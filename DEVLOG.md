@@ -177,3 +177,52 @@ where it was first written — two segments do not collide with
 
 *Next:* practice mode drawing from `v_practice` with unverified answers
 labelled, then mocks.
+
+---
+
+## 2026-10-18 (cont.) — the design was not actually being followed
+
+The deployed Bank screen looked bland and the user called it out. They were
+right, and the framing in the earlier entry ("design tokens ported") was
+generous to the point of misleading. What had been ported were colours and
+fonts; the *layouts* were invented. The prototype is 3,500 lines of specific
+composition and copy, and almost none of it had been read.
+
+**Root cause: built from the handoff README instead of the prototype.** The
+README's token summary disagrees with the actual markup in several places:
+
+| | README | markup |
+|---|---|---|
+| card radius | 10px | 14px |
+| option radius | 8px | 6px |
+| correct state | `#2E7D46`/`#DCEFE1` | `#3D7344`/`#E3ECDD` |
+| wrong state | `#C0392B`/`#F8DEDA` | `#B0412A`/`#F5E1D8` |
+| option resting bg | `#FFFFFF` | `#FBF8F1` |
+| state indicator | `✓ × !` | words: "Correct"/"Answer"/"Your pick" |
+
+Everything extracted is now in `docs/DESIGN-FIDELITY.md`, and `CLAUDE.md`
+says to read it before building a screen. **The markup is authoritative; the
+README is a summary.**
+
+Also missed entirely: the prototype answers questions **inline on the bank
+list** ("Tap an option to check it"), with the explanation revealed under the
+card. The detail page is for the original-paper view, not for answering.
+
+Bank card now matches, verified against the live site: radius 14px, padding
+20px 22px, option radius 6px on `#FBF8F1`/`#DCD3C2`, stem Newsreader 21px at
+line-height 28.35px (= 21 × 1.35), outlined provenance pill, solid dark
+repeat badge, "View original ↗" in `#33609E`.
+
+**Resolves the earlier unexplained CSS reading.** Computed styles in this
+browser pane are correct for classes present at *first render*, and stale for
+classes React swaps in after a *state change* — which is exactly why the
+post-reveal option colours read as unchanged while a freshly created probe
+with the same classes read correctly. Not a CSS bug and not a React bug: do
+not trust `getComputedStyle` here for post-interaction styling, verify the
+className instead and have a human look at the page.
+
+Still not ported: the filter rail, topic chips (our `subject` is NULL until
+classification), discussion counts (milestone 4), and the other 24 screens.
+
+*Next:* the filter rail, then the remaining screens one at a time, each
+extracted from the prototype first.

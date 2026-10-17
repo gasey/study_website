@@ -95,15 +95,20 @@ export default function Bank() {
         )}
       </p>
 
-      <div className="mt-6 flex items-baseline justify-between">
-        <span className="label">
-          {loading ? 'Loading…' : `${total.toLocaleString('en-IN')} questions`}
+      {/* Mirrors the prototype's list header: count on the left, the
+          affordance hint on the right, separated by a 1px ink rule. */}
+      <div className="mt-6 flex flex-wrap items-center justify-between gap-2.5 border-b border-ink pb-3">
+        <span className="text-[14px] text-secondary">
+          {loading ? (
+            'Loading…'
+          ) : (
+            <>
+              <b className="text-ink">{total.toLocaleString('en-IN')}</b> questions shown
+              {total > 0 && <> · page {page} of {pages.toLocaleString('en-IN')}</>}
+            </>
+          )}
         </span>
-        {!loading && total > 0 && (
-          <span className="label">
-            Page {page} of {pages.toLocaleString('en-IN')}
-          </span>
-        )}
+        <span className="font-mono text-[11px] text-muted">Tap an option to check it</span>
       </div>
 
       {error && (
@@ -113,7 +118,7 @@ export default function Bank() {
         </div>
       )}
 
-      <div className="mt-4 grid gap-3">
+      <div className="mt-4">
         {data?.items.map((q) => <QuestionCard key={q.id} q={q} />)}
         {!loading && data?.items.length === 0 && (
           <p className="rounded-card border border-hairline bg-card p-6 text-muted">

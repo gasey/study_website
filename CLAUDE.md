@@ -3,11 +3,32 @@
 MPSC exam-prep platform. Question bank, per-question discussion, user-made
 study materials, games and duels, exam calendar, paid plans.
 
-This file is context for whoever picks the work up next, human or agent.
-Chronological history lives in `DEVLOG.md`; the milestone checklist lives in
-`docs/PLAN.md`; the reasoning behind irreversible choices lives in
-`docs/DECISIONS.md`. Append to the log, tick the plan, and add a decision
-record when you choose something that would be expensive to undo.
+## Read this before touching anything
+
+Whoever picks this up next — human or model — reads these four files first,
+in this order. They exist because the same mistakes were being rediscovered
+every session.
+
+| File | What it holds | When you write to it |
+|---|---|---|
+| `CLAUDE.md` (this) | Layout, server, rules that must not be broken | A rule changes |
+| `docs/PLAN.md` | Milestones, as checkboxes | Tick a box when work lands |
+| `docs/DECISIONS.md` | Why a choice was made, and what was rejected | Any choice expensive to reverse |
+| `docs/DESIGN-FIDELITY.md` | Exact values pulled from the prototype | You extract a new screen's spec |
+| `DEVLOG.md` | Dated, append-only account of each session | **Every session, before you stop** |
+
+**The devlog entry is not optional, and it is not a changelog.** Record what
+you measured, what broke, and the trap you hit — the dead end you wasted an
+hour on is worth more to the next session than the feature you shipped. Write
+it as prose someone can act on, with real numbers.
+
+Append; never rewrite history. If a past entry turns out to be wrong, add a
+new entry saying so rather than editing the old one — that correction is
+itself the useful record.
+
+Before building a screen, read `docs/DESIGN-FIDELITY.md` and extract the
+values for that screen from the prototype. The handoff README's token summary
+is a simplification and disagrees with the markup in several places.
 
 ## Layout
 

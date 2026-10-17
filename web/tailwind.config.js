@@ -29,10 +29,19 @@ export default {
         exams:     { DEFAULT: '#B26B00', soft: '#F7EAD0', dark: '#7E4A00' },
         rewards:   { DEFAULT: '#8A8A12', soft: '#ECEDCF', dark: '#545A06' },
 
-        // States always pair with a symbol (✓ × !), never colour alone.
+        // States always pair with a word or symbol, never colour alone.
         correct:   { DEFAULT: '#2E7D46', soft: '#DCEFE1', dark: '#1F6234' },
         wrong:     { DEFAULT: '#C0392B', soft: '#F8DEDA', dark: '#9E2A1F' },
         attention: { DEFAULT: '#1D1B18', soft: '#EDE5D4', dark: '#1D1B18' },
+
+        // Values taken from the prototype markup, which disagrees with the
+        // handoff README's summary. See docs/DESIGN-FIDELITY.md — the markup
+        // wins. Used by the bank card and its option buttons.
+        opt:      { bg: '#FBF8F1', border: '#DCD3C2', muted: '#6B6457' },
+        keyed:    { DEFAULT: '#3D7344', soft: '#E3ECDD' },  // revealed correct
+        mypick:   { DEFAULT: '#B0412A', soft: '#F5E1D8' },  // revealed wrong pick
+        prov:     { DEFAULT: '#2F5E8C' },                   // non-official provenance
+        link:     { DEFAULT: '#33609E' },                   // "View original ↗"
       },
       fontFamily: {
         display: ['Newsreader', 'Georgia', 'serif'],
