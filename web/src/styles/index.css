@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { -webkit-text-size-adjust: 100%; }
+  body { @apply bg-paper text-ink font-sans antialiased; }
+}
+
+@layer components {
+  /* Labels, metadata and codes: 10–11px mono, uppercase, wide tracking. */
+  .label { @apply font-mono text-[11px] uppercase tracking-[0.08em] text-muted; }
+  .hair  { @apply border border-hairline; }
+}
