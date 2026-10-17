@@ -11,16 +11,18 @@ Every later screen is then additive on a proven path.
 
 - [x] Monorepo scaffold, docs, git init
 - [x] FastAPI service: health, `/api/questions`, `/api/questions/{id}`
-- [ ] Design tokens + app shell (header, nav, area-colour dots)
-- [ ] Bank screen: list, filters, search, provenance labels
-- [ ] Question detail: options, answer-before-reveal gate, appearances
-- [ ] Deploy script + systemd unit + Caddy reverse_proxy
-- [ ] Verified in a browser with a screenshot
+- [x] Design tokens + app shell (header, nav, area-colour dots)
+- [x] Bank screen: list, filters, search, provenance labels
+- [x] Question detail: options, answer-before-reveal gate, appearances
+- [x] Deploy script + systemd unit + Caddy reverse_proxy
+- [x] Verified in a browser (behaviour + network; colours need a human eye — see DEVLOG)
 
 **Done means:** a real question from the 77,751 renders at
 study.hawayu.in over HTTPS, with its provenance visible, no console errors.
 
 ## Milestone 2 — accounts and attempts
+
+- [x] `scripts/sync-bank.sh` — local bank → server, user data preserved
 
 - [ ] Auth (decide: own JWT vs fastapi-users) — needs a decision record
 - [ ] Record attempts with `chosen_text`, so re-scoring survives key fixes

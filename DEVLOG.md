@@ -105,3 +105,44 @@ the question would have made the gate decorative.
 Live: `https://study.hawayu.in/api/health` → 77,751 questions.
 
 *Next:* Bank screen against this API.
+
+---
+
+## 2026-10-18 (cont.) — milestone 1 shipped, and bank sync
+
+**Bank screen and Question detail are live** at https://study.hawayu.in.
+Real data: 12,454 scorable / 59,047 practice, provenance tag on every card,
+pool toggle, debounced full-text search, pagination. Detail has the
+answer-before-reveal gate and the appearances list.
+
+`scripts/deploy.sh [web|api|all]` builds locally and rsyncs artifacts; the
+API half waits for `/api/health` and dumps journal output if it does not come
+back. Caddy serves the SPA with `try_files {path} /index.html`, so deep links
+like `/bank/<id>` return 200.
+
+**Unresolved — colour verification.** The option buttons carry the right
+classes (`border-correct bg-correct-soft` after a reveal) and the generated
+CSS rules are correct, but `getComputedStyle` in this browser pane reports
+the *pre-change* colours. A freshly created probe element — `div` and
+`button` alike — with the identical classes computes correctly, and removing
+`transition-colors` changes nothing. Behaviour is verified (aria-pressed, the
+`×`/`✓` markers, the POST, disabled state); colours need a human to look at
+the page in a real browser. Screenshots time out in this pane too, which
+points at the pane rather than the CSS.
+
+**scripts/sync-bank.sh** — local bank JSON is the source of truth, the server
+DB is derived (DECISIONS.md #5). One transaction, `--dry-run` first.
+
+*Trap:* the v3 migration leaves `appearances.canonical_id` NOT NULL with an
+FK. `INSERT ... ON CONFLICT DO UPDATE` does **not** rescue a NOT NULL
+violation — the proposed row is validated before the conflict is detected —
+so the canonical row has to be created before its appearance, not after. The
+first run failed on exactly this and rolled back whole, which is the argument
+for the single transaction.
+
+Verified round-trip: edited a question in a *copy* of the bank → synced →
+marker visible via the live API → re-synced from the real file → gone.
+Seeded attempts stayed at 3 through every cycle, and the real bank file was
+never written to.
+
+*Next:* milestone 2 — auth, and recording attempts for real.

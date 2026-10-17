@@ -68,3 +68,35 @@ human fixes them.
 `npm run build` on one Ampere core is slow and competes with the running
 site. Builds happen on a developer machine; `scripts/deploy.sh` rsyncs
 `web/dist` to `/srv/study/public`. The server never compiles frontend code.
+
+---
+
+## 5. The bank is authored locally; the server database is a derived artifact — 2026-10-18
+
+The question bank is edited locally, by hand and by various models, with
+`mpsc-question-bankv2/bank/mpsc_bank_v2.json` under git as the single source
+of truth. `scripts/sync-bank.sh` pushes it to the server. The sync is
+one-way, re-runnable, and never reaches outside the bank tables.
+
+What this buys: several models can work the bank in parallel, every change is
+a reviewable diff, and the server can be rebuilt from scratch — which matters
+on a free-tier box that Oracle may reclaim.
+
+**Two classes of data, and they must never be synced alike:**
+
+- *Bank data* — papers, questions, options, answer keys. Authored locally,
+  overwritten on every sync.
+- *User data* — users, attempts, posts, votes, reports, moderation. Created
+  on the server, **never** touched by the sync. Losing it is unrecoverable;
+  there is no local copy to restore from.
+
+**Open tension — resolve before the Admin Console ships.** Admin is designed
+to correct wrong keys and OCR errors, which are edits to *bank* data made on
+the *server*. Under this decision the next sync destroys them. The intended
+resolution is that admin writes to a correction queue which is exported back
+into the local JSON, so fixes reach the server only through the normal sync.
+The alternative — letting the server own `answer_text`/`answer_source` while
+local owns the rest — splits truth by column and reproduces the local/prod
+divergence that has already caused trouble on another project. Until this is
+settled, do not build admin writes that mutate `canonical_questions`
+directly.
