@@ -67,3 +67,41 @@ things are `ORDER BY random()` (19.8 ms, avoidable) and trigram similarity
 is a vertical slice: Bank → Question detail, deployed.
 
 *Next:* FastAPI service against the `bench` database.
+
+---
+
+## 2026-10-18 (later) — scaffold + API
+
+**Repo split settled.** `mpsc-question-bankv2` stays as the data workshop
+(2 GB of PDFs, raw JSON, OCR, parsers). The app owns what the app runs on:
+`api/migrations/` now holds the schema, `docs/design/` holds the handoff, and
+bankv2 keeps a `db/README.md` pointer. One copy of v3 only — two copies
+already existed once and the review nearly landed on the stale one.
+
+**web/** Vite + React 18 + TS + Tailwind. Pinned to React 18 / Vite 5: npm
+10.8.2's peer resolver crashes on the React 19 / Vite 8 tree
+(`Cannot read properties of null (reading 'edgesOut')`), and 18/5 is what
+india-study-map already runs, so ported components work unchanged. Tokens
+verified in the browser by computed CSS, not by eye — `#F4EFE4`, `#1D1B18`,
+all six area colours, three fonts loading.
+
+*Note:* screenshots time out in this browser pane. Verify with the
+accessibility tree and `getComputedStyle` instead; it is more precise anyway.
+
+**api/** FastAPI + psycopg3 async pool, deployed as `ism-api.service` running
+as www-data, behind Caddy at `/api/*`. `PGPASSWORD` comes from
+`EnvironmentFile=/etc/mpsc/db.env`, and `DATABASE_URL` omits the password, so
+the secret is in neither the unit file nor `ps` output.
+
+Production database `mpsc` loaded and migrated: 77,751 canonical / 12,454
+scorable / 59,047 practice. Migration took 19 s.
+
+**The answer gate is enforced server-side.** No GET response carries
+`answer_text` — verified by grepping 50 list items and a detail response, 0
+occurrences. The key is revealed only by `POST /api/questions/{id}/answer`,
+which grades by comparing option *text*, not index. Shipping the answer with
+the question would have made the gate decorative.
+
+Live: `https://study.hawayu.in/api/health` → 77,751 questions.
+
+*Next:* Bank screen against this API.

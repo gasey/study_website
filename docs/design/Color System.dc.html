@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#F4EFE4;font-family:'Public Sans',system-ui,sans-serif;color:#1D1B18}a{color:#1D1B18}a:hover{color:#C0462C}</style>
+</helmet>
+<main style="max-width:1120px;margin:0 auto;padding:40px 24px 80px">
+  <div style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B6457">India Study Map · colour key</div>
+  <h1 style="margin:8px 0 0;font-family:'Newsreader',Georgia,serif;font-size:clamp(32px,5vw,48px);font-weight:500;letter-spacing:-0.02em">One colour per area of the app</h1>
+  <p style="margin:12px 0 0;max-width:720px;font-size:16px;line-height:1.6;color:#49443B;text-wrap:pretty">Today blue means “Start here”, exam guides, flashcards, links and ranking notes at once. Each colour below now means exactly one area. Each area has three values: a mid tone for dots, bars and swatches, a dark ink for text (at least 4.5:1 on its soft tint and on paper), and a soft tint for backgrounds. Buttons stay ink.</p>
+
+  <h2 style="margin:40px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B6457;font-weight:500">Areas</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px;margin-top:12px">
+    <sc-for list="{{ areas }}" as="a" hint-placeholder-count="6">
+      <div style="border:1px solid #1D1B18;border-radius:10px;background:#FBF8F1;overflow:hidden;display:flex;flex-direction:column">
+        <div style="display:flex;height:56px"><span style="flex:3;background:{{ a.c }}"></span><span style="flex:1;background:{{ a.ink }}"></span><span style="flex:2;background:{{ a.bg }}"></span></div>
+        <div style="padding:14px 16px 16px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><span style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:500">{{ a.name }}</span><span style="font-family:'IBM Plex Mono',monospace;font-size:11px;color:#6B6457">{{ a.c }} · {{ a.ink }} · {{ a.bg }}</span></div>
+          <div style="font-size:13.5px;line-height:1.5;color:#49443B">{{ a.covers }}</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px">
+            <sc-for list="{{ a.chips }}" as="ch" hint-placeholder-count="3"><span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:{{ a.bg }};color:{{ a.ink }}">{{ ch }}</span></sc-for>
+          </div>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="margin:40px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B6457;font-weight:500">States (separate from areas, always with a symbol)</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px;margin-top:12px">
+    <sc-for list="{{ states }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;gap:12px;align-items:center;padding:12px 14px;border-radius:8px;background:{{ s.bg }};border:1px solid {{ s.c }}">
+        <span style="width:28px;height:28px;flex:0 0 28px;border-radius:50%;background:{{ s.c }};color:#FFF;display:grid;place-items:center;font-size:14px;font-weight:600">{{ s.sym }}</span>
+        <div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:14px;font-weight:600;color:{{ s.ink }}">{{ s.name }}</span><span style="font-size:12.5px;color:#49443B">{{ s.use }}</span></div>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="margin:40px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B6457;font-weight:500">In use: one feed, five areas</h2>
+  <div style="margin-top:12px;border:1px solid #1D1B18;border-radius:10px;background:#FBF8F1">
+    <sc-for list="{{ feed }}" as="f" hint-placeholder-count="5">
+      <div style="display:flex;gap:14px;align-items:center;padding:14px 18px;border-bottom:1px solid #E4DBC9;flex-wrap:wrap">
+        <span style="width:4px;align-self:stretch;border-radius:2px;background:{{ f.c }}"></span>
+        <span style="font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:999px;background:{{ f.bg }};color:{{ f.ink }};flex:0 0 auto">{{ f.tag }}</span>
+        <span style="flex:1 1 300px;font-size:15px;line-height:1.45">{{ f.text }}</span>
+      </div>
+    </sc-for>
+  </div>
+
+  <h2 style="margin:40px 0 0;font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#6B6457;font-weight:500">Rules</h2>
+  <div style="margin-top:12px;display:flex;flex-direction:column;gap:0;border-top:1px solid #1D1B18">
+    <sc-for list="{{ rules }}" as="r" hint-placeholder-count="5">
+      <div style="display:grid;grid-template-columns:28px minmax(0,1fr);gap:12px;padding:12px 0;border-bottom:1px solid #DCD3C2;font-size:15px;line-height:1.55"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#6B6457;padding-top:2px">{{ r.n }}</span><span>{{ r.t }}</span></div>
+    </sc-for>
+  </div>
+</main>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const A = {
+      practice:['Practice','#2D5BD0','#E3E9F8','#1F44A6','Question bank, MCQs, mocks, Gauntlet Run, speed round, duels, weekly cup.',['Question bank','Mock','Duel']],
+      learn:['Learn','#7B45B8','#EEE6F7','#5E2F98','Study materials and every block type: notes, flashcards, mind maps, timelines, formula sheets.',['Material','Flashcards','Mind map']],
+      map:['Map','#0E8287','#DCEFEF','#08605F','Study Map, map-pin blocks, Locate on map game, anything about a place.',['Study Map','Map pins','Locate']],
+      community:['Community','#B23A9A','#F5E1F0','#86226F','Feed posts, doubts, explanations, study desks and class desks, profiles.',['Doubt','Desk','Explanation']],
+      exams:['Exams','#B26B00','#F7EAD0','#7E4A00','Exam calendar, MPSC dates, modules and papers, original paper viewer, repeats.',['Calendar','Paper','Asked 3×']],
+      rewards:['Rewards','#8A8A12','#ECEDCF','#545A06','XP, coins, levels, leaderboards, cup placings, contribution points.',['+10 XP','Coins','Level 7']],
+    };
+    const areas = Object.values(A).map(([name, c, bg, ink, covers, chips]) => ({ name, c, bg, ink, covers, chips }));
+    const states = [['Correct','#2E7D46','#DCEFE1','#1F6234','✓','Right answer, confirmed fix, accepted answer'],['Wrong','#C0392B','#F8DEDA','#9E2A1F','×','Wrong answer, blocked merge'],['Needs attention','#1D1B18','#EDE5D4','#1D1B18','!','Open report, held from mocks, draft']].map(([name, c, bg, ink, sym, use]) => ({ name, c, bg, ink, sym, use }));
+    const feed = [['community','Doubt','Is the Prime Minister counted inside the 15%?'],['learn','Material','Mizoram’s 11 districts on one page'],['practice','Duel','Rosangpuii challenged you: 10 Polity questions'],['exams','Calendar','LDC Paper-I mock opens Sunday 9 am'],['rewards','Cup','You placed 4th in the weekly cup · +40 coins'],['map','Locate','Find Serchhip on the map in under 5 seconds']].map(([k, tag, text]) => ({ tag, text, c:A[k][1], bg:A[k][2], ink:A[k][3] }));
+    const rules = ['A colour names an area, never a state. Right and wrong use green and red with ✓ and ×; no area uses pure green or red, so the two never get confused.','Buttons and primary actions stay ink. Vermilion stays the brand mark and nothing else.','Text in an area colour always uses its dark ink value. The mid tone is for dots, bars, borders and swatches only, never for small text.','One area colour per card. A material inside the feed is violet even though the feed is community.','Navigation shows each area’s colour as a small dot, so the menu becomes the legend.'].map((t, i) => ({ n:String(i + 1).padStart(2, '0'), t }));
+    return { areas, states, feed, rules };
+  }
+}
+</script>
+</body>
+</html>

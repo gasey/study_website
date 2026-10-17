@@ -10,7 +10,7 @@ The point is to prove the whole stack and build the deploy pipeline once.
 Every later screen is then additive on a proven path.
 
 - [x] Monorepo scaffold, docs, git init
-- [ ] FastAPI service: health, `/api/questions`, `/api/questions/{id}`
+- [x] FastAPI service: health, `/api/questions`, `/api/questions/{id}`
 - [ ] Design tokens + app shell (header, nav, area-colour dots)
 - [ ] Bank screen: list, filters, search, provenance labels
 - [ ] Question detail: options, answer-before-reveal gate, appearances

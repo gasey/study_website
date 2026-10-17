@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&family=Public+Sans:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>body{margin:0;background:#E9E1D2;font-family:'Public Sans',system-ui,sans-serif;color:#1D1B18}a{color:#1D1B18}a:hover{color:#C0462C}</style>
+</helmet>
+<section style="padding:48px 56px 80px">
+  <div style="display:flex;height:4px;width:240px"><span style="flex:1;background:#C0462C"></span><span style="flex:1;background:#D8A33A"></span><span style="flex:1;background:#3F8350"></span><span style="flex:1;background:#1F7F86"></span><span style="flex:1;background:#33609E"></span><span style="flex:1;background:#8A4A86"></span></div>
+  <h1 style="margin:16px 0 0;font-family:'Newsreader',Georgia,serif;font-size:44px;font-weight:500">India Study Map · mobile</h1>
+  <p style="font-size:16px;color:#49443B;margin:8px 0 0;max-width:760px">The live app at phone width (390 × 844). Every screen is interactive; scroll inside a phone. On phones the top bar is trimmed and a bottom bar holds Home, Bank, Desk, Exams and Me.</p>
+  <div style="display:flex;flex-wrap:wrap;gap:40px;margin-top:36px">
+    <sc-for list="{{ phones }}" as="p" hint-placeholder-count="8">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:baseline;gap:10px"><span style="font-family:'IBM Plex Mono',monospace;font-size:12px;padding:2px 8px;border-radius:999px;background:#1D1B18;color:#F4EFE4">{{ p.id }}</span><span style="font-family:'Newsreader',Georgia,serif;font-size:22px;font-weight:500">{{ p.title }}</span></div>
+        <div style="width:414px;height:868px;padding:12px;border-radius:52px;background:#1D1B18;box-shadow:0 30px 60px rgba(29,27,24,.25)">
+          <div style="position:relative;width:390px;height:844px;border-radius:40px;overflow:hidden;background:#F4EFE4">
+            <iframe src="{{ p.src }}" title="{{ p.title }}" style="width:390px;height:844px;border:0;display:block"></iframe>
+          </div>
+        </div>
+        <div style="font-size:13px;color:#49443B;max-width:414px;line-height:1.5">{{ p.note }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    const S = [
+      ['landing','Signed-out home','Start with Combined Prelims, try one real question.'],
+      ['onboard','Onboarding','Three steps: exam, study time, scoring.'],
+      ['feed','Home feed','Featured exam, posts. Bottom bar always in reach.'],
+      ['module','Exam page','Six tabs scroll sideways; Discuss is the exam’s community.'],
+      ['bank','Question bank','Sources, filters stacked above results, tap to check.'],
+      ['bank&thread=q6','Question discussion','Opens after you answer. Open report status, pinned explanation, doubts with accepted answers, one composer.'],
+      ['exam','Mock exam','Full-screen with timer; palette drops below the question.'],
+      ['calendar','Exam calendar','Month grid with coloured dots; tap a day to see its events.'],
+      ['partner','Study desk','Desk drawing scales to width; panels stack under it.'],
+      ['games','Games','Featured Gauntlet Run, then one game per row.'],
+      ['profile','Profile','Avatar, level bar, Activity tab with today’s XP.'],
+      ['create','Create material','Block editor at phone width. + block or / opens the block menu; controls sit on each block’s label row.'],
+      ['material','Study material','Reader view: flip cards, charts, timeline, MCQ check, impact panel below.'],
+      ['pricing','Plans','Free, Pro, Class, one card per row. Tap Get Pro to start checkout.'],
+      ['checkout','Checkout','Order, coupon, UPI apps or card, approve in the app, success or retry.'],
+      ['account','Subscription & billing','Plan, autopay, cancel, receipts.'],
+    ];
+    return { phones: S.map(([k, title, note], i) => ({ id: 'M' + (i + 1), title, note, src: 'India Study Map v3.dc.html?screen=' + k })) };
+  }
+}
+</script>
+</body>
+</html>
