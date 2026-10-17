@@ -1,8 +1,9 @@
-from typing import Literal
+from typing import Annotated, Literal
 
-from fastapi import APIRouter, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from ..db import cursor
+from ..deps import current_user
 from ..schemas import (
     AnswerResult,
     AnswerSubmission,
@@ -104,8 +105,12 @@ async def get_question(question_id: str) -> QuestionDetail:
 
 
 @router.post("/{question_id}/answer", response_model=AnswerResult)
-async def answer_question(question_id: str, body: AnswerSubmission) -> AnswerResult:
-    """Grade an answer. This is the only endpoint that reveals the key.
+async def answer_question(
+    question_id: str,
+    body: AnswerSubmission,
+    user_id: Annotated[str, Depends(current_user)],
+) -> AnswerResult:
+    """Grade an answer, record the attempt, and reveal the key.
 
     Grading compares option TEXT, not index: the canonical row stores the
     answer as text precisely so a reprint with shuffled options cannot
@@ -138,8 +143,21 @@ async def answer_question(question_id: str, body: AnswerSubmission) -> AnswerRes
         # out from under the constraint.
         raise HTTPException(500, "answer is not one of the options") from None
 
+    chosen_text = options[body.chosen_index]
+    correct = chosen_text == answer_text
+
+    # Store the TEXT the learner chose, not its index. When a key is later
+    # corrected, attempts can be re-scored against the new answer; an index
+    # would be meaningless if the options were ever re-ordered.
+    async with cursor() as cur:
+        await cur.execute(
+            """INSERT INTO attempts (user_id, canonical_id, correct, chosen_text, context)
+               VALUES (%s, %s, %s, %s, %s)""",
+            (user_id, question_id, correct, chosen_text, body.context),
+        )
+
     return AnswerResult(
-        correct=options[body.chosen_index] == answer_text,
+        correct=correct,
         answer_index=answer_index,
         answer_text=answer_text,
         answer_source=row["answer_source"],

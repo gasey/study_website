@@ -1,3 +1,5 @@
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 # Answers are deliberately absent from every GET model below. The client
@@ -57,6 +59,10 @@ class QuestionPage(BaseModel):
 
 class AnswerSubmission(BaseModel):
     chosen_index: int = Field(ge=0, le=9)
+    #: Where the answer was given. Only 'mock', 'duel' and 'cup' are scored
+    #: competitively, and those draw from v_scorable, so an inferred answer
+    #: can never reach them.
+    context: Literal["practice", "mock", "duel", "cup", "review", "material"] = "practice"
 
 
 class AnswerResult(BaseModel):
@@ -66,3 +72,11 @@ class AnswerResult(BaseModel):
     answer_source: str
     verified: bool
     explanation: str | None = None
+
+
+class Progress(BaseModel):
+    answered: int
+    correct: int
+    #: Distinct questions seen, which differs from `answered` once a question
+    #: has been retried.
+    unique_questions: int

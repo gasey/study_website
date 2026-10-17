@@ -146,3 +146,34 @@ Seeded attempts stayed at 3 through every cycle, and the real bank file was
 never written to.
 
 *Next:* milestone 2 — auth, and recording attempts for real.
+
+---
+
+## 2026-10-18 (cont.) — milestone 2: attempts without accounts
+
+Progress now records, with no login. Client generates a UUID into
+`localStorage` and sends `X-Device-Id`; the API creates a `users` row per
+device so `attempts.user_id` is a real FK from day one. Answering records the
+attempt with `chosen_text` — the text, not the index, so a later key
+correction can re-score it. `GET /api/me/progress` returns answered/correct/
+distinct counts and the header shows them.
+
+Rejects a missing or malformed header with 400 rather than inventing a guest
+identity, so a client bug is loud instead of silently splitting progress
+across phantom users.
+
+Verified against the live API: 400 on no header, 400 on a non-UUID, attempts
+recorded, progress correct, and a second device sees zeroes — devices are
+isolated.
+
+*Caught a near-miss:* the second test answer returned `correct: true` when a
+wrong one was expected. It was not a grading bug — index 3 genuinely is that
+question's key. Re-tested with indices 0 and 1, both `false`. Worth noting
+because "the test looked wrong" nearly became "the code is wrong".
+
+`/api/me/progress` sits in its own router rather than under `/api/questions`,
+where it was first written — two segments do not collide with
+`/{question_id}`, but it was the wrong shape for a user resource.
+
+*Next:* practice mode drawing from `v_practice` with unverified answers
+labelled, then mocks.

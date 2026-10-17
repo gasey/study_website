@@ -1,4 +1,6 @@
-import { NavLink } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { NavLink, useLocation } from 'react-router-dom'
+import { getProgress, type Progress } from '../lib/api'
 
 /** The six area colours, in the order the design uses them in the mark.
  *  The nav shows each area's colour as a dot, so the menu doubles as the
@@ -33,6 +35,27 @@ export function Logo() {
   )
 }
 
+/** Anonymous progress. Refetched on navigation, which is enough: the only
+ *  thing that changes it is answering a question, and that is followed by a
+ *  route change back to the bank often enough to stay honest. */
+function ProgressPill() {
+  const [p, setP] = useState<Progress | null>(null)
+  const { pathname } = useLocation()
+  useEffect(() => {
+    getProgress()
+      .then(setP)
+      .catch(() => setP(null))
+  }, [pathname])
+
+  if (!p || p.answered === 0) return null
+  const pct = Math.round((p.correct / p.answered) * 100)
+  return (
+    <span className="label" title={`${p.unique_questions} distinct questions`}>
+      {p.answered} answered · {pct}% correct
+    </span>
+  )
+}
+
 export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-hairline bg-card">
@@ -57,6 +80,8 @@ export default function Header() {
             </NavLink>
           ))}
         </nav>
+        <span className="grow" />
+        <ProgressPill />
       </div>
     </header>
   )

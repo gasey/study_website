@@ -24,10 +24,10 @@ study.hawayu.in over HTTPS, with its provenance visible, no console errors.
 
 - [x] `scripts/sync-bank.sh` — local bank → server, user data preserved
 
-- [ ] Auth (decide: own JWT vs fastapi-users) — needs a decision record
-- [ ] Record attempts with `chosen_text`, so re-scoring survives key fixes
+- [x] Anonymous device id (accounts deferred — DECISIONS.md #6)
+- [x] Record attempts with `chosen_text`, so re-scoring survives key fixes
 - [ ] Practice mode drawing from `v_practice`, unverified answers labelled
-- [ ] Per-user progress
+- [x] Per-device progress (`GET /api/me/progress`)
 
 ## Milestone 3 — mocks
 

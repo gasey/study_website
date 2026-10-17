@@ -100,3 +100,21 @@ local owns the rest — splits truth by column and reproduces the local/prod
 divergence that has already caused trouble on another project. Until this is
 settled, do not build admin writes that mutate `canonical_questions`
 directly.
+
+---
+
+## 6. Anonymous device ids before real accounts — 2026-10-18
+
+Progress is attributed to a client-generated UUID in `localStorage`, sent as
+`X-Device-Id`. The server creates a `users` row per device on first sight, so
+attempts have a real foreign key and nothing special is needed later.
+
+This is **not authentication.** The header is forgeable and identifies a
+browser, not a person. Nothing that matters may be gated on it — no payments,
+no moderation powers, no private data. It exists so practice, mocks and
+mistake review can be built and tested now, without first standing up
+registration, password reset and session management.
+
+When accounts arrive, a signed-in user adopts the device's attempts by
+reassigning `attempts.user_id`. Deferring the choice also avoids committing
+to email/password versus Google before it is known which one users want.

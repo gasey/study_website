@@ -1,3 +1,5 @@
+import { deviceId } from './device'
+
 /** Typed client for the FastAPI service. Same-origin in production (Caddy
  *  routes /api), proxied by Vite in dev — so no base URL either way. */
 
@@ -61,7 +63,11 @@ class ApiError extends Error {
 async function req<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(`/api${path}`, {
     ...init,
-    headers: { 'content-type': 'application/json', ...init?.headers },
+    headers: {
+      'content-type': 'application/json',
+      'x-device-id': deviceId(),
+      ...init?.headers,
+    },
   })
   if (!res.ok) {
     let detail = res.statusText
@@ -94,10 +100,18 @@ export function listQuestions(p: ListParams = {}): Promise<QuestionPage> {
 
 export const getQuestion = (id: string) => req<QuestionDetail>(`/questions/${id}`)
 
-export const submitAnswer = (id: string, chosen_index: number) =>
+export const submitAnswer = (id: string, chosen_index: number, context = 'practice') =>
   req<AnswerResult>(`/questions/${id}/answer`, {
     method: 'POST',
-    body: JSON.stringify({ chosen_index }),
+    body: JSON.stringify({ chosen_index, context }),
   })
+
+export interface Progress {
+  answered: number
+  correct: number
+  unique_questions: number
+}
+
+export const getProgress = () => req<Progress>('/me/progress')
 
 export { ApiError }
