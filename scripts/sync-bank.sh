@@ -23,6 +23,30 @@ DRY=${1:-}
 
 [ -f "$BANK" ] || { echo "bank not found: $BANK" >&2; exit 1; }
 
+# --check answers the question parallel work actually raises: is the server
+# running the bank I have in front of me, and has it anything to send back?
+if [ "$DRY" = "--check" ]; then
+  LOCAL=$(sha256sum "$BANK" | cut -c1-64)
+  # Pipe-separated. Not space (the timestamp contains one, which silently
+  # shifted every later field) and not \t (it survives the quoting as a
+  # literal backslash-t, so nothing splits at all).
+  IFS='|' read -r REMOTE_SUM REMOTE_N REMOTE_AT FEEDBACK <<<"$(ssh "$HOST" \
+    "sudo -u postgres psql -qtA -F'|' -d $DB -c \"
+       SELECT COALESCE(bank_checksum,'none'), COALESCE(questions_in,0),
+              COALESCE(to_char(finished_at,'YYYY-MM-DD HH24:MI'),'never'),
+              COALESCE(open_feedback,0)
+         FROM v_sync_state;\"" 2>/dev/null)"
+  echo "local  bank : ${LOCAL:0:12}…  $(python3 -c "import json,sys;print(len(json.load(open(sys.argv[1]))['questions']))" "$BANK") questions"
+  echo "server bank : ${REMOTE_SUM:0:12}…  ${REMOTE_N:-?} questions  (last sync ${REMOTE_AT:-?})"
+  if [ "${REMOTE_SUM:-x}" = "$LOCAL" ]; then
+    echo "status      : IN SYNC"
+  else
+    echo "status      : SERVER IS BEHIND — run ./scripts/sync-bank.sh"
+  fi
+  [ "${FEEDBACK:-0}" != "0" ] && echo "feedback    : ${FEEDBACK} open proposal(s) from the server — export before editing the bank"
+  exit 0
+fi
+
 echo "==> source: $BANK ($(du -h "$BANK" | cut -f1))"
 TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
 python3 "$ROOT/scripts/bank_to_csv.py" "$BANK" "$TMP/csv"
@@ -160,9 +184,36 @@ if [ "$DRY" = "--dry-run" ]; then
   ssh "$HOST" "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
 ROLLBACK;"
 else
+  # Record which bank version this sync carries. Without it nobody can
+  # answer "is the server running the bank in front of me?", and parallel
+  # work drifts silently.
+  SUM=$(sha256sum "$BANK" | cut -c1-64)
+  BYTES=$(stat -c%s "$BANK")
+  NQ=$(python3 -c "import json,sys;print(len(json.load(open(sys.argv[1]))['questions']))" "$BANK")
+  WHO="${USER:-unknown}@$(hostname -s)"
+  echo "==> bank ${SUM:0:12}… · ${NQ} questions"
+
   echo "==> applying"
   ssh "$HOST" "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
+-- Capture the before-counts as psql variables so the deltas recorded below
+-- are real deltas, not totals wearing a delta's name.
+SELECT COUNT(*) AS cq_before FROM canonical_questions \gset
+SELECT COUNT(*) AS ap_before FROM appearances \gset
+SELECT COUNT(*) AS at_before FROM attempts \gset
+
+INSERT INTO sync_log (bank_checksum, bank_bytes, questions_in, attempts_before, ran_by)
+VALUES ('$SUM', $BYTES, $NQ, :at_before, '$WHO');
+
 $APPLY
+
+UPDATE sync_log SET
+    finished_at     = now(),
+    attempts_after  = (SELECT COUNT(*) FROM attempts),
+    canonical_new   = (SELECT COUNT(*) FROM canonical_questions) - :cq_before,
+    canonical_upd   = (SELECT COUNT(*) FROM canonical_questions
+                        WHERE updated_at > now() - interval '5 minutes'),
+    appearances_new = (SELECT COUNT(*) FROM appearances) - :ap_before
+  WHERE id = (SELECT MAX(id) FROM sync_log);
 COMMIT;"
   echo "==> after"
   ssh "$HOST" "sudo -u postgres psql -tA -d $DB -c \"

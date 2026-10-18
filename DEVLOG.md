@@ -445,3 +445,43 @@ Also: `api.map.hawayu.in` resolves to the old droplet, so the domain
 currently straddles both boxes.
 
 No harvest performed — writing to the source-of-truth bank is the user's call.
+
+---
+
+## 2026-10-18 (cont.) — recording sync state so parallel work is safe
+
+Migration `0004_sync_log` adds two tables. `sync_log` records every
+`sync-bank.sh` run: the sha256 of the bank JSON it carried, the question
+count, and the attempt count before and after — so "did that sync eat my
+data?" is answered from a table instead of from memory. A CHECK makes
+`attempts_after < attempts_before` unstorable.
+
+`bank_feedback` is the reverse channel. The server never edits bank content
+directly; it raises a proposal, which is exported, applied to the local
+JSON, and returns through the normal sync. One authority for bank content,
+work still possible on both sides. That closes the open tension flagged in
+DECISIONS #5.
+
+`./scripts/sync-bank.sh --check` now answers "is the server running the bank
+in front of me?" — both checksums, IN SYNC or SERVER IS BEHIND, and how many
+proposals are waiting. Verified both ways: identical bank reports IN SYNC;
+one edited question in a copy reports BEHIND.
+
+*Two bugs in that check, both from shell field-splitting:*
+`psql -F' '` looked fine until the timestamp — which contains a space —
+shifted every later field, so the feedback count was reading `04:44` and the
+"open proposals" line printed when there were none. Switching to `-F'\t'`
+was worse: inside the quoted ssh command `\t` survives as a literal
+backslash-t, nothing split at all, and the comparison silently reported
+BEHIND while displaying matching checksums. Settled on `|`, which cannot
+occur in a checksum, a count or a timestamp.
+
+The first fix looked right in the output and was wrong; the second looked
+wrong in the output and was wrong differently. Worth checking both branches
+of a status command, not just the one you expect.
+
+Also corrected stale paths in `CLAUDE.md` — it still pointed at
+`../mpsc-question-bankv2/db/` for the schema and `../mpsc-question-bankv2/design/`
+for the prototypes, both of which moved into this repo, and told the reader
+to run the dev server on :5173 with `uv`. A read-this-first file that lies
+is worse than no file.

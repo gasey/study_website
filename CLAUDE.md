@@ -33,21 +33,28 @@ is a simplification and disagrees with the markup in several places.
 ## Layout
 
 ```
-web/    Vite + React 18 + TypeScript + Tailwind   → static, served by Caddy
-api/    FastAPI + psycopg3                        → uvicorn on :8000
-docs/   PLAN.md, DECISIONS.md
-scripts/ deploy.sh
+web/             Vite + React 18 + TS + Tailwind  → static, served by Caddy
+api/             FastAPI + psycopg3               → uvicorn on :8000
+api/migrations/  NNNN_*.sql, applied by migrate.sh
+docs/            PLAN · DECISIONS · DESIGN-FIDELITY · design/ (the prototypes)
+scripts/         deploy.sh · migrate.sh · sync-bank.sh · harvest_old_server.py
 ```
 
 ## Where things already live
 
-- **Design handoff** — `../mpsc-question-bankv2/design/` (four `.dc.html`
-  prototypes + `README.md`). High fidelity: colours, type, spacing and copy
-  are final. They are references, not code; recreate them in React.
-- **Schema** — `../mpsc-question-bankv2/db/mpsc_schema_v3.sql`, reviewed and
-  tested. Migration guide in `../mpsc-question-bankv2/docs/`.
+- **Design handoff** — `docs/design/` (four `.dc.html` prototypes +
+  `README.md`). High fidelity: colours, type, spacing and copy are final.
+  They are references, not code; recreate them in React. The prototype
+  markup beats the README where they disagree.
+- **Schema** — `api/migrations/`. This repo owns the schema; the bank repo
+  keeps only v1/v2 as history and a pointer README.
 - **Bank data** — `../mpsc-question-bankv2/bank/mpsc_bank_v2.json`,
-  77,751 questions across 1,938 papers.
+  77,751 questions across 1,938 papers. That repo is the data workshop
+  (2 GB of PDFs, parsers, OCR) and stays separate.
+- **A second, older corpus** — `ssh shiksha-dev`, database `mpsc_study`:
+  140,552 rows, 26,490 questions absent from our bank, 70,839 explanations,
+  and **no answer provenance at all**. An archive to harvest from, never a
+  peer to sync with (DECISIONS #7).
 
 ## Server
 
@@ -84,6 +91,35 @@ So every schema change is a numbered file in `api/migrations/`:
   aggregates run in milliseconds, and a counter is one more thing to keep
   honest when attempts are re-scored after a key correction.
 
+## Working in parallel with the server
+
+Two streams run at once: the bank is edited locally, and the server
+accumulates attempts, reports and corrections. They do not collide, because
+ownership is split by *what* the data is, not by where it lives.
+
+| Data | Owner | Travels |
+|---|---|---|
+| questions, options, answer keys | local bank JSON | local → server, overwritten each sync |
+| attempts, posts, reports, moderation | server | never synced, never touched |
+| corrections *proposed* on the server | `bank_feedback` | server → export → local → back in a sync |
+
+Start any session by asking who is ahead:
+
+```bash
+./scripts/sync-bank.sh --check
+```
+
+It prints both bank checksums and says IN SYNC or SERVER IS BEHIND, plus how
+many proposals the server is holding. Every sync writes a `sync_log` row —
+the bank checksum it carried, and the attempt count before and after — so
+"did that sync eat my data?" is answerable from the table rather than from
+memory.
+
+**The server never edits bank content directly.** It raises a row in
+`bank_feedback`; the fix is applied to the local JSON and reaches the server
+through the normal sync. One authority for bank content, work still possible
+on both sides. See DECISIONS #5 and #7.
+
 ## Build with the data that exists
 
 The bank is incomplete on purpose and will improve later: ~69,757 questions
@@ -117,6 +153,15 @@ this. Do not fake it, and do not hide the feature; say why it is empty.
 ## Running locally
 
 ```bash
-cd web && npm install && npm run dev      # :5173
-cd api && uv run uvicorn app.main:app --reload   # :8000
+cd web && npm install && npm run dev      # :5175 (registered as "ism-app")
+```
+
+`web` proxies `/api` to the deployed service by default, so no local
+database is needed. To run the API locally instead, tunnel the DB — it is
+localhost-only on the server — and point the proxy at it:
+
+```bash
+ssh -L 5433:localhost:5432 ubuntu@152.67.31.231
+cd api && .venv/bin/uvicorn app.main:app --reload   # :8000
+DATABASE_URL=postgresql://mpsc@localhost:5433/mpsc API_TARGET=http://localhost:8000 npm run dev
 ```
