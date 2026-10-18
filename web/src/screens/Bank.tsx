@@ -85,7 +85,7 @@ export default function Bank() {
                 setOffset(0)
               }}
               aria-pressed={pool === k}
-              className={`rounded-pill px-3 py-1 font-mono text-[11px] uppercase tracking-[0.06em] transition-colors ${
+              className={`min-h-[44px] rounded-pill px-3 py-2 font-mono text-[11px] uppercase tracking-[0.06em] transition-colors ${
                 pool === k ? 'bg-ink text-paper' : 'text-muted hover:text-ink'
               }`}
             >
@@ -158,14 +158,14 @@ export default function Bank() {
               <button
                 disabled={offset === 0}
                 onClick={() => setOffset((o) => Math.max(0, o - PAGE))}
-                className="rounded-pill border border-hairline px-4 py-2 text-[14px] disabled:opacity-40"
+                className="min-h-[44px] rounded-pill border border-hairline px-4 py-2 text-[14px] disabled:opacity-40"
               >
                 ← Previous
               </button>
               <button
                 disabled={offset + PAGE >= total}
                 onClick={() => setOffset((o) => o + PAGE)}
-                className="rounded-pill border border-hairline px-4 py-2 text-[14px] disabled:opacity-40"
+                className="min-h-[44px] rounded-pill border border-hairline px-4 py-2 text-[14px] disabled:opacity-40"
               >
                 Next →
               </button>

@@ -89,7 +89,7 @@ export default function Scoring() {
       <h2 className="mt-9 border-b border-ink pb-2.5 font-display text-[26px] font-medium">
         Marks in a mock
       </h2>
-      <div className="mt-1 grid [grid-template-columns:minmax(180px,2fr)_minmax(90px,1fr)_minmax(200px,2fr)] gap-2.5 border-b border-hairline2 py-2 font-mono text-[10.5px] uppercase tracking-[0.06em] text-muted">
+      <div className="mt-1 hidden gap-2.5 border-b border-hairline2 py-2 font-mono text-[10.5px] uppercase tracking-[0.06em] text-muted sm:grid sm:[grid-template-columns:minmax(140px,2fr)_minmax(80px,1fr)_minmax(180px,2fr)]">
         <span>Outcome</span>
         <span>Marks</span>
         <span>Notes</span>
@@ -102,10 +102,13 @@ export default function Scoring() {
       ].map(([a, b, c]) => (
         <div
           key={a}
-          className="grid items-center gap-2.5 border-b border-hairline2 py-2.5 [grid-template-columns:minmax(180px,2fr)_minmax(90px,1fr)_minmax(200px,2fr)]"
+          className="flex flex-col gap-1 border-b border-hairline2 py-3 sm:grid sm:items-center sm:gap-2.5 sm:py-2.5 sm:[grid-template-columns:minmax(140px,2fr)_minmax(80px,1fr)_minmax(180px,2fr)]"
         >
-          <span className="text-[14px]">{a}</span>
-          <span className="font-mono text-[13px]">{b}</span>
+          <span className="flex items-baseline gap-2 text-[14px]">
+            {a}
+            <span className="font-mono text-[13px] text-muted sm:hidden">{b}</span>
+          </span>
+          <span className="hidden font-mono text-[13px] sm:block">{b}</span>
           <span className="text-[13px] text-secondary">{c}</span>
         </div>
       ))}

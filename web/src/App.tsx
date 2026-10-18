@@ -1,4 +1,5 @@
 import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import BottomBar from './components/BottomBar'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { Card } from './components/ui'
@@ -72,6 +73,7 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      <BottomBar />
     </div>
   )
 }

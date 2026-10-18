@@ -733,3 +733,45 @@ contract, and `transcribed` is what the UI calls it anyway.
 a server-authoritative clock, results you can revisit, mistakes, and the
 explainer. `thread_locks` moves to Phase 4 — there is no discussion to lock
 during a mock yet, so building it now would be untestable.
+
+---
+
+## 2026-10-18 (cont.) — mobile pass
+
+Audited every screen at 390×844 and fixed what broke.
+
+**`/scoring` overflowed to 514px.** Its marks table had
+`minmax(180px,2fr) minmax(90px,1fr) minmax(200px,2fr)` — a 470px floor plus
+gaps, which cannot fit a phone. Now stacks below `sm`, with the marks value
+inline beside the outcome.
+
+**Tap targets.** The handoff requires 44px minimum; nothing met it.
+Raised the pool toggle, pagination, filter checkboxes, bank options, the
+Sections button and Post. Inline prose links were deliberately left alone —
+forcing those to 44px turns a sentence into a staircase. Now 0 controls
+under 44 on any screen.
+
+**Mock palette** was 10 columns, giving 31px cells on a phone. Six columns
+on mobile gives 53px, above the floor, and still reads as a grid.
+
+**Bottom tab bar** added from the mobile prototype: Home / Bank / Desk /
+Exams / Me, 52px tabs, hidden from `sm` up. It hides entirely during a
+mock — the prototype's exam screen has no bottom bar either, and tapping
+"Home" mid-paper would abandon an attempt the server still has open.
+
+**Found an accessibility regression I had caused.** Refactoring FilterRail
+onto the shared `Card` component silently turned its `<aside>` into a
+`<div>`, leaving the page with zero landmarks. `Card` now takes an `as`
+prop. A shared wrapper must not flatten semantics.
+
+**And a real production bug, found by accident.** Chasing why a fix "had
+not deployed", the pane was serving `/bank` from its own cache with a
+bundle the server no longer had. The deploy was fine — but it exposed that
+Caddy sent **no `Cache-Control` at all on index.html**. Since `deploy.sh`
+rsyncs with `--delete`, a returning user could hold a cached shell naming a
+deleted bundle: a blank page. Now `no-cache, must-revalidate` on HTML and
+`immutable, max-age=31536000` on the content-hashed assets.
+
+*Measurement trap:* navigating with `history.pushState` + `popstate` does
+not reload the bundle, so an audit after a deploy silently measures the old
+build. Use a real navigation with a cache-busting query.

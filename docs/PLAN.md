@@ -161,8 +161,8 @@ plans, flags, settings.
 
 ## Phase 9 — mobile and polish
 
-- [ ] `India Study Map Mobile.dc.html` — 390×844, bottom tab bar
-      (Home/Bank/Desk/Exams/Me), 44px minimum hit targets
+- [x] Mobile pass — bottom tab bar (Home/Bank/Desk/Exams/Me), 44px minimum
+      hit targets everywhere, no horizontal scroll at 390px on any screen
 - [ ] The handoff calls the mobile reflow and contrast pass **unfinished** —
       expect judgement calls, and record them
 - [ ] **landing** (77, 92) — last, because it should describe a product that

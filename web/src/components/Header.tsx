@@ -116,7 +116,7 @@ export default function Header() {
           <button
             onClick={() => setMenu((m) => !m)}
             aria-expanded={menu}
-            className={`whitespace-nowrap rounded-pill border border-ink px-3 py-2 text-[14px] font-semibold ${
+            className={`min-h-[44px] whitespace-nowrap rounded-pill border border-ink px-3 py-2 text-[14px] font-semibold ${
               menu ? 'bg-ink text-paper' : 'bg-transparent text-ink'
             }`}
           >

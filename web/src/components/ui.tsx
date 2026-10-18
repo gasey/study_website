@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import * as React from 'react'
 
 /** Primitives extracted from the prototype. Every screen composes these
  *  rather than re-deriving padding and radii, which is how a design drifts.
@@ -27,7 +28,7 @@ export function PillButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`whitespace-nowrap rounded-pill px-4 py-[9px] text-[14px] font-semibold disabled:opacity-40 ${tones[tone]}`}
+      className={`min-h-[44px] whitespace-nowrap rounded-pill px-4 py-[9px] text-[14px] font-semibold disabled:opacity-40 ${tones[tone]}`}
     >
       {children}
     </button>
@@ -95,7 +96,7 @@ export function Checkbox({
       onClick={onClick}
       disabled={disabled}
       aria-pressed={on}
-      className="flex w-full items-center gap-2.5 py-1.5 text-left text-[14px] disabled:text-muted"
+      className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-[14px] disabled:text-muted"
     >
       <span
         className={`h-[14px] w-[14px] shrink-0 rounded-[3px] border ${
@@ -118,20 +119,28 @@ export function GroupTitle({ children }: { children: ReactNode }) {
 }
 
 /** White surface card: 14px radius, hairline border, the same faint shadow
- *  the prototype uses on the bank article and the filter rail. */
+ *  the prototype uses on the bank article and the filter rail.
+ *
+ *  `as` exists because refactoring the filter rail onto this component
+ *  silently turned its <aside> into a <div> and removed the only landmark
+ *  on the page. A shared wrapper must not flatten semantics. */
 export function Card({
   children,
   className = '',
+  as: Tag = 'div',
+  ...rest
 }: {
   children: ReactNode
   className?: string
-}) {
+  as?: 'div' | 'aside' | 'section' | 'article'
+} & React.HTMLAttributes<HTMLElement>) {
   return (
-    <div
+    <Tag
       className={`rounded-[14px] border border-hairline bg-card shadow-[0_1px_2px_rgba(29,27,24,.05)] ${className}`}
+      {...rest}
     >
       {children}
-    </div>
+    </Tag>
   )
 }
 

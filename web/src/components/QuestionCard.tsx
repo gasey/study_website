@@ -100,7 +100,7 @@ export default function QuestionCard({ q }: { q: Question }) {
                 key={i}
                 onClick={() => pick(i)}
                 disabled={!!result || busy}
-                className={`flex items-center gap-3 rounded-[6px] border px-[14px] py-[11px] text-left text-[15px] ${cls} ${
+                className={`flex min-h-[44px] items-center gap-3 rounded-[6px] border px-[14px] py-[11px] text-left text-[15px] ${cls} ${
                   result ? 'cursor-default' : 'cursor-pointer'
                 }`}
               >

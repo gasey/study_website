@@ -218,7 +218,7 @@ export default function MockRunner() {
             <span>Paper</span>
             <span>{answered} answered · {nMarked} marked</span>
           </div>
-          <div className="mt-3.5 grid grid-cols-10 gap-[5px]">
+          <div className="mt-3.5 grid grid-cols-6 gap-[5px] sm:grid-cols-10">
             {mock.questions.map((mq, i) => {
               const isAns = picks[mq.id] !== undefined
               const isMark = !!marked[mq.id]

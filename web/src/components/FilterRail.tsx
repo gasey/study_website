@@ -31,7 +31,11 @@ export default function FilterRail({
     })
 
   return (
-    <Card className="flex max-w-[260px] flex-[1_1_220px] flex-col gap-[22px] p-4">
+    <Card
+      as="aside"
+      aria-label="Filters"
+      className="flex w-full max-w-full flex-col gap-[22px] p-4 sm:max-w-[260px] sm:flex-[1_1_220px]"
+    >
       <div>
         <GroupTitle>Answer key</GroupTitle>
         {SOURCES.map((s) => (
