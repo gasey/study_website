@@ -38,6 +38,24 @@ DB = "mpsc_study"
 norm = lambda s: re.sub(r"[^a-z0-9]+", " ", (s or "").lower()).strip()
 key = lambda s: hashlib.md5(norm(s).encode()).hexdigest()
 
+# mpsc_study's `explanation` column is mostly NOT explanations. 42,742 of the
+# 43,018 it yielded were the literal placeholder "[OCR extraction from
+# Old_Questions]" — the old pipeline wrote a marker there, not prose. A
+# COUNT(*) on that column therefore wildly overstates what is worth having
+# (the real number is ~275). Anything matching these, or too short to be an
+# explanation of anything, is discarded.
+_JUNK = re.compile(
+    r"ocr extraction|no explanation|not available|^n/?a$|^-+$|auto[- ]generated",
+    re.I,
+)
+
+
+def useful_explanation(s: str | None) -> str | None:
+    s = (s or "").strip()
+    if len(s) < 40 or _JUNK.search(s):
+        return None
+    return s
+
 
 def fetch_old() -> list[dict]:
     """Pull the old corpus as JSON over ssh. Read-only; nothing is written
@@ -51,6 +69,13 @@ def fetch_old() -> list[dict]:
         "         q.type, q.year, p.exam_name, q.paper_id"
         "    FROM questions q LEFT JOIN papers p ON p.id = q.paper_id"
         "   WHERE q.question IS NOT NULL AND q.question <> ''"
+        # Ordering is not cosmetic here. mpsc_study holds ~50k duplicate
+        # question texts, and the dedup below keeps whichever copy it sees
+        # FIRST. Without ORDER BY, Postgres returns rows arbitrarily, so the
+        # representative changes between runs — two identical runs reported
+        # 8,655 and 8,801 explanations to fill. Putting rows that HAVE an
+        # explanation first makes the harvest both reproducible and maximal.
+        "   ORDER BY (q.explanation IS NULL OR q.explanation = '') ASC, q.id ASC"
         ") t"
     )
     script = f"psql -d {DB} -At -c {json.dumps(sql)}"
@@ -94,7 +119,7 @@ def main() -> int:
         if not k or k in seen:
             continue
         seen.add(k)
-        expl = (o.get("explanation") or "").strip()
+        expl = useful_explanation(o.get("explanation"))
         if k in by_key:
             if expl and not (by_key[k].get("explanation") or "").strip():
                 fill_expl.append((by_key[k], expl))
@@ -142,7 +167,7 @@ def main() -> int:
                 "answerIndex": ai,
                 # Never 'official'/'key': the source records no provenance.
                 "answerSource": "inferred" if ai is not None else None,
-                "explanation": (o.get("explanation") or "").strip() or None,
+                "explanation": useful_explanation(o.get("explanation")),
                 # subject/topic deliberately omitted — 98% are 'gk'.
                 "harvestedFrom": "shiksha-dev:mpsc_study",
             })

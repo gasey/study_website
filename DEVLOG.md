@@ -485,3 +485,40 @@ Also corrected stale paths in `CLAUDE.md` — it still pointed at
 for the prototypes, both of which moved into this repo, and told the reader
 to run the dev server on :5173 with `uv`. A read-this-first file that lies
 is worse than no file.
+
+---
+
+## 2026-10-18 (cont.) — the harvest, and two bugs it exposed
+
+Harvested explanations from shiksha-dev. Net result: **18 → 275 real
+explanations**. I had claimed the old server held 70,839. It does not, and
+the gap is instructive.
+
+**Bug 1 — the query had no ORDER BY.** mpsc_study holds ~50k duplicate
+question texts and the dedup keeps whichever copy Postgres returns first,
+which without an ORDER BY is arbitrary. Two identical runs reported 8,655
+and 8,801. Ordering rows that *have* an explanation first made the harvest
+both reproducible and maximal — the count jumped to 34,199.
+
+**Bug 2 — sync-bank.sh never propagated `explanation` to canonical.** 43,018
+landed in `appearances` and 18 reached `canonical_questions`, which is the
+table the API reads, so none of it was visible. Any bank-owned column added
+to the appearances upsert must also appear in the canonical propagate SET
+*and* in its change-detection WHERE, or it silently stops halfway.
+
+**And then the real problem: almost all of it was junk.** Of 43,018
+harvested explanations, **42,742 were the literal string
+`[OCR extraction from Old_Questions]`** — the old pipeline wrote a marker
+into that column, not prose. 275 were real.
+
+I had quoted "70,839 explanations" from a `COUNT(*)` on a non-null column
+and never looked at the values. Then I shipped them live, where the API
+served `[OCR extraction from Old_Questions]` to a user as an explanation.
+The harvester now filters placeholders, the junk has been stripped from
+both bank and server, and all 18 original explanations were verified intact
+against the pristine 2026-10-16 backup.
+
+**The lesson is cheap to state and was expensive here: a COUNT(*) on a
+column tells you how many rows are non-null, not how many are useful.**
+Sample the values before quoting the number, and certainly before writing
+them to production.

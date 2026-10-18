@@ -159,12 +159,19 @@ UPDATE canonical_questions c SET
     answer_text = CASE WHEN a.answer_index IS NOT NULL AND c.status <> 'withdrawn'
                        THEN a.options ->> a.answer_index END,
     answer_source = COALESCE(a.answer_source, 'none'),
+    -- explanation was missing here, which cost a whole harvest: 43,018
+    -- explanations landed in appearances and 18 reached canonical, so the
+    -- API — which reads canonical — showed none of them. Any bank-owned
+    -- column added to the appearances upsert above must also be listed
+    -- here AND in the change-detection below, or it silently stops halfway.
+    explanation = NULLIF(a.explanation, ''),
     stem_norm = norm_stem(a.question),
     updated_at = now()
   FROM appearances a
  WHERE a.canonical_id = c.id AND a.is_primary
    AND (c.question IS DISTINCT FROM a.question OR c.options IS DISTINCT FROM a.options
-     OR c.answer_source IS DISTINCT FROM COALESCE(a.answer_source, 'none'));
+     OR c.answer_source IS DISTINCT FROM COALESCE(a.answer_source, 'none')
+     OR c.explanation IS DISTINCT FROM NULLIF(a.explanation, ''));
 
 UPDATE canonical_questions c SET times_asked = GREATEST(1, s.n), first_year = s.y0,
        last_year = s.y1, updated_at = now()
