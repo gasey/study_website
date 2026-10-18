@@ -169,3 +169,33 @@ class MockResult(BaseModel):
     #: Submitted after the window closed. Recorded, not rejected.
     late: bool
     review: list[MockReviewRow]
+
+
+class MockSummary(BaseModel):
+    id: str
+    collection_id: str
+    collection_title: str
+    section_path: str | None = None
+    total: int
+    n_correct: int | None = None
+    n_wrong: int | None = None
+    n_skipped: int | None = None
+    score: float | None = None
+    elapsed_seconds: int | None = None
+    late: bool
+    started_at: datetime
+    #: None while the paper is still open.
+    submitted_at: datetime | None = None
+
+
+class Mistake(BaseModel):
+    id: str
+    question: str
+    options: list[str]
+    answer_text: str | None
+    chosen_text: str | None
+    explanation: str | None = None
+    #: How many times this device has got it wrong in total, which is a
+    #: better signal of a weak spot than a single miss.
+    times_wrong: int
+    last_attempt: datetime

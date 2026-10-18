@@ -5,14 +5,15 @@ import { Card } from './components/ui'
 import Bank from './screens/Bank'
 import ExamPage from './screens/ExamPage'
 import Exams from './screens/Exams'
+import Mistakes from './screens/Mistakes'
 import MockRunner from './screens/MockRunner'
+import Results from './screens/Results'
 import QuestionDetail from './screens/QuestionDetail'
 
 /** Routes the shell links to but that are not built yet. Named explicitly
  *  rather than caught by `*`, so the page can say which phase owns it
  *  instead of pretending to be a 404. docs/PLAN.md has the order. */
 const PLANNED: Record<string, { title: string; phase: string }> = {
-  '/mistakes': { title: 'Mistakes', phase: 'Phase 2' },
   '/scoring': { title: 'How scoring works', phase: 'Phase 2' },
   '/profile': { title: 'Profile', phase: 'Phase 3' },
   '/feed': { title: 'Feed', phase: 'Phase 4' },
@@ -60,6 +61,8 @@ export default function App() {
           <Route path="/exams" element={<Exams />} />
           <Route path="/exams/:id" element={<ExamPage />} />
           <Route path="/exams/:id/mock" element={<MockRunner />} />
+          <Route path="/results/:mockId" element={<Results />} />
+          <Route path="/mistakes" element={<Mistakes />} />
           <Route path="/exams/:id/*" element={<Planned />} />
           {Object.keys(PLANNED).map((path) => (
             <Route key={path} path={path} element={<Planned />} />

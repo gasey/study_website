@@ -206,3 +206,34 @@ export const currentMock = () => req<MockSession | null>('/mocks/current')
 
 export const submitMock = (id: string, answers: { question_id: string; chosen_index: number }[]) =>
   req<MockResult>(`/mocks/${id}/submit`, { method: 'POST', body: JSON.stringify({ answers }) })
+
+export interface MockSummary {
+  id: string
+  collection_id: string
+  collection_title: string
+  section_path: string | null
+  total: number
+  n_correct: number | null
+  n_wrong: number | null
+  n_skipped: number | null
+  score: number | null
+  elapsed_seconds: number | null
+  late: boolean
+  started_at: string
+  submitted_at: string | null
+}
+
+export interface Mistake {
+  id: string
+  question: string
+  options: string[]
+  answer_text: string | null
+  chosen_text: string | null
+  explanation: string | null
+  times_wrong: number
+  last_attempt: string
+}
+
+export const listMocks = () => req<MockSummary[]>('/mocks')
+export const getMockResult = (id: string) => req<MockResult>(`/mocks/${id}`)
+export const getMistakes = () => req<Mistake[]>('/me/mistakes')

@@ -645,3 +645,31 @@ session forever, and that session blocks the device from starting another.
 *The countdown is cosmetic and says so in the file.* Stopping it in a
 debugger buys nothing: the server recorded `started_at` and recomputes
 elapsed on submit. Proven earlier by backdating a session ten minutes.
+
+---
+
+## 2026-10-18 (cont.) — results you can revisit, and mistakes
+
+`/results/:mockId` and `/mistakes`, closing most of Phase 2.
+
+Past results are **rebuilt from `mock_sessions` + `attempts`, not stored a
+second time**. The review query uses `unnest(question_ids) WITH ORDINALITY`
+LEFT JOINed to attempts — a LEFT JOIN specifically, because a skipped
+question has no attempt row and would otherwise vanish from its own review.
+Verified: a 6-question paper returns 6 rows.
+
+`MockResultView` is shared between the runner (straight after submit) and
+the standalone screen, so the two cannot drift apart.
+
+**"Mistake" means the LATEST attempt was wrong**, not that a wrong attempt
+exists. `DISTINCT ON (canonical_id) ... ORDER BY at DESC` then filtering on
+`NOT correct`. Showing questions the learner has since got right would waste
+their time and understate progress. Verified live: answered one of five
+mistakes correctly in practice and the list went 5 → 4 with that question
+gone.
+
+Also fixed "1 marks" — visible on every single-mark result.
+
+Phase 2 now has one item left: the scoring explainer. `thread_locks` during
+a live mock belongs with discussion in Phase 4, since there are no threads
+to lock yet.

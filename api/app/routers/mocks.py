@@ -12,6 +12,7 @@ from ..schemas import (
     MockSession,
     MockStart,
     MockSubmission,
+    MockSummary,
     MockReviewRow,
 )
 
@@ -208,4 +209,67 @@ async def submit_mock(
     return MockResult(
         id=mock_id, n_correct=n_ok, n_wrong=n_bad, n_skipped=n_skip, score=score,
         total=len(ids), elapsed_seconds=elapsed, late=late, review=rows,
+    )
+
+
+@router.get("", response_model=list[MockSummary])
+async def list_mocks(user_id: Annotated[str, Depends(current_user)]) -> list[MockSummary]:
+    """Past papers, newest first. Open sessions are included so the UI can
+    offer to resume rather than silently hiding a blocked slot."""
+    async with cursor() as cur:
+        await cur.execute(
+            """SELECT m.id, m.collection_id, c.title AS collection_title, m.section_path,
+                      cardinality(m.question_ids) AS total,
+                      m.n_correct, m.n_wrong, m.n_skipped, m.score,
+                      m.elapsed_seconds, m.late, m.started_at, m.submitted_at
+                 FROM mock_sessions m
+                 JOIN collections c ON c.id = m.collection_id
+                WHERE m.user_id = %s
+                ORDER BY m.started_at DESC LIMIT 50""",
+            (user_id,),
+        )
+        return [MockSummary(**r) for r in await cur.fetchall()]
+
+
+@router.get("/{mock_id}", response_model=MockResult)
+async def get_mock_result(
+    mock_id: str, user_id: Annotated[str, Depends(current_user)]
+) -> MockResult:
+    """Re-read a finished paper. The review is rebuilt from attempts rather
+    than stored twice — and a LEFT JOIN, because a skipped question has no
+    attempt row at all and must still appear in the review."""
+    async with cursor() as cur:
+        await cur.execute(
+            """SELECT question_ids, n_correct, n_wrong, n_skipped, score,
+                      elapsed_seconds, late, submitted_at
+                 FROM mock_sessions WHERE id = %s AND user_id = %s""",
+            (mock_id, user_id),
+        )
+        s = await cur.fetchone()
+        if s is None:
+            raise HTTPException(404, "no such mock for this device")
+        if s["submitted_at"] is None:
+            raise HTTPException(409, "that mock is still open")
+
+        await cur.execute(
+            """SELECT q.id, q.question, q.answer_text, q.explanation,
+                      a.chosen_text, COALESCE(a.correct, false) AS correct
+                 FROM unnest(%s::text[]) WITH ORDINALITY AS u(qid, ord)
+                 JOIN canonical_questions q ON q.id = u.qid
+                 LEFT JOIN attempts a ON a.mock_id = %s AND a.canonical_id = q.id
+                ORDER BY u.ord""",
+            (s["question_ids"], mock_id),
+        )
+        review = [
+            MockReviewRow(position=i, question_id=r["id"], question=r["question"],
+                          chosen_text=r["chosen_text"], answer_text=r["answer_text"],
+                          correct=r["correct"], explanation=r["explanation"])
+            for i, r in enumerate(await cur.fetchall())
+        ]
+
+    return MockResult(
+        id=mock_id, n_correct=s["n_correct"], n_wrong=s["n_wrong"],
+        n_skipped=s["n_skipped"], score=float(s["score"]),
+        total=len(s["question_ids"]), elapsed_seconds=s["elapsed_seconds"],
+        late=s["late"], review=review,
     )

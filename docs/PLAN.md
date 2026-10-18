@@ -59,7 +59,7 @@ blockage is visible, not so the build stops.
 
 ---
 
-## Phase 1 — foundations (unlocks every later screen) ← **current**
+## Phase 1 — foundations (unlocks every later screen)
 
 - [x] Monorepo, docs, deploy pipeline, HTTPS
 - [x] FastAPI + Postgres; question list, detail, answer gate
@@ -75,7 +75,7 @@ blockage is visible, not so the build stops.
       name the phase that owns them.
 - [ ] **search** (1460, 23) — small, and exercises the shell.
 
-## Phase 2 — exams and mocks *(the core product)*
+## Phase 2 — exams and mocks *(the core product)* ← **current**
 
 Needs no accounts; attempts already work anonymously.
 
@@ -88,7 +88,7 @@ Needs no accounts; attempts already work anonymously.
       header, palette with answered/marked/current state, auto-submit at
       zero, resume on reload. Timer is server-authoritative (0006).
 - [x] Inline results + review after submit
-- [ ] **results** (1582, 36) as a standalone screen, and **mistakes** (1546, 36)
+- [x] **results** (1582) standalone at /results/:mockId, and **mistakes** (1546) at /mistakes
 - [ ] **scoring** (1389, 71) — scoring explainer, including negative marking
 - [ ] Mocks draw from `v_scorable` only; `thread_locks` while a mock is live
 
