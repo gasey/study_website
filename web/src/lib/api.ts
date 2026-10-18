@@ -237,3 +237,14 @@ export interface Mistake {
 export const listMocks = () => req<MockSummary[]>('/mocks')
 export const getMockResult = (id: string) => req<MockResult>(`/mocks/${id}`)
 export const getMistakes = () => req<Mistake[]>('/me/mistakes')
+
+export interface ScoringFacts {
+  total: number
+  scorable: number
+  practice: number
+  official: number
+  transcribed: number
+  dup_defect: number
+}
+
+export const getScoringFacts = () => req<ScoringFacts>('/scoring-facts')

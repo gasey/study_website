@@ -705,3 +705,31 @@ accents**. The paper and body ink are unchanged.
 
 Logged `placeholder #7A7366` at 4.10, under AA, as a known issue left for a
 design pass rather than patched per-component.
+
+---
+
+## 2026-10-18 (cont.) — scoring explainer; Phase 2 complete
+
+The prototype's scoring screen is mostly about Score, Reputation and the
+Contributor/Mentor/Scholar tiers — XP, monthly resets, leaderboards. None
+of that exists; it arrives with games (Phase 5) and discussion (Phase 4).
+
+Porting it verbatim would have published a rulebook for rules the app does
+not follow, which is worse than no page at all. So `/scoring` explains what
+is actually true today — which questions can be scored and why, how marks
+and negative marking work, how the clock works, what counts as a mistake —
+and puts Score and Reputation under a plainly labelled "Not built yet".
+
+**Every number is served from `/api/scoring-facts`**, not typed in, so the
+page cannot quietly become wrong as the bank changes. Verified live: 12,454
+scorable, 59,047 practice, 1,508 held back, 12,342 official + 136
+transcribed, 77,751 total — all rendered from the API.
+
+Renamed that endpoint's field from `key_` to `transcribed` before it
+shipped. `key_` was a Python-side naming dodge leaking into a public JSON
+contract, and `transcribed` is what the UI calls it anyway.
+
+**Phase 2 is done**: collection seeded, launcher, exam page, timed mock with
+a server-authoritative clock, results you can revisit, mistakes, and the
+explainer. `thread_locks` moves to Phase 4 — there is no discussion to lock
+during a mock yet, so building it now would be untestable.

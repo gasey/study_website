@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .db import close_pool, cursor, open_pool
 from .routers import collections, me, mocks, questions
+from .schemas import ScoringFacts
 
 
 @asynccontextmanager
@@ -44,3 +45,23 @@ async def health() -> dict:
         )
         row = await cur.fetchone()
     return {"status": "ok", **(row or {})}
+
+
+@app.get("/api/scoring-facts", response_model=ScoringFacts)
+async def scoring_facts() -> ScoringFacts:
+    """Counts behind the scoring explainer. Served rather than hard-coded so
+    the page cannot quietly become wrong as the bank changes."""
+    async with cursor() as cur:
+        await cur.execute(
+            """SELECT (SELECT COUNT(*) FROM canonical_questions)::int AS total,
+                      (SELECT COUNT(*) FROM v_scorable)::int            AS scorable,
+                      (SELECT COUNT(*) FROM v_practice)::int            AS practice,
+                      (SELECT COUNT(*) FROM canonical_questions
+                        WHERE answer_source = 'official')::int          AS official,
+                      (SELECT COUNT(*) FROM canonical_questions
+                        WHERE answer_source = 'key')::int               AS transcribed,
+                      (SELECT COUNT(*) FROM canonical_questions
+                        WHERE source_defect = 'duplicate-options')::int AS dup_defect"""
+        )
+        row = await cur.fetchone() or {}
+    return ScoringFacts(**row)

@@ -199,3 +199,16 @@ class Mistake(BaseModel):
     #: better signal of a weak spot than a single miss.
     times_wrong: int
     last_attempt: datetime
+
+
+class ScoringFacts(BaseModel):
+    total: int
+    scorable: int
+    practice: int
+    #: answer_source = 'official'
+    official: int
+    #: answer_source = 'key' — a key transcribed from the paper rather than
+    #: published by the commission. Named for the UI label, not the column.
+    transcribed: int
+    #: Same option text printed twice, so the answer cannot be identified.
+    dup_defect: int

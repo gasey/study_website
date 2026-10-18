@@ -75,7 +75,7 @@ blockage is visible, not so the build stops.
       name the phase that owns them.
 - [ ] **search** (1460, 23) — small, and exercises the shell.
 
-## Phase 2 — exams and mocks *(the core product)* ← **current**
+## Phase 2 — exams and mocks *(the core product)* — **complete**
 
 Needs no accounts; attempts already work anonymously.
 
@@ -89,10 +89,11 @@ Needs no accounts; attempts already work anonymously.
       zero, resume on reload. Timer is server-authoritative (0006).
 - [x] Inline results + review after submit
 - [x] **results** (1582) standalone at /results/:mockId, and **mistakes** (1546) at /mistakes
-- [ ] **scoring** (1389, 71) — scoring explainer, including negative marking
-- [ ] Mocks draw from `v_scorable` only; `thread_locks` while a mock is live
+- [x] **scoring** (1389) — live at /scoring, numbers served from the DB
+- [x] Mocks draw from `v_scorable` only
+- [ ] `thread_locks` while a mock is live — moved to Phase 4; nothing to lock until discussion exists
 
-## Phase 3 — accounts
+## Phase 3 — accounts ← **next**
 
 Replaces the anonymous device id. Needed by everything below.
 
