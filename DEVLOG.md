@@ -361,3 +361,47 @@ overlay that only closes via its own button is a trap.
 do not exist. Rather than a bare 404, each renders a card saying which phase
 owns it and pointing at `docs/PLAN.md`. Honest about what is designed versus
 built, and it makes the shell navigable for review.
+
+---
+
+## 2026-10-18 (cont.) — a second corpus exists on the old server
+
+`ssh shiksha-dev` (134.209.154.122, DigitalOcean blr1) runs `mpsc-api.service`
+against a Postgres database `mpsc_study` holding **140,552 questions across
+3,764 papers** — plus 168 `question_corrections`, 296 comments and a
+208-row audit log that exist nowhere else.
+
+Compared both corpora by normalised question text:
+
+| | rows | distinct |
+|---|---|---|
+| old server | 140,552 | 90,619 |
+| our bank | 77,751 | 71,987 |
+
+overlap 64,129 · **only on old 26,490** · only in ours 7,858.
+
+**Neither is a superset**, and the "140k" figure is a raw row count — the old
+database carries roughly 50,000 internal duplicate texts, which is precisely
+what the dedupe job is meant to collapse.
+
+**Do not treat its answers as keys.** `mpsc_study.questions` has no
+`answer_source`. 64,706 rows carry an `answer_index` with no record of where
+it came from; `source` is only a label and `verified_by`/`key_disputed` are
+empty on every row. Importing those as `official` would silently destroy the
+one guarantee the product rests on — that `v_scorable` contains only
+genuinely keyed questions. Anything harvested comes in as `inferred` at best.
+
+It does not fix classification either: 138,355 of 140,552 rows are
+`subject = 'gk'` — the same placeholder, at 98%.
+
+Worth having: the ~26,490 unseen questions and **70,839 explanations** (our
+bank has explanations on about 18 rows).
+
+**Also corrected a misconception I had been carrying all session:** MPSC here
+is the **Mizoram** Public Service Commission, not Maharashtra. Every exam
+name reads "Government of Mizoram" and the design's footer is "Aizawl". It
+changed nothing about the Mumbai region choice, but it had been stated wrong.
+
+No merge attempted. Harvesting is a data decision with real downside, and
+anything taken goes into the local bank JSON first, never into the server
+database directly.
