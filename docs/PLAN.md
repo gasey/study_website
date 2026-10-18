@@ -83,12 +83,12 @@ Needs no accounts; attempts already work anonymously.
       16 papers, 1,446 official-key questions (migration 0005).
 - [x] **modules** (525, 53) — "Exams & tools" launcher, live at /exams
 - [ ] **GET /api/collections** pagination/filtering when there is more than one exam
-- [ ] **module** (1699, 93) — one exam's sections and formats.
-- [ ] **exam** (578, 45) — the timed paper. Sticky dark header, question
-      palette with answered/marked state. **Timer is server-authoritative:**
-      the client counts down for display, the server validates elapsed time
-      on submit, or the scoreboard is trivially cheatable.
-- [ ] **results** (1582, 36) and **mistakes** (1546, 36)
+- [x] **ExamPage** (prototype `module`, 1699) — live at /exams/:id
+- [x] **MockRunner** (prototype `exam`, 578) — timed paper, sticky dark
+      header, palette with answered/marked/current state, auto-submit at
+      zero, resume on reload. Timer is server-authoritative (0006).
+- [x] Inline results + review after submit
+- [ ] **results** (1582, 36) as a standalone screen, and **mistakes** (1546, 36)
 - [ ] **scoring** (1389, 71) — scoring explainer, including negative marking
 - [ ] Mocks draw from `v_scorable` only; `thread_locks` while a mock is live
 

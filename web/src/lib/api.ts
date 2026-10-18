@@ -147,3 +147,62 @@ export const listCollections = () => req<Collection[]>('/collections')
 export const getCollection = (id: string) => req<CollectionDetail>(`/collections/${id}`)
 
 export { ApiError }
+
+// ── mocks ───────────────────────────────────────────────────────────────
+export interface MockQuestion {
+  id: string
+  position: number
+  question: string
+  options: string[]
+}
+
+export interface MockSession {
+  id: string
+  collection_id: string
+  section_path: string | null
+  duration_seconds: number
+  started_at: string
+  /** Computed server-side. The countdown shown is cosmetic; the server
+   *  recomputes elapsed time on submit regardless of what the client did. */
+  seconds_remaining: number
+  questions: MockQuestion[]
+}
+
+export interface MockReviewRow {
+  position: number
+  question_id: string
+  question: string
+  chosen_text: string | null
+  answer_text: string | null
+  correct: boolean
+  explanation: string | null
+}
+
+export interface MockResult {
+  id: string
+  n_correct: number
+  n_wrong: number
+  n_skipped: number
+  score: number
+  total: number
+  elapsed_seconds: number
+  late: boolean
+  review: MockReviewRow[]
+}
+
+export interface MockStart {
+  collection_id: string
+  section_path?: string
+  count?: number
+  duration_minutes?: number
+  marks_correct?: number
+  marks_wrong?: number
+}
+
+export const startMock = (b: MockStart) =>
+  req<MockSession>('/mocks', { method: 'POST', body: JSON.stringify(b) })
+
+export const currentMock = () => req<MockSession | null>('/mocks/current')
+
+export const submitMock = (id: string, answers: { question_id: string; chosen_index: number }[]) =>
+  req<MockResult>(`/mocks/${id}/submit`, { method: 'POST', body: JSON.stringify({ answers }) })

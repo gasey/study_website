@@ -615,3 +615,33 @@ added `mock_sessions` and the API died in production with
 it. Every future migration that adds a table would have done the same.
 `0007_grants` adds `ALTER DEFAULT PRIVILEGES`, so anything created by
 `postgres` in `public` is usable by `mpsc` without a follow-up grant.
+
+---
+
+## 2026-10-18 (cont.) — the timed paper
+
+`MockRunner.tsx`, ported from prototype line 579. Sticky `#1D1B18` bar with
+the countdown and Submit, question area, and the palette grid at 10 columns.
+
+Verified live against the prototype's own state colours: an answered cell is
+`#1D1B18`/`#F4EFE4`, the current question carries the `#B0412A` border,
+unseen is transparent on `#CFC5B2`. Options use `#EDE5D4` on `#1D1B18` when
+selected, with the 26px letter circle inverting.
+
+Ran a paper end to end: picked one option, submitted, got
+`0 correct · 1 wrong · 19 skipped · 00:53 taken` and 20 review cards showing
+the key beside the pick. **Answers appeared only after submit** — the
+start and resume payloads contain no key at all.
+
+Three behaviours worth noting:
+
+*Resume on reload.* The server allows one open mock per device, so a reload
+must rejoin rather than 409. The screen asks `/mocks/current` first and only
+starts a new paper if there is none.
+
+*Auto-submit at zero.* An abandoned tab would otherwise leave an open
+session forever, and that session blocks the device from starting another.
+
+*The countdown is cosmetic and says so in the file.* Stopping it in a
+debugger buys nothing: the server recorded `started_at` and recomputes
+elapsed on submit. Proven earlier by backdating a session ten minutes.

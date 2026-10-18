@@ -5,6 +5,7 @@ import { Card } from './components/ui'
 import Bank from './screens/Bank'
 import ExamPage from './screens/ExamPage'
 import Exams from './screens/Exams'
+import MockRunner from './screens/MockRunner'
 import QuestionDetail from './screens/QuestionDetail'
 
 /** Routes the shell links to but that are not built yet. Named explicitly
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="/bank/:id" element={<QuestionDetail />} />
           <Route path="/exams" element={<Exams />} />
           <Route path="/exams/:id" element={<ExamPage />} />
+          <Route path="/exams/:id/mock" element={<MockRunner />} />
           <Route path="/exams/:id/*" element={<Planned />} />
           {Object.keys(PLANNED).map((path) => (
             <Route key={path} path={path} element={<Planned />} />
