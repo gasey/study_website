@@ -7,8 +7,7 @@ import * as React from 'react'
  *  docs/DESIGN-FIDELITY.md for where the two disagree. */
 
 /** Filled pill button. The primary action everywhere; always ink,
- *  never vermilion — that is the brand mark only (markup line 49).
- *  Use `text-vermilion-dark` if vermilion ever carries text. */
+ *  never vermilion — that is the brand mark only (markup line 49). */
 export function PillButton({
   children,
   onClick,

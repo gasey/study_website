@@ -17,18 +17,9 @@ export default {
         placeholder: '#7A7366',
         hairline: '#E4DBC9',
         hairline2: '#DCD3C2',
-        // Brand mark. Split mid/dark like every area colour, because the
-        // handoff uses vermilion as TEXT in places (56 occurrences in the
-        // prototype, several as `color:`) and a mark-bright value cannot
-        // carry body text. DEFAULT is for the mark, `dark` for any text.
-        //
-        // Raised from #C0462C: that was RGB-distance 23 from the wrong-answer
-        // state #B0412A — effectively the same colour, in a system whose
-        // central rule is "a colour names an area, never a state". Now 60.
-        // More saturated too (0.77 -> 0.87), which is the direction the
-        // evidence points: saturation is the dominant term in Valdez &
-        // Mehrabian's arousal equation, and vivid helps on hard reading.
-        vermilion: { DEFAULT: '#D9461C', dark: '#962F15' },
+        // Brand mark only. Keep the exact handoff colour; primary buttons
+        // and text use ink.
+        vermilion: '#C0462C',
 
         // Area colours: mid / soft tint / dark ink.
         // Text in an area colour uses `dark`; `DEFAULT` is for dots, bars,

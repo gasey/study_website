@@ -92,6 +92,23 @@ The prototype's cards show a **topic chip** and a **discussion count**. Our
 discussion is milestone 4. Render those slots only when the data exists —
 do not invent a placeholder topic, and do not fall back to the old `'gk'`.
 
+### Bank and exam screens — live-data adaptations
+
+- The Bank search currently searches question text only. Do not promise paper
+  or topic search until the API indexes those fields.
+- The answer-source filters apply to the selected pool. Scorable contains
+  official and transcribed keys; All answered also contains derived and
+  inferred answers. Unanswered questions are not in either pool, so “No
+  published key” is not a selectable filter.
+- The Bank's “Details” link opens question metadata and appearances. It is
+  not a PDF viewer; page-image storage is still deferred.
+- The launcher features a real public collection, currently ITI Instructor
+  2026. LDE collections stay hidden until the user chooses to expand exam
+  coverage. Never replace the live title or counts with sample values from the
+  handoff.
+- Section bars on an exam page show each section's share of that collection's
+  scorable questions, not a percentage of the largest section.
+
 ## Naming — "module" is dead, and "exam" means two things
 
 The prototype still uses the old vocabulary. The schema and UI moved on, and
@@ -111,14 +128,9 @@ called `Exam*` is the timed paper — check which of the three it is.
 Routes: `/exams` → launcher, `/exams/:id` → exam page, and the mock runner
 is entered from there.
 
-## Deliberate divergences from the handoff
+## Palette fidelity
 
-Changes we have made on purpose. Everything else follows the prototype.
-
-| Token | Handoff | Ours | Why |
-|---|---|---|---|
-| brand vermilion | `#C0462C` | `#D9461C` (mark) + `#962F15` (text) | was RGB-distance 23 from the wrong-answer state; see DECISIONS #8 |
-
-Known and **not** changed: `placeholder #7A7366` sits at 4.10 contrast,
-just under AA for body text. Left alone pending a design pass, since
-placeholder styling is a system-wide call rather than a component fix.
+Bank uses the Practice area palette (blue); Exams uses the Exams area palette
+(ochre). Both follow the warm paper surfaces and ink primary actions in the
+handoff. Vermilion is exactly `#C0462C` and reserved for the brand mark.
+`placeholder #7A7366` remains as specified by the handoff.

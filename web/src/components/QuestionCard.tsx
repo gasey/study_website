@@ -67,9 +67,9 @@ export default function QuestionCard({ q }: { q: Question }) {
 
         <Link
           to={`/bank/${q.id}`}
-          className="ml-auto font-mono text-[11px] font-medium text-link"
+          className="ml-auto min-h-11 rounded-pill px-2 font-mono text-[11px] font-medium text-link hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-link"
         >
-          View original ↗
+          Details ↗
         </Link>
       </div>
 

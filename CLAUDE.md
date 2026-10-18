@@ -142,9 +142,18 @@ this. Do not fake it, and do not hide the feature; say why it is empty.
    degrades as the bank grows. Draw ids in the app, fetch by primary key.
 3. **Never build on the server.** One ARM core makes `npm run build` painful.
    Build locally, rsync the output. `scripts/deploy.sh` does this.
-4. **Never add `log { output file ... }` to the Caddyfile.** The packaged unit
-   sets `ProtectSystem=full`, so `/var` is read-only and Caddy refuses to
-   reload. Logs go to journald.
+4. **This VM is shared. Never rewrite `/etc/caddy/Caddyfile`.** It serves
+   `family.hawayu.in` (Vansa) as well as us. Our config lives in
+   `/etc/caddy/sites/study.hawayu.in.caddy` and the top-level file only
+   does `import /etc/caddy/sites/*.caddy`. On 2026-10-18 a wholesale
+   `sudo tee` of the shared file deleted Vansa's block and took that site
+   down for some time — the cert was still on disk, so it failed as a TLS
+   handshake error rather than a 404, and the session that caused it only
+   checked its own URL and never noticed. After touching Caddy, systemd or
+   Postgres, **curl the other site too**.
+   Also: never add `log { output file ... }` — the packaged unit sets
+   `ProtectSystem=full`, so `/var` is read-only and Caddy refuses to reload.
+   Logs go to journald.
 5. **`subject` and `difficulty` are NULL on purpose.** The old values were a
    placeholder `'gk'` on 90% of rows and a default `'medium'` on 96%. Do not
    "restore" them; they are being reclassified, and `subject_source` records

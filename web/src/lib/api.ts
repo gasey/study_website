@@ -143,6 +143,13 @@ export interface CollectionDetail extends Collection {
   section_list: CollectionSection[]
 }
 
+/** LDE collections are intentionally held back until the exam library grows. */
+export function isLaterExamCollection(collection: Pick<Collection, 'id' | 'title' | 'kind'>): boolean {
+  return /\bL\.?D\.?E\.?\b|\blimited departmental(?: examination| exam)?\b/i.test(
+    `${collection.id} ${collection.title} ${collection.kind}`,
+  )
+}
+
 export const listCollections = () => req<Collection[]>('/collections')
 export const getCollection = (id: string) => req<CollectionDetail>(`/collections/${id}`)
 

@@ -7,25 +7,48 @@ import { listQuestions, type QuestionPage } from '../lib/api'
 const PAGE = 20
 
 export default function Bank() {
-  const [params] = useSearchParams()
+  const [params, setParams] = useSearchParams()
+  const queryFromUrl = params.get('q') ?? ''
   const [pool, setPool] = useState<'scorable' | 'practice'>('scorable')
-  const [filters, setFilters] = useState<Filters>({ sources: [] })
-  const [query, setQuery] = useState(params.get('q') ?? '')
-  const [search, setSearch] = useState(params.get('q') ?? '')
+  const [filters, setFilters] = useState<Filters>({ sources: [], yearFrom: '', yearTo: '' })
+  const [yearRange, setYearRange] = useState({ from: '', to: '' })
+  const [query, setQuery] = useState(queryFromUrl)
+  const [search, setSearch] = useState(queryFromUrl)
   const [offset, setOffset] = useState(0)
   const [data, setData] = useState<QuestionPage | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
 
+  useEffect(() => {
+    setQuery(queryFromUrl)
+    setSearch(queryFromUrl)
+    setOffset(0)
+  }, [queryFromUrl])
+
   // The search index is sub-millisecond, but a request per keystroke is
   // still pointless traffic.
   useEffect(() => {
     const t = setTimeout(() => {
-      setSearch(query.trim())
+      const next = query.trim()
+      setSearch(next)
       setOffset(0)
+      setParams((current) => {
+        const updated = new URLSearchParams(current)
+        if (next) updated.set('q', next)
+        else updated.delete('q')
+        return updated
+      }, { replace: true })
     }, 250)
     return () => clearTimeout(t)
-  }, [query])
+  }, [query, setParams])
+
+  useEffect(() => {
+    const t = setTimeout(() => {
+      setYearRange({ from: filters.yearFrom, to: filters.yearTo })
+      setOffset(0)
+    }, 300)
+    return () => clearTimeout(t)
+  }, [filters.yearFrom, filters.yearTo])
 
   const sourceKey = filters.sources.join(',')
   useEffect(() => {
@@ -36,6 +59,8 @@ export default function Bank() {
       pool,
       q: search.length >= 2 ? search : undefined,
       source: filters.sources.length ? filters.sources : undefined,
+      year_from: /^\d{4}$/.test(yearRange.from) ? Number(yearRange.from) : undefined,
+      year_to: /^\d{4}$/.test(yearRange.to) ? Number(yearRange.to) : undefined,
       limit: PAGE,
       offset,
     })
@@ -46,35 +71,56 @@ export default function Bank() {
       cancelled = true
     }
     // sourceKey stands in for the array so a new-but-equal array does not refetch
-  }, [pool, search, offset, sourceKey, filters.sources])
+  }, [pool, search, offset, sourceKey, filters.sources, yearRange.from, yearRange.to])
 
   const total = data?.total ?? 0
   const page = Math.floor(offset / PAGE) + 1
   const pages = Math.max(1, Math.ceil(total / PAGE))
+  const hasFilters = query.trim().length > 0 || filters.sources.length > 0 || filters.yearFrom !== '' || filters.yearTo !== ''
+
+  const clearFilters = () => {
+    setQuery('')
+    setSearch('')
+    setParams((current) => {
+      const updated = new URLSearchParams(current)
+      updated.delete('q')
+      return updated
+    }, { replace: true })
+    setFilters({ sources: [], yearFrom: '', yearTo: '' })
+    setYearRange({ from: '', to: '' })
+    setOffset(0)
+  }
 
   return (
-    <div className="mx-auto max-w-shell px-6 py-10">
-      <div className="label text-practice-dark">Question bank</div>
-      <h1 className="mt-1 font-display text-[34px] font-semibold leading-tight">
-        Browse the bank
+    <div className="mx-auto max-w-shell px-6 pb-24 pt-9">
+      <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-practice-dark">
+        Engine · Mizoram PSC
+      </div>
+      <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)] font-medium leading-[1.05] -tracking-[0.02em]">
+        Question bank
       </h1>
+      <p className="mt-3 max-w-[720px] text-[17px] leading-relaxed text-secondary [text-wrap:pretty]">
+        Browse questions from Mizoram Public Service Commission (MPSC) past papers. Each answer
+        shows whether it comes from an official key, a transcribed key or a practice-only answer.
+      </p>
 
-      <div className="mt-6 flex flex-wrap items-center gap-3">
+      <div className="mt-5 flex flex-wrap items-center gap-3">
         <input
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Search questions…"
+          type="search"
+          placeholder="Search question text…"
           aria-label="Search questions"
-          className="h-10 min-w-[260px] grow rounded-panel border border-hairline bg-card px-3 text-[15px] placeholder:text-placeholder focus:border-ink focus:outline-none"
+          className="h-[46px] min-w-[260px] grow rounded-pill border border-hairline bg-card px-[18px] text-[15px] placeholder:text-placeholder focus:border-ink focus:outline-none"
         />
         <div
           role="group"
           aria-label="Answer pool"
-          className="flex rounded-pill border border-hairline bg-card p-[3px]"
+          className="flex min-h-[46px] rounded-pill border border-hairline bg-card p-[3px]"
         >
           {(
             [
-              ['scorable', 'Official keys'],
+              ['scorable', 'Scorable keys'],
               ['practice', 'All answered'],
             ] as const
           ).map(([k, label]) => (
@@ -82,6 +128,12 @@ export default function Bank() {
               key={k}
               onClick={() => {
                 setPool(k)
+                if (k === 'scorable') {
+                  setFilters((f) => ({
+                    ...f,
+                    sources: f.sources.filter((s) => s === 'official' || s === 'key'),
+                  }))
+                }
                 setOffset(0)
               }}
               aria-pressed={pool === k}
@@ -94,11 +146,15 @@ export default function Bank() {
           ))}
         </div>
       </div>
+      {query.trim().length === 1 && (
+        <p className="mt-2 text-[12px] text-muted">Enter at least two characters to search.</p>
+      )}
 
       {/* Rail + list, matching the prototype's 40px gutter and flex ratios. */}
       <div className="mt-6 flex flex-wrap items-start gap-10">
         <FilterRail
           value={filters}
+          pool={pool}
           onChange={(f) => {
             setFilters(f)
             setOffset(0)
@@ -107,32 +163,40 @@ export default function Bank() {
 
         <section className="min-w-0 flex-[999_1_520px]">
           <div className="flex flex-wrap items-center justify-between gap-2.5 border-b border-ink pb-3">
-            <span className="text-[14px] text-secondary">
+            <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-[14px] text-secondary" aria-live="polite">
               {loading ? (
                 'Loading…'
               ) : (
                 <>
-                  <b className="text-ink">{total.toLocaleString('en-IN')}</b> questions shown
+                  <b className="text-ink">{total.toLocaleString('en-IN')}</b> questions
                   {total > 0 && (
                     <>
                       {' '}
-                      · page {page} of {pages.toLocaleString('en-IN')}
+                      <span className="text-muted">· page {page} of {pages.toLocaleString('en-IN')}</span>
                     </>
                   )}
                 </>
               )}
-            </span>
+              {hasFilters && (
+                <button
+                  type="button"
+                  onClick={clearFilters}
+                  className="ml-1 min-h-11 rounded-pill px-2 text-[13px] font-semibold text-link hover:underline"
+                >
+                  Clear filters
+                </button>
+              )}
+            </div>
             <span className="font-mono text-[11px] text-muted">Tap an option to check it</span>
           </div>
 
           <p className="mt-3 text-[13px] text-muted">
             {pool === 'scorable' ? (
-              <>Only questions with an official answer key — what mocks score against.</>
+              <>Official and transcribed keys only. Scored mocks use this pool.</>
             ) : (
               <>
-                Everything with an answer, including{' '}
-                <span className="text-attention-dark">unverified</span> ones. Practice only;
-                never scored.
+                Includes derived and <span className="text-attention-dark">unverified</span> answers
+                for practice. This pool is never scored.
               </>
             )}
           </p>

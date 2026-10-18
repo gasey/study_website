@@ -775,3 +775,123 @@ deleted bundle: a blank page. Now `no-cache, must-revalidate` on HTML and
 *Measurement trap:* navigating with `history.pushState` + `popstate` does
 not reload the bundle, so an audit after a deploy silently measures the old
 build. Use a real navigation with a cache-busting query.
+
+---
+
+## 2026-10-19 — bank filters and exam collection UI
+
+The local source bank is `../mpsc-question-bankv2/bank/mpsc_bank_v2.json`.
+Counting its `questions` array gives **77,751**, which matches the total in
+the app docs. The prototype's `1,840 questions` is sample text on one exam
+landing card. I found no 1,400,000 figure in the app or design handoff. The
+nearby **140,552** number in `CLAUDE.md` and `DECISIONS.md` is a historical
+row-count snapshot for the separate `mpsc_study` archive, not this bank.
+
+Added year-from/year-to controls to the bank filter rail and connected them
+to the existing `/api/questions` parameters. Year input is debounced and
+only complete four-digit values are sent, so intermediate keystrokes do not
+trigger invalid requests. The scorable pool is now labelled accurately:
+`v_scorable` includes official and transcribed keys, not official keys only.
+
+The Exams launcher now retains the full public collection list and shows
+additional collections below the featured one. Removed its hard-coded 2026
+year and the claim that every exam uses official keys. Section cards now
+open scoped timed mocks; the runner title comes from the selected collection
+and section instead of the unrelated fixed "ITI Instructor 2026" label.
+
+No test suite or build was run in this session. The API contract and schema
+were inspected directly; verify `web` compilation before deploying.
+
+## 2026-10-19 — launch scope finalized
+
+The user asked to finalize the Exams and Bank launch UI and defer LDE exams
+until the site grows. The live collection API currently returns only ITI
+Instructor 2026 (9 sections; 1,444 scorable questions); no LDE collection is
+public today. The launcher now filters LDE by title/id/kind before choosing
+the featured exam or counting/listing collections. Direct LDE detail routes
+show a short planned-later state, and the mock runner checks the collection
+before opening a session. The source data and collection API remain intact for
+later use.
+
+Removed the ExamPage's nonfunctional Continue placeholder. Corrected the Bank
+orientation card so it promises search and filtering, not user-created sets,
+which do not exist yet. Year filters, source filters and answer-pool
+explanations stay because they are wired to the API and accurately describe
+the available data. `npm run build` passed and `git diff --check` passed.
+Frontend-only deployment was selected because this change does not touch the
+API or schema.
+
+The deployed-page check found a second set of section cards on the Exams
+launcher that still linked to a planned route and said "official key". They
+now start section-scoped mocks and say "scorable questions". The additional
+exam-list caption now says "available" because deferred LDE sets are
+intentionally hidden. Rebuilt after this visual/route audit; ready for the
+frontend redeploy.
+
+## 2026-10-19 — Bank and Exams design finish
+
+Refined the Bank hierarchy to match the supplied prototype: eyebrow, display
+heading, explanatory copy, 46px pill search, answer-pool control, filter rail,
+and a live result header. Search now follows `?q=` links from the site header,
+updates the URL as it is typed, and gives feedback when fewer than two
+characters are entered. A visible Clear filters control resets text, source,
+and year filters.
+
+Kept filters honest against the two API views: scorable accepts only official
+and transcribed keys; derived and inferred source filters are disabled there
+and become available in All answered. Removed “No published key” as a filter
+because neither answer pool contains unanswered rows; the rail explains that
+limitation. Changed the question card link to “Details” because the current
+route shows appearances and metadata, not the original PDF.
+
+The Exams launcher copy now describes only current functionality and the
+live answer-key policy. Added an empty-library state. The exam detail bars
+now display each section's actual share of scorable questions and expose that
+value to assistive technology. `npm run build` and `git diff --check` passed.
+
+Live desktop and 390px mobile checks passed with no horizontal overflow on
+Bank, Exams, or the exam detail page. Verified pool behavior live: Scorable
+shows 12,454, switching to All answered shows 59,047, filtering Derived
+answers gives 6,614, and switching back clears the incompatible filter.
+Search for “Swadeshi” returns 7 matches and syncs `?q=Swadeshi` into the
+address bar. Final wording cleanup keeps exam-detail labels consistent with
+scorable counts and removes the implication that its Bank link is prefiltered.
+
+The final frontend build was deployed with `./scripts/deploy.sh web`. The
+cache-busted live Bank, Exams launcher and exam detail pages all served the
+new design and counts; section CTAs resolve to their section-mock routes. The
+browser was returned to its default viewport after the mobile checks.
+
+Restored the supplied design palette for the Bank and Exams areas: Practice
+blue, Exams ochre, warm paper surfaces, ink actions, and the exact
+`#C0462C` vermilion brand mark. This supersedes the temporary brightened
+vermilion decision documented above. `npm run build` and `git diff --check`
+passed.
+
+---
+
+## 2026-10-18 (cont.) — I took Vansa down, and then made it impossible to repeat
+
+While adding the SPA cache-control headers I rewrote `/etc/caddy/Caddyfile`
+with `sudo tee`. That file is **shared with Vansa** (`family.hawayu.in`),
+and the rewrite deleted its site block. Vansa went down at 18:48. Because
+the Let's Encrypt cert was still on disk, it failed as a TLS handshake
+error rather than an obvious 404, and because every check I ran polled only
+`study.hawayu.in`, I carried on for some time without noticing. Another
+session found and restored it.
+
+A memory describing this exact hazard already existed. I did not read the
+memories for the *other* projects on this host before changing shared
+state. That is the actual lesson, and it is cheaper to state than it was to
+learn: on a shared box, the blast radius of a config write is every project
+on it, not the one you are thinking about.
+
+**Structural fix, so remembering is no longer required.**
+`/etc/caddy/Caddyfile` is now only `import /etc/caddy/sites/*.caddy`, and
+each project owns `/etc/caddy/sites/<host>.caddy`. A project rewriting its
+own file cannot reach another's. Both sites verified after the split:
+study `/bank` 200, study `/api/health` 200, family 200 — and family's own
+media-cache and upload-size rules survived intact.
+
+`CLAUDE.md` rule 4 now carries this, including: after touching Caddy,
+systemd or Postgres, curl the *other* site.

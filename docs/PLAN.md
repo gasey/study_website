@@ -65,7 +65,7 @@ blockage is visible, not so the build stops.
 - [x] FastAPI + Postgres; question list, detail, answer gate
 - [x] `scripts/sync-bank.sh` — local bank is truth, user data preserved
 - [x] Anonymous device id + attempts with `chosen_text` (DECISIONS #6)
-- [x] Bank card and filter rail, ported faithfully
+- [x] Bank screen: search, answer pools, inline answer feedback, and source/year filters wired to the question API
 - [x] Numbered migrations + `scripts/migrate.sh` (status / dry-run / apply)
 - [x] **Component library** in `web/src/components/ui.tsx`: PillButton,
       OutlinePill, Chip, CountBadge, Checkbox, GroupTitle, Card, NotYet,
@@ -81,9 +81,9 @@ Needs no accounts; attempts already work anonymously.
 
 - [x] **First collection seeded** — `iti-instructor-2026`: 9 sections,
       16 papers, 1,446 official-key questions (migration 0005).
-- [x] **modules** (525, 53) — "Exams & tools" launcher, live at /exams
-- [ ] **GET /api/collections** pagination/filtering when there is more than one exam
-- [x] **ExamPage** (prototype `module`, 1699) — live at /exams/:id
+- [x] **modules** (525, 53) — "Exams & tools" launcher, live at /exams; lists launch collections and uses live counts; LDE is deferred
+- [ ] **GET /api/collections** pagination/filtering once the exam library grows
+- [x] **ExamPage** (prototype `module`, 1699) — live at /exams/:id; section cards launch section-scoped mocks
 - [x] **MockRunner** (prototype `exam`, 578) — timed paper, sticky dark
       header, palette with answered/marked/current state, auto-submit at
       zero, resume on reload. Timer is server-authoritative (0006).

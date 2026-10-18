@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useSearchParams } from 'react-router-dom'
 import MockResultView, { mmss } from '../components/MockResultView'
 import {
   currentMock,
+  getCollection,
+  isLaterExamCollection,
   startMock,
   submitMock,
   type MockResult,
@@ -21,7 +23,10 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 
 export default function MockRunner() {
   const { id: collectionId = '' } = useParams()
+  const [searchParams] = useSearchParams()
+  const sectionPath = searchParams.get('section') || undefined
   const [mock, setMock] = useState<MockSession | null>(null)
+  const [paperTitle, setPaperTitle] = useState('Preparing your paper')
   const [result, setResult] = useState<MockResult | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [at, setAt] = useState(0)
@@ -38,11 +43,23 @@ export default function MockRunner() {
     let dead = false
     ;(async () => {
       try {
+        const selectedCollection = await getCollection(collectionId)
+        if (isLaterExamCollection(selectedCollection)) {
+          throw new Error('LDE exam practice will be added as the exam library grows.')
+        }
         const existing = await currentMock()
-        const m = existing ?? (await startMock({ collection_id: collectionId, count: 20, duration_minutes: 20 }))
+        const m = existing ?? (await startMock({
+          collection_id: collectionId,
+          section_path: sectionPath,
+          count: 20,
+          duration_minutes: 20,
+        }))
+        const collection = m.collection_id === collectionId ? selectedCollection : await getCollection(m.collection_id)
+        const section = collection.section_list.find((s) => s.path === m.section_path)
         if (!dead) {
           setMock(m)
           setLeft(m.seconds_remaining)
+          setPaperTitle(`${collection.title}${section ? ` · ${section.title}` : ''} · Mock`)
         }
       } catch (e) {
         if (!dead) setError((e as Error).message)
@@ -51,7 +68,7 @@ export default function MockRunner() {
     return () => {
       dead = true
     }
-  }, [collectionId])
+  }, [collectionId, sectionPath])
 
   const send = useCallback(async () => {
     if (!mock || submitted.current) return
@@ -120,9 +137,9 @@ export default function MockRunner() {
             ← Exit
           </Link>
           <div className="min-w-0 flex-[1_1_280px]">
-            <div className="font-display text-[19px] font-medium">ITI Instructor 2026 · Mock</div>
+            <div className="font-display text-[19px] font-medium">{paperTitle}</div>
             <div className="font-mono text-[11px] text-[#BDB3A0]">
-              {mock.questions.length} questions · 1 mark each · no negative marking
+              {mock.questions.length} questions · timed practice
             </div>
           </div>
           <div

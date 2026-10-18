@@ -165,7 +165,7 @@ retiring that subdomain is a separate decision from the data.
 
 ---
 
-## 8. Brand vermilion split and brightened — 2026-10-18
+## 8. Brand vermilion split and brightened — 2026-10-18 (superseded by design palette restoration)
 
 The handoff's brand vermilion `#C0462C` sat **RGB-distance 23** from the
 wrong-answer state `#B0412A`. They are, to a user, the same colour — in a

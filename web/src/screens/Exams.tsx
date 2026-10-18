@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { getCollection, listCollections, type CollectionDetail } from '../lib/api'
+import { getCollection, isLaterExamCollection, listCollections, type Collection, type CollectionDetail } from '../lib/api'
 
-/** "Exams & tools", ported from markup line 526. The prototype hard-codes
- *  MPSC Combined Prelims as the flagship; we show whichever collection is
- *  first by position, which today is the only one that exists. */
+/** "Exams & tools", backed by the public collection list. */
 export default function Exams() {
+  const [collections, setCollections] = useState<Collection[]>([])
   const [flagship, setFlagship] = useState<CollectionDetail | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
@@ -13,8 +12,13 @@ export default function Exams() {
   useEffect(() => {
     let cancelled = false
     listCollections()
-      .then((cs) => (cs.length ? getCollection(cs[0].id) : null))
-      .then((d) => !cancelled && setFlagship(d))
+      .then(async (cs) => {
+        if (cancelled) return
+        const launchCollections = cs.filter((c) => !isLaterExamCollection(c))
+        setCollections(launchCollections)
+        const detail = launchCollections.length ? await getCollection(launchCollections[0].id) : null
+        if (!cancelled) setFlagship(detail)
+      })
       .catch((e) => !cancelled && setError(e.message))
       .finally(() => !cancelled && setLoading(false))
     return () => {
@@ -32,8 +36,8 @@ export default function Exams() {
         Exams &amp; tools
       </h1>
       <p className="mt-3 max-w-[720px] text-[17px] leading-relaxed text-secondary [text-wrap:pretty]">
-        Each exam page takes the right questions from the bank for one exam or subject and puts
-        them in order, with mocks around them.
+        We group past-paper questions by exam and section, then use reliable answer keys for scored
+        practice.
       </p>
 
       {/* The prototype's two orientation cards: where you are, and the bank. */}
@@ -44,7 +48,7 @@ export default function Exams() {
             Premade, in order, finite
           </div>
           <div className="mt-1.5 text-[13.5px] leading-[1.55] text-[#4A3205]">
-            Start at the top and work down; you always know what’s left.
+            Choose a prepared exam set, then practise one section at a time.
           </div>
         </div>
         <Link
@@ -59,7 +63,7 @@ export default function Exams() {
             Everything, unsorted until you filter
           </div>
           <div className="mt-1.5 text-[13.5px] leading-[1.55] text-secondary">
-            Every question from every paper. Search, filter and build your own sets. Open the bank →
+            Search the question text and filter by answer source or exam year. Open the bank →
           </div>
         </Link>
       </div>
@@ -82,15 +86,15 @@ export default function Exams() {
                   Start here
                 </span>
                 <span className="font-mono text-[11px] text-[#BDB3A0]">
-                  Mizoram PSC · official answer keys only
+                  {flagship.kind} · exam collection
                 </span>
               </div>
               <h2 className="mt-3.5 font-display text-[clamp(34px,4.6vw,52px)] font-medium leading-[1.05] -tracking-[0.02em]">
                 {flagship.title}
               </h2>
               <p className="mt-3 max-w-[560px] text-[16px] leading-relaxed text-[#D9D0BF]">
-                Past papers with official keys, grouped by paper and trade. Every question here has
-                a published answer — nothing in this exam is scored against a guess.
+                Past-paper questions grouped into {flagship.sections} sections. Scored mocks use
+                official and transcribed answer keys only.
               </p>
               <div className="mt-4 flex flex-wrap gap-1.5">
                 {flagship.section_list.slice(0, 6).map((s) => (
@@ -113,16 +117,16 @@ export default function Exams() {
                   to="/bank"
                   className="rounded-pill border border-paper px-[21px] py-[11px] text-[15px] font-semibold text-paper"
                 >
-                  Browse the bank instead
+                  Browse the bank
                 </Link>
               </div>
             </div>
             <div className="grid flex-[1_1_260px] content-center gap-[18px] bg-[#2A2723] px-7 py-[26px] [grid-template-columns:1fr_1fr]">
               {[
-                { v: flagship.scorable.toLocaleString('en-IN'), k: 'keyed questions', c: 'text-paper' },
+                { v: flagship.scorable.toLocaleString('en-IN'), k: 'scorable questions', c: 'text-paper' },
                 { v: String(flagship.sections), k: 'sections', c: 'text-paper' },
-                { v: String(technical.length), k: 'trades', c: 'text-paper' },
-                { v: '2026', k: 'exam year', c: 'text-paper' },
+                { v: String(technical.length), k: 'trade sections', c: 'text-paper' },
+                { v: String(collections.length), k: 'available exam sets', c: 'text-paper' },
               ].map((s) => (
                 <div key={s.k}>
                   <div className={`font-display text-[34px] leading-none ${s.c}`}>{s.v}</div>
@@ -144,7 +148,42 @@ export default function Exams() {
             items={technical}
             examId={flagship.id}
           />
+          {collections.length > 1 && (
+            <section className="mt-12">
+              <div className="flex flex-wrap items-baseline justify-between gap-2.5 border-b border-hairline pb-2.5">
+                <h2 className="font-display text-[30px] font-medium">More exam collections</h2>
+                <span className="text-[14px] text-secondary">Browse available exam sets</span>
+              </div>
+              <div className="mt-3.5 grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
+                {collections.filter((c) => c.id !== flagship.id).map((c) => (
+                  <Link
+                    key={c.id}
+                    to={`/exams/${c.id}`}
+                    className="flex flex-col gap-2 rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.12)]"
+                  >
+                    <span className="flex items-center gap-2 text-[12.5px] font-semibold">
+                      <span className="h-2 w-2 rounded-full bg-exams" />
+                      {c.kind} · {c.sections} sections
+                    </span>
+                    <div className="font-display text-[21px] font-medium leading-tight">{c.title}</div>
+                    <div className="flex-1 text-[14px] leading-[1.55] text-[#2E2A24]">
+                      {c.scorable.toLocaleString('en-IN')} scorable questions
+                    </div>
+                    <span className="text-[12px] font-semibold">Open →</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
         </>
+      )}
+      {!loading && !error && !flagship && (
+        <div className="mt-7 rounded-[14px] border border-hairline bg-card p-6 shadow-[0_1px_2px_rgba(29,27,24,.05)]">
+          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">Exam library</div>
+          <h2 className="mt-2 font-display text-[24px] font-medium">Exam sets are being prepared</h2>
+          <p className="mt-2 text-[14px] text-secondary">Browse the question bank while we publish the first exam collections.</p>
+          <Link to="/bank" className="mt-4 inline-block text-[14px] font-semibold text-link hover:underline">Open the bank →</Link>
+        </div>
       )}
     </div>
   )
@@ -172,7 +211,7 @@ function SectionGroup({
         {items.map((s) => (
           <Link
             key={s.path}
-            to={`/exams/${examId}/${s.path}`}
+            to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}`}
             className="flex flex-col gap-2 rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.12)]"
           >
             <span className="flex items-center gap-2 text-[12.5px] font-semibold">
@@ -181,9 +220,9 @@ function SectionGroup({
             </span>
             <div className="font-display text-[21px] font-medium leading-tight">{s.title}</div>
             <div className="flex-1 text-[14px] leading-[1.55] text-[#2E2A24]">
-              {s.scorable.toLocaleString('en-IN')} questions with an official key.
+              {s.scorable.toLocaleString('en-IN')} scorable questions.
             </div>
-            <span className="text-[12px] font-semibold">Open →</span>
+            <span className="text-[12px] font-semibold">Start this section →</span>
           </Link>
         ))}
       </div>
