@@ -522,3 +522,36 @@ against the pristine 2026-10-16 backup.
 column tells you how many rows are non-null, not how many are useful.**
 Sample the values before quoting the number, and certainly before writing
 them to production.
+
+---
+
+## 2026-10-18 (cont.) — first exam collection
+
+`0005_seed_iti_collection` seeds **ITI Instructor 2026**: 9 sections, 16
+papers, 1,446 questions with an official key. The collections tables were
+empty, so nothing in Phase 2 could be built against real data.
+
+Chosen on the data, not preference. UDC/LDC is the natural first exam and
+has 92 papers in the bank — **none of them keyed**. ITI Instructor is the
+best-keyed exam there is. Structure: Paper-I General English, Paper-II
+General Knowledge, then Technical Paper-I and II across seven trades (COPA,
+Electrician, Electronics Mechanic, Wireman, Baker & Confectioner, Carpenter,
+Workshop Calculation & Science).
+
+*Trap worth recording:* grouping these by `exam_name` undercounts badly —
+the same exam is stored under two different casings, so an earlier query
+reported 7 papers / 584 scorable when the truth is 16 / 1,446. Match
+`ILIKE`, not `=`.
+
+*And a second:* my first generator derived the trade by parsing parentheses
+out of the filename. The names are inconsistent enough ("Paper-IV (Technical
+Paper-IV) (Wireman)", "Paper-III-Technical Paper-I (Carpenter)") that single
+trades split across two sections — `electrician` and `electrician-i`,
+`copa` and `paper-iv-copa-i`, with Wireman becoming `general` and `v`. The
+generator now matches a known trade list by keyword, ordered so "Electronics
+Mechanic" is tested before "Electrician", and it exits non-zero if any paper
+fails to match rather than silently dropping it.
+
+Sections filter by `paper_id` because `subject` is NULL everywhere until
+classification runs; they can gain subject filters later without touching
+the seed.

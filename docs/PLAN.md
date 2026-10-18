@@ -79,9 +79,9 @@ blockage is visible, not so the build stops.
 
 Needs no accounts; attempts already work anonymously.
 
-- [ ] **modules** (525, 53) — "Exams & tools" launcher. An exam is a saved
-      filter set over the bank: `collections`, `collection_sections`,
-      `collection_papers`.
+- [x] **First collection seeded** — `iti-instructor-2026`: 9 sections,
+      16 papers, 1,446 official-key questions (migration 0005).
+- [ ] **modules** (525, 53) — "Exams & tools" launcher, listing collections.
 - [ ] **module** (1699, 93) — one exam's sections and formats.
 - [ ] **exam** (578, 45) — the timed paper. Sticky dark header, question
       palette with answered/marked state. **Timer is server-authoritative:**
