@@ -405,3 +405,43 @@ changed nothing about the Mumbai region choice, but it had been stated wrong.
 No merge attempted. Harvesting is a data decision with real downside, and
 anything taken goes into the local bank JSON first, never into the server
 database directly.
+
+---
+
+## 2026-10-18 (cont.) — harvest tooling, and the sync topology
+
+Settled how the three stores relate (DECISIONS #7). Not a triangle:
+
+```
+shiksha-dev  ──import──▶  local bank JSON  ──sync-bank.sh──▶  Oracle VM
+ (archive)                 (source of truth)                  (derived)
+```
+
+shiksha-dev can be demoted to an archive because it has no users: its nginx
+log is 113 distinct IPs of vulnerability scanners, and its newest data is
+~11 days old and was written by us.
+
+**Chased down an apparent compromise and cleared it.** Webshell probes
+(`wp_filemanager.php`, `opsh.php`, `BDKR28WP.php`) were returning **200**
+rather than 404, which reads alarming. It is the SPA catch-all serving
+index.html for unknown paths: the box has no PHP binary, no PHP packages, no
+PHP services and no `.php` files on disk. Checked rather than assumed in
+either direction — a 200 on a webshell path deserves five minutes.
+
+`scripts/harvest_old_server.py` is report-only by default. Measured:
+**8,655 explanations** to fill on questions we already hold, and **26,006
+unseen questions** (77,751 → 103,757). It backs the bank up before writing,
+and enforces DECISIONS #7: harvested answers land as `inferred`, never
+`official`, because `mpsc_study` records no provenance at all; harvested
+subjects are discarded since 98% are the placeholder `'gk'`; and a local row
+is only ever modified to fill an *empty* explanation.
+
+*Trap:* dumping JSON out of Postgres over ssh needs base64. `COPY ... TO`
+uses text format and escapes backslashes and tabs, which corrupts embedded
+JSON (`Expecting ',' delimiter` at char 5896), and `-At` still has to
+survive newlines inside question text.
+
+Also: `api.map.hawayu.in` resolves to the old droplet, so the domain
+currently straddles both boxes.
+
+No harvest performed — writing to the source-of-truth bank is the user's call.

@@ -118,3 +118,47 @@ registration, password reset and session management.
 When accounts arrive, a signed-in user adopts the device's attempts by
 reassigning `attempts.user_id`. Deferring the choice also avoids committing
 to email/password versus Google before it is known which one users want.
+
+---
+
+## 7. shiksha-dev is a source to harvest, not a database to sync with — 2026-10-18
+
+Three stores now exist: the local bank JSON, the Oracle VM's `mpsc`, and
+`mpsc_study` on the old shiksha-dev droplet (140,552 questions, 26,490 of
+them absent from our bank). The instinct is to keep all three in sync. That
+is a triangle, and triangles do not converge: when two corners edit the same
+question there is no rule for which wins, and the result is the local/prod
+divergence that has already cost time on another project — with an extra
+corner.
+
+The topology is a **line**:
+
+```
+shiksha-dev  ──import──▶  local bank JSON  ──sync-bank.sh──▶  Oracle VM
+ (archive)                 (source of truth)                  (derived)
+```
+
+Exactly one authority at each step. Nothing is ever written back to
+shiksha-dev, and nothing is written into the VM except by `sync-bank.sh`.
+
+**Why the old server can be demoted to an archive:** it has no users. Its
+nginx log is 113 distinct IPs of vulnerability scanners (`wp_filemanager.php`,
+`opsh.php` and friends — all harmless, the box has no PHP installed at all).
+Its newest data is ~11 days old and was written by us, not by learners. It is
+a working box, not a production service.
+
+**Import rules, which are not optional:**
+
+- Its answers arrive as `inferred` at most. `mpsc_study.questions` has no
+  `answer_source`; 64,706 rows carry an `answer_index` with no provenance,
+  and `verified_by`/`key_disputed` are empty on every row. Importing those as
+  `official` would inflate `v_scorable` from 12,454 genuinely keyed questions
+  to tens of thousands of unprovenanced ones and destroy the single guarantee
+  the product rests on.
+- Its `subject` is not an improvement: 138,355 of 140,552 rows are the
+  placeholder `'gk'` — 98%, against our 90%.
+- Explanations are the clearest win: 70,839 of them, against roughly 18 in
+  our bank.
+
+Note `api.map.hawayu.in` still resolves to the old droplet. Consolidating or
+retiring that subdomain is a separate decision from the data.
