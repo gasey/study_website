@@ -119,4 +119,31 @@ export interface Progress {
 
 export const getProgress = () => req<Progress>('/me/progress')
 
+
+export interface CollectionSection {
+  path: string
+  title: string
+  position: number
+  formats: string[]
+  papers: number
+  scorable: number
+}
+
+export interface Collection {
+  id: string
+  title: string
+  kind: string
+  route: string | null
+  visibility: string
+  sections: number
+  scorable: number
+}
+
+export interface CollectionDetail extends Collection {
+  section_list: CollectionSection[]
+}
+
+export const listCollections = () => req<Collection[]>('/collections')
+export const getCollection = (id: string) => req<CollectionDetail>(`/collections/${id}`)
+
 export { ApiError }

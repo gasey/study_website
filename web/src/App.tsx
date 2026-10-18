@@ -3,13 +3,13 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import { Card } from './components/ui'
 import Bank from './screens/Bank'
+import Exams from './screens/Exams'
 import QuestionDetail from './screens/QuestionDetail'
 
 /** Routes the shell links to but that are not built yet. Named explicitly
  *  rather than caught by `*`, so the page can say which phase owns it
  *  instead of pretending to be a 404. docs/PLAN.md has the order. */
 const PLANNED: Record<string, { title: string; phase: string }> = {
-  '/exams': { title: 'Exams & tools', phase: 'Phase 2' },
   '/mistakes': { title: 'Mistakes', phase: 'Phase 2' },
   '/scoring': { title: 'How scoring works', phase: 'Phase 2' },
   '/profile': { title: 'Profile', phase: 'Phase 3' },
@@ -55,6 +55,9 @@ export default function App() {
           <Route path="/" element={<Navigate to="/bank" replace />} />
           <Route path="/bank" element={<Bank />} />
           <Route path="/bank/:id" element={<QuestionDetail />} />
+          <Route path="/exams" element={<Exams />} />
+          <Route path="/exams/:id" element={<Planned />} />
+          <Route path="/exams/:id/*" element={<Planned />} />
           {Object.keys(PLANNED).map((path) => (
             <Route key={path} path={path} element={<Planned />} />
           ))}

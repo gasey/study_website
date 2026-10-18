@@ -80,3 +80,28 @@ class Progress(BaseModel):
     #: Distinct questions seen, which differs from `answered` once a question
     #: has been retried.
     unique_questions: int
+
+
+class CollectionSummary(BaseModel):
+    id: str
+    title: str
+    kind: str
+    route: str | None = None
+    visibility: str
+    sections: int
+    #: Counted from v_scorable, so a collection never advertises questions
+    #: that mocks are not permitted to score.
+    scorable: int
+
+
+class CollectionSection(BaseModel):
+    path: str
+    title: str
+    position: int
+    formats: list[str] = Field(default_factory=list)
+    papers: int
+    scorable: int
+
+
+class CollectionDetail(CollectionSummary):
+    section_list: list[CollectionSection] = Field(default_factory=list)

@@ -81,7 +81,8 @@ Needs no accounts; attempts already work anonymously.
 
 - [x] **First collection seeded** — `iti-instructor-2026`: 9 sections,
       16 papers, 1,446 official-key questions (migration 0005).
-- [ ] **modules** (525, 53) — "Exams & tools" launcher, listing collections.
+- [x] **modules** (525, 53) — "Exams & tools" launcher, live at /exams
+- [ ] **GET /api/collections** pagination/filtering when there is more than one exam
 - [ ] **module** (1699, 93) — one exam's sections and formats.
 - [ ] **exam** (578, 45) — the timed paper. Sticky dark header, question
       palette with answered/marked state. **Timer is server-authoritative:**

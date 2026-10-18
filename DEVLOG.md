@@ -555,3 +555,30 @@ fails to match rather than silently dropping it.
 Sections filter by `paper_id` because `subject` is NULL everywhere until
 classification runs; they can gain subject filters later without touching
 the seed.
+
+---
+
+## 2026-10-18 (cont.) — Exams & tools launcher
+
+`/exams` is live, driven by the seeded collection rather than mock data.
+`GET /api/collections` and `/api/collections/{id}` return sections with
+their paper and question counts, **counted from `v_scorable`** — a
+collection can never advertise questions that mocks are not allowed to
+score.
+
+Ported from markup line 526: "Library" eyebrow in `#7E4A00`, the clamped
+display heading, the two orientation cards (`#F7EAD0` "you are here" and the
+white bank card), the near-black flagship panel at `#14130F` with its
+`#2A2723` stats rail, and the module card grid.
+
+Verified live: hero `rgb(20,19,15)`, stats rail `1,444 / 9 / 7 / 2026`,
+both section groups, nine section cards.
+
+The prototype hard-codes MPSC Combined Prelims as the flagship; we show
+whichever collection sorts first by position, which today is the only one.
+
+*Note to self about verification:* my check reported the "Library" eyebrow
+missing. It was there — `innerText` returns the CSS-`uppercase` form, so a
+case-sensitive match for "Library" fails against "LIBRARY". The test was
+wrong, not the page. Worth remembering before "fixing" something that
+already works.
