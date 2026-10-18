@@ -258,3 +258,31 @@ here — a pool toggle and a checkbox both no-opped. `dispatchEvent(new
 MouseEvent('click', {bubbles:true}))` works, one interaction per tool call so
 React re-renders between them. Two clicks in a single call also fails: the
 second lands before the re-render.
+
+---
+
+## 2026-10-18 (cont.) — surveyed the prototype, rewrote the plan
+
+Mapped every screen instead of guessing. Screens are gated by
+`<sc-if value="{{ is.<name> }}">` at column 0 — that is the switch, not the
+`showX` flags, which are sub-sections. Markup ends at line 2283 where the
+script block starts; measuring the last screen to EOF overstates it badly
+(`contribute` looked like 1,420 lines, is 203).
+
+**28 screens, 2,206 lines of markup**, plus the 147 KB Admin Console.
+Largest: partner 274, contribute 203, feed 194, bank 162, profile 114,
+material 101. Smallest: account 16, onboard 23, search 23.
+
+Size is a poor proxy for effort — `exam` is 45 lines but needs a
+server-authoritative timer and thread locking, while `partner` is 274 lines
+of mostly static layout. The plan is ordered by dependency, not by size.
+
+`docs/PLAN.md` rewritten as the authoritative feature-by-feature plan: phase
+0 data prerequisites, then foundations, exams/mocks, accounts, community,
+games, moderation, money, admin, mobile. Every screen carries its prototype
+line reference so the next session can jump straight to the markup.
+
+**Phase 0 is the real critical path and it is not engineering.** Subject
+classification, dedupe, page images and the 11,459 missing keys each block a
+feature the design treats as central, and none of them is unblocked by more
+frontend. Three controls already ship as explanations because of this.
