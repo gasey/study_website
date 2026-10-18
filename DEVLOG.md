@@ -286,3 +286,45 @@ line reference so the next session can jump straight to the markup.
 classification, dedupe, page images and the 11,459 missing keys each block a
 feature the design treats as central, and none of them is unblocked by more
 frontend. Three controls already ship as explanations because of this.
+
+---
+
+## 2026-10-18 (cont.) — migrations, and Phase 0 deferred
+
+**Redis is installed and entirely unused** — 0 keys, the only client was a
+`redis-cli` probe, ~1 MB resident. It is there for Phase 5 (game rooms,
+presence, leaderboards shared across uvicorn workers). FastAPI does not
+touch it and does not need to; Postgres covers everything at this scale.
+
+**Phase 0 deferred by decision.** Classification, dedupe, page images and
+the missing keys are no longer treated as the critical path. Build against
+the 12,454 official-key questions and improve the bank later. Where a
+control cannot be honest on today's data it ships as an explanation, which
+two filters already do.
+
+**Numbered migrations, because the schema will keep moving.**
+`api/migrations/NNNN_name.sql` + `scripts/migrate.sh`. The old
+`mpsc_schema_v2/v3.sql` became `0001`/`0002` and were baselined into a
+`schema_migrations` ledger without re-running.
+
+Two things worth knowing about the runner:
+
+*`createdb -T` cannot be used for dry runs.* It needs exclusive access to
+the template, and the API's pool holds connections — the first attempt died
+with "source database is being accessed by other users". Taking the API down
+to rehearse a migration is the wrong trade, so `--dry-run` restores a
+`pg_dump` into a throwaway clone instead. ~15 s on the current 282 MB, site
+stays up, and real data is included so backfills rehearse honestly.
+
+*Applied migrations are checksummed and may not be edited.* Verified by
+tampering with an applied file: the runner refuses and says to write a new
+one. An edited migration means the repo and the server disagree about what
+the schema is, silently.
+
+First real migration, `0003_attempt_stats`: index on `attempts(canonical_id)`
+plus `v_question_stats` and `v_option_picks`. These back the option-vote
+bars the prototype shows (`opts()` takes a `votes` argument, line 2603) and
+give a real difficulty signal, which the imported `difficulty` column never
+did — it was a default `'medium'` on 96% of rows. Views rather than counter
+columns: aggregates are milliseconds here, and a counter is one more thing
+to keep honest when attempts are re-scored after a key fix.

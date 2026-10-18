@@ -56,6 +56,45 @@ Postgres 16 (localhost only), Redis 7, Caddy 2 serving https://study.hawayu.in.
 DB credentials in `/etc/mpsc/db.env` (root-only). Test database `bench`
 already holds the full migrated bank.
 
+## The schema is expected to change as features land
+
+It is not frozen. v3 was written before most of the product existed, and
+each feature will want columns, indexes or views it does not have. Changing
+it is normal; changing it *carelessly* is what breaks things, because the
+server database is derived from a local bank (DECISIONS #5) and a hand-made
+`ALTER TABLE` on the box diverges from the repo silently.
+
+So every schema change is a numbered file in `api/migrations/`:
+
+```bash
+./scripts/migrate.sh --status    # applied vs pending
+./scripts/migrate.sh --dry-run   # rehearse on a dump clone; prod untouched
+./scripts/migrate.sh             # apply
+```
+
+- Name them `NNNN_what_it_does.sql`; they run in filename order.
+- **Never edit a migration that has been applied.** The runner checksums
+  them and refuses, because an edited migration means the repo and the
+  server disagree about what the schema is. Write a new one.
+- Each file owns its transactions — `BEGIN`/`COMMIT` inside the file.
+- `--dry-run` restores a dump into a throwaway clone rather than using
+  `createdb -T`, which would need exclusive access and therefore downtime.
+  It takes ~15s and includes real data, so backfills are rehearsed honestly.
+- Prefer a **view** over a denormalised counter column. At this size
+  aggregates run in milliseconds, and a counter is one more thing to keep
+  honest when attempts are re-scored after a key correction.
+
+## Build with the data that exists
+
+The bank is incomplete on purpose and will improve later: ~69,757 questions
+are unclassified, nothing is deduped, 11,459 MCQs have no key. **Do not block
+features on that work.** Build against the 12,454 questions with official
+keys and the 59,047 with any answer.
+
+Where a control cannot be honest on today's data, show a short explanation
+instead of the control — the topic filter and the repeats filter already do
+this. Do not fake it, and do not hide the feature; say why it is empty.
+
 ## Rules that are not negotiable
 
 1. **Never score a user against an inferred answer.** Only 12,454 of 77,751

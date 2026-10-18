@@ -24,11 +24,16 @@ mostly static layout.
 
 ---
 
-## Phase 0 — data prerequisites (start now, runs in parallel)
+## Phase 0 — data work *(deferred by decision, 2026-10-18)*
 
-**These are the critical path and no amount of frontend work unblocks them.**
-Three features in the design cannot be built honestly until these run; each
-currently shows an explanation instead of a control.
+**Build around these, do not wait for them.** They were going to be the
+critical path; the call is to ship features against the data that exists —
+12,454 questions with official keys, 59,047 with any answer — and improve
+the bank later. Where a control cannot be honest today, it ships as a short
+explanation instead (the topic and repeats filters already do).
+
+Each item below still blocks a specific feature. That is recorded so the
+blockage is visible, not so the build stops.
 
 - [ ] **Subject classification of ~69,757 questions.** 90% carry the
       placeholder `'gk'`; `subject`/`topic` are NULL by design. Blocks topic
@@ -54,13 +59,14 @@ currently shows an explanation instead of a control.
 
 ---
 
-## Phase 1 — foundations (unlocks every later screen)
+## Phase 1 — foundations (unlocks every later screen) ← **current**
 
 - [x] Monorepo, docs, deploy pipeline, HTTPS
 - [x] FastAPI + Postgres; question list, detail, answer gate
 - [x] `scripts/sync-bank.sh` — local bank is truth, user data preserved
 - [x] Anonymous device id + attempts with `chosen_text` (DECISIONS #6)
 - [x] Bank card and filter rail, ported faithfully
+- [x] Numbered migrations + `scripts/migrate.sh` (status / dry-run / apply)
 - [ ] **Component library** extracted from the prototype: chip, pill,
       outlined pill, checkbox, tabs, card, toast, avatar, segmented control,
       empty state. Every later screen reuses these; building them ad hoc per
