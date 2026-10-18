@@ -3,6 +3,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import { Card } from './components/ui'
 import Bank from './screens/Bank'
+import ExamPage from './screens/ExamPage'
 import Exams from './screens/Exams'
 import QuestionDetail from './screens/QuestionDetail'
 
@@ -56,7 +57,7 @@ export default function App() {
           <Route path="/bank" element={<Bank />} />
           <Route path="/bank/:id" element={<QuestionDetail />} />
           <Route path="/exams" element={<Exams />} />
-          <Route path="/exams/:id" element={<Planned />} />
+          <Route path="/exams/:id" element={<ExamPage />} />
           <Route path="/exams/:id/*" element={<Planned />} />
           {Object.keys(PLANNED).map((path) => (
             <Route key={path} path={path} element={<Planned />} />

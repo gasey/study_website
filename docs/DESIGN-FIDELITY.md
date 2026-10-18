@@ -91,3 +91,22 @@ The prototype's cards show a **topic chip** and a **discussion count**. Our
 `subject`/`topic` columns are NULL by design until classification runs, and
 discussion is milestone 4. Render those slots only when the data exists —
 do not invent a placeholder topic, and do not fall back to the old `'gk'`.
+
+## Naming — "module" is dead, and "exam" means two things
+
+The prototype still uses the old vocabulary. The schema and UI moved on, and
+the overlap is a real trap: the prototype's `exam` screen is **the timed
+paper**, not an exam's landing page.
+
+| Prototype screen | What it actually is | Schema | Our file |
+|---|---|---|---|
+| `modules` | the launcher, "Exams & tools" | `collections` | `screens/Exams.tsx` |
+| `module` | one exam's landing page | one `collection` | `screens/ExamPage.tsx` |
+| `exam` | **the timed paper itself** | `collection_papers.as_mock` | `screens/MockRunner.tsx` |
+
+Schema v3 says it outright: *"Collections (UI: 'Exams & tools'; formerly
+'modules')"*. Do not name anything new `module`, and do not assume a file
+called `Exam*` is the timed paper — check which of the three it is.
+
+Routes: `/exams` → launcher, `/exams/:id` → exam page, and the mock runner
+is entered from there.
