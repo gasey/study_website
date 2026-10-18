@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from .config import settings
 from .db import close_pool, cursor, open_pool
-from .routers import collections, me, questions
+from .routers import collections, me, mocks, questions
 
 
 @asynccontextmanager
@@ -30,6 +30,7 @@ app.add_middleware(
 app.include_router(questions.router)
 app.include_router(me.router)
 app.include_router(collections.router)
+app.include_router(mocks.router)
 
 
 @app.get("/api/health")

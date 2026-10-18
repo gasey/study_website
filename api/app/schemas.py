@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Literal
 
 from pydantic import BaseModel, Field
@@ -105,3 +106,66 @@ class CollectionSection(BaseModel):
 
 class CollectionDetail(CollectionSummary):
     section_list: list[CollectionSection] = Field(default_factory=list)
+
+
+class MockStart(BaseModel):
+    collection_id: str
+    section_path: str | None = None
+    count: int = Field(20, ge=1, le=200)
+    duration_minutes: int = Field(20, ge=1, le=240)
+    marks_correct: float = Field(1, ge=0, le=10)
+    #: Deduction per wrong answer. 0 = no negative marking, which is what
+    #: several Mizoram PSC papers actually use.
+    marks_wrong: float = Field(0, ge=0, le=10)
+
+
+class MockQuestion(BaseModel):
+    id: str
+    position: int
+    question: str
+    options: list[str]
+    # No answer field, deliberately: the key is revealed only by submit.
+
+
+class MockSession(BaseModel):
+    id: str
+    collection_id: str
+    section_path: str | None = None
+    duration_seconds: int
+    started_at: datetime
+    #: Computed server-side. The client counts down from this for display,
+    #: but the server recomputes elapsed time on submit regardless.
+    seconds_remaining: int
+    questions: list[MockQuestion]
+
+
+class MockAnswer(BaseModel):
+    question_id: str
+    chosen_index: int = Field(ge=0, le=9)
+
+
+class MockSubmission(BaseModel):
+    answers: list[MockAnswer] = Field(default_factory=list)
+
+
+class MockReviewRow(BaseModel):
+    position: int
+    question_id: str
+    question: str
+    chosen_text: str | None
+    answer_text: str | None
+    correct: bool
+    explanation: str | None = None
+
+
+class MockResult(BaseModel):
+    id: str
+    n_correct: int
+    n_wrong: int
+    n_skipped: int
+    score: float
+    total: int
+    elapsed_seconds: int
+    #: Submitted after the window closed. Recorded, not rejected.
+    late: bool
+    review: list[MockReviewRow]

@@ -582,3 +582,36 @@ missing. It was there — `innerText` returns the CSS-`uppercase` form, so a
 case-sensitive match for "Library" fails against "LIBRARY". The test was
 wrong, not the page. Worth remembering before "fixing" something that
 already works.
+
+---
+
+## 2026-10-18 (cont.) — mock sessions, with the clock on the server
+
+`0006_mock_sessions` plus `/api/mocks`. The property that matters: **the
+client never owns the clock.** `started_at` is written server-side at start,
+elapsed time is computed server-side at submit, and nothing the client sends
+influences either. Verified by backdating a session ten minutes in the
+database: the submit reported `elapsed 600s` against a 60s limit and flagged
+`late: true`.
+
+Late submissions are **recorded, not rejected** — a slow network should not
+destroy an attempt, but the result has to say it was late.
+
+The question set is frozen into `question_ids` at start, so resume works, a
+bank re-sync cannot change a paper mid-attempt, and the order shown is the
+order scored. Questions are drawn with `random.sample` in Python and fetched
+by primary key; `ORDER BY random()` stays banned.
+
+Verified live: answers never appear in the start or resume payload
+(`answer_text leaked: False`), a second concurrent mock is refused (409,
+enforced by a partial unique index), resubmission is refused (409), another
+device submitting someone else's mock gets 404, and scoring with negative
+marking is exact — 1 correct × 2 minus 4 wrong × 0.5 = 0.0.
+
+**Found a systemic bug on the way.** The app role had been granted on *all
+tables* once, which covers only the tables existing at that moment. 0006
+added `mock_sessions` and the API died in production with
+`permission denied for table mock_sessions` on the first request to touch
+it. Every future migration that adds a table would have done the same.
+`0007_grants` adds `ALTER DEFAULT PRIVILEGES`, so anything created by
+`postgres` in `public` is usable by `mpsc` without a follow-up grant.
