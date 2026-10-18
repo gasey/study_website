@@ -110,3 +110,15 @@ called `Exam*` is the timed paper — check which of the three it is.
 
 Routes: `/exams` → launcher, `/exams/:id` → exam page, and the mock runner
 is entered from there.
+
+## Deliberate divergences from the handoff
+
+Changes we have made on purpose. Everything else follows the prototype.
+
+| Token | Handoff | Ours | Why |
+|---|---|---|---|
+| brand vermilion | `#C0462C` | `#D9461C` (mark) + `#962F15` (text) | was RGB-distance 23 from the wrong-answer state; see DECISIONS #8 |
+
+Known and **not** changed: `placeholder #7A7366` sits at 4.10 contrast,
+just under AA for body text. Left alone pending a design pass, since
+placeholder styling is a system-wide call rather than a component fix.

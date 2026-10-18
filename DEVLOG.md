@@ -673,3 +673,35 @@ Also fixed "1 marks" — visible on every single-mark result.
 Phase 2 now has one item left: the scoring explainer. `thread_locks` during
 a live mock belongs with discussion in Phase 4, since there are no threads
 to lock yet.
+
+---
+
+## 2026-10-18 (cont.) — the palette, measured
+
+Audited the palette with actual contrast maths rather than opinion. Two
+findings.
+
+**The system's rules are empirically sound.** Every `dark` area variant
+passes AA on the warm paper (6.39–7.84), and the rule "text uses dark, mid
+tone only for dots and bars" turns out to be load-bearing: as text, map
+scores 4.01, exams 3.67 and rewards 3.20 — three of six areas are
+unreadable at mid tone. Whoever wrote that rule had measured it.
+
+**One real collision.** Brand vermilion `#C0462C` was RGB-distance 23 from
+the wrong-answer state `#B0412A`, in a system whose central rule is that a
+colour names an area and never a state. Every other pair is 73–96 apart.
+Fixed to `{ DEFAULT: '#D9461C', dark: '#962F15' }` — distance now 60,
+saturation 0.77 → 0.87, and the split exists because the prototype uses
+vermilion as `color:` in several places while the old value was already
+under AA for text at 4.41. DECISIONS #8.
+
+The saturation increase is also what the user wanted, and it is defensible:
+Valdez & Mehrabian (1994) give `Arousal = −0.31·Brightness + 0.60·Saturation`,
+so saturation dominates, and learning-environment studies find reading
+comprehension higher under vivid than pale colour on *difficult* material.
+Yerkes–Dodson caps it — arousal/performance is curvilinear and a learner
+sits here for hours — so the shape is **calm reading surface, vivid
+accents**. The paper and body ink are unchanged.
+
+Logged `placeholder #7A7366` at 4.10, under AA, as a known issue left for a
+design pass rather than patched per-component.

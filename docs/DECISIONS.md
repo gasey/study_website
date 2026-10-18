@@ -162,3 +162,35 @@ a working box, not a production service.
 
 Note `api.map.hawayu.in` still resolves to the old droplet. Consolidating or
 retiring that subdomain is a separate decision from the data.
+
+---
+
+## 8. Brand vermilion split and brightened — 2026-10-18
+
+The handoff's brand vermilion `#C0462C` sat **RGB-distance 23** from the
+wrong-answer state `#B0412A`. They are, to a user, the same colour — in a
+system whose central rule is *"a colour names an area, never a state"*. Every
+other pair in the palette is separated by 73–96.
+
+Vermilion is now `{ DEFAULT: '#D9461C', dark: '#962F15' }`:
+
+- **DEFAULT `#D9461C`** is the mark. Distance to the wrong-state is now 60,
+  and saturation rises 0.77 → 0.87. Contrast on paper is 3.78 — above the
+  3.0 floor for graphical objects, which is all a mark needs.
+- **dark `#962F15`** is for text, at 6.75 contrast. The split exists because
+  the prototype uses vermilion as `color:` in several places and the old
+  single value was already at 4.41 — under AA for body text. Every area
+  colour already carries this mid/dark split; vermilion should have too.
+
+**On the saturation increase.** The user reports feeling more engaged by
+vivid colour, and that is measurable rather than taste: Valdez & Mehrabian
+(1994) derive `Arousal = −0.31·Brightness + 0.60·Saturation`, making
+saturation the dominant term, and studies of learning environments find
+reading comprehension higher under vivid than pale colour, with the proposed
+mechanism being arousal moving toward optimum on *difficult* reading.
+
+The limit is Yerkes–Dodson: arousal and performance are curvilinear, so more
+is not monotonically better, and a learner sits with this for hours. Hence
+the shape — **calm reading surface, vivid accents.** The warm `#F4EFE4`
+paper and ink body text stay exactly as they are; only marks and accents get
+the extra chroma. Do not raise saturation on the reading surface itself.

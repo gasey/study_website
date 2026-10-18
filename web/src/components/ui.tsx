@@ -5,8 +5,9 @@ import type { ReactNode } from 'react'
  *  Values come from the markup, not the handoff README — see
  *  docs/DESIGN-FIDELITY.md for where the two disagree. */
 
-/** Filled pill button. The primary action everywhere; always ink, never
- *  vermilion — vermilion is the brand mark only. (markup line 49) */
+/** Filled pill button. The primary action everywhere; always ink,
+ *  never vermilion — that is the brand mark only (markup line 49).
+ *  Use `text-vermilion-dark` if vermilion ever carries text. */
 export function PillButton({
   children,
   onClick,
