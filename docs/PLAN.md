@@ -67,13 +67,12 @@ blockage is visible, not so the build stops.
 - [x] Anonymous device id + attempts with `chosen_text` (DECISIONS #6)
 - [x] Bank card and filter rail, ported faithfully
 - [x] Numbered migrations + `scripts/migrate.sh` (status / dry-run / apply)
-- [ ] **Component library** extracted from the prototype: chip, pill,
-      outlined pill, checkbox, tabs, card, toast, avatar, segmented control,
-      empty state. Every later screen reuses these; building them ad hoc per
-      screen is exactly how the look drifts.
-- [ ] **App shell**: the mega-menu header (line 54 — multi-column dropdown
-      with badges), the dark footer (line 162), the toast/flash used
-      throughout.
+- [x] **Component library** in `web/src/components/ui.tsx`: PillButton,
+      OutlinePill, Chip, CountBadge, Checkbox, GroupTitle, Card, NotYet,
+      Avatar. Still to add when a screen needs them: tabs, toast, segmented
+      control.
+- [x] **App shell**: mega-menu header, dark footer, planned-route pages that
+      name the phase that owns them.
 - [ ] **search** (1460, 23) — small, and exercises the shell.
 
 ## Phase 2 — exams and mocks *(the core product)*

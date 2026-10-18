@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import FilterRail, { type Filters } from '../components/FilterRail'
 import QuestionCard from '../components/QuestionCard'
 import { listQuestions, type QuestionPage } from '../lib/api'
@@ -6,10 +7,11 @@ import { listQuestions, type QuestionPage } from '../lib/api'
 const PAGE = 20
 
 export default function Bank() {
+  const [params] = useSearchParams()
   const [pool, setPool] = useState<'scorable' | 'practice'>('scorable')
-  const [filters, setFilters] = useState<Filters>({ sources: [], repeatsOnly: false })
-  const [query, setQuery] = useState('')
-  const [search, setSearch] = useState('')
+  const [filters, setFilters] = useState<Filters>({ sources: [] })
+  const [query, setQuery] = useState(params.get('q') ?? '')
+  const [search, setSearch] = useState(params.get('q') ?? '')
   const [offset, setOffset] = useState(0)
   const [data, setData] = useState<QuestionPage | null>(null)
   const [error, setError] = useState<string | null>(null)
@@ -44,7 +46,7 @@ export default function Bank() {
       cancelled = true
     }
     // sourceKey stands in for the array so a new-but-equal array does not refetch
-  }, [pool, search, offset, sourceKey, filters.repeatsOnly, filters.sources])
+  }, [pool, search, offset, sourceKey, filters.sources])
 
   const total = data?.total ?? 0
   const page = Math.floor(offset / PAGE) + 1

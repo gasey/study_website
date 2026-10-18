@@ -328,3 +328,36 @@ give a real difficulty signal, which the imported `difficulty` column never
 did — it was a default `'medium'` on 96% of rows. Views rather than counter
 columns: aggregates are milliseconds here, and a counter is one more thing
 to keep honest when attempts are re-scored after a key fix.
+
+---
+
+## 2026-10-18 (cont.) — component library and the real app shell
+
+`web/src/components/ui.tsx` holds the primitives every screen composes:
+PillButton, OutlinePill, Chip, CountBadge, Checkbox, GroupTitle, Card,
+NotYet, Avatar. FilterRail was refactored onto them, which is the point —
+re-deriving padding and radii per screen is exactly how a design drifts.
+
+**Header rebuilt from markup line 34, and it caught an invention.** The
+earlier header put the six coloured area dots next to the wordmark. They are
+not in the header at all — they belong to the landing hero and the footer
+mark. There is now a comment in `Header.tsx` saying so, because it is the
+kind of thing that gets "restored" by someone tidying up.
+
+The real header: wordmark in Newsreader 22px, a `Sections ▾` pill that opens
+a full-width mega-menu, quick nav underlined on the active route
+(`underline-offset 6px`, `thickness 2px`), pill search on `#F7F3EA`, inbox
+with a count badge, ink `Post` button, avatar with a level badge tucked
+`-14px` into it.
+
+Verified live: 0 dots in the header, menu grid resolves to 4×268px from
+`auto-fit minmax(240px,1fr)`, shadow is exactly
+`rgba(29,27,24,0.12) 0 18px 40px`, footer is `#14130F` on `#CFC7B8`.
+
+Dismiss-on-outside-click and Escape were added to the menu — a full-width
+overlay that only closes via its own button is a trap.
+
+**Planned routes now name their phase.** The shell links to 13 screens that
+do not exist. Rather than a bare 404, each renders a card saying which phase
+owns it and pointing at `docs/PLAN.md`. Honest about what is designed versus
+built, and it makes the shell navigable for review.
