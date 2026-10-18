@@ -40,12 +40,26 @@ async def list_questions(
     q: str | None = Query(None, min_length=2, max_length=120),
     year_from: int | None = Query(None, ge=1900, le=2100),
     year_to: int | None = Query(None, ge=1900, le=2100),
+    source: Annotated[list[str] | None, Query()] = None,
+    repeats_only: bool = False,
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0),
 ) -> QuestionPage:
     view = POOLS[pool]
     where: list[str] = []
     params: dict[str, object] = {}
+
+    if source:
+        # Whitelisted against the enum rather than interpolated: this value
+        # reaches a query, and the CHECK constraint is not a sanitiser.
+        allowed = {"official", "key", "derived", "inferred", "none"}
+        chosen = [s for s in source if s in allowed]
+        if not chosen:
+            raise HTTPException(422, "no recognised answer_source values")
+        where.append("answer_source = ANY(%(source)s)")
+        params["source"] = chosen
+    if repeats_only:
+        where.append("times_asked >= 2")
 
     if q:
         # Uses the GIN index on the generated tsvector; ~0.1-0.5 ms at 77k rows.

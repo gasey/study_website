@@ -20,6 +20,8 @@ Every later screen is then additive on a proven path.
 **Done means:** a real question from the 77,751 renders at
 study.hawayu.in over HTTPS, with its provenance visible, no console errors.
 
+- [x] Filter rail (answer-key provenance); topic + repeats blocked on data
+
 ## Milestone 2 — accounts and attempts
 
 - [x] `scripts/sync-bank.sh` — local bank → server, user data preserved

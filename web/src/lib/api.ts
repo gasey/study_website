@@ -86,6 +86,9 @@ export interface ListParams {
   q?: string
   year_from?: number
   year_to?: number
+  /** Repeated, not comma-joined: FastAPI reads `?source=a&source=b`. */
+  source?: AnswerSource[]
+  repeats_only?: boolean
   limit?: number
   offset?: number
 }
@@ -93,7 +96,9 @@ export interface ListParams {
 export function listQuestions(p: ListParams = {}): Promise<QuestionPage> {
   const qs = new URLSearchParams()
   for (const [k, v] of Object.entries(p)) {
-    if (v !== undefined && v !== '') qs.set(k, String(v))
+    if (v === undefined || v === '' || v === false) continue
+    if (Array.isArray(v)) v.forEach((x) => qs.append(k, String(x)))
+    else qs.set(k, String(v))
   }
   return req<QuestionPage>(`/questions?${qs}`)
 }

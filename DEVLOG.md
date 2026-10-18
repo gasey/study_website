@@ -226,3 +226,35 @@ classification), discussion counts (milestone 4), and the other 24 screens.
 
 *Next:* the filter rail, then the remaining screens one at a time, each
 extracted from the prototype first.
+
+---
+
+## 2026-10-18 (cont.) — filter rail
+
+Ported from the prototype (line 390): white card, 14px radius, 16px padding,
+`flex 1 1 220px` capped at 260px, groups headed by a mono 11px label with a
+1px ink underline, 14px checkbox squares at 3px radius filling solid ink.
+Layout is the prototype's `gap:40px` with the list at `flex 999 1 520px`.
+
+API gained `source` (repeatable) and `repeats_only`. `source` is whitelisted
+against the enum before it reaches the query — a CHECK constraint is not a
+sanitiser. A bogus value returns 422.
+
+Verified live: switching to the practice pool and ticking "Unverified" took
+the count 12,454 → 39,961, exactly the `inferred` total, and every card on
+screen read "Unverified".
+
+**Two filters are deliberately inert, and say so on screen:**
+
+- *Topic* — `subject`/`topic` are NULL on every row until classification runs.
+- *Repeats* — measured `max(times_asked) = 1` across all 77,751 rows, and
+  zero canonicals have more than one appearance. Repeats only exist once the
+  dedupe job merges duplicate printings, and it has not run. The filter was
+  built, found to match nothing, and replaced with an explanation rather than
+  left as a control that silently returns an empty list.
+
+*Pane note, again:* `computer` clicks intermittently fail to reach React
+here — a pool toggle and a checkbox both no-opped. `dispatchEvent(new
+MouseEvent('click', {bubbles:true}))` works, one interaction per tool call so
+React re-renders between them. Two clicks in a single call also fails: the
+second lands before the re-render.
