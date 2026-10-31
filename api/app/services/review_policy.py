@@ -117,7 +117,10 @@ class Proposal(BaseModel):
             raise ValueError('Figure must reference a registered relative asset path')
         if self.kind not in {'new_question','source_request'} and not self.canonical_id: raise ValueError('Choose a target question')
         if 'question' in self.patch and (not isinstance(self.patch['question'],str) or len(self.patch['question'].strip())<5): raise ValueError('Question text is required')
-        if self.kind in {'new_question','answer','explanation'} and len(str(self.patch.get('explanation') or '').strip())<20: raise ValueError('Provide a useful explanation of at least 20 characters')
+        mapped_key_only=(self.kind=='answer' and self.patch.get('answerSource') in {'official','key'}
+                         and self.patch.get('answerKeyRef') and not self.patch.get('explanation')
+                         and any(e.kind=='official-key' and e.document_id==self.patch['answerKeyRef'] for e in self.evidence))
+        if self.kind in {'new_question','answer','explanation'} and not mapped_key_only and len(str(self.patch.get('explanation') or '').strip())<20: raise ValueError('Provide a useful explanation of at least 20 characters')
         if self.kind=='new_question':
             for key in ('question','options','answerIndex','explanation','classification'):
                 if key not in self.patch: raise ValueError(f'New MCQ requires {key}')

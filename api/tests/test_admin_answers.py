@@ -61,6 +61,16 @@ def test_admin_review_hold_and_unsolved_and_stale_guards(client,actor,database):
  patch=conn.execute('SELECT manifest->\'payload\'->\'patch\' FROM bank_publications WHERE id=%s',(r.json()['publication_id'],)).fetchone()[0]
  assert patch['answerIndex']is None and patch['answerSource']=='none'
 
+def test_official_key_only_keeps_audit_reason_out_of_public_explanation(client,actor,database):
+ q,a,p,h,base,payload=setup(client,actor,database);conn=database[1];doc='key-only-'+uuid4().hex
+ conn.execute("INSERT INTO review_documents(id,paper_id,title,source_file,sha256,kind,key_status,registered_by) VALUES(%s,%s,'Synthetic final key','synthetic.pdf',%s,'official-key','final','test')",(doc,p,'a'*64))
+ payload.update(mode='official',document_id=doc,key_page=1,explanation='')
+ response=client.post(base,headers=h,json=payload);assert response.status_code==200,response.text
+ manifest=conn.execute('SELECT manifest FROM bank_publications WHERE id=%s',(response.json()['publication_id'],)).fetchone()[0]
+ assert manifest['payload']['patch']['explanation'] is None
+ assert manifest['payload']['rationale']==payload['reason']
+ assert manifest['payload']['evidence'][0]['note']==payload['reason']
+
 def test_admin_can_attest_existing_derived_solution_without_fake_content_change(client,actor,database):
  q,a,p,h,base,payload=setup(client,actor,database);conn=database[1]
  explanation='Existing worked solution checked directly by the synthetic administrator.'

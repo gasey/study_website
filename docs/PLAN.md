@@ -848,3 +848,13 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Group MCS boxed cards by year and Paper I/II, retaining separate A/B/C/D selection, counts, source PDFs and answer readiness.
 - [ ] Review the restored480transcriptions, three unresolved option extractions, classifications and final-key mappings; continue36recovered-copy source defects and checked explanations. Source coverage alone is not answer readiness.
 - [ ] Implement source-confirmed original-paper simulation after complete paper/key/compensation adjudication; Mains remains separately inventoried future work.
+
+### 31 October 2026 — MCS tags and final-key readiness
+
+- [x] Reuse existing approved classifications for332restored copies with exact normalized stems and full ordered options; skip conflicting, unmatched and defective sources. Save bounded workshop claims and prove classification-only changes.
+- [x] Publish329newofficial-key mappings from each booklet's own final key, with current source/key/baseline checks and no fabricated explanations.
+- [x] Resolve the three earlier2025answer differences: final-key correction for I B Q15, date-range option restoration/final key for I B Q30, and equation/source image/page/final key/checked working for II C Q41.
+- [x] Protect all24compensated source entries with persistent grading holds while retaining printed-paper browsing.
+- [x] Keep official-key audit notes separate from optional worked explanations; retain strict explanation requirements for derived solutions and community MCQs.
+- [x] Prevent owner export batches from racing the single-item publisher; reconcile99staleunappliedexports with unchanged source checks, immutable history and fresh decisions. Verify314backendtests and all live published values.
+- [ ] Review148remainingrecenttaggaps (including three option extraction defects and three compensated entries); recovered600stillneed classification and source/key review. Continue useful worked explanations and historical2014/2016numbering audits before authentic simulation.

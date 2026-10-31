@@ -28,6 +28,17 @@ def test_exact_final_key_is_publishable(tmp_path):
     assert out['questions'][0]['answerSource']=='official'
     assert journal['receipts'][0]['after']['answerKeyRef']=='key_synthetic'
 
+def test_exact_final_key_does_not_require_a_fabricated_worked_explanation(tmp_path):
+    bank,m,keys=packet(tmp_path);m['payload']['patch']['explanation']=None
+    out,journal=apply(tmp_path,bank,m,keys)
+    assert out['questions'][0]['explanation']is None
+    assert journal['receipts'][0]['after']['answerSource']=='official'
+
+def test_unofficial_solution_still_requires_worked_explanation(tmp_path):
+    bank,m,keys=packet(tmp_path);m['admin_decision']['mode']='verified'
+    m['payload']['patch'].update(answerSource='derived',answerKeyRef=None,explanation=None)
+    with pytest.raises(ValueError,match='worked explanation'):apply(tmp_path,bank,m,keys)
+
 @pytest.mark.parametrize('field,value',[
     ('key_status','provisional'),('key_status','superseded'),('paper_id','paper-series-B'),('sha256','b'*64),('kind','reference'),('source_file','other.pdf'),
 ])

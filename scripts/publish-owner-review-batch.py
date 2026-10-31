@@ -44,7 +44,8 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
                     and e.get('answer_text')==opts[ai] for e in p.get('evidence',[]))
                 if not matching_document or not matching_cell:raise ValueError('Missing exact key document, printed question or mapped answer-cell evidence')
             else:raise ValueError('Only verified solutions or exactly mapped final official answers qualify')
-            if len((p['patch'].get('explanation')or'').strip())<20:raise ValueError('A worked explanation is required')
+            explanation=(p['patch'].get('explanation')or'').strip()
+            if (mode=='verified' or explanation) and len(explanation)<20:raise ValueError('A worked explanation is required')
         elif p['kind']in('transcription','source_reference'):
             if m.get('operator_maintenance',{}).get('owner_id')!=m['author_id']:raise ValueError('Explicit owner source adjudication required')
             allowed={'page','qnum'}if p['kind']=='source_reference'else{'question','direction','questionMarkup','optionsMarkup','passage','options','hasDiagram','figureImage','answerIndex'}

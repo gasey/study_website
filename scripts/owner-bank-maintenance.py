@@ -108,9 +108,24 @@ async def run():
  finally:await close_pool()
 asyncio.run(run())
 '''
+
+def require_batch_worker_idle(data):
+ # A single-item timer can publish one member while a batch is still being
+ # queued, making every remaining immutable export refer to an old bank hash.
+ exports_batch=(data.get('operation')=='source-batch' or
+     data.get('operation')=='answer-batch' and len(data.get('repairs',[]))>1
+     and any(r.get('mode')!='needs-review'for r in data['repairs']))
+ if not exports_batch:return
+ for unit in ('ism-bank-review.timer','ism-bank-review.service'):
+  try:state=subprocess.run(['systemctl','--user','is-active',unit],capture_output=True,text=True).stdout.strip()
+  except FileNotFoundError:return  # Hosts without systemd have no such timer.
+  if state in ('active','activating','reloading'):
+   raise ValueError('Pause ism-bank-review.timer and wait for ism-bank-review.service to finish before queuing batch exports; resume the timer after publication.')
+
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--request',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--quota-exemption-run',help='Explicit owner-authorized SSH-only run; normal HTTP/user quotas stay unchanged');p.add_argument('--quota-exemption-reason',help='Owner authorization for this specific maintenance exemption');args=p.parse_args()
  data=json.loads(args.request.read_text())
+ require_batch_worker_idle(data)
  data.pop('_quota_exemption_run',None)
  data.pop('_quota_exemption_authorization',None)
  if args.quota_exemption_run:

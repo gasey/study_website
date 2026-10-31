@@ -94,7 +94,11 @@ async def decide(qid:str,body:Decision,actor:Staff,idempotency_key:Annotated[str
    if not doc:raise HTTPException(422,'Use a current official-key document for this exact paper')
    if not snap['record']['qnum']:raise HTTPException(422,'Record the printed question number before mapping an official key')
    evidence=[{'kind':'official-key','document_id':doc['id'],'sha256':doc['sha256'],'page':body.key_page,'printed_question':str(snap['record']['qnum']),'series':snap['paper']['series'],'answer_text':snap['record']['options'][body.answer_index],'note':body.reason}]
-  patch={'answerIndex':body.answer_index,'answerSource':source,'answerKeyRef':body.document_id if body.mode=='official'else None,'explanation':body.explanation or body.reason}
+  # A mapped examiner key establishes an answer, not a worked explanation.
+  # Keep the audit reason in rationale/evidence instead of manufacturing public
+  # explanation coverage when the optional explanation was left empty.
+  explanation=(body.explanation.strip() or None)if body.mode=='official'else body.explanation or body.reason
+  patch={'answerIndex':body.answer_index,'answerSource':source,'answerKeyRef':body.document_id if body.mode=='official'else None,'explanation':explanation}
   if separate:
    selected=snap['record']['options'][body.answer_index]
    original=snap['record']['options'][snap['record']['answerIndex']]
