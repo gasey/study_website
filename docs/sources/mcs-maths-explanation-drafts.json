@@ -1,0 +1,242 @@
+{
+  "review_date": "2026-11-01",
+  "status": "13 checked local explanation drafts only; no live explanations or answer changes",
+  "bank_sha256": "8e5b9998e87b47aa8cc2dc8cafa303af21c07e3dad112eb7a12b063685d5ea8e",
+  "calculation_checks": "Exact Fraction/integer checks passed for all 13 problems; original PDF pages 8,9,10,12,13 visually inspected; existing own-booklet final key cells rechecked",
+  "drafts": [
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "58314474ea495b301d69",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 60,
+      "physical_pdf_page": 8,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 3,
+      "existing_answer_text": "900",
+      "baseline_sha256": "2b8cc3571656ba3031c99ed13ff41bbe5ae0d07e7a0e8fa8bf5f6bbb0c99f5d5",
+      "proposed_patch": {
+        "explanation": "For annual compounding, interest after two years is P[(1 + r)² − 1]. With r = 12/100, this is P(1.12² − 1) = 0.2544P. Therefore P = 228.96 ÷ 0.2544 = ₹900, printed option D."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "78627a370f53894f6fc8",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 64,
+      "physical_pdf_page": 9,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 1,
+      "existing_answer_text": "16 years",
+      "baseline_sha256": "a444b40d8fa77e1aa5961d16eeacff771c12c0d903a4c76f2aa87fd03aa50b77",
+      "proposed_patch": {
+        "explanation": "Siami is 12 and her brother is 12 ÷ 3 = 4. After t years, 12 + t = 2(4 + t), giving t = 4. Siami will then be 12 + 4 = 16 years old, printed option B."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "360ae53b2e78670e1559",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 67,
+      "physical_pdf_page": 9,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 0,
+      "existing_answer_text": "1 hour 31 minutes",
+      "baseline_sha256": "336666c2cc6266cb701be45df0e911133ca8cd81e8fc84ed1955b1a14082dfdc",
+      "proposed_patch": {
+        "explanation": "The train journey takes 28 + 35 = 63 minutes. The total includes both journeys: 28 + 63 = 91 minutes, or 1 hour 31 minutes, printed option A."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "0752252c6000a07d842c",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 72,
+      "physical_pdf_page": 10,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 2,
+      "existing_answer_text": "` 1600 : ` 2400",
+      "baseline_sha256": "c36f4ce03b2116e3b716995903ed17c6a5bbb52e224f5cc68ad98c49989e7a62",
+      "proposed_patch": {
+        "explanation": "Let the monthly incomes be 2x and 3x, and expenses 5y and 9y. Equal savings give 2x − 5y = 600 and 3x − 9y = 600. Subtraction gives x = 4y. Hence 8y − 5y = 600, so y = 200 and x = 800. The incomes are ₹1600 and ₹2400, printed option C."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "9006373f1e59f25663f3",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 73,
+      "physical_pdf_page": 10,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 3,
+      "existing_answer_text": "6.09%",
+      "baseline_sha256": "27043ca926bfd37b70895bcf7fdb7e29c217ebddd0c2d7e781a5afe5273b3fbe",
+      "proposed_patch": {
+        "explanation": "A nominal annual rate of 6% compounded half-yearly gives 3% per half-year. The annual growth factor is (1.03)² = 1.0609, so the effective annual rate is (1.0609 − 1) × 100 = 6.09%, printed option D."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "33a12b82079ac9613bf3",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 76,
+      "physical_pdf_page": 10,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 1,
+      "existing_answer_text": "24",
+      "baseline_sha256": "cb9fb3f555763f5451fc673d16c7b19ae8702abd39b8953280f7e00d68284eda",
+      "proposed_patch": {
+        "explanation": "The job needs 24 × 16 = 384 man-days or 32 × 24 = 768 woman-days, so one woman has half a man’s daily work rate. The starting group of 16 men and 16 women therefore works at 24 men’s rate. In 12 days it completes 24 × 12 = 288 man-days, leaving 96. Finishing that in two days needs a total rate of 48 men, so add 48 − 24 = 24 men, printed option B."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "62340d2c4b6054a0cb4a",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 85,
+      "physical_pdf_page": 12,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 2,
+      "existing_answer_text": "34",
+      "baseline_sha256": "76176136aac85d31c967113494a70ccbf876bd1d9a6a7cfcef2ba189d4be4097",
+      "proposed_patch": {
+        "explanation": "The first term is 7 and the common difference is 13 − 7 = 6. Using aₙ = a₁ + (n − 1)d gives 205 = 7 + 6(n − 1). Thus n = (205 − 7)/6 + 1 = 34, printed option C."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "1b92b275eacda34f272d",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 88,
+      "physical_pdf_page": 12,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 3,
+      "existing_answer_text": "120 litres",
+      "baseline_sha256": "86d8f6ea03a8e5c2b139077f7678ce044ba7699c3b2be43c68c10a2925ad8759",
+      "proposed_patch": {
+        "explanation": "The initial 120 litres contains 80 litres of milk and 40 litres of water. Adding water keeps the milk at 80 litres. For milk:water = 1:2, the water must become 160 litres. Add 160 − 40 = 120 litres, printed option D."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "cebc68aadb0f2ee7d61d",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 91,
+      "physical_pdf_page": 12,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 3,
+      "existing_answer_text": "1920",
+      "baseline_sha256": "1735104a06e4348edab3ac84ecc1fb51d2a4628c9737d386290779484dfee244",
+      "proposed_patch": {
+        "explanation": "Orient each plank with its 5 m side along the pit’s 40 m length, 4 m side along its 12 m width, and 2 m side along its 160 m depth. This fits 8 × 3 × 80 = 1920 planks without leftover space. It also equals the pit volume divided by one plank’s volume, printed option D."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "7b950aaccea7de1f7a87",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 93,
+      "physical_pdf_page": 12,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 0,
+      "existing_answer_text": "1",
+      "baseline_sha256": "8ae044864b16b57dec3f900802fcfa08350159794f7f80344ad1f84a02b27bde",
+      "proposed_patch": {
+        "explanation": "23 × 45 = 1035, so 1057 leaves remainder 22 on division by 23. Adding 23 − 22 = 1 gives 1058 = 23 × 46. The least required addend is 1, printed option A."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "e26b6408661924b932dc",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 97,
+      "physical_pdf_page": 13,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 2,
+      "existing_answer_text": "6 hrs 40 mins",
+      "baseline_sha256": "bd3a6f2bd600da97dabd0167b022920b52cdf43db988263ff8a8184a543e627d",
+      "proposed_patch": {
+        "explanation": "At constant speed, travel time is proportional to distance. The time for 25 km is 4 × (25/15) = 20/3 hours. This is 6 hours and 40 minutes, printed option C."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "16f99118d7902b26bbc4",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 98,
+      "physical_pdf_page": 13,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 1,
+      "existing_answer_text": "450",
+      "baseline_sha256": "d0dd483732c7184b242448ff80eab33b7a36ec94821962a04e3a5958507d2e2c",
+      "proposed_patch": {
+        "explanation": "20% of x = 90 means 0.2x = 90. Dividing by 0.2 gives x = 450, printed option B."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    },
+    {
+      "status": "checked-local-draft-not-published",
+      "appearance_id": "3958619a0330e05683f8",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 99,
+      "physical_pdf_page": 13,
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "key_document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+      "key_page": 1,
+      "existing_answer_index": 1,
+      "existing_answer_text": "Rs. 2820",
+      "baseline_sha256": "cee7d524807b0189d26b416054d93f71ecbc307f222a8969932a9b96111f1ad1",
+      "proposed_patch": {
+        "explanation": "A 6% loss on the ₹3000 cost price is 0.06 × 3000 = ₹180. The selling price is therefore 3000 − 180 = ₹2820, printed option B."
+      },
+      "policy": "Reviewer-written working for an existing official-key answer, not an official worked solution or independent peer review. Recheck current source/key/answer baseline before ordinary audited publication; preserve answer and provenance."
+    }
+  ]
+}

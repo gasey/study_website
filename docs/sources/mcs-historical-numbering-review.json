@@ -1,0 +1,496 @@
+{
+  "review_date": "2026-11-01",
+  "status": "Read-only audit and unapplied draft packet; website staff quota 500/500",
+  "bank_sha256": "8e5b9998e87b47aa8cc2dc8cafa303af21c07e3dad112eb7a12b063685d5ea8e",
+  "scope": "Six 2014/2016 original booklets; numbering/page inventory, not source/key/simulation certification",
+  "source_papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/2.MCS Combined 2016 Preliminary Exam Paper I - Series A.pdf",
+      "sha256": "2062c9d9a030ade87dccc919a459d6b37cf19bd131806690f81d9273bc8c1e68",
+      "source_position_count": 100,
+      "bank_record_count": 100
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/3.MCS Combined 2016 Preliminary Exam Paper I - Series B.pdf",
+      "sha256": "c0d5049fb41ed513bee27f991ec34e755218196eb66f81393158a21ae191d35d",
+      "source_position_count": 100,
+      "bank_record_count": 100
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/4.MCS Combined 2016 Preliminary Exam Paper I - Series C.pdf",
+      "sha256": "bb0018100fc7af4867b2996e27e2024ddac27920392f4472abaa7bd80f2c13f0",
+      "source_position_count": 100,
+      "bank_record_count": 102
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/5.MCS Combined 2016 Preliminary Exam Paper I - Series D.pdf",
+      "sha256": "4711bda35420e78cc2aae6df4bec327a71e2d0736f6ef5a9a9140611b2c98c59",
+      "source_position_count": 100,
+      "bank_record_count": 100
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper I.pdf",
+      "sha256": "828290773b005658a97ce8db0d7c5029c3e22061f487e7e181d50596bb439b51",
+      "source_position_count": 100,
+      "bank_record_count": 100
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "source_position_count": 100,
+      "bank_record_count": 99
+    }
+  ],
+  "findings": [
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/4.MCS Combined 2016 Preliminary Exam Paper I - Series C.pdf",
+      "source_sha256": "bb0018100fc7af4867b2996e27e2024ddac27920392f4472abaa7bd80f2c13f0",
+      "kind": "duplicate-printed-position",
+      "qnum": 4,
+      "source": {
+        "qnum": 4,
+        "page": 1,
+        "source_body_sha256": "9070842f9867489fd9013fb493653c36dac0a4ace3ed9827e02ed70f762f6438"
+      },
+      "whitespace_normalized_text_and_ordered_options_agree": true,
+      "records": [
+        {
+          "id": "7aeee7f2e5d26e2d13b1",
+          "page": 1,
+          "answer_source": "inferred",
+          "baseline_sha256": "3f92b8f9f46076c35a2da97cb6dcb0a5ec0238ecdbca0ae9b7ff7d85019f715c"
+        },
+        {
+          "id": "b6a58e2ea6c8e2b6e3b5",
+          "page": 1,
+          "answer_source": "derived",
+          "baseline_sha256": "248b3a73b050b9e9a63e9a027c3d8f6f1831860a58f181c9e95123583c6406e0"
+        }
+      ],
+      "action": "Review canonical/appearance/history links before any retirement or merge; transfer no answer."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/4.MCS Combined 2016 Preliminary Exam Paper I - Series C.pdf",
+      "source_sha256": "bb0018100fc7af4867b2996e27e2024ddac27920392f4472abaa7bd80f2c13f0",
+      "kind": "duplicate-printed-position",
+      "qnum": 86,
+      "source": {
+        "qnum": 86,
+        "page": 7,
+        "source_body_sha256": "af47aeda1a0c4f6c05b56a4e9c60328b6622af69b918ef7edf1d998af9d69b53"
+      },
+      "whitespace_normalized_text_and_ordered_options_agree": true,
+      "records": [
+        {
+          "id": "1e14cf94e2a7bc86819b",
+          "page": 7,
+          "answer_source": "inferred",
+          "baseline_sha256": "586e42ddd0fd805691b785ab52f7d040377f77375699abc70747bdc75d3b3771"
+        },
+        {
+          "id": "6fb58fc37b563672712b",
+          "page": 7,
+          "answer_source": "inferred",
+          "baseline_sha256": "fd51680edc0f0221acee0c3333906fe3332e5b7d11ef16557d8d05be86a1a1d5"
+        }
+      ],
+      "action": "Review canonical/appearance/history links before any retirement or merge; transfer no answer."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "kind": "physical-page-mismatch",
+      "qnum": 11,
+      "appearance_id": "c9681302eb41b15e60e8",
+      "current_page": 2,
+      "expected_page": 3,
+      "baseline_sha256": "55158203325c60461a73824cb29d81cf46e9d09428b9bed2f716342d697cfef7",
+      "action": "Audited source_reference correction; retain preceding shared passage context."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "kind": "physical-page-mismatch",
+      "qnum": 12,
+      "appearance_id": "cb80e4c5ba56156b17c7",
+      "current_page": 2,
+      "expected_page": 3,
+      "baseline_sha256": "caf2a11cacb617adf1348cf7d4fdbdbf3b5c24d759a210edeb8a347ab8d414ac",
+      "action": "Audited source_reference correction; retain preceding shared passage context."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "kind": "missing-source-appearance",
+      "qnum": 39,
+      "source": {
+        "qnum": 39,
+        "page": 6,
+        "source_body_sha256": "7ae3778f9cfa5784fb072e3c9b7fce1d844b347475dcedc16c9c67511986272a"
+      },
+      "action": "Prepare unanswered original-source restoration; do not infer a key."
+    }
+  ],
+  "additional_source_issue": {
+    "appearance_id": "a5cea3f01a90fee6cdc9",
+    "qnum": 38,
+    "issue": "Missing direct and group diagram image",
+    "source_page": 6
+  },
+  "source_asset": {
+    "path": "images/page-renders/c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2.png",
+    "sha256": "c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2",
+    "status": "Prepared locally only; not published or mirrored remotely"
+  },
+  "maintenance_items": [
+    {
+      "proposal": {
+        "kind": "source_reference",
+        "canonical_id": "cq_2091dac911989280",
+        "appearance_id": "c9681302eb41b15e60e8",
+        "subject_id": "english",
+        "title": "Correct original MCS 2014 II question page 11",
+        "patch": {
+          "page": 3
+        },
+        "rationale": "Inspected original 2014 Paper II PDF page 3: printed Q11 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 3,
+            "note": "Inspected original 2014 Paper II PDF page 3: printed Q11 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance."
+          }
+        ]
+      },
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "reason": "Inspected original 2014 Paper II PDF page 3: printed Q11 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance.",
+      "expected_source": {
+        "question": "This passage could most probably be a part of",
+        "options": [
+          "The Indian Constitution",
+          "A book on political science",
+          "A speech",
+          "A personal letter"
+        ],
+        "page": 2
+      },
+      "prerequisites": [
+        "Restore/preserve the complete shared passage spanning physical pages 2–3 before moving the question locator to page 3. A locator-only update would lose the current start-of-passage access.",
+        "Publish context transcriptions first, sync/verify, then prepare fresh source-reference exports. Never queue overlapping canonical targets in one batch."
+      ]
+    },
+    {
+      "proposal": {
+        "kind": "source_reference",
+        "canonical_id": "cq_67f87c47cc788d35",
+        "appearance_id": "cb80e4c5ba56156b17c7",
+        "subject_id": "english",
+        "title": "Correct original MCS 2014 II question page 12",
+        "patch": {
+          "page": 3
+        },
+        "rationale": "Inspected original 2014 Paper II PDF page 3: printed Q12 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 3,
+            "note": "Inspected original 2014 Paper II PDF page 3: printed Q12 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance."
+          }
+        ]
+      },
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "reason": "Inspected original 2014 Paper II PDF page 3: printed Q12 is on physical page 3, while the shared passage starts on page 2. Correct the question locator only and retain the preceding passage context and existing unverified answer provenance.",
+      "expected_source": {
+        "question": "According to the author, our national objective is to",
+        "options": [
+          "Create equal opportunities for all",
+          "End economic exploitation in the country",
+          "Promote individual freedom and prosperity",
+          "Promote democracy, socialism and secularism"
+        ],
+        "page": 2
+      },
+      "prerequisites": [
+        "Restore/preserve the complete shared passage spanning physical pages 2–3 before moving the question locator to page 3. A locator-only update would lose the current start-of-passage access.",
+        "Publish context transcriptions first, sync/verify, then prepare fresh source-reference exports. Never queue overlapping canonical targets in one batch."
+      ]
+    },
+    {
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_239a02a46035ba82",
+        "appearance_id": "a5cea3f01a90fee6cdc9",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Restore missing original diagram for MCS 2014 II Q38",
+        "patch": {
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2.png",
+          "answerIndex": null
+        },
+        "rationale": "Inspected original 2014 Paper II PDF page 6 and printed Q38. The question depends on four line figures, but both its direct figureImage and inherited figure-group image are absent. Attach the exact original full source page, retain the shared odd-one-out direction and withdraw no supported key (the stored index is -1, source is null). No answer is assigned or guessed.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 6,
+            "note": "Inspected original 2014 Paper II PDF page 6 and printed Q38. The question depends on four line figures, but both its direct figureImage and inherited figure-group image are absent. Attach the exact original full source page, retain the shared odd-one-out direction and withdraw no supported key (the stored index is -1, source is null). No answer is assigned or guessed."
+          }
+        ]
+      },
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "reason": "Inspected original 2014 Paper II PDF page 6 and printed Q38. The question depends on four line figures, but both its direct figureImage and inherited figure-group image are absent. Attach the exact original full source page, retain the shared odd-one-out direction and withdraw no supported key (the stored index is -1, source is null). No answer is assigned or guessed.",
+      "expected_source": {
+        "question": "In each of the four figures marked (1), (2), (3) and (4), three are similar in a certain manner and one figure is not like the others. Choose the figure which is different from the rest.",
+        "options": [
+          "1",
+          "2",
+          "3",
+          "4"
+        ],
+        "page": 6,
+        "figureImage": null,
+        "hasDiagram": true
+      },
+      "current_live_metadata": {
+        "id": "a5cea3f01a90fee6cdc9",
+        "canonical_id": "cq_239a02a46035ba82",
+        "is_primary": true,
+        "status": "live",
+        "source_defect": null
+      }
+    }
+  ],
+  "missing_question_draft": {
+    "status": "Not imported; use trusted unanswered original-source ingestion, not community authoring that requires a derived answer",
+    "record": {
+      "id": "b7fe3d3aa84860bbb9fc",
+      "paperId": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "type": "mcq",
+      "qnum": 39,
+      "page": 6,
+      "question": "Choose the figure which is different from the rest.",
+      "direction": "Directions to solve (Questions 38 – 39): In each of the four figures marked (1), (2), (3) and (4), three are similar in a certain manner and one figure is not like the others. Choose the figure which is different from the rest.",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "answerIndex": null,
+      "answerSource": "none",
+      "explanation": null,
+      "marks": null,
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2.png",
+      "classifications": [],
+      "origin": {
+        "kind": "restored-original-paper",
+        "source_sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+        "review_date": "2026-11-01",
+        "text_status": "Prepared source-only draft; printed shared directions and original figure retained; no key matched"
+      }
+    },
+    "question_wording_note": "Question text is drawn from the printed shared direction; figures are preserved in the original page image.",
+    "proposed_learning_path": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "requires": [
+      "Recheck exact bank/PDF/source baseline and missing printed position",
+      "Use a bounded original-source import with backup, field diff and normal sync; never bypass an importer scope guard",
+      "Publish/mirror exact source image before exposing the new appearance",
+      "Keep answer unsolved; do not transfer Q38 answer or infer Q39 key"
+    ]
+  },
+  "duplicate_review": {
+    "status": "No records merged, removed, held or retired",
+    "live_context": [
+      {
+        "id": "1e14cf94e2a7bc86819b",
+        "canonical_id": "cq_19d4b47311fc1fe5",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "inferred",
+        "attempts": 0,
+        "contributions": 0
+      },
+      {
+        "id": "6fb58fc37b563672712b",
+        "canonical_id": "cq_e028ceda2594ec3c",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "inferred",
+        "attempts": 0,
+        "contributions": 0
+      },
+      {
+        "id": "7aeee7f2e5d26e2d13b1",
+        "canonical_id": "cq_dd144ef8928630d4",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "inferred",
+        "attempts": 0,
+        "contributions": 0
+      },
+      {
+        "id": "b6a58e2ea6c8e2b6e3b5",
+        "canonical_id": "cq_adbc4fd7c0302d33",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "derived",
+        "attempts": 0,
+        "contributions": 0
+      },
+      {
+        "id": "c9681302eb41b15e60e8",
+        "canonical_id": "cq_2091dac911989280",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "inferred",
+        "attempts": 0,
+        "contributions": 0
+      },
+      {
+        "id": "cb80e4c5ba56156b17c7",
+        "canonical_id": "cq_67f87c47cc788d35",
+        "is_primary": true,
+        "status": "live",
+        "answer_source": "inferred",
+        "attempts": 0,
+        "contributions": 0
+      }
+    ],
+    "live_relationship_context": [
+      {
+        "id": "1e14cf94e2a7bc86819b",
+        "mock_links": 0,
+        "duplicate_links": 0
+      },
+      {
+        "id": "6fb58fc37b563672712b",
+        "mock_links": 0,
+        "duplicate_links": 0
+      },
+      {
+        "id": "7aeee7f2e5d26e2d13b1",
+        "mock_links": 0,
+        "duplicate_links": 0
+      },
+      {
+        "id": "b6a58e2ea6c8e2b6e3b5",
+        "mock_links": 0,
+        "duplicate_links": 0
+      }
+    ],
+    "policy": "Matching stem/ordered options at one printed position supports a duplicate-import finding, not an answer upgrade. Preserve IDs/history and use an audited relationship/retirement workflow. Snapshot counts do not exhaust every possible reference.",
+    "implementation_note": "Existing duplicate publication records a relationship link; that alone does not remove repeated printed source appearances or prove a corrected 100-position booklet. Use an explicit audited merge/retirement design that persists across sync and preserves existing IDs and history."
+  },
+  "registered_source_document": {
+    "id": "doc_27f320fe0ca6eed357e122a2",
+    "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+    "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+    "kind": "paper"
+  },
+  "shared_passage_transcriptions": [
+    {
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_2091dac911989280",
+        "appearance_id": "c9681302eb41b15e60e8",
+        "subject_id": "english",
+        "title": "Restore complete shared source passage before locator correction",
+        "patch": {
+          "passage": "We in India have our own special problems. No one can deny that some of them are of a serious nature and must be attacked with vigour and determination. Our national objectives have been defined clearly. We aim at providing every citizen with the basic necessities and complete freedom to lead a life of his or her own choice. We aim to create a democratic society, strong and free, in which every citizen, irrespective of his religious beliefs, will occupy an equal and honoured place, and be given full and equal opportunities for growth and service. We aim at ending untouchability and doing away with the present inequalities of status and wealth. We are opposed to the concentration of wealth in a few hands."
+        },
+        "rationale": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 2,
+            "note": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately."
+          },
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 3,
+            "note": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately."
+          }
+        ]
+      },
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "reason": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately.",
+      "expected_source": {
+        "question": "This passage could most probably be a part of",
+        "options": [
+          "The Indian Constitution",
+          "A book on political science",
+          "A speech",
+          "A personal letter"
+        ],
+        "page": 2,
+        "passage": null
+      }
+    },
+    {
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_67f87c47cc788d35",
+        "appearance_id": "cb80e4c5ba56156b17c7",
+        "subject_id": "english",
+        "title": "Restore complete shared source passage before locator correction",
+        "patch": {
+          "passage": "We in India have our own special problems. No one can deny that some of them are of a serious nature and must be attacked with vigour and determination. Our national objectives have been defined clearly. We aim at providing every citizen with the basic necessities and complete freedom to lead a life of his or her own choice. We aim to create a democratic society, strong and free, in which every citizen, irrespective of his religious beliefs, will occupy an equal and honoured place, and be given full and equal opportunities for growth and service. We aim at ending untouchability and doing away with the present inequalities of status and wealth. We are opposed to the concentration of wealth in a few hands."
+        },
+        "rationale": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 2,
+            "note": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately."
+          },
+          {
+            "kind": "paper",
+            "document_id": "doc_27f320fe0ca6eed357e122a2",
+            "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+            "page": 3,
+            "note": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately."
+          }
+        ]
+      },
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "source_sha": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "reason": "Inspected the shared passage for printed Q11–14 across original physical PDF pages 2 and 3; retain it as reading context while correcting the question locator separately.",
+      "expected_source": {
+        "question": "According to the author, our national objective is to",
+        "options": [
+          "Create equal opportunities for all",
+          "End economic exploitation in the country",
+          "Promote individual freedom and prosperity",
+          "Promote democracy, socialism and secularism"
+        ],
+        "page": 2,
+        "passage": null
+      }
+    }
+  ],
+  "publication_sequence": [
+    "Phase 1: shared-passage transcriptions for Q11/Q12 and original diagram attachment for Q38, distinct canonical targets; publish and verify.",
+    "Phase 2: refresh baselines, then source-reference locator changes for Q11/Q12.",
+    "Original-source Q39 ingestion and duplicate retirement/merge are separate guarded workflows, not community answer authoring or blind JSON deletion."
+  ]
+}

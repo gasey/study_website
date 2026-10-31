@@ -882,3 +882,12 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Prepare13source-onlytranscriptiondrafts from inspected pages for audited publication later; keep all answers, source flags and scoring holds unchanged.
 - [x] Retain the02:10ISTCodexresetcontinuation and add one21:35ISTwebsiteallowancecontinuation on1November, both reading current checkpoints/quotas.
 - [ ] Recheck staff allowance, then publish80preparedrecentkeymappings and source repairs using the audited workflow. Finish source flags, recovered booklet/final-key checks, explanations and historical numbering before original-paper simulation.2012/2013remainsdeferred.
+
+### 1 November 2026 — Scheduled reset review and historical source audit
+
+- [x] Execute early continuation; confirm Codex reset, website quota500/500, completed tags and no outstanding exports. Preserve canonical bank unchanged.
+- [x] Audit600printedpositions across six imported2014/2016sourcePDFs; identify two duplicate imports, missing2014II Q39andtwo wrong page locators, plus missingQ38image. Save unapplied source/identity/history packet.
+- [x] Add reproducible read-only audit CLI with13focusedtests; stage13checkedmathsexplanations for existing official answers without publishing or inventing peer review.
+- [x] Discover/hash four unimported image-only2016-labelledPaperIIA–Dscans; inspect source headers/Q100andrecordOCRlimits and exact PaperI B cover-rule evidence.
+- [ ] At21:35ISToronceactualquotaallows: reprepare/publish80recentkeymappings and reviewed source/explanation drafts through ordinary audited workflows. Historical duplicate retirement/new original-source ingestion need explicit history-preserving workflows, not community answer invention or relationship links alone.
+- [ ] Plan careful source-only intake for the four scanned PaperIIbooklets, verify sitting/year/source and every printed position/figure/option, then version the collection. Do not blindly import legacyOCR or declare400verifiedquestions.2012/2013remainsdeferred; simulation stays gated.
