@@ -858,3 +858,12 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Keep official-key audit notes separate from optional worked explanations; retain strict explanation requirements for derived solutions and community MCQs.
 - [x] Prevent owner export batches from racing the single-item publisher; reconcile99staleunappliedexports with unchanged source checks, immutable history and fresh decisions. Verify314backendtests and all live published values.
 - [ ] Review148remainingrecenttaggaps (including three option extraction defects and three compensated entries); recovered600stillneed classification and source/key review. Continue useful worked explanations and historical2014/2016numbering audits before authentic simulation.
+
+### 31 October 2026 — Recent MCS tags completed; continuation scheduled
+
+- [x] Directly classify the148remainingrecentappearances with question-level evidence and a bounded workshop merge; preserve every non-classification field.
+- [x] Restore2023II C Q86/Q87/Q96transcriptions through audited source publication while preserving compensation holds and unresolved-source review.
+- [x] Publish60additionalexactfinal-keyanswers within ordinary staff quotas; retain honest missing worked explanations.
+- [x] Exclude private-font glyph corruption and changed transcriptions from automatic key mapping; require explicit source/manual key review.
+- [x] Schedule one same-thread continuation for1November02:10IST after the reported Codex reset, using latest checkpoints and separate website quotas.
+- [ ] Continue80remainingautomatickeycandidates as rolling staff allowance permits, repairedQ87manualmapping, Q39root-glyph repair and three recent source-flag decisions. Recovered600classifications/36optiongaps, explanations and historical numbering remain before simulation.

@@ -19,3 +19,14 @@ def test_image_table_requires_exact_columns_and_compensated_positions():
     with pytest.raises(ValueError):CELLS.parse_image_key(page,[38])
     with pytest.raises(ValueError):CELLS.parse_image_key({'rows':['A '*25]*3},[])
     with pytest.raises(ValueError):CELLS.parse_image_key({'rows':['Z '+'A '*24]+['A '*25]*3},[])
+
+
+def test_repaired_source_cannot_inherit_an_ocr_based_key_mapping():
+    original={'question':'The value of', 'options':['7 + 2\uf035','1','2','3'], 'page':12}
+    assert CELLS.transcription_gate(original,original)=='unresolved_font_glyphs'
+    repaired={**original,'question':'The value of (√5 + √2)² is',
+              'options':['7 + 2√5','1 + 5√2','7 + 2√10','7 − 2√10']}
+    assert CELLS.transcription_gate(repaired,original)=='changed_transcription_requires_manual_mapping'
+    assert CELLS.transcription_gate(repaired,repaired) is None
+    assert CELLS.transcription_gate({**repaired,'page':13},repaired)=='changed_transcription_requires_manual_mapping'
+    assert CELLS.transcription_gate({**repaired,'options':list(reversed(repaired['options']))},repaired)=='changed_transcription_requires_manual_mapping'

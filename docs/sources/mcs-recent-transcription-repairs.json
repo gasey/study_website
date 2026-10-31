@@ -1,0 +1,92 @@
+{
+  "review_date": "2026-10-31",
+  "scope": "Three source-only transcriptions; existing compensation hold/source defect preserved",
+  "repairs": [
+    {
+      "appearance_id": "dc295226480faef161b0",
+      "canonical_id": "cq_bdc2e1d6ead3ed88",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "page": 12,
+      "publication_id": "pub_b9d43df8184c4ad98124cfcde9d89c76",
+      "before": {
+        "question": "A wire is looped in the form of a circle of radius 28 cm. It is rebent into a square form. Determine the\n     perimeter of the square.",
+        "options": [
+          "44 cm",
+          "48 cm",
+          "56 cm",
+          "64 cm\n\n                    5  2  is\n                                2"
+        ]
+      },
+      "patch": {
+        "options": [
+          "44 cm",
+          "48 cm",
+          "56 cm",
+          "64 cm"
+        ],
+        "answerIndex": null
+      },
+      "rationale": "Inspected original physical PDF page 12, printed Q86. Its option D ends at 64 cm. Remove the formula belonging to Q87 that extraction spilled into this option. The final-key compensation hold must remain; no replacement answer is assigned.",
+      "answer_assigned": false
+    },
+    {
+      "appearance_id": "cb1969597c5aafc0f473",
+      "canonical_id": "cq_b80fd23c3bda3290",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "page": 12,
+      "publication_id": "pub_1bd7758e14104af39a89fb9dfe645580",
+      "before": {
+        "question": "The value of",
+        "options": [
+          " 7  2 5 ",
+          "1  5 2 ",
+          " 7  2 10 ",
+          " 7  2 10 "
+        ]
+      },
+      "patch": {
+        "question": "The value of (√5 + √2)² is",
+        "options": [
+          "(7 + 2√5)",
+          "(1 + 5√2)",
+          "(7 + 2√10)",
+          "(7 − 2√10)"
+        ],
+        "answerIndex": null
+      },
+      "rationale": "Inspected original physical PDF page 12, printed Q87. Restore the squared sum of square roots and all four surd choices exactly in printed A/B/C/D order, replacing missing operators and private-font glyphs. Original source image remains authoritative; no answer is assigned.",
+      "answer_assigned": false
+    },
+    {
+      "appearance_id": "b5dbd9725c082aa7795b",
+      "canonical_id": "cq_353d92f350df4e54",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "page": 13,
+      "publication_id": "pub_f22b2e405bf54a38a286b339c4a63059",
+      "before": {
+        "question": "A and B together can do a piece of work in 12 days, while B alone can finish it in 30 days. Find the\n        workdone by A in 1 day.\n               1                                                  1",
+        "options": [
+          "See printed option A in the source image",
+          "20                                                 12\n               1                                                  1",
+          "See printed option C in the source image",
+          "30                                                 60"
+        ]
+      },
+      "patch": {
+        "question": "A and B together can do a piece of work in 12 days, while B alone can finish it in 30 days. Find the work done by A in 1 day.",
+        "options": [
+          "1/20",
+          "1/12",
+          "1/30",
+          "1/60"
+        ],
+        "answerIndex": null
+      },
+      "rationale": "Inspected original physical PDF page 13, printed Q96. Restore the four printed fractions 1/20, 1/12, 1/30 and 1/60 in A/B/C/D order and remove stray numerators from the stem. Keep the unresolved-source flag until a separate audited defect decision; no answer is assigned.",
+      "answer_assigned": false
+    }
+  ]
+}

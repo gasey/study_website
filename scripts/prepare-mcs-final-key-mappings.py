@@ -6,6 +6,7 @@ import importlib.util
 import json
 import re
 import subprocess
+import unicodedata
 from collections import Counter
 from pathlib import Path
 
@@ -13,6 +14,16 @@ ROOT = Path(__file__).resolve().parents[1]
 B = ROOT.parent / 'mpsc-question-bankv2'
 SPEC = importlib.util.spec_from_file_location('mcs_extract', ROOT / 'scripts/restore-mcs-recent-papers.py')
 EXTRACT = importlib.util.module_from_spec(SPEC); SPEC.loader.exec_module(EXTRACT)
+
+
+def transcription_gate(question, extracted):
+    """A repaired source needs explicit remapping, never a stale OCR baseline."""
+    text = '\n'.join([question['question'], *question['options']])
+    if any(unicodedata.category(char) == 'Co' for char in text):
+        return 'unresolved_font_glyphs'
+    if any(question[field] != extracted[field] for field in ('question', 'options', 'page')):
+        return 'changed_transcription_requires_manual_mapping'
+    return None
 
 
 def parse_text_key(text, compensated):
@@ -72,7 +83,7 @@ def prepare(output):
         text = subprocess.run(['pdftotext', '-layout', str(pdf), '-'], capture_output=True, text=True, check=True).stdout
         for row in EXTRACT.extract(text):
             source_rows[p['paper_id'], row['qnum']] = row
-    ready = []; pending = Counter()
+    ready = []; pending = Counter(); source_review = []
     for q in bank['questions']:
         ident = (q['paperId'], q.get('qnum'))
         if ident not in targets:
@@ -84,8 +95,12 @@ def prepare(output):
             pending['source_defect'] += 1; continue
         if not any(c.get('is_primary') and c.get('review_status') == 'approved' for c in q.get('classifications', [])):
             pending['classification'] += 1; continue
-        if q['question'] != row['question'] or q['options'] != row['options'] or q['page'] != row['page']:
-            raise ValueError('Printed source transcription changed: ' + q['id'])
+        gate = transcription_gate(q, row)
+        if gate:
+            pending[gate] += 1
+            source_review.append({'appearance_id': q['id'], 'paper_id': q['paperId'],
+                                  'printed_question': q['qnum'], 'reason': gate})
+            continue
         if q.get('answerIndex') is not None or q.get('answerSource') != 'none':
             pending['already_answered'] += 1; continue
         letter = key['answers'][q['qnum']]
@@ -96,6 +111,7 @@ def prepare(output):
             'key_sha256': key['key_sha256'], 'key_file': key['final_key_file'], 'key_letter': letter,
             'answer_index': 'ABCD'.index(letter), 'expected_source': expected_source})
     result = {'bank_sha256': hashlib.sha256(raw).hexdigest(), 'ready': ready, 'pending': dict(pending),
+              'manual_source_review': source_review,
               'policy': 'Exact booklet key cells and original PDF positions. No answer letter copied between series. No worked explanation inferred.'}
     (output / 'mappings.json').write_text(json.dumps(result, ensure_ascii=False, indent=2) + '\n')
     (output / 'keys.json').write_text(json.dumps(keys, indent=2) + '\n')
