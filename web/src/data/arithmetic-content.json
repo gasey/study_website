@@ -1,0 +1,580 @@
+[
+  {
+    "id": "num",
+    "name": "Number System, Surds & Roots",
+    "analogy": "A surd like √2 is a number that refuses to be written neatly as a fraction — like a length that never lands exactly on a ruler mark. **Rationalising** just tidies the fraction so the messy root sits on top, not underneath.",
+    "explain": "Numbers split into natural, integer, rational and irrational. A perfect square has every prime factor to an even power; a perfect cube has every prime factor to a power that is a multiple of three. To simplify a surd fraction, multiply top and bottom by the conjugate.",
+    "formulas": [
+      "√(a·b) = √a · √b",
+      "(a+√b)(a−√b) = a² − b",
+      "Perfect square ⇒ every prime power is even",
+      "Perfect cube ⇒ every prime power is a multiple of 3"
+    ],
+    "variant": {
+      "q": "Smallest number that 1176 must be multiplied by to become a perfect square?",
+      "options": [
+        "3",
+        "6",
+        "2",
+        "7"
+      ],
+      "answer": 1,
+      "solution": "1176 = 2³·3·7². The 2³ needs one more 2 and the lone 3 needs another 3 ⇒ ×6 = 7056 = 84²."
+    }
+  },
+  {
+    "id": "hcflcm",
+    "name": "HCF & LCM",
+    "analogy": "**HCF** is the largest identical tile that paves two rooms exactly. **LCM** is the soonest two blinking lights flash together again.",
+    "explain": "HCF is the biggest number dividing both; LCM is the smallest number both divide into. The product of any two numbers equals HCF × LCM, which instantly gives a missing number.",
+    "formulas": [
+      "HCF × LCM = product of the two numbers",
+      "Missing number = (HCF × LCM) ÷ known number",
+      "Divisibility add/subtract: find the nearest multiple"
+    ],
+    "variant": {
+      "q": "HCF of two numbers is 8 and LCM is 96. One number is 24. The other?",
+      "options": [
+        "32",
+        "24",
+        "16",
+        "48"
+      ],
+      "answer": 0,
+      "solution": "Other = 8×96 ÷ 24 = 32."
+    }
+  },
+  {
+    "id": "simp",
+    "name": "Simplification (BODMAS)",
+    "analogy": "Like following a recipe's steps in order — you cream the butter before you bake, never after. And 'of' is sneaky: it means multiply.",
+    "explain": "Resolve in order: Brackets, Of, Division & Multiplication (left to right), then Addition & Subtraction. Spot a³+b³ / a³−b³ patterns to dodge ugly cube arithmetic.",
+    "formulas": [
+      "B · O · D · M · A · S",
+      "'of' means ×",
+      "(a³+b³) ÷ (a²−ab+b²) = a+b"
+    ],
+    "variant": {
+      "q": "Simplify: 12 + 8 × 3 − 6 ÷ 2",
+      "options": [
+        "33",
+        "27",
+        "30",
+        "21"
+      ],
+      "answer": 0,
+      "solution": "× and ÷ first: 24 and 3 ⇒ 12 + 24 − 3 = 33."
+    }
+  },
+  {
+    "id": "ratio",
+    "name": "Ratio & Proportion",
+    "analogy": "A recipe scaled up keeps the same ratio of flour to sugar. To chain a:b and b:c, make the shared term b equal in both — like matching gears so they mesh.",
+    "explain": "Convert a ratio to 'parts', find the value of one part, then scale. To combine a:b and b:c, scale each so b is the same number.",
+    "formulas": [
+      "Total = sum of all ratio parts",
+      "Chain a:b & b:c by equalising b",
+      "One part = total ÷ (sum of parts)"
+    ],
+    "variant": {
+      "q": "If a:b = 3:4 and b:c = 6:7, then a:c?",
+      "options": [
+        "9:14",
+        "3:7",
+        "2:3",
+        "9:7"
+      ],
+      "answer": 0,
+      "solution": "Make b = 12: a:b = 9:12, b:c = 12:14 ⇒ a:c = 9:14."
+    }
+  },
+  {
+    "id": "pct",
+    "name": "Percentage",
+    "analogy": "A 20% rise then a 20% fall does NOT cancel — you end lower, because the fall is taken on a bigger number. Percentage changes multiply, they never add.",
+    "explain": "Percent means 'per hundred'. For successive changes, multiply the growth factors. Pass/fail and election problems are just percentages of a hidden total.",
+    "formulas": [
+      "x% of N = xN/100",
+      "Successive r₁, r₂ ⇒ net = (1+r₁)(1+r₂) − 1",
+      "Find total when a % is known, then scale"
+    ],
+    "variant": {
+      "q": "A number rises 25% then falls 20%. Net change?",
+      "options": [
+        "0%",
+        "5% rise",
+        "5% fall",
+        "45% rise"
+      ],
+      "answer": 0,
+      "solution": "1.25 × 0.80 = 1.00 ⇒ no net change."
+    }
+  },
+  {
+    "id": "pl",
+    "name": "Profit & Loss",
+    "analogy": "The 'sticker price' is the marked price; what you actually pay after the sale is the selling price. Profit and loss are always measured against the cost price, never the marked price.",
+    "explain": "Profit% and loss% use cost price as the base. Discount comes off the marked price. When two items sell at the same price with equal % gain and loss, there is always a net loss.",
+    "formulas": [
+      "Profit% = (SP−CP)/CP × 100",
+      "SP = MP × (1 − discount)",
+      "Equal SP, ±x% ⇒ net loss = x²/100 %"
+    ],
+    "variant": {
+      "q": "An article sold at 20% profit fetches ₹600. Its cost price?",
+      "options": [
+        "₹500",
+        "₹480",
+        "₹520",
+        "₹450"
+      ],
+      "answer": 0,
+      "solution": "CP = 600 ÷ 1.20 = ₹500."
+    }
+  },
+  {
+    "id": "si",
+    "name": "Simple Interest",
+    "analogy": "Rent that is the same every month, no matter how long you stay — the interest is always on the original amount only.",
+    "explain": "Simple interest grows by a fixed amount each year on the principal alone. If the money doubles, the interest equals the principal, so rate × time = 100.",
+    "formulas": [
+      "SI = P · R · T / 100",
+      "Doubles ⇒ R × T = 100",
+      "SI = a fraction of P ⇒ solve for T"
+    ],
+    "variant": {
+      "q": "Find the simple interest on ₹4000 at 6% for 3 years.",
+      "options": [
+        "₹720",
+        "₹600",
+        "₹240",
+        "₹840"
+      ],
+      "answer": 0,
+      "solution": "4000 × 6 × 3 / 100 = 720."
+    }
+  },
+  {
+    "id": "ci",
+    "name": "Compound Interest",
+    "analogy": "A snowball rolling downhill — it grows faster and faster because each new layer sits on a bigger ball. Interest earns interest.",
+    "explain": "Compound interest applies the rate to the new balance each period. For half-yearly, halve the rate and double the periods. The amount after each year forms a constant ratio.",
+    "formulas": [
+      "A = P(1 + R/100)ⁿ",
+      "CI = A − P",
+      "Half-yearly: rate/2, periods × 2",
+      "CI − SI (2 yrs) = P(R/100)²"
+    ],
+    "variant": {
+      "q": "Compound interest on ₹10000 at 10% for 2 years?",
+      "options": [
+        "₹2100",
+        "₹2000",
+        "₹1100",
+        "₹2200"
+      ],
+      "answer": 0,
+      "solution": "10000(1.1² − 1) = 10000 × 0.21 = 2100."
+    }
+  },
+  {
+    "id": "avg",
+    "name": "Averages",
+    "analogy": "Pouring water of different heights between glasses until they all sit level — that level is the average.",
+    "explain": "Average = total ÷ count. To find a missing value, work back from the total. When every number changes by the same amount, the average changes by that amount.",
+    "formulas": [
+      "Average = sum ÷ n",
+      "Sum = average × n",
+      "New value = (new avg × new n) − old sum"
+    ],
+    "variant": {
+      "q": "Average of 5 numbers is 18. Adding a 6th number 30 makes the new average?",
+      "options": [
+        "20",
+        "19",
+        "21",
+        "24"
+      ],
+      "answer": 0,
+      "solution": "(90 + 30) ÷ 6 = 20."
+    }
+  },
+  {
+    "id": "tw",
+    "name": "Time & Work",
+    "analogy": "Filling a bucket together — each worker pours in their share of water per minute, so you add their rates. If A finishes in n days, A does 1/n of the job each day.",
+    "explain": "Think in work-per-day. Add rates when people work together; men × days stays constant for the same job.",
+    "formulas": [
+      "One day's work = 1/n",
+      "Combined rate = sum of rates",
+      "Men × days = constant"
+    ],
+    "variant": {
+      "q": "A does a job in 15 days, B in 10 days. Together?",
+      "options": [
+        "6 days",
+        "5 days",
+        "12 days",
+        "25 days"
+      ],
+      "answer": 0,
+      "solution": "1/15 + 1/10 = 1/6 ⇒ 6 days."
+    }
+  },
+  {
+    "id": "pipes",
+    "name": "Pipes & Cisterns",
+    "analogy": "A bathtub filling while the drain leaks — the net speed is the fill rate minus the leak rate. A draining pipe is just negative work.",
+    "explain": "Identical to time & work, but an emptying pipe subtracts. Add all inflow rates and subtract outflow rates to get the net rate.",
+    "formulas": [
+      "Net rate = inflow − outflow",
+      "Time to fill = 1 ÷ net rate",
+      "Leak rate = (no-leak rate) − (with-leak rate)"
+    ],
+    "variant": {
+      "q": "Pipe A fills a tank in 6 h; pipe B empties it in 8 h. With both open?",
+      "options": [
+        "24 h",
+        "14 h",
+        "2 h",
+        "48 h"
+      ],
+      "answer": 0,
+      "solution": "1/6 − 1/8 = 1/24 ⇒ 24 hours."
+    }
+  },
+  {
+    "id": "tsd",
+    "name": "Time, Speed & Distance / Trains",
+    "analogy": "Passing a pole, a train travels exactly its own length; passing a platform, its length plus the platform's. Speed is just distance per unit time.",
+    "explain": "Speed = distance ÷ time. Convert km/h to m/s with ×5/18. Opposite directions add speeds; same direction subtract.",
+    "formulas": [
+      "S = D / T",
+      "km/h → m/s: ×5/18",
+      "m/s → km/h: ×18/5",
+      "Train + platform = total distance"
+    ],
+    "variant": {
+      "q": "A train 200 m long at 36 km/h crosses a pole in?",
+      "options": [
+        "20 s",
+        "10 s",
+        "36 s",
+        "18 s"
+      ],
+      "answer": 0,
+      "solution": "36 km/h = 10 m/s; 200 ÷ 10 = 20 s."
+    }
+  },
+  {
+    "id": "ages",
+    "name": "Ages",
+    "analogy": "A family photo timeline — everyone ages by the same number of years together. Set today's age as a letter, then shift by ±years.",
+    "explain": "Let the present age be a variable; write past and future ages as ± years, then turn each ratio statement into an equation.",
+    "formulas": [
+      "After t years: every age + t",
+      "Before t years: every age − t",
+      "Form equations from the ratios given"
+    ],
+    "variant": {
+      "q": "A father is 3 times his son's age; in 12 years he will be twice. Son's present age?",
+      "options": [
+        "12",
+        "10",
+        "8",
+        "15"
+      ],
+      "answer": 0,
+      "solution": "3s + 12 = 2(s + 12) ⇒ s = 12."
+    }
+  },
+  {
+    "id": "ap",
+    "name": "Arithmetic Progression",
+    "analogy": "Stairs of equal height — each step adds the same amount. The n-th term is the first plus (n−1) steps.",
+    "explain": "An AP adds a constant step d. Count terms with (last−first)/d + 1; sum with n/2 × (first + last). Salary-increment problems are APs in disguise.",
+    "formulas": [
+      "aₙ = a + (n−1)d",
+      "n = (last − first)/d + 1",
+      "Sum = n/2 (first + last)"
+    ],
+    "variant": {
+      "q": "Find the 10th term of 5, 8, 11, …",
+      "options": [
+        "32",
+        "29",
+        "35",
+        "30"
+      ],
+      "answer": 0,
+      "solution": "5 + 9×3 = 32."
+    }
+  },
+  {
+    "id": "alg",
+    "name": "Algebra (identities, roots, indices)",
+    "analogy": "A factor (x−k) is a key: x = k unlocks the expression to zero. Identities are shortcuts that skip the long multiplication.",
+    "explain": "Use identities for cubes and squares; the remainder theorem says (x−k) is a factor when x=k gives 0. For a quadratic, product of roots = c/a and the discriminant is b²−4ac.",
+    "formulas": [
+      "a³±b³ = (a±b)(a²∓ab+b²)",
+      "(x+1/x)² = x²+1/x²+2",
+      "Product of roots = c/a",
+      "Discriminant = b² − 4ac"
+    ],
+    "variant": {
+      "q": "If x + 1/x = 3, find x² + 1/x².",
+      "options": [
+        "7",
+        "9",
+        "11",
+        "5"
+      ],
+      "answer": 0,
+      "solution": "(x+1/x)² = 9 = x²+1/x²+2 ⇒ 7."
+    }
+  },
+  {
+    "id": "prob",
+    "name": "Probability",
+    "analogy": "Drawing a coloured ball from a bag — count the balls you want over all the balls there are.",
+    "explain": "Probability = favourable ÷ total outcomes. For 'at least one', it is easier to do 1 minus the probability of none.",
+    "formulas": [
+      "P = favourable / total",
+      "P(at least one) = 1 − P(none)",
+      "Leap year: 2 extra days ⇒ 2/7 for any weekday"
+    ],
+    "variant": {
+      "q": "A die is rolled. Probability of a number greater than 4?",
+      "options": [
+        "1/3",
+        "1/2",
+        "2/3",
+        "1/6"
+      ],
+      "answer": 0,
+      "solution": "Favourable {5,6} ⇒ 2/6 = 1/3."
+    }
+  },
+  {
+    "id": "sets",
+    "name": "Set Theory & Surveys",
+    "analogy": "Two overlapping circles — add both groups but subtract the shared middle once, or you count it twice.",
+    "explain": "Use n(A∪B) = n(A) + n(B) − n(A∩B). 'Neither' equals the total minus those in at least one set.",
+    "formulas": [
+      "At least one = A + B − both",
+      "Neither = total − (at least one)",
+      "Only A = A − both"
+    ],
+    "variant": {
+      "q": "In a class of 50, 30 play cricket, 25 football, 10 both. How many play neither?",
+      "options": [
+        "5",
+        "15",
+        "20",
+        "10"
+      ],
+      "answer": 0,
+      "solution": "At least one = 45 ⇒ neither = 50 − 45 = 5."
+    }
+  },
+  {
+    "id": "mens2",
+    "name": "Mensuration — 2D",
+    "analogy": "The same piece of string can be bent into a square or a circle; both keep the string's length as their perimeter. That is the link in most wire problems.",
+    "explain": "Know area and perimeter of flat shapes. A wire bent into a shape keeps the same total length. A sector is a fraction of the full circle by its angle.",
+    "formulas": [
+      "Circle: A = πr², C = 2πr",
+      "Sector area = (θ/360) πr²",
+      "Equilateral △ = (√3/4)a²",
+      "Trapezium = ½(a+b)h"
+    ],
+    "variant": {
+      "q": "A wire bent into a circle of radius 7 cm is reshaped into a square. Its side? (π=22/7)",
+      "options": [
+        "11 cm",
+        "7 cm",
+        "14 cm",
+        "22 cm"
+      ],
+      "answer": 0,
+      "solution": "Circumference = 44 = perimeter of square ⇒ side = 11."
+    }
+  },
+  {
+    "id": "mens3",
+    "name": "Mensuration — 3D",
+    "analogy": "The longest umbrella that fits in a room goes corner-to-corner — that is the space diagonal. Melting one solid into another keeps the volume the same.",
+    "explain": "Volume and surface of solids. The longest rod in a box is the space diagonal √(l²+b²+h²). Melting conserves volume, so equate the volumes.",
+    "formulas": [
+      "Cube V = a³, SA = 6a²",
+      "Cuboid diagonal = √(l²+b²+h²)",
+      "Sphere V = 4/3 πr³",
+      "Cone V = ⅓ πr²h, Cylinder V = πr²h"
+    ],
+    "variant": {
+      "q": "Longest rod that fits in a cubical room of edge 6 m?",
+      "options": [
+        "6√3 m",
+        "6 m",
+        "12 m",
+        "18 m"
+      ],
+      "answer": 0,
+      "solution": "Space diagonal = 6√3 ≈ 10.39 m."
+    }
+  },
+  {
+    "id": "trig",
+    "name": "Trigonometry & Heights",
+    "analogy": "Your shadow equals your height exactly when the sun sits at 45°. Heights-and-distances problems are just tan = opposite / adjacent.",
+    "explain": "Use tan = opposite/adjacent for towers, poles and ladders. If the two angles of elevation are complementary, the height is √(d₁·d₂).",
+    "formulas": [
+      "tan45=1, tan30=1/√3, tan60=√3",
+      "height = base × tanθ",
+      "Complementary angles ⇒ h = √(d₁·d₂)",
+      "sec²θ − tan²θ = 1"
+    ],
+    "variant": {
+      "q": "From 30 m away the top of a tower has elevation 30°. Height of tower?",
+      "options": [
+        "10√3 m",
+        "30√3 m",
+        "15 m",
+        "10 m"
+      ],
+      "answer": 0,
+      "solution": "30 × tan30° = 30/√3 = 10√3 m."
+    }
+  },
+  {
+    "id": "mix",
+    "name": "Mixtures & Alligation",
+    "analogy": "Adding water to squash dilutes it — the syrup stays the same, only the water grows. Track each ingredient's actual amount, then re-form the ratio.",
+    "explain": "Convert the ratio to real quantities, adjust for what is added or removed, then write the new ratio.",
+    "formulas": [
+      "Find actual quantities from the ratio",
+      "Adjust the changed ingredient",
+      "Re-form the ratio with new totals"
+    ],
+    "variant": {
+      "q": "In 40 L of milk-water (3:1), how much water makes it 1:1?",
+      "options": [
+        "20 L",
+        "10 L",
+        "30 L",
+        "15 L"
+      ],
+      "answer": 0,
+      "solution": "Milk 30, water 10; need water 30 ⇒ add 20 L."
+    }
+  },
+  {
+    "id": "part",
+    "name": "Partnership",
+    "analogy": "A shared taxi — you pay for how much you ride AND how long you ride. Profit splits in the ratio of capital × time.",
+    "explain": "Each partner's share is proportional to capital multiplied by the months invested.",
+    "formulas": [
+      "Share ∝ capital × time",
+      "Equal time ⇒ share ∝ capital",
+      "Sum the ratio, find one part, scale"
+    ],
+    "variant": {
+      "q": "A invests ₹5000 for 12 months, B ₹6000 for 10 months. Profit-share ratio?",
+      "options": [
+        "1:1",
+        "5:6",
+        "6:5",
+        "2:3"
+      ],
+      "answer": 0,
+      "solution": "5000×12 : 6000×10 = 60000:60000 = 1:1."
+    }
+  },
+  {
+    "id": "di",
+    "name": "Data Interpretation",
+    "analogy": "A pie slice's angle is its share of the whole pie. If a 36° slice is ₹1600, the whole pie scales up from there.",
+    "explain": "Read pie charts by angle (360° = whole), bars and lines by height. Percentage change compares to the earlier value.",
+    "formulas": [
+      "Value = (angle/360) × total",
+      "% change = (new − old)/old × 100",
+      "Average bar = sum of bars ÷ count"
+    ],
+    "variant": {
+      "q": "In a pie chart a 90° sector is 250 students. Total students?",
+      "options": [
+        "1000",
+        "750",
+        "500",
+        "900"
+      ],
+      "answer": 0,
+      "solution": "250 × 360/90 = 1000."
+    }
+  },
+  {
+    "id": "stat",
+    "name": "Statistics (mean, median, mode)",
+    "analogy": "The median is the person standing exactly in the middle of a queue sorted by height — sort first, then look at the centre.",
+    "explain": "Mean is the average; median is the middle value after sorting; mode is the most frequent. They are linked by the empirical formula.",
+    "formulas": [
+      "Mode = 3·Median − 2·Mean",
+      "Median: sort, take centre value(s)",
+      "Median class: where cumulative freq passes N/2"
+    ],
+    "variant": {
+      "q": "Find the median of 7, 3, 9, 5, 11.",
+      "options": [
+        "7",
+        "9",
+        "5",
+        "8"
+      ],
+      "answer": 0,
+      "solution": "Sorted: 3,5,7,9,11 ⇒ middle is 7."
+    }
+  },
+  {
+    "id": "coord",
+    "name": "Coordinate Geometry",
+    "analogy": "Walking across a grid: go along, then up — the straight-line distance is the hypotenuse of that right triangle.",
+    "explain": "Distance between two points uses Pythagoras on the coordinate gaps.",
+    "formulas": [
+      "d = √((x₂−x₁)² + (y₂−y₁)²)",
+      "Midpoint = ((x₁+x₂)/2, (y₁+y₂)/2)"
+    ],
+    "variant": {
+      "q": "Distance between (0,0) and (3,4)?",
+      "options": [
+        "5",
+        "7",
+        "√7",
+        "12"
+      ],
+      "answer": 0,
+      "solution": "√(3²+4²) = √25 = 5."
+    }
+  },
+  {
+    "id": "pnc",
+    "name": "Permutations & Combinations",
+    "analogy": "A podium (1st / 2nd / 3rd) is a permutation because order matters; picking a team is a combination because it does not.",
+    "explain": "Permutation counts arrangements (order matters); combination counts selections (order ignored). Arrangements of n distinct items = n!.",
+    "formulas": [
+      "ⁿPᵣ = n! / (n−r)!",
+      "ⁿCᵣ = n! / (r!(n−r)!)",
+      "Arrangements of n = n!"
+    ],
+    "variant": {
+      "q": "In how many ways can 4 people sit in a row?",
+      "options": [
+        "24",
+        "12",
+        "16",
+        "4"
+      ],
+      "answer": 0,
+      "solution": "4! = 24."
+    }
+  }
+]

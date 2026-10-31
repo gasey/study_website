@@ -15,7 +15,9 @@ async def open_pool() -> None:
         settings.database_url,
         min_size=settings.pool_min,
         max_size=settings.pool_max,
-        kwargs={"row_factory": dict_row},
+        # The bank's large view queries have enough estimated cost to trigger
+        # PostgreSQL JIT; compilation costs more than executing these reads.
+        kwargs={"row_factory": dict_row, "options": "-c jit=off"},
         open=False,
     )
     await _pool.open(wait=True, timeout=10)

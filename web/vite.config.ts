@@ -14,6 +14,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': { target: API_TARGET, changeOrigin: true, secure: true },
+      '/papers': { target: process.env.PAPER_TARGET ?? 'https://study.hawayu.in', changeOrigin: true, secure: true },
     },
   },
 })

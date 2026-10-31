@@ -1,0 +1,12 @@
+[Unit]
+Description=Publish independently reviewed India Study Map bank contributions
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/hruaia/workspace/projects/personal/india-study-map-app
+ExecStart=/home/hruaia/workspace/projects/personal/india-study-map-app/api/.venv/bin/python /home/hruaia/workspace/projects/personal/india-study-map-app/scripts/bank-review-worker.py once
+TimeoutStartSec=240
+UMask=0077
+NoNewPrivileges=true

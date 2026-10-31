@@ -1,0 +1,21 @@
+import type {AnswerSource} from './api'
+export interface AnswerContext {reviewed?:boolean;disputed?:boolean;defect?:string|null;questionType?:string;statusOverride?:string}
+/** Display policy only. Never grants publication approval or scoring eligibility. */
+export function answerStatus(source:AnswerSource,{reviewed=false,disputed=false,defect=null,questionType='mcq',statusOverride}:AnswerContext={}){
+ const sourceDetail=source==='official'?'Recorded authority key':source==='key'?'Transcribed authority key':source==='derived'?'Derived from a worked solution':source==='inferred'?'Unverified suggestion':'No recorded answer'
+ if(questionType==='descriptive')return {status:'written',label:'Written question',sourceDetail,description:'This question requires a written answer. An MCQ answer index does not apply.',scoring:'Use the paper instructions and marking rubric; this label does not certify a rubric.',trusted:false}
+ if(statusOverride==='needs-review'||disputed||['duplicate-options','unresolved-source'].includes(defect||''))return {status:'needs-review',label:'Needs review',sourceDetail,description:disputed?'The recorded answer is disputed. Its source and competing evidence need review.':'This item is held for review, or a source/option issue prevents verification.',scoring:'This badge does not clear a scoring hold. Scored modes continue to enforce their existing eligibility checks.',trusted:false}
+ if(statusOverride==='unsolved')source='none'
+ if(source==='official'||source==='key')return {status:'official',label:'Official key',sourceDetail,description:source==='key'?'The authority’s key was transcribed into the bank. Check the exact paper, question number, booklet and copied option.':'The recorded answer comes from the examination authority’s key. Check the exact paper, question number and booklet.',scoring:'Eligible questions can enter official-key mocks. This label does not establish that the key is final; a later final key can supersede a provisional key.',trusted:true}
+ if(source==='derived'&&reviewed)return {status:'verified',label:'Verified solution · unofficial',sourceDetail,description:'This worked solution was checked by an authorized administrator or independent reviewers, published, and matched against the current question. Verified describes that review process; the solution remains unofficial and can still be corrected.',scoring:'Eligible for labelled practice estimates, not official-key mock scores. Editing the reviewed content can invalidate its verification.',trusted:true}
+ if(source==='derived'||source==='inferred')return {status:'needs-review',label:'Needs review',sourceDetail,description:source==='derived'?'A worked answer exists, but completed answer verification is not established.':'An unverified suggested answer exists. It may be model-generated and can be wrong.',scoring:'Excluded from scored mocks until the required admin decision or independent review and publication checks pass. Agreement and upvotes do not verify an answer.',trusted:false}
+ return {status:'unsolved',label:'Unsolved',sourceDetail,description:'No answer is recorded in the bank yet. This does not mean that an official key was never published.',scoring:'Browse the source or contribute a supported solution. A search that found no official key must record its sources and date separately.',trusted:false}
+}
+
+/** Provenance colours are independent of correct/wrong answer colours. */
+export function answerStatusAppearance(status:string){
+ if(status==='official')return {badge:'border-[#8CB89A] bg-[#E7F3EA] text-[#214E34]',accent:'border-[#8CB89A]',symbol:'▣',shortLabel:'Official key',meaning:'Answer from the exam authority'}
+ if(status==='verified')return {badge:'border-[#8DAED7] bg-[#EAF1FC] text-[#204F86]',accent:'border-[#8DAED7]',symbol:'✓',shortLabel:'Verified solution · unofficial',meaning:'Published, reviewed working; not an authority key'}
+ if(status==='needs-review')return {badge:'border-[#D9B76B] bg-[#FFF4D9] text-[#705015]',accent:'border-[#D9B76B]',symbol:'?',shortLabel:'Needs review',meaning:'Not yet verified for scored mocks'}
+ return {badge:'border-[#C9C4BA] bg-[#F1EFEA] text-[#514C43]',accent:'border-[#C9C4BA]',symbol:'—',shortLabel:status==='written'?'Written question':'Unsolved',meaning:status==='written'?'Requires a written response':'No recorded answer'}
+}

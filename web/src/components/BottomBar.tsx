@@ -1,23 +1,24 @@
 import { NavLink, useLocation } from 'react-router-dom'
 
-/** Mobile bottom tab bar, from `India Study Map Mobile.dc.html`.
- *  Home / Bank / Desk / Exams / Me, with the handoff's 44px minimum hit
+/** Mobile bottom tab bar.
+ *  Home / Library / Desk / Exams / Me, with the handoff's 44px minimum hit
  *  target. Hidden from `sm` up, where the header's nav takes over.
  *
+ *  Hidden on the public landing page, which has its own prototype header.
  *  Hidden entirely during a mock: a timed paper is full-attention, and the
  *  prototype's exam screen has no bottom bar either. Tapping "Home"
  *  mid-paper would abandon an attempt the server still has open. */
 const TABS = [
   { to: '/feed', label: 'Home', dot: 'bg-community' },
-  { to: '/bank', label: 'Bank', dot: 'bg-practice' },
+  { to: '/library', label: 'Library', dot: 'bg-practice' },
   { to: '/desk', label: 'Desk', dot: 'bg-learn' },
   { to: '/exams', label: 'Exams', dot: 'bg-exams' },
-  { to: '/mistakes', label: 'Me', dot: 'bg-rewards' },
+  { to: '/profile', label: 'Me', dot: 'bg-rewards' },
 ]
 
 export default function BottomBar() {
   const { pathname } = useLocation()
-  if (/^\/exams\/[^/]+\/mock$/.test(pathname)) return null
+  if (pathname === '/' || /^\/exams\/[^/]+\/mock$/.test(pathname)) return null
 
   return (
     <nav

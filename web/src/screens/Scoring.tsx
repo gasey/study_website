@@ -139,35 +139,7 @@ export default function Scoring() {
         progress look worse than it is.
       </p>
 
-      <h2 className="mt-9 border-b border-ink pb-2.5 font-display text-[26px] font-medium">
-        Not built yet
-      </h2>
-      <p className="mt-3 max-w-[720px] text-[15px] leading-[1.6] text-secondary">
-        The design has two more numbers beyond marks. Neither exists today, and this page
-        will describe them properly when they do rather than in advance.
-      </p>
-      <div className="mt-4 grid gap-4 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]">
-        <div className="rounded-panel border border-hairline bg-card px-5 py-[18px]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
-            Score · planned
-          </div>
-          <div className="mt-1.5 font-display text-[20px] font-medium">Monthly XP</div>
-          <p className="mt-1.5 text-[13.5px] leading-[1.55] text-secondary">
-            Earned by practising and playing, resets monthly, drives the leaderboard. Arrives
-            with games and duels.
-          </p>
-        </div>
-        <div className="rounded-panel border border-hairline bg-card px-5 py-[18px]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
-            Reputation · planned
-          </div>
-          <div className="mt-1.5 font-display text-[20px] font-medium">Lifetime trust</div>
-          <p className="mt-1.5 text-[13.5px] leading-[1.55] text-secondary">
-            Earned when others confirm your explanations and error reports. Unlocks
-            Contributor, Mentor and Scholar. Arrives with discussion.
-          </p>
-        </div>
-      </div>
+      <h2 className="mt-9 font-display text-[26px]">XP and reward points</h2><p className="mt-3 text-[15px] leading-relaxed text-secondary">Your first correct verified-key answer to a unique question earns 10 XP and 1 reward point, with a shared 300 daily study/game XP cap. Repeats, guests and unverified answers do not earn question rewards. Published contribution credit also earns XP and points; reversals remain in history. Exam marks stay separate.</p><p className="mt-3 text-[15px] text-secondary">Monthly XP drives the activity leaderboard; lifetime XP determines your level. Spending reward points on an enabled benefit never reduces XP. Public participation is optional.</p><Link to="/rewards" className="mt-4 inline-block min-h-11 text-link underline">Open rewards, rules and point history →</Link>
     </main>
   )
 }

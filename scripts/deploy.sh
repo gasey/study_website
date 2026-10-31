@@ -17,7 +17,7 @@ deploy_web() {
   (cd "$ROOT/web" && npm run build)
   echo "==> shipping to /srv/study/public"
   rsync -az --delete -e ssh "$ROOT/web/dist/" "$HOST:/tmp/web-stage/"
-  ssh "$HOST" 'sudo rsync -a --delete /tmp/web-stage/ /srv/study/public/ && sudo chown -R caddy:caddy /srv/study'
+  ssh "$HOST" 'sudo rsync -a --delete /tmp/web-stage/ /srv/study/public/ && sudo chown -R caddy:caddy /srv/study/public'
 }
 
 deploy_api() {
@@ -46,7 +46,7 @@ deploy_api() {
 case "$WHAT" in
   web) deploy_web ;;
   api) deploy_api ;;
-  all) deploy_web; deploy_api ;;
+  all) deploy_api; deploy_web ;;
   *) echo "usage: $0 [web|api|all]" >&2; exit 2 ;;
 esac
 echo "==> done: https://study.hawayu.in"

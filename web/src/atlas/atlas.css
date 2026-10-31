@@ -1,0 +1,7 @@
+.atlas-map {height:clamp(420px,64vh,720px);background:#e9eee4}
+.atlas-map .leaflet-container {font-family:'Public Sans',sans-serif;background:#e9eee4}
+.atlas-map .leaflet-control-zoom a {width:44px;height:44px;line-height:44px}
+.atlas-map .leaflet-control-attribution {font-size:10px;max-width:95%;white-space:normal}
+.atlas-map .leaflet-tooltip {max-width:260px;white-space:normal}
+.atlas-map .leaflet-container:focus-visible {outline:3px solid #245f91;outline-offset:-3px}
+@media(max-width:767px){.atlas-map {height:420px}}

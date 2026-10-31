@@ -1,0 +1,10 @@
+import {useEffect,useState} from 'react'
+import {reviewRequest} from '../lib/review'
+interface Session{id:string;created_at:string;expires_at:string;current:boolean}
+export default function AccountSessions(){
+ const [sessions,setSessions]=useState<Session[]>([]),[error,setError]=useState(''),[busy,setBusy]=useState(false),[notice,setNotice]=useState('')
+ async function load(){const r=await reviewRequest<{items:Session[]}>('/auth/sessions');setSessions(r.items)}
+ useEffect(()=>{void load().catch(e=>setError(e.message))},[])
+ async function revoke(id?:string){setBusy(true);setError('');try{await reviewRequest('/auth/sessions/revoke',{session_id:id});setNotice('Selected sessions have been signed out.');await load()}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
+ return <section className="mt-5 rounded-[12px] border border-hairline bg-card p-5"><h2 className="font-display text-[24px]">Signed-in sessions</h2><p className="mt-2 text-[13px] text-secondary">Review when sessions started and sign out other sessions you no longer use.</p>{error&&<p role="alert" className="mt-3 text-[13px]">{error} <button onClick={()=>void load().catch(e=>setError(e.message))} className="underline">Retry</button></p>}{notice&&<p role="status" className="mt-3 text-[13px]">{notice}</p>}{sessions.map(s=><div key={s.id} className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-3 text-[13px]"><div>{s.current?<strong>This session</strong>:'Other session'}<p className="text-secondary">Started {new Date(s.created_at).toLocaleString('en-IN')} · expires {new Date(s.expires_at).toLocaleDateString('en-IN')}</p></div>{!s.current&&<button disabled={busy} onClick={()=>void revoke(s.id)} className="min-h-11 rounded-pill border border-hairline px-4">Sign out</button>}</div>)}<button disabled={busy||!sessions.some(s=>!s.current)} onClick={()=>void revoke()} className="mt-4 min-h-11 rounded-pill border border-hairline px-4 text-[13px] disabled:opacity-40">Sign out all other sessions</button></section>
+}

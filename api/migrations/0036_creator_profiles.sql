@@ -1,0 +1,16 @@
+BEGIN;
+CREATE TABLE creator_profiles(user_id TEXT PRIMARY KEY REFERENCES users(id),public BOOLEAN NOT NULL DEFAULT false,bio TEXT NOT NULL DEFAULT '' CHECK(length(bio)<=600),updated_at TIMESTAMPTZ NOT NULL DEFAULT now());
+CREATE INDEX creator_profiles_public ON creator_profiles(user_id) WHERE public;
+CREATE TABLE creator_follows(follower_id TEXT NOT NULL REFERENCES users(id),creator_id TEXT NOT NULL REFERENCES users(id),created_at TIMESTAMPTZ NOT NULL DEFAULT now(),PRIMARY KEY(follower_id,creator_id),CHECK(follower_id<>creator_id));
+CREATE INDEX creator_followers ON creator_follows(creator_id,follower_id);
+CREATE TABLE creator_blocks(user_id TEXT NOT NULL REFERENCES users(id),blocked_id TEXT NOT NULL REFERENCES users(id),created_at TIMESTAMPTZ NOT NULL DEFAULT now(),PRIMARY KEY(user_id,blocked_id),CHECK(user_id<>blocked_id));
+CREATE INDEX creator_blocks_reverse ON creator_blocks(blocked_id,user_id);
+CREATE TABLE creator_reports(id BIGSERIAL PRIMARY KEY,reporter_id TEXT NOT NULL REFERENCES users(id),creator_id TEXT NOT NULL REFERENCES users(id),reason TEXT NOT NULL CHECK(reason IN ('spam','harassment','impersonation','other')),note TEXT NOT NULL CHECK(length(note) BETWEEN 10 AND 2000),state TEXT NOT NULL DEFAULT 'open' CHECK(state IN ('open','resolved')),resolution TEXT,resolved_by TEXT REFERENCES users(id),created_at TIMESTAMPTZ NOT NULL DEFAULT now(),updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),UNIQUE(reporter_id,creator_id),CHECK(reporter_id<>creator_id));
+CREATE INDEX creator_reports_queue ON creator_reports(state,id);
+CREATE TABLE creator_events(id BIGSERIAL PRIMARY KEY,actor_id TEXT NOT NULL,action TEXT NOT NULL,target_id TEXT,detail JSONB NOT NULL DEFAULT '{}',created_at TIMESTAMPTZ NOT NULL DEFAULT now());
+CREATE TRIGGER creator_events_immutable BEFORE UPDATE OR DELETE ON creator_events FOR EACH ROW EXECUTE FUNCTION review_immutable();
+GRANT SELECT,INSERT,UPDATE ON creator_profiles,creator_reports TO mpsc;
+GRANT SELECT,INSERT,DELETE ON creator_follows,creator_blocks TO mpsc;
+GRANT SELECT,INSERT ON creator_events TO mpsc;
+GRANT USAGE,SELECT ON SEQUENCE creator_reports_id_seq,creator_events_id_seq TO mpsc;
+COMMIT;

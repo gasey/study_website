@@ -122,14 +122,16 @@ on both sides. See DECISIONS #5 and #7.
 
 ## Build with the data that exists
 
-The bank is incomplete on purpose and will improve later: ~69,757 questions
-are unclassified, nothing is deduped, 11,459 MCQs have no key. **Do not block
-features on that work.** Build against the 12,454 questions with official
-keys and the 59,047 with any answer.
+The bank is incomplete on purpose and will improve later: taxonomy-v2 claims
+now cover all 77,751 question IDs, with 21,712 approved and 56,039 pending;
+the API exposes only approved claims. Nothing is deduped, and 11,459 MCQs
+have no key. **Do not block features on that work.** Build against the 12,454
+questions with official keys and the 59,047 with any answer.
 
-Where a control cannot be honest on today's data, show a short explanation
-instead of the control — the topic filter and the repeats filter already do
-this. Do not fake it, and do not hide the feature; say why it is empty.
+Use reviewed taxonomy claims for Bank filters and subject-wise mock sections;
+pending classifications stay out of learner-facing filters and scored play.
+Where data is still missing, explain that instead of faking a control. The
+repeats filter remains unavailable until deduplication is done.
 
 ## Rules that are not negotiable
 
@@ -174,3 +176,12 @@ ssh -L 5433:localhost:5432 ubuntu@152.67.31.231
 cd api && .venv/bin/uvicorn app.main:app --reload   # :8000
 DATABASE_URL=postgresql://mpsc@localhost:5433/mpsc API_TARGET=http://localhost:8000 npm run dev
 ```
+
+
+## Difficulty labels retired — user decision 2026-10-23
+
+Do not add difficulty labels, selectors, filters, authoring fields or scoring behavior. Classification means subject/topic/subtopic only. Legacy bank columns and immutable review snapshots remain for compatibility; they are not current product metadata. New contribution/revision authoring rejects any difficulty field, and submission/publication validation rejects old proposals that would change it. Existing history/idempotent replays remain readable.
+
+## Owner-authorized quota exemption — 2026-10-26
+
+The owner approved lifting the daily maintenance cap for the current clerical review run. `scripts/owner-bank-maintenance.py --quota-exemption-run <run-id> --quota-exemption-reason <explicit authorization>` scopes the exemption to the existing owner and exact canonical targets in that SSH process. Public user/staff limits stay30/500perday; do not globally disable them. Every exempt contribution is audited. Future use needs explicit owner authorization, with all source/publication/permission guards preserved. See DECISIONS and reports/clerical-publication-unlimited-20261026.

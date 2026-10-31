@@ -1,0 +1,417 @@
+/* UDC / LDC visual skin
+   The module is deliberately scoped so its stronger green-and-gold study
+   identity does not change the rest of the app. The colours are inherited
+   from the shared subject tokens where possible, so dark/neon themes remain
+   legible. */
+.udc-ldc-page {
+  --udc-primary: var(--green, #1d7a3f);
+  --udc-primary-deep: color-mix(in srgb, var(--udc-primary) 78%, #102719);
+  --udc-gold: var(--gold, #d59b20);
+  --udc-gold-soft: color-mix(in srgb, var(--udc-gold) 16%, transparent);
+  --udc-panel: var(--bg-panel, #fff);
+  --udc-border: color-mix(in srgb, var(--udc-primary) 22%, var(--line, #dcdce3));
+  --udc-page: #f6f5ef;
+  --info: var(--udc-primary);
+  --border: var(--udc-border);
+  --bg-panel-elev: color-mix(in srgb, var(--udc-gold) 8%, var(--bg-panel, #fff));
+  background-color: var(--udc-page);
+  background-image:
+    linear-gradient(rgba(21, 36, 59, .045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 36, 59, .045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+html.dark .udc-ldc-page {
+  --udc-page: var(--bg-app);
+  background-image: none;
+}
+
+.udc-ldc-page > .udc-ldc-content {
+  padding-top: 0 !important;
+}
+
+.udc-hero {
+  margin: 0 -24px 22px;
+  padding: 22px 24px 20px;
+  color: #fff;
+  background:
+    radial-gradient(circle at 92% 12%, color-mix(in srgb, var(--udc-gold) 34%, transparent), transparent 30%),
+    linear-gradient(135deg, var(--udc-primary-deep), var(--udc-primary));
+  border-bottom: 4px solid var(--udc-gold);
+}
+.udc-hero h1 { color: #fff; letter-spacing: -.02em; }
+.udc-hero p { color: color-mix(in srgb, #fff 78%, var(--udc-gold)); opacity: 1 !important; }
+
+.udc-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px !important;
+  flex-wrap: wrap;
+}
+.udc-tab {
+  border: 1.5px solid var(--udc-border) !important;
+  background: var(--udc-panel) !important;
+  color: var(--text-secondary) !important;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--udc-primary) 10%, transparent);
+  transition: transform var(--dur-1) var(--ease), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+.udc-tab:hover { transform: translateY(-1px); border-color: var(--udc-primary) !important; color: var(--udc-primary) !important; }
+.udc-tab.is-active {
+  background: var(--udc-primary) !important;
+  border-color: var(--udc-primary) !important;
+  color: #fff !important;
+  box-shadow: 0 3px 8px color-mix(in srgb, var(--udc-primary) 28%, transparent);
+}
+
+/* The progress cards and paper rows inherit these variables from their inline
+   styles; these rules add the tactile treatment that the old neutral screen
+   lacked. */
+.udc-ldc-page button {
+  transition: transform var(--dur-1) var(--ease), background var(--dur-1) var(--ease), border-color var(--dur-1) var(--ease), box-shadow var(--dur-1) var(--ease);
+}
+.udc-ldc-page button:hover:not(:disabled) { border-color: var(--udc-primary) !important; }
+.udc-ldc-page button:active:not(:disabled) { transform: translateY(1px); }
+
+.udc-question-stem { font-weight: 650; }
+.udc-question-passage {
+  margin: 0 0 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border, #dcdce3);
+  border-radius: 8px;
+  font-size: 0.95em;
+}
+.udc-question-passage > summary { cursor: pointer; font-weight: 600; }
+
+.udc-question-direction {
+  margin-bottom: 12px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--udc-primary);
+  border-radius: 6px;
+  background: var(--bg-panel-elev);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+.udc-option-label { font-weight: 600; }
+.udc-question-number { font-weight: 750; color: var(--udc-primary); opacity: 1 !important; }
+
+/* Quantitative stems need a visual reading mode: operators, fractions, units,
+   and long expressions are easier to scan when they are set apart from prose.
+   Reasoning stays lighter, but gets the same controlled wrapping for matrices,
+   sequences, and multi-condition prompts. */
+.udc-math-stem {
+  padding: 10px 12px;
+  border-left: 3px solid var(--udc-gold);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--udc-gold) 8%, var(--bg-panel, #fff));
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.04em;
+  letter-spacing: .01em;
+}
+.udc-math-option {
+  display: block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.5;
+  letter-spacing: .01em;
+  overflow-wrap: anywhere;
+}
+.udc-reasoning-stem {
+  padding: 8px 11px;
+  border-left: 3px solid var(--udc-primary);
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--udc-primary) 5%, var(--bg-panel, #fff));
+}
+.udc-reasoning-option {
+  display: block;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+/* Fill-in-the-blank stems: a `_____` run renders as a ruled line the reader
+   can write into, and "Reveal model answer" drops each answer into its slot as
+   a softly highlighted completion. The highlight reads as *written on the
+   page*, not as an option to pick. */
+.udc-blank {
+  display: inline-block;
+  min-width: 2.4em;
+  border-bottom: 1.5px solid currentColor;
+  border-radius: 2px;
+  opacity: 0.8;
+  margin: 0 2px;
+  vertical-align: baseline;
+}
+.udc-blank-fill {
+  display: inline-block;
+  margin: 0 2px;
+  padding: 1px 5px;
+  border-radius: 5px;
+  font-weight: 650;
+  background: color-mix(in srgb, var(--ok, #2e9e5b) 13%, transparent);
+  box-shadow: inset 0 -1.5px 0 color-mix(in srgb, var(--ok, #2e9e5b) 45%, transparent);
+}
+
+/* Review controls stay collapsed until the learner explicitly opens the
+   question discussion trigger. */
+.udc-review-compact { padding-top: 6px; margin-top: 10px !important; }
+.udc-review-compact .udc-review-trigger {
+  margin-bottom: 0 !important;
+  padding: 4px 7px !important;
+  border: 0 !important;
+  border-radius: 6px !important;
+  background: transparent !important;
+}
+.udc-review-compact .udc-review-trigger:hover { background: var(--bg-panel-elev) !important; }
+.udc-review-compact .udc-review-icon {
+  width: 22px !important;
+  height: 22px !important;
+  font-size: 12px !important;
+  border-radius: 5px !important;
+}
+.udc-review-compact .udc-review-description { display: none !important; }
+.udc-review-compact .udc-review-actions:not(.is-open) { display: none; }
+
+.udc-ldc-page table thead tr { background: var(--bg-panel-elev); }
+.udc-ldc-page table th { color: var(--udc-primary); font-size: 11px; text-transform: uppercase; letter-spacing: .06em; }
+.udc-ldc-page table tbody tr:hover { background: color-mix(in srgb, var(--udc-gold) 7%, transparent); }
+
+.udc-question-card {
+  background: var(--bg-panel, #fff) !important;
+  border: 1px solid var(--udc-border) !important;
+  border-radius: 12px !important;
+  padding: 16px 17px !important;
+  margin: 12px 0 !important;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--udc-primary) 8%, transparent),
+    0 8px 20px -16px color-mix(in srgb, var(--udc-primary) 30%, transparent);
+}
+.udc-question-card:first-child { margin-top: 4px !important; }
+.udc-question-card:last-child { margin-bottom: 4px !important; }
+.udc-question-card > .udc-review-panel { margin-top: 14px !important; }
+.udc-practice-card { scroll-margin-top: 16px; }
+.udc-practice.is-answered { padding-bottom: 76px; }
+.udc-practice-action-bar {
+  position: fixed;
+  right: max(16px, env(safe-area-inset-right));
+  bottom: max(16px, env(safe-area-inset-bottom));
+  z-index: 30;
+  width: min(280px, calc(100vw - 32px));
+  padding: 6px;
+  border: 1px solid var(--udc-border);
+  border-radius: 14px;
+  background: var(--bg-panel, #fff);
+  box-shadow: 0 8px 28px color-mix(in srgb, var(--udc-primary) 22%, transparent);
+}
+.udc-practice-next {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 9px 16px;
+  border: 1px solid var(--udc-primary);
+  border-radius: 10px;
+  background: var(--udc-primary);
+  color: #fff;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.udc-practice-next:focus-visible { outline: 3px solid var(--udc-gold); outline-offset: 3px; }
+
+@media (max-width: 640px) {
+  .udc-hero { margin-left: -16px; margin-right: -16px; padding-left: 16px; padding-right: 16px; }
+}
+
+@media (max-width: 767px) {
+  .udc-ldc-content { padding-left: 12px !important; padding-right: 12px !important; }
+  .udc-practice-action-bar {
+    left: max(12px, env(safe-area-inset-left));
+    right: max(12px, env(safe-area-inset-right));
+    bottom: max(12px, env(safe-area-inset-bottom));
+    width: auto;
+  }
+  .udc-practice-card {
+    padding: 14px 12px !important;
+    scroll-margin-top: 12px;
+  }
+  .udc-practice-card .udc-option-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .udc-ldc-content { padding-left: 18px !important; padding-right: 18px !important; }
+}
+.udc-answer-sources {
+  margin: 10px 0; padding: 12px; border: 1px solid var(--border);
+  border-radius: 9px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px;
+  background: var(--bg-panel-elev); font-size: 12px;
+}
+.udc-answer-sources > div { display: grid; gap: 5px; }
+.udc-answer-sources span { color: var(--text-secondary); }
+.udc-answer-sources p { grid-column: 1 / -1; margin: 0; }
+.udc-answer-sources a { grid-column: 1 / -1; }
+.udc-agrees { color: var(--ok, #2e9e5b); }
+.udc-disagrees { color: var(--bad, #c4462f); }
+.udc-paper-library > label { display: grid; gap: 7px; font-size: 13px; margin: 16px 0; }
+.udc-paper-library input { font: inherit; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-panel); color: inherit; }
+.udc-library-sitting { border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin: 14px 0; }
+.udc-library-sitting h3 { margin: 0 0 12px; font-size: 16px; }
+.udc-library-paper { padding: 12px 0; border-top: 1px solid var(--border); }
+.udc-library-paper p { font-size: 12px; color: var(--text-secondary); margin: 5px 0 9px; }
+.udc-library-links { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; font-size: 12px; }
+.udc-library-links button { font: inherit; padding: 6px 10px; border-radius: 7px; border: 1px solid var(--border); background: var(--bg-panel-elev); color: inherit; cursor: pointer; }
+
+/* Dedicated subject study: topic selection stays ahead of the question. */
+.udc-subject-study { --study-accent: #9a4f7a; }
+.udc-subject-study.is-english { --study-accent: #8a5a2b; }
+.udc-subject-study.is-computer { --study-accent: #3b6fb8; }
+.udc-subject-heading { display: flex; justify-content: space-between; gap: 20px; align-items: flex-start; margin: 18px 0; }
+.udc-subject-heading h2 { font-size: 24px; margin: 3px 0 7px; }
+.udc-subject-heading p { margin: 0; font-size: 14px; line-height: 1.6; }
+.udc-subject-eyebrow { color: var(--study-accent); font-size: 11px !important; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+.udc-subject-total { display: grid; gap: 3px; text-align: right; flex-shrink: 0; font-size: 12px; }
+.udc-subject-total strong { font-size: 27px; color: var(--study-accent); font-variant-numeric: tabular-nums; }
+.udc-subject-total small { opacity: .65; }
+.udc-topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(205px, 1fr)); gap: 9px; margin-bottom: 20px; }
+.udc-topic-card { display: grid; gap: 10px; min-height: 83px; padding: 13px 15px; text-align: left; border: 1px solid var(--border, #dcdce3); border-radius: 10px; background: var(--bg-panel, #fff); color: inherit; font: inherit; cursor: pointer; }
+.udc-topic-card strong { font-size: 13px; }
+.udc-topic-card span { font-size: 11px; opacity: .7; font-variant-numeric: tabular-nums; }
+.udc-topic-card.is-selected { border-color: var(--study-accent); background: color-mix(in srgb, var(--study-accent) 10%, var(--bg-panel, #fff)); box-shadow: inset 3px 0 var(--study-accent); }
+.udc-topic-card:disabled { opacity: .5; cursor: default; }
+.udc-subject-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; padding: 13px; border: 1px solid var(--border, #dcdce3); border-radius: 10px; }
+.udc-subject-toggle { display: flex; gap: 3px; }
+.udc-subject-toggle button { border: 1px solid var(--border, #dcdce3); border-radius: 7px; padding: 7px 10px; background: transparent; color: inherit; font: inherit; font-size: 12px; cursor: pointer; }
+.udc-subject-toggle button[aria-pressed="true"] { background: var(--study-accent); color: #fff; border-color: var(--study-accent); }
+.udc-subject-toggle button:disabled { opacity: .4; cursor: default; }
+.udc-subject-toolbar label { display: flex; align-items: center; gap: 7px; font-size: 12px; }
+.udc-subject-toolbar select, .udc-subject-toolbar input { min-width: 0; border: 1px solid var(--border, #dcdce3); border-radius: 6px; background: var(--bg-panel, #fff); color: inherit; padding: 7px; font: inherit; }
+.udc-subject-search { flex: 1; min-width: 210px; }
+.udc-subject-search input { width: 100%; }
+.udc-subject-status { font-size: 12px; opacity: .75; margin: 12px 0 18px; }
+.udc-subject-empty { padding: 20px; border: 1px solid var(--border, #dcdce3); border-radius: 10px; }
+.udc-subject-study button:focus-visible, .udc-subject-toolbar input:focus-visible, .udc-subject-toolbar select:focus-visible { outline: 2px solid var(--study-accent); outline-offset: 3px; }
+@media (max-width: 540px) {
+  .udc-subject-heading { flex-direction: column; gap: 12px; }
+  .udc-subject-total { text-align: left; }
+  .udc-topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .udc-topic-card { padding: 12px 10px; }
+  .udc-subject-search { width: 100%; }
+}
+
+/* Learning controls shared by drills and inline reading. */
+.udc-recall-confidence, .udc-mistake-reason {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 7px;
+  margin: 12px 0; font-size: 12.5px; line-height: 1.5;
+}
+.udc-recall-confidence > span, .udc-mistake-reason > span { color: var(--text-secondary); }
+.udc-recall-confidence select, .udc-mistake-reason select {
+  max-width: 100%; padding: 7px 9px; border-radius: 7px;
+  background: var(--udc-panel); color: inherit; border: 1px solid var(--udc-border);
+}
+.udc-study-action { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0; }
+.udc-study-action > span { font-size: 11px; color: var(--text-secondary); }
+.udc-learning-session-heading {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 17px 0; margin-bottom: 15px; border-bottom: 1px solid var(--udc-border);
+}
+.udc-learning-session-heading p { margin: 0 0 4px; font-size: 11px; text-transform: uppercase; letter-spacing: .09em; color: var(--udc-primary); }
+.udc-learning-session-heading h2 { margin: 0 0 6px; font-size: 23px; }
+.udc-learning-session-heading span { color: var(--text-secondary); font-size: 12px; }
+.udc-learning-storage-notice, .udc-learning-session-note {
+  padding: 12px 15px; border-radius: 9px; background: var(--bg-panel-elev);
+  border: 1px solid var(--udc-border); font-size: 13px; line-height: 1.5;
+}
+@media (max-width: 600px) {
+  .udc-learning-session-heading { flex-direction: column; align-items: flex-start; }
+}
+
+/* Subject compilations and Economics lessons */
+.udc-tabs { flex-wrap: wrap; }
+@media (max-width: 640px) {
+  .udc-tabs {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
+    padding-bottom: 7px;
+  }
+  .udc-tabs button, .udc-tabs a { flex: 0 0 auto; }
+}
+.udc-subject-compilations { max-width: 1040px; }
+.udc-subject-compilations .udc-hero { margin-left: 0; margin-right: 0; }
+.udc-compilation-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 22px; }
+.udc-compilation-nav button, .udc-guide-toolbar button, .udc-guide-practice,
+.udc-economics-question-heading button {
+  border: 1px solid var(--border); border-radius: 9px; padding: 8px 12px;
+  background: var(--bg-panel); color: var(--text-primary); font: inherit; font-size: 12px; cursor: pointer;
+}
+.udc-compilation-nav button.is-active {
+  border-color: var(--udc-primary); color: var(--udc-primary);
+  background: color-mix(in srgb, var(--udc-primary) 9%, var(--bg-panel));
+  font-weight: 700;
+}
+.udc-compilation-section { margin-bottom: 30px; scroll-margin-top: 18px; }
+.udc-compilation-heading { padding: 18px 20px; margin-bottom: 14px; border-radius: 14px;
+  background: color-mix(in srgb, var(--udc-primary) 8%, var(--bg-panel)); border: 1px solid var(--border); }
+.udc-compilation-heading > span { font-size: 10px; font-weight: 800; letter-spacing: .12em; color: var(--udc-primary); }
+.udc-compilation-heading h3 { margin: 6px 0 8px; font-size: 22px; line-height: 1.25; }
+.udc-compilation-heading p { margin: 0; max-width: 760px; line-height: 1.6; font-size: 13px; color: var(--text-secondary); }
+.udc-compilation-heading small, .udc-economics-question-heading small { font-size: 12px; font-weight: 600; opacity: .65; }
+.udc-mizo-notes { margin-top: 20px; }
+.udc-mizo-notes > summary { cursor: pointer; font-size: 14px; font-weight: 650; padding: 12px 0; }
+.udc-guide-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 14px; font-size: 12px; color: var(--text-secondary); }
+.udc-guide-toolbar button { flex: none; }
+.udc-guide-lessons { display: grid; gap: 10px; }
+.udc-guide-lesson { border: 1px solid var(--border); border-radius: 13px; background: var(--bg-panel); overflow: hidden; }
+.udc-guide-lesson > summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 12px; padding: 16px; }
+.udc-guide-lesson > summary::-webkit-details-marker { display: none; }
+.udc-guide-lesson > summary::after { content: '+'; font-size: 20px; color: var(--text-secondary); }
+.udc-guide-lesson[open] > summary::after { content: '−'; }
+.udc-guide-number { flex: none; font-size: 13px; font-weight: 700; display: grid; place-items: center; width: 34px; height: 34px;
+  border-radius: 10px; color: var(--udc-primary); background: color-mix(in srgb, var(--udc-primary) 10%, transparent); }
+.udc-guide-title { flex: 1; min-width: 0; }
+.udc-guide-title strong { display: block; font-size: 14px; line-height: 1.4; }
+.udc-guide-title small { display: block; font-size: 11px; margin-top: 4px; color: var(--text-secondary); }
+.udc-guide-priority { flex: none; font-size: 10px; font-weight: 650; padding: 3px 7px; border-radius: 5px; background: var(--bg-panel-elev); color: var(--text-secondary); }
+.udc-guide-priority.is-critical { background: color-mix(in srgb, var(--udc-primary) 12%, transparent); color: var(--udc-primary); }
+.udc-guide-body { padding: 0 20px 20px; border-top: 1px solid var(--border); }
+.udc-guide-explanation { max-width: 78ch; font-size: 14px; line-height: 1.8; }
+.udc-guide-explanation p { margin: 15px 0; }
+.udc-guide-memory { border-left: 3px solid var(--udc-primary); padding: 12px 15px; border-radius: 0 9px 9px 0;
+  background: color-mix(in srgb, var(--udc-primary) 7%, transparent); font-size: 13px; line-height: 1.65; margin: 16px 0; }
+.udc-guide-memory > strong { color: var(--udc-primary); font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }
+.udc-guide-memory p { margin: 5px 0 0; }
+.udc-guide-reference-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.udc-guide-reference-grid aside { padding: 13px 15px; border: 1px solid var(--border); border-radius: 10px; font-size: 12.5px; line-height: 1.65; }
+.udc-guide-reference-grid h4 { margin: 0 0 8px; font-size: 12px; }
+.udc-guide-traps { background: color-mix(in srgb, var(--warn, #b06f1a) 5%, transparent); }
+.udc-guide-traps h4 { color: var(--warn, #b06f1a); }
+.udc-guide-traps ul { padding-left: 18px; margin: 0; }
+.udc-guide-traps li + li { margin-top: 6px; }
+.udc-guide-facts p { padding: 7px 0; margin: 0; overflow-wrap: anywhere; }
+.udc-guide-facts p + p { border-top: 1px solid var(--border); }
+.udc-guide-practice { margin-top: 14px; color: var(--udc-primary); font-weight: 650; }
+.udc-economics-question-heading { scroll-margin-top: 18px; margin-top: 28px; margin-bottom: 12px; }
+.udc-economics-question-heading h3 { font-size: 19px; margin: 0 0 8px; }
+.udc-economics-question-heading p { font-size: 13px; }
+.udc-economics-question-heading button { margin-left: 8px; }
+@media (max-width: 640px) {
+  .udc-guide-reference-grid { grid-template-columns: 1fr; }
+  .udc-guide-lesson > summary { gap: 9px; padding: 13px 11px; }
+  .udc-guide-priority { display: none; }
+  .udc-guide-body { padding: 0 13px 15px; }
+  .udc-guide-toolbar { align-items: flex-start; }
+  .udc-compilation-heading { padding: 16px; }
+}
+
+/* Match the exam shell's responsive padding; the hero must not widen the page. */
+@media (max-width: 767px) {
+  .udc-ldc-content > .udc-hero { margin-left: -12px; margin-right: -12px; }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .udc-ldc-content > .udc-hero { margin-left: -18px; margin-right: -18px; }
+}

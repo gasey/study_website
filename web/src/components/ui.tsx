@@ -1,3 +1,5 @@
+import AvatarArt from './AvatarArt'
+import type {AvatarLook} from '../lib/avatar'
 import type { ReactNode } from 'react'
 import * as React from 'react'
 
@@ -151,7 +153,8 @@ export function NotYet({ children }: { children: ReactNode }) {
 }
 
 /** 36px avatar circle with initials. (markup line 50) */
-export function Avatar({ initials }: { initials: string }) {
+export function Avatar({ initials,look }: { initials: string;look?:AvatarLook|null }) {
+  if(look)return <AvatarArt look={look}/>
   return (
     <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-ink bg-[#F6DDD3] font-mono text-[12px] font-medium">
       {initials}

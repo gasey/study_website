@@ -1,0 +1,11 @@
+[Unit]
+Description=Check the reviewed bank publication queue every minute
+
+[Timer]
+OnBootSec=30s
+OnUnitInactiveSec=60s
+RandomizedDelaySec=5s
+Unit=ism-bank-review.service
+
+[Install]
+WantedBy=timers.target

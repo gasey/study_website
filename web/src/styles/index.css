@@ -12,3 +12,116 @@
   .label { @apply font-mono text-[11px] uppercase tracking-[0.08em] text-muted; }
   .hair  { @apply border border-hairline; }
 }
+
+/* Fixed A/B then C/D positions. List preference never changes answer order. */
+.answer-options { display:grid; grid-template-columns:minmax(0,1fr); gap:10px; }
+@media (min-width:640px) { .answer-options[data-layout="grid"] { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+.answer-options > *, .answer-options > li > button { min-width:0; overflow-wrap:anywhere; }
+.answer-options > li { display:flex; }
+.answer-options .answer-option { width:100%; height:100%; align-items:flex-start; min-height:48px; background:#FBF8F1; border:1px solid #DCD3C2; border-radius:9px; color:#1D1B18; line-height:1.5; transition:background-color .15s,border-color .15s; }
+.answer-options .answer-option > span:first-child { display:inline-flex; align-items:center; justify-content:center; flex:none; width:25px; height:25px; border:1px solid #DCD3C2; border-radius:6px; background:#fff; color:#49443B; font-size:12px; font-weight:700; }
+.answer-options .answer-option:focus-visible { outline:3px solid #2D5BD0; outline-offset:3px; }
+.answer-options .answer-option:not(:disabled):hover { border-color:#2D5BD0; }
+.answer-options .answer-option[data-answer-state="selected"] { background:#E3E9F8; border-color:#2D5BD0; box-shadow:inset 0 0 0 1px #2D5BD0; }
+.answer-options .answer-option[data-answer-state="correct"] { background:#DCEFE1; border-color:#2E7D46; opacity:1; }
+.answer-options .answer-option[data-answer-state="wrong"] { background:#F8DEDA; border-color:#C0392B; opacity:1; }
+.answer-options .answer-option[data-answer-state="correct"] > span:first-child { color:white; background:#2E7D46; border-color:#2E7D46; }
+.answer-options .answer-option[data-answer-state="wrong"] > span:first-child { color:white; background:#C0392B; border-color:#C0392B; }
+.answer-options .answer-option[data-answer-state="selected"] > span:first-child { color:white; background:#2D5BD0; border-color:#2D5BD0; }
+@media (prefers-reduced-motion:reduce) { .answer-options .answer-option { transition:none; } }
+
+.source-question-enumeration { display:grid; grid-template-columns:minmax(0,1fr); gap:4px 16px; margin-top:8px; font-size:.9em; line-height:1.45; }
+.source-question-enumeration > span { min-width:0; overflow-wrap:anywhere; }
+@media (min-width:640px) { .source-question-enumeration { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+
+/* Study Desk v3: scene, two-column workspace and exact prototype palette. */
+@keyframes ism-breathe {50% {transform:translateY(-2px)}}
+@keyframes ism-write {50% {transform:rotate(-7deg)}}
+@keyframes ism-glow {50% {opacity:.65}}
+@keyframes ism-blink {50% {opacity:.45}}
+@keyframes ism-sway {50% {transform:rotate(5deg)}}
+@keyframes ism-steam {50% {opacity:.3;transform:translateY(-4px)}}
+@keyframes ism-pulse {50% {opacity:.35}}
+@keyframes ism-spin {to {transform:rotate(360deg)}}
+.desk-v3 {max-width:none;margin:0 auto;padding:32px 16px 96px}
+.desk-v3 h1,.desk-v3 h2,.desk-v3 h3 {font-weight:500}
+.desk-v3-heading {font-family:Newsreader,Georgia,serif;font-size:clamp(34px,4.6vw,50px);letter-spacing:-.02em;line-height:1.15}
+.desk-v3-button {display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:44px;padding:8px 15px;border:1px solid #CFC5B2;border-radius:999px;font-size:13px;font-weight:600;overflow-wrap:anywhere}
+.desk-v3-button:disabled {opacity:.5;cursor:not-allowed}
+.desk-v3-input {display:block;box-sizing:border-box;width:100%;min-width:0;min-height:44px;padding:10px 12px;border:1px solid #CFC5B2;border-radius:6px;background:#FBF8F1;font-size:14px}
+.desk-v3-label {font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#6B6457}
+.desk-v3-card {border:1px solid #E4DBC9;border-radius:8px;background:#FBF8F1;padding:18px;min-width:0}
+.desk-v3-columns {display:flex;flex-wrap:wrap;gap:40px;align-items:flex-start;margin-top:28px}
+.desk-v3-main {flex:999 1 560px;min-width:0}
+.desk-v3-rail {flex:1 1 280px;max-width:360px;min-width:0;display:flex;flex-direction:column;gap:26px}
+.desk-v3-subhead {display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:10px;border-bottom:1px solid #E4DBC9;padding-bottom:10px}
+.desk-v3-subhead h2 {font-family:Newsreader,Georgia,serif;font-size:28px;line-height:1.2}
+.desk-v3-scene {margin-top:16px;border:1px solid #1D1B18;border-radius:10px;overflow:hidden;background:#EFE6D3}
+.desk-v3-scene svg [role=button]:focus-visible {outline:3px solid #2D5BD0;outline-offset:3px}
+.desk-v3-empty {padding:30px 10px;text-align:center;color:#6B6457;font-size:14px;line-height:1.6}
+.desk-v3-mistake {padding:16px;border-radius:3px;background:#F6DDD3;box-shadow:0 2px 0 rgba(29,27,24,.08),0 8px 18px rgba(29,27,24,.08)}
+.desk-v3-chat {display:flex;flex-direction:column;gap:10px;max-height:340px;overflow:auto;overflow-wrap:anywhere}
+.desk-v3-tabs {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+.desk-v3-tabs button {min-height:44px}
+@media(max-width:640px){.desk-v3 {padding:24px 12px 100px}.desk-v3-rail {max-width:none;width:100%}.desk-v3-columns{gap:28px}.desk-v3-scene svg{min-width:640px}.desk-v3-scene-canvas{overflow-x:auto}.desk-v3-scene-canvas::after{content:'Scroll the desk illustration · use the tabs below for all actions';display:block;padding:6px 12px;font-size:10px;color:#6B6457}}
+@media(prefers-reduced-motion:reduce){.desk-v3 [data-anim]{animation:none!important;transition:none!important}}
+.desk-shared-question > article {border:0;background:transparent;padding:0;box-shadow:none;margin-bottom:0}
+
+@keyframes scope-enter { from {opacity:.65;transform:translateY(2px)} to {opacity:1;transform:translateY(0)} }
+.scope-workspace {animation:scope-enter 160ms ease-out}
+@media(prefers-reduced-motion:reduce){.scope-workspace{animation:none}}
+
+/* Printed answer spaces are distinct from paired underline emphasis. */
+.source-question-blank {display:inline-block;border-bottom:1px solid currentColor;height:.9em;vertical-align:baseline;margin:0 .12em;max-width:100%}
+
+/* Exam targets must remain visible even in the display font or forced colours.
+   Source underline stays distinct from ordinary bold and italic emphasis. */
+.source-question-text u,
+.source-question-underline-targets strong {
+  text-decoration-line: underline;
+  text-decoration-thickness: max(1.5px, .09em);
+  text-underline-offset: .18em;
+  text-decoration-skip-ink: none;
+  font-weight: 700;
+}
+/* Light actions in both exam hero skins need dark text against their white card. */
+.udc-hero .exam-hero-light-action,
+.cp-hero .exam-hero-light-action { color: #1d1b18 !important; }
+
+/* Shared outer gutters: use available screen space without tightening text. */
+.max-w-shell {padding-left:16px;padding-right:16px}
+@media(max-width:767px){.max-w-shell {padding-left:12px;padding-right:12px}}
+@media(min-width:1025px){.udc-ldc-content > .udc-hero {margin-left:-16px;margin-right:-16px}}
+.cp-page .cp-content {max-width:none;padding-left:16px;padding-right:16px}
+.cp-content > .cp-hero {margin-left:-16px;margin-right:-16px}
+@media(max-width:767px){
+ .cp-page .cp-content {padding-left:12px;padding-right:12px}
+ .cp-content > .cp-hero {margin-left:-12px;margin-right:-12px}
+}
+
+/* Wide browsing, comfortable card and question widths. Keep the outer shell fluid. */
+.exam-paper-grid {
+ display:grid;
+ grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));
+ align-items:stretch;
+ gap:16px;
+}
+.exam-paper-card {
+ display:flex;flex-direction:column;overflow-wrap:anywhere;
+ box-shadow:0 2px 5px rgba(29,27,24,.035);
+ transition:border-color 160ms ease,box-shadow 160ms ease;
+}
+.exam-paper-status {display:inline-flex;align-items:baseline;gap:6px;min-height:28px;padding:3px 0;text-decoration:underline;text-decoration-color:transparent;text-underline-offset:4px}
+.exam-paper-actions > a {flex:1 1 auto}
+.exam-paper-expand {display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#f3f0e8;font-size:17px}
+.exam-paper-card a:focus-visible,.exam-paper-card summary:focus-visible {outline:2px solid #245f91;outline-offset:4px;border-radius:6px}
+.exam-paper-card summary::-webkit-details-marker {display:none}
+@media(hover:hover){
+ .exam-paper-card:hover {border-color:#bcb4a4;box-shadow:0 5px 14px rgba(29,27,24,.07)}
+ .exam-paper-status:hover,.exam-paper-source:hover {text-decoration:underline}
+ .exam-paper-actions > a:hover {box-shadow:0 2px 6px rgba(29,27,24,.12)}
+}
+@media(prefers-reduced-motion:reduce){.exam-paper-card,.exam-paper-expand {transition:none}}
+.exam-reading-area {width:100%;max-width:960px}
+.exam-reading-area h3 {max-width:75ch}
+@media(max-width:767px){.exam-paper-grid {gap:12px}}

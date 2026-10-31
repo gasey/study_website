@@ -6,3 +6,12 @@ __pycache__/
 .env
 .DS_Store
 *.tsbuildinfo
+# Locally provisioned site-admin bearer token.
+.admin-token
+
+# Generated from the pinned pdfjs-dist package before dev/build.
+web/public/vendor/pdfjs/
+
+# Local release evidence, database snapshots and disposable test fixtures.
+/reports/
+/tmp/

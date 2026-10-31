@@ -52,7 +52,7 @@ export default {
         paperdoc: ['"Times New Roman"', 'Times', 'serif'], // original-paper rendering
       },
       borderRadius: { card: '10px', panel: '8px', pill: '999px' },
-      maxWidth: { shell: '1240px' },
+      maxWidth: { shell: '100%' },
     },
   },
   plugins: [],

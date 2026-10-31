@@ -1,231 +1,168 @@
-import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import { getCollection, isLaterExamCollection, listCollections, type Collection, type CollectionDetail } from '../lib/api'
+import { useEffect, useMemo, useState } from 'react'
+import { Link,useSearchParams } from 'react-router-dom'
+import Pagination from '../components/Pagination'
+import {pageNumber,scrollToResults} from '../lib/pagination'
+import {
+  getCollection, getExamBookmarks, getExamProgress, isLaterExamCollection,
+  listCollections, removeExamBookmark, saveExamBookmark,
+  type Collection, type CollectionDetail, type ExamProgressSummary,
+} from '../lib/api'
 
-/** "Exams & tools", backed by the public collection list. */
-export default function Exams() {
-  const [collections, setCollections] = useState<Collection[]>([])
-  const [flagship, setFlagship] = useState<CollectionDetail | null>(null)
-  const [error, setError] = useState<string | null>(null)
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    let cancelled = false
-    listCollections()
-      .then(async (cs) => {
-        if (cancelled) return
-        const launchCollections = cs.filter((c) => !isLaterExamCollection(c))
-        setCollections(launchCollections)
-        const detail = launchCollections.length ? await getCollection(launchCollections[0].id) : null
-        if (!cancelled) setFlagship(detail)
-      })
-      .catch((e) => !cancelled && setError(e.message))
-      .finally(() => !cancelled && setLoading(false))
-    return () => {
-      cancelled = true
-    }
-  }, [])
-
-  const general = flagship?.section_list.filter((s) => s.path.startsWith('general/')) ?? []
-  const technical = flagship?.section_list.filter((s) => s.path.startsWith('technical/')) ?? []
-
-  return (
-    <div className="mx-auto max-w-shell px-6 pb-24 pt-9">
-      <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-exams-dark">Library</div>
-      <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)] font-medium -tracking-[0.02em]">
-        Exams &amp; tools
-      </h1>
-      <p className="mt-3 max-w-[720px] text-[17px] leading-relaxed text-secondary [text-wrap:pretty]">
-        We group past-paper questions by exam and section, then use reliable answer keys for scored
-        practice.
-      </p>
-
-      {/* The prototype's two orientation cards: where you are, and the bank. */}
-      <div className="mt-5 grid gap-3.5 [grid-template-columns:repeat(auto-fit,minmax(280px,1fr))]">
-        <div className="rounded-[14px] bg-exams-soft px-5 py-[18px]">
-          <div className="text-[13px] font-semibold text-exams-dark">Exams · you are here</div>
-          <div className="mt-1.5 font-display text-[21px] font-medium">
-            Premade, in order, finite
-          </div>
-          <div className="mt-1.5 text-[13.5px] leading-[1.55] text-[#4A3205]">
-            Choose a prepared exam set, then practise one section at a time.
-          </div>
-        </div>
-        <Link
-          to="/bank"
-          className="block rounded-[14px] border border-hairline bg-card px-5 py-[18px] shadow-[0_1px_2px_rgba(29,27,24,.05)]"
-        >
-          <div className="flex items-center gap-2 text-[13px] font-semibold text-practice-dark">
-            <span className="h-2 w-2 rounded-full bg-practice" />
-            Question bank
-          </div>
-          <div className="mt-1.5 font-display text-[21px] font-medium">
-            Everything, unsorted until you filter
-          </div>
-          <div className="mt-1.5 text-[13.5px] leading-[1.55] text-secondary">
-            Search the question text and filter by answer source or exam year. Open the bank →
-          </div>
-        </Link>
-      </div>
-
-      {loading && <p className="label mt-10">Loading…</p>}
-      {error && (
-        <div className="mt-6 rounded-[14px] border border-mypick bg-mypick-soft p-4 text-mypick">
-          <span className="font-mono text-[11px] uppercase tracking-[0.06em]">Error</span>
-          <p className="mt-1 text-[14px]">{error}</p>
-        </div>
-      )}
-
-      {flagship && (
-        <>
-          {/* Flagship panel: near-black with a stats rail, markup line 540. */}
-          <section className="mt-7 flex flex-wrap overflow-hidden rounded-[14px] bg-[#14130F] text-paper">
-            <div className="min-w-0 flex-[3_1_460px] px-8 py-[30px]">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-pill bg-practice px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.08em] text-white">
-                  Start here
-                </span>
-                <span className="font-mono text-[11px] text-[#BDB3A0]">
-                  {flagship.kind} · exam collection
-                </span>
-              </div>
-              <h2 className="mt-3.5 font-display text-[clamp(34px,4.6vw,52px)] font-medium leading-[1.05] -tracking-[0.02em]">
-                {flagship.title}
-              </h2>
-              <p className="mt-3 max-w-[560px] text-[16px] leading-relaxed text-[#D9D0BF]">
-                Past-paper questions grouped into {flagship.sections} sections. Scored mocks use
-                official and transcribed answer keys only.
-              </p>
-              <div className="mt-4 flex flex-wrap gap-1.5">
-                {flagship.section_list.slice(0, 6).map((s) => (
-                  <span
-                    key={s.path}
-                    className="rounded-pill border border-[#5A544A] px-2.5 py-1 text-[12.5px] text-canvas"
-                  >
-                    {s.title}
-                  </span>
-                ))}
-              </div>
-              <div className="mt-[22px] flex flex-wrap gap-2.5">
-                <Link
-                  to={`/exams/${flagship.id}`}
-                  className="rounded-pill bg-paper px-[22px] py-3 text-[15px] font-semibold text-ink"
-                >
-                  Open the exam
-                </Link>
-                <Link
-                  to="/bank"
-                  className="rounded-pill border border-paper px-[21px] py-[11px] text-[15px] font-semibold text-paper"
-                >
-                  Browse the bank
-                </Link>
-              </div>
-            </div>
-            <div className="grid flex-[1_1_260px] content-center gap-[18px] bg-[#2A2723] px-7 py-[26px] [grid-template-columns:1fr_1fr]">
-              {[
-                { v: flagship.scorable.toLocaleString('en-IN'), k: 'scorable questions', c: 'text-paper' },
-                { v: String(flagship.sections), k: 'sections', c: 'text-paper' },
-                { v: String(technical.length), k: 'trade sections', c: 'text-paper' },
-                { v: String(collections.length), k: 'available exam sets', c: 'text-paper' },
-              ].map((s) => (
-                <div key={s.k}>
-                  <div className={`font-display text-[34px] leading-none ${s.c}`}>{s.v}</div>
-                  <div className="mt-1 text-[12.5px] text-[#BDB3A0]">{s.k}</div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <SectionGroup
-            title="General papers"
-            desc="Taken by every candidate"
-            items={general}
-            examId={flagship.id}
-          />
-          <SectionGroup
-            title="By trade"
-            desc="Technical Paper-I and II"
-            items={technical}
-            examId={flagship.id}
-          />
-          {collections.length > 1 && (
-            <section className="mt-12">
-              <div className="flex flex-wrap items-baseline justify-between gap-2.5 border-b border-hairline pb-2.5">
-                <h2 className="font-display text-[30px] font-medium">More exam collections</h2>
-                <span className="text-[14px] text-secondary">Browse available exam sets</span>
-              </div>
-              <div className="mt-3.5 grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
-                {collections.filter((c) => c.id !== flagship.id).map((c) => (
-                  <Link
-                    key={c.id}
-                    to={`/exams/${c.id}`}
-                    className="flex flex-col gap-2 rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.12)]"
-                  >
-                    <span className="flex items-center gap-2 text-[12.5px] font-semibold">
-                      <span className="h-2 w-2 rounded-full bg-exams" />
-                      {c.kind} · {c.sections} sections
-                    </span>
-                    <div className="font-display text-[21px] font-medium leading-tight">{c.title}</div>
-                    <div className="flex-1 text-[14px] leading-[1.55] text-[#2E2A24]">
-                      {c.scorable.toLocaleString('en-IN')} scorable questions
-                    </div>
-                    <span className="text-[12px] font-semibold">Open →</span>
-                  </Link>
-                ))}
-              </div>
-            </section>
-          )}
-        </>
-      )}
-      {!loading && !error && !flagship && (
-        <div className="mt-7 rounded-[14px] border border-hairline bg-card p-6 shadow-[0_1px_2px_rgba(29,27,24,.05)]">
-          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">Exam library</div>
-          <h2 className="mt-2 font-display text-[24px] font-medium">Exam sets are being prepared</h2>
-          <p className="mt-2 text-[14px] text-secondary">Browse the question bank while we publish the first exam collections.</p>
-          <Link to="/bank" className="mt-4 inline-block text-[14px] font-semibold text-link hover:underline">Open the bank →</Link>
-        </div>
-      )}
-    </div>
-  )
+type Filter = 'all' | 'saved'
+const PAGE_SIZE = 8
+const ALIASES: Record<string, string[]> = {
+  ldc: ['ldc', 'lower division clerk'], udc: ['udc', 'upper division clerk'],
+  prelims: ['prelims', 'preliminary', 'combined prelims'], mpsc: ['mpsc', 'mizoram public service commission'],
+  gazetted: ['gazetted', 'gazette', 'group b'], gazette: ['gazetted', 'gazette', 'group b'],
+  nongazetted: ['non gazetted', 'non-gazetted', 'ldc', 'udc'],
+  assistant: ['assistant', 'assistant grade', 'assistant audit'],
+}
+const PHRASES: Record<string, string[]> = {
+  'non gazetted': ['non gazetted', 'ldc', 'udc'], 'group b': ['group b', 'gazetted'],
+  'combined prelims': ['combined prelims', 'preliminary'],
+  'lower division clerk': ['lower division clerk', 'ldc'], 'upper division clerk': ['upper division clerk', 'udc'],
+}
+const norm = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim()
+function matches(text: string, query: string) {
+  const terms = norm(query).split(' ').filter(Boolean)
+  const target = norm(text)
+  const groups: string[][] = []
+  for (let i = 0; i < terms.length;) {
+    const phrase = Object.keys(PHRASES).sort((a, b) => b.length - a.length).find((p) => terms.slice(i, i + p.split(' ').length).join(' ') === p)
+    if (phrase) { groups.push(PHRASES[phrase]); i += phrase.split(' ').length }
+    else { groups.push(ALIASES[terms[i]] ?? [terms[i]]); i++ }
+  }
+  return groups.every((g) => g.some((alias) => target.includes(norm(alias))))
 }
 
-function SectionGroup({
-  title,
-  desc,
-  items,
-  examId,
-}: {
-  title: string
-  desc: string
-  items: { path: string; title: string; papers: number; scorable: number }[]
-  examId: string
-}) {
-  if (!items.length) return null
-  return (
-    <section className="mt-10">
-      <div className="flex flex-wrap items-baseline justify-between gap-2.5 pb-1">
-        <h2 className="font-display text-[30px] font-medium">{title}</h2>
-        <span className="text-[14px] text-secondary">{desc}</span>
+export default function Exams() {
+  const [collections, setCollections] = useState<Collection[]>([])
+  const [feature, setFeature] = useState<CollectionDetail | null>(null)
+  const [progress, setProgress] = useState<Record<string, ExamProgressSummary>>({})
+  const [bookmarks, setBookmarks] = useState<string[]>([])
+  const [busyBookmark, setBusyBookmark] = useState<string | null>(null)
+  const [params,setParams]=useSearchParams()
+  const filter:Filter=params.get('exam_filter')==='saved'?'saved':'all',query=params.get('q')||'',page=pageNumber(params.get('page'))-1
+  function filterURL(key:string,value:string){setParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);next.delete('page');return next},{replace:true})}
+  const setFilter=(value:Filter)=>filterURL('exam_filter',value==='all'?'':value),setQuery=(value:string)=>filterURL('q',value)
+  const goPage=(value:number)=>{setParams(previous=>{const next=new URLSearchParams(previous);if(value>1)next.set('page',String(value));else next.delete('page');return next});requestAnimationFrame(()=>scrollToResults('exam-library-heading'))}
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+
+  useEffect(() => {
+    let live = true
+    listCollections().then((all) => {
+      if (!live) return
+      const available = all.filter((c) => c.kind === 'exam' && !isLaterExamCollection(c))
+      setCollections(available)
+      setLoading(false)
+      // The catalog is visible immediately; the featured detail enriches it in the background.
+      const featured = available.find((c) => c.id === 'combined-prelims') ?? available.find((c) => c.kind === 'exam')
+      if (featured) getCollection(featured.id).then((detail) => live && setFeature(detail)).catch(() => {})
+    }).catch((e) => { if (live) { setError(e.message); setLoading(false) } })
+    Promise.all([getExamBookmarks(), getExamProgress()]).then(([saved, rows]) => {
+      if (!live) return
+      setBookmarks(saved.collection_ids)
+      setProgress(Object.fromEntries(rows.map((row) => [row.collection_id, row])))
+    }).catch(() => {})
+    return () => { live = false }
+  }, [])
+
+  const featured = collections.find((c) => c.id === 'combined-prelims') ?? collections.find((c) => c.kind === 'exam') ?? null
+  const shown = useMemo(() => collections.filter((c) => {
+    const isSaved = bookmarks.includes(c.id)
+    const typeMatch = filter === 'all' || isSaved
+    return typeMatch && matches(`${c.title} ${c.id} ${c.kind}`, query)
+  }), [collections, bookmarks, filter, query])
+  const pages = Math.ceil(shown.length / PAGE_SIZE)
+  const visible = shown.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE)
+  useEffect(()=>{if(!loading&&page>=Math.max(1,pages))setParams(previous=>{const next=new URLSearchParams(previous);if(pages>1)next.set('page',String(pages));else next.delete('page');return next},{replace:true})},[loading,page,pages,setParams])
+
+  async function toggleBookmark(c: Collection) {
+    const wasSaved = bookmarks.includes(c.id)
+    setBusyBookmark(c.id)
+    // Optimistic UI keeps browsing responsive; restore the saved state if the API fails.
+    setBookmarks((old) => wasSaved ? old.filter((id) => id !== c.id) : [c.id, ...old])
+    try {
+      if (wasSaved) await removeExamBookmark(c.id)
+      else await saveExamBookmark(c.id)
+    } catch (e) {
+      setBookmarks((old) => wasSaved ? [...old, c.id] : old.filter((id) => id !== c.id))
+      setError(e instanceof Error ? `Could not update saved exams: ${e.message}` : 'Could not update saved exams.')
+    } finally { setBusyBookmark(null) }
+  }
+
+  const detail = feature?.id === featured?.id ? feature : null
+  const general = detail?.section_list.filter((s) => s.path.startsWith('general/')) ?? []
+  const subjectSections = detail?.section_list.filter((s) => s.path.startsWith('subject/')) ?? []
+  const featuredSections = [...general, ...subjectSections].slice(0, 5)
+  const examCount = collections.filter((c) => c.kind === 'exam').length
+  const savedCount = bookmarks.filter((id) => collections.some((c) => c.id === id)).length
+
+  return <div className="mx-auto max-w-shell px-5 pb-24 pt-7 sm:px-6 sm:pt-10">
+    <div className="flex flex-wrap items-end justify-between gap-4">
+      <div>
+        <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-exams-dark">Your exam room</div>
+        <h1 className="mt-2 font-display text-[clamp(36px,5vw,54px)] font-medium leading-[1.02] -tracking-[0.03em]">Exams</h1>
+        <p className="mt-3 max-w-[690px] text-[16px] leading-relaxed text-secondary">Find an exam, study its questions by subject and topic, work through past papers, or start a timed mock.</p>
       </div>
-      <div className="mt-3.5 grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
-        {items.map((s) => (
-          <Link
-            key={s.path}
-            to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}`}
-            className="flex flex-col gap-2 rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.12)]"
-          >
-            <span className="flex items-center gap-2 text-[12.5px] font-semibold">
-              <span className="h-2 w-2 rounded-full bg-exams" />
-              {s.papers} paper{s.papers === 1 ? '' : 's'}
-            </span>
-            <div className="font-display text-[21px] font-medium leading-tight">{s.title}</div>
-            <div className="flex-1 text-[14px] leading-[1.55] text-[#2E2A24]">
-              {s.scorable.toLocaleString('en-IN')} scorable questions.
-            </div>
-            <span className="text-[12px] font-semibold">Start this section →</span>
-          </Link>
-        ))}
-      </div>
+      <Link to="/desk" className="rounded-pill border border-hairline bg-card px-4 py-2.5 text-[13px] font-semibold hover:border-ink">Open study desk →</Link>
+    </div>
+
+    <section className="mt-6 rounded-[14px] border border-hairline bg-exams-soft p-5" aria-label="Group B common subjects"><h2 className="font-display text-[27px]">Group B — English &amp; GK/GS</h2><p className="mt-2 text-[14px] text-secondary">Focus on common subjects across gazetted and non-gazetted recruitment papers. Technical papers have their own area.</p><div className="mt-4 flex flex-wrap gap-3"><Link to="/group-b" className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 text-[13px] font-semibold text-paper">Study English &amp; GK/GS →</Link><Link to="/group-b?study_area=technical" className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Technical papers →</Link></div></section>
+
+    <section className="mt-6 grid gap-3 sm:grid-cols-3" aria-label="Exam overview">
+      <div className="rounded-[14px] bg-exams-soft p-4"><div className="font-mono text-[10px] uppercase tracking-[.1em] text-exams-dark">Prepared routes</div><div className="mt-1 font-display text-[25px]">{loading ? '…' : examCount}</div><p className="mt-1 text-[12px] text-[#4A3205]">Exam collections, ordered by paper and subject</p></div>
+      <div className="rounded-[14px] border border-hairline bg-card p-4"><div className="font-mono text-[10px] uppercase tracking-[.1em] text-muted">Your saved list</div><div className="mt-1 font-display text-[25px]">{savedCount} <span className="text-[15px] text-muted">exam{savedCount === 1 ? '' : 's'}</span></div><p className="mt-1 text-[12px] text-secondary">Bookmarks sync with your account when you sign in</p></div>
+      <div className="rounded-[14px] border border-hairline bg-card p-4"><div className="font-mono text-[10px] uppercase tracking-[.1em] text-practice-dark">Past papers</div><div className="mt-1 font-display text-[21px]">Browse &amp; practise</div><p className="mt-1 text-[12px] text-secondary">Open questions within each exam, with its source and answer status</p></div>
     </section>
-  )
+
+    {featured && <section className="relative mt-5 overflow-hidden rounded-[18px] bg-[#171713] text-paper shadow-[0_14px_40px_rgba(34,30,20,.15)]">
+      <div className="absolute -right-10 -top-16 h-64 w-64 rounded-full border border-white/10" aria-hidden="true"/><div className="absolute -right-2 -top-8 h-48 w-48 rounded-full border border-white/10" aria-hidden="true"/>
+      <div className="relative grid lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div className="p-6 sm:p-8">
+          <div className="flex flex-wrap items-center gap-2"><span className="rounded-pill bg-practice px-3 py-1 font-mono text-[10px] uppercase tracking-[.1em] text-white">Featured route</span><span className="font-mono text-[11px] text-[#C5BDAD]">{featured.kind} · MPSC</span></div>
+          <h2 className="mt-4 max-w-2xl font-display text-[clamp(32px,4vw,48px)] font-medium leading-[1.04] -tracking-[.025em]">{featured.title}</h2>
+          <p className="mt-3 max-w-[590px] text-[14px] leading-relaxed text-[#DDD6C8]">Work through the papers in order, browse every question with its source context, or start a timed set using verified answer keys.</p>
+          <div className="mt-4 flex min-h-7 flex-wrap gap-1.5">{featuredSections.map((s) => <span key={s.path} className="rounded-pill border border-white/20 px-2.5 py-1 text-[11px] text-[#EEE7DA]">{s.title}</span>)}{!featuredSections.length && <span className="text-[11px] text-[#BDB3A0]">Past papers · verified-key practice · progress saved</span>}</div>
+          <div className="mt-6 flex flex-wrap gap-2.5"><Link to={`/exams/${featured.id}`} className="rounded-pill bg-paper px-5 py-3 text-[14px] font-semibold text-ink">Explore this exam</Link><Link to={`/exams/${featured.id}?view=topics#exam-study-heading`} className="rounded-pill border border-white/50 px-5 py-3 text-[14px] font-semibold text-paper hover:bg-white/10">Study by subject</Link><Link to={`/exams/${featured.id}/mock`} className="rounded-pill border border-white/50 px-5 py-3 text-[14px] font-semibold text-paper hover:bg-white/10">Try a timed set</Link></div>
+        </div>
+        <div className="grid grid-cols-2 content-center gap-y-5 bg-white/[.06] p-6 sm:px-8 lg:grid-cols-1 lg:gap-y-6">
+          <Stat label="Questions" value={featured.questions.toLocaleString('en-IN')} /><Stat label="Verified keys" value={featured.scorable.toLocaleString('en-IN')} /><Stat label="Sections" value={featured.sections.toLocaleString('en-IN')} /><Stat label="Your answers" value={(progress[featured.id]?.answered ?? 0).toLocaleString('en-IN')} />
+        </div>
+      </div>
+    </section>}
+
+    <section className="mt-9" aria-labelledby="exam-library-heading">
+      <div className="flex flex-wrap items-end justify-between gap-3">
+        <div><div className="font-mono text-[10px] uppercase tracking-[.12em] text-muted">Find your next session</div><h2 id="exam-library-heading" tabIndex={-1} className="scroll-mt-28 focus:outline-none mt-1 font-display text-[30px] font-medium">Browse exams</h2></div>
+        <span className="text-[12px] text-secondary">{loading ? 'Loading collections…' : `${shown.length} ${shown.length === 1 ? 'collection' : 'collections'}`}</span>
+      </div>
+      <div className="mt-4 rounded-[14px] border border-hairline bg-card p-3.5 sm:p-4">
+        <label htmlFor="exam-search" className="sr-only">Search exam collections</label><input id="exam-search" type="search" value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Search: LDC, UDC, assistant, prelims, gazetted…" className="h-12 w-full rounded-[10px] border border-hairline bg-canvas px-4 text-[14px] placeholder:text-placeholder focus:border-ink focus:outline-none" />
+        <div className="mt-3 flex flex-wrap gap-2" role="group" aria-label="Filter exams">{([['all','All exams'],['saved','★ Saved']] as const).map(([key,label]) => <button key={key} type="button" onClick={() => setFilter(key)} aria-pressed={filter === key} className={`rounded-pill px-3.5 py-2 text-[12px] font-semibold transition ${filter === key ? 'bg-ink text-paper' : 'border border-hairline text-secondary hover:border-ink hover:text-ink'}`}>{label}{key === 'saved' ? ` (${savedCount})` : ''}</button>)}</div>
+      </div>
+
+      {error && <div role="status" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick">{error}<button type="button" onClick={() => setError(null)} className="ml-2 underline">Dismiss</button></div>}
+      {loading && <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3" aria-label="Loading exams">{[1,2,3].map((i) => <div key={i} className="h-48 animate-pulse rounded-[14px] border border-hairline bg-card" />)}</div>}
+      {!loading && visible.length > 0 && <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{visible.map((c) => {
+        const p = progress[c.id]
+        const isSaved = bookmarks.includes(c.id)
+        const completion = p && c.questions ? Math.min(100, Math.round(100 * p.unique_questions / c.questions)) : 0
+        return <article key={c.id} className="group flex min-h-[210px] flex-col rounded-[15px] border border-hairline bg-card p-4 shadow-[0_1px_2px_rgba(29,27,24,.04)] transition hover:-translate-y-0.5 hover:border-[#C6B58F] hover:shadow-[0_10px_26px_rgba(29,27,24,.09)] sm:p-5">
+          <div className="flex items-start justify-between gap-3"><div className="flex items-center gap-2"><span className={`grid h-8 w-8 place-items-center rounded-[9px] ${c.kind === 'exam' ? 'bg-exams-soft text-exams-dark' : 'bg-practice-soft text-practice-dark'}`} aria-hidden="true">{c.kind === 'exam' ? '✦' : '↗'}</span><span className="font-mono text-[10px] uppercase tracking-[.08em] text-muted">{c.kind} · {c.sections} sections</span></div><button type="button" onClick={() => void toggleBookmark(c)} disabled={busyBookmark === c.id} aria-label={`${isSaved ? 'Remove' : 'Save'} ${c.title} ${isSaved ? 'from' : 'to'} saved exams`} aria-pressed={isSaved} className={`grid h-9 w-9 shrink-0 place-items-center rounded-full border transition ${isSaved ? 'border-[#E9C46A] bg-[#FFF6DD] text-[#79570A]' : 'border-hairline text-muted hover:border-[#C6B58F] hover:text-ink'} disabled:opacity-50`}><span aria-hidden="true">{isSaved ? '★' : '☆'}</span></button></div>
+          <Link to={`/exams/${c.id}`} className="mt-3 block rounded focus:outline-none focus-visible:ring-2 focus-visible:ring-ink"><h3 className="font-display text-[22px] font-medium leading-tight group-hover:underline decoration-[#C6B58F] underline-offset-4">{c.title}</h3></Link>
+          <p className="mt-2 text-[12px] text-secondary">{c.questions.toLocaleString('en-IN')} questions <span className="px-1 text-[#C8BDA8]">·</span> {c.scorable.toLocaleString('en-IN')} official-key questions</p>
+          <Link to={`/exams/${c.id}?view=topics#exam-study-heading`} className="mt-3 inline-flex min-h-11 items-center self-start rounded-pill border border-hairline px-3 text-[12px] font-semibold text-link hover:border-ink">Study subjects &amp; topics →</Link>
+          {p && p.answered > 0 ? <div className="mt-auto pt-4"><div className="flex justify-between text-[11px]"><span className="font-medium">{p.unique_questions.toLocaleString('en-IN')} unique questions answered</span><span className="text-muted">{completion}% of questions</span></div><div className="mt-1.5 h-1.5 overflow-hidden rounded-full bg-[#ECE6D9]" role="progressbar" aria-label={`${c.title} coverage`} aria-valuemin={0} aria-valuemax={100} aria-valuenow={completion}><div className="h-full rounded-full bg-exams" style={{ width: `${completion}%` }} /></div><div className="mt-2 flex items-center justify-between text-[11px] text-secondary"><span>{p.accuracy}% accuracy</span><Link to={`/exams/${c.id}?view=practice#exam-question-browser`} className="font-semibold text-ink">Practise →</Link></div></div> : <div className="mt-auto flex items-center justify-between pt-4"><span className="text-[11px] text-muted">{c.scorable ? 'Verified-key practice available' : 'Browse questions and papers'}</span><Link to={`/exams/${c.id}`} className="text-[12px] font-semibold text-ink">Explore →</Link></div>}
+        </article>
+      })}</div>}
+      {!loading && !visible.length && <div className="mt-4 rounded-[14px] border border-dashed border-hairline bg-card p-8 text-center"><div className="font-display text-[22px]">{filter === 'saved' ? 'Your saved exams will be here' : 'No matching exams'}</div><p className="mt-1 text-[13px] text-secondary">{filter === 'saved' ? 'Tap the star on any exam to keep it close.' : 'Try a shorter search or clear the selected filter.'}</p>{filter === 'saved' && <button type="button" onClick={() => setFilter('all')} className="mt-3 rounded-pill bg-ink px-4 py-2 text-[12px] font-semibold text-paper">Browse all exams</button>}</div>}
+      <Pagination page={page+1} pages={pages} disabled={loading} onPageChange={goPage} label="Exam collection pages"/>
+    </section>
+  </div>
+}
+
+function Stat({ label, value }: { label: string; value: string }) {
+  return <div><div className="font-display text-[30px] leading-none text-paper">{value}</div><div className="mt-1.5 text-[11px] text-[#C5BDAD]">{label}</div></div>
 }

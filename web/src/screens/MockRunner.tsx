@@ -1,11 +1,15 @@
+import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { Link, useParams, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
 import MockResultView, { mmss } from '../components/MockResultView'
+import { SourceQuestionContext, SourceQuestionText } from '../components/SourceQuestionText'
 import {
   currentMock,
+  getMockResult,
   getCollection,
   isLaterExamCollection,
   startMock,
+  saveMockAnswer,
   submitMock,
   type MockResult,
   type MockSession,
@@ -23,8 +27,11 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 
 export default function MockRunner() {
   const { id: collectionId = '' } = useParams()
+  const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const sectionPath = searchParams.get('section') || undefined
+  const paperId = searchParams.get('paper') || undefined
+  const answerMode = searchParams.get('mode') === 'derived' ? 'derived-practice' : 'official'
   const [mock, setMock] = useState<MockSession | null>(null)
   const [paperTitle, setPaperTitle] = useState('Preparing your paper')
   const [result, setResult] = useState<MockResult | null>(null)
@@ -34,13 +41,17 @@ export default function MockRunner() {
   const [marked, setMarked] = useState<Record<string, boolean>>({})
   const [left, setLeft] = useState(0)
   const [busy, setBusy] = useState(false)
+  const [saveError, setSaveError] = useState<string | null>(null)
+  const [loadingSlow, setLoadingSlow] = useState(false)
   const submitted = useRef(false)
+  const saveQueue = useRef(Promise.resolve())
 
   // Resume an open mock if there is one, else start a fresh 20-question /
   // 20-minute paper. Resuming matters: the server allows only one open mock
   // per device, so a reload must rejoin rather than fail with a 409.
   useEffect(() => {
     let dead = false
+    const slowTimer = window.setTimeout(() => { if (!dead) setLoadingSlow(true) }, 12000)
     ;(async () => {
       try {
         const selectedCollection = await getCollection(collectionId)
@@ -48,46 +59,82 @@ export default function MockRunner() {
           throw new Error('LDE exam practice will be added as the exam library grows.')
         }
         const existing = await currentMock()
+        // API fields use null for an unscoped mock, while absent URL params
+        // are undefined. Normalize both sides or a full-collection mock loops
+        // back to the same URL forever without ever being rendered.
+        if (existing && (existing.collection_id !== collectionId || (existing.paper_id ?? undefined) !== paperId || (!paperId && (existing.section_path ?? undefined) !== sectionPath) || existing.answer_mode !== answerMode)) {
+          const target = new URLSearchParams()
+          if (existing.paper_id) target.set('paper', existing.paper_id)
+          else if (existing.section_path) target.set('section', existing.section_path)
+          if (existing.answer_mode === 'derived-practice') target.set('mode', 'derived')
+          const query = target.toString()
+          navigate(`/exams/${existing.collection_id}/mock${query ? `?${query}` : ''}`, { replace: true })
+          return
+        }
         const m = existing ?? (await startMock({
           collection_id: collectionId,
           section_path: sectionPath,
+          paper_id: paperId,
+          answer_mode: answerMode,
           count: 20,
           duration_minutes: 20,
-        }))
+        }).catch(async error=>{const resumed=await currentMock();if(resumed)return resumed;throw error}))
+        // Another tab or StrictMode's overlapping initialization may win the
+        // start race. Rejoin its persisted session instead of stranding it.
+        if (m.collection_id!==collectionId || (m.paper_id??undefined)!==paperId || (!paperId&&(m.section_path??undefined)!==sectionPath) || m.answer_mode!==answerMode){
+          const target=new URLSearchParams();if(m.paper_id)target.set('paper',m.paper_id);else if(m.section_path)target.set('section',m.section_path);if(m.answer_mode==='derived-practice')target.set('mode','derived');navigate(`/exams/${m.collection_id}/mock?${target}`,{replace:true});return
+        }
         const collection = m.collection_id === collectionId ? selectedCollection : await getCollection(m.collection_id)
         const section = collection.section_list.find((s) => s.path === m.section_path)
+        const paper = collection.paper_list.find((p) => p.id === m.paper_id)
         if (!dead) {
+          setLoadingSlow(false)
+          setError(null)
           setMock(m)
           setLeft(m.seconds_remaining)
-          setPaperTitle(`${collection.title}${section ? ` · ${section.title}` : ''} · Mock`)
+          setPicks(m.saved_answers || {})
+          setMarked(Object.fromEntries((m.marked_questions || []).map((questionId) => [questionId,true])))
+          setAt(m.current_position || 0)
+          setPaperTitle(`${collection.title}${paper ? ` · ${paper.title}` : section ? ` · ${section.title}` : ''} · ${answerMode === 'derived-practice' ? 'Practice estimate' : paper ? 'Paper test' : 'Mock'}`)
         }
       } catch (e) {
         if (!dead) setError((e as Error).message)
+      } finally {
+        window.clearTimeout(slowTimer)
       }
     })()
     return () => {
       dead = true
+      window.clearTimeout(slowTimer)
     }
-  }, [collectionId, sectionPath])
+  }, [collectionId, sectionPath, paperId, answerMode, navigate])
+
+  const persistAnswer = (question_id: string, chosen_index: number | null, isMarked: boolean, position: number) => {
+    if (!mock) return
+    saveQueue.current = saveQueue.current.then(async () => {
+      try {
+        await saveMockAnswer(mock.id,{question_id,chosen_index,marked:isMarked,position})
+        setSaveError(null)
+      } catch (e) { setSaveError(`Could not save this answer yet: ${(e as Error).message}`) }
+    })
+  }
 
   const send = useCallback(async () => {
     if (!mock || submitted.current) return
     submitted.current = true
     setBusy(true)
     try {
-      setResult(
-        await submitMock(
-          mock.id,
-          Object.entries(picks).map(([question_id, chosen_index]) => ({ question_id, chosen_index })),
-        ),
-      )
+      await saveQueue.current
+      const saved=await submitMock(mock.id,Object.entries(picks).map(([question_id,chosen_index])=>({question_id,chosen_index}))).catch(async error=>{try{return await getMockResult(mock.id)}catch{throw error}})
+      setResult(saved)
+      navigate('/results/'+saved.id,{replace:true})
     } catch (e) {
       setError((e as Error).message)
       submitted.current = false
     } finally {
       setBusy(false)
     }
-  }, [mock, picks])
+  }, [mock, picks,navigate])
 
   // Tick for display, and auto-submit at zero so an abandoned tab still
   // produces a result rather than an orphaned open session.
@@ -121,7 +168,7 @@ export default function MockRunner() {
   }
   if (result)
     return <MockResultView result={result} backTo={`/exams/${collectionId}`} />
-  if (!mock) return <div className="mx-auto max-w-shell px-6 py-12 label">Preparing your paper…</div>
+  if (!mock) return <div className="mx-auto max-w-shell px-6 py-12 label">{loadingSlow ? <><p>This paper is taking longer than expected. Check your connection, then reload to resume.</p><button onClick={() => window.location.reload()} className="mt-4 rounded-pill border border-ink px-4 py-2 text-[13px] font-semibold">Reload paper</button></> : 'Preparing your paper…'}</div>
 
   const q = mock.questions[at]
   const answered = Object.keys(picks).length
@@ -158,6 +205,11 @@ export default function MockRunner() {
         </div>
       </div>
 
+      {saveError && <p role="status" className="mx-auto mt-3 max-w-shell rounded-[8px] border border-mypick bg-mypick-soft px-4 py-2 text-[13px] text-mypick">{saveError} Keep this page open and try again before submitting.</p>}
+
+      {!!mock.excluded_presentations&&<p className="mx-auto mt-3 max-w-shell rounded-[8px] border border-hairline bg-paper px-4 py-2 text-[13px]">{mock.excluded_presentations} source appearances were excluded because their options or context could not be safely mapped. This test scores only the displayed questions.</p>}
+      {mock.answer_mode === 'derived-practice' && <p className="mx-auto mt-3 max-w-shell rounded-[8px] border border-[#D8B56D] bg-[#FFF4DF] px-4 py-2 text-[13px] text-[#684919]">Practice estimate · this set can include published derived answers checked by an authorized admin or independent reviewers. Your result is not an official-key score.</p>}
+
       <main className="mx-auto flex max-w-shell flex-wrap items-start gap-10 px-6 pb-24 pt-8">
         <section className="min-w-0 flex-[999_1_560px]">
           <div className="flex justify-between gap-2.5 border-b border-ink pb-2.5 font-mono text-[12px] text-muted">
@@ -166,18 +218,22 @@ export default function MockRunner() {
           </div>
 
           <div className="my-6 font-display text-[clamp(22px,2.6vw,28px)] leading-[1.35] [text-wrap:pretty]">
-            {q.question}
+            <SourceQuestionContext direction={q.direction} passage={q.passage} />
+            <SourceQuestionText instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} />
           </div>
+          {q.figure_image_url && <a href={q.figure_image_url} target="_blank" rel="noreferrer" className="mb-5 block max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper" aria-label="Open original question figure"><img src={q.figure_image_url} alt="Original figure for this question" decoding="async" className="max-h-[420px] w-full object-contain"/><span className="block border-t border-hairline px-3 py-2 text-[11px] text-secondary">Original source figure · open full image ↗</span></a>}
+          {q.source_pdf_url && <a href={`${q.source_pdf_url}${q.page ? `#page=${q.page}` : ''}`} target="_blank" rel="noreferrer" className="-mt-3 mb-5 inline-block text-[12px] font-semibold text-[#486B62] underline underline-offset-2">Open original question · page {q.page ?? 'not listed'} ↗</a>}
 
-          <div className="flex flex-col gap-2.5">
+          <AnswerLayoutControl/><AnswerOptions>
             {q.options.map((text, i) => {
               const on = picks[q.id] === i
               return (
                 <button
                   key={i}
-                  onClick={() => setPicks((p) => ({ ...p, [q.id]: i }))}
+                  onClick={() => { setPicks((p) => ({ ...p, [q.id]: i })); persistAnswer(q.id,i,!!marked[q.id],at) }}
                   aria-pressed={on}
-                  className={`flex items-center gap-3.5 rounded-[6px] border p-4 text-left text-[16px] ${
+                  data-answer-state={on?'selected':'neutral'}
+                  className={`answer-option flex items-center gap-3.5 rounded-[6px] border p-4 text-left text-[16px] ${
                     on ? 'border-ink bg-[#EDE5D4]' : 'border-opt-border bg-opt-bg hover:border-ink'
                   }`}
                 >
@@ -188,40 +244,41 @@ export default function MockRunner() {
                   >
                     {LETTERS[i]}
                   </span>
-                  <span>{text}</span>
+                  <span>{text === null ? 'Option unavailable in source' : <SourceQuestionText text={q.options_markup?.[i] ?? text} />}</span>
                 </button>
               )
             })}
-          </div>
+          </AnswerOptions>
 
           <div className="mt-7 flex flex-wrap items-center gap-2.5">
             <button
-              onClick={() => setAt((n) => Math.max(0, n - 1))}
+              onClick={() => { const next=Math.max(0,at-1); setAt(next); persistAnswer(q.id,picks[q.id]??null,!!marked[q.id],next) }}
               disabled={at === 0}
               className="rounded-pill border border-ink px-[18px] py-[11px] text-[14px] font-semibold disabled:opacity-40"
             >
               Previous
             </button>
             <button
-              onClick={() => setMarked((m) => ({ ...m, [q.id]: !m[q.id] }))}
+              onClick={() => { const next=!marked[q.id]; setMarked((m) => ({ ...m, [q.id]: next })); persistAnswer(q.id,picks[q.id]??null,next,at) }}
               className="rounded-pill border border-prov px-[18px] py-[11px] text-[14px] font-semibold text-prov"
             >
               {marked[q.id] ? 'Unmark' : 'Mark for review'}
             </button>
             <button
-              onClick={() =>
+              onClick={() => {
                 setPicks((p) => {
                   const { [q.id]: _drop, ...rest } = p
                   return rest
                 })
-              }
+                persistAnswer(q.id,null,!!marked[q.id],at)
+              }}
               className="px-[18px] py-[11px] text-[14px] text-secondary"
             >
               Clear
             </button>
             <div className="flex-1" />
             <button
-              onClick={() => setAt((n) => Math.min(mock.questions.length - 1, n + 1))}
+              onClick={() => { const next=Math.min(mock.questions.length-1,at+1); setAt(next); persistAnswer(q.id,picks[q.id]??null,!!marked[q.id],next) }}
               disabled={at === mock.questions.length - 1}
               className="rounded-pill bg-ink px-[22px] py-[11px] text-[14px] font-semibold text-paper disabled:opacity-40"
             >
@@ -255,7 +312,7 @@ export default function MockRunner() {
               return (
                 <button
                   key={mq.id}
-                  onClick={() => setAt(i)}
+                  onClick={() => { setAt(i); persistAnswer(mq.id,picks[mq.id]??null,!!marked[mq.id],i) }}
                   className={`flex aspect-square items-center justify-center rounded-[4px] border font-mono text-[11px] ${cls} ${border}`}
                 >
                   {i + 1}
