@@ -29,3 +29,17 @@ Important mislabelling: [a mirror URL named2013Paper I final](https://img.freejo
 ## Follow-up queue
 
 Preserve the six recovered copies and source metadata, retrieve working original links, cross-check each booklet's year/series/questions/figures/passages against its matching final key, then use the bank's normal intake workflow. For2013/2012next leads are archived oldMPSCattachments, NDLI's MPSCcollection and physical/coaching archives. No one has been contacted; no claim of a completed Wayback/NDLIarchive search.
+
+## Follow-up search — 31 October 2026, after the recovered-paper release
+
+The owner requested2012/2013next. Searched exact and broad exam/year variants, old MPSC links, NDLI catalogue, third-party question-paper indexes, Scribd leads, and Wayback availability/CDX. No target question booklet recovered; no additional question-bank records or learner papers published.
+
+The accessible NDLI MPSC catalogue explicitly lists Combined Prelims2014/2015/2016/2017/2018but no2012/2013MCSPrelims. Its2012/2013entries are other examinations (MSS/MES/Tourist Officer/Assistant Librarian), not substitute sources. Direct NDLI retrieval returned401; only the publicly accessible indexed catalogue was inspected. Generic third-party index pages did not yield the target booklets.
+
+Wayback availability returned a2022snapshot of the obsolete2012key query URL. Retrieved HTML was a generic MPSC homepage: no2012or2013text and noPDFattachments. Thus a200archive result does not establish recovery. WildcardCDXqueries returnedemptyresults; broaderdomainquerytimedout. This was a bounded unsuccessful archive search, not proof that no snapshot exists anywhere.
+
+[Official Assembly proceedings](https://mizoramassembly.in/storage/Assembly/Proceedings/State/Sixth_Assembly/11th_Session/English/2012/en_pro16072012.pdf) include discussion of the Combined exam held28June2012and revised/compensated answers. This is useful evidence of the exam and why its final key matters; it is neither a question booklet nor the final key. Do not infer “no exam held” from missing papers.
+
+Saved eight2013PaperI/IISeriesA–Dkey leads with their exact URLs in `docs/sources/mcs-2012-2013-search.json`. Their web-indexed contents identify2013keys, but direct PDFdownloadsreturned403for all eight. No local PDFs, scores, answer mappings or verified-paper records were fabricated. The previously identified2013-labelled2015mirror remains rejected for2013.
+
+Next useful input is an actual2012/2013booklet scan or working source URL, for example from an existing personal/coaching/library collection. No one was contacted on the owner's behalf. Website/bank unchanged in this follow-up.
