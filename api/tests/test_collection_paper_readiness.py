@@ -7,14 +7,21 @@ def test_paper_cards_report_review_and_scoring_counts(client,database):
  conn.execute("INSERT INTO papers(id,exam_type,exam_name,year,exam_scope_id) VALUES (%s,'Direct','Synthetic LDC readiness paper',2026,'mizoram-recruitment')",(paper,))
  conn.execute("INSERT INTO collection_papers(collection_id,version,paper_id,section_path,as_mock) VALUES ('ldc',1,%s,'papers',false)",(paper,))
  try:
-  for i,source,answer,defect in [(1,'official','A',None),(2,'inferred','B',None),(3,'none',None,None),(4,'derived','B','unresolved-source')]:
+  for i,source,answer,defect in [(1,'official','A',None),(2,'inferred','B',None),(3,'none',None,None),(4,'derived','B','unresolved-source'),(5,'official','A',None),(6,'none',None,None)]:
    q='cq_ready_'+suffix+str(i);a='app_ready_'+suffix+str(i)
-   conn.execute("INSERT INTO canonical_questions(id,type,question,options,answer_text,answer_source,source_defect) VALUES (%s,'mcq','Synthetic readiness question',%s,%s,%s,%s)",(q,Jsonb(['A','B','C','D']),answer,source,defect))
+   conn.execute("INSERT INTO canonical_questions(id,type,question,options,answer_text,answer_source,source_defect,status) VALUES (%s,'mcq','Synthetic readiness question',%s,%s,%s,%s,%s)",(q,Jsonb(['A','B','C','D']),answer,source,defect,'held'if i==5 else 'withdrawn'if i==6 else 'live'))
    conn.execute("INSERT INTO appearances(id,paper_id,type,qnum,question,options,answer_index,answer_source,canonical_id,is_primary) VALUES (%s,%s,'mcq',%s,'Synthetic readiness question',%s,%s,%s,%s,true)",(a,paper,str(i),Jsonb(['A','B','C','D']),None if answer is None else ['A','B','C','D'].index(answer),source,q))
   r=client.get('/api/collections/ldc');assert r.status_code==200,r.text
   item=next(p for p in r.json()['paper_list'] if p['id']==paper)
-  assert {k:item[k] for k in ['questions','scorable','practice_count','answerable_count','verified_solutions','needs_review','unsolved','missing_explanations','blocked_count']}=={'questions':4,'scorable':1,'practice_count':1,'answerable_count':2,'verified_solutions':0,'needs_review':2,'unsolved':1,'missing_explanations':4,'blocked_count':1}
+  assert {k:item[k] for k in ['questions','scorable','practice_count','answerable_count','verified_solutions','needs_review','unsolved','missing_explanations','blocked_count']}=={'questions':5,'scorable':1,'practice_count':1,'answerable_count':2,'verified_solutions':0,'needs_review':3,'unsolved':1,'missing_explanations':5,'blocked_count':2}
   assert not item['allow_timed_test']
+  response=client.get('/api/collections/ldc/paper-questions',params={'paper_id':paper})
+  assert response.status_code==200,response.text
+  body=response.json();assert body['total']==5 and body['practice_count']==1
+  held=next(q for q in body['items']if q['qnum']=='5')
+  assert not any(q['qnum']=='6'for q in body['items'])
+  assert held['held'] and held['answer_status']=='needs-review'
+  assert 'answer_index'not in held and 'answer_text'not in held
  finally:
   conn.execute("DELETE FROM collection_papers WHERE paper_id=%s",(paper,))
   conn.execute("DELETE FROM appearances WHERE paper_id=%s",(paper,))

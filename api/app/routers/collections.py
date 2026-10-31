@@ -294,18 +294,19 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
                       AND {scope_condition('p', exam_scope)}
                 ), readiness AS MATERIALIZED (
                     SELECT av.*, {answer_status_sql('av')} AS answer_status
-                    FROM paper_questions pq JOIN v_all_questions av ON av.id=pq.canonical_id
+                    FROM paper_questions pq JOIN canonical_questions av ON av.id=pq.canonical_id
+                    WHERE av.status IN ('live','held')
                 )
                 SELECT cp.paper_id AS id,COALESCE(cp.display_title,p.exam_name) AS title,
                       p.year,p.exam_name AS exam,p.paper_number,p.paper_subject AS subject,
                       p.source_file,p.pdf_url,cp.section_path,cp.allow_browse,cp.allow_practice,
                       cp.as_mock AS allow_timed_test,cp.duration_minutes,
                       cp.marks_correct,cp.marks_wrong,cp.rule_source,cp.instructions,
-                      COUNT(DISTINCT a.canonical_id)::int AS questions,
+                      COUNT(DISTINCT av.id)::int AS questions,
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE av.answer_status='official')::int AS scorable,
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE av.type='descriptive')::int AS descriptive,
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE cp.allow_practice AND av.answer_status IN ('official','verified'))::int AS practice_count,
-                      COUNT(DISTINCT av.id) FILTER (WHERE cp.allow_practice AND av.answer_text IS NOT NULL AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
+                      COUNT(DISTINCT av.id) FILTER (WHERE cp.allow_practice AND av.status='live' AND av.answer_text IS NOT NULL AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='verified')::int AS verified_solutions,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='needs-review')::int AS needs_review,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='unsolved')::int AS unsolved,
@@ -383,6 +384,7 @@ async def list_paper_questions(
     exam_scope: ExamScope = DEFAULT_SCOPE) -> PaperQuestionPage:
     """Browse a paper in printed order, preserving this appearance's options.
 
+    Held items remain visible as source records, with their grading blocked.
     Correct answers are never included. Practice submissions use `option_order`
     to translate the printed choice back to the canonical option position.
     """
@@ -399,8 +401,8 @@ async def list_paper_questions(
         await cur.execute(
             f"""SELECT COUNT(DISTINCT v.id)::int AS n,
                       COUNT(DISTINCT v.id) FILTER(WHERE v.id IN(SELECT id FROM {pool_view('mock_practice', exam_scope)}))::int AS practice_count
-                 FROM appearances a JOIN {pool_view('all', exam_scope)} v ON v.id=a.canonical_id
-                WHERE a.paper_id=%s""", (paper_id,),
+                 FROM appearances a JOIN canonical_questions v ON v.id=a.canonical_id
+                WHERE a.paper_id=%s AND v.status IN ('live','held')""", (paper_id,),
         )
         counts = await cur.fetchone()
         total = counts["n"]
@@ -419,7 +421,7 @@ async def list_paper_questions(
                       qc.subject_id AS taxonomy_subject_id,qc.subject_label AS taxonomy_subject,
                       qc.topic_id AS taxonomy_topic_id,qc.topic_label AS taxonomy_topic
                  FROM appearances a JOIN papers p ON p.id=a.paper_id
-                 JOIN {pool_view('all', exam_scope)} v ON v.id=a.canonical_id
+                 JOIN canonical_questions v ON v.id=a.canonical_id AND v.status IN ('live','held')
                  LEFT JOIN question_classifications qc
                    ON qc.question_id=v.id AND qc.review_status='approved'
                 WHERE a.paper_id=%s

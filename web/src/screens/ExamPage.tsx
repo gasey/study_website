@@ -1,4 +1,6 @@
 import ExamPaperCard from '../components/ExamPaperCard'
+import McsBookletGroup from '../components/McsBookletGroup'
+import { groupMcsBooklets } from '../lib/mcsBooklets'
 import Pagination from '../components/Pagination'
 import {pageNumber,scrollToResults,focusWhenAvailable} from '../lib/pagination'
 import '../styles/legacy-udc-ldc.css'
@@ -115,8 +117,12 @@ export default function ExamPage() {
   const mcsSection=c.id==='combined-prelims'?searchParams.get('section'):null
   const filteredPapers=c.paper_list.filter(p=>(!mcsSection||!['gs','aptitude'].includes(mcsSection)||p.section_path===mcsSection)&&(!paperYear||String(p.year)===paperYear)&&tokens.every(token=>`${p.paper_label||''} ${p.title} ${p.exam||''} ${p.subject||''} ${p.paper_number||''} ${p.year||''} ${p.id.split('/').pop()}`.toLowerCase().includes(token)))
   const pageSize=9
-  const paperPage=Math.min(pageNumber(searchParams.get('paper_page')),Math.max(1,Math.ceil(filteredPapers.length/pageSize)))
+  const bookletGroups=c.id==='combined-prelims'?groupMcsBooklets(filteredPapers):[]
+  const paperResultCount=c.id==='combined-prelims'?bookletGroups.length:filteredPapers.length
+  const paperPages=Math.max(1,Math.ceil(paperResultCount/pageSize))
+  const paperPage=Math.min(pageNumber(searchParams.get('paper_page')),paperPages)
   const visiblePapers=filteredPapers.slice((paperPage-1)*pageSize,paperPage*pageSize)
+  const visibleBookletGroups=bookletGroups.slice((paperPage-1)*pageSize,paperPage*pageSize)
   function paperFilter(key:string,value:string){setSearchParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);if(key!=='paper_page')next.delete('paper_page');return next},{replace:key!=='paper_page'});if(key==='paper_page')requestAnimationFrame(()=>scrollToResults('past-paper-results'))}
   const combined = c.id === 'combined-prelims'
 
@@ -238,7 +244,7 @@ export default function ExamPage() {
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-hairline pb-2.5">
           <div>
             <h2 className="font-display text-[26px] font-medium">Past papers</h2>
-            <p className="mt-1 text-[13px] text-secondary">Choose a paper to read or practise. Counts reflect the questions currently available; check the source PDF for the complete paper.</p>
+            <p className="mt-1 text-[13px] text-secondary">{combined?'Choose a year and paper, then your booklet series. Each series keeps its own printed question order, PDF and answer key.':'Choose a paper to read or practise. Counts reflect the questions currently available; check the source PDF for the complete paper.'}</p>
           </div>
           <span className="label">{filteredPapers.length} papers</span>
         </div>
@@ -247,12 +253,12 @@ export default function ExamPage() {
           <label className="text-[12px] font-semibold">Year<select value={paperYear} onChange={e=>paperFilter('paper_year',e.target.value)} className="mt-1 block min-h-11 rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"><option value="">All years</option>{[...new Set(c.paper_list.map(p=>p.year).filter((year):year is number=>year!==null))].sort((a,b)=>b-a).map(year=><option key={year} value={year}>{year}</option>)}</select></label>
           {(paperQuery||paperYear)&&<button type="button" onClick={()=>setSearchParams(previous=>{const next=new URLSearchParams(previous);for(const key of ['paper_q','paper_year','paper_page'])next.delete(key);return next},{replace:true})} className="self-end rounded-pill border border-hairline px-4 py-3 text-[13px]">Clear filters</button>}
         </div>
-        <p id="past-paper-results" tabIndex={-1} role="status" className="mt-3 scroll-mt-28 text-[12px] text-secondary focus:outline-none">{filteredPapers.length} matching papers · page {paperPage} of {Math.max(1,Math.ceil(filteredPapers.length/pageSize))}</p>
+        <p id="past-paper-results" tabIndex={-1} role="status" className="mt-3 scroll-mt-28 text-[12px] text-secondary focus:outline-none">{filteredPapers.length} matching {combined?'booklets':'papers'}{combined?` in ${bookletGroups.length} paper groups`:''} · page {paperPage} of {paperPages}</p>
         <div className="exam-paper-grid mt-3">
-          {visiblePapers.map(p => <ExamPaperCard key={p.id} paper={p} examId={c.id} />)}
+          {combined?visibleBookletGroups.map(group=><McsBookletGroup key={group.id} group={group}/>):visiblePapers.map(p => <ExamPaperCard key={p.id} paper={p} examId={c.id} />)}
         </div>
         {!filteredPapers.length&&<p className="py-8 text-center text-secondary">No papers match. Try a department name or clear the year.</p>}
-        <Pagination page={paperPage} pages={Math.ceil(filteredPapers.length/pageSize)} onPageChange={value=>paperFilter('paper_page',String(value))} label="Past paper pages"/>
+        <Pagination page={paperPage} pages={paperPages} onPageChange={value=>paperFilter('paper_page',String(value))} label="Past paper pages"/>
       </section>}
 
       {ready&&view === 'overview' && <MaterialDiscovery collectionId={c.id} title="Read for this exam"/>}

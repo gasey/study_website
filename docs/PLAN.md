@@ -835,4 +835,16 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Display General Studies with nested Science for MCS while retaining clerical General Knowledge; distinguish quick timed practice and partial paper coverage.
 - [x] Run293backend/34frontendtests, build, bank dry run and migration clone rehearsal; verify all600live records and149source assets.
 - [ ] Repair36option extraction gaps and complete source/booklet/final-key checks, explanations and learning classification for the new600.
-- [ ] Restore incomplete2023/2025booklets; continue2012/2013source search; implement authentic source-confirmed simulation and independently inventory Mains.
+- [ ] Complete restored2023/2025source/key review, implement authentic source-confirmed simulation and independently inventory Mains. Source extraction restoration is completed below;2012/2013search is explicitly deferred by the owner.
+
+### Deferred by owner — 2012/2013 MCS booklets
+
+- [ ] Later: recover actual2012/2013Papers I/II from a working source or scan; do not repeat the same failed search without new evidence. Owner explicitly deferred this on31October2026. Continue remaining available MCSPrelimswork now.
+
+### 31 October 2026 — Recent MCS source restoration
+
+- [x] Restore480missing printed appearances from eight existing2023/2025PDFs; all16recentbooklets now contain printed1–100, with source page images and no inferred keys/tags.
+- [x] Audit final-key compensation entries, place18existingquestions under audited scoring holds, and keep held questions visible in printed-paper browsing while excluding withdrawn records and grading.
+- [x] Group MCS boxed cards by year and Paper I/II, retaining separate A/B/C/D selection, counts, source PDFs and answer readiness.
+- [ ] Review the restored480transcriptions, three unresolved option extractions, classifications and final-key mappings; continue36recovered-copy source defects and checked explanations. Source coverage alone is not answer readiness.
+- [ ] Implement source-confirmed original-paper simulation after complete paper/key/compensation adjudication; Mains remains separately inventoried future work.
