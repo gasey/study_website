@@ -891,3 +891,14 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Discover/hash four unimported image-only2016-labelledPaperIIA–Dscans; inspect source headers/Q100andrecordOCRlimits and exact PaperI B cover-rule evidence.
 - [ ] At21:35ISToronceactualquotaallows: reprepare/publish80recentkeymappings and reviewed source/explanation drafts through ordinary audited workflows. Historical duplicate retirement/new original-source ingestion need explicit history-preserving workflows, not community answer invention or relationship links alone.
 - [ ] Plan careful source-only intake for the four scanned PaperIIbooklets, verify sitting/year/source and every printed position/figure/option, then version the collection. Do not blindly import legacyOCR or declare400verifiedquestions.2012/2013remainsdeferred; simulation stays gated.
+
+### 1 November 2026 — Immediate MCS publication completed
+
+- [x] Publish the remaining 80 source-checked recent official-key mappings with a scoped, audited exception authorized by the owner's immediate instruction after the quota blocker; leave ordinary website limits unchanged.
+- [x] Publish 13 checked maths explanations while preserving existing official answers/key provenance.
+- [x] Publish 13 recovered-copy source transcriptions without assigning answers or clearing source flags.
+- [x] Restore 2014 II Q11/Q12 shared passages and Q38 diagram, then correct the two page locators using fresh source-reference exports.
+- [x] Verify all 111 publications, full bank diff, exact live records, 24 compensation holds, learner history and unlimited owner access; restore publisher timer. MCS official-eligible increases 1,473 → 1,553. 49 focused tests pass.
+- [ ] Continue three recent and 36 recovered-copy source-flag adjudications, additional explanations, history-preserving duplicate appearance repair and unanswered original-source intake for missing 2014 II Q39.
+- [ ] Verify sitting/source identity and carefully transcribe four image-only Paper II booklet leads. Keep 2012/2013 deferred and authentic simulation gated.
+- [ ] Existing 21:35 IST follow-up must read this completed checkpoint, skip the published packet and recheck ordinary allowance; this run's scoped exception does not persist.

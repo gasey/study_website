@@ -1,6 +1,6 @@
 {
   "review_date": "2026-11-01",
-  "status": "Read-only audit and unapplied draft packet; website staff quota 500/500",
+  "status": "Partially repaired and verified live 2026-11-01: shared passages, Q38 diagram, Q11/Q12 physical page locators. Duplicate positions and missing Q39 remain unapplied.",
   "bank_sha256": "8e5b9998e87b47aa8cc2dc8cafa303af21c07e3dad112eb7a12b063685d5ea8e",
   "scope": "Six 2014/2016 original booklets; numbering/page inventory, not source/key/simulation certification",
   "source_papers": [
@@ -140,7 +140,7 @@
   "source_asset": {
     "path": "images/page-renders/c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2.png",
     "sha256": "c317a825d6828c8a7907ec34042f6d7318c8d24eb75a6d447af0be74bc3be0f2",
-    "status": "Prepared locally only; not published or mirrored remotely"
+    "status": "Mirrored live with matching SHA256 and published on Q38; no answer assigned"
   },
   "maintenance_items": [
     {
@@ -180,7 +180,9 @@
       "prerequisites": [
         "Restore/preserve the complete shared passage spanning physical pages 2–3 before moving the question locator to page 3. A locator-only update would lose the current start-of-passage access.",
         "Publish context transcriptions first, sync/verify, then prepare fresh source-reference exports. Never queue overlapping canonical targets in one batch."
-      ]
+      ],
+      "publication_status": "applied-live-verified",
+      "publication_id": "pub_042253fc2b504eeab1487ce081780931"
     },
     {
       "proposal": {
@@ -219,7 +221,9 @@
       "prerequisites": [
         "Restore/preserve the complete shared passage spanning physical pages 2–3 before moving the question locator to page 3. A locator-only update would lose the current start-of-passage access.",
         "Publish context transcriptions first, sync/verify, then prepare fresh source-reference exports. Never queue overlapping canonical targets in one batch."
-      ]
+      ],
+      "publication_status": "applied-live-verified",
+      "publication_id": "pub_3c0f63dd1f044537a8247a6baa4a3e24"
     },
     {
       "proposal": {
@@ -265,7 +269,9 @@
         "is_primary": true,
         "status": "live",
         "source_defect": null
-      }
+      },
+      "publication_status": "applied-live-verified",
+      "publication_id": "pub_5ddb0483217e49f5b73ffa3554df3a4f"
     }
   ],
   "missing_question_draft": {
@@ -442,7 +448,9 @@
         ],
         "page": 2,
         "passage": null
-      }
+      },
+      "publication_status": "applied-live-verified",
+      "publication_id": "pub_496da149dc8440e18c1f9b9e1622c309"
     },
     {
       "proposal": {
@@ -485,12 +493,32 @@
         ],
         "page": 2,
         "passage": null
-      }
+      },
+      "publication_status": "applied-live-verified",
+      "publication_id": "pub_01e3a18841fb4a019d3da1a1c5ace34d"
     }
   ],
   "publication_sequence": [
     "Phase 1: shared-passage transcriptions for Q11/Q12 and original diagram attachment for Q38, distinct canonical targets; publish and verify.",
     "Phase 2: refresh baselines, then source-reference locator changes for Q11/Q12.",
     "Original-source Q39 ingestion and duplicate retirement/merge are separate guarded workflows, not community answer authoring or blind JSON deletion."
-  ]
+  ],
+  "publication": {
+    "verified_date": "2026-11-01",
+    "bank_sha256": "84c8752c01502b70353574e4bc2207c49b69d1d11e4ec8fcdca5aff2aa61b90c",
+    "context_and_image_publications": [
+      "pub_496da149dc8440e18c1f9b9e1622c309",
+      "pub_01e3a18841fb4a019d3da1a1c5ace34d",
+      "pub_5ddb0483217e49f5b73ffa3554df3a4f"
+    ],
+    "locator_publications": [
+      "pub_042253fc2b504eeab1487ce081780931",
+      "pub_3c0f63dd1f044537a8247a6baa4a3e24"
+    ],
+    "remaining": [
+      "2016 I C Q4/Q86 duplicate source appearance adjudication with history-preserving workflow",
+      "2014 II missing Q39 unanswered original-source ingestion"
+    ],
+    "evidence": "reports/mcs-now-20261101/live-check.json"
+  }
 }
