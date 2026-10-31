@@ -867,3 +867,11 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Exclude private-font glyph corruption and changed transcriptions from automatic key mapping; require explicit source/manual key review.
 - [x] Schedule one same-thread continuation for1November02:10IST after the reported Codex reset, using latest checkpoints and separate website quotas.
 - [ ] Continue80remainingautomatickeycandidates as rolling staff allowance permits, repairedQ87manualmapping, Q39root-glyph repair and three recent source-flag decisions. Recovered600classifications/36optiongaps, explanations and historical numbering remain before simulation.
+
+### 31 October 2026 — Recovered MCS classification and maths continuation
+
+- [x] Add373exact-matchapprovedlearningpaths and directly review64remainingrecoveredGSappearances; all300recoveredGSitems now classified, with no answer transfer.
+- [x] Repair2025II C Q39's printed square-root approximation and publish its final-key B, plus2023II C Q87's final-key C, both with checked worked explanations.
+- [x] Keep already-published repaired questions out of the new-key preparer's unfinished manual queue; verify30focusedtests and complete bank/live diff checks.
+- [ ] Review163remainingrecoveredAptitudeclassifications and source/option defects; prepare80recentkeymappings for publication once ordinary staff allowance frees up (500/500used; recheck live rolling window).
+- [ ] Continue worked explanations,2014/2016numbering and source-confirmed simulation prerequisites.2012/2013search remains deferred; scheduled continuation remains in place.

@@ -1,0 +1,79 @@
+{
+  "review_date": "2026-10-31",
+  "review_kind": "Owner-delegated source/final-key maintenance; no independent peer review claimed",
+  "source_repair": {
+    "appearance_id": "5b7790be69d44c73d0ff",
+    "canonical_id": "cq_9337a15e56d4f6e3",
+    "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+    "source_sha256": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+    "page": 7,
+    "publication_id": "pub_c5ad00c961c34b059a188931107894f4",
+    "before": {
+      "question": "In a violent storm, a tree got bent by the wind.The top of the tree meets the ground at an angle of 30°, at\n    a distance of 24 m from the root. At what height from the bottom did the tree get bent? ( 3  1.73)",
+      "options": [
+        "12.73 m",
+        "13.84 m",
+        "15.34 m",
+        "17.3 m"
+      ],
+      "page": 7
+    },
+    "patch": {
+      "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? (√3 = 1.73)",
+      "answerIndex": null
+    },
+    "rationale": "Inspected the original 2025 Paper II Series C, printed Q39 on physical PDF page 7 (printed page 6). Restore the missing square-root symbol and equality in the supplied approximation (√3 = 1.73), retain the complete original stem, ordered choices, source image and page, and assign no answer during source repair."
+  },
+  "answer_mappings": [
+    {
+      "canonical_id": "cq_b80fd23c3bda3290",
+      "appearance_id": "cb1969597c5aafc0f473",
+      "mode": "official",
+      "answer_index": 2,
+      "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+      "key_page": 1,
+      "explanation": "Use (a + b)² = a² + 2ab + b². With a = √5 and b = √2, (√5 + √2)² = 5 + 2√10 + 2 = 7 + 2√10, matching printed option C. The final official Paper II Series C key also maps Q87 to C.",
+      "reason": "Visually checked this exact booklet's final official key: printed Q87, PDF key page 1, option C. Rechecked original source page and restored mathematical symbols/ordered options. Added independently calculated working as a learner explanation, not a quotation of official working.",
+      "expected_source": {
+        "question": "The value of (√5 + √2)² is",
+        "options": [
+          "(7 + 2√5)",
+          "(1 + 5√2)",
+          "(7 + 2√10)",
+          "(7 − 2√10)"
+        ],
+        "page": 12,
+        "qnum": "87",
+        "figureImage": "images/page-renders/40ec157ca1cea0fc01d4e879e8fce7330ede11d11540b5046ffc4b458daa4351.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "hasDiagram": true
+      },
+      "publication_id": "pub_8a9e2d725de641c7887ada01beaf095f"
+    },
+    {
+      "canonical_id": "cq_9337a15e56d4f6e3",
+      "appearance_id": "5b7790be69d44c73d0ff",
+      "mode": "official",
+      "answer_index": 1,
+      "document_id": "key_b02b541d13656dd073218364",
+      "key_page": 7,
+      "explanation": "Let h be the height where the tree bent. The upright trunk and the ground form a right triangle, with the fallen top making 30° with the ground 24 m from the root. Thus tan 30° = h/24, so h = 24/√3 = 8√3. Using the paper’s supplied approximation √3 = 1.73 gives h ≈ 13.84 m, printed option B. The final official Paper II Series C key maps Q39 to B.",
+      "reason": "Visually checked this exact booklet's final official key: printed Q39, PDF key page 7, option B. Rechecked original source page and restored mathematical symbols/ordered options. Added independently calculated working as a learner explanation, not a quotation of official working.",
+      "expected_source": {
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? (√3 = 1.73)",
+        "options": [
+          "12.73 m",
+          "13.84 m",
+          "15.34 m",
+          "17.3 m"
+        ],
+        "page": 7,
+        "qnum": "39",
+        "figureImage": "images/page-renders/d3763e7421a7b020554e664a2dd0d8213e007951429a02f89e6662bdcee10764.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "hasDiagram": true
+      },
+      "publication_id": "pub_79d2e346aff742c395d0385ea8c1cfe1"
+    }
+  ]
+}

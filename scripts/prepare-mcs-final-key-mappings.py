@@ -95,14 +95,17 @@ def prepare(output):
             pending['source_defect'] += 1; continue
         if not any(c.get('is_primary') and c.get('review_status') == 'approved' for c in q.get('classifications', [])):
             pending['classification'] += 1; continue
+        # This prepares new mappings, not a retrospective source audit. A
+        # repaired question already published through explicit key review must
+        # not keep appearing as unfinished manual mapping on every later run.
+        if q.get('answerIndex') is not None or q.get('answerSource') != 'none':
+            pending['already_answered'] += 1; continue
         gate = transcription_gate(q, row)
         if gate:
             pending[gate] += 1
             source_review.append({'appearance_id': q['id'], 'paper_id': q['paperId'],
                                   'printed_question': q['qnum'], 'reason': gate})
             continue
-        if q.get('answerIndex') is not None or q.get('answerSource') != 'none':
-            pending['already_answered'] += 1; continue
         letter = key['answers'][q['qnum']]
         expected_source={k: q.get(k) for k in ('question', 'options', 'page', 'qnum', 'figureImage', 'direction', 'hasDiagram')}
         expected_source['qnum']=str(q['qnum'])
