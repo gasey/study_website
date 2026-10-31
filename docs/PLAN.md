@@ -875,3 +875,10 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Keep already-published repaired questions out of the new-key preparer's unfinished manual queue; verify30focusedtests and complete bank/live diff checks.
 - [ ] Review163remainingrecoveredAptitudeclassifications and source/option defects; prepare80recentkeymappings for publication once ordinary staff allowance frees up (500/500used; recheck live rolling window).
 - [ ] Continue worked explanations,2014/2016numbering and source-confirmed simulation prerequisites.2012/2013search remains deferred; scheduled continuation remains in place.
+
+### 31 October 2026 — MCS learning classifications completed
+
+- [x] Review and publish the remaining163recoveredAptitudetags with source passage/figure checks; MCS GS/Aptitude now have zero unclassified questions.
+- [x] Prepare13source-onlytranscriptiondrafts from inspected pages for audited publication later; keep all answers, source flags and scoring holds unchanged.
+- [x] Retain the02:10ISTCodexresetcontinuation and add one21:35ISTwebsiteallowancecontinuation on1November, both reading current checkpoints/quotas.
+- [ ] Recheck staff allowance, then publish80preparedrecentkeymappings and source repairs using the audited workflow. Finish source flags, recovered booklet/final-key checks, explanations and historical numbering before original-paper simulation.2012/2013remainsdeferred.
