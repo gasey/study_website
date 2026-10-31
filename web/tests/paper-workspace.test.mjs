@@ -42,3 +42,9 @@ test('clerical GK combines legacy GK/GS and includes Science while retaining a S
  assert.deepEqual(paperLearningSubjects({...gs,taxonomy_topic:'Science in the news'},'ldc'),[{id:'gk-gs',label:'General Knowledge'},{id:'science',label:'Science'}])
  assert.equal(gs.taxonomy_subject_id,'general-studies')
 })
+
+test('MCS uses General Studies with nested Science while clerical GK stays distinct',()=>{
+ const science={taxonomy_subject_id:'science',taxonomy_subject:'Science',taxonomy_topic:'Physics'}
+ assert.deepEqual(paperLearningSubjects(science,'combined-prelims'),[{id:'gk-gs',label:'General Studies'},{id:'science',label:'Science'}])
+ assert.deepEqual(paperLearningSubjects(science,'udc'),[{id:'gk-gs',label:'General Knowledge'},{id:'science',label:'Science'}])
+})

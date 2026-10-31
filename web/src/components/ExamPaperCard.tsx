@@ -21,6 +21,8 @@ export default function ExamPaperCard({ paper: p, examId }: { paper: CollectionP
         </div>
         <h3 className="exam-paper-title break-words font-display text-[21px] font-medium leading-snug">{title}</h3>
         <p className="mt-1 text-[13px] text-secondary">{count(p.questions)} questions{p.descriptive > 0 ? ` · ${count(p.descriptive)} written` : ''}{!p.questions ? ' · PDF only' : ''}</p>
+        {examId==='combined-prelims'&&p.year!==null&&p.year>=2023&&p.questions>0&&p.questions<100&&<p className="mt-2 text-[12px] text-[#80520a]">Fewer than 100 questions available · check source coverage</p>}
+        {examId==='combined-prelims'&&p.instructions?.startsWith('Recovered Chase')&&<p className="mt-2 text-[12px] text-[#80520a]">Recovered copy · transcription and answer review pending</p>}
         <div className="exam-paper-coverage mt-4 flex flex-col items-start gap-1 text-[12px] leading-relaxed" aria-label="Answer coverage">
           {p.scorable > 0 && <Link to={filtered('official')} className="exam-paper-status font-semibold text-[#17613e]"><span aria-hidden="true">▪</span> {count(p.scorable)} official keys</Link>}
           {p.verified_solutions > 0 && <Link to={filtered('verified')} className="exam-paper-status font-semibold text-[#245f91]"><span aria-hidden="true">✓</span> {count(p.verified_solutions)} verified solutions · unofficial</Link>}

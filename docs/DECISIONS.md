@@ -575,3 +575,7 @@ Keep stable admin tab IDs while reducing the owner's primary menu to Home, Revie
 ### 31 October 2026 — Source-faithful paper workspace
 
 Use source appearance identity for paper interactions and retain printed options/numbers. Shared learning tags are projected into exam-aware GK labels; Science remains a nested filtering choice for clerical GK. PDF comparison uses recorded page mappings with lazy local PDF.js rendering. Flags/scratchpads are explicitly visit-only until a persistent notes product is implemented. Full-paper loading follows actual appearance batches, not canonical totals.
+
+### 31 October 2026 — MCS paper role is source membership
+
+Collection version2uses separate GS/Aptitude manifests and retains version1. Learning topics filter inside the selected source role; shared canonical categories do not determine which exam paper a question belongs to. MCS shows General Studies and includes Science as a discovery overlay, while clerical GK labels remain unchanged. Recovered third-party PDFs are provisional source resources, never automatically official keys or reviewed explanations. New source records stay outside answer practice/scored modes until adjudication. Table/figure options that cannot be transcribed point explicitly to their source image and carry a source-review flag.

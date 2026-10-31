@@ -827,3 +827,12 @@ Release verified: static index-CXed5_X2.js and admin asset match live SHA256; pr
 ### Paper workspace — 31 October 2026
 
 Implemented Paper / Focus / Question + PDF, whole-paper search, printed question map, visit flags/scratchpad, source page navigation/zoom and exam-aware GK/Science filtering. See docs/PAPER-WORKSPACE.md and reports/paper-workspace-20261030/STATUS.md. Persistent notes and source bounding-box highlights are future work, not claimed capabilities.
+
+### 31 October 2026 — MCS Combined source expansion and paper roles
+
+- [x] Add recovered2015/2017/2018Papers I/II as600provisionalsource records with PDF/images, explicit review labels and no inferred keys.
+- [x] Version MCS Prelims into source-backed GS/Aptitude sections; retain role through topic/paper/practice links and support old all-paper bookmarks.
+- [x] Display General Studies with nested Science for MCS while retaining clerical General Knowledge; distinguish quick timed practice and partial paper coverage.
+- [x] Run293backend/34frontendtests, build, bank dry run and migration clone rehearsal; verify all600live records and149source assets.
+- [ ] Repair36option extraction gaps and complete source/booklet/final-key checks, explanations and learning classification for the new600.
+- [ ] Restore incomplete2023/2025booklets; continue2012/2013source search; implement authentic source-confirmed simulation and independently inventory Mains.

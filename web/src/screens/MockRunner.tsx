@@ -95,7 +95,7 @@ export default function MockRunner() {
           setPicks(m.saved_answers || {})
           setMarked(Object.fromEntries((m.marked_questions || []).map((questionId) => [questionId,true])))
           setAt(m.current_position || 0)
-          setPaperTitle(`${collection.title}${paper ? ` · ${paper.title}` : section ? ` · ${section.title}` : ''} · ${answerMode === 'derived-practice' ? 'Practice estimate' : paper ? 'Paper test' : 'Mock'}`)
+          setPaperTitle(`${collection.title}${paper ? ` · ${paper.title}` : section ? ` · ${section.title}` : ''} · ${answerMode === 'derived-practice' ? 'Practice estimate' : paper ? (paper.rule_source==='platform-default'?'Timed practice':'Paper test') : 'Mock'}`)
         }
       } catch (e) {
         if (!dead) setError((e as Error).message)

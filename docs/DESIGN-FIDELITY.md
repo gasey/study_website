@@ -433,3 +433,7 @@ Retained prototype admin palette/sidebar: body#EFE9DD, sidebar#1D1B18/text#E9E1D
 ### Paper workspace — 31 October 2026
 
 Preserve boxed question cards with 12px phone / 16px desktop outer gutters. Bound reading width outside the two-column PDF comparison. Use the booklet filename as the compact heading, disclose full paper title/instructions/coverage, and keep mobile search full-width with type/status controls side by side. PDF stacks above the question on narrow screens and scrolls within its own container.
+
+### 31 October 2026 — MCS Prelims paths
+
+Retain existing Combined colours, boxed cards and outer gutter system. Present two clear source-paper paths above shared views, stack on phones and use two columns on wider screens. Keep selected-role links through topics, papers and practice. Disclose recovered-copy status directly on paper cards, with source details inside the existing disclosure. No Mains availability or complete-paper simulation claim in this release.

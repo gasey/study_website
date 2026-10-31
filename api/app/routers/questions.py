@@ -111,7 +111,7 @@ async def list_questions(
     primary_path = " AND x.review_status='approved' AND x.is_primary" if study_area else ""
     # Only approved taxonomy claims feed learner filters. Pending proposals
     # remain stored with provenance but are never presented as established.
-    clerical_science = collection_id in CLERICAL_EXAMS and not study_area
+    clerical_science = collection_id in (*CLERICAL_EXAMS,'combined-prelims') and not study_area
     if clerical_science and (subject_id or topic_id or subtopic_id):
         # Match one projected path so the map and results share exact semantics.
         path_filters = ["x.question_id=v.id", "x.review_status='approved'"]
@@ -179,6 +179,8 @@ async def list_questions(
             WHERE ec.visibility='public' AND {scope_condition('ec', exam_scope)}
               AND ep.collection_id=%(collection_id)s)""")
         params["collection_id"] = collection_id
+    if collection_id=='combined-prelims' and section_path=='papers':
+        section_path=None  # Historical all-paper bookmarks predate the GS/Aptitude split.
     if section_path:
         where.append("""EXISTS (
             SELECT 1 FROM collection_sections ss
@@ -569,7 +571,7 @@ async def answer_question(
         async with cursor() as cur:
             prior=await replay(cur)
             if prior:return prior
-    resolved_section = body.section_path
+    resolved_section = None if body.collection_id=='combined-prelims' and body.section_path=='papers' else body.section_path
     async with cursor() as cur:
         await protect_answer(cur,user_id,question_id)
         if body.collection_id:

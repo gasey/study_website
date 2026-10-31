@@ -38,6 +38,8 @@ async def _candidate_ids(cur, collection_id: str, section_path: str | None,
     view remains the authority for which keys are eligible for a mock.
     """
     source_view = pool_view('mock_practice', exam_scope) if answer_mode == "derived-practice" else pool_view('scorable', exam_scope)
+    if collection_id=='combined-prelims' and section_path=='papers':
+        section_path=None
     if section_path:
         await cur.execute(
             """SELECT s.query, s.pins, s.excludes FROM collection_sections s

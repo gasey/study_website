@@ -165,7 +165,7 @@ async def collection_header(collection_id: str, exam_scope: ExamScope = DEFAULT_
 
 
 @router.get("/{collection_id}/study-topics")
-async def collection_study_topics(collection_id: str, exam_scope: ExamScope = DEFAULT_SCOPE, study_area: StudyArea | None = None):
+async def collection_study_topics(collection_id: str, exam_scope: ExamScope = DEFAULT_SCOPE, study_area: StudyArea | None = None, section_path: str | None = Query(None,max_length=200)):
     """Approved taxonomy within this exam's browsable source papers.
 
     Counts are distinct canonical questions at each level. A question with
@@ -173,12 +173,12 @@ async def collection_study_topics(collection_id: str, exam_scope: ExamScope = DE
     child counts are never added to claim an exam total.
     """
     return await public_catalog(
-        ('collection-study-topics', collection_id, exam_scope, study_area),
-        lambda: _collection_study_topics(collection_id, exam_scope, study_area),
+        ('collection-study-topics', collection_id, exam_scope, study_area, section_path),
+        lambda: _collection_study_topics(collection_id, exam_scope, study_area, section_path),
     )
 
 
-async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, study_area: StudyArea | None = None):
+async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, study_area: StudyArea | None = None, section_path: str | None = None):
     if collection_id == 'group-b':
         study_area = study_area or 'common'
     membership = None
@@ -207,6 +207,7 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                   JOIN appearances a ON a.paper_id=cp.paper_id
                   JOIN {pool_view('all', exam_scope)} v ON v.id=a.canonical_id
                  WHERE cp.collection_id=ANY(%(study_collections)s) AND cp.allow_browse
+                   AND (%(section_path)s::text IS NULL OR cp.section_path=%(section_path)s)
                    AND c.visibility='public' AND {scope_condition('c', exam_scope)}
                    AND {scope_condition('paper', exam_scope)} {area_clause}
             )
@@ -218,14 +219,14 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                    path.subtopic_id,MIN(path.subtopic_label) AS subtopic_label,
                    COUNT(DISTINCT exam_questions.id)::int AS questions
               FROM exam_questions
-              LEFT JOIN ({path_projection(include_science=study_area in ("common", "gk-gs"), clerical_science=collection_id in CLERICAL_EXAMS and not study_area)}) path ON path.question_id=exam_questions.id
+              LEFT JOIN ({path_projection(include_science=study_area in ("common", "gk-gs"), clerical_science=collection_id in (*CLERICAL_EXAMS,'combined-prelims') and not study_area)}) path ON path.question_id=exam_questions.id
                 AND path.review_status='approved'
                 AND (NOT %(primary_only)s OR path.is_primary)
              GROUP BY GROUPING SETS (
                (), (path.subject_id), (path.subject_id,path.topic_id),
                (path.subject_id,path.topic_id,path.subtopic_id)
              )""",
-            {"study_collections": collection_ids, "primary_only": bool(study_area), **area_params},
+            {"study_collections": collection_ids, "primary_only": bool(study_area), "section_path": section_path, **area_params},
         )
         rows = await cur.fetchall()
     total = 0
@@ -239,7 +240,7 @@ async def _collection_study_topics(collection_id: str, exam_scope: ExamScope, st
                 unclassified = row['questions']
             else:
                 subjects[row['subject_id']] = {
-                    'id': row['subject_id'], 'title': ('General Knowledge' if collection_id in ('udc', 'ldc', 'assistant') and not study_area and row['subject_id']=='gk-gs' else row['subject_label'] or row['subject_id']),
+                    'id': row['subject_id'], 'title': ('General Knowledge' if collection_id in ('udc', 'ldc', 'assistant') and not study_area and row['subject_id']=='gk-gs' else 'General Studies' if collection_id=='combined-prelims' and row['subject_id']=='gk-gs' else row['subject_label'] or row['subject_id']),
                     'questions': row['questions'], 'topics': [],
                 }
     for row in rows:

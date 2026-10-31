@@ -1,10 +1,10 @@
 import {useEffect,useMemo,useState} from 'react'
-import {Link} from 'react-router-dom'
+import {Link,useSearchParams} from 'react-router-dom'
 import {getExamStudyTopics,type GroupBStudyArea,type ExamStudySubject,type ExamStudyTopics as StudyTopics} from '../lib/api'
 
 type Selection = {subject_id?:string;topic_id?:string;subtopic_id?:string}
 function studyLink(examId:string,view:'browse'|'practice',selection:Selection,area?:GroupBStudyArea,basePath?:string) {
-  const params=new URLSearchParams({view})
+  const params=new URLSearchParams({view});if(examId==='combined-prelims'){const section=new URLSearchParams(window.location.search).get('section');if(section==='gs'||section==='aptitude')params.set('section',section)}
   if(area)params.set('study_area',area)
   if(examId!=='group-b'&&basePath)params.set('collection',examId)
   if(view==='practice')params.set('pool','practice')
@@ -13,6 +13,7 @@ function studyLink(examId:string,view:'browse'|'practice',selection:Selection,ar
 }
 
 export default function ExamStudyTopics({examId,area,basePath}:{examId:string;area?:GroupBStudyArea;basePath?:string}) {
+  const [params]=useSearchParams();const section=examId==='combined-prelims'?(params.get('section')||undefined):undefined
   const [data,setData]=useState<StudyTopics|null>(null)
   const [error,setError]=useState('')
   const [search,setSearch]=useState('')
@@ -20,9 +21,9 @@ export default function ExamStudyTopics({examId,area,basePath}:{examId:string;ar
   useEffect(()=>{
     let live=true
     setData(null);setError('');setExpanded(null)
-    getExamStudyTopics(examId,area).then(value=>{if(live)setData(value)}).catch(e=>{if(live)setError(e instanceof Error?e.message:'Could not load subjects')})
+    getExamStudyTopics(examId,area,section).then(value=>{if(live)setData(value)}).catch(e=>{if(live)setError(e instanceof Error?e.message:'Could not load subjects')})
     return()=>{live=false}
-  },[examId,area])
+  },[examId,area,section])
   const query=search.trim().toLocaleLowerCase()
   const subjects=useMemo(()=>data?.subjects.filter(subject=>
     !query || subject.title.toLocaleLowerCase().includes(query) ||

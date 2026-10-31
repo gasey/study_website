@@ -542,7 +542,7 @@ export interface ExamStudySubtopic { id:string; title:string; questions:number }
 export interface ExamStudyTopic { id:string; title:string; questions:number; subtopics:ExamStudySubtopic[] }
 export interface ExamStudySubject { id:string; title:string; questions:number; topics:ExamStudyTopic[] }
 export interface ExamStudyTopics { collection_id:string; title:string; questions:number; unclassified:number; subjects:ExamStudySubject[] }
-export const getExamStudyTopics = (id:string, area?:GroupBStudyArea) => req<ExamStudyTopics>(`/collections/${encodeURIComponent(id)}/study-topics${area?'?study_area='+area:''}`)
+export const getExamStudyTopics = (id:string, area?:GroupBStudyArea, section?:string) => { const params=new URLSearchParams();if(area)params.set('study_area',area);if(section)params.set('section_path',section);return req<ExamStudyTopics>(`/collections/${encodeURIComponent(id)}/study-topics?${params}`) }
 export const getGroupBStudyConfig = () => req<{version:string;rules:{collection_id:string;paper_id:string;role:'english'|'gk-gs'|'technical';recruitment_stream:string;evidence:string}[]}>('/collections/group-b/study-config')
 export interface ExamProgressSummary {
   collection_id: string

@@ -34,7 +34,7 @@ export function paperLearningSubjects(q:Pick<PaperQuestion,'taxonomy_subject_id'
  const general=['general-knowledge','general-studies'].includes(id)
  const science=id==='science'||(general&&q.taxonomy_topic?.toLowerCase()==='science in the news')
  const choices:{id:string;label:string}[]=[]
- if(general||(clerical&&science))choices.push({id:'gk-gs',label:clerical?'General Knowledge':'GK/GS'})
+ if(general||((clerical||exam==='combined-prelims')&&science))choices.push({id:'gk-gs',label:clerical?'General Knowledge':exam==='combined-prelims'?'General Studies':'GK/GS'})
  if(science)choices.push({id:'science',label:'Science'})
  if(!general&&!science)choices.push({id,label:q.taxonomy_subject||id})
  return choices

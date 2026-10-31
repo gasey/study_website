@@ -112,7 +112,8 @@ export default function ExamPage() {
   const paperQuery=searchParams.get('paper_q')||''
   const paperYear=searchParams.get('paper_year')||''
   const tokens=paperQuery.toLowerCase().trim().split(/\s+/).filter(Boolean)
-  const filteredPapers=c.paper_list.filter(p=>(!paperYear||String(p.year)===paperYear)&&tokens.every(token=>`${p.paper_label||''} ${p.title} ${p.exam||''} ${p.subject||''} ${p.paper_number||''} ${p.year||''} ${p.id.split('/').pop()}`.toLowerCase().includes(token)))
+  const mcsSection=c.id==='combined-prelims'?searchParams.get('section'):null
+  const filteredPapers=c.paper_list.filter(p=>(!mcsSection||!['gs','aptitude'].includes(mcsSection)||p.section_path===mcsSection)&&(!paperYear||String(p.year)===paperYear)&&tokens.every(token=>`${p.paper_label||''} ${p.title} ${p.exam||''} ${p.subject||''} ${p.paper_number||''} ${p.year||''} ${p.id.split('/').pop()}`.toLowerCase().includes(token)))
   const pageSize=9
   const paperPage=Math.min(pageNumber(searchParams.get('paper_page')),Math.max(1,Math.ceil(filteredPapers.length/pageSize)))
   const visiblePapers=filteredPapers.slice((paperPage-1)*pageSize,paperPage*pageSize)
@@ -143,16 +144,24 @@ export default function ExamPage() {
             className={`whitespace-nowrap rounded-pill border px-[17px] py-[9px] text-[14px] font-semibold text-ink disabled:opacity-60 ${bookmarked ? 'border-[#E9C46A] bg-[#FFF6DD] text-[#79570A]' : 'border-ink bg-card hover:bg-canvas'}`}>
             {bookmarked ? '★ Saved' : '☆ Save exam'}
           </button>
-          {view!=='practice'&&<Link to={`/exams/${c.id}?view=practice#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 py-2 text-[13px] font-semibold text-paper">Start practice →</Link>}
-          <Link to={`/exams/${c.id}?view=topics#exam-study-heading`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Subjects &amp; topics</Link>
-          {view==='overview'&&<Link to={`/exams/${c.id}?view=papers#past-paper-results`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Past papers</Link>}
+          {view!=='practice'&&<Link to={`/exams/${c.id}?view=practice${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 py-2 text-[13px] font-semibold text-paper">Start practice →</Link>}
+          <Link to={`/exams/${c.id}?view=topics${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-study-heading`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Subjects &amp; topics</Link>
+          {view==='overview'&&<Link to={`/exams/${c.id}?view=papers${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#past-paper-results`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Past papers</Link>}
         </div>
       </div>
+
+      {combined&&<section className="mt-4 rounded-xl border border-hairline bg-card p-4" aria-label="MCS preliminary papers">
+        <h2 className="font-display text-[23px]">Choose your preliminary paper</h2>
+        <p className="mt-1 text-[13px] text-secondary">Study General Studies and Aptitude separately. Historical papers keep their own source, booklet and answer status.</p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">{[['gs','Paper I · General Studies','History, polity, geography, economy, environment, science and Mizoram'],['aptitude','Paper II · Aptitude Tests','Comprehension, reasoning, numeracy and data interpretation']].map(([role,title,description])=><Link key={role} to={{search:'?'+new URLSearchParams({view:view==='overview'?'papers':view,section:role})}} aria-current={mcsSection===role?'page':undefined} className={'rounded-lg border p-4 '+(mcsSection===role?'border-exams bg-exams-soft':'border-hairline')}><strong className="text-[15px]">{title}</strong><p className="mt-1 text-[12px] text-secondary">{description}</p></Link>)}</div>
+        {mcsSection&&<Link to={{search:'?'+new URLSearchParams({view})}} className="mt-2 inline-flex min-h-11 items-center text-[12px] font-semibold underline">Show both papers</Link>}
+        <p className="mt-2 text-[12px] text-secondary">Timed sets use eligible questions and the stated practice rules. Partial booklets and recovered copies are study resources; they are not a complete exam simulation.</p>
+      </section>}
 
       {view==='overview'&&['udc','ldc','assistant'].includes(c.id)&&<section aria-label="Clerical exam study" className="mt-4 rounded-[12px] border border-hairline bg-card p-4">
         <nav aria-label="Choose clerical exam" className="flex flex-wrap gap-2">{[['udc','UDC'],['ldc','LDC'],['assistant','Assistant Grade']].map(([exam,label])=><Link key={exam} to={`/exams/${exam}`} aria-current={c.id===exam?'page':undefined} className={'inline-flex min-h-11 items-center rounded-pill border px-4 text-[13px] font-semibold '+(c.id===exam?'border-ink bg-ink text-paper':'border-hairline')}>{label}</Link>)}</nav>
         <p className="mt-3 text-[13px] leading-relaxed text-secondary">Study shared subjects with questions from {c.title} papers. General Knowledge, English and other subjects are grouped for revision; each source paper keeps its printed sections and test rules.</p>
-        <div className="mt-3 flex flex-wrap gap-2"><Link to={`/exams/${c.id}?view=topics#exam-study-heading`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">All subjects &amp; topics →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=gk-gs#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">General Knowledge →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=english#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">English →</Link></div>
+        <div className="mt-3 flex flex-wrap gap-2"><Link to={`/exams/${c.id}?view=topics${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-study-heading`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">All subjects &amp; topics →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=gk-gs#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">General Knowledge →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=english#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">English →</Link></div>
       </section>}
 
       {c.section_list.find((s) => s.note)?.note && <div className="mt-4 rounded-[10px] border border-[#E9D8B4] bg-[#FBF4E6] p-4 text-[13px] leading-relaxed text-[#5B3D08]">{c.section_list.find((s) => s.note)?.note}</div>}
@@ -163,7 +172,7 @@ export default function ExamPage() {
         <p className="mt-2 text-[13px] leading-relaxed text-secondary">{c.needs_review.toLocaleString('en-IN')} MCQs need answer review · {c.unsolved.toLocaleString('en-IN')} have no answer. Browse keeps the available questions visible, including written questions. {c.answerable_count.toLocaleString('en-IN')} questions have usable stored answers for study practice, shown with their review labels; only eligible reviewed answers enter a practice-estimate mock.</p>
         {!c.practice_count&&<p className="mt-2 text-[13px] text-secondary">No reviewed mock set is ready for this exam yet. You can study the papers and help verify answers below each question.</p>}
         <p className="mt-2 text-[12px] text-secondary">Past-paper current affairs belong to their exam date. Date hints help you compare time-sensitive facts with official updates without changing historical answers.</p>
-        <div className="mt-3 flex flex-wrap gap-3">{c.scorable>=20&&<Link to={`/exams/${c.id}/mock`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Official-key mock</Link>}{c.practice_count>=20&&<Link to={`/exams/${c.id}/mock?mode=derived`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">Reviewed practice estimate</Link>}</div>
+        <div className="mt-3 flex flex-wrap gap-3">{c.scorable>=20&&<Link to={`/exams/${c.id}/mock${mcsSection?`?section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Official-key mock</Link>}{c.practice_count>=20&&<Link to={`/exams/${c.id}/mock?mode=derived${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">Reviewed practice estimate</Link>}</div>
       </details>}
 
       {view==='overview'&&c.id.startsWith('group-b-')&&<section className="mt-5 rounded-[14px] border border-hairline bg-exams-soft p-5"><h2 className="font-display text-[25px]">Study common subjects first</h2><p className="mt-2 text-[13px] text-secondary">English and GK/GS have a focused study area. Technical papers are available separately.</p><div className="mt-3 flex flex-wrap gap-3"><Link to={`/group-b?collection=${c.id}`} className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 text-[13px] font-semibold text-paper">English &amp; GK/GS →</Link><Link to={`/group-b?study_area=technical&collection=${c.id}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Technical papers →</Link></div></section>}
@@ -175,7 +184,7 @@ export default function ExamPage() {
           <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);return '?'+next.toString()})(),hash:key==='topics'?'#exam-study-heading':key==='papers'?'#past-paper-results':key==='browse'||key==='practice'?'#exam-question-browser':''}} aria-current={view===key?'page':undefined}
             className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-[13px] font-semibold`}>{label}</Link>)
         }
-        {c.scorable >= 20 && <Link to={`/exams/${c.id}/mock`} className={`${combined?'':'udc-tab'} whitespace-nowrap rounded-[9px] border border-hairline bg-card px-4 py-3 text-[13px] font-semibold`}>{combined?'Timed paper':'Exam'}</Link>}
+        {c.scorable >= 20 && <Link to={`/exams/${c.id}/mock${mcsSection?`?section=${encodeURIComponent(mcsSection)}`:''}`} className={`${combined?'':'udc-tab'} whitespace-nowrap rounded-[9px] border border-hairline bg-card px-4 py-3 text-[13px] font-semibold`}>{combined?'Quick practice':'Exam'}</Link>}
       </nav>
 
       {error&&<p role="alert" className="mt-3 rounded-[10px] border border-hairline bg-card p-3 text-[13px]">Paper details could not load. Available questions can still be studied. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry details</button></p>}
@@ -231,7 +240,7 @@ export default function ExamPage() {
             <h2 className="font-display text-[26px] font-medium">Past papers</h2>
             <p className="mt-1 text-[13px] text-secondary">Choose a paper to read or practise. Counts reflect the questions currently available; check the source PDF for the complete paper.</p>
           </div>
-          <span className="label">{c.paper_list.length} papers</span>
+          <span className="label">{filteredPapers.length} papers</span>
         </div>
         <div className="mt-4 flex flex-wrap gap-3 rounded-[10px] border border-hairline bg-card p-3">
           <label className="min-w-[180px] flex-1 text-[12px] font-semibold">Find a paper<input type="search" value={paperQuery} onChange={e=>paperFilter('paper_q',e.target.value)} placeholder="Department, paper, year or keyword" className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"/></label>
