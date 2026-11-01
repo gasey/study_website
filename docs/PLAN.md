@@ -935,3 +935,9 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 
 - [x] Receive explicit owner approval for the pending bounded explanation-only quota exception; revalidate all72 prepared items locally. Authorization: `docs/sources/mcs-explanation-authorization-20261101.json`.
 - [ ] Publish and verify the72 explanations after server connectivity returns. Current session blocks SSH socket creation before authentication. Approval already received; do not ask again for this scope. No bank or timer changes made.
+
+
+### 1 November — explanation publication completed
+
+- [x] Publish all72 approved MCS explanations through the audited workflow; verify complete bank diff, live records, provenance/holds/history/access, zero outstanding exports, bank/taxonomy sync and restored publisher timer. Receipt: `docs/sources/mcs-explanation-publication-20261101.json`. This completes the earlier network-blocked72-item task.
+- [ ] Continue wider checked explanations, separate source locator/text review, historical numbering and original-paper simulation prerequisites;2012/2013 recovery remains deferred.

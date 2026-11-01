@@ -1,0 +1,605 @@
+{
+  "packet": "docs/sources/mcs-explanation-batch-20261101.json",
+  "authorization": "docs/sources/mcs-explanation-authorization-20261101.json",
+  "quota_exception_run": "mcs-explanations-20261101",
+  "summary": {
+    "status": "published-and-verified",
+    "publications": 72,
+    "changed_questions": 72,
+    "unchanged_questions": 81555,
+    "answer_and_source_fields_preserved": true,
+    "bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
+    "holds_preserved": 24,
+    "health": {
+      "status": "ok",
+      "questions": 81627,
+      "scorable": 13166
+    },
+    "mcs_scorable": 1556,
+    "account": {
+      "attempts": 243,
+      "owner_unlimited": true
+    },
+    "peer_votes_or_credits": 0,
+    "quota_exception_events": 72,
+    "outstanding_exports": 0
+  },
+  "publications": [
+    {
+      "id": "pub_0122a37e0e10435bbeac359cc2cec4a7",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_01b1b778848f4ca495de2cbb3b94259d",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_07665a58cbba435c80b01343b8263bf9",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_0be2499a8b314a829f1009ef283c4d3d",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_135875e231494b7288f6c285732eba45",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_1cd2659c24894200ae9c1e36887fc080",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_243ba12ad1e34645bf82ca9a94f4b000",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_2776858f544743d4af7d6ba1fb187ddb",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_2f61ef0ce8a14d609efb9b3c5952d8dd",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_30b5cf08059a4b84957f2e2a4f476f76",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_3544004b45414af59e93c4c92d26dc4b",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_393367cc2b1c4c7b8fe4b265864cdfb1",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_3c13df04ab654d10bd5c8cb954d64080",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_3e3d65adb7f049d0a41798e6b58aacde",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_4004d179cc3e4b20a8fbeabc33f2ee4e",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_408378fc7c2d4d8993b23f49c55f379e",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_451e390d0dfa47c98d34b5891542d5d3",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_4a61717d465b4cc68add2cb659895411",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_4ae47b89c38e48c8b17382e529a2de6d",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_4c0d42f3c3cc476ca68f0d2887b3769d",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_4d3b85919c8f437f971232cffa751965",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_5bf4b33497b94e5cbdb9e623aebec091",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_633512a5434042aa970394ed928cc4c2",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_63b91650855b41e19f9cb30c503e64c2",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_65b1936ca86e4ed1b6a2a9b7aab2edac",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_6f53f7e81af14850acdc713b61e9490c",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_767e5782979c40218c64d183477ed7ed",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_77c6863c1d8e4ddd967b32c2a0e025b2",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_77d7737318bd47f3a677df1f058a9be6",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_7b3db808d6ea47f0a1902313c9271e29",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_87b8eba1d5fd4c17b986a8ebfc6e3018",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_8863758102ab4fc3ab0f863fae6e166b",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_895f616ec542407dab14d0f4ee0a8695",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_8c8b4f3813524e6f94dd51adbef15912",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_91d9131ee32f499b8441ef14dc261efa",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_952ec74756c9462794640e3b7816c85e",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_95abff991454471886f279cdc2226300",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_9a7b5eb8cc714ae6a44281aae0819a03",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_9a936b4ec2a1480a93e9f48c4967c281",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_a04a11efa849465dbda2fc70cd2a24fd",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_a8e038cf6f8c45169a466dc86269497a",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_adc3d4afffc443a8839ba2e40967e3be",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_ade8a06f466d4204854d44b1d69180d8",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_aefcbe0570054086bdc863b4393ff8e6",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_b1c9609eb861434ba5472e43dfa3f244",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_b331f569affb45bb86e85d46d8ffdf4f",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_b70ffbab067f4458b9dc86fa7a885f5b",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_b7147f9a855d4f7abfd4f7403be4b7d1",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_bbc3fea89a8547d086a532a13b2024d2",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_bc8ba9f68b704252be80f0a6dad767a7",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_c2b2d60a88694ffb97c21e0703b891b1",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_c3705ab6d33a4afeb9a353da01c6b5d4",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_c52036d8cccb4548902e5ab82da3c1b9",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_c71d11d010054dc3a2fc501a1511e2f9",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_d2b4fb01b42145388b56b0c42e64462f",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_d4029e8a5bce483f9c55a2eab31541e3",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_d4fd9865914d40a5a56255d0ad0732fb",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_d636320a9915494395e95c1633dbff96",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_d74d029270094b7b96e7cbf116eece32",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_ded3c637ef4346a0831cd64944011b00",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e2f19d34b7514c1d8ee1decb443e9162",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e459825b843e4daeb8c6aa0d6ba71594",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e4f228d084d0492e85920b25721259b6",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e4fe9b1b552b4e0f9fd3fb30043ce616",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e87c8b1b71ca462bb93e1383849c4fb1",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_e9c98bdeaf0449f884546d6eec701995",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_ee0dfad477ca4993a1c55869a7c6e42c",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_f046404b19a04baebdf3bbf83c1e74bb",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_f4055f37050c45afbb113f416c939aab",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_fa3c97ea8b7146dcb06a9687d5db34b5",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_fed0f934d43b4ea5a8abcbb5f69b381c",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    },
+    {
+      "id": "pub_ffebce00dee44767bd07a04be5ae23e1",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_decisions": 0,
+      "credit_rows": 0,
+      "exemptions": 1
+    }
+  ]
+}

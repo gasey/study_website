@@ -1,14 +1,15 @@
 {
-  "status": "approved-not-published",
+  "status": "approved-published-and-verified",
   "date": "2026-11-01",
   "owner_response": "I approve",
   "approved_scope": "Pending new quota exception for up to200 explanation-only publications in existing MCS2023/2025 questions; answers, provenance and ordinary website limits unchanged.",
   "prepared_packet": "docs/sources/mcs-explanation-batch-20261101.json",
   "revalidated_items": 72,
   "request_path": "reports/mcs-explanations-20261101/approved-explanation-request.json",
-  "execution_blocker": "Current session network restrictions deny SSH socket creation before authentication.",
-  "publication_count": 0,
-  "bank_modified": false,
-  "timer_modified": false,
-  "resume": "Approval already received; do not ask again for this scope. Recheck bank/live state and sources, pause timer and wait for service, queue with bounded audited exception, dry-run/publish, verify fields/holds/history and restore timer. No exception was invoked in this follow-up."
+  "execution_blocker": null,
+  "publication_count": 72,
+  "bank_modified": true,
+  "timer_modified": true,
+  "resume": "Completed under run mcs-explanations-20261101. No pending publication in this72-item packet; future work must use its applicable ordinary allowance or separate explicit exception.",
+  "completion_receipt": "docs/sources/mcs-explanation-publication-20261101.json"
 }
