@@ -109,12 +109,17 @@ async def queue_source_batch(cur,owner,items,authorization):
             if item['proposal'].get('kind')=='defect':
                 current=await review.snapshot(cur,item['proposal']['canonical_id'],item['proposal']['appearance_id'])
                 patch=item['proposal']['patch'];opts=current['record'].get('options',[])
+                old_flag=current.get('metadata',{}).get('sourceDefect')
+                reviewed_unresolved=(old_flag=='unresolved-source'
+                    and current['record'].get('answerIndex') is None
+                    and item.get('expected_source')==current['record']
+                    and (not current['record'].get('hasDiagram') or current['record'].get('figureImage')))
                 if (set(patch)!={'sourceDefect','disputeNote'} or patch['sourceDefect']is not None
-                        or current.get('metadata',{}).get('sourceDefect')!='duplicate-options'
+                        or not(old_flag=='duplicate-options' or reviewed_unresolved)
                         or len((patch['disputeNote']or'').strip())<20
                         or not 2<=len(opts)<=8 or any(not isinstance(o,str)or not o.strip()for o in opts)
                         or len({o.strip()for o in opts})!=len(opts)):
-                    raise HTTPException(422,'Only an obsolete duplicate-options defect with restored distinct source choices can be cleared in a batch')
+                    raise HTTPException(422,'Defect clearance needs distinct source choices and an obsolete duplicate flag or an exact reviewed unanswered source baseline')
             expected=item.get('expected_source')
             if expected is not None:
                 current=await review.snapshot(cur,item['proposal']['canonical_id'],item['proposal']['appearance_id'])

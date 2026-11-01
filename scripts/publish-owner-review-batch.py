@@ -66,13 +66,19 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
                         for e in p.get('evidence',[])))
             clear_obsolete=(p['patch'].get('sourceDefect')is None
                 and m['baseline'].get('metadata',{}).get('sourceDefect')=='duplicate-options')
+            clear_reviewed=(p['patch'].get('sourceDefect')is None
+                and m['baseline'].get('metadata',{}).get('sourceDefect')=='unresolved-source'
+                and m['baseline']['record'].get('answerIndex')is None
+                and (not m['baseline']['record'].get('hasDiagram') or m['baseline']['record'].get('figureImage'))
+                and any(e.get('kind')=='paper'and e.get('document_id')and e.get('sha256')and e.get('page')
+                        for e in p.get('evidence',[])))
             if (m.get('operator_maintenance',{}).get('owner_id')!=m['author_id']
                     or set(p['patch'])!={'sourceDefect','disputeNote'}
-                    or not(clear_obsolete or flag_unresolved)
+                    or not(clear_obsolete or clear_reviewed or flag_unresolved)
                     or len((p['patch']['disputeNote']or'').strip())<20
                     or not 2<=len(opts)<=8 or any(not isinstance(o,str)or not o.strip()for o in opts)
                     or len({o.strip()for o in opts})!=len(opts)):
-                raise ValueError('Defect batches require an obsolete duplicate flag or a source-evidenced unresolved item with its answer withdrawn')
+                raise ValueError('Defect batches require a source-evidenced unanswered item or an obsolete duplicate flag')
         else:raise ValueError('Only bounded owner source/answer repairs qualify')
         if target in targets or target not in by_id:raise ValueError('Targets must be distinct existing appearances')
         targets.add(target);original=by_id[target]

@@ -195,3 +195,33 @@ def test_staff_intake_budget_is_bounded_and_internal_flag_cannot_grant_access(cl
   with pytest.raises(HTTPException)as blocked:client.portal.call(create,'author')
   assert blocked.value.status_code==403
  finally:conn.execute('DELETE FROM bank_contributions WHERE id=ANY(%s)',(ids,))
+
+@pytest.mark.parametrize('defect', ['valid','answered','changed-source','missing-image','duplicate-options','wrong-flag'])
+def test_reviewed_unresolved_source_batch_requires_exact_unanswered_readable_source(client,actor,database,defect):
+ from app.services.operator_maintenance import queue_source_batch
+ q,a,p,c,args=prepared(client,actor,database);conn=database[1]
+ conn.execute("UPDATE canonical_questions SET source_defect='unresolved-source',answer_text=NULL,answer_source='none' WHERE id=%s",(q,))
+ conn.execute("UPDATE appearances SET answer_index=NULL,answer_source='none' WHERE id=%s",(a,))
+ if defect=='answered':conn.execute('UPDATE appearances SET answer_index=0 WHERE id=%s',(a,))
+ if defect=='missing-image':conn.execute('UPDATE appearances SET has_diagram=true,figure_image=NULL WHERE id=%s',(a,))
+ if defect=='duplicate-options':conn.execute('UPDATE appearances SET options=%s WHERE id=%s',(Jsonb(['same','same']),a))
+ if defect=='wrong-flag':conn.execute("UPDATE canonical_questions SET source_defect='diagram-not-embedded' WHERE id=%s",(q,))
+ payload=conn.execute('SELECT payload FROM contribution_revisions WHERE contribution_id=%s AND revision=1',(c['id'],)).fetchone()[0]
+ async def call():
+  from app.db import cursor
+  async with cursor()as cur:
+   snap=await review.snapshot(cur,q,a);expected=dict(snap['record'])
+   if defect=='changed-source':expected['question']='An older different source baseline'
+   proposal={**payload,'kind':'defect','patch':{'sourceDefect':None,'disputeNote':'The registered source was inspected and its complete distinct choices restored.'}}
+   item=dict(proposal=proposal,expected_source=expected,paper_id=p,source_sha='b'*64,reason=args['reason'])
+   return await queue_source_batch(cur,'owner',[item],args['authorization'])
+ if defect!='valid':
+  with pytest.raises(HTTPException):client.portal.call(call)
+  assert conn.execute("SELECT count(*) FROM bank_publications p JOIN bank_contributions c ON c.id=p.contribution_id WHERE c.canonical_id=%s",(q,)).fetchone()[0]==0
+  return
+ result=client.portal.call(call);pub=result['publications'][0]
+ assert pub['state']=='exported'
+ assert conn.execute('SELECT count(*) FROM contribution_decisions WHERE contribution_id=%s',(pub['contribution_id'],)).fetchone()[0]==0
+ assert conn.execute('SELECT count(*) FROM contribution_credit WHERE contribution_id=%s',(pub['contribution_id'],)).fetchone()[0]==0
+ assert conn.execute('SELECT answer_index FROM appearances WHERE id=%s',(a,)).fetchone()[0]is None
+ conn.execute("UPDATE bank_publications SET state='applied' WHERE id=%s",(pub['id'],))

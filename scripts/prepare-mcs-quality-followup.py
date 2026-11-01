@@ -55,7 +55,10 @@ def prepare(phase,packet,bank):
         validate_item(item,current)
         source=record(current)
         if phase=='transcription':
-            patch=item['transcription_patch']
+            # Do not submit unchanged nullable markup fields. In particular,
+            # optionsMarkup=None is a source baseline, not a new options list.
+            patch={key:value for key,value in item['transcription_patch'].items()
+                   if source.get(key)!=value}
             if not patch:continue
             if source==item['post_transcription_source']:continue
             if source!=item['expected_source'] or digest(current)!=item['baseline_sha256']:
@@ -79,7 +82,7 @@ def prepare(phase,packet,bank):
                 if current['sourceDefect']!='unresolved-source':raise ValueError('The reviewed source defect changed')
                 reason='Separate source-defect review: '+item['rationale']+' The checked source is now readable; retain null answers, source identity and provisional recovered-copy status.'
                 items.append(dict(proposal=dict(kind='defect',canonical_id=item['canonical_id'],appearance_id=current['id'],subject_id=item['subject_id'],
-                    title='Adjudicate MCS Q'+str(item['printed_question'])+' source readability',patch={'sourceDefect':None},rationale=reason,
+                    title='Adjudicate MCS Q'+str(item['printed_question'])+' source readability',patch={'sourceDefect':None,'disputeNote':reason},rationale=reason,
                     evidence=[dict(kind='paper',document_id=item['document_id'],sha256=item['source_sha256'],page=item['physical_pdf_page'],note=reason)]),
                     paper_id=item['paper_id'],source_sha=item['source_sha256'],reason=reason,expected_source=source))
             elif item.get('answer_draft'):

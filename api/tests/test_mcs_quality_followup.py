@@ -31,9 +31,24 @@ def test_phase_order_refuses_to_clear_unrepaired_sources(monkeypatch):
         m.prepare('defect',{'items':[item]},{'questions':[current]})
     monkeypatch.setattr(m,'record',lambda _:item['post_transcription_source'])
     request=m.prepare('defect',{'items':[item]},{'questions':[current]})
-    assert request['items'][0]['proposal']['patch']=={'sourceDefect':None}
+    assert request['items'][0]['proposal']['patch']['sourceDefect']is None
+    assert len(request['items'][0]['proposal']['patch']['disputeNote'])>=20
     with pytest.raises(ValueError,match='predecessor'):
         m.prepare('answers',{'items':[item]},{'questions':[current]})
+
+
+def test_transcription_omits_unchanged_nullable_markup(monkeypatch):
+    item=copy.deepcopy(next(i for i in packet['items'] if i['transcription_patch'].get('options')))
+    item['expected_source']['optionsMarkup']=None
+    item['transcription_patch']['optionsMarkup']=None
+    current={'id':item['appearance_id']}
+    monkeypatch.setattr(m,'validate_item',lambda *_:None)
+    monkeypatch.setattr(m,'record',lambda _:item['expected_source'])
+    monkeypatch.setattr(m,'digest',lambda _:item['baseline_sha256'])
+    request=m.prepare('transcription',{'items':[item]},{'questions':[current]})
+    patch=request['items'][0]['proposal']['patch']
+    assert 'optionsMarkup' not in patch
+    assert patch['options']==item['transcription_patch']['options']
 
 
 def test_recovered_answers_remain_unofficial_and_transcription_is_source_only(monkeypatch):
