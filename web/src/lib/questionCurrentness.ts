@@ -52,13 +52,68 @@ export const revisionNotes: RevisionNote[] = [
     revisionHint: 'Compare the same measure and units. Distinguish Budget Estimates, Revised Estimates and Actuals, and keep each figure attached to its financial year.',
     reference: {label: 'Ministry of Finance · Union Budget 2026–2027 documents', url: 'https://www.indiabudget.gov.in/'},
   },
+  {
+    id: 'mcs-bairabi-sairang-2025', checkedOn: '2026-11-01', effectiveOn: '2026-09-13', reviewBy: '2027-02-01',
+    historicalContext: 'The 2025 paper asked about the new Bairabi–Sairang line and its commissioning status.',
+    note: 'A Ministry of Railways anniversary report dated 13 September 2026 records that the 51.38 km line and Sairang station were inaugurated on 13 September 2025. It also records the Sairang–Silchar passenger service beginning in January 2026. These later dated milestones do not verify every construction or safety statement in the original question.',
+    revisionHint: 'Separate route, construction length, safety approvals and later passenger services; keep each fact attached to its date.',
+    reference: {label: 'Ministry of Railways · Bairabi–Sairang one-year report · 13 September 2026', url: 'https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2309650&lang=1&reg=3'},
+  },
+  {
+    id: 'mcs-muhcs-policy-2025', checkedOn: '2026-11-01', effectiveOn: '2026-04-01', reviewBy: '2027-02-01',
+    historicalContext: 'The 2025 question refers to the scheme terms described for that examination year.',
+    note: 'Mizoram State Health Care Society’s 16 February 2026 notice describes policy year 2026–27, effective 1 April 2026. It lists annual contribution options of ₹2,500, ₹5,000 and ₹10,000, with cover up to ₹5 lakh per family. These figures belong to that dated notice; check the Society’s subsequent scheme notices for later changes.',
+    revisionHint: 'Keep each MUHCS policy year, enrolment category, contribution and cover amount in a separate row.',
+    reference: {label: 'Mizoram State Health Care Society · MUHCS 2.0 policy 2026–27 notice · 16 February 2026', url: 'https://mshcs.mizoram.gov.in/post/muhcs-20-enrolment-16-feb-2026-aangin'},
+  },
+  {
+    id: 'mcs-ner-sdg-index-2025', checkedOn: '2026-11-01', effectiveOn: '2025-07-07', reviewBy: '2027-02-01',
+    historicalContext: 'This stem names the 2023–24 edition of NITI Aayog’s North Eastern Region District SDG Index.',
+    note: 'NITI Aayog’s report page, published 7 July 2025, provides rankings and scores for the 2023–24 edition. Keep district comparisons attached to that report period and methodology. The SDG division listing checked on 1 November 2026 showed this as the latest North Eastern Region District SDG Index edition; its rank is still edition-specific, not a live 2026 ranking.',
+    revisionHint: 'Record the index edition, publication date, district boundary and methodology with every rank.',
+    reference: {label: 'NITI Aayog · SDG index and report listings · checked 1 November 2026', url: 'https://www.niti.gov.in/divisions/division/sustainable-development-goal'},
+  },
+  {
+    id: 'mcs-ullas-literacy-2025', checkedOn: '2026-11-01', effectiveOn: '2026-04-01', reviewBy: '2027-02-01',
+    historicalContext: 'The 2025 stem is tied to Mizoram’s declaration dated 20 May 2025.',
+    note: 'The Ministry of Education’s 2026–27 outcome framework continues to list ULLAS and sets a target for States/UTs achieving full literacy during that year. This programme target is not a revised Mizoram literacy rate. No later Mizoram-specific rate was checked; retain the exam’s declaration date as historical context.',
+    revisionHint: 'Distinguish a declaration, a survey rate and a future programme target; do not substitute one for another.',
+    reference: {label: 'Ministry of Education · Output and Outcome Monitoring Framework 2026–27 · ULLAS', url: 'https://www.education.gov.in/sites/upload_files/mhrd/files/document-reports/OOMF_2026_27.pdf'},
+  },
+  {
+    id: 'mcs-unfpa-swp-2025', checkedOn: '2026-11-01', effectiveOn: '2025-06-10', reviewBy: '2027-02-01',
+    historicalContext: 'This is a report-theme question tied to UNFPA’s 2025 State of World Population edition.',
+    note: 'UNFPA’s 10 June 2025 release describes the report’s central finding: many people cannot have the number of children they want because economic and social barriers constrain choice. Keep this summary attached to the 2025 report title; no later report theme or current demographic estimate is implied.',
+    revisionHint: 'Keep the report year and title beside its theme; do not replace a report summary with a later population statistic.',
+    reference: {label: 'UNFPA · 2025 State of World Population report release · 10 June 2025', url: 'https://www.unfpa.org/press/unfpa-report-links-falling-birth-rates-cost-living-sexist-norms-fear-future'},
+  },
+  {
+    id: 'mcs-hero-trination-imphal-2023', checkedOn: '2026-11-01', effectiveOn: '2023-03-22', reviewBy: '2027-02-01',
+    historicalContext: 'The question refers to a completed 2023 international friendly tournament.',
+    note: 'The All India Football Federation’s match report dated 22 March 2023 records the opening fixture and venue for the Hero Tri-Nation International Football Tournament. Use it as a historical event record only; it says nothing about the host or schedule of later tournaments.',
+    revisionHint: 'Keep the event year, venue and fixture date together; do not turn an old host-city question into a current event claim.',
+    reference: {label: 'All India Football Federation · Hero Tri-Nation opening match · 22 March 2023', url: 'https://www.the-aiff.com/article/anirudh-thapa-strikes-as-india-edge-past-myanmar-in-hero-tri-nation-opener-in-imphal'},
+  },
 ]
 export function revisionNoteFor(question: string, year?: number | null, today = new Date().toISOString().slice(0,10)) {
   const id = /stand[ -]?up india/i.test(question) && year===2016 ? 'stand-up-india-2016'
     : /languages.*initially.*constitution/i.test(question) && year===2015 ? 'eighth-schedule-initial-count'
     : /number of biodiversity hotspots/i.test(question) && year===2017 ? 'biodiversity-hotspots-2017'
     : /\bshibu soren\b/i.test(question) && /chief minister/i.test(question) && year === 2025
-    ? 'shibu-soren-2025' : /\bfinance commission\b/i.test(question)
+    ? 'shibu-soren-2025'
+    : year === 2025 && /new railway line in mizoram/i.test(question) && /bairabi/i.test(question) && /sairang/i.test(question)
+      ? 'mcs-bairabi-sairang-2025'
+      : year === 2025 && /mizoram universal healthcare scheme|muhcs/i.test(question)
+        ? 'mcs-muhcs-policy-2025'
+        : year === 2025 && /north eastern region district sdg index/i.test(question) && /mizoram/i.test(question)
+          ? 'mcs-ner-sdg-index-2025'
+          : year === 2025 && /fully literate state/i.test(question) && /mizoram/i.test(question) && /ullas/i.test(question)
+            ? 'mcs-ullas-literacy-2025'
+            : year === 2025 && /state of world population report\s*2025/i.test(question) && /united nations population fund|unfpa/i.test(question)
+              ? 'mcs-unfpa-swp-2025'
+              : year === 2023 && /2023 hero tri-nation international football tournament/i.test(question)
+                ? 'mcs-hero-trination-imphal-2023'
+                : /\bfinance commission\b/i.test(question)
       ? 'finance-commission-2026' : /\b(?:union|indian) budget\b/i.test(question) ? 'union-budget-2026' : null
   const note = revisionNotes.find(n => n.id === id)
   // Future-dated editorial material must not appear before its source was checked.

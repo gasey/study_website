@@ -46,6 +46,26 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
             else:raise ValueError('Only verified solutions or exactly mapped final official answers qualify')
             explanation=(p['patch'].get('explanation')or'').strip()
             if (mode=='verified' or explanation) and len(explanation)<20:raise ValueError('A worked explanation is required')
+        elif p['kind']=='explanation':
+            baseline=m.get('baseline',{});before=baseline.get('record',{});patch=p.get('patch',{})
+            opts=before.get('options')or[];ai=before.get('answerIndex');source=before.get('answerSource')
+            evidence=p.get('evidence',[]);documents=m.get('documents',[])
+            exact_paper=any(e.get('kind')=='paper' and e.get('document_id') and e.get('sha256')
+                and type(e.get('page'))is int and e.get('page')>=1
+                and any(d.get('id')==e.get('document_id') and d.get('kind')=='paper'
+                    and d.get('paper_id')==before.get('paperId') and d.get('sha256')==e.get('sha256') for d in documents)
+                for e in evidence)
+            explanation=patch.get('explanation')
+            if (m.get('operator_maintenance',{}).get('owner_id')!=m.get('author_id')
+                    or set(patch)!={'explanation'} or not isinstance(explanation,str) or len(explanation.strip())<20
+                    or before.get('type')!='mcq' or type(ai)is not int or not 0<=ai<len(opts)
+                    or source not in {'official','key','derived'} or not 2<=len(opts)<=8
+                    or any(not isinstance(o,str)or not o.strip()for o in opts)
+                    or len({o.strip()for o in opts})!=len(opts)
+                    or before.get('hasDiagram') and not before.get('figureImage')
+                    or baseline.get('metadata',{}).get('sourceDefect') in {'duplicate-options','unresolved-source'}
+                    or not exact_paper):
+                raise ValueError('Explanation batches require an owner-adjudicated, source-evidenced usable answer and an explanation-only patch')
         elif p['kind']in('transcription','source_reference'):
             if m.get('operator_maintenance',{}).get('owner_id')!=m['author_id']:raise ValueError('Explicit owner source adjudication required')
             allowed={'page','qnum'}if p['kind']=='source_reference'else{'question','direction','questionMarkup','optionsMarkup','passage','options','hasDiagram','figureImage','answerIndex'}
@@ -93,6 +113,8 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         # source/answer patch kinds cannot change other questions or taxonomy.
         branch,qid=transform({'questions':[original],'papers':bank['papers']},m)
         changed=branch['questions'][0];opts=changed.get('options',[])
+        if p['kind']=='explanation' and any(changed.get(k)!=original.get(k) for k in ('answerIndex','answerSource','answerKeyRef')):
+            raise ValueError('Explanation publication cannot change answer or provenance')
         if p['kind']=='answer'and(not 2<=len(opts)<=8 or any(not isinstance(o,str)or not o.strip()for o in opts)or len({o.strip()for o in opts})!=len(opts)):raise ValueError('Repair malformed options before verifying')
         ai=changed.get('answerIndex')
         if p['kind']=='answer'and(type(ai)is not int or not 0<=ai<len(opts)):raise ValueError('A usable answer is required')
@@ -104,6 +126,17 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
     return result,{'schema':1,'batch_id':batch_id,'input_sha256':input_sha,'output_sha256':output_sha,'receipts':receipts}
 
 
+def check_live_explanation_targets(pubs):
+    targets={p['manifest']['payload']['canonical_id'] for p in pubs
+             if p['state']=='exported' and p['manifest']['payload']['kind']=='explanation'}
+    if not targets:return
+    rows=w.remote("SELECT id FROM canonical_questions WHERE id IN("+
+        ','.join(w.literal(qid)for qid in sorted(targets))+
+        ") AND status='live' AND NOT key_disputed AND (source_defect IS NULL OR source_defect NOT IN ('duplicate-options','unresolved-source'))",True)
+    if {row['id']for row in rows}!=targets:
+        raise ValueError('An explanation target became held, disputed or source-defective after review')
+
+
 def publish(ids,dry_run=False):
     if len(ids)!=len(set(ids))or not 1<=len(ids)<=100:raise ValueError('Choose 1–100 unique explicit publication IDs')
     quoted=','.join(w.literal(x)for x in ids)
@@ -111,6 +144,7 @@ def publish(ids,dry_run=False):
         pubs=w.remote('SELECT * FROM bank_publications WHERE id IN('+quoted+')ORDER BY id',True)
         if any(digest(p['manifest'])!=p['manifest_hash']for p in pubs):raise ValueError('Immutable manifest changed')
         if len(pubs)!=len(ids)or any(p['state']not in('exported','applied')for p in pubs):raise ValueError('Every requested publication must exist and be exported/applied')
+        check_live_explanation_targets(pubs)
         other=w.remote("SELECT id FROM bank_publications WHERE state='exported'AND id NOT IN("+quoted+')LIMIT 1',True)
         if other:raise ValueError('An unrelated publication is waiting; reconcile it first')
         # Avoid ambiguous overlapping canonical targets, including alternate prints.

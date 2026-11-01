@@ -13,7 +13,30 @@ from .review_policy import Proposal,digest
 OPERATOR='operator:owner-source-maintenance'
 _source_batch=ContextVar('owner_source_batch',default=None)
 
-SOURCE_KINDS={'transcription','source_reference','new_question','defect'}
+SOURCE_KINDS={'transcription','source_reference','new_question','defect','explanation'}
+
+def _explanation_patch(proposal):
+    """Keep owner explanation maintenance isolated from answer/source edits."""
+    if proposal.kind!='explanation' or set(proposal.patch)!={'explanation'}:
+        raise HTTPException(422,'Owner explanation maintenance accepts only an explanation patch')
+    explanation=proposal.patch.get('explanation')
+    if not isinstance(explanation,str) or len(explanation.strip())<20:
+        raise HTTPException(422,'A substantive explanation of at least 20 characters is required')
+
+async def _validate_explanation_target(cur,current):
+    record=current.get('record',{});opts=record.get('options')or[];index=record.get('answerIndex')
+    if (record.get('type')!='mcq' or type(index)is not int or not 0<=index<len(opts)
+            or len(opts)<2 or len(opts)>8 or any(not isinstance(o,str)or not o.strip()for o in opts)
+            or len({o.strip()for o in opts})!=len(opts)
+            or record.get('hasDiagram') and not record.get('figureImage')
+            or record.get('answerSource')not in {'official','key','derived'}):
+        raise HTTPException(422,'Explanation maintenance requires an existing usable answer and distinct choices')
+    await cur.execute('SELECT status,answer_text,answer_source,key_disputed,source_defect FROM canonical_questions WHERE id=(SELECT canonical_id FROM appearances WHERE id=%s)',(record['id'],))
+    row=await cur.fetchone()
+    if (not row or row['status']!='live' or row['answer_source']not in {'official','key','derived'}
+            or row['answer_text']!=opts[index] or row['key_disputed']
+            or row['source_defect']in {'duplicate-options','unresolved-source'}):
+        raise HTTPException(422,'Explanation maintenance requires a live, undisputed answer without an unresolved source flag')
 
 async def intake_source(cur,owner,proposal,authorization):
     await require_role(cur,owner,roles=('owner',))
@@ -22,6 +45,7 @@ async def intake_source(cur,owner,proposal,authorization):
     p=Proposal.model_validate(proposal)
     if p.kind not in SOURCE_KINDS:
         raise HTTPException(422,'Owner source intake accepts only source maintenance kinds')
+    if p.kind=='explanation':_explanation_patch(p)
     c=await review.create(cur,owner,p,'operator-source:'+digest(p.model_dump(mode='json')),admin_attestation=True)
     await review.event(cur,c['id'],OPERATOR,'operator_source_intake',{'owner_id':owner,'authorization':authorization,'payload_hash':digest(p.model_dump(mode='json')),'no_peer_approvals':True})
     return {'id':c['id'],'state':c['state'],'payload_hash':digest(p.model_dump(mode='json'))}
@@ -36,6 +60,9 @@ async def queue_source(cur,owner,cid,payload_hash,paper_id,source_sha,reason,aut
     r=await review.revision(cur,c)
     if digest(r['payload'])!=payload_hash:raise HTTPException(409,'The reviewed proposal payload changed')
     p=Proposal.model_validate(r['payload'])
+    if p.kind=='explanation':
+        _explanation_patch(p)
+        if _source_batch.get()is None:raise HTTPException(422,'Explanation maintenance requires the bounded batch with an exact expected source snapshot')
     target=(r['baseline'].get('paper')or{}).get('id')or p.patch.get('paperId')
     if target!=paper_id:raise HTTPException(409,'The source paper does not match the authorized paper')
     evidence=[e for e in p.evidence if e.kind=='paper'and e.sha256==source_sha and e.document_id]
@@ -55,6 +82,7 @@ async def queue_source(cur,owner,cid,payload_hash,paper_id,source_sha,reason,aut
     await cur.execute('SELECT 1 FROM contribution_decisions WHERE contribution_id=%s AND revision=%s AND decision<>\'approve\'',(cid,c['revision']))
     if await cur.fetchone():raise HTTPException(409,'Resolve the existing reviewer objection first')
     current=await review.snapshot(cur,c['canonical_id'],c['appearance_id'])if c['canonical_id']else{}
+    if p.kind=='explanation':await _validate_explanation_target(cur,current)
     if digest(current)!=r['baseline_hash']:
         if not allow_rebase:raise HTTPException(409,'Source changed; inspect and explicitly rebase the proposal')
         # Only disjoint source changes can be rebased without a new payload.
@@ -105,7 +133,14 @@ async def queue_source_batch(cur,owner,items,authorization):
     try:
         results=[]
         for item in items:
-            if item['proposal'].get('kind')not in('transcription','source_reference','defect'):raise HTTPException(422,'This batch accepts source repairs only')
+            if item['proposal'].get('kind')not in('transcription','source_reference','defect','explanation'):raise HTTPException(422,'This batch accepts source repairs and explanation-only maintenance')
+            if item['proposal'].get('kind')=='explanation':
+                proposal=Proposal.model_validate(item['proposal']);_explanation_patch(proposal)
+                expected=item.get('expected_source')
+                current=await review.snapshot(cur,proposal.canonical_id,proposal.appearance_id)
+                if not isinstance(expected,dict) or expected!=current['record']:
+                    raise HTTPException(409,'Explanation maintenance requires the exact current source snapshot')
+                await _validate_explanation_target(cur,current)
             if item['proposal'].get('kind')=='defect':
                 current=await review.snapshot(cur,item['proposal']['canonical_id'],item['proposal']['appearance_id'])
                 patch=item['proposal']['patch'];opts=current['record'].get('options',[])

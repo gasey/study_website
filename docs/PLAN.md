@@ -920,3 +920,12 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Deploy the final frontend restore-generation fix after network access was restored. Production build and live index match; fresh Show answer displays the answer, explanation, 30-minute retry countdown and unlocked discussion without reload. API healthy (81,627 / 13,163); family site returns 307. The owner cancelled the 21:35 IST continuation.
 
 - [x] Add guarded owner batching for separately reviewed unanswered unresolved-source clearances; exact source, distinct choices, figure reference, source evidence and explanatory note required. All 353 backend tests pass; API deployed, publisher restored after live verification.
+
+
+### 1 November — efficient recent MCS explanations and revision context
+
+- [x] Use bounded Luna drafting with operator source/reasoning checks; prepare72explanation-only updates in28groups, preserving every existing answer and key reference. Save the strict live inventory and source/locator findings.
+- [x] Add tested guarded explanation-only owner publication support;391backendtests and50frontendtests pass. Deploy API and six dated current-affairs notes, verify the live frontend and a protected source-specific note.
+- [ ] Publish the checked72-item recent-explanation packet after the new bounded quota-exception choice is answered (or ordinary allowance becomes available). No new exception approval or publication has occurred at this checkpoint.
+- [x] Audit original-simulation prerequisites and collect exact2025cover evidence; retain timed-practice labelling and compensation holds.
+- [ ] Resolve the separate tenpage-locator/tworadicalstem findings and the unconfirmedEnglishmeaning/key review lead through fresh audited source/answer workflows. Continue the wider explanation backlog and simulation prerequisites;2012/2013recovery staysdeferred.

@@ -18,6 +18,12 @@ api/.venv/bin/python scripts/bank-review-worker.py once
 
 Publish in sequence. Each successful publication changes the bank checksum; do not export a stack of manifests against an outdated bank version. Inspect a failed publication before continuing. An already applied source request replays its existing receipt. A failed request is not silently re-exported.
 
+## Explanation-only backfill
+
+The owner source-batch workflow also accepts `explanation` proposals with exactly one patch field: substantive explanation text. Supply the complete current `expected_source` for every item. Only a live, undisputed question with an existing usable official/key/derived answer, distinct choices and required source figure qualifies. Registered exact-paper evidence and current source/answer checks are mandatory. The queue and publisher preserve answer index, provenance, key reference, source positions and grading holds; they record owner maintenance, not independent peer approval or rewards. The publisher rechecks live eligibility after export to catch a new hold/dispute. Single-item source queueing cannot bypass the exact-snapshot explanation batch guard.
+
+`scripts/prepare-mcs-explanation-batch.py --output reports/.../request.json` prepares at most100items from the checked recent-MCS packet. It never writes bank/server data, refuses changed PDFs/baselines and never overwrites a nonempty explanation. A new maintenance run needs its own actual ordinary allowance or explicit bounded owner quota exception; a completed earlier exception does not persist. Follow the normal timer pause, export, dry run, publication, live verification and timer restoration sequence.
+
 ## Answer decisions
 
 The same trusted command can invoke the direct admin answer service under explicit operator delegation. It records a separate authorization event; its internal account reference does not assert a browser login or recent MFA. Browser endpoints continue to require session/CSRF/MFA. Current role, primary appearance, source integrity and active-assessment checks still run.
