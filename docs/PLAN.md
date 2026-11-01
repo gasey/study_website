@@ -909,5 +909,5 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Show missing explanations honestly and provide explanation-only proposals; add teaching/source/date guidance to contributor and admin forms.
 - [x] Add three inspected-source editorial notes (2025 Shibu Soren example, Finance Commission period, Union Budget year comparison), effective/check/review dates, explicit unknown-update state and recheck-due handling.
 - [x] Protect answer-bearing notes and links until answer/reveal; keep historical scoring unchanged and avoid assigning a year from an unrelated appearance on question detail.
-- [ ] Deploy the tested frontend and push the local commit once SSH/GitHub networking is available. This session's sandbox denies SSH sockets; no live release is claimed.
+- [x] Deploy the tested frontend after networking was restored; verify the live entrypoint, API health, bank sync and actual revision-note reveal in the browser, then push the completed release to GitHub. The earlier sandbox blocker is resolved.
 - [ ] Continue substantive source-checked explanations and specific dated updates through the documented editorial/publication workflow. A full browser-managed update queue and separate per-explanation review metadata remain future work.
