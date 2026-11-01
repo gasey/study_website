@@ -1,5 +1,4 @@
-import QuestionExplanation from '../components/QuestionExplanation'
-import QuestionCurrentness from '../components/QuestionCurrentness'
+import PracticeAnswerPanel from '../components/PracticeAnswerPanel'
 import AnswerProvenance from '../components/AnswerProvenance'
 import {QuestionActions} from '../components/QuestionDiscussion'
 import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
@@ -22,6 +21,7 @@ export default function PaperViewer() {
   const [total,setTotal]=useState(0),[practiceCount,setPracticeCount]=useState(0)
   const [questionsLoading,setQuestionsLoading]=useState(true),[pageRetry,setPageRetry]=useState(0)
   const [offset,setOffset]=useState(0)
+  const [viewed,setViewed]=useState<Record<string,boolean>>({})
   const [answers,setAnswers]=useState<Record<string,AnswerResult>>({})
   const [picked,setPicked]=useState<Record<string,number>>({})
   const [flags,setFlags]=useState<Set<string>>(new Set())
@@ -34,7 +34,7 @@ export default function PaperViewer() {
   const query=search.get('q')||'',kind=search.get('kind')||'',status=search.get('status')||'',subject=search.get('subject')||''
   const selected=search.get('appearance')||''
   function update(values:Record<string,string>){setSearch(previous=>{const next=new URLSearchParams(previous);for(const [key,value]of Object.entries(values)){if(value)next.set(key,value);else next.delete(key)}return next},{replace:true})}
-  useEffect(()=>{setItems([]);setTotal(0);setPracticeCount(0);setOffset(0);setAnswers({});setPicked({});setFlags(new Set());setNotes({});setAnswerErrors({});pending.current.clear();setBusy(new Set())},[id,paperId])
+  useEffect(()=>{setItems([]);setTotal(0);setPracticeCount(0);setOffset(0);setAnswers({});setViewed({});setPicked({});setFlags(new Set());setNotes({});setAnswerErrors({});pending.current.clear();setBusy(new Set())},[id,paperId])
   useEffect(()=>{
     let live=true;identity.current=id+':'+paperId
     setCollection(null);setError(null)
@@ -49,7 +49,7 @@ export default function PaperViewer() {
       .catch(e=>{if(live)setQuestionError(e.message)}).finally(()=>{if(live)setQuestionsLoading(false)})
     return()=>{live=false;controller.abort()}
   },[id,paperId,pageRetry])
-  useEffect(()=>{const clear=()=>{setAnswers({});setPicked({});setNotes({});setFlags(new Set());setAnswerErrors({})};window.addEventListener('ism-auth-change',clear);return()=>window.removeEventListener('ism-auth-change',clear)},[])
+  useEffect(()=>{const clear=()=>{setAnswers({});setViewed({});setPicked({});setNotes({});setFlags(new Set());setAnswerErrors({})};window.addEventListener('ism-auth-change',clear);return()=>window.removeEventListener('ism-auth-change',clear)},[])
   useEffect(()=>setOffset(0),[query,kind,status,subject])
   const paper=collection?.paper_list.find(p=>p.id===paperId)
   const indexed=useMemo(()=>items.map((q,index)=>({q,index})),[items])
@@ -63,7 +63,7 @@ export default function PaperViewer() {
   function toggleFlag(appearance:string){setFlags(previous=>{const next=new Set(previous);if(next.has(appearance))next.delete(appearance);else next.add(appearance);return next})}
   async function check(q:PaperQuestion){
     const key=q.appearance_id,shownIndex=picked[key],scope=id+':'+paperId
-    if(shownIndex===undefined||answers[key]||!q.option_order||pending.current.has(key))return
+    if(shownIndex===undefined||answers[key]||viewed[key]||busy.has(key)||!q.option_order||pending.current.has(key))return
     const canonicalIndex=q.option_order[shownIndex]
     if(!Number.isInteger(canonicalIndex)||canonicalIndex<0)return
     pending.current.add(key);setBusy(new Set(pending.current));setAnswerErrors(e=>({...e,[key]:''}))
@@ -115,20 +115,19 @@ export default function PaperViewer() {
           {blocked && <p role="note" className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick">Source issue — excluded from scoring. {q.dispute_note || 'The printed question needs clarification before a reliable answer can be scored.'}</p>}
           <div className="mt-3"><SourceQuestionContext direction={q.direction} passage={q.passage} /></div>
           <h2 className="mt-2 font-display text-[21px] leading-snug"><SourceQuestionText instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h2>
-          <QuestionCurrentness revealed={!!result} question={q.question} year={q.year ?? paper.year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
           {q.figure_image_url && <a href={q.figure_image_url} target="_blank" rel="noreferrer" className="mt-3 block max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper" aria-label="Open original question figure"><img src={q.figure_image_url} loading="lazy" decoding="async" alt={`Original source figure for question ${q.qnum ?? ''}`} className="max-h-[360px] w-full object-contain" /><span className="block border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · open full image ↗</span></a>}
           {!!q.options.length && <AnswerOptions as="ol" className="mt-4">
             {q.options.map((option, i) => {
               const correct = result && i === correctShown
               const wrong = result && picked[q.appearance_id] === i && !result.correct
-              return <li key={i}><button type="button" disabled={!!result || busy.has(q.appearance_id) || option == null} onClick={() => setPicked((p) => ({ ...p, [q.appearance_id]: i }))} aria-pressed={picked[q.appearance_id]===i} data-answer-state={correct?'correct':wrong?'wrong':picked[q.appearance_id]===i?'selected':'neutral'} className={`answer-option flex w-full items-start gap-3 rounded-[8px] border p-3 text-left text-[14px] ${correct ? 'border-correct bg-correct-soft' : wrong ? 'border-wrong bg-wrong-soft' : picked[q.appearance_id] === i ? 'border-ink bg-paper' : 'border-hairline bg-card'}`}><span className="font-mono">{LETTERS[i]}.</span><span>{option == null ? 'Option unavailable in source' : <SourceQuestionText text={q.options_markup?.[i] ?? option} />}</span></button></li>
+              return <li key={i}><button type="button" disabled={!!result || viewed[q.appearance_id] || busy.has(q.appearance_id) || option == null} onClick={() => setPicked((p) => ({ ...p, [q.appearance_id]: i }))} aria-pressed={picked[q.appearance_id]===i} data-answer-state={correct?'correct':wrong?'wrong':picked[q.appearance_id]===i?'selected':'neutral'} className={`answer-option flex w-full items-start gap-3 rounded-[8px] border p-3 text-left text-[14px] ${correct ? 'border-correct bg-correct-soft' : wrong ? 'border-wrong bg-wrong-soft' : picked[q.appearance_id] === i ? 'border-ink bg-paper' : 'border-hairline bg-card'}`}><span className="font-mono">{LETTERS[i]}.</span><span>{option == null ? 'Option unavailable in source' : <SourceQuestionText text={q.options_markup?.[i] ?? option} />}</span></button></li>
             })}
           </AnswerOptions>}
-          {q.type === 'mcq' && q.answer_source !== 'none' && !blocked && !result && <button type="button" disabled={picked[q.appearance_id] === undefined || !q.option_order || busy.has(q.appearance_id)} onClick={() => void check(q)} className="mt-3 rounded-pill bg-ink px-4 py-2 text-[12px] font-semibold text-paper disabled:opacity-40">{busy.has(q.appearance_id)?'Checking…':'Check answer'}</button>}
+          {q.type === 'mcq' && q.answer_source !== 'none' && !blocked && !result && !viewed[q.appearance_id] && <button type="button" disabled={picked[q.appearance_id] === undefined || !q.option_order || busy.has(q.appearance_id)} onClick={() => void check(q)} className="mt-3 rounded-pill bg-ink px-4 py-2 text-[12px] font-semibold text-paper disabled:opacity-40">{busy.has(q.appearance_id)?'Checking…':'Check answer'}</button>}
           {answerErrors[q.appearance_id]&&<p role="alert" className="mt-3 text-[13px] text-mypick">{answerErrors[q.appearance_id]}</p>}
           {q.type==='mcq'&&!q.option_order&&<p className="mt-3 text-[12px] text-secondary">Printed options are available to read; reliable answer mapping is not available for this appearance.</p>}
           {q.type==='descriptive'&&<p className="mt-3 text-[12px] text-secondary">Written response · use the original instructions. This question is not automatically scored.</p>}
-          {result && <div className="mt-3 text-[13px] text-secondary"><p>{!result.verified&&!q.reviewed_derived?(result.correct?'Matches stored answer':'Differs from stored answer'):(result.correct ? 'Correct' : 'Review this answer')} · {result.verified ? 'Official key' : q.reviewed_derived ? 'Verified solution · unofficial' : 'Needs review'}</p><QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/></div>}
+          {q.type==='mcq'&&<PracticeAnswerPanel key={paperId+':'+q.appearance_id} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={paperId} year={q.year ?? paper.year} available={!blocked&&q.answer_source!=='none'} disabled={busy.has(q.appearance_id)} onBusy={value=>setBusy(old=>{const next=new Set(old);if(value)next.add(q.appearance_id);else next.delete(q.appearance_id);return next})} onViewed={()=>setViewed(old=>({...old,[q.appearance_id]:true}))}/>}
           <details className="mt-4 border-t border-hairline pt-1"><summary className="min-h-11 cursor-pointer py-3 text-[12px] font-semibold">Scratchpad · this visit only</summary><label className="text-[12px] text-secondary">Working for {printedQuestionLabel(q,index)}<textarea aria-label={'Scratchpad for '+printedQuestionLabel(q,index)} maxLength={20000} rows={5} value={notes[q.appearance_id]||''} onChange={e=>setNotes(n=>({...n,[q.appearance_id]:e.target.value}))} placeholder="Work through calculations or outline a written answer…" className="mt-2 w-full rounded-[8px] border border-hairline bg-paper p-3 text-[14px] text-ink"/></label><p className="mt-1 text-[12px] text-secondary">Kept while this paper is open. Copy your work before leaving or reloading.</p></details>
           <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:paperId,collection_id:id}} answeredSignal={result}/>
         </article>

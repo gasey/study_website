@@ -19,7 +19,7 @@ For time-sensitive questions, distinguish the fact at the exam date from a newer
 
 The small editorial revision-note registry lives in `web/src/lib/questionCurrentness.ts`. Each note has an ID, inspected-source date, event/period date, review deadline, revision hint and direct reference. Historical context must be narrowly bound to the original question/year. The Shibu Soren note is limited to 2025; Finance Commission and Budget notes are topic comparisons, not certification of the original answer. Do not add answer indices, scoring flags or key provenance to these notes.
 
-Learners see date context first. Answer-bearing notes and reference links render only after answering or an explicit “Reveal revision context” action, which also works for unanswered/source-held items and does not submit an attempt. Switching question/year resets that reveal. An expired note remains clearly dated and marked “Recheck due”; it is not presented as verified current information. Unknown updates say no question-specific update was checked. This is an editorial workflow, not an automatic news feed or automatic answer rewrite.
+Answer-bearing revision notes and reference links render inside the shared answer panel after a successful check or protected Show answer request. There is no independent revision reveal; source-held and unanswered items retain evidence comparison instead. An expired note remains clearly dated and marked “Recheck due”; it is not presented as verified current information. Unknown updates say no question-specific update was checked. This is an editorial workflow, not an automatic news feed or automatic answer rewrite.
 
 Maintainers add/review a note after checking its source, then run the frontend tests/build and deploy the frontend. Learners can propose dates/sources through Suggest correction; existing server proposal/publication safeguards remain in force. A full browser-managed current-affairs editorial queue and separate per-explanation review metadata are future work, not features claimed by this release.
 
@@ -30,3 +30,12 @@ Maintainers add/review a note after checking its source, then run the frontend t
 - Union Budget: Ministry of Finance, https://www.indiabudget.gov.in/ — 2026–2027 documents and separate Budget/Revised/Actuals context. No numerical budget answer is transferred between years.
 
 Source check dates are editorial records. They never imply an official examination answer key or independent peer approval.
+
+
+## Practice checking and viewing (2026-11-01)
+
+Bank cards, question details, module study and paper browsing use explicit selection followed by **Check answer**. **Show answer** calls the protected POST reveal endpoint and displays **Viewed answer**, with no attempt, accuracy entry, quota consumption or reward. The shared panel orders the stored answer/provenance, explanation, revision note and optional key/solution comparison. Revision notes have no independent reveal control.
+
+`answer_reveals` stores only the most recent view per learner and canonical question. Revealing a usable answer or answer comparison starts a 30-minute review window across tabs and paper appearances. The answer endpoint rejects new attempts during that window, including alternative context values; idempotent replay of an already recorded attempt remains safe. Later attempts retain existing provenance and reward eligibility checks. This is a practical study cooldown, not proof of independent recall or protection against separate accounts/external PDFs. No existing learner attempt is rewritten.
+
+Direct reveals and comparisons retain active mock/game/cup protection. Unusable/held questions retain source-evidence comparison, without presenting a checkable answer. GET comparison remains compatible with the existing client but now records answer exposure; it is private and not cacheable. Revision-note content is editorial frontend content, not a secret answer store.

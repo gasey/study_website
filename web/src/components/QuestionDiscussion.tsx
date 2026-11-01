@@ -1,5 +1,4 @@
 import {scopeLink} from '../lib/examScope'
-import AnswerComparison from './AnswerComparison'
 import {UserAvatar} from './AvatarArt'
 import type {AvatarLook} from '../lib/avatar'
 import { useEffect, useRef, useState } from "react";
@@ -88,7 +87,6 @@ export function QuestionActions({
   context = {},
   answeredSignal,
   initialOpen = false,
-  questionType = "mcq",
 }: {
   qid: string;
   context?: DiscussionContext;
@@ -130,7 +128,6 @@ export function QuestionActions({
           Suggest correction
         </Link>
       </div>
-      {questionType==='mcq'&&<AnswerComparison key={qid+':'+(context.paper_id||'')} qid={qid} paperId={context.paper_id}/>}
       {open && <p className="mt-2 text-[12px] text-secondary">This conversation stays with the question across papers and practice. <Link to="/feed?tab=questions" className="font-semibold text-link underline">Explore Questions & Doubts →</Link></p>}
       {manual && (
         <label className="mt-2 block text-[12px]">

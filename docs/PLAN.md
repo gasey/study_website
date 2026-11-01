@@ -911,3 +911,5 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Protect answer-bearing notes and links until answer/reveal; keep historical scoring unchanged and avoid assigning a year from an unrelated appearance on question detail.
 - [x] Deploy the tested frontend after networking was restored; verify the live entrypoint, API health, bank sync and actual revision-note reveal in the browser, then push the completed release to GitHub. The earlier sandbox blocker is resolved.
 - [ ] Continue substantive source-checked explanations and specific dated updates through the documented editorial/publication workflow. A full browser-managed update queue and separate per-explanation review metadata remain future work.
+
+- [x] 2026-11-01: Explicit Check answer versus Show answer across bank/module/detail/paper practice; unified explanation/revision panel; protected reveal ledger and 30-minute retry window. Migration rehearsed/applied, API/web deployed, 329 API and 40 frontend checks pass; live reveal and reload safeguard verified. See docs/EXPLANATIONS-AND-CURRENT-AFFAIRS.md.

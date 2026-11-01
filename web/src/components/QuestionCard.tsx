@@ -1,7 +1,5 @@
-import QuestionExplanation from './QuestionExplanation'
-import RewardOutcome from './RewardOutcome'
+import PracticeAnswerPanel from './PracticeAnswerPanel'
 import {questionTopicLabel} from '../lib/questionLabels'
-import QuestionCurrentness from './QuestionCurrentness'
 import {savePracticePosition} from '../lib/learning'
 import AnswerProvenance from './AnswerProvenance'
 import {scopeLink} from '../lib/examScope'
@@ -23,9 +21,9 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
   const [busy, setBusy] = useState(false)
   const [answerError, setAnswerError] = useState('')
 
-  // The prototype answers inline on the list: "Tap an option to check it".
+  const [viewed,setViewed]=useState(false)
   async function pick(i: number) {
-    if (result || busy) return
+    if (result || busy || viewed) return
     setAnswerError('')
     setPicked(i)
     setBusy(true)
@@ -97,7 +95,6 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
 
       {sourceNote && <p className="mb-3 rounded-[8px] border border-[#D8B56D] bg-[#FFF4DF] px-3 py-2 text-[12px] leading-relaxed text-[#684919]">{sourceNote}</p>}
 
-      <QuestionCurrentness revealed={!!result} question={q.question} year={source?.year ?? q.first_year ?? q.last_year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
 
       {q.options.length > 0 && (
         <AnswerOptions>
@@ -120,8 +117,8 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
             return (
               <button
                 key={i}
-                onClick={() => pick(i)}
-                disabled={text === null || !answerable || !!result || busy}
+                onClick={() => setPicked(i)}
+                disabled={text === null || !answerable || !!result || busy || viewed}
                 aria-pressed={isPick}
                 data-answer-state={isCorrect?'correct':result&&isPick?'wrong':isPick?'selected':'neutral'}
                 className={`answer-option flex min-h-[44px] items-center gap-3 rounded-[6px] border px-[14px] py-[11px] text-left text-[15px] ${cls} ${
@@ -143,18 +140,8 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
         <p className="mt-3 text-[13px] text-muted">This question is held for review or has no usable answer yet. Browse its source, compare the evidence or suggest a correction.</p>
       )}
 
-      {result && (
-        <div className="mt-3 text-[14px] leading-[1.6] text-secondary [text-wrap:pretty]">
-          {result.verified?'Official key answer':'Recorded solution'}: {result.answer_text}.{' '}
-          {result.verified
-            ? 'This is the answer keyed for the source paper.'
-            : result.answer_source === 'derived'
-              ? 'This is a worked solution, not an official key. Only solutions that pass independent review and publication can enter a labelled practice-estimate mock.'
-              : 'This answer is unverified and excluded from scoring. Check the source paper before trusting it.'}
-          <QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/>
-          <RewardOutcome reward={result.reward}/>
-        </div>
-      )}
+      {!result&&!viewed&&answerable&&q.type==='mcq'&&<button type="button" disabled={picked===null||busy} onClick={()=>picked!==null&&void pick(picked)} className="mt-3 min-h-11 rounded-pill bg-ink px-4 py-2 text-[13px] text-paper disabled:opacity-40">{busy?'Checking…':'Check answer'}</button>}
+      {q.type==='mcq'&&<PracticeAnswerPanel qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={source?.paper_id} year={source?.year ?? q.first_year ?? q.last_year} available={answerable} disabled={busy} onBusy={setBusy} onViewed={()=>setViewed(true)}/>}
       <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id}} answeredSignal={result}/>
       {source && <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-hairline pt-3 text-[12px] text-secondary"><span><strong className="font-semibold text-ink">Source:</strong> {source.exam || source.paper_id.split('/').pop()}{source.year ? ` · ${source.year}` : ''}{source.paper_label ? ` · ${source.paper_label}` : source.paper ? ` · Paper ${source.paper}` : ''}{source.section_label ? ` · Section: ${source.section_label}` : ''}{source.series ? ` · Series ${source.series}` : ''}{source.qnum ? ` · Q${source.qnum}` : ''}{source.page ? ` · p. ${source.page}` : ''}</span>{source.source_pdf_url && <a href={`${source.source_pdf_url}${source.page ? `#page=${source.page}` : ''}`} target="_blank" rel="noreferrer" className="font-semibold text-link underline">Source PDF ↗</a>}{q.times_asked > 1 && <Link to={scopeLink(`/bank/${q.id}`)} className="font-semibold text-link underline">All {q.times_asked} appearances ↗</Link>}</div>}
     </article>

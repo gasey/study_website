@@ -696,3 +696,8 @@ export interface LibraryShelf {id:string;title:string;description:string;questio
 export interface ShelfDetail extends LibraryShelf {topics:{subject_id:string;subject:string;topic_id:string|null;topic:string|null;subtopic_id:string|null;subtopic:string|null;questions:number}[];exams:{id:string;title:string}[]}
 export const listLibraryShelves=()=>req<LibraryShelf[]>('/library/shelves')
 export const getLibraryShelf=(id:string)=>req<ShelfDetail>('/library/shelves/'+encodeURIComponent(id))
+
+/** Viewing never creates an attempt or a reward. Indices remain canonical. */
+export type ViewedAnswer = Omit<AnswerResult, 'correct' | 'reward'> & {viewed:true}
+export const revealAnswer = (id:string,paperId?:string|null) =>
+  req<ViewedAnswer>(`/questions/${id}/reveal${paperId?'?paper_id='+encodeURIComponent(paperId):''}`,{method:'POST'})

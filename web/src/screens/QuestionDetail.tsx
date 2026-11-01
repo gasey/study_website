@@ -1,6 +1,4 @@
-import QuestionExplanation from '../components/QuestionExplanation'
-import RewardOutcome from '../components/RewardOutcome'
-import QuestionCurrentness from '../components/QuestionCurrentness'
+import PracticeAnswerPanel from '../components/PracticeAnswerPanel'
 import QuestionUpdate from '../components/QuestionUpdate'
 import {savePracticePosition} from '../lib/learning'
 import {QuestionActions} from '../components/QuestionDiscussion'
@@ -26,6 +24,8 @@ export default function QuestionDetail() {
   const [q, setQ] = useState<QD | null>(null)
   const [error, setError] = useState<string | null>(null)
   const [picked, setPicked] = useState<number | null>(null)
+  const [answerError,setAnswerError]=useState('')
+  const [viewed,setViewed]=useState(false)
   const [result, setResult] = useState<AnswerResult | null>(null)
   const [submitting, setSubmitting] = useState(false)
   const [deskLoading, setDeskLoading] = useState(() => getDeskSync().loading)
@@ -35,6 +35,8 @@ export default function QuestionDetail() {
     setQ(null)
     setPicked(null)
     setResult(null)
+    setViewed(false)
+    setAnswerError('')
     setError(null)
     setSaved(getDesk().saved.includes(id))
     getQuestion(id)
@@ -53,14 +55,15 @@ export default function QuestionDetail() {
   }
 
   async function reveal() {
-    if (picked === null || result) return
+    if (picked === null || result || viewed || submitting) return
     setSubmitting(true)
+    setAnswerError('')
     try {
       // The client does not know the answer until this returns — the server
       // never sent it with the question.
-      setResult(await submitAnswer(id, picked))
+      setResult(await submitAnswer(id, picked, 'practice',undefined,params.get('paper')||undefined))
     } catch (e) {
-      setError((e as Error).message)
+      setAnswerError((e as Error).message)
     } finally {
       setSubmitting(false)
     }
@@ -113,7 +116,6 @@ export default function QuestionDetail() {
         <SourceQuestionContext direction={q.direction} passage={q.passage} />
         <h1 className="font-display text-[24px] font-medium leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
 
-        <QuestionCurrentness revealed={!!result} question={q.question} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
         {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
         {!q.verified&&q.type==='mcq'&&<p className="mt-3 text-[13px] text-secondary"><Link to={evidenceLink(q.id)} className="inline-flex min-h-[44px] items-center font-semibold text-link underline">{q.reviewed_derived?'Improve this solution · submit evidence →':'Help verify this answer · submit evidence →'}</Link></p>}
@@ -140,7 +142,7 @@ export default function QuestionDetail() {
               return (
                 <li key={i}>
                   <button
-                    disabled={!!result || o === null}
+                    disabled={!!result || viewed || submitting || o === null}
                     onClick={() => o !== null && setPicked(i)}
                     aria-pressed={isPicked}
                     data-answer-state={isAnswer?'correct':wrongPick?'wrong':isPicked?'selected':'neutral'}
@@ -158,7 +160,7 @@ export default function QuestionDetail() {
           </AnswerOptions></>
         )}
 
-        {!result && q.options.length > 0 && q.answer_source!=='none' && !q.held && (
+        {!result && !viewed && q.options.length > 0 && q.answer_source!=='none' && !q.held && (
           <button
             disabled={picked === null || submitting}
             onClick={reveal}
@@ -168,33 +170,11 @@ export default function QuestionDetail() {
           </button>
         )}
 
+        {answerError&&<p role="alert" className="mt-3 text-[13px] text-mypick">{answerError}</p>}
         {q.held&&<p className="mt-4 rounded-panel border border-[#D9B76B] bg-[#FFF4D9] p-3 text-[13px] text-[#705015]">This question is held for review and cannot be checked or scored. Compare the official key and reviewed evidence below.</p>}
         {q.answer_source==='none'&&<p className="mt-4 text-[13px] text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
-        {result && (
-          <div
-            className={`mt-5 rounded-panel p-4 ${
-              result.correct ? 'bg-correct-soft' : 'bg-wrong-soft'
-            }`}
-          >
-            <span
-              className={`font-mono text-[11px] uppercase tracking-[0.06em] ${
-                result.correct ? 'text-correct-dark' : 'text-wrong-dark'
-              }`}
-            >
-              {!result.verified&&!q.reviewed_derived?(result.correct?'Matches stored answer':'Differs from stored answer'):(result.correct?'✓ Correct':'× Not quite')}
-            </span>
-            <p className="mt-1 text-[15px]">
-              {LETTERS[result.answer_index]}. {result.answer_text}
-            </p>
-            {!result.verified && (
-              <p className="mt-2 text-[13px] text-attention-dark">
-                {result.answer_source === 'inferred' ? 'This suggestion is unverified and excluded from scored mocks.' : 'This is a worked solution, not an official key. Only published reviewed solutions can enter a labelled practice estimate.'} Check its reasoning and source evidence.
-              </p>
-            )}
-            <RewardOutcome reward={result.reward}/>
-            <QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/>
-          </div>
-        )}
+        {q.type==='mcq'&&<PracticeAnswerPanel key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={()=>setViewed(true)}/>}
+
       </div>
 
       <div id="discussion"><QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={true}/></div>

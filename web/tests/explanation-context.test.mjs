@@ -44,7 +44,8 @@ test('revision sources and answers are absent from markup before reveal',()=>{
  const props={question:'Shibu Soren who recently passed away in August this year had been Chief Minister of which state?',year:2025,topic:'Current Affairs'}
  const hidden=note(props)
  assert.doesNotMatch(hidden,/Jharkhand|newsonair\.gov|4 August 2025/)
- assert.match(hidden,/Reveal revision context/)
+ assert.match(hidden,/Check or show the answer/)
+ assert.doesNotMatch(hidden,/<button/)
  const shown=note({...props,revealed:true})
  assert.match(shown,/Jharkhand/);assert.match(shown,/2025-08-04/);assert.match(shown,/2026-11-01/)
  assert.match(shown,/does not verify or replace/)

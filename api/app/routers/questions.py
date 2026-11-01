@@ -26,6 +26,7 @@ from ..source_files import figure_image_url, source_pdf_url
 from ..services.bank_review import protect_answer
 from ..services.bank_review import snapshot as review_snapshot
 from ..services.answer_comparison import published_comparison
+from ..services.answer_reveals import record_reveal, require_fresh_attempt
 
 router = APIRouter(prefix="/api/questions", tags=["questions"])
 
@@ -497,7 +498,36 @@ async def answer_comparison(question_id: str, response: Response,
                     'published_at':None,'document':None,'imported':True}
                 if result['solution']:
                     result['relation']='agree' if opts[ai]==result['solution']['answer_text'] else 'disagree'
+        if result['official'] or result['solution']:
+            await record_reveal(cur, user_id, question_id)
     return result
+
+
+@router.post("/{question_id}/reveal")
+async def reveal_answer(question_id: str, response: Response,
+    user_id: Annotated[str, Depends(current_user)],
+    paper_id: str | None = Query(None, max_length=500),
+    exam_scope: ExamScope = DEFAULT_SCOPE):
+    """View a stored answer without creating an attempt or granting rewards."""
+    response.headers['Cache-Control'] = 'private, no-store'
+    async with cursor() as cur:
+        await protect_answer(cur, user_id, question_id)
+        await cur.execute(f'''SELECT q.options,q.answer_text,q.answer_source,q.explanation,q.status,q.source_defect
+          FROM canonical_questions q WHERE q.id=%s AND {question_scope('q', exam_scope)}
+          AND EXISTS(SELECT 1 FROM appearances a JOIN papers p ON p.id=a.paper_id
+            WHERE a.canonical_id=q.id AND (%s::text IS NULL OR a.paper_id=%s)
+            AND {scope_condition('p', exam_scope)})''', (question_id,paper_id,paper_id))
+        row = await cur.fetchone()
+        if not row:
+            raise HTTPException(404, 'Question source not found in this exam scope')
+        if row['status'] != 'live' or row['answer_text'] is None or row['answer_source']=='none' or row['source_defect'] in ('duplicate-options','unresolved-source'):
+            raise HTTPException(409, 'This question has no usable answer; compare its source evidence instead.')
+        if row['answer_text'] not in row['options']:
+            raise HTTPException(409, 'The stored answer needs source review.')
+        await record_reveal(cur, user_id, question_id)
+        return dict(viewed=True, answer_index=row['options'].index(row['answer_text']),
+            answer_text=row['answer_text'],answer_source=row['answer_source'],
+            verified=row['answer_source'] in ('official','key'),explanation=row['explanation'] or None)
 
 
 @router.get("/{question_id}", response_model=QuestionDetail)
@@ -664,6 +694,8 @@ async def answer_question(
             await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('answer-request:'+user_id+':'+idempotency_key,))
             prior=await replay(cur)
             if prior:return prior
+        await protect_answer(cur, user_id, question_id)
+        await require_fresh_attempt(cur, user_id, question_id)
         # Free accounts receive 50 bank practice answers per calendar day.
         # A transaction lock keeps simultaneous tabs from spending the last
         # remaining answer twice; mock answers are handled by the mock runner.

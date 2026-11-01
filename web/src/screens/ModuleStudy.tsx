@@ -1,12 +1,10 @@
-import QuestionExplanation from '../components/QuestionExplanation'
-import RewardOutcome from '../components/RewardOutcome'
+import PracticeAnswerPanel from '../components/PracticeAnswerPanel'
 import {questionQueryString} from '../lib/requestCache'
 import {questionTopicLabel} from '../lib/questionLabels'
 import {savePracticePosition} from '../lib/learning'
 import Pagination from '../components/Pagination'
 import {scrollToResults} from '../lib/pagination'
 import AnswerProvenance from '../components/AnswerProvenance'
-import QuestionCurrentness from '../components/QuestionCurrentness'
 import {QuestionActions} from '../components/QuestionDiscussion'
 import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
 import { useEffect, useRef, useState } from 'react'
@@ -48,6 +46,9 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   }
   const [page, setPage] = useState<{items: Question[];total: number}|null>(null)
   const [picks, setPicks] = useState<Record<string,number>>({})
+  const [viewed,setViewed]=useState<Record<string,boolean>>({})
+  const [answerBusy,setAnswerBusy]=useState<Record<string,boolean>>({})
+  const checking=useRef(new Set<string>())
   const [results, setResults] = useState<Record<string,AnswerResult>>({})
   const [error, setError] = useState<string|null>(null)
   const [account,setAccount]=useState(false);const [checkpointError,setCheckpointError]=useState('');const saveQueue=useRef(Promise.resolve())
@@ -84,12 +85,10 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     requestAnimationFrame(()=>scrollToResults('exam-question-browser'))
   }
   function update<T>(setter: (value:T)=>void, value:T) { setter(value); setResults({}); setPicks({}) }
-  // Match the Aptitude Hub's topic drill: choosing an option is the answer,
-  // so feedback and the worked explanation appear immediately. The same
-  // action is recorded by the shared bank API with the current module scope.
+  // Selection is provisional until Check answer.
   async function answer(q: Question, index: number) {
-    if (pending || q.held || results[q.id] || picks[q.id]!==undefined || q.answer_source === 'none' || q.key_disputed || ['duplicate-options','unresolved-source'].includes(q.source_defect||'')) return
-    setPicks((old) => ({...old,[q.id]:index}))
+    if (pending || q.held || results[q.id] || viewed[q.id] || answerBusy[q.id] || checking.current.has(q.id) || q.answer_source === 'none' || q.key_disputed || ['duplicate-options','unresolved-source'].includes(q.source_defect||'')) return
+    checking.current.add(q.id);setAnswerBusy(old=>({...old,[q.id]:true}))
     try {
       const actualPaper=paperId||((studyArea||['udc','ldc','assistant'].includes(collectionId))?q.source_appearance?.paper_id:undefined)
       const actualCollection=sourceCollections?.[actualPaper||'']||collectionId
@@ -98,7 +97,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     } catch (e) {
       setPicks((old) => { const next={...old}; delete next[q.id]; return next })
       setError((e as Error).message)
-    }
+    } finally {checking.current.delete(q.id);setAnswerBusy(old=>({...old,[q.id]:false}))}
   }
 
   return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
@@ -131,7 +130,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     {error && <p role="alert" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick">{error} <button type="button" onClick={()=>setReload(n=>n+1)} className="underline">Retry</button></p>}
     {metadataLoading&&<p role="status" className="mt-2 text-[12px] text-muted">Paper details are loading. You can start with the available questions.</p>}
     {checkpointError&&<p role="status" className="mt-2 text-[12px] text-mypick">Could not save your place: {checkpointError}</p>}
-    {practice&&<p className="mt-3 text-[12px] text-secondary">Choose an option to check your answer.</p>}
+    {practice&&<p className="mt-3 text-[12px] text-secondary">Choose an option, then Check answer. Show answer opens reading mode.</p>}
     {page&&<Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice?'Practice question navigator':'Exam question pages'}/>}
     {pending&&!page&&!error&&<p role="status" className="min-h-[320px] py-10 text-center text-secondary">Loading questions…</p>}
     <div className={`exam-reading-area mt-2 divide-y divide-hairline ${pending&&page?'opacity-50':''}`} data-results-current={!pending}>
@@ -141,17 +140,17 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
         return <article key={q.id} className={`${combined?'cp-question':'udc-question-card'} py-5`}>
           <div className="flex flex-wrap gap-x-3 text-[11px] text-muted"><span>{q.source_appearance?.year ?? q.first_year ?? q.last_year ?? 'Year unknown'}</span><span>{q.type==='mcq'?'MCQ':'Written question'}</span><span>{questionTopicLabel(q,collectionId)}</span><AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.id}/></div>
           <SourceQuestionContext direction={q.direction} passage={q.passage}/><h3 className="mt-2 font-display text-[20px] leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup||q.question}/></h3>
-          <QuestionCurrentness revealed={!!result} question={q.question} year={q.source_appearance?.year ?? q.first_year ?? q.last_year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
           {blocked&&<p className="mt-3 rounded-[8px] bg-mypick-soft p-3 text-[13px] text-mypick">Source issue · excluded from scoring. {q.dispute_note||'Check the source PDF or suggest a correction.'}</p>}
           {q.figure_image_url&&<img src={q.figure_image_url} loading="lazy" alt="Printed question figure" className="mt-3 max-h-[360px] max-w-full rounded-[8px] border border-hairline object-contain"/>}
           {q.source_appearance&&<p className="mt-2 text-[12px] text-secondary">{q.source_appearance.exam||'Source paper'}{q.source_appearance.paper_label ? ' · '+q.source_appearance.paper_label : ''}{q.source_appearance.section_label ? ' · Section: '+q.source_appearance.section_label : ''} · Q{q.source_appearance.qnum||'?'}{q.source_appearance.page?' · p. '+q.source_appearance.page:''} {q.source_appearance.source_pdf_url&&<a href={q.source_appearance.source_pdf_url+(q.source_appearance.page?'#page='+q.source_appearance.page:'')} target="_blank" rel="noreferrer" className="text-link underline">Source PDF ↗</a>}</p>}
           {!!q.options.length && <AnswerOptions className="mt-3">{q.options.map((option,i)=>{
             const correct=result?.answer_index===i
             const wrong=!!result && picks[q.id]===i && !result.correct
-            return <button key={i} type="button" disabled={pending || !!result || picks[q.id]!==undefined || option==null || blocked || q.answer_source==='none'} onClick={()=>void answer(q,i)} aria-pressed={picks[q.id]===i} data-answer-state={correct?'correct':wrong?'wrong':picks[q.id]===i?'selected':'neutral'} className={`answer-option ${combined?'cp-option':'udc-option-label'} flex min-h-11 gap-2 rounded-[8px] border p-3 text-left text-[13px] disabled:cursor-default ${correct?'is-right border-correct bg-correct-soft':wrong?'is-wrong border-wrong bg-wrong-soft':picks[q.id]===i?'is-chosen border-ink bg-paper':'border-hairline bg-card'}`}><span className={`${combined?'cp-option-letter':'font-mono'}`}>{LETTERS[i]}.</span><span><SourceQuestionText text={q.options_markup?.[i]||option||'Option unavailable'}/></span></button>
+            return <button key={i} type="button" disabled={pending || !!result || viewed[q.id] || answerBusy[q.id] || option==null || blocked || q.answer_source==='none'} onClick={()=>setPicks(old=>({...old,[q.id]:i}))} aria-pressed={picks[q.id]===i} data-answer-state={correct?'correct':wrong?'wrong':picks[q.id]===i?'selected':'neutral'} className={`answer-option ${combined?'cp-option':'udc-option-label'} flex min-h-11 gap-2 rounded-[8px] border p-3 text-left text-[13px] disabled:cursor-default ${correct?'is-right border-correct bg-correct-soft':wrong?'is-wrong border-wrong bg-wrong-soft':picks[q.id]===i?'is-chosen border-ink bg-paper':'border-hairline bg-card'}`}><span className={`${combined?'cp-option-letter':'font-mono'}`}>{LETTERS[i]}.</span><span><SourceQuestionText text={q.options_markup?.[i]||option||'Option unavailable'}/></span></button>
           })}</AnswerOptions>}
           {q.answer_source==='none'&&<p className="mt-3 text-[12px] text-muted">This question is available to read, but no answer key is available to check yet.</p>}
-          {result&&<div className={`mt-3 rounded-[10px] border p-3 text-[13px] ${result.correct?'border-correct bg-correct-soft':'border-wrong bg-wrong-soft'}`}><strong>{!result.verified&&!q.reviewed_derived?(result.correct?'Matches the stored answer':'Differs from the stored answer'):(result.correct?'Correct':'Not quite')}</strong>{!result.correct&&<span> · Stored answer: {result.answer_text}</span>}<p className="mt-1 text-secondary">{result.verified?'Official key':q.reviewed_derived?'Verified solution · unofficial':'Needs review · this stored answer is not verified'}</p><QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/><RewardOutcome reward={result.reward}/></div>}
+          {!result&&!viewed[q.id]&&!blocked&&q.answer_source!=='none'&&q.type==='mcq'&&<button type="button" disabled={pending||picks[q.id]===undefined||answerBusy[q.id]} onClick={()=>void answer(q,picks[q.id])} className="mt-3 min-h-11 rounded-pill bg-ink px-4 py-2 text-[13px] text-paper disabled:opacity-40">{answerBusy[q.id]?'Checking…':'Check answer'}</button>}
+          {q.type==='mcq'&&<PracticeAnswerPanel qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={paperId||q.source_appearance?.paper_id} year={q.source_appearance?.year ?? q.first_year ?? q.last_year} available={!blocked&&q.answer_source!=='none'} disabled={pending||answerBusy[q.id]} onBusy={v=>setAnswerBusy(old=>({...old,[q.id]:v}))} onViewed={()=>setViewed(old=>({...old,[q.id]:true}))}/>}
           <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id,collection_id:q.source_appearance?.paper_id?(sourceCollections?.[q.source_appearance.paper_id]||(collectionId==='group-b'?null:collectionId)):null}} answeredSignal={result}/>
         </article>
       })}
