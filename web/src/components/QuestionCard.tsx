@@ -1,3 +1,4 @@
+import QuestionExplanation from './QuestionExplanation'
 import RewardOutcome from './RewardOutcome'
 import {questionTopicLabel} from '../lib/questionLabels'
 import QuestionCurrentness from './QuestionCurrentness'
@@ -96,7 +97,7 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
 
       {sourceNote && <p className="mb-3 rounded-[8px] border border-[#D8B56D] bg-[#FFF4DF] px-3 py-2 text-[12px] leading-relaxed text-[#684919]">{sourceNote}</p>}
 
-      <QuestionCurrentness question={q.question} year={source?.year ?? q.first_year ?? q.last_year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
+      <QuestionCurrentness revealed={!!result} question={q.question} year={source?.year ?? q.first_year ?? q.last_year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
 
       {q.options.length > 0 && (
         <AnswerOptions>
@@ -108,7 +109,7 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
             if (result) {
               if (isCorrect) {
                 cls = 'bg-keyed-soft border-keyed text-ink'
-                mark = isPick ? 'Correct' : 'Answer'
+                mark = isPick ? (result.verified||q.reviewed_derived?'Correct':'Matches stored answer') : (result.verified||q.reviewed_derived?'Answer':'Stored answer')
               } else if (isPick) {
                 cls = 'bg-mypick-soft border-mypick text-ink'
                 mark = 'Your pick'
@@ -150,7 +151,7 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
             : result.answer_source === 'derived'
               ? 'This is a worked solution, not an official key. Only solutions that pass independent review and publication can enter a labelled practice-estimate mock.'
               : 'This answer is unverified and excluded from scoring. Check the source paper before trusting it.'}
-          {result.explanation && ` ${result.explanation}`}
+          <QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/>
           <RewardOutcome reward={result.reward}/>
         </div>
       )}

@@ -902,3 +902,12 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [ ] Continue three recent and 36 recovered-copy source-flag adjudications, additional explanations, history-preserving duplicate appearance repair and unanswered original-source intake for missing 2014 II Q39.
 - [ ] Verify sitting/source identity and carefully transcribe four image-only Paper II booklet leads. Keep 2012/2013 deferred and authentic simulation gated.
 - [ ] Existing 21:35 IST follow-up must read this completed checkpoint, skip the published packet and recheck ordinary allowance; this run's scoped exception does not persist.
+
+### 1 November 2026 — Explanation clarity and dated current-affairs revision
+
+- [x] Separate MCQ format, answer provenance and explanation availability across Bank, detail, module study and paper browsing; preserve scoring rules and source identities.
+- [x] Show missing explanations honestly and provide explanation-only proposals; add teaching/source/date guidance to contributor and admin forms.
+- [x] Add three inspected-source editorial notes (2025 Shibu Soren example, Finance Commission period, Union Budget year comparison), effective/check/review dates, explicit unknown-update state and recheck-due handling.
+- [x] Protect answer-bearing notes and links until answer/reveal; keep historical scoring unchanged and avoid assigning a year from an unrelated appearance on question detail.
+- [ ] Deploy the tested frontend and push the local commit once SSH/GitHub networking is available. This session's sandbox denies SSH sockets; no live release is claimed.
+- [ ] Continue substantive source-checked explanations and specific dated updates through the documented editorial/publication workflow. A full browser-managed update queue and separate per-explanation review metadata remain future work.

@@ -1,3 +1,4 @@
+import QuestionExplanation from '../components/QuestionExplanation'
 import RewardOutcome from '../components/RewardOutcome'
 import QuestionCurrentness from '../components/QuestionCurrentness'
 import QuestionUpdate from '../components/QuestionUpdate'
@@ -112,7 +113,7 @@ export default function QuestionDetail() {
         <SourceQuestionContext direction={q.direction} passage={q.passage} />
         <h1 className="font-display text-[24px] font-medium leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
 
-        <QuestionCurrentness question={q.question} year={q.appearances[0]?.year ?? q.first_year ?? q.last_year} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
+        <QuestionCurrentness revealed={!!result} question={q.question} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(' / ')}/>
         {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
         {!q.verified&&q.type==='mcq'&&<p className="mt-3 text-[13px] text-secondary"><Link to={evidenceLink(q.id)} className="inline-flex min-h-[44px] items-center font-semibold text-link underline">{q.reviewed_derived?'Improve this solution · submit evidence →':'Help verify this answer · submit evidence →'}</Link></p>}
@@ -180,7 +181,7 @@ export default function QuestionDetail() {
                 result.correct ? 'text-correct-dark' : 'text-wrong-dark'
               }`}
             >
-              {result.correct ? '✓ Correct' : '× Not quite'}
+              {!result.verified&&!q.reviewed_derived?(result.correct?'Matches stored answer':'Differs from stored answer'):(result.correct?'✓ Correct':'× Not quite')}
             </span>
             <p className="mt-1 text-[15px]">
               {LETTERS[result.answer_index]}. {result.answer_text}
@@ -191,9 +192,7 @@ export default function QuestionDetail() {
               </p>
             )}
             <RewardOutcome reward={result.reward}/>
-            {result.explanation && (
-              <p className="mt-2 text-[14px] text-secondary">{result.explanation}</p>
-            )}
+            <QuestionExplanation explanation={result.explanation} source={result.answer_source} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} questionId={q.id}/>
           </div>
         )}
       </div>

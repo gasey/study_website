@@ -19,3 +19,14 @@ export function answerStatusAppearance(status:string){
  if(status==='needs-review')return {badge:'border-[#D9B76B] bg-[#FFF4D9] text-[#705015]',accent:'border-[#D9B76B]',symbol:'?',shortLabel:'Needs review',meaning:'Not yet verified for scored mocks'}
  return {badge:'border-[#C9C4BA] bg-[#F1EFEA] text-[#514C43]',accent:'border-[#C9C4BA]',symbol:'—',shortLabel:status==='written'?'Written question':'Unsolved',meaning:status==='written'?'Requires a written response':'No recorded answer'}
 }
+
+/** Explanation availability is independent of key provenance. No review is
+ * inferred merely from a nonempty explanation or an official answer badge. */
+export function explanationPresentation(explanation:string|null|undefined,source:AnswerSource,context:AnswerContext={}) {
+ const available=!!explanation?.trim()
+ if(!available)return {status:'missing',label:'Explanation not yet available',detail:'A stored answer alone does not explain the reasoning. A checked explanation still needs to be added.'}
+ const answer=answerStatus(source,context)
+ if(answer.status==='verified')return {status:'reviewed-solution',label:'Reviewed solution working · unofficial',detail:'Published with the reviewed unofficial solution. It can still be corrected.'}
+ if(answer.status==='official')return {status:'available',label:'Explanation available',detail:'The official-key badge identifies the answer source. Separate review of this explanation is not recorded here.'}
+ return {status:'needs-review',label:'Stored explanation · needs review',detail:'Treat this working as provisional until its reasoning and source evidence have been checked.'}
+}
