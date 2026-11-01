@@ -1,0 +1,22 @@
+{
+  "status": "approved-not-published",
+  "date": "2026-11-01",
+  "owner_response": "Yes, publish this 286-item packet",
+  "scope": {
+    "reading_passages": 76,
+    "page_locators": 24,
+    "maths_text_repairs": 2,
+    "explanations": 184,
+    "total": 286
+  },
+  "quota_exception_run": "mcs-completion-20261101",
+  "packets": [
+    "docs/sources/mcs-reading-passage-repairs-20261101.json",
+    "docs/sources/mcs-source-navigation-repairs-20261101.json",
+    "docs/sources/mcs-completion-explanations-20261101.json"
+  ],
+  "authorization": "Owner explicitly approved the exact286-publication packet on2026-11-01. This bounded exception covers only the reviewed staged source/explanation decisions; ordinary website limits and examiner answers remain unchanged.",
+  "publication_count": 0,
+  "execution_blocker": "Current session network restrictions deny SSH socket creation; existing SSH user authorization persists.",
+  "resume": "Do not request this approval again. Revalidate fresh local/live bank/holds/history/export state; coordinate publisher timer; publish78transcriptions then24source locators then100/84explanations using the audited workflow. Restore timer after full verification."
+}

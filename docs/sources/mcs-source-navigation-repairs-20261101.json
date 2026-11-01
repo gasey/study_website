@@ -1,0 +1,1306 @@
+{
+  "status": "source-checked; not published",
+  "checked_on": "2026-11-01",
+  "input_bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
+  "review": "One operator visually checked2025IIA physical15/16 and IIDphysical4. Source and transcription phases kept separate for the overlappingQ89 target. Additional14locators source-checked; coordinator visually inspected2025IIAphysical8,12,13,14,15,16 and2025IAphysical12. No shared-context locator shifted.",
+  "items": [
+    {
+      "appearance_id": "b0d48a41dd7a3f8d28b4",
+      "canonical_id": "cq_e8564f7ebe4d1a8c",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 16,
+      "baseline_sha256": "4378d51a44d529595b96bbe0de9591be216e1e8a5c90590ded8e9b588d594356",
+      "expected_source": {
+        "id": "b0d48a41dd7a3f8d28b4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "The diameter of a metallic sphere is 42 cm. It is melted and drawn into a cylindrical wire of diameter 2.8 cm. The length of the wire in metre is:",
+        "options": [
+          "54 m",
+          "58 m",
+          "60 m",
+          "63 m"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "Equate the melted sphere’s volume to the cylindrical wire’s volume: (4/3)π(21)³=π(1.4)²L. Cancel π to get L=12,348/1.96=6,300 cm=63 m.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "90",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 16
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "90. The diameter of a metallic sphere is 42 cm. It is melted and drawn into a cylindrical wire of diameter 2.8\n       cm. The length of the wire in metre is:\n        (a) 54 m                                              (b) 58 m\n        (c) 60 m                                              (d) 63 m"
+    },
+    {
+      "appearance_id": "a9b3060a44753fc7c862",
+      "canonical_id": "cq_9dc2981ff38ca7c2",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "65bd1b8e9d4cf9ae6db58cce4d8bbd9299e17380e24ee83df849fabae972a9a6",
+      "expected_source": {
+        "id": "a9b3060a44753fc7c862",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Lala and Dova can do a piece of work in 45 days and 40 days respectively. They began the work together, but Lala leaves after 9 days. In how many days will Dova finish the remaining work?",
+        "options": [
+          "23 days",
+          "21 days",
+          "18 days",
+          "16 days"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "Their combined rate is 1/45+1/40=17/360 per day. In nine days they complete 17/40, leaving 23/40. Dova’s rate is 1/40 per day, so the remaining time is (23/40)/(1/40)=23 days.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "84",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "84. Lala and Dova can do a piece of work in 45 days and 40 days respectively. They began the work\n    together, but Lala leaves after 9 days. In how many days will Dova finish the remaining work?\n      (a) 23 days                                        (b) 21 days\n      (c) 18 days                                        (d) 16 days"
+    },
+    {
+      "appearance_id": "b6e6fd58dcc36c9cf783",
+      "canonical_id": "cq_875e7cee3d378d42",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "3be2c07f379986922d016431b99484758f0d4480f0a37cfc94cb14ab903a24b3",
+      "expected_source": {
+        "id": "b6e6fd58dcc36c9cf783",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "A steel wire, when bent in the form of a square, encloses an area of 121 cm2. If the same wire is bent in the form of a circle, then radius of the circle is:",
+        "options": [
+          "21 cm",
+          "14 cm",
+          "11 cm",
+          "7 cm"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "The square area is 121 cm², so its side is 11 cm and the wire length is 44 cm. For the circle, 2πr=44; using π=22/7 gives r=7 cm.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "88",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "88. A steel wire, when bent in the form of a square, encloses an area of 121 cm2. If the same wire is bent in\n    the form of a circle, then radius of the circle is:\n      (a) 21 cm                                          (b) 14 cm\n      (c) 11 cm                                          (d) 7 cm"
+    },
+    {
+      "appearance_id": "0f09ae4d5617f7e80f28",
+      "canonical_id": "cq_1577f76858f71593",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "502032e7760fe1bd263f2cd84243b12af8ff9c9cabbc306ba9fa98e95810cbba",
+      "expected_source": {
+        "id": "0f09ae4d5617f7e80f28",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "A ladder 15 m long reaches a window which is 9 m above the ground on one side of a street. Keeping its foot at the same point, the ladder is turned to the other side of the street to reach a window 12 m high. The width of the street is:",
+        "options": [
+          "18 m",
+          "19 m",
+          "21m",
+          "22 m"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "The ladder’s horizontal reach to the 9 m window is √(15²−9²)=12 m. To the 12 m window it is √(15²−12²)=9 m. The foot lies between the two sides, so street width is 12+9=21 m.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "87",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "87. A ladder 15 m long reaches a window which is 9 m above the ground on one side of a street. Keeping\n    its foot at the same point, the ladder is turned to the other side of the street to reach a window 12 m high.\n    The width of the street is:\n      (a) 18 m                                               (b) 19 m\n      (c) 21m                                                (d) 22 m"
+    },
+    {
+      "appearance_id": "96eceff014216072633b",
+      "canonical_id": "cq_957df74c9a81937b",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 16,
+      "baseline_sha256": "14964942b8ec3505c7f50bacbb45fbbbd54139822189a71792330ef736f01f80",
+      "expected_source": {
+        "id": "96eceff014216072633b",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "A shopkeeper purchased 300 bulbs for Rs. 10 each. However, 20 bulbs were fused and had to be thrown away. The remaining were sold at Rs. 12 each. Find the gain or loss percent.",
+        "options": [
+          "10 % gain",
+          "10 % loss",
+          "12 % loss",
+          "12 % gain"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "Cost includes all 300 bulbs: 300×Rs 10=Rs 3,000. Revenue is 280×Rs 12=Rs 3,360 because 20 are discarded. Profit is Rs 360, or 360/3,000=12% of cost.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "93",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 16
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "93. A shopkeeper purchased 300 bulbs for Rs. 10 each. However, 20 bulbs were fused and had to be\n       thrown away. The remaining were sold at Rs. 12 each. Find the gain or loss percent.\n        (a) 10 % gain                                    (b) 10 % loss\n        (c) 12 % loss                                    (d) 12 % gain"
+    },
+    {
+      "appearance_id": "80b18c7117f24b96c901",
+      "canonical_id": "cq_f52f22fa71a5a4d9",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "6e46d99ecafe5bd530bfbde2c19691dc939c28de70fce8c7e67881f664acd1c4",
+      "expected_source": {
+        "id": "80b18c7117f24b96c901",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Five years ago, A was thrice as old as B and ten years later, A shall be twice as old as B. The present age of B is:",
+        "options": [
+          "20 years",
+          "22 years",
+          "24 years",
+          "18 years"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "Let current ages be A and B. Five years ago, A−5=3(B−5), so A=3B−10. Ten years from now, A+10=2(B+10), so A=2B+10. Equating gives B=20.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "86",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "86. Five years ago, A was thrice as old as B and ten years later, A shall be twice as old as B. The present age\n    of B is:\n     (a) 20 years                                         (b) 22 years\n     (c) 24 years                                         (d) 18 years"
+    },
+    {
+      "appearance_id": "73e706edba51813905d9",
+      "canonical_id": "cq_736393ba292ad13e",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "14e7aa52187b7e314da73aa5298092946fd435dfc8f1de1d2487355c885f9690",
+      "expected_source": {
+        "id": "73e706edba51813905d9",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "The difference between the cost price and the selling price of an article is Rs 240. If the profit is 20%, then the selling price is:",
+        "options": [
+          "Rs 1200",
+          "Rs 1440",
+          "Rs 1580",
+          "Rs 1620"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "A 20% profit means profit=0.20×cost price. The Rs 240 difference is the profit, so cost price is 240/0.20=Rs 1,200. Selling price is Rs 1,200+Rs 240=Rs 1,440.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "85",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "85. The difference between the cost price and the selling price of an article is Rs 240. If the profit is 20%,\n    then the selling price is:\n      (a) Rs 1200                                       (b) Rs 1440\n      (c) Rs 1580                                       (d) Rs 1620"
+    },
+    {
+      "appearance_id": "5e395816345bae335127",
+      "canonical_id": "cq_c36de9103df0c5af",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 16,
+      "baseline_sha256": "523910992c37ba2c6569945fcaccc5523677abf81d348b4b7b44ef2e04d56927",
+      "expected_source": {
+        "id": "5e395816345bae335127",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "If 15 workers can finish a work in 48 hrs. How many workers will be required to do the same work in 30 hrs?",
+        "options": [
+          "24",
+          "56",
+          "34",
+          "96"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "For the same work, workers and time vary inversely. Required workers are 15×48/30=24.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "94",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 16
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "94. If 15 workers can finish a work in 48 hrs. How many workers will be required to do the same work in\n       30 hrs?\n         (a) 24                                          (b) 56\n         (c) 34                                          (d) 96"
+    },
+    {
+      "appearance_id": "054b7752d5ed97683980",
+      "canonical_id": "cq_18a25af81a276fbf",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "d09214df620f2aa6730d590925b7b60e24e6f877e41c58d51e201fbf08a1c63b",
+      "expected_source": {
+        "id": "054b7752d5ed97683980",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? ( 3  1.73)",
+        "options": [
+          "12.73 m",
+          "13.84 m",
+          "15.34 m",
+          "17.3 m"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "The 24 m is the horizontal distance from the root to the point where the top touches the ground, and the trunk makes a 30° angle with the ground. Thus h=24 tan30°=24√3/3=8√3. Apply the printed √3≈1.73 only after simplifying: h≈8×1.73=13.84 m using the paper’s approximation.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "89",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "89. In a violent storm, a tree got bent by the wind.The top of the tree meets the ground at an angle of 30°, at\n    a distance of 24 m from the root. At what height from the bottom did the tree get bent? ( 3  1.73)\n      (a) 12.73 m                                              (b) 13.84 m\n      (c) 15.34 m                                              (d) 17.3 m"
+    },
+    {
+      "appearance_id": "86c76ee2ea6abc223b66",
+      "canonical_id": "cq_315842bd9e5b8d19",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 16,
+      "baseline_sha256": "9177222d04e46d95e212c531833cee911f642547a3a5c5dde35e05b12a678eb9",
+      "expected_source": {
+        "id": "86c76ee2ea6abc223b66",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "If 40% of the students in a school are boys and the number of girls in the school is 540. How many boys are there in the school?",
+        "options": [
+          "360",
+          "390",
+          "420",
+          "460"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "If boys are 40%, girls are 60%. Total students are 540/0.60=900; boys are 0.40×900=360.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "96",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 16
+      },
+      "reason": "Source PDF physical page visually inspected, including exact printed question and ordered options. Correct the navigation page only; preserve answer, explanation, provenance, options, source identity and history.",
+      "source_excerpt": "96. If 40% of the students in a school are boys and the number of girls in the school is 540. How many boys\n       are there in the school?\n         (a) 360                                             (b) 390\n         (c) 420                                             (d) 460"
+    },
+    {
+      "appearance_id": "054b7752d5ed97683980",
+      "canonical_id": "cq_18a25af81a276fbf",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "d09214df620f2aa6730d590925b7b60e24e6f877e41c58d51e201fbf08a1c63b",
+      "expected_source": {
+        "id": "054b7752d5ed97683980",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? ( 3  1.73)",
+        "options": [
+          "12.73 m",
+          "13.84 m",
+          "15.34 m",
+          "17.3 m"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "The 24 m is the horizontal distance from the root to the point where the top touches the ground, and the trunk makes a 30° angle with the ground. Thus h=24 tan30°=24√3/3=8√3. Apply the printed √3≈1.73 only after simplifying: h≈8×1.73=13.84 m using the paper’s approximation.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "89",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "transcription",
+      "patch": {
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? (√3 = 1.73)"
+      },
+      "reason": "Original printed square-root sign and equality visually inspected on the exact booklet page. Restore only the lost √3 = 1.73 expression; preserve all numerical choices, answer index/provenance, explanation and source identity."
+    },
+    {
+      "appearance_id": "0965775570c130d3474c",
+      "canonical_id": "cq_7c025a3bba48332c",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+      "source_document": {
+        "id": "doc_972535eb394779ce6becdba2",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "sha256": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 4,
+      "baseline_sha256": "87306998c4289c54fe9d4e75e11039705e2daa057dd63d6c6e63a3e9333469ed",
+      "expected_source": {
+        "id": "0965775570c130d3474c",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? ( 3  1.73)",
+        "options": [
+          "12.73 m",
+          "13.84 m",
+          "15.34 m",
+          "17.3 m"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": "The 24 m is the horizontal distance from the root to the point where the top touches the ground, and the trunk makes a 30° angle with the ground. Thus h=24 tan30°=24√3/3=8√3. Apply the printed √3≈1.73 only after simplifying: h≈8×1.73=13.84 m using the paper’s approximation.",
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 4,
+        "qnum": "22",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/mensuration",
+          "subtopic_id": null
+        }
+      },
+      "kind": "transcription",
+      "patch": {
+        "question": "In a violent storm, a tree got bent by the wind. The top of the tree meets the ground at an angle of 30°, at a distance of 24 m from the root. At what height from the bottom did the tree get bent? (√3 = 1.73)"
+      },
+      "reason": "Original printed square-root sign and equality visually inspected on the exact booklet page. Restore only the lost √3 = 1.73 expression; preserve all numerical choices, answer index/provenance, explanation and source identity."
+    },
+    {
+      "appearance_id": "08804e87973bb51731de",
+      "canonical_id": "cq_6a03e35cb8917812",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 8,
+      "baseline_sha256": "18a404a9ffb6ff5d65d3edaafa85f22f5166d38c8b12226409d4ac7ce00cb20f",
+      "expected_source": {
+        "id": "08804e87973bb51731de",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "K is the son of A's mother's sister. Q is daughter of D, who is the father of G and grandfather of A. P is the Daughter of H who is grandmother of K. D is husband of H and G is husband of L. How is K related to A?",
+        "options": [
+          "Mother",
+          "Sister",
+          "Daughter",
+          "Cousin"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 7,
+        "qnum": "38",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 8
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "38. K is the son of A’s mother’s sister. Q is daughter of D, who is the father of G and grandfather of A. P is\n       the Daughter of H who is grandmother of K. D is husband of H and G is husband of L. How is K related\n       to A?\n         (a) Mother                                           (b) Sister\n         (c) Daughter                                         (d) Cousin"
+    },
+    {
+      "appearance_id": "d9020ed398844346da15",
+      "canonical_id": "cq_30f51a62b3ad76ca",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 8,
+      "baseline_sha256": "615ecca0796f7dd2c84197b8cf9a435bbec25b83094c44e5c3c11fa87e3b6574",
+      "expected_source": {
+        "id": "d9020ed398844346da15",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Find the odd one out:",
+        "options": [
+          "35",
+          "63",
+          "54",
+          "42"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 7,
+        "qnum": "39",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 8
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "39. Find the odd one out:\n        (a) 35                                                (b) 63\n        (c) 54                                                (d) 42"
+    },
+    {
+      "appearance_id": "7c36165a401c45fd0c39",
+      "canonical_id": "cq_a8cd461dbe019298",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 8,
+      "baseline_sha256": "9e1c14cb7bf7bd4a9009f2bf60f20d314ec4d6b257e80e8452c0b5d9e01c645a",
+      "expected_source": {
+        "id": "7c36165a401c45fd0c39",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "In a row of 21 girls, Rini was shifted by four places towards the right, now she becomes 12th from the left end. What was her earlier position from the right end of the row?",
+        "options": [
+          "10th",
+          "12th",
+          "14th",
+          "8th"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 7,
+        "qnum": "40",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 8
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "40. In a row of 21 girls, Rini was shifted by four places towards the right, now she becomes 12th from the\n       left end. What was her earlier position from the right end of the row?\n         (a) 10th                                            (b) 12th\n         (c) 14th                                            (d) 8th\n\n  Direction (Question Nos. 41 - 44): In each question given below are two statements followed by two\n  conclusions numbered I and II. You have to take the two given statements to be true even if they\n  seem to be at variance from commonly known facts and decide which of the given conclusions\n  logically follows from the given two statements, disregarding commonly known facts:"
+    },
+    {
+      "appearance_id": "b4427331868e61116869",
+      "canonical_id": "cq_51fb2bb8ca07d31b",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 12,
+      "baseline_sha256": "3024f384d553b941287162fb20f60159b2d30a31eab0313d965bea7312f273d5",
+      "expected_source": {
+        "id": "b4427331868e61116869",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "CIRCLE is related to RICELC in the same way as SQUARE is related to:",
+        "options": [
+          "QSUERA",
+          "QUSERA",
+          "UQSAER",
+          "UQSERA"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 11,
+        "qnum": "68",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 12
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "68. CIRCLE is related to RICELC in the same way as SQUARE is related to:\n        (a) QSUERA                                     (b) QUSERA\n        (c) UQSAER                                     (d) UQSERA"
+    },
+    {
+      "appearance_id": "244cc3f32547ecf7e9f2",
+      "canonical_id": "cq_270ed0bcef7d820d",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 12,
+      "baseline_sha256": "2adc0696d368be077446c5821c130accea81475e2185952a2df4f658f7cbdb18",
+      "expected_source": {
+        "id": "244cc3f32547ecf7e9f2",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "In code language, ASTARK is written as LBFMG and MOBILE is written as TNRSPJ. How is BLAME written in that code?",
+        "options": [
+          "TSFRJ",
+          "RPFTJ",
+          "NJFTP",
+          "TSFGJ"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 11,
+        "qnum": "69",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 12
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "69. In code language, ASTARK is written as LBFMG and MOBILE is written as TNRSPJ. How is BLAME\n       written in that code?\n        (a) TSFRJ                                     (b) RPFTJ\n        (c) NJFTP                                     (d) TSFGJ"
+    },
+    {
+      "appearance_id": "844f1cd38a4ad9bb36f2",
+      "canonical_id": "cq_f0ec5a64a6a5ec96",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 13,
+      "baseline_sha256": "fde0f507b72b7ee5a82f9528dbbe7868d2896974099c2cfd1e4a698b67920d18",
+      "expected_source": {
+        "id": "844f1cd38a4ad9bb36f2",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Choose the odd one out:",
+        "options": [
+          "HJN",
+          "JLP",
+          "PRU",
+          "QSW"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 11,
+        "qnum": "70",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 13
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "70. Choose the odd one out:\n      (a) HJN                                                (b) JLP\n      (c) PRU                                                (d) QSW\n\nDirection (Question No. 71): Read the following information carefully and answer the question\ngiven below:\n               Ravi and Kunal are good in hockey and volleyball. Sachin and Ravi are good in hockey and\n     baseball. Gaurav and Kunal are good in cricket and volleyball.Sachin, Gaurav and Michael are good in\n     football and baseball."
+    },
+    {
+      "appearance_id": "c4e282b96ce475bbf4a6",
+      "canonical_id": "cq_776579195ee7f9a3",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 13,
+      "baseline_sha256": "d92ccfd1695ddc941fcd514a6ee8e36d1ea89e31729d00d88b02493c44c40a41",
+      "expected_source": {
+        "id": "c4e282b96ce475bbf4a6",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Rohan ranks seventh from the top and twenty sixth from the bottom in a class. How many students are there in the class?",
+        "options": [
+          "31",
+          "32",
+          "33",
+          "34"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 12,
+        "qnum": "72",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 13
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "72. Rohan ranks seventh from the top and twenty sixth from the bottom in a class. How many students are\n     there in the class?\n      (a) 31                                            (b) 32\n      (c) 33                                            (d) 34"
+    },
+    {
+      "appearance_id": "78c80d8899aeabfa1e1b",
+      "canonical_id": "cq_5a3680723bfd5c57",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 13,
+      "baseline_sha256": "8f52aa59266a3850b0a2bd801310b9c7405d1135cff813e91f6dbdf3c9229b04",
+      "expected_source": {
+        "id": "78c80d8899aeabfa1e1b",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many poles did he need all together?",
+        "options": [
+          "100",
+          "104",
+          "108",
+          "None of these"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 12,
+        "qnum": "73",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 13
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "73. A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n     poles did he need all together?\n      (a) 100                                            (b) 104\n      (c) 108                                            (d) None of these"
+    },
+    {
+      "appearance_id": "a7df2dfbdfc60ef9e281",
+      "canonical_id": "cq_6186d264d133b2ff",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 14,
+      "baseline_sha256": "4564871074c9466146c8e0ed08e6d8c12271c041efc688175212ea36a1585d29",
+      "expected_source": {
+        "id": "a7df2dfbdfc60ef9e281",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Arrange the following words in a meaningful sequence: (1) Presentation, (2) Recommendation, (3) Arrival, (4) Discussion, (5) Introduction",
+        "options": [
+          "5,1, 3, 4, 2",
+          "3, 5, 1, 4, 2",
+          "5, 1, 2, 4, 3",
+          "1, 4, 3, 5, 2"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "78",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 14
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "78. Arrange the following words in a meaningful sequence:\n       (1) Presentation, (2) Recommendation, (3) Arrival, (4) Discussion, (5) Introduction\n        (a) 5,1, 3, 4, 2                                   (b) 3, 5, 1, 4, 2\n        (c) 5, 1, 2, 4, 3                                  (d) 1, 4, 3, 5, 2"
+    },
+    {
+      "appearance_id": "055f392a80fea40b27d4",
+      "canonical_id": "cq_3875f0ba4a6bbd76",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "deba8ae4a0b601d685b310c57cceec52cafdad91def0da6785c2c04c16f95a3b",
+      "expected_source": {
+        "id": "055f392a80fea40b27d4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "The following question consists of two words each that have a certain relationship to each other, followed by four lettered pairs of words. Select the lettered pair that has the same relationship as the original pair of words i.e Optimistic : Pessimistic:",
+        "options": [
+          "Difficult : Impossible",
+          "Tolerating : Accommodating",
+          "Export : Import",
+          "Strong : Hard"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "79",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "79. The following question consists of two words each that have a certain relationship to each other, followed\n    by four lettered pairs of words. Select the lettered pair that has the same relationship as the original pair\n    of words i.e Optimistic : Pessimistic:\n     (a) Difficult : Impossible                             (b) Tolerating : Accommodating\n     (c) Export : Import                                    (d) Strong : Hard"
+    },
+    {
+      "appearance_id": "1c03601f2d5650c0f074",
+      "canonical_id": "cq_eb6ab512b75e98e0",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "6fe4a64b20dcb35afb6d883f9d76a2eb8380f23442c1158c849db78a02b22a18",
+      "expected_source": {
+        "id": "1c03601f2d5650c0f074",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "If eraser is called box, box is called pencil, pencil is called sharpener and sharpener is called bag, what will a child write with?",
+        "options": [
+          "Box",
+          "Sharpener",
+          "Eraser",
+          "Pencil"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "82",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "82. If eraser is called box, box is called pencil, pencil is called sharpener and sharpener is called bag, what\n    will a child write with?\n      (a) Box                                                (b) Sharpener\n      (c) Eraser                                             (d) Pencil"
+    },
+    {
+      "appearance_id": "bfc2faf6c2af446ff5b7",
+      "canonical_id": "cq_971b1b23a61f2f3a",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 15,
+      "baseline_sha256": "291a0cf06fb99f7920b45a214ae4c091988ec05fe30a6f6cf342bc0daaae4397",
+      "expected_source": {
+        "id": "bfc2faf6c2af446ff5b7",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "In this question, four words have been given, out of which three are alike in some manner and the fourth one is different. Choose out the odd one.",
+        "options": [
+          "Stool",
+          "Bench",
+          "Table",
+          "Chair"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "83",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 15
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "83. In this question, four words have been given, out of which three are alike in some manner and the fourth\n    one is different. Choose out the odd one.\n     (a) Stool                                            (b) Bench\n     (c) Table                                            (d) Chair"
+    },
+    {
+      "appearance_id": "29c7dc7a604a8022419c",
+      "canonical_id": "cq_52e6efa821ae14ca",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "source_document": {
+        "id": "doc_e092395e2688703b09ce8212",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "sha256": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 16,
+      "baseline_sha256": "749f83864b6f15a822297934382a94153aa3d074c9999ed9f36fd80ea3737ad6",
+      "expected_source": {
+        "id": "29c7dc7a604a8022419c",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "question": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their marks:",
+        "options": [
+          "96",
+          "72",
+          "84",
+          "108"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 14,
+        "qnum": "92",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 16
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "92. Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n       marks:\n        (a) 96                                             (b) 72\n        (c) 84                                             (d) 108"
+    },
+    {
+      "appearance_id": "fc24a74b4a9c84b58ae8",
+      "canonical_id": "cq_cf6f299d92469203",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+      "source_document": {
+        "id": "doc_b8a147e2c2ec7387f2ea50c2",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+        "sha256": "681390fb2095b38803e9f9987c7975461829a0e821e589ec0f761c7539c9c528",
+        "kind": "paper"
+      },
+      "physical_pdf_page": 12,
+      "baseline_sha256": "3c60ee8b2f367ddbdd879a8230cba270934cc8c54b1d2640b4bc0fbc859bbf40",
+      "expected_source": {
+        "id": "fc24a74b4a9c84b58ae8",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+        "type": "mcq",
+        "question": "Which of the following is not one of the Sustainable Development Goals?",
+        "options": [
+          "Life below water",
+          "Life on land",
+          "Life on Air",
+          "Climate action"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Preliminary ) - 2025 Answer Key Paper-I..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 11,
+        "qnum": "68",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "general-studies",
+          "topic_id": "general-studies/environment",
+          "subtopic_id": null
+        }
+      },
+      "kind": "source_reference",
+      "patch": {
+        "page": 12
+      },
+      "reason": "Exact printed stem and ordered options checked in this booklet. Coordinator visually inspected the physical page and confirmed no preceding shared-passage context is needed for this item. Correct physical PDF navigation only; preserve all answers/provenance, source text/options, holds and history.",
+      "source_excerpt": "Which of the following is not one of the Sustainable Development Goals?"
+    }
+  ]
+}

@@ -1,0 +1,279 @@
+{
+  "audit_date": "2026-11-01",
+  "mode": "read-only historical numbering/source-gap and simulation prerequisite audit; no bank/code/configuration changes, no publication/deployment",
+  "current_bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
+  "paper_numbering": {
+    "registered_source_papers": 16,
+    "printed_source_positions": 1600,
+    "bank_appearance_records": 1600,
+    "source_number_gaps": 0,
+    "duplicate_bank_printed_positions": 0,
+    "unmapped_extra_bank_positions": 0,
+    "basis": "Independent pdftotext -layout extraction greedily confirmed sequential printed labels 1–100 on every registered source PDF; every paper has one bank row at every q-number.",
+    "page_locator_candidates": {
+      "candidate_differences_to_review": 114,
+      "comparison": "current bank page field versus physical PDF page containing the printed question number, found from pdftotext -layout",
+      "interpretation": "Treat these as candidate locator inconsistencies, not 114 confirmed errors: the source/page-number convention is not uniform across these imported books and the legacy inventory uses a page field without an explicit convention. Resolve each against visible PDF header and current appearance source reference before simulation.",
+      "notable_examples": [
+        {
+          "paper": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+          "qnum": 12,
+          "bank_page": 4,
+          "physical_pdf_page": 5,
+          "printed_page_label": "4"
+        },
+        {
+          "paper": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "qnum": 52,
+          "bank_page": 8,
+          "physical_pdf_page": 7
+        },
+        {
+          "paper": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+          "qnum": 29,
+          "bank_page": 5,
+          "physical_pdf_page": 6,
+          "printed_page_label": "5"
+        }
+      ]
+    },
+    "limitations": [
+      "Question numbering/count does not validate full question text, ordered options, diagrams, source page citations or key assignment.",
+      "The repository historical audit helper is not compatible with 2025 Paper-II formatting and stopped at 75; the independent sequential extraction succeeded.",
+      "Greedy sequential label matching is a candidate position inventory; internal statement numbering can require manual discrimination. It does not independently certify all1600physical locators."
+    ]
+  },
+  "source_key_coverage": {
+    "registered_original_paper_hashes": 16,
+    "registered_final_key_sources": "Eight 2023 series-specific final-key PDFs and one 8-page 2025 final-key PDF are identified by docs/sources/mcs-recent-compensations.json and docs/sources/mcs-2025-final-key-cells.json.",
+    "compensation_appearances": 24,
+    "compensation_register": {
+      "review_date": "2026-10-31",
+      "status": "Source-confirmed compensation entries; no option answer assigned.",
+      "papers": [
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'A'..pdf",
+          "key_sha256": "4e8b1beac773f2c326006d26117ad899c34edad31023c1d974035175219a5d19",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            43
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'B'..pdf",
+          "key_sha256": "fdc99c3de0fecdeb7c9098596509b3454dfb299e27ea654d78687e2bf649db22",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            52
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'C'..pdf",
+          "key_sha256": "d3407b4d8c086317ef518f426765f11bb66cf9df85ac1f1d54c47a01e3a08217",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            49
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'D'..pdf",
+          "key_sha256": "38decdfd41212bd4a22c7e08855a95a5cba93b943112888df2a95978cf05832c",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            46
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'A'..pdf",
+          "key_sha256": "2479b2a42cbe612a628b0c7b8f6d08c2bfefd51f290d42e744dd0368dde02933",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            72,
+            76,
+            94
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'B'..pdf",
+          "key_sha256": "c5f67610c631a307abfb9492832df85a6f28ef3d985cf63206b3e254a37a2f7a",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            72,
+            83,
+            90
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+          "key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            78,
+            82,
+            86
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+          "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'D'..pdf",
+          "key_sha256": "05e83ad1b5931495d850cc97b1c2cbd0620fd241cdc1565bb4e884cff13f6115",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            9,
+            11,
+            99
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-A..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 1,
+          "compensated_question_numbers": [
+            37,
+            96
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-B..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 2,
+          "compensated_question_numbers": [
+            11,
+            70
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-C..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 3,
+          "compensated_question_numbers": [
+            46,
+            87
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-I Series-D..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 4,
+          "compensated_question_numbers": [
+            22,
+            63
+          ]
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 5,
+          "compensated_question_numbers": []
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 6,
+          "compensated_question_numbers": []
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 7,
+          "compensated_question_numbers": []
+        },
+        {
+          "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+          "final_key_file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "key_sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "key_page": 8,
+          "compensated_question_numbers": []
+        }
+      ]
+    },
+    "current_live_held_appearances": 24,
+    "additional_live_source_defects": [
+      {
+        "appearance_id": "9ae15c0141a46ecf40c4",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "canonical_id": "cq_525aa39d5041d0bc",
+        "source_defect": "duplicate-options"
+      },
+      {
+        "appearance_id": "682a6da14ad9756567e4",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "canonical_id": "cq_7a38ee435ef86a07",
+        "source_defect": "duplicate-options"
+      }
+    ],
+    "inventory_unusable_answered_mcq_rows": {
+      "malformed_options": 6,
+      "no_usable_answer": 6
+    },
+    "live_snapshot_sha256": "cdffdc1fd85261513537b7985d264df53dfc39af791a040f14c5fc2c07d4cddd"
+  },
+  "authority_compensation_policy": {
+    "2023": "The 2023 final-key PDFs mark 16 cells “To be Compensated” across eight booklets. The in-force 2020 Rules establish 200 marks per paper / 2 hours (Rule 9(1)(b)) and one-third penalty for wrong or multiple answers, no penalty for blank (Schedule I A.2–5); they do not state who receives marks for dropped questions. The 2024 consolidated scheme says dropped-question marks are awarded to all candidates, but its notice says it takes effect immediately on 2024-02-01; do not project this later rule backward to the June 2023 exam. No direct 2023 source found resolves attempt-dependence or penalty interaction. Keep 2023 compensation scoring blocked pending year-specific authority evidence.",
+    "2025": "MPSC scheme notification No. A.12034/18/2025-MPSC(EXAM), dated 2025-08-01 (official MPSC PDF, SHA256 0e8af2c954ee6f9a8fa1283d05b35148c264acbf58427ee2a6034e2b39eaff25) states: if any answer key is successfully challenged, corresponding mark(s) shall be compensated to all candidates. The scheme gives 2 hours, 200 marks, 100 questions × 2 marks, one-third wrong-answer penalty, 33% Paper-II qualification. This resolves attempt eligibility: all candidates, irrespective of attempt. The separate 2025 Rules also treat multiple marked responses as wrong and blank as no penalty. Still unresolved from inspected authority text: whether a wrong/multiple response to a compensated item also incurs the ordinary penalty or the item is scored as a flat compensation outcome. Confirm before coding that interaction.",
+    "official_sources": [
+      {
+        "title": "Mizoram Civil Services Combined Competitive Examination Rules, 2020 (official Gazette PDF)",
+        "url": "https://mpsc.mizoram.gov.in/uploads/attachments/2023/04/e9112c6c8318ed415bc3fd38a8ad9b83/06-mizoram-civil-services-combined-competitive-examination-rules-2020.pdf",
+        "relevant": "Rule 9(1)(b), PDF pp. 8–9; Schedule I A, PDF p. 11."
+      },
+      {
+        "title": "MPSC consolidated Scheme of Examination, notification 2024-02-01",
+        "url": "https://mpsc.mizoram.gov.in/uploads/attachments/2024/02/3a30334ae9a978951580182abdfeae87/mcs-combined-scheme-of-examination.pdf",
+        "relevant": "Notice states effective immediately; Annexure 6: dropped-question marks awarded to all candidates. Later than 2023."
+      },
+      {
+        "title": "MPSC Scheme of Examination for MCS (Combined), notification 2025-08-01",
+        "url": "https://mpsc.mizoram.gov.in/uploads/attachments/2025/08/fb8d7186b8634c80aa7e83e1a6dccd4c/notification-for-scheme-of-examination-for-mizoram-civil-service-combined-.pdf",
+        "sha256": "0e8af2c954ee6f9a8fa1283d05b35148c264acbf58427ee2a6034e2b39eaff25",
+        "relevant": "PDF p.1: all-candidate compensation for successfully challenged keys; 2h, 200 marks, 100 questions at 2 marks."
+      }
+    ],
+    "2025_original_key_source": {
+      "path": "../mpsc-question-bankv2/pdfs/Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+      "sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+      "pages": 8,
+      "inspection": "Rendered and visually inspected pages 1 and 5; cells explicitly read “Compensated” at Paper-I A Q37/Q96; Paper-II A has no compensation. Full cell transcription is registered in docs/sources/mcs-2025-final-key-cells.json."
+    }
+  },
+  "simulation_implementation_readiness": {
+    "safe_to_prepare": "A versioned 2025 original-paper mode can be designed against the year-specific MPSC scheme and exact final-key files. Use 2/3 rational units (correct +6, wrong −2, blank 0 when one point is one third of a mark; max 600 thirds) and an explicit compensated outcome for each item. Universal 2025 compensation can be modeled separately from attempt state. Preserve immutable paper/key/source snapshots.",
+    "not_safe_to_activate_now": [
+      "All 16 current collection_papers remain rule_source=platform-default with duration null, marks_correct=1 and marks_wrong=0.",
+      "The current generic paper-mock path selects only v_scorable items; it omits held/unkeyed questions and can discard presentations whose source options/context do not map. It is not a 100-position original simulation. See api/app/routers/mocks.py start_mock and api/app/services/scoring_revisions.py capture_mock_questions/totals.",
+      "24 compensation items remain held (per series-specific final-key evidence); they are not 24 ordinary answer choices. Six of the 24 have no answer index, while the rest may retain provisional indices; all remain excluded through status=held.",
+      "Two 2025 Paper-II image rows remain flagged duplicate-options (B Q58, D Q8); four additional malformed-source rows are in the six-row inventory malformed-options bucket.",
+      "Eight exact 2023 Paper-II English rows have key/context conflicts: request-only packet at english-comprehension-key-hold-request.json.",
+      "All 1,600 numbering positions are present, but 114 question-page values differ from the physical PDF page with the printed q-number; page field convention is mixed/unclear. Verify every locator before source snapshot freeze.",
+      "2023 compensation rule and 2025 wrong-answer-penalty interaction on compensated items remain unresolved.",
+      "Complete source transcription, ordered choices, image assets, final-key provenance and coverage still need per-item checks; numbering alone is not certification."
+    ],
+    "do_not_infer": "No overall cutoff, qualification rank, or answer key should be derived beyond explicit year-specific evidence."
+  },
+  "english_key_concerns": {
+    "request_file": "english-comprehension-key-hold-request.json",
+    "safety_valve": "All four 2023 Paper-II source passages use work as a safety valve; Oxford Learner’s Dictionary figurative sense supports B (release of pent-up feelings), while final official keys use C in A Q11/B Q23/C Q2/D Q31. Hold for authority-key/context adjudication; preserve key.",
+    "vain_regrets": "All four passages say a man with a task has no time for vain regret and contrast him with the man without a task; D (“not need to work”) is more directly supported than final-key A (“chosen his life’s work rather carelessly”) in A Q12/B Q24/C Q3/D Q32. Hold; preserve key.",
+    "dictionary_url": "https://www.oxfordlearnersdictionaries.com/definition/american_english/safety-valve"
+  },
+  "generated_evidence_files": [
+    "recent-numbering-manifest.json",
+    "recent-source-gap-audit.json",
+    "english-comprehension-key-hold-request.json"
+  ],
+  "post_audit_update": "Ten review holds subsequently acknowledged: eight English key/context concerns and two corrupted-code appearances. This read-only audit predates those writes; its24compensation holds remain a separate count."
+}

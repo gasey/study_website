@@ -1,0 +1,48 @@
+{
+  "status": "286-publication packet approved and locally validated; publication blocked only by session SSH restriction",
+  "source_packet": "docs/sources/mcs-source-navigation-repairs-20261101.json",
+  "passage_packet": "docs/sources/mcs-reading-passage-repairs-20261101.json",
+  "explanation_packet": "docs/sources/mcs-completion-explanations-20261101.json",
+  "publication_stages": [
+    {
+      "phase": "transcription",
+      "items": 78,
+      "details": "76passages +2radical stems; disjoint targets"
+    },
+    {
+      "phase": "source_reference",
+      "items": 24,
+      "details": "Reprepare after transcription; exactQ89predecessor required"
+    },
+    {
+      "phase": "explanation",
+      "offset": 0,
+      "limit": 100
+    },
+    {
+      "phase": "explanation",
+      "offset": 100,
+      "limit": 100,
+      "expected_items": 84
+    }
+  ],
+  "review_holds_acknowledged": 10,
+  "compensation_holds_prior": 24,
+  "ordinary_quota_last_checked": 788,
+  "quota_exception_approval": "Explicitly approved: owner answered Yes, publish this286-item packet on2026-11-01. Scope exactly76passages+24locators+2radical stems+184explanations, up to286decisions. Do not ask again.",
+  "ssh_authorization": "Already granted; do not request again.",
+  "execution_blocker": "Current session restricted network denies SSH socket creation before authentication.",
+  "bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
+  "bank_writes_this_task": false,
+  "exports_this_task": 0,
+  "publisher_timer": "Not touched this task; last verified active at preceding72-item completion.",
+  "tests": "35pure preparation tests passed with --noconftest; database fixture cannot connect under session socket restriction. Earlier10navigation tests passed normally before restriction.",
+  "limitations": [
+    "Recent1600appearance scope only; historical numbering and unimported scanned-booklet intake remain separate.",
+    "All1,488blank explanation appearances still blank:184newtexts prepared, not live. Initial1,470candidate count is triage and precedes10newholds/provenance-specific exclusion.",
+    "One inferred-answer appearance excluded from explanation-only packet; three odd-organ drafts rejected rather than publish an inaccurate sense-organ rationale.",
+    "Ambiguous fence/ratio questions not rationalized; maintain separate source review leads.",
+    "2012/2013recovery remains deferred; original simulation remains gated."
+  ],
+  "quota_exception_run": "mcs-completion-20261101"
+}

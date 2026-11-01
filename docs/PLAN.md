@@ -941,3 +941,12 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 
 - [x] Publish all72 approved MCS explanations through the audited workflow; verify complete bank diff, live records, provenance/holds/history/access, zero outstanding exports, bank/taxonomy sync and restored publisher timer. Receipt: `docs/sources/mcs-explanation-publication-20261101.json`. This completes the earlier network-blocked72-item task.
 - [ ] Continue wider checked explanations, separate source locator/text review, historical numbering and original-paper simulation prerequisites;2012/2013 recovery remains deferred.
+
+### 1 November — next MCS quality packet
+
+- [x] Source-check76missing shared passages,24locators, two radical/equality repairs and184explanations; validate286staged proposals without publishing.35pure preparation tests pass.
+- [x] Apply10source-supported review holds while preserving examiner answers/provenance; receipts saved. Independent follow-up live verification pending connectivity. These are separate from24compensationholds.
+- [ ] Publish the checked286-item packet after network access and pending bounded quota authorization/ordinary allowance permit; exact source phases and100/84explanation batches in `docs/sources/mcs-completion-checkpoint-20261101.json`. No exports/bank writes/timer change this task.
+- [ ] Continue remaining explanation/source integrity review, historical numbering/scanned-booklet intake and original-paper simulation prerequisites.2012/2013recovery remains deferred.
+
+- [x] Receive explicit authorization for the exact286-publication exception (`mcs-completion-20261101`); prior pending-approval notes superseded. Publication remains blocked by session SSH restriction only.

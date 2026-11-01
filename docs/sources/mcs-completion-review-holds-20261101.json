@@ -1,0 +1,814 @@
+{
+  "status": "ten review holds acknowledged by server before network restriction returned; no answer/source publication",
+  "date": "2026-11-01",
+  "english_evidence": {
+    "mode": "hold-only review request; no source/answer mutation, no queue or publication action performed",
+    "created_date": "2026-11-01",
+    "bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
+    "candidates": [
+      {
+        "review_id": "english-2023-p2-A-safety-valve",
+        "kind": "review-hold",
+        "issue": "safety-valve",
+        "appearance_id": "c1a1d1eab924d016f651",
+        "canonical_id": "cq_47657a3aa9ebe56f",
+        "current_baseline_sha256": "32ca863b5847b8a4cc6d4b97cc1f51efcd089f3a9536388a4fdfbcf2bb7a50de",
+        "expected_source": {
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "page": 2,
+          "qnum": "11",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "paper_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "physical_pdf_page": 2,
+        "printed_question": 11,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'A'..pdf",
+        "final_key_sha256": "2479b2a42cbe612a628b0c7b8f6d08c2bfefd51f290d42e744dd0368dde02933",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 11,
+          "letter": "C",
+          "option_text": "something which guarantees safety"
+        },
+        "current_bank_answer": {
+          "letter": "C",
+          "text": "something which guarantees safety",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf"
+        },
+        "reason": "The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-B-safety-valve",
+        "kind": "review-hold",
+        "issue": "safety-valve",
+        "appearance_id": "74733ffaedb0ccef61bb",
+        "canonical_id": "cq_1754929a4c8450f5",
+        "current_baseline_sha256": "b263451cabb486ac21e53a66feb7b28da4a4294132a918066d7c82c873f38093",
+        "expected_source": {
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "page": 4,
+          "qnum": "23",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "paper_pdf_sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "physical_pdf_page": 4,
+        "printed_question": 23,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'B'..pdf",
+        "final_key_sha256": "c5f67610c631a307abfb9492832df85a6f28ef3d985cf63206b3e254a37a2f7a",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 23,
+          "letter": "C",
+          "option_text": "something which guarantees safety"
+        },
+        "current_bank_answer": {
+          "letter": "C",
+          "text": "something which guarantees safety",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf"
+        },
+        "reason": "The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-C-safety-valve",
+        "kind": "review-hold",
+        "issue": "safety-valve",
+        "appearance_id": "3105005ca4006f0e3630",
+        "canonical_id": "cq_a35d51a49bf96bd1",
+        "current_baseline_sha256": "adb914e95e88443706597570421a1e8f7adf9ca8ce2a09d9ea01daac8f808d40",
+        "expected_source": {
+          "question": "The expression ‘safety-valve’ means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "page": 1,
+          "qnum": "2",
+          "figureImage": "images/page-renders/ee50c2697458541b3adc303277a9c8498d94fddf06cdf3554921f110e1635bc8.png",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "hasDiagram": true,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "paper_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "physical_pdf_page": 1,
+        "printed_question": 2,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "final_key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 2,
+          "letter": "C",
+          "option_text": "something which guarantees safety"
+        },
+        "current_bank_answer": {
+          "letter": "C",
+          "text": "something which guarantees safety",
+          "answer_source": "official",
+          "answer_key_ref": "key_4ff8bee67d9977f6a3ad1e3a"
+        },
+        "reason": "The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-D-safety-valve",
+        "kind": "review-hold",
+        "issue": "safety-valve",
+        "appearance_id": "6d98beded6fe1c73507e",
+        "canonical_id": "cq_0094634adccca7bb",
+        "current_baseline_sha256": "fe6753a45c6a53b1430f739bbe1be590f0781aac91da2fa21bedf74438bca853",
+        "expected_source": {
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "page": 5,
+          "qnum": "31",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "paper_pdf_sha256": "de633f7b308d6ac98da641cb5164bc8a6e66ff8aba05e27677534d8471d2d09e",
+        "physical_pdf_page": 5,
+        "printed_question": 31,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'D'..pdf",
+        "final_key_sha256": "05e83ad1b5931495d850cc97b1c2cbd0620fd241cdc1565bb4e884cff13f6115",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 31,
+          "letter": "C",
+          "option_text": "something which guarantees safety"
+        },
+        "current_bank_answer": {
+          "letter": "C",
+          "text": "something which guarantees safety",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf"
+        },
+        "reason": "The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-A-vain-regrets",
+        "kind": "review-hold",
+        "issue": "vain-regrets",
+        "appearance_id": "772c13ea656447ac9baa",
+        "canonical_id": "cq_1ae669fc002681f5",
+        "current_baseline_sha256": "c89a33a5dd7f1f1c74968098706704cd2c1c71e311c2d1d9f2ed6488c373cb45",
+        "expected_source": {
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "page": 2,
+          "qnum": "12",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "paper_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "physical_pdf_page": 2,
+        "printed_question": 12,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'A'..pdf",
+        "final_key_sha256": "2479b2a42cbe612a628b0c7b8f6d08c2bfefd51f290d42e744dd0368dde02933",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 12,
+          "letter": "A",
+          "option_text": "chosen his life's work rather carelessly"
+        },
+        "current_bank_answer": {
+          "letter": "A",
+          "text": "chosen his life's work rather carelessly",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf"
+        },
+        "reason": "The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-B-vain-regrets",
+        "kind": "review-hold",
+        "issue": "vain-regrets",
+        "appearance_id": "65b21d160b8186a335ec",
+        "canonical_id": "cq_763ca6705c5b6714",
+        "current_baseline_sha256": "132945672fd4aa69054ac5620a90c67463db2175c9108cf0ae412254986463ac",
+        "expected_source": {
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "page": 4,
+          "qnum": "24",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "paper_pdf_sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "physical_pdf_page": 4,
+        "printed_question": 24,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'B'..pdf",
+        "final_key_sha256": "c5f67610c631a307abfb9492832df85a6f28ef3d985cf63206b3e254a37a2f7a",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 24,
+          "letter": "A",
+          "option_text": "chosen his life's work rather carelessly"
+        },
+        "current_bank_answer": {
+          "letter": "A",
+          "text": "chosen his life's work rather carelessly",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf"
+        },
+        "reason": "The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-C-vain-regrets",
+        "kind": "review-hold",
+        "issue": "vain-regrets",
+        "appearance_id": "69b37846964f014133e3",
+        "canonical_id": "cq_b3c56baeb804cbbc",
+        "current_baseline_sha256": "f4a27c2b40b8c271945bc53a21d975f56a3b46d9851468c745da9885bcceac60",
+        "expected_source": {
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life’s work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "page": 1,
+          "qnum": "3",
+          "figureImage": "images/page-renders/ee50c2697458541b3adc303277a9c8498d94fddf06cdf3554921f110e1635bc8.png",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "hasDiagram": true,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "paper_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "physical_pdf_page": 1,
+        "printed_question": 3,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "final_key_sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 3,
+          "letter": "A",
+          "option_text": "chosen his life’s work rather carelessly"
+        },
+        "current_bank_answer": {
+          "letter": "A",
+          "text": "chosen his life’s work rather carelessly",
+          "answer_source": "official",
+          "answer_key_ref": "key_4ff8bee67d9977f6a3ad1e3a"
+        },
+        "reason": "The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      },
+      {
+        "review_id": "english-2023-p2-D-vain-regrets",
+        "kind": "review-hold",
+        "issue": "vain-regrets",
+        "appearance_id": "3ab168e7d44a6aceb65b",
+        "canonical_id": "cq_40930f9786c0953b",
+        "current_baseline_sha256": "89fe4d20ac9de826f0cb16487149c5f23d6c3e560b993771ebd7eb31f83f6d73",
+        "expected_source": {
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "page": 5,
+          "qnum": "32",
+          "figureImage": null,
+          "direction": null,
+          "hasDiagram": false,
+          "passage": null
+        },
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "paper_pdf_sha256": "de633f7b308d6ac98da641cb5164bc8a6e66ff8aba05e27677534d8471d2d09e",
+        "physical_pdf_page": 5,
+        "printed_question": 32,
+        "final_key_file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'D'..pdf",
+        "final_key_sha256": "05e83ad1b5931495d850cc97b1c2cbd0620fd241cdc1565bb4e884cff13f6115",
+        "final_key_page": 1,
+        "final_key_cell": {
+          "printed_question": 32,
+          "letter": "A",
+          "option_text": "chosen his life's work rather carelessly"
+        },
+        "current_bank_answer": {
+          "letter": "A",
+          "text": "chosen his life's work rather carelessly",
+          "answer_source": "official",
+          "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf"
+        },
+        "reason": "The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer.",
+        "source_context_note": "Current live bank context fields (passage/direction) are null in the captured baseline; review against the original PDF page and restore the exact shared passage before any explanation or simulation certification.",
+        "review_decision_requested": "Apply review hold / key-dispute status only after refreshing the exact source baseline. Preserve answerIndex, answerSource, answerKeyRef, explanation, and all source fields. No answer correction or publication requested."
+      }
+    ],
+    "shared_passage_source": "Original 2023 Paper-II PDFs, the listed paper-specific page and q-number; the repeated passage is textually identical in all four variants.",
+    "dictionary_source": {
+      "title": "Oxford Advanced American Dictionary: safety valve",
+      "url": "https://www.oxfordlearnersdictionaries.com/definition/american_english/safety-valve",
+      "relevant_sense": "a harmless way of letting out feelings of anger, excitement, etc."
+    },
+    "global_caveat": "Rows are separate live canonical questions per booklet; evidence supports review holds only. The official final keys remain authoritative for attribution and are not replaced by this lexical/context analysis. Refresh expected_source and baseline SHA after passage restoration before submitting any hold."
+  },
+  "english_hold_request": {
+    "operation": "answer-batch",
+    "owner_email": "hruaitluangasailo20@gmail.com",
+    "authorization": "Owner requested completion of the MCS quality review. Place source-supported review holds on these eight exact English appearances without changing answers, provenance, source data or learner history.",
+    "repairs": [
+      {
+        "canonical_id": "cq_47657a3aa9ebe56f",
+        "appearance_id": "c1a1d1eab924d016f651",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "c1a1d1eab924d016f651",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 2,
+          "qnum": "11",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_1754929a4c8450f5",
+        "appearance_id": "74733ffaedb0ccef61bb",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "74733ffaedb0ccef61bb",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 4,
+          "qnum": "23",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_a35d51a49bf96bd1",
+        "appearance_id": "3105005ca4006f0e3630",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "3105005ca4006f0e3630",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "type": "mcq",
+          "question": "The expression ‘safety-valve’ means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "explanation": null,
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 1,
+          "qnum": "2",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/ee50c2697458541b3adc303277a9c8498d94fddf06cdf3554921f110e1635bc8.png",
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_0094634adccca7bb",
+        "appearance_id": "6d98beded6fe1c73507e",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The original passage says work is a safety-valve after describing work as helping people withstand disappointments. Oxford Learner’s Dictionary gives the figurative sense as a harmless way of releasing feelings. Both support the printed option “an outlet for pent-up energy” (B); the exact MPSC final-key cell is C (“something which guarantees safety”). Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "6d98beded6fe1c73507e",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+          "type": "mcq",
+          "question": "The expression 'safety-valve' means",
+          "options": [
+            "something which blows up safety",
+            "an outlet for pent-up energy",
+            "something which guarantees safety",
+            "the leaf of a folding door"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 5,
+          "qnum": "31",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_1ae669fc002681f5",
+        "appearance_id": "772c13ea656447ac9baa",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "772c13ea656447ac9baa",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "answerIndex": 0,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 2,
+          "qnum": "12",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_763ca6705c5b6714",
+        "appearance_id": "65b21d160b8186a335ec",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "65b21d160b8186a335ec",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "answerIndex": 0,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 4,
+          "qnum": "24",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_b3c56baeb804cbbc",
+        "appearance_id": "69b37846964f014133e3",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "69b37846964f014133e3",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "type": "mcq",
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life’s work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "answerIndex": 0,
+          "answerSource": "official",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "explanation": null,
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 1,
+          "qnum": "3",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/ee50c2697458541b3adc303277a9c8498d94fddf06cdf3554921f110e1635bc8.png",
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      },
+      {
+        "canonical_id": "cq_40930f9786c0953b",
+        "appearance_id": "3ab168e7d44a6aceb65b",
+        "mode": "needs-review",
+        "reason": "Review hold only; retain examiner answer and provenance. The shared passage contrasts a man without a task, who is overwhelmed by disappointments, with a man who has a task and “has no time for vain regret.” That points toward the printed option “not need to work” (D), while the exact final-key cell is A (“chosen his life’s work rather carelessly”), which is not supported by the passage. Flag as an authority-key/context conflict; do not alter the answer. Exact original paper and final-key cell inspected. No replacement answer or independent review approval asserted.",
+        "expected_source": {
+          "id": "3ab168e7d44a6aceb65b",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+          "type": "mcq",
+          "question": "A man who suffers from vain regrets must have",
+          "options": [
+            "chosen his life's work rather carelessly",
+            "met with disastrous fate",
+            "been a victim of adverse circumstances",
+            "not need to work"
+          ],
+          "answerIndex": 0,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 5,
+          "qnum": "32",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "english",
+            "topic_id": "english/comprehension",
+            "subtopic_id": null
+          }
+        }
+      }
+    ]
+  },
+  "english_hold_receipt": {
+    "decisions": [
+      {
+        "id": "adm_8d8f7421d05d4a1fa4dc10357f041bd4",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_c3cc23fb84d94930b7cac29b9739597c",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_2b34b6750cbc443782a4e0e807ebbf6a",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_96db452b1d5d480abd3e76101d7cb84a",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_319486342a044908916b985ae44b3f25",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_3d845420953b4af09156f4f1e05e7ea4",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_e994f140052f41d195cfe527d5aabc30",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_bc4ea344bfff441f8b2329f184792bf1",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      }
+    ]
+  },
+  "code_hold_request": {
+    "operation": "answer-batch",
+    "owner_email": "hruaitluangasailo20@gmail.com",
+    "authorization": "Owner requested completion of the MCS quality review. Place exact-source review holds on two damaged-code appearances without changing answers, key provenance, source text or learner history.",
+    "repairs": [
+      {
+        "canonical_id": "cq_270ed0bcef7d820d",
+        "appearance_id": "244cc3f32547ecf7e9f2",
+        "mode": "needs-review",
+        "expected_source": {
+          "id": "244cc3f32547ecf7e9f2",
+          "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+          "type": "mcq",
+          "question": "In code language, ASTARK is written as LBFMG and MOBILE is written as TNRSPJ. How is BLAME written in that code?",
+          "options": [
+            "TSFRJ",
+            "RPFTJ",
+            "NJFTP",
+            "TSFGJ"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 11,
+          "qnum": "69",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "reason": "Source review hold only; preserve official answer and provenance. The exact printed code example maps six-letter ASTARK to five-letter LBFMG, while MOBILE maps six letters to six. The missing/unclear symbol correspondence does not establish a reliable rule for BLAME; no corrected code or replacement answer is invented. Original source excerpt and options inspected."
+      },
+      {
+        "canonical_id": "cq_f80f7c6e255205c6",
+        "appearance_id": "0854b7288b0a8fbe3a26",
+        "mode": "needs-review",
+        "expected_source": {
+          "id": "0854b7288b0a8fbe3a26",
+          "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+          "type": "mcq",
+          "question": "In code language, ASTARK is written as LBFMG and MOBILE is written as TNRSPJ. How is BLAME written in that code?",
+          "options": [
+            "TSFRJ",
+            "RPFTJ",
+            "NJFTP",
+            "TSFGJ"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 2,
+          "qnum": "2",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "reason": "Source review hold only; preserve official answer and provenance. The exact printed code example maps six-letter ASTARK to five-letter LBFMG, while MOBILE maps six letters to six. The missing/unclear symbol correspondence does not establish a reliable rule for BLAME; no corrected code or replacement answer is invented. Original source excerpt and options inspected."
+      }
+    ]
+  },
+  "code_hold_receipt": {
+    "decisions": [
+      {
+        "id": "adm_973382d362664aeb895dd35714f7df40",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      },
+      {
+        "id": "adm_4c1cc643300a49bf89e891e32b123674",
+        "contribution_id": null,
+        "state": "held",
+        "replayed": false
+      }
+    ]
+  },
+  "preserved": "No answer indices, provenance, source fields or bank records changed by needs-review decisions. Existing24 compensation holds are separate.",
+  "verification_limit": "Server returned held for each decision. A subsequent independent live-state/account/history query is pending restored connectivity; do not call that full follow-up verification complete."
+}
