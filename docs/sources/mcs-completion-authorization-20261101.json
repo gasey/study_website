@@ -1,5 +1,5 @@
 {
-  "status": "approved-not-published",
+  "status": "approved-published-and-verified",
   "date": "2026-11-01",
   "owner_response": "Yes, publish this 286-item packet",
   "scope": {
@@ -16,7 +16,8 @@
     "docs/sources/mcs-completion-explanations-20261101.json"
   ],
   "authorization": "Owner explicitly approved the exact286-publication packet on2026-11-01. This bounded exception covers only the reviewed staged source/explanation decisions; ordinary website limits and examiner answers remain unchanged.",
-  "publication_count": 0,
-  "execution_blocker": "Current session network restrictions deny SSH socket creation; existing SSH user authorization persists.",
-  "resume": "Do not request this approval again. Revalidate fresh local/live bank/holds/history/export state; coordinate publisher timer; publish78transcriptions then24source locators then100/84explanations using the audited workflow. Restore timer after full verification."
+  "publication_count": 286,
+  "execution_blocker": null,
+  "resume": "Exact286-item authorization fulfilled. Do not repeat these publications. Further checked content uses its applicable ordinary allowance or separate explicit bounded exception.",
+  "completion_receipt": "docs/sources/mcs-completion-publication-20261101.json"
 }

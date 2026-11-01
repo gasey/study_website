@@ -1,5 +1,5 @@
 {
-  "status": "286-publication packet approved and locally validated; publication blocked only by session SSH restriction",
+  "status": "all286publications completed and verified",
   "source_packet": "docs/sources/mcs-source-navigation-repairs-20261101.json",
   "passage_packet": "docs/sources/mcs-reading-passage-repairs-20261101.json",
   "explanation_packet": "docs/sources/mcs-completion-explanations-20261101.json",
@@ -31,18 +31,56 @@
   "ordinary_quota_last_checked": 788,
   "quota_exception_approval": "Explicitly approved: owner answered Yes, publish this286-item packet on2026-11-01. Scope exactly76passages+24locators+2radical stems+184explanations, up to286decisions. Do not ask again.",
   "ssh_authorization": "Already granted; do not request again.",
-  "execution_blocker": "Current session restricted network denies SSH socket creation before authentication.",
-  "bank_sha256": "8bca8cf30d69349b811dc23fe9584e2f42ddc7337be0f178109885c0e4e61644",
-  "bank_writes_this_task": false,
-  "exports_this_task": 0,
-  "publisher_timer": "Not touched this task; last verified active at preceding72-item completion.",
-  "tests": "35pure preparation tests passed with --noconftest; database fixture cannot connect under session socket restriction. Earlier10navigation tests passed normally before restriction.",
+  "execution_blocker": null,
+  "bank_sha256": "527d8757d2990b224b13a9471e8a000867c613b2af78f46f6b0841d96215684b",
+  "bank_writes_this_task": true,
+  "exports_this_task": 286,
+  "publisher_timer": "restored and verified active after full live verification",
+  "tests": "35targeted preparation tests passed with normal disposable-PostgreSQL fixture after access returned; staged source/explanation dry runs and final full-bank/live/history checks passed.",
   "limitations": [
     "Recent1600appearance scope only; historical numbering and unimported scanned-booklet intake remain separate.",
-    "All1,488blank explanation appearances still blank:184newtexts prepared, not live. Initial1,470candidate count is triage and precedes10newholds/provenance-specific exclusion.",
-    "One inferred-answer appearance excluded from explanation-only packet; three odd-organ drafts rejected rather than publish an inaccurate sense-organ rationale.",
-    "Ambiguous fence/ratio questions not rationalized; maintain separate source review leads.",
-    "2012/2013recovery remains deferred; original simulation remains gated."
+    "After184newexplanations,1,304usableanswered recent appearances still lack working (1,316allrecentMCQblanktexts). These counts are not publication eligibility.",
+    "One inferred-answer appearance and three odd-organ drafts excluded from explanation-only packet.",
+    "Ambiguous fence/ratio questions remain source review leads.",
+    "2012/2013recovery deferred; original-paper simulation remains gated."
   ],
-  "quota_exception_run": "mcs-completion-20261101"
+  "quota_exception_run": "mcs-completion-20261101",
+  "outstanding_exports": 0,
+  "publication_receipt": "docs/sources/mcs-completion-publication-20261101.json",
+  "final_verification": {
+    "status": "published-and-verified",
+    "publications": 286,
+    "passages_restored": 76,
+    "radical_expressions_restored": 2,
+    "page_locators_corrected": 24,
+    "explanations_added": 184,
+    "changed_question_objects": 206,
+    "unchanged_question_objects": 81421,
+    "answer_provenance_options_classification_papers_preserved": true,
+    "bank_sha256": "527d8757d2990b224b13a9471e8a000867c613b2af78f46f6b0841d96215684b",
+    "compensation_holds_preserved": 24,
+    "new_review_holds_preserved": 10,
+    "preexisting_attempt_rows_unchanged": 244,
+    "account": {
+      "attempts": 244,
+      "owner_unlimited": true
+    },
+    "health": {
+      "status": "ok",
+      "questions": 81627,
+      "scorable": 13156
+    },
+    "mcs_questions": 2967,
+    "mcs_scorable": 1546,
+    "peer_votes_and_credits": 0,
+    "quota_exception_events": 286,
+    "outstanding_exports": 0
+  },
+  "remaining_explanation_counts": {
+    "recent_appearances": 1600,
+    "usable_answered_mcqs": 1588,
+    "usable_answered_without_explanation": 1304,
+    "all_recent_mcqs_without_explanation": 1316,
+    "note": "Raw local content counts; not live publication eligibility or source completeness."
+  }
 }

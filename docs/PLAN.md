@@ -950,3 +950,9 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [ ] Continue remaining explanation/source integrity review, historical numbering/scanned-booklet intake and original-paper simulation prerequisites.2012/2013recovery remains deferred.
 
 - [x] Receive explicit authorization for the exact286-publication exception (`mcs-completion-20261101`); prior pending-approval notes superseded. Publication remains blocked by session SSH restriction only.
+
+### 1 November —286-publication completion verified
+
+- [x] Publish and verify all76passages+24locators+2maths-textrepairs+184explanations under the explicit286-item authorization; complete full-bank/live/audit/34hold/244attempt-row/account checks and restore publisher timer. Receipt: `docs/sources/mcs-completion-publication-20261101.json`.
+- [x] Confirm restored Oracle SSH/sudo access, normal35targeted tests, bank/taxonomy sync, health/family checks and actual live passage/reveal/explanation behavior. Earlier blocked/pending statuses for this exact packet are superseded.
+- [ ] Continue the wider MCS teaching/source/simulation backlog:1,304usableanswered recent appearances still lack explanations; historical numbering/scanned-booklet work and original-paper prerequisites remain.2012/2013deferred.
