@@ -929,3 +929,9 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [ ] Publish the checked72-item recent-explanation packet after the new bounded quota-exception choice is answered (or ordinary allowance becomes available). No new exception approval or publication has occurred at this checkpoint.
 - [x] Audit original-simulation prerequisites and collect exact2025cover evidence; retain timed-practice labelling and compensation holds.
 - [ ] Resolve the separate tenpage-locator/tworadicalstem findings and the unconfirmedEnglishmeaning/key review lead through fresh audited source/answer workflows. Continue the wider explanation backlog and simulation prerequisites;2012/2013recovery staysdeferred.
+
+
+### 1 November — approved explanation batch checkpoint
+
+- [x] Receive explicit owner approval for the pending bounded explanation-only quota exception; revalidate all72 prepared items locally. Authorization: `docs/sources/mcs-explanation-authorization-20261101.json`.
+- [ ] Publish and verify the72 explanations after server connectivity returns. Current session blocks SSH socket creation before authentication. Approval already received; do not ask again for this scope. No bank or timer changes made.

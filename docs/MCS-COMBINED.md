@@ -147,3 +147,8 @@ Luna prepared bounded maths, English and factual drafts; the coordinating operat
 Six dated revision notes are deployed, including the13September2026railway report and the2026–27MUHCSnotice. Stored historical answers remain unchanged. The actual current inventory and working evidence are under ignored `reports/mcs-explanations-20261101/`. All391backendtests and50frontendtests pass; API/frontend deployed and live index verified.
 
 All16recentbooklets still use platform-default practice rules. Eight2025covers state120minutes/100items/200marks with+2correct,−2/3wrong and0blank, saved as exact-source evidence only. Full original simulation remains gated by source/final-key readiness, original compensation treatment and frozen rational scoring. Tenverified2025Apage-locator discrepancies and two radical-stem transcription leads are separately recorded in `docs/sources/mcs-explanation-locator-findings-20261101.json`; no source mapping was changed in the explanation pass.2012/2013remainsdeferred.
+
+
+## 1 November — Explanation publication authorization received
+
+Owner explicitly answered “I approve” to the new up-to200 explanation-only quota-exception request. All72 packet items pass a fresh local preparation; none already has identical text. Prior awaiting-answer notes are historical. Authorization is recorded in docs/sources/mcs-explanation-authorization-20261101.json and must not be requested again for this scope. Publication remains pending because current session restrictions deny SSH socket creation before authentication. No exports, exception invocation, bank/server writes or timer changes occurred. Revalidate live baselines, coordinate the timer and publish with the existing audited workflow when connectivity returns.
