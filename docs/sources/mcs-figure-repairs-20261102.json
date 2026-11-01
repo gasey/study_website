@@ -1,0 +1,232 @@
+{
+  "status": "Published and live-verified; immutable reviewed input snapshots retained. See mcs-publication-20261102.json.",
+  "checked_on": "2026-11-02",
+  "input_bank_sha256": "527d8757d2990b224b13a9471e8a000867c613b2af78f46f6b0841d96215684b",
+  "workflow": "Separate audited withdrawal of invalid presentation answer (old provenance retained in immutable decision), source restoration, source-defect clearance and exact final-key mapping. Ordinary staff quota only. No grading against blank choices at any stage.",
+  "items": [
+    {
+      "appearance_id": "9ae15c0141a46ecf40c4",
+      "canonical_id": "cq_525aa39d5041d0bc",
+      "original_raw_record": {
+        "id": "9ae15c0141a46ecf40c4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "type": "mcq",
+        "qnum": 58,
+        "page": 9,
+        "question": "Consider the following figures : In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions. Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": null,
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": true,
+        "figureGroupId": "820d4d080ac22125acd8",
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": null,
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": null,
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved",
+            "confidence": 0.9,
+            "evidence": "Question-level review of pending Pending adjudication proposal (OpenCode Beam Free, 2026-10-21): Figure sequence is nonverbal reasoning."
+          }
+        ]
+      },
+      "baseline_sha256": "5d00cb167a02aaed8d24fbf66cd38933b97044cfe346598aa2f9d228a3b702c8",
+      "expected_source": {
+        "id": "9ae15c0141a46ecf40c4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "type": "mcq",
+        "question": "Consider the following figures : In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions. Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          null,
+          null,
+          null,
+          null
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 9,
+        "qnum": "58",
+        "hasDiagram": true,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_document": {
+        "id": "doc_3ca8a042c58ca9f11073ae4a",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "sha256": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "kind": "paper",
+        "key_status": null
+      },
+      "physical_pdf_page": 9,
+      "figure_image": "images/page-renders/137d2d76e1f9876be0a7fa543d91960e92f09f858679ba86c2ff29b420744dcb.png",
+      "figure_sha256": "137d2d76e1f9876be0a7fa543d91960e92f09f858679ba86c2ff29b420744dcb",
+      "options": [
+        "Triangle in the upper-left sector; square in the lower-right sector.",
+        "Square in the top sector; triangle in the lower-left sector.",
+        "Square and triangle together in the bottom sector (square left, triangle right).",
+        "Triangle in the top sector; square in the bottom sector."
+      ],
+      "key": {
+        "id": "key_db183bd84be63c0e61a11ac2",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "kind": "official-key",
+        "source_file": "pdfs/Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+        "sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+        "key_status": "final",
+        "page": 6,
+        "printed_question": 58,
+        "letter": "B",
+        "answer_index": 1
+      },
+      "withdrawal_explanation": "Source repair in progress: the printed diagram and choices are being restored. The earlier examiner-key attribution remains in the immutable audit; no replacement answer is asserted during this source-repair stage.",
+      "explanation": "The square advances one sector clockwise at every step: top, upper-right, lower-right, bottom, lower-left, upper-left, then top again. The triangle advances one sector anticlockwise: lower-left, bottom, lower-right, upper-right, top, upper-left, then lower-left again. Thus figure VII has the square at the top and the triangle in the lower-left sector. This matches printed option B; the exact final-key cell for this booklet also records B."
+    },
+    {
+      "appearance_id": "682a6da14ad9756567e4",
+      "canonical_id": "cq_7a38ee435ef86a07",
+      "original_raw_record": {
+        "id": "682a6da14ad9756567e4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "qnum": 8,
+        "page": 3,
+        "question": "Consider the following figures: In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions. Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": null,
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": true,
+        "figureGroupId": "27aa64e2b43210d98163",
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": null,
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": null,
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved",
+            "confidence": 0.9,
+            "evidence": "Question-level review of pending Pending adjudication proposal (DeepSeek V4.1 Flash Free, 2026-10-21): Figure-series reasoning."
+          }
+        ]
+      },
+      "baseline_sha256": "b8fd22ed88276063e3c7824a68cc6e4605dba77949fa06c8c093835c75be317a",
+      "expected_source": {
+        "id": "682a6da14ad9756567e4",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "question": "Consider the following figures: In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions. Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          "",
+          "",
+          "",
+          ""
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 3,
+        "qnum": "8",
+        "hasDiagram": true,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_document": {
+        "id": "doc_972535eb394779ce6becdba2",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "source_file": "pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "sha256": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "kind": "paper",
+        "key_status": null
+      },
+      "physical_pdf_page": 3,
+      "figure_image": "images/page-renders/9a79af743f69e93efca5fa44fd886369075bd51726236e2c21d799f47a47291b.png",
+      "figure_sha256": "9a79af743f69e93efca5fa44fd886369075bd51726236e2c21d799f47a47291b",
+      "options": [
+        "Triangle in the upper-left sector; square in the lower-right sector.",
+        "Square in the top sector; triangle in the lower-left sector.",
+        "Square and triangle together in the bottom sector (square left, triangle right).",
+        "Triangle in the top sector; square in the bottom sector."
+      ],
+      "key": {
+        "id": "key_c54e585cd9b44856cc1e15ed",
+        "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "kind": "official-key",
+        "source_file": "pdfs/Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+        "sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+        "key_status": "final",
+        "page": 8,
+        "printed_question": 8,
+        "letter": "B",
+        "answer_index": 1
+      },
+      "withdrawal_explanation": "Source repair in progress: the printed diagram and choices are being restored. The earlier examiner-key attribution remains in the immutable audit; no replacement answer is asserted during this source-repair stage.",
+      "explanation": "The square advances one sector clockwise at every step: top, upper-right, lower-right, bottom, lower-left, upper-left, then top again. The triangle advances one sector anticlockwise: lower-left, bottom, lower-right, upper-right, top, upper-left, then lower-left again. Thus figure VII has the square at the top and the triangle in the lower-left sector. This matches printed option B; the exact final-key cell for this booklet also records B."
+    }
+  ]
+}

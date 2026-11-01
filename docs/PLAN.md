@@ -956,3 +956,13 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Publish and verify all76passages+24locators+2maths-textrepairs+184explanations under the explicit286-item authorization; complete full-bank/live/audit/34hold/244attempt-row/account checks and restore publisher timer. Receipt: `docs/sources/mcs-completion-publication-20261101.json`.
 - [x] Confirm restored Oracle SSH/sudo access, normal35targeted tests, bank/taxonomy sync, health/family checks and actual live passage/reveal/explanation behavior. Earlier blocked/pending statuses for this exact packet are superseded.
 - [ ] Continue the wider MCS teaching/source/simulation backlog:1,304usableanswered recent appearances still lack explanations; historical numbering/scanned-booklet work and original-paper prerequisites remain.2012/2013deferred.
+
+
+### 2 November — MCS ordinary-quota source and explanation continuation
+
+- [x] Restore two 2025 graphical questions with original images, accessible A–D choices, separately cleared source flags and exact final-key mapping; correct seven maths stems and three physical-page links.
+- [x] Publish 18 explanation-only backfills plus two diagram workings; verify all 36 successful publications, full-bank diff, 34 holds, 244 existing attempt-row hashes, account access and public question/image output. Restore publisher timer and bank/taxonomy sync; 18 targeted tests pass.
+- [x] Retain and retire one unapplied stale export through normal review transitions; use a fresh reviewed decision and stay within 37 ordinary contribution slots, ending at 500/500 with zero exceptions.
+- [x] Save exact source/predecessor packets, 96 further drafts and three historical numbering candidates; preserve unrelated UDC work. Receipt: `docs/sources/mcs-publication-20261102.json`.
+- [ ] Resume remaining explanation review when ordinary allowance opens. Current recent backlog is 1,296 raw blanks / 1,290 with usable case-sensitive answers; held/source/provenance checks still apply. The older 1,304 usable count incorrectly casefolded four letter-code choices; corrected pre-run count was 1,308.
+- [ ] Address historical duplicate Q4/Q86 without unsupported retirement, add guarded unanswered original-source intake for 2014 II Q39, and satisfy original simulation source/key/scoring prerequisites. Keep 2012/2013 recovery deferred. Continue from `docs/sources/mcs-continuation-checkpoint-20261102.json`.

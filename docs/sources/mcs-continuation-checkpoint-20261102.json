@@ -1,0 +1,31 @@
+{
+  "status": "Current 36-publication packet complete, live-verified and bank/taxonomy in sync. Publisher timer active. Ordinary staff allowance exhausted at 500/500; next drafts are not authorized for a quota exception.",
+  "authorization": "Continue authorized MCS work using ordinary staff quotas only. Prior scoped exceptions are fulfilled and must not be reused.",
+  "current_requests": "reports/mcs-continue-20261102/",
+  "current_receipt": "docs/sources/mcs-publication-20261102.json",
+  "next_drafts": "docs/sources/mcs-next-explanation-drafts-20261102.json",
+  "next_draft_appearances": 96,
+  "next_steps": [
+    "Check current bank sync, publication queue, owner ordinary quota, existing attempts, holds, account and publisher timer before new work.",
+    "Source-check and coordinator-review the next 96 draft appearances against current bank records, exact PDF context and ordered case-sensitive choices. Publish only explicit fresh eligible explanation-only patches through established owner source batches, after pausing and draining the publisher.",
+    "Finish the wider recent explanation inventory. Count literal blanks separately from valid answered and live-eligible blanks; case distinctions in letter-code choices are significant.",
+    "Review historical duplicate-link candidates at 2016 Paper I C Q4 and Q86 with fresh reference/history checks. Links do not retire or merge source appearances.",
+    "Add a guarded original-source-only intake path for missing 2014 Paper II Q39 before importing its inspected unanswered figure. Do not route it through answered community authoring.",
+    "Keep original-paper simulation disabled until source content, exact final-key/compensation rules and immutable scoring readiness are satisfied.",
+    "Keep 2012/2013 booklet recovery deferred."
+  ],
+  "protected": {
+    "compensation_holds": 24,
+    "other_review_holds": 10,
+    "original_ordered_options_and_source_mapping": true,
+    "exam_specific_identity_and_shared_bank": true,
+    "unlimited_owner_account": true,
+    "learner_history": true
+  },
+  "sequencing_note": "Wait for sync and acknowledgement to finish before queuing the next single-item answer. A prepared export is tied to a whole-bank checksum; an unrelated in-flight sync can make it stale. Retain and retire any failed unapplied manifest through normal review transitions; never modify it in place.",
+  "bank_sha256": "6a060c94b8a398567455ee4c38916437200aaaffe60205b7121ad1539ccecec1",
+  "remaining_recent_raw_blank_explanations": 1296,
+  "remaining_recent_usable_answered_blank_explanations": 1290,
+  "original_simulation_enabled": false,
+  "publisher_timer": "active"
+}
