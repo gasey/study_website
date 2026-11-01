@@ -59,3 +59,14 @@ test('explanation rendering preserves working without claiming an official expla
  assert.doesNotMatch(text,/Reviewed solution working/)
  assert.match(explanation({source:'derived',explanation:'Working',context:{reviewed:true}}),/Reviewed solution working/)
 })
+test('MCS revision notes stay tied to the original year and distinguish dated references from current claims',()=>{
+ const stand='What is the main aim of Stand up India plan recently announced by the Prime Minister?'
+ assert.equal(revisionNoteFor(stand,2015),null)
+ assert.match(questionCurrentness(stand,'General Studies',2016).update.note,/22 July 2025/)
+ const lang='How many languages were initially included in the Indian Constitution?'
+ assert.match(questionCurrentness(lang,'Indian Polity',2015).update.note,/original 14/)
+ assert.equal(revisionNoteFor(lang,2025),null)
+ const bio='The number of Biodiversity Hotspots in the world is'
+ assert.match(questionCurrentness(bio,'Environment',2017).update.note,/Not Updated/)
+ assert.equal(revisionNoteFor(bio,2018),null)
+})

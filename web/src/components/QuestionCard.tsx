@@ -15,7 +15,7 @@ const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 /** Bank question card, ported from `India Study Map v3.dc.html` line 407.
  *  Exact values and the README-vs-markup disagreements are recorded in
  *  docs/DESIGN-FIDELITY.md — read that before changing anything here. */
-export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswered?: () => void }) {
+export default function QuestionCard({ q, onAnswered, onNext }: { q: Question; onAnswered?: () => void; onNext?:()=>void }) {
   const [picked, setPicked] = useState<number | null>(null)
   const [result, setResult] = useState<AnswerResult | null>(null)
   const [busy, setBusy] = useState(false)
@@ -141,7 +141,7 @@ export default function QuestionCard({ q, onAnswered }: { q: Question; onAnswere
       )}
 
       {!result&&!viewed&&answerable&&q.type==='mcq'&&<button type="button" disabled={picked===null||busy} onClick={()=>picked!==null&&void pick(picked)} className="mt-3 min-h-11 rounded-pill bg-ink px-4 py-2 text-[13px] text-paper disabled:opacity-40">{busy?'Checking…':'Check answer'}</button>}
-      {q.type==='mcq'&&<PracticeAnswerPanel qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={source?.paper_id} year={source?.year ?? q.first_year ?? q.last_year} available={answerable} disabled={busy} onBusy={setBusy} onViewed={()=>setViewed(true)}/>}
+      {q.type==='mcq'&&<PracticeAnswerPanel qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={source?.paper_id} year={source?.year ?? q.first_year ?? q.last_year} available={answerable} disabled={busy} onBusy={setBusy} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null)}} onNext={onNext}/>}
       <QuestionActions questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id}} answeredSignal={result}/>
       {source && <div className="mt-4 flex flex-wrap items-center gap-x-3 gap-y-1.5 border-t border-hairline pt-3 text-[12px] text-secondary"><span><strong className="font-semibold text-ink">Source:</strong> {source.exam || source.paper_id.split('/').pop()}{source.year ? ` · ${source.year}` : ''}{source.paper_label ? ` · ${source.paper_label}` : source.paper ? ` · Paper ${source.paper}` : ''}{source.section_label ? ` · Section: ${source.section_label}` : ''}{source.series ? ` · Series ${source.series}` : ''}{source.qnum ? ` · Q${source.qnum}` : ''}{source.page ? ` · p. ${source.page}` : ''}</span>{source.source_pdf_url && <a href={`${source.source_pdf_url}${source.page ? `#page=${source.page}` : ''}`} target="_blank" rel="noreferrer" className="font-semibold text-link underline">Source PDF ↗</a>}{q.times_asked > 1 && <Link to={scopeLink(`/bank/${q.id}`)} className="font-semibold text-link underline">All {q.times_asked} appearances ↗</Link>}</div>}
     </article>

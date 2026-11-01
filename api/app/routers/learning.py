@@ -114,6 +114,7 @@ async def candidates(cur,user,scope):
       FROM selected_ids ids JOIN v_mock_practice q ON q.id=ids.id
       LEFT JOIN question_classifications qc ON qc.question_id=q.id AND qc.review_status='approved'
       WHERE {question_scope('q',scope)} AND {not_assessed()}
+      AND NOT EXISTS(SELECT 1 FROM answer_reveals ar WHERE ar.user_id=%(user)s AND ar.canonical_id=q.id AND ar.revealed_at>clock_timestamp()-interval '30 minutes')
       ORDER BY vocabulary DESC,mistake DESC,saved DESC,q.id''',{'user':user,'scope':scope})
     return await cur.fetchall()
 

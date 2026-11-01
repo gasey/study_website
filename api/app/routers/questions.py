@@ -8,6 +8,7 @@ from ..exam_scope import ExamScope, DEFAULT_SCOPE, pool_view, scope_condition, q
 from psycopg.types.json import Jsonb
 from typing import Annotated, Literal
 
+from pydantic import BaseModel, ConfigDict, Field
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, Header
 
 from ..db import cursor
@@ -456,6 +457,80 @@ async def list_question_papers(
     )
 
 
+class PracticeStateItem(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    question_id: str = Field(min_length=1,max_length=100)
+    paper_id: str | None = Field(default=None,max_length=500)
+
+class PracticeStateRequest(BaseModel):
+    model_config = ConfigDict(extra='forbid')
+    items: list[PracticeStateItem] = Field(min_length=1,max_length=100)
+
+
+def viewed_payload(row):
+    if row['status']!='live' or row['answer_text'] is None or row['answer_source']=='none' or row['source_defect'] in ('duplicate-options','unresolved-source') or row['answer_text'] not in row['options']:
+        return None
+    return dict(viewed=True,answer_index=row['options'].index(row['answer_text']),
+        answer_text=row['answer_text'],answer_source=row['answer_source'],
+        verified=row['answer_source'] in ('official','key'),explanation=row['explanation'] or None)
+
+
+@router.post('/practice-state')
+async def practice_state(body: PracticeStateRequest,response:Response,
+    user_id:Annotated[str,Depends(current_user)],exam_scope:ExamScope=DEFAULT_SCOPE):
+    """Restore personal reading state without renewing the reveal cooldown.
+
+    The public question catalog stays answer-free and cacheable. Private state
+    is loaded in a bounded batch for the visible cards, not once per card.
+    """
+    response.headers['Cache-Control']='private, no-store'
+    async with cursor() as cur:
+        await cur.execute(f'''SELECT q.id,q.options,q.answer_text,q.answer_source,q.explanation,q.status,q.source_defect,
+          r.revealed_at,r.revealed_at+interval '30 minutes' AS retry_at,
+          greatest(0,ceil(extract(epoch from r.revealed_at+interval '30 minutes'-clock_timestamp())))::int AS retry_after_seconds
+          FROM answer_reveals r JOIN canonical_questions q ON q.id=r.canonical_id
+          WHERE r.user_id=%s AND q.id=ANY(%s) AND {question_scope('q',exam_scope)}
+          AND NOT EXISTS(SELECT 1 FROM attempts a WHERE a.user_id=r.user_id AND a.canonical_id=q.id AND a.at>=r.revealed_at)''',
+          (user_id,[item.question_id for item in body.items]))
+        rows={r['id']:r for r in await cur.fetchall()}
+        await cur.execute(f'''SELECT a.canonical_id,a.paper_id FROM appearances a JOIN papers p ON p.id=a.paper_id
+          WHERE a.canonical_id=ANY(%s) AND {scope_condition('p',exam_scope)}''',([*rows],))
+        sources={(r['canonical_id'],r['paper_id']) for r in await cur.fetchall()}
+        result=[]
+        for item in body.items:
+            state={'question_id':item.question_id,'paper_id':item.paper_id,'viewed':False,'answer':None,'retry_at':None,'retry_after_seconds':0,'restricted':False}
+            row=rows.get(item.question_id)
+            if row and (item.paper_id is None or (item.question_id,item.paper_id) in sources):
+                try:
+                    await protect_answer(cur,user_id,item.question_id)
+                except HTTPException as exc:
+                    if exc.status_code!=409:raise
+                    state.update(restricted=True,message=exc.detail)
+                else:
+                    answer=viewed_payload(row)
+                    state.update(viewed=True,answer={**answer,'retry_at':row['retry_at'],'retry_after_seconds':row['retry_after_seconds']} if answer else None,retry_at=row['retry_at'],retry_after_seconds=row['retry_after_seconds'])
+            result.append(state)
+    return {'items':result}
+
+
+@router.get('/{question_id}/next')
+async def next_question(question_id:str,paper_id:str|None=Query(None,max_length=500),exam_scope:ExamScope=DEFAULT_SCOPE):
+    """Next available question in the selected paper's printed order."""
+    async with cursor() as cur:
+        await cur.execute(f'''SELECT a.paper_id FROM appearances a JOIN papers p ON p.id=a.paper_id
+          JOIN canonical_questions q ON q.id=a.canonical_id AND q.status IN ('live','held')
+          WHERE a.canonical_id=%s AND (%s::text IS NULL OR a.paper_id=%s) AND {scope_condition('p',exam_scope)}
+          ORDER BY a.is_primary DESC,p.year DESC NULLS LAST,a.id LIMIT 1''',(question_id,paper_id,paper_id))
+        source=await cur.fetchone()
+        if not source:raise HTTPException(404,'Question source not found in this exam scope')
+        await cur.execute('''SELECT a.canonical_id FROM appearances a JOIN canonical_questions q ON q.id=a.canonical_id
+          WHERE a.paper_id=%s AND q.status IN ('live','held')
+          ORDER BY CASE WHEN a.qnum ~ '^[0-9]{1,8}$' THEN a.qnum::int END NULLS LAST,a.page NULLS LAST,a.id''',(source['paper_id'],))
+        ids=list(dict.fromkeys(r['canonical_id'] for r in await cur.fetchall()))
+        position=ids.index(question_id)
+        return {'question_id':ids[position+1] if position+1<len(ids) else None,'paper_id':source['paper_id']}
+
+
 @router.get("/{question_id}/answer-comparison")
 async def answer_comparison(question_id: str, response: Response,
     user_id: Annotated[str, Depends(current_user)],
@@ -525,9 +600,8 @@ async def reveal_answer(question_id: str, response: Response,
         if row['answer_text'] not in row['options']:
             raise HTTPException(409, 'The stored answer needs source review.')
         await record_reveal(cur, user_id, question_id)
-        return dict(viewed=True, answer_index=row['options'].index(row['answer_text']),
-            answer_text=row['answer_text'],answer_source=row['answer_source'],
-            verified=row['answer_source'] in ('official','key'),explanation=row['explanation'] or None)
+        await cur.execute("SELECT revealed_at+interval '30 minutes' AS retry_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s",(user_id,question_id))
+        return {**viewed_payload(row),**(await cur.fetchone()),'retry_after_seconds':1800}
 
 
 @router.get("/{question_id}", response_model=QuestionDetail)

@@ -683,10 +683,12 @@ export default function QuestionDiscussion({
       void load(0);
     };
     window.addEventListener("ism-auth-change", update);
+    window.addEventListener("ism-answer-viewed", update);
     return () => {
       active = false;
       ++generation.current;
       window.removeEventListener("ism-auth-change", update);
+      window.removeEventListener("ism-answer-viewed", update);
     };
   }, [qid, answeredSignal, focus]);
   const posts =
@@ -721,7 +723,7 @@ export default function QuestionDiscussion({
           <p className="text-[14px]">
             {data.can_disclose
               ? "This question is unscored or has no checkable MCQ answer. Discussion may contain suggested answers."
-              : "Answer this question to unlock its discussion."}
+              : "Check or show the answer to unlock its discussion."}
           </p>
           {data.can_disclose &&
             (data.registered ? (

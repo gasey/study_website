@@ -182,7 +182,7 @@ export default function Bank() {
                   </div>
                 ))}
               </div>
-            ) : !error && data?.items.map((q) => <QuestionCard key={q.id} q={q} />)}
+            ) : !error && data?.items.map((q,index) => <QuestionCard key={q.id} q={q} onNext={()=>{const next=data.items[index+1];if(next)document.getElementById('question-'+next.id)?.scrollIntoView({block:'start',behavior:'smooth'});else if(page<pages){setParams(previous=>{const next=new URLSearchParams(previous);next.set('page',String(page+1));return next});requestAnimationFrame(()=>scrollToResults('bank-results'))}}} />)}
             {!loading && !error && data?.items.length === 0 && (
               <div className="rounded-[14px] border border-hairline bg-card p-7 text-center">
                 <h2 className="font-display text-[23px] font-medium">No questions found</h2>

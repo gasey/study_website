@@ -92,3 +92,82 @@ def test_active_game_and_unclosed_cup_block_view(client,actor,database,cup):
     assert client.get(url+'/answer-comparison').status_code==409
     assert not conn.execute('SELECT 1 FROM answer_reveals WHERE user_id=%s',(user,)).fetchone()
     assert counts(conn,user)==(0,0)
+
+
+def test_restore_is_private_and_does_not_renew_or_submit(client,actor,database):
+    q,p,user,h,conn=setup(database,actor)
+    first=client.post('/api/questions/'+q+'/reveal',headers=h).json()
+    stamp=conn.execute('SELECT revealed_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,q)).fetchone()[0]
+    payload={'items':[{'question_id':q,'paper_id':p},{'question_id':q,'paper_id':'wrong-paper'},{'question_id':'absent'}]}
+    r=client.post('/api/questions/practice-state',json=payload,headers=h)
+    assert r.status_code==200,r.text
+    assert r.headers['cache-control']=='private, no-store'
+    states=r.json()['items'];state=states[0]
+    assert state['viewed'] and state['answer']['answer_text']=='B' and state['retry_at']==first['retry_at']
+    assert 0<state['retry_after_seconds']<=1800
+    assert not states[1]['viewed'] and not states[2]['viewed']
+    assert conn.execute('SELECT revealed_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,q)).fetchone()[0]==stamp
+    assert counts(conn,user)==(0,0)
+    _,other_h=learner(database,actor)
+    assert not client.post('/api/questions/practice-state',json=payload,headers=other_h).json()['items'][0]['viewed']
+
+
+def test_restore_rechecks_active_assessment_and_expires_honestly(client,actor,database):
+    q,p,user,h,conn=setup(database,actor)
+    assert client.post('/api/questions/'+q+'/reveal',headers=h).status_code==200
+    mid=uuid4().hex
+    conn.execute("INSERT INTO mock_sessions(id,user_id,collection_id,question_ids,duration_seconds)VALUES(%s,%s,'ldc',%s,60)",(mid,user,[q]))
+    payload={'items':[{'question_id':q,'paper_id':p},{'question_id':'cq_test'}]}
+    state=client.post('/api/questions/practice-state',headers=h,json=payload).json()['items']
+    assert state[0]['restricted'] and state[0]['answer'] is None and not state[1]['restricted']
+    conn.execute('DELETE FROM mock_sessions WHERE id=%s',(mid,))
+    conn.execute("UPDATE answer_reveals SET revealed_at=now()-interval '31 minutes' WHERE user_id=%s AND canonical_id=%s",(user,q))
+    state=client.post('/api/questions/practice-state',headers=h,json=payload).json()['items'][0]
+    assert state['viewed'] and state['retry_after_seconds']==0
+    assert client.post('/api/questions/'+q+'/answer',headers=h,json={'chosen_index':1}).status_code==200
+    state=client.post('/api/questions/practice-state',headers=h,json=payload).json()['items'][0]
+    assert not state['viewed'] and state['answer'] is None
+
+
+def test_restore_batch_is_bounded(client,actor,database):
+    _,_,_,h,_=setup(database,actor)
+    for items in ([],[{'question_id':'cq_test'}]*101):
+        assert client.post('/api/questions/practice-state',headers=h,json={'items':items}).status_code==422
+
+
+def test_next_uses_printed_order_and_scope(client,actor,database):
+    from psycopg.types.json import Jsonb
+    q,p,user,h,conn=setup(database,actor)
+    second,aid,p2=official(database)
+    conn.execute("UPDATE appearances SET paper_id=%s,qnum='2',options=%s WHERE id=%s",(p,Jsonb(['D','C','B','A']),aid))
+    r=client.get('/api/questions/'+q+'/next',params={'paper_id':p})
+    assert r.status_code==200 and r.json()=={'question_id':second,'paper_id':p},r.text
+    assert client.get('/api/questions/'+second+'/next',params={'paper_id':p}).json()['question_id'] is None
+    assert client.get('/api/questions/'+q+'/next',params={'paper_id':p2}).status_code==404
+    assert counts(conn,user)==(0,0)
+
+
+def test_reveal_unlocks_discussion_without_attempt_and_keeps_test_gate(client,actor,database):
+    q,p,user,h,conn=setup(database,actor)
+    thread='/api/community/questions/'+q+'/discussion'
+    assert not client.get(thread).json()['allowed']
+    assert client.post('/api/questions/'+q+'/reveal',headers=h).status_code==200
+    assert client.get(thread).json()['allowed']
+    r=client.post(thread,headers={**h,'Idempotency-Key':uuid4().hex},json={'kind':'doubt','body':'Can someone explain the reasoning behind this option?'})
+    assert r.status_code==201,r.text
+    assert counts(conn,user)==(0,0)
+    mid=uuid4().hex
+    conn.execute("INSERT INTO mock_sessions(id,user_id,collection_id,question_ids,duration_seconds)VALUES(%s,%s,'ldc',%s,60)",(mid,user,[q]))
+    assert client.get(thread).status_code==409
+    conn.execute('DELETE FROM mock_sessions WHERE id=%s',(mid,))
+
+
+def test_saved_revision_waits_until_reveal_window_expires(client,actor,database):
+    from psycopg.types.json import Jsonb
+    q,p,user,h,conn=setup(database,actor)
+    conn.execute('INSERT INTO personal_desks(user_id,document) VALUES(%s,%s)',(user,Jsonb({'saved':[q]})))
+    assert client.get('/api/learning/revision',headers={**h,'X-Learning-User':user}).json()['available']==1
+    assert client.post('/api/questions/'+q+'/reveal',headers=h).status_code==200
+    assert client.get('/api/learning/revision',headers={**h,'X-Learning-User':user}).json()['available']==0
+    conn.execute("UPDATE answer_reveals SET revealed_at=now()-interval '31 minutes' WHERE user_id=%s AND canonical_id=%s",(user,q))
+    assert client.get('/api/learning/revision',headers={**h,'X-Learning-User':user}).json()['available']==1

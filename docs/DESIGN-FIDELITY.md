@@ -437,3 +437,7 @@ Preserve boxed question cards with 12px phone / 16px desktop outer gutters. Boun
 ### 31 October 2026 — MCS Prelims paths
 
 Retain existing Combined colours, boxed cards and outer gutter system. Present two clear source-paper paths above shared views, stack on phones and use two columns on wider screens. Keep selected-role links through topics, papers and practice. Disclose recovered-copy status directly on paper cards, with source details inside the existing disclosure. No Mains availability or complete-paper simulation claim in this release.
+
+### 1 November 2026 — Reading continuity and revision actions
+
+Owner accepted explicit Check answer / Show answer and requested the follow-up actions. Reuse existing cream paper, white card, hairline borders, 10px inner panel radius, 14px body and 12px notes. Continue studying is a wrapping row of existing pill controls with 44px minimum targets: Save for revision, Retry later, Next question. Reading mode shows remaining minutes and offers Retry now when its server window expires. Keep countdown changes outside live announcements to avoid repeated screen-reader interruptions. Preserve the existing source-paper identity and result layout.

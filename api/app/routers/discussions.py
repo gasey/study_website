@@ -60,10 +60,11 @@ async def access(cur,qid,user,write=False):
     await cur.execute('SELECT 1 FROM attempts WHERE user_id=%s AND canonical_id=%s LIMIT 1',(user,qid));answered=bool(await cur.fetchone())
     exceptional=q['status']=='held' or q['source_defect'] in ('duplicate-options','unresolved-source') or q['type']!='mcq' or not q['answer_text'] or (q['options'] or []).count(q['answer_text'])!=1
     await cur.execute('SELECT 1 FROM discussion_disclosures WHERE user_id=%s AND canonical_id=%s',(user,qid));disclosed=bool(await cur.fetchone())
-    allowed=answered or (exceptional and disclosed)
+    await cur.execute('SELECT 1 FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,qid));viewed=bool(await cur.fetchone())
+    allowed=answered or viewed or (exceptional and disclosed)
     await cur.execute('SELECT reason FROM thread_locks WHERE canonical_id=%s AND (until IS NULL OR until>now())',(qid,));lock=await cur.fetchone()
     if write:
-        if not allowed:raise HTTPException(403,'Answer this question before joining its discussion, or open discussion for an unscored question')
+        if not allowed:raise HTTPException(403,'Check or show the answer before joining its discussion, or open discussion for an unscored question')
         if lock:raise HTTPException(409,'Discussion is locked: '+(lock['reason'] or 'moderation review'))
         await cur.execute("SELECT 1 FROM sanctions WHERE user_id=%s AND kind IN ('mute','suspension') AND lifted_at IS NULL AND starts_at<=now() AND (ends_at IS NULL OR ends_at>now())",(user,))
         if await cur.fetchone():raise HTTPException(403,'Your account is currently restricted from discussion changes')
@@ -81,7 +82,7 @@ async def post_visible(cur,pid,user):
     await cur.execute(SELECT+' WHERE p.id=%s AND '+VISIBLE,(user,user,pid,user,user,user));p=await cur.fetchone()
     if not p:raise HTTPException(404,'Discussion post not found')
     a=await access(cur,p['canonical_id'],user)
-    if not a['allowed']:raise HTTPException(403,'Answer the question before reading this discussion')
+    if not a['allowed']:raise HTTPException(403,'Check or show the answer before reading this discussion')
     if p['parent_id']:
         await cur.execute('SELECT 1 FROM posts p WHERE p.id=%s AND '+VISIBLE,(p['parent_id'],user,user,user))
         if not await cur.fetchone():raise HTTPException(404,'Discussion is unavailable')

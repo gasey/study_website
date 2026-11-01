@@ -246,7 +246,7 @@ def test_original_and_adjusted_history_block_active_overlap(client,actor,databas
 
 def test_owner_retries_stalled_jobs_without_changing_assessments(client,actor,database):
     conn=database[1];qid,cid,mid,h,_=start_and_finish(client,actor,database)
-    before=conn.execute('SELECT count(*) FROM mock_assessments').fetchone()[0]
+    before=dict(conn.execute('SELECT id,payload FROM mock_assessments').fetchall())
     conn.execute("INSERT INTO assessment_jobs(canonical_id,failures,last_error) VALUES (%s,5,'Synthetic failure') ON CONFLICT(canonical_id) DO UPDATE SET failures=5",(qid,))
     conn.execute('UPDATE new_score_jobs SET failures=5 WHERE mock_id=%s',(mid,))
     assert client.post('/api/admin/bank/assessments/retry',headers=actor('outsider'),json={'reason':'Synthetic recovery check by unauthorized account.'}).status_code==403
@@ -254,4 +254,7 @@ def test_owner_retries_stalled_jobs_without_changing_assessments(client,actor,da
     assert response.status_code==200,response.text
     assert response.json()['retried']>=2
     assert conn.execute('SELECT failures FROM assessment_jobs WHERE canonical_id=%s',(qid,)).fetchone()[0]==0
-    assert conn.execute('SELECT count(*) FROM mock_assessments').fetchone()[0]==before
+    # The live test worker may append an unrelated queued assessment while
+    # retry runs; previously recorded assessment payloads must stay immutable.
+    after=dict(conn.execute('SELECT id,payload FROM mock_assessments').fetchall())
+    assert all(after.get(key)==payload for key,payload in before.items())

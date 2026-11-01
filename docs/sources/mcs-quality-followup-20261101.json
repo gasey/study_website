@@ -1,0 +1,3891 @@
+{
+  "schema": 1,
+  "review_date": "2026-11-01",
+  "status": "Checked local drafts only; ordinary staff publication allowance unavailable",
+  "bank_sha256": "84c8752c01502b70353574e4bc2207c49b69d1d11e4ec8fcdca5aff2aa61b90c",
+  "policy": "Single authorized operator review, not independent peer approval. No bank writes, answers, source-flag clearances, publications or rewards occurred. Keep 2012/2013 recovery deferred. Do not publish a defect or answer before its source prerequisites are verified.",
+  "source_review_count": 39,
+  "transcription_drafts": 31,
+  "clearance_candidates": 35,
+  "retained_defects": 4,
+  "answer_explanation_drafts": 35,
+  "items": [
+    {
+      "appearance_id": "ec68ba55f13908c70cb2",
+      "canonical_id": "cq_e08e509f86cc331b",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+      "printed_question": 53,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2015-i",
+      "source_sha256": "d8ed118b1965298a51ec597f09e0c5613683708c6c2a2945d28813e1862c7cbe",
+      "baseline_sha256": "a6ff9700d7891122c12acdc737a21d65d21ba8605796adc7d585edafde3a3d0d",
+      "expected_source": {
+        "id": "ec68ba55f13908c70cb2",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many languages were initially included in the Indian Constitution?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "53",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/1e4ed259785e94a7f8a54438d11e8d6d81d79ab0102d4b24e50f8421c8f8fa7a.png",
+        "classification": {
+          "subject_id": "general-studies",
+          "topic_id": "general-studies/indian-polity",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "14",
+          "15",
+          "16",
+          "17"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "ec68ba55f13908c70cb2",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many languages were initially included in the Indian Constitution?",
+        "options": [
+          "14",
+          "15",
+          "16",
+          "17"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "53",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/1e4ed259785e94a7f8a54438d11e8d6d81d79ab0102d4b24e50f8421c8f8fa7a.png",
+        "classification": {
+          "subject_id": "general-studies",
+          "topic_id": "general-studies/indian-polity",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "general-studies",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "14",
+        "explanation": "The original Eighth Schedule contained 14 languages. Later additions brought the number to 22, so “initially” rules out using the later total. A Government of India release dated 18 December 2024 explicitly distinguishes these counts and records the subsequent additions. Reference: https://www.coal.nic.in/sites/default/files/2024-12/PIB2085529.pdf#page=2 . This is an unofficial explanation for the recovered reproduction, not an examiner key.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "7d18fc0104c53b466833",
+      "canonical_id": "cq_48f806f3c110fb56",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 39,
+      "physical_pdf_page": 8,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "bc15d9255dcf3211311e141e88cf61b993686157ed70f0744cd0c1a9982abeb6",
+      "expected_source": {
+        "id": "7d18fc0104c53b466833",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Printed question 39. Read the source image.",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 8,
+        "qnum": "39",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/24144d028442693f98908fcf5e8f9969dc8fe44582639b677b72b9a0b600c2a4.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "Each of the problem figures is incomplete. Choose the correct pattern from the answer figures to complete the pattern. (See the source image for question 39.)",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "7d18fc0104c53b466833",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Each of the problem figures is incomplete. Choose the correct pattern from the answer figures to complete the pattern. (See the source image for question 39.)",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 8,
+        "qnum": "39",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/24144d028442693f98908fcf5e8f9969dc8fe44582639b677b72b9a0b600c2a4.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "Figure (a) in the source image",
+        "explanation": "Compare the two rows within each column. The lower-left curved piece is the vertical reflection of the upper-left piece. Applying that same reflection to the upper-right piece moves its thick horizontal stroke to the bottom while retaining the right-hand vertical stroke. Figure (a) supplies that missing lower-right pattern. Read the actual shapes in the source image; the letter is tied to this reproduction.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "3ae86f05d0c031f13168",
+      "canonical_id": "cq_8206b311bcfa4768",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 40,
+      "physical_pdf_page": 8,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "714aaa0bc280f0885488f219e463a57f76ec02d2c63a25d2466c3bfadc7fd005",
+      "expected_source": {
+        "id": "3ae86f05d0c031f13168",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "40.",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 8,
+        "qnum": "40",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/92c7d396c43d5c7c0725931bbffe3193b310d74ef42d1184ac9a06a838fe6e6d.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "3ae86f05d0c031f13168",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "40.",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 8,
+        "qnum": "40",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/92c7d396c43d5c7c0725931bbffe3193b310d74ef42d1184ac9a06a838fe6e6d.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "retain-unresolved-source",
+      "rationale": "The source reproduction prints option label (d) but its figure is blank. The missing figure cannot be reconstructed from the other choices or an assumed answer. Keep unresolved-source and no answer; recover a better scan or matching original booklet."
+    },
+    {
+      "appearance_id": "a9fc914e4fdbbbaf2ad4",
+      "canonical_id": "cq_c53231d587f68121",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 41,
+      "physical_pdf_page": 9,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "43c29da0c64d64edb30def9599620ad4f0474f6600bd954dc57b01dbd557c73b",
+      "expected_source": {
+        "id": "a9fc914e4fdbbbaf2ad4",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "41.",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 9,
+        "qnum": "41",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e0d8e3fb801b8ee007de105f4e6cf774deca3720e29604a503689084094a88ea.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "Choose the correct pattern from the answer figures to complete the incomplete problem figure. (See the source image for question 41.)",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "a9fc914e4fdbbbaf2ad4",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Choose the correct pattern from the answer figures to complete the incomplete problem figure. (See the source image for question 41.)",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 9,
+        "qnum": "41",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e0d8e3fb801b8ee007de105f4e6cf774deca3720e29604a503689084094a88ea.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "Figure (c) in the source image",
+        "explanation": "In each row, line elements present in both of the first two figures disappear in the third; the central point remains. Row 1 leaves the cross, row 2 leaves a circle with the cross, and row 3 leaves only the circle and central point after removing the common diagonals. That is figure (c). Use the actual source figures to check the operation.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      },
+      "additional_source_pages": [
+        8
+      ]
+    },
+    {
+      "appearance_id": "d703d71d06cb42fa5519",
+      "canonical_id": "cq_c054b61ebfb1818d",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 52,
+      "physical_pdf_page": 10,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "ffa2e49cb369787880529d0b01cfb7a5b13e504257d555485f6ad61068027ac3",
+      "expected_source": {
+        "id": "d703d71d06cb42fa5519",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes have at least one blue face?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "52",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/156ce6553a7cca34d457a8415a48ee15ca90c01796fad9ca92723818ff4fadc1.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "20",
+          "18",
+          "17",
+          "16"
+        ],
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "d703d71d06cb42fa5519",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes have at least one blue face?",
+        "options": [
+          "20",
+          "18",
+          "17",
+          "16"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "difficulty": null,
+        "page": 10,
+        "qnum": "52",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/156ce6553a7cca34d457a8415a48ee15ca90c01796fad9ca92723818ff4fadc1.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "17",
+        "explanation": "Scale the original cube to side 1. The four-cube half is a 2×2×1 arrangement; its two adjacent blue sides cover 2+2−1=3 cubes. The 32-cube half is 4×4×2; its two blue sides cover 8+8−2=14 cubes. Count the blue-edge intersections only once. Total: 3+14=17, option (c). The shared cube-cutting instructions are essential.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "54f25694e7df2c3d779c",
+      "canonical_id": "cq_65fb454fccee631d",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 53,
+      "physical_pdf_page": 11,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "e6374095863634267621291247547a32a8b687acdf788739f7f299ef6f324596",
+      "expected_source": {
+        "id": "54f25694e7df2c3d779c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes have at least two colored faces?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "53",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/56f8f2f32bbb1d12a117e5d83a07b947ed089d05d3b0c1454d8acc1a2ca0fcb5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "24",
+          "28",
+          "16",
+          "20"
+        ],
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "54f25694e7df2c3d779c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes have at least two colored faces?",
+        "options": [
+          "24",
+          "28",
+          "16",
+          "20"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "difficulty": null,
+        "page": 11,
+        "qnum": "53",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/56f8f2f32bbb1d12a117e5d83a07b947ed089d05d3b0c1454d8acc1a2ca0fcb5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "20",
+        "explanation": "The 2×2×1 half contributes all four cubes: each touches the red outer face and at least one coloured side. In the 4×4×2 half, the red-face layer contributes its 12 perimeter cubes; the other layer contributes its four corner cubes, each touching two coloured sides. Total with at least two coloured faces: 4+12+4=20, option (d). The unpainted cutting face does not count as coloured.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      },
+      "additional_source_pages": [
+        10
+      ]
+    },
+    {
+      "appearance_id": "85671235bb9b9696674c",
+      "canonical_id": "cq_01b3c8b34efeef68",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 54,
+      "physical_pdf_page": 11,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "4e1b22f59fc46543d1181620b110fc5e702e3db21c6fbaa94ef3b56d6a340c79",
+      "expected_source": {
+        "id": "85671235bb9b9696674c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes do not have any colored face?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "54",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/56f8f2f32bbb1d12a117e5d83a07b947ed089d05d3b0c1454d8acc1a2ca0fcb5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "4",
+          "6",
+          "8",
+          "12"
+        ],
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "85671235bb9b9696674c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many cubes do not have any colored face?",
+        "options": [
+          "4",
+          "6",
+          "8",
+          "12"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "A cube has been colored red on its opposite two faces, blue on two adjacent faces and yellow on the two remaining faces. Then, it is cut into two halves along the plane parallel to the red faces. One piece is cut into four equal cubes and the other one into 32 equal cubes.",
+        "difficulty": null,
+        "page": 11,
+        "qnum": "54",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/56f8f2f32bbb1d12a117e5d83a07b947ed089d05d3b0c1454d8acc1a2ca0fcb5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": null,
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "4",
+        "explanation": "Every cube in the 2×2×1 half touches the painted red face. In the 4×4×2 half, only the layer next to the unpainted cutting face can contain unpainted cubes. Removing its painted side-edge positions leaves the inner 2×2 cells: 4 cubes, option (a).",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      },
+      "additional_source_pages": [
+        10
+      ]
+    },
+    {
+      "appearance_id": "cb59e1360373a4d612e7",
+      "canonical_id": "cq_f0ae6fd8912473eb",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 59,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "311a3328e5e9498f08b5e0d8927b0852e1d840043bc2adb8e36216d5a88bf27e",
+      "expected_source": {
+        "id": "cb59e1360373a4d612e7",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A student has to secure 35% marks to pass. He got 80 marks and failed by 60 marks. The maximum\n    marks are",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "59",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/cbd1fc180689d7681ecce0f6f76ca5b6ff39e19c4aea984c1dbbc9850dad3705.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "100",
+          "200",
+          "300",
+          "400"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "cb59e1360373a4d612e7",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A student has to secure 35% marks to pass. He got 80 marks and failed by 60 marks. The maximum\n    marks are",
+        "options": [
+          "100",
+          "200",
+          "300",
+          "400"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "59",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/cbd1fc180689d7681ecce0f6f76ca5b6ff39e19c4aea984c1dbbc9850dad3705.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "400",
+        "explanation": "Passing requires 80+60=140 marks. Since this is 35% of the maximum, the maximum is 140÷0.35=400, option (d). The 60 is the shortfall from the pass mark, not the total mark.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "6b1deb64092c47421772",
+      "canonical_id": "cq_8bcab79db01d32c5",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 60,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "493cfda24a6f3a4087813ab80e480ddae0b662dc2f2eef50832997ad313d6031",
+      "expected_source": {
+        "id": "6b1deb64092c47421772",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "What is the next number in the series 8, 12, 24, 60, ?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "60",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/cbd1fc180689d7681ecce0f6f76ca5b6ff39e19c4aea984c1dbbc9850dad3705.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "158",
+          "160",
+          "168",
+          "170"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "6b1deb64092c47421772",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "What is the next number in the series 8, 12, 24, 60, ?",
+        "options": [
+          "158",
+          "160",
+          "168",
+          "170"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "60",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/cbd1fc180689d7681ecce0f6f76ca5b6ff39e19c4aea984c1dbbc9850dad3705.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "168",
+        "explanation": "The successive differences are 12−8=4, 24−12=12 and 60−24=36. Multiplying each difference by 3 gives the next difference 108. Hence the next term is 60+108=168, option (c). This states the pattern used rather than treating a finite series as having a unique mathematical continuation.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "f293b89091c7b3eb8cbe",
+      "canonical_id": "cq_4cc081cbb9a470f3",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 66,
+      "physical_pdf_page": 13,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "6a954d635bd52013966b43439899c45df2a56ef6fcb23b2d0cf75765c94b6ed0",
+      "expected_source": {
+        "id": "f293b89091c7b3eb8cbe",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "3       1      3\n\n        36      ?     91",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "66",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/12f97898ff58859202f4ccc1f4c5d4368839cf03043f965eafe30178ce5c32aa.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/numerical-ability",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "Which number, when placed at the question mark, completes the matrix?\n2 | 4 | 0\n1 | 2 | 4\n3 | 1 | 3\n36 | ? | 91",
+        "options": [
+          "62",
+          "73",
+          "47",
+          "23"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "f293b89091c7b3eb8cbe",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Which number, when placed at the question mark, completes the matrix?\n2 | 4 | 0\n1 | 2 | 4\n3 | 1 | 3\n36 | ? | 91",
+        "options": [
+          "62",
+          "73",
+          "47",
+          "23"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "66",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/12f97898ff58859202f4ccc1f4c5d4368839cf03043f965eafe30178ce5c32aa.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/numerical-ability",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 1,
+        "answer_text": "73",
+        "explanation": "The bottom entry is the sum of the cubes of the three numbers above it. The first column gives 2³+1³+3³=36 and the third gives 0³+4³+3³=91. The middle column therefore gives 4³+2³+1³=64+8+1=73, option (b).",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "dc3b10001ee119b7440e",
+      "canonical_id": "cq_e9bb2cde7f0f7c56",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 74,
+      "physical_pdf_page": 14,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "9d5dfea3a635280783ffeed453d1852465063e83ce2f60de29555e364e7a62b6",
+      "expected_source": {
+        "id": "dc3b10001ee119b7440e",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A two digit number is four times the sum of its digits and twice the product of the digits, then the\n     number is",
+        "options": [
+          "45",
+          "36",
+          "54",
+          "18"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 14,
+        "qnum": "74",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/a96d559728844039f3046ae180ed4f40082547bc5c9b0a2cc0b0c4509a512d99.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "45",
+          "36",
+          "25",
+          "18"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "dc3b10001ee119b7440e",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A two digit number is four times the sum of its digits and twice the product of the digits, then the\n     number is",
+        "options": [
+          "45",
+          "36",
+          "25",
+          "18"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 14,
+        "qnum": "74",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/a96d559728844039f3046ae180ed4f40082547bc5c9b0a2cc0b0c4509a512d99.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Correct a previously published mistranscription: the inspected PDF prints option (c) as 25, not 54. The current hold and null answer prevented scoring against the wrong transcription.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 1,
+        "answer_text": "36",
+        "explanation": "Write the digits as a and b. From 10a+b=4(a+b), obtain 6a=3b, so b=2a. From 10a+b=2ab, substitute b=2a to get 12a=4a². The nonzero tens digit is a=3 and b=6, giving 36, option (b). The printed distractor (c) is 25; do not replace it by a derived alternative.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "03bdbed06710cd55413d",
+      "canonical_id": "cq_27ae21a210cbf035",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 77,
+      "physical_pdf_page": 14,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "49b39888be1bfcf7c6f69f74e6851595670f7ec27ef266ebc306e1c2253988b2",
+      "expected_source": {
+        "id": "03bdbed06710cd55413d",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If 16% of a number is 2.4, the number is",
+        "options": [
+          "10",
+          "15",
+          "20",
+          "25"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 14,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/8d67b48676b44c8cc6cfef01f091af9cb6edcdddc339e5b2a8ab87acc0ad2531.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "10",
+          "23",
+          "18",
+          "15"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "03bdbed06710cd55413d",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If 16% of a number is 2.4, the number is",
+        "options": [
+          "10",
+          "23",
+          "18",
+          "15"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 14,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/8d67b48676b44c8cc6cfef01f091af9cb6edcdddc339e5b2a8ab87acc0ad2531.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Correct a previously published reordered/substituted choice set. The actual PDF page 14 prints 10, 23, 18, 15; keep answer null until a separate reviewed answer decision.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "15",
+        "explanation": "If the number is x, then 0.16x=2.4. Thus x=2.4÷0.16=15. In this reproduction, 15 is printed as option (d), not (b). Keep the original ordering: 10, 23, 18, 15.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "f076264f24dac52c0f04",
+      "canonical_id": "cq_2fe9233702e420d3",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 85,
+      "physical_pdf_page": 16,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "7f619c9abf3e4396ef5bf23b39524b31f7f2263f97ead5e12b8f3fddbd809fc2",
+      "expected_source": {
+        "id": "f076264f24dac52c0f04",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "From the following frequency distribution table, the median is\n\n\n         Variables      Frequency      Cumulative frequency\n            xi              fi                 c.f.\n\n             1                 7                7\n             2                12               19\n             3                17               36\n             4                19               55\n             5                21               76\n             6                24            100 = N",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 16,
+        "qnum": "85",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3a0df9a99aac6ec21b656187600747b64cf69d1062f0fd1ca515cc5ef227db1e.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "From the following frequency distribution table, the median is:\nVariable | Frequency | Cumulative frequency\n1 | 7 | 7\n2 | 12 | 19\n3 | 17 | 36\n4 | 19 | 55\n5 | 21 | 76\n6 | 24 | 100",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "f076264f24dac52c0f04",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "From the following frequency distribution table, the median is:\nVariable | Frequency | Cumulative frequency\n1 | 7 | 7\n2 | 12 | 19\n3 | 17 | 36\n4 | 19 | 55\n5 | 21 | 76\n6 | 24 | 100",
+        "options": [
+          "1",
+          "2",
+          "4",
+          "5"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 16,
+        "qnum": "85",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3a0df9a99aac6ec21b656187600747b64cf69d1062f0fd1ca515cc5ef227db1e.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "statistics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "4",
+        "explanation": "There are 100 observations, so inspect the 50th and 51st values. The cumulative frequency is 36 at variable 3 and 55 at variable 4; both middle observations therefore equal 4. The median is 4, option (c). Do not take the median of the six displayed variable labels without weighting their frequencies.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "f011d521750da4dcc5b6",
+      "canonical_id": "cq_e3f5ceb0ebba3346",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 86,
+      "physical_pdf_page": 16,
+      "document_id": "mcs-recovered-2015-ii",
+      "source_sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "baseline_sha256": "c0666e2ece3aeee70676f369b38039e530252507930bcabaecf3f3297a7b6d19",
+      "expected_source": {
+        "id": "f011d521750da4dcc5b6",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The graph below shows the teacher assessments for the percentage of pupils achieving Level 4 or\n    above at Key Stage 2 in a primary school.\n\n\n    75                                                                                     Maths\n\n    70                                                                                     English\n\n    65                                                                                     Science\n\n\n                 2009               2010                 2011              2012\n    In 2011, number of pupils who achieved Level 4 or above in Maths is",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 16,
+        "qnum": "86",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/5dc369a6fa842fe669eff797615659f2e68e3616d55d694606487fbd9167316b.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "The graph shows teacher assessments for the percentage of pupils achieving Level 4 or above at Key Stage 2 in a primary school. In 2011, number of pupils who achieved Level 4 or above in Maths is (see the source graph).",
+        "options": [
+          "74",
+          "75",
+          "76",
+          "77"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "f011d521750da4dcc5b6",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The graph shows teacher assessments for the percentage of pupils achieving Level 4 or above at Key Stage 2 in a primary school. In 2011, number of pupils who achieved Level 4 or above in Maths is (see the source graph).",
+        "options": [
+          "74",
+          "75",
+          "76",
+          "77"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 16,
+        "qnum": "86",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/5dc369a6fa842fe669eff797615659f2e68e3616d55d694606487fbd9167316b.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "retain-unresolved-source",
+      "rationale": "The printed stem asks a number of pupils, but the graph is a percentage scale and no total pupil count is supplied. The dotted 2011 Maths bar is 77 percent, not a justified count of 77 pupils. Preserve unresolved-source; keep the conditional graph-reading explanation as review evidence only."
+    },
+    {
+      "appearance_id": "440ad65623e49ab1874c",
+      "canonical_id": "cq_b1bbb0c61a15b9fa",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+      "printed_question": 69,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2017-i",
+      "source_sha256": "9ffcacef43da7139c4c69400d7275dae52385cfcbbfbf386c0cf60155a24c674",
+      "baseline_sha256": "03390543279f841571e4d5973cd418f6888ddcb5e2ba64d67f231f71f9d73626",
+      "expected_source": {
+        "id": "440ad65623e49ab1874c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The number of Biodiversity Hotspots in the world is",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "69",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/6bac569a433ef5ea18fc640b217cc82baca1b787919501f394da90a8f9dab940.png",
+        "classification": {
+          "subject_id": "general-studies",
+          "topic_id": "general-studies/environment",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "18",
+          "24",
+          "28",
+          "36"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "440ad65623e49ab1874c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-I Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The number of Biodiversity Hotspots in the world is",
+        "options": [
+          "18",
+          "24",
+          "28",
+          "36"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "69",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/6bac569a433ef5ea18fc640b217cc82baca1b787919501f394da90a8f9dab940.png",
+        "classification": {
+          "subject_id": "general-studies",
+          "topic_id": "general-studies/environment",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "general-studies",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "36",
+        "explanation": "The European Commission Joint Research Centre catalog for the Biodiversity Hotspots version 2016.1 dataset identifies 36 global hotspots, consistent with option (d) in this 2017 reproduction. Hotspots require at least 1,500 endemic vascular-plant species and loss of at least 70% of original native vegetation. The catalog marks this archived dataset “Not Updated”; it is not a fresh survey. Reference: https://africa-knowledge-platform.ec.europa.eu/dataset/biodiversity-hotspots .",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "e939e608436877781806",
+      "canonical_id": "cq_c0bea9621b225596",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 34,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "a69ff1a64b0418cb0840504c1162a565d8451a9ea68cd042834c13ac09b4fe89",
+      "expected_source": {
+        "id": "e939e608436877781806",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Ten men can finish construction of a wall in eight days. How many men are needed to finish the work in\n     half – a – day?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "34",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "80",
+          "100",
+          "120",
+          "160"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "e939e608436877781806",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Ten men can finish construction of a wall in eight days. How many men are needed to finish the work in\n     half – a – day?",
+        "options": [
+          "80",
+          "100",
+          "120",
+          "160"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "34",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "160",
+        "explanation": "The wall needs 10×8=80 man-days, assuming equal productivity. To finish in half a day requires 80÷0.5=160 men, option (d). Halving the time doubles the workers relative to a one-day requirement.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "2d34bcddefef1f8d1adf",
+      "canonical_id": "cq_9e02507f42cb06a4",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 35,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "386c4d2885867b1a4f13500d11b117cd2a9abde571b0716bc2ed9a8baf665432",
+      "expected_source": {
+        "id": "2d34bcddefef1f8d1adf",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The average height of students in a class of 10 is 105 cm. If 20 more students with an average of 120\n     cm join the class, what will the average height be.",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "35",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "105",
+          "110",
+          "112",
+          "115"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "2d34bcddefef1f8d1adf",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The average height of students in a class of 10 is 105 cm. If 20 more students with an average of 120\n     cm join the class, what will the average height be.",
+        "options": [
+          "105",
+          "110",
+          "112",
+          "115"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "35",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "115",
+        "explanation": "The combined height is 10×105+20×120=3,450 cm for 30 students. The weighted mean is 3,450÷30=115 cm, option (d). The simple average of 105 and 120 would incorrectly weight the two unequal groups equally.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "7c9cada3af19ecca1d8d",
+      "canonical_id": "cq_a80871770d53f0ec",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 36,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "e7d874a7eaf8514b38dd247b3244b4391ed22f4d129f0e38d680d0d3642da1a3",
+      "expected_source": {
+        "id": "7c9cada3af19ecca1d8d",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A one rupee coin is placed on plain paper. How many coins of the same size can be placed round it so\n     that one touches the central and adjacent coins?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "36",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/geometry",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "4",
+          "3",
+          "7",
+          "6"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "7c9cada3af19ecca1d8d",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A one rupee coin is placed on plain paper. How many coins of the same size can be placed round it so\n     that one touches the central and adjacent coins?",
+        "options": [
+          "4",
+          "3",
+          "7",
+          "6"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "36",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/e70f6347903453860cc020fe32a0fff408c2a381e9c673c7a87631491e816319.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/geometry",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "6",
+        "explanation": "The centres of two identical coins touching the central coin and each other form an equilateral triangle with the central centre. Each outer coin therefore occupies 60° around the centre. Six fit into 360°, option (d); seven would require an angular spacing below 60° and overlap.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "c1cca52545e7577f8407",
+      "canonical_id": "cq_5c1177294ed78932",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 38,
+      "physical_pdf_page": 6,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "79ce72ecc2e9b47c12e8857b9d0a7ad2bc48fd7b01cc07cdf64497555f493445",
+      "expected_source": {
+        "id": "c1cca52545e7577f8407",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A number is made of 2 digits. If 45 is added to the number, the digit gets reversed. What is the\n     number?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "38",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/8f532dfefee95959ec837ddd8944fab3a3b927b05a41a24b25a958058241ee1d.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "18",
+          "36",
+          "27",
+          "54"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "c1cca52545e7577f8407",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A number is made of 2 digits. If 45 is added to the number, the digit gets reversed. What is the\n     number?",
+        "options": [
+          "18",
+          "36",
+          "27",
+          "54"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 6,
+        "qnum": "38",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/8f532dfefee95959ec837ddd8944fab3a3b927b05a41a24b25a958058241ee1d.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "27",
+        "explanation": "For a two-digit number 10a+b, reversal after adding 45 gives 10a+b+45=10b+a, hence b−a=5. Among the listed choices, only 27 satisfies this: 27+45=72. Therefore option (c). The condition alone permits several two-digit numbers, so the choices are needed.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "b53414fd25a2d569b7ae",
+      "canonical_id": "cq_daf60d4f20a40d2f",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 42,
+      "physical_pdf_page": 7,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "75dbd81d50f5a517e04e014344ecae7d13234ff03599f36b590dfa84e6c29619",
+      "expected_source": {
+        "id": "b53414fd25a2d569b7ae",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many numbers lie between 10 and 300, which when divided by 4 leave a remainder 3?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 7,
+        "qnum": "42",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/f3ade1f9c36774aaeefccfcccaaf8ccc6685d37e5ebedfa48dc01a9e21dbfabe.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "71",
+          "72",
+          "73",
+          "74"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "b53414fd25a2d569b7ae",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "How many numbers lie between 10 and 300, which when divided by 4 leave a remainder 3?",
+        "options": [
+          "71",
+          "72",
+          "73",
+          "74"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 7,
+        "qnum": "42",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/f3ade1f9c36774aaeefccfcccaaf8ccc6685d37e5ebedfa48dc01a9e21dbfabe.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "73",
+        "explanation": "The first integer above 10 congruent to 3 modulo 4 is 11; the last below 300 is 299. This arithmetic progression has (299−11)÷4+1=73 terms, option (c). Include both valid endpoints of the progression.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "91c3d4b12ef34d16fbfd",
+      "canonical_id": "cq_78bf361344b00417",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 73,
+      "physical_pdf_page": 11,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "9dd85332facba6006cd5f54923d45f44da6dd1b9604ae39ddec2ea175267620a",
+      "expected_source": {
+        "id": "91c3d4b12ef34d16fbfd",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A letter of English alpabets is chosen at random. The probability that it is a letter of the word ‘MATHEMATICS’ is",
+        "options": [
+          "11/26",
+          "4/13",
+          "5/13",
+          "9/26"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "73",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/131e473f8ddaa7c2495ee8b7ed86add18c2cca14ff10f4cc2f5219657d3b8734.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "91c3d4b12ef34d16fbfd",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A letter of English alpabets is chosen at random. The probability that it is a letter of the word ‘MATHEMATICS’ is",
+        "options": [
+          "11/26",
+          "4/13",
+          "5/13",
+          "9/26"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "73",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/131e473f8ddaa7c2495ee8b7ed86add18c2cca14ff10f4cc2f5219657d3b8734.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "statistics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 1,
+        "answer_text": "4/13",
+        "explanation": "MATHEMATICS contains eight distinct letters: M, A, T, H, E, I, C and S. When one of the 26 alphabet letters is chosen uniformly, repeated occurrences inside the word do not create extra outcomes. The probability is 8/26=4/13, option (b).",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "faeb1bc7b2be9b2d1e56",
+      "canonical_id": "cq_4421f71fe20943f2",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 74,
+      "physical_pdf_page": 11,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "acad41aa9847a0c65fb90eb5bd8f29fbca53339ebb89203dab3cb0e3bb4a2be0",
+      "expected_source": {
+        "id": "faeb1bc7b2be9b2d1e56",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The 31th term in the sequence . 1, 4, 9, 16, 25, ... is",
+        "options": [
+          "441",
+          "781",
+          "961",
+          "1681"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "74",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/fb06c10c50872f627f88572d7c135d260e4eb58d5610ac894100b448f64273d3.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "faeb1bc7b2be9b2d1e56",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The 31th term in the sequence . 1, 4, 9, 16, 25, ... is",
+        "options": [
+          "441",
+          "781",
+          "961",
+          "1681"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 11,
+        "qnum": "74",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/fb06c10c50872f627f88572d7c135d260e4eb58d5610ac894100b448f64273d3.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "961",
+        "explanation": "The sequence is 1², 2², 3², 4², 5², … . Its 31st term is 31²=(30+1)²=900+60+1=961, option (c). The printed “31th” is an ordinal typo, not a different sequence index.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "c4a923209d18b00f1ac2",
+      "canonical_id": "cq_60d724bf07604cc2",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 76,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "5946d3269aecdbd0295b85422cf46faf56bd11c5953aadff8c715691d0471175",
+      "expected_source": {
+        "id": "c4a923209d18b00f1ac2",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A History class joins a Science class for a school trip. The total number of pupils in this trip is 64. If       of\n    the pupils were from the Science class, how many pupils were there from the History class?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "76",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "A History class joins a Science class for a school trip. The total number of pupils in this trip is 64. If 3/8 of the pupils were from the Science class, how many pupils were there from the History class?",
+        "options": [
+          "35",
+          "40",
+          "45",
+          "50"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "c4a923209d18b00f1ac2",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A History class joins a Science class for a school trip. The total number of pupils in this trip is 64. If 3/8 of the pupils were from the Science class, how many pupils were there from the History class?",
+        "options": [
+          "35",
+          "40",
+          "45",
+          "50"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "76",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 1,
+        "answer_text": "40",
+        "explanation": "Science contributes (3/8)×64=24 pupils. The remaining pupils are from History: 64−24=40, option (b). Equivalently, History is 5/8 of 64.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "9b323f7957b6eeefaca0",
+      "canonical_id": "cq_1a509a62907a2bd1",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 77,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "9d77a361fe30e51fb143c78d7d6e3cfa45b801b75769f31b460c9fd57335567c",
+      "expected_source": {
+        "id": "9b323f7957b6eeefaca0",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A number consists of two digits. The digit in the ten’s place is triple the digit in the unit’s\n    place. When digits are interchanged the number decreases by 36, then the number is",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "93",
+          "82",
+          "62",
+          "72"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "9b323f7957b6eeefaca0",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A number consists of two digits. The digit in the ten’s place is triple the digit in the unit’s\n    place. When digits are interchanged the number decreases by 36, then the number is",
+        "options": [
+          "93",
+          "82",
+          "62",
+          "72"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "62",
+        "explanation": "Let the units digit be u; the tens digit is 3u. The original number is 31u and its reversal is 13u. Their difference is 18u=36, giving u=2. The number is 62, option (c); reversing it gives 26, exactly 36 less.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "ea4459ac3ba0557aa0c8",
+      "canonical_id": "cq_6a7e16f3c800de3d",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 78,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "42f028e38bfbbaf7d4324537f1f18ab910788cff3a58b9b381a1ede7d1b66243",
+      "expected_source": {
+        "id": "ea4459ac3ba0557aa0c8",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The average of 5 numbers is 65. The average of the first two numbers is 81 and the average of the last\n    two numbers is 38. What is the third number?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "78",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "63",
+          "87",
+          "95",
+          "75"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "ea4459ac3ba0557aa0c8",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The average of 5 numbers is 65. The average of the first two numbers is 81 and the average of the last\n    two numbers is 38. What is the third number?",
+        "options": [
+          "63",
+          "87",
+          "95",
+          "75"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "78",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/956c777e92f6a993b51d4fa530b3c7499e0caa42c913417412a51618145c2fda.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 1,
+        "answer_text": "87",
+        "explanation": "The total of all five numbers is 5×65=325. The first two total 2×81=162 and the last two total 2×38=76. The third number is 325−162−76=87, option (b).",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "defc2821e02452d91db9",
+      "canonical_id": "cq_4e3af393645b7190",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 86,
+      "physical_pdf_page": 14,
+      "document_id": "mcs-recovered-2017-ii",
+      "source_sha256": "172a47a5f12fbabe262c6aad3f06b8b04798e1fe4dfa3626236f0524dea4c283",
+      "baseline_sha256": "ad18736520cdf37bad22fdda22c4430e8dd9f24a8dfd7f3014028fe4bd60bb6b",
+      "expected_source": {
+        "id": "defc2821e02452d91db9",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "What was the approximate percentage decrease in number of soldiers recruited in army in the year 2008\n     as compared to the previous year?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 14,
+        "qnum": "86",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/6e2384af5a9977e4bb7ef07d87cccf0fd8266631c179ae766dd88867fc87e214.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "20",
+          "23",
+          "38",
+          "33"
+        ],
+        "passage": "The graph gives soldiers recruited in thousands. Read the Army (unfilled) bars: 45 thousand in 2007 and 30 thousand in 2008. See the shared graph on physical PDF page 13.",
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "defc2821e02452d91db9",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2017 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "What was the approximate percentage decrease in number of soldiers recruited in army in the year 2008\n     as compared to the previous year?",
+        "options": [
+          "20",
+          "23",
+          "38",
+          "33"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "The graph gives soldiers recruited in thousands. Read the Army (unfilled) bars: 45 thousand in 2007 and 30 thousand in 2008. See the shared graph on physical PDF page 13.",
+        "difficulty": null,
+        "page": 14,
+        "qnum": "86",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/6e2384af5a9977e4bb7ef07d87cccf0fd8266631c179ae766dd88867fc87e214.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Read both question page 14 and shared graph page 13. The graph-derived values are supplied as a labelled transcription of the relevant series; preserve the source image and page locator.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "33",
+        "explanation": "The Army count drops from 45 thousand in 2007 to 30 thousand in 2008. Use the previous-year value as the denominator: (45−30)/45×100=33⅓%, approximately 33%, option (d). The Airforce and Navy bars represent different series.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      },
+      "additional_source_pages": [
+        13
+      ]
+    },
+    {
+      "appearance_id": "033ee2b2b7e4ec1c6a7b",
+      "canonical_id": "cq_d7cbb727b0778c45",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 60,
+      "physical_pdf_page": 10,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "5e6c3bebea9daa8757eec4ce90ef0fa9b84075a22f8044e6f78a0377bd0a0159",
+      "expected_source": {
+        "id": "033ee2b2b7e4ec1c6a7b",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Printed question 60. Read the source image.",
+        "options": [
+          "8",
+          "14",
+          "29",
+          "40"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "60",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7a3f3d62319ff65958381579f46ac3bb24f332b988aa455dc42a3e6ef7b2decf.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/numerical-ability",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "Choose the one which is different from the others.",
+        "questionMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "033ee2b2b7e4ec1c6a7b",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "Choose the one which is different from the others.",
+        "options": [
+          "8",
+          "14",
+          "29",
+          "40"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "60",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7a3f3d62319ff65958381579f46ac3bb24f332b988aa455dc42a3e6ef7b2decf.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/numerical-ability",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "29",
+        "explanation": "Among 8, 14, 29 and 40, 29 is the only odd number and the only prime. The other three are even composite numbers, so option (c) is the outlier. The shared printed direction supplies the missing stem.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "46633cb2de1ba352d9b4",
+      "canonical_id": "cq_8dc347c91951f46f",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 62,
+      "physical_pdf_page": 10,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "c37885846b9e6fd580b1e9ae3ce7fe3d3f356f0932525cbf4a3e76572f5d5a97",
+      "expected_source": {
+        "id": "46633cb2de1ba352d9b4",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "?, 430, 345, 270, 205",
+        "options": [
+          "555",
+          "505",
+          "535",
+          "525"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "62",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7a3f3d62319ff65958381579f46ac3bb24f332b988aa455dc42a3e6ef7b2decf.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "46633cb2de1ba352d9b4",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "?, 430, 345, 270, 205",
+        "options": [
+          "555",
+          "505",
+          "535",
+          "525"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "62",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7a3f3d62319ff65958381579f46ac3bb24f332b988aa455dc42a3e6ef7b2decf.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "525",
+        "explanation": "The successive decreases are 85, 75 and 65. Extend this pattern backward with a decrease of 95 before 430. The missing first value is 430+95=525, option (d). This identifies the particular number-series rule being used.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "0cf97a31845591e5d190",
+      "canonical_id": "cq_c6b6c2bd132d9ad6",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 63,
+      "physical_pdf_page": 10,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "24c2abbfef08a257246b41acd65eb6f8714eafc3dc9f9e89309bdbb90592914f",
+      "expected_source": {
+        "id": "0cf97a31845591e5d190",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "In a code language, “678” means “app man lem”; “136” means “man and tasty”; and “729” means “lem\n     are faint”. Which stands for “app”?",
+        "options": [
+          "9",
+          "2",
+          "1",
+          "8"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "63",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3d36e458d358323645863d379cef107e47f3760e53c07bd7d879032b06a475c5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "0cf97a31845591e5d190",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "In a code language, “678” means “app man lem”; “136” means “man and tasty”; and “729” means “lem\n     are faint”. Which stands for “app”?",
+        "options": [
+          "9",
+          "2",
+          "1",
+          "8"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "63",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3d36e458d358323645863d379cef107e47f3760e53c07bd7d879032b06a475c5.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "8",
+        "explanation": "Compare the code groups: “678” and “136” share digit 6 and word “man”, so 6 means man. “678” and “729” share digit 7 and word “lem”, so 7 means lem. The remaining digit in “678” is 8, which therefore means the printed word “app”, option (d). Do not silently expand that source word to “apple”.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "50e234e48f4033a6e76f",
+      "canonical_id": "cq_00c4ea4e94f571a9",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 72,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "b5b09990e9360f59b7fff551e4fde0c4c9ee26403cc449aee9e0039a877b0ebd",
+      "expected_source": {
+        "id": "50e234e48f4033a6e76f",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If the product 5465 × 6k4 is divisible by 15, then the value of k is -",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "None of these"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "72",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "1",
+          "2",
+          "5",
+          "None of these"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "50e234e48f4033a6e76f",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If the product 5465 × 6k4 is divisible by 15, then the value of k is -",
+        "options": [
+          "1",
+          "2",
+          "5",
+          "None of these"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "72",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "retain-unresolved-source",
+      "rationale": "Restore the printed digits, but keep unresolved-source: 5465 already supplies a factor 5, and the product is divisible by 3 when k is 2, 5 or 8. Both printed choices 2 and 5 work. No single answer is justified."
+    },
+    {
+      "appearance_id": "7c6b22043430f5cea070",
+      "canonical_id": "cq_5f918f863906a3a2",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 73,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "84f46218f357bcffa6b7c82f322cbdc1c83b94a43f4c8f4199edccbb63e2170f",
+      "expected_source": {
+        "id": "7c6b22043430f5cea070",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If 18% of       of a number 54, then the number is -",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "73",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "question": "If 18% of 5/6 of a number 54, then the number is -",
+        "options": [
+          "464",
+          "175",
+          "280",
+          "360"
+        ],
+        "questionMarkup": null,
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "7c6b22043430f5cea070",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "If 18% of 5/6 of a number 54, then the number is -",
+        "options": [
+          "464",
+          "175",
+          "280",
+          "360"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "73",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 3,
+        "answer_text": "360",
+        "explanation": "Read the printed fraction as 5/6. If the number is x, then (18/100)×(5/6)×x=54, so (3/20)x=54 and x=360, option (d). The source omits “is” before 54; the transcription retains that wording while this explanation states the intended equation.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "f691c5f4a50f2bd0df0c",
+      "canonical_id": "cq_0dcb24be96deb5e7",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 75,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "6902a4dda3a643aae3482104aba215360daf226c4700fa17b377f3108c44a3b3",
+      "expected_source": {
+        "id": "f691c5f4a50f2bd0df0c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "In a group of 65 people, 40 like apples, 10 like both apples and bananas. How many like bananas only?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "75",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "25",
+          "35",
+          "50",
+          "75"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "f691c5f4a50f2bd0df0c",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "In a group of 65 people, 40 like apples, 10 like both apples and bananas. How many like bananas only?",
+        "options": [
+          "25",
+          "35",
+          "50",
+          "75"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "75",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "retain-unresolved-source",
+      "rationale": "Restore the choices, but retain unresolved-source. “25 bananas only” follows only if all 65 people like at least one of the two fruits. The printed question does not state that condition; 25 is an upper bound without it. Do not invent the missing premise."
+    },
+    {
+      "appearance_id": "7bb49c000d9e4d021892",
+      "canonical_id": "cq_ae4882085d8e51bd",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 77,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "12b64c8203b018edca0688e00e3373f2059ca2a3321d21bfbb149a3389d69e4b",
+      "expected_source": {
+        "id": "7bb49c000d9e4d021892",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The sum of the first 15 terms of the A.P. 21, 18, 15, ....... is",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "0",
+          "306",
+          "360",
+          "630"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "7bb49c000d9e4d021892",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The sum of the first 15 terms of the A.P. 21, 18, 15, ....... is",
+        "options": [
+          "0",
+          "306",
+          "360",
+          "630"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0309a8955c000784201601a5fcc6d6c380219c557a16cd3fb188e8355ddce196.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "0",
+        "explanation": "The first term is 21 and the common difference is −3. The 15th term is 21+14(−3)=−21. The sum is 15(21−21)/2=0, option (a). The progression crosses zero, so the positive and negative terms cancel.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "38132932eb7b31165b19",
+      "canonical_id": "cq_409733fe7ebadb79",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 78,
+      "physical_pdf_page": 12,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "39a684c8c0ac038f4ad8ba6f919a8bafd623b2615d7de714136b439db9d8ecb3",
+      "expected_source": {
+        "id": "38132932eb7b31165b19",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A bag contain 7 red, 5 white and 3 black balls. A ball is drawn at random from the bag. What is the\n    probability that the ball drawn is neither white nor black?\n          1                                                      1",
+        "options": [
+          "See printed option A in the source image",
+          "7                                                  8",
+          "See printed option C in the source image",
+          "15                                                  15"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "78",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/17fa5cd8b543589ee614ff7476aaec409d26edc467ea901f233b9c67a8e4ba09.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "1/3",
+          "1/5",
+          "7/15",
+          "8/15"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "38132932eb7b31165b19",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "A bag contain 7 red, 5 white and 3 black balls. A ball is drawn at random from the bag. What is the\n    probability that the ball drawn is neither white nor black?\n          1                                                      1",
+        "options": [
+          "1/3",
+          "1/5",
+          "7/15",
+          "8/15"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 12,
+        "qnum": "78",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/17fa5cd8b543589ee614ff7476aaec409d26edc467ea901f233b9c67a8e4ba09.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "statistics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 2,
+        "answer_text": "7/15",
+        "explanation": "A ball that is neither white nor black must be red. There are 7 red balls among 7+5+3=15 equally likely balls, so the probability is 7/15, option (c). The complementary event is white or black, with probability 8/15.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "e892ac90f84f69123f8b",
+      "canonical_id": "cq_aecd57a3c303f5e8",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 81,
+      "physical_pdf_page": 13,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "9c133b6d5d540e4b3bec8bc4e99d1a9e3842e1496f1b07a7c93dfb4b33c3a3c8",
+      "expected_source": {
+        "id": "e892ac90f84f69123f8b",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The following pie chart depicts the marks obtained by a student in different subjects. If the student obtained 200 marks in Maths, then the marks obtained in science is –",
+        "options": [
+          "150",
+          "140",
+          "135",
+          "130"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "81",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/46c30f938683a207b5adb055a2698cefb9d29b94eef16807510ed72e8b4973b2.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "e892ac90f84f69123f8b",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The following pie chart depicts the marks obtained by a student in different subjects. If the student obtained 200 marks in Maths, then the marks obtained in science is –",
+        "options": [
+          "150",
+          "140",
+          "135",
+          "130"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "81",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/46c30f938683a207b5adb055a2698cefb9d29b94eef16807510ed72e8b4973b2.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "150",
+        "explanation": "In the pie chart, Maths occupies 120° and Science 90°. Marks are proportional to sector angles, so Science marks are 200×90/120=150, option (a). Keep the original labelled pie-chart image; do not substitute a different set of angles.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "6b284e3331bd7a25863e",
+      "canonical_id": "cq_4572889e702136c9",
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "printed_question": 85,
+      "physical_pdf_page": 13,
+      "document_id": "mcs-recovered-2018-ii",
+      "source_sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "baseline_sha256": "3d8134c306f42e6b907e9a7f7b65b99e0800e8b61ee12972fbf7d088d9fbb317",
+      "expected_source": {
+        "id": "6b284e3331bd7a25863e",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The marks obtained (out of 100) by a class of 80 students are given below:\n\nMarks: 10–20 | 20–30 | 30–50 | 50–70 | 70–100\nNumber of students: 6 | 17 | 15 | 16 | 26\n\nA student of the class is selected at random. The probability that she/he gets 20 or more marks but less than 70 marks is –",
+        "options": [
+          "3/5",
+          "2/5",
+          "4/5",
+          "1/5"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "85",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/46c30f938683a207b5adb055a2698cefb9d29b94eef16807510ed72e8b4973b2.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "6b284e3331bd7a25863e",
+        "paperId": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+        "type": "mcq",
+        "question": "The marks obtained (out of 100) by a class of 80 students are given below:\n\nMarks: 10–20 | 20–30 | 30–50 | 50–70 | 70–100\nNumber of students: 6 | 17 | 15 | 16 | 26\n\nA student of the class is selected at random. The probability that she/he gets 20 or more marks but less than 70 marks is –",
+        "options": [
+          "3/5",
+          "2/5",
+          "4/5",
+          "1/5"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the printed question and all shared passages, tables and figures in the source image. This recovered reproduction has not been checked against a matching final answer key.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "85",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/46c30f938683a207b5adb055a2698cefb9d29b94eef16807510ed72e8b4973b2.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "statistics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "verified",
+        "answer_index": 0,
+        "answer_text": "3/5",
+        "explanation": "The relevant mark intervals are 20–30, 30–50 and 50–70. Their frequencies sum to 17+15+16=48 out of 80 students. Thus P(20≤marks<70)=48/80=3/5, option (a). The 10–20 and 70–100 groups are excluded.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ]
+      }
+    },
+    {
+      "appearance_id": "387eed9ac579111ff120",
+      "canonical_id": "cq_e50f84678142d17c",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 70,
+      "physical_pdf_page": 10,
+      "document_id": "doc_8ca4dbea2b4225a2a24b10e9",
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "baseline_sha256": "54485376ceddcd7b2bdb8490c94548037b8c8411ab02d04f7c7fde2b19c84660",
+      "expected_source": {
+        "id": "387eed9ac579111ff120",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Problem figures\n\n\n\n\n     Answer figures",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "70",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/169fc65775eb673232c2862a3b824c4547e319d8b6333a1db090e9a8d1dbe85a.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "387eed9ac579111ff120",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Problem figures\n\n\n\n\n     Answer figures",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "70",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/169fc65775eb673232c2862a3b824c4547e319d8b6333a1db090e9a8d1dbe85a.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "official",
+        "answer_index": 0,
+        "answer_text": "Figure (a) in the source image",
+        "explanation": "The problem series alternates right-pointing arrows with left-pointing arrows. Rightward stages show 1, then 2, then 3 arrows. Each intervening leftward stage has a plain horizontal line at the top and 1, then 2 left-pointing arrows below it. The next stage needs a top line and 3 left-pointing arrows: figure (a). The exact 2023 Paper II Series C final key also records A for Q70.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ],
+        "key": {
+          "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+          "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+          "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+          "page": 1,
+          "letter": "A"
+        }
+      }
+    },
+    {
+      "appearance_id": "b5dbd9725c082aa7795b",
+      "canonical_id": "cq_353d92f350df4e54",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "printed_question": 96,
+      "physical_pdf_page": 13,
+      "document_id": "doc_8ca4dbea2b4225a2a24b10e9",
+      "source_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "baseline_sha256": "b9c8d2c65416eb92a8fc7c7bdebae185c0fc4e781a3556c53d61b5495ddfc787",
+      "expected_source": {
+        "id": "b5dbd9725c082aa7795b",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "A and B together can do a piece of work in 12 days, while B alone can finish it in 30 days. Find the work done by A in 1 day.",
+        "options": [
+          "1/20",
+          "1/12",
+          "1/30",
+          "1/60"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "96",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7d54368d77f9fa5a61641766ac063aba503c55871267253e4fd1aa208bcaa5f8.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {},
+      "post_transcription_source": {
+        "id": "b5dbd9725c082aa7795b",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "A and B together can do a piece of work in 12 days, while B alone can finish it in 30 days. Find the work done by A in 1 day.",
+        "options": [
+          "1/20",
+          "1/12",
+          "1/30",
+          "1/60"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "96",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7d54368d77f9fa5a61641766ac063aba503c55871267253e4fd1aa208bcaa5f8.png",
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/arithmetic",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "mathematics",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "official",
+        "answer_index": 0,
+        "answer_text": "1/20",
+        "explanation": "Together A and B complete 1/12 of the work per day; B alone completes 1/30. Subtract the rates: A=1/12−1/30=(5−2)/60=1/20 of the work per day. This is option (a), matching the exact 2023 Paper II Series C final-key cell for Q96. The question asks the fraction in one day, not A’s completion time of 20 days.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ],
+        "key": {
+          "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+          "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+          "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+          "page": 1,
+          "letter": "A"
+        }
+      }
+    },
+    {
+      "appearance_id": "97b76afa019acf228ea0",
+      "canonical_id": "cq_cf7bd5950153ac8f",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+      "printed_question": 25,
+      "physical_pdf_page": 5,
+      "document_id": "doc_e80528d5477ee1a5b2fbc200",
+      "source_sha256": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+      "baseline_sha256": "4ea61cc36c0a5779372b2d6b28fbb578201d5c643bbedf780e4d19e3d4d90065",
+      "expected_source": {
+        "id": "97b76afa019acf228ea0",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "type": "mcq",
+        "question": "Consider the following figures :\n\n\n\n\n    In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions.\n    Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          "See printed option A in the source image",
+          "See printed option B in the source image",
+          "See printed option C in the source image",
+          "See printed option D in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 5,
+        "qnum": "25",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3d49fdcb972672a1d81d9502bd333c487cba8090af98cc375e0e7f00fe410d1b.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "transcription_patch": {
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "optionsMarkup": null
+      },
+      "post_transcription_source": {
+        "id": "97b76afa019acf228ea0",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "type": "mcq",
+        "question": "Consider the following figures :\n\n\n\n\n    In the figures (I) to (VI) above, some parts are shown to change their positions in regular directions.\n    Following the same sequence, which of the figures given below will appear at (VII) stage?",
+        "options": [
+          "Figure (a) in the source image",
+          "Figure (b) in the source image",
+          "Figure (c) in the source image",
+          "Figure (d) in the source image"
+        ],
+        "answerIndex": null,
+        "answerSource": "none",
+        "answerKeyRef": null,
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 5,
+        "qnum": "25",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3d49fdcb972672a1d81d9502bd333c487cba8090af98cc375e0e7f00fe410d1b.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "source_defect": "unresolved-source",
+      "subject_id": "reasoning-and-aptitude",
+      "review_status": "checked-draft-not-published",
+      "decision": "clear-only-after-source-verification",
+      "rationale": "Inspected complete printed stem, all four ordered choices and required shared instructions/figures on the original recovered reproduction or MPSC booklet. No booklet equivalence or examiner key is inferred from a recovered copy.",
+      "answer_draft": {
+        "mode": "official",
+        "answer_index": 1,
+        "answer_text": "Figure (b) in the source image",
+        "explanation": "Across the six-sector circles, the square advances one sector clockwise at each step while the triangle advances one sector anticlockwise. After six steps from figure I, each returns to its original sector: square at the top and triangle at the lower left. That arrangement is option (b), matching the 2025 Paper II Series C final-key cell for Q25. Compare the actual printed options rather than a letter from another series.",
+        "publication_prerequisites": [
+          "Apply and verify source transcription if changed",
+          "Separate audited source-defect decision against fresh baseline",
+          "Preserve compensation holds and source identity",
+          "Recheck exact final-key document/cell for official mode; no recovered-copy official keys"
+        ],
+        "key": {
+          "document_id": "key_b02b541d13656dd073218364",
+          "file": "Answer_Keys/MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+          "sha256": "32238c9873959c8e41cf5ccea84a6f8dde46c5216808f76c2e9c0a9569358563",
+          "page": 7,
+          "letter": "B"
+        }
+      }
+    }
+  ],
+  "existing_explanation_drafts": [
+    {
+      "appearance_id": "f70b341d39538a3f92ce",
+      "canonical_id": "cq_7a976ebeb55056e0",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "physical_pdf_page": 10,
+      "printed_question": 71,
+      "baseline_sha256": "da69477893a5f11b4e9e6df2ef9d8fa04a81d282fa2eca0760908cedc98896ef",
+      "expected_source": {
+        "id": "f70b341d39538a3f92ce",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Find the missing number in the following series?\n     3, 5, 5, 19, 7, 41, 9, ?",
+        "options": [
+          "71",
+          "61",
+          "79",
+          "69"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "71",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/169fc65775eb673232c2862a3b824c4547e319d8b6333a1db090e9a8d1dbe85a.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/series",
+          "subtopic_id": null
+        }
+      },
+      "existing_answer_index": 0,
+      "answer_text": "71",
+      "explanation": "Split the terms by position. Odd positions give 3, 5, 7, 9, increasing by 2. The even-position subsequence is 5, 19, 41, ?. Its differences are 14 and 22; extending the difference pattern by another 8 gives 30, so the next even-position term is 41+30=71. This is option (a), matching the exact 2023 Paper II Series C final key. This states the selected finite-series pattern rather than claiming that every possible continuation is unique.",
+      "key": {
+        "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+        "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "page": 1,
+        "letter": "A"
+      },
+      "status": "checked-draft-not-published"
+    },
+    {
+      "appearance_id": "0fc07824b8ef4df92eee",
+      "canonical_id": "cq_f33bebfad5983f2b",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "physical_pdf_page": 10,
+      "printed_question": 74,
+      "baseline_sha256": "6791bbfe96194beb085054ac81df5f3d08b5e984c8002e4ff047479aff80ec05",
+      "expected_source": {
+        "id": "0fc07824b8ef4df92eee",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Five children take part in a tournament. Each one has to play every other one. How many games must\n     they play?",
+        "options": [
+          "6",
+          "8",
+          "10",
+          "12"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "74",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/169fc65775eb673232c2862a3b824c4547e319d8b6333a1db090e9a8d1dbe85a.png",
+        "classification": {
+          "subject_id": "statistics",
+          "topic_id": "statistics/probability-and-statistics",
+          "subtopic_id": null
+        }
+      },
+      "existing_answer_index": 2,
+      "answer_text": "10",
+      "explanation": "Each of five children plays the other four, giving 5×4=20 player-opponent counts. Each actual game is counted once for each participant, so divide by 2: 20/2=10 games. Equivalently choose an unordered pair, C(5,2)=10. This is option (c), matching the exact booklet final key; 20 would double-count every match.",
+      "key": {
+        "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+        "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "page": 1,
+        "letter": "C"
+      },
+      "status": "checked-draft-not-published"
+    },
+    {
+      "appearance_id": "dc19a9ec6908e96bbbf0",
+      "canonical_id": "cq_aa0b6cb1701b687b",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "physical_pdf_page": 10,
+      "printed_question": 77,
+      "baseline_sha256": "436cc5ae612ef24ddf16e1cbad814c03b24c03c416d21b4cbd0272d9818ccd59",
+      "expected_source": {
+        "id": "dc19a9ec6908e96bbbf0",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Kima left home and cycled 10 km southwards, turned right and cycled 5 km & turned right and cycled 10 km\n     and turned left and cycled 10 km. How many kilometers will he have to cycle to reach his home straight?",
+        "options": [
+          "10 km",
+          "15 km",
+          "20 km",
+          "25 km"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 10,
+        "qnum": "77",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/8fa534eb67389f2bd905b1e6987760b3ed39cd825dd4c03653aa4acca11b783a.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "existing_answer_index": 1,
+      "answer_text": "15 km",
+      "explanation": "Use the starting point as (0,0). South 10 km gives (0,−10). A right turn while heading south points west, reaching (−5,−10). A second right turn points north, reaching (−5,0). The final left turn points west, ending at (−15,0). The direct route home is therefore 15 km east, option (b), matching the exact booklet final key. Add the net displacements, not the total distance cycled.",
+      "key": {
+        "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+        "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "page": 1,
+        "letter": "B"
+      },
+      "status": "checked-draft-not-published"
+    },
+    {
+      "appearance_id": "79af2b55b301cbf3f8ad",
+      "canonical_id": "cq_4452a861eed38301",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "physical_pdf_page": 13,
+      "printed_question": 100,
+      "baseline_sha256": "bb39b34a44af54d78d58e0ac52d8963bc06ccd6453f4f5ea3d6a2131e711191a",
+      "expected_source": {
+        "id": "79af2b55b301cbf3f8ad",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "The given pie chart shows the monthly expenses of a family on various items. The expenditure on education\n        per month Rs. 1600.\n\n\n                        Food\n\n                            135°\n                  81°\n           Rent              108°                  s\n                                             eou\n                    36°               l an\n                               s   cel\n                Education\n                             Mi\n\n\n        Find the total expenditure of the family.",
+        "options": [
+          "Rs. 15000",
+          "Rs. 15500",
+          "Rs. 16000",
+          "Rs. 16500"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 13,
+        "qnum": "100",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7d54368d77f9fa5a61641766ac063aba503c55871267253e4fd1aa208bcaa5f8.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/data-interpretation",
+          "subtopic_id": null
+        }
+      },
+      "existing_answer_index": 2,
+      "answer_text": "Rs. 16000",
+      "explanation": "The Education sector is 36° out of the 360° pie, so it represents one tenth of total expenditure. If that tenth is Rs 1,600, the total is 1,600×360/36=Rs 16,000, option (c), matching the exact booklet final key. The diagram also labels Food 135°, Rent 81° and Miscellaneous 108°, which together with Education sum to 360°.",
+      "key": {
+        "document_id": "key_4ff8bee67d9977f6a3ad1e3a",
+        "file": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-II Series 'C'..pdf",
+        "sha256": "72f2883424fd826932a5eed2932a9ddc06f0b8c73b4c327f0a374e4ba7fb5c10",
+        "page": 1,
+        "letter": "C"
+      },
+      "status": "checked-draft-not-published"
+    }
+  ],
+  "existing_official_explanation_count": 4
+}

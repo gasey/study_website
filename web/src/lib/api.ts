@@ -698,6 +698,10 @@ export const listLibraryShelves=()=>req<LibraryShelf[]>('/library/shelves')
 export const getLibraryShelf=(id:string)=>req<ShelfDetail>('/library/shelves/'+encodeURIComponent(id))
 
 /** Viewing never creates an attempt or a reward. Indices remain canonical. */
-export type ViewedAnswer = Omit<AnswerResult, 'correct' | 'reward'> & {viewed:true}
+export type ViewedAnswer = Omit<AnswerResult, 'correct' | 'reward'> & {viewed:true;retry_at:string;retry_after_seconds:number}
 export const revealAnswer = (id:string,paperId?:string|null) =>
   req<ViewedAnswer>(`/questions/${id}/reveal${paperId?'?paper_id='+encodeURIComponent(paperId):''}`,{method:'POST'})
+
+export interface PracticeState {question_id:string;paper_id:string|null;viewed:boolean;answer:ViewedAnswer|null;retry_at:string|null;retry_after_seconds:number;restricted:boolean;message?:string}
+export const loadPracticeStates=(items:{question_id:string;paper_id?:string|null}[])=>req<{items:PracticeState[]}>('/questions/practice-state',{method:'POST',body:JSON.stringify({items})})
+export const getNextQuestion=(qid:string,paperId?:string|null)=>req<{question_id:string|null;paper_id:string}>(`/questions/${qid}/next${paperId?'?paper_id='+encodeURIComponent(paperId):''}`)

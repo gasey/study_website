@@ -431,5 +431,14 @@
     "evidence": "reports/mcs-now-20261101/live-check.json",
     "ordinary_website_limits_unchanged": true,
     "authorization": "Owner requested Do it now after being told the daily maintenance cap blocked publication; scoped SSH maintenance exception only."
+  },
+  "followup_review_20261101": {
+    "status": "Two previously published option transcriptions need correction; current unresolved-source flags and null answers remain in force.",
+    "appearance_ids": [
+      "dc3b10001ee119b7440e",
+      "03bdbed06710cd55413d"
+    ],
+    "corrections": "2015 II Q74 option C is 25, not 54. Q77 printed choices are 10, 23, 18, 15. See the new checked draft packet; no live change has yet occurred.",
+    "packet": "docs/sources/mcs-quality-followup-20261101.json"
   }
 }
