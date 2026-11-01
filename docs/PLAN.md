@@ -901,7 +901,7 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Verify all 111 publications, full bank diff, exact live records, 24 compensation holds, learner history and unlimited owner access; restore publisher timer. MCS official-eligible increases 1,473 → 1,553. 49 focused tests pass.
 - [ ] Continue three recent and 36 recovered-copy source-flag adjudications, additional explanations, history-preserving duplicate appearance repair and unanswered original-source intake for missing 2014 II Q39.
 - [ ] Verify sitting/source identity and carefully transcribe four image-only Paper II booklet leads. Keep 2012/2013 deferred and authentic simulation gated.
-- [ ] Existing 21:35 IST follow-up must read this completed checkpoint, skip the published packet and recheck ordinary allowance; this run's scoped exception does not persist.
+- [x] Existing 21:35 IST follow-up cancelled at the owner's request on 1 November. Further content publication remains pending and requires fresh ordinary-allowance checks; prior scoped exceptions do not persist.
 
 ### 1 November 2026 — Explanation clarity and dated current-affairs revision
 
@@ -916,5 +916,5 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 
 - [x] 2026-11-01 follow-up: restore private reading mode and retry time, unlock discussion after reveal with active-test/account/moderation protection, add saved revision / Retry later / contextual Next question, and defer daily-revision eligibility until cooldown expires. Bounded private state reads keep public catalog caching intact.
 - [x] Review all 39 remaining MCS source flags against printed sources; prepare 31 transcription drafts, 35 separate source-clearance/answer drafts and four existing-key explanations, retaining four unresolved questions. Save exact source/answer checks and a predecessor-enforcing read-only preparer.
-- [ ] Publish the checked MCS follow-up packet within actual rolling staff allowance, rechecking all source baselines and preserving holds/provenance. Existing 21:35 IST continuation updated; no quota exemption used.
-- [ ] Deploy the final frontend restore-generation fix: initial follow-up API/web release is live, but acceptance found a stuck loading state after Retry now -> Show answer. Fixed/tested locally; SSH became restricted before the final web deployment. The existing 21:35 continuation reads this latest checkpoint; deploy this fix first. An attempt to explicitly prepend it to the automation prompt was denied after the permission change. Fresh Show answer can need a reload in the current live build; the final local fix covers that flow as well.
+- [ ] Publish the checked MCS follow-up packet within actual rolling staff allowance, rechecking all source baselines and preserving holds/provenance. The 21:35 IST continuation was subsequently cancelled at the owner's request; no quota exemption used.
+- [x] Deploy the final frontend restore-generation fix after network access was restored. Production build and live index match; fresh Show answer displays the answer, explanation, 30-minute retry countdown and unlocked discussion without reload. API healthy (81,627 / 13,163); family site returns 307. The owner cancelled the 21:35 IST continuation.
