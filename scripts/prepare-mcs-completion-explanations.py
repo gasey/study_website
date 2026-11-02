@@ -16,7 +16,7 @@ def prepare(packet,bank,bank_root,offset=0,limit=100):
         q=by[item['appearance_id']];reviewed=item['reviewed_raw_record'];doc=item['source_document'];pid=q['paperId'];plan=item['required_source_patch']
         if (pid not in packet['scope']['paper_ids']or 'MCS Combined'not in pid or papers[pid].get('year')not in(2023,2025)
                 or digest(reviewed)!=item['baseline_sha256']or record(reviewed)!=item['expected_source']
-                or set(plan)-{'question','page','passage'}):raise ValueError('Reviewed scope or immutable raw source baseline changed')
+                or set(plan)-{'question','page','passage','direction'}):raise ValueError('Reviewed scope or immutable raw source baseline changed')
         expected=copy.deepcopy(reviewed);expected.update(plan)
         if record(expected)!=item['post_source_expected']:raise ValueError('The planned exact source predecessor changed')
         path=(root/doc['source_file']).resolve()

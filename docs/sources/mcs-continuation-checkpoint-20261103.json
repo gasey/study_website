@@ -1,14 +1,16 @@
 {
-  "status": "First 103-publication packet complete and live-verified. Additional bounded read-only drafts are being reviewed; no exports are outstanding. Publisher timer active.",
-  "bank_sha256": "1cfdd44ca6d9b7bf845b6cac377e6692f4fa312193a943c7f2cc174d31e64b43",
-  "receipt": "docs/sources/mcs-publication-20261103.json",
-  "ordinary_staff_used": 296,
+  "status": "Both bounded packets complete and live-verified: 214 ordinary publications, 182 explanations. No exports outstanding; publisher timer restored active.",
+  "bank_sha256": "99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0",
+  "receipt": "docs/sources/mcs-additional-explanations-publication-20261103.json",
+  "ordinary_staff_used": 407,
   "quota_exemptions": 0,
   "completed": {
-    "explanations": 89,
+    "publications": 214,
+    "explanations": 182,
     "restored_diagrams": 9,
-    "source_page_links": 4,
-    "notation_repair": 1
+    "source_page_links": 17,
+    "notation_repair": 1,
+    "missing_printed_contexts": 5
   },
   "protected": {
     "old_holds": 34,
@@ -16,22 +18,20 @@
     "old_attempt_rows": 244,
     "reviewer_assignments": 2,
     "owner_unlimited": true,
-    "source_integrity": "78 papers / 6931 source questions; existing scope unchanged"
+    "source_integrity": "78 papers / 6931 source questions; existing scope unchanged",
+    "all_existing_global_holds": 134
   },
   "withheld": "docs/sources/mcs-review-exclusions-20261103.json",
   "new_hold": "docs/sources/mcs-review-hold-20261103.json",
-  "remaining_recent_blank_explanations": 1207,
-  "remaining_recent_usable_answered_blank_explanations": 1201,
+  "remaining_recent_blank_explanations": 1114,
+  "remaining_recent_usable_answered_blank_explanations": 1108,
   "next_steps": [
-    "Reconcile any later checked packet/publication receipts before preparing fresh requests. Use ordinary staff quotas only; prior exceptions are fulfilled.",
+    "Both 20261103 receipts are complete; never replay them as fresh decisions. Check current authority, sync, queue, assignments, usage and protection before preparing another packet; ordinary staff quotas only.",
     "Prepare new clean explanations only against exact current bank and source PDFs; no template working across different radicals, operators, choices, underlining or passages.",
     "The 16 withheld drafts need source/wording/subject review; bf48a27ab6f2c1f47c05 is held. Restore its exact original stem/choices through audited source correction and exact final-key mapping before separately releasing the hold.",
     "Historical Q4/Q86 duplicate links do not remove duplicate source positions. Missing 2014 II Q39 needs a protected original-source-only intake/identity review; do not force an append or a new protection baseline.",
-    "Do not enable original-paper simulation until all source/key/compensation/scoring requirements are met. Keep 2012/2013 recovery deferred."
-  ],
-  "additional_pending_draft_dirs": [
-    "reports/mcs-continue-20261103/next-math/",
-    "reports/mcs-continue-20261103/next-factual/"
+    "Do not enable original-paper simulation until all source/key/compensation/scoring requirements are met. Keep 2012/2013 recovery deferred.",
+    "Continue source-checked recent explanation work from fresh live metadata. The 57 factual and36 reasoning/English drafts in the additional packet are already published. Five weaker factual themes were excluded and still require primary-source review. Do not invent current-affairs connections; publish them separately only with dated comparable official evidence."
   ],
   "historical_current_snapshot": [
     {
@@ -70,5 +70,10 @@
       "attempts": 0,
       "contributions": 0
     }
+  ],
+  "additional_packet": "docs/sources/mcs-additional-checked-explanations-20261103.json",
+  "receipts": [
+    "docs/sources/mcs-publication-20261103.json",
+    "docs/sources/mcs-additional-explanations-publication-20261103.json"
   ]
 }

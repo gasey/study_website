@@ -976,3 +976,11 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Verify full bank diff, protected transition state, live chart/page17link, source/answer readback, account and family health;71targeted tests pass. Restore publisher timer; ordinary usage296/500. Receipt:`docs/sources/mcs-publication-20261103.json`.
 - [ ] Continue the next bounded clean draft review using the remaining ordinary allowance. The first packet leaves1,207raw recent blank explanations/1,201usableanswered, and16documented unresolved drafts. No blanket source certification or human checks.
 - [ ] Restore the held radical source through separate audited option/final-key correction before releasing its hold; handle historical numbering/source-intake gaps without resetting editorial protection. Original simulation stays off;2012/2013deferred.
+
+
+### 3 November — additional checked MCS packet complete
+
+- [x] Restore five missing printed contexts and 13 physical PDF links before publishing 93 more checked explanations (36 reasoning/English, 57 factual) through 111 ordinary audited publications.
+- [x] Pass 75 targeted tests; verify full bank diff, public context readback, all 134 global holds, 244 previous attempts, both reviewer assignments, unlimited owner access and the protected 78-paper scope. No human checks, peer credits or quota exceptions.
+- [x] Restore the publisher timer, hash-verify the private recovery copy and confirm bank/taxonomy sync at `99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0`. Both receipts total 214 publications and 182 explanations this heartbeat; ordinary usage is 407/500.
+- [ ] Continue fresh primary-source review for 1,114 remaining raw recent blanks (1,108 with usable answers, including held/ineligible records) and withheld themes. Historical intake/numbering and the held radical correction remain open. Original simulation stays disabled; 2012/2013 recovery remains deferred.
