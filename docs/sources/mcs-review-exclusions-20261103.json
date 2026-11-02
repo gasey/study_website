@@ -1,0 +1,1557 @@
+{
+  "status": "Unpublished findings for source/subject review. Existing examiner keys and holds unchanged; no human checks created.",
+  "math": [
+    {
+      "id": "bf48a27ab6f2c1f47c05",
+      "group_id": "math-d585e446e1bc",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+      "year": 2023,
+      "paper_number": "II",
+      "qnum": 99,
+      "current_page_locator": 13,
+      "draft_baseline_page_locator": 13,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "bfb77fb6ced8f7e8ec99c4f6ba63c390ec2dd41b3380c49c9d872ced20c5caab",
+      "draft_expected_record_sha256": "bfb77fb6ced8f7e8ec99c4f6ba63c390ec2dd41b3380c49c9d872ced20c5caab",
+      "current_bank_record": {
+        "id": "bf48a27ab6f2c1f47c05",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "qnum": 99,
+        "page": 13,
+        "question": "Which one is the greatest out of ³√2, ⁶√3, ⁴√4 and ⁵√5?",
+        "options": [
+          "³√4",
+          "⁵√5",
+          "⁴√2",
+          "⁶√3"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": null,
+        "topicLabel": "MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": true,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/algebra",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ]
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "pdf_sha256_actual": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "pdf_sha256_expected": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "physical_page": 13,
+        "printed_footer_page_claimed": 13,
+        "question_and_options_native_excerpt": "    99. Which one is the greatest out of   2, 6 3, 3 4 and 4 5 ?\n          (a)   3\n                    4                                         (b)   4\n                                                                        5\n          (c)   2                                         (d) 6 3",
+        "qnum_found_on_page": true,
+        "visual_verification_excerpt": "99. Which one is the greatest out of √2, ⁶√3, ∛4 and ⁴√5? Choices: (a) ∛4; (b) ⁴√5; (c) √2; (d) ⁶√3."
+      },
+      "question_exact": "Which one is the greatest out of ³√2, ⁶√3, ⁴√4 and ⁵√5?",
+      "options_ordered": [
+        "³√4",
+        "⁵√5",
+        "⁴√2",
+        "⁶√3"
+      ],
+      "stored_answer_text": "³√4",
+      "answer_provenance": {
+        "answer_text": "³√4",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "live_canonical_answer_text": "³√4"
+      },
+      "independently_derived_answer_text": "∛4 (from the visually verified PDF stem and options only; not applicable to the current bank record)",
+      "answer_agrees": false,
+      "review_status": "source_transcription_prerequisite",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "Visual inspection of the original Paper-II (B), physical PDF page 13, shows stem √2, ⁶√3, ∛4, ⁴√5 and choices ∛4, ⁴√5, √2, ⁶√3. Current bank stem is ³√2, ⁶√3, ⁴√4, ⁵√5 and its ordered choices include ⁵√5 and ⁴√2. The bank record therefore needs source-transcription review before any explanation can attach safely."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_7453f7ecd0d3b989",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "³√4",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "78c80d8899aeabfa1e1b",
+      "group_id": "math-7d1b7fba65db",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 73,
+      "current_page_locator": 13,
+      "draft_baseline_page_locator": 13,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "97d34765cca081c41ab9067e32cafbb26b6eb4342ae96921309f24defea6f521",
+      "draft_expected_record_sha256": "97d34765cca081c41ab9067e32cafbb26b6eb4342ae96921309f24defea6f521",
+      "current_bank_record": {
+        "id": "78c80d8899aeabfa1e1b",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "qnum": 73,
+        "page": 13,
+        "question": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many poles did he need all together?",
+        "options": [
+          "100",
+          "104",
+          "108",
+          "None of these"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": null,
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "difficulty": "medium",
+        "explanation": null,
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ],
+        "reviewPublicationId": "pub_2a449c9b96c74c4ab44a8f9bcaaca881"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "pdf_sha256_actual": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "pdf_sha256_expected": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "physical_page": 13,
+        "printed_footer_page_claimed": 12,
+        "question_and_options_native_excerpt": " 73. A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n     poles did he need all together?\n      (a) 100                                            (b) 104\n      (c) 108                                            (d) None of these",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many poles did he need all together?",
+      "options_ordered": [
+        "100",
+        "104",
+        "108",
+        "None of these"
+      ],
+      "stored_answer_text": "104",
+      "answer_provenance": {
+        "answer_text": "104",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "live_canonical_answer_text": "104"
+      },
+      "independently_derived_answer_text": "104",
+      "answer_agrees": true,
+      "review_status": "source_defect",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "Printed source says “27 fence on each ride.” 104 requires interpreting “ride” as “side” and assuming the count includes both endpoints; neither correction is in the stem."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_5a3680723bfd5c57",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "104",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "6e01bfb62a39efdf0567",
+      "group_id": "math-2d5432ff5b8a",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 77,
+      "current_page_locator": 14,
+      "draft_baseline_page_locator": 13,
+      "changed_fields_vs_baseline": [
+        "page"
+      ],
+      "current_record_sha256_canonical_json": "cd8e7f24c8b736721a67347c20d24faa158b9bf6f809f6979a283621d3834633",
+      "draft_expected_record_sha256": "e18df8bc5fa34526e8dbb90a7cd4d9e39c7642720ae812011a883c6aa9b9494f",
+      "current_bank_record": {
+        "id": "6e01bfb62a39efdf0567",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "qnum": 77,
+        "page": 14,
+        "question": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and Hindi and the remaining speak both Mizo and Hindi. The ratio of people who speak Mizo to those who speak Khasi is:",
+        "options": [
+          "1/5",
+          "5/10",
+          "3/5",
+          "3/4"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": "Reasoning and Aptitude",
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "difficulty": "medium",
+        "explanation": null,
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": "Numerical Ability",
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/data-interpretation",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ],
+        "reviewPublicationId": "pub_ca5d9530ed294db5a88542ce82732a3a"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "pdf_sha256_actual": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "pdf_sha256_expected": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "physical_page": 14,
+        "printed_footer_page_claimed": 13,
+        "question_and_options_native_excerpt": "   77. Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n       The ratio of people who speak Mizo to those who speak Khasi is:\n        (a) 1/5                                         (b) 5/10\n        (c) 3/5                                         (d) 3/4",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and Hindi and the remaining speak both Mizo and Hindi. The ratio of people who speak Mizo to those who speak Khasi is:",
+      "options_ordered": [
+        "1/5",
+        "5/10",
+        "3/5",
+        "3/4"
+      ],
+      "stored_answer_text": "3/5",
+      "answer_provenance": {
+        "answer_text": "3/5",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "live_canonical_answer_text": "3/5"
+      },
+      "independently_derived_answer_text": "3/5",
+      "answer_agrees": true,
+      "review_status": "assumption",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "3/5 follows if the listed language-combination counts are mutually exclusive: remaining=5, Mizo=10+5=15, Khasi=12+13=25. Mutual exclusivity is not explicit."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_1011f10e4d539506",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "3/5",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "29c7dc7a604a8022419c",
+      "group_id": "math-015bb8dc6972",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 92,
+      "current_page_locator": 16,
+      "draft_baseline_page_locator": 16,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "69280ebbd60f625dd18d4562a952196b04c952d45685d9ad430504952ff896fc",
+      "draft_expected_record_sha256": "69280ebbd60f625dd18d4562a952196b04c952d45685d9ad430504952ff896fc",
+      "current_bank_record": {
+        "id": "29c7dc7a604a8022419c",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "type": "mcq",
+        "qnum": 92,
+        "page": 16,
+        "question": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their marks:",
+        "options": [
+          "96",
+          "72",
+          "84",
+          "108"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": "Reasoning and Aptitude",
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "difficulty": "medium",
+        "explanation": null,
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": "Numerical Ability",
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "assistant-reviewed",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ],
+        "reviewPublicationId": "pub_5876339f4dca428494c4c56909d547f2"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-A..pdf",
+        "pdf_sha256_actual": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "pdf_sha256_expected": "63ee7c9d5510accf7a0d0da33f18c5fb79764fea6d5ddf8945b1ec7587392cf0",
+        "physical_page": 16,
+        "printed_footer_page_claimed": 15,
+        "question_and_options_native_excerpt": "   92. Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n       marks:\n        (a) 96                                             (b) 72\n        (c) 84                                             (d) 108",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their marks:",
+      "options_ordered": [
+        "96",
+        "72",
+        "84",
+        "108"
+      ],
+      "stored_answer_text": "84",
+      "answer_provenance": {
+        "answer_text": "84",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "live_canonical_answer_text": "84"
+      },
+      "independently_derived_answer_text": "84",
+      "answer_agrees": true,
+      "review_status": "internal_contradiction",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "“Rama obtained 12 marks more” conflicts with a 3:4 Rama-to-Thana ratio, which makes Rama lower. Reversing the ratio order would silently alter the source."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_52e6efa821ae14ca",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "84",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "e5a647ae3e073cb19ff6",
+      "group_id": "math-ca562ad6c728",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 56,
+      "current_page_locator": 9,
+      "draft_baseline_page_locator": 9,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "d9c96f669797d2e3ab645db51560dcebd7fe8e178dd70f44e4d903e6afb835b8",
+      "draft_expected_record_sha256": "d9c96f669797d2e3ab645db51560dcebd7fe8e178dd70f44e4d903e6afb835b8",
+      "current_bank_record": {
+        "id": "e5a647ae3e073cb19ff6",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "type": "mcq",
+        "qnum": 56,
+        "page": 9,
+        "question": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?",
+        "options": [
+          "100",
+          "104",
+          "108",
+          "None of these"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 78c80d8899aeabfa1e1b, f00d07f49c4fc1cb9f40. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/7be4185d9a5936484c9972160ff62574afe43ccee172fa1fda101bd89651c380.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_db183bd84be63c0e61a11ac2",
+        "reviewPublicationId": "pub_d062bd507a8649de996dc7f1972e7472"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "pdf_sha256_actual": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "pdf_sha256_expected": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "physical_page": 9,
+        "printed_footer_page_claimed": 8,
+        "question_and_options_native_excerpt": "\n56. A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?\n     (a) 100                                            (b) 104\n     (c) 108                                            (d) None of these",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?",
+      "options_ordered": [
+        "100",
+        "104",
+        "108",
+        "None of these"
+      ],
+      "stored_answer_text": "104",
+      "answer_provenance": {
+        "answer_text": "104",
+        "answer_source": "official",
+        "answer_key_ref": "key_db183bd84be63c0e61a11ac2",
+        "live_canonical_answer_text": "104"
+      },
+      "independently_derived_answer_text": "104",
+      "answer_agrees": true,
+      "review_status": "source_defect",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "Printed source says “27 fence on each ride.” 104 requires interpreting “ride” as “side” and assuming the count includes both endpoints; neither correction is in the stem."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_1974b06e3847ec47",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "104",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "39214b0958d43992370a",
+      "group_id": "math-ac6de99802c9",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 60,
+      "current_page_locator": 10,
+      "draft_baseline_page_locator": 10,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "0bd22082dca97323fcc7e5c3799766629a14fc6aca3604bcb5cb1a1f0ac7e724",
+      "draft_expected_record_sha256": "0bd22082dca97323fcc7e5c3799766629a14fc6aca3604bcb5cb1a1f0ac7e724",
+      "current_bank_record": {
+        "id": "39214b0958d43992370a",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "type": "mcq",
+        "qnum": 60,
+        "page": 10,
+        "question": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n        The ratio of people who speak Mizo to those who speak Khasi is:",
+        "options": [
+          "1/5",
+          "5/10",
+          "3/5",
+          "3/4"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/data-interpretation",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 58717f04b6a3c30731e8, 6e01bfb62a39efdf0567. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/d31fc7e9d539593040b5a920e55f3535f0988964818dc04a2c7b56e017702729.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_db183bd84be63c0e61a11ac2",
+        "reviewPublicationId": "pub_dae3c34dc5ba47e299f0bd64539ce664"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "pdf_sha256_actual": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "pdf_sha256_expected": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "physical_page": 10,
+        "printed_footer_page_claimed": 9,
+        "question_and_options_native_excerpt": "\n   60. Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n        The ratio of people who speak Mizo to those who speak Khasi is:\n         (a) 1/5                                         (b) 5/10\n         (c) 3/5                                         (d) 3/4",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n        The ratio of people who speak Mizo to those who speak Khasi is:",
+      "options_ordered": [
+        "1/5",
+        "5/10",
+        "3/5",
+        "3/4"
+      ],
+      "stored_answer_text": "3/5",
+      "answer_provenance": {
+        "answer_text": "3/5",
+        "answer_source": "official",
+        "answer_key_ref": "key_db183bd84be63c0e61a11ac2",
+        "live_canonical_answer_text": "3/5"
+      },
+      "independently_derived_answer_text": "3/5",
+      "answer_agrees": true,
+      "review_status": "assumption",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "3/5 follows if the listed language-combination counts are mutually exclusive: remaining=5, Mizo=10+5=15, Khasi=12+13=25. Mutual exclusivity is not explicit."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_86ad41ac56058700",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "3/5",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "8223e491699df930dc2a",
+      "group_id": "math-7d7f81521e9f",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 75,
+      "current_page_locator": 11,
+      "draft_baseline_page_locator": 11,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "2b6b77a6b2e99b118e6d79c886d0f37239a0eb99f3b1138b1d72b4ea18b4746f",
+      "draft_expected_record_sha256": "2b6b77a6b2e99b118e6d79c886d0f37239a0eb99f3b1138b1d72b4ea18b4746f",
+      "current_bank_record": {
+        "id": "8223e491699df930dc2a",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "type": "mcq",
+        "qnum": 75,
+        "page": 11,
+        "question": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:",
+        "options": [
+          "96",
+          "72",
+          "84",
+          "108"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 27942318f0d3de215cfa, 29c7dc7a604a8022419c. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/edf535a8de2cc8f541c2faaa93c5a70362602a5204e9550af562b052ce88a27d.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_db183bd84be63c0e61a11ac2",
+        "reviewPublicationId": "pub_b0cfacd047024287b86157dd3059e0fa"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-B..pdf",
+        "pdf_sha256_actual": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "pdf_sha256_expected": "3f615b039ce199e74a5ea09478dfb60c7a3b4b65e8025145916813d0715602c8",
+        "physical_page": 11,
+        "printed_footer_page_claimed": 10,
+        "question_and_options_native_excerpt": "75. Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:\n     (a) 96                                             (b) 72\n     (c) 84                                             (d) 108",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:",
+      "options_ordered": [
+        "96",
+        "72",
+        "84",
+        "108"
+      ],
+      "stored_answer_text": "84",
+      "answer_provenance": {
+        "answer_text": "84",
+        "answer_source": "official",
+        "answer_key_ref": "key_db183bd84be63c0e61a11ac2",
+        "live_canonical_answer_text": "84"
+      },
+      "independently_derived_answer_text": "84",
+      "answer_agrees": true,
+      "review_status": "internal_contradiction",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "“Rama obtained 12 marks more” conflicts with a 3:4 Rama-to-Thana ratio, which makes Rama lower. Reversing the ratio order would silently alter the source."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_2ed6052a8d5c68ec",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "84",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "b88b8d82c10a03fd1ee5",
+      "group_id": "math-ffb88f1692f2",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 23,
+      "current_page_locator": 5,
+      "draft_baseline_page_locator": 5,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "61644782a129f438379480957b8201a72bade6d0ac2a4a8709ef0e558cee1132",
+      "draft_expected_record_sha256": "61644782a129f438379480957b8201a72bade6d0ac2a4a8709ef0e558cee1132",
+      "current_bank_record": {
+        "id": "b88b8d82c10a03fd1ee5",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "type": "mcq",
+        "qnum": 23,
+        "page": 5,
+        "question": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?",
+        "options": [
+          "100",
+          "104",
+          "108",
+          "None of these"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 78c80d8899aeabfa1e1b, f00d07f49c4fc1cb9f40. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/3d49fdcb972672a1d81d9502bd333c487cba8090af98cc375e0e7f00fe410d1b.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_b02b541d13656dd073218364",
+        "reviewPublicationId": "pub_c8ae4fb2158f457297167a47912d5746"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "pdf_sha256_actual": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "pdf_sha256_expected": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "physical_page": 5,
+        "printed_footer_page_claimed": 4,
+        "question_and_options_native_excerpt": "\n23. A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?\n     (a) 100                                            (b) 104\n     (c) 108                                            (d) None of these",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n    poles did he need all together?",
+      "options_ordered": [
+        "100",
+        "104",
+        "108",
+        "None of these"
+      ],
+      "stored_answer_text": "104",
+      "answer_provenance": {
+        "answer_text": "104",
+        "answer_source": "official",
+        "answer_key_ref": "key_b02b541d13656dd073218364",
+        "live_canonical_answer_text": "104"
+      },
+      "independently_derived_answer_text": "104",
+      "answer_agrees": true,
+      "review_status": "source_defect",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "Printed source says “27 fence on each ride.” 104 requires interpreting “ride” as “side” and assuming the count includes both endpoints; neither correction is in the stem."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_e061b24fea520e9b",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "104",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "89e710be120576732e3a",
+      "group_id": "math-dc092b1c6d85",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 27,
+      "current_page_locator": 6,
+      "draft_baseline_page_locator": 6,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "94961bd21fefe17c3568c7daa02d3f4d0d4babd1302a02656dfadc196d806812",
+      "draft_expected_record_sha256": "94961bd21fefe17c3568c7daa02d3f4d0d4babd1302a02656dfadc196d806812",
+      "current_bank_record": {
+        "id": "89e710be120576732e3a",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "type": "mcq",
+        "qnum": 27,
+        "page": 6,
+        "question": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n       The ratio of people who speak Mizo to those who speak Khasi is:",
+        "options": [
+          "1/5",
+          "5/10",
+          "3/5",
+          "3/4"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/data-interpretation",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 58717f04b6a3c30731e8, 6e01bfb62a39efdf0567. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/0dcc013be14b885a405bc69db5e2d64efe0b729d83a813cb76eee7798a3a2d07.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_b02b541d13656dd073218364",
+        "reviewPublicationId": "pub_f5bcc3c3b6d54d468ba98013210d6a40"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "pdf_sha256_actual": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "pdf_sha256_expected": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "physical_page": 6,
+        "printed_footer_page_claimed": 5,
+        "question_and_options_native_excerpt": "\n   27. Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n       The ratio of people who speak Mizo to those who speak Khasi is:\n        (a) 1/5                                         (b) 5/10\n        (c) 3/5                                         (d) 3/4",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n       Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n       Hindi and the remaining speak both Mizo and Hindi.\n       The ratio of people who speak Mizo to those who speak Khasi is:",
+      "options_ordered": [
+        "1/5",
+        "5/10",
+        "3/5",
+        "3/4"
+      ],
+      "stored_answer_text": "3/5",
+      "answer_provenance": {
+        "answer_text": "3/5",
+        "answer_source": "official",
+        "answer_key_ref": "key_b02b541d13656dd073218364",
+        "live_canonical_answer_text": "3/5"
+      },
+      "independently_derived_answer_text": "3/5",
+      "answer_agrees": true,
+      "review_status": "assumption",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "3/5 follows if the listed language-combination counts are mutually exclusive: remaining=5, Mizo=10+5=15, Khasi=12+13=25. Mutual exclusivity is not explicit."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_c347f176430cd3d7",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "3/5",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "faa129a1eff0f7ce23c8",
+      "group_id": "math-4906b05f9576",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 42,
+      "current_page_locator": 7,
+      "draft_baseline_page_locator": 7,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "5c168b6bc65913831f685dd2ef3a624ed057d9e99c0e74fe7dbe0d507623b441",
+      "draft_expected_record_sha256": "5c168b6bc65913831f685dd2ef3a624ed057d9e99c0e74fe7dbe0d507623b441",
+      "current_bank_record": {
+        "id": "faa129a1eff0f7ce23c8",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "type": "mcq",
+        "qnum": 42,
+        "page": 7,
+        "question": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:",
+        "options": [
+          "96",
+          "72",
+          "84",
+          "108"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "explanation": null,
+        "marks": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "taxonomy_version": "2.2",
+            "is_primary": true,
+            "review_status": "approved",
+            "source": "exact-signature-propagated",
+            "evidence": "Reused existing approved path from exact normalized stem and full ordered options: 27942318f0d3de215cfa, 29c7dc7a604a8022419c. No answer transferred; not an independent content review."
+          }
+        ],
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/d3763e7421a7b020554e664a2dd0d8213e007951429a02f89e6662bdcee10764.png",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "origin": {
+          "kind": "restored-original-paper",
+          "source_sha256": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+          "review_date": "2026-10-31",
+          "text_status": "provisional; original PDF pages retained"
+        },
+        "answerKeyRef": "key_b02b541d13656dd073218364",
+        "reviewPublicationId": "pub_caab7713f78d433ca3d32bb0b8f2cffb"
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-C..pdf",
+        "pdf_sha256_actual": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "pdf_sha256_expected": "040479198429c1b0b15e41060cdc9d129bd518823ac80a0c11f48a9f5396d344",
+        "physical_page": 7,
+        "printed_footer_page_claimed": 6,
+        "question_and_options_native_excerpt": "42. Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:\n     (a) 96                                             (b) 72\n     (c) 84                                             (d) 108",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:",
+      "options_ordered": [
+        "96",
+        "72",
+        "84",
+        "108"
+      ],
+      "stored_answer_text": "84",
+      "answer_provenance": {
+        "answer_text": "84",
+        "answer_source": "official",
+        "answer_key_ref": "key_b02b541d13656dd073218364",
+        "live_canonical_answer_text": "84"
+      },
+      "independently_derived_answer_text": "84",
+      "answer_agrees": true,
+      "review_status": "internal_contradiction",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "“Rama obtained 12 marks more” conflicts with a 3:4 Rama-to-Thana ratio, which makes Rama lower. Reversing the ratio order would silently alter the source."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_ba22066470dab2be",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "84",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "f00d07f49c4fc1cb9f40",
+      "group_id": "math-7d1b7fba65db",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 6,
+      "current_page_locator": 2,
+      "draft_baseline_page_locator": 2,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "3626c77ae8c74642174cb63b66d101c5c2104a7a9a2d895499a4c0d813650ccc",
+      "draft_expected_record_sha256": "3626c77ae8c74642174cb63b66d101c5c2104a7a9a2d895499a4c0d813650ccc",
+      "current_bank_record": {
+        "id": "f00d07f49c4fc1cb9f40",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "qnum": 6,
+        "page": 2,
+        "question": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many poles did he need all together?",
+        "options": [
+          "100",
+          "104",
+          "108",
+          "None of these"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": null,
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": null,
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "exact-signature-propagated",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ]
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "pdf_sha256_actual": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "pdf_sha256_expected": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "physical_page": 2,
+        "printed_footer_page_claimed": 1,
+        "question_and_options_native_excerpt": "    6. A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many\n       poles did he need all together?\n        (a) 100                                            (b) 104\n        (c) 108                                            (d) None of these",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "A farmer built a fence around his square plot. He used 27 fence on each ride of the square. How many poles did he need all together?",
+      "options_ordered": [
+        "100",
+        "104",
+        "108",
+        "None of these"
+      ],
+      "stored_answer_text": "104",
+      "answer_provenance": {
+        "answer_text": "104",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "live_canonical_answer_text": "104"
+      },
+      "independently_derived_answer_text": "104",
+      "answer_agrees": true,
+      "review_status": "source_defect",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "Printed source says “27 fence on each ride.” 104 requires interpreting “ride” as “side” and assuming the count includes both endpoints; neither correction is in the stem."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_e83105f2e86edc5d",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "104",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "58717f04b6a3c30731e8",
+      "group_id": "math-2d5432ff5b8a",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 10,
+      "current_page_locator": 3,
+      "draft_baseline_page_locator": 3,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "20fd29bacae085bb7e37124f9de64d5bdc22ec1e482a1ea6269c3ce3bfe2594e",
+      "draft_expected_record_sha256": "20fd29bacae085bb7e37124f9de64d5bdc22ec1e482a1ea6269c3ce3bfe2594e",
+      "current_bank_record": {
+        "id": "58717f04b6a3c30731e8",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "qnum": 10,
+        "page": 3,
+        "question": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and Hindi and the remaining speak both Mizo and Hindi. The ratio of people who speak Mizo to those who speak Khasi is:",
+        "options": [
+          "1/5",
+          "5/10",
+          "3/5",
+          "3/4"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": "Reasoning and Aptitude",
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": "Numerical Ability",
+        "classifications": [
+          {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/data-interpretation",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "exact-signature-propagated",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ]
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "pdf_sha256_actual": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "pdf_sha256_expected": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "physical_page": 3,
+        "printed_footer_page_claimed": 2,
+        "question_and_options_native_excerpt": "10. Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and\n    Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and\n    Hindi and the remaining speak both Mizo and Hindi.\n    The ratio of people who speak Mizo to those who speak Khasi is:\n     (a) 1/5                                         (b) 5/10\n     (c) 3/5                                         (d) 3/4",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Out of 60 people in a colony, 10 speak only Mizo, 5 speak only Assamese, 10 speak both Hindi and Odia, 12 speak both Khasi and Hindi, 13 speak English, Tamil and Khasi, 5 speak both Assamese and Hindi and the remaining speak both Mizo and Hindi. The ratio of people who speak Mizo to those who speak Khasi is:",
+      "options_ordered": [
+        "1/5",
+        "5/10",
+        "3/5",
+        "3/4"
+      ],
+      "stored_answer_text": "3/5",
+      "answer_provenance": {
+        "answer_text": "3/5",
+        "answer_source": "official",
+        "answer_key_ref": "MCS Provisional ( Premliminary ) - 2025 Answer Key Paper-II..pdf",
+        "live_canonical_answer_text": "3/5"
+      },
+      "independently_derived_answer_text": "3/5",
+      "answer_agrees": true,
+      "review_status": "assumption",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "3/5 follows if the listed language-combination counts are mutually exclusive: remaining=5, Mizo=10+5=15, Khasi=12+13=25. Mutual exclusivity is not explicit."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_36a38d429600d8c9",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "3/5",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    },
+    {
+      "id": "27942318f0d3de215cfa",
+      "group_id": "math-015bb8dc6972",
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+      "year": 2025,
+      "paper_number": "II",
+      "qnum": 25,
+      "current_page_locator": 5,
+      "draft_baseline_page_locator": 5,
+      "changed_fields_vs_baseline": [],
+      "current_record_sha256_canonical_json": "5b93533867aacf8df5058a3d16a40d10779b5409f3291d8366ba4b7d35529db5",
+      "draft_expected_record_sha256": "5b93533867aacf8df5058a3d16a40d10779b5409f3291d8366ba4b7d35529db5",
+      "current_bank_record": {
+        "id": "27942318f0d3de215cfa",
+        "paperId": "Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "type": "mcq",
+        "qnum": 25,
+        "page": 5,
+        "question": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their marks:",
+        "options": [
+          "96",
+          "72",
+          "84",
+          "108"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "subject": "General Studies",
+        "topic": "Reasoning and Aptitude",
+        "topicLabel": "MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "difficulty": "medium",
+        "explanation": "",
+        "hasDiagram": false,
+        "figureGroupId": null,
+        "figureImage": null,
+        "usedVision": false,
+        "passage": null,
+        "passageId": null,
+        "marks": null,
+        "essayKind": null,
+        "answerKeyRef": "MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+        "auto_tagged": true,
+        "tag_source": "taxonomy:2",
+        "subtopic": "Numerical Ability",
+        "classifications": [
+          {
+            "subject_id": "mathematics",
+            "topic_id": "mathematics/arithmetic",
+            "subtopic_id": null,
+            "is_primary": true,
+            "source": "exact-signature-propagated",
+            "taxonomy_version": "2.2",
+            "review_status": "approved"
+          }
+        ]
+      },
+      "source": {
+        "pdf_path": "/home/hruaia/workspace/projects/personal/mpsc-question-bankv2/pdfs/Old_Questions/Direct_2025-2027/MCS Combined 2025 Preliminary Exam Paper-II Series-D..pdf",
+        "pdf_sha256_actual": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "pdf_sha256_expected": "644599689080f284e3812f1d3eeb769c23ef7aa67cc43e69d176b65a62d4d722",
+        "physical_page": 5,
+        "printed_footer_page_claimed": 4,
+        "question_and_options_native_excerpt": "25. Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their\n    marks:\n     (a) 96                                             (b) 72\n     (c) 84                                             (d) 108",
+        "qnum_found_on_page": true
+      },
+      "question_exact": "Rama obtained 12 marks more than that of Thana. If the ratio of their marks is 3 : 4, find the sum of their marks:",
+      "options_ordered": [
+        "96",
+        "72",
+        "84",
+        "108"
+      ],
+      "stored_answer_text": "84",
+      "answer_provenance": {
+        "answer_text": "84",
+        "answer_source": "official",
+        "answer_key_ref": "MCS (Combined) Prelim-2025 Final Answer Key..pdf",
+        "live_canonical_answer_text": "84"
+      },
+      "independently_derived_answer_text": "84",
+      "answer_agrees": true,
+      "review_status": "internal_contradiction",
+      "explanation_draft": null,
+      "assumptions_or_source_findings": [
+        "“Rama obtained 12 marks more” conflicts with a 3:4 Rama-to-Thana ratio, which makes Rama lower. Reversing the ratio order would silently alter the source."
+      ],
+      "historical_2026_11_02_eligibility_snapshot": {
+        "canonical_id": "cq_09ccd22056e6c037",
+        "canonical_status": "live",
+        "held_reason": null,
+        "is_primary": true,
+        "compensated": false,
+        "appearance_key_disputed": false,
+        "canonical_key_disputed": false,
+        "appearance_source_defect": null,
+        "canonical_source_defect": null,
+        "appearance_answer_text": null,
+        "canonical_answer_text": "84",
+        "bank_live_appearance_matches": true,
+        "eligible_for_draft": true,
+        "exclusion_reasons": []
+      },
+      "current_live_eligibility_checked": false
+    }
+  ],
+  "factual": [
+    {
+      "appearanceId": "4ff3aae02576c87ebfb2",
+      "canonicalId": "cq_424c5a8f251dd216",
+      "topic": "prolactin",
+      "year": 2023,
+      "paperNumber": "I",
+      "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+      "questionNumber": 84,
+      "bankPageLocator": 8,
+      "currentRecordSHA256": "af677ce32a25ac974f89f640f533494c2adec62d10d29a31ddea6b870f59f7dd",
+      "currentBankBaseline": {
+        "stem": "The function of mammary glands is regulated by a hormone known as",
+        "options": [
+          "Oxytocin",
+          "Prolactin",
+          "Thyroxine",
+          "Vasopressin"
+        ],
+        "answerIndexZeroBased": 1,
+        "answerText": "Prolactin",
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+        "explanation": null,
+        "context": {
+          "passage": null,
+          "passageId": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "hasDiagram": false,
+          "figureGroupId": null,
+          "figureImage": null,
+          "usedVision": false
+        }
+      },
+      "originalPaperEvidence": {
+        "path": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "sha256": "b48ee8b3b35f7b3f6f05ee7055fbc4249524eee007114f7175748dbd6eab8c01",
+        "physicalPageOneBased": 8,
+        "bankLocatorPage": 8,
+        "exactExtractedStemAndOrderedOptions": "84. The function of mammary glands is regulated by a hormone known as\n      (a) Oxytocin                                      (b) Prolactin\n      (c) Thyroxine                                     (d) Vasopressin"
+      },
+      "officialFinalKeyEvidence": {
+        "path": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'B'..pdf",
+        "sha256": "fdc99c3de0fecdeb7c9098596509b3454dfb299e27ea654d78687e2bf649db22",
+        "physicalPageOneBased": 1,
+        "series": "B",
+        "questionNumber": 84,
+        "finalKeyLetter": "B",
+        "letterMapsToOption": "Prolactin",
+        "storedAnswerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+        "checkedAgainstFinalKey": true,
+        "keyEntryText": "84 (B)",
+        "verificationMethod": "Digitally extractable official final key, checked against series and question number."
+      },
+      "sourceCheck": {
+        "title": "NCBI Bookshelf, The Pituitary Gland",
+        "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK27/?report=reader",
+        "publisher": "official/primary issuer",
+        "checkedAt": "2026-11-03",
+        "supports": "Prolactin stimulates breast development and milk production; it is distinct from oxytocin-mediated milk ejection.",
+        "derivedAnswerText": "Prolactin",
+        "answerMatchesOfficialFinalKey": true
+      },
+      "draftExplanation": "Prolactin promotes breast development and milk production, which is the relevant mammary function. Oxytocin is associated with milk ejection, a different step; the cited endocrine source distinguishes prolactin’s milk-production role.",
+      "reviewStatus": "qualified_stem_ambiguity",
+      "issues": [
+        "stem_scope_ambiguity: “function of mammary glands” can include milk production (prolactin) or milk ejection (oxytocin); answer is defensible in the milk-production sense and explanation should retain distinction."
+      ]
+    },
+    {
+      "appearanceId": "01842be67d9b4572af3f",
+      "canonicalId": "cq_1e5c4e7d8f627785",
+      "topic": "prolactin",
+      "year": 2023,
+      "paperNumber": "I",
+      "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+      "questionNumber": 87,
+      "bankPageLocator": 8,
+      "currentRecordSHA256": "bfd4fb5acedca177b4e5f6ce7bd6d99cf43c8a3e50c6efc551dc729177c88696",
+      "currentBankBaseline": {
+        "stem": "The function of mammary glands is regulated by a hormone known as",
+        "options": [
+          "Oxytocin",
+          "Prolactin",
+          "Thyroxine",
+          "Vasopressin"
+        ],
+        "answerIndexZeroBased": 1,
+        "answerText": "Prolactin",
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+        "explanation": "",
+        "context": {
+          "passage": null,
+          "passageId": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "hasDiagram": false,
+          "figureGroupId": null,
+          "figureImage": null,
+          "usedVision": false
+        }
+      },
+      "originalPaperEvidence": {
+        "path": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "physicalPageOneBased": 8,
+        "bankLocatorPage": 8,
+        "exactExtractedStemAndOrderedOptions": "87. The function of mammary glands is regulated by a hormone known as\n      (a) Oxytocin                                      (b) Prolactin\n      (c) Thyroxine                                     (d) Vasopressin"
+      },
+      "officialFinalKeyEvidence": {
+        "path": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'A'..pdf",
+        "sha256": "4e8b1beac773f2c326006d26117ad899c34edad31023c1d974035175219a5d19",
+        "physicalPageOneBased": 1,
+        "series": "A",
+        "questionNumber": 87,
+        "finalKeyLetter": "B",
+        "letterMapsToOption": "Prolactin",
+        "storedAnswerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+        "checkedAgainstFinalKey": true,
+        "keyEntryText": "87 (B)",
+        "verificationMethod": "Digitally extractable official final key, checked against series and question number."
+      },
+      "sourceCheck": {
+        "title": "NCBI Bookshelf, The Pituitary Gland",
+        "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK27/?report=reader",
+        "publisher": "official/primary issuer",
+        "checkedAt": "2026-11-03",
+        "supports": "Prolactin stimulates breast development and milk production; it is distinct from oxytocin-mediated milk ejection.",
+        "derivedAnswerText": "Prolactin",
+        "answerMatchesOfficialFinalKey": true
+      },
+      "draftExplanation": "Prolactin promotes breast development and milk production, which is the relevant mammary function. Oxytocin is associated with milk ejection, a different step; the cited endocrine source distinguishes prolactin’s milk-production role.",
+      "reviewStatus": "qualified_stem_ambiguity",
+      "issues": [
+        "stem_scope_ambiguity: “function of mammary glands” can include milk production (prolactin) or milk ejection (oxytocin); answer is defensible in the milk-production sense and explanation should retain distinction."
+      ]
+    },
+    {
+      "appearanceId": "f33235e74703f0c591b1",
+      "canonicalId": "cq_43ebcd12c251c2ed",
+      "topic": "prolactin",
+      "year": 2023,
+      "paperNumber": "I",
+      "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+      "questionNumber": 78,
+      "bankPageLocator": 7,
+      "currentRecordSHA256": "3d14cd6dac95bafb95067670ddae4a4c6e8b9cc8bdff2afaf2258992af50e054",
+      "currentBankBaseline": {
+        "stem": "The function of mammary glands is regulated by a hormone known as",
+        "options": [
+          "Oxytocin",
+          "Prolactin",
+          "Thyroxine",
+          "Vasopressin"
+        ],
+        "answerIndexZeroBased": 1,
+        "answerText": "Prolactin",
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+        "explanation": "",
+        "context": {
+          "passage": null,
+          "passageId": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "hasDiagram": false,
+          "figureGroupId": null,
+          "figureImage": null,
+          "usedVision": false
+        }
+      },
+      "originalPaperEvidence": {
+        "path": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "sha256": "ea98579ba44d7695518b766693f34c461f587c59c24bb797cfa6b787d5e86e66",
+        "physicalPageOneBased": 7,
+        "bankLocatorPage": 7,
+        "exactExtractedStemAndOrderedOptions": "78. The function of mammary glands is regulated by a hormone known as\n         (a) Oxytocin                                      (b) Prolactin\n         (c) Thyroxine                                     (d) Vasopressin"
+      },
+      "officialFinalKeyEvidence": {
+        "path": "Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'D'..pdf",
+        "sha256": "38decdfd41212bd4a22c7e08855a95a5cba93b943112888df2a95978cf05832c",
+        "physicalPageOneBased": 1,
+        "series": "D",
+        "questionNumber": 78,
+        "finalKeyLetter": "B",
+        "letterMapsToOption": "Prolactin",
+        "storedAnswerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+        "checkedAgainstFinalKey": true,
+        "keyEntryText": "78 (B)",
+        "verificationMethod": "Digitally extractable official final key, checked against series and question number."
+      },
+      "sourceCheck": {
+        "title": "NCBI Bookshelf, The Pituitary Gland",
+        "url": "https://www.ncbi.nlm.nih.gov/sites/books/NBK27/?report=reader",
+        "publisher": "official/primary issuer",
+        "checkedAt": "2026-11-03",
+        "supports": "Prolactin stimulates breast development and milk production; it is distinct from oxytocin-mediated milk ejection.",
+        "derivedAnswerText": "Prolactin",
+        "answerMatchesOfficialFinalKey": true
+      },
+      "draftExplanation": "Prolactin promotes breast development and milk production, which is the relevant mammary function. Oxytocin is associated with milk ejection, a different step; the cited endocrine source distinguishes prolactin’s milk-production role.",
+      "reviewStatus": "qualified_stem_ambiguity",
+      "issues": [
+        "stem_scope_ambiguity: “function of mammary glands” can include milk production (prolactin) or milk ejection (oxytocin); answer is defensible in the milk-production sense and explanation should retain distinction."
+      ]
+    }
+  ]
+}

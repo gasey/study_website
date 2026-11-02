@@ -966,3 +966,13 @@ Implemented Paper / Focus / Question + PDF, whole-paper search, printed question
 - [x] Save exact source/predecessor packets, 96 further drafts and three historical numbering candidates; preserve unrelated UDC work. Receipt: `docs/sources/mcs-publication-20261102.json`.
 - [ ] Resume remaining explanation review when ordinary allowance opens. Current recent backlog is 1,296 raw blanks / 1,290 with usable case-sensitive answers; held/source/provenance checks still apply. The older 1,304 usable count incorrectly casefolded four letter-code choices; corrected pre-run count was 1,308.
 - [ ] Address historical duplicate Q4/Q86 without unsupported retirement, add guarded unanswered original-source intake for 2014 II Q39, and satisfy original simulation source/key/scoring prerequisites. Keep 2012/2013 recovery deferred. Continue from `docs/sources/mcs-continuation-checkpoint-20261102.json`.
+
+
+### 3 November — protected MCS source and explanation continuation
+
+- [x] Recheck authority, human-review integrity, bank/taxonomy sync, ordinary193/500allowance and current account/history before work. Preserve78protectedpapers and both reviewer assignments.
+- [x] Restore nine missing required diagrams from four original page images, fix four PDF links and the lost √3=1.73 annotation; publish89worked explanations through103audited ordinary publications.
+- [x] Preserve all34existingholds/244oldattemptrows; place the exact damaged2023B Q99radical source on one separate review hold. Source keys remain intact.
+- [x] Verify full bank diff, protected transition state, live chart/page17link, source/answer readback, account and family health;71targeted tests pass. Restore publisher timer; ordinary usage296/500. Receipt:`docs/sources/mcs-publication-20261103.json`.
+- [ ] Continue the next bounded clean draft review using the remaining ordinary allowance. The first packet leaves1,207raw recent blank explanations/1,201usableanswered, and16documented unresolved drafts. No blanket source certification or human checks.
+- [ ] Restore the held radical source through separate audited option/final-key correction before releasing its hold; handle historical numbering/source-intake gaps without resetting editorial protection. Original simulation stays off;2012/2013deferred.

@@ -1,0 +1,52 @@
+{
+  "request": {
+    "operation": "answer",
+    "owner_email": "hruaitluangasailo20@gmail.com",
+    "authorization": "Owner authorized continuing MCS source/option quality review through standard audited workflows. Apply only this evidence-backed reversible review hold to prevent scoring damaged source text; no key replacement or quota exception.",
+    "repair": {
+      "canonical_id": "cq_7453f7ecd0d3b989",
+      "appearance_id": "bf48a27ab6f2c1f47c05",
+      "mode": "needs-review",
+      "reason": "Exact 2023 Paper II Series B Q99 source PDF, physical page 13, visually checked: the printed radicals are √2, sixth-root 3, cube-root 4 and fourth-root 5, with choices cube-root 4, fourth-root 5, √2 and sixth-root 3. The stored stem/choices have different root indices, so the preserved official answer cannot safely grade the displayed question. Hold pending original-source option restoration and a separate exact final-key mapping; preserve all examiner provenance and existing history.",
+      "expected_source": {
+        "id": "bf48a27ab6f2c1f47c05",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "question": "Which one is the greatest out of ³√2, ⁶√3, ⁴√4 and ⁵√5?",
+        "options": [
+          "³√4",
+          "⁵√5",
+          "⁴√2",
+          "⁶√3"
+        ],
+        "answerIndex": 0,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 13,
+        "qnum": "99",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "mathematics",
+          "topic_id": "mathematics/algebra",
+          "subtopic_id": null
+        }
+      }
+    }
+  },
+  "receipt": {
+    "id": "adm_d81aee1c1f1a4cdf88638574efd3069a",
+    "contribution_id": null,
+    "state": "held",
+    "replayed": false
+  },
+  "source_finding": "docs/sources/mcs-review-exclusions-20261103.json",
+  "bank_content_changed": false,
+  "new_official_answer_assigned": false
+}

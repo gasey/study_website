@@ -46,9 +46,10 @@ def prepare(packet,bank,bank_root,offset=0,limit=100):
     return dict(operation='source-batch',owner_email='hruaitluangasailo20@gmail.com',authorization='Owner requested completion of checked MCS explanations. Add only reviewed explanation text after exact source prerequisites through audited publication, preserving all answers/provenance, source mappings, holds, access and history.',items=items),identical
 
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--offset',type=int,default=0);p.add_argument('--limit',type=int,default=100);p.add_argument('--preview',action='store_true');p.add_argument('--output',type=Path,required=True);args=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--packet',type=Path,default=PACKET,help='Checked packet saved under docs/sources; all existing source/answer guards remain mandatory');p.add_argument('--offset',type=int,default=0);p.add_argument('--limit',type=int,default=100);p.add_argument('--preview',action='store_true');p.add_argument('--output',type=Path,required=True);args=p.parse_args()
     if not args.output.resolve().is_relative_to(ROOT/'reports'):p.error('Write reports under reports/')
-    packet=json.loads(PACKET.read_text());bank=json.loads((BANK_ROOT/'bank/mpsc_bank_v2.json').read_text())
+    if not args.packet.resolve().is_relative_to(ROOT/'docs/sources'):p.error('Read checked packets under docs/sources/')
+    packet=json.loads(args.packet.read_text());bank=json.loads((BANK_ROOT/'bank/mpsc_bank_v2.json').read_text())
     if args.preview:
         # In-memory validation only; this is not an executable publication
         # request and must not be passed to the owner-maintenance CLI.
