@@ -1,0 +1,45 @@
+{
+  "batch": 61,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2021-2022/MCS Combined 2021 Preliminary Exam Paper II.pdf",
+      "paper_title": "Mizoram Civil Service Combined Preliminary Examination 2021 — Paper II (Aptitude, Arithmetic & Comprehension)",
+      "document_id": "doc_82ea93920297fe3dba5ea823",
+      "sha256": "9df024ceae83bb6183df0bf513aeb6354d8fa0cf1871ce9fd22455094c91784d",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for MCS Combined 2021 Preliminary Paper II (100/100 MCQs)",
+  "actions": {
+    "retag": 31,
+    "keep": 69,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 10,
+    "english/vocabulary/synonyms": 3,
+    "english/vocabulary": 2,
+    "english/vocabulary/antonyms": 1,
+    "english/vocabulary/idioms-and-phrases": 1,
+    "reasoning-and-aptitude/verbal-reasoning": 52,
+    "reasoning-and-aptitude/series": 4,
+    "mathematics/algebra/linear-equations": 3,
+    "mathematics/arithmetic/percentages": 3,
+    "mathematics/arithmetic/averages": 2,
+    "reasoning-and-aptitude/numerical-ability": 8,
+    "mathematics/arithmetic": 4,
+    "reasoning-and-aptitude/data-interpretation": 3,
+    "mathematics/algebra": 1,
+    "mathematics/arithmetic/ratio-and-proportion": 2,
+    "mathematics/mensuration": 1
+  },
+  "source_defects": [
+    "Q71 Misclassified to Physics: An assertion-reason logic question was misclassified into science/physics in legacy baseline; retagged to reasoning-and-aptitude/verbal-reasoning.",
+    "Q49, Q88 Misclassified to Statistics: Standard arithmetic mean/average problems were tagged to statistics in legacy baseline; retagged to mathematics/arithmetic/averages."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

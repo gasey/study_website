@@ -7055,3 +7055,33 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,035 saved records**, **3,957 unique appearances**, **3,557 deduplicated candidates**, **0 problems**. [Batch 60 report](reports/tagging-batch60-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 61: MCS Combined 2021 Preliminary Paper II (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 61 (`reports/tagging-batch61-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination 2021 — Paper II (Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Direct_2021-2022/MCS Combined 2021 Preliminary Exam Paper II.pdf`, `doc_82ea93920297fe3dba5ea823`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 31 retag, 69 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/comprehension` (10 items, confirmed and kept): Q1–Q2, Q8–Q9, Q11–Q14, Q16–Q17 (reading comprehension passages).
+    - `english/vocabulary/synonyms` (3 items, retagged): Q3, Q5, Q7 (passage vocabulary synonyms).
+    - `english/vocabulary` (2 items, confirmed and kept): Q4, Q6 (passage vocabulary context).
+    - `english/vocabulary/antonyms` (1 item, retagged): Q10 (opposite of 'rampant').
+    - `english/vocabulary/idioms-and-phrases` (1 item, retagged): Q15 ('deliver the goods').
+    - `reasoning-and-aptitude/verbal-reasoning` (52 items): Q18–Q33 (interpersonal/decision-making), Q34–Q37 (logic puzzle), Q38, Q72 (blood relations), Q39–Q40 (analogies), Q41, Q45, Q73 (coding), Q43–Q44 (non-verbal figures), Q50 (inequalities), Q51–Q54 (syllogisms/conclusions), Q55–Q67 (administrative decision making), Q71 (assertion-reason), Q74, Q78 (direction sense), Q81–Q82 (analytical puzzles).
+    - `reasoning-and-aptitude/series` (4 items): Q42, Q68, Q69 (number series), Q46 (letter series).
+    - `reasoning-and-aptitude/numerical-ability` (8 items): Q70 (word problem), Q75 (number matrix), Q76, Q90 (Venn sets), Q79 (clock), Q80 (dice), Q83 (seating rows), Q84 (scheduling).
+    - `reasoning-and-aptitude/data-interpretation` (3 items): Q91 (pie chart), Q99–Q100 (table DI).
+    - `mathematics/arithmetic` (4 items): Q86–Q87 (surd arithmetic), Q89 (pipes & cisterns), Q96 (speed, distance, time).
+    - `mathematics/arithmetic/percentages` (3 items): Q48, Q85, Q94 (percentage calculations).
+    - `mathematics/arithmetic/averages` (2 items): Q49, Q88 (arithmetic mean / averages).
+    - `mathematics/arithmetic/ratio-and-proportion` (2 items): Q95, Q98 (ratios).
+    - `mathematics/algebra` (1 item): Q92 (arithmetic progression).
+    - `mathematics/algebra/linear-equations` (3 items): Q47, Q77, Q93 (linear equations & age algebra).
+    - `mathematics/mensuration` (1 item): Q97 (wheel revolutions & perimeter).
+- **Source Defects & Verification:**
+  - Resolved baseline anomalies (Assertion-Reason in Physics, Mean/Average in Statistics) by properly mapping to reasoning and arithmetic.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,135 saved records**, **4,057 unique appearances**, **3,657 deduplicated candidates**, **0 problems**. [Batch 61 report](reports/tagging-batch61-20261108/README.md).
