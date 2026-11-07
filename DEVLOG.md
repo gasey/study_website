@@ -6501,4 +6501,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 3 Unextracted Conventional Tasks:** Preserved 3 Part-A written prompts (Précis 14m, Formal Application Letter 10m, Reading Comprehension 10m) totaling 34 marks in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (66/66) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,839 across 40 candidate reports with zero problems or booklet family conflicts. [Batch 39 report](reports/tagging-batch39-20261108/README.md).
 
+## 2026-11-08 05:15 IST — Source-reviewed tagging batch 40 (AAO & Field Facilitator 2025 General English Series A 100% Paper Finalization — 60 MCQs)
+
+- Completed source-reviewed tagging batch 40 (60 English MCQs, achieving 100% paper completion) from *General Competitive Examination for Recruitment to the Posts of Assistant Accounts Officer (Treasury & Works) and Field Facilitator (November, 2025) — Paper-I (General English) (Series A)* (`Old_Questions/Direct_NG_2024-2027/General English - Series A..pdf`, `doc_f00f463fd9dd338fb2178369`), advancing the owner's English priority under policy `study-tagging-v1`:
+  * **41 retags, 19 keeps, 0 holds.**
+  * **Single-Booklet Series Deduplication Enforced:** Cleanly bypassed permuted Series B booklet `Old_Questions/Direct_NG_2024-2027/General English - Series B..pdf` (`doc_9283fbe7c06c764e3084aeff`, `sha256: 950f330d86383ce12a0ee813fadea7d1745627866eeedbf98cf501703a0f5b95`), saving 60 redundant reviews under the single-booklet deduplication policy.
+  * **Untagged Baseline Rectification:** All 60 MCQs had coarse topic-level tags (`english/grammar` or `english/vocabulary`) without subtopics. Rectified 100% of targets to active English subtopics:
+    - `english/grammar/parts-of-speech` (10 items: Adjectives 1, Adverbs 4, Conjunctions 1, Prepositions 1, Pronouns 1, Nouns 2)
+    - `english/grammar/tenses` (10 items: Present 1, Past 3, Future 2, Continuous 2, Perfect 2)
+    - `english/vocabulary` (4 items: Contextual Word Choice)
+    - `english/vocabulary/synonyms` (5 items)
+    - `english/vocabulary/antonyms` (1 item)
+    - `english/sentence-correction` (6 items: Word Order, Grammaticality, Sentence Completeness, Punctuation)
+    - `english/grammar` (18 items: Jumbled Sentences PQRS 3, Conjunctions 1, Sentence Types 6, Clause Patterns 4, Sentence Functions 4)
+    - `english/grammar/prepositions` (1 item)
+    - `english/grammar/reported-speech` (3 items: Direct/Indirect narration)
+    - `english/grammar/voice` (2 items: Active/Passive Voice)
+  * **Preserved 4 Unextracted Conventional Tasks:** Preserved 4 Part-A written prompts (Précis 10m, Formal Letter to Minister 10m, Reading Comprehension 10m, Essay Writing 10m) totaling 40 marks in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (60/60) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,899 across 41 candidate reports with zero problems or booklet family conflicts. [Batch 40 report](reports/tagging-batch40-20261108/README.md).
+
+
 
