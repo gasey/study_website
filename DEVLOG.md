@@ -6612,6 +6612,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - `reasoning-and-aptitude/data-interpretation` (9 items: Bar Chart Analysis 5, Pie Chart Expenditure Analysis 4)
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (70/70) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,177** across 45 candidate reports with zero problems or booklet family conflicts. [Batch 44 report](reports/tagging-batch44-20261108/README.md).
 
+## 2026-11-08 07:45 IST — Source-reviewed tagging batch 45 (Finance Dept ADA, AA & ATA General English 100% Paper Finalization — 60 MCQs)
+
+- Completed source-reviewed tagging batch 45 (60 General English MCQs, achieving 100% paper completion) from:
+  - *Competitive Examinations for Recruitment to the Posts of Assistant Auditor, Assistant Treasury Accountant & Assistant Divisional Accountant under Finance Department, Government of Mizoram (January 2019) — General English* (`doc_28eafb04c21bfc501a33c583`, 60 MCQs)
+  * **58 retags, 2 keeps, 0 holds.**
+  * **Companion Paper Finalization:** Companion to the Batch 44 Arithmetic paper, completing the entire non-GK portion of the 2019 Finance Department Combined recruitment examination. Single-booklet paper with zero duplicates.
+  * **Untagged Baseline Rectification:** All 60 MCQs in production had coarse `current_subject: 'gk'` and `current_topic: 'ADA, AA & ATA General English'`. All have been restructured into active taxonomy subtopics:
+    - `english/grammar/parts-of-speech` (25 items: abstract/collective/common nouns, transitive verb, gerunds as subject/object/complement, participles, predicate/substantive adjectives, degree/manner adverbs, interjections, coordinating/subordinating conjunctions, spatial preposition)
+    - `english/grammar` (19 items: modal notions of possibility, obligation, command, polite request, habitual aspect, clause purpose, optative wish/prayer, moral advice, conditions; traditional sentence types: interrogative, assertive, imperative, exclamatory, optative, negative)
+    - `english/grammar/prepositions` (7 items: time origin, dependent verbs, motion, idiomatic swearing, relative position)
+    - `english/grammar/subject-verb-agreement` (9 items: prepositional interveners, 'one of' singular agreement, compound subjects with 'and', single composite unit 'horse and carriage', correlative conjunctions, singular scientific fields 'Physics', divided collective nouns 'Committee were', proper book titles 'The Arabian Nights', fractions of uncountables)
+  * **Preserved 2 Conventional Descriptive Section-A Tasks:** Preserved 2 conventional written tasks totaling 40 marks in `pending-written-intake.json` (Task 1: Essay 20m; Task 2: Précis 20m).
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (60/60) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,237** across 46 candidate reports with zero problems or booklet family conflicts. [Batch 45 report](reports/tagging-batch45-20261108/README.md).
+
+
 
 
 
