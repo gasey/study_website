@@ -7418,3 +7418,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,498 saved records**, **5,420 unique appearances**, **5,020 deduplicated candidates**, **0 problems**. [Batch 75 report](reports/tagging-batch75-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 76 (Junior Scientific Officer General English May 2016)
+- **Execution:** Prepared pending source-reviewed tagging batch 76 (`reports/tagging-batch76-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Junior Scientific Officer (Contract) under Home Dept (May 2016) — General English* (`Old_Questions/Direct_2014-2018/5.JSO General English 2016 (Common).pdf`, `doc_27139f9cee9ec33283e18370`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 79 retag, 1 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and phrases meaning and fill-in).
+    - `english/comprehension` (14 items): Q17–Q22, Q25–Q32 (reading comprehension passages across 2 passages).
+    - `english/vocabulary/synonyms` (6 items): Q23 (passage synonym), Q72–Q76 (synonyms).
+    - `english/vocabulary/antonyms` (5 items): Q24 (passage antonym), Q77–Q80 (antonyms).
+    - `english/grammar/tenses` (10 items): Q33–Q42 (simple past vs present perfect tense).
+    - `english/grammar/reported-speech` (6 items): Q43–Q48 (direct and indirect speech).
+    - `english/grammar` (12 items): Q49–Q56 (sentence structure: simple, complex, compound), Q62–Q65 (sentence linking / conjunctions).
+    - `english/sentence-correction` (5 items): Q57–Q61 (phrase substitution / sentence correction).
+    - `english/vocabulary` (6 items): Q66–Q71 (vocabulary definitions of underlined words).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,578 saved records**, **5,500 unique appearances**, **5,100 deduplicated candidates**, **0 problems**. [Batch 76 report](reports/tagging-batch76-20261108/README.md).
