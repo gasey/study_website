@@ -6483,3 +6483,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 3 Unextracted Conventional Tasks:** Preserved 3 Section-B written prompts (Essay 20m, Précis 10m, Reading Comprehension 10m) totaling 40 marks in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (66/66) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,773 across 39 candidate reports with zero problems or booklet family conflicts. [Batch 38 report](reports/tagging-batch38-20261108/README.md).
 
+## 2026-11-08 04:50 IST — Source-reviewed tagging batch 39 (Circle Education Officer 2025 General English 100% Paper Finalization — 66 MCQs)
+
+- Completed source-reviewed tagging batch 39 (66 English MCQs, achieving 100% paper completion) from *Competitive Examination for Recruitment to the Post of Circle Education Officer under School Education Department (November, 2025) — General English* (`Old_Questions/Direct_2025-2027/CEO General English - 2025..pdf`, `doc_db5ba5b3fe26ca319535f622`), advancing the owner's English priority under policy `study-tagging-v1`:
+  * **64 retags, 2 keeps, 0 holds.**
+  * **Untagged Baseline Rectification:** 64 of 66 questions had unclassified `subject=english` with `topic=null, subtopic=null` or coarse tags. Rectified 100% of targets to active English subtopics:
+    - `english/grammar/parts-of-speech` (6 items)
+    - `english/grammar/prepositions` (9 items)
+    - `english/grammar` (10 items: Conjunctions, Connectors, Sentence Transformations)
+    - `english/grammar/tenses` (15 items: Verb Forms 10, Tense Transformations 5)
+    - `english/vocabulary` (2 items)
+    - `english/vocabulary/one-word-substitution` (6 items)
+    - `english/vocabulary/idioms-and-phrases` (4 items)
+    - `english/vocabulary/antonyms` (4 items)
+    - `english/grammar/reported-speech` (5 items: Direct/Indirect narration)
+    - `english/vocabulary/synonyms` (5 items)
+  * **Preserved 3 Unextracted Conventional Tasks:** Preserved 3 Part-A written prompts (Précis 14m, Formal Application Letter 10m, Reading Comprehension 10m) totaling 34 marks in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (66/66) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,839 across 40 candidate reports with zero problems or booklet family conflicts. [Batch 39 report](reports/tagging-batch39-20261108/README.md).
+
+
