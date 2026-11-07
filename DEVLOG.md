@@ -6990,3 +6990,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 
 
 
+
+## 2026-11-08 — Tagging Batch 58: Grade-V of MSCS (Cooperative Audit Officer) General English Paper - II (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 58 (`reports/tagging-batch58-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Grade-V of MSCS (Cooperative Audit Officer) under Cooperation Department (December 2022) — General English Paper - II* (`Old_Questions/Direct_2022-2023/General English Paper-II (CAO).pdf`, `doc_8cd9d275470b7aa2b6b85cbd`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 60 retag, 40 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/grammar` (30 items, confirmed and kept): Q41–Q50 (compound/complex/simple conversions), Q51–Q60 (clause identification), Q61–Q70 (synthesis & transformation).
+    - `english/grammar/parts-of-speech` (24 items, retagged): Q1–Q10 (underlined parts of speech), Q21–Q30 (adjectives/adverbs/formation), Q31, Q36, Q38, Q39 (conjunctions).
+    - `english/grammar/tenses` (10 items, retagged): Q11–Q20 (verb forms and aspect).
+    - `english/grammar/prepositions` (6 items, retagged): Q32–Q35, Q37, Q40 (prepositions).
+    - `english/vocabulary` (10 items, retagged): Q71–Q80 (contextual vocabulary and confusable word pairs).
+    - `english/vocabulary/idioms-and-phrases` (10 items, retagged): Q91–Q100 (idiomatic expressions).
+    - `english/vocabulary/antonyms` (5 items, retagged): Q81–Q85 (direct antonyms).
+    - `english/vocabulary/synonyms` (5 items, retagged): Q86–Q90 (direct synonyms).
+- **Source Defects & Verification:**
+  - Q1–Q10 and Q81–Q100 underlined stems and words verified via vector line drawings.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **3,835 saved records**, **3,757 unique appearances**, **3,357 deduplicated candidates**, **0 problems**. [Batch 58 report](reports/tagging-batch58-20261108/README.md).

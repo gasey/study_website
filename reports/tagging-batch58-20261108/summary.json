@@ -1,0 +1,36 @@
+{
+  "batch": 58,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2022-2023/General English Paper-II (CAO).pdf",
+      "paper_title": "Competitive Examinations for Recruitment to the Post of Grade-V of MSCS (Cooperative Audit Officer) \u2014 General English Paper - II (December 2022)",
+      "document_id": "doc_8cd9d275470b7aa2b6b85cbd",
+      "sha256": "1c0b24d38335e26661e24d26af19a2ca1fd1d1cbb47b0e74b459300c71d58a86",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for CAO General English Paper-II (100/100 MCQs)",
+  "actions": {
+    "retag": 60,
+    "keep": 40
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 24,
+    "english/grammar/tenses": 10,
+    "english/grammar/prepositions": 6,
+    "english/grammar": 30,
+    "english/vocabulary": 10,
+    "english/vocabulary/antonyms": 5,
+    "english/vocabulary/synonyms": 5,
+    "english/vocabulary/idioms-and-phrases": 10
+  },
+  "source_defects": [
+    "Q1\u2013Q10 Underlined Target Words in PDF Geometry: Target words in parts of speech questions (once, fined, else, Time, next, long, ylong, after, left, hard) were rendered with vector line strokes in the PDF stream; verified via exact PyMuPDF geometry.",
+    "Q81\u2013Q100 Underlined Words in Antonyms, Synonyms & Idioms: Target words and phrases were underlined with vector geometry in the original printed booklet."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
