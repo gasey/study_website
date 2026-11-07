@@ -6715,6 +6715,39 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 18 Conventional Descriptive Tasks (274 Marks):** Preserved 18 conventional written tasks (Essays, Précis, Letter writing, Proverb expansions, Idiom explanations, and sentence compositions) totaling 274 marks across all 6 booklets in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (50/50) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,487** (2,887 unique appearances) across 50 candidate reports with zero problems or booklet family conflicts. [Batch 49 report](reports/tagging-batch49-20261108/README.md).
 
+## 2026-11-08 09:05 IST — Source-reviewed tagging batch 50 (Direct 2014-2026 General English Booklets 100% Paper Finalization — 70 MCQs & Tasks)
+
+- Completed source-reviewed tagging batch 50 (70 General English MCQs and descriptive tasks, achieving 100% paper completion across all 7 target booklets):
+  1. *Common Competitive Examination for Group 'B' Non-Gazetted (Technical) (March 2026) — Paper I (General English)* (`doc_7f704f41cc87a988ef58e762`, 5 written tasks, achieving **100% paper completion** with 55/55 items reviewed)
+  2. *Competitive Examinations for Recruitment to the Posts of Fishery Extension Officer (FEO) — General English* (`doc_197d853e438e227a2ae7f15f`, 32 items, 100% paper completion)
+  3. *Inspector of Statistics (February 2017) — General English* (`doc_08d6b0f9b9e23606217a0ed3`, 12 items, 100% paper completion)
+  4. *Technical Competitive Examinations for Recruitment to the Post of Employment Officer — General English Paper I* (`doc_115a2dd346bc29a73812bf40`, 7 items, 100% paper completion)
+  5. *Competitive Examinations for Recruitment to the Post of Inspector of Factories — General English* (`doc_7eb8775038672312345754e3`, 2 items, 100% paper completion)
+  6. *Technical Competitive Examinations for Assistant Engineer / Assistant Environmental Officer (AEO) — General English* (`doc_f75f6fa112041692130f684b`, 4 items, 100% paper completion)
+  7. *Competitive Examinations for Recruitment to Grade-V of Mizoram Food, Civil Supplies & Consumer Affairs Service (Inspector) (2019) — General English Paper I* (`doc_de0249ac406ac702e8477528`, 8 items, 100% paper completion)
+  * **70 retags, 0 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Restructured 70 baseline targets into precise active English taxonomy paths:
+      - `english/vocabulary/idioms-and-phrases` (19 items: 10 Inspector of Statistics items Q1–Q10; 7 Employment Officer items Q1–Q7; 1 FEO item Q32; 1 Inspector FCS&CA item Q5)
+      - `english/vocabulary` (11 items: FEO contextual vocabulary items)
+      - `english/vocabulary/one-word-substitution` (8 items: FEO Q17–Q24)
+      - `english/grammar/parts-of-speech` (6 items: FEO possessive pronoun, comparative adjectives, conjunctions)
+      - `english/grammar/prepositions` (5 items: FEO prepositions)
+      - `english/grammar/tenses` (1 item: FEO Q6 simple present habitual action)
+      - `english/grammar/voice` (1 item: Group B Technical Q.W4 active-to-passive voice transformations)
+      - `english/grammar/reported-speech` (1 item: Group B Technical Q.W5 direct-to-indirect speech transformations)
+      - `english/comprehension` (6 items: Inspector FCS&CA Q1–Q3, Q6, Q7 on mass culture and art; Group B Technical Q.W2 on Scandinavian Ombudsman)
+      - `english/writing/essay` (3 items: Inspector of Statistics Q1, IoF Q1, AEO Q1)
+      - `english/writing/precis` (4 items: Group B Technical Q.W1, Inspector of Statistics Q2, IoF Q2, AEO Q2)
+      - `english/writing/letter` (2 items: Group B Technical Q.W3, AEO Q3)
+      - `english/writing` (1 item: AEO Q5 proverb expansion)
+      - `english/vocabulary/synonyms` (1 item: Inspector FCS&CA Q4)
+      - `english/vocabulary/antonyms` (1 item: Inspector FCS&CA Q8)
+  * **Single-Booklet Deduplication Enforced:** Cleanly bypassed 68 duplicate appearances across Series B, C, and D of the 2026 Group 'B' Non-Gazetted Technical examination under single-booklet deduplication rules.
+  * **Preserved 21 Conventional Descriptive Tasks (346 Marks):** Preserved 21 conventional written tasks across all 7 booklets in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (70/70) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,557** (2,957 unique appearances) across 51 candidate reports with zero problems or booklet family conflicts. [Batch 50 report](reports/tagging-batch50-20261108/README.md).
+
+
 
 
 
