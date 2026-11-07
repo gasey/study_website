@@ -109,7 +109,7 @@ async def catalog(user: User, response: Response):
         )
         active = await cur.fetchone()
         await cur.execute(
-            "SELECT m.room_id AS id,r.mode,r.state,m.score,m.correct,m.wrong,m.excluded,m.distance,r.finished_at FROM game_members m JOIN game_rooms r ON r.id=m.room_id WHERE m.user_id=%s AND r.state IN ('finished','cancelled') ORDER BY r.finished_at DESC LIMIT 10",
+            "SELECT m.room_id AS id,r.mode,r.state,m.score,m.correct,m.wrong,m.excluded,m.distance,m.pace_bonus,m.streak_bonus,m.courage_bonus,m.best_streak,r.finished_at FROM game_members m JOIN game_rooms r ON r.id=m.room_id WHERE m.user_id=%s AND r.state IN ('finished','cancelled') ORDER BY r.finished_at DESC LIMIT 10",
             (user,),
         )
         history = await cur.fetchall()
@@ -423,6 +423,7 @@ async def answer(
             raise HTTPException(
                 409, "The round has changed; reload the current question"
             )
+        if r["mode"]=="trail" and r["trail_phase"]!="question":raise HTTPException(409,"Reveal the next trail question first")
         q = r["questions"][body.position]
         if body.chosen_index is not None and body.chosen_index >= len(q["options"]):
             raise HTTPException(422, "Choose an available option")
@@ -530,3 +531,204 @@ async def cup_visibility(
             cur, row["room_id"], user, "cup_visibility", {"public": body.enabled}
         )
     return {"public_result": body.enabled}
+
+
+@router.get("/leaderboard")
+async def competitive_leaderboard(
+    user: User,
+    response: Response,
+    track: Literal["league", "cup", "gk_gs", "everyday_math", "english"] = "league",
+    period: Literal["week", "month", "all"] = "week",
+    cohort: Literal["all", "arts-comfort", "science-bridge", "balanced-core", "commerce-core"] = "all",
+    offset: int = Query(0, ge=0, le=10000),
+):
+    from ..services.learning_rewards import level_bounds, league_division
+    private(response)
+    async with cursor() as cur:
+        if track == "league":
+            await cur.execute(
+                """WITH bounds AS (
+                    SELECT CASE WHEN %s='all' THEN NULL
+                           ELSE date_trunc(%s, now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata'
+                           END AS start_at
+                ),
+                totals AS (
+                    SELECT l.user_id, u.handle, u.avatar,
+                           COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
+                           COALESCE(p.current_streak_days, 0) AS streak,
+                           COALESCE(p.board_public, false) AS board_public,
+                           sum(l.xp)::int AS xp,
+                           (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=l.user_id) AS lifetime_xp
+                    FROM reward_ledger l
+                    JOIN users u ON u.id=l.user_id
+                    LEFT JOIN reward_profiles p ON p.user_id=l.user_id
+                    CROSS JOIN bounds b
+                    WHERE (b.start_at IS NULL OR l.created_at>=b.start_at)
+                      AND (COALESCE(p.board_public, false) OR l.user_id=%s)
+                      AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
+                      AND NOT EXISTS (
+                          SELECT 1 FROM creator_blocks cb
+                          WHERE (cb.user_id=%s AND cb.blocked_id=l.user_id)
+                             OR (cb.user_id=l.user_id AND cb.blocked_id=%s)
+                      )
+                    GROUP BY l.user_id, u.handle, u.avatar, p.stream_cohort, p.current_streak_days, p.board_public
+                    HAVING sum(l.xp)>0
+                ),
+                ranked AS (
+                    SELECT *, dense_rank() OVER (ORDER BY xp DESC)::int AS rank
+                    FROM totals
+                )
+                SELECT user_id, handle, avatar, stream_cohort, streak, xp AS score, lifetime_xp, rank, (user_id=%s) AS is_you
+                FROM ranked
+                ORDER BY rank, handle
+                LIMIT 21 OFFSET %s""",
+                (
+                    period,
+                    "week" if period == "week" else "month",
+                    user,
+                    cohort,
+                    cohort,
+                    user,
+                    user,
+                    user,
+                    offset,
+                ),
+            )
+            raw_rows = await cur.fetchall()
+            items = []
+            for r in raw_rows[:20]:
+                lvl = level_bounds(r["lifetime_xp"])
+                div = league_division(r["score"])
+                items.append({
+                    "handle": r["handle"],
+                    "avatar": r["avatar"],
+                    "rank": r["rank"],
+                    "score": r["score"],
+                    "level": lvl["level"],
+                    "title": lvl["title"],
+                    "league_division": div["name"],
+                    "stream_cohort": r["stream_cohort"],
+                    "streak": r["streak"],
+                    "is_you": r["is_you"],
+                })
+            return {"track": track, "period": period, "cohort": cohort, "items": items, "has_more": len(raw_rows) > 20}
+
+        if track == "cup":
+            now = await g.clock(cur)
+            cid, _, _ = g.cup_window(now)
+            await cur.execute(
+                """WITH ranked AS (
+                    SELECT m.user_id, u.handle, u.avatar, m.score, m.correct, m.elapsed_ms,
+                           m.pace_bonus, m.best_streak, m.public_result,
+                           COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
+                           COALESCE(p.current_streak_days, 0) AS streak,
+                           (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=m.user_id) AS lifetime_xp,
+                           dense_rank() OVER (ORDER BY m.score DESC, m.elapsed_ms ASC)::int AS rank
+                    FROM game_cup_entries e
+                    JOIN game_rooms r ON r.id=e.room_id AND r.state='finished'
+                    JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL
+                    JOIN users u ON u.id=m.user_id
+                    LEFT JOIN reward_profiles p ON p.user_id=m.user_id
+                    WHERE e.cup_id=%s
+                      AND (m.public_result OR COALESCE(p.board_public, false) OR m.user_id=%s)
+                      AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
+                      AND NOT EXISTS (
+                          SELECT 1 FROM creator_blocks cb
+                          WHERE (cb.user_id=%s AND cb.blocked_id=m.user_id)
+                             OR (cb.user_id=m.user_id AND cb.blocked_id=%s)
+                      )
+                )
+                SELECT user_id, handle, avatar, score, correct, elapsed_ms, pace_bonus, best_streak, stream_cohort, streak, lifetime_xp, rank, (user_id=%s) AS is_you
+                FROM ranked
+                ORDER BY rank, handle
+                LIMIT 21 OFFSET %s""",
+                (cid, user, cohort, cohort, user, user, user, offset),
+            )
+            raw_rows = await cur.fetchall()
+            items = []
+            for r in raw_rows[:20]:
+                lvl = level_bounds(r["lifetime_xp"])
+                items.append({
+                    "handle": r["handle"],
+                    "avatar": r["avatar"],
+                    "rank": r["rank"],
+                    "score": r["score"],
+                    "correct": r["correct"],
+                    "elapsed_ms": r["elapsed_ms"],
+                    "pace_bonus": r["pace_bonus"],
+                    "best_streak": r["best_streak"],
+                    "level": lvl["level"],
+                    "title": lvl["title"],
+                    "stream_cohort": r["stream_cohort"],
+                    "streak": r["streak"],
+                    "is_you": r["is_you"],
+                })
+            return {"track": track, "period": period, "cohort": cohort, "cup_id": cid, "items": items, "has_more": len(raw_rows) > 20}
+
+        # Pillar High-Score Boards: gk_gs, everyday_math, english
+        preset_map = {
+            "gk_gs": ("gk-foundation", "arts-comfort", "science-bridge", "balanced-core"),
+            "everyday_math": ("math-foundation", "balanced-core", "commerce-core"),
+            "english": ("english-foundation", "arts-comfort", "balanced-core"),
+        }
+        allowed_presets = list(preset_map[track])
+        await cur.execute(
+            """WITH best_runs AS (
+                SELECT m.user_id, u.handle, u.avatar,
+                       max(m.score)::int AS score,
+                       max(m.correct)::int AS correct,
+                       min(m.elapsed_ms)::int AS elapsed_ms,
+                       max(m.pace_bonus)::int AS pace_bonus,
+                       max(m.best_streak)::int AS best_streak,
+                       COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
+                       COALESCE(p.current_streak_days, 0) AS streak,
+                       (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=m.user_id) AS lifetime_xp
+                FROM game_members m
+                JOIN game_rooms r ON r.id=m.room_id AND r.state='finished'
+                JOIN users u ON u.id=m.user_id
+                LEFT JOIN reward_profiles p ON p.user_id=m.user_id
+                WHERE m.left_at IS NULL AND m.score > 0
+                  AND (COALESCE(p.board_public, false) OR m.public_result OR m.user_id=%s)
+                  AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
+                  AND (
+                      (r.selection_context->'selector'->>'preset_id') = ANY(%s)
+                      OR r.selection_context IS NOT NULL
+                  )
+                  AND NOT EXISTS (
+                      SELECT 1 FROM creator_blocks cb
+                      WHERE (cb.user_id=%s AND cb.blocked_id=m.user_id)
+                         OR (cb.user_id=m.user_id AND cb.blocked_id=%s)
+                  )
+                GROUP BY m.user_id, u.handle, u.avatar, p.stream_cohort, p.current_streak_days
+            ),
+            ranked AS (
+                SELECT *, dense_rank() OVER (ORDER BY score DESC, elapsed_ms ASC)::int AS rank
+                FROM best_runs
+            )
+            SELECT user_id, handle, avatar, score, correct, elapsed_ms, pace_bonus, best_streak, stream_cohort, streak, lifetime_xp, rank, (user_id=%s) AS is_you
+            FROM ranked
+            ORDER BY rank, handle
+            LIMIT 21 OFFSET %s""",
+            (user, cohort, cohort, allowed_presets, user, user, user, offset),
+        )
+        raw_rows = await cur.fetchall()
+        items = []
+        for r in raw_rows[:20]:
+            lvl = level_bounds(r["lifetime_xp"])
+            items.append({
+                "handle": r["handle"],
+                "avatar": r["avatar"],
+                "rank": r["rank"],
+                "score": r["score"],
+                "correct": r["correct"],
+                "elapsed_ms": r["elapsed_ms"],
+                "pace_bonus": r["pace_bonus"],
+                "best_streak": r["best_streak"],
+                "level": lvl["level"],
+                "title": lvl["title"],
+                "stream_cohort": r["stream_cohort"],
+                "streak": r["streak"],
+                "is_you": r["is_you"],
+            })
+        return {"track": track, "period": period, "cohort": cohort, "items": items, "has_more": len(raw_rows) > 20}
+

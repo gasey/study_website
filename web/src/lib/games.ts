@@ -1,7 +1,7 @@
 import { deviceId } from "./device";
 import { reviewRequest } from "./review";
 import type { AvatarLook } from "./avatar";
-export type GameMode = "gauntlet" | "speed" | "duel" | "party" | "cup";
+export type GameMode = "gauntlet" | "speed" | "duel" | "party" | "cup" | "trail";
 export interface GameQuestion {
   id: string;
   question: string;
@@ -17,6 +17,10 @@ export interface GameQuestion {
   qnum: string | null;
   page: number | null;
   answer_source: string;
+  pillar?: string | null;
+  pillar_label?: string | null;
+  round_seconds?: number | null;
+  courage_eligible?: boolean;
 }
 export interface Player {
   user_id: string;
@@ -29,6 +33,10 @@ export interface Player {
   excluded?: number;
   lives?: number;
   distance?: number;
+  pace_bonus?: number;
+  streak_bonus?: number;
+  courage_bonus?: number;
+  best_streak?: number;
   ready?: boolean;
   left_at: string | null;
   elapsed_ms?: number;
@@ -80,6 +88,10 @@ export interface GamesData {
     wrong: number;
     excluded: number;
     distance: number;
+    pace_bonus?: number;
+    streak_bonus?: number;
+    courage_bonus?: number;
+    best_streak?: number;
     finished_at: string;
   }[];
   game_xp_today: number;
@@ -112,6 +124,7 @@ export async function gameRead<T>(path: string): Promise<T> {
 export const gameWrite = <T>(path: string, body: unknown) =>
   reviewRequest<T>("/games" + path, body);
 export const MODE_NAMES: Record<GameMode, string> = {
+  trail: "Topic Trail",
   gauntlet: "Gauntlet Run",
   speed: "Speed round",
   duel: "Duel",
@@ -119,10 +132,74 @@ export const MODE_NAMES: Record<GameMode, string> = {
   cup: "Weekly cup",
 };
 
-export interface GameSelection {kind:'mixed'|'area'|'exam';area_id?:string|null;collection_id?:string|null;section?:string|null;excluded_areas:string[]}
-export interface GameSetupData {areas:{id:string;title:string;questions:number}[];exams:{id:string;title:string;saved:boolean}[];suggestions:{area_id:string;title:string;reason:string;evidence_count:number}[];saved_selection:GameSelection|null;source_label:string;mixed_available:number}
-export interface GamePreview {context_hash:string;public:{label:string;source_label:string;included_subjects:{title:string;questions:number}[];rules:{questions:number;round_seconds:number;total_seconds:number;scoring:string};excluded_labels:string[];selector:GameSelection};available:number;required:number;can_start:boolean;message:string}
+export interface FoundationPreset {
+  id: string;
+  title: string;
+  badge: string;
+  subtitle: string;
+  quotas: { gk_gs?: number; english?: number; everyday_math?: number };
+  math_round_seconds: number;
+  courage_pillar: string | null;
+  available: number;
+}
+export interface GameSelection {
+  kind: 'mixed' | 'area' | 'exam' | 'foundation';
+  area_id?: string | null;
+  collection_id?: string | null;
+  section?: string | null;
+  preset_id?: string | null;
+  excluded_areas: string[];
+}
+export interface GameSetupData {
+  areas: { id: string; title: string; questions: number }[];
+  exams: { id: string; title: string; saved: boolean }[];
+  suggestions: { area_id: string; title: string; reason: string; evidence_count: number }[];
+  foundation_presets?: FoundationPreset[];
+  pillar_counts?: Record<string, number>;
+  saved_selection: GameSelection | null;
+  source_label: string;
+  mixed_available: number;
+}
+export interface GamePreview {
+  context_hash: string;
+  public: {
+    label: string;
+    source_label: string;
+    included_subjects: { title: string; questions: number }[];
+    pillar_breakdown?: { pillar: string; title: string; required: number; available: number }[];
+    math_round_seconds?: number;
+    courage_pillar?: string | null;
+    rules: { questions: number; round_seconds: number; total_seconds: number; scoring: string };
+    excluded_labels: string[];
+    selector: GameSelection;
+  };
+  available: number;
+  required: number;
+  can_start: boolean;
+  message: string;
+}
 export interface JoinPreview {mode:GameMode;players:number;capacity:number;context_hash:string|null;label:string;source_label:string;questions:number;round_seconds:number;excluded_labels:string[]}
+export interface CompetitiveLeaderboardItem {
+  handle: string;
+  avatar: AvatarLook | null;
+  stream_cohort: string | null;
+  streak: number;
+  score: number;
+  correct?: number;
+  best_streak?: number;
+  courage_bonus?: number;
+  pace_bonus?: number;
+  rank: number;
+  is_you: boolean;
+  league?: { id: string; name: string };
+}
+export interface CompetitiveLeaderboardResponse {
+  track: string;
+  period: string;
+  cohort: string;
+  items: CompetitiveLeaderboardItem[];
+  has_more: boolean;
+}
 
 // Read-only preview accepts guests; contribution-session CSRF is only for writes.
 export async function gamePreview(mode:GameMode,selection:GameSelection):Promise<GamePreview> {

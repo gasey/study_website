@@ -13,7 +13,10 @@ import {
   type GamesData,
   type GameMode,
   type GameRoom,
-  type GameSelection, type GamePreview, type JoinPreview,
+  type GameSelection,
+  type GamePreview,
+  type JoinPreview,
+  type CompetitiveLeaderboardResponse,
 } from "../lib/games";
 import {
   SourceQuestionContext,
@@ -230,6 +233,7 @@ export default function Games() {
           </button>
         </div>
       )}
+      <Link to="/trail" className="mt-5 block rounded-[16px] border border-[#C8D8C9] bg-[#EEF3E8] p-5"><h2 className="font-display text-[28px]">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
       {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-[#D8A33A] bg-[#F6E7C6] p-4"><div><h2 className="font-display text-[23px]">You have an unfinished mock</h2><p className="mt-1 text-[13px] text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' bg-ink text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
       {data?.active && (
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-link bg-[#E3E9F8] p-4">
@@ -237,7 +241,7 @@ export default function Games() {
             You have an unfinished {MODE_NAMES[data.active.mode]}.
           </p>
           <Link
-            to={"/games/" + data.active.id}
+            to={(data.active.mode==='trail'?'/trail/':'/games/') + data.active.id}
             className={BTN + " bg-ink text-paper"}
           >
             Resume / leave →
@@ -422,7 +426,7 @@ export default function Games() {
             {data?.history.map((h) => (
               <Link
                 key={h.id}
-                to={"/games/" + h.id}
+                to={(h.mode==='trail'?'/trail/':'/games/') + h.id}
                 className="flex items-center justify-between gap-3 border-b border-hairline py-3"
               >
                 <span className="text-[13px]">
@@ -431,6 +435,12 @@ export default function Games() {
                     {h.state} ·{" "}
                     {new Date(h.finished_at).toLocaleDateString("en-IN")}
                   </span>
+                  {!!(h.pace_bonus || h.streak_bonus || h.courage_bonus || h.best_streak) && (
+                    <span className="mt-0.5 block font-mono text-[10px] text-[#9A6410]">
+                      Pace +{h.pace_bonus || 0} · Streak +{h.streak_bonus || 0} (🔥{h.best_streak || 0})
+                      {h.courage_bonus ? ` · ⚡+${h.courage_bonus}` : ""}
+                    </span>
+                  )}
                 </span>
                 <b className="font-display text-[23px]">{h.score}</b>
               </Link>
@@ -456,7 +466,193 @@ export default function Games() {
           </Link>
         </aside>
       </div>
+      <CompetitiveLeaderboardSection />
     </main>
+  );
+}
+const COHORT_LABELS: Record<string, string> = {
+  all: "All Streams",
+  "arts-comfort": "Arts & Humanities",
+  "science-bridge": "Science & Tech",
+  "commerce-core": "Commerce & Accounts",
+  "balanced-core": "Balanced Core",
+};
+function CompetitiveLeaderboardSection() {
+  const [track, setTrack] = useState<"league" | "gk_gs" | "everyday_math" | "english" | "cup">("league");
+  const [period, setPeriod] = useState<"week" | "month" | "all">("week");
+  const [cohort, setCohort] = useState<string>("all");
+  const [board, setBoard] = useState<CompetitiveLeaderboardResponse | null>(null);
+  const [error, setError] = useState("");
+  useEffect(() => {
+    let live = true;
+    const q = new URLSearchParams({ track, period, cohort });
+    gameRead<CompetitiveLeaderboardResponse>("/leaderboard?" + q.toString())
+      .then((r) => {
+        if (live) {
+          setBoard(r);
+          setError("");
+        }
+      })
+      .catch((e) => {
+        if (live) setError((e as Error).message);
+      });
+    return () => {
+      live = false;
+    };
+  }, [track, period, cohort]);
+  return (
+    <section
+      aria-label="Competitive leaderboards and stream leagues"
+      className="mt-8 rounded-[14px] border border-hairline bg-card p-5 sm:p-6"
+    >
+      <div className="flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <div className="font-mono text-[11px] uppercase tracking-wider text-[#9A6410]">
+            4-Track Standings · Cross-Stream Fair Play
+          </div>
+          <h2 className="mt-1 font-display text-[28px]">
+            Competitive Leaderboards & Stream Cohorts
+          </h2>
+          <p className="mt-1 max-w-[680px] text-[13px] text-secondary">
+            Compare weekly XP leagues, pillar best runs (GK/GS, Everyday Maths, General English), or filter by your academic stream cohort.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Link to="/rewards" className={BTN}>
+            Daily quests & streak shields →
+          </Link>
+          <Link to="/board" className={BTN}>
+            Full XP board →
+          </Link>
+        </div>
+      </div>
+      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Leaderboard track">
+        {(
+          [
+            ["league", "Weekly XP League"],
+            ["gk_gs", "GK & GS Best"],
+            ["everyday_math", "Everyday Maths Best"],
+            ["english", "General English Best"],
+            ["cup", "Sunday Cup"],
+          ] as const
+        ).map(([id, label]) => (
+          <button
+            key={id}
+            type="button"
+            aria-pressed={track === id}
+            onClick={() => setTrack(id)}
+            className={BTN + (track === id ? " bg-ink text-paper" : "")}
+          >
+            {label}
+          </button>
+        ))}
+      </div>
+      <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-3">
+        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Stream cohort filter">
+          <span className="mr-1 font-mono text-[11px] uppercase text-muted">Cohort:</span>
+          {Object.entries(COHORT_LABELS).map(([id, label]) => (
+            <button
+              key={id}
+              type="button"
+              aria-pressed={cohort === id}
+              onClick={() => setCohort(id)}
+              className={
+                "min-h-9 rounded-pill border px-3 py-1 text-[12px] font-semibold " +
+                (cohort === id
+                  ? "border-[#9A6410] bg-[#F6E7C6] text-ink"
+                  : "border-hairline bg-paper text-secondary")
+              }
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+        {["gk_gs", "everyday_math", "english"].includes(track) && (
+          <div className="flex gap-1.5" role="group" aria-label="Leaderboard period">
+            {(
+              [
+                ["week", "This week"],
+                ["month", "This month"],
+                ["all", "All time"],
+              ] as const
+            ).map(([id, label]) => (
+              <button
+                key={id}
+                type="button"
+                aria-pressed={period === id}
+                onClick={() => setPeriod(id)}
+                className={
+                  "min-h-9 rounded-pill border px-3 py-1 text-[12px] font-semibold " +
+                  (period === id ? "border-ink bg-ink text-paper" : "border-hairline bg-paper")
+                }
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+        )}
+      </div>
+      {error && <p className="mt-3 text-[13px] text-mypick">{error}</p>}
+      <div className="mt-4 overflow-hidden rounded-[10px] border border-hairline bg-paper">
+        {board?.items.length ? (
+          board.items.map((item, idx) => (
+            <div
+              key={item.handle + "-" + idx}
+              className={
+                "flex flex-wrap items-center justify-between gap-3 border-b border-hairline px-4 py-3 last:border-b-0 " +
+                (item.is_you ? "bg-[#FBF4E6]" : "")
+              }
+            >
+              <div className="flex min-w-0 items-center gap-3">
+                <span className="w-8 font-display text-[22px] text-[#9A6410]">
+                  #{item.rank}
+                </span>
+                <UserAvatar look={item.avatar} initials={item.handle} />
+                <div className="min-w-0">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <b className="truncate text-[14px]">
+                      {item.handle}
+                      {item.is_you ? " · you" : ""}
+                    </b>
+                    {item.stream_cohort && COHORT_LABELS[item.stream_cohort] && (
+                      <span className="rounded-pill bg-ink/10 px-2 py-0.5 font-mono text-[10px] text-ink">
+                        {COHORT_LABELS[item.stream_cohort]}
+                      </span>
+                    )}
+                    {item.streak > 0 && (
+                      <span className="rounded-pill bg-[#F6DDD3] px-2 py-0.5 font-mono text-[10px] text-[#C0462C]">
+                        🔥 {item.streak}d
+                      </span>
+                    )}
+                    {item.league && (
+                      <span className="rounded-pill bg-[#F6E7C6] px-2 py-0.5 font-mono text-[10px] text-[#9A6410]">
+                        {item.league.name}
+                      </span>
+                    )}
+                  </div>
+                  {(item.pace_bonus || item.best_streak || item.courage_bonus) ? (
+                    <div className="mt-0.5 font-mono text-[11px] text-muted">
+                      {item.correct ?? 0} correct · Pace +{item.pace_bonus || 0} · Best streak 🔥{item.best_streak || 0}
+                      {item.courage_bonus ? ` · Courage ⚡+${item.courage_bonus}` : ""}
+                    </div>
+                  ) : null}
+                </div>
+              </div>
+              <div className="font-display text-[24px]">
+                {item.score.toLocaleString("en-IN")}{" "}
+                <span className="font-mono text-[11px] uppercase text-muted">
+                  {track === "league" ? "XP" : "pts"}
+                </span>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p className="p-5 text-[13px] text-secondary">
+            No public standings on this track yet. Finish a game or join the public leaderboard from Rewards to appear here.
+          </p>
+        )}
+      </div>
+    </section>
   );
 }
 function CupBoard({ cupId }: { cupId: string }) {
@@ -576,6 +772,8 @@ export function GamePlayer() {
   const actionEpoch = useRef(0);
   const now = useClock();
   const [serverOffset, setServerOffset] = useState(0);
+  const [scratchOpen, setScratchOpen] = useState(false);
+  const [scratchText, setScratchText] = useState("");
   const apply = (r: GameRoom) => {
     if (alive.current && r.id === id && r.version >= lastVersion.current) {
       if(r.state === "finished" && progressReported.current !== r.id){
@@ -583,6 +781,7 @@ export function GamePlayer() {
         window.dispatchEvent(new Event("ism-progress-change"));
       }
       lastVersion.current = r.version;
+      if(r.mode==='trail'){navigate('/trail/'+r.id,{replace:true});return}
       setRoom(r);
       setServerOffset(Date.parse(r.server_now) - Date.now());
       setError("");
@@ -787,12 +986,62 @@ export function GamePlayer() {
               )}
               {room.state === "running" && room.question && (
                 <div className="p-5 sm:p-[22px]">
-                  <div className="flex items-center justify-between gap-3 font-mono text-[12px] text-muted">
-                    <span>
-                      Question {room.position + 1} of {room.total}
-                    </span>
+                  <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[12px] text-muted">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span>
+                        Question {room.position + 1} of {room.total}
+                      </span>
+                      {room.question.pillar_label && (
+                        <span className="rounded-pill bg-ink/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink">
+                          {room.question.pillar_label}
+                        </span>
+                      )}
+                      {room.question.pillar === "everyday_math" && (
+                        <span className="rounded-pill bg-[#F6DDD3] px-2.5 py-0.5 text-[10px] font-semibold text-[#C0462C]">
+                          ⏱ {room.question.round_seconds || 40}s Extended Math Clock
+                        </span>
+                      )}
+                      {room.question.courage_eligible && (
+                        <span className="rounded-pill bg-[#F6E7C6] px-2.5 py-0.5 text-[10px] font-semibold text-[#9A6410]">
+                          ⚡ +25 Cross-Stream Courage
+                        </span>
+                      )}
+                    </div>
                     <span role="timer">{remaining}s</span>
                   </div>
+                  {room.question.pillar === "everyday_math" && (
+                    <div className="mt-3 rounded-[10px] border border-[#D8A33A]/50 bg-[#FBF4E6] p-3">
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <span className="font-mono text-[11px] font-semibold text-[#9A6410]">
+                          Everyday Class-10 Math Tools · Pace bonus normalized to {room.question.round_seconds || 40}s
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setScratchOpen((v) => !v)}
+                          className="min-h-8 rounded-pill border border-ink/20 bg-paper px-3 py-1 font-mono text-[11px] font-semibold text-ink"
+                        >
+                          {scratchOpen ? "Hide Scratchpad" : "✎ Open Quick Math Scratchpad"}
+                        </button>
+                      </div>
+                      {scratchOpen && (
+                        <div className="mt-2.5 space-y-2">
+                          <div className="flex flex-wrap gap-1.5 font-mono text-[10px] text-secondary">
+                            <span className="rounded bg-paper px-2 py-0.5">HCF × LCM = A × B</span>
+                            <span className="rounded bg-paper px-2 py-0.5">SI = (P × R × T) / 100</span>
+                            <span className="rounded bg-paper px-2 py-0.5">Speed = Distance / Time</span>
+                            <span className="rounded bg-paper px-2 py-0.5">Net % = a + b + (ab/100)</span>
+                          </div>
+                          <textarea
+                            rows={2}
+                            value={scratchText}
+                            onChange={(e) => setScratchText(e.target.value)}
+                            placeholder="Jot down quick ratios, percentages or steps here…"
+                            className="w-full rounded-[6px] border border-hairline bg-paper p-2 font-mono text-[12px]"
+                          />
+                        </div>
+                      )}
+                    </div>
+                  )}
                   {room.mode === "speed" && room.deadline && (
                     <p className="mt-2 text-[12px] text-muted">
                       {Math.max(
@@ -892,7 +1141,7 @@ export function GamePlayer() {
                         ? "Answer saved · waiting for the next round"
                         : remaining === 0
                           ? "Time is up · synchronizing the next round…"
-                          : "Choose once. Answers are checked by the server."}
+                          : "Tap one option to submit your answer."}
                     </p>
                     <button
                       className={BTN}
@@ -953,8 +1202,51 @@ export function GamePlayer() {
                       <b>{mine?.excluded ?? 0}</b> excluded
                     </span>
                   </div>
+                  {!mine?.left_at && (
+                    <div className="mt-4 grid gap-2.5 rounded-[12px] border border-[#D8A33A] bg-[#FBF4E6] p-4 sm:grid-cols-4">
+                      <div>
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          Base Accuracy
+                        </div>
+                        <div className="mt-1 font-display text-[22px]">
+                          {Math.max(
+                            0,
+                            (mine?.score ?? 0) -
+                              (mine?.pace_bonus ?? 0) -
+                              (mine?.streak_bonus ?? 0) -
+                              (mine?.courage_bonus ?? 0),
+                          )}{" "}
+                          pts
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          Normalized Pace
+                        </div>
+                        <div className="mt-1 font-display text-[22px] text-[#1F44A6]">
+                          +{mine?.pace_bonus ?? 0} pts
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          Streak Combo (🔥{mine?.best_streak ?? 0})
+                        </div>
+                        <div className="mt-1 font-display text-[22px] text-[#C0462C]">
+                          +{mine?.streak_bonus ?? 0} pts
+                        </div>
+                      </div>
+                      <div>
+                        <div className="font-mono text-[10px] uppercase text-muted">
+                          Cross-Stream ⚡
+                        </div>
+                        <div className="mt-1 font-display text-[22px] text-[#9A6410]">
+                          +{mine?.courage_bonus ?? 0} pts
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   <p className="mt-3 text-[13px] text-secondary">
-                    Game points use correct answers and server timing. Bank
+                    Game points use correct answers, task-normalized server timing, streak combos and cross-stream courage bonuses. Bank
                     changes before finalization are excluded. Learning XP
                     follows the shared daily budget and first-question reward
                     rules.
@@ -967,9 +1259,14 @@ export function GamePlayer() {
                         {readableTime(room.review_available_at)}.
                       </p>
                     )}
-                  <Link className={BTN + " mt-5 bg-ink text-paper"} to="/games">
-                    Choose another game →
-                  </Link>
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <Link className={BTN + " bg-ink text-paper"} to="/games">
+                      Choose another game →
+                    </Link>
+                    <Link className={BTN} to="/rewards">
+                      Daily quests & streak chests →
+                    </Link>
+                  </div>
                 </div>
               )}
               {room.state === "cancelled" && (

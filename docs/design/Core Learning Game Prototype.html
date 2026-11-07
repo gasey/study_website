@@ -1,0 +1,2038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>India Study Map · Competitive Foundation Learning Game Prototype</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* Design-Fidelity Tokens from docs/DESIGN-FIDELITY.md */
+    .ism-paper { background-color: #F4EFE4; color: #1D1B18; }
+    .ism-canvas-outer { background-color: #E9E1D2; color: #1D1B18; }
+    .ism-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E4DBC9;
+      border-radius: 14px;
+      box-shadow: 0 1px 2px rgba(29, 27, 24, 0.05);
+    }
+    .ism-panel-warm {
+      background-color: #FBF8F1;
+      border: 1px solid #DCD3C2;
+      border-radius: 10px;
+    }
+    .ism-stem {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 21px;
+      line-height: 1.38;
+      color: #1D1B18;
+      text-wrap: pretty;
+    }
+    .ism-display {
+      font-family: Georgia, 'Times New Roman', serif;
+      color: #1D1B18;
+    }
+    .ism-mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+    /* Option States per docs/DESIGN-FIDELITY.md line 74 */
+    .ism-opt-resting {
+      background-color: #FBF8F1;
+      border: 1px solid #DCD3C2;
+      color: #1D1B18;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: border-color 0.12s ease, background-color 0.12s ease;
+    }
+    .ism-opt-resting:hover {
+      border-color: #1D1B18;
+      background-color: #F6F1E5;
+    }
+    .ism-opt-correct {
+      background-color: #E3ECDD;
+      border: 1.5px solid #3D7344;
+      color: #1D1B18;
+      border-radius: 6px;
+      cursor: default;
+    }
+    .ism-opt-wrong {
+      background-color: #F5E1D8;
+      border: 1.5px solid #B0412A;
+      color: #1D1B18;
+      border-radius: 6px;
+      cursor: default;
+    }
+    .ism-opt-muted {
+      background-color: #FBF8F1;
+      border: 1px solid #DCD3C2;
+      color: #6B6457;
+      border-radius: 6px;
+      cursor: default;
+    }
+    /* Area & Topic Chips */
+    .chip-polity { background-color: #E3E9F8; color: #1F44A6; }
+    .chip-mizoram { background-color: #DCEFEF; color: #08605F; }
+    .chip-current { background-color: #F7EAD0; color: #7E4A00; }
+    .chip-english { background-color: #EEE6F7; color: #5E2F98; }
+    .chip-math { background-color: #E3ECDD; color: #25582C; }
+    .prov-official {
+      border: 1px solid #3D7344;
+      color: #3D7344;
+      border-radius: 999px;
+    }
+  </style>
+</head>
+<body class="ism-canvas-outer min-h-screen antialiased selection:bg-[#E3E9F8] selection:text-[#1F44A6]">
+
+  <!-- Top Prototype Control Bar -->
+  <header class="sticky top-0 z-30 border-b border-[#DCD3C2] bg-[#1D1B18] text-[#F4EFE4] px-4 py-3">
+    <div class="mx-auto max-w-[1240px] flex flex-wrap items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <!-- Six 7px area squares -->
+        <div class="flex gap-1" aria-hidden="true">
+          <span class="w-2 h-2 inline-block bg-[#2D5BD0]"></span>
+          <span class="w-2 h-2 inline-block bg-[#7B45B8]"></span>
+          <span class="w-2 h-2 inline-block bg-[#0E8287]"></span>
+          <span class="w-2 h-2 inline-block bg-[#B23A9A]"></span>
+          <span class="w-2 h-2 inline-block bg-[#B26B00]"></span>
+          <span class="w-2 h-2 inline-block bg-[#8A8A12]"></span>
+        </div>
+        <div>
+          <span class="font-serif text-base font-semibold tracking-tight">India Study Map</span>
+          <span class="ism-mono text-xs text-[#D8A33A] ml-2 uppercase">Competitive Foundation Circuit</span>
+        </div>
+      </div>
+
+      <!-- Screen Stage Switcher -->
+      <nav class="flex flex-wrap items-center gap-1" aria-label="Prototype views">
+        <button id="tab-setup" onclick="setScreen('setup')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          1. Setup
+        </button>
+        <button id="tab-play" onclick="setScreen('play')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          2. Play & Score
+        </button>
+        <button id="tab-duel" onclick="setScreen('duel')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          3. Duel
+        </button>
+        <button id="tab-leaderboard" onclick="setScreen('leaderboard')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          4. Leaderboards 🏆
+        </button>
+        <button id="tab-rewards" onclick="setScreen('rewards')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          5. Daily Rewards & Wallet 🔥
+        </button>
+        <button id="tab-finish" onclick="setScreen('finish')" class="px-2.5 py-1.5 rounded-full text-xs font-semibold transition">
+          6. Summary
+        </button>
+      </nav>
+
+      <!-- Desktop vs Mobile 390x844 Switcher -->
+      <div class="flex items-center gap-1.5 bg-[#2B2823] p-1 rounded-full border border-[#49443B]">
+        <button id="vp-desktop" onclick="setViewport('desktop')" class="px-3 py-1 rounded-full text-xs font-semibold transition">
+          Website (1240px)
+        </button>
+        <button id="vp-mobile" onclick="setViewport('mobile')" class="px-3 py-1 rounded-full text-xs font-semibold transition">
+          Mobile App (390×844)
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Viewport Container -->
+  <div id="viewport-wrapper" class="mx-auto py-6 px-4 transition-all">
+    <div id="app-surface" class="ism-paper mx-auto max-w-[1240px] rounded-2xl border border-[#DCD3C2] shadow-sm overflow-hidden">
+      <!-- Dynamic Content Injected by JS -->
+    </div>
+  </div>
+
+  <script>
+    // =========================================================================
+    // 1. REAL VERIFIED MPSC QUESTION BANK ITEMS (Official / Key Provenance)
+    // =========================================================================
+    const REAL_QUESTIONS = [
+      {
+        id: "cq_00e694d3833be594",
+        pillar: "gk_gs",
+        pillarLabel: "GK & General Studies",
+        topicLabel: "Indian Polity",
+        chipClass: "chip-polity",
+        exam: "MCS Combined Prelims 2026 · Series A",
+        year: 2026,
+        qnum: "1",
+        page: 2,
+        roundSeconds: 20,
+        direction: null,
+        temporalBadge: null,
+        question: "Under which article of the Constitution, the Governor can reserve a Bill for the consideration of the President?",
+        options: ["Article 169", "Article 200", "Article 201", "Article 257"],
+        answerIndex: 1,
+        conceptHint: "Constitutional Check: Article 200 governs the Governor's four options when a State Legislature bill is presented for assent; Article 201 covers what the President does after reservation.",
+        explanation: "Under Article 200 of the Constitution of India, when a Bill passed by the State Legislature is presented to the Governor, the Governor may assent, withhold assent, return the Bill (if not a Money Bill), or reserve the Bill for the consideration of the President."
+      },
+      {
+        id: "cq_f04d4df10b7aac34",
+        pillar: "everyday_math",
+        pillarLabel: "Everyday Maths & Reasoning",
+        topicLabel: "Arithmetic · Percentages",
+        chipClass: "chip-math",
+        exam: "Junior Accounts Officer (JAO) 2026 · Paper-II (A)",
+        year: 2026,
+        qnum: "56",
+        page: 7,
+        roundSeconds: 45,
+        direction: "Simple Arithmetic (Non-Technical)",
+        temporalBadge: null,
+        question: "A student needs to secure 40% to pass. If he gets 72 marks and fails by 8 marks, find the maximum marks.",
+        options: ["180", "200", "240", "250"],
+        answerIndex: 1,
+        conceptHint: "Passing Marks = Marks Obtained + Shortfall. Set Passing Marks equal to 40% of Maximum Marks (M).",
+        scratchpadSteps: [
+          "1. Passing marks needed = 72 + 8 = 80 marks",
+          "2. 40% of Maximum Marks (M) = 80",
+          "3. M = (80 × 100) ÷ 40 = 200"
+        ],
+        explanation: "Step 1: Passing marks = 72 + 8 = 80.\nStep 2: Since passing threshold is 40% of total marks (M), 0.40 × M = 80.\nStep 3: M = 80 ÷ 0.40 = 200 maximum marks."
+      },
+      {
+        id: "cq_6b2c4848984b9a2b",
+        pillar: "english",
+        pillarLabel: "General English",
+        topicLabel: "Vocabulary in Context",
+        chipClass: "chip-english",
+        exam: "Combined Group B Non-Gazetted · Dec 2024 Paper-I",
+        year: 2024,
+        qnum: "54",
+        page: 5,
+        roundSeconds: 20,
+        direction: "Choose the most appropriate word to fill in the blank:",
+        temporalBadge: null,
+        question: "This case is so unique that we cannot find any __________ to it.",
+        options: ["reason", "precedent", "help", "triviality"],
+        answerIndex: 1,
+        conceptHint: "In legal and formal English, an earlier event or case that serves as an example or parallel is a 'precedent' (followed by 'to' or 'for').",
+        explanation: "A 'precedent' is an earlier event, decision, or case that serves as a parallel or guide for subsequent situations. Because the case is described as 'so unique', there is no prior parallel ('precedent') to it."
+      },
+      {
+        id: "cq_326831cc99b74d79",
+        pillar: "gk_gs",
+        pillarLabel: "GK & General Studies",
+        topicLabel: "Mizoram GK",
+        chipClass: "chip-mizoram",
+        exam: "MCS Combined Prelims 2026 · Series B",
+        year: 2026,
+        qnum: "7",
+        page: 2,
+        roundSeconds: 20,
+        direction: null,
+        temporalBadge: null,
+        question: "The Station Code of Sairang Railway Station which connects the capital of Mizoram (Aizawl) to the rest of India is:",
+        options: ["Sarng", "Srng", "Sair", "SANG"],
+        answerIndex: 3,
+        conceptHint: "Indian Railways station codes use 2 to 4 uppercase block letters (e.g., Bairabi is BHRB; Sairang uses 4 uppercase letters).",
+        explanation: "Sairang Railway Station (terminus of the Bairabi–Sairang broad-gauge railway line near Aizawl under Northeast Frontier Railway) has the official Indian Railways station code SANG."
+      },
+      {
+        id: "cq_df495b7df094cf0e",
+        pillar: "everyday_math",
+        pillarLabel: "Everyday Maths & Reasoning",
+        topicLabel: "Arithmetic · Integers",
+        chipClass: "chip-math",
+        exam: "Junior Accounts Officer (JAO) 2026 · Paper-II (A)",
+        year: 2026,
+        qnum: "51",
+        page: 7,
+        roundSeconds: 45,
+        direction: "Simple Arithmetic (Non-Technical)",
+        temporalBadge: null,
+        question: "How many integers are there strictly between −12 and 9?",
+        options: ["19", "20", "21", "22"],
+        answerIndex: 1,
+        conceptHint: "Number of integers strictly between A and B (excluding both endpoints) is: (B − A) − 1.",
+        scratchpadSteps: [
+          "1. Negative integers (−11 to −1) = 11 numbers",
+          "2. Zero (0) = 1 number",
+          "3. Positive integers (1 to 8) = 8 numbers → 11 + 1 + 8 = 20"
+        ],
+        explanation: "Using the endpoint rule: strictly between −12 and 9 means from −11 up to +8 inclusive. Count = 9 − (−12) − 1 = 21 − 1 = 20 integers."
+      },
+      {
+        id: "cq_4579bb395d003d57",
+        pillar: "english",
+        pillarLabel: "General English",
+        topicLabel: "Grammar · Subject-Verb Agreement",
+        chipClass: "chip-english",
+        exam: "MCS Combined Prelims 2026 · Paper-I",
+        year: 2026,
+        qnum: "28",
+        page: 4,
+        roundSeconds: 20,
+        direction: "Complete the sentence by choosing the grammatically correct verb form:",
+        temporalBadge: null,
+        question: "Bread and butter _________ my favourite breakfast.",
+        options: ["has always been", "have always been", "were", "weren’t"],
+        answerIndex: 0,
+        conceptHint: "When two nouns joined by 'and' refer to a single dish or unified concept ('my favourite breakfast'), the verb must be singular.",
+        explanation: "'Bread and butter' here names a single composite meal ('my favourite breakfast'). Compound nouns expressing a single unit take a singular verb: 'has always been'."
+      },
+      {
+        id: "cq_31a314ef0174ccc9",
+        pillar: "gk_gs",
+        pillarLabel: "GK & General Studies",
+        topicLabel: "Current Affairs",
+        chipClass: "chip-current",
+        exam: "MPSC Radiotherapist Recruitment 2026 · Paper-II (GK)",
+        year: 2026,
+        qnum: "1",
+        page: 1,
+        roundSeconds: 20,
+        direction: null,
+        temporalBadge: "Reference Period: Jan 2026 · Scored by 2026 Official Key",
+        question: "Which country officially became the 21st member of the Eurozone on January 1, 2026?",
+        options: ["Croatia", "Albania", "Romania", "Bulgaria"],
+        answerIndex: 3,
+        conceptHint: "Croatia joined as the 20th member in Jan 2023; this EU Balkan member adopted the euro after Croatia.",
+        explanation: "Per the official 2026 MPSC Paper-II key, Bulgaria is recorded as the 21st member of the Eurozone (following Croatia's accession as the 20th member in 2023). Historical reference date (Jan 2026) is preserved."
+      },
+      {
+        id: "cq_77cf88bea079e7da",
+        pillar: "everyday_math",
+        pillarLabel: "Everyday Maths & Reasoning",
+        topicLabel: "Arithmetic · Discounts",
+        chipClass: "chip-math",
+        exam: "Junior Accounts Officer (JAO) 2026 · Paper-II (A)",
+        year: 2026,
+        qnum: "58",
+        page: 7,
+        roundSeconds: 45,
+        direction: "Simple Arithmetic (Non-Technical)",
+        temporalBadge: null,
+        question: "The single discount equivalent to two successive discounts of 20% and 10% is:",
+        options: ["30%", "28%", "25%", "22%"],
+        answerIndex: 1,
+        conceptHint: "Successive discounts a% and b% never simply add! Formula: Single Discount = a + b − (a × b) / 100.",
+        scratchpadSteps: [
+          "1. Start with ₹100 → after 20% off, price is ₹80",
+          "2. Take 10% off ₹80 → ₹80 − ₹8 = ₹72",
+          "3. Total reduction from ₹100 to ₹72 = 28%"
+        ],
+        explanation: "Using D = a + b − (ab/100): D = 20 + 10 − (20 × 10)/100 = 30 − 2 = 28%. Alternatively, ₹100 × 0.80 × 0.90 = ₹72, which is a 28% net discount."
+      },
+      {
+        id: "cq_d69973dd6b60534b",
+        pillar: "english",
+        pillarLabel: "General English",
+        topicLabel: "Grammar · Active & Passive Voice",
+        chipClass: "chip-english",
+        exam: "Combined Group B Non-Gazetted · Dec 2024 Paper-I",
+        year: 2024,
+        qnum: "59",
+        page: 6,
+        roundSeconds: 20,
+        direction: "Choose the correct passive voice transformation:",
+        temporalBadge: null,
+        question: "They are pulling down the old theatre.",
+        options: [
+          "The old theatre will be pulled down by them.",
+          "The old theatre is pulled down by them.",
+          "The old theatre is going to be pulled down by them.",
+          "The old theatre is being pulled down by them."
+        ],
+        answerIndex: 3,
+        conceptHint: "Present Continuous Active ('are pulling') transforms to Present Continuous Passive: is/are + being + past participle ('is being pulled').",
+        explanation: "The active verb 'are pulling down' is in the present continuous tense. In passive voice, present continuous uses 'is/are + being + V3': 'The old theatre is being pulled down by them.'"
+      },
+      {
+        id: "cq_389e9d8e6e19a2e7",
+        pillar: "everyday_math",
+        pillarLabel: "Everyday Maths & Reasoning",
+        topicLabel: "Verbal Reasoning · Coding",
+        chipClass: "chip-math",
+        exam: "MCS Combined Prelims CSP 2025 · Paper-II Series A",
+        year: 2025,
+        qnum: "37",
+        page: 8,
+        roundSeconds: 40,
+        direction: null,
+        temporalBadge: null,
+        question: "In a certain code 'PROBLEM' is written as 'PORLBME'. How can 'IDENTIFY' be written in that code?",
+        options: ["IFEDNITY", "IETDNYFI", "INFYEDIT", "IEDTNFIY"],
+        answerIndex: 3,
+        conceptHint: "Compare letter positions: P-R-O-B-L-E-M → P (fixed first letter), then swap adjacent pairs: (RO -> OR), (BL -> LB), (EM -> ME).",
+        scratchpadSteps: [
+          "1. Keep 1st letter fixed: I",
+          "2. Swap pairs: (DE → ED), (NT → TN), (IF → FI)",
+          "3. Last remaining letter stays: Y → I-ED-TN-FI-Y"
+        ],
+        explanation: "In P-R-O-B-L-E-M → P-O-R-L-B-M-E, the 1st letter stays in place and subsequent pairs of letters are reversed: (RO→OR), (BL→LB), (EM→ME). Applying this to I-D-E-N-T-I-F-Y keeps 'I', reverses (DE→ED), (NT→TN), (IF→FI), and leaves 'Y' at the end: IEDTNFIY."
+      }
+    ];
+
+    const STREAM_PRESETS = {
+      "arts-comfort": {
+        id: "arts-comfort",
+        badge: "Arts / Humanities / Law Stream",
+        title: "Humanities Comfort Mix",
+        subtitle: "Strong GK/GS & English · Gentle, step-guided Everyday Maths (45s clock)",
+        quotas: { gk_gs: 5, english: 3, everyday_math: 2 },
+        mathSeconds: 45,
+        autoHintOnMath: false,
+        couragePillar: "everyday_math",
+        poolCount: "26,995",
+        desc: "Designed for BA, Social Science, Mizo, and Law graduates. Keeps 80% of the run in GK/GS and General English, while giving 45 seconds and +25 Cross-Stream Courage bonus on Everyday Arithmetic."
+      },
+      "science-bridge": {
+        id: "science-bridge",
+        badge: "Science / Engineering / Medical Stream",
+        title: "Science & Tech GK Bridge",
+        subtitle: "High-yield Polity, History, Mizoram GK & Idioms · Fast Quant check",
+        quotas: { gk_gs: 6, english: 2, everyday_math: 2 },
+        mathSeconds: 35,
+        autoHintOnMath: false,
+        couragePillar: "gk_gs",
+        poolCount: "26,995",
+        desc: "Designed for BSc, BTech, Nursing, and Agriculture graduates who are comfortable with numbers and earn +25 Cross-Stream Courage points when mastering Constitutional Articles, History, and Mizoram GK."
+      },
+      "balanced-core": {
+        id: "balanced-core",
+        badge: "All Streams · Standard Exam Blueprint",
+        title: "Balanced MPSC Common Core",
+        subtitle: "Proportional Paper-I & II mix for Prelims, UDC, Assistant & Group B",
+        quotas: { gk_gs: 4, english: 3, everyday_math: 3 },
+        mathSeconds: 40,
+        autoHintOnMath: false,
+        couragePillar: "everyday_math",
+        poolCount: "26,995",
+        desc: "Mirrors the shared non-technical foundation across MPSC direct recruitment exams. Also used as the level-playing-field blueprint for Cross-Stream Duels & the Sunday Cup."
+      },
+      "single-pillar": {
+        id: "single-pillar",
+        badge: "Focused Single-Area Practice",
+        title: "Single Pillar Deep Dive",
+        subtitle: "Play 10 questions purely in GK/GS, Everyday Maths, or General English",
+        quotas: { gk_gs: 10, english: 0, everyday_math: 0 },
+        mathSeconds: 45,
+        autoHintOnMath: false,
+        couragePillar: null,
+        poolCount: "13,129",
+        desc: "Focus 100% of your 10-stone circuit on a single foundation pillar and climb its Pillar Specialist High-Score Board."
+      }
+    };
+
+    // Multi-Stream Leaderboard Competitors
+    const LEADERBOARD_PLAYERS = [
+      { handle: "lalrinsanga_mcs", name: "Lalrinsanga P.", initials: "LP", color: "#1F44A6", stream: "arts-comfort", streamLabel: "Arts & Humanities", level: 9, title: "Secretariat Fellow", streak: 14, weeklyXp: 1640, monthlyXp: 5820, allXp: 3420, cupScore: 3490, cupAcc: "24/25", cupPace: "71%", gkScore: 1680, mathScore: 1410, engScore: 1620, isYou: false },
+      { handle: "remruati_btech", name: "Remruati C.", initials: "RC", color: "#08605F", stream: "science-bridge", streamLabel: "Science & Tech", level: 8, title: "Secretariat Fellow", streak: 11, weeklyXp: 1520, monthlyXp: 4990, allXp: 2890, cupScore: 3445, cupAcc: "24/25", cupPace: "68%", gkScore: 1540, mathScore: 1710, engScore: 1510, isYou: false },
+      { handle: "zuali_study", name: "Zuali (You)", initials: "ZL", color: "#8A4A86", stream: "arts-comfort", streamLabel: "Arts & Humanities", level: 5, title: "Aizawl Core Scholar", streak: 5, weeklyXp: 1180, monthlyXp: 3120, allXp: 1180, cupScore: 3280, cupAcc: "23/25", cupPace: "64%", gkScore: 1610, mathScore: 1380, engScore: 1590, isYou: true },
+      { handle: "vanlalpeka_jao", name: "Vanlalpeka H.", initials: "VH", color: "#25582C", stream: "commerce", streamLabel: "Commerce & Accounts", level: 7, title: "Aizawl Core Scholar", streak: 9, weeklyXp: 1120, monthlyXp: 3840, allXp: 2140, cupScore: 3210, cupAcc: "22/25", cupPace: "66%", gkScore: 1450, mathScore: 1675, engScore: 1440, isYou: false },
+      { handle: "mami_chaltlang", name: "Malsawmkimi T.", initials: "MT", color: "#7E4A00", stream: "arts-comfort", streamLabel: "Arts & Humanities", level: 6, title: "Aizawl Core Scholar", streak: 7, weeklyXp: 980, monthlyXp: 2950, allXp: 1680, cupScore: 3150, cupAcc: "22/25", cupPace: "61%", gkScore: 1595, mathScore: 1290, engScore: 1640, isYou: false },
+      { handle: "rinzuala_civil", name: "Rinzuala K.", initials: "RK", color: "#33609E", stream: "science-bridge", streamLabel: "Science & Tech", level: 6, title: "Aizawl Core Scholar", streak: 4, weeklyXp: 890, monthlyXp: 2640, allXp: 1520, cupScore: 3090, cupAcc: "21/25", cupPace: "69%", gkScore: 1420, mathScore: 1650, engScore: 1390, isYou: false },
+      { handle: "hmingsanga_udc", name: "Hmingsanga Z.", initials: "HZ", color: "#5E2F98", stream: "commerce", streamLabel: "Commerce & Accounts", level: 4, title: "Chaltlang Cadet", streak: 3, weeklyXp: 640, monthlyXp: 1920, allXp: 920, cupScore: 2890, cupAcc: "20/25", cupPace: "58%", gkScore: 1380, mathScore: 1520, engScore: 1480, isYou: false }
+    ];
+
+    // =========================================================================
+    // 2. APPLICATION STATE
+    // =========================================================================
+    let state = {
+      viewport: "desktop", // 'desktop' | 'mobile'
+      screen: "setup",     // 'setup' | 'play' | 'duel' | 'leaderboard' | 'rewards' | 'finish'
+      presetId: "arts-comfort",
+      currentIndex: 0,
+      phase: "question",   // 'question' | 'feedback'
+      chosenIndex: null,
+      doubleNextArmed: false,
+      doubleUsedOn: null,
+      conceptLensOpen: false,
+      scratchpadOpen: false,
+      scratchpadText: "",
+      savedForRevision: { "cq_f04d4df10b7aac34": true },
+      currentStreak: 2,    // Pre-seeded 2-stone combo so player feels streak momentum immediately
+      bestStreak: 2,
+      stones: [],
+      timerRemaining: 20,
+      duelAccepted: false,
+      // Leaderboard Filters
+      lbTrack: "league",   // 'league' | 'cup' | 'pillar'
+      lbPeriod: "week",    // 'week' | 'month' | 'all'
+      lbPillar: "gk_gs",   // 'gk_gs' | 'everyday_math' | 'english'
+      lbCohort: "all",     // 'all' | 'arts-comfort' | 'science-bridge' | 'commerce'
+      // Rewards & Daily Quests State
+      lifetimeXp: 1180,    // Level 5 (1,000 to 1,440 XP)
+      dailyBaseXp: 140,    // Out of 300 XP daily study/game cap
+      walletPoints: 865,   // Spendable points in wallet
+      streakDays: 5,       // 5-day active IST streak
+      streakShields: 1,    // 1 Streak Shield equipped (max 2)
+      proDaysActive: 0,
+      quests: {
+        warmup: { claimed: false, progress: 1, target: 1, xp: 20, pts: 2, title: "Ring 1 · Daily Warm-Up Circuit", desc: "Complete 1 full 10-stone Foundation Circuit today" },
+        triad:  { claimed: false, progress: 6, target: 6, xp: 30, pts: 3, title: "Ring 2 · Cross-Stream Triad", desc: "Answer 2 GK/GS, 2 English & 2 Everyday Maths stones right" },
+        mastery:{ claimed: false, progress: 5, target: 5, xp: 50, pts: 5, title: "Ring 3 · High-Score or Revision Closure", desc: "Score 900+ circuit pts OR clear 5 saved items in /revision" }
+      },
+      cosmeticsOwned: {
+        frame_puanchei: false,
+        desk_bamboo: false
+      },
+      rewardToast: null
+    };
+
+    let timerHandle = null;
+
+    // Level curve from api/app/services/learning_rewards.py: level = max(1, floor(sqrt(xp / 40)))
+    function computeLevelBounds(xp) {
+      const safeXp = Math.max(0, xp);
+      const level = Math.max(1, Math.floor(Math.sqrt(safeXp / 40)));
+      const levelFloor = level === 1 ? 0 : 40 * level * level;
+      const nextLevelXp = 40 * (level + 1) * (level + 1);
+      const pct = Math.min(100, Math.round(((safeXp - levelFloor) / (nextLevelXp - levelFloor)) * 100));
+      const titles = {
+        1: "Foundation Novice", 2: "Foundation Novice",
+        3: "Chaltlang Cadet", 4: "Chaltlang Cadet",
+        5: "Aizawl Core Scholar", 6: "Aizawl Core Scholar", 7: "Aizawl Core Scholar",
+        8: "Secretariat Fellow", 9: "Secretariat Fellow", 10: "Secretariat Fellow", 11: "Secretariat Fellow"
+      };
+      return {
+        level,
+        levelFloor,
+        nextLevelXp,
+        xpToNext: Math.max(0, nextLevelXp - safeXp),
+        pct,
+        title: titles[level] || "MPSC Common Core Master"
+      };
+    }
+
+    function currentQuestion() {
+      return REAL_QUESTIONS[state.currentIndex] || REAL_QUESTIONS[0];
+    }
+
+    function effectiveRoundSeconds(q) {
+      if (q.pillar === "everyday_math") {
+        return STREAM_PRESETS[state.presetId].mathSeconds;
+      }
+      return q.roundSeconds;
+    }
+
+    function startTimer() {
+      clearInterval(timerHandle);
+      const q = currentQuestion();
+      state.timerRemaining = effectiveRoundSeconds(q);
+      timerHandle = setInterval(() => {
+        if (state.screen !== "play" || state.phase !== "question") return;
+        if (state.timerRemaining > 0) {
+          state.timerRemaining--;
+          const el = document.getElementById("live-timer-val");
+          if (el) el.textContent = state.timerRemaining + "s";
+        } else {
+          submitAnswer(null);
+        }
+      }, 1000);
+    }
+
+    function setViewport(vp) {
+      state.viewport = vp;
+      render();
+    }
+
+    function setScreen(scr) {
+      state.screen = scr;
+      if (scr === "play" && state.phase === "question") {
+        startTimer();
+      }
+      render();
+    }
+
+    function selectPreset(id) {
+      state.presetId = id;
+      render();
+    }
+
+    function startCircuitRun() {
+      state.currentIndex = 0;
+      state.stones = [];
+      state.currentStreak = 0;
+      state.bestStreak = 0;
+      state.doubleNextArmed = false;
+      state.doubleUsedOn = null;
+      state.phase = "question";
+      state.chosenIndex = null;
+      const q = currentQuestion();
+      state.conceptLensOpen = false;
+      state.scratchpadOpen = q.pillar === "everyday_math";
+      state.scratchpadText = q.scratchpadSteps ? q.scratchpadSteps.join("\n") : "";
+      setScreen("play");
+    }
+
+    function jumpToStone(idx) {
+      state.currentIndex = idx;
+      const existing = state.stones.find(s => s.position === idx);
+      const q = currentQuestion();
+      if (existing) {
+        state.phase = "feedback";
+        state.chosenIndex = existing.chosenIndex;
+      } else {
+        state.phase = "question";
+        state.chosenIndex = null;
+        state.conceptLensOpen = false;
+        state.scratchpadOpen = q.pillar === "everyday_math";
+        state.scratchpadText = q.scratchpadSteps ? q.scratchpadSteps.join("\n") : "";
+        startTimer();
+      }
+      render();
+    }
+
+    // Competitive Task-Normalized Scoring Engine
+    function submitAnswer(optIdx) {
+      if (state.phase !== "question") return;
+      clearInterval(timerHandle);
+      const q = currentQuestion();
+      const roundSecs = effectiveRoundSeconds(q);
+      const correct = optIdx !== null && optIdx === q.answerIndex;
+      const boosted = state.doubleUsedOn === state.currentIndex;
+
+      // Clock saved ratio (0.0 to 1.0) - Task-Normalized so 45s Maths and 20s GK are equally rewarded!
+      const clockSavedRatio = Math.max(0, Math.min(1, state.timerRemaining / roundSecs));
+      const clockSavedPct = Math.round(clockSavedRatio * 100);
+
+      let basePts = 0;
+      let pacePts = 0;
+      let streakPts = 0;
+      let couragePts = 0;
+      let totalPts = 0;
+      let xpEarned = 0;
+      let walletPtEarned = 0;
+
+      if (correct) {
+        state.currentStreak++;
+        if (state.currentStreak > state.bestStreak) state.bestStreak = state.currentStreak;
+
+        basePts = 100;
+        pacePts = Math.floor(50 * clockSavedRatio);
+        if (boosted) {
+          basePts *= 2;
+          pacePts *= 2;
+        }
+
+        // Streak Combo Bonus
+        if (state.currentStreak === 2) streakPts = 15;
+        else if (state.currentStreak === 3) streakPts = 30;
+        else if (state.currentStreak === 4) streakPts = 40;
+        else if (state.currentStreak >= 5) streakPts = 50;
+
+        // Cross-Stream Courage Bonus (+25 pts when answering outside comfort stream without hint)
+        const preset = STREAM_PRESETS[state.presetId];
+        if (preset.couragePillar === q.pillar && !state.conceptLensOpen) {
+          couragePts = 25;
+        }
+
+        totalPts = basePts + pacePts + streakPts + couragePts;
+
+        // First-time canonical correct reward (+10 XP & +1 Wallet Point under 300 XP daily cap)
+        if (state.dailyBaseXp < 300) {
+          xpEarned = 10;
+          walletPtEarned = 1;
+          state.dailyBaseXp = Math.min(300, state.dailyBaseXp + 10);
+          state.lifetimeXp += 10;
+          state.walletPoints += 1;
+          // Sync with leaderboard 'You' entry
+          const youRow = LEADERBOARD_PLAYERS.find(p => p.isYou);
+          if (youRow) {
+            youRow.weeklyXp += 10;
+            youRow.monthlyXp += 10;
+            youRow.allXp += 10;
+          }
+        }
+      } else {
+        state.currentStreak = 0;
+      }
+
+      state.chosenIndex = optIdx;
+      state.phase = "feedback";
+      state.stones = state.stones.filter(s => s.position !== state.currentIndex);
+      state.stones.push({
+        position: state.currentIndex,
+        id: q.id,
+        pillar: q.pillar,
+        chosenIndex: optIdx,
+        correct,
+        basePts,
+        pacePts,
+        streakPts,
+        couragePts,
+        points: totalPts,
+        clockSavedPct,
+        boosted,
+        xpEarned,
+        walletPtEarned,
+        streakAtStone: state.currentStreak
+      });
+      render();
+    }
+
+    function nextStone() {
+      if (state.currentIndex + 1 >= REAL_QUESTIONS.length) {
+        setScreen("finish");
+        return;
+      }
+      state.currentIndex++;
+      if (state.doubleNextArmed && state.doubleUsedOn === null) {
+        state.doubleUsedOn = state.currentIndex;
+        state.doubleNextArmed = false;
+      }
+      const q = currentQuestion();
+      state.phase = "question";
+      state.chosenIndex = null;
+      state.conceptLensOpen = false;
+      state.scratchpadOpen = q.pillar === "everyday_math";
+      state.scratchpadText = q.scratchpadSteps ? q.scratchpadSteps.join("\n") : "";
+      startTimer();
+      render();
+    }
+
+    function toggleDoubleNext() {
+      if (state.doubleUsedOn !== null) return;
+      state.doubleNextArmed = !state.doubleNextArmed;
+      render();
+    }
+
+    function toggleConceptLens() {
+      state.conceptLensOpen = !state.conceptLensOpen;
+      render();
+    }
+
+    function toggleScratchpad() {
+      state.scratchpadOpen = !state.scratchpadOpen;
+      render();
+    }
+
+    function toggleRevisionSave(qid) {
+      state.savedForRevision[qid] = !state.savedForRevision[qid];
+      render();
+    }
+
+    function totalScore() {
+      return state.stones.reduce((acc, s) => acc + s.points, 0) || 345; // Default display score before first stone
+    }
+
+    function actualRunScore() {
+      return state.stones.reduce((acc, s) => acc + s.points, 0);
+    }
+
+    // Daily Quest & Wallet Actions
+    function claimDailyQuest(qKey) {
+      const q = state.quests[qKey];
+      if (!q || q.claimed) return;
+      q.claimed = true;
+      state.lifetimeXp += q.xp;
+      state.walletPoints += q.pts;
+      const youRow = LEADERBOARD_PLAYERS.find(p => p.isYou);
+      if (youRow) {
+        youRow.weeklyXp += q.xp;
+        youRow.monthlyXp += q.xp;
+        youRow.allXp += q.xp;
+      }
+      state.rewardToast = `Claimed ${q.title}: +${q.xp} XP & +${q.pts} Spendable Points added to your wallet!`;
+      render();
+    }
+
+    function buyStreakShield() {
+      if (state.streakShields >= 2) {
+        state.rewardToast = "You already hold the maximum 2 Streak Shields.";
+        render();
+        return;
+      }
+      if (state.walletPoints < 25) {
+        state.rewardToast = "Need 25 Points to equip a Streak Shield.";
+        render();
+        return;
+      }
+      state.walletPoints -= 25;
+      state.streakShields++;
+      state.rewardToast = "Equipped +1 Streak Shield (-25 Points). Your XP & Leaderboard Rank are unchanged!";
+      render();
+    }
+
+    function redeemPro7Days() {
+      if (state.walletPoints < 1000) {
+        state.rewardToast = `You have ${state.walletPoints} / 1,000 Points. Claim today's Daily Quest chests or play a circuit to reach 1,000!`;
+        render();
+        return;
+      }
+      state.walletPoints -= 1000;
+      state.proDaysActive += 7;
+      state.rewardToast = "Redeemed 7 Days of India Study Map Pro (-1,000 Points)!";
+      render();
+    }
+
+    function unlockCosmetic(key, cost, label) {
+      if (state.cosmeticsOwned[key]) return;
+      if (state.walletPoints < cost) {
+        state.rewardToast = `Need ${cost} Points to unlock ${label}.`;
+        render();
+        return;
+      }
+      state.walletPoints -= cost;
+      state.cosmeticsOwned[key] = true;
+      state.rewardToast = `Unlocked & Equipped ${label} (-${cost} Points)! Lifetime XP & Rank untouched.`;
+      render();
+    }
+
+    // =========================================================================
+    // 3. VIEW RENDERERS
+    // =========================================================================
+    function renderAppShellHeader(isMobile) {
+      const lvl = computeLevelBounds(state.lifetimeXp);
+      if (isMobile) {
+        return `
+          <div class="flex items-center justify-between border-b border-[#E4DBC9] bg-[#F4EFE4] px-3.5 py-2.5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-[#2D5BD0]"></span>
+              <span class="ism-display text-base font-semibold">Foundation Circuit</span>
+            </div>
+            <div class="flex items-center gap-1.5">
+              <button onclick="setScreen('rewards')" class="ism-mono text-xs px-2 py-0.5 rounded-full bg-[#F5E1D8] text-[#B0412A] font-semibold">
+                🔥 ${state.streakDays}d
+              </button>
+              <button onclick="setScreen('rewards')" class="ism-mono text-xs px-2 py-0.5 rounded-full bg-[#E3ECDD] text-[#25582C] font-semibold">
+                L${lvl.level} · ${state.walletPoints} pts
+              </button>
+            </div>
+          </div>
+        `;
+      }
+      return `
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#E4DBC9] bg-[#F4EFE4] px-6 py-3.5">
+          <div class="flex items-center gap-5">
+            <div class="flex items-center gap-2">
+              <span class="ism-display text-2xl font-semibold tracking-tight">India Study Map</span>
+              <span class="ism-mono text-xs px-2.5 py-0.5 rounded-full bg-[#E3E9F8] text-[#1F44A6] uppercase font-medium">Competitive Core</span>
+            </div>
+            <div class="hidden lg:flex items-center gap-4 text-xs font-semibold text-[#49443B]">
+              <button onclick="setScreen('setup')" class="hover:text-[#1D1B18] ${state.screen === 'setup' ? 'text-[#1D1B18] underline decoration-[#2D5BD0] underline-offset-4' : ''}">Stream Setup</button>
+              <button onclick="setScreen('play')" class="hover:text-[#1D1B18] ${state.screen === 'play' ? 'text-[#1D1B18] underline decoration-[#2D5BD0] underline-offset-4' : ''}">Circuit Play</button>
+              <button onclick="setScreen('duel')" class="hover:text-[#1D1B18] ${state.screen === 'duel' ? 'text-[#1D1B18] underline decoration-[#2D5BD0] underline-offset-4' : ''}">1v1 Duel</button>
+              <button onclick="setScreen('leaderboard')" class="hover:text-[#1D1B18] ${state.screen === 'leaderboard' ? 'text-[#1D1B18] underline decoration-[#2D5BD0] underline-offset-4' : ''}">Leaderboards 🏆</button>
+              <button onclick="setScreen('rewards')" class="hover:text-[#1D1B18] ${state.screen === 'rewards' ? 'text-[#1D1B18] underline decoration-[#2D5BD0] underline-offset-4' : ''}">Daily Quests & Wallet 🔥</button>
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button onclick="setScreen('rewards')" class="rounded-full border border-[#B0412A]/40 bg-[#F5E1D8] px-3 py-1 text-xs font-semibold text-[#B0412A]">
+              🔥 ${state.streakDays}-Day Streak · 🛡️×${state.streakShields}
+            </button>
+            <button onclick="setScreen('leaderboard')" class="rounded-full border border-[#3D7344]/40 bg-[#E3ECDD] px-3 py-1 text-xs font-semibold text-[#25582C]">
+              Level ${lvl.level} (${lvl.title}) · <span class="ism-mono">${state.lifetimeXp} XP</span>
+            </button>
+            <button onclick="setScreen('rewards')" class="rounded-full border border-[#D8A33A] bg-[#F6E7C6] px-3 py-1 text-xs font-semibold text-[#7E4A00]">
+              Wallet: <span class="ism-mono">${state.walletPoints} Pts</span>
+            </button>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderSetupScreen(isMobile) {
+      const activePreset = STREAM_PRESETS[state.presetId];
+      return `
+        <div class="${isMobile ? 'p-4 pb-24' : 'p-6 sm:p-8'}">
+          <!-- Competitive Season Banner -->
+          <div class="mb-5 rounded-[14px] border border-[#DCD3C2] bg-[#FFFFFF] p-4 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#F6E7C6] border border-[#D8A33A] flex items-center justify-center text-lg font-bold">🏆</div>
+              <div>
+                <div class="ism-mono text-xs uppercase text-[#7E4A00] font-semibold">November 2026 Season · Gold Fellow Division</div>
+                <div class="text-sm font-semibold text-[#1D1B18]">You are #3 in Arts & Humanities this week (${state.lifetimeXp} XP) · Sunday Cup opens 19:00 IST</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <button onclick="setScreen('leaderboard')" class="min-h-[38px] px-3.5 py-1.5 rounded-full border border-[#DCD3C2] bg-[#FBF8F1] text-xs font-semibold hover:border-[#1D1B18]">
+                View Leaderboards →
+              </button>
+              <button onclick="setScreen('rewards')" class="min-h-[38px] px-3.5 py-1.5 rounded-full bg-[#F6E7C6] text-[#7E4A00] text-xs font-semibold">
+                Claim Daily Quests (3 Ready) 🔥
+              </button>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div class="ism-mono text-xs uppercase tracking-wider text-[#1F44A6] font-semibold">
+                Non-Technical MPSC Shared Core · 26,995 Eligible MCQs
+              </div>
+              <h1 class="ism-display ${isMobile ? 'text-3xl' : 'text-4xl'} mt-1.5 font-medium leading-tight">
+                What is your stream or competitive focus today?
+              </h1>
+              <p class="mt-2 max-w-2xl text-sm leading-relaxed text-[#49443B]">
+                Students come from Arts, Science, Engineering, Commerce, Medical, and Agriculture—but everyone competes on the shared MPSC Foundation. Pick a preset below: <strong>specialist technical branches and B.Sc calculus are excluded</strong>, and our <strong>Task-Normalized Pace Bonus (0–50 pts)</strong> ensures 45s Maths questions score just as high as 20s GK questions.
+              </p>
+            </div>
+            <div class="ism-panel-warm px-4 py-3 text-xs">
+              <div class="font-semibold text-[#1D1B18]">Fair Competitive Scoring Active</div>
+              <div class="mt-1 text-[#49443B]">✓ +100 Base + 0..50 Normalized Pace + Streak Combo</div>
+              <div class="text-[#3D7344] font-medium">✓ +25 Cross-Stream Courage Bonus on non-comfort pillars</div>
+            </div>
+          </div>
+
+          <!-- Stream Preset Cards Grid -->
+          <div class="mt-6 grid gap-3.5 ${isMobile ? 'grid-cols-1' : 'sm:grid-cols-2 lg:grid-cols-4'}">
+            ${Object.values(STREAM_PRESETS).map(p => {
+              const selected = p.id === state.presetId;
+              return `
+                <button
+                  type="button"
+                  onclick="selectPreset('${p.id}')"
+                  class="text-left p-4 rounded-[14px] border transition flex flex-col justify-between min-h-[195px] ${
+                    selected
+                      ? 'bg-[#FFFFFF] border-2 border-[#1D1B18] shadow-sm'
+                      : 'bg-[#FBF8F1] border-[#DCD3C2] hover:bg-[#FFFFFF]'
+                  }"
+                >
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="ism-mono text-xs uppercase px-2.5 py-0.5 rounded-full ${
+                        selected ? 'bg-[#1D1B18] text-[#F4EFE4]' : 'bg-[#E9E1D2] text-[#49443B]'
+                      }">
+                        ${selected ? 'Selected' : 'Preset'}
+                      </span>
+                      <span class="ism-mono text-xs text-[#6B6457]">Maths: ${p.mathSeconds}s</span>
+                    </div>
+                    <h2 class="ism-display text-xl font-medium mt-3">${p.title}</h2>
+                    <p class="mt-1 text-xs text-[#49443B] leading-relaxed">${p.subtitle}</p>
+                  </div>
+
+                  <!-- Quota Pill Bar -->
+                  <div class="mt-4 pt-3 border-t border-[#E4DBC9]">
+                    <div class="flex flex-wrap gap-1.5 text-xs font-medium">
+                      ${p.quotas.gk_gs > 0 ? `<span class="px-2 py-0.5 rounded chip-polity">${p.quotas.gk_gs} GK/GS</span>` : ''}
+                      ${p.quotas.english > 0 ? `<span class="px-2 py-0.5 rounded chip-english">${p.quotas.english} English</span>` : ''}
+                      ${p.quotas.everyday_math > 0 ? `<span class="px-2 py-0.5 rounded chip-math">${p.quotas.everyday_math} Everyday Maths</span>` : ''}
+                    </div>
+                  </div>
+                </button>
+              `;
+            }).join('')}
+          </div>
+
+          <!-- Frozen Context Confirmation Box -->
+          <section aria-label="Confirm game setup" class="mt-6 rounded-[14px] border border-[#D8A33A] bg-[#FBF4E6] p-5">
+            <div class="flex flex-wrap items-start justify-between gap-4">
+              <div class="max-w-2xl">
+                <div class="ism-mono text-xs uppercase tracking-wider text-[#7E4A00] font-semibold">
+                  Confirmed Selection Preview · ${activePreset.badge}
+                </div>
+                <h3 class="ism-display text-2xl mt-1">${activePreset.title} · 10-Stone Competitive Circuit</h3>
+                <p class="mt-1.5 text-sm text-[#49443B] leading-relaxed">${activePreset.desc}</p>
+
+                <div class="mt-4 flex flex-wrap gap-2 text-xs">
+                  <span class="px-3 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E4DBC9] font-medium">
+                    <strong>Base + Pace:</strong> 100 + up to 50 pts (% clock saved)
+                  </span>
+                  <span class="px-3 py-1.5 rounded-full bg-[#E3ECDD] border border-[#3D7344] text-[#1D1B18] font-medium">
+                    <strong>Streak & Courage:</strong> Up to +50 Streak & +25 Cross-Stream
+                  </span>
+                  <span class="px-3 py-1.5 rounded-full bg-[#FFFFFF] border border-[#E4DBC9] font-medium">
+                    <strong>Earning:</strong> +10 XP & +1 Wallet Pt per 1st verified correct
+                  </span>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:items-end gap-2.5 w-full sm:w-auto">
+                <button
+                  type="button"
+                  onclick="startCircuitRun()"
+                  class="min-h-11 w-full sm:w-auto px-6 py-3 rounded-full bg-[#1D1B18] text-[#F4EFE4] text-sm font-semibold hover:opacity-95"
+                >
+                  Confirm & Start Competitive Circuit →
+                </button>
+                <button
+                  type="button"
+                  onclick="setScreen('duel')"
+                  class="min-h-11 w-full sm:w-auto px-5 py-2.5 rounded-full border border-[#1D1B18] bg-[#FFFFFF] text-[#1D1B18] text-xs font-semibold"
+                >
+                  Challenge a Friend (Cross-Stream Duel) ⚔
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function renderPlayScreen(isMobile) {
+      const q = currentQuestion();
+      const preset = STREAM_PRESETS[state.presetId];
+      const isRevealed = state.phase === "feedback";
+      const isMath = q.pillar === "everyday_math";
+      const boostedThisStone = state.doubleUsedOn === state.currentIndex;
+      const lastStoneRecord = state.stones.find(s => s.position === state.currentIndex);
+
+      // 10-stone stepper strip with live competitive score & streak
+      const stonesBar = `
+        <div class="rounded-[14px] border border-[#C8D8C9] bg-[#EEF3E8] p-3.5">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+            <div class="flex flex-wrap items-center gap-2">
+              <strong class="text-[#1D1B18]">${preset.title}</strong>
+              <span class="text-[#49443B]">· Stone ${state.currentIndex + 1} of 10</span>
+              <span class="px-2.5 py-0.5 rounded-full ${state.currentStreak >= 2 ? 'bg-[#F5E1D8] text-[#B0412A]' : 'bg-[#FFFFFF] text-[#6B6457]'} font-bold ism-mono">
+                🔥 ${state.currentStreak}× Streak ${state.currentStreak >= 2 ? `(+${state.currentStreak === 2 ? 15 : state.currentStreak === 3 ? 30 : state.currentStreak === 4 ? 40 : 50} pts)` : ''}
+              </span>
+              ${boostedThisStone ? `<span class="px-2 py-0.5 rounded-full bg-[#D8A33A] text-[#1D1B18] font-semibold">×2 Double Active</span>` : ''}
+            </div>
+            <div class="ism-mono font-semibold text-[#2D6252]">
+              ${actualRunScore()} run pts · ${state.stones.filter(s => s.correct).length}/${state.stones.length} correct
+            </div>
+          </div>
+          <ol aria-label="10-stone circuit progress" class="mt-2.5 grid grid-cols-10 gap-1.5">
+            ${REAL_QUESTIONS.map((item, idx) => {
+              const s = state.stones.find(x => x.position === idx);
+              const isCurrent = idx === state.currentIndex;
+              let cls = "border-[#A2B596] bg-[#FFFFFF] text-[#49443B]";
+              let label = idx + 1;
+              if (s && s.correct) {
+                cls = "border-[#3D7344] bg-[#3D7344] text-[#FFFFFF]";
+                label = "✓";
+              } else if (s && !s.correct) {
+                cls = "border-[#B0412A] bg-[#F5E1D8] text-[#B0412A]";
+                label = "↻";
+              } else if (isCurrent) {
+                cls = "border-2 border-[#1D1B18] bg-[#F6E7C6] text-[#1D1B18]";
+              }
+              return `
+                <li>
+                  <button
+                    type="button"
+                    onclick="jumpToStone(${idx})"
+                    title="Stone ${idx + 1}: ${item.topicLabel}"
+                    class="w-full min-h-[38px] rounded-full border text-xs font-bold flex items-center justify-center transition ${cls}"
+                  >
+                    ${label}
+                  </button>
+                </li>
+              `;
+            }).join('')}
+          </ol>
+        </div>
+      `;
+
+      // Options markup strictly following docs/DESIGN-FIDELITY.md
+      const optionsHtml = q.options.map((optText, idx) => {
+        const letter = String.fromCharCode(65 + idx);
+        let optClass = "ism-opt-resting";
+        let stateWord = "";
+
+        if (isRevealed) {
+          if (idx === q.answerIndex) {
+            optClass = "ism-opt-correct";
+            stateWord = state.chosenIndex === idx ? "Correct" : "Answer";
+          } else if (state.chosenIndex === idx) {
+            optClass = "ism-opt-wrong";
+            stateWord = "Your pick";
+          } else {
+            optClass = "ism-opt-muted";
+          }
+        }
+
+        return `
+          <button
+            type="button"
+            ${isRevealed ? 'disabled' : `onclick="submitAnswer(${idx})"`}
+            class="${optClass} min-h-[46px] w-full px-3.5 py-2.5 text-left flex items-center justify-between gap-3"
+          >
+            <div class="flex items-start gap-3 min-w-0">
+              <span class="ism-mono text-xs font-semibold w-4 shrink-0 mt-0.5">${letter}.</span>
+              <span class="text-[15px] leading-snug break-words">${optText}</span>
+            </div>
+            ${stateWord ? `<span class="ism-mono text-xs uppercase font-semibold shrink-0 px-2 py-0.5 rounded bg-[#FFFFFF]/80">${stateWord}</span>` : ''}
+          </button>
+        `;
+      }).join('');
+
+      // Question Card (Bank Card v3 Fidelity)
+      const questionCard = `
+        <article class="ism-card p-5 sm:p-[22px]">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="ism-mono text-xs uppercase tracking-wider px-2.5 py-1 rounded-full font-semibold ${q.chipClass}">
+              ${q.pillarLabel} · ${q.topicLabel}
+            </span>
+            <span class="ism-mono text-xs text-[#6B6457]">
+              Q${q.qnum} · ${q.exam} (p.${q.page})
+            </span>
+            <span class="ism-mono text-xs uppercase px-2.5 py-0.5 prov-official font-medium">
+              Official key
+            </span>
+            <span class="ml-auto ism-mono text-xs font-semibold px-3 py-1 rounded-full ${
+              isRevealed
+                ? 'bg-[#E9E1D2] text-[#49443B]'
+                : isMath
+                  ? 'bg-[#E3ECDD] text-[#25582C]'
+                  : 'bg-[#F6E7C6] text-[#7E4A00]'
+            }" role="timer">
+              ${isRevealed ? `Clock paused (${lastStoneRecord ? lastStoneRecord.clockSavedPct + '% saved' : ''})` : `<span id="live-timer-val">${state.timerRemaining}s</span>${isMath ? ' (Normalized Math Clock)' : ''}`}
+            </span>
+          </div>
+
+          ${q.temporalBadge ? `
+            <div class="mt-3 rounded-lg border border-[#D8A33A] bg-[#F7EAD0] px-3 py-2 text-xs text-[#7E4A00] flex items-center justify-between gap-2">
+              <span><strong>Temporal Context:</strong> ${q.temporalBadge}</span>
+              <span class="ism-mono uppercase">study-tagging-v1</span>
+            </div>
+          ` : ''}
+
+          ${q.direction ? `
+            <p class="mt-3 text-xs italic text-[#49443B] bg-[#FBF8F1] px-3 py-2 rounded border border-[#E4DBC9]">
+              ${q.direction}
+            </p>
+          ` : ''}
+
+          <!-- Question Stem -->
+          <h2 class="ism-stem mt-3.5 mb-4">
+            ${q.question}
+          </h2>
+
+          <!-- Concept / Formula Lens Drawer -->
+          ${state.conceptLensOpen ? `
+            <div class="mb-4 rounded-xl border border-[#2D5BD0] bg-[#E3E9F8] p-3.5 text-xs text-[#1F44A6]">
+              <div class="font-semibold uppercase ism-mono">💡 Concept & Rule Lens (Base 100 pts preserved)</div>
+              <p class="mt-1 text-sm text-[#1D1B18] leading-relaxed">${q.conceptHint}</p>
+            </div>
+          ` : ''}
+
+          <!-- Mobile Collapsible Scratchpad Trigger on Math Questions -->
+          ${isMath && isMobile ? `
+            <div class="mb-3">
+              <button
+                type="button"
+                onclick="toggleScratchpad()"
+                class="min-h-11 w-full rounded-lg border border-[#3D7344] bg-[#E3ECDD] px-3 py-2 text-xs font-semibold text-[#25582C] flex items-center justify-between"
+              >
+                <span>✎ ${state.scratchpadOpen ? 'Hide Quick Math Scratchpad' : 'Open Quick Math Scratchpad'}</span>
+                <span class="ism-mono">Work steps</span>
+              </button>
+              ${state.scratchpadOpen ? `
+                <div class="mt-2 rounded-lg border border-[#DCD3C2] bg-[#FBF8F1] p-3">
+                  <label class="block text-xs font-semibold text-[#49443B]">Jot numbers or inspect step template:</label>
+                  <textarea
+                    rows="3"
+                    oninput="state.scratchpadText = this.value"
+                    class="mt-1.5 w-full rounded border border-[#DCD3C2] bg-[#FFFFFF] p-2 ism-mono text-xs text-[#1D1B18]"
+                  >${state.scratchpadText}</textarea>
+                </div>
+              ` : ''}
+            </div>
+          ` : ''}
+
+          <!-- Options Grid -->
+          <div class="grid gap-2.5 ${isMobile ? 'grid-cols-1' : 'sm:grid-cols-2'}">
+            ${optionsHtml}
+          </div>
+
+          <!-- Pre-Answer Action Strip -->
+          ${!isRevealed ? `
+            <div class="mt-4 pt-3 border-t border-[#E4DBC9] flex flex-wrap items-center justify-between gap-2">
+              <div class="flex flex-wrap gap-2">
+                <button
+                  type="button"
+                  onclick="toggleConceptLens()"
+                  class="min-h-11 px-3.5 py-2 rounded-full border border-[#DCD3C2] bg-[#FBF8F1] text-xs font-semibold text-[#1D1B18] hover:border-[#1D1B18]"
+                >
+                  💡 ${state.conceptLensOpen ? 'Hide Concept Hint' : 'Show Concept / Formula Hint'}
+                </button>
+                <button
+                  type="button"
+                  onclick="submitAnswer(null)"
+                  class="min-h-11 px-3.5 py-2 rounded-full border border-[#DCD3C2] bg-[#FFFFFF] text-xs font-semibold text-[#49443B]"
+                >
+                  Skip stone (Mark for revision)
+                </button>
+              </div>
+              <span class="text-xs text-[#6B6457]">
+                ${preset.couragePillar === q.pillar && !state.conceptLensOpen ? '⚡ +25 Cross-Stream Courage Bonus eligible!' : 'Tap any option to lock answer & pause clock'}
+              </span>
+            </div>
+          ` : ''}
+
+          <!-- Paused Worked Feedback Panel + Live Competitive Score Breakdown -->
+          ${isRevealed ? `
+            <div role="status" class="mt-5 rounded-xl border border-[#DCD3C2] bg-[#FBF8F1] p-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div class="flex flex-wrap items-center gap-2">
+                  <span class="ism-mono text-xs uppercase font-bold px-2.5 py-1 rounded ${
+                    state.chosenIndex === q.answerIndex
+                      ? 'bg-[#E3ECDD] text-[#3D7344]'
+                      : 'bg-[#F5E1D8] text-[#B0412A]'
+                  }">
+                    ${state.chosenIndex === q.answerIndex
+                      ? `Correct · +${lastStoneRecord ? lastStoneRecord.points : 100} Competitive Pts`
+                      : state.chosenIndex === null
+                        ? 'Skipped / Time · Marked for revision'
+                        : 'Revise · Official Answer: ' + String.fromCharCode(65 + q.answerIndex)}
+                  </span>
+                  ${lastStoneRecord && lastStoneRecord.xpEarned > 0 ? `
+                    <span class="ism-mono text-xs font-semibold px-2.5 py-1 rounded-full bg-[#F6E7C6] text-[#7E4A00]">
+                      +${lastStoneRecord.xpEarned} XP · +${lastStoneRecord.walletPtEarned} Wallet Pt
+                    </span>
+                  ` : ''}
+                </div>
+
+                <button
+                  type="button"
+                  onclick="toggleRevisionSave('${q.id}')"
+                  class="min-h-11 px-3.5 py-1.5 rounded-full border text-xs font-semibold transition ${
+                    state.savedForRevision[q.id]
+                      ? 'border-[#1F44A6] bg-[#E3E9F8] text-[#1F44A6]'
+                      : 'border-[#DCD3C2] bg-[#FFFFFF] text-[#1D1B18]'
+                  }"
+                >
+                  ${state.savedForRevision[q.id] ? '★ Saved for Daily Revision (/revision)' : '+ Save for Daily Revision'}
+                </button>
+              </div>
+
+              <!-- Competitive Score Breakdown Pills -->
+              ${lastStoneRecord && lastStoneRecord.correct ? `
+                <div class="mt-3 flex flex-wrap gap-1.5 text-xs ism-mono">
+                  <span class="px-2.5 py-1 rounded bg-[#FFFFFF] border border-[#E4DBC9]">
+                    Base: +${lastStoneRecord.basePts} pts ${lastStoneRecord.boosted ? '(×2 Double)' : ''}
+                  </span>
+                  <span class="px-2.5 py-1 rounded bg-[#E3ECDD] text-[#25582C] border border-[#3D7344]/30">
+                    Normalized Pace (${lastStoneRecord.clockSavedPct}% clock left): +${lastStoneRecord.pacePts} pts
+                  </span>
+                  ${lastStoneRecord.streakPts > 0 ? `
+                    <span class="px-2.5 py-1 rounded bg-[#F5E1D8] text-[#B0412A] font-semibold">
+                      🔥 ${lastStoneRecord.streakAtStone}× Streak Combo: +${lastStoneRecord.streakPts} pts
+                    </span>
+                  ` : ''}
+                  ${lastStoneRecord.couragePts > 0 ? `
+                    <span class="px-2.5 py-1 rounded bg-[#E3E9F8] text-[#1F44A6] font-semibold">
+                      ⚡ Cross-Stream Courage: +${lastStoneRecord.couragePts} pts
+                    </span>
+                  ` : ''}
+                </div>
+              ` : ''}
+
+              <p class="mt-3 whitespace-pre-line text-sm leading-relaxed text-[#1D1B18]">${q.explanation}</p>
+
+              <!-- Next Stone Preview & Double Next Token -->
+              <div class="mt-4 pt-3 border-t border-[#E4DBC9] flex flex-wrap items-center justify-between gap-3">
+                <div class="text-xs text-[#49443B]">
+                  ${state.currentIndex + 1 < REAL_QUESTIONS.length ? `
+                    <span>Next up (Stone ${state.currentIndex + 2}): </span>
+                    <strong class="text-[#1D1B18]">${REAL_QUESTIONS[state.currentIndex + 1].pillarLabel} · ${REAL_QUESTIONS[state.currentIndex + 1].topicLabel}</strong>
+                  ` : '<strong>Final stone completed!</strong> Ready for your competitive circuit summary.'}
+                </div>
+
+                <div class="flex flex-wrap items-center gap-2.5 w-full sm:w-auto">
+                  ${state.doubleUsedOn === null && state.currentIndex + 1 < REAL_QUESTIONS.length ? `
+                    <button
+                      type="button"
+                      onclick="toggleDoubleNext()"
+                      class="min-h-11 px-3.5 py-2 rounded-full border text-xs font-semibold ${
+                        state.doubleNextArmed
+                          ? 'border-[#9A6410] bg-[#F6E7C6] text-[#1D1B18]'
+                          : 'border-[#DCD3C2] bg-[#FFFFFF] text-[#1D1B18]'
+                      }"
+                    >
+                      ${state.doubleNextArmed ? '✓ Double Next (×2) Armed' : 'Use Double Next (×2) on Stone ' + (state.currentIndex + 2)}
+                    </button>
+                  ` : ''}
+
+                  <button
+                    type="button"
+                    onclick="nextStone()"
+                    class="min-h-11 flex-1 sm:flex-initial px-5 py-2.5 rounded-full bg-[#1D1B18] text-[#F4EFE4] text-xs font-semibold"
+                  >
+                    ${state.currentIndex + 1 < REAL_QUESTIONS.length ? `Continue to Stone ${state.currentIndex + 2} →` : 'Finish & View Competitive Summary ⚑'}
+                  </button>
+                </div>
+              </div>
+            </div>
+          ` : ''}
+        </article>
+      `;
+
+      // Right Rail for Desktop
+      const desktopRightRail = `
+        <aside class="space-y-4">
+          <!-- Live Competitive Formula Card -->
+          <section class="ism-card p-4">
+            <div class="flex items-center justify-between">
+              <span class="ism-mono text-xs uppercase tracking-wider text-[#7E4A00] font-semibold">🏆 Competitive Scoring</span>
+              <span class="ism-mono text-xs font-bold text-[#2D6252]">${actualRunScore()} pts</span>
+            </div>
+            <div class="mt-2.5 space-y-1.5 text-xs text-[#49443B]">
+              <div class="flex justify-between"><span>Base Accuracy</span><span class="ism-mono font-semibold text-[#1D1B18]">+100 pts</span></div>
+              <div class="flex justify-between"><span>Normalized Pace (0–100% left)</span><span class="ism-mono font-semibold text-[#25582C]">+0..50 pts</span></div>
+              <div class="flex justify-between"><span>Streak Combo (2× to 5×+)</span><span class="ism-mono font-semibold text-[#B0412A]">+15..50 pts</span></div>
+              <div class="flex justify-between"><span>Cross-Stream Courage</span><span class="ism-mono font-semibold text-[#1F44A6]">+25 pts</span></div>
+            </div>
+            <p class="mt-2.5 pt-2 border-t border-[#E4DBC9] text-xs text-[#6B6457]">
+              Pace bonus uses % of stone clock remaining so a 45s Maths stone and a 20s GK stone earn equal speed points.
+            </p>
+          </section>
+
+          <!-- Interactive Math Scratchpad (Desktop Rail) -->
+          <section class="ism-card p-4">
+            <div class="flex items-center justify-between">
+              <span class="ism-mono text-xs uppercase tracking-wider text-[#25582C] font-semibold">✎ Quick Math Scratchpad</span>
+              <span class="text-xs text-[#6B6457]">${isMath ? 'Active for this stone' : 'Available anytime'}</span>
+            </div>
+            <textarea
+              rows="4"
+              oninput="state.scratchpadText = this.value"
+              placeholder="e.g. 72 + 8 = 80 (40% of total)..."
+              class="mt-2 w-full rounded-lg border border-[#DCD3C2] bg-[#FBF8F1] p-2.5 ism-mono text-xs text-[#1D1B18]"
+            >${state.scratchpadText}</textarea>
+            <div class="mt-2 flex flex-wrap gap-1.5 text-xs ism-mono">
+              <span class="px-2 py-0.5 rounded bg-[#FBF8F1] border border-[#E4DBC9]">HCF×LCM = A×B</span>
+              <span class="px-2 py-0.5 rounded bg-[#FBF8F1] border border-[#E4DBC9]">Net% = a+b−ab/100</span>
+            </div>
+          </section>
+
+          <!-- Daily XP & Quest Mini Progress -->
+          <section class="ism-card p-4">
+            <div class="flex items-center justify-between">
+              <span class="ism-mono text-xs uppercase tracking-wider text-[#6B6457]">Daily XP Budget</span>
+              <span class="ism-mono text-xs font-semibold">${state.dailyBaseXp} / 300 XP</span>
+            </div>
+            <div class="mt-1.5 h-2 rounded-full bg-[#E9E1D2] overflow-hidden">
+              <div class="h-full bg-[#3D7344]" style="width: ${Math.round((state.dailyBaseXp / 300) * 100)}%"></div>
+            </div>
+            <button onclick="setScreen('rewards')" class="mt-3 w-full min-h-[38px] rounded-lg bg-[#F6E7C6] text-[#7E4A00] text-xs font-semibold">
+              Open Daily Quest Chests & Wallet →
+            </button>
+          </section>
+        </aside>
+      `;
+
+      return `
+        <div class="${isMobile ? 'p-3.5 pb-24 space-y-3.5' : 'p-6 sm:p-8 space-y-5'}">
+          ${stonesBar}
+          <div class="${isMobile ? 'space-y-4' : 'grid lg:grid-cols-[minmax(0,1fr)_340px] gap-6 items-start'}">
+            <div class="min-w-0">${questionCard}</div>
+            ${!isMobile ? desktopRightRail : ''}
+          </div>
+        </div>
+      `;
+    }
+
+    function renderDuelScreen(isMobile) {
+      return `
+        <div class="${isMobile ? 'p-4 pb-24' : 'p-6 sm:p-8'}">
+          <div class="ism-mono text-xs uppercase tracking-wider text-[#33609E] font-semibold">
+            Fair Cross-Stream Competition · Room Code: 8F4A92C1D0E3
+          </div>
+          <h1 class="ism-display ${isMobile ? 'text-3xl' : 'text-4xl'} mt-1 font-medium">
+            Common Core 1v1 Duel Lobby
+          </h1>
+          <p class="mt-2 max-w-2xl text-sm text-[#49443B] leading-relaxed">
+            How do two friends from different academic branches compete fairly? Both players receive the exact same <strong>10-question Common Core Blueprint</strong> (4 GK/GS · 3 General English · 3 Everyday Non-Technical Maths) with task-normalized pace scoring.
+          </p>
+
+          <div class="mt-6 grid gap-5 ${isMobile ? 'grid-cols-1' : 'lg:grid-cols-2'}">
+            <section class="ism-card p-5">
+              <h2 class="ism-display text-2xl">Players in Lobby (2 / 2)</h2>
+              <div class="mt-4 space-y-3">
+                <div class="flex items-center justify-between p-3.5 rounded-xl bg-[#FBF8F1] border border-[#DCD3C2]">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#33609E] text-white font-bold flex items-center justify-center text-sm">RK</div>
+                    <div>
+                      <div class="font-semibold text-sm">Rinzuala K. (Host · L6)</div>
+                      <div class="text-xs text-[#49443B]">Stream: B.Tech Civil Engineering · 🔥 4d Streak</div>
+                    </div>
+                  </div>
+                  <span class="ism-mono text-xs px-2.5 py-1 rounded-full bg-[#E3ECDD] text-[#3D7344] font-semibold">Ready ✓</span>
+                </div>
+
+                <div class="flex items-center justify-between p-3.5 rounded-xl bg-[#FBF8F1] border border-[#DCD3C2]">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-[#8A4A86] text-white font-bold flex items-center justify-center text-sm">ZL</div>
+                    <div>
+                      <div class="font-semibold text-sm">Zuali (You · L5)</div>
+                      <div class="text-xs text-[#49443B]">Stream: B.A. History (Humanities) · 🔥 ${state.streakDays}d Streak</div>
+                    </div>
+                  </div>
+                  <span class="ism-mono text-xs px-2.5 py-1 rounded-full ${
+                    state.duelAccepted ? 'bg-[#E3ECDD] text-[#3D7344]' : 'bg-[#F6E7C6] text-[#7E4A00]'
+                  } font-semibold">
+                    ${state.duelAccepted ? 'Ready ✓' : 'Awaiting Ready'}
+                  </span>
+                </div>
+              </div>
+
+              <div class="mt-5 rounded-xl border border-[#D8A33A] bg-[#FBF4E6] p-4 text-xs leading-relaxed">
+                <div class="font-semibold text-[#1D1B18] text-sm">Fair Tie-Break & Anti-Wager Guarantee</div>
+                <p class="mt-1 text-[#49443B]">
+                  • Neither Civil Engineering nor specialist BA History papers are drawn.<br/>
+                  • Tie-breaks use <strong>Average % of Task Clock Saved</strong> so 40s Arithmetic rounds and 20s GK rounds carry identical weight.<br/>
+                  • No point wagering: winner earns the Duel Victory Badge and Ring 3 Daily Quest completion!
+                </p>
+              </div>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onclick="state.duelAccepted = !state.duelAccepted; render()"
+                  class="min-h-11 px-5 py-2.5 rounded-full bg-[#1D1B18] text-[#F4EFE4] text-xs font-semibold"
+                >
+                  ${state.duelAccepted ? '✓ Blueprint Accepted · Ready' : 'I Accept Common Core Blueprint · Ready'}
+                </button>
+                <button
+                  type="button"
+                  onclick="startCircuitRun()"
+                  class="min-h-11 px-5 py-2.5 rounded-full border border-[#1D1B18] bg-[#FFFFFF] text-[#1D1B18] text-xs font-semibold"
+                >
+                  Launch Shared 10-Stone Duel →
+                </button>
+              </div>
+            </section>
+
+            <section class="ism-card p-5">
+              <h2 class="ism-display text-2xl">Frozen Duel Context Snapshot</h2>
+              <p class="mt-1 text-xs text-[#6B6457] ism-mono">context_hash: 9f42c8a1e7b044d3... · Task-Normalized Scoring</p>
+
+              <div class="mt-4 space-y-3 text-xs">
+                <div class="p-3 rounded-lg border border-[#E4DBC9] flex items-center justify-between">
+                  <div>
+                    <span class="px-2 py-0.5 rounded chip-polity font-semibold">Rounds 1, 3, 6, 8</span>
+                    <div class="font-semibold text-sm mt-1">4 × GK & General Studies</div>
+                    <div class="text-[#49443B]">Polity, Indian History, Geography, Mizoram GK</div>
+                  </div>
+                  <span class="ism-mono font-semibold">20s · up to 150 pts/stone</span>
+                </div>
+
+                <div class="p-3 rounded-lg border border-[#E4DBC9] flex items-center justify-between">
+                  <div>
+                    <span class="px-2 py-0.5 rounded chip-english font-semibold">Rounds 2, 5, 9</span>
+                    <div class="font-semibold text-sm mt-1">3 × General English</div>
+                    <div class="text-[#49443B]">Grammar, Vocabulary, Voice Transformation</div>
+                  </div>
+                  <span class="ism-mono font-semibold">20s · up to 150 pts/stone</span>
+                </div>
+
+                <div class="p-3 rounded-lg border border-[#3D7344] bg-[#E3ECDD]/40 flex items-center justify-between">
+                  <div>
+                    <span class="px-2 py-0.5 rounded chip-math font-semibold">Rounds 4, 7, 10</span>
+                    <div class="font-semibold text-sm mt-1">3 × Everyday Maths & Reasoning</div>
+                    <div class="text-[#49443B]">Percentages, Integers, Letter-Cipher Coding</div>
+                  </div>
+                  <span class="ism-mono font-semibold text-[#25582C]">40s · up to 150 pts/stone</span>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // 4. NEW: MULTI-TIER LEADERBOARDS & STREAM COHORT SCREEN
+    // =========================================================================
+    function renderLeaderboardScreen(isMobile) {
+      // Filter by Stream Cohort
+      let rows = LEADERBOARD_PLAYERS.filter(p => state.lbCohort === "all" || p.stream === state.lbCohort);
+
+      // Sort according to active track
+      rows = [...rows].sort((a, b) => {
+        if (state.lbTrack === "league") {
+          const k = state.lbPeriod === "week" ? "weeklyXp" : state.lbPeriod === "month" ? "monthlyXp" : "allXp";
+          return b[k] - a[k];
+        } else if (state.lbTrack === "cup") {
+          return b.cupScore - a.cupScore;
+        } else {
+          const pk = state.lbPillar === "gk_gs" ? "gkScore" : state.lbPillar === "everyday_math" ? "mathScore" : "engScore";
+          return b[pk] - a[pk];
+        }
+      });
+
+      return `
+        <div class="${isMobile ? 'p-4 pb-24' : 'p-6 sm:p-8'}">
+          <div class="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <div class="ism-mono text-xs uppercase tracking-wider text-[#7E4A00] font-semibold">
+                Competitive Standings · Asia/Kolkata (IST) Boundaries
+              </div>
+              <h1 class="ism-display ${isMobile ? 'text-3xl' : 'text-4xl'} mt-1 font-medium">
+                Leaderboards & League Divisions
+              </h1>
+              <p class="mt-1.5 max-w-2xl text-sm text-[#49443B]">
+                Compete on Weekly XP Leagues, the Sunday 25-Stone Common Core Cup, or Pillar Specialist High-Score Boards. Filter by <strong>Stream Cohort</strong> to benchmark against your academic peer group or all streams statewide.
+              </p>
+            </div>
+
+            <!-- Stream Cohort Filter Pills -->
+            <div class="ism-panel-warm p-2 flex flex-wrap gap-1.5 text-xs">
+              ${[
+                { id: "all", label: "All Streams (Open)" },
+                { id: "arts-comfort", label: "Arts & Humanities" },
+                { id: "science-bridge", label: "Science & Tech" },
+                { id: "commerce", label: "Commerce & Accounts" }
+              ].map(c => `
+                <button
+                  type="button"
+                  onclick="state.lbCohort = '${c.id}'; render()"
+                  class="px-3 py-1.5 rounded-lg font-semibold transition ${
+                    state.lbCohort === c.id
+                      ? 'bg-[#1D1B18] text-[#F4EFE4]'
+                      : 'bg-transparent text-[#49443B] hover:bg-[#FFFFFF]'
+                  }"
+                >
+                  ${c.label}
+                </button>
+              `).join('')}
+            </div>
+          </div>
+
+          <!-- 3 Primary Leaderboard Track Tabs -->
+          <div class="mt-6 grid gap-3 ${isMobile ? 'grid-cols-1' : 'sm:grid-cols-3'}">
+            <button
+              type="button"
+              onclick="state.lbTrack = 'league'; render()"
+              class="text-left p-4 rounded-[14px] border transition ${
+                state.lbTrack === 'league'
+                  ? 'bg-[#FFFFFF] border-2 border-[#1D1B18] shadow-sm'
+                  : 'bg-[#FBF8F1] border-[#DCD3C2]'
+              }"
+            >
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase text-[#7E4A00] font-semibold">Track 1 · /board</span>
+                <span class="px-2 py-0.5 rounded-full bg-[#F6E7C6] text-[#7E4A00] text-xs font-bold">Gold Division</span>
+              </div>
+              <div class="ism-display text-xl font-medium mt-1.5">Weekly & Monthly XP Leagues</div>
+              <p class="mt-1 text-xs text-[#49443B]">Ranked by canonical study + quest XP. Top 3 promote to Diamond Ranker on Monday 00:00 IST.</p>
+            </button>
+
+            <button
+              type="button"
+              onclick="state.lbTrack = 'cup'; render()"
+              class="text-left p-4 rounded-[14px] border transition ${
+                state.lbTrack === 'cup'
+                  ? 'bg-[#FFFFFF] border-2 border-[#1D1B18] shadow-sm'
+                  : 'bg-[#FBF8F1] border-[#DCD3C2]'
+              }"
+            >
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase text-[#1F44A6] font-semibold">Track 2 · Sunday 19:00 IST</span>
+                <span class="px-2 py-0.5 rounded-full bg-[#E3E9F8] text-[#1F44A6] text-xs font-bold">25 Stones</span>
+              </div>
+              <div class="ism-display text-xl font-medium mt-1.5">Sunday Common Core Cup</div>
+              <p class="mt-1 text-xs text-[#49443B]">10 GK/GS · 8 English · 7 Everyday Maths. Single-attempt statewide championship.</p>
+            </button>
+
+            <button
+              type="button"
+              onclick="state.lbTrack = 'pillar'; render()"
+              class="text-left p-4 rounded-[14px] border transition ${
+                state.lbTrack === 'pillar'
+                  ? 'bg-[#FFFFFF] border-2 border-[#1D1B18] shadow-sm'
+                  : 'bg-[#FBF8F1] border-[#DCD3C2]'
+              }"
+            >
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase text-[#25582C] font-semibold">Track 3 · Specialist</span>
+                <span class="px-2 py-0.5 rounded-full bg-[#E3ECDD] text-[#25582C] text-xs font-bold">10-Stone Best</span>
+              </div>
+              <div class="ism-display text-xl font-medium mt-1.5">Pillar High-Score Boards</div>
+              <p class="mt-1 text-xs text-[#49443B]">Separate personal-best leaderboards for GK/GS, Everyday Quant, and General English.</p>
+            </button>
+          </div>
+
+          <!-- Active Track Sub-Filters & Division Banner -->
+          <div class="mt-5 ism-card p-5">
+            <div class="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#E4DBC9]">
+              <div>
+                <h2 class="ism-display text-2xl">
+                  ${state.lbTrack === 'league'
+                    ? 'XP League Standings (Bronze → Silver → Gold → Diamond → MPSC Topper)'
+                    : state.lbTrack === 'cup'
+                      ? 'Sunday Common Core Championship · 25-Stone Official Blueprint'
+                      : 'Pillar Specialist Best 10-Stone Circuit Score'}
+                </h2>
+                <p class="text-xs text-[#6B6457] mt-0.5">
+                  Showing cohort: <strong>${state.lbCohort === 'all' ? 'All Academic Streams' : state.lbCohort === 'arts-comfort' ? 'Arts & Humanities' : state.lbCohort === 'science-bridge' ? 'Science & Tech' : 'Commerce & Accounts'}</strong> · Opt-in public handles (board_public = true)
+                </p>
+              </div>
+
+              ${state.lbTrack === 'league' ? `
+                <div class="flex gap-1.5 text-xs">
+                  ${[
+                    { id: 'week', label: 'This Week (IST)' },
+                    { id: 'month', label: 'This Month' },
+                    { id: 'all', label: 'All Time' }
+                  ].map(p => `
+                    <button
+                      type="button"
+                      onclick="state.lbPeriod = '${p.id}'; render()"
+                      class="px-3 py-1.5 rounded-full font-semibold ${
+                        state.lbPeriod === p.id ? 'bg-[#1D1B18] text-[#F4EFE4]' : 'bg-[#FBF8F1] border border-[#DCD3C2] text-[#49443B]'
+                      }"
+                    >
+                      ${p.label}
+                    </button>
+                  `).join('')}
+                </div>
+              ` : ''}
+
+              ${state.lbTrack === 'pillar' ? `
+                <div class="flex flex-wrap gap-1.5 text-xs">
+                  ${[
+                    { id: 'gk_gs', label: 'GK & General Studies' },
+                    { id: 'everyday_math', label: 'Everyday Maths & Reasoning' },
+                    { id: 'english', label: 'General English' }
+                  ].map(pil => `
+                    <button
+                      type="button"
+                      onclick="state.lbPillar = '${pil.id}'; render()"
+                      class="px-3 py-1.5 rounded-full font-semibold ${
+                        state.lbPillar === pil.id ? 'bg-[#1D1B18] text-[#F4EFE4]' : 'bg-[#FBF8F1] border border-[#DCD3C2] text-[#49443B]'
+                      }"
+                    >
+                      ${pil.label}
+                    </button>
+                  `).join('')}
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- Standings Table / List -->
+            <div class="mt-4 divide-y divide-[#E4DBC9]">
+              ${rows.map((r, idx) => {
+                const rank = idx + 1;
+                const medal = rank === 1 ? "🥇 #1" : rank === 2 ? "🥈 #2" : rank === 3 ? "🥉 #3" : "#" + rank;
+                let metricPrimary = "";
+                let metricSecondary = "";
+
+                if (state.lbTrack === "league") {
+                  const val = state.lbPeriod === "week" ? r.weeklyXp : state.lbPeriod === "month" ? r.monthlyXp : r.allXp;
+                  metricPrimary = val.toLocaleString() + " XP";
+                  metricSecondary = rank <= 3 ? "▲ Promotion Zone" : "Gold Fellow Tier";
+                } else if (state.lbTrack === "cup") {
+                  metricPrimary = r.cupScore.toLocaleString() + " pts";
+                  metricSecondary = `${r.cupAcc} correct · ${r.cupPace} clock saved`;
+                } else {
+                  const val = state.lbPillar === "gk_gs" ? r.gkScore : state.lbPillar === "everyday_math" ? r.mathScore : r.engScore;
+                  metricPrimary = val.toLocaleString() + " pts";
+                  metricSecondary = "10-stone circuit record";
+                }
+
+                return `
+                  <div class="py-3.5 px-3 flex flex-wrap items-center justify-between gap-3 rounded-xl ${
+                    r.isYou ? 'bg-[#FBF4E6] border border-[#D8A33A]' : ''
+                  }">
+                    <div class="flex items-center gap-3.5 min-w-0">
+                      <span class="ism-mono text-sm font-bold w-12 shrink-0 ${rank <= 3 ? 'text-[#7E4A00]' : 'text-[#6B6457]'}">
+                        ${medal}
+                      </span>
+                      <div class="w-10 h-10 rounded-full text-white font-bold flex items-center justify-center text-xs shrink-0 ${
+                        r.isYou && state.cosmeticsOwned.frame_puanchei ? 'ring-4 ring-[#B0412A]' : ''
+                      }" style="background-color: ${r.color}">
+                        ${r.initials}
+                      </div>
+                      <div class="min-w-0">
+                        <div class="flex flex-wrap items-center gap-2">
+                          <span class="font-semibold text-sm text-[#1D1B18]">${r.name}</span>
+                          <span class="ism-mono text-xs text-[#6B6457]">@${r.handle}</span>
+                          <span class="ism-mono text-xs px-2 py-0.5 rounded bg-[#E3ECDD] text-[#25582C] font-semibold">L${r.level} · ${r.title}</span>
+                          <span class="ism-mono text-xs px-2 py-0.5 rounded bg-[#F5E1D8] text-[#B0412A] font-semibold">🔥 ${r.streak}d</span>
+                        </div>
+                        <div class="text-xs text-[#49443B] mt-0.5">
+                          Stream Cohort: <strong>${r.streamLabel}</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="text-right">
+                      <div class="ism-mono text-base font-bold text-[#1D1B18]">${metricPrimary}</div>
+                      <div class="ism-mono text-xs ${rank <= 3 ? 'text-[#3D7344] font-semibold' : 'text-[#6B6457]'}">${metricSecondary}</div>
+                    </div>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // =========================================================================
+    // 5. NEW: DAILY REWARDS, 3-RING QUESTS & SPENDABLE WALLET SCREEN
+    // =========================================================================
+    function renderRewardsScreen(isMobile) {
+      const lvl = computeLevelBounds(state.lifetimeXp);
+      const weekDays = [
+        { day: "Mon", done: true, bonus: null },
+        { day: "Tue", done: true, bonus: null },
+        { day: "Wed", done: true, bonus: "Day 3 (+15 XP)" },
+        { day: "Thu", done: true, bonus: null },
+        { day: "Fri", done: true, bonus: "Today 🔥" },
+        { day: "Sat", done: false, bonus: null },
+        { day: "Sun", done: false, bonus: "🎁 +50 XP & +10 Pts" }
+      ];
+
+      return `
+        <div class="${isMobile ? 'p-4 pb-24' : 'p-6 sm:p-8'}">
+          ${state.rewardToast ? `
+            <div role="status" class="mb-5 rounded-xl border border-[#3D7344] bg-[#E3ECDD] px-4 py-3 text-xs font-semibold text-[#25582C] flex items-center justify-between">
+              <span>✓ ${state.rewardToast}</span>
+              <button onclick="state.rewardToast = null; render()" class="ism-mono underline ml-3">Dismiss</button>
+            </div>
+          ` : ''}
+
+          <!-- Top Summary Cards: Level Curve, Spendable Wallet, Streak Shield -->
+          <div class="grid gap-4 ${isMobile ? 'grid-cols-1' : 'lg:grid-cols-3'}">
+            <!-- Lifetime Level & XP Card -->
+            <section class="ism-card p-5">
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase tracking-wider text-[#25582C] font-semibold">Progression Ledger</span>
+                <span class="ism-mono text-xs px-2.5 py-0.5 rounded-full bg-[#E3ECDD] text-[#25582C] font-bold">Level ${lvl.level}</span>
+              </div>
+              <h2 class="ism-display text-2xl mt-1">${lvl.title}</h2>
+              <div class="mt-2 flex items-baseline justify-between text-xs">
+                <span class="ism-mono font-bold text-base text-[#1D1B18]">${state.lifetimeXp.toLocaleString()} Total XP</span>
+                <span class="text-[#6B6457]">${lvl.xpToNext} XP to Level ${lvl.level + 1} (${lvl.nextLevelXp} XP)</span>
+              </div>
+              <div class="mt-2 h-2.5 rounded-full bg-[#E9E1D2] overflow-hidden">
+                <div class="h-full bg-[#3D7344]" style="width: ${lvl.pct}%"></div>
+              </div>
+              <p class="mt-2.5 text-xs text-[#49443B]">
+                Formula: <code class="ism-mono">level = floor(sqrt(XP / 40))</code>. Spending wallet points never reduces your XP or level.
+              </p>
+            </section>
+
+            <!-- Spendable Reward Points Wallet -->
+            <section class="ism-card p-5 border-[#D8A33A] bg-[#FBF4E6]/60">
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase tracking-wider text-[#7E4A00] font-semibold">Spendable Wallet</span>
+                <span class="ism-mono text-xs px-2.5 py-0.5 rounded-full bg-[#F6E7C6] text-[#7E4A00] font-bold">reward_profiles</span>
+              </div>
+              <div class="ism-display text-3xl font-semibold mt-1">${state.walletPoints.toLocaleString()} Points</div>
+              <p class="mt-1 text-xs text-[#49443B]">
+                Earn <strong>+1 Point</strong> per first verified correct canonical answer and up to <strong>+10 Points/day</strong> from Daily Quest chests.
+              </p>
+              <div class="mt-3 pt-2.5 border-t border-[#E4DBC9] flex items-center justify-between text-xs">
+                <span class="text-[#49443B]">7-Day Pro Goal (1,000 Pts):</span>
+                <span class="ism-mono font-semibold text-[#7E4A00]">${Math.min(100, Math.round((state.walletPoints / 1000) * 100))}% ready</span>
+              </div>
+            </section>
+
+            <!-- 7-Day Consistency Streak & Shield -->
+            <section class="ism-card p-5">
+              <div class="flex items-center justify-between">
+                <span class="ism-mono text-xs uppercase tracking-wider text-[#B0412A] font-semibold">Consistency Engine</span>
+                <span class="ism-mono text-xs px-2.5 py-0.5 rounded-full bg-[#F5E1D8] text-[#B0412A] font-bold">🛡️ ${state.streakShields}/2 Shields</span>
+              </div>
+              <h2 class="ism-display text-2xl mt-1">🔥 ${state.streakDays}-Day IST Streak</h2>
+              <div class="mt-3 grid grid-cols-7 gap-1 text-center text-xs">
+                ${weekDays.map(d => `
+                  <div class="p-1.5 rounded-lg border ${
+                    d.done
+                      ? 'border-[#B0412A] bg-[#F5E1D8] text-[#B0412A] font-bold'
+                      : 'border-[#DCD3C2] bg-[#FBF8F1] text-[#6B6457]'
+                  }">
+                    <div>${d.day}</div>
+                    <div class="mt-0.5">${d.done ? '🔥' : '·'}</div>
+                  </div>
+                `).join('')}
+              </div>
+              <p class="mt-2 text-xs text-[#49443B]">
+                Complete <strong>Sunday's Warm-Up</strong> for the Day 7 Chest (<strong>+50 XP & +10 Points</strong>).
+              </p>
+            </section>
+          </div>
+
+          <!-- Today's 3-Ring Daily Quests -->
+          <section class="mt-6 ism-card p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#E4DBC9]">
+              <div>
+                <div class="ism-mono text-xs uppercase text-[#1F44A6] font-semibold">Daily Target · Resets 00:00 IST</div>
+                <h2 class="ism-display text-2xl mt-0.5">Today's 3-Ring Daily Quests</h2>
+              </div>
+              <span class="ism-mono text-xs px-3 py-1 rounded-full bg-[#FBF8F1] border border-[#DCD3C2]">
+                Base Study/Game XP Today: <strong>${state.dailyBaseXp} / 300 XP</strong>
+              </span>
+            </div>
+
+            <div class="mt-4 grid gap-4 ${isMobile ? 'grid-cols-1' : 'lg:grid-cols-3'}">
+              ${Object.entries(state.quests).map(([qKey, q]) => `
+                <div class="p-4 rounded-xl border ${
+                  q.claimed ? 'border-[#3D7344] bg-[#E3ECDD]/40' : 'border-[#DCD3C2] bg-[#FBF8F1]'
+                } flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between gap-2">
+                      <span class="ism-mono text-xs font-bold text-[#7E4A00]">+${q.xp} XP · +${q.pts} Pts</span>
+                      <span class="ism-mono text-xs text-[#3D7344] font-semibold">${q.progress}/${q.target} Done</span>
+                    </div>
+                    <h3 class="font-semibold text-base text-[#1D1B18] mt-1.5">${q.title}</h3>
+                    <p class="text-xs text-[#49443B] mt-1 leading-relaxed">${q.desc}</p>
+                  </div>
+
+                  <button
+                    type="button"
+                    ${q.claimed ? 'disabled' : `onclick="claimDailyQuest('${qKey}')"`}
+                    class="mt-4 min-h-11 w-full rounded-full text-xs font-semibold transition ${
+                      q.claimed
+                        ? 'bg-[#3D7344] text-white cursor-default'
+                        : 'bg-[#1D1B18] text-[#F4EFE4] hover:opacity-90'
+                    }"
+                  >
+                    ${q.claimed ? '✓ Chest Claimed into Ledger' : `🎁 Claim Chest (+${q.xp} XP & +${q.pts} Pts)`}
+                  </button>
+                </div>
+              `).join('')}
+            </div>
+          </section>
+
+          <!-- Spendable Reward Points Shop (/rewards/redeem & /avatar) -->
+          <section class="mt-6 ism-card p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-[#E4DBC9]">
+              <div>
+                <div class="ism-mono text-xs uppercase text-[#7E4A00] font-semibold">Reward Point Redemptions · Zero Pay-to-Win</div>
+                <h2 class="ism-display text-2xl mt-0.5">Spendable Wallet Catalog</h2>
+              </div>
+              <span class="text-xs text-[#3D7344] font-medium">
+                ✓ Spending points writes (xp = 0, points &lt; 0) — never lowers your level or rank!
+              </span>
+            </div>
+
+            <div class="mt-4 grid gap-4 ${isMobile ? 'grid-cols-1' : 'sm:grid-cols-2 lg:grid-cols-4'}">
+              <!-- Item 1: 7 Days Pro Access -->
+              <div class="p-4 rounded-xl border border-[#D8A33A] bg-[#FBF4E6] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="ism-mono text-xs uppercase font-bold text-[#7E4A00]">1,000 Points</span>
+                    <span class="ism-mono text-xs text-[#6B6457]">pro_7d</span>
+                  </div>
+                  <h3 class="ism-display text-xl mt-1.5">7 Days Pro Access</h3>
+                  <p class="text-xs text-[#49443B] mt-1">Unlock full Pro mock analytics and unlimited revision packs for 7 days, earned purely by studying.</p>
+                </div>
+                <button
+                  type="button"
+                  onclick="redeemPro7Days()"
+                  class="mt-4 min-h-11 w-full rounded-full bg-[#1D1B18] text-[#F4EFE4] text-xs font-semibold"
+                >
+                  ${state.proDaysActive > 0 ? `✓ ${state.proDaysActive}d Pro Active (Extend)` : 'Redeem 1,000 Points'}
+                </button>
+              </div>
+
+              <!-- Item 2: 1-Day Streak Shield -->
+              <div class="p-4 rounded-xl border border-[#DCD3C2] bg-[#FBF8F1] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="ism-mono text-xs uppercase font-bold text-[#B0412A]">25 Points</span>
+                    <span class="ism-mono text-xs text-[#6B6457]">${state.streakShields}/2 held</span>
+                  </div>
+                  <h3 class="ism-display text-xl mt-1.5">🛡️ 1-Day Streak Shield</h3>
+                  <p class="text-xs text-[#49443B] mt-1">Automatically protects your daily streak if you miss 1 IST calendar day due to exams or travel.</p>
+                </div>
+                <button
+                  type="button"
+                  onclick="buyStreakShield()"
+                  class="mt-4 min-h-11 w-full rounded-full border border-[#1D1B18] bg-[#FFFFFF] text-[#1D1B18] text-xs font-semibold"
+                >
+                  ${state.streakShields >= 2 ? 'Max 2 Shields Equipped' : 'Equip Shield (25 Pts)'}
+                </button>
+              </div>
+
+              <!-- Item 3: Puanchei Avatar Frame -->
+              <div class="p-4 rounded-xl border border-[#DCD3C2] bg-[#FBF8F1] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="ism-mono text-xs uppercase font-bold text-[#1F44A6]">150 Points</span>
+                    <span class="ism-mono text-xs text-[#6B6457]">Cosmetic</span>
+                  </div>
+                  <h3 class="ism-display text-xl mt-1.5">Mizo Puanchei Frame</h3>
+                  <p class="text-xs text-[#49443B] mt-1">Equips a traditional woven crimson-and-black border around your avatar on /board and Duel lobbies.</p>
+                </div>
+                <button
+                  type="button"
+                  onclick="unlockCosmetic('frame_puanchei', 150, 'Mizo Puanchei Avatar Frame')"
+                  class="mt-4 min-h-11 w-full rounded-full border border-[#1D1B18] ${state.cosmeticsOwned.frame_puanchei ? 'bg-[#3D7344] text-white border-[#3D7344]' : 'bg-[#FFFFFF] text-[#1D1B18]'} text-xs font-semibold"
+                >
+                  ${state.cosmeticsOwned.frame_puanchei ? '✓ Equipped on Leaderboard' : 'Unlock & Equip (150 Pts)'}
+                </button>
+              </div>
+
+              <!-- Item 4: Bamboo Study Lamp Theme -->
+              <div class="p-4 rounded-xl border border-[#DCD3C2] bg-[#FBF8F1] flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between">
+                    <span class="ism-mono text-xs uppercase font-bold text-[#25582C]">250 Points</span>
+                    <span class="ism-mono text-xs text-[#6B6457]">Desk Theme</span>
+                  </div>
+                  <h3 class="ism-display text-xl mt-1.5">Bamboo & Brass Desk</h3>
+                  <p class="text-xs text-[#49443B] mt-1">Warm heirloom study lamp accent for your Study Desk (/desk) and Foundation Circuit header.</p>
+                </div>
+                <button
+                  type="button"
+                  onclick="unlockCosmetic('desk_bamboo', 250, 'Bamboo & Brass Desk Theme')"
+                  class="mt-4 min-h-11 w-full rounded-full border border-[#1D1B18] ${state.cosmeticsOwned.desk_bamboo ? 'bg-[#3D7344] text-white border-[#3D7344]' : 'bg-[#FFFFFF] text-[#1D1B18]'} text-xs font-semibold"
+                >
+                  ${state.cosmeticsOwned.desk_bamboo ? '✓ Theme Active' : 'Unlock Theme (250 Pts)'}
+                </button>
+              </div>
+            </div>
+          </section>
+        </div>
+      `;
+    }
+
+    function renderFinishScreen(isMobile) {
+      const answeredCount = state.stones.length;
+      const correctCount = state.stones.filter(s => s.correct).length;
+      const totalBase = state.stones.reduce((a, s) => a + (s.basePts || 0), 0);
+      const totalPace = state.stones.reduce((a, s) => a + (s.pacePts || 0), 0);
+      const totalStreak = state.stones.reduce((a, s) => a + (s.streakPts || 0), 0);
+      const totalCourage = state.stones.reduce((a, s) => a + (s.couragePts || 0), 0);
+      const savedIds = Object.keys(state.savedForRevision).filter(k => state.savedForRevision[k]);
+      const badgeLabel = correctCount === 10 ? "Perfect Foundation Trail" : correctCount >= 7 ? "Strong Competitive Run" : "Circuit Completed";
+
+      return `
+        <div class="${isMobile ? 'p-4 pb-24' : 'p-6 sm:p-8'}">
+          <div class="ism-card p-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-[#E4DBC9] pb-5">
+              <div>
+                <div class="ism-mono text-xs uppercase tracking-wider text-[#2D6252] font-semibold">
+                  ⚑ ${badgeLabel} · ${STREAM_PRESETS[state.presetId].title}
+                </div>
+                <h1 class="ism-display text-3xl sm:text-4xl mt-1">
+                  ${actualRunScore()} Competitive Points · ${correctCount} / ${answeredCount || 10} Correct
+                </h1>
+                <div class="mt-2 flex flex-wrap gap-2 text-xs ism-mono">
+                  <span class="px-2.5 py-1 rounded bg-[#FBF8F1] border border-[#DCD3C2]">Base: +${totalBase}</span>
+                  <span class="px-2.5 py-1 rounded bg-[#E3ECDD] text-[#25582C]">Normalized Pace: +${totalPace}</span>
+                  <span class="px-2.5 py-1 rounded bg-[#F5E1D8] text-[#B0412A]">Streak Combo: +${totalStreak}</span>
+                  <span class="px-2.5 py-1 rounded bg-[#E3E9F8] text-[#1F44A6]">Cross-Stream Courage: +${totalCourage}</span>
+                </div>
+              </div>
+              <div class="flex flex-wrap gap-2.5">
+                <button
+                  type="button"
+                  onclick="setScreen('leaderboard')"
+                  class="min-h-11 px-5 py-2.5 rounded-full bg-[#D8A33A] text-[#1D1B18] text-xs font-semibold"
+                >
+                  View Leaderboard Rank 🏆
+                </button>
+                <button
+                  type="button"
+                  onclick="startCircuitRun()"
+                  class="min-h-11 px-5 py-2.5 rounded-full bg-[#1D1B18] text-[#F4EFE4] text-xs font-semibold"
+                >
+                  Play Another Circuit
+                </button>
+              </div>
+            </div>
+
+            <!-- Saved for Tomorrow's Daily Revision (/revision) -->
+            <div class="mt-5 rounded-xl border border-[#2D5BD0] bg-[#E3E9F8]/60 p-4">
+              <div class="flex flex-wrap items-center justify-between gap-2">
+                <div>
+                  <h2 class="font-semibold text-sm text-[#1F44A6]">Queued for Tomorrow's Daily Revision (/revision) · ${savedIds.length} saved</h2>
+                  <p class="text-xs text-[#49443B] mt-0.5">Clearing 5 items in /revision completes Ring 3 of your Daily Quests (+50 XP & +5 Points).</p>
+                </div>
+                <span class="ism-mono text-xs text-[#1F44A6] font-semibold">/revision?exam_scope=mizoram-recruitment</span>
+              </div>
+            </div>
+
+            <!-- All 10 Real Questions Source Review -->
+            <h2 class="ism-display text-2xl mt-6 mb-3">Complete Source & Official Key Review</h2>
+            <div class="divide-y divide-[#E4DBC9]">
+              ${REAL_QUESTIONS.map((q, idx) => {
+                const s = state.stones.find(x => x.position === idx);
+                return `
+                  <details class="py-3 group">
+                    <summary class="min-h-11 cursor-pointer flex flex-wrap items-center justify-between gap-2 text-sm font-medium">
+                      <div class="flex items-center gap-2.5">
+                        <span class="ism-mono text-xs px-2 py-0.5 rounded ${q.chipClass}">${idx + 1}. ${q.topicLabel}</span>
+                        <span>${q.question}</span>
+                      </div>
+                      <span class="ism-mono text-xs ${s ? (s.correct ? 'text-[#3D7344] font-semibold' : 'text-[#B0412A] font-semibold') : 'text-[#6B6457]'}">
+                        ${s ? (s.correct ? `✓ +${s.points} pts` : '↻ Revise') : 'Inspect key'}
+                      </span>
+                    </summary>
+                    <div class="mt-2 pl-3 border-l-2 border-[#DCD3C2] text-xs space-y-1.5 text-[#49443B]">
+                      <div><strong>Official Key:</strong> <span class="text-[#3D7344] font-semibold">${String.fromCharCode(65 + q.answerIndex)}. ${q.options[q.answerIndex]}</span> · Source: ${q.exam} (Q${q.qnum}, p.${q.page})</div>
+                      <div>${q.explanation}</div>
+                    </div>
+                  </details>
+                `;
+              }).join('')}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    function renderMobileBottomBar() {
+      return `
+        <nav aria-label="Mobile bottom navigation" class="sticky bottom-0 z-20 border-t border-[#DCD3C2] bg-[#FFFFFF] px-1.5 py-1.5 grid grid-cols-5 text-center text-xs">
+          <button type="button" onclick="setScreen('setup')" class="min-h-11 flex flex-col items-center justify-center ${state.screen === 'setup' ? 'text-[#1D1B18] font-bold' : 'text-[#6B6457]'}">
+            <span>⌂</span><span>Setup</span>
+          </button>
+          <button type="button" onclick="setScreen('play')" class="min-h-11 flex flex-col items-center justify-center ${state.screen === 'play' ? 'text-[#2D5BD0] font-bold' : 'text-[#6B6457]'}">
+            <span>↟</span><span>Circuit</span>
+          </button>
+          <button type="button" onclick="setScreen('duel')" class="min-h-11 flex flex-col items-center justify-center ${state.screen === 'duel' ? 'text-[#33609E] font-bold' : 'text-[#6B6457]'}">
+            <span>⚔</span><span>Duel</span>
+          </button>
+          <button type="button" onclick="setScreen('leaderboard')" class="min-h-11 flex flex-col items-center justify-center ${state.screen === 'leaderboard' ? 'text-[#7E4A00] font-bold' : 'text-[#6B6457]'}">
+            <span>🏆</span><span>Boards</span>
+          </button>
+          <button type="button" onclick="setScreen('rewards')" class="min-h-11 flex flex-col items-center justify-center ${state.screen === 'rewards' ? 'text-[#B0412A] font-bold' : 'text-[#6B6457]'}">
+            <span>🔥</span><span>Quests</span>
+          </button>
+        </nav>
+      `;
+    }
+
+    function render() {
+      ["setup", "play", "duel", "leaderboard", "rewards", "finish"].forEach(t => {
+        const btn = document.getElementById("tab-" + t);
+        if (!btn) return;
+        if (state.screen === t) {
+          btn.className = "px-2.5 py-1.5 rounded-full text-xs font-semibold transition bg-[#D8A33A] text-[#1D1B18]";
+        } else {
+          btn.className = "px-2.5 py-1.5 rounded-full text-xs font-semibold transition text-[#D9D0BF] hover:bg-[#2B2823]";
+        }
+      });
+
+      const vpDesk = document.getElementById("vp-desktop");
+      const vpMob = document.getElementById("vp-mobile");
+      if (state.viewport === "desktop") {
+        vpDesk.className = "px-3 py-1 rounded-full text-xs font-semibold transition bg-[#F4EFE4] text-[#1D1B18]";
+        vpMob.className = "px-3 py-1 rounded-full text-xs font-semibold transition text-[#D9D0BF]";
+      } else {
+        vpMob.className = "px-3 py-1 rounded-full text-xs font-semibold transition bg-[#F4EFE4] text-[#1D1B18]";
+        vpDesk.className = "px-3 py-1 rounded-full text-xs font-semibold transition text-[#D9D0BF]";
+      }
+
+      const isMobile = state.viewport === "mobile";
+      const surface = document.getElementById("app-surface");
+      if (isMobile) {
+        surface.className = "mx-auto w-[414px] rounded-[48px] bg-[#1D1B18] p-[12px] shadow-2xl";
+      } else {
+        surface.className = "ism-paper mx-auto max-w-[1240px] rounded-2xl border border-[#DCD3C2] shadow-sm overflow-hidden";
+      }
+
+      let bodyContent = "";
+      if (state.screen === "setup") bodyContent = renderSetupScreen(isMobile);
+      else if (state.screen === "play") bodyContent = renderPlayScreen(isMobile);
+      else if (state.screen === "duel") bodyContent = renderDuelScreen(isMobile);
+      else if (state.screen === "leaderboard") bodyContent = renderLeaderboardScreen(isMobile);
+      else if (state.screen === "rewards") bodyContent = renderRewardsScreen(isMobile);
+      else bodyContent = renderFinishScreen(isMobile);
+
+      if (isMobile) {
+        surface.innerHTML = `
+          <div class="ism-paper w-[390px] h-[844px] rounded-[38px] overflow-y-auto flex flex-col justify-between relative">
+            <div>
+              ${renderAppShellHeader(true)}
+              ${bodyContent}
+            </div>
+            ${renderMobileBottomBar()}
+          </div>
+        `;
+      } else {
+        surface.innerHTML = `
+          ${renderAppShellHeader(false)}
+          ${bodyContent}
+        `;
+      }
+    }
+
+    // Initialize prototype
+    render();
+  </script>
+</body>
+</html>

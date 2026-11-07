@@ -7,8 +7,10 @@ from fastapi import HTTPException
 from psycopg.types.json import Jsonb
 from ..db import cursor
 from ..source_files import source_pdf_url, figure_image_url
+from .learning_rewards import touch_daily_streak
 
 MODES = {
+    "trail": (10, 20, 1),
     "gauntlet": (20, 25, 1),
     "speed": (10, 15, 1),
     "duel": (10, 20, 2),
@@ -31,6 +33,10 @@ PUBLIC_FIELDS = (
     "page",
     "paper_id",
     "answer_source",
+    "pillar",
+    "pillar_label",
+    "round_seconds",
+    "courage_eligible",
 )
 IDENTITY = (
     "question",
@@ -129,7 +135,6 @@ async def cup(cur, now):
     row = await cur.fetchone()
     if row:
         return row
-    # Freeze the common set on first access without disclosing it before play.
     questions = await draw(cur, 25)
     await cur.execute(
         "INSERT INTO game_cups(id,opens_at,closes_at,questions) VALUES(%s,%s,%s,%s) RETURNING *",
@@ -167,6 +172,17 @@ async def member(cur, r, user):
     return m
 
 
+def question_round_seconds(r, pos=0):
+    if r["mode"] == "speed":
+        return r["round_seconds"]
+    qs = r.get("questions") or []
+    if 0 <= pos < len(qs):
+        q_secs = qs[pos].get("round_seconds")
+        if isinstance(q_secs, int) and 5 <= q_secs <= 60:
+            return q_secs
+    return r["round_seconds"]
+
+
 async def start(cur, r, now):
     if r["state"] != "waiting":
         raise HTTPException(409, "This game has already started")
@@ -184,16 +200,24 @@ async def start(cur, r, now):
         for player in await cur.fetchall():await permitted(cur,player['user_id'])
         await cur.execute("SELECT 1 FROM creator_blocks b JOIN game_members a ON a.user_id=b.user_id AND a.room_id=%s AND a.left_at IS NULL JOIN game_members z ON z.user_id=b.blocked_id AND z.room_id=a.room_id AND z.left_at IS NULL",(r['id'],))
         if await cur.fetchone():raise HTTPException(409,"This room contains a blocked participant. Leave and choose another room.")
-    duration = 60 if r["mode"] == "speed" else len(r["questions"]) * r["round_seconds"]
+    first_secs = question_round_seconds(r, 0)
+    duration = (
+        1800
+        if r["mode"] == "trail"
+        else 60
+        if r["mode"] == "speed"
+        else sum(question_round_seconds(r, i) for i in range(len(r["questions"])))
+    )
     await cur.execute(
         "UPDATE game_rooms SET state='running',round_started_at=%s,round_ends_at=%s,deadline=%s,version=version+1 WHERE id=%s",
         (
             now,
-            now + timedelta(seconds=r["round_seconds"]),
+            now + timedelta(seconds=first_secs),
             now + timedelta(seconds=duration),
             r["id"],
         ),
     )
+    if r["mode"]=="trail":await cur.execute("UPDATE game_rooms SET round_ends_at=deadline WHERE id=%s",(r["id"],))
     await event(cur, r["id"], r["owner_id"], "started")
     return await room(cur, r["id"])
 
@@ -222,6 +246,10 @@ async def finish(cur, r, now):
         "SELECT * FROM game_members WHERE room_id=%s ORDER BY user_id", (r["id"],)
     )
     players = await cur.fetchall()
+    is_foundation_comp = (
+        (r.get("selection_context") or {}).get("rules", {}).get("scoring")
+        == "foundation-competitive-v1"
+    )
     for p in players:
         await cur.execute(
             "SELECT * FROM game_answers WHERE room_id=%s AND user_id=%s ORDER BY position",
@@ -229,6 +257,7 @@ async def finish(cur, r, now):
         )
         answers = await cur.fetchall()
         right = wrong = skipped = excluded = score = elapsed = distance = streak = 0
+        pace_total = streak_total = courage_total = best_streak = 0
         for a in answers:
             q = r["questions"][a["position"]]
             live = current.get(q["id"])
@@ -251,11 +280,36 @@ async def finish(cur, r, now):
             elif a["correct"]:
                 right += 1
                 streak += 1
+                if streak > best_streak:
+                    best_streak = streak
                 distance += 100 * min(streak, 5)
-                score += 100 + max(
-                    0,
-                    50 - int(a["elapsed_ms"] / max(1, r["round_seconds"] * 1000) * 50),
-                )
+                if r["mode"] == "trail":
+                    score += 200 if a["position"] == r.get("trail_boost_position") else 100
+                else:
+                    q_secs = question_round_seconds(r, a["position"])
+                    pace_pts = max(
+                        0,
+                        50 - int(a["elapsed_ms"] / max(1, q_secs * 1000) * 50),
+                    )
+                    streak_pts = 0
+                    courage_pts = 0
+                    if is_foundation_comp:
+                        streak_pts = (
+                            15
+                            if streak == 2
+                            else 30
+                            if streak == 3
+                            else 40
+                            if streak == 4
+                            else 50
+                            if streak >= 5
+                            else 0
+                        )
+                        courage_pts = 25 if q.get("courage_eligible") else 0
+                    pace_total += pace_pts
+                    streak_total += streak_pts
+                    courage_total += courage_pts
+                    score += 100 + pace_pts + streak_pts + courage_pts
                 elapsed += a["elapsed_ms"]
             else:
                 wrong += 1
@@ -273,8 +327,10 @@ async def finish(cur, r, now):
                 )
                 if a["correct"] and not p["left_at"]:
                     await cur.execute("SELECT reward_study_attempt(%s)", (aid,))
+        if not p["left_at"] and (right + wrong) > 0:
+            await touch_daily_streak(cur, p["user_id"])
         await cur.execute(
-            "UPDATE game_members SET correct=%s,wrong=%s,skipped=%s,excluded=%s,score=%s,elapsed_ms=%s,distance=%s WHERE room_id=%s AND user_id=%s",
+            "UPDATE game_members SET correct=%s,wrong=%s,skipped=%s,excluded=%s,score=%s,elapsed_ms=%s,distance=%s,pace_bonus=%s,streak_bonus=%s,courage_bonus=%s,best_streak=%s WHERE room_id=%s AND user_id=%s",
             (
                 right,
                 wrong,
@@ -283,6 +339,10 @@ async def finish(cur, r, now):
                 distance if r["mode"] == "gauntlet" else score,
                 elapsed,
                 distance,
+                pace_total,
+                streak_total,
+                courage_total,
+                best_streak,
                 r["id"],
                 p["user_id"],
             ),
@@ -298,6 +358,9 @@ async def advance(cur, r, now):
         return r
     if r["state"] != "running":
         return r
+    if r["mode"]=="trail":
+        from .topic_trail import advance as trail_advance
+        return await trail_advance(cur,r,now)
     for _ in range(26):
         await cur.execute(
             "SELECT user_id,lives FROM game_members WHERE room_id=%s AND left_at IS NULL",
@@ -320,6 +383,7 @@ async def advance(cur, r, now):
         answered = (await cur.fetchone())["n"]
         if now < r["round_ends_at"] and answered < len(active):
             return r
+        cur_secs = question_round_seconds(r, r["current_position"])
         for p in active:
             await cur.execute(
                 "INSERT INTO game_answers(room_id,user_id,position,correct,elapsed_ms) VALUES(%s,%s,%s,false,%s) ON CONFLICT DO NOTHING RETURNING user_id",
@@ -327,7 +391,7 @@ async def advance(cur, r, now):
                     r["id"],
                     p["user_id"],
                     r["current_position"],
-                    r["round_seconds"] * 1000,
+                    cur_secs * 1000,
                 ),
             )
             timedout = await cur.fetchone()
@@ -337,11 +401,13 @@ async def advance(cur, r, now):
                     (r["id"], p["user_id"]),
                 )
         next_start = r["round_ends_at"] if now >= r["round_ends_at"] else now
+        next_pos = r["current_position"] + 1
+        next_secs = question_round_seconds(r, next_pos)
         await cur.execute(
             "UPDATE game_rooms SET current_position=current_position+1,round_started_at=%s,round_ends_at=%s,version=version+1 WHERE id=%s",
             (
                 next_start,
-                min(next_start + timedelta(seconds=r["round_seconds"]), r["deadline"]),
+                min(next_start + timedelta(seconds=next_secs), r["deadline"]),
                 r["id"],
             ),
         )
@@ -352,7 +418,7 @@ async def advance(cur, r, now):
 async def view(cur, r, user, now):
     m = await member(cur, r, user)
     await cur.execute(
-        "SELECT m.user_id,m.score,m.correct,m.wrong,m.skipped,m.excluded,m.lives,m.distance,m.left_at,m.ready,m.elapsed_ms,u.handle,u.avatar FROM game_members m JOIN users u ON u.id=m.user_id WHERE m.room_id=%s ORDER BY m.joined_at,m.user_id",
+        "SELECT m.user_id,m.score,m.correct,m.wrong,m.skipped,m.excluded,m.lives,m.distance,m.left_at,m.ready,m.elapsed_ms,m.pace_bonus,m.streak_bonus,m.courage_bonus,m.best_streak,u.handle,u.avatar FROM game_members m JOIN users u ON u.id=m.user_id WHERE m.room_id=%s ORDER BY m.joined_at,m.user_id",
         (r["id"],),
     )
     players = await cur.fetchall()
@@ -387,7 +453,6 @@ async def view(cur, r, user, now):
                     "explanation": raw.get("explanation"),
                 }
             )
-    # Current correctness/scores remain hidden until the shared game finishes.
     if r["state"] != "finished":
         for p in players:
             for key in (
@@ -397,13 +462,17 @@ async def view(cur, r, user, now):
                 "skipped",
                 "excluded",
                 "elapsed_ms",
+                "pace_bonus",
+                "streak_bonus",
+                "courage_bonus",
+                "best_streak",
             ):
                 p.pop(key, None)
         if r["mode"] != "gauntlet":
             for p in players:
                 p.pop("distance", None)
                 p.pop("lives", None)
-    return {
+    result = {
         "id": r["id"],
         "owner_id": r["owner_id"],
         "mode": r["mode"],
@@ -411,7 +480,7 @@ async def view(cur, r, user, now):
         "subject_id": r["subject_id"],
         "selection": {k:r['selection_context'][k]for k in ['label','source_label','rules','excluded_labels']}if r.get('selection_context')else None,
         "context_hash": r.get('context_hash'),
-        "round_seconds": r['round_seconds'],
+        "round_seconds": question_round_seconds(r, r["current_position"]) if r["state"] == "running" else r['round_seconds'],
         "capacity": r["capacity"],
         "join_code": r["join_code"] if r["state"] == "waiting" else None,
         "cup_id": r["cup_id"],
@@ -429,6 +498,11 @@ async def view(cur, r, user, now):
         "review": review,
         "review_available_at": review_at,
     }
+
+    if r["mode"]=="trail":
+        from .topic_trail import decorate
+        result=await decorate(cur,r,user,result)
+    return result
 
 
 async def worker():

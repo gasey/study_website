@@ -560,3 +560,133 @@ def test_active_mock_resume_metadata_is_private_and_preserves_mode(client,game_c
     assert client.get('/api/games',headers=h[0]).json()['active_mock']['seconds_remaining']==0
     r=client.post('/api/mocks/'+mock['id']+'/submit',headers=h[0],json={'answers':[]});assert r.status_code==200,r.text
     assert client.get('/api/games',headers=h[0]).json()['active_mock'] is None
+
+
+def test_foundation_presets_competitive_scoring_quests_and_leaderboards(client, actor, game_case):
+    conn, subject, users, h, ids = game_case
+    # Seed non-technical foundation taxonomy nodes + bare specialist math to test guardrail
+    for tid, label, parent, level in [
+        ("general-studies", "General Studies", None, "subject"),
+        ("mathematics", "Mathematics", None, "subject"),
+        ("mathematics/arithmetic", "Arithmetic", "mathematics", "topic"),
+        ("english/grammar", "Grammar", "english", "topic"),
+    ]:
+        conn.execute(
+            "INSERT INTO review_taxonomy(id,label,parent_id,level,version) VALUES(%s,%s,%s,%s,'test') ON CONFLICT DO NOTHING",
+            (tid, label, parent, level),
+        )
+    # Assign 12 GK/GS, 12 English Grammar, 10 Everyday Arithmetic, and 6 bare specialist Calculus questions
+    for i, qid in enumerate(ids):
+        if i < 12:
+            conn.execute(
+                "UPDATE question_classifications SET subject_id='general-studies',subject_label='General Studies',topic_id=NULL,topic_label=NULL WHERE question_id=%s",
+                (qid,),
+            )
+        elif i < 24:
+            conn.execute(
+                "UPDATE question_classifications SET subject_id='english',subject_label='English',topic_id='english/grammar',topic_label='Grammar' WHERE question_id=%s",
+                (qid,),
+            )
+        elif i < 34:
+            conn.execute(
+                "UPDATE question_classifications SET subject_id='mathematics',subject_label='Mathematics',topic_id='mathematics/arithmetic',topic_label='Arithmetic' WHERE question_id=%s",
+                (qid,),
+            )
+        else:
+            # Bare subject-only 'mathematics' (specialist B.Sc/Stats calculus) - MUST BE EXCLUDED from foundation pool!
+            conn.execute(
+                "UPDATE question_classifications SET subject_id='mathematics',subject_label='Mathematics',topic_id=NULL,topic_label=NULL WHERE question_id=%s",
+                (qid,),
+            )
+
+    specialist_calculus_ids = set(ids[34:])
+    selection = {"kind": "foundation", "preset_id": "arts-comfort", "excluded_areas": []}
+    prev = client.post("/api/games/preview", headers=h[0], json={"mode": "duel", "selection": selection})
+    assert prev.status_code == 200, prev.text
+    pdata = prev.json()
+    assert pdata["can_start"] is True
+    assert pdata["public"]["rules"]["scoring"] == "foundation-competitive-v1"
+    assert pdata["public"]["rules"]["math_round_seconds"] == 45
+    assert pdata["public"]["rules"]["quotas"] == {"gk_gs": 5, "english": 3, "everyday_math": 2}
+
+    # Start a solo Gauntlet or Speed / Duel room with arts-comfort foundation preset
+    prev_speed = client.post("/api/games/preview", headers=h[0], json={"mode": "speed", "selection": selection}).json()
+    room_res = client.post(
+        "/api/games/rooms",
+        headers=h[0],
+        json={
+            "mode": "speed",
+            "selection": selection,
+            "preview_hash": prev_speed["context_hash"],
+            "request_key": uuid4().hex,
+        },
+    )
+    assert room_res.status_code == 200, room_res.text
+    room = room_res.json()
+    drawn_qs = conn.execute("SELECT questions FROM game_rooms WHERE id=%s", (room["id"],)).fetchone()[0]
+    drawn_ids = {q["id"] for q in drawn_qs}
+    # Verify non-technical guardrail: zero bare specialist mathematics questions drawn
+    assert not (drawn_ids & specialist_calculus_ids)
+    # Verify exact stream quota: 5 gk_gs, 3 english, 2 everyday_math
+    pillars = [q["pillar"] for q in drawn_qs]
+    assert pillars.count("gk_gs") == 5
+    assert pillars.count("english") == 3
+    assert pillars.count("everyday_math") == 2
+
+    done = finish(client, h[0], room)
+    assert done["state"] == "finished"
+    me = done["players"][0]
+    assert me["correct"] == 10
+    assert me["best_streak"] == 10
+    assert me["streak_bonus"] > 0
+    assert me["courage_bonus"] == 50  # 2 everyday_math stones * +25 Cross-Stream Courage bonus
+    assert me["score"] > 1000
+
+    # Check Daily Quests & Wallet
+    w = client.get("/api/rewards/me", headers=h[0]).json()
+    assert w["current_streak_days"] >= 1
+    quests = {q["key"]: q for q in w["daily_quests"]["quests"]}
+    assert quests["warmup_circuit"]["completed"] is True
+    assert quests["cross_stream_triad"]["completed"] is True
+    assert quests["mastery_closure"]["completed"] is True
+
+    claim1 = client.post("/api/rewards/daily-quests/warmup_circuit/claim", headers=h[0])
+    assert claim1.status_code == 200, claim1.text
+    assert claim1.json()["points_awarded"] == 2
+    # Idempotent replay returns same receipt
+    claim1_replay = client.post("/api/rewards/daily-quests/warmup_circuit/claim", headers=h[0])
+    assert claim1_replay.status_code == 200
+    assert claim1_replay.json()["ledger_id"] == claim1.json()["ledger_id"]
+
+    # Update stream cohort & join public leaderboard
+    assert client.post("/api/rewards/stream-cohort", headers=h[0], json={"stream_cohort": "arts-comfort"}).status_code == 200
+    assert client.post("/api/rewards/visibility", headers=h[0], json={"public": True}).status_code == 200
+
+    # Verify multi-track competitive leaderboards & stream cohort filter
+    lb_league = client.get("/api/games/leaderboard", headers=h[0], params={"track": "league", "period": "week", "cohort": "arts-comfort"})
+    assert lb_league.status_code == 200, lb_league.text
+    assert any(item["handle"] == users[0] and item["stream_cohort"] == "arts-comfort" for item in lb_league.json()["items"])
+
+    lb_pillar = client.get("/api/games/leaderboard", headers=h[0], params={"track": "gk_gs", "cohort": "arts-comfort"})
+    assert lb_pillar.status_code == 200, lb_pillar.text
+    assert any(item["handle"] == users[0] and item["score"] == me["score"] for item in lb_pillar.json()["items"])
+
+    # Equip Streak Shield (costs 25 points, 0 XP impact)
+    conn.execute(
+        "INSERT INTO reward_ledger(user_id,event_key,kind,xp,points,note) VALUES(%s,%s,'adjustment',0,50,'Seed points for shield test')",
+        (users[0], uuid4().hex),
+    )
+    before_xp = client.get("/api/rewards/me", headers=h[0]).json()["lifetime_xp"]
+    shield_res = client.post("/api/rewards/streak-shield", headers=h[0])
+    assert shield_res.status_code == 200, shield_res.text
+    assert shield_res.json()["streak_shields"] == 1
+    after_wallet = client.get("/api/rewards/me", headers=h[0]).json()
+    assert after_wallet["lifetime_xp"] == before_xp
+
+    # Verify owner reward_diagnostics has 0 integrity issues
+    diag = client.get("/api/admin/bank/reward-diagnostics", headers=actor("owner")).json()
+    assert diag["claims_without_receipts"] == 0
+    assert diag["receipts_without_claims"] == 0
+    assert diag["wallets_in_debt"] == 0
+    assert diag["over_cap_days"] == 0
+
