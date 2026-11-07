@@ -7715,3 +7715,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,429 saved records**, **6,351 unique appearances**, **5,951 deduplicated candidates**, **0 problems**. [Batch 90 report](reports/tagging-batch90-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 91 (MES Grade-V AE/SDO 2012 General Aptitude Test)
+- **Execution:** Prepared pending source-reviewed tagging batch 91 (`reports/tagging-batch91-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Aptitude Test for Grade-V of Mizoram Engineering Service (AE/SDO), 2012* (`Old_Questions/Direct_2014-2018/3. General Aptitude Test.pdf`, `doc_dd04f5d21970135ddf530d12`, 50 MCQs, achieving **100% paper completion** with 50/50 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (50 items: 16 retag, 34 keep, 0 hold):**
+  - All 50 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `reasoning-and-aptitude/verbal-reasoning` (20 items): Q7, Q42, Q44 (analogies & odd one out), Q22–Q26 (word formation & anagrams), Q27 (calendar logic), Q29, Q30, Q33 (ranking & row position), Q32 (logical deduction), Q34, Q35 (blood relations), Q20, Q36 (direction & distance), Q39 (word sequence), Q40, Q41 (coding-decoding).
+    - `mathematics/arithmetic` (9 items): Q2 (squares), Q5 (primes), Q8, Q9 (probability), Q10, Q15 (combinations & handshakes), Q11, Q13 (speed & distance), Q16 (simple interest).
+    - `reasoning-and-aptitude/numerical-ability` (6 items): Q14 (paired comparisons), Q21 (operator substitution), Q28 (leap year day count), Q31 (number sequence pattern), Q37, Q38 (number set rules).
+    - `reasoning-and-aptitude/series` (5 items): Q1, Q3, Q4, Q43, Q49 (number & geometric series, missing figure values).
+    - `reasoning-and-aptitude` (5 items): Q45 (triangle counting), Q46 (dice opposite face), Q47, Q48, Q50 (non-verbal figure analogy, classification, and series).
+    - `science/biology/human-physiology` (2 items): Q17 (Hepatitis B), Q18 (Swine flu).
+    - `science/biology/ecology` (1 item): Q19 (global warming mitigation).
+    - `mathematics/arithmetic/averages` (1 item): Q6 (average sum).
+    - `mathematics/arithmetic/percentages` (1 item): Q12 (percentage comparison).
+- **Ledger Verification:**
+  - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,479 saved records**, **6,401 unique appearances**, **6,001 deduplicated candidates**, **0 problems**. [Batch 91 report](reports/tagging-batch91-20261108/README.md).
