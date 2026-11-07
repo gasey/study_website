@@ -7541,3 +7541,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,978 saved records**, **5,900 unique appearances**, **5,500 deduplicated candidates**, **0 problems**. [Batch 81 report](reports/tagging-batch81-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 82 (Junior Engineer Contract Basis General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 82 (`reports/tagging-batch82-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to Junior Engineer (JE) Contract Basis — General English* (`Old_Questions/Direct_2014-2018/9. General English.pdf`, `doc_9ca4c2a445e9a44ecb9c3f58`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 78 retag, 2 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and phrases meaning).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passage on poverty and development).
+    - `english/grammar/prepositions` (6 items): Q33–Q38 (prepositions).
+    - `english/grammar/parts-of-speech` (6 items): Q39–Q44 (parts of speech identification).
+    - `english/grammar/tenses` (4 items): Q45–Q48 (verb form and tenses).
+    - `english/grammar` (16 items): Q49–Q53 (sentence structure: simple, compound, complex), Q54–Q58 (clause identification), Q59–Q64 (sentence functional classification).
+    - `english/vocabulary` (8 items): Q65–Q72 (vocabulary / word usage / commonly confused words).
+    - `english/vocabulary/synonyms` (8 items): Q73–Q80 (synonyms nearest in meaning).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,058 saved records**, **5,980 unique appearances**, **5,580 deduplicated candidates**, **0 problems**. [Batch 82 report](reports/tagging-batch82-20261108/README.md).
