@@ -6666,6 +6666,32 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 10 Conventional Descriptive Tasks (190 Marks):** Preserved 10 conventional written tasks (Essays, Précis, Idea Expansion, Idiom sentence composition) totaling 190 marks across all 4 booklets in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (78/78) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,362** across 48 candidate reports with zero problems or booklet family conflicts. [Batch 47 report](reports/tagging-batch47-20261108/README.md).
 
+## 2026-11-08 08:48 IST — Source-reviewed tagging batch 48 (Direct 2022-2023 General English Booklets 100% Paper Finalization — 75 MCQs & Tasks)
+
+- Completed source-reviewed tagging batch 48 (75 General English MCQs and descriptive tasks, achieving 100% paper completion across all 4 booklets) from:
+  1. *Competitive Examinations for Recruitment to the Post of Grade-V of MSCS (Cooperative Audit Officer) (December 2022) — General English Paper-I* (`doc_09ecdb100f668625c85b57c4`, 14 MCQs)
+  2. *Competitive Examinations for Recruitment to the Post of Geologist Junior under Commerce & Industries Department (November 2022) — General English Paper-I* (`doc_7a32498eb36e71f5a1ac6918`, 6 items)
+  3. *Technical Competitive Examinations for Grade-III of Mizoram Health Service (GDMO & Dental Surgeon Sub-Cadre) (October 2022) — General English* (`doc_062a465c96890fff341e8db7`, 20 MCQs)
+  4. *Technical Competitive Examinations for Junior Grade of Mizoram Engineering Service, P&E Cadre (Electrical Wing) (June 2022) — General English* (`doc_4e9059a592b86e3de860b4f1`, 35 MCQs)
+  * **75 retags, 0 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Restructured 75 untagged/coarse baseline targets into precise active English taxonomy paths:
+      - `english/vocabulary/idioms-and-phrases` (24 items: 14 CAO Paper-I items Q4–Q17; 10 GDMO/Dental items Q5(a)–(j))
+      - `english/vocabulary` (10 items: GDMO/Dental Q7(a)–(j) contextual vocabulary and lexical choice)
+      - `english/vocabulary/synonyms` (10 items: MES Electrical Wing Q3(a)–(e) passage synonyms; Q24–Q28 general synonyms)
+      - `english/vocabulary/antonyms` (5 items: MES Electrical Wing Q29–Q33)
+      - `english/grammar/parts-of-speech` (10 items: MES Electrical Wing Q4–Q13)
+      - `english/grammar/tenses` (10 items: MES Electrical Wing Q14–Q23)
+      - `english/writing/essay` (1 item: Geologist Junior Q1)
+      - `english/writing/precis` (1 item: Geologist Junior Q2)
+      - `english/writing/letter` (2 items: Geologist Junior Q3(a) and Q3(b))
+      - `english/writing` (1 item: Geologist Junior Q5 proverb expansion)
+      - `english/comprehension` (1 item: Geologist Junior Q6 reading comprehension)
+  * **Underlined Token Visual Alignment:** Verified exact rectangle fill path geometries (`rect`) in the PDF stream for MES Electrical Wing Q4–Q13 to confirm the precise underlined word in each sentence ('spider', 'little', 'sells', 'They', 'spreads', 'and', 'soundly', 'into', 'Alas!', 'Our').
+  * **Preserved 16 Conventional Descriptive Tasks (245 Marks):** Preserved 16 conventional written tasks (Essays, Précis, Letter writing, Proverb expansions, Sentence corrections, and Idiom sentence compositions) totaling 245 marks across all 4 booklets in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (75/75) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,437** (2,837 unique appearances) across 49 candidate reports with zero problems or booklet family conflicts. [Batch 48 report](reports/tagging-batch48-20261108/README.md).
+
+
 
 
 
