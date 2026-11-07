@@ -7786,3 +7786,18 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,779 saved records**, **6,701 unique appearances**, **6,301 deduplicated candidates**, **0 problems**. [Batch 94 report](reports/tagging-batch94-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 95 (Sericulture Extension Officer 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 95 (`reports/tagging-batch95-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to Sericulture Extension Officer under Sericulture Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/SEO General English-II.pdf`, `doc_8b9654f42a144ef28a022335`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 31 retag, 69 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (69 items): Q1–Q10 (functional parts of speech), Q11–Q20 (noun classification), Q32–Q40 (adverb classification), Q41–Q50 (sentence structures), Q51–Q60 (sentence transformations), Q61–Q70 (clauses), Q91–Q100 (grammatical completion & determiners).
+    - `english/grammar/prepositions` (11 items): Q21–Q31 (preposition selection in context).
+    - `english/vocabulary/synonyms` (10 items): Q71–Q80 (synonyms / closest meaning).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q81–Q90 (idioms and idiomatic expressions).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,879 saved records**, **6,801 unique appearances**, **6,401 deduplicated candidates**, **0 problems** (reached **5,000 retags** milestone). [Batch 95 report](reports/tagging-batch95-20261108/README.md).
