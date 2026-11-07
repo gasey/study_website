@@ -1,0 +1,46 @@
+{
+  "batch": 63,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "paper_title": "Mizoram Civil Services Combined Preliminary Examination 2015 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)",
+      "document_id": "mcs-recovered-2015-ii",
+      "sha256": "0a54d3113f97d0f4c1e6cff7333b1fb8eec3d95a39268d679bf076f9c603fd8a",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for MCS Combined 2015 Preliminary Paper-II Series A (100/100 MCQs)",
+  "actions": {
+    "retag": 75,
+    "keep": 25,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 24,
+    "english/vocabulary/one-word-substitution": 1,
+    "reasoning-and-aptitude/verbal-reasoning": 32,
+    "reasoning-and-aptitude/series": 5,
+    "reasoning-and-aptitude/numerical-ability": 14,
+    "mathematics/arithmetic/percentages": 2,
+    "mathematics/mensuration": 1,
+    "mathematics/arithmetic/averages": 3,
+    "english/vocabulary": 4,
+    "mathematics/algebra/quadratic-equations": 1,
+    "mathematics/algebra/linear-equations": 1,
+    "mathematics/geometry": 1,
+    "mathematics/arithmetic": 3,
+    "mathematics/mensuration/volume": 1,
+    "mathematics/arithmetic/ratio-and-proportion": 1,
+    "reasoning-and-aptitude/data-interpretation": 4,
+    "english/vocabulary/antonyms": 2
+  },
+  "source_defects": [
+    "Major Baseline Cleanup: Realigned legacy classification where CSAT questions were misclassified under psychology (10), commerce (4), science (3), general-studies (3), civil-engineering (1), and journalism (1).",
+    "Q63, Q64 Visual Analogies: Verbal analogy questions with source-scanned stimulus diagrams properly tagged to reasoning-and-aptitude/verbal-reasoning."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

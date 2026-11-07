@@ -7120,3 +7120,35 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,235 saved records**, **4,157 unique appearances**, **3,757 deduplicated candidates**, **0 problems**. [Batch 62 report](reports/tagging-batch62-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 63: MCS Combined 2015 Preliminary Paper II Series A (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 63 (`reports/tagging-batch63-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination 2015 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Recovered_MCS/MCS Combined 2015 Preliminary Exam Paper-II Series-A Chase copy.pdf`, `mcs-recovered-2015-ii`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 75 retag, 25 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Resolved major legacy baseline misclassifications where questions had been imported into foreign subjects (`psychology` [10], `commerce` [4], `general-studies` [3], `science` [3], `civil-engineering` [1], and `journalism` [1]).
+  - Active path assignments:
+    - `english/comprehension` (24 items): Q1–Q4, Q6–Q14, Q87–Q91, Q93–Q95, Q97–Q99 (reading comprehension).
+    - `english/vocabulary/one-word-substitution` (1 item): Q5 ('Euthanasia').
+    - `english/vocabulary/antonyms` (2 items): Q92 ('spurious'), Q96 ('frustrater').
+    - `english/vocabulary` (4 items): Q67–Q70 (anagrams).
+    - `reasoning-and-aptitude/verbal-reasoning` (32 items): Q15–Q29 (interpersonal communication, active listening, conflict), Q42–Q44 (logic deduction), Q45–Q51 (group decision making, administrative ethics), Q55–Q58 (Mr. Thanga case study), Q63–Q64 (verbal analogies), Q72 (line seating).
+    - `reasoning-and-aptitude/series` (5 items): Q30–Q32 (letter series), Q60 (geometric series), Q65 (letter matrix).
+    - `reasoning-and-aptitude/numerical-ability` (14 items): Q33–Q38 (figure sequences), Q39–Q41 (pattern completion), Q52–Q54 (painted cube faces), Q66 (number matrix), Q71 (page numbering digits).
+    - `reasoning-and-aptitude/data-interpretation` (4 items): Q82 (pie chart), Q83–Q84 (tables), Q86 (graph).
+    - `mathematics/arithmetic` (3 items): Q76 (rope fractions), Q79 (speed/distance), Q100 (million = ten lakh).
+    - `mathematics/arithmetic/percentages` (2 items): Q59 (pass percentage), Q77 (16% equation).
+    - `mathematics/arithmetic/averages` (3 items): Q62 (mean height), Q81 (mean salary), Q85 (median).
+    - `mathematics/arithmetic/ratio-and-proportion` (1 item): Q80 (alloy mixture).
+    - `mathematics/algebra/linear-equations` (1 item): Q74 (two-digit number).
+    - `mathematics/algebra/quadratic-equations` (1 item): Q73 (age quadratic product).
+    - `mathematics/geometry` (1 item): Q75 (quadrant).
+    - `mathematics/mensuration` (1 item): Q61 (perimeter comparison).
+    - `mathematics/mensuration/volume` (1 item): Q78 (brick wall volume, retagged from civil engineering).
+- **Source Defects & Verification:**
+  - Standardized stimulus image questions (Q63, Q64) as verbal analogies.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,335 saved records**, **4,257 unique appearances**, **3,857 deduplicated candidates**, **0 problems**. [Batch 63 report](reports/tagging-batch63-20261108/README.md).
