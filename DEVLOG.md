@@ -6398,3 +6398,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 3 Part-A Conventional Written Tasks:** Extracted full prompt evidence and suggested taxonomy for Part-A Q1 Essay (20m: Communication skills / Workplace ethics / Digital India), Q2 Reading Comprehension questions (a)–(l) (30m: Talent vs hard work), and Q3 Précis (10m: Academic degrees vs common sense) in `pending-written-intake.json`.
   * **Defects Documented:** Documented completely untagged baseline and printed booklet typo ('disabitity' instead of 'disability' in Q36).
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (40/40) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,421 across 35 candidate reports with zero problems or booklet family conflicts. [Batch 34 report](reports/tagging-batch34-20261108/README.md).
+
+## 2026-11-08 03:20 IST — Source-reviewed tagging batch 35 (ASI Ministerial 2018 Mathematics 100% Paper Finalization — 100 MCQs)
+
+- Completed source-reviewed tagging batch 35 (100 Class-10 Arithmetic, Algebra, Geometry, Mensuration & Numerical Ability MCQs, 100% paper completion) from *General Competitive Examinations for Recruitment to the Post of Assistant Sub Inspector (Ministerial) under Home Department, Government of Mizoram (October, 2018) — Mathematics* (`doc_5c1f675b19f778f61bcf7eaf`), advancing the owner's Arithmetic priority under policy `study-tagging-v1`:
+  * **100 retags, 0 keeps, 0 holds.**
+  * **Untagged Baseline Rectification:** All 100 MCQs were completely untagged in the production database (`subject=null, topic=null`). Rectified 100% of targets to active Class-10 mathematics subtopics:
+    - `mathematics/arithmetic/percentages` (12 items)
+    - `mathematics/arithmetic/profit-and-loss` (8 items)
+    - `mathematics/arithmetic/ratio-and-proportion` (6 items)
+    - `mathematics/arithmetic/averages` (5 items)
+    - `mathematics/arithmetic` (29 items: Simple Interest, Compound Interest, Time & Work, Time & Distance, Surds, Fractions, HCF/LCM, Real-world calculation)
+    - `mathematics/algebra/linear-equations` (4 items)
+    - `mathematics/algebra/algebraic-expressions` (2 items)
+    - `mathematics/algebra` (4 items: Exponents, Arithmetic Progressions)
+    - `mathematics/geometry/lines-and-angles` (4 items)
+    - `mathematics/geometry/triangles` (4 items)
+    - `mathematics/geometry/circles` (1 item)
+    - `mathematics/geometry` (3 items: Trigonometry, Coordinate Geometry)
+    - `mathematics/mensuration/area` (8 items)
+    - `mathematics/mensuration/volume` (3 items)
+    - `reasoning-and-aptitude/numerical-ability` (7 items: Statistics and Probability)
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,521 across 36 candidate reports with zero problems or booklet family conflicts. [Batch 35 report](reports/tagging-batch35-20261108/README.md).
