@@ -7459,3 +7459,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,658 saved records**, **5,580 unique appearances**, **5,180 deduplicated candidates**, **0 problems**. [Batch 77 report](reports/tagging-batch77-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 78 (Assistant Tourist Officer General English Dec 2017)
+- **Execution:** Prepared pending source-reviewed tagging batch 78 (`reports/tagging-batch78-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Posts of Assistant Tourist Officer under Tourism Department (December, 2017) — General English* (`Old_Questions/Direct_2014-2018/1.ATO General English.pdf`, `doc_fe7a66559c7eb4bde50c19a9`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 77 retag, 3 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/comprehension` (12 items): Q1–Q6 (poem reading comprehension), Q7–Q12 (poem vocabulary synonyms).
+    - `english/grammar/tenses` (5 items): Q13–Q17 (verb form and tense selection).
+    - `english/grammar/prepositions` (5 items): Q18–Q22 (preposition selection).
+    - `english/grammar/parts-of-speech` (10 items): Q23–Q32 (parts of speech identification).
+    - `english/grammar` (16 items): Q33–Q38 (sentence structure: simple, compound, complex), Q39–Q43 (sentence functional classification), Q44–Q48 (clause identification).
+    - `english/vocabulary/one-word-substitution` (7 items): Q49–Q55 (one-word substitution).
+    - `english/vocabulary/synonyms` (5 items): Q56–Q60 (synonyms nearest in meaning).
+    - `english/vocabulary/idioms-and-phrases` (15 items): Q61–Q65 (phrase similar in meaning), Q71–Q80 (idioms and phrases meaning).
+    - `english/vocabulary` (5 items): Q66–Q70 (animal cries vocabulary).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,738 saved records**, **5,660 unique appearances**, **5,260 deduplicated candidates**, **0 problems**. [Batch 78 report](reports/tagging-batch78-20261108/README.md).
