@@ -7398,3 +7398,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,418 saved records**, **5,340 unique appearances**, **4,940 deduplicated candidates**, **0 problems**. [Batch 74 report](reports/tagging-batch74-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 75 (Junior Engineer General English April 2016)
+- **Execution:** Prepared pending source-reviewed tagging batch 75 (`reports/tagging-batch75-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Junior Engineer (J.E) under PHE & PWD (April 2016) — General English* (`Old_Questions/Direct_2014-2018/3. General English.pdf`, `doc_4c79cb3420629f238d2b19c8`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 80 retag, 0 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (23 items): Q1–Q16 (idioms and phrases fill-in and meaning), Q29–Q35 (phrasal verbs).
+    - `english/comprehension` (12 items): Q17–Q28 (reading comprehension passages across 2 passages).
+    - `english/grammar/parts-of-speech` (13 items): Q36–Q42 (adjectives, adverbs, and verbs), Q43–Q48 (parts of speech of underlined words).
+    - `english/grammar` (16 items): Q49–Q54 (clause identification), Q55–Q59 (sentence structure: simple, complex, compound), Q60–Q64 (sentence functional classification: declarative, interrogative, imperative, exclamatory).
+    - `english/vocabulary/synonyms` (6 items): Q65–Q70 (synonyms / similar meaning).
+    - `english/vocabulary/antonyms` (4 items): Q71–Q74 (antonyms / opposite meaning).
+    - `english/vocabulary/one-word-substitution` (4 items): Q75–Q77, Q79 (one-word substitution).
+    - `english/vocabulary` (2 items): Q78, Q80 (vocabulary / word usage).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,498 saved records**, **5,420 unique appearances**, **5,020 deduplicated candidates**, **0 problems**. [Batch 75 report](reports/tagging-batch75-20261108/README.md).
