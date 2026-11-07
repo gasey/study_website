@@ -6420,3 +6420,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - `mathematics/mensuration/volume` (3 items)
     - `reasoning-and-aptitude/numerical-ability` (7 items: Statistics and Probability)
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,521 across 36 candidate reports with zero problems or booklet family conflicts. [Batch 35 report](reports/tagging-batch35-20261108/README.md).
+
+## 2026-11-08 03:45 IST — Source-reviewed tagging batch 36 (Agri & Allied 2025 & Jr. MHS 2025 General English 100% Paper Finalization — 86 MCQs)
+
+- Completed source-reviewed tagging batch 36 (86 English MCQs, achieving 100% paper completion across both booklets) from *Agri & Allied Services (Combined Technical) November-2025 General English* (`doc_74fb44237ebef4588c005e8a`, 46 MCQs) and *Junior Grade of MHS September-2025 General English* (`doc_dab76ba7bd50a3f08ac483d2`, 40 MCQs), advancing the owner's English priority under policy `study-tagging-v1`:
+  * **86 retags, 0 keeps, 0 holds.**
+  * **Untagged Baseline Rectification:** All 86 MCQs were completely untagged in the production database (`subject=null, topic=null`). Rectified 100% of targets to active English subtopics:
+    - `english/grammar/parts-of-speech` (21 items)
+    - `english/vocabulary/idioms-and-phrases` (14 items)
+    - `english/vocabulary` (12 items)
+    - `english/grammar/prepositions` (13 items)
+    - `english/grammar/articles` (1 item)
+    - `english/grammar` (7 items: Clauses, Sentence Structures, Transformations)
+    - `english/grammar/tenses` (5 items)
+    - `english/vocabulary/one-word-substitution` (5 items)
+    - `english/sentence-correction` (5 items)
+    - `english/grammar/voice` (1 item)
+    - `english/vocabulary/synonyms` (1 item)
+    - `english/vocabulary/antonyms` (1 item)
+  * **Preserved 10 Unextracted Tasks & Ingestion Drops:**
+    - Agri & Allied: Preserved 3 Section-A written prompts (Précis 10m, Reading Comprehension 20m, Transformations 10m) and 4 dropped MCQs (Q42–Q45 dropped by automated ingestion due to empty stems under 'Choose the correct sentence:') in `pending-written-intake.json`.
+    - Jr. of MHS: Preserved 3 Section-A written prompts (Essay 20m, Précis 20m, Reading Comprehension 20m) in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (86/86) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,607 across 37 candidate reports with zero problems or booklet family conflicts. [Batch 36 report](reports/tagging-batch36-20261108/README.md).
