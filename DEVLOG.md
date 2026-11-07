@@ -6545,6 +6545,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - `mathematics` (15 items: Advanced Real Analysis, Continuity, Limits, Rolle's Theorem, Extrema, Homogeneous Euler Theorem, Definite/Indefinite Integrals)
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (75/75) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,974 across 42 candidate reports with zero problems or booklet family conflicts. [Batch 41 report](reports/tagging-batch41-20261108/README.md).
 
+## 2026-11-08 06:10 IST — Source-reviewed tagging batch 42 (Food Sub-Inspector & Receptionist 2025 General English Series A 100% Paper Finalization — 52 MCQs)
+
+- Completed source-reviewed tagging batch 42 (52 English MCQs, achieving 100% paper completion) from *Competitive Examination for Sub-Inspector under Food, Civil Supplies & Consumer Affairs Department and Receptionist under Health & Family Welfare Department (May, 2025) — Paper-I (General English) (Series A)* (`Old_Questions/Direct_NG_2024-2027/Paper-I General English (Series A)..pdf`, `doc_57d09d87766f60d8370e2547`), advancing the owner's English priority under policy `study-tagging-v1`:
+  * **37 retags, 15 keeps, 0 holds.**
+  * **Single-Booklet Series Deduplication Enforced:** Cleanly bypassed 3 permuted series booklets: Series B (`doc_ae75dbff924cd9f1cda167dc`), Series C (`doc_a0c489d819810fcb83048888`), and Series D (`doc_42a5afe2420d8ff997936b63`), saving 68 redundant reviews across the series family.
+  * **Untagged Baseline Rectification:** All 52 MCQs had coarse topic-level tags (`english/grammar` or `english/vocabulary`) without subtopics. Rectified 100% of targets to active English subtopics:
+    - `english/grammar/parts-of-speech` (10 items: Adjectives 2, Adverbs 2, Nouns 1, Pronouns 5)
+    - `english/grammar/prepositions` (5 items)
+    - `english/grammar/subject-verb-agreement` (1 item)
+    - `english/grammar/tenses` (4 items)
+    - `english/sentence-correction` (6 items: Spotting Errors 5, Sentence Structure 1)
+    - `english/vocabulary` (6 items: Word Choice 5, Spelling 1)
+    - `english/vocabulary/one-word-substitution` (5 items)
+    - `english/grammar` (15 items: Jumbled Sentences 5, Inversion Structures 5, Conditional Transformations 5)
+  * **Preserved 11 Unextracted Tasks & Ingestion Drops:**
+    - Preserved 3 Section-A conventional tasks totaling 40 marks (Précis 10m, Formal Complaint Letter 15m, Reading Comprehension 15m) in `pending-written-intake.json`.
+    - Preserved 8 dropped MCQs (Q37–Q40 spelling tests, Q47–Q50 sentence structure items dropped due to empty stems under direction headers) in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (52/52) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,026** across 43 candidate reports with zero problems or booklet family conflicts. [Batch 42 report](reports/tagging-batch42-20261108/README.md).
+
+
 
 
 
