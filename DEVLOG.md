@@ -6520,5 +6520,31 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 4 Unextracted Conventional Tasks:** Preserved 4 Part-A written prompts (Précis 10m, Formal Letter to Minister 10m, Reading Comprehension 10m, Essay Writing 10m) totaling 40 marks in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (60/60) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,899 across 41 candidate reports with zero problems or booklet family conflicts. [Batch 40 report](reports/tagging-batch40-20261108/README.md).
 
+## 2026-11-08 05:40 IST — Source-reviewed tagging batch 41 (High School Teacher 2017 Mathematics Paper-I 100% Paper Finalization — 75 MCQs)
+
+- Completed source-reviewed tagging batch 41 (75 Quantitative Aptitude, Arithmetic, Reasoning, Algebra, Geometry, Probability, Statistics & Calculus MCQs, achieving 100% paper completion) from *Competitive Examinations for Recruitment to the Posts of High School Teacher (Mathematics) under School Education Department, Government of Mizoram (September, 2017) — Technical Paper-I* (`Old_Questions/Direct_2014-2018/2.Mathematics Paper-I.pdf`, `doc_3bbda79f063fd1c62ac7e8a3`), advancing the owner's Arithmetic & Reasoning priority under policy `study-tagging-v1`:
+  * **57 retags, 18 keeps, 0 holds.**
+  * **Untagged & Inactive Taxonomy Baseline Rectification:** All 75 MCQs had coarse unclassified subject baselines (`mathematics/None/None` or `reasoning-and-aptitude/None/None`), and 3 questions (Q49, Q56, Q58) suffered from an inactive subject defect (`statistics/None/None`). Rectified 100% of targets to active taxonomy paths:
+    - `mathematics/arithmetic` (7 items: Number System Cyclicity, Divisibility Counting, Radicals, Decimals/Exponents, Time & Work, Pipes & Cisterns, Alligations)
+    - `mathematics/arithmetic/ratio-and-proportion` (2 items)
+    - `mathematics/arithmetic/averages` (2 items: Corrected Mean, Shifted Averages)
+    - `mathematics/arithmetic/percentages` (2 items: Consumption/Price, Compound Depreciation)
+    - `mathematics/arithmetic/profit-and-loss` (2 items: Identical SP Transaction, Successive Discounts)
+    - `reasoning-and-aptitude/series` (1 item: Letter Series)
+    - `reasoning-and-aptitude/verbal-reasoning` (6 items: Analogies, Classification, Coding-Decoding, Carrom Seating, Venn Diagram, Alphabetical Ordering)
+    - `reasoning-and-aptitude` (3 items: Non-Verbal Pattern Completion & Geometric Figure Counting)
+    - `mathematics/algebra/quadratic-equations` (3 items: Discriminant, Root Relations, Reciprocal Roots)
+    - `mathematics/algebra/algebraic-expressions` (3 items: Logarithmic Identities, Cyclic Expressions, Remainder Theorem)
+    - `mathematics/algebra/linear-equations` (2 items: Line Geometry through Origin, Simultaneous Linear Equations)
+    - `mathematics/algebra` (2 items: Set Symmetric Difference, Mathematical Induction)
+    - `mathematics/geometry/circles` (1 item: Equilateral Circumcircle Radius)
+    - `mathematics/geometry/triangles` (2 items: Similar Triangle Area Ratio, Triangle Perimeter)
+    - `mathematics/geometry` (5 items: Trigonometric Identities, Quadrant Ratios, Heights & Distances, Extrema)
+    - `mathematics/geometry/lines-and-angles` (2 items: Collinearity Intercepts, Section Formula)
+    - `reasoning-and-aptitude/numerical-ability` (15 items: Probability & Statistics, rectifying inactive `statistics` baseline)
+    - `mathematics` (15 items: Advanced Real Analysis, Continuity, Limits, Rolle's Theorem, Extrema, Homogeneous Euler Theorem, Definite/Indefinite Integrals)
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (75/75) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,974 across 42 candidate reports with zero problems or booklet family conflicts. [Batch 41 report](reports/tagging-batch41-20261108/README.md).
+
+
 
 
