@@ -7283,3 +7283,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,829 saved records**, **4,751 unique appearances**, **4,351 deduplicated candidates**, **0 problems**. [Batch 68 report](reports/tagging-batch68-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 69 (Fishery Extension Officer General English Paper II)
+- **Execution:** Prepared pending source-reviewed tagging batch 69 (`reports/tagging-batch69-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Fishery Extension Officer (December 2017) — General English Paper II* (`Old_Questions/Direct_2014-2018/2.General English Paper-II.pdf`, `doc_c634c07280fb2818a0383368`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 93 retag, 7 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (17 items): Q1–Q10 (underlined parts of speech), Q21–Q22 (determiners/quantifiers), Q31–Q35 (adjectives and adverbs).
+    - `english/grammar/tenses` (15 items): Q11–Q20 (correct form of verbs), Q36–Q40 (name the tense of the verb).
+    - `english/grammar/articles` (3 items): Q23–Q25 (article selection: a/an/the).
+    - `english/grammar/prepositions` (5 items): Q26–Q30 (preposition selection).
+    - `english/grammar` (30 items): Q41–Q50 (sentence transformation: simple, compound, complex), Q51–Q55 (sentence transformation: affirmative/negative, degrees, exclamatory), Q56–Q60 (interchanging parts of speech), Q61–Q65 (sentence transformation: affirmative, negative, interrogative), Q66–Q70 (sentence synthesis using clauses).
+    - `english/vocabulary/antonyms` (5 items): Q71–Q75 (opposite in meaning).
+    - `english/vocabulary/synonyms` (5 items): Q76–Q80 (nearest in meaning).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q81–Q90 (idioms and phrases meaning).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,929 saved records**, **4,851 unique appearances**, **4,451 deduplicated candidates**, **0 problems**. [Batch 69 report](reports/tagging-batch69-20261108/README.md).
