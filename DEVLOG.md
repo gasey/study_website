@@ -7520,3 +7520,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,898 saved records**, **5,820 unique appearances**, **5,420 deduplicated candidates**, **0 problems**. [Batch 80 report](reports/tagging-batch80-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 81 (Computer Operator under Mizoram Information Commission 2016 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 81 (`reports/tagging-batch81-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Computer Operator under Mizoram Information Commission (2016) — General English* (`Old_Questions/Direct_2014-2018/1.Computer Operator (CB) under Mizoram Information Commission 2016 General English.pdf`, `doc_e4a3e87d3a010bc114cf396a`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 77 retag, 3 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q8 (idiom meanings), Q9–Q16 (idioms in context).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passages on human society and religion).
+    - `english/grammar/tenses` (11 items): Q33–Q37 (past and perfect tenses), Q38–Q42 (verb forms), Q45 (participle form).
+    - `english/grammar/parts-of-speech` (4 items): Q43, Q46, Q47, Q48 (relative pronouns and determiners).
+    - `english/grammar/prepositions` (1 item): Q44 (preposition: looking for).
+    - `english/grammar` (17 items): Q49–Q56 (sentence structure: simple, complex, compound), Q57–Q61 (sentence synthesis and pronoun substitution), Q62–Q65 (sentence connectors / linkers).
+    - `english/vocabulary` (6 items): Q66–Q71 (vocabulary usage in context).
+    - `english/vocabulary/synonyms` (5 items): Q72–Q76 (synonyms).
+    - `english/vocabulary/antonyms` (4 items): Q77–Q80 (antonyms).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,978 saved records**, **5,900 unique appearances**, **5,500 deduplicated candidates**, **0 problems**. [Batch 81 report](reports/tagging-batch81-20261108/README.md).
