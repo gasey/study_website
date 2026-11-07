@@ -7679,3 +7679,39 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 10/10 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,329 saved records**, **6,251 unique appearances**, **5,851 deduplicated candidates**, **0 problems**. [Batch 89 report](reports/tagging-batch89-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 90 (LDC under MPSC 2025 Paper-II: Computer Knowledge, Arithmetic & Reasoning)
+- **Execution:** Prepared pending source-reviewed tagging batch 90 (`reports/tagging-batch90-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examination for Lower Division Clerk under Mizoram Public Service Commission (February 2025) — Paper II: Computer Knowledge, Arithmetic and Reasoning* (`Old_Questions/Direct_NG_2024-2027/LDC under MPSC Paper-II 2025..pdf`, `doc_712c2c9334cdd9d7`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 34 retag, 66 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Sectional active path assignments:
+    - **Computer Knowledge (50 items)**:
+      - `computer-science/office-applications` (25 items): Q19–Q30 (MS Word formatting, alignment, mail merge, tables), Q31–Q38 (MS Excel formulas, references, data tables, charts), Q39–Q43 (PowerPoint presentation slides, layouts, rehearsal).
+      - `computer-science/operating-systems` (9 items): Q7, Q11–Q18 (OS role, Windows 11/settings, taskbar, file naming, shortcuts).
+      - `computer-science/networking` (7 items): Q44–Q50 (Internet, ICANN, search engines, HTTPS, IMAP, email headers).
+      - `computer-science/computer-systems-and-architecture` (3 items): Q6, Q8, Q9 (software definition, computer classification, supercomputers).
+      - `computer-science/computer-systems-and-architecture/memory-and-storage` (2 items): Q3, Q4 (main and cache memory).
+      - `computer-science/computer-systems-and-architecture/computer-hardware` (2 items): Q2, Q5 (CPU structure, high-resolution plotters).
+      - `computer-science/computer-systems-and-architecture/history-and-generations` (1 item): Q1 (fifth-generation computers).
+      - `computer-science` (1 item): Q10 (Information Technology Amendment Act).
+    - **Arithmetic (25 items)**:
+      - `mathematics/arithmetic` (9 items): Q53 (primes), Q57 (time & work), Q58, Q59 (permutations & combinations), Q63 (recurring fractions), Q64 (BODMAS), Q70 (speed, time & distance), Q71 (compound interest), Q72 (simple interest).
+      - `mathematics/arithmetic/averages` (3 items): Q52, Q56, Q68 (consecutive number averages, joint incomes, excluded item weight).
+      - `mathematics/arithmetic/ratio-and-proportion` (3 items): Q66, Q67, Q69 (ratio changes, sum decomposition, partnership profit share).
+      - `reasoning-and-aptitude/data-interpretation` (3 items): Q61 (flight level graph), Q62 (bar chart expenditures), Q75 (fruit cost pie chart).
+      - `mathematics/arithmetic/percentages` (2 items): Q54, Q55 (successive discounts, shaded area percentage).
+      - `mathematics/arithmetic/profit-and-loss` (1 item): Q65 (selling price for loss to profit conversion).
+      - `mathematics/mensuration` (1 item): Q60 (longest rod in 3D cuboid room).
+      - `mathematics/mensuration/volume` (1 item): Q73 (cone volume & radius ratio).
+      - `mathematics/algebra/algebraic-expressions` (1 item): Q51 (radical / surd addition).
+      - `mathematics/geometry/triangles` (1 item): Q74 (angle of elevation / trigonometric height and shadow).
+    - **Reasoning (25 items)**:
+      - `reasoning-and-aptitude/verbal-reasoning` (15 items): Q76, Q77 (word analogies), Q79, Q93 (odd word/element out), Q81 (word formation), Q82 (letter reverse arrangement), Q83 (coding-decoding), Q84, Q85 (blood relations family trees), Q86, Q87 (direction and cardinal rotation), Q88, Q89 (ranking and row position), Q91 (dictionary sequence), Q92 (syllogisms).
+      - `reasoning-and-aptitude/series` (7 items): Q78, Q80 (letter pattern series), Q90 (geometric number series), Q95, Q96, Q97, Q98 (matrix and grid missing number/letter puzzles).
+      - `reasoning-and-aptitude` (2 items): Q99 (mirror reflection figure), Q100 (dice opposite face deduction).
+      - `reasoning-and-aptitude/numerical-ability` (1 item): Q94 (digit reversal and ranking).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,429 saved records**, **6,351 unique appearances**, **5,951 deduplicated candidates**, **0 problems**. [Batch 90 report](reports/tagging-batch90-20261108/README.md).
