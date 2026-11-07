@@ -7341,3 +7341,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,129 saved records**, **5,051 unique appearances**, **4,651 deduplicated candidates**, **0 problems**. [Batch 71 report](reports/tagging-batch71-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 72 (Grade-V of MHS 2017 General English Paper II)
+- **Execution:** Prepared pending source-reviewed tagging batch 72 (`reports/tagging-batch72-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Grade-V of Mizoram Horticulture Service (November 2017) — General English Paper - II* (`Old_Questions/Direct_2014-2018/General English paper-II (MHS).pdf`, `doc_bbd4602370e71a495e7d027b`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 50 retag, 50 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (underlined parts of speech).
+    - `english/vocabulary` (15 items): Q9–Q13 (semantic adverb meaning), Q81–Q90 (vocabulary / sentence completion).
+    - `english/grammar` (40 items): Q14–Q23 (notion / concept expressed by sentence), Q51–Q60 (sentence structure analysis: simple, complex, compound), Q61–Q70 (clause identification), Q71–Q80 (sentence functional classification: declarative, imperative, interrogative, exclamatory).
+    - `english/grammar/tenses` (5 items): Q24, Q25, Q28–Q30 (verb forms and conditionals).
+    - `english/grammar/prepositions` (12 items): Q26, Q27, Q31–Q40 (preposition selection).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q41–Q50 (phrasal verbs).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,229 saved records**, **5,151 unique appearances**, **4,751 deduplicated candidates**, **0 problems**. [Batch 72 report](reports/tagging-batch72-20261108/README.md).
