@@ -1,122 +1,27 @@
-import { useEffect, useState } from "react";
-import { reviewRequest } from "../lib/review";
-type MapData = {
-  tables: { id: string; title: string; total: number }[];
-  coverage: {
-    questions: number;
-    without_topic: number;
-    without_subtopic: number;
-  };
-  relationships: [string, string, string][];
-};
-export default function DatabaseMap() {
-  const [data, setData] = useState<MapData | null>(null),
-    [selected, setSelected] = useState("canonical_questions"),
-    [error, setError] = useState("");
-  useEffect(() => {
-    let live = true;
-    reviewRequest<MapData>("/admin/bank/database-map")
-      .then((d) => {
-        if (live) setData(d);
-      })
-      .catch((e) => {
-        if (live) setError(e.message);
-      });
-    return () => {
-      live = false;
-    };
-  }, []);
-  return (
-    <section className="mt-5 min-w-0">
-      <h2 className="font-display text-[30px]">Your database, visually</h2>
-      <p className="mt-2 max-w-[760px] text-[14px] leading-relaxed text-secondary">
-        One shared question connects source papers, topics, exams, discussions
-        and study history. Select a card to see its relationships. These are
-        live database counts; printed appearances and shared questions can
-        differ.
-      </p>
-      {error && (
-        <p role="alert" className="mt-4 text-mypick">
-          {error}
-        </p>
-      )}
-      {!data && !error && <p className="mt-4">Loading database map…</p>}
-      {data && (
-        <>
-          <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {data.tables.map((t) => (
-              <button
-                key={t.id}
-                onClick={() => setSelected(t.id)}
-                aria-pressed={selected === t.id}
-                className={
-                  "min-w-0 rounded-[12px] border p-5 text-left " +
-                  (selected === t.id
-                    ? "border-link bg-[#E3E9F8]"
-                    : "border-hairline bg-card")
-                }
-              >
-                <span className="font-display text-[23px]">{t.title}</span>
-                <strong className="mt-2 block font-display text-[30px]">
-                  {t.total.toLocaleString("en-IN")}
-                </strong>
-                <span className="mt-2 block break-all font-mono text-[10px] text-muted">
-                  {t.id}
-                </span>
-              </button>
-            ))}
-          </div>
-          <div className="mt-4 rounded-[12px] border border-hairline bg-card p-5">
-            <h3 className="font-display text-[24px]">
-              Connected to this table
-            </h3>
-            {data.relationships
-              .filter((r) => r[0] === selected || r[1] === selected)
-              .map((r) => (
-                <div
-                  key={r.join(":")}
-                  className="mt-3 flex flex-wrap items-center gap-2 text-[13px]"
-                >
-                  <button
-                    className="min-h-11 break-all font-semibold text-link underline"
-                    onClick={() => setSelected(r[0])}
-                  >
-                    {data.tables.find((t) => t.id === r[0])?.title}
-                  </button>
-                  <span>→ {r[2]} →</span>
-                  <button
-                    className="min-h-11 break-all font-semibold text-link underline"
-                    onClick={() => setSelected(r[1])}
-                  >
-                    {data.tables.find((t) => t.id === r[1])?.title}
-                  </button>
-                </div>
-              ))}
-            {!data.relationships.some(
-              (r) => r[0] === selected || r[1] === selected,
-            ) && (
-              <p className="mt-3 text-[13px] text-secondary">
-                Community materials have their own publication and audience
-                controls. Embedded question blocks reference the shared bank.
-              </p>
-            )}
-          </div>
-          <div className="mt-5 rounded-[12px] border border-hairline bg-[#F6EACB] p-5">
-            <h3 className="font-display text-[23px]">Topic coverage</h3>
-            <p className="mt-2 text-[14px]">
-              {data.coverage.without_topic.toLocaleString("en-IN")} of{" "}
-              {data.coverage.questions.toLocaleString("en-IN")} primary
-              classifications have no narrower topic. Related topic links extend
-              the primary path; they do not replace its history.
-            </p>
-            <p className="mt-3 text-[13px]">
-              Broad subject approval does not establish answer correctness.
-              Further classification goes through evidence, independent review
-              and publication.
-            </p>
-          </div>
-        </>
-      )}
-    </section>
-  );
+import {useEffect,useMemo,useState} from 'react'
+import {Link} from 'react-router-dom'
+import {reviewRequest} from '../lib/review'
+import {mapEdges,MAP_GROUPS,type MapData} from '../lib/databaseMap'
+import DatabaseDiagram from './DatabaseDiagram'
+const B='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-[13px] font-semibold disabled:opacity-40'
+export default function DatabaseMap(){
+ const [data,setData]=useState<MapData|null>(null),[selected,setSelected]=useState('canonical_questions'),[group,setGroup]=useState('bank'),[mode,setMode]=useState<'content'|'schema'>('content'),[layout,setLayout]=useState<'diagram'|'list'>('diagram'),[query,setQuery]=useState(''),[error,setError]=useState(''),[refresh,setRefresh]=useState(0)
+ useEffect(()=>{let live=true;setError('');reviewRequest<MapData>('/admin/bank/database-map').then(d=>{if(live)setData(d)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[refresh])
+ const edges=useMemo(()=>data?mapEdges(data,mode):[],[data,mode])
+ const shown=(data?.tables||[]).filter(t=>(group==='all'||t.group===group)&&(!query||[t.title,t.id,t.description].join(' ').toLowerCase().includes(query.toLowerCase())))
+ const connected=edges.filter(e=>e.source===selected||e.target===selected),current=data?.tables.find(t=>t.id===selected)
+ function area(value:string){setGroup(value);setQuery('');if(value!=='all'&&current?.group!==value){const first=data?.tables.find(t=>t.group===value);if(first)setSelected(first.id)}}
+ function choose(id:string){setSelected(id);const n=data?.tables.find(t=>t.id===id);if(n&&group!=='all'&&n.group!==group)setGroup(n.group);if(query&&!shown.some(t=>t.id===id))setQuery('')}
+ const format=(n:number)=>n.toLocaleString('en-IN')
+ return <section className="mt-5 min-w-0"><header className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0"><h2 className="font-display text-[30px]">Your database, visually</h2><p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-secondary">Follow how original papers become reusable questions, learning modules and saved tests. Select a table to highlight its connections and open the matching admin tool.</p></div><button className={B} onClick={()=>setRefresh(n=>n+1)}>Refresh live counts</button></header>
+ {error&&<p role="alert" className="mt-4 rounded-lg bg-mypick-soft p-3">{error} <button className={B} onClick={()=>setRefresh(n=>n+1)}>Retry</button></p>}{!data&&!error&&<p role="status" className="mt-4">Loading live database map…</p>}
+ {data&&<><div className="mt-4 flex flex-wrap items-center gap-2" role="group" aria-label="Map interpretation"><button aria-pressed={mode==='content'} className={B+(mode==='content'?' bg-ink text-paper':'')} onClick={()=>setMode('content')}>Content flow</button><button aria-pressed={mode==='schema'} className={B+(mode==='schema'?' bg-ink text-paper':'')} onClick={()=>setMode('schema')}>Tables & foreign keys</button><span className="text-[12px] text-secondary">Read-only · {new Date(data.observed_at).toLocaleString()}</span></div><p className="mt-2 text-[12px] text-secondary">{mode==='content'?'Arrows explain how the app uses its content. Some selections use saved rules rather than a database foreign key.':'Arrows come from the live PostgreSQL foreign-key constraints. Select a table to inspect its columns and exact joins.'}</p>
+ <div className="mt-4 flex flex-wrap items-end gap-3"><label className="text-[13px]">Area<select aria-label="Database area" className="ml-2 min-h-11 max-w-full rounded-lg border border-hairline bg-card p-2" value={group} onChange={e=>area(e.target.value)}>{MAP_GROUPS.map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label><label className="min-w-0 flex-1 text-[13px]">Find a table<input aria-label="Find a database table" className="ml-2 min-h-11 max-w-full rounded-lg border border-hairline bg-card p-2" type="search" value={query} onChange={e=>setQuery(e.target.value)}/></label><div className="flex gap-2" role="group" aria-label="Map layout"><button className={B} aria-pressed={layout==='diagram'} onClick={()=>setLayout('diagram')}>Diagram</button><button className={B} aria-pressed={layout==='list'} onClick={()=>setLayout('list')}>List</button></div></div>
+ {layout==='diagram'?<DatabaseDiagram nodes={shown} edges={edges} selected={selected} onSelect={choose}/>:<div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{shown.map(t=><button key={t.id} aria-pressed={selected===t.id} className={'min-w-0 rounded-xl border bg-card p-4 text-left '+(selected===t.id?'border-link':'border-hairline')} onClick={()=>choose(t.id)}><span className="block text-[15px] font-semibold">{t.title}</span><strong className="mt-1 block font-display text-[28px]">{format(t.total)}</strong><span className="break-all font-mono text-[10px] text-muted">{t.id}</span></button>)}</div>}
+ {!shown.length&&<p className="mt-3 text-sm text-secondary">No tables match. <button className={B} onClick={()=>{setQuery('');setGroup('all')}}>Show all mapped tables</button></p>}
+ {current&&<section aria-label="Selected database table" className="mt-5 rounded-xl border border-hairline bg-card p-4 sm:p-5"><div className="flex flex-wrap items-start justify-between gap-3"><div className="min-w-0"><h3 className="font-display text-[26px]">{current.title}</h3><p className="mt-1 break-all font-mono text-[11px] text-muted">{current.id} · {format(current.total)} rows</p><p className="mt-2 max-w-3xl text-[14px] leading-relaxed">{current.description}</p></div><Link className={B} to={current.href}>Open related tool →</Link></div><h4 className="mt-5 text-[14px] font-semibold">Connected tables</h4><ul className="mt-2 space-y-2">{connected.map(e=><li key={e.id} className="rounded-lg border border-hairline bg-paper px-3 py-2 text-[13px]"><div className="flex flex-wrap items-center gap-2"><button className="min-h-11 text-link underline" onClick={()=>choose(e.source)}>{data.tables.find(t=>t.id===e.source)?.title}</button><span>→ {mode==='content'?e.label:'references'} →</span><button className="min-h-11 text-link underline" onClick={()=>choose(e.target)}>{data.tables.find(t=>t.id===e.target)?.title}</button></div>{e.fk&&<p className="break-words font-mono text-[10px] text-secondary">{e.label} · {e.fk.source_unique?'one → one':'many → one'}{e.fk.optional?' · optional reference':''}</p>}</li>)}</ul>{!connected.length&&<p className="mt-2 text-[13px] text-secondary">No links in this map view. Switch the interpretation to inspect the other relationship type.</p>}
+ <details className="mt-4 border-t border-hairline pt-2" open={mode==='schema'}><summary className="min-h-11 cursor-pointer py-3 text-[13px] font-semibold">Columns & primary keys · {current.columns.length}</summary><div className="max-w-full overflow-auto"><table className="w-full text-left text-[12px]"><thead><tr className="border-b border-hairline"><th className="p-2">Column</th><th className="p-2">Type</th><th className="p-2">Rules</th></tr></thead><tbody>{current.columns.map(c=><tr key={c.name} className="border-b border-hairline"><td className="p-2 font-mono">{c.name}</td><td className="p-2 font-mono">{c.type}</td><td className="p-2">{[c.primary_key?'Primary key':'',c.required?'Required':'Nullable'].filter(Boolean).join(' · ')}</td></tr>)}</tbody></table></div></details></section>}
+ <section className="mt-5 rounded-xl border border-hairline bg-exams-soft p-4"><h3 className="font-display text-[23px]">Learning-topic coverage</h3><p className="mt-2 text-[14px]">{format(data.coverage.without_topic)} of {format(data.coverage.questions)} approved primary classifications have no narrower topic.</p><progress aria-label="Primary classifications with a topic" className="mt-3 h-3 w-full accent-exams-dark" max={Math.max(1,data.coverage.questions)} value={data.coverage.questions-data.coverage.without_topic}/><p className="mt-2 text-[12px] text-secondary">This measures topic detail, not semantic correctness. Some broad classifications are intentional. Owner corrections publish through the normal guarded workflow.</p><Link className={B+' mt-3'} to="/admin/bank?tab=retag&tag_issue=no-topic">Open missing-topic queue →</Link></section><p className="mt-3 text-[12px] text-secondary">{data.scope} Counts are rows; paper positions, question IDs, published editions and attempts are different units. This view cannot edit database records or run SQL.</p>
+ </>}
+ </section>
 }

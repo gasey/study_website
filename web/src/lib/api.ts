@@ -24,6 +24,7 @@ export interface Appearance {
 }
 
 export interface Question {
+  presentation_hash?: string | null
   taxonomy_paths?: {subject_id:string;subject_label:string;topic_id:string|null;topic_label:string|null;subtopic_id:string|null;subtopic_label:string|null;is_primary:boolean}[]
   id: string
   type: 'mcq' | 'descriptive'
@@ -117,8 +118,9 @@ export interface AnswerComparisonData {
   review_note:string|null
   notice:string
 }
-export function getAnswerComparison(qid:string,paperId?:string|null,signal?:AbortSignal) {
-  return req<AnswerComparisonData>('/questions/'+encodeURIComponent(qid)+'/answer-comparison'+(paperId?'?'+new URLSearchParams({paper_id:paperId}):''),{signal})
+export function getAnswerComparison(qid:string,paperId?:string|null,signal?:AbortSignal,restore=false) {
+  const params=new URLSearchParams({...paperId?{paper_id:paperId}:{},...restore?{restore:'true'}:{}})
+  return req<AnswerComparisonData>('/questions/'+encodeURIComponent(qid)+'/answer-comparison'+(params.size?'?'+params:''),{signal})
 }
 
 class ApiError extends Error {
@@ -170,7 +172,7 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
   const data=await(coalesce?readRequests.read(scoped,load,ttl):load())
   if(method!=='GET'){
     clearReadCaches()
-    if(/^\/questions\/[^/]+\/answer$|^\/mocks\/[^/]+\/submit$/.test(path))window.dispatchEvent(new Event('ism-progress-change'))
+    if(/^\/questions\/[^/]+\/answer$|^\/mocks\/[^/]+\/submit$|^\/study-sessions\/[^/]+\/answer$/.test(path))window.dispatchEvent(new Event('ism-progress-change'))
   }
   // A screen sorting catalog rows must not mutate another consumer's cache.
   return ttl>0?structuredClone(data):data
@@ -178,6 +180,8 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
 
 export type GroupBStudyArea = 'common'|'english'|'gk-gs'|'technical'
 export interface ListParams {
+  learning_entry?: string
+  exam_scope?: "all" | "mizoram-recruitment"
   study_area?: GroupBStudyArea
   shelf_id?: string
   subtopic_id?: string
@@ -196,7 +200,9 @@ export interface ListParams {
   paper_id?: string
   essay_kind?: 'essay' | 'letter' | 'precis' | 'comprehension'
   section_path?: string
-  study_status?: 'all' | 'unseen' | 'answered' | 'wrong'
+  order?: 'repeated'|'mixed'
+  seed?: string
+  study_status?: 'all' | 'unseen' | 'answered' | 'wrong' | 'ever_wrong'
   limit?: number
   offset?: number
 }
@@ -576,6 +582,10 @@ export interface MockQuestion {
 }
 
 export interface MockSession {
+  learning_test_id?:string|null
+  learning_test_version?:number|null
+  learning_test_title?:string|null
+  paper_mode?: 'practice' | 'full'
   excluded_presentations?:number
   id: string
   collection_id: string
@@ -594,6 +604,7 @@ export interface MockSession {
 }
 
 export interface MockReviewRow {
+  topic_label?: string | null
   figure_image_url?: string | null
   direction?: string | null
   question_markup?: string | null
@@ -609,6 +620,9 @@ export interface MockReviewRow {
 }
 
 export interface MockResult {
+  learning_test_id?:string|null
+  learning_test_version?:number|null
+  learning_test_title?:string|null
   id: string
   collection_id?:string|null
   answer_mode: 'official' | 'derived-practice'
@@ -625,6 +639,10 @@ export interface MockResult {
 }
 
 export interface MockStart {
+  learning_test_id?:string|null
+  learning_test_version?:number|null
+  learning_test_title?:string|null
+  paper_mode?: 'practice' | 'full'
   collection_id: string
   answer_mode?: 'official' | 'derived-practice'
   section_path?: string
@@ -646,6 +664,9 @@ export const submitMock = (id: string, answers: { question_id: string; chosen_in
   req<MockResult>(`/mocks/${id}/submit`, { method: 'POST', body: JSON.stringify({ answers }) })
 
 export interface MockSummary {
+  learning_test_id?:string|null
+  learning_test_version?:number|null
+  learning_test_title?:string|null
   id: string
   collection_id: string
   collection_title: string
@@ -705,3 +726,31 @@ export const revealAnswer = (id:string,paperId?:string|null) =>
 export interface PracticeState {question_id:string;paper_id:string|null;viewed:boolean;answer:ViewedAnswer|null;retry_at:string|null;retry_after_seconds:number;restricted:boolean;message?:string}
 export const loadPracticeStates=(items:{question_id:string;paper_id?:string|null}[])=>req<{items:PracticeState[]}>('/questions/practice-state',{method:'POST',body:JSON.stringify({items})})
 export const getNextQuestion=(qid:string,paperId?:string|null)=>req<{question_id:string|null;paper_id:string}>(`/questions/${qid}/next${paperId?'?paper_id='+encodeURIComponent(paperId):''}`)
+
+export interface StudySetFilters {
+  order?: 'repeated'|'mixed'; seed?: string;
+  subject_id?: string | null; topic_id?: string | null; subtopic_id?: string | null;
+  paper_id?: string | null; section_path?: string | null; q?: string | null;
+  study_status?: 'all'|'unseen'|'answered'|'wrong'|'ever_wrong'; pool?: 'practice'|'scorable';
+  answer_status?: 'official'|'verified'|'needs-review'|null; offset?: number;
+  review_session_id?: string;
+}
+export interface StudySetSummary { correct:number;wrong:number;viewed:number;skipped:number;unofficial:number;total:number }
+export interface StudySetPreview {
+  id:string;requested_size:10|20;total:number;position:number;version:number;
+  filters:StudySetFilters;created_at:string;updated_at:string;finished_at:string|null;summary:StudySetSummary|null;
+}
+export interface StudySetState extends StudySetPreview {
+  viewed_ids:string[];results:Record<string,{result:AnswerResult;chosen_index:number|null;updated_fields?:string[]}>;
+  summary:StudySetSummary;
+}
+export interface StudySet extends StudySetState { question_ids:string[];items:Question[] }
+export const listStudySets=()=>req<{items:StudySetPreview[]}>('/study-sessions')
+export const getStudySet=(id:string)=>req<StudySet>('/study-sessions/'+encodeURIComponent(id))
+export const startStudySet=(request_key:string,size:10|20,filters:StudySetFilters,review_session_id?:string)=>req<StudySet>('/study-sessions',{method:'POST',body:JSON.stringify({request_key,size,filters,review_session_id})})
+export const moveStudySet=(id:string,version:number,position:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/position',{method:'POST',body:JSON.stringify({version,position})})
+export const checkStudySet=(id:string,version:number,question_id:string,chosen_index:number,presentation_hash?:string|null)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/answer',{method:'POST',body:JSON.stringify({version,question_id,chosen_index,presentation_hash})})
+export const viewStudySet=(id:string,question_id:string)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/viewed',{method:'POST',body:JSON.stringify({question_id})})
+export const finishStudySet=(id:string,version:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/finish',{method:'POST',body:JSON.stringify({version})})
+
+export const getPaperReadiness=(collection:string,paper:string)=>req<import('./bankOrganization').PaperReadiness>('/collections/'+encodeURIComponent(collection)+'/paper-readiness?paper_id='+encodeURIComponent(paper))

@@ -73,3 +73,39 @@ def test_inspector_source_formatting_and_paging(client,actor,workbench):
     assert body['snapshot']['record']['answerIndex'] is None
     body=client.get('/api/admin/bank/questions/'+ids['missing']+'/inspect',params={'appearance_offset':50}).json()
     assert body['appearances']==[] and body['appearance_total']==1
+
+
+def test_review_tasks_are_disjoint_scoped_and_follow_latest_kind(client,actor,workbench,database):
+    ids,paper,_=workbench;conn=database[1]
+    def work(qid,kind,state,days=0):
+        cid='queue-'+uuid4().hex
+        conn.execute("""INSERT INTO bank_contributions(id,author_id,canonical_id,kind,subject_id,title,state,idempotency_key,request_hash,updated_at)
+          VALUES(%s,'owner',%s,%s,'english','Synthetic queue work',%s,%s,'test',now()-(%s*interval '1 day'))""",(cid,qid,kind,state,cid,days))
+        return cid
+    failed=work(ids['unverified'],'answer','publication_failed')
+    work(ids['keyed'],'answer','publication_failed',1)
+    work(ids['keyed'],'answer','published') # old failure cannot hide newer completion
+    pending=work(ids['missing'],'explanation','publishing')
+    actor('owner');params={'paper_id':paper,'issue':'all'}
+    all_rows=client.get('/api/admin/bank/questions',params=params).json()
+    assert all_rows['total']==8
+    assert all_rows['task_counts']=={'all':8,'failed':1,'publishing':1,'source':2,'answer':2,'other':2}
+    lanes={}
+    for lane in ('answer','source','failed','publishing'):
+        response=client.get('/api/admin/bank/questions',params={**params,'review_task':lane})
+        assert response.status_code==200,response.text
+        body=response.json();assert body['total']==body['task_counts'][lane]
+        lanes[lane]={r['id'] for r in body['items']}
+        assert all(r['review_reason'] for r in body['items'])
+    assert lanes['failed']=={ids['unverified']}
+    assert lanes['publishing']=={ids['missing']}
+    assert lanes['source']=={ids['held'],ids['defect']}
+    assert not any(lanes[a]&lanes[b] for a in lanes for b in lanes if a!=b)
+    row=client.get('/api/admin/bank/questions',params={**params,'review_task':'failed'}).json()['items'][0]
+    assert row['work_id']==failed and row['work_kind']=='answer'
+    actor('reviewer1')
+    body=client.get('/api/admin/bank/questions',params=params).json()
+    assert body['total']==7 and body['task_counts']['answer']==1
+    assert ids['restricted'] not in {r['id'] for r in body['items']}
+    assert client.get('/api/admin/bank/questions',params={'review_task':'pretend-done'}).status_code==422
+    actor('outsider');assert client.get('/api/admin/bank/questions',params={'review_task':'failed'}).status_code==403

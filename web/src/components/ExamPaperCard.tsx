@@ -1,10 +1,13 @@
+import {withoutBooklet} from '../lib/sourceBooklets'
+import {paperIdentity} from '../lib/paperIdentity'
 import { Link } from 'react-router-dom'
 import type { CollectionPaper } from '../lib/api'
 
 /** Shared across exam modules. Printed identity and test eligibility remain separate. */
-export default function ExamPaperCard({ paper: p, examId }: { paper: CollectionPaper; examId: string }) {
-  const filename = p.id.split('/').pop()?.replace(/\.pdf$/i, '').replace(/[.\s]+$/, '').replace(/_/g, ' ')
-  const title = filename || p.paper_label || p.title
+export default function ExamPaperCard({ paper: p, examId, hideSeriesInTitle=false }: { paper: CollectionPaper; examId: string; hideSeriesInTitle?: boolean }) {
+  const {title:sourceTitle,exam,filename}=paperIdentity(p)
+  const title = hideSeriesInTitle ? withoutBooklet(sourceTitle) : sourceTitle
+  const compactSource = examId==='udc'||examId==='combined-prelims'
   const count = (n: number) => n.toLocaleString('en-IN')
   const base = `/exams/${examId}`
   const paper = encodeURIComponent(p.id)
@@ -17,9 +20,10 @@ export default function ExamPaperCard({ paper: p, examId }: { paper: CollectionP
       <div className="min-w-0 flex-1">
         <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
           <span className="rounded-md border border-hairline bg-canvas px-2 py-1 font-mono text-[11px] font-semibold tracking-[0.04em] text-secondary">{p.year || 'Past paper'}</span>
-          {p.source_pdf_url && <a href={p.source_pdf_url} target="_blank" rel="noreferrer" className="exam-paper-source inline-flex min-h-11 items-center gap-1 text-[12px] font-semibold text-link">Source PDF <span aria-hidden="true">↗</span></a>}
+          {!compactSource && p.source_pdf_url && <a href={p.source_pdf_url} target="_blank" rel="noreferrer" className="exam-paper-source inline-flex min-h-11 items-center gap-1 text-[12px] font-semibold text-link">Source PDF <span aria-hidden="true">↗</span></a>}
         </div>
         <h3 className="exam-paper-title break-words font-display text-[21px] font-medium leading-snug">{title}</h3>
+        <p className="mt-2 break-words text-[13px] leading-relaxed text-secondary">{exam}</p>
         <p className="mt-1 text-[13px] text-secondary">{count(p.questions)} questions{p.descriptive > 0 ? ` · ${count(p.descriptive)} written` : ''}{!p.questions ? ' · PDF only' : ''}</p>
         {examId==='combined-prelims'&&p.year!==null&&p.year>=2023&&p.questions>0&&p.questions<100&&<p className="mt-2 text-[12px] text-[#80520a]">Fewer than 100 questions available · check source coverage</p>}
         {examId==='combined-prelims'&&p.instructions?.startsWith('Recovered Chase')&&<p className="mt-2 text-[12px] text-[#80520a]">Recovered copy · transcription and answer review pending</p>}
@@ -33,6 +37,7 @@ export default function ExamPaperCard({ paper: p, examId }: { paper: CollectionP
           </div>
         </div>
       </div>
+      {p.questions===0&&<p className="mt-3 text-[12px] text-secondary">{p.source_pdf_url?'Original PDF available · questions not yet extracted.':'Questions not yet extracted; no original PDF is linked.'}</p>}
       <div className="exam-paper-actions mt-auto flex shrink-0 flex-wrap items-center gap-2">
         {p.questions > 0 && <Link to={`${base}/paper?paper=${paper}`} className={`${button} border-ink bg-ink text-paper`}>Browse paper</Link>}
         {p.allow_practice && p.answerable_count > 0 && <Link to={`${base}?view=practice&paper=${paper}#exam-question-browser`} className={`${button} border-hairline`}>Practise · {count(p.answerable_count)}</Link>}
@@ -41,7 +46,10 @@ export default function ExamPaperCard({ paper: p, examId }: { paper: CollectionP
     <details className="group mt-3 border-t border-hairline pt-1">
       <summary className="flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 text-[12px] font-semibold text-secondary"><span>Paper details{keyTest || reviewedTest ? ' & tests' : ''}</span><span aria-hidden="true" className="exam-paper-expand transition-transform group-open:rotate-45">＋</span></summary>
       <div className="space-y-3 pb-1 pt-1 text-[13px] leading-relaxed text-secondary">
+        {hideSeriesInTitle && <p className="break-words">Selected source: {sourceTitle}</p>}
         <p className="break-words">{p.paper_label || p.title}</p>
+        <p className="break-words text-[12px]">Source file: {filename}</p>
+        {compactSource && p.source_pdf_url && <a href={p.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-[12px] font-semibold text-link">Source PDF ↗</a>}
         {!!p.missing_explanations && <p>{count(p.missing_explanations)} {p.missing_explanations === 1 ? 'question has' : 'questions have'} no explanation yet.</p>}
         {!!p.blocked_count && <p>Questions with source/key issues are excluded from scoring.</p>}
         {(keyTest || reviewedTest) && <div className="rounded-[8px] border border-hairline bg-canvas p-3">

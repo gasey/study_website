@@ -2,13 +2,15 @@
 """Publish an explicit, bounded set of owner-adjudicated source/answer repairs in one bank sync.
 
 Each existing immutable manifest, source baseline and receipt remains independent.
-Only distinct existing MCQs with already-exported owner decisions qualify.
+Only distinct existing questions with already-exported owner decisions qualify.
+Written questions accept source locators/context only; answer paths stay MCQ-only.
 The prepared batch journal permits recovery after file replacement/sync/ack failure.
 No decisions, permissions, peer votes or reward credits are created here.
 """
 import argparse,hashlib,importlib.util,json,os,subprocess
 from pathlib import Path
 from review_bank_store import atomic,bank_lock,digest,record,sha,transform
+from editorial_protection import check_candidate,prepare_publication,finish_publication
 SPEC=importlib.util.spec_from_file_location('bank_worker',Path(__file__).with_name('bank-review-worker.py'))
 w=importlib.util.module_from_spec(SPEC);SPEC.loader.exec_module(w)
 
@@ -102,7 +104,11 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         else:raise ValueError('Only bounded owner source/answer repairs qualify')
         if target in targets or target not in by_id:raise ValueError('Targets must be distinct existing appearances')
         targets.add(target);original=by_id[target]
-        if original.get('type')!='mcq':raise ValueError('Only existing MCQs qualify')
+        if original.get('type')!='mcq':
+            if original.get('type')!='descriptive' or p['kind'] not in ('transcription','source_reference'):
+                raise ValueError('Written questions accept source locators and context only')
+            if set(p['patch'])-{'question','direction','questionMarkup','passage','page','qnum'}:
+                raise ValueError('Written source repairs cannot change options, answers or provenance')
         for doc in m['documents']:
             path=(root/doc['source_file']).resolve()
             if not path.is_relative_to(root)or not path.is_file()or sha(path)!=doc['sha256']:raise ValueError('Registered source changed')
@@ -137,13 +143,26 @@ def check_live_explanation_targets(pubs):
         raise ValueError('An explanation target became held, disputed or source-defective after review')
 
 
+def require_recoverable_failures(pubs,journal,current):
+    if any(p['state']=='failed' for p in pubs) and (not journal or current!=journal['output_sha256']):
+        raise ValueError('Failed publications require the exact already-written prepared batch output')
+
+
+def recover_failed_ack_sql(pub,batch_id):
+    # Caller must first verify every immutable receipt against synced live rows.
+    pid=w.literal(pub['id']);cid=w.literal(pub['contribution_id'])
+    detail=w.literal(json.dumps({'batch_id':batch_id,'publication_id':pub['id'],'reason':'Exact prepared output, immutable manifest and live readback verified after acknowledgment failure.'}))
+    return "BEGIN; UPDATE bank_publications SET state='exported',error=NULL WHERE id="+pid+" AND state='failed'; UPDATE bank_contributions SET state='publishing' WHERE id="+cid+" AND state='publication_failed'; INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES("+cid+",'operator:owner-source-maintenance','prepared_batch_ack_reconciled',"+detail+"::jsonb); COMMIT;"
+
+
 def publish(ids,dry_run=False):
     if len(ids)!=len(set(ids))or not 1<=len(ids)<=100:raise ValueError('Choose 1–100 unique explicit publication IDs')
     quoted=','.join(w.literal(x)for x in ids)
     with bank_lock(w.BANK):
+        check_candidate(w.BANK)
         pubs=w.remote('SELECT * FROM bank_publications WHERE id IN('+quoted+')ORDER BY id',True)
         if any(digest(p['manifest'])!=p['manifest_hash']for p in pubs):raise ValueError('Immutable manifest changed')
-        if len(pubs)!=len(ids)or any(p['state']not in('exported','applied')for p in pubs):raise ValueError('Every requested publication must exist and be exported/applied')
+        if len(pubs)!=len(ids)or any(p['state']not in('exported','applied','failed')for p in pubs):raise ValueError('Every requested publication must exist and be exported/applied, or have a recoverable prepared receipt')
         check_live_explanation_targets(pubs)
         other=w.remote("SELECT id FROM bank_publications WHERE state='exported'AND id NOT IN("+quoted+')LIMIT 1',True)
         if other:raise ValueError('An unrelated publication is waiting; reconcile it first')
@@ -165,6 +184,7 @@ def publish(ids,dry_run=False):
         if journal:
             if {r['publication_id']for r in journal['receipts']}!=set(ids)or any(r['manifest_hash']!=next(p['manifest_hash']for p in pubs if p['id']==r['publication_id'])for r in journal['receipts']):raise ValueError('Prepared batch changed')
             if current not in(journal['input_sha256'],journal['output_sha256']):raise ValueError('Bank changed after batch preparation; reconcile explicitly')
+        require_recoverable_failures(pubs,journal,current)
         if not journal or current==journal['input_sha256']:
             raw=w.BANK.read_bytes();bank=json.loads(raw)
             output,prepared=prepare(bank,pubs,current,w.BANK_ROOT.resolve(),final_keys)
@@ -179,9 +199,11 @@ def publish(ids,dry_run=False):
             receipt_dir=w.BANK.parent/'review-receipts';receipt_dir.mkdir(exist_ok=True)
             for receipt in journal['receipts']:atomic(receipt_dir/(receipt['publication_id']+'.json'),receipt)
             if sha(w.BANK)!=current:raise ValueError('Concurrent bank writer detected')
+            prepare_publication(w.BANK,bank,output,[p['manifest'] for p in pubs])
             atomic(w.BANK,output)
         elif dry_run:print(json.dumps({'dry_run':True,'prepared':True,**journal},indent=2));return
         if sha(w.BANK)!=journal['output_sha256']:raise ValueError('Batch output hash mismatch')
+        finish_publication(w.BANK)
         live=w.remote('SELECT bank_checksum FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1',True)
         if not live or live[0]['bank_checksum']!=journal['output_sha256']:
             subprocess.run([str(w.ROOT/'scripts/sync-bank.sh')],cwd=w.ROOT,env={**os.environ,'ISM_BANK_LOCK_HELD':'1'},check=True,timeout=180)
@@ -190,6 +212,11 @@ def publish(ids,dry_run=False):
         # Verify every appearance, canonical answer and related classification
         # against its immutable receipt before acknowledging any publication.
         w.verify_live_batch(journal['receipts'],{p['id']:p['manifest']for p in pubs})
+        # Only after exact output hash, current authority, sync and live content
+        # verification may an ack failure return to the ordinary ack path.
+        for pub in pubs:
+            if pub['state']=='failed':
+                w.remote(recover_failed_ack_sql(pub,batch_id))
         statements=[]
         for receipt in journal['receipts']:
             pub=next(p for p in pubs if p['id']==receipt['publication_id'])

@@ -136,10 +136,21 @@ async def queue_source_batch(cur,owner,items,authorization):
             if item['proposal'].get('kind')not in('transcription','source_reference','defect','explanation'):raise HTTPException(422,'This batch accepts source repairs and explanation-only maintenance')
             if item['proposal'].get('kind')=='explanation':
                 proposal=Proposal.model_validate(item['proposal']);_explanation_patch(proposal)
-                expected=item.get('expected_source')
+                await cur.execute('SELECT id FROM canonical_questions WHERE id=%s FOR UPDATE',(proposal.canonical_id,))
+                await cur.execute('SELECT id FROM appearances WHERE id=%s FOR UPDATE',(proposal.appearance_id,))
                 current=await review.snapshot(cur,proposal.canonical_id,proposal.appearance_id)
+                if item.get('expected_snapshot_hash') and digest(current)!=item['expected_snapshot_hash']:
+                    raise HTTPException(409,'The complete reviewed source changed before explanation publication')
+                if item.get('expected_snapshot_hash'):
+                    await cur.execute("SELECT 1 FROM canonical_questions q WHERE q.id=%s AND (q.answer_source IN ('official','key') OR EXISTS(SELECT 1 FROM v_reviewed_answer_publications rp WHERE rp.canonical_id=q.id))",(proposal.canonical_id,))
+                    if not await cur.fetchone():raise HTTPException(409,'Answer provenance no longer supports explanation backfill')
+                expected=item.get('expected_source')
                 if not isinstance(expected,dict) or expected!=current['record']:
                     raise HTTPException(409,'Explanation maintenance requires the exact current source snapshot')
+                await cur.execute('SELECT explanation FROM canonical_questions WHERE id=%s',(proposal.canonical_id,))
+                canonical=await cur.fetchone()
+                if item.get('expected_snapshot_hash') and ((current['record'].get('explanation')or'').strip() or (canonical['explanation']or'').strip()):
+                    raise HTTPException(409,'Never overwrite an existing explanation in the portable backfill')
                 await _validate_explanation_target(cur,current)
             if item['proposal'].get('kind')=='defect':
                 current=await review.snapshot(cur,item['proposal']['canonical_id'],item['proposal']['appearance_id'])

@@ -1,5 +1,9 @@
 # Subject-first Library and reviewed topic links
 
+Current tagging decisions follow [Question tagging rules](QUESTION-TAGGING-RULES.md).
+Publication follows the [Oracle runbook](ORACLE-PAPER-WORKBENCH-RUNBOOK.md).
+The measurements below describe this feature's original release, not today's audit.
+
 The Library opens on Subjects. Geography, History, Polity, Economy, Science, Environment, Mizoram GK and Current Affairs are direct shelves. Modules & tools and Saved notes sit beside them. All General Studies and the complete broad-subject catalog remain accessible. Shelves are database-defined queries over approved classifications, not copied questions.
 
 Each shelf has Practise, Browse, Notes and Discussions. Practise uses answerable questions; the strict verified-key pool is optional. Browse includes descriptive and unkeyed items. Search, topic/subtopic, public exam, original year, paper/community origin, provenance and account progress filters use URL state with ten-question pagination. Clear filters preserves the selected view. Progress without an exam filter includes attempts from across the account. Source details remain on question cards. Current Affairs carries an original-year warning. Regions are not inferred from stems; geography-specific regions need reviewed taxonomy expansion later.
@@ -19,7 +23,7 @@ flowchart TD
   paths --> games[Game subject selection]
   canonical --> attempts[Account attempts / progress]
   canonical --> posts[Question discussions and replies]
-  proposals[Independent review proposals] --> worker[Local bank publication worker]
+  proposals[Attributed reviewed proposals] --> worker[Guarded Oracle publication worker]
   worker --> bank[Bank JSON: source of truth]
   bank --> primary
   bank --> related
@@ -27,7 +31,7 @@ flowchart TD
 
 0044 adds bank-owned `question_topic_links`, approved-only `v_question_paths` and versioned deployment seed `library_shelves`. Geography maps to general-studies/geography; History combines Indian/World History; Economy includes both General Studies economy and Economics. These are discovery shelves and do not promote broad tags to more precise classifications. A question with several matching links is counted/rendered once. Existing primary classification, paper context and question ID remain stable.
 
-`relatedClassifications` is a separate explicit list in bank JSON. Parked alternative model claims in `classifications` are NOT imported as related topics. Each path has a subject and optional topic/subtopic, publication provenance and review status. Contributions can add/remove up to twelve related paths through the existing taxonomy proposal type. Valid active parent/level paths, distinct paths, subject scope on all affected reviewer/publisher permissions, immutable revisions, baseline checks, independent quorum and normal worker receipts apply. The server never publishes question tags directly. Publication writes the local bank, exports primary/secondary CSV separately, syncs transactionally and verifies live paths against the receipt. Empty-path removal has an explicit reversible [] before-value. Old immutable revisions without secondary paths keep their baseline shape.
+`relatedClassifications` is a separate explicit list in bank JSON. Parked alternative model claims in `classifications` are NOT imported as related topics. Each path has a subject and optional topic/subtopic, publication provenance and review status. Contributions can add/remove up to twelve related paths through the existing taxonomy proposal type. Valid active parent/level paths, distinct paths, subject scope on all affected reviewer/publisher permissions, immutable revisions, baseline checks and normal worker receipts apply. Owner decisions and independent-review decisions retain their actual attribution under the current workflow; a model must not fabricate either. The server never publishes question tags directly. Publication writes the canonical Oracle bank, exports primary/secondary CSV separately, syncs transactionally and verifies live paths against the receipt. Empty-path removal has an explicit reversible [] before-value. Old immutable revisions without secondary paths keep their baseline shape.
 
 The classification-only and full sync paths replace secondary links from explicit bank data in the same transaction. Secondary path collisions across multiple appearances of a canonical question resolve deterministically by primary appearance then appearance ID. A failed import rolls back with primary classifications. No synthetic secondary links or reclassifications are seeded in production by this release.
 

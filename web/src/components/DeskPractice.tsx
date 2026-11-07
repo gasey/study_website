@@ -92,14 +92,14 @@ export default function DeskPractice({
         <div className="desk-v3-label !text-[#2D5BD0]">
           {shared
             ? "Shared desk set · practice"
-            : "Your desk set · scorable questions"}
+            : "Your desk set · practice questions"}
         </div>
         <h3 className="mt-2 font-display text-[24px]">
           Five questions, one focused step.
         </h3>
         <p className="mt-2 text-[13px] text-secondary">
           {shared
-            ? "Work through the questions your members shared. Answers stay in your own account; check each question’s provenance."
+            ? "Work through the questions your members shared. Your answers and progress stay in your own account."
             : "Questions come from the shared bank engine. Answers are recorded in your account; use the focus subject in your plan to narrow this set."}
         </p>
       </div>
@@ -120,7 +120,7 @@ export default function DeskPractice({
           <p className="desk-v3-empty">
             {shared
               ? "No questions have been shared for this desk set yet. Use Share from the bank."
-              : "No scorable questions for this subject yet. Choose another focus subject in your plan."}
+              : "No questions with usable answers are available for this subject yet. Choose another subject."}
           </p>
         )}
       </div>

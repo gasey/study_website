@@ -1,7 +1,9 @@
+import QuestionReport from './QuestionReport'
+import {useQuestionStaff} from '../lib/useQuestionStaff'
 import {scopeLink} from '../lib/examScope'
 import {UserAvatar} from './AvatarArt'
 import type {AvatarLook} from '../lib/avatar'
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import { deviceId } from "../lib/device";
 import { reviewRequest } from "../lib/review";
@@ -87,13 +89,16 @@ export function QuestionActions({
   context = {},
   answeredSignal,
   initialOpen = false,
+  sourceDetails,
 }: {
   qid: string;
   context?: DiscussionContext;
   answeredSignal?: unknown;
   initialOpen?: boolean;
   questionType?: "mcq" | "descriptive";
+  sourceDetails?: ReactNode;
 }) {
+  const staff = useQuestionStaff();
   const [open, setOpen] = useState(initialOpen);
   const [copied, setCopied] = useState(false);
   const [manual, setManual] = useState(false);
@@ -108,25 +113,23 @@ export function QuestionActions({
     }
   }
   return (
-    <div className="mt-4">
-      <div className="flex flex-wrap gap-2">
+    <details key={qid+String(context.paper_id)} open={initialOpen||undefined} className="mt-0 text-[12px] text-secondary open:basis-full">
+      <summary className="min-h-11 cursor-pointer py-3 font-semibold">More</summary>
+      <div className="flex flex-wrap gap-x-3 gap-y-1">
+        {sourceDetails&&<details className="text-[12px] text-secondary open:basis-full"><summary className="min-h-11 cursor-pointer py-3">Source</summary>{sourceDetails}</details>}
         <button
           type="button"
-          className={BTN}
+          className="min-h-11 py-2 text-[12px] text-secondary"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
-          {open ? "Hide discussion" : "Discuss / Ask a doubt"}
+          {open ? "Hide discussion" : "Discussion"}
         </button>
-        <button type="button" className={BTN} onClick={() => void share()}>
-          {copied ? "Link copied" : "Share question"}
+        <button type="button" className="min-h-11 py-2 text-[12px] text-secondary" onClick={() => void share()}>
+          {copied ? "Link copied" : "Share"}
         </button>
-        <Link
-          className={BTN + " text-link"}
-          to={"/contribute/new?" + new URLSearchParams({ question: qid })}
-        >
-          Suggest correction
-        </Link>
+      <QuestionReport key={qid+String(context.paper_id)} qid={qid} paperId={context.paper_id}/>
+        {staff && <Link className="inline-flex min-h-11 items-center text-[12px] text-link underline" to={'/admin/bank?'+new URLSearchParams({tab:'questions',question:qid,issue:'all'})}>Review / edit</Link>}
       </div>
       {open && <p className="mt-2 text-[12px] text-secondary">This conversation stays with the question across papers and practice. <Link to="/feed?tab=questions" className="font-semibold text-link underline">Explore Questions & Doubts →</Link></p>}
       {manual && (
@@ -148,7 +151,7 @@ export function QuestionActions({
           answeredSignal={answeredSignal}
         />
       )}
-    </div>
+    </details>
   );
 }
 
@@ -336,6 +339,7 @@ function Topic({
   parentAuthor?: boolean;
   focusPost?: number;
 }) {
+  const staff = useQuestionStaff();
   const [expanded, setExpanded] = useState(false);
   const [page, setPage] = useState<Page | null>(null);
   const [offset, setOffset] = useState(0);
@@ -479,7 +483,7 @@ function Topic({
             {post.accepted ? "Unmark accepted" : "Accept reply"}
           </button>
         )}
-        {registered && !post.needs_approval && (
+        {staff && registered && !post.needs_approval && (
           <Link
             className={BTN + " text-link"}
             to={
@@ -557,7 +561,7 @@ function Topic({
             />
           </label>
           <p className="text-[12px] text-secondary">
-            For an incorrect answer or typo, use Suggest correction.
+            For an incorrect answer or typo, use Report an issue.
           </p>
           <button disabled={busy} className={BTN}>
             Send conduct report

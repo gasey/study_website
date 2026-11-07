@@ -76,6 +76,7 @@ def qrow(q):
         q.get("passageId") if q.get("passageId") in pg else None,
         q.get("essayKind"),
         json.dumps({k:q[k] for k in ("sourceDefect","disputeNote","reviewPublicationId","origin") if k in q}, ensure_ascii=False),
+        q.get("series"),
     ]
 
 w("questions", ["id","paper_id","type","qnum","qnum_seq","page","question","direction",
@@ -83,7 +84,7 @@ w("questions", ["id","paper_id","type","qnum","qnum_seq","page","question","dire
                 "answer_index","answer_source","answer_key_ref","subject","topic",
                 "topic_label","difficulty","explanation","marks","has_diagram",
                 "used_vision","figure_group_id","figure_image","passage","passage_id",
-                "essay_kind","review_metadata"],
+                "essay_kind","review_metadata","series"],
   (qrow(q) for q in d.get("questions", [])))
 
 def classification_rows():

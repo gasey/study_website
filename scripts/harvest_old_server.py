@@ -29,6 +29,7 @@ import subprocess
 import sys
 from datetime import date
 from pathlib import Path
+from editorial_protection import write_guarded
 
 ROOT = Path(__file__).resolve().parent.parent
 BANK = ROOT.parent / "mpsc-question-bankv2" / "bank" / "mpsc_bank_v2.json"
@@ -173,7 +174,7 @@ def main() -> int:
             })
         print(f"  added {len(new_qs):,} questions")
 
-    BANK.write_text(json.dumps(bank, ensure_ascii=False))
+    write_guarded(BANK, bank)
     print(f"\nwrote {BANK}")
     print("next: ./scripts/sync-bank.sh --dry-run")
     return 0

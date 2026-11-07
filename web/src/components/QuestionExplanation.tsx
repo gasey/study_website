@@ -1,15 +1,18 @@
-import {Link} from 'react-router-dom'
+import {useEffect,useId,useState} from 'react'
 import type {AnswerSource} from '../lib/api'
 import {explanationPresentation,type AnswerContext} from '../lib/answerStatus'
 import {SourceQuestionText} from './SourceQuestionText'
 
-/** Render only after an answer/reveal, alongside the answer's own provenance. */
-export default function QuestionExplanation({explanation,source,context,questionId}:{explanation?:string|null;source:AnswerSource;context?:AnswerContext;questionId?:string}) {
+/** Only mounted after the existing answer/reveal gate permits access. */
+export default function QuestionExplanation({explanation,source,context}:{explanation?:string|null;source:AnswerSource;context?:AnswerContext;questionId?:string;inline?:boolean}) {
  const info=explanationPresentation(explanation,source,context)
- return <section aria-label="Explanation" data-explanation-status={info.status} className="mt-3 border-t border-hairline pt-3 text-[13px] leading-relaxed text-secondary">
-   <h4 className="font-semibold text-ink">{info.label}</h4>
-   <p className="mt-1 text-[12px]">{info.detail}</p>
-   {explanation?.trim()&&<div className="mt-2 whitespace-pre-line text-[14px]"><SourceQuestionText text={explanation}/></div>}
-   {questionId&&<Link to={'/contribute/new?'+new URLSearchParams({question:questionId,kind:'explanation'})} className="mt-2 inline-flex min-h-11 items-center font-semibold text-link underline">{info.status==='missing'?'Add a supported explanation':'Improve this explanation'} →</Link>}
+ const [expanded,setExpanded]=useState(false)
+ const bodyId=useId()
+ useEffect(()=>setExpanded(false),[explanation])
+ const present=!!explanation?.trim(),long=(explanation?.trim().length??0)>600
+ return <section aria-label="Explanation" data-explanation-status={info.status} className={present?'answer-explanation':'answer-explanation-missing'}>
+   <h4 className="answer-explanation-title">Explanation{info.status==='needs-review'?' · awaiting review':''}</h4>
+   {present?<div id={bodyId} className={'answer-explanation-body'+(long&&!expanded?' is-condensed':'')}><SourceQuestionText text={explanation!}/></div>:<p className="answer-explanation-empty">Explanation not available yet.</p>}
+   {long&&<button type="button" aria-expanded={expanded} aria-controls={bodyId} onClick={()=>setExpanded(value=>!value)} className="answer-explanation-more">{expanded?'Show less':'Read more'}</button>}
  </section>
 }

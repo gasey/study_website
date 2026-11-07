@@ -171,3 +171,37 @@ def test_saved_revision_waits_until_reveal_window_expires(client,actor,database)
     assert client.get('/api/learning/revision',headers={**h,'X-Learning-User':user}).json()['available']==0
     conn.execute("UPDATE answer_reveals SET revealed_at=now()-interval '31 minutes' WHERE user_id=%s AND canonical_id=%s",(user,q))
     assert client.get('/api/learning/revision',headers={**h,'X-Learning-User':user}).json()['available']==1
+
+
+def test_inline_comparison_restores_without_renewing_and_requires_prior_exposure(client,actor,database):
+    q,p,user,h,conn=setup(database,actor)
+    path='/api/questions/'+q
+    params={'paper_id':p,'restore':'true'}
+    assert client.get(path+'/answer-comparison',params=params).status_code==409
+    assert counts(conn,user)==(0,0)
+    assert client.post(path+'/reveal',headers=h).status_code==200
+    conn.execute("UPDATE answer_reveals SET revealed_at=now()-interval '31 minutes' WHERE user_id=%s AND canonical_id=%s",(user,q))
+    stamp=conn.execute('SELECT revealed_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,q)).fetchone()[0]
+    r=client.get(path+'/answer-comparison',params=params)
+    assert r.status_code==200,r.text
+    assert r.json()['official']['answer_text']=='B'
+    assert r.headers['cache-control']=='private, no-store'
+    assert conn.execute('SELECT revealed_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,q)).fetchone()[0]==stamp
+    assert client.get(path+'/answer-comparison',params={**params,'paper_id':'wrong'}).status_code==404
+    assert client.post(path+'/answer',headers=h,json={'chosen_index':1}).status_code==200
+    before=counts(conn,user)
+    assert client.get(path+'/answer-comparison',params=params).status_code==200
+    assert counts(conn,user)==before
+    mid=uuid4().hex
+    conn.execute("INSERT INTO mock_sessions(id,user_id,collection_id,question_ids,duration_seconds)VALUES(%s,%s,'ldc',%s,60)",(mid,user,[q]))
+    assert client.get(path+'/answer-comparison',params=params).status_code==409
+    learner(database,actor)
+    assert client.get(path+'/answer-comparison',params=params).status_code==409
+
+
+def test_inline_comparison_after_attempt_does_not_create_a_reveal(client,actor,database):
+    q,p,user,h,conn=setup(database,actor)
+    path='/api/questions/'+q
+    assert client.post(path+'/answer',headers=h,json={'chosen_index':1}).status_code==200
+    assert client.get(path+'/answer-comparison',params={'restore':'true','paper_id':p}).status_code==200
+    assert not conn.execute('SELECT 1 FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,q)).fetchone()

@@ -15,6 +15,7 @@ from ..deps import current_user
 from ..services.review_identity import Actor, identity, grants, require_role
 from ..services.review_policy import Proposal, digest, validate_target, quorum
 from ..services import bank_review as service
+from ..services.editorial_access import assigned, source_version, require_version
 
 router=APIRouter(tags=['bank workspace'])
 Account=Annotated[Actor,Depends(identity)]
@@ -30,6 +31,7 @@ class Transition(Strict):
     reason: str = Field(default='',max_length=4000)
 class Revise(Transition): proposal: Proposal
 class Decision(Transition):
+    publish: bool = False
     decision: Literal['approve','reject','request_changes']
     reason: str = Field(min_length=20,max_length=4000)
 class Grant(Strict):
@@ -37,6 +39,51 @@ class Grant(Strict):
     role: Literal['owner','publisher','senior','reviewer']
     subject_id: str | None = Field(default=None,max_length=100)
     reason: str = Field(min_length=10,max_length=4000)
+
+class TagReport(Strict):
+    appearance_id:str=Field(min_length=1,max_length=200)
+    note:str=Field(min_length=20,max_length=4000)
+
+class QuestionReport(Strict):
+    kind:Literal['wrong_key','typo_ocr','outdated','ambiguous']
+    note:str=Field(min_length=20,max_length=4000)
+    paper_id:str|None=Field(default=None,min_length=1,max_length=500)
+
+@router.post('/api/review/questions/{qid}/report')
+async def report_question(qid:str,body:QuestionReport,actor:Account):
+    """Private learner feedback; never changes an answer or its scoring status."""
+    note=body.note.strip()
+    if len(note)<20:raise HTTPException(422,'Describe the issue in at least 20 characters')
+    async with cursor() as cur:
+        await cur.execute('''SELECT 1 FROM canonical_questions c
+          WHERE c.id=%s AND c.status IN ('live','held')
+          AND (%s::text IS NULL OR EXISTS (SELECT 1 FROM appearances a
+            WHERE a.canonical_id=c.id AND a.paper_id=%s))''',(qid,body.paper_id,body.paper_id))
+        if not await cur.fetchone():raise HTTPException(404,'Published question source not found')
+        await cur.execute('''INSERT INTO content_reports(canonical_id,kind,reporter_id,note,evidence_paper)
+          VALUES(%s,%s,%s,%s,%s) ON CONFLICT(canonical_id,kind,reporter_id) DO NOTHING RETURNING id,status''',
+          (qid,body.kind,actor.id,note,body.paper_id))
+        report=await cur.fetchone()
+        if not report:
+            await cur.execute('SELECT id,status FROM content_reports WHERE canonical_id=%s AND kind=%s AND reporter_id=%s',(qid,body.kind,actor.id))
+            report=await cur.fetchone()
+        return report
+
+@router.post('/api/review/questions/{qid}/tag-report')
+async def report_tags(qid:str,body:TagReport,actor:Account):
+    async with cursor() as cur:
+        await cur.execute('''SELECT 1 FROM canonical_questions c JOIN appearances a ON a.canonical_id=c.id
+          WHERE c.id=%s AND a.id=%s AND c.status IN ('live','held')''',(qid,body.appearance_id))
+        if not await cur.fetchone():raise HTTPException(404,'Published question not found')
+        if len(body.note.strip())<20:raise HTTPException(422,'Describe the tag issue in at least 20 characters')
+        await cur.execute('''INSERT INTO content_reports(canonical_id,kind,reporter_id,note)
+          VALUES(%s,'subject',%s,%s) ON CONFLICT(canonical_id,kind,reporter_id) DO NOTHING RETURNING id,status''',
+          (qid,actor.id,body.note.strip()))
+        report=await cur.fetchone()
+        if not report:
+            await cur.execute("SELECT id,status FROM content_reports WHERE canonical_id=%s AND kind='subject' AND reporter_id=%s",(qid,actor.id))
+            report=await cur.fetchone()
+        return report
 class Hold(Strict):
     reason: str=Field(min_length=10,max_length=4000)
 class AppealDecision(Strict):
@@ -45,10 +92,11 @@ class AppealDecision(Strict):
 
 @router.get('/api/review/session')
 async def session(actor:Account):
+    from ..services.mfa import staff_required
     async with cursor() as cur:
         await cur.execute('SELECT role,subject_id FROM review_grants WHERE user_id=%s AND revoked_at IS NULL',(actor.id,))
         permissions=await cur.fetchall()
-    return {'user_id':actor.id,'csrf':actor.csrf,'grants':permissions,'mfa_required':bool(permissions) and settings.mfa_enforce_staff and not actor.mfa_verified}
+    return {'user_id':actor.id,'csrf':actor.csrf,'grants':permissions,'mfa_required':bool(permissions) and staff_required(actor.id) and not actor.mfa_verified}
 
 @router.get('/api/review/taxonomy')
 async def taxonomy(actor:Account):
@@ -61,16 +109,32 @@ async def question(qid:str,actor:Account,appearance_id:str|None=None):
     async with cursor() as cur:
         await service.protect_answer(cur,actor.id,qid)
         # Authors may see source and baseline to propose a repair after answering.
+        version_token=await source_version(cur,qid,appearance_id,True)
         snap=await service.snapshot(cur,qid,appearance_id)
         await cur.execute('SELECT role FROM review_grants WHERE user_id=%s AND revoked_at IS NULL AND (subject_id IS NULL OR subject_id=%s)',(actor.id,snap['record']['classification'].get('subject_id')))
-        privileged=bool(await cur.fetchone())
+        privileged=bool(await cur.fetchone()) or await assigned(cur,actor.id,snap['record']['paperId'])
         if not privileged:
             await cur.execute('SELECT 1 FROM attempts WHERE user_id=%s AND canonical_id=%s LIMIT 1',(actor.id,qid))
             if not await cur.fetchone():
                 snap['record']['answerIndex']=None
                 snap['record']['explanation']=None
-        await cur.execute('SELECT id,title,sha256,kind,key_status FROM review_documents WHERE paper_id=%s ORDER BY kind,title',(snap['paper']['id'],))
-        snap['documents']=await cur.fetchall()
+        await cur.execute('SELECT id,title,sha256,kind,key_status FROM review_documents WHERE paper_id=%s ORDER BY kind,title FOR SHARE',(snap['paper']['id'],))
+        documents=await cur.fetchall()
+        snap['edit_hash']=digest(snap)
+        await cur.execute("SELECT subject_label,topic_label,subtopic_label FROM question_classifications WHERE question_id=%s AND review_status='approved'",(qid,))
+        labels=await cur.fetchone()
+        snap['tag_label']=' / '.join(v for v in labels.values() if v) if labels else 'No approved subject'
+        snap['canonical_id']=qid
+        snap['can_publish']=bool(set(await grants(cur,actor.id,snap['record']['classification'].get('subject_id')))&{'owner','publisher'})
+        snap['solo_owner']='owner' in await grants(cur,actor.id)
+        if snap['can_publish']:
+            await cur.execute("SELECT id,kind,note FROM content_reports WHERE canonical_id=%s AND status IN ('open','confirmed') ORDER BY id",(qid,))
+            snap['reports']=await cur.fetchall()
+        snap['documents']=documents
+        snap['baseline_token']=version_token
+        if privileged:
+            from ..services.editorial_access import inspection_fingerprints
+            snap['inspection_version']=digest((await inspection_fingerprints(cur,[snap['paper']['id']],[snap['record']['id']]))[snap['record']['id']])
         return snap
 
 @router.get('/api/contributions/summary')
@@ -97,8 +161,8 @@ async def mine(actor:Account,before:str|None=None,limit:int=Query(20,ge=1,le=100
     return {'items':rows[:limit],'next_cursor':rows[limit-1]['id'] if len(rows)>limit else None}
 
 @router.post('/api/contributions',status_code=201)
-async def create(proposal:Proposal,actor:Account,idempotency_key:Annotated[str|None,Header()]=None):
-    async with cursor() as cur: return await service.create(cur,actor.id,proposal,idempotency_key)
+async def create(proposal:Proposal,actor:Account,idempotency_key:Annotated[str|None,Header()]=None,x_review_source_version:Annotated[str|None,Header()]=None):
+    async with cursor() as cur: return await service.create(cur,actor.id,proposal,idempotency_key,source_token=x_review_source_version,require_source_version=True)
 
 @router.get('/api/review/queue')
 async def queue(actor:Account,state:str|None=None,subject_id:str|None=None,before:str|None=None,limit:int=Query(20,ge=1,le=100)):
@@ -145,14 +209,24 @@ async def detail(cid:str,actor:Account):
         if not direct:
             await cur.execute("SELECT 'source repair' AS mode,detail->>'reason' AS reason,created_at FROM contribution_events WHERE contribution_id=%s AND actor_id='operator:owner-source-maintenance' AND action='operator_source_adjudication' AND detail->>'revision'=%s ORDER BY id DESC LIMIT 1",(cid,str(c['revision'])))
             direct=await cur.fetchone()
+    if not direct:
+        async with cursor() as cur:
+            await cur.execute('SELECT kind AS mode,reason,created_at FROM admin_bank_decisions WHERE contribution_id=%s AND revision=%s',(cid,c['revision']))
+            direct=await cur.fetchone()
+    if direct and direct.get('mode')=='taxonomy':
+        async with cursor() as cur:
+            await cur.execute('SELECT id FROM bank_retag_batches WHERE %s=ANY(contribution_ids)',(cid,))
+            batch=await cur.fetchone()
+            if batch:direct['batch_id']=batch['id']
     return {**c,'admin_decision':direct,'viewer_id':actor.id,'required_reviews':quorum(c['kind'],r['baseline'].get('record',{}),r['payload']['patch'])[0],'current':r,'decisions':decisions,'events':events,'appeals':appeals,'publications':publications,'permissions':roles,'is_author':c['author_id']==actor.id}
 
 @router.post('/api/contributions/{cid}/revisions')
-async def revise(cid:str,body:Revise,actor:Account):
+async def revise(cid:str,body:Revise,actor:Account,x_review_source_version:Annotated[str|None,Header()]=None):
     async with cursor() as cur:
         c=await service.load(cur,cid,actor.id,body.expected_version)
         if c['state'] not in {'draft','changes_requested'}: service.conflict('This contribution is not editable in its current state')
         p=body.proposal
+        if p.canonical_id:await require_version(cur,p.canonical_id,p.appearance_id,x_review_source_version)
         service.require_current_patch(p)
         if p.kind!=c['kind'] or p.canonical_id!=c['canonical_id'] or (p.appearance_id is not None and p.appearance_id!=c['appearance_id']): raise HTTPException(422,'Kind and target cannot change in a revision')
         baseline=await service.snapshot(cur,p.canonical_id,p.appearance_id) if p.canonical_id else {}
@@ -206,7 +280,15 @@ async def decide(cid:str,body:Decision,actor:Account):
         await cur.execute('INSERT INTO contribution_decisions(contribution_id,revision,reviewer_id,decision,rationale) VALUES (%s,%s,%s,%s,%s)',(cid,c['revision'],actor.id,body.decision,body.reason))
         state={'reject':'rejected','request_changes':'changes_requested'}.get(body.decision,'in_review')
         if body.decision=='approve' and await service.eligible_reviews(cur,c,r): state='accepted'
-        return await service.update_state(cur,c,actor.id,state,{'decision':body.decision,'reason':body.reason})
+        updated=await service.update_state(cur,c,actor.id,state,{'decision':body.decision,'reason':body.reason})
+        if body.publish:
+            await require_role(cur,actor.id,c['subject_id'],('owner','publisher'))
+            if body.decision!='approve':raise HTTPException(422,'Only approvals can be published')
+            if state=='accepted':
+                from ..services.bank_publication import queue
+                publication=await queue(cur,updated,actor.id)
+                return {**updated,'state':'publishing','publication_id':publication['id']}
+        return updated
 
 @router.post('/api/contributions/{cid}/appeals',status_code=201)
 async def appeal(cid:str,body:Transition,actor:Account):
@@ -255,12 +337,17 @@ async def admin_summary(actor:Account):
         health['queue']=await cur.fetchall()
         await cur.execute('SELECT bank_checksum,finished_at FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1')
         health['sync']=await cur.fetchone()
-        await cur.execute("SELECT worker_id,seen_at,status,seen_at>now()-interval '5 minutes' AS available FROM review_worker_health WHERE worker_id='local-bank-publisher' LIMIT 1")
+        await cur.execute("SELECT worker_id,seen_at,status,seen_at>now()-interval '5 minutes' AS available FROM review_worker_health WHERE worker_id IN ('oracle-bank-publisher','local-bank-publisher') ORDER BY seen_at DESC LIMIT 1")
         health['worker']=await cur.fetchone()
         await cur.execute("SELECT worker_id,seen_at,status,seen_at>now()-interval '2 minutes' AS available FROM review_worker_health WHERE worker_id='score-reassessment'")
         health['assessment_worker']=await cur.fetchone()
         await cur.execute("SELECT (SELECT count(*) FROM assessment_jobs WHERE finished_at IS NULL) + (SELECT count(*) FROM new_score_jobs WHERE finished_at IS NULL)+(SELECT count(*) FROM question_change_events WHERE finished_at IS NULL) AS pending,(SELECT count(*) FROM assessment_jobs WHERE failures>=5)+(SELECT count(*) FROM new_score_jobs WHERE failures>=5)+(SELECT count(*) FROM question_change_events WHERE failures>=5) AS failed")
         health['assessments']=await cur.fetchone()
+        await cur.execute("SELECT 1 FROM review_grants WHERE user_id=%s AND revoked_at IS NULL AND subject_id IS NULL AND role IN ('owner','publisher','senior','reviewer')",(actor.id,))
+        health['overview']=None
+        if await cur.fetchone():
+            from ..services.bank_overview import overview
+            health['overview']=await overview(cur)
     return health
 
 @router.get('/api/admin/bank/grants')
@@ -392,44 +479,9 @@ async def unvote(cid:str,actor:Account):
 @router.post('/api/admin/bank/contributions/{cid}/publish')
 async def export_publication(cid:str,body:Transition,actor:Account):
     async with cursor() as cur:
+        from ..services.bank_publication import queue
         c=await service.load(cur,cid,actor.id,body.expected_version,review=True)
-        await require_role(cur,actor.id,c['subject_id'],('owner','publisher'))
-        if c['state'] not in {'accepted','publication_failed'}: service.conflict('Only accepted work can be published')
-        r=await service.revision(cur,c)
-        if not await service.eligible_reviews(cur,c,r): service.conflict('Current independent review quorum is no longer met')
-        await cur.execute('SELECT 1 FROM admin_answer_decisions WHERE contribution_id=%s AND revision=%s',(cid,c['revision']))
-        direct=bool(await cur.fetchone())
-        p=Proposal.model_validate(r['payload']); await service.validate_evidence(cur,p,r['baseline'],allow_noop=direct)
-        if p.kind=='source_request' and not p.patch.get('paperId'): service.conflict('Register the requested source and link its paper ID in a fresh reviewed revision before fulfillment')
-        if c['canonical_id']:
-            current=await service.snapshot(cur,c['canonical_id'],c['appearance_id'])
-            if digest(current)!=r['baseline_hash']: service.conflict('The bank changed. Request a new revision and review it against the current source')
-        await cur.execute('SELECT bank_checksum FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1')
-        sync=await cur.fetchone()
-        if not sync: raise HTTPException(503,'A completed bank sync is required')
-        await cur.execute('SELECT id FROM bank_publications WHERE contribution_id=%s AND revision=%s',(cid,c['revision']))
-        existing=await cur.fetchone()
-        if existing:
-            await cur.execute("UPDATE bank_publications SET state='exported',error=NULL WHERE id=%s AND state='failed'",(existing['id'],))
-            await service.update_state(cur,c,actor.id,'publishing')
-            return {'id':existing['id'],'state':'publishing'}
-        await cur.execute('SELECT * FROM review_documents WHERE id=ANY(%s)',([e.document_id for e in p.evidence if e.document_id],))
-        docs=[{k:v for k,v in d.items() if k in {'id','sha256','source_file','kind','paper_id'}} for d in await cur.fetchall()]
-        path=p.patch.get('classification') or r['baseline'].get('record',{}).get('classification') or {}
-        paths=[path,*p.patch.get('relatedClassifications',[]),*r['baseline'].get('record',{}).get('relatedClassifications',[])]
-        if set(p.patch)&{'classification','relatedClassifications'}:
-            for sid in {v['subject_id'] for v in paths if v.get('subject_id')}:await require_role(cur,actor.id,sid,('owner','publisher'))
-        await cur.execute('SELECT * FROM review_taxonomy WHERE id=ANY(%s)',(list({v for path in paths for v in path.values() if v}),))
-        nodes=await cur.fetchall()
-        pub_id=service.uid('pub')
-        manifest={'schema':1,'id':pub_id,'contribution_id':cid,'revision':c['revision'],
-            'author_id':c['author_id'],'subject_id':c['subject_id'],'bank_sha256':sync['bank_checksum'],
-            'payload':r['payload'],'baseline':r['baseline'],'baseline_hash':r['baseline_hash'],
-            'documents':docs,'taxonomy':nodes}
-        await cur.execute('INSERT INTO bank_publications(id,contribution_id,revision,manifest,manifest_hash,exported_by) VALUES (%s,%s,%s,%s,%s,%s)',(pub_id,cid,c['revision'],Jsonb(manifest),digest(manifest),actor.id))
-        await cur.execute("INSERT INTO review_outbox(event_key,kind,payload) VALUES (%s,'publication',%s)",(pub_id,Jsonb({'publication_id':pub_id})))
-        await service.update_state(cur,c,actor.id,'publishing',{'publication':pub_id})
-        return {'id':pub_id,'state':'publishing'}
+        return await queue(cur,c,actor.id)
 
 @router.get('/api/admin/bank/publications')
 async def publications(actor:Account,limit:int=Query(30,ge=1,le=100)):
@@ -463,10 +515,23 @@ async def request_rebase(cid:str,body:Transition,actor:Account):
         if len(body.reason.strip())<20: raise HTTPException(422,'Explain why new review is needed')
         return await service.update_state(cur,c,actor.id,'changes_requested',{'reason':body.reason})
 
+@router.get('/api/admin/bank/publication-pulse')
+async def publication_pulse(actor:Account):
+    """Cheap scoped change detector; no question/answer content or user details."""
+    async with cursor() as cur:
+        await cur.execute('SELECT 1 FROM review_grants WHERE user_id=%s AND revoked_at IS NULL',(actor.id,))
+        if not await cur.fetchone():raise HTTPException(403,'Admin permission required')
+        await cur.execute("""SELECT COALESCE(sum(c.lock_version),0)::text||':'||
+          (SELECT COALESCE(max(id),0)::text FROM sync_log WHERE finished_at IS NOT NULL) AS revision,
+          count(*) FILTER(WHERE c.state IN ('accepted','publishing'))::int AS pending
+          FROM bank_contributions c WHERE EXISTS(SELECT 1 FROM review_grants g
+          WHERE g.user_id=%s AND g.revoked_at IS NULL AND (g.subject_id IS NULL OR g.subject_id=c.subject_id))""",(actor.id,))
+        return await cur.fetchone()
+
 @router.get('/api/admin/bank/questions')
 async def browse_admin(actor:Account,q:str=Query('',max_length=200),subject_id:str|None=None,missing:bool=False,
                        issue:Literal['all','missing','defect','held','keyed','unverified','descriptive','malformed','disputed','missing-explanation','missing-figure','missing-context']='all',
-                       paper_id:str|None=None,answer_status:Literal['official','verified','needs-review','unsolved','written']|None=None,exam_id:str|None=None,year:int|None=Query(None,ge=1900,le=2100),topic_id:str|None=None,offset:int=Query(0,ge=0,le=1000000),limit:int=Query(20,ge=1,le=100)):
+                       review_task:Literal['all','answer','source','failed','publishing']='all',paper_id:str|None=None,answer_status:Literal['official','verified','needs-review','unsolved','written']|None=None,exam_id:str|None=None,year:int|None=Query(None,ge=1900,le=2100),topic_id:str|None=None,offset:int=Query(0,ge=0,le=1000000),limit:int=Query(20,ge=1,le=100)):
     filters={
         'all':'TRUE',
         'disputed':'q.key_disputed',
@@ -496,18 +561,9 @@ async def browse_admin(actor:Account,q:str=Query('',max_length=200),subject_id:s
           AND ("""+filters[issue]+')'
         params=(actor.id,q.strip(),q.strip(),q.strip(),subject_id,subject_id,subject_id,missing,paper_id,exam_id,year,paper_id,paper_id,exam_id,exam_id,year,year,answer_status,answer_status,topic_id,topic_id)
         if issue=='missing-figure':params+= (paper_id,paper_id,exam_id,exam_id,year,year)
-        join=" FROM canonical_questions q JOIN v_bank_answer_status bs ON bs.id=q.id LEFT JOIN question_classifications c ON c.question_id=q.id AND c.review_status='approved' WHERE "
-        await cur.execute('SELECT count(*)::int AS total'+join+where,params)
-        total=(await cur.fetchone())['total']
-        source_join=""" FROM canonical_questions q JOIN v_bank_answer_status bs ON bs.id=q.id LEFT JOIN question_classifications c ON c.question_id=q.id AND c.review_status='approved'
-           LEFT JOIN LATERAL (SELECT a.id,a.paper_id,a.qnum,a.page FROM appearances a WHERE a.canonical_id=q.id
-             AND (%s::text IS NULL OR a.paper_id=%s) AND (%s::text IS NULL OR EXISTS(SELECT 1 FROM bank_exam_papers ep WHERE ep.paper_id=a.paper_id AND ep.exam_id=%s)) AND (%s::int IS NULL OR EXISTS(SELECT 1 FROM papers yp WHERE yp.id=a.paper_id AND yp.year=%s)) ORDER BY a.is_primary DESC,a.id LIMIT 1) a ON true
-           LEFT JOIN papers p ON p.id=a.paper_id WHERE """
+        from ..services.admin_review_queue import page
         ordering="a.page NULLS LAST,CASE WHEN a.qnum ~ '^[0-9]{1,9}$' THEN a.qnum::int END NULLS LAST,a.qnum,q.id" if paper_id else 'q.id'
-        await cur.execute('''SELECT q.id,q.type,q.question,q.answer_source,q.answer_text IS NULL AS missing_answer,
-           q.status,q.source_defect,bs.answer_status,c.subject_id,c.subject_label,c.topic_label,
-           a.id AS appearance_id,a.paper_id,a.qnum,a.page,p.exam_name AS paper_title'''+source_join+where+' ORDER BY '+ordering+' LIMIT %s OFFSET %s',(paper_id,paper_id,exam_id,exam_id,year,year,*params,limit,offset))
-        return {'items':await cur.fetchall(),'total':total}
+        return await page(cur,where,params,paper_id,exam_id,year,review_task,ordering,limit,offset)
 
 @router.get('/api/admin/bank/questions/{qid}/inspect')
 async def inspect_question(qid:str,actor:Account,appearance_id:str|None=None,
@@ -529,8 +585,19 @@ async def inspect_question(qid:str,actor:Account,appearance_id:str|None=None,
         appearances=await cur.fetchall()
         await cur.execute('SELECT count(*)::int AS total FROM appearances WHERE canonical_id=%s',(qid,))
         total=(await cur.fetchone())['total']
-        await cur.execute('SELECT id,title,sha256,kind,key_status FROM review_documents WHERE paper_id=%s ORDER BY kind,title',(snap['paper']['id'],))
-        snap['documents']=await cur.fetchall()
+        await cur.execute('SELECT id,title,sha256,kind,key_status FROM review_documents WHERE paper_id=%s ORDER BY kind,title FOR SHARE',(snap['paper']['id'],))
+        documents=await cur.fetchall()
+        snap['edit_hash']=digest(snap)
+        await cur.execute("SELECT subject_label,topic_label,subtopic_label FROM question_classifications WHERE question_id=%s AND review_status='approved'",(qid,))
+        labels=await cur.fetchone()
+        snap['tag_label']=' / '.join(v for v in labels.values() if v) if labels else 'No approved subject'
+        snap['canonical_id']=qid
+        snap['can_publish']=bool(set(await grants(cur,actor.id,snap['record']['classification'].get('subject_id')))&{'owner','publisher'})
+        snap['solo_owner']='owner' in await grants(cur,actor.id)
+        if snap['can_publish']:
+            await cur.execute("SELECT id,kind,note FROM content_reports WHERE canonical_id=%s AND status IN ('open','confirmed') ORDER BY id",(qid,))
+            snap['reports']=await cur.fetchall()
+        snap['documents']=documents
         await cur.execute('''SELECT id,title,kind,state,revision,updated_at FROM bank_contributions
             WHERE canonical_id=%s AND state NOT IN ('draft','withdrawn') ORDER BY updated_at DESC,id LIMIT 20''',(qid,))
         proposals=await cur.fetchall()
@@ -666,12 +733,24 @@ async def retry_assessments(body:Hold,actor:Account):
 async def database_map(actor:Account):
     async with cursor() as cur:
         await require_role(cur,actor.id,None,('owner',))
-        tables={'papers':'Source papers','appearances':'Printed appearances','canonical_questions':'Shared questions','question_classifications':'Primary classifications','question_topic_links':'Related topic paths','library_shelves':'Library subject shelves','collections':'Exam / learning collections','collection_sections':'Collection sections','posts':'Question discussions / replies','attempts':'Study attempts','bank_contributions':'Review proposals','materials':'Community materials'}
-        rows=[]
-        for table,label in tables.items():
-            await cur.execute('SELECT count(*)::int AS total FROM '+table)
-            rows.append({'id':table,'title':label,'total':(await cur.fetchone())['total']})
-        await cur.execute("SELECT count(*)::int AS questions,count(*) FILTER(WHERE topic_id IS NULL)::int AS without_topic,count(*) FILTER(WHERE subtopic_id IS NULL)::int AS without_subtopic FROM question_classifications")
-        coverage=await cur.fetchone()
-        return {'tables':rows,'coverage':coverage,'relationships':[
-          ['papers','appearances','contains'],['appearances','canonical_questions','points to'],['canonical_questions','question_classifications','primary path'],['canonical_questions','question_topic_links','related paths'],['question_classifications','library_shelves','selects through approved paths'],['question_topic_links','library_shelves','also matches'],['canonical_questions','posts','discussions'],['canonical_questions','attempts','shared progress'],['collections','collection_sections','organises'],['collection_sections','canonical_questions','selects via filters'],['bank_contributions','canonical_questions','reviewed publication']]}
+        from ..services.database_map import read_map
+        return await read_map(cur)
+
+from .admin_bank_edits import router as admin_edit_router
+router.include_router(admin_edit_router)
+
+@router.get('/api/admin/bank/publication-history')
+async def publication_history(actor:Account,response:Response,mine:bool=True,q:str=Query('',max_length=200),
+    state:Literal['','applied','exported','failed','reverted']='',kind:str=Query('',max_length=50),
+    offset:int=Query(0,ge=0,le=100000),limit:int=Query(20,ge=1,le=100)):
+    response.headers['Cache-Control']='private, no-store'
+    from ..services.publication_history import listing
+    async with cursor() as cur:
+        return await listing(cur,actor.id,mine=mine,q=q.strip(),state=state,kind=kind,offset=offset,limit=limit)
+
+@router.get('/api/admin/bank/publication-history/{publication_id}')
+async def publication_history_detail(publication_id:str,actor:Account,response:Response):
+    response.headers['Cache-Control']='private, no-store'
+    from ..services.publication_history import detail
+    async with cursor() as cur:
+        return await detail(cur,actor.id,publication_id)

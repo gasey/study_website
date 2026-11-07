@@ -1,9 +1,17 @@
+import { lazy, Suspense, useEffect, useState } from 'react'
+const SharedTests=lazy(()=>import('./screens/SharedTests'))
+const TestMaker=lazy(()=>import('./screens/TestMaker'))
+const GoogleFinish=lazy(()=>import('./screens/GoogleFinish'))
+const LearningCatalog=lazy(()=>import('./screens/LearningCatalog'))
+const LearningCatalogAdmin=lazy(()=>import('./screens/LearningCatalogAdmin'))
+const DiscoveryAdmin=lazy(()=>import('./screens/DiscoveryAdmin'))
+const McqSolverReview=lazy(()=>import('./screens/McqSolverReview'))
+const EditorialReview=lazy(()=>import('./screens/EditorialReview'))
 import SessionNotice from './components/SessionNotice'
 import MaterialReadingPanel from './components/MaterialReadingPanel'
 import {routeModules,warmRoute} from './lib/routeModules'
 import {RouteNavigation,RouteErrorBoundary,WorkspaceLoading} from './components/RouteWorkspace'
 import {useExamScope,syncExamScope} from './lib/examScope'
-import { lazy, Suspense, useEffect, useState } from 'react'
 import {hydrateDesk} from './lib/desk'
 const DeskAdmin=lazy(()=>import('./screens/DeskAdmin'))
 const DiscussionAdmin=lazy(()=>import('./screens/DiscussionAdmin'))
@@ -26,6 +34,8 @@ const QuestionDetail=lazy(routeModules.QuestionDetail)
 const StudyDesk=lazy(()=>import('./screens/StudyDesk'))
 const Home=lazy(routeModules.Home)
 const Feed=lazy(routeModules.Feed)
+const StudyHome=lazy(routeModules.StudyHome)
+const CreateHub=lazy(routeModules.CreateHub)
 const Moderation=lazy(routeModules.Moderation)
 const English=lazy(routeModules.English)
 const Arithmetic=lazy(routeModules.Arithmetic)
@@ -36,6 +46,8 @@ const LibraryShelf=lazy(()=>import('./screens/LibraryShelf'))
 const Mizo=lazy(routeModules.Mizo)
 const Essay=lazy(routeModules.Essay)
 const AccountRecovery=lazy(()=>import('./screens/AccountRecovery'))
+const PaperWorkbench=lazy(()=>import('./screens/PaperWorkbench'))
+const CurrentAffairsAdmin=lazy(()=>import('./screens/CurrentAffairsAdmin'))
 const AccountSecurity=lazy(()=>import('./screens/AccountSecurity'))
 const BankAdmin = lazy(() => import('./screens/BankAdmin'))
 const Contribute = lazy(() => import('./screens/Contribute'))
@@ -46,6 +58,9 @@ const ReviewNotifications = lazy(() => import('./screens/Inbox'))
 const CommunityQuestions = lazy(() => import('./screens/CommunityQuestions'))
 const Vocabulary=lazy(routeModules.Vocabulary)
 const Profile=lazy(routeModules.Profile)
+const TopicTrail=lazy(()=>import('./screens/TopicTrail'))
+const TopicTrailAdmin=lazy(()=>import('./screens/TopicTrailAdmin'))
+const More=lazy(()=>import('./screens/More'))
 const Games=lazy(()=>import('./screens/Games'))
 const GamePlayer=lazy(()=>import('./screens/Games').then(m=>({default:m.GamePlayer})))
 const GlobalSearch=lazy(()=>import('./screens/GlobalSearch'))
@@ -109,14 +124,18 @@ export default function App() {
     <div className="flex min-h-screen flex-col" onPointerOver={event=>{if(event.pointerType==='mouse'){const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}} onFocus={event=>{const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}>
       {!landing && !adminWorkspace && <Header />}
       <SessionNotice/>
-      <main className="flex-1">
+      <main id="main-content" tabIndex={-1} className="flex-1 scroll-mt-32">
         <RouteErrorBoundary key={pathname+examScope}><Suspense fallback={<WorkspaceLoading/>}>
         <RouteNavigation/>{new URLSearchParams(search).has('resume_question')&&!adminWorkspace&&<ResumedPractice/>}<div key={`${accountEpoch}:${scopedWorkspace?examScope:'stable'}`} className={scopedWorkspace?'scope-workspace':undefined}><Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/account/recovery" element={<AccountRecovery/>}/>
+          <Route path="/google/finish" element={<GoogleFinish/>}/><Route path="/account/recovery" element={<AccountRecovery/>}/>
           <Route path="/materials" element={<Materials/>}/><Route path="/materials/:id" element={<MaterialReader/>}/>
-          <Route path="/studio" element={<CreatorHome/>}/><Route path="/studio/new" element={<ContentEditor/>}/><Route path="/studio/:id" element={<ContentEditor/>}/><Route path="/create" element={<Navigate to="/studio" replace/>}/><Route path="/inbox" element={<ReviewNotifications/>}/>
-          <Route path="/games" element={<Games/>}/><Route path="/games/:id" element={<GamePlayer/>}/><Route path="/duel" element={<Navigate to="/games" replace/>}/><Route path="/search" element={<GlobalSearch/>}/><Route path="/feed" element={<Feed />} /><Route path="/calendar" element={<ExamCalendar/>}/><Route path="/news" element={<ExamCalendar notices/>}/>
+          <Route path="/studio" element={<CreatorHome/>}/><Route path="/studio/new" element={<ContentEditor/>}/><Route path="/studio/:id" element={<ContentEditor/>}/><Route path="/create" element={<CreateHub/>}/><Route path="/inbox" element={<ReviewNotifications/>}/>
+          <Route path="/trail" element={<TopicTrail/>}/><Route path="/trail/:id" element={<TopicTrail/>}/><Route path="/admin/topic-trail" element={<TopicTrailAdmin/>}/><Route path="/more" element={<More/>}/><Route path="/games" element={<Games/>}/><Route path="/games/:id" element={<GamePlayer/>}/><Route path="/duel" element={<Navigate to="/games" replace/>}/><Route path="/search" element={<GlobalSearch/>}/><Route path="/feed" element={<StudyHome />} /><Route path="/community" element={<Feed/>}/><Route path="/calendar" element={<ExamCalendar/>}/><Route path="/news" element={<ExamCalendar notices/>}/>
+          <Route path="/editorial" element={<EditorialReview />} />
+          <Route path="/admin/discovery" element={<DiscoveryAdmin/>}/><Route path="/current-affairs/manage" element={<CurrentAffairsAdmin/>}/>
+          <Route path="/admin/mcq-solver" element={<McqSolverReview/>}/>
+          <Route path="/paper-workbench" element={<PaperWorkbench/>}/>
           <Route path="/admin" element={<Navigate to="/admin/bank" replace />} />
           <Route path="/admin/bank" element={<BankAdmin />} />
           <Route path="/review" element={<Navigate to="/admin/bank?tab=review" replace />} />
@@ -128,6 +147,10 @@ export default function App() {
           <Route path="/contributions/:id/edit" element={<ContributionEditor />} />
           <Route path="/community/contributors" element={<ContributorBoard />} />
           <Route path="/community/questions" element={<CommunityQuestions />} />
+          <Route path="/website-bank" element={<CommunityQuestions />} />
+          <Route path="/important-days" element={<LearningCatalog kind="day"/>} />
+          <Route path="/practice-sets" element={<LearningCatalog kind="practice"/>} />
+          <Route path="/learning/manage" element={<LearningCatalogAdmin/>} />
           <Route path="/admin/desks" element={<DeskAdmin />} />
           <Route path="/admin/discussions" element={<DiscussionAdmin />} />
           <Route path="/admin/moderation" element={<Moderation />} />
@@ -144,6 +167,7 @@ export default function App() {
           <Route path="/exams/:id" element={<ExamPage />} />
           <Route path="/exams/:id/paper" element={<PaperViewer />} />
           <Route path="/exams/:id/mock" element={<MockRunner />} />
+          <Route path="/tests" element={<SharedTests/>}/><Route path="/tests/make" element={<TestMaker/>}/><Route path="/tests/:testId" element={<SharedTests/>}/><Route path="/tests/:testId/take" element={<MockRunner/>}/>
           <Route path="/results/:mockId" element={<Results />} />
           <Route path="/revision" element={<DailyRevision/>}/>
           <Route path="/mistakes" element={<Mistakes />} />

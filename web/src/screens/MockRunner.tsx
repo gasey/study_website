@@ -1,3 +1,4 @@
+import {getSharedTest,mockResumePath} from '../lib/sharedTests'
 import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams, useSearchParams } from 'react-router-dom'
@@ -26,11 +27,13 @@ import {
 const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F']
 
 export default function MockRunner() {
-  const { id: collectionId = '' } = useParams()
+  const { id: collectionId = '',testId } = useParams()
+  const backTo=testId?'/tests/'+encodeURIComponent(testId):'/exams/'+collectionId
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
   const sectionPath = searchParams.get('section') || undefined
   const paperId = searchParams.get('paper') || undefined
+  const paperMode=searchParams.get('simulation')==='full'?'full':'practice'
   const answerMode = searchParams.get('mode') === 'derived' ? 'derived-practice' : 'official'
   const [mock, setMock] = useState<MockSession | null>(null)
   const [paperTitle, setPaperTitle] = useState('Preparing your paper')
@@ -46,68 +49,31 @@ export default function MockRunner() {
   const submitted = useRef(false)
   const saveQueue = useRef(Promise.resolve())
 
-  // Resume an open mock if there is one, else start a fresh 20-question /
-  // 20-minute paper. Resuming matters: the server allows only one open mock
-  // per device, so a reload must rejoin rather than fail with a 409.
+  // Reuse one server-owned session. Shared tests carry an immutable edition.
   useEffect(() => {
     let dead = false
-    const slowTimer = window.setTimeout(() => { if (!dead) setLoadingSlow(true) }, 12000)
-    ;(async () => {
+    const slowTimer=window.setTimeout(()=>{if(!dead)setLoadingSlow(true)},12000)
+    const matches=(m:MockSession)=>testId?m.learning_test_id===testId:!m.learning_test_id&&m.collection_id===collectionId&&(m.paper_id??undefined)===paperId&&(paperId||(m.section_path??undefined)===sectionPath)&&m.answer_mode===answerMode&&(m.paper_mode||'practice')===paperMode
+    ;(async()=>{
       try {
-        const selectedCollection = await getCollection(collectionId)
-        if (isLaterExamCollection(selectedCollection)) {
-          throw new Error('LDE exam practice will be added as the exam library grows.')
+        const existing=await currentMock()
+        if(existing&&!matches(existing)){navigate(mockResumePath(existing),{replace:true});return}
+        const shared=testId&&!existing?await getSharedTest(testId):null
+        const collection=!testId?await getCollection(collectionId):null
+        if(collection&&isLaterExamCollection(collection))throw new Error('LDE exam practice will be added as the exam library grows.')
+        const m=existing??await startMock(shared?{
+          collection_id:'shared-tests',learning_test_id:shared.id,learning_test_version:shared.revision,
+        }:{collection_id:collectionId,section_path:sectionPath,paper_id:paperId,answer_mode:answerMode,paper_mode:paperMode,count:20,duration_minutes:20}).catch(async error=>{const resumed=await currentMock();if(resumed)return resumed;throw error})
+        if(!matches(m)){navigate(mockResumePath(m),{replace:true});return}
+        const section=collection?.section_list.find(s=>s.path===m.section_path),paper=collection?.paper_list.find(p=>p.id===m.paper_id)
+        if(!dead){
+          setLoadingSlow(false);setError(null);setMock(m);setLeft(m.seconds_remaining);setPicks(m.saved_answers||{});setMarked(Object.fromEntries((m.marked_questions||[]).map(id=>[id,true])));setAt(m.current_position||0)
+          setPaperTitle(m.learning_test_title?m.learning_test_title+' · edition '+m.learning_test_version:`${collection?.title}${paper?' · '+paper.title:section?' · '+section.title:''} · ${answerMode==='derived-practice'?'Practice estimate':paper?(paper.rule_source==='platform-default'?'Timed practice':'Paper test'):'Mock'}`)
         }
-        const existing = await currentMock()
-        // API fields use null for an unscoped mock, while absent URL params
-        // are undefined. Normalize both sides or a full-collection mock loops
-        // back to the same URL forever without ever being rendered.
-        if (existing && (existing.collection_id !== collectionId || (existing.paper_id ?? undefined) !== paperId || (!paperId && (existing.section_path ?? undefined) !== sectionPath) || existing.answer_mode !== answerMode)) {
-          const target = new URLSearchParams()
-          if (existing.paper_id) target.set('paper', existing.paper_id)
-          else if (existing.section_path) target.set('section', existing.section_path)
-          if (existing.answer_mode === 'derived-practice') target.set('mode', 'derived')
-          const query = target.toString()
-          navigate(`/exams/${existing.collection_id}/mock${query ? `?${query}` : ''}`, { replace: true })
-          return
-        }
-        const m = existing ?? (await startMock({
-          collection_id: collectionId,
-          section_path: sectionPath,
-          paper_id: paperId,
-          answer_mode: answerMode,
-          count: 20,
-          duration_minutes: 20,
-        }).catch(async error=>{const resumed=await currentMock();if(resumed)return resumed;throw error}))
-        // Another tab or StrictMode's overlapping initialization may win the
-        // start race. Rejoin its persisted session instead of stranding it.
-        if (m.collection_id!==collectionId || (m.paper_id??undefined)!==paperId || (!paperId&&(m.section_path??undefined)!==sectionPath) || m.answer_mode!==answerMode){
-          const target=new URLSearchParams();if(m.paper_id)target.set('paper',m.paper_id);else if(m.section_path)target.set('section',m.section_path);if(m.answer_mode==='derived-practice')target.set('mode','derived');navigate(`/exams/${m.collection_id}/mock?${target}`,{replace:true});return
-        }
-        const collection = m.collection_id === collectionId ? selectedCollection : await getCollection(m.collection_id)
-        const section = collection.section_list.find((s) => s.path === m.section_path)
-        const paper = collection.paper_list.find((p) => p.id === m.paper_id)
-        if (!dead) {
-          setLoadingSlow(false)
-          setError(null)
-          setMock(m)
-          setLeft(m.seconds_remaining)
-          setPicks(m.saved_answers || {})
-          setMarked(Object.fromEntries((m.marked_questions || []).map((questionId) => [questionId,true])))
-          setAt(m.current_position || 0)
-          setPaperTitle(`${collection.title}${paper ? ` · ${paper.title}` : section ? ` · ${section.title}` : ''} · ${answerMode === 'derived-practice' ? 'Practice estimate' : paper ? (paper.rule_source==='platform-default'?'Timed practice':'Paper test') : 'Mock'}`)
-        }
-      } catch (e) {
-        if (!dead) setError((e as Error).message)
-      } finally {
-        window.clearTimeout(slowTimer)
-      }
+      }catch(e){if(!dead)setError((e as Error).message)}finally{window.clearTimeout(slowTimer)}
     })()
-    return () => {
-      dead = true
-      window.clearTimeout(slowTimer)
-    }
-  }, [collectionId, sectionPath, paperId, answerMode, navigate])
+    return()=>{dead=true;window.clearTimeout(slowTimer)}
+  },[collectionId,testId,sectionPath,paperId,answerMode,paperMode,navigate])
 
   const persistAnswer = (question_id: string, chosen_index: number | null, isMarked: boolean, position: number) => {
     if (!mock) return
@@ -160,14 +126,14 @@ export default function MockRunner() {
           <span className="font-mono text-[11px] uppercase tracking-[0.06em]">Error</span>
           <p className="mt-1">{error}</p>
         </div>
-        <Link to={`/exams/${collectionId}`} className="label mt-4 inline-block underline">
-          ← Back to the exam
+        <Link to={backTo} className="label mt-4 inline-block underline">
+          ← Back to {testId?'test':'exam'}
         </Link>
       </div>
     )
   }
   if (result)
-    return <MockResultView result={result} backTo={`/exams/${collectionId}`} />
+    return <MockResultView result={result} backTo={backTo} />
   if (!mock) return <div className="mx-auto max-w-shell px-6 py-12 label">{loadingSlow ? <><p>This paper is taking longer than expected. Check your connection, then reload to resume.</p><button onClick={() => window.location.reload()} className="mt-4 rounded-pill border border-ink px-4 py-2 text-[13px] font-semibold">Reload paper</button></> : 'Preparing your paper…'}</div>
 
   const q = mock.questions[at]
@@ -176,11 +142,11 @@ export default function MockRunner() {
   const low = left <= 60
 
   return (
-    <>
+    <div className="exam-session">
       {/* Sticky dark bar, markup line 579. */}
-      <div className="sticky top-0 z-40 bg-ink text-paper">
+      <div className="exam-session-bar sticky top-0 z-40 bg-ink text-paper">
         <div className="mx-auto flex max-w-shell flex-wrap items-center gap-x-5 gap-y-2.5 px-6 py-2.5">
-          <Link to={`/exams/${collectionId}`} className="text-[14px] font-medium text-[#D9D0BF]">
+          <Link to={backTo} className="text-[14px] font-medium text-[#D9D0BF]">
             ← Exit
           </Link>
           <div className="min-w-0 flex-[1_1_280px]">
@@ -190,10 +156,10 @@ export default function MockRunner() {
             </div>
           </div>
           <div
-            className={`font-mono text-[22px] font-medium tracking-[0.02em] ${low ? 'text-mypick-soft' : ''}`}
+            className={`exam-clock font-mono text-[22px] font-medium tracking-[0.02em] ${low ? 'text-mypick-soft' : ''}`}
             aria-live="off"
           >
-            {mmss(left)}
+            <span className="exam-clock-label">Time remaining</span>{mmss(left)}
           </div>
           <button
             onClick={send}
@@ -208,10 +174,10 @@ export default function MockRunner() {
       {saveError && <p role="status" className="mx-auto mt-3 max-w-shell rounded-[8px] border border-mypick bg-mypick-soft px-4 py-2 text-[13px] text-mypick">{saveError} Keep this page open and try again before submitting.</p>}
 
       {!!mock.excluded_presentations&&<p className="mx-auto mt-3 max-w-shell rounded-[8px] border border-hairline bg-paper px-4 py-2 text-[13px]">{mock.excluded_presentations} source appearances were excluded because their options or context could not be safely mapped. This test scores only the displayed questions.</p>}
-      {mock.answer_mode === 'derived-practice' && <p className="mx-auto mt-3 max-w-shell rounded-[8px] border border-[#D8B56D] bg-[#FFF4DF] px-4 py-2 text-[13px] text-[#684919]">Practice estimate · this set can include published derived answers checked by an authorized admin or independent reviewers. Your result is not an official-key score.</p>}
+      {mock.answer_mode === 'derived-practice' && <p className="mx-auto mt-3 max-w-shell rounded-[8px] border border-[#D8B56D] bg-[#FFF4DF] px-4 py-2 text-[13px] text-[#684919]">Practice estimate · includes reviewed worked solutions. This is not an official-key test score.</p>}
 
-      <main className="mx-auto flex max-w-shell flex-wrap items-start gap-10 px-6 pb-24 pt-8">
-        <section className="min-w-0 flex-[999_1_560px]">
+      <main className="exam-session-layout mx-auto flex max-w-shell flex-wrap items-start gap-10 px-6 pb-24 pt-8">
+        <section className="exam-sheet exam-active-sheet min-w-0 flex-[999_1_560px]" aria-label="Current question">
           <div className="flex justify-between gap-2.5 border-b border-ink pb-2.5 font-mono text-[12px] text-muted">
             <span>Question {at + 1} of {mock.questions.length}</span>
             <span>{marked[q.id] ? 'Marked for review' : ''}</span>
@@ -250,7 +216,7 @@ export default function MockRunner() {
             })}
           </AnswerOptions>
 
-          <div className="mt-7 flex flex-wrap items-center gap-2.5">
+          <div className="exam-sheet-navigation mt-7 flex flex-wrap items-center gap-2.5">
             <button
               onClick={() => { const next=Math.max(0,at-1); setAt(next); persistAnswer(q.id,picks[q.id]??null,!!marked[q.id],next) }}
               disabled={at === 0}
@@ -287,12 +253,15 @@ export default function MockRunner() {
           </div>
         </section>
 
-        <aside className="min-w-0 max-w-[380px] flex-[1_1_300px]">
+        <aside className="exam-answer-sheet min-w-0 max-w-[380px] flex-[1_1_300px]" aria-label="Answer sheet">
+          <div className="answer-sheet-title">Your answer sheet</div>
+          <p className="answer-sheet-hint">Select a number to revisit a question.</p>
+          <progress className="exam-completion" aria-label="Questions answered" value={answered} max={mock.questions.length}/>
           <div className="flex justify-between border-b border-ink pb-2 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
-            <span>Paper</span>
+            <span>Progress</span>
             <span>{answered} answered · {nMarked} marked</span>
           </div>
-          <div className="mt-3.5 grid grid-cols-6 gap-[5px] sm:grid-cols-10">
+          <div className="exam-question-map mt-3.5 grid grid-cols-6 gap-[5px] sm:grid-cols-10">
             {mock.questions.map((mq, i) => {
               const isAns = picks[mq.id] !== undefined
               const isMark = !!marked[mq.id]
@@ -312,6 +281,8 @@ export default function MockRunner() {
               return (
                 <button
                   key={mq.id}
+                  aria-label={`Question ${i + 1}, ${isAns ? 'answered' : 'unanswered'}${isMark ? ', marked for review' : ''}`}
+                  aria-current={cur ? 'step' : undefined}
                   onClick={() => { setAt(i); persistAnswer(mq.id,picks[mq.id]??null,!!marked[mq.id],i) }}
                   className={`flex aspect-square items-center justify-center rounded-[4px] border font-mono text-[11px] ${cls} ${border}`}
                 >
@@ -328,11 +299,11 @@ export default function MockRunner() {
               <span className="h-3 w-3 rounded-[3px] bg-[#DCE5EE]" />Marked
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="h-3 w-3 rounded-[3px] border border-[#CFC5B2]" />Not seen
+              <span className="h-3 w-3 rounded-[3px] border border-[#CFC5B2]" />Unanswered
             </span>
           </div>
         </aside>
       </main>
-    </>
+    </div>
   )
 }

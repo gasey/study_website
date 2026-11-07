@@ -116,3 +116,23 @@ def test_source_heading_is_independent_of_learning_taxonomy(client,actor,databas
     detail=client.get('/api/questions/'+ids[3])
     assert detail.status_code==200,detail.text
     assert detail.json()['appearances'][0]['paper_label']==source_paper_label(common)
+
+
+def test_explicit_general_paper_subjects_keep_aptitude_accessible_without_specialist_leakage(client,actor,database,monkeypatch):
+    actor('author')
+    _,_,technical,gazetted=seed(database[1]);conn=database[1]
+    monkeypatch.setitem(PAPER_ROLES,'rules',PAPER_ROLES['rules']+[{
+        'collection_id':'group-b-gazetted','paper_id':gazetted,'role':'gk-gs',
+        'common_subjects':['mathematics','reasoning-and-aptitude','computer-science']}])
+    expected=set();all_ids=set()
+    for paper in (gazetted,technical):
+        for subject in ('mathematics','reasoning-and-aptitude','computer-science','medicine'):
+            qid='general_subject_'+uuid4().hex;all_ids.add(qid)
+            if paper==gazetted and subject!='medicine':expected.add(qid)
+            conn.execute("INSERT INTO canonical_questions(id,type,question,options,answer_source,answer_text) VALUES (%s,'mcq','Explicit general-paper subject',%s,'official','B')",(qid,Jsonb(['A','B','C','D'])))
+            conn.execute("INSERT INTO appearances(id,paper_id,type,question,options,canonical_id,is_primary,qnum) VALUES (%s,%s,'mcq','Explicit general-paper subject',%s,%s,true,'1')",('a_'+qid,paper,Jsonb(['A','B','C','D']),qid))
+            conn.execute("INSERT INTO question_classifications(question_id,subject_id,subject_label,taxonomy_version,source,review_status) VALUES (%s,%s,%s,'test','manual','approved')",(qid,subject,subject))
+    for area in ('gk-gs','common'):
+        response=client.get('/api/questions',params={'collection_id':'group-b','study_area':area,'q':'Explicit general-paper subject','limit':100})
+        assert response.status_code==200,response.text
+        assert {q['id'] for q in response.json()['items']} & all_ids==expected

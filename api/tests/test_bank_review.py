@@ -70,10 +70,12 @@ def test_subject_scope_and_revocation(client,actor,database):
     c,h,p=create(client,actor);cid=c['id']
     r=client.post('/api/contributions/'+cid+'/submit',headers=h,json={'expected_version':1});c=r.json()
     conn=database[1]
-    conn.execute("INSERT INTO review_grants(user_id,role,subject_id,granted_by,reason) VALUES ('outsider','reviewer','mizo','test','Out of scope synthetic reviewer')")
-    h=actor('outsider')
-    assert client.post('/api/review/'+cid+'/decisions',headers=h,json={'expected_version':c['lock_version'],'decision':'approve','reason':'This approval is out of subject scope.'}).status_code==403
-    assert client.get('/api/review/queue').json()['items']==[]
+    grant=conn.execute("INSERT INTO review_grants(user_id,role,subject_id,granted_by,reason) VALUES ('outsider','reviewer','mizo','test','Out of scope synthetic reviewer') RETURNING id").fetchone()[0]
+    try:
+        h=actor('outsider')
+        assert client.post('/api/review/'+cid+'/decisions',headers=h,json={'expected_version':c['lock_version'],'decision':'approve','reason':'This approval is out of subject scope.'}).status_code==403
+        assert client.get('/api/review/queue').json()['items']==[]
+    finally:conn.execute('DELETE FROM review_grants WHERE id=%s',(grant,))
 
 
 def test_bad_patch_and_official_key_rejected(client,actor):
@@ -402,7 +404,7 @@ def test_legacy_reports_do_not_hold_and_require_real_publication(client,actor,da
     assert conn.execute("SELECT status FROM canonical_questions WHERE id='cq_test'").fetchone()[0]=='live'
     actor('reviewer1');items=client.get('/api/admin/bank/reports').json()
     assert any(r['id']==rid for r in items)
-    actor('outsider');assert client.get('/api/admin/bank/reports').json()==[]
+    actor('outsider');assert client.get('/api/admin/bank/reports').status_code==403
     h=actor('reviewer1')
     response=client.post('/api/admin/bank/reports/'+str(rid)+'/resolve',headers=h,json={'status':'fixed','publication_id':'pub_missing','reason':'A report must not be called fixed before its correction is live.'})
     assert response.status_code==422,response.text

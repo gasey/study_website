@@ -11,6 +11,17 @@ from fastapi import HTTPException
 from ..config import settings
 
 
+def staff_exempt(user_id):
+    """Explicit operator policy; does not assert an authenticator was verified."""
+    return bool(user_id) and user_id in {
+        value.strip() for value in settings.staff_mfa_exempt_user_ids.split(',') if value.strip()
+    }
+
+
+def staff_required(user_id):
+    return settings.mfa_enforce_staff and not staff_exempt(user_id)
+
+
 def cipher():
     try:return Fernet(settings.mfa_encryption_key.encode())
     except (ValueError,TypeError):raise HTTPException(503,'Authenticator security is not configured') from None

@@ -16,7 +16,7 @@ export interface Filters {
 const SOURCES: { key: AnswerSource; label: string }[] = [
   { key: 'official', label: 'Official key' },
   { key: 'key', label: 'Transcribed key' },
-  { key: 'derived', label: 'Worked solution (derived)' },
+  { key: 'derived', label: 'Worked solution' },
   { key: 'inferred', label: 'Suggested answer' },
   { key: 'none', label: 'No recorded answer' },
 ]
@@ -58,7 +58,7 @@ export default function FilterRail({
           />
         ))}
         {pool === 'scorable' && (
-          <NotYet>Choose All answered to include derived and unverified answers.</NotYet>
+          <NotYet>Choose All answered to include worked solutions and answers awaiting review.</NotYet>
         )}
         {pool === 'practice' && (
           <NotYet>Questions without a usable answer are not in either pool yet.</NotYet>

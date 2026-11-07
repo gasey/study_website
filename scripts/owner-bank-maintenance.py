@@ -112,15 +112,19 @@ asyncio.run(run())
 def require_batch_worker_idle(data):
  # A single-item timer can publish one member while a batch is still being
  # queued, making every remaining immutable export refer to an old bank hash.
- exports_batch=(data.get('operation')=='source-batch' or
+ exports_batch=(data.get('operation')=='source-batch' and len(data.get('items',[]))>1 or
      data.get('operation')=='answer-batch' and len(data.get('repairs',[]))>1
      and any(r.get('mode')!='needs-review'for r in data['repairs']))
  if not exports_batch:return
- for unit in ('ism-bank-review.timer','ism-bank-review.service'):
-  try:state=subprocess.run(['systemctl','--user','is-active',unit],capture_output=True,text=True).stdout.strip()
-  except FileNotFoundError:return  # Hosts without systemd have no such timer.
-  if state in ('active','activating','reloading'):
-   raise ValueError('Pause ism-bank-review.timer and wait for ism-bank-review.service to finish before queuing batch exports; resume the timer after publication.')
+ # Check the publisher on the authoritative host, never this developer machine.
+ run=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=10',
+   'ubuntu@152.67.31.231','systemctl is-active ism-oracle-bank-review.timer ism-oracle-bank-review.service'],
+   capture_output=True,text=True,timeout=20)
+ states=run.stdout.strip().splitlines()
+ if len(states)!=2 or any(s not in {'active','activating','reloading','inactive','failed'} for s in states):
+  raise ValueError('Cannot establish the Oracle publisher state; batch export stopped')
+ if any(s in {'active','activating','reloading'} for s in states):
+  raise ValueError('Oracle publisher is running. Prefer serial single-item exports; for legacy multi-item exports drain ism-oracle-bank-review.timer/service on Oracle and restore the timer afterwards.')
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--request',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--quota-exemption-run',help='Explicit owner-authorized SSH-only run; normal HTTP/user quotas stay unchanged');p.add_argument('--quota-exemption-reason',help='Owner authorization for this specific maintenance exemption');args=p.parse_args()

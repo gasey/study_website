@@ -399,7 +399,7 @@ async def list_paper_questions(
         if await cur.fetchone() is None:
             raise HTTPException(404, "paper not found in this exam")
         await cur.execute(
-            f"""SELECT COUNT(DISTINCT v.id)::int AS n,
+            f"""SELECT COUNT(*)::int AS n,
                       COUNT(DISTINCT v.id) FILTER(WHERE v.id IN(SELECT id FROM {pool_view('mock_practice', exam_scope)}))::int AS practice_count
                  FROM appearances a JOIN canonical_questions v ON v.id=a.canonical_id
                 WHERE a.paper_id=%s AND v.status IN ('live','held')""", (paper_id,),

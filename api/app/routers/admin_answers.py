@@ -8,6 +8,7 @@ from ..db import cursor
 from ..services.review_identity import Actor,identity,require_role
 from ..services.review_policy import Proposal,digest
 from ..services import bank_review as service
+from ..services.publication_verification import publication_mismatches,verification_status
 from .exam_inventory import no_store
 router=APIRouter(prefix='/api/admin/bank',tags=['direct admin answers'],dependencies=[Depends(no_store)])
 Staff=Annotated[Actor,Depends(identity)]
@@ -23,6 +24,52 @@ class Decision(BaseModel):
  key_page:int|None=Field(default=None,ge=1,le=10000)
  preserve_official_key:bool=False
 
+@router.get('/publications/{publication_id}/verification')
+async def verify_publication(publication_id:str,actor:Staff):
+ """Recheck an immutable receipt against a consistent current database snapshot."""
+ async with cursor()as cur:
+  await cur.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ, READ ONLY')
+  await cur.execute('''SELECT p.*,c.canonical_id,c.subject_id FROM bank_publications p
+   JOIN bank_contributions c ON c.id=p.contribution_id WHERE p.id=%s''',(publication_id,))
+  pub=await cur.fetchone()
+  if not pub:raise HTTPException(404,'Publication not found')
+  await require_role(cur,actor.id,pub['subject_id'],('owner','publisher','senior','reviewer'),lock=False)
+  qid=pub['canonical_id']
+  if qid:await service.protect_answer(cur,actor.id,qid)
+  result={'publication_id':publication_id,'question_id':qid,'publication_state':pub['state'],
+          'checked_at':None,'differences':[]}
+  await cur.execute('SELECT transaction_timestamp() AS checked_at')
+  result['checked_at']=(await cur.fetchone())['checked_at']
+  if pub['state']!='applied':
+   return result|{'status':'reverted' if pub['state']=='reverted' else 'not_applied'}
+  receipt=pub['receipt'] or {}
+  if not qid or not receipt.get('appearance_id') or not isinstance(receipt.get('after'),dict):
+   return result|{'status':'unavailable'}
+  await cur.execute('''SELECT q.*,qc.subject_id AS current_subject,bs.answer_status FROM canonical_questions q
+   JOIN v_bank_answer_status bs ON bs.id=q.id
+   LEFT JOIN question_classifications qc ON qc.question_id=q.id AND qc.review_status='approved'
+   WHERE q.id=%s''',(qid,))
+  canonical=await cur.fetchone()
+  if canonical:
+   await require_role(cur,actor.id,canonical['current_subject'],('owner','publisher','senior','reviewer'),lock=False)
+  try:
+   snap=await service.snapshot(cur,qid,receipt['appearance_id'])
+  except HTTPException as exc:
+   if exc.status_code!=404:raise
+   snap=None
+  await cur.execute('SELECT is_primary FROM appearances WHERE id=%s AND canonical_id=%s',(receipt['appearance_id'],qid))
+  source=await cur.fetchone()
+  differences=publication_mismatches(receipt['after'],snap['record'] if snap else None,
+   canonical,bool(source and source['is_primary']),pub['manifest']['payload']['patch'])
+  await cur.execute('''SELECT EXISTS(SELECT 1 FROM bank_publications newer
+   JOIN bank_contributions nc ON nc.id=newer.contribution_id
+   WHERE nc.canonical_id=%s AND newer.state='applied' AND newer.finished_at>%s) AS newer''',
+   (qid,pub['finished_at']))
+  newer=(await cur.fetchone())['newer']
+  return result|{'status':verification_status(differences,newer),'differences':differences,
+                 'question_state':canonical['status'] if canonical else 'unavailable',
+                 'answer_status':canonical['answer_status'] if canonical else None}
+
 async def baseline(cur,actor,qid,aid=None,lock=False):
  await service.protect_answer(cur,actor.id,qid)
  await cur.execute('''SELECT q.id,q.type,q.question,q.options,q.status,q.key_disputed,q.source_defect,
@@ -34,7 +81,9 @@ async def baseline(cur,actor,qid,aid=None,lock=False):
  snap=await service.snapshot(cur,qid,aid)
  await cur.execute('SELECT is_primary FROM appearances WHERE id=%s',(snap['record']['id'],));primary=(await cur.fetchone())['is_primary']
  if not primary:raise HTTPException(409,'Choose the primary appearance before changing the shared answer')
- return q,snap,digest({'snapshot':snap,'state':q})
+ await cur.execute('SELECT id,sha256,kind,key_status FROM review_documents WHERE paper_id=%s ORDER BY id FOR SHARE',(snap['paper']['id'],))
+ documents=await cur.fetchall()
+ return q,snap,digest({'snapshot':snap,'state':q,'documents':documents})
 
 @router.get('/questions/{qid}/answer-decision')
 async def get_baseline(qid:str,actor:Staff,appearance_id:str|None=Query(None,max_length=200)):
@@ -44,7 +93,7 @@ async def get_baseline(qid:str,actor:Staff,appearance_id:str|None=Query(None,max
   await cur.execute('''SELECT d.id,d.mode,d.reason,d.contribution_id,d.created_at,u.handle AS administrator,
    c.state AS publication_state FROM admin_answer_decisions d JOIN users u ON u.id=d.actor_id
    LEFT JOIN bank_contributions c ON c.id=d.contribution_id WHERE d.canonical_id=%s ORDER BY d.created_at DESC,d.id DESC LIMIT 10''',(qid,));history=await cur.fetchall()
- return {'baseline_hash':token,'snapshot':snap,'question_state':q['status'],'documents':docs,'history':history}
+ return {'viewer_id':actor.id,'baseline_hash':token,'snapshot':snap,'question_state':q['status'],'documents':docs,'history':history}
 
 @router.post('/questions/{qid}/answer-decision')
 async def decide(qid:str,body:Decision,actor:Staff,idempotency_key:Annotated[str|None,Header()]=None):
@@ -58,7 +107,11 @@ async def decide(qid:str,body:Decision,actor:Staff,idempotency_key:Annotated[str
   if prior:
    await baseline(cur,actor,prior['canonical_id'],prior['appearance_id'])
    if prior['request_hash']!=request_hash:raise HTTPException(409,'This request key was used for another decision')
-   return {'id':prior['id'],'contribution_id':prior['contribution_id'],'state':'held'if prior['mode']=='needs-review'else 'queued','replayed':True}
+   if prior['mode']=='needs-review':return {'id':prior['id'],'contribution_id':None,'state':'held','replayed':True}
+   from ..services.bank_publication import receipt
+   current=await receipt(cur,prior['contribution_id'])
+   return {'id':prior['id'],'contribution_id':prior['contribution_id'],'publication_id':current['id'],'state':current['state'],'replayed':True}
+  await cur.execute('SELECT pg_advisory_xact_lock(hashtextextended(%s,0))',('bank-question:'+qid,))
   q,snap,token=await baseline(cur,actor,qid,body.appearance_id,True)
   if token!=body.baseline_hash:raise HTTPException(409,'This question changed. Refresh the decision form before saving.')
   if q['type']!='mcq' or q['status']not in ('live','held'):raise HTTPException(409,'Direct answer decisions require an available MCQ')
@@ -71,7 +124,7 @@ async def decide(qid:str,body:Decision,actor:Staff,idempotency_key:Annotated[str
    await service.event(cur,None,actor.id,'admin_answer_needs_review',{'decision':decision_id,'question':qid,'reason':body.reason})
    return {'id':decision_id,'contribution_id':None,'state':'held','replayed':False}
   if not q['subject_id']:raise HTTPException(409,'Add an approved subject tag before assigning the answer')
-  await cur.execute("SELECT c.id FROM admin_answer_decisions d JOIN bank_contributions c ON c.id=d.contribution_id WHERE d.canonical_id=%s AND c.state IN ('accepted','publishing','publication_failed') LIMIT 1",(qid,))
+  await cur.execute("SELECT id FROM bank_contributions WHERE canonical_id=%s AND state IN ('accepted','publishing') LIMIT 1",(qid,))
   if await cur.fetchone():raise HTTPException(409,'An admin change is already waiting for publication. Open its publication progress first.')
   if q['status']=='held':raise HTTPException(409,'Release the current review hold before assigning a new answer status')
   if body.mode in ('official','verified'):
@@ -110,23 +163,17 @@ async def decide(qid:str,body:Decision,actor:Staff,idempotency_key:Annotated[str
   r=await service.revision(cur,c)
   await cur.execute('''INSERT INTO admin_answer_decisions(id,canonical_id,appearance_id,actor_id,mode,contribution_id,revision,baseline_hash,payload_hash,reason,request_key,request_hash)
    VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)''',(decision_id,qid,body.appearance_id,actor.id,body.mode,c['id'],c['revision'],r['baseline_hash'],digest(r['payload']),body.reason,idempotency_key,request_hash))
-  await service.update_state(cur,c,actor.id,'accepted',{'admin_decision':decision_id,'mode':body.mode})
-  await cur.execute('SELECT bank_checksum FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1');sync=await cur.fetchone()
-  if not sync:raise HTTPException(409,'A completed bank sync is required before publication')
-  await cur.execute('SELECT id,sha256,source_file,kind,paper_id FROM review_documents WHERE id=ANY(%s)',([e.document_id for e in p.evidence if e.document_id],));docs=await cur.fetchall()
-  pub=service.uid('pub')
-  manifest={'schema':1,'id':pub,'contribution_id':c['id'],'revision':c['revision'],'author_id':actor.id,'subject_id':q['subject_id'],'bank_sha256':sync['bank_checksum'],
-   'payload':r['payload'],'baseline':r['baseline'],'baseline_hash':r['baseline_hash'],'documents':docs,'taxonomy':[],
-   'admin_decision':{'id':decision_id,'actor_id':actor.id,'mode':body.mode,'reason':body.reason}}
+  c=await service.update_state(cur,c,actor.id,'accepted',{'admin_decision':decision_id,'mode':body.mode})
+  decision={'id':decision_id,'actor_id':actor.id,'mode':body.mode,'reason':body.reason}
   if separate:
-   manifest['admin_decision']['solution_answer_text']=selected
-   manifest['admin_decision']['preserve_official_key']=True
+   decision['solution_answer_text']=selected
+   decision['preserve_official_key']=True
    if selected!=original:
     hold_reason='Reviewed solution differs from the preserved official key. '+body.reason
     await cur.execute('INSERT INTO review_holds(canonical_id,reason,placed_by,previous_status) VALUES(%s,%s,%s,%s) ON CONFLICT DO NOTHING',(qid,hold_reason,actor.id,q['status']))
     await cur.execute("UPDATE canonical_questions SET status='held',held_reason=%s WHERE id=%s",(hold_reason,qid))
     await service.event(cur,c['id'],actor.id,'admin_solution_key_conflict',{'decision':decision_id,'question':qid,'official_answer':original,'reviewed_answer':selected})
-  await cur.execute('INSERT INTO bank_publications(id,contribution_id,revision,manifest,manifest_hash,exported_by) VALUES(%s,%s,%s,%s,%s,%s)',(pub,c['id'],c['revision'],Jsonb(manifest),digest(manifest),actor.id))
-  await cur.execute("INSERT INTO review_outbox(event_key,kind,payload) VALUES(%s,'publication',%s)",(pub,Jsonb({'publication_id':pub})))
-  await service.update_state(cur,c,actor.id,'publishing',{'admin_decision':decision_id,'publication':pub})
+  from ..services.bank_publication import queue
+  publication=await queue(cur,c,actor.id,{'admin_decision':decision})
+  pub=publication['id']
  return {'id':decision_id,'contribution_id':c['id'],'publication_id':pub,'state':'queued','replayed':False}

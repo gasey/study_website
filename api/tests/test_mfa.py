@@ -118,3 +118,43 @@ def test_rotate_disable_and_revoked_session(client,account,database):
     assert client.get('/api/auth/mfa/status').json()['recovery_codes_remaining']==0
     database[1].execute('UPDATE auth_sessions SET revoked_at=now() WHERE user_id=%s',(user,))
     assert client.post('/api/auth/mfa/setup',headers=h,json={'password':password}).status_code==401
+
+
+def test_operator_exception_is_account_scoped_and_keeps_real_auth_state(client,account,database,monkeypatch):
+    user,email,password,h=account;conn=database[1]
+    conn.execute("INSERT INTO review_grants(user_id,role,granted_by,reason) VALUES (%s,'owner','test','Synthetic owner exception')",(user,))
+    monkeypatch.setattr(settings,'mfa_enforce_staff',True)
+    monkeypatch.setattr(settings,'staff_mfa_exempt_user_ids',' '+user+' , ')
+    assert client.get('/api/review/session').json()['mfa_required'] is False
+    state=client.get('/api/auth/mfa/status').json()
+    assert state['staff_required'] is False and state['verified'] is False and state['enabled'] is False
+    endpoint='/api/admin/bank/assessments/retry'
+    body={'reason':'Synthetic explicit account exception check.'}
+    assert client.post(endpoint,headers=h,json=body).status_code==200
+    assert client.post(endpoint,json=body).status_code==403  # CSRF still required.
+    # Another real staff account is not covered by the configured account ID.
+    client.cookies.set('ism_session','test-session-owner')
+    other={'Origin':settings.public_origin,'X-Review-CSRF':hashlib.sha256(b'bank-review:test-session-owner').hexdigest()}
+    assert client.get('/api/review/session').json()['mfa_required'] is True
+    assert client.post(endpoint,headers=other,json=body).status_code==403
+    # Email and prefix matches cannot grant an exception.
+    client.cookies.clear();client.cookies.set('ism_session','mfa-session-'+user.removeprefix('mfa_'))
+    monkeypatch.setattr(settings,'staff_mfa_exempt_user_ids',email+','+user+'-suffix')
+    assert client.get('/api/review/session').json()['mfa_required'] is True
+    assert client.post(endpoint,headers=h,json=body).status_code==403
+
+
+def test_exception_keeps_opt_in_authenticator_and_allows_normal_removal(client,account,database,monkeypatch):
+    user,email,password,h=account;conn=database[1]
+    conn.execute("INSERT INTO review_grants(user_id,role,granted_by,reason) VALUES (%s,'owner','test','Synthetic optional MFA')",(user,))
+    monkeypatch.setattr(settings,'mfa_enforce_staff',True)
+    monkeypatch.setattr(settings,'staff_mfa_exempt_user_ids',user)
+    seed,codes=enroll(client,account)
+    # An exception to staff enrollment does not bypass a voluntarily enabled login factor.
+    client.cookies.clear()
+    assert client.post('/api/auth/login',headers={'Origin':settings.public_origin},json={'email':email,'password':password}).status_code==401
+    assert client.post('/api/auth/login',headers={'Origin':settings.public_origin},json={'email':email,'password':password,'code':codes[0]}).status_code==200
+    token=client.cookies.get('ism_session')
+    headers={'Origin':settings.public_origin,'X-Review-CSRF':hashlib.sha256(('bank-review:'+token).encode()).hexdigest()}
+    assert client.post('/api/auth/mfa/disable',headers=headers,json={'password':password,'code':codes[1]}).status_code==200
+    assert client.get('/api/review/session').json()['mfa_required'] is False

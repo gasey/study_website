@@ -1,4 +1,5 @@
 import hashlib,json
+from contextlib import asynccontextmanager
 from ..services.question_readiness import answer_status_sql, reviewed_answer_sql
 from ..services.learning_taxonomy import CLERICAL_EXAMS, path_projection, topic_expression
 from ..services.source_identity import identities_for, display_identity
@@ -28,6 +29,7 @@ from ..services.bank_review import protect_answer
 from ..services.bank_review import snapshot as review_snapshot
 from ..services.answer_comparison import published_comparison
 from ..services.answer_reveals import record_reveal, require_fresh_attempt
+from ..services.study_series import study_series_pool
 
 router = APIRouter(prefix="/api/questions", tags=["questions"])
 
@@ -68,18 +70,25 @@ async def list_questions(
     topic_id: str | None = Query(None, min_length=2, max_length=160),
     study_area: StudyArea | None = None,
     shelf_id: str | None = Query(None, min_length=2, max_length=100),
+    learning_entry: str | None = Query(None, pattern=r"^learn_[0-9a-f]{32}$"),
     subtopic_id: str | None = Query(None, min_length=2, max_length=160),
     collection_id: str | None = Query(None, min_length=2, max_length=80),
     section_path: str | None = Query(None, min_length=2, max_length=160),
     paper_id: str | None = Query(None, min_length=1, max_length=500),
     essay_kind: Literal["essay", "letter", "precis", "comprehension"] | None = None,
-    study_status: Literal["all", "unseen", "answered", "wrong"] = "all",
+    study_status: Literal["all", "unseen", "answered", "wrong", "ever_wrong"] = "all",
+    order: Literal["repeated", "mixed"] = "repeated",
+    seed: str = "",
     repeats_only: bool = False,
     origin: Literal["paper", "community", "all"] = "paper",
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0),
     user_id: str = Depends(current_user),
     exam_scope: ExamScope = DEFAULT_SCOPE) -> QuestionPage:
+    if len(seed)>64 or (seed and not all(c.isascii() and (c.isalnum() or c in "-_") for c in seed)):
+        raise HTTPException(422, "Invalid question order seed")
+    if order=="mixed" and not seed:
+        raise HTTPException(422, "Mixed order needs a seed")
     view = pool_view(pool, exam_scope)
     where: list[str] = []
     params: dict[str, object] = {}
@@ -93,6 +102,11 @@ async def list_questions(
     if origin != "all":
         where.append("EXISTS (SELECT 1 FROM appearances oa JOIN papers op ON op.id=oa.paper_id WHERE oa.canonical_id=v.id AND oa.is_primary AND ((op.exam_type='Community')=%(community)s)" + (" OFFSET 0" if collection_id or paper_id else "") + ")")
         params["community"] = origin == "community"
+
+    if learning_entry:
+        where.append("EXISTS (SELECT 1 FROM learning_catalog lc WHERE lc.id=%(learning_entry)s AND lc.live_payload IS NOT NULL AND lc.live_payload->'question_ids' ? v.id)")
+        params["learning_entry"] = learning_entry
+        where.append("v.id IN (SELECT id FROM v_mock_practice)")
 
     if source:
         # Whitelisted against the enum rather than interpolated: this value
@@ -218,6 +232,7 @@ async def list_questions(
         where.append("EXISTS (SELECT 1 FROM appearances ea WHERE ea.canonical_id=v.id AND ea.essay_kind=%(essay_kind)s)")
         params["essay_kind"] = essay_kind
 
+    status_where = []
     if study_status != "all":
         attempt_exists = """EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s
                          AND sa.canonical_id=v.id AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s)"""
@@ -228,16 +243,18 @@ async def list_questions(
         params["user_id"] = user_id
         params["study_collection"] = collection_id
         if study_status == "unseen":
-            where.append(f"NOT {attempt_exists}")
+            status_where.append(f"NOT {attempt_exists}")
         elif study_status == "answered":
-            where.append(attempt_exists)
+            status_where.append(attempt_exists)
+        elif study_status == "ever_wrong":
+            status_where.append(attempt_exists.replace("sa.canonical_id=v.id", "sa.canonical_id=v.id AND NOT sa.correct"))
         else:
             scope="" if shelf_id and not collection_id else " AND sa.collection_id IS NOT DISTINCT FROM %(study_collection)s"
             inner_scope="" if shelf_id and not collection_id else " AND sa2.collection_id IS NOT DISTINCT FROM sa.collection_id"
             if study_area:
                 scope=" AND sa.collection_id=ANY(%(gb_collections)s)"
                 inner_scope=" AND sa2.collection_id=ANY(%(gb_collections)s)"
-            where.append("EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id"+scope+" AND sa.id=(SELECT MAX(sa2.id) FROM attempts sa2 WHERE sa2.user_id=sa.user_id AND sa2.canonical_id=sa.canonical_id"+inner_scope+") AND NOT sa.correct)")
+            status_where.append("EXISTS (SELECT 1 FROM attempts sa WHERE sa.user_id=%(user_id)s AND sa.canonical_id=v.id"+scope+" AND sa.id=(SELECT MAX(sa2.id) FROM attempts sa2 WHERE sa2.user_id=sa.user_id AND sa2.canonical_id=sa.canonical_id"+inner_scope+") AND NOT sa.correct)")
 
     if q:
         # Uses the GIN index on the generated tsvector; ~0.1-0.5 ms at 77k rows.
@@ -283,8 +300,20 @@ async def list_questions(
         if paper_id:
             source_area += " AND a.paper_id=%(paper_id)s"
     clause = f"WHERE {' AND '.join(where)}" if where else ""
+    grouped = collection_id in ('udc','combined-prelims') and not paper_id and not study_area
+    if grouped:
+        view = study_series_pool(view, clause)
+        params.update(series_user=user_id, series_collection=collection_id)
+        if study_status == "ever_wrong":
+            status_where = ["v.series_ever_wrong"]
+        clause = f"WHERE {' AND '.join(status_where)}" if status_where else ""
+    elif status_where:
+        clause = f"WHERE {' AND '.join(where + status_where)}"
 
     async with cursor() as cur:
+        if learning_entry:
+            from .current_affairs import no_assessment
+            await no_assessment(cur,user_id)
         if study_area:
             await cur.execute("SET LOCAL jit=off")
         source_sql = f"FROM {view} v"
@@ -292,14 +321,19 @@ async def list_questions(
         row = await cur.fetchone()
         total = row["n"] if row else 0
 
-        # Deliberately NOT `ORDER BY random()` — 19.8 ms vs 0.67 ms measured,
-        # and it degrades as the bank grows. times_asked DESC is indexed and
-        # puts genuinely repeated questions first, which is what a learner
-        # browsing the bank wants anyway.
+        # A seeded hash mixes the filtered pool once; pagination/reload retain
+        # the same order. Group identities stay stable after an attempt picks a
+        # different booklet representative. No per-request random sort.
+        sort_key = "v.times_asked"
+        direction = "DESC"
+        if order == 'mixed':
+            sort_key = "md5(" + ("v.study_series_key::text" if grouped else "v.id") + " || %(order_seed)s)"
+            params['order_seed'] = seed
+            direction = "ASC"
         await cur.execute(
             f"""WITH selected AS MATERIALIZED (
-                    SELECT v.id,v.times_asked FROM {view} v {clause}
-                    ORDER BY v.times_asked DESC,v.id
+                    SELECT v.id,{sort_key} AS sort_key FROM {view} v {clause}
+                    ORDER BY sort_key {direction},v.id
                     LIMIT %(limit)s OFFSET %(offset)s
                 )
                 SELECT {_COLS},src.figure_image,COALESCE(src.has_diagram,false) AS has_diagram,
@@ -319,33 +353,38 @@ async def list_questions(
                               (a.figure_image IS NOT NULL) DESC,p.year DESC NULLS LAST,
                               a.page NULLS LAST LIMIT 1
                 ) src ON TRUE
-                ORDER BY selected.times_asked DESC, selected.id""",
+                ORDER BY selected.sort_key {direction}, selected.id""",
             {**params, "source_paper_id": paper_id, "source_year_from": (year_from or 1900) if shelf_id and (year_from is not None or year_to is not None) else None, "source_year_to": (year_to or 2100) if shelf_id and (year_from is not None or year_to is not None) else None, "limit": limit, "offset": offset},
         )
-        items = []
-        selected_rows=await cur.fetchall()
-        await cur.execute("SELECT * FROM v_question_paths WHERE question_id=ANY(%s) ORDER BY is_primary DESC,subject_label,topic_label",([r['id'] for r in selected_rows],))
-        paths={}
-        for path in await cur.fetchall():paths.setdefault(path['question_id'],[]).append(path)
-        source_identities = await identities_for(cur, [r["source_paper_id"] for r in selected_rows if r.get("source_paper_id")])
-        for row in selected_rows:
-            row['taxonomy_paths']=paths.get(row['id'],[])
-            source = None
-            if row.get("source_paper_id"):
-                source = Appearance(
-                    paper_id=row["source_paper_id"], year=row.get("source_year"),
-                    exam=row.get("source_exam"), paper=row.get("source_paper"),
-                    qnum=row.get("source_qnum"), page=row.get("source_page"),
-                    series=row.get("source_series"),
-                    source_pdf_url=source_pdf_url(row.get("source_file"), row.get("pdf_url")),
-                )
-                source = source.model_copy(update=display_identity(source.paper_id, source.qnum, source_identities))
-            items.append(QuestionListItem(
-                **{**row, "figure_image_url": figure_image_url(row.get("figure_image")),
-                   "source_appearance": source}
-            ))
+        items = await question_items(cur, await cur.fetchall())
 
     return QuestionPage(items=items, total=total, limit=limit, offset=offset)
+
+
+async def question_items(cur, selected_rows):
+    """Shared answer-free serializer for catalog pages and saved study sets."""
+    items = []
+    await cur.execute("SELECT * FROM v_question_paths WHERE question_id=ANY(%s) ORDER BY is_primary DESC,subject_label,topic_label",([r['id'] for r in selected_rows],))
+    paths={}
+    for path in await cur.fetchall():paths.setdefault(path['question_id'],[]).append(path)
+    source_identities = await identities_for(cur, [r["source_paper_id"] for r in selected_rows if r.get("source_paper_id")])
+    for row in selected_rows:
+        row['taxonomy_paths']=paths.get(row['id'],[])
+        source = None
+        if row.get("source_paper_id"):
+            source = Appearance(
+                paper_id=row["source_paper_id"], year=row.get("source_year"),
+                exam=row.get("source_exam"), paper=row.get("source_paper"),
+                qnum=row.get("source_qnum"), page=row.get("source_page"),
+                series=row.get("source_series"),
+                source_pdf_url=source_pdf_url(row.get("source_file"), row.get("pdf_url")),
+            )
+            source = source.model_copy(update=display_identity(source.paper_id, source.qnum, source_identities))
+        items.append(QuestionListItem(
+            **{**row, "figure_image_url": figure_image_url(row.get("figure_image")),
+               "source_appearance": source}
+        ))
+    return items
 
 
 @router.get("/taxonomy", response_model=list[TaxonomyFacet])
@@ -535,11 +574,20 @@ async def next_question(question_id:str,paper_id:str|None=Query(None,max_length=
 async def answer_comparison(question_id: str, response: Response,
     user_id: Annotated[str, Depends(current_user)],
     paper_id: str | None = Query(None, max_length=500),
+    restore: bool = False,
     exam_scope: ExamScope = DEFAULT_SCOPE):
     """Explicit answer reveal, protected against active mocks, games and cups."""
     response.headers['Cache-Control'] = 'private, no-store'
     async with cursor() as cur:
         await protect_answer(cur, user_id, question_id)
+        # An already open answer panel can read its comparison without renewing
+        # the reveal cooldown. The client flag alone never grants answer access.
+        if restore:
+            await cur.execute('''SELECT 1 WHERE EXISTS (SELECT 1 FROM answer_reveals
+              WHERE user_id=%s AND canonical_id=%s) OR EXISTS (SELECT 1 FROM attempts
+              WHERE user_id=%s AND canonical_id=%s)''',(user_id,question_id,user_id,question_id))
+            if not await cur.fetchone():
+                raise HTTPException(409,'Show or answer this question before opening its comparison.')
         await cur.execute(f'''SELECT a.id,q.status,q.key_disputed,q.dispute_note,q.source_defect
           FROM canonical_questions q JOIN appearances a ON a.canonical_id=q.id
           JOIN papers p ON p.id=a.paper_id WHERE q.id=%s AND q.status<>'merged'
@@ -573,7 +621,7 @@ async def answer_comparison(question_id: str, response: Response,
                     'published_at':None,'document':None,'imported':True}
                 if result['solution']:
                     result['relation']='agree' if opts[ai]==result['solution']['answer_text'] else 'disagree'
-        if result['official'] or result['solution']:
+        if not restore and (result['official'] or result['solution']):
             await record_reveal(cur, user_id, question_id)
     return result
 
@@ -649,13 +697,20 @@ async def get_question(question_id: str, exam_scope: ExamScope = DEFAULT_SCOPE) 
     return QuestionDetail(**row, appearances=appearances)
 
 
-@router.post("/{question_id}/answer", response_model=AnswerResult)
-async def answer_question(
+@asynccontextmanager
+async def _answer_cursor(active=None):
+    if active is not None:
+        yield active
+    else:
+        async with cursor() as cur:
+            yield cur
+
+async def _answer_question(
     question_id: str,
     body: AnswerSubmission,
     user_id: Annotated[str, Depends(current_user)],
     idempotency_key:Annotated[str|None,Header(min_length=16,max_length=100)]=None,
-    exam_scope: ExamScope = DEFAULT_SCOPE) -> AnswerResult:
+    exam_scope: ExamScope = DEFAULT_SCOPE, _cur=None) -> AnswerResult:
     """Grade an answer, record the attempt, and reveal the key.
 
     Grading compares option TEXT, not index: the canonical row stores the
@@ -672,11 +727,11 @@ async def answer_question(
             if prior['request_hash']!=request_hash:raise HTTPException(409,'This answer request was already used for a different answer')
             return AnswerResult(**prior['response'])
     if idempotency_key:
-        async with cursor() as cur:
+        async with _answer_cursor(_cur) as cur:
             prior=await replay(cur)
             if prior:return prior
     resolved_section = None if body.collection_id=='combined-prelims' and body.section_path=='papers' else body.section_path
-    async with cursor() as cur:
+    async with _answer_cursor(_cur) as cur:
         await protect_answer(cur,user_id,question_id)
         if body.collection_id:
             if body.paper_id:
@@ -725,6 +780,7 @@ async def answer_question(
                     raise HTTPException(422, "question source does not belong to this exam")
         await cur.execute(
             f"""SELECT q.question,q.options,q.answer_text,q.answer_source,q.explanation,q.status,q.source_defect,
+                   {answer_status_sql('q')} AS answer_status,{reviewed_answer_sql('q')} AS reviewed_derived,
                    a.id AS appearance_id,COALESCE(a.direction,q.direction) AS direction,
                    COALESCE(a.passage,q.passage) AS passage,COALESCE(a.question_markup,q.question_markup) AS question_markup,
                    COALESCE(a.options_markup,q.options_markup) AS options_markup,a.has_diagram,a.figure_image
@@ -763,7 +819,7 @@ async def answer_question(
     # Store the TEXT the learner chose, not its index. When a key is later
     # corrected, attempts can be re-scored against the new answer; an index
     # would be meaningless if the options were ever re-ordered.
-    async with cursor() as cur:
+    async with _answer_cursor(_cur) as cur:
         if idempotency_key:
             await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('answer-request:'+user_id+':'+idempotency_key,))
             prior=await replay(cur)
@@ -786,7 +842,7 @@ async def answer_question(
                                       collection_id,paper_id,section_path,scoring_snapshot)
                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s) RETURNING id""",
             (user_id, question_id, correct, chosen_text, body.context,
-             body.collection_id, body.paper_id,resolved_section,Jsonb({k:row[k] for k in ('question','options','answer_text','answer_source','appearance_id','direction','passage','question_markup','options_markup','has_diagram','figure_image')})),
+             body.collection_id, body.paper_id,resolved_section,Jsonb({k:row[k] for k in ('question','options','answer_text','answer_source','answer_status','reviewed_derived','appearance_id','direction','passage','question_markup','options_markup','has_diagram','figure_image')})),
         )
 
         attempt=(await cur.fetchone())['id']
@@ -800,3 +856,11 @@ async def answer_question(
         if idempotency_key:
             await cur.execute('INSERT INTO practice_request_receipts(user_id,request_key,request_hash,attempt_id,response) VALUES(%s,%s,%s,%s,%s)',(user_id,idempotency_key,request_hash,attempt,Jsonb(result.model_dump())))
     return result
+
+
+@router.post("/{question_id}/answer", response_model=AnswerResult)
+async def answer_question(question_id:str,body:AnswerSubmission,
+    user_id:Annotated[str,Depends(current_user)],
+    idempotency_key:Annotated[str|None,Header(min_length=16,max_length=100)]=None,
+    exam_scope:ExamScope=DEFAULT_SCOPE) -> AnswerResult:
+    return await _answer_question(question_id,body,user_id,idempotency_key,exam_scope)

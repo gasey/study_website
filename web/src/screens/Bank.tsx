@@ -78,7 +78,7 @@ export default function Bank() {
           {(
             [
               ['all', 'All questions'],
-              ['scorable', 'Scorable keys'],
+              ['scorable', 'Official answer keys'],
               ['practice', 'All answered'],
             ] as const
           ).map(([k, label]) => (
@@ -150,7 +150,7 @@ export default function Bank() {
               <>Official and transcribed keys only. Scored mocks use this pool.</>
             ) : (
               <>
-                Includes derived and <span className="text-attention-dark">unverified</span> answers
+                Includes worked solutions and <span className="text-attention-dark">unverified</span> answers
                 for practice. This pool is never scored.
               </>
             )}

@@ -94,7 +94,7 @@ def test_publication_verifier_respects_retired_canonical_difficulty():
  from pathlib import Path
  spec=importlib.util.spec_from_file_location('retired_difficulty_worker',Path(__file__).resolve().parents[2]/'scripts/bank-review-worker.py');worker=importlib.util.module_from_spec(spec);spec.loader.exec_module(worker)
  record={'id':'synthetic-a','question':'Synthetic stem','options':['A','B'],'answerIndex':1,'explanation':None,'difficulty':'legacy-medium'}
- live={'record':record,'is_primary':True,'canonical_question':'Synthetic stem','canonical_options':['A','B'],'answer_text':'B','canonical_explanation':None,'canonical_difficulty':None,'source_defect':None}
+ live={'record':record,'is_primary':True,'canonical':{'question':'Synthetic stem','options':['A','B'],'answer_text':'B','explanation':None,'difficulty':None,'source_defect':None}}
  worker.remote=lambda query,json_result=False:[]if'question_topic_links'in query else[live]
  worker.verify_live({'appearance_id':'synthetic-a','after':record},{'payload':{'patch':{'question':'Synthetic stem'}}})
 

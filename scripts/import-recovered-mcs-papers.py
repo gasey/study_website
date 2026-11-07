@@ -2,6 +2,7 @@
 """Append source-only recovered MCS records. Never infers keys or changes existing rows."""
 import argparse,fcntl,hashlib,json,os
 from pathlib import Path
+from editorial_protection import write_guarded
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('artifact',type=Path);p.add_argument('--bank',type=Path,default=Path(__file__).resolve().parents[2]/'mpsc-question-bankv2/bank/mpsc_bank_v2.json');p.add_argument('--receipt',type=Path,required=True);p.add_argument('--apply',action='store_true');a=p.parse_args()
@@ -25,6 +26,6 @@ def main():
   receipt={'questions_before':count,'questions_after':len(bank['questions']),'new_papers':6,'new_questions':600,'existing_questions_changed':0,'official_answers_added':0,'before_sha256':hashlib.sha256(before).hexdigest(),'applied':a.apply}
   if a.apply:
    a.receipt.parent.mkdir(parents=True,exist_ok=True);(a.receipt.parent/'bank-before.json').write_bytes(before)
-   temp=a.bank.with_suffix('.mcs-import.tmp');temp.write_text(json.dumps(bank,ensure_ascii=False,indent=2)+'\n');os.replace(temp,a.bank);receipt['after_sha256']=hashlib.sha256(a.bank.read_bytes()).hexdigest()
+   write_guarded(a.bank, bank, locked=True);receipt['after_sha256']=hashlib.sha256(a.bank.read_bytes()).hexdigest()
   a.receipt.write_text(json.dumps(receipt,indent=2)+'\n');print(json.dumps(receipt,indent=2))
 if __name__=='__main__':main()

@@ -284,7 +284,7 @@ export default function LibraryShelf() {
                   <option value="all">Papers & community</option>
                 </select>
                 <select
-                  aria-label="Answer provenance"
+                  aria-label="Answer source"
                   className={INPUT}
                   value={params.get("source") || ""}
                   onChange={(e) => filter("source", e.target.value)}
@@ -292,8 +292,8 @@ export default function LibraryShelf() {
                   <option value="">Any answer status</option>
                   <option value="official">Official answer</option>
                   <option value="key">Transcribed key</option>
-                  <option value="derived">Reviewed / derived</option>
-                  <option value="inferred">Unverified inferred answer</option>
+                  <option value="derived">Worked solutions</option>
+                  <option value="inferred">Answer awaiting review</option>
                   <option value="none">No answer recorded</option>
                 </select>
                 <select
@@ -355,7 +355,7 @@ export default function LibraryShelf() {
           <p className="mt-3 text-[12px] text-muted">
             {view === "browse"
               ? "Includes descriptive and unkeyed questions, with original sources."
-              : "Answer labels show whether a key is official or a solution is derived."}{" "}
+              : "Answer labels distinguish official keys from worked solutions."}{" "}
             Topics may overlap; each question appears once.
           </p>
           <AnswerLayoutControl />

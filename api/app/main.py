@@ -14,6 +14,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import settings
 from .db import close_pool, cursor, open_pool
 from .routers import auth, billing, collections, community, home, me, mocks, moderation, questions
+from .routers import study_sessions
+from .routers import editorial
 from .routers import games,search,calendar,avatars,study_desks,discussions,bank_workspace,auth_mfa,rewards,materials,creators,admin_workflow,module_audits
 from .services.review_limits import ReviewBodyLimit
 from .schemas import ScoringFacts
@@ -59,7 +61,11 @@ app.add_middleware(AccountBoundary)
 app.add_middleware(ReviewBodyLimit)
 app.add_middleware(InvalidatePublicCatalog)
 app.include_router(bank_workspace.router)
+from .routers import mcq_solver_reviews
+app.include_router(mcq_solver_reviews.router)
 app.include_router(questions.router)
+app.include_router(study_sessions.router)
+app.include_router(editorial.router)
 app.include_router(home.router)
 app.include_router(community.router)
 app.include_router(discussions.router)
@@ -139,3 +145,30 @@ app.include_router(retagging.router)
 
 from .routers import account_recovery
 app.include_router(account_recovery.router)
+
+from .routers import current_affairs
+app.include_router(current_affairs.router)
+
+from .routers import paper_workbench
+app.include_router(paper_workbench.router)
+from .routers import topic_trail
+app.include_router(topic_trail.router)
+
+from .routers import discovery
+app.include_router(discovery.router)
+
+from .routers import learning_catalog
+app.include_router(learning_catalog.router)
+
+from .routers import google_auth
+app.include_router(google_auth.router)
+
+from .routers import pdf_library
+app.include_router(pdf_library.router)
+
+from .routers import bank_organization
+app.include_router(bank_organization.router)
+app.include_router(bank_organization.public_router)
+
+from .routers import shareable_tests
+app.include_router(shareable_tests.router)

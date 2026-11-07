@@ -16,6 +16,14 @@
 set -euo pipefail
 
 HOST=${ISM_HOST:-ubuntu@152.67.31.231}
+# The Oracle worker talks to its local database; developer checkouts use SSH.
+remote() {
+  if [ "${ISM_DB_TRANSPORT:-ssh}" = local ]; then bash -c "$1"; else ssh "$HOST" "$1"; fi
+}
+copy_csv() {
+  local src="$1" dest="$2"
+  if [ "${ISM_DB_TRANSPORT:-ssh}" = local ]; then cp -a "$src"/. "$dest"/; else rsync -az -e ssh "$src"/ "$HOST:$dest/"; fi
+}
 DB=${ISM_DB:-mpsc}
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 BANK=${ISM_BANK:-$ROOT/../mpsc-question-bankv2/bank/mpsc_bank_v2.json}
@@ -27,6 +35,10 @@ case "$DRY" in
 esac
 [ "$#" -le 1 ] || { echo "Only one sync mode is allowed" >&2; exit 2; }
 
+if [ "$DRY" != --check ] && [ "$DRY" != --dry-run ]; then
+  python3 "$ROOT/scripts/bank_authority.py" "$BANK"
+fi
+
 # Shared with the bank publication worker. A worker can pass its held lock.
 if [ "${ISM_BANK_LOCK_HELD:-}" != "1" ]; then
   exec 9>"${BANK}.lock"
@@ -35,6 +47,11 @@ fi
 
 [ -f "$BANK" ] || { echo "bank not found: $BANK" >&2; exit 1; }
 
+# Fail before any upload/database mutation if a parser/legacy writer altered
+# handed-off content. This also covers alternate ISM_BANK and taxonomy-only sync.
+python3 "$ROOT/scripts/editorial_protection.py" check --bank "$BANK" \
+  --policy "$ROOT/scripts/editorial-protection-policy.json" --remote-scope
+
 # --check answers the question parallel work actually raises: is the server
 # running the bank I have in front of me, and has it anything to send back?
 if [ "$DRY" = "--check" ]; then
@@ -42,7 +59,7 @@ if [ "$DRY" = "--check" ]; then
   # Pipe-separated. Not space (the timestamp contains one, which silently
   # shifted every later field) and not \t (it survives the quoting as a
   # literal backslash-t, so nothing splits at all).
-  IFS='|' read -r REMOTE_SUM REMOTE_N REMOTE_AT FEEDBACK <<<"$(ssh "$HOST" \
+  IFS='|' read -r REMOTE_SUM REMOTE_N REMOTE_AT FEEDBACK <<<"$(remote \
     "sudo -u postgres psql -qtA -F'|' -d $DB -c \"
        SELECT COALESCE(bank_checksum,'none'), COALESCE(questions_in,0),
               COALESCE(to_char(finished_at,'YYYY-MM-DD HH24:MI'),'never'),
@@ -58,7 +75,7 @@ c=collections.Counter(claim.get('review_status') for q in data.get('questions', 
 print(f"{sum(c.values())}|{c['approved']}|{c['pending']}|{c['rejected']}")
 PY
 )
-  REMOTE_CLASS=$(ssh "$HOST" "sudo -u postgres psql -qtA -F'|' -d $DB -c \"
+  REMOTE_CLASS=$(remote "sudo -u postgres psql -qtA -F'|' -d $DB -c \"
     SELECT COUNT(*),COUNT(*) FILTER (WHERE review_status='approved'),
            COUNT(*) FILTER (WHERE review_status='pending'),
            COUNT(*) FILTER (WHERE review_status='rejected')
@@ -70,7 +87,11 @@ PY
   if [ "${REMOTE_SUM:-x}" = "$LOCAL" ]; then
     echo "status      : IN SYNC"
   else
-    echo "status      : SERVER IS BEHIND — run ./scripts/sync-bank.sh"
+    if python3 "$ROOT/scripts/bank_authority.py" "$BANK" >/dev/null 2>&1; then
+      echo "status      : SERVER IS BEHIND — run ./scripts/sync-bank.sh"
+    else
+      echo "status      : READ-ONLY SNAPSHOT DIFFERS — Oracle is authoritative; refresh this snapshot"
+    fi
   fi
   [ "${FEEDBACK:-0}" != "0" ] && echo "feedback    : ${FEEDBACK} open proposal(s) from the server — export before editing the bank"
   exit 0
@@ -83,10 +104,10 @@ if [ "$DRY" = "--classifications-only" ]; then
   TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
   python3 "$ROOT/scripts/bank_to_csv.py" "$BANK" "$TMP/csv" "$TAXONOMY" >/dev/null
   echo "==> publishing taxonomy classifications from $BANK"
-  ssh "$HOST" 'rm -rf /tmp/bank-classifications && mkdir -p /tmp/bank-classifications'
-  rsync -az -e ssh "$TMP/csv/question_classifications.csv" "$TMP/csv/question_topic_links.csv" "$HOST:/tmp/bank-classifications/"
-  ssh "$HOST" 'chmod 755 /tmp/bank-classifications && chmod 644 /tmp/bank-classifications/*.csv'
-  ssh "$HOST" "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<'SQL'
+  remote 'rm -rf /tmp/bank-classifications && mkdir -p /tmp/bank-classifications'
+  if [ "${ISM_DB_TRANSPORT:-ssh}" = local ]; then cp "$TMP/csv/question_classifications.csv" "$TMP/csv/question_topic_links.csv" /tmp/bank-classifications/; else rsync -az -e ssh "$TMP/csv/question_classifications.csv" "$TMP/csv/question_topic_links.csv" "$HOST:/tmp/bank-classifications/"; fi
+  remote 'chmod 755 /tmp/bank-classifications && chmod 644 /tmp/bank-classifications/*.csv'
+  remote "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<'SQL'
 BEGIN;
 CREATE TEMP TABLE s_classifications (question_id TEXT, subject_id TEXT, subject_label TEXT,
     topic_id TEXT, topic_label TEXT, subtopic_id TEXT, subtopic_label TEXT,
@@ -147,7 +168,7 @@ SELECT 'subject-wise-practice',1,'subject/'||subjects.subject_id,subjects.subjec
          WHERE qc.review_status='approved') AS subjects;
 COMMIT;
 SQL
-  ssh "$HOST" 'rm -rf /tmp/bank-classifications'
+  remote 'rm -rf /tmp/bank-classifications'
   echo "==> classifications synchronized; no question text, answers, attempts, or accounts changed"
   exit 0
 fi
@@ -157,11 +178,11 @@ TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
 python3 "$ROOT/scripts/bank_to_csv.py" "$BANK" "$TMP/csv" "$TAXONOMY"
 
 echo "==> uploading"
-ssh "$HOST" 'rm -rf /tmp/bank-csv && mkdir -p /tmp/bank-csv'
-rsync -az -e ssh "$TMP/csv/" "$HOST:/tmp/bank-csv/"
+remote 'rm -rf /tmp/bank-csv && mkdir -p /tmp/bank-csv'
+copy_csv "$TMP/csv" /tmp/bank-csv
 # The scheduled worker uses umask 077. PostgreSQL must traverse the staging
 # directory as well as read these public question-bank CSVs.
-ssh "$HOST" 'chmod 755 /tmp/bank-csv && chmod 644 /tmp/bank-csv/*.csv'
+remote 'chmod 755 /tmp/bank-csv && chmod 644 /tmp/bank-csv/*.csv'
 
 # Everything below runs in ONE transaction: it fully applies or not at all.
 SQL=$(cat <<'EOSQL'
@@ -177,7 +198,7 @@ CREATE TEMP TABLE s_q (id TEXT, paper_id TEXT, type TEXT, qnum TEXT, qnum_seq IN
     source_context_ref TEXT, options JSONB, answer_index INT, answer_source TEXT, answer_key_ref TEXT,
     subject TEXT, topic TEXT, topic_label TEXT, difficulty TEXT, explanation TEXT, marks NUMERIC,
     has_diagram BOOL, used_vision BOOL, figure_group_id TEXT, figure_image TEXT, passage TEXT,
-    passage_id TEXT, essay_kind TEXT, review_metadata JSONB) ON COMMIT DROP;
+    passage_id TEXT, essay_kind TEXT, review_metadata JSONB, series TEXT) ON COMMIT DROP;
 CREATE TEMP TABLE s_classifications (question_id TEXT, subject_id TEXT, subject_label TEXT,
     topic_id TEXT, topic_label TEXT, subtopic_id TEXT, subtopic_label TEXT,
     taxonomy_version TEXT, source TEXT, review_status TEXT, confidence NUMERIC,
@@ -292,6 +313,12 @@ INSERT INTO appearances (id,paper_id,type,qnum,qnum_seq,page,question,direction,
      OR (appearances.option_order IS NOT NULL
          AND array_length(appearances.option_order,1) IS DISTINCT FROM jsonb_array_length(EXCLUDED.options));
 
+-- New reviewed uploads own their explicit booklet mapping. Legacy source
+-- mappings remain untouched by this additive path.
+UPDATE appearances a SET series=s.series FROM s_q s
+ WHERE a.id=s.id AND s.review_metadata->>'origin'='reviewed-paper-workbench'
+ AND a.series IS DISTINCT FROM s.series;
+
 -- Propagate edited text/options/keys from the primary printing. This is what
 -- makes local authoritative: a typo fixed in the JSON reaches the canonical
 -- row. It also overwrites any server-side edit to the same columns, which is
@@ -388,7 +415,7 @@ EOSQL
 
 if [ "$DRY" = "--dry-run" ]; then
   echo "==> DRY RUN (nothing is written)"
-  ssh "$HOST" "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
+  remote "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
 ROLLBACK;"
 else
   # Record which bank version this sync carries. Without it nobody can
@@ -401,7 +428,7 @@ else
   echo "==> bank ${SUM:0:12}… · ${NQ} questions"
 
   echo "==> applying"
-  ssh "$HOST" "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
+  remote "sudo -u postgres psql -v ON_ERROR_STOP=1 -d $DB" <<< "$SQL
 -- Capture the before-counts as psql variables so the deltas recorded below
 -- are real deltas, not totals wearing a delta's name.
 SELECT COUNT(*) AS cq_before FROM canonical_questions \gset
@@ -426,7 +453,7 @@ UPDATE sync_log SET
   WHERE id = (SELECT MAX(id) FROM sync_log);
 COMMIT;"
   echo "==> after"
-  ssh "$HOST" "sudo -u postgres psql -tA -d $DB -c \"
+  remote "sudo -u postgres psql -tA -d $DB -c \"
     SELECT 'canonical='||COUNT(*) FROM canonical_questions
     UNION ALL SELECT 'scorable='||COUNT(*) FROM v_scorable
     UNION ALL SELECT 'attempts='||COUNT(*) FROM attempts;\""

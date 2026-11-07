@@ -9,14 +9,14 @@ OWNER=importlib.util.module_from_spec(SPEC);SPEC.loader.exec_module(OWNER)
 
 @pytest.mark.parametrize('state',['active','activating','reloading'])
 def test_live_single_item_worker_prevents_new_batch_exports(monkeypatch,state):
-    monkeypatch.setattr(OWNER.subprocess,'run',lambda *a,**k:SimpleNamespace(stdout=state))
-    with pytest.raises(ValueError,match='Pause ism-bank-review.timer'):
+    monkeypatch.setattr(OWNER.subprocess,'run',lambda *a,**k:SimpleNamespace(stdout=state+'\ninactive'))
+    with pytest.raises(ValueError,match='Oracle publisher is running'):
         OWNER.require_batch_worker_idle({'operation':'answer-batch','repairs':[{'mode':'official'}]*2})
-    with pytest.raises(ValueError):OWNER.require_batch_worker_idle({'operation':'source-batch'})
+    with pytest.raises(ValueError):OWNER.require_batch_worker_idle({'operation':'source-batch','items':[{},{}]})
 
 
 def test_holds_do_not_create_exports_and_paused_worker_allows_batches(monkeypatch):
     monkeypatch.setattr(OWNER.subprocess,'run',lambda *a,**k:SimpleNamespace(stdout='active'))
     OWNER.require_batch_worker_idle({'operation':'answer-batch','repairs':[{'mode':'needs-review'}]*18})
-    monkeypatch.setattr(OWNER.subprocess,'run',lambda *a,**k:SimpleNamespace(stdout='inactive'))
+    monkeypatch.setattr(OWNER.subprocess,'run',lambda *a,**k:SimpleNamespace(stdout='inactive\ninactive'))
     OWNER.require_batch_worker_idle({'operation':'answer-batch','repairs':[{'mode':'official'}]*2})

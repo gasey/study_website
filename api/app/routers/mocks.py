@@ -89,7 +89,8 @@ async def _candidate_ids(cur, collection_id: str, section_path: str | None,
             params,
         )
         candidates.update(r["id"] for r in await cur.fetchall())
-    return sorted(candidates)
+    from ..services.repeat_selection import distinct_candidates
+    return await distinct_candidates(cur,sorted(candidates))
 
 
 @router.post("", response_model=MockSession)
@@ -100,16 +101,25 @@ async def start_mock(
         await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('learning-session:'+user_id,))
         await cur.execute('SELECT 1 FROM game_members WHERE user_id=%s AND released_at IS NULL',(user_id,))
         if await cur.fetchone():raise HTTPException(409,'Finish or leave your game before starting a mock')
-        await cur.execute(f"""SELECT 1 FROM collections WHERE id=%s AND visibility='public' AND {scope_condition('collections', exam_scope)}""",(body.collection_id,))
-        if not await cur.fetchone():raise HTTPException(404,'Exam not found in this scope')
+        shared_test=None
+        if body.learning_test_id:
+            if body.learning_test_version is None:raise HTTPException(422,'Choose the published test edition')
+            from ..services.shareable_tests import for_start
+            shared_test=await for_start(cur,body.learning_test_id,body.learning_test_version,user_id)
+            config=shared_test['payload']['test_config']
+            body=body.model_copy(update={'collection_id':'shared-tests','section_path':None,'paper_id':None,'paper_mode':'practice',**config})
+        elif body.learning_test_version is not None:raise HTTPException(422,'A test edition needs its test ID')
+        if not shared_test:
+            await cur.execute(f"""SELECT 1 FROM collections WHERE id=%s AND visibility='public' AND {scope_condition('collections', exam_scope)}""",(body.collection_id,))
+            if not await cur.fetchone():raise HTTPException(404,'Exam not found in this scope')
         await cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))", ("mock:" + user_id,))
         await cur.execute("SELECT account_has_pro(id) AS pro FROM users WHERE id=%s", (user_id,))
         entitlement=await cur.fetchone()
-        if not entitlement or not entitlement["pro"]:
+        if not shared_test and (not entitlement or not entitlement["pro"]):
             # An expired/abandoned paper with no answers should not consume
             # the learner's one monthly free mock. Count only a submission
             # where they actually answered at least one question.
-            await cur.execute("SELECT count(*)::int AS n FROM mock_sessions WHERE user_id=%s AND started_at>=date_trunc('month',now()) AND submitted_at IS NOT NULL AND COALESCE(n_correct,0)+COALESCE(n_wrong,0)>0",(user_id,))
+            await cur.execute("SELECT count(*)::int AS n FROM mock_sessions WHERE user_id=%s AND learning_test_id IS NULL AND started_at>=date_trunc('month',now()) AND submitted_at IS NOT NULL AND COALESCE(n_correct,0)+COALESCE(n_wrong,0)>0",(user_id,))
             if (await cur.fetchone())["n"] >= 1:
                 raise HTTPException(429,"Your free plan includes one mock per month. Pro includes unlimited mocks.")
         await cur.execute(
@@ -120,12 +130,17 @@ async def start_mock(
             raise HTTPException(409, "a mock is already open; resume or submit it first")
 
         paper_items = None
+        full_readiness=None
+        if body.paper_mode=='full' and (not body.paper_id or body.answer_mode!='official'):
+            raise HTTPException(422,'Full simulation needs an exact original paper and official-key scoring')
         section_path = body.section_path
         duration_minutes = body.duration_minutes
         marks_correct = body.marks_correct
         marks_wrong = body.marks_wrong
         source_view = pool_view('mock_practice', exam_scope) if body.answer_mode == "derived-practice" else pool_view('scorable', exam_scope)
-        if body.paper_id:
+        if shared_test:
+            chosen=shared_test['payload']['question_ids']
+        elif body.paper_id:
             if body.section_path:
                 raise HTTPException(422, "choose either a paper or a section mock")
             await cur.execute(
@@ -138,6 +153,19 @@ async def start_mock(
             paper = await cur.fetchone()
             if paper is None or (body.answer_mode == "official" and not paper["as_mock"]):
                 raise HTTPException(422, "this paper is available to browse but not for a scored test")
+            if body.paper_mode=='full':
+                from ..services.bank_organization import readiness
+                await cur.execute('SELECT c.id FROM canonical_questions c JOIN appearances a ON a.canonical_id=c.id WHERE a.paper_id=%s ORDER BY c.id FOR SHARE OF c',(body.paper_id,))
+                await cur.fetchall()
+                await cur.execute('SELECT id FROM appearances WHERE paper_id=%s ORDER BY id FOR SHARE',(body.paper_id,))
+                await cur.fetchall()
+                await cur.execute('SELECT id FROM papers WHERE id=%s FOR SHARE',(body.paper_id,))
+                await cur.fetchone()
+                await cur.execute('SELECT paper_id FROM bank_paper_profiles WHERE paper_id=%s FOR SHARE',(body.paper_id,))
+                await cur.fetchone()
+                full_readiness=await readiness(cur,body.paper_id)
+                if not full_readiness['full_simulation_ready']:
+                    raise HTTPException(422,'Full original-paper simulation is not ready: '+'; '.join(full_readiness['blockers']))
             section_path = paper["section_path"]
             # Preserve this paper's numbering and printed option order while
             # using the canonical key for scoring.
@@ -154,6 +182,9 @@ async def start_mock(
                 if r["id"] not in seen:
                     seen.add(r["id"])
                     paper_items.append(r)
+            if full_readiness and full_readiness['appearance_order']:
+                order={aid:i for i,aid in enumerate(full_readiness['appearance_order'])}
+                paper_items.sort(key=lambda item:order[item['appearance_id']])
             if not paper_items:
                 label = "reviewed-answer" if body.answer_mode == "derived-practice" else "verified-key"
                 raise HTTPException(422, f"this paper has no {label} questions yet")
@@ -163,6 +194,11 @@ async def start_mock(
                 marks_correct = float(paper["marks_correct"])
             if paper["marks_wrong"] is not None:
                 marks_wrong = float(paper["marks_wrong"])
+            if full_readiness:
+                spec=full_readiness['scheme']['paper']
+                duration_minutes=spec['duration_minutes']
+                marks_correct=spec['marks']/full_readiness['appearances']
+                marks_wrong=marks_correct*spec['negative_fraction']
             chosen = [r["id"] for r in paper_items]
         else:
             ids = await _candidate_ids(cur, body.collection_id, body.section_path, body.answer_mode, exam_scope)
@@ -175,14 +211,17 @@ async def start_mock(
         # hold/publication cannot change the key between eligibility and freeze.
         await cur.execute("SELECT id FROM canonical_questions WHERE id=ANY(%s) ORDER BY id FOR SHARE",(chosen,))
         await cur.fetchall()
-        view=pool_view('mock_practice', exam_scope) if body.answer_mode=='derived-practice' else pool_view('scorable', exam_scope)
+        view=pool_view('mock_practice', 'all' if shared_test else exam_scope) if body.answer_mode=='derived-practice' else pool_view('scorable', 'all' if shared_test else exam_scope)
         await cur.execute('SELECT id FROM '+view+' WHERE id=ANY(%s)',(chosen,))
         if {r['id'] for r in await cur.fetchall()}!=set(chosen):
             raise HTTPException(409,'The bank changed while preparing this mock. Please try again.')
         appearances=[r['appearance_id'] for r in paper_items] if paper_items is not None else [None]*len(chosen)
-        captured=await scoring_revisions.capture_mock_questions(cur,chosen,appearances,body.answer_mode)
+        captured=shared_test['questions'] if shared_test else await scoring_revisions.capture_mock_questions(cur,chosen,appearances,body.answer_mode)
+        await cur.execute("SELECT question_id,COALESCE(subtopic_label,topic_label,subject_label) AS label FROM question_classifications WHERE question_id=ANY(%s) AND review_status='approved'",(chosen,))
+        labels={r['question_id']:r['label'] for r in await cur.fetchall()}
+        for item in captured:item['snapshot']['topic_label']=labels.get(item['id'])
         excluded_presentations=len(chosen)-len(captured)
-        if not captured or (excluded_presentations and paper_items is None):
+        if not captured or (excluded_presentations and (paper_items is None or body.paper_mode=='full')):
             raise HTTPException(422,'The presented source context or options cannot be safely scored. Browse the paper or request a correction.')
         chosen=[r['id'] for r in captured]
         mock_id = uuid.uuid4().hex
@@ -190,11 +229,11 @@ async def start_mock(
         await cur.execute(
             """INSERT INTO mock_sessions
                  (id, user_id, collection_id, section_path, paper_id, question_ids, answer_mode,
-                  duration_seconds, marks_correct, marks_wrong,excluded_presentations)
-               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
+                  duration_seconds, marks_correct, marks_wrong,excluded_presentations,paper_mode,scheme_snapshot,learning_test_id,learning_test_version,learning_test_title)
+               VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)
                RETURNING started_at""",
             (mock_id, user_id, body.collection_id, section_path, body.paper_id, chosen, body.answer_mode,
-             duration_minutes * 60, marks_correct, marks_wrong,excluded_presentations),
+             duration_minutes * 60, marks_correct, marks_wrong,excluded_presentations,body.paper_mode,Jsonb(full_readiness['scheme']) if full_readiness else None,body.learning_test_id,shared_test['revision'] if shared_test else None,shared_test['payload']['title'] if shared_test else None),
         )
         started = (await cur.fetchone())["started_at"]
         for position,item in enumerate(captured):
@@ -203,8 +242,8 @@ async def start_mock(
         questions = await _load_questions(cur, chosen, mock_id)
 
     return MockSession(
-        id=mock_id, collection_id=body.collection_id, answer_mode=body.answer_mode, section_path=section_path,
-        paper_id=body.paper_id,
+        id=mock_id,learning_test_id=body.learning_test_id,learning_test_version=shared_test['revision'] if shared_test else None,learning_test_title=shared_test['payload']['title'] if shared_test else None, collection_id=body.collection_id, answer_mode=body.answer_mode, section_path=section_path,
+        paper_id=body.paper_id,paper_mode=body.paper_mode,
         duration_seconds=duration_minutes * 60, started_at=started,
         seconds_remaining=duration_minutes * 60, questions=questions,excluded_presentations=excluded_presentations,
     )
@@ -275,7 +314,7 @@ async def current_mock(user_id: Annotated[str, Depends(current_user)]) -> MockSe
     async with cursor() as cur:
         await cur.execute(
             """SELECT id, collection_id, answer_mode, section_path, paper_id, question_ids, duration_seconds,
-                      current_position,excluded_presentations,
+                      current_position,excluded_presentations,paper_mode,learning_test_id,learning_test_version,learning_test_title,
                       started_at,
                       GREATEST(0, duration_seconds
                                - EXTRACT(EPOCH FROM (now() - started_at)))::int AS remaining
@@ -293,8 +332,8 @@ async def current_mock(user_id: Annotated[str, Depends(current_user)]) -> MockSe
         )
         saved = await cur.fetchall()
     return MockSession(
-        id=row["id"], collection_id=row["collection_id"], answer_mode=row["answer_mode"], section_path=row["section_path"],
-        paper_id=row["paper_id"],
+        id=row["id"],learning_test_id=row["learning_test_id"],learning_test_version=row["learning_test_version"],learning_test_title=row["learning_test_title"], collection_id=row["collection_id"], answer_mode=row["answer_mode"], section_path=row["section_path"],
+        paper_id=row["paper_id"],paper_mode=row["paper_mode"],
         duration_seconds=row["duration_seconds"], started_at=row["started_at"],
         current_position=row["current_position"],
         saved_answers={r["question_id"]:r["chosen_index"] for r in saved if r["chosen_index"] is not None},
@@ -350,7 +389,7 @@ async def submit_mock(
 ) -> MockResult:
     async with cursor() as cur:
         await cur.execute(
-            """SELECT question_ids, collection_id, section_path, paper_id, answer_mode, duration_seconds, marks_correct, marks_wrong,
+            """SELECT question_ids, collection_id, section_path, paper_id, answer_mode, duration_seconds, marks_correct, marks_wrong,learning_test_id,learning_test_version,learning_test_title,
                       submitted_at,
                       EXTRACT(EPOCH FROM (now() - started_at))::int AS elapsed
                  FROM mock_sessions WHERE id = %s AND user_id = %s FOR UPDATE""",
@@ -417,7 +456,7 @@ async def submit_mock(
                      s["collection_id"],s["paper_id"],s["section_path"]),
                 )
             rows.append(MockReviewRow(
-                position=pos, question_id=qid, question=q["question"],
+                position=pos, question_id=qid, question=q["question"], topic_label=q.get("topic_label"),
                 direction=q.get("direction"),question_markup=q.get("question_markup"),passage=q.get("passage"),
                 figure_image_url=figure_image_url(q.get("figure_image")),
                 chosen_text=chosen_text, answer_text=q["answer_text"], correct=correct,
@@ -436,7 +475,7 @@ async def submit_mock(
         await cur.execute("INSERT INTO new_score_jobs(mock_id) VALUES (%s) ON CONFLICT DO NOTHING",(mock_id,))
 
     return MockResult(
-        id=mock_id, collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=n_ok, n_wrong=n_bad, n_skipped=n_skip, score=score,
+        id=mock_id,learning_test_id=s["learning_test_id"],learning_test_version=s["learning_test_version"],learning_test_title=s["learning_test_title"], collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=n_ok, n_wrong=n_bad, n_skipped=n_skip, score=score,
         total=len(ids), elapsed_seconds=elapsed, late=late, review=rows,
         score_breakdown=scoring_revisions.original_breakdown(rows,s['marks_correct'],s['marks_wrong']),
         legacy_unversioned=len(frozen_ids)<len(ids),
@@ -449,7 +488,7 @@ async def list_mocks(user_id: Annotated[str, Depends(current_user)]) -> list[Moc
     offer to resume rather than silently hiding a blocked slot."""
     async with cursor() as cur:
         await cur.execute(
-            """SELECT m.id, m.collection_id, c.title AS collection_title, m.section_path, m.answer_mode,
+            """SELECT m.id,m.learning_test_id,m.learning_test_version,m.learning_test_title, m.collection_id, COALESCE(m.learning_test_title,c.title) AS collection_title, m.section_path, m.answer_mode,
                       cardinality(m.question_ids) AS total,
                       m.n_correct, m.n_wrong, m.n_skipped, m.score,
                       m.elapsed_seconds, m.late, m.started_at, m.submitted_at
@@ -471,7 +510,7 @@ async def get_mock_result(
     attempt row at all and must still appear in the review."""
     async with cursor() as cur:
         await cur.execute(
-            """SELECT collection_id,question_ids, answer_mode, n_correct, n_wrong, n_skipped, score,marks_correct,marks_wrong,
+            """SELECT collection_id,question_ids, answer_mode, n_correct, n_wrong, n_skipped, score,marks_correct,marks_wrong,learning_test_id,learning_test_version,learning_test_title,
                       elapsed_seconds, late, submitted_at
                  FROM mock_sessions WHERE id = %s AND user_id = %s""",
             (mock_id, user_id),
@@ -497,11 +536,11 @@ async def get_mock_result(
         result_rows=await cur.fetchall()
         for row in result_rows:
             if row['snapshot']:
-                row.update({key:row['snapshot'].get(key) for key in ('question','answer_text','answer_source','explanation','direction','question_markup','passage','figure_image')})
+                row.update({key:row['snapshot'].get(key) for key in ('question','answer_text','answer_source','explanation','direction','question_markup','passage','figure_image','topic_label')})
             else:
                 row.update(answer_text=None,answer_source=None,explanation=None)
         review = [
-            MockReviewRow(position=i, question_id=r["id"], question=r["question"],
+            MockReviewRow(position=i, question_id=r["id"], question=r["question"], topic_label=r.get("topic_label"),
                           direction=r.get("direction"),question_markup=r.get("question_markup"),passage=r.get("passage"),
                           figure_image_url=figure_image_url(r.get("figure_image")),
                           chosen_text=r["chosen_text"], answer_text=r["answer_text"],
@@ -510,7 +549,7 @@ async def get_mock_result(
         ]
 
     return MockResult(
-        id=mock_id, collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=s["n_correct"], n_wrong=s["n_wrong"],
+        id=mock_id,learning_test_id=s["learning_test_id"],learning_test_version=s["learning_test_version"],learning_test_title=s["learning_test_title"], collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=s["n_correct"], n_wrong=s["n_wrong"],
         n_skipped=s["n_skipped"], score=float(s["score"]),
         total=len(s["question_ids"]), elapsed_seconds=s["elapsed_seconds"],
         late=s["late"], review=review,

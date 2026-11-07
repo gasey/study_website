@@ -15,3 +15,6 @@ web/public/vendor/pdfjs/
 # Local release evidence, database snapshots and disposable test fixtures.
 /reports/
 /tmp/
+
+# Private portable AI editorial queue and receipts.
+/state/ai-review/

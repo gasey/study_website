@@ -1,3 +1,4 @@
+import GoogleSignIn from '../components/GoogleSignIn'
 import {safeReturnPath,resetAccountContext} from '../lib/accountContext'
 import {reviewRequest,reviewSession} from '../lib/review'
 import { useEffect, useState, type FormEvent } from 'react'
@@ -21,7 +22,7 @@ export function AccountForm({ mode }: { mode: 'login' | 'join' }) {
       <p className="mt-2 text-[14px] leading-relaxed text-secondary">{joining?'Save your progress across devices. New accounts include a seven-day Pro trial with no card required.':'Sign in to continue your study progress.'}</p>
       {new URLSearchParams(location.search).has('recovered')&&<p role="status" className="mt-4 text-[14px]">Your password was saved. Sign in to continue.</p>}
       {error&&<p role="alert" className="mt-4 rounded-[9px] bg-wrong-soft p-3 text-[13px] text-wrong-dark">{error}</p>}
-      <form onSubmit={submit} className="mt-5 space-y-4"><label className="block text-[13px] font-semibold">Email address<input className={input} type="email" autoComplete="email" required maxLength={254} value={email} onChange={e=>setEmail(e.target.value)}/></label>
+      <GoogleSignIn/>{new URLSearchParams(location.search).has("google_error")&&<p role="status">Google sign-in was cancelled. You can try again.</p>}<form onSubmit={submit} className="mt-5 space-y-4"><label className="block text-[13px] font-semibold">Email address<input className={input} type="email" autoComplete="email" required maxLength={254} value={email} onChange={e=>setEmail(e.target.value)}/></label>
         <label className="block text-[13px] font-semibold">Password<input className={input} type="password" autoComplete={joining?'new-password':'current-password'} minLength={joining?12:1} maxLength={200} required value={password} onChange={e=>setPassword(e.target.value)}/>{joining&&<span className="mt-1 block text-[11px] font-normal text-muted">At least 12 characters, including a letter and a number.</span>}</label>
         {!joining&&<label className="block text-[13px] font-semibold">Authenticator or recovery code <span className="font-normal text-muted">(if enabled)</span><input value={code} onChange={e=>setCode(e.target.value)} autoComplete="one-time-code" maxLength={64} className={input}/></label>}
         {guestCount>0&&<label className="flex gap-3 text-[13px] leading-relaxed"><input type="checkbox" checked={saveGuest} onChange={e=>setSaveGuest(e.target.checked)}/><span>Save this browser’s {guestCount} practice answers and study progress to my account. Past guest answers earn no XP.</span></label>}
@@ -46,7 +47,7 @@ export function Plans(){
     <div className="mt-6 rounded-[12px] border border-map bg-map-soft p-4 text-[14px] text-map-dark"><b>7 days of Pro included</b> with every new account. No card required; the trial does not automatically charge you.</div>
     {error&&<p role="alert" className="mt-4 rounded-[9px] bg-wrong-soft p-3 text-[13px] text-wrong-dark">{error}</p>}{msg&&<p role="status" className="mt-4 rounded-[9px] bg-correct-soft p-3 text-[13px] text-correct-dark">{msg}</p>}
     <div className="mt-5 grid gap-3 md:grid-cols-3">{planCards.map(p=><section key={p.period} className={`${panel} flex flex-col`}><div className="font-mono text-[11px] uppercase tracking-[.1em] text-muted">Pro · {p.label}</div><div className="mt-3 font-display text-[38px]">{p.price}</div><div className="text-[13px] text-secondary">{p.note}</div><button disabled={!config?.enabled||busy!==''} onClick={()=>void checkout(p.period)} className={`${button} mt-5`}>{!config?.enabled?'Payments setting up':busy===p.period?'Opening checkout…':'Choose Pro'}</button></section>)}</div>
-    {!config?.enabled&&<p className="mt-4 text-[12px] text-muted">Razorpay is not configured on the server yet. Plan selection will open when the payment keys and webhook secret are installed.</p>}
+    {!config?.enabled&&<p className="mt-4 text-[12px] text-muted">Paid plans are not available yet. You can continue using the free features.</p>}
     <p className="mt-6 text-[12px] leading-relaxed text-muted">Recurring subscription renewals are processed by Razorpay. You can cancel at any time; access remains through the current paid period. Receipts and subscription status will appear in your profile.</p>
     <section className={`${panel} mt-5`}><h2 className="font-display text-[22px]">Class plan</h2><p className="mt-1 text-[14px] text-secondary">Designed for teacher-led groups. Class setup and management are still being built, so this plan is not available for purchase yet.</p></section>
   </div></main>

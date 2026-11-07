@@ -2,31 +2,37 @@ import type {AnswerSource} from './api'
 export interface AnswerContext {reviewed?:boolean;disputed?:boolean;defect?:string|null;questionType?:string;statusOverride?:string}
 /** Display policy only. Never grants publication approval or scoring eligibility. */
 export function answerStatus(source:AnswerSource,{reviewed=false,disputed=false,defect=null,questionType='mcq',statusOverride}:AnswerContext={}){
- const sourceDetail=source==='official'?'Recorded authority key':source==='key'?'Transcribed authority key':source==='derived'?'Derived from a worked solution':source==='inferred'?'Unverified suggestion':'No recorded answer'
- if(questionType==='descriptive')return {status:'written',label:'Written question',sourceDetail,description:'This question requires a written answer. An MCQ answer index does not apply.',scoring:'Use the paper instructions and marking rubric; this label does not certify a rubric.',trusted:false}
- if(statusOverride==='needs-review'||disputed||['duplicate-options','unresolved-source'].includes(defect||''))return {status:'needs-review',label:'Needs review',sourceDetail,description:disputed?'The recorded answer is disputed. Its source and competing evidence need review.':'This item is held for review, or a source/option issue prevents verification.',scoring:'This badge does not clear a scoring hold. Scored modes continue to enforce their existing eligibility checks.',trusted:false}
+ const sourceDetail=source==='official'?'Official answer key':source==='key'?'Official answer key':source==='derived'?'Worked solution':source==='inferred'?'Answer awaiting review':'No recorded answer'
+ if(questionType==='descriptive')return {status:'written',label:'Written question',sourceDetail,description:'Write your response using the instructions in the original paper.',scoring:'Written answers are not automatically scored.',trusted:false}
+ if(statusOverride==='needs-review'||disputed||['duplicate-options','unresolved-source'].includes(defect||''))return {status:'needs-review',label:'Needs review',sourceDetail,description:disputed?'The answer is disputed. Check the original key and available explanation.':'This question or its answer needs checking.',scoring:'Questions with unresolved issues are excluded from scored tests.',trusted:false}
  if(statusOverride==='unsolved')source='none'
- if(source==='official'||source==='key')return {status:'official',label:'Official key',sourceDetail,description:source==='key'?'The authority’s key was transcribed into the bank. Check the exact paper, question number, booklet and copied option.':'The recorded answer comes from the examination authority’s key. Check the exact paper, question number and booklet.',scoring:'Eligible questions can enter official-key mocks. This label does not establish that the key is final; a later final key can supersede a provisional key.',trusted:true}
- if(source==='derived'&&reviewed)return {status:'verified',label:'Verified solution · unofficial',sourceDetail,description:'This worked solution was checked by an authorized administrator or independent reviewers, published, and matched against the current question. Verified describes that review process; the solution remains unofficial and can still be corrected.',scoring:'Eligible for labelled practice estimates, not official-key mock scores. Editing the reviewed content can invalidate its verification.',trusted:true}
- if(source==='derived'||source==='inferred')return {status:'needs-review',label:'Needs review',sourceDetail,description:source==='derived'?'A worked answer exists, but completed answer verification is not established.':'An unverified suggested answer exists. It may be model-generated and can be wrong.',scoring:'Excluded from scored mocks until the required admin decision or independent review and publication checks pass. Agreement and upvotes do not verify an answer.',trusted:false}
- return {status:'unsolved',label:'Unsolved',sourceDetail,description:'No answer is recorded in the bank yet. This does not mean that an official key was never published.',scoring:'Browse the source or contribute a supported solution. A search that found no official key must record its sources and date separately.',trusted:false}
+ if(source==='official'||source==='key')return {status:'official',label:'Official key',sourceDetail,description:source==='key'?'This answer was copied from the examination authority’s key.':'This answer comes from the examination authority’s key.',scoring:'Used for official-key tests when eligible. A provisional key may change when the final key is published.',trusted:true}
+ if(source==='derived'&&reviewed)return {status:'verified',label:'Verified solution',sourceDetail,description:'This worked solution has been reviewed. Official test scores continue to use the examination authority’s answer key.',scoring:'May be used for practice estimates, but not official-key test scores.',trusted:true}
+ if(source==='derived'||source==='inferred')return {status:'needs-review',label:'Needs review',sourceDetail,description:source==='derived'?'A worked answer is available but has not yet been verified.':'A suggested answer is available but has not been verified. It may be wrong.',scoring:'Not used in scored tests until verified.',trusted:false}
+ return {status:'unsolved',label:'No answer yet',sourceDetail,description:'An answer is not available here yet.',scoring:'Read the original paper or suggest a solution with a reliable source.',trusted:false}
 }
 
 /** Provenance colours are independent of correct/wrong answer colours. */
 export function answerStatusAppearance(status:string){
  if(status==='official')return {badge:'border-[#8CB89A] bg-[#E7F3EA] text-[#214E34]',accent:'border-[#8CB89A]',symbol:'▣',shortLabel:'Official key',meaning:'Answer from the exam authority'}
- if(status==='verified')return {badge:'border-[#8DAED7] bg-[#EAF1FC] text-[#204F86]',accent:'border-[#8DAED7]',symbol:'✓',shortLabel:'Verified solution · unofficial',meaning:'Published, reviewed working; not an authority key'}
+ if(status==='verified')return {badge:'border-[#8DAED7] bg-[#EAF1FC] text-[#204F86]',accent:'border-[#8DAED7]',symbol:'✓',shortLabel:'Verified solution · unofficial',meaning:'Reviewed worked solution; not an official key'}
  if(status==='needs-review')return {badge:'border-[#D9B76B] bg-[#FFF4D9] text-[#705015]',accent:'border-[#D9B76B]',symbol:'?',shortLabel:'Needs review',meaning:'Not yet verified for scored mocks'}
- return {badge:'border-[#C9C4BA] bg-[#F1EFEA] text-[#514C43]',accent:'border-[#C9C4BA]',symbol:'—',shortLabel:status==='written'?'Written question':'Unsolved',meaning:status==='written'?'Requires a written response':'No recorded answer'}
+ return {badge:'border-[#C9C4BA] bg-[#F1EFEA] text-[#514C43]',accent:'border-[#C9C4BA]',symbol:'—',shortLabel:status==='written'?'Written question':'No answer yet',meaning:status==='written'?'Requires a written response':'No recorded answer'}
 }
 
 /** Explanation availability is independent of key provenance. No review is
  * inferred merely from a nonempty explanation or an official answer badge. */
 export function explanationPresentation(explanation:string|null|undefined,source:AnswerSource,context:AnswerContext={}) {
  const available=!!explanation?.trim()
- if(!available)return {status:'missing',label:'Explanation not yet available',detail:'A stored answer alone does not explain the reasoning. A checked explanation still needs to be added.'}
+ if(!available)return {status:'missing',label:'Explanation not yet available',detail:'You can check the original paper or suggest an explanation.'}
  const answer=answerStatus(source,context)
- if(answer.status==='verified')return {status:'reviewed-solution',label:'Reviewed solution working · unofficial',detail:'Published with the reviewed unofficial solution. It can still be corrected.'}
- if(answer.status==='official')return {status:'available',label:'Explanation available',detail:'The official-key badge identifies the answer source. Separate review of this explanation is not recorded here.'}
- return {status:'needs-review',label:'Stored explanation · needs review',detail:'Treat this working as provisional until its reasoning and source evidence have been checked.'}
+ if(answer.status==='verified')return {status:'reviewed-solution',label:'Reviewed explanation · unofficial',detail:'Part of a reviewed worked solution. It may still be corrected.'}
+ if(answer.status==='official')return {status:'available',label:'Explanation available',detail:'The answer comes from an official key. This explanation has not been separately verified.'}
+ return {status:'needs-review',label:'Explanation awaiting review',detail:'This explanation has not yet been verified. Check its reasoning against a reliable source.'}
+}
+
+/** Learner wording follows actual source/review status, never storage terminology. */
+export function answerFeedbackLabel(answer:{correct:boolean;answer_source:AnswerSource},context:AnswerContext={}) {
+ const state=answerStatus(answer.answer_source,context)
+ return state.trusted?(answer.correct?'Correct':'Incorrect'):['official','key'].includes(answer.answer_source)?'Answer under review':'Suggested answer'
 }

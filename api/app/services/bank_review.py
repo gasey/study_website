@@ -141,11 +141,17 @@ async def revision(cur,c):
 async def update_state(cur,c,actor,state,detail=None):
     await cur.execute('UPDATE bank_contributions SET state=%s,lock_version=lock_version+1,updated_at=now() WHERE id=%s RETURNING *',(state,c['id']))
     updated=await cur.fetchone()
+    if state in ('accepted','publishing'):
+        # PostgreSQL delivers this only when the save transaction commits.
+        await cur.execute("SELECT pg_notify('ism_bank_publication','')")
     await event(cur,c['id'],actor,state,detail)
     await notify(cur,c['id'],c['author_id'],f"{c['id']}:{updated['lock_version']}",f"{c['title']}: {state.replace('_',' ')}")
     return updated
 
 async def eligible_reviews(cur,c,r):
+    from .admin_bank_edits import eligible
+    admin_edit=await eligible(cur,c,r)
+    if admin_edit is not None:return admin_edit
     await cur.execute('SELECT * FROM admin_answer_decisions WHERE contribution_id=%s AND revision=%s',(c['id'],c['revision']))
     admin=await cur.fetchone()
     if admin:
@@ -182,7 +188,7 @@ def require_current_patch(p):
     if 'difficulty' in p.patch:
         raise HTTPException(422,'Difficulty labels are retired. Update subject and topic tags only.')
 
-async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_items=(),admin_attestation=False):
+async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_items=(),admin_attestation=False,source_token=None,require_source_version=False):
     if not key or len(key)>100: raise HTTPException(422,'A stable Idempotency-Key is required')
     payload=p.model_dump(mode='json')
     await cur.execute('SELECT pg_advisory_xact_lock(hashtextextended(%s,0))',(actor+':'+key,))
@@ -198,6 +204,9 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         await require_role(cur,actor,p.subject_id,('owner','publisher'))
     await cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))",('review-author:'+actor,))
     await protect_answer(cur,actor,p.canonical_id)
+    if p.canonical_id and require_source_version:
+        from .editorial_access import require_version
+        await require_version(cur,p.canonical_id,p.appearance_id,source_token)
     baseline=await snapshot(cur,p.canonical_id,p.appearance_id) if p.canonical_id else {}
     if expected_baseline_hash is not None and digest(baseline)!=expected_baseline_hash:
         raise HTTPException(409,'The bank changed since this comparison was opened. Refresh before creating the draft.')

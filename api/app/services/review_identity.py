@@ -33,7 +33,8 @@ async def _identity(request: Request, require_staff_mfa: bool) -> Actor:
                 RETURNING count""",('write:'+row['user_id'],))
             count=(await cur.fetchone())['count']
         if count>60: raise HTTPException(429,'Too many changes. Try again in one minute.',headers={'Retry-After':'60'})
-    if require_staff_mfa and settings.mfa_enforce_staff and request.method not in {'GET','HEAD','OPTIONS'} and not request.url.path.startswith('/api/auth/mfa/'):
+    from .mfa import staff_required
+    if require_staff_mfa and staff_required(row['user_id']) and request.method not in {'GET','HEAD','OPTIONS'} and not request.url.path.startswith('/api/auth/mfa/'):
         async with cursor() as cur:
             await cur.execute('SELECT 1 FROM review_grants WHERE user_id=%s AND revoked_at IS NULL LIMIT 1',(row['user_id'],))
             staff=bool(await cur.fetchone())

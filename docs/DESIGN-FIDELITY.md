@@ -1,5 +1,19 @@
 # Design fidelity — values extracted from the prototype
 
+Existing-original link (4 November): the workbench uses the existing paper/card
+tokens and44px controls to identify the exact registered PDF, show whether it is
+empty, and explicitly link or refresh it before saving. Read-only reviewers see
+the link and source-change warning; published drafts show completion instead of a
+false warning merely because their questions now exist. Linking retains question
+objects and adopts the original exam/year/subject metadata; it does not approve it.
+
+Gazetted duplicate presentation (4 November): the original-paper workspace groups
+only four source-audited written pairs, retaining the existing card styles. Its
+header distinguishes printed questions from stored transcriptions. A 44px show-all
+control, exact appearance links and flagged records preserve access to every record.
+Grouping stops on current source/context/tag/hold differences. This is a reading
+presentation change; archive/module inventory and scoring remain unchanged.
+
 **The prototype markup is authoritative, not the handoff README.** The README
 in `docs/design/README.md` gives a tidy summary of the tokens; where it
 disagrees with `docs/design/India Study Map v3.dc.html`, the markup wins. It
@@ -304,7 +318,7 @@ Ported v3 avatarEl geometry (120×120 SVG, 55px circular clip, 58px background, 
 
 ## Question entry and discovery refinement — 2026-10-23
 
-User-approved functional extension of v3 question/feed cards. Keep existing cream panels, mono metadata, pill actions and44px targets. Open question is a secondary muted link instead of Details. Questions & Doubts uses the existing feed tab bar and a23px Newsreader subheading with wrapped pill filters. Reuses the existing inline discussion styling rather than introducing another page design.
+User-approved functional extension of v3 question/feed cards. Keep existing cream panels, mono metadata, pill actions and 44px targets. Open question is a secondary muted link instead of Details. Questions & Doubts uses the existing feed tab bar and a23px Newsreader subheading with wrapped pill filters. Reuses the existing inline discussion styling rather than introducing another page design.
 
 ## Exam calendar — 2026-10-23
 
@@ -316,7 +330,7 @@ Follow the v3 games hub cream/ink/gold palette, serif headings, featured Gauntle
 
 ## 2026-10-23 — Direct subject Library and database map
 
-Functional extension of v3's warm Library/cards and admin console: cream #FBF8F1 cards, hairline borders, Newsreader 25–54px titles, muted blue/green/gold shelf accents, rounded pill view controls and44px targets. Subjects opens first; tools remain in the adjacent view. Shelf tabs use four plainly named actions, additional filters fold under More filters, and original source context stays on existing question cards. The database map reuses the236px dark admin sidebar, cream workbench and blue selected cards, with selectable count/relationship views. No invented difficulty chips or activity counts. These new Library/map layouts extend v3 rather than claiming to be original prototype screens.
+Functional extension of v3's warm Library/cards and admin console: cream #FBF8F1 cards, hairline borders, Newsreader 25–54px titles, muted blue/green/gold shelf accents, rounded pill view controls and 44px targets. Subjects opens first; tools remain in the adjacent view. Shelf tabs use four plainly named actions, additional filters fold under More filters, and original source context stays on existing question cards. The database map reuses the236px dark admin sidebar, cream workbench and blue selected cards, with selectable count/relationship views. No invented difficulty chips or activity counts. These new Library/map layouts extend v3 rather than claiming to be original prototype screens.
 
 ### 2026-10-23 — Launch scope and Games recovery additions
 These are functional additions requested by the user, not extracted v3 prototype elements. Header adds a compact warm focus line (11px, #F6F0E3, hairline border) for MPSC & Mizoram recruitment. Library shelf exam selector is always visible; optional advanced controls remain below. Games uses a cream/gold unfinished-mock banner with direct resume link above the featured game. Existing type, cards and source presentation retained.
@@ -332,7 +346,7 @@ Vocabulary Helper extends the v3 paper/card typography with a 900px reading colu
 Match prior UDC-LDC QuestionText/QuestionContext behavior for ruled blanks, nested **bold**, *italic*, __underline__ and default-open reading passages. Retain current v3 cream instruction panel (#F6F2E9), gold left border (#B9A579),13px context and source line breaks. Blank width follows underscore length capped2.4–12.6em; React text rendering keeps arbitrary HTML escaped. Apply the same shared source renderer to live practice, mocks and frozen result review. ENGLISH-SOURCE-FORMATTING.md records actual data scope.
 
 ##24October — Answer provenance help
-Extend the existing v3 provenance pill with an information mark and44px summary target. Native hover text gives the short meaning; native details opens a cream320px/max-container note in normal flow for touch and keyboard, avoiding viewport-clipped tooltips. Keep green official/key and muted blue non-official styling, with separate reviewed wording. Help and question-specific evidence links disclose no answer.
+Extend the existing v3 provenance pill with an information mark and 44px summary target. Native hover text gives the short meaning; native details opens a cream320px/max-container note in normal flow for touch and keyboard, avoiding viewport-clipped tooltips. Keep green official/key and muted blue non-official styling, with separate reviewed wording. Help and question-specific evidence links disclose no answer.
 
 Provenance-help layout follow-up: expanded help spans a full metadata row with a fluid680px maximum, superseding the initial320px note. This avoids vertically centering metadata beside a tall narrow text column. Closed pill/hover styling remains the same.
 
@@ -346,7 +360,7 @@ Exams & coverage is a lazy-loaded workspace within the existing admin shell, wit
 
 ## 2026-10-24 — Workflow extensions
 
-These five workflows extend the existing v3 design rather than represent additional prototype screens. Reuse cream/card/ink surfaces, hairlines, Newsreader26–42px headings, mono metadata, 9–14px corners and44px controls. Intake and quality remain internal admin tabs with the existing236px sidebar. Continuation/daily revision enter through existing Library/Desk; question answers retain the shared source renderer and2×2/list choices. Resumed practice displays within its original module, with one clear return action. Correction updates use the existing Inbox and warm source-notice treatment. Synthetic screenshots are explicitly rehearsal evidence.
+These five workflows extend the existing v3 design rather than represent additional prototype screens. Reuse cream/card/ink surfaces, hairlines, Newsreader26–42px headings, mono metadata, 9–14px corners and 44px controls. Intake and quality remain internal admin tabs with the existing236px sidebar. Continuation/daily revision enter through existing Library/Desk; question answers retain the shared source renderer and2×2/list choices. Resumed practice displays within its original module, with one clear return action. Correction updates use the existing Inbox and warm source-notice treatment. Synthetic screenshots are explicitly rehearsal evidence.
 
 
 ## 2026-10-24 — Admin paper audit readability
@@ -385,7 +399,7 @@ archives link to English & GK/GS first and a separate Technical papers area.
 Source-group and study-mode selectors wrap on small screens. Technical papers
 use searchable two-column cards, eight per page. Original source names and
 answer status remain on the shared question browser. Browser verification at
-390px measured375px document/body width, without horizontal overflow. Desktop
+390px measured 375px document/body width, without horizontal overflow. Desktop
 and mobile screenshots live in reports/group-b-common-20261028.
 
 ### 28 October 2026 — Question source wording
@@ -402,13 +416,13 @@ Reuse the existing exam card, hairline border, pill links and min-h-11 controls.
 
 ### 29 October 2026 — Exam-section polish
 
-Retain the existing green exam hero, gold edge, Newsreader headings, cream/card surfaces, hairlines and44px controls. Focused study uses a28px exam title and fewer hero actions. Overview keeps Start practice / Subjects & topics / Past papers; answer guidance is a closed disclosure. Subject/topic/search form the main filter row, with secondary controls in a disclosure. Keep old results dimmed while replacement data arrives, with answers disabled. Match hero negative margins to actual shell padding:12px below768px and18px from768–1024px. Tab links scroll inside their own container. Result focus uses measured sticky-header clearance instead of a fixed mobile offset. Evidence: reports/exam-polish-20261028.
+Retain the existing green exam hero, gold edge, Newsreader headings, cream/card surfaces, hairlines and 44px controls. Focused study uses a28px exam title and fewer hero actions. Overview keeps Start practice / Subjects & topics / Past papers; answer guidance is a closed disclosure. Subject/topic/search form the main filter row, with secondary controls in a disclosure. Keep old results dimmed while replacement data arrives, with answers disabled. Match hero negative margins to actual shell padding:12px below768px and18px from768–1024px. Tab links scroll inside their own container. Result focus uses measured sticky-header clearance instead of a fixed mobile offset. Evidence: reports/exam-polish-20261028.
 
 Final phone refinement: fold the subject/topic/search controls behind a44px toggle by default while retaining the current subject/topic beside the practice heading. This brings the first question into the initial study viewport.
 
 ### 29 October 2026 — Owner-requested less crowded paper lists and page gutters
 
-Override the prototype's1240px outer shell with1440px for shared app navigation/workspaces; use16px desktop and12px phone outer gutters, retaining18px exam tablet padding and narrow prose/form limits. Exam1100px and Combined1160px wrappers use this shared width. Hero negative margins match actual gutters. Paper lists use a full-width row with Newsreader21px heading, cream card/hairline border,12px radius,16/20px inner padding and44px action/disclosure targets. Show only nonzero answer counts; keep unofficial wording visible. Native Paper details & tests holds full printed identity, explanation gaps and unchanged test settings/actions. This is an explicit user-directed functional/layout extension; not a newly discovered prototype value.
+Override the prototype's1240px outer shell with1440px for shared app navigation/workspaces; use16px desktop and12px phone outer gutters, retaining18px exam tablet padding and narrow prose/form limits. Exam1100px and Combined1160px wrappers use this shared width. Hero negative margins match actual gutters. Paper lists use a full-width row with Newsreader21px heading, cream card/hairline border,12px radius,16/20px inner padding and 44px action/disclosure targets. Show only nonzero answer counts; keep unofficial wording visible. Native Paper details & tests holds full printed identity, explanation gaps and unchanged test settings/actions. This is an explicit user-directed functional/layout extension; not a newly discovered prototype value.
 
 ### 29 October 2026 — Explicit layout correction
 
@@ -424,7 +438,7 @@ Shared paper boxes now stretch to equal height per row with flex body/action ali
 
 ### 29 October 2026 — Interactive Atlas extension
 
-Owner-authorized restoration uses existing cream/card/hairline tokens and Newsreader headings. Fluid16/12px shell gutters; desktop map plus300px layer rail, stacked phone layout. Map420px phone and clamp420px/64vh/720px desktop; Leaflet zoom44px. Native selects and44px checkbox/button targets; notes/features collapsed. Interactive Atlas belongs in Library tools and contextual subject navigation. This is a functional extension to the prototype, not a newly extracted prototype screen.
+Owner-authorized restoration uses existing cream/card/hairline tokens and Newsreader headings. Fluid16/12px shell gutters; desktop map plus300px layer rail, stacked phone layout. Map420px phone and clamp420px/64vh/720px desktop; Leaflet zoom44px. Native selects and 44px checkbox/button targets; notes/features collapsed. Interactive Atlas belongs in Library tools and contextual subject navigation. This is a functional extension to the prototype, not a newly extracted prototype screen.
 
 ### 30 October 2026 — Simplified admin workflow
 
@@ -441,3 +455,365 @@ Retain existing Combined colours, boxed cards and outer gutter system. Present t
 ### 1 November 2026 — Reading continuity and revision actions
 
 Owner accepted explicit Check answer / Show answer and requested the follow-up actions. Reuse existing cream paper, white card, hairline borders, 10px inner panel radius, 14px body and 12px notes. Continue studying is a wrapping row of existing pill controls with 44px minimum targets: Save for revision, Retry later, Next question. Reading mode shows remaining minutes and offers Retry now when its server window expires. Keep countdown changes outside live announcements to avoid repeated screen-reader interruptions. Preserve the existing source-paper identity and result layout.
+
+### 1 November 2026 — Focused UDC overview
+
+Owner-requested extension of the existing exam landing page. Retain the green/gold hero, Newsreader 25–44px headings, cream/card surfaces, hairline borders, 12–14px corners and 44px controls from v3 module1699–1791 and subsequent owner-approved fluid gutter/box-card changes. Place the five UDC views immediately below the hero, one journey action block next, then six own-exam subject shortcuts, disclosed answer/test guidance and three recent paper groups. Full paper search/pagination remains in Past papers. Broader Group B practice is a secondary bottom link. Remove the UDC cross-exam switcher, duplicate hero actions, single-section 100% bar and empty material panel. Existing Prelims booklet selector is reused without changing source records. Verified at360px and390px: document/body345px/375px with15px browser scrollbar; no horizontal page overflow. This release does not add bounded study sessions.
+
+### 2 November 2026 — UDC short-set practice and saved finish screen
+
+Functional extension of the approved UDC study flow. Reuse the existing green/gold exam identity, cream/card surfaces, Newsreader 24–30px headings, 13/14px text, 12–14px corners and 44px controls. Setup uses a subject select, 10/20 pill choices and a disclosure for source/topic/status filters. Active study has Question N of actual total, one compact Previous/Skip-or-Next row and an explicit finish action. The existing source/answer card is shared with unlimited browsing; session mode suppresses its duplicate Next button. Finish uses four wrapping Correct/Wrong/Viewed/Skipped counters, an original-feedback caveat, mistake practice and saved checked-question review. No timed score or fabricated mastery claim. Focus after the saved question list loads respects the real sticky header rather than clamping against the temporary loading page. Synthetic 390px verification measured 375px document width, 198.5px header bottom and 214.5px study-start position; expanded 360px filters measured 345px document width, with no horizontal overflow.
+
+
+### 2 November 2026 — Disclosed booklet/source controls
+
+Owner-requested refinement of existing UDC and MCS Prelims screens. Reuse current card surfaces, hairline borders, 12px corners, 12px secondary copy and 44px minimum summary/selector targets. The existing A–D pills sit inside a native closed details element labelled Booklet series & original sources. Grouped-card titles omit series; the full selected-source title and PDF remain inside Paper details. Shared study questions use a closed Source details element while retaining visible figures, passages, source-issue warnings and answer-provenance labels. No new layout or visual language. Production build passes; browser/mobile verification of this refinement remains pending because local server sockets are blocked in this session.
+
+
+### 2 November 2026 — Admin readback and corrected saved-feedback notices
+
+Refine existing controls rather than adding a new dashboard. Admin progress keeps the existing card, 13px body, 12px status/time detail and 44px minimum recheck/link targets. Distinguish applied-and-matched, unexplained mismatch, later publication and unavailable comparison in plain copy. Reuse the same progress card inside published contribution history. Student correction notices use existing canvas/hairline panels and secondary text with a current-question link; keep original finish counters unchanged. UDC syllabus/coverage guidance is a native disclosure with existing spacing and targets. Build passes; browser/mobile verification remains pending because this session cannot open local server sockets or reach the deployment host.
+
+### 2 November — Verified current UDC syllabus guidance
+
+Extend the existing native syllabus/coverage disclosure with the inspected 2026 blueprint and penalty rules. Retain 13px body text, existing canvas/card/hairline spacing and 44px source links. Mark the combined 2026 exam explicitly; historical paper cards and practice rules remain independent. Replace the redirect link with its verified direct official PDF. Production build and live browser display verified; source and screenshot in reports/udc-content-20261102.
+
+### 2 November — Learner-first feed redesign
+
+Owner-requested replacement of the three-column community landing. Retain prototype feed tokens: #14130F dark next-step panel, #D8A33A accent, #F4EFE4 paper, #E4DBC9 hairlines, 14px cards, Newsreader headings and Public Sans body. New hierarchy: 36/44px study-feed title, 28/32px next-step heading, two revision/help cards, then existing community tabs. Desktop uses minmax(0,1fr) plus a 280px resource rail; mobile places learning actions and feed before the rail. Actual all-time activity replaces the misleading Your week heading and unsupported progress bars. Native disclosures contain secondary contribution actions and publication updates. Browser checks at 1280px and 390px show no horizontal overflow (document widths 1265/375px respectively).
+
+### 2 November — Group B Non-Gazetted study choices
+
+Extend the existing Group B exam-soft hero and 14px source/topic card language. New three-choice section uses Newsreader28px heading/24px card titles,13–14px secondary copy,44px links, three columns on medium screens and one on mobile. Use a native disclosure for module relationships and syllabus references; technical entry is separate. Retain original archive/source titles while displaying General Knowledge in the NG topic map and subject selector. Build passed; this slice has not been deployed or visually verified because current SSH access is sandbox-blocked.
+
+### 2 November — Group B navigation finalization
+
+Separate Study home from Choose a topic / Read questions / Practise answers. Active study uses compact28px title/p4 hero; home retains32–48px/p6–8. Recruitment source selector and original-paper archives are native disclosures. Home scroll resets to the beginning. Reuse44px controls and existing exam/card colors. Local browser with real API data confirms390px viewport/375px document without overflow. Production deployment remains blocked by SSH restrictions.
+
+
+### 2 November — Group B dated syllabus guidance
+
+Reuse the existing collapsed module-relationship disclosure,13px body, bold inline labels and source-link styles. Add inspected May2025 general/technical schemes with July interview amendment; no additional home cards or scoring controls. Live360px expanded overview has345px document width and no horizontal overflow. Evidence:reports/group-b-release-20261102/syllabus-mobile.jpg.
+
+
+### 2 November — Visible exam names on paper resources
+
+Retain21px Newsreader paper headings and existing cream card/12px radius. Prefer printed paper labels when available, then display the existing exam identity in a wrapping 13px secondary paragraph below; viewer uses 14px and max-w-5xl. Source filename remains in disclosed details. This resolves generic filename ambiguity without new cards or navigation.390px card list has 375px document width.
+
+
+### 2 November — Exam and year list
+
+Owner-requested archive extension uses existing cream/card surfaces, hairlines,12pxradius and44pxcontrols. Desktop columns:72pxyear, flexible examination and paper,180pxactions. Mobile stacks each source row; exam names wrap at14px and source headings13px. Search/year/order/display controls wrap. Group B Past papers defaults to list; card mode remains available. Live390pxviewport/375pxdocument has no horizontal overflow. Evidence:reports/bank-human-handoff-20261102/archive-desktop.jpg and archive-mobile.jpg.
+
+
+### 2 November — Assigned paper review workspace
+
+Functional extension of existing source comparison/contribution UI: reuse cream/card/hairline surfaces,12pxpanels,13–14pxbody,24/32pxNewsreader headings and44pxcontrols. Assignment choices and paper select precede a360pxquestion rail plus flexible source inspector on desktop, stacked on phones. Checklist outcomes explicitly distinguish human inspection from answer provenance/publication. Owner assignment controls stay in a native disclosure. Synthetic1280/390rehearsal measured1265/375document widths without overflow; live signed-out entry verified separately. Screenshots:reports/udc-prelims-human-review-20261102/synthetic-desktop.jpg and synthetic-mobile.jpg.
+
+### 2 November — Current affairs connections
+
+Reuse the established paper/card/hairline/ink/link tokens, 44px controls and 6–14px corner radii. The learner's Then and now panel sits after permitted answer/explanation reveal, with source context, dated fact cards and related-paper rows. Unknown dates and Recheck due are text, not colour-only badges. The manual editor uses labelled form fields, a permission-scoped source search, source preview, separate proposal/history cards and a rationale form before a publication decision. Mobile form columns stack. Synthetic rehearsal measured document widths1265/375against viewports1280/390with no horizontal overflow. Screenshots and replay fixture are in reports/current-affairs-connections-20261102 and api/tests/run_current_affairs_preview.py; synthetic fact values are not production assertions.
+
+### 3 November — question discovery and dated Hot topic administration
+
+Owner-requested extension, using existing paper/card/hairline tokens, Newsreader
+headings, 12px cards and 44px controls. Home retains resume/study actions first,
+then exam-specific Popular/Recommended/Hot sections before community. Three cards
+per Home section and six inside UDC/Prelims; source exam/year/question and exact
+paper link remain visible. Sparse activity, absent inspected recommendations and
+unpublished topics have honest empty states. Hot picks show why-now text, primary
+source/date and expiry. Owner administration uses existing session/CSRF/MFA and
+audited draft/publish/retire actions. Production browser measurements: 1265px document
+at 1280px viewport; 375px document at 390px viewport. Screenshots are retained in
+reports/ai-discovery-20261103. No new exact-prototype claim or fabricated activity.
+
+### 3 November — Learning collections and Website bank
+
+Extend the existing paper/card/hairline palette, Newsreader headings, pill actions
+and44px controls. Important Days uses wrapping search/month/bank filters and
+responsive cards; the author/reviewer editor stacks its list and form on phones.
+Question selection searches both banks and reuses the established QuestionCard
+for answer reveal and provenance. Live390px inspection measured375px document
+width without overflow. No prototype or synthetic entries were published.
+
+### 3 November — Navigation and page hierarchy refresh
+
+User-authorized restructuring uses five shared destinations: Home, Exams, Library,
+Create and More. Desktop uses one header row; phones use the matching five-item
+bottom navigation. Warm paper, white cards, Newsreader, source labels and existing
+area colours remain. Search is always available outside focused test/game sessions;
+secondary tools and role-aware staff links live in More. Visible focus outlines
+and skip links support keyboard navigation.
+
+Home (/feed) now contains the next study action, revision/subject shortcuts,
+compact discovery and a weekly overview. The full community feed is /community;
+legacy community query links redirect with filters preserved. Library groups
+Subjects, Practice, Reading, Saved and Tools, with explicit MPSC/Website bank
+choices. Create groups current question, material, practice-set and Important Day
+workflows, with submission status links. The landing page has shorter navigation,
+six featured exams and accurate links to available community features.
+
+Live desktop Home/Create screenshots and Library/More/legacy-route checks passed.
+The local preview was denied by browser approval; public production verification
+was read-only. The browser viewport override did not change the 1280px viewport,
+so mobile visual QA is not claimed for this release. Responsive styles compile;
+temporary viewport settings were reset. Screenshot: screenshots/study-home-2026-11-03.jpg.
+
+
+## 4 November 2026 — simplified editorial workspace
+
+Reused workspace tokens/cards for My work / Needs attention / Completed. Inline
+corrections preserve context; searchable paged pickers replace long lists. One
+batch preview precedes Apply. Submitted/queued/applied/failed labels reflect actual
+status. Sticky question actions sit above mobile navigation with safe-area spacing.
+Tag cleanup preserves the current paper through its independent paper filter.
+
+Live signed-out entry inspected at 390x844 and 768x1024 with document width equal
+to viewport width and no horizontal overflow. Viewport reset afterwards.
+Authenticated layouts were component-tested but not visually exercised in a
+signed-in browser; no physical-device visual QA is claimed.
+
+
+### 4 November — visible review/admin entry points
+
+Keep five learner destinations. A wrapping44px workspace strip below the header
+appears for staff/assigned reviewers; it scrolls away to preserve existing sticky
+editor offsets. More places role-aware workspace cards before learning/community
+links. Admin sidebar uses existing dark panels and44px links; admin home leads with
+module review, followed by Across the bank. Editorial adds an admin return action
+and a module-scoped tag shortcut, retaining current source position.
+
+Role variants, account transitions and link destinations passed component checks.
+Live signed-out More has no overflow at390px/document375px and768px/document768px.
+Tablet screenshot visually inspected; viewport reset. Signed-in visual QA remains
+pending, so no claim of a complete authenticated device audit is made.
+
+
+### 4 November — separate Group B learner homes
+
+Use existing warm paper/card surfaces, Newsreader headings, hairlines and 44px
+controls. Non-Gazetted retains the exam colour; Gazetted uses a sage header with
+its own explicit title. Shared study is secondary. Four/five equal mobile tabs
+fit one row; the unrelated global study-focus selector is omitted on this hub.
+Non-Gazetted leads with common subjects; Gazetted leads with actual source papers
+and collapses sparse common-subject availability. Availability determines practice
+controls. A paper library replaces long paper dropdowns with search, year, content,
+sort and ten rows per page. No false scores or syllabus-completion claims.
+
+First deployed design visually inspected. Final live DOM checks: phone390/document375,
+tablet768/document753, no overflow on checked home/archive routes; primary phone
+subject action bottom710 within844px height. Final screenshots failed in the
+browser capture service, so final visual/physical-device QA remains qualified.
+Viewport reset. Details: [Group B design record](GROUP-B-STUDY-DESIGN.md).
+
+
+### 4 November — reusable module review
+
+Reuses paper overview, inline editor and source context. A searchable paged module
+chooser and compact source-coverage counts replace nested dropdowns. Source rules
+remain secondary/read-only. All / Remaining / Needs attention queues support
+full-paper search and25-row pages. Original source and prior reviewer attribution
+remain visible. A source leaving the queue gets explicit Show all / Continue actions.
+
+The question list collapses on phones/tablets and becomes a side panel at xl.
+Controls retain44px minimum height and existing safe-area-aware editor actions.
+Live signed-out entry measured390/390 and768/768 document/viewport widths without
+overflow; viewport reset. Component tests cover source binding, drafts, retry and
+capability. Authenticated visual/physical-device QA remains pending. Browser
+screenshot capture timed out; no screenshot claim is made.
+
+
+### 4 November — module setup panel
+
+A secondary owner-only panel sits under the review module chooser. Uses existing
+warm paper/card surfaces, Newsreader headings, hairlines and44px controls. Search
+and20-paper pages replace long dropdowns. Existing sources, imported libraries,
+exclusions and publication history use collapsed disclosures. Preview gives two
+compact Current/Proposed columns and scrollable paper changes; publication requires
+a reason and an unchanged saved preview. New-module fields are hidden until needed.
+Component checks cover owner/account visibility, saved preview, reason/MFA gating
+and retained retry identity. Real-session phone/iPad inspection is in progress;
+no authenticated visual certification is claimed by this implementation record.
+
+### 4 November — source references and written context
+
+Extend the existing shared correction card with Source reference and Text / context
+choices. Physical PDF page / printed number controls stack on phones and use two
+columns at sm; instructions/passages retain full-width16px textareas,44px targets,
+existing paper/card surfaces and hairlines. No new visual theme. Zero-extraction
+paper cards disclose actual PDF availability. Authenticated visual QA remains
+unverified; component checks and production build cover this functional extension.
+
+## Editorial list and quick revision — 4 November 2026
+
+Opening a source paper now defaults to a full-width question list, with25 entries
+per page and existing search/status filters. Explicit question deep links retain
+the detailed view. Reviewers can switch between Question list and Detailed review.
+Rows use the prototype's warm paper,14px container,6px option corners,44px controls
+and word labels. Each row retains its exact appearance and canonical identity.
+
+Options / self-check loads that source on demand. Tapping an option compares it
+with the recorded answer immediately, without a second Check answer action.
+Show answer and Show answers on this page are read-only; Hide answer / try again
+resets the local pick. Page-wide reads run through at most three request lanes.
+Missing answers and written prompts have explicit empty states. Key references,
+provenance, source PDF, tags and expandable explanation remain available.
+
+Neither a reveal nor a local pick records a learner attempt or an editorial check.
+Review / edit source opens the existing detailed workflow, where permissions,
+source-version checks, issue resolution and explicit inspection recording remain.
+The existing learner Check answer control still confirms a scored attempt.
+
+### One-tap practice and larger editorial pages — 4 November follow-up
+
+The owner requested removing the extra Check answer step. Bank cards, question
+detail, module practice, original-paper practice, saved UDC sets and vocabulary
+now submit the tapped option immediately. Existing attempt/reveal rules and
+source-option mapping remain authoritative. Pending requests block repeated taps;
+request errors allow retry. Show answer continues to mean reading without an
+attempt. Editorial local self-check remains read-only and never records approval.
+Editorial lists now offer25,50 or100 rows; both shared and assignment endpoints
+accept a bounded limit, and continuation/previous/next use the selected size.
+
+## Public language polish — 4 November 2026
+
+Learner copy uses answer source, official key, worked solution and answer awaiting
+review. Implementation terms such as canonical, provenance, inferred/derived,
+publication checks and server configuration belong in staff tools, not public
+help. Answer badges retain official/unofficial, disputed, unverified and provisional
+key distinctions; simpler wording must never imply stronger verification.
+Answer help is a short description, scoring consequence and correction link.
+Explanation review remains separate from answer-key status. Account unavailable
+states describe what the learner can do, without payment/configuration internals.
+Scoring counts now have an explicit loading state and retryable error state.
+Source question text, source documents, stored answers and scoring rules are not
+rewritten as part of presentation cleanup.
+
+## Compact answer panel — 4 November
+
+Following the owner’s phone screenshot, retain the answer, source badge and real explanation upfront. Missing explanations use one muted line. Save and next are the main actions; a native, initially closed More options disclosure contains contributions, dated connections, reward details and answer comparison. Reset that disclosure for each source question. Preserve 44px controls and visible date-sensitive/source warnings.
+
+### 4 November — list navigation follow-up
+
+Removed per-question Next and Save and continue from bank/library cards, module lists and original-paper list mode. Single-question detail and paper focus retain navigation. List pagination remains available. Answer-panel checks cover both navigation variants; one-tap regression passed.
+
+## Public answer comparison and private reports — 5 November 2026
+
+Owner-requested reduction of learner-card copy. Keep the existing paper surfaces,
+option layout and44px controls. Reveal shows a compact Official key / Our answer
+comparison, merging agreement into one line. Map letters to visible options by text;
+missing keys/solutions stay explicit. Detailed evidence and long explanations are
+closed initially. Short explanations remain readable without repeated disclaimer
+paragraphs. Staff review/edit replaces public correction prompts; the public gets
+one subdued Report an issue action beside Discussion and Share. Reports enter the
+existing private review queue. Source/review details stay available through
+expandable help; this presentation change does not certify or rewrite content.
+
+### 5 November — Further density reduction
+
+Owner requested a smaller card. This supersedes the prior short-explanation
+upfront rule: all explanation/evidence is now inside one closed Explanation &
+sources disclosure, while answer and official-key comparison stay visible.
+Use a wrapping comparison line, shared save/tools row and source disclosure in
+the module card footer. Preserve44px targets, readable text and material source
+warnings. Live first UDC revealed card is40.6% shorter at390px viewport, with
+unchanged content available on expansion. See public-cards/compact-mobile.jpg.
+
+### 5 November — Practice discovery and stable mixed browsing
+
+Use two compact visible selectors for My questions and Question order above the
+subject filters. Never attempted counts recorded attempts only; Previously wrong
+includes corrected mistakes, with a brief hint; Last answer wrong keeps the
+latest-attempt meaning. Mixed order is default for module browse/practice, with
+explicit Shuffle again and an alternative Most repeated first. Preserve a seed
+through pagination, reload and saved set/checkpoint resume; answering/revealing
+must not reshuffle the current page. Original-paper views remain unchanged.
+
+## PDF Library — 5 November
+
+Staff bank console gains Library / Needs attention / Activity views in its
+existing paper/card palette. Search and paginated rows replace a grid of large
+source cards; each row has one primary continuation. Source filenames distinguish
+otherwise identical exam titles. File copies, hashes and history stay under
+details; answer coverage and module membership are explicit in the selected-paper
+view. Inputs/actions retain44px minimum height. URL state preserves filters/page
+through detail and workbench return. Global archive gap totals remain separate
+from filtered result totals. Permission/navigation components and build passed;
+live signed-out entry verified. Full signed-in phone/tablet visual QA is pending.
+
+## Everyday navigation and compact study entry — 5 November
+
+Keep the prototype's warm paper, Newsreader headings, 14px panels, 6–8px controls
+and 44px touch targets. The exam catalog now leads with search and compact exam
+cards; direct Questions / Subjects / Original papers links replace duplicate
+entry actions. The oversized featured route and three statistic panels are removed.
+Group B cross-exam links remain in a compact footer panel. Existing bookmark,
+progress, search-alias, URL and pagination behavior remains.
+
+Home prioritizes a real active test or saved continuation. When neither exists,
+Quick start is the primary entry, with a live exam catalog and Mixed practice /
+Never attempted / Previously wrong / Original papers choices. Question choices
+open the existing mixed browse queue; they do not start or submit a timed test.
+Previously wrong retains the ever-wrong meaning. Topic discovery is a closed,
+on-demand disclosure. Personal study history is not copied to browser storage.
+
+Find opens a native modal with an explicit close button, focus containment,
+Escape, arrow-key navigation and Ctrl/Cmd+K. Student destinations are shared;
+staff destinations use current existing permissions, and assignment-only users
+see only their review workspace. Search all hands typed text to existing search.
+Focused tests/games do not mount this launcher. The admin sidebar has the same
+launcher. Searchable navigation is not an authorization mechanism.
+
+PDF Library keeps search/module visible, secondary filters collapsed, active
+filter summaries, module shortcuts and Clear filters. Previous/next source stays
+within the current results page and retains the page/filter return. Source actions
+are cleared when a new detail loads or fails. Page offsets are bounded and adjust
+after a result set shrinks. No import, approval or publication policy changes.
+
+
+## Exam browsing refresh — 5 November 2026
+
+The owner explicitly requested a modern, more appealing module layout and expanded
+colour palette. For the exam catalog and module navigation/headers, this refinement
+supersedes the earlier green/gold legacy wrappers and prototype surface tokens.
+`web/src/styles/exam-experience.css` is scoped to these surfaces: cool slate/off-white
+canvas, white cards, restrained teal (UDC), blue (LDC), violet (Assistant/Gazetted),
+indigo (Prelims) and amber (ITI) accents. Existing Newsreader typography is retained.
+Answer correctness, provenance and question-option styles keep their existing rules.
+
+Catalog Cards/List and one expanded exam are URL-backed. Expanded options preserve
+questions, subjects, papers and practice routes. Module views use one consistent
+navigation below the header; redundant hero shortcuts are limited to Overview.
+Subject headings are full-width disclosure buttons with independent expansion,
+Expand/Collapse all, valid controlled panels and search results that can still be
+collapsed. Controls retain keyboard focus and phone touch targets. Header copy is
+shorter on phones; subject search/topic surfaces use the same cool palette.
+
+## Bank working overview — 7 November 2026
+
+The global-staff admin landing page uses warm paper, white 14px cards, Newsreader
+headings, mono eyebrows and 44px controls. Lead with live coverage and actionable
+field gaps, then the exam table and historical work. Keep the table inside its own
+keyboard-focusable horizontal scroll region on phones; the document must not
+scroll horizontally. Show snapshot time and honest overlap/configuration/history
+labels. Search, attention filter and CSV export operate on the visible exam rows.
+Subject-scoped reviewers keep the existing permitted work queue.
+
+The question inspector now leads with wrapping44px task pills and scoped counts.
+Each list row retains its learning tag and answer/workflow label, shows a specific
+review reason, and truncates its long paper title to one line with a full title
+attribute. Workflow lanes group work; they never imply an answer is verified.
+
+## Compact practice cards — 7 November 2026
+
+Owner requested minimal expanding question cards, comparing the map.hawayu.in
+MCQ practice hub. This overrides earlier spacing/disclosure stacking for public
+bank and module question cards. Use compact padding, 44px controls, a small answer
+divider, visible provenance/key comparison and a one-line historical exam-date
+note. Save, More and Explanation & details share a wrapping footer. More contains
+source, discussion, sharing, private reporting and permitted staff editing;
+Explanation & details contains the complete explanation, source evidence, dated
+revision context and secondary study tools. Preserve reveal gates, assessment
+restrictions and visible material source/scoring warnings. Do not hide uncertainty
+or turn historical answers into current claims. Local before/after evidence and
+limitations: `reports/compact-cards-20261107/README.md`; deployment remains pending.

@@ -11,19 +11,24 @@ import os
 from pathlib import Path
 import subprocess
 import sys
+import time
 from review_bank_store import apply_manifest, bank_lock, digest, sha
 
 ROOT=Path(__file__).resolve().parents[1]
+sys.path.insert(0,str(ROOT/'api'))
+from app.services.publication_verification import publication_mismatches
 BANK_ROOT=ROOT.parent/'mpsc-question-bankv2'
 BANK=BANK_ROOT/'bank/mpsc_bank_v2.json'
 HOST=os.environ.get('ISM_HOST','ubuntu@152.67.31.231')
 DB=os.environ.get('ISM_DB','mpsc')
+WORKER_ID='oracle-bank-publisher' if os.environ.get('ISM_DB_TRANSPORT')=='local' else 'local-bank-publisher'
 if not all(c.isalnum() or c=='_' for c in DB):raise SystemExit('Invalid database name')
 
 def literal(value):return "'"+str(value).replace("'","''")+"'"
 def remote(query,json_result=False):
     sql=('SELECT COALESCE(json_agg(result),\'[]\'::json) FROM ('+query+') result;' if json_result else query)
-    result=subprocess.run(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=10',HOST,'sudo','-u','postgres','psql','-v','ON_ERROR_STOP=1','-qtA','-d',DB],input=sql,text=True,capture_output=True,timeout=60)
+    transport=['sudo','-u','postgres','psql','-v','ON_ERROR_STOP=1','-qtA','-d',DB] if os.environ.get('ISM_DB_TRANSPORT')=='local' else ['ssh','-o','BatchMode=yes','-o','ConnectTimeout=10',HOST,'sudo','-u','postgres','psql','-v','ON_ERROR_STOP=1','-qtA','-d',DB]
+    result=subprocess.run(transport,input=sql,text=True,capture_output=True,timeout=60)
     if result.returncode:raise RuntimeError(result.stderr[-1500:])
     return json.loads(result.stdout) if json_result else result.stdout
 
@@ -99,6 +104,7 @@ def acknowledge(pub,receipt,sql_only=False):
       INSERT INTO contribution_credit(user_id,contribution_id,publication_id,amount,event_key,reason,subject_id)
        SELECT author_id,id,'''+pid+''',CASE WHEN (SELECT manifest->'payload'->>'reverts_publication' FROM bank_publications WHERE id='''+pid+''') IS NOT NULL THEN 0 WHEN kind='new_question' THEN 25 WHEN kind IN ('source_request','duplicate') THEN 0 ELSE 10 END,
           '''+pid+'''||':credit','Published reviewed contribution',subject_id FROM bank_contributions WHERE id='''+cid+''' AND NOT EXISTS(SELECT 1 FROM admin_answer_decisions d WHERE d.contribution_id=bank_contributions.id)
+          AND NOT EXISTS(SELECT 1 FROM admin_bank_decisions d WHERE d.contribution_id=bank_contributions.id)
           AND NOT EXISTS(SELECT 1 FROM contribution_events e WHERE e.contribution_id=bank_contributions.id AND e.actor_id='operator:owner-source-maintenance' AND e.action='operator_source_adjudication')
        ON CONFLICT(event_key) DO NOTHING;
       INSERT INTO review_notifications(user_id,contribution_id,event_key,message)
@@ -106,6 +112,18 @@ def acknowledge(pub,receipt,sql_only=False):
       INSERT INTO contribution_events(contribution_id,actor_id,action,detail)
        SELECT '''+cid+''','operator:publication','published','''+r+'''::jsonb
        WHERE NOT EXISTS(SELECT 1 FROM contribution_events WHERE contribution_id='''+cid+''' AND action='published' AND detail->>'publication_id'='''+pid+''');
+      WITH fixed AS (
+        UPDATE content_reports cr SET status='fixed',resolved_by=d.actor_id,resolved_at=now()
+        FROM admin_bank_report_links l JOIN admin_bank_decisions d ON d.id=l.decision_id
+        JOIN bank_publications bp ON bp.contribution_id=d.contribution_id AND bp.revision=d.revision
+        WHERE bp.id='''+pid+''' AND bp.state='applied' AND cr.id=l.report_id AND cr.canonical_id=d.canonical_id
+          AND cr.status IN ('open','confirmed') AND cr.created_at<=d.created_at
+          AND ((d.kind='taxonomy' AND cr.kind='subject') OR (d.kind='transcription' AND cr.kind='typo_ocr')
+            OR (d.kind='source_reference' AND cr.kind='typo_ocr') OR (d.kind='explanation' AND cr.kind IN ('outdated','ambiguous'))
+            OR (d.kind='defect' AND cr.kind='ambiguous'))
+        RETURNING cr.id,cr.canonical_id,cr.resolved_by
+      ) INSERT INTO contribution_events(actor_id,action,detail)
+        SELECT resolved_by,'linked_report_fixed',jsonb_build_object('report_id',id,'question',canonical_id,'publication_id','''+pid+''') FROM fixed;
       UPDATE review_outbox SET finished_at=now() WHERE event_key='''+pid+''';
       COMMIT;'''
     if sql_only:return statement
@@ -119,7 +137,7 @@ def fetch_live_records(appearance_ids):
       'optionsMarkup':'a.options_markup','passage':'a.passage','difficulty':'a.difficulty','page':'a.page',
       'qnum':'a.qnum','hasDiagram':'a.has_diagram','figureImage':'a.figure_image'}
     parts=','.join(literal(key)+','+value for key,value in columns.items())
-    query="SELECT a.id AS appearance_id,jsonb_build_object("+parts+",'classification',jsonb_build_object('subject_id',qc.subject_id,'topic_id',qc.topic_id,'subtopic_id',qc.subtopic_id)) AS record,a.is_primary,c.answer_text,c.question AS canonical_question,c.options AS canonical_options,c.explanation AS canonical_explanation,c.difficulty AS canonical_difficulty,c.source_defect FROM appearances a JOIN canonical_questions c ON c.id=a.canonical_id LEFT JOIN question_classifications qc ON qc.question_id=c.id WHERE a.id IN("+','.join(literal(qid)for qid in appearance_ids)+")"
+    query="SELECT a.id AS appearance_id,jsonb_build_object("+parts+",'classification',jsonb_build_object('subject_id',qc.subject_id,'topic_id',qc.topic_id,'subtopic_id',qc.subtopic_id)) AS record,a.is_primary,to_jsonb(c) AS canonical FROM appearances a JOIN canonical_questions c ON c.id=a.canonical_id LEFT JOIN question_classifications qc ON qc.question_id=c.id WHERE a.id IN("+','.join(literal(qid)for qid in appearance_ids)+")"
     rows=remote(query,True)
     related=remote("SELECT a.id AS appearance_id,l.subject_id,l.topic_id,l.subtopic_id FROM question_topic_links l JOIN appearances a ON a.canonical_id=l.question_id WHERE l.review_status='approved' AND a.id IN("+','.join(literal(qid)for qid in appearance_ids)+") ORDER BY a.id,l.subject_id,l.topic_id NULLS FIRST,l.subtopic_id NULLS FIRST",True)
     for row in rows:
@@ -129,14 +147,10 @@ def fetch_live_records(appearance_ids):
 
 
 def verify_live_rows(receipt,manifest,rows):
-    if len(rows)!=1 or rows[0]['record']!=receipt['after']:raise ValueError('Live appearance does not match the publication receipt')
-    live=rows[0];expected=receipt['after']
-    if live['is_primary']:
-        ai=expected.get('answerIndex');answer=expected['options'][ai] if ai is not None else None
-        if (live['canonical_question'],live['canonical_options'],live['answer_text'],live['canonical_explanation'] or None,live['canonical_difficulty'])!=(expected['question'],expected['options'],answer,expected['explanation'],None):
-            raise ValueError('Canonical learner content does not match the publication receipt')
-        if 'sourceDefect' in manifest['payload']['patch'] and live['source_defect']!=manifest['payload']['patch']['sourceDefect']:
-            raise ValueError('Published defect did not reach the learner bank')
+    if len(rows)!=1:raise ValueError('Live appearance does not match the publication receipt')
+    live=rows[0]
+    differences=publication_mismatches(receipt['after'],live['record'],live['canonical'],live['is_primary'],manifest['payload']['patch'])
+    if differences:raise ValueError('Published learner content mismatch: '+', '.join(differences))
 
 def verify_live(receipt,manifest):
     qid=receipt.get('appearance_id')
@@ -151,28 +165,95 @@ def verify_live_batch(receipts,manifests):
         verify_live_rows(receipt,manifests[receipt['publication_id']],[r for r in rows if r['appearance_id']==receipt['appearance_id']])
 
 
+def validate_admin_authority(pub):
+    manifest=pub['manifest']
+    decision=manifest.get('admin_edit') or manifest.get('admin_decision')
+    if not decision:return
+    table='admin_bank_decisions' if manifest.get('admin_edit') else 'admin_answer_decisions'
+    rows=remote('SELECT d.*,c.revision AS current_revision FROM '+table+' d JOIN bank_contributions c ON c.id=d.contribution_id WHERE d.id='+literal(decision['id'])+' AND d.contribution_id='+literal(pub['contribution_id']),True)
+    if len(rows)!=1:raise ValueError('The final admin decision is unavailable')
+    d=rows[0]
+    if (d['actor_id']!=decision['actor_id'] or d['revision']!=manifest['revision'] or d['current_revision']!=manifest['revision']
+        or d['baseline_hash']!=manifest['baseline_hash'] or d['payload_hash']!=digest(manifest['payload'])):
+        raise ValueError('The final admin decision no longer matches this publication')
+    record=manifest.get('baseline',{}).get('record',{})
+    patch=manifest['payload']['patch']
+    subjects={manifest.get('subject_id'),record.get('classification',{}).get('subject_id')}
+    if set(patch)&{'classification','relatedClassifications'}:
+        subjects.add(patch.get('classification',record.get('classification',{})).get('subject_id'))
+        subjects.update(p.get('subject_id') for p in [*record.get('relatedClassifications',[]),*patch.get('relatedClassifications',[])])
+    roles=remote("SELECT role,subject_id FROM review_grants WHERE user_id="+literal(d['actor_id'])+" AND revoked_at IS NULL AND role IN ('owner','publisher')",True)
+    if any(not any(g['subject_id'] is None or g['subject_id']==sid for g in roles) for sid in subjects):
+        raise ValueError('Final administrator publication permission was revoked or no longer covers the subjects')
+
+
+def promote_deferred():
+    if os.environ.get('PUBLICATION_SERIAL_QUEUE','').lower() not in ('true','1'):return
+    if os.environ.get('ISM_DB_TRANSPORT')!='local':raise ValueError('Deferred publication export requires the Oracle local operator')
+    result=subprocess.run(['sudo','-u','postgres','env','PUBLICATION_SERIAL_QUEUE=true','ISM_DB_TRANSPORT=local',
+      sys.executable,'/srv/api/promote-publication-queue.py','--database',DB],
+      check=True,capture_output=True,text=True,timeout=60,cwd='/srv/api')
+    data=json.loads(result.stdout)
+    print('Publication queue: '+data['state'])
+    return data
+
+
 def once(dry_run=False):
-    remote("INSERT INTO review_worker_health(worker_id,status) VALUES ('local-bank-publisher','online') ON CONFLICT(worker_id) DO UPDATE SET seen_at=now(),status='online';")
+    if not dry_run:
+        from bank_authority import require_writable
+        require_writable(BANK)
+    remote("INSERT INTO review_worker_health(worker_id,status) VALUES ("+literal(WORKER_ID)+",'online') ON CONFLICT(worker_id) DO UPDATE SET seen_at=now(),status='online';")
     with bank_lock(BANK):
         pubs=remote("SELECT * FROM bank_publications WHERE state='exported' ORDER BY created_at LIMIT 1",True)
-        if not pubs:print('Publication queue empty');return
+        if not pubs and not dry_run:
+            # A stale/cancelled intent must not hold up unrelated valid work for
+            # another timer cycle. Keep the scan bounded and preserve each error.
+            for _ in range(5):
+                promoted=promote_deferred()
+                pubs=remote("SELECT * FROM bank_publications WHERE state='exported' ORDER BY created_at LIMIT 1",True)
+                if pubs or not promoted or promoted['state'] not in ('failed','cancelled'):break
+        if not pubs:print('Publication queue empty');return False
         pub=pubs[0]
         try:
-            receipt=apply_manifest(BANK,BANK_ROOT,pub['manifest'],pub['manifest_hash'],dry_run=dry_run,locked=True)
-            if dry_run:print(json.dumps(receipt));return
+            group=None
+            if pub['manifest'].get('admin_edit',{}).get('kind')=='taxonomy':
+                groups=remote('SELECT contribution_ids FROM bank_retag_batches WHERE '+literal(pub['contribution_id'])+'=ANY(contribution_ids)',True)
+                if groups:
+                    ids=groups[0]['contribution_ids']
+                    pubs=remote('SELECT * FROM bank_publications WHERE contribution_id IN('+','.join(literal(i) for i in ids)+') ORDER BY id',True)
+                    if len(pubs)!=len(ids) or any(p['state'] not in ('exported','applied') for p in pubs):
+                        raise ValueError('Every tag batch publication must be queued or already applied; retry the batch together')
+                    for item in pubs:validate_admin_authority(item)
+                    from admin_tag_batch import apply_admin_tag_batch
+                    group=apply_admin_tag_batch(BANK,BANK_ROOT,pubs,dry_run=dry_run,locked=True)
+            if not group:
+                validate_admin_authority(pub)
+                receipt=apply_manifest(BANK,BANK_ROOT,pub['manifest'],pub['manifest_hash'],dry_run=dry_run,locked=True)
+            else:receipt=group['receipts'][0]
+            if dry_run:print(json.dumps(group or receipt));return
             env={**os.environ,'ISM_BANK_LOCK_HELD':'1'}
             subprocess.run([str(ROOT/'scripts/sync-bank.sh')],cwd=ROOT,env=env,check=True,timeout=180)
             if sha(BANK)!=receipt['output_sha256']:raise ValueError('Bank changed while publishing; reconciliation required')
             # Verify changed values live, not just an old historical sync hash.
             live=remote('SELECT bank_checksum FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1',True)
             if not live or live[0]['bank_checksum']!=receipt['output_sha256']:raise ValueError('Live bank checksum mismatch')
-            verify_live(receipt,pub['manifest'])
-            acknowledge(pub,receipt)
-            print('Published '+pub['id'])
+            if group:
+                verify_live_batch(group['receipts'],{p['id']:p['manifest'] for p in pubs})
+                for item in pubs:
+                    if item['state']!='applied':
+                        acknowledge(item,next(r for r in group['receipts'] if r['publication_id']==item['id']))
+                print('Published admin tag batch '+group['batch_id'])
+            else:
+                verify_live(receipt,pub['manifest'])
+                acknowledge(pub,receipt)
+                print('Published '+pub['id'])
+            return True
         except Exception as exc:
             error=str(exc)[-1500:] if isinstance(exc,ValueError) else 'Publication could not complete. Operator diagnostics are available in the worker log.'
-            remote("UPDATE review_worker_health SET seen_at=now(),status='publication failed' WHERE worker_id='local-bank-publisher';")
-            remote('BEGIN; UPDATE bank_publications SET state=\'failed\',error='+literal(error)+' WHERE id='+literal(pub['id'])+'; UPDATE bank_contributions SET state=\'publication_failed\',lock_version=lock_version+1 WHERE id='+literal(pub['contribution_id'])+"; UPDATE review_outbox SET attempts=attempts+1,last_error="+literal(error)+' WHERE event_key='+literal(pub['id'])+'; COMMIT;')
+            remote("UPDATE review_worker_health SET seen_at=now(),status='publication failed' WHERE worker_id="+literal(WORKER_ID)+";")
+            for item in pubs:
+                if item['state']=='applied':continue
+                remote('BEGIN; UPDATE bank_publications SET state=\'failed\',error='+literal(error)+' WHERE id='+literal(item['id'])+'; UPDATE bank_contributions SET state=\'publication_failed\',lock_version=lock_version+1 WHERE id='+literal(item['contribution_id'])+"; UPDATE review_outbox SET attempts=attempts+1,last_error="+literal(error)+' WHERE event_key='+literal(item['id'])+'; COMMIT;')
             raise
 
 def main():
@@ -183,5 +264,9 @@ def main():
     args=parser.parse_args()
     if args.command=='bootstrap':bootstrap(args.owner_email)
     elif args.command=='register-key':register_key(args)
-    else:once(args.dry_run)
+    else:
+        limit=5 if not args.dry_run and os.environ.get('PUBLICATION_SERIAL_QUEUE','').lower() in ('true','1') else 1
+        end=time.monotonic()+180
+        for _ in range(limit):
+            if not once(args.dry_run) or time.monotonic()>=end:break
 if __name__=='__main__':main()

@@ -29,5 +29,5 @@ export default function Results() {
     )
   }
   if (!result) return <div className="mx-auto max-w-shell px-6 py-12 label">Loading…</div>
-  return <MockResultView result={result} backTo={result.collection_id?'/exams/'+result.collection_id:'/exams'} backLabel={result.collection_id?'← Exam':'← Exams'} />
+  return <MockResultView result={result} backTo={result.learning_test_id?'/tests/'+encodeURIComponent(result.learning_test_id):result.collection_id?'/exams/'+result.collection_id:'/exams'} backLabel={result.learning_test_id?'← Shared test':result.collection_id?'← Exam':'← Exams'} />
 }

@@ -71,7 +71,7 @@ export default function English() {
 
         <article className="rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)]">
           <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#72509A]">02 · Learn → test → review</div><h3 className="mt-2 font-display text-[25px] font-medium">English MCQ masterclass</h3>
-          <p className="mt-2 text-[14px] leading-relaxed text-secondary">Work across grammar, vocabulary, and comprehension. Tap an option for immediate feedback; answer provenance and explanations stay visible so uncertain keys are never mistaken for official ones.</p>
+          <p className="mt-2 text-[14px] leading-relaxed text-secondary">Practise grammar, vocabulary and comprehension. Tap an option to check your answer, then read the explanation.</p>
           <div className="mt-4 flex flex-wrap items-center gap-3"><Link to="/library/subjects/english" className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 text-[13px] font-semibold text-paper">Start MCQ practice →</Link><a href={`${LEGACY}/eng-mcq-masterclass`} target="_blank" rel="noreferrer" className="min-h-11 py-3 text-[13px] font-semibold text-link underline">Open full masterclass</a></div>
         </article>
 
@@ -90,7 +90,7 @@ export default function English() {
 
     <section id="paper-browser" className="mt-10 scroll-mt-24">
       <div className="flex flex-wrap items-end justify-between gap-3 border-b border-ink pb-3">
-        <div><div className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">Past papers · browse by exam</div><h2 className="mt-1 font-display text-[27px] font-medium">General English papers</h2><p className="mt-1 max-w-[680px] text-[14px] leading-relaxed text-secondary">Open a complete paper, browse every question in its printed order, and check available answers with their provenance. Papers without a reliable key remain readable.</p></div>
+        <div><div className="font-mono text-[10px] uppercase tracking-[0.12em] text-muted">Past papers · browse by exam</div><h2 className="mt-1 font-display text-[27px] font-medium">General English papers</h2><p className="mt-1 max-w-[680px] text-[14px] leading-relaxed text-secondary">Read a complete paper in its original order, check available answers and view the answer sources. You can also read papers that have no answer key yet.</p></div>
         <span className="rounded-pill border border-hairline bg-card px-3 py-2 font-mono text-[11px] text-secondary">{paperTotal.toLocaleString('en-IN')} papers</span>
       </div>
       <div className="mt-4 grid gap-2 sm:grid-cols-[1fr_190px_150px]">

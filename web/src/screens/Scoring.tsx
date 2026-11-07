@@ -15,9 +15,12 @@ import { getScoringFacts, type ScoringFacts } from '../lib/api'
  *  cannot drift away from the database. */
 export default function Scoring() {
   const [f, setF] = useState<ScoringFacts | null>(null)
+  const [failed,setFailed]=useState(false),[retry,setRetry]=useState(0)
   useEffect(() => {
-    getScoringFacts().then(setF).catch(() => setF(null))
-  }, [])
+    let live=true;setFailed(false)
+    getScoringFacts().then(value=>{if(live)setF(value)}).catch(()=>{if(live)setFailed(true)})
+    return()=>{live=false}
+  }, [retry])
 
   const n = (x?: number) => (x == null ? '—' : x.toLocaleString('en-IN'))
 
@@ -35,6 +38,8 @@ export default function Scoring() {
         you — is set per paper and shown before you start.
       </p>
 
+      {failed&&<p role="alert" className="mt-4 rounded-lg border border-hairline bg-card p-4 text-sm">Question counts could not load. <button className="min-h-11 px-3 font-semibold text-link underline" onClick={()=>setRetry(n=>n+1)}>Try again</button></p>}
+      {!f&&!failed&&<p role="status" className="mt-4 text-sm text-secondary">Loading question counts…</p>}
       <h2 className="mt-8 border-b border-ink pb-2.5 font-display text-[26px] font-medium">
         What can be scored
       </h2>
@@ -47,8 +52,7 @@ export default function Scoring() {
             {n(f?.scorable)} questions
           </div>
           <p className="mt-1.5 text-[13.5px] leading-[1.55] text-[#2F4A33]">
-            Every one has an official published key ({n(f?.official)}) or a transcribed one
-            ({n(f?.transcribed)}). Mocks and, later, duels and cups draw only from here.
+            These questions have answers from official examination keys, including keys copied from the original documents.
           </p>
         </div>
         <div className="rounded-panel bg-[#DAE3F1] px-5 py-[18px]">
@@ -59,8 +63,7 @@ export default function Scoring() {
             {n(f?.practice)} questions
           </div>
           <p className="mt-1.5 text-[13.5px] leading-[1.55] text-[#2B3F5E]">
-            Has an answer, but one we cannot trace to a published key. Usable for practice,
-            always labelled unverified, never scored.
+            These answers do not come from an official key. Reviewed solutions may be used for practice estimates; answers awaiting review are not used in scored tests.
           </p>
         </div>
         <div className="rounded-panel bg-[#EDE5D4] px-5 py-[18px]">
@@ -72,15 +75,14 @@ export default function Scoring() {
           </div>
           <p className="mt-1.5 text-[13.5px] leading-[1.55] text-[#4A4335]">
             The same option text is printed twice, so there is no way to say which position
-            was correct. Excluded from both pools until a human fixes them.
+            was correct. These questions cannot be scored until the options are corrected.
           </p>
         </div>
       </div>
 
       <p className="mt-4 max-w-[720px] text-[14px] leading-[1.6] text-secondary">
-        Why so strict: of {n(f?.total)} questions in the bank, most answers were worked out
-        rather than published. Scoring you against a worked-out answer would teach you a
-        wrong fact for a real exam, and you would have no way of knowing.{' '}
+        Official keys and reviewed worked solutions are labelled separately. Check the
+        answer source when revising, especially when a key is provisional or disputed.{' '}
         <Link to="/bank" className="text-link underline">
           Every question shows where its answer came from.
         </Link>
@@ -121,8 +123,8 @@ export default function Scoring() {
         The clock
       </h2>
       <p className="mt-3 max-w-[720px] text-[15px] leading-[1.6] text-secondary">
-        The countdown on screen is for you. The real timing is kept on the server from the
-        moment the paper opens, so a paused tab, a reload or a stopped clock changes nothing.
+        The timer starts when you open the test. Pausing the tab or reloading the page
+        does not pause the timer.
         Submit after time and the attempt still counts — it is just marked late.
       </p>
 

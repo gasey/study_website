@@ -40,6 +40,8 @@ def test_admin_official_requires_exact_registered_key(client,actor,database):
  conn=database[1];doc='adm-key-'+uuid4().hex
  conn.execute("INSERT INTO review_documents(id,paper_id,title,source_file,sha256,kind,key_status,registered_by) VALUES(%s,%s,'Synthetic official key','synthetic.pdf',%s,'official-key','final','test')",(doc,p,'a'*64))
  payload.update(document_id=doc,key_page=1)
+ assert client.post(base,headers=h,json=payload).status_code==409
+ payload['baseline_hash']=client.get(base,params={'appearance_id':a}).json()['baseline_hash']
  r=client.post(base,headers=h,json=payload);assert r.status_code==200,r.text
  pub=conn.execute('SELECT manifest FROM bank_publications WHERE id=%s',(r.json()['publication_id'],)).fetchone()[0]
  assert pub['payload']['evidence'][0]['answer_text']=='C' and pub['payload']['evidence'][0]['printed_question']=='1'
@@ -65,6 +67,7 @@ def test_official_key_only_keeps_audit_reason_out_of_public_explanation(client,a
  q,a,p,h,base,payload=setup(client,actor,database);conn=database[1];doc='key-only-'+uuid4().hex
  conn.execute("INSERT INTO review_documents(id,paper_id,title,source_file,sha256,kind,key_status,registered_by) VALUES(%s,%s,'Synthetic final key','synthetic.pdf',%s,'official-key','final','test')",(doc,p,'a'*64))
  payload.update(mode='official',document_id=doc,key_page=1,explanation='')
+ payload['baseline_hash']=client.get(base,params={'appearance_id':a}).json()['baseline_hash']
  response=client.post(base,headers=h,json=payload);assert response.status_code==200,response.text
  manifest=conn.execute('SELECT manifest FROM bank_publications WHERE id=%s',(response.json()['publication_id'],)).fetchone()[0]
  assert manifest['payload']['patch']['explanation'] is None
@@ -131,6 +134,20 @@ def test_direct_admin_publication_roundtrip_verifies_without_maintenance_points(
   assert conn.execute('SELECT count(*) FROM v_scorable WHERE id=%s',(qid,)).fetchone()[0]==0
   assert conn.execute('SELECT count(*) FROM contribution_decisions WHERE contribution_id=%s',(pub['contribution_id'],)).fetchone()[0]==0
   assert conn.execute('SELECT count(*) FROM contribution_credit WHERE publication_id=%s',(pubid,)).fetchone()[0]==0
+  verify='/api/admin/bank/publications/'+pubid+'/verification'
+  checked=client.get(verify)
+  assert checked.status_code==200,checked.text
+  assert checked.json()['status']=='matched' and checked.headers['cache-control']=='private, no-store'
+  assert checked.json()['answer_status']=='verified'
+  conn.execute("UPDATE canonical_questions SET status='held' WHERE id=%s",(qid,))
+  checked=client.get(verify)
+  assert checked.json()['answer_status']=='needs-review' and checked.json()['question_state']=='held'
+  conn.execute("UPDATE canonical_questions SET status='live' WHERE id=%s",(qid,))
+  conn.execute("UPDATE canonical_questions SET direction='Later canonical-only instruction drift' WHERE id=%s",(qid,))
+  checked=client.get(verify)
+  assert checked.json()['status']=='mismatch' and 'canonical.direction' in checked.json()['differences']
+  actor('author');assert client.get(verify).status_code==403
+  actor('owner')
  finally:
   for table in ('question_classifications','question_topic_links','collection_sections'):
    conn.execute(f'DELETE FROM {table}')

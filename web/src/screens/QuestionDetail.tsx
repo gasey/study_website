@@ -3,10 +3,10 @@ import QuestionUpdate from '../components/QuestionUpdate'
 import {savePracticePosition} from '../lib/learning'
 import {QuestionActions} from '../components/QuestionDiscussion'
 import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useParams, useSearchParams } from 'react-router-dom'
 import { RepeatBadge } from '../components/ProvenanceTag'
-import AnswerProvenance, {evidenceLink} from '../components/AnswerProvenance'
+import AnswerProvenance from '../components/AnswerProvenance'
 import {
   getQuestion,
   submitAnswer,
@@ -54,18 +54,20 @@ export default function QuestionDetail() {
     setSaved(!saved)
   }
 
-  async function reveal() {
-    if (picked === null || result || viewed || submitting) return
+  const sending=useRef(false)
+  async function reveal(index:number) {
+    if (!q || q.held || q.answer_source==='none' || ['duplicate-options','unresolved-source'].includes(q.source_defect||'') || result || viewed || submitting || sending.current) return
+    sending.current=true;setPicked(index)
     setSubmitting(true)
     setAnswerError('')
     try {
       // The client does not know the answer until this returns — the server
       // never sent it with the question.
-      setResult(await submitAnswer(id, picked, 'practice',undefined,params.get('paper')||undefined))
+      setResult(await submitAnswer(id, index, 'practice',undefined,params.get('paper')||undefined))
     } catch (e) {
       setAnswerError((e as Error).message)
     } finally {
-      setSubmitting(false)
+      sending.current=false;setSubmitting(false)
     }
   }
 
@@ -118,8 +120,7 @@ export default function QuestionDetail() {
 
         {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
-        {!q.verified&&q.type==='mcq'&&<p className="mt-3 text-[13px] text-secondary"><Link to={evidenceLink(q.id)} className="inline-flex min-h-[44px] items-center font-semibold text-link underline">{q.reviewed_derived?'Improve this solution · submit evidence →':'Help verify this answer · submit evidence →'}</Link></p>}
-        {q.key_disputed && <p className="mt-4 rounded-panel border border-[#D8B56D] bg-[#FFF4DF] p-4 text-[13px] leading-relaxed text-[#684919]">Key discrepancy · the Commission’s official key conflicts with this reviewed derived answer. It is available for practice but excluded from official-key scoring.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
+        {q.key_disputed && <p className="mt-4 rounded-panel border border-[#D8B56D] bg-[#FFF4DF] p-4 text-[13px] leading-relaxed text-[#684919]">Answer disputed · the worked solution differs from the official key. This question is excluded from official-key test scores.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
 
         {sourceNote && <p className="mt-4 rounded-panel border border-[#D8B56D] bg-[#FFF4DF] p-4 text-[13px] leading-relaxed text-[#684919]">{sourceNote}</p>}
 
@@ -142,8 +143,8 @@ export default function QuestionDetail() {
               return (
                 <li key={i}>
                   <button
-                    disabled={!!result || viewed || submitting || o === null}
-                    onClick={() => o !== null && setPicked(i)}
+                    disabled={q.held || q.answer_source==='none' || ['duplicate-options','unresolved-source'].includes(q.source_defect||'') || !!result || viewed || submitting || o === null}
+                    onClick={() => o !== null && void reveal(i)}
                     aria-pressed={isPicked}
                     data-answer-state={isAnswer?'correct':wrongPick?'wrong':isPicked?'selected':'neutral'}
                     className={`answer-option flex w-full items-start gap-3 rounded-panel border p-3 text-left text-[15px] transition-colors ${cls}`}
@@ -160,24 +161,14 @@ export default function QuestionDetail() {
           </AnswerOptions></>
         )}
 
-        {!result && !viewed && q.options.length > 0 && q.answer_source!=='none' && !q.held && (
-          <button
-            disabled={picked === null || submitting}
-            onClick={reveal}
-            className="mt-5 rounded-pill bg-ink px-5 py-2 text-[14px] text-paper disabled:opacity-40"
-          >
-            {submitting ? 'Checking…' : 'Check answer'}
-          </button>
-        )}
-
         {answerError&&<p role="alert" className="mt-3 text-[13px] text-mypick">{answerError}</p>}
         {q.held&&<p className="mt-4 rounded-panel border border-[#D9B76B] bg-[#FFF4D9] p-3 text-[13px] text-[#705015]">This question is held for review and cannot be checked or scored. Compare the official key and reviewed evidence below.</p>}
         {q.answer_source==='none'&&<p className="mt-4 text-[13px] text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
-        {q.type==='mcq'&&<PracticeAnswerPanel key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
+        {q.type==='mcq'&&<PracticeAnswerPanel options={q.options} key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
 
       </div>
 
-      <div id="discussion"><QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={true}/></div>
+      <div id="discussion"><QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={!!params.get('post')||window.location.hash==='#discussion'}/></div>
       <section className="mt-6">
         <h2 className="label text-exams-dark">
           Appeared in {q.appearances.length} paper{q.appearances.length === 1 ? '' : 's'}

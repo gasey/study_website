@@ -137,11 +137,11 @@ export default function Vocabulary() {
       ++generation.current;
     };
   }, [user]);
-  async function answer(action: "answer" | "reveal" | "defer") {
+  async function answer(action: "answer" | "reveal" | "defer", choice=selected) {
     if (
       !card ||
       answering.current ||
-      (action === "answer" && selected === null)
+      (action === "answer" && choice === null)
     )
       return;
     answering.current = true;
@@ -153,7 +153,7 @@ export default function Vocabulary() {
       const saved = await vocabularyRequest<VocabularyResult>(
         "/cards/" + cid + "/answer",
         user,
-        { action, chosen_index: action === "answer" ? selected : null },
+        { action, chosen_index: action === "answer" ? choice : null },
       );
       if (owner !== epoch.current) return;
       setResult(saved);
@@ -310,7 +310,7 @@ export default function Vocabulary() {
                 key={i}
                 aria-pressed={selected === i}
                 disabled={busy || !!result}
-                onClick={() => setSelected(i)}
+                onClick={() => {if(answering.current)return;setSelected(i);void answer("answer",i)}}
                 className={
                   "flex min-h-[48px] items-start gap-3 rounded-[9px] border p-4 text-left text-[14px] " +
                   (result?.answer_text === option
@@ -331,13 +331,6 @@ export default function Vocabulary() {
           </AnswerOptions>
           {!result ? (
             <div className="mt-5 flex flex-wrap gap-2">
-              <button
-                disabled={busy || selected === null}
-                onClick={() => void answer("answer")}
-                className="min-h-[44px] rounded-pill bg-ink px-5 text-[14px] font-semibold text-paper disabled:opacity-40"
-              >
-                {busy ? "Saving…" : "Check answer"}
-              </button>
               <button
                 disabled={busy}
                 onClick={() => void answer("reveal")}

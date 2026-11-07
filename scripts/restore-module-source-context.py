@@ -7,6 +7,7 @@ module rows are an audit backlog, not a count of defective bank questions.
 import argparse,fcntl,hashlib,json,re,subprocess,unicodedata,os
 from collections import defaultdict,Counter
 from pathlib import Path
+from editorial_protection import write_guarded
 ROOT=Path(__file__).resolve().parents[1]
 FIELDS=('direction','questionMarkup','optionsMarkup','passage','sourceContextRef')
 def sha(raw):return hashlib.sha256(raw).hexdigest()
@@ -82,7 +83,7 @@ def main():
             if sha(backup.read_bytes())!=sha(raw):raise ValueError('Backup hash differs')
             byid={q['id']:q for q in bank['questions']}
             for r in report['changes']:byid[r['id']].update(r['after'])
-            tmp=bankfile.with_suffix('.json.context-tmp');tmp.write_text(json.dumps(bank,ensure_ascii=False));tmp.replace(bankfile)
+            write_guarded(bankfile, bank, locked=True)
             report.update(written=True,backup=str(backup),bank_after_sha256=sha(bankfile.read_bytes()))
         args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(report,indent=2,ensure_ascii=False)+'\n')
         print(json.dumps({'statistics':report['statistics'],'changed_questions':len(report['changes']),'fields':dict(Counter(k for r in report['changes'] for k in r['after'])),'held_module_rows':len(report['held']),'written':report['written']},indent=2))

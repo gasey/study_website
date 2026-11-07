@@ -1,187 +1,109 @@
-# India Study Map — agent working notes
+# India Study Map — current working instructions
 
-MPSC exam-prep platform. Question bank, per-question discussion, user-made
-study materials, games and duels, exam calendar, paid plans.
+These instructions apply to every human or model working in this repository.
+Historical logs explain past work; they do not authorize new operations.
 
-## Read this before touching anything
+## Start here
 
-Whoever picks this up next — human or model — reads these four files first,
-in this order. They exist because the same mistakes were being rediscovered
-every session.
+Read this file and `docs/PLAN.md`. For AI question work also read
+`docs/AI-QUESTION-REVIEW-HANDOFF.md` and run its checkpoint command.
+Read the relevant specialist runbook before operating that subsystem.
+For tagging, classification, extraction labels or bank repairs, first read
+`docs/QUESTION-TAGGING-RULES.md`. It is the single current tagging policy and
+supersedes conflicting older classification handoffs. Use its model prompt and
+fresh active registry IDs; unresolved semantic choices go to the owner.
+For screens, consult `docs/DESIGN-FIDELITY.md` and the prototypes in `docs/design/`;
+prototype markup takes precedence over its summary README. Record implementation
+results and limitations in `DEVLOG.md` before stopping. Do not rewrite historical
+receipts, decisions or applied migrations.
 
-| File | What it holds | When you write to it |
-|---|---|---|
-| `CLAUDE.md` (this) | Layout, server, rules that must not be broken | A rule changes |
-| `docs/PLAN.md` | Milestones, as checkboxes | Tick a box when work lands |
-| `docs/DECISIONS.md` | Why a choice was made, and what was rejected | Any choice expensive to reverse |
-| `docs/DESIGN-FIDELITY.md` | Exact values pulled from the prototype | You extract a new screen's spec |
-| `DEVLOG.md` | Dated, append-only account of each session | **Every session, before you stop** |
+## One authority
 
-**The devlog entry is not optional, and it is not a changelog.** Record what
-you measured, what broke, and the trap you hit — the dead end you wasted an
-hour on is worth more to the next session than the feature you shipped. Write
-it as prose someone can act on, with real numbers.
+The only writable bank is Oracle:
+`/srv/study/workshop/mpsc-question-bankv2`. Its sibling app contains publisher
+scripts; the API runs at `/srv/api`. Connect with `ssh ubuntu@152.67.31.231`.
+This developer checkout's bank is a read-only recovery snapshot.
 
-Append; never rewrite history. If a past entry turns out to be wrong, add a
-new entry saying so rather than editing the old one — that correction is
-itself the useful record.
+Bank content changes go through reviewed proposals, guarded JSON publication and
+normal database sync. Never repair production bank content with SQL, bypass the
+machine-bound authority policy, regenerate protection baselines to clear errors,
+or enable the retired local publisher. Oracle's `ism-oracle-bank-review.timer`
+handles ordinary corrections. The whole-paper publisher shares its bank lock.
+Workflow/user data belongs to PostgreSQL and is never imported from bank JSON.
+Use fresh authoritative checks rather than counts in historical documents.
 
-Before building a screen, read `docs/DESIGN-FIDELITY.md` and extract the
-values for that screen from the prototype. The handoff README's token summary
-is a simplification and disagrees with the markup in several places.
+## Review ownership
 
-## Layout
+Parser/OCR output and AI drafts remain staged. Human edits invalidate stale drafts;
+recheck exact sources at submission and publication. Preserve keys, provenance,
+source identities, holds, attempts and immutable review history. AI agreement is
+not source verification or an independent human sign-off.
 
-```
-web/             Vite + React 18 + TS + Tailwind  → static, served by Caddy
-api/             FastAPI + psycopg3               → uvicorn on :8000
-api/migrations/  NNNN_*.sql, applied by migrate.sh
-docs/            PLAN · DECISIONS · DESIGN-FIDELITY · design/ (the prototypes)
-scripts/         deploy.sh · migrate.sh · sync-bank.sh · harvest_old_server.py
-```
+On 4 November 2026, after asking Codex to finish the Gazetted review/publication,
+the owner clarified "i dont understand...i just want it to be solved". The ten
+exact source/payload/owner bindings in
+`api/app/data/gazetted-owner-ai-review-20261104.json` therefore have a narrowly
+scoped, explicitly attributed `owner_ai` approval path. Its immutable evidence
+records AI-assisted source/key review and owner authorization, never a separate
+person's inspection. Any edit invalidates that AI scope. This grants no authority to expand the scope,
+alter frozen UDC/Prelims assignments, bypass MFA, or overwrite keys/history.
+See `docs/sources/group-b-gazetted-completion-20261104.json` for the completed
+publication and module receipt. Official 2026 keys remain **provisional**; the six
+conflicting entries are unscored.
 
-## Where things already live
+On 6 November 2026 the owner explicitly requested the solo-owner workflow.
+Global owners may now make their own source-bound paper/learning-test publication
+decisions through the admin preview and explicit publish controls. Attribute these
+as `owner`, never as independent human or AI review. Routine owner corrections
+and bounded bulk tags may omit a note; the server records a factual change summary.
+Answer/key changes retain evidence requirements. Stale-source checks, guarded
+publication/readback, holds, staff MFA and protected UDC/Prelims assignments still
+apply. Ordinary user submissions retain independent review. Implementing this
+workflow does not authorize an agent to claim source inspections it did not make.
 
-- **Design handoff** — `docs/design/` (four `.dc.html` prototypes +
-  `README.md`). High fidelity: colours, type, spacing and copy are final.
-  They are references, not code; recreate them in React. The prototype
-  markup beats the README where they disagree.
-- **Schema** — `api/migrations/`. This repo owns the schema; the bank repo
-  keeps only v1/v2 as history and a pointer README.
-- **Bank data** — `../mpsc-question-bankv2/bank/mpsc_bank_v2.json`,
-  77,751 questions across 1,938 papers. That repo is the data workshop
-  (2 GB of PDFs, parsers, OCR) and stays separate.
-- **A second, older corpus** — `ssh shiksha-dev`, database `mpsc_study`:
-  140,552 rows, 26,490 questions absent from our bank, 70,839 explanations,
-  and **no answer provenance at all**. An archive to harvest from, never a
-  peer to sync with (DECISIONS #7).
+Solomon reviews Prelims; Sangzel reviews UDC, through exact existing assignments.
+On 3 November 2026 the website owner explicitly granted Sangzel
+(sangzeldoto@gmail.com) the global owner/admin role. Solomon remains assignment-only.
+Staff MFA remains required for admin changes. UDC/Prelims source protection stays
+in force. Read `docs/HUMAN-REVIEW-UDC-PRELIMS.md` for those assignments and checks.
+On 7 November 2026 the owner explicitly requested removing the authenticator
+requirement for hruaitluangasailo20@gmail.com. The operator-managed
+`STAFF_MFA_EXEMPT_USER_IDS` policy permits this exact immutable account ID to use
+staff tools without MFA. Its unfinished setup was cleared; no active factor was
+removed, MFA verification fabricated, password changed or role granted. Other
+staff retain the existing MFA requirement. An optional enrolled factor still
+protects sign-in. This account exception does not waive source protection,
+evidence, stale-source checks or publication attribution.
+Explanation backfill is explanation-only; source and answer repairs use their
+separate existing workflows. Use ordinary allowance; past bounded quota exceptions
+are historical and do not authorize a new exemption.
 
-## Server
+## Product and implementation
 
-Oracle Cloud Ampere A1, 4 OCPU / 24 GB, Mumbai. `ssh ubuntu@152.67.31.231`.
-Postgres 16 (localhost only), Redis 7, Caddy 2 serving https://study.hawayu.in.
-DB credentials in `/etc/mpsc/db.env` (root-only). Test database `bench`
-already holds the full migrated bank.
+- Use approved subject/topic/subtopic classifications. Difficulty labels are retired.
+- Use existing scoring eligibility and answer-status views. Never promote an AI
+  inference to an official key or silently change a historical answer.
+- Preserve assessment restrictions, answer reveal gates and account boundaries.
+- Keep question/source IDs; presentation grouping is not a canonical merge.
+- Popular means observed learner activity; Hot topics require dated reviewed picks.
+  Use honest empty states instead of invented activity or predictions.
+- Make schema changes with new numbered migrations in `api/migrations/`; never edit
+  an applied migration. Rehearse migrations on a disposable dump clone.
+- Build frontend artifacts locally and deploy with `scripts/deploy.sh`. Never build
+  on Oracle. Avoid `ORDER BY random()`; use existing indexed selection helpers.
+- Never rewrite shared `/etc/caddy/Caddyfile`. After Caddy, systemd or PostgreSQL
+  changes, verify both study.hawayu.in and family.hawayu.in.
 
-## The schema is expected to change as features land
+## Runbooks and layout
 
-It is not frozen. v3 was written before most of the product existed, and
-each feature will want columns, indexes or views it does not have. Changing
-it is normal; changing it *carelessly* is what breaks things, because the
-server database is derived from a local bank (DECISIONS #5) and a hand-made
-`ALTER TABLE` on the box diverges from the repo silently.
+- `docs/ORACLE-PAPER-WORKBENCH-RUNBOOK.md`: maintenance, deployment, PDF workers,
+  guarded paper publication and paired backup/recovery.
+- `docs/AI-QUESTION-REVIEW-HANDOFF.md`: serial queue, subscriptions and resumable AI
+  explanation checks/publication. This is the continuation entry point.
+- `docs/DECISIONS.md`: historical reasons; current guidance above supersedes obsolete
+  physical locations, counts and completed task instructions.
+- `web/`: React/Vite/TypeScript; `api/`: FastAPI/psycopg; `scripts/`: operators.
 
-So every schema change is a numbered file in `api/migrations/`:
-
-```bash
-./scripts/migrate.sh --status    # applied vs pending
-./scripts/migrate.sh --dry-run   # rehearse on a dump clone; prod untouched
-./scripts/migrate.sh             # apply
-```
-
-- Name them `NNNN_what_it_does.sql`; they run in filename order.
-- **Never edit a migration that has been applied.** The runner checksums
-  them and refuses, because an edited migration means the repo and the
-  server disagree about what the schema is. Write a new one.
-- Each file owns its transactions — `BEGIN`/`COMMIT` inside the file.
-- `--dry-run` restores a dump into a throwaway clone rather than using
-  `createdb -T`, which would need exclusive access and therefore downtime.
-  It takes ~15s and includes real data, so backfills are rehearsed honestly.
-- Prefer a **view** over a denormalised counter column. At this size
-  aggregates run in milliseconds, and a counter is one more thing to keep
-  honest when attempts are re-scored after a key correction.
-
-## Working in parallel with the server
-
-Two streams run at once: the bank is edited locally, and the server
-accumulates attempts, reports and corrections. They do not collide, because
-ownership is split by *what* the data is, not by where it lives.
-
-| Data | Owner | Travels |
-|---|---|---|
-| questions, options, answer keys | local bank JSON | local → server, overwritten each sync |
-| attempts, posts, reports, moderation | server | never synced, never touched |
-| corrections *proposed* on the server | `bank_feedback` | server → export → local → back in a sync |
-
-Start any session by asking who is ahead:
-
-```bash
-./scripts/sync-bank.sh --check
-```
-
-It prints both bank checksums and says IN SYNC or SERVER IS BEHIND, plus how
-many proposals the server is holding. Every sync writes a `sync_log` row —
-the bank checksum it carried, and the attempt count before and after — so
-"did that sync eat my data?" is answerable from the table rather than from
-memory.
-
-**The server never edits bank content directly.** It raises a row in
-`bank_feedback`; the fix is applied to the local JSON and reaches the server
-through the normal sync. One authority for bank content, work still possible
-on both sides. See DECISIONS #5 and #7.
-
-## Build with the data that exists
-
-The bank is incomplete on purpose and will improve later: taxonomy-v2 claims
-now cover all 77,751 question IDs, with 21,712 approved and 56,039 pending;
-the API exposes only approved claims. Nothing is deduped, and 11,459 MCQs
-have no key. **Do not block features on that work.** Build against the 12,454
-questions with official keys and the 59,047 with any answer.
-
-Use reviewed taxonomy claims for Bank filters and subject-wise mock sections;
-pending classifications stay out of learner-facing filters and scored play.
-Where data is still missing, explain that instead of faking a control. The
-repeats filter remains unavailable until deduplication is done.
-
-## Rules that are not negotiable
-
-1. **Never score a user against an inferred answer.** Only 12,454 of 77,751
-   questions have an official key. `v_scorable` is the only source for mocks,
-   duels and cups; `v_practice` is the wider pool and the UI *must* label
-   those answers unverified. This is the project's own rule — see the
-   extraction guide: a model "may never write `official` or `key`".
-2. **Never `ORDER BY random()`.** 19.8 ms vs 0.67 ms for an id draw, and it
-   degrades as the bank grows. Draw ids in the app, fetch by primary key.
-3. **Never build on the server.** One ARM core makes `npm run build` painful.
-   Build locally, rsync the output. `scripts/deploy.sh` does this.
-4. **This VM is shared. Never rewrite `/etc/caddy/Caddyfile`.** It serves
-   `family.hawayu.in` (Vansa) as well as us. Our config lives in
-   `/etc/caddy/sites/study.hawayu.in.caddy` and the top-level file only
-   does `import /etc/caddy/sites/*.caddy`. On 2026-10-18 a wholesale
-   `sudo tee` of the shared file deleted Vansa's block and took that site
-   down for some time — the cert was still on disk, so it failed as a TLS
-   handshake error rather than a 404, and the session that caused it only
-   checked its own URL and never noticed. After touching Caddy, systemd or
-   Postgres, **curl the other site too**.
-   Also: never add `log { output file ... }` — the packaged unit sets
-   `ProtectSystem=full`, so `/var` is read-only and Caddy refuses to reload.
-   Logs go to journald.
-5. **`subject` and `difficulty` are NULL on purpose.** The old values were a
-   placeholder `'gk'` on 90% of rows and a default `'medium'` on 96%. Do not
-   "restore" them; they are being reclassified, and `subject_source` records
-   where each one came from.
-
-## Running locally
-
-```bash
-cd web && npm install && npm run dev      # :5175 (registered as "ism-app")
-```
-
-`web` proxies `/api` to the deployed service by default, so no local
-database is needed. To run the API locally instead, tunnel the DB — it is
-localhost-only on the server — and point the proxy at it:
-
-```bash
-ssh -L 5433:localhost:5432 ubuntu@152.67.31.231
-cd api && .venv/bin/uvicorn app.main:app --reload   # :8000
-DATABASE_URL=postgresql://mpsc@localhost:5433/mpsc API_TARGET=http://localhost:8000 npm run dev
-```
-
-
-## Difficulty labels retired — user decision 2026-10-23
-
-Do not add difficulty labels, selectors, filters, authoring fields or scoring behavior. Classification means subject/topic/subtopic only. Legacy bank columns and immutable review snapshots remain for compatibility; they are not current product metadata. New contribution/revision authoring rejects any difficulty field, and submission/publication validation rejects old proposals that would change it. Existing history/idempotent replays remain readable.
-
-## Owner-authorized quota exemption — 2026-10-26
-
-The owner approved lifting the daily maintenance cap for the current clerical review run. `scripts/owner-bank-maintenance.py --quota-exemption-run <run-id> --quota-exemption-reason <explicit authorization>` scopes the exemption to the existing owner and exact canonical targets in that SSH process. Public user/staff limits stay30/500perday; do not globally disable them. Every exempt contribution is audited. Future use needs explicit owner authorization, with all source/publication/permission guards preserved. See DECISIONS and reports/clerical-publication-unlimited-20261026.
+Run web locally with `cd web && npm run dev`; its default API proxy is production.
+Use a disposable database for tests, never production fixtures or synthetic reviews.
+Secrets stay in private credential storage, never repository files or tool output.

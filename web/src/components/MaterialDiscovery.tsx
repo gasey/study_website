@@ -15,7 +15,7 @@ export function MaterialCard({item:m}:{item:MaterialItem}){
 }
 
 /** Only approved publication metadata. No lesson bodies or question-bank scans. */
-export default function MaterialDiscovery({collectionId,subjectId,title='From the community',compact=false}:{collectionId?:string;subjectId?:string;title?:string;compact?:boolean}){
+export default function MaterialDiscovery({collectionId,subjectId,title='From the community',compact=false,hideEmpty=false}:{collectionId?:string;subjectId?:string;title?:string;compact?:boolean;hideEmpty?:boolean}){
  const [expanded,setExpanded]=useState(false),[offset,setOffset]=useState(0)
  const [data,setData]=useState<{items:MaterialItem[];total:number}|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
  const context=new URLSearchParams();if(collectionId)context.set('collection_id',collectionId);if(subjectId)context.set('subject_id',subjectId)
@@ -23,6 +23,8 @@ export default function MaterialDiscovery({collectionId,subjectId,title='From th
  const [loadedKey,setLoadedKey]=useState('')
  useEffect(()=>{let live=true;setError('');setData(null);contentRequest<{items:MaterialItem[];total:number}>('/materials?'+query+(query?'&':'')+'sort=helpful&limit='+(expanded?12:3)+'&offset='+offset).then(r=>{if(live){setData(r);setLoadedKey(key)}}).catch(e=>{if(live){setError(e.message);setLoadedKey(key)}});return()=>{live=false}},[query,key])
  const current=loadedKey===key,items=current?data?.items:null
+
+ if(hideEmpty&&(!current&&!error||current&&data?.total===0))return null
 
  return <section aria-label={title} className="mt-6 min-w-0 rounded-[14px] border border-[#DDD0E8] bg-[#F6F0FA] p-4 sm:p-5">
   <div className="flex flex-wrap items-start justify-between gap-3"><div><div className="font-mono text-[10px] uppercase tracking-widest text-[#5E2F98]">Community materials</div><h2 className="mt-1 font-display text-[27px] leading-tight">{title}</h2><p className="mt-2 text-[13px] leading-relaxed text-secondary">Published notes and lessons · helpful votes reflect reader feedback.</p></div><button type="button" onClick={()=>{setExpanded(v=>!v);setOffset(0)}} aria-expanded={expanded} className="inline-flex min-h-11 items-center text-[13px] font-semibold text-link">{expanded?'Show highlights':'View all here'} →</button></div>

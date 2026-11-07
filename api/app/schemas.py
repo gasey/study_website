@@ -74,6 +74,7 @@ class QuestionBase(BaseModel):
 
 
 class QuestionListItem(QuestionBase):
+    presentation_hash: str | None = None
     taxonomy_paths: list[dict] = Field(default_factory=list)
     # One representative printing, or the requested paper's printing. The
     # complete appearance list remains available on the detail endpoint.
@@ -318,10 +319,13 @@ class PaperQuestionPage(BaseModel):
 
 
 class MockStart(BaseModel):
+    learning_test_id: str | None = Field(default=None,pattern=r"^learn_[0-9a-f]{32}$")
+    learning_test_version: int | None = Field(default=None,ge=1)
     collection_id: str
     section_path: str | None = None
     paper_id: str | None = None
     answer_mode: Literal["official", "derived-practice"] = "official"
+    paper_mode: Literal['practice','full'] = 'practice'
     count: int = Field(20, ge=1, le=200)
     duration_minutes: int = Field(20, ge=1, le=240)
     marks_correct: float = Field(1, ge=0, le=10)
@@ -346,12 +350,16 @@ class MockQuestion(BaseModel):
 
 
 class MockSession(BaseModel):
+    learning_test_id: str | None = None
+    learning_test_version: int | None = None
+    learning_test_title: str | None = None
     excluded_presentations: int = 0
     id: str
     collection_id: str
     answer_mode: Literal["official", "derived-practice"] = "official"
     section_path: str | None = None
     paper_id: str | None = None
+    paper_mode: Literal['practice','full'] = 'practice'
     current_position: int = 0
     saved_answers: dict[str, int] = Field(default_factory=dict)
     marked_questions: list[str] = Field(default_factory=list)
@@ -380,6 +388,7 @@ class MockAnswerSave(BaseModel):
 
 
 class MockReviewRow(BaseModel):
+    topic_label: str | None = None
     figure_image_url: str | None = None
     direction: str | None = None
     question_markup: str | None = None
@@ -395,6 +404,9 @@ class MockReviewRow(BaseModel):
 
 
 class MockResult(BaseModel):
+    learning_test_id: str | None = None
+    learning_test_version: int | None = None
+    learning_test_title: str | None = None
     id: str
     collection_id: str | None = None
     answer_mode: Literal["official", "derived-practice"] = "official"
@@ -412,6 +424,9 @@ class MockResult(BaseModel):
 
 
 class MockSummary(BaseModel):
+    learning_test_id: str | None = None
+    learning_test_version: int | None = None
+    learning_test_title: str | None = None
     id: str
     collection_id: str
     collection_title: str

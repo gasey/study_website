@@ -1,5 +1,10 @@
 # Decisions
 
+> Current operations: read `CLAUDE.md` and `docs/PLAN.md`. This document is a
+> historical decision ledger, not an executable task list. Oracle authority and
+> the current runbooks supersede earlier local publishing locations and old counts.
+
+
 Short records for choices that would be expensive to reverse. Newest last.
 If you change one of these, add a new record saying why rather than editing
 the old one.
@@ -585,3 +590,116 @@ Collection version2uses separate GS/Aptitude manifests and retains version1. Lea
 Keep question format, answer provenance and explanation status separate. An official key can exist without an explanation, and does not certify any accompanying teaching text. Reuse published reviewed-derived eligibility only for the corresponding unofficial solution's working; unresolved/disputed items remain provisional. Do not invent a separate explanation-review status where no metadata establishes it.
 
 Keep current-affairs revision notes outside canonical answers and scoring. Use a small dated editorial registry with direct sources and review deadlines; constrain historical context to the relevant question/year. Expired notes disclose that rechecking is due, and missing notes explicitly acknowledge that no specific update has been checked. Render answer-bearing notes/references only after answering or explicit revision-context reveal. Existing proposal/publication guards continue to govern bank edits. This avoids both silent historic-answer replacement and the misleading implication that a generic portal link verifies today's fact. See docs/EXPLANATIONS-AND-CURRENT-AFFAIRS.md for the workflow and current limits.
+
+### 1 November 2026 — UDC preparation stays within UDC
+
+The owner confirmed that UDC is a focused preparation destination; students can explicitly move to Group B Non-Gazetted later for broader practice. This supersedes the UDC part of the earlier clerical switcher decision. UDC's overview now has one journey action block, its own approved subject shortcuts and five primary views. Other exams remain in Exams; the broader Group B link sits at the bottom. Shared Assistant/UDC source papers remain legitimate UDC resources. Resume restores an allowlist of study filters and UDC only offers an active timed-session resume for its own collection.
+
+Group the eight exact registered 2025 Assistant/UDC booklet IDs into Paper I and Paper II navigation cards. Require their expected 2025 year and paper role; leave every other identity separate. Differences in historical department/sitting metadata make year-only grouping unsafe. This changes presentation only; all source IDs, questions, keys and scoring rules retain their current identities. Reuse the Prelims series selector with an explicit exam ID. New sitting families need an explicit metadata audit before extending grouping.
+
+### 2 November 2026 — Bounded UDC study sets share the existing attempt engine
+
+The owner approved the second UDC release: 10/20-question sets, saved position, finish summaries and targeted mistake practice. Freeze canonical IDs and source paper IDs at creation using the existing UDC collection/taxonomy/pool filters. Later reads use these exact IDs rather than re-running a shrinking wrong/unseen queue. Current holds and unavailable sources still apply; missing questions retain their slots and can be skipped. A smaller eligible pool produces a visibly smaller set.
+
+Migration 0062 adds session metadata only. Ordinary attempts and immutable practice receipts remain the answer/progress/reward authority. A deterministic session/question receipt key and one shared transaction encompass checking, awarding and updating the session version. Duplicate checks replay; stale-tab navigation fails explicitly. Finished summaries retain original checked feedback, with unofficial-answer counts and a clear distinction from an exam score. Restored checked questions use the attempt's original text/options snapshot. Reveals remain reading, never an attempt or award; finishing reconciles server-recorded reveals even when the acknowledgement was interrupted. Per-question review/active-test guards still apply to saved answer feedback.
+
+Guests use their protected HttpOnly principal; signed-in users use the existing account boundary. Explicit proven-guest transfer adopts session metadata and preserves immutable receipt ownership through its adopted attempt. It also carries answer-view timestamps forward using the later server timestamp, so signing in cannot reset the reading cooldown. Set creation, position and history never grant XP. Completed set summaries and active continuation appear in the existing exam journey, while general UDC progress still derives from attempts.
+
+
+### 2 November 2026 — Quiet booklet sources and conservative study-series grouping
+
+The owner requested hiding repeated series controls in UDC and MCS Prelims and addressing duplicated study questions. Keep original booklet records and printed-order paper browsing intact. Collapse series selectors into Booklet series & original sources, remove series from grouped-card display titles, move PDF links into Paper details and put per-question source identity behind Source details. Source issues, figures, passages and answer-provenance labels remain visible.
+
+General collection question queues for UDC/combined-prelims collapse only identical text copies within the same filename family, year and paper role. Require exact case-sensitive question, ordered options, canonical and source context/markup, answer text/source, explanation, status/defect/dispute state and derived-review status. Any recorded figure or diagram prevents collapse. This is query presentation, not canonical deduplication; no IDs, source counts, attempts, credits or saved-set contents change. A selected paper bypasses grouping and keeps its original questions. Other modules and timed papers are unchanged.
+
+Apply subject/source/pool filters before grouping and learner-status filters afterwards. Prefer the current learner's most recently attempted eligible copy, otherwise the lowest ID. This preserves usable legacy feedback and prevents a parallel booklet copy resurfacing in the same unseen queue. Different solutions, reordered options, OCR differences and figures deliberately remain separate until supported review. This does not enable the general repeats filter or claim complete deduplication. New UDC sets use the shared queue; already frozen sets are preserved.
+
+
+### 2 November 2026 — Verify admin publication readback and preserve original study feedback
+
+The owner requested the remaining UDC readiness work and a fresh audit of fast admin editing/confirmation and later mismatches. Keep existing source/issue filters and Save & next; do not introduce blanket verification or relax evidence, role, source, quota or stale-publication guards. Expand publisher verification from a few canonical fields to every learner field represented in the primary receipt, including provenance/key reference, source context and markup. Secondary source records do not overwrite shared primary content.
+
+Add a private read-only post-publication comparison endpoint, using a repeatable-read snapshot, original/current subject grants and active-test protection. Return only mismatch field names. Distinguish a subsequent legitimate publication from unexplained drift. The admin progress card rechecks after application and can recheck again from contribution history. This verifies publication consistency, not the factual truth of a reviewer’s conclusion. No approval or correction is created by a recheck.
+
+Current UDC short sets send a hash of the displayed answer-free presentation. Before a new check, hold shared source/canonical locks and reject a changed presentation without creating an attempt/reward. Keep the field optional for existing API clients; older clients and unlimited study routes retain legacy behavior and are not represented as covered by this gate. New attempts snapshot the original answer-status/review context. Saved sets preserve original feedback/totals and explicitly flag later question/key/context/figure/review changes. Older snapshots must not inherit a later derived-review badge. Original attempts/mock results/credits are not rewritten; existing adjusted assessments remain separate.
+
+Keep UDC coverage claims tied to actual archive counts. Main subject shortcuts prioritise five direct-recruitment areas; historical extras remain accessible. Explicitly distinguish written preparation from MCQ sets and keep default timed rules labelled practice. The current syllabus redirect could not be fetched; do not claim full current syllabus or authentic paper-rule verification. The offline backlog/source audit prepares evidence only and creates no bank changes. Release gates remain pending restricted server/database access.
+
+### 2 November — Feed begins with the learner's next action
+
+The owner requested a student-focused feed redesign. The feed now offers active timed practice first, then a real saved learning checkpoint, otherwise explicit exam choice. Resume links retain the original paper/section/answer mode; the server resume service remains authoritative. Do not label the first public collection as the learner's chosen exam. Community discovery, followed creators, community MCQs, discussions and materials remain available below study actions. Remove duplicate rails, placeholder social previews and games promotions from the feed; retain those destinations elsewhere. Progress is labelled all-time and is not represented as exam readiness. This is a frontend composition change, with no change to question eligibility or answer visibility.
+
+### 2 November — Non-Gazetted hub and focused exam routes
+
+The owner clarified the broader Group B Non-Gazetted module: users may want only English, GK and Current Affairs. Default `/group-b` to NG, preserving explicit combined and Gazetted query selections. Use General Knowledge for NG learning labels; Current Affairs is a separate entry into an actual approved GK topic. Keep canonical taxonomy/source titles unchanged. The official July 2024 NG scheme supports GK terminology; a newer May 2025 notice exists but its PDF returned403, so no new current marks/duration claims are introduced. UDC/LDC/Assistant remain focused routes; preparation overlap does not establish identical syllabus, statutory classification or a complete source union. Existing UDC/Assistant collection membership is preserved, and LDC is linked without silently adding its bank. See docs/GROUP-B-NON-GAZETTED-MODULE.md.
+
+### 2 November — Group B navigation and GK/GS correction
+
+Separate the NG study-home choices from active topic/practice controls. Centralize URL transitions so source changes clear incompatible filters while read/practice changes preserve the selected topic and reset pagination/answer-status. Keep explicit combined/Gazetted links valid. GK remains a discovery label only: the original January2026 Health & Family Welfare NG technical PaperII explicitly says General Studies. This corrects any interpretation of the preceding note as saying GS does not occur in Non-Gazetted examinations. Preserve printed paper titles and existing taxonomy/source roles.
+
+
+### 2 November — Selectable exam/year archive
+
+The owner now requests an MPSC-style exam/year list with ascending/descending ordering. Add it as an archive presentation, defaulting Group B Past papers to list while retaining the existing card option and other module defaults. Each row retains its exact source paper; do not merge similarly named sittings or booklets. Year and exam-name order is deterministic, unknown years last for date sorts, and URL filters restore the selected view. This is the explicit exception to the earlier card-only preference for paper lists.
+
+Human handoff readiness is distinct from final certification. Report official keys and reviewed unofficial answers separately, include held items in editorial backlog, and require real human attribution for final paper sign-off. Do not count approved taxonomy as answer verification.
+
+
+### 2 November — Human editorial authority over re-parsed UDC/Prelims content
+
+Freeze the handed-off exact source scope as an integrity baseline, not factual certification. Parser/tooling changes to protected questions, paper/context records or source assets become staged comparisons. A mandatory sync gate catches drift even if a legacy/raw writer bypassed its local hook. Only existing validated immutable publication manifests advance bounded targets, with a journal durable before replacement and exact replay after interruption. Do not auto-rebaseline, silently add sources, merge source IDs or grant parser results human/official provenance.
+
+Introduce distinct source-editor assignments rather than global reviewer roles. Bind invitations to the owner-designated email plus an explicitly activated existing account ID, with frozen paper membership and revocation. Do not auto-claim by email or create passwords. Source inspection and attributed append-only checks are allowed; ordinary contributions still require independent approval/publication. A checked source is a human inspection record, not an official-key or solution promotion. Reject stale ordinary proposal/check forms using source versions before saving. Owner retains activation/publishing control; historical checks remain earlier checks when content changes.
+
+### 2 November — Dated connections are independently published editorial context
+
+Implement the manual first version of Current Affairs Connections as server-owned entity/revision/source-link records. Historical bank content and scoring retain their canonical authority. Exact assigned-source editors can author context; only an independent owner publishes it. Unknown time references remain explicit; precise entity/jurisdiction/fact-type identity connects GS/GK questions without rewriting source labels or taxonomy. No automatic model inference or officeholder update is trusted.
+
+Use transaction-version source tokens for short-lived authoring freshness and separate semantic evidence fingerprints for durable published connections. A byte-identical bank upsert must not remove every link; actual source/key/context changes withhold stale context. New endpoint access blocks the entire feature during active assessments, since entity facts can disclose another question's answer even when IDs differ. Explicit viewing applies existing review cooldowns to all linked canonical IDs. Existing public static notes and externally reachable PDFs are not represented as covered by these new server controls.
+
+### 2 November — General changing facts and comparable measurement series
+
+The election-office example does not define the current-affairs product scope. Add explicit fact categories plus immutable comparison metadata for rankings/statistics and separate reporting periods/editions per fact. Commodity, exporter/producer metric, value/volume basis, unit/currency, compared population, source series and methodology define one comparable connection. Preserve this identity across replacements by comparing with the entity's first immutable proposal under its existing row lock. A different definition needs a distinct named connection. This keeps the existing schema/additive JSON compatibility and avoids silently recasting historical data.
+
+Annual statistics and awards do not obey officeholder term-expiry rules; overlap validation depends on fact category, with distinct reporting editions retained. Link comparability is a reviewed explicit status and explanation, not inferred from similar words or matching GS/GK tags. Older records retain general/unclear defaults. Normalizing legacy defaults for idempotent replay avoids treating an old successful request as changed merely because optional fields were added.
+
+### 3 November — one Oracle canonical bank and browser paper preparation
+
+The owner authorized implementing the remaining website/PDF/admin/game work and moving the local workshop to the existing Oracle VM. Physical bank authority now lives in `/srv/study/workshop/mpsc-question-bankv2`; this supersedes DECISIONS #5's location, not its ownership separation. PostgreSQL still holds workflow/user data and derives exam content from guarded JSON sync. A machine-bound write policy disables local publication, the local timer is disabled, and Oracle owns the existing correction publisher plus an independently reviewed whole-paper publisher. Both share the bank lock. Parser results remain staged. No production bank content was edited through direct SQL.
+
+Keep human-edited draft payloads separate from extracted page text and OCR jobs. Saving creates immutable version history and invalidates review; no person who edited a paper may approve it. Exact draft assignments do not expand UDC/Prelims collection access. Source/key hashes, independent review and roles are rechecked at publication, with durable receipts and readback. New paper membership requires a separate deliberate collection change. This preserves the handed-off 78 sources and their 6,931 questions.
+
+Document processing runs as www-data with bounded Poppler/qpdf/Tesseract subprocesses; the privileged publication bridge does not parse untrusted PDFs. Deployment drains workers, and new workers finish their current lease on graceful shutdown. Paired daily recovery snapshots are verified and fetched read-only into private local storage when this computer is online; continuous external-cloud offsite storage remains unconfigured.
+
+Topic Trail is a versioned mode in existing game_rooms, preserving assessment locks, snapshot exclusion and exactly-once rewards. The live vocabulary pool fell from thirteen canonical records to seven distinct usable questions after booklet deduplication. The physics taxonomy also included geography questions. Therefore approved taxonomy alone cannot select a narrow pack: add owner-inspected exact source lists. Launch only ten source-matched Constitution basics questions from Prelims, with explicit pilot/limited-variety expectations. Never count a UI fixture's synthetic approvals as human review of production content.
+
+### 3 November — consolidated AI continuation and honest discovery
+
+The owner requested implementation of the finalized portable-review plan and removal
+of contradictory active instructions. CLAUDE.md is now a short current entry point;
+PLAN.md contains active work and links the unchanged historical ledger. Past local
+publishing paths, old counts and bounded quota exceptions are not standing authority.
+No protection, source/provenance, human-review, assessment or backup rule was removed.
+
+Use one private SQLite queue across accounts, with rotating claims, immutable source
+and evidence files, exact proposal reconciliation and serial Oracle publication.
+Five pilot explanations were source-checked, applied and fully read back through
+ordinary allowance. A complete before/after bank comparison permits only those five
+explanations and their required reviewPublicationId audit pointers. Attempts, exact
+assignments, permission grants and human checks remained unchanged.
+
+The owner confirmed OpenCode Go. Installed v2 Console OAuth is not accepted as a Go
+API key (read-only probe returned 401). Use the documented Go-only inference endpoint
+with a privately supplied personal Go API key, stable packet session headers, bounded
+output and verified Go/zero-balance-cost usage. This stateless model call has no tools
+or production credentials. Missing keys or exhausted/unconfirmed billing stop work;
+a billing mismatch blocks subsequent Go calls until operator reconciliation. No paid
+model request occurred during implementation; the pilot used manually checked drafts.
+
+Popular questions reflect distinct registered practice/discussion participation in
+seven days, conservatively grouped across identical booklets, with a five-participant
+threshold. Editorial recommendations come from existing inspected exact source lists.
+Hot topics are owner-managed dated picks; factual support must use independently
+published current-affairs revisions and becomes unavailable when stale or withdrawn.
+Display creates no attempt and assessments withhold discovery. Never seed popularity
+or label these sections as predictions.

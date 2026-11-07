@@ -75,6 +75,13 @@ async def transfer_guest(request, account):
         await cur.execute('''UPDATE mock_sessions SET user_id=%s WHERE user_id=%s
           AND (submitted_at IS NOT NULL OR NOT EXISTS(SELECT 1 FROM mock_sessions WHERE user_id=%s AND submitted_at IS NULL))''',(account,guest,account))
         counts['mocks'] = cur.rowcount
+        await cur.execute("UPDATE practice_study_sessions g SET request_key='adopted:'||g.id WHERE g.user_id=%s AND EXISTS(SELECT 1 FROM practice_study_sessions a WHERE a.user_id=%s AND a.request_key=g.request_key)",(guest,account))
+        await cur.execute('UPDATE practice_study_sessions SET user_id=%s WHERE user_id=%s',(account,guest))
+        counts['study_sessions'] = cur.rowcount
+        await cur.execute('''INSERT INTO answer_reveals(user_id,canonical_id,revealed_at)
+          SELECT %s,canonical_id,revealed_at FROM answer_reveals WHERE user_id=%s
+          ON CONFLICT(user_id,canonical_id) DO UPDATE SET revealed_at=greatest(answer_reveals.revealed_at,EXCLUDED.revealed_at)''',(account,guest))
+        counts['answer_views'] = cur.rowcount
         # Explicit, reviewed mutable progress tables; keep the most recently
         # server-updated checkpoint/draft, never replay client timestamps.
         for table,keys in [('exam_study_checkpoints',['collection_id']),('learning_checkpoints',['kind']),

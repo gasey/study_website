@@ -4,6 +4,8 @@ Pure file operations are isolated here for tests using temporary synthetic banks
 No network requests or subprocess execution are derived from manifest content.
 """
 import copy
+import gzip
+import shutil
 import fcntl
 import hashlib
 import json
@@ -11,6 +13,7 @@ import os
 from pathlib import Path
 import tempfile
 from contextlib import contextmanager, nullcontext
+from editorial_protection import check_candidate, prepare_publication, finish_publication
 
 FIELDS={'question','direction','questionMarkup','optionsMarkup','passage','options','answerIndex',
  'answerSource','answerKeyRef','explanation','difficulty','page','qnum','hasDiagram','figureImage',
@@ -127,18 +130,24 @@ def transform(bank,manifest):
 
 def apply_manifest(bank_path,root,manifest,expected_manifest_hash,dry_run=False,locked=False):
     bank_path=Path(bank_path).resolve();root=Path(root).resolve()
+    if not dry_run:
+        from bank_authority import require_writable
+        require_writable(bank_path)
     if digest(manifest)!=expected_manifest_hash or manifest.get('schema')!=1:raise ValueError('Invalid manifest hash/version')
     if not manifest['id'].startswith('pub_') or not manifest['id'].removeprefix('pub_').isalnum():raise ValueError('Invalid publication ID')
     receipts=bank_path.parent/'review-receipts';receipts.mkdir(exist_ok=True)
     receipt_path=receipts/(manifest['id']+'.json')
     with (nullcontext() if locked else bank_lock(bank_path)):
+        check_candidate(bank_path)
         if receipt_path.exists():
             prior=json.loads(receipt_path.read_text())
             if prior['manifest_hash']!=expected_manifest_hash:raise ValueError('Receipt/manifest mismatch')
             # A prepared receipt is durable BEFORE bank replacement. Replaying
             # either side of that boundary is safe and requires an exact hash.
             current=sha(bank_path)
-            if current==prior['output_sha256']:return prior
+            if current==prior['output_sha256']:
+                finish_publication(bank_path)
+                return prior
             if prior.get('batch_id'):raise ValueError('Prepared batch must be resumed with publish-owner-review-batch.py; never apply one member separately')
             if current!=prior['input_sha256']:raise ValueError('Bank changed after prepared publication; operator reconciliation required')
         before=sha(bank_path)
@@ -160,13 +169,18 @@ def apply_manifest(bank_path,root,manifest,expected_manifest_hash,dry_run=False,
             'after':record(next(q for q in out['questions'] if q['id']==qid)) if qid else None}
         if dry_run:return receipt
         backups=bank_path.parent/'review-backups';backups.mkdir(exist_ok=True)
-        backup=backups/(before+'.json')
+        if shutil.disk_usage(bank_path.parent).free<10*1024**3:raise ValueError('Less than 10 GB free; pause publishing and archive backups')
+        backup=backups/(before+'.json.gz')
         if not backup.exists():
             fd=os.open(backup,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
-            with os.fdopen(fd,'wb') as stream:stream.write(bank_path.read_bytes());stream.flush();os.fsync(stream.fileno())
+            with os.fdopen(fd,'wb') as stream:
+                with gzip.GzipFile(fileobj=stream,mode='wb',compresslevel=3) as zipped:zipped.write(bank_path.read_bytes())
+                stream.flush();os.fsync(stream.fileno())
         atomic(receipt_path,receipt)
         # Protect against a legacy writer that has not yet adopted the lock.
         if sha(bank_path)!=before:raise ValueError('Concurrent bank writer detected')
+        prepare_publication(bank_path,bank,out,[manifest])
         atomic(bank_path,out)
         if sha(bank_path)!=receipt['output_sha256']:raise ValueError('Publication output checksum mismatch')
+        finish_publication(bank_path)
         return receipt

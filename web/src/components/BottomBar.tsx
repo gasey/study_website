@@ -1,53 +1,8 @@
-import { NavLink, useLocation } from 'react-router-dom'
-
-/** Mobile bottom tab bar.
- *  Home / Library / Desk / Exams / Me, with the handoff's 44px minimum hit
- *  target. Hidden from `sm` up, where the header's nav takes over.
- *
- *  Hidden on the public landing page, which has its own prototype header.
- *  Hidden entirely during a mock: a timed paper is full-attention, and the
- *  prototype's exam screen has no bottom bar either. Tapping "Home"
- *  mid-paper would abandon an attempt the server still has open. */
-const TABS = [
-  { to: '/feed', label: 'Home', dot: 'bg-community' },
-  { to: '/library', label: 'Library', dot: 'bg-practice' },
-  { to: '/desk', label: 'Desk', dot: 'bg-learn' },
-  { to: '/exams', label: 'Exams', dot: 'bg-exams' },
-  { to: '/profile', label: 'Me', dot: 'bg-rewards' },
-]
-
-export default function BottomBar() {
-  const { pathname } = useLocation()
-  if (pathname === '/' || /^\/exams\/[^/]+\/mock$/.test(pathname)) return null
-
-  return (
-    <nav
-      aria-label="Sections"
-      className="sticky bottom-0 z-40 border-t border-hairline bg-card sm:hidden"
-    >
-      <div className="mx-auto flex max-w-shell">
-        {TABS.map((t) => (
-          <NavLink
-            key={t.to}
-            to={t.to}
-            className={({ isActive }) =>
-              [
-                'flex min-h-[52px] flex-1 flex-col items-center justify-center gap-1 py-1.5 text-[11px]',
-                isActive ? 'text-ink' : 'text-muted',
-              ].join(' ')
-            }
-          >
-            {({ isActive }) => (
-              <>
-                <span
-                  className={`h-[7px] w-[7px] rounded-full ${t.dot} ${isActive ? '' : 'opacity-35'}`}
-                />
-                {t.label}
-              </>
-            )}
-          </NavLink>
-        ))}
-      </div>
-    </nav>
-  )
+import {Link,useLocation} from 'react-router-dom'
+import {PRIMARY_NAV,primarySection,focusedSession} from '../lib/navigation'
+import NavIcon from './NavIcon'
+export default function BottomBar(){
+ const {pathname}=useLocation()
+ if(pathname==='/'||focusedSession(pathname))return null
+ return <nav aria-label="Primary navigation" className="sticky bottom-0 z-40 border-t border-hairline bg-card pb-[env(safe-area-inset-bottom)] lg:hidden"><div className="mx-auto flex max-w-shell">{PRIMARY_NAV.map(t=><Link key={t.to} to={t.to} aria-current={primarySection(pathname)===t.to?'page':undefined} className={'flex min-h-[60px] min-w-0 flex-1 flex-col items-center justify-center gap-1 text-[11px] '+(primarySection(pathname)===t.to?'font-semibold text-ink':'text-secondary')}><span className={'rounded-lg px-4 py-1 '+(primarySection(pathname)===t.to?'bg-[#EDE7DA]':'')}><NavIcon name={t.icon}/></span>{t.label}</Link>)}</div></nav>
 }

@@ -13,6 +13,7 @@ import os
 import re
 import subprocess
 from pathlib import Path
+from editorial_protection import write_guarded
 
 ROOT = Path(__file__).resolve().parents[1]
 BANK_ROOT = ROOT.parent / 'mpsc-question-bankv2'
@@ -150,7 +151,8 @@ def apply(artifact_path, receipt_path):
         bank['questions'].extend(added)
         tmp = bank_path.with_suffix('.restoration.tmp')
         tmp.write_text(json.dumps(bank, ensure_ascii=False, indent=2) + '\n')
-        os.replace(tmp, bank_path)
+        write_guarded(bank_path, bank, locked=True)
+        tmp.unlink(missing_ok=True)
         receipt_path.write_text(json.dumps({'before_sha256': digest(before),
             'after_sha256': digest(bank_path.read_bytes()), 'added': len(added),
             'existing_records_changed': 0, 'answers_added': 0}, indent=2) + '\n')

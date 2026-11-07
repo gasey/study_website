@@ -1,13 +1,15 @@
+import json
+from pathlib import Path
+TOPIC_ALIASES=json.loads((Path(__file__).resolve().parents[1]/'data/learning-topic-aliases.json').read_text())
 """Virtual learning categories preserve original, bank-owned taxonomy IDs."""
 GK_SUBJECTS = ('general-knowledge', 'general-studies')
 CLERICAL_EXAMS = ('udc', 'ldc', 'assistant')
 
 
 def topic_expression(alias='p', include_science=False):
-    subjects = "'general-knowledge','general-studies'" + (",'science'" if include_science else '')
-    return f"""CASE WHEN {alias}.subject_id IN ({subjects}) AND {alias}.topic_id IS NOT NULL
-        THEN 'gk-gs:' || trim(both '-' from regexp_replace(lower(COALESCE({alias}.topic_label,{alias}.topic_id)), '[^a-z0-9]+','-','g'))
-        ELSE {alias}.topic_id END"""
+    # Explicit compatibility aliases survive label renames; unknown paths keep their ID.
+    pairs=' '.join("WHEN '"+key+"' THEN '"+value+"'" for key,value in TOPIC_ALIASES.items() if include_science or not key.startswith('science/'))
+    return f"CASE {alias}.topic_id {pairs} ELSE {alias}.topic_id END"
 
 
 def path_projection(include_science=False, clerical_science=False):

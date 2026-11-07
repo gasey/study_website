@@ -20,6 +20,6 @@ export function groupMcsBooklets(papers: CollectionPaper[]): BookletGroup[] {
 }
 
 export function bookletLabel(paper: CollectionPaper): string {
-  const match = /Series[\s-]+['"]?([A-D])\b/i.exec(paper.id)
+  const match = /(?:Series|Booklet|Set)[\s-]+['"]?([A-D1-4])\b/i.exec(paper.id)
   return match ? `Series ${match[1].toUpperCase()}` : paper.id.split('/').pop()?.replace(/\.pdf$/i, '') || paper.title
 }

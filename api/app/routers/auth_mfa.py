@@ -38,7 +38,7 @@ async def status(actor:Account):
         await cur.execute('SELECT enabled_at FROM account_mfa WHERE user_id=%s',(actor.id,));row=await cur.fetchone()
         await cur.execute('SELECT 1 FROM review_grants WHERE user_id=%s AND revoked_at IS NULL LIMIT 1',(actor.id,));staff=bool(await cur.fetchone())
         await cur.execute('SELECT count(*)::int AS n FROM mfa_recovery_codes WHERE user_id=%s AND used_at IS NULL',(actor.id,));remaining=(await cur.fetchone())['n']
-    return {'configured':bool(settings.mfa_encryption_key),'enabled':bool(row and row['enabled_at']),'verified':actor.mfa_verified,'staff_required':staff and settings.mfa_enforce_staff,'recovery_codes_remaining':remaining}
+    return {'configured':bool(settings.mfa_encryption_key),'enabled':bool(row and row['enabled_at']),'verified':actor.mfa_verified,'staff_required':staff and mfa.staff_required(actor.id),'recovery_codes_remaining':remaining}
 
 @router.post('/setup')
 async def setup(body:PasswordCheck,actor:Account):
@@ -101,7 +101,8 @@ async def disable(body:Action,request:Request,actor:Account):
     async with cursor() as cur:
         await password(cur,actor.id,body.password)
         await cur.execute('SELECT 1 FROM review_grants WHERE user_id=%s AND revoked_at IS NULL LIMIT 1',(actor.id,))
-        if settings.mfa_enforce_staff and await cur.fetchone():raise HTTPException(409,'Staff accounts must replace their authenticator rather than disable MFA')
+        staff=bool(await cur.fetchone())
+        if mfa.staff_required(actor.id) and staff:raise HTTPException(409,'Staff accounts must replace their authenticator rather than disable MFA')
         if not await mfa.consume(cur,actor.id,body.code):raise HTTPException(401,'Authenticator or recovery code is incorrect or already used')
         await cur.execute('UPDATE account_mfa SET secret_cipher=NULL,pending_cipher=NULL,pending_until=NULL,enabled_at=NULL,last_counter=-1 WHERE user_id=%s',(actor.id,))
         await cur.execute('UPDATE mfa_recovery_codes SET used_at=COALESCE(used_at,now()) WHERE user_id=%s',(actor.id,))

@@ -1,22 +1,22 @@
-import {useRef,useState,useEffect} from 'react'
+import {useRef,useState,useEffect,type ReactNode} from 'react'
 import {Link,useNavigate,useSearchParams} from 'react-router-dom'
 import {revealAnswer,getNextQuestion,type AnswerResult,type ViewedAnswer} from '../lib/api'
 import {getPracticeState} from '../lib/practiceState'
 import {getDesk,getDeskSync,saveDesk,flushDesk,subscribeDesk} from '../lib/desk'
 import {scopeLink} from '../lib/examScope'
-import type {AnswerContext} from '../lib/answerStatus'
-import AnswerProvenance from './AnswerProvenance'
+import {answerFeedbackLabel,answerStatus,type AnswerContext} from '../lib/answerStatus'
 import AnswerComparison from './AnswerComparison'
 import QuestionExplanation from './QuestionExplanation'
 import QuestionCurrentness from './QuestionCurrentness'
+import CurrentAffairsConnections from './CurrentAffairsConnections'
 import RewardOutcome from './RewardOutcome'
 import {SourceQuestionText} from './SourceQuestionText'
 
 /** Views are restored privately; only checked results reach attempt/progress handlers. */
-export default function PracticeAnswerPanel({qid,paperId,question,year,topic,context,result,available=true,disabled=false,onViewed,onBusy,onRetry,onNext}: {
- qid:string;paperId?:string|null;question:string;year?:number|null;topic?:string;
+export default function PracticeAnswerPanel({qid,paperId,options,question,year,topic,context,result,available=true,disabled=false,onViewed,onBusy,onRetry,onNext,nextLabel='Next question →',showNext=true,secondaryActions}: {
+ qid:string;paperId?:string|null;options?:readonly (string|null)[];question:string;year?:number|null;topic?:string;
  context:AnswerContext;result?:AnswerResult|null;available?:boolean;disabled?:boolean;
- onViewed:(viewed:boolean)=>void;onBusy?:(busy:boolean)=>void;onRetry?:()=>void;onNext?:()=>void|Promise<void>
+ onViewed:(viewed:boolean)=>void;onBusy?:(busy:boolean)=>void;onRetry?:()=>void;onNext?:()=>void|Promise<void>;nextLabel?:string;showNext?:boolean;secondaryActions?:ReactNode
 }) {
  const nav=useNavigate(),[params]=useSearchParams()
  const [viewed,setViewed]=useState<ViewedAnswer|null>(null),[busy,setBusy]=useState(false),[restoring,setRestoring]=useState(true),[error,setError]=useState('')
@@ -72,35 +72,40 @@ export default function PracticeAnswerPanel({qid,paperId,question,year,topic,con
   saveDesk({...desk,saved:forLater||!saved?[qid,...desk.saved.filter(id=>id!==qid)]:desk.saved.filter(id=>id!==qid)})
   await flushDesk()
   const sync=getDeskSync()
-  if(sync.status==='error'||sync.status==='conflict')throw new Error(sync.error||'Saved in this browser; account sync needs attention in Study desk.')
+  if(sync.status==='error'||sync.status==='conflict')throw new Error(sync.error||'Saved on this device. Open Study desk to finish saving to your account.')
   setRevisionMessage(forLater?'Saved for later revision.':saved?'Removed from saved revision.':'Saved for revision.')
   if(forLater)await next()
  }
  async function action(task:()=>Promise<void>){if(actionBusy)return;setActionBusy(true);setError('');try{await task()}catch(e){if(active.current)setError((e as Error).message)}finally{if(active.current)setActionBusy(false)}}
  function retry(){setViewed(null);setError('');setDeadline(0);onViewed(false);onRetry?.()}
  const answer=result||viewed,remaining=Math.max(0,Math.ceil((deadline-now)/60000)),saved=getDesk().saved.includes(qid)
- const control='min-h-11 rounded-pill border border-hairline bg-card px-4 py-2 text-[13px] font-semibold disabled:opacity-40'
- if(restoring&&!result)return <p role="status" className="mt-3 text-[12px] text-muted">Restoring your practice state…</p>
- if(restricted)return <p role="status" className="mt-3 rounded-[10px] border border-hairline bg-paper p-3 text-[13px] text-secondary">{restricted}</p>
+ const answerMatches=answer&&options?options.flatMap((text,index)=>text===answer.answer_text?[index]:[]):[]
+ const answerLetter=answerMatches.length===1?String.fromCharCode(65+answerMatches[0]):null
+ const control='min-h-11 rounded-pill border border-hairline bg-card px-3 py-2 text-[13px] font-semibold disabled:opacity-40'
+ if(restoring&&!result)return <div><p role="status" className="mt-3 text-[12px] text-muted">Loading your previous answer…</p>{secondaryActions}</div>
+ if(restricted)return <div><p role="status" className="mt-3 rounded-[10px] border border-hairline bg-paper p-3 text-[13px] text-secondary">{restricted}</p>{secondaryActions}</div>
  return <div className="mt-3">
-  {!available&&!answer?<AnswerComparison qid={qid} paperId={paperId}/>:!answer&&<><button type="button" disabled={busy||disabled} onClick={()=>void show()} className={control+' text-link'}>{busy?'Opening…':'Show answer'}</button><p className="mt-1 text-[12px] text-muted">Show answer is for reading: no attempt, accuracy credit or rewards. Retry after 30 minutes.</p></>}
+  {!answer&&<div className="flex flex-wrap items-center gap-x-4">{!available?<AnswerComparison options={options} qid={qid} paperId={paperId}/>:<><button type="button" disabled={busy||disabled} onClick={()=>void show()} className={control+' text-link'}>{busy?'Opening…':'Show answer'}</button><p className="mt-1 text-[12px] text-muted">No attempt recorded · retry after 30 minutes.</p></>}{secondaryActions}</div>}
   {error&&<p role="alert" className="mt-2 text-[13px] text-mypick">{error}</p>}
-  {answer&&<section aria-label="Answer and explanation" className="rounded-[10px] border border-hairline bg-paper p-4 text-[14px]">
-   <strong>{!result?'Viewed answer':!result.verified&&!context.reviewed?(result.correct?'Matches stored answer':'Differs from stored answer'):result.correct?'Correct':'Not quite'}</strong>
-   {!result&&<p className="mt-1 text-[12px] text-muted">No attempt or reward recorded. {remaining>0?`Retry available in ${remaining} ${remaining===1?'minute':'minutes'}.`:'Ready for a fresh attempt.'}</p>}
-   {!result&&remaining===0&&onRetry&&<button type="button" onClick={retry} className={control+' mt-2 text-link'}>Retry now</button>}
-   <div className="mt-2"><SourceQuestionText text={answer.answer_text}/></div>
-   <div className="mt-2"><AnswerProvenance source={answer.answer_source} {...context}/></div>
-   <QuestionExplanation explanation={answer.explanation} source={answer.answer_source} context={context} questionId={qid}/>
-   <QuestionCurrentness revealed question={question} year={year} topic={topic}/>
-   {result&&<RewardOutcome reward={result.reward}/>}
-   <nav aria-label="Continue studying" className="mt-4 flex flex-wrap gap-2">
-    <button type="button" disabled={actionBusy||getDeskSync().loading} aria-pressed={saved} onClick={()=>void action(()=>save())} className={control}>{saved?'Saved for revision':'Save for revision'}</button>
-    <button type="button" disabled={actionBusy||getDeskSync().loading} onClick={()=>void action(()=>save(true))} className={control}>Retry later</button>
-    <button type="button" disabled={actionBusy} onClick={()=>void action(next)} className={control+' text-link'}>Next question →</button>
+  {answer&&<section aria-label="Answer and explanation" className="border-t border-hairline pt-2 text-[14px]">
+   <div className="practice-answer-outcome flex flex-wrap items-baseline gap-x-2"><strong>{result?answerFeedbackLabel(result,context):'Answer'}</strong><span>{answerLetter?` · ${answerLetter}. `:' · '}<SourceQuestionText text={answer.answer_text}/></span></div>
+   {!result&&<div className="flex flex-wrap items-center gap-x-2 text-[12px] text-muted"><p>No attempt recorded{remaining>0?` · retry in ${remaining} ${remaining===1?'minute':'minutes'}`:''}.</p>{remaining===0&&onRetry&&<button type="button" onClick={retry} className="min-h-11 px-1 font-semibold text-link">Retry now</button>}</div>}
+   <QuestionCurrentness variant="summary" revealed question={question} year={year} topic={topic}/>
+   <AnswerComparison options={options} qid={qid} paperId={paperId} revealed answer={answer} answerReviewed={answerStatus(answer.answer_source,context).status==='verified'} explanation={answer.explanation} actions={
+   <nav aria-label="Continue studying" className="flex flex-wrap gap-2 has-[details[open]]:basis-full">
+    <button type="button" disabled={actionBusy||getDeskSync().loading} aria-pressed={saved} aria-label={saved?'Remove from saved revision':'Save for revision'} onClick={()=>void action(()=>save())} className="min-h-11 py-2 text-[13px] font-semibold text-secondary disabled:opacity-40">{saved?'Saved':'Save'}</button>
+    {showNext&&<button type="button" disabled={actionBusy} onClick={()=>void action(next)} className={control+' text-link'}>{nextLabel}</button>}
+    {secondaryActions}
    </nav>
+   } tools={<div className="space-y-3">
+     <QuestionCurrentness variant="details" revealed question={question} year={year} topic={topic}/>
+     <CurrentAffairsConnections qid={qid} paperId={paperId} onExposure={()=>{setDeadline(Date.now()+30*60*1000);setNow(Date.now())}}/>
+     {showNext&&<button type="button" disabled={actionBusy||getDeskSync().loading} onClick={()=>void action(()=>save(true))} className={control}>Save and continue</button>}
+     {result&&<RewardOutcome reward={result.reward}/>}
+    </div>}>
+    <QuestionExplanation inline explanation={answer.explanation} source={answer.answer_source} context={context}/>
+   </AnswerComparison>
    {revisionMessage&&<p role="status" className="mt-2 text-[12px] text-secondary">{revisionMessage} <Link to={scopeLink('/desk?tab=bookmarks')} className="text-link underline">Saved questions</Link></p>}
-   <AnswerComparison qid={qid} paperId={paperId}/>
   </section>}
  </div>
 }

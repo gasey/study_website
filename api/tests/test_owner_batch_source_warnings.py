@@ -70,3 +70,36 @@ def test_reviewed_unresolved_clearance_has_no_answer_and_requires_readable_sourc
         assert out['questions'][0]['answerIndex']is None
     else:
         with pytest.raises(ValueError):batch.prepare(bank,[pub],'a'*64,tmp_path)
+
+@pytest.mark.parametrize('kind,patch',[
+    ('source_reference',{'page':2,'qnum':'7'}),
+    ('transcription',{'direction':'Answer any two questions from this printed section.','passage':'Source context.'}),
+])
+def test_written_source_repair_preserves_identity_and_has_no_answer(tmp_path,kind,patch):
+    bank,pub=packet(tmp_path,kind,patch,None)
+    q=bank['questions'][0];q.update(type='descriptive',options=[],answerSource=None)
+    pub['manifest']['baseline']['record']=record(q);pub['manifest_hash']=digest(pub['manifest'])
+    out,journal=batch.prepare(bank,[pub],'a'*64,tmp_path)
+    assert out['questions'][0]['id']==q['id']
+    assert out['questions'][0]['answerIndex'] is None
+    assert out['questions'][0]['answerSource'] is None
+    assert all(out['questions'][0][k]==v for k,v in patch.items())
+    assert journal['receipts'][0]['appearance_id']==q['id']
+
+@pytest.mark.parametrize('patch',[{'options':['new','choices']},{'answerIndex':None},{'hasDiagram':True}])
+def test_written_source_batch_rejects_mcq_mutation(tmp_path,patch):
+    bank,pub=packet(tmp_path,'transcription',patch,None)
+    q=bank['questions'][0];q.update(type='descriptive',options=[],answerSource=None)
+    pub['manifest']['baseline']['record']=record(q);pub['manifest_hash']=digest(pub['manifest'])
+    with pytest.raises(ValueError,match='Written source repairs'):
+        batch.prepare(bank,[pub],'a'*64,tmp_path)
+
+@pytest.mark.parametrize('journal,current,valid',[
+    (None,'before',False),({'output_sha256':'after'},'before',False),
+    ({'output_sha256':'after'},'unrelated',False),({'output_sha256':'after'},'after',True),
+])
+def test_failed_ack_recovery_requires_exact_already_written_output(journal,current,valid):
+    pubs=[{'state':'failed'}]
+    if valid:batch.require_recoverable_failures(pubs,journal,current)
+    else:
+        with pytest.raises(ValueError,match='already-written'):batch.require_recoverable_failures(pubs,journal,current)

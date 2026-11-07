@@ -49,7 +49,13 @@ def study_membership(area: StudyArea, collection_id: str | None, exam_scope):
         'gb_technical_papers': [r['paper_id'] for r in PAPER_ROLES['rules'] if r['role'] == 'technical' and r['collection_id'] in collections],
     }
     english = "gc.subject_id='english'"
-    general = f"(gc.subject_id IN ('general-knowledge','general-studies') OR (gc.subject_id='science' AND {general_science_source('ga')}))"
+    # Explicitly reviewed general papers may contain aptitude, mathematics or
+    # computing. Retain their subject tags while making those source questions
+    # available in general study; unknown and specialist papers stay excluded.
+    declared = """EXISTS (SELECT 1 FROM jsonb_to_recordset(%(gb_general_roles)s)
+        AS role(paper_id text,common_subjects jsonb)
+        WHERE role.paper_id=ga.paper_id AND role.common_subjects ? gc.subject_id)"""
+    general = f"(gc.subject_id IN ('general-knowledge','general-studies') OR (gc.subject_id='science' AND {general_science_source('ga')}) OR {declared})"
     technical = "(ga.paper_id=ANY(%(gb_technical_papers)s) AND gc.subject_id NOT IN ('english','general-knowledge','general-studies'))"
     condition = {'english': english, 'gk-gs': general, 'common': f'({english} OR {general})', 'technical': technical}[area]
     sql = f"""SELECT ga.canonical_id FROM collection_papers gp

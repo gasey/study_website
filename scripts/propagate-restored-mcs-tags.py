@@ -13,6 +13,7 @@ import os
 import re
 from collections import Counter, defaultdict
 from pathlib import Path
+from editorial_protection import write_guarded
 
 ROOT = Path(__file__).resolve().parents[1]
 BANK = ROOT.parent / 'mpsc-question-bankv2/bank/mpsc_bank_v2.json'
@@ -104,7 +105,8 @@ def run(manifest_path, output, apply=False):
             with open(temp, 'w') as stream:
                 json.dump(bank, stream, ensure_ascii=False, indent=2); stream.write('\n')
                 stream.flush(); os.fsync(stream.fileno())
-            os.replace(temp, BANK)
+            write_guarded(BANK, bank, locked=True)
+            temp.unlink(missing_ok=True)
             report['after_sha256'] = hashlib.sha256(BANK.read_bytes()).hexdigest()
         (output / ('receipt.json' if apply else 'preview.json')).write_text(json.dumps(report, indent=2) + '\n')
         print(json.dumps({'tagged': len(plan['candidates']), 'skipped': plan['skipped'], 'applied': apply}))
