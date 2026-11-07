@@ -7753,3 +7753,18 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,579 saved records**, **6,501 unique appearances**, **6,101 deduplicated candidates**, **0 problems**. [Batch 92 report](reports/tagging-batch92-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 93 (Circle Education Officer 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 93 (`reports/tagging-batch93-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to Circle Education Officer under School Education Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/CEO General English-II.pdf`, `doc_b62486413c037a0400665202`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 40 retag, 60 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (60 items): Q1–Q10 (functional parts of speech), Q11–Q20 (noun classification), Q31–Q40 (adjectives & determiners), Q41–Q50 (sentence structures: simple, compound, complex), Q51–Q60 (phrases & clauses), Q61–Q70 (degrees of comparison).
+    - `english/vocabulary` (20 items): Q71–Q80 (contextual double fill-in-the-blanks / word pairs), Q81–Q90 (vocabulary word choice and sentence completion).
+    - `english/grammar/prepositions` (10 items): Q21–Q30 (prepositions and collocations).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution / definitions).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,679 saved records**, **6,601 unique appearances**, **6,201 deduplicated candidates**, **0 problems**. [Batch 93 report](reports/tagging-batch93-20261108/README.md).
