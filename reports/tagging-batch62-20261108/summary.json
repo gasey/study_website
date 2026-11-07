@@ -1,0 +1,49 @@
+{
+  "batch": 62,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+      "paper_title": "Mizoram Civil Services Combined Preliminary Examination 2023 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)",
+      "document_id": "doc_1f45222ca9e6101529b723e7",
+      "sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for MCS Combined 2023 Preliminary Paper-II Series A (100/100 MCQs; Series B, C, D bypassed under single-booklet deduplication)",
+  "actions": {
+    "retag": 26,
+    "keep": 74,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 14,
+    "english/vocabulary/idioms-and-phrases": 2,
+    "english/vocabulary/synonyms": 2,
+    "english/vocabulary/antonyms": 1,
+    "reasoning-and-aptitude/verbal-reasoning": 48,
+    "english/vocabulary": 3,
+    "reasoning-and-aptitude/series": 2,
+    "mathematics/algebra/linear-equations": 1,
+    "mathematics/arithmetic": 10,
+    "reasoning-and-aptitude/numerical-ability": 5,
+    "reasoning-and-aptitude/data-interpretation": 2,
+    "mathematics/arithmetic/ratio-and-proportion": 2,
+    "mathematics/arithmetic/percentages": 1,
+    "mathematics/arithmetic/profit-and-loss": 1,
+    "mathematics/algebra": 1,
+    "mathematics/mensuration/area": 1,
+    "mathematics/algebra/algebraic-expressions": 1,
+    "mathematics/algebra/quadratic-equations": 1,
+    "mathematics/mensuration/volume": 1,
+    "mathematics/arithmetic/averages": 1
+  },
+  "source_defects": [
+    "Single-Booklet Deduplication: MCS Combined 2023 Prelims Paper-II contains 4 letter permutation booklets (Series A, B, C, D); Series A was reviewed as primary booklet, successfully achieving single-booklet deduplication without repeating reviews for B, C, and D.",
+    "Cross-Disciplinary Retagging: Corrected baseline classification where decision-making was tagged under commerce (Q63) and mean/round-robin/sets were tagged under statistics (Q83, Q92, Q100)."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

@@ -7085,3 +7085,38 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,135 saved records**, **4,057 unique appearances**, **3,657 deduplicated candidates**, **0 problems**. [Batch 61 report](reports/tagging-batch61-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 62: MCS Combined 2023 Preliminary Paper II Series A (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 62 (`reports/tagging-batch62-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination 2023 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf`, `doc_1f45222ca9e6101529b723e7`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+  - Enforced single-booklet deduplication: cleanly bypassed permutation booklets Series B, C, and D without redundant review.
+- **Candidate Decisions & Taxonomy Structuring (100 items: 26 retag, 74 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/comprehension` (14 items, confirmed and kept): Q1, Q4–Q7, Q10, Q12–Q17, Q60–Q61 (reading comprehension).
+    - `english/vocabulary/idioms-and-phrases` (2 items, retagged): Q2 ('lavish with his hospitality'), Q11 ('safety-valve').
+    - `english/vocabulary/synonyms` (2 items, retagged): Q3 ('paradox'), Q8 ('subsistence').
+    - `english/vocabulary/antonyms` (1 item, retagged): Q9 (opposite of 'stimulate').
+    - `english/vocabulary` (3 items, confirmed and kept): Q21–Q23 (contextual vocabulary).
+    - `reasoning-and-aptitude/verbal-reasoning` (48 items): Q18–Q20, Q24–Q34, Q52–Q53, Q56–Q57, Q59, Q62–Q64, Q67 (interpersonal skills, communication, administrative situational judgment), Q35–Q37, Q47–Q48 (blood relations & deductions), Q39–Q43 (statements and arguments), Q44–Q46 (syllogisms), Q49–Q51 (odd word out), Q54 (ranking test), Q66 (meaningful sequence), Q71 (direction sense), Q72, Q76, Q77 (coding-decoding), Q74, Q78 (ranking comparison), Q75 (analogy).
+    - `reasoning-and-aptitude/series` (2 items): Q38 (letter series), Q80 (number series).
+    - `reasoning-and-aptitude/numerical-ability` (5 items): Q65 (dice), Q69 (matrix), Q79 (problem figures), Q83 (tournament rounds), Q92 (Venn sets).
+    - `reasoning-and-aptitude/data-interpretation` (2 items): Q73 (Venn DI), Q91 (pie chart).
+    - `mathematics/arithmetic` (10 items): Q58 (journey time), Q68, Q82 (compound interest), Q70, Q87 (time & work), Q84 (divisibility), Q85, Q86, Q95 (surds/radicals), Q88 (speed, distance, time).
+    - `mathematics/arithmetic/percentages` (1 item): Q89.
+    - `mathematics/arithmetic/profit-and-loss` (1 item): Q90.
+    - `mathematics/arithmetic/ratio-and-proportion` (2 items): Q81, Q96.
+    - `mathematics/arithmetic/averages` (1 item): Q100 (mean).
+    - `mathematics/algebra` (1 item): Q93 (AP).
+    - `mathematics/algebra/linear-equations` (1 item): Q55.
+    - `mathematics/algebra/algebraic-expressions` (1 item): Q97 (GCD & LCM of polynomials).
+    - `mathematics/algebra/quadratic-equations` (1 item): Q98 (quadratic zeroes).
+    - `mathematics/mensuration/area` (1 item): Q94 (perimeter wire rebent).
+    - `mathematics/mensuration/volume` (1 item): Q99 (plank storage volume).
+- **Source Defects & Verification:**
+  - Resolved baseline misclassifications under commerce and statistics, standardizing all aptitude items into their rightful subjects.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,235 saved records**, **4,157 unique appearances**, **3,757 deduplicated candidates**, **0 problems**. [Batch 62 report](reports/tagging-batch62-20261108/README.md).
