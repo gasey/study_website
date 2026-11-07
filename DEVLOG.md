@@ -7598,3 +7598,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,173 saved records**, **6,095 unique appearances**, **5,695 deduplicated candidates**, **0 problems**. [Batch 84 report](reports/tagging-batch84-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 85 (X-Ray & Lab Technician 2017 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 85 (`reports/tagging-batch85-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to X-Ray Technician & Laboratory Technician under Health & Family Welfare Department (February, 2017) — General English* (`Old_Questions/Direct_2014-2018/1.General English.pdf`, `doc_6e026ce1a2e737c020d2d3a3`, 46 MCQs, achieving **100% paper completion** with 46/46 items reviewed).
+  - Preserved unextracted conventional Section A Essay Q1 (20 marks) on Page 1 and Question 2(f) Passage Title (1 mark) on Page 2 (21 marks total) in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (46 items: 44 retag, 2 keep, 0 hold):**
+  - All 46 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/comprehension` (5 items): Q1–Q5 (reading comprehension passage).
+    - `english/vocabulary/idioms-and-phrases` (8 items): Q6–Q13 (idioms and phrases meaning).
+    - `english/grammar/parts-of-speech` (10 items): Q14–Q23 (parts of speech identification).
+    - `english/grammar/prepositions` (8 items): Q24–Q31 (prepositions).
+    - `english/grammar` (10 items): Q32–Q36 (sentence structure: simple, compound, complex), Q42–Q46 (sentence transformation: compound, complex, simple).
+    - `english/sentence-correction` (5 items): Q37–Q41 (sentence correction / phrase replacement).
+- **Ledger Verification:**
+  - Readback validation confirmed 46/46 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,219 saved records**, **6,141 unique appearances**, **5,741 deduplicated candidates**, **0 problems**. [Batch 85 report](reports/tagging-batch85-20261108/README.md).
