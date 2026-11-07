@@ -7768,3 +7768,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,679 saved records**, **6,601 unique appearances**, **6,201 deduplicated candidates**, **0 problems**. [Batch 93 report](reports/tagging-batch93-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 94 (Tourist Officer 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 94 (`reports/tagging-batch94-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to Tourist Officer under Tourism Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/T.O General English Paper-II.pdf`, `doc_91a4e2e762e15e99c2db9bc7`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 46 retag, 54 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (54 items): Q1–Q10 (parts of speech), Q24, Q25, Q28, Q30 (connectors/conjunctions), Q31–Q40 (adjectives & determiners), Q41–Q50 (sentence transformations), Q51–Q60 (sentence type conversions), Q61–Q70 (synthesis & clauses).
+    - `english/grammar/tenses` (10 items): Q11–Q20 (verb forms, aspects, and tenses).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and phrases).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution / definitions).
+    - `english/grammar/prepositions` (6 items): Q21–Q23, Q26, Q27, Q29 (prepositions in context).
+    - `english/vocabulary/synonyms` (5 items): Q81–Q85 (synonyms / nearest meaning).
+    - `english/vocabulary/antonyms` (5 items): Q86–Q90 (antonyms / opposite meaning).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,779 saved records**, **6,701 unique appearances**, **6,301 deduplicated candidates**, **0 problems**. [Batch 94 report](reports/tagging-batch94-20261108/README.md).
