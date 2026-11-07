@@ -6641,6 +6641,32 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 80 Marks of Conventional Descriptive Problems:** Preserved 7 conventional problems (difference operators, exact differential equations, particle kinematics, friction, simplex method, transportation problem) totaling 45+ marks in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (47/47) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,284** across 47 candidate reports with zero problems or booklet family conflicts. [Batch 46 report](reports/tagging-batch46-20261108/README.md).
 
+## 2026-11-08 08:35 IST — Source-reviewed tagging batch 47 (Direct 2023-2025 General English Booklets 100% Paper Finalization — 78 MCQs)
+
+- Completed source-reviewed tagging batch 47 (78 General English MCQs, achieving 100% paper completion across all 4 booklets) from:
+  1. *General Competitive Examinations for Recruitment to the Post of Jr. Grade of Mizoram Forest Service (Asst. Conservator of Forests) (2023) — General English* (`doc_b5f51992824cdf78ca9eb105`, 10 MCQs)
+  2. *Technical Competitive Examination for Informatics Officer under ICT Department (November 2024) — General English Paper-I* (`doc_e46ac6fab7a2eb8bf138f169`, 8 MCQs)
+  3. *Technical Competitive Examinations for Junior Grade of Mizoram Engineering Service, P&E Cadre (Electrical Wing) and Assistant Architect (July 2023) — General English* (`doc_210c8de409ca07cc3de1ad76`, 10 MCQs)
+  4. *Technical Competitive Examinations for Junior Grade of Mizoram Legal Service (MLS) under Law & Judicial Department (July 2023) — English* (`doc_e13e10e93f23cf05cda8960a`, 50 MCQs)
+  * **78 retags, 0 keeps, 0 holds.**
+  * **Bug Fix & Baseline Rectification:** 
+    - Rectified item `mpsc-cli-informatics-officer-general-english-paper-i-2024-007` from misclassified `town-planning` baseline to `english/comprehension`.
+    - Restructured 77 unclassified/coarse baseline targets into precise active English taxonomy paths:
+      - `english/vocabulary/one-word-substitution` (10 items: MES Electrical Wing Q6(a)–(j))
+      - `english/vocabulary/idioms-and-phrases` (15 items: ACF Q1–Q10; MLS Q46–Q50)
+      - `english/vocabulary/synonyms` (5 items: MLS Q1–Q5)
+      - `english/vocabulary/antonyms` (5 items: MLS Q6–Q10)
+      - `english/grammar/prepositions` (5 items: MLS Q11–Q15)
+      - `english/grammar/parts-of-speech` (5 items: MLS Q16–Q20 conjunctions)
+      - `english/grammar/tenses` (10 items: MLS Q21–Q30)
+      - `english/grammar/subject-verb-agreement` (5 items: MLS Q31–Q35)
+      - `english/grammar/reported-speech` (5 items: MLS Q36–Q40)
+      - `english/grammar/voice` (5 items: MLS Q41–Q45)
+      - `english/comprehension` (8 items: Informatics Officer Q6(a)–(h) urban planning passage)
+  * **Preserved 10 Conventional Descriptive Tasks (190 Marks):** Preserved 10 conventional written tasks (Essays, Précis, Idea Expansion, Idiom sentence composition) totaling 190 marks across all 4 booklets in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (78/78) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,362** across 48 candidate reports with zero problems or booklet family conflicts. [Batch 47 report](reports/tagging-batch47-20261108/README.md).
+
+
 
 
 
