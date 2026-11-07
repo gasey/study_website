@@ -7579,3 +7579,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 65/65 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,123 saved records**, **6,045 unique appearances**, **5,645 deduplicated candidates**, **0 problems**. [Batch 83 report](reports/tagging-batch83-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 84 (Stenographer Grade-II Contract 2015 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 84 (`reports/tagging-batch84-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Written Examinations for Recruitment to Stenographer Grade-II (Contract) under DP&AR (May 2015) — General English* (`Old_Questions/Direct_2014-2018/1.STENOGRAPHER GRADE-II (CONTRACT) UNDER DP&AR (SSW),2015General English.pdf`, `doc_e4ea50d99042b325203308ec`, 50 MCQs, achieving **100% paper completion** with 50/50 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (50 items: 24 retag, 26 keep, 0 hold):**
+  - All 50 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q1–Q8 (idioms meaning), Q46, Q48 (idioms in context).
+    - `english/comprehension` (6 items): Q9–Q14 (reading comprehension passage on cement tile manufacturing).
+    - `english/grammar/prepositions` (5 items): Q15, Q20, Q22, Q23, Q24 (preposition selection).
+    - `english/grammar/parts-of-speech` (5 items): Q16, Q17, Q18, Q19, Q21 (adjectives, adverbs, degrees of comparison).
+    - `english/grammar` (18 items): Q25–Q30 (sentence notions / concepts), Q31–Q36 (sentence structure: simple, compound, complex), Q37–Q42 (clause identification).
+    - `english/vocabulary/one-word-substitution` (1 item): Q47 (pompous speech definition).
+    - `english/vocabulary` (5 items): Q43, Q44, Q45, Q49, Q50 (word choice and vocabulary in context).
+- **Ledger Verification:**
+  - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,173 saved records**, **6,095 unique appearances**, **5,695 deduplicated candidates**, **0 problems**. [Batch 84 report](reports/tagging-batch84-20261108/README.md).
