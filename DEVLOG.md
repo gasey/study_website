@@ -6564,6 +6564,32 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - Preserved 8 dropped MCQs (Q37–Q40 spelling tests, Q47–Q50 sentence structure items dropped due to empty stems under direction headers) in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (52/52) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,026** across 43 candidate reports with zero problems or booklet family conflicts. [Batch 42 report](reports/tagging-batch42-20261108/README.md).
 
+## 2026-11-08 06:35 IST — Source-reviewed tagging batch 43 (Final 2024–2025 Direct English Booklets 100% Paper Finalization — 81 items)
+
+- Completed source-reviewed tagging batch 43 (81 English questions across 4 distinct booklets, achieving 100% paper completion across all four papers) from:
+  1. *Competitive Examination for the Post of Sericulture Extension Officer (2025) — General English* (`doc_3e7d37598a061cd1d52da2ad`, 20 MCQs)
+  2. *Technical Competitive Examination for Junior Grade of Mizoram Engineering Service (Combined) (2025) — General English* (`doc_682ab0cad0fd9c4e525e91a9`, 21 MCQs)
+  3. *General Competitive Examination for Recruitment to the Post of Junior Grade of Mizoram Planning, Economic & Statistical Service (2025) — General English* (`doc_895b0f62c2314d435e125458`, 30 MCQs)
+  4. *Group B(NG) (Technical) Paper-I (General English)-2024* (`doc_d50623457f36f5aeab231741`, 10 composite items)
+  * **79 retags, 2 keeps, 0 holds.**
+  * **Baseline Rectification & Bug Fix:** Rectified question Q3(ii) in Sericulture Extension Officer, which was mistakenly ingested in production under `subject_id: sociology` due to passage topic keywords; correctly reassigned to `english/comprehension`. Across all 4 booklets, rectified 100% of targets to active English subtopics:
+    - `english/comprehension` (7 items)
+    - `english/vocabulary/one-word-substitution` (6 items)
+    - `english/vocabulary/synonyms` (6 items)
+    - `english/vocabulary/antonyms` (11 items)
+    - `english/grammar` (10 items: Clause Analysis)
+    - `english/grammar/tenses` (15 items)
+    - `english/grammar/prepositions` (16 items)
+    - `english/grammar/subject-verb-agreement` (1 item)
+    - `english/grammar/parts-of-speech` (5 items)
+    - `english/writing/precis` (1 item)
+    - `english/writing/letter` (1 item)
+    - `english/grammar/voice` (1 item)
+    - `english/grammar/reported-speech` (1 item)
+  * **Preserved 5 Conventional Descriptive Tasks:** Preserved 5 conventional written tasks totaling 80 marks in `pending-written-intake.json` (Sericulture: Précis 10m, Complaint Letter 15m; MES: Essay 20m; MPE & SS: Essay 20m, Précis 15m).
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (81/81) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,107** across 44 candidate reports with zero problems or booklet family conflicts. [Batch 43 report](reports/tagging-batch43-20261108/README.md).
+
+
 
 
 
