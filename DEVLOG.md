@@ -6464,3 +6464,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - `mathematics/mensuration/volume` (12 items)
     - `reasoning-and-aptitude/numerical-ability` (5 items: Statistics and Probability)
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,707 across 38 candidate reports with zero problems or booklet family conflicts. [Batch 37 report](reports/tagging-batch37-20261108/README.md).
+
+## 2026-11-08 04:30 IST — Source-reviewed tagging batch 38 (Assistant Director / CDPO 2025 General English 100% Paper Finalization — 66 MCQs)
+
+- Completed source-reviewed tagging batch 38 (66 English MCQs, achieving 100% paper completion) from *Competitive Examination for Child Development Project Officer (CDPO) and Assistant Director (Food & Drugs) (November, 2025) — General English* (`doc_000e6be43acfd05656947ae1`), advancing the owner's English priority under policy `study-tagging-v1`:
+  * **66 retags, 0 keeps, 0 holds.**
+  * **Single-Booklet Deduplication Enforced:** Cleanly bypassed duplicate file `Old_Questions/Direct_2025-2027/CDPO General English-2025..pdf` (`doc_93dc9451f2beee9b16a34ec8`), an identical sha256 binary duplicate of the same booklet, saving 66 redundant reviews.
+  * **Untagged Baseline Rectification:** All 66 MCQs were completely untagged in the production database (`subject=null, topic=null`). Rectified 100% of targets to active English subtopics:
+    - `english/grammar/parts-of-speech` (15 items: Adverbs 5, Pronouns 5, Articles 5)
+    - `english/grammar/prepositions` (10 items)
+    - `english/grammar/tenses` (10 items)
+    - `english/grammar/reported-speech` (5 items: Direct/Indirect narration)
+    - `english/vocabulary/idioms-and-phrases` (5 items)
+    - `english/vocabulary/one-word-substitution` (4 items)
+    - `english/sentence-correction` (3 items)
+    - `english/grammar` (11 items: Concord/Agreement 5, Sentence Combining 3, Determiners 3)
+    - `english/vocabulary` (3 items: Synonyms/Antonyms)
+  * **Preserved 3 Unextracted Conventional Tasks:** Preserved 3 Section-B written prompts (Essay 20m, Précis 10m, Reading Comprehension 10m) totaling 40 marks in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (66/66) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached 1,773 across 39 candidate reports with zero problems or booklet family conflicts. [Batch 38 report](reports/tagging-batch38-20261108/README.md).
+
