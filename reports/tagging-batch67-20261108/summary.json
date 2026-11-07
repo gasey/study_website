@@ -1,0 +1,43 @@
+{
+  "batch": 67,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/5.MCS Series A Paper-II.pdf",
+      "paper_title": "Mizoram Civil Services Combined Preliminary Examination — Paper II (Series A: Aptitude, Arithmetic & Comprehension)",
+      "document_id": "doc_29704fec92a63aac9cf1e2ea",
+      "sha256": "04d4ddc99b6ca66c1310c8df559ea267626b841611401c75fe72e8958b564571",
+      "targets": 95
+    }
+  ],
+  "targets": 95,
+  "completion": "100% paper completion achieved for MCS Series A Paper-II (95/95 available MCQs reviewed; 5 unextracted figure questions preserved in pending-written-intake.json; Series B, C, D bypassed under single-booklet deduplication)",
+  "actions": {
+    "retag": 91,
+    "keep": 4,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 5,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 28,
+    "reasoning-and-aptitude/verbal-reasoning": 35,
+    "english/vocabulary": 1,
+    "mathematics/arithmetic": 5,
+    "mathematics/arithmetic/averages": 2,
+    "reasoning-and-aptitude/numerical-ability": 5,
+    "mathematics/algebra/linear-equations": 3,
+    "mathematics/mensuration/area": 1,
+    "english/vocabulary/synonyms": 3,
+    "english/vocabulary/idioms-and-phrases": 3,
+    "statistics/probability-and-statistics/probability": 1,
+    "reasoning-and-aptitude/series": 1,
+    "mathematics/arithmetic/percentages": 1,
+    "reasoning-and-aptitude/data-interpretation": 6
+  },
+  "source_defects": [
+    "Single-Booklet Deduplication: Cleanly bypassed permutation series 6.MCS Series B Paper-II.pdf, 7.MCS Series C Paper-II.pdf, and 8.MCS Series D Paper-II.pdf without repeating reviews.",
+    "Unextracted Figure Items (Q59, Q60, Q68, Q69, Q72): Visual pattern questions omitted from legacy OCR intake due to missing text stems, safely recorded in pending-written-intake.json."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

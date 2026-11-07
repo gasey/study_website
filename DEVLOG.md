@@ -7235,3 +7235,31 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 99/99 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,634 saved records**, **4,556 unique appearances**, **4,156 deduplicated candidates**, **0 problems**. [Batch 66 report](reports/tagging-batch66-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 67: 5.MCS Series A Paper-II (95 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 67 (`reports/tagging-batch67-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination — Paper II (Series A: Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Direct_2014-2018/5.MCS Series A Paper-II.pdf`, `doc_29704fec92a63aac9cf1e2ea`, 95 MCQs, achieving **100% paper completion** with 95/95 items reviewed).
+  - Enforced single-booklet deduplication: cleanly bypassed permutation series `6.MCS Series B Paper-II.pdf`, `7.MCS Series C Paper-II.pdf`, and `8.MCS Series D Paper-II.pdf`.
+  - Preserved unextracted source defects: 5 visual stimulus figure questions (Q59, Q60, Q68, Q69, Q72) omitted from legacy database OCR intake due to missing text stems are recorded in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (95 items: 91 retag, 4 keep, 0 hold):**
+  - All 95 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/comprehension` (28 items): Q1–Q14, Q87–Q100 (reading comprehension).
+    - `english/vocabulary` (1 item): Q28 ('implicate').
+    - `english/vocabulary/synonyms` (3 items): Q61–Q63 (WHIMSICAL, APATHETIC, CLANDESTINE).
+    - `english/vocabulary/idioms-and-phrases` (3 items): Q64–Q66 (proverbs & idioms).
+    - `reasoning-and-aptitude/verbal-reasoning` (35 items): Q15–Q27, Q29 (interpersonal communication), Q30 (coding-decoding), Q31, Q37 (seating), Q32, Q33 (syllogisms), Q40 (directions), Q44–Q51, Q53–Q57 (decision making), Q52 (statement-conclusion), Q70 (hardness).
+    - `reasoning-and-aptitude/series` (1 item): Q74 (square sequence).
+    - `reasoning-and-aptitude/numerical-ability` (5 items): Q36 (coin geometry), Q58, Q67, Q71 (non-verbal figures), Q75 (Venn).
+    - `reasoning-and-aptitude/data-interpretation` (6 items): Q81–Q83 (budget table), Q84–Q86 (recruitment table).
+    - `mathematics/arithmetic` (5 items): Q34 (work), Q41 (train speed/distance), Q42 (divisibility), Q76 (fractions), Q79 (compound interest).
+    - `mathematics/arithmetic/averages` (2 items): Q35, Q78.
+    - `mathematics/arithmetic/percentages` (1 item): Q80.
+    - `mathematics/algebra/linear-equations` (3 items): Q38, Q77 (digit equations), Q39 (siblings).
+    - `mathematics/mensuration/area` (1 item): Q43 (circle areas ratio).
+    - `statistics/probability-and-statistics/probability` (1 item): Q73.
+- **Ledger Verification:**
+  - Readback validation confirmed 95/95 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,729 saved records**, **4,651 unique appearances**, **4,251 deduplicated candidates**, **0 problems**. [Batch 67 report](reports/tagging-batch67-20261108/README.md).
