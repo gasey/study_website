@@ -7665,3 +7665,17 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,319 saved records**, **6,241 unique appearances**, **5,841 deduplicated candidates**, **0 problems**. [Batch 88 report](reports/tagging-batch88-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 89 (Combined Services / Departmental CSM:17 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 89 (`reports/tagging-batch89-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Combined Services / Departmental Examinations (CSM: 17) — General English* (`Old_Questions/Direct_2014-2018/13.General English.pdf`, `doc_eb2bb5df817e94df40f1a4e7`, 10 MCQs, achieving **100% paper completion** with 10/10 items reviewed).
+  - Preserved unextracted conventional sections: Essay Q1 (20m), Précis Q2 (15m), Comprehension Q3 (15m), Grammar Q4 (10m), Prepositions Q5 (5m), Connectors Q6 (5m), Voice Q7 (10m), Word Pairs Q8 (10m), Articles Q10 (5m) totaling 95 conventional marks in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (10 items: 4 retag, 6 keep, 0 hold):**
+  - All 10 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/one-word-substitution` (6 items): Q9(a)–Q9(e), Q9(h) (term definitions: etymologist, domicile, acquaintance, articulate, posthumous, epitaph).
+    - `english/vocabulary` (4 items): Q9(f), Q9(g) (collective nouns: pride, fleet), Q9(i), Q9(j) (niece, oxymoron).
+- **Ledger Verification:**
+  - Readback validation confirmed 10/10 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,329 saved records**, **6,251 unique appearances**, **5,851 deduplicated candidates**, **0 problems**. [Batch 89 report](reports/tagging-batch89-20261108/README.md).
