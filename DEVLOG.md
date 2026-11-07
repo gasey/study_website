@@ -6778,6 +6778,42 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - Documented Q61 colloquial phrasing in printed booklet ('You do not hard work. You will fail the test.').
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,657** (3,057 unique appearances) across 52 candidate reports with zero problems or booklet family conflicts. [Batch 51 report](reports/tagging-batch51-20261108/README.md).
 
+## 2026-11-08 09:25 IST — Source-reviewed tagging batch 52 (Informatics Officer General English Paper-II — 100 MCQs 100% Paper Completion)
+
+- Completed source-reviewed tagging batch 52 (100 General English Paper-II MCQs, achieving **100% paper completion**):
+  - *Technical Competitive Examinations for Recruitment to the Post of Informatics Officer under Information & Communication Technology Department, Government of Mizoram (February 2021) — General English Paper-II* (`Old_Questions/Direct_2020-2021/Informatics Officer - General English Paper-II.pdf`, `doc_e7390bd6cab5dd95ac26ed38`, 100 MCQs, achieving 100% paper completion with 100/100 items reviewed).
+  * **32 retags, 68 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Structured 100 baseline targets into active English taxonomy paths:
+      - `english/grammar` (50 items, confirmed and kept from baseline):
+        - Q21–Q30: Verb moods (indicative, infinitive, imperative, subjunctive).
+        - Q31–Q40: Modal auxiliaries and tense forms (*shall, can, must, should have, were able to, must have gone, should, hadn't been*).
+        - Q41–Q50: Sentence analysis into Simple, Complex, and Compound structures.
+        - Q51–Q60: Clause identification (noun clauses, adjective/relative clauses, adverbial clauses).
+        - Q61–Q70: Sentence classification (affirmative, negative, assertive, comparative, superlative).
+      - `english/grammar/parts-of-speech` (10 items, retagged from coarse baseline):
+        - Q1–Q10: Identification of parts of speech of underlined words (*any, before, even, by, master, One, back, deep, than, fix*).
+      - `english/grammar/prepositions` (11 items, 10 kept + 1 retagged):
+        - Q11–Q20: Spatial, temporal, and directional prepositions (*at the roundabout, on the left, change into, except, above corruption, across the road, over the years, through the back door, at the age of, under the agreement*).
+        - Q92: Dependent preposition (*acquitted of the charge*).
+      - `english/vocabulary` (17 items, confirmed and kept from baseline):
+        - Q71–Q80: Contextual word pairs filling blanks.
+        - Q94–Q100: Contextual vocabulary (*delicate, fastidious, exercise restraint, unbelievably, queasy, cloistered, casual*).
+      - `english/vocabulary/idioms-and-phrases` (6 items, retagged from coarse baseline):
+        - Q81–Q85: Proverb completions (*bad name, into the river, guilty conscience is always suspicious, quarrels with his tools, praises his pot*).
+        - Q93: Idiom (*get your house in order*).
+      - `english/vocabulary/one-word-substitution` (4 items, retagged from coarse baseline):
+        - Q86 (*highest position -> pinnacle*), Q87 (*indifferent to art -> Philistine*), Q90 (*Prima facie -> on the first impression*), Q91 (*universal remedy -> panacea*).
+      - `english/vocabulary/synonyms` (1 item, retagged from coarse baseline):
+        - Q88 (*BACKLASH -> reaction*).
+      - `english/vocabulary/antonyms` (1 item, retagged from coarse baseline):
+        - Q89 (*AMPLE -> scanty*).
+  * **Documented Source Defects & Vector Geometry:**
+    - Verified underlined target words in parts of speech questions (*any, before, even, by, master, One, back, deep, than, fix*) directly from vector line geometry in the PDF stream.
+    - Verified authentic 3-option structure for sentence analysis questions Q41–Q50 ((a) Simple, (b) Complex, (c) Compound).
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,757** (3,157 unique appearances) across 53 candidate reports with zero problems or booklet family conflicts. [Batch 52 report](reports/tagging-batch52-20261108/README.md).
+
+
 
 
 
