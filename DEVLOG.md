@@ -7480,3 +7480,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,738 saved records**, **5,660 unique appearances**, **5,260 deduplicated candidates**, **0 problems**. [Batch 78 report](reports/tagging-batch78-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 79 (Various Posts under MIMER Feb 2018 General English Common Paper)
+- **Execution:** Prepared pending source-reviewed tagging batch 79 (`reports/tagging-batch79-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to Various Posts under MIMER (February, 2018) — General English Common Paper* (`Old_Questions/Direct_2014-2018/1.General English Common Paper.pdf`, `doc_6df8aa9179998188151c7268`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 22 retag, 58 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/comprehension` (12 items): Q1–Q12 (reading comprehension passages on cleanliness and health).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q13–Q28 (idioms and phrases).
+    - `english/grammar/parts-of-speech` (10 items): Q29–Q37 (parts of speech identification), Q46 (adverb usage).
+    - `english/grammar/tenses` (5 items): Q38–Q40 (verb forms and tenses), Q79–Q80 (tenses and mood).
+    - `english/grammar/subject-verb-agreement` (1 item): Q41 (police agreement).
+    - `english/grammar/prepositions` (9 items): Q42, Q43, Q47 (preposition selection), Q73–Q78 (prepositional usage).
+    - `english/grammar` (19 items): Q44, Q45 (distributive pronouns), Q48 (conjunction), Q49–Q52 (sentence structure: simple, compound, complex), Q53–Q58 (sentence functional classification), Q59–Q64 (synthesis of sentences).
+    - `english/vocabulary/one-word-substitution` (8 items): Q65–Q72 (one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,818 saved records**, **5,740 unique appearances**, **5,340 deduplicated candidates**, **0 problems**. [Batch 79 report](reports/tagging-batch79-20261108/README.md).
