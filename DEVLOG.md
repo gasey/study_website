@@ -7616,3 +7616,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 46/46 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,219 saved records**, **6,141 unique appearances**, **5,741 deduplicated candidates**, **0 problems**. [Batch 85 report](reports/tagging-batch85-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 86 (Librarian under H&FW Dept 2017 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 86 (`reports/tagging-batch86-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Librarian under Health & Family Welfare Department — General English* (`Old_Questions/Direct_2014-2018/general-english-under-hfw-deptt.pdf`, `doc_eb2bb6d43e5c94e8a4d45be7`, 40 MCQs, achieving **100% paper completion** with 40/40 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (40 items: 40 retag, 0 keep, 0 hold):**
+  - All 40 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (9 items): Q1–Q8 (idioms and phrases meaning), Q24 (phrasal verb: turned over).
+    - `english/comprehension` (6 items): Q9–Q14 (reading comprehension passage on food, clothing, and population).
+    - `english/grammar/prepositions` (5 items): Q15–Q19 (preposition selection).
+    - `english/grammar/tenses` (2 items): Q20, Q21 (subjunctive and verb form: if I were, hanged for murder).
+    - `english/grammar` (17 items): Q22 (distributive pronoun: either), Q25–Q29 (sentence notions / concepts), Q30–Q35 (sentence structure: simple, compound, complex), Q36–Q40 (clause identification).
+    - `english/vocabulary` (1 item): Q23 (vocabulary word choice: approached the bank).
+- **Ledger Verification:**
+  - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,259 saved records**, **6,181 unique appearances**, **5,781 deduplicated candidates**, **0 problems**. [Batch 86 report](reports/tagging-batch86-20261108/README.md).
