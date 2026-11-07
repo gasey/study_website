@@ -1,0 +1,42 @@
+{
+  "batch": 65,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf",
+      "paper_title": "Mizoram Civil Services Combined Preliminary Examination 2018 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)",
+      "document_id": "mcs-recovered-2018-ii",
+      "sha256": "6a955f096a09992b681ac0c6eb0f6d48f7dbc9b831c4892a73efa9e9c7eceb47",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for MCS Combined 2018 Preliminary Paper-II Series A (100/100 MCQs)",
+  "actions": {
+    "retag": 80,
+    "keep": 20,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 28,
+    "reasoning-and-aptitude/verbal-reasoning": 48,
+    "reasoning-and-aptitude/numerical-ability": 6,
+    "reasoning-and-aptitude/series": 2,
+    "english/vocabulary": 2,
+    "mathematics/arithmetic": 4,
+    "mathematics/arithmetic/percentages": 2,
+    "mathematics/mensuration/area": 2,
+    "mathematics/algebra": 1,
+    "statistics/probability-and-statistics/probability": 1,
+    "mathematics/arithmetic/ratio-and-proportion": 1,
+    "reasoning-and-aptitude/data-interpretation": 2,
+    "mathematics/arithmetic/profit-and-loss": 1
+  },
+  "source_defects": [
+    "Major Legacy Normalization: Corrected baseline classifications where CSAT questions were misclassified into sociology (3), psychology (7), general-studies (9), general-knowledge (6), physics (4), commerce (2), civil-engineering (1), and biology (1).",
+    "Passage Question Grouping: Re-integrated reading comprehension questions across Indian Army, ISRO, crime/sociology, morals, and Beethoven into english/comprehension."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

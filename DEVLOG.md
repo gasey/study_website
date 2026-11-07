@@ -7181,3 +7181,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,435 saved records**, **4,357 unique appearances**, **3,957 deduplicated candidates**, **0 problems**. [Batch 64 report](reports/tagging-batch64-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 65: MCS Combined 2018 Preliminary Paper II Series A (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 65 (`reports/tagging-batch65-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination 2018 — Paper II (Series A: Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Recovered_MCS/MCS Combined 2018 Preliminary Exam Paper-II Series-A Chase copy.pdf`, `mcs-recovered-2018-ii`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 80 retag, 20 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Executed major re-alignment across questions previously misclassified in foreign disciplines (`general-studies`, `general-knowledge`, `psychology`, `sociology`, `physics`, `commerce`, `civil-engineering`).
+  - Active path assignments:
+    - `english/comprehension` (28 items): Q1–Q14, Q87–Q100 (reading comprehension).
+    - `english/vocabulary` (2 items): Q66–Q67 (DECEIVE, DECEPTIVE).
+    - `reasoning-and-aptitude/verbal-reasoning` (48 items): Q15–Q28 (interpersonal communication, active listening, conflict), Q29–Q33 (economic/monsoon logic), Q34–Q38 (assertion & reason), Q39–Q42 (family age deduction), Q43–Q57 (administrative decision making, groupthink), Q63 (coding), Q64–Q65 (verbal analogies), Q70–Q71 (situational engineering/physics).
+    - `reasoning-and-aptitude/series` (2 items): Q61 (letter series), Q62 (number series).
+    - `reasoning-and-aptitude/numerical-ability` (6 items): Q58–Q60, Q68–Q69 (stimulus figures), Q75 (Venn sets).
+    - `reasoning-and-aptitude/data-interpretation` (2 items): Q81 (pie chart), Q85 (frequency table).
+    - `mathematics/arithmetic` (4 items): Q72 (divisibility), Q74 (work), Q79 (radicals), Q86 (compound interest).
+    - `mathematics/arithmetic/percentages` (2 items): Q73 (percentage fraction), Q82 (sales tax).
+    - `mathematics/arithmetic/profit-and-loss` (1 item): Q83 (profit/cost price).
+    - `mathematics/arithmetic/ratio-and-proportion` (1 item): Q80 (ratio comparison).
+    - `mathematics/algebra` (1 item): Q77 (AP sum).
+    - `mathematics/mensuration/area` (2 items): Q76 (circle radius), Q84 (plot perimeter).
+    - `statistics/probability-and-statistics/probability` (1 item): Q78 (colored ball probability).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,535 saved records**, **4,457 unique appearances**, **4,057 deduplicated candidates**, **0 problems**. [Batch 65 report](reports/tagging-batch65-20261108/README.md).
