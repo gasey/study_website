@@ -7322,3 +7322,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,029 saved records**, **4,951 unique appearances**, **4,551 deduplicated candidates**, **0 problems**. [Batch 70 report](reports/tagging-batch70-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 71 (Inspector of Taxes 2016 General English Paper II)
+- **Execution:** Prepared pending source-reviewed tagging batch 71 (`reports/tagging-batch71-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to Inspector of Taxes (January 2016) — General English Paper II* (`Old_Questions/Direct_2014-2018/2.Inspector of Taxes 2016 General English Paper II.pdf`, `doc_6311a1c087c7ee07ee8bb474`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 70 retag, 30 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (17 items): Q1–Q10 (name parts of speech), Q27, Q28 (noun forms and quantifiers), Q36–Q40 (adjectives and adverbs).
+    - `english/grammar/tenses` (15 items): Q11–Q20 (correct form of verbs), Q31–Q35 (name the tense of the verb).
+    - `english/grammar/prepositions` (5 items): Q21–Q25 (prepositions).
+    - `english/grammar/articles` (3 items): Q26, Q29, Q30 (articles and determiners).
+    - `english/grammar` (30 items): Q41–Q45 (degrees of comparison transformation), Q46–Q50 (sentence transformation: affirmative/negative), Q51–Q60 (sentence conversion: simple, compound, complex), Q61–Q70 (sentence synthesis using clauses).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and phrases meaning).
+    - `english/vocabulary/synonyms` (10 items): Q81–Q90 (synonyms / nearest in meaning).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,129 saved records**, **5,051 unique appearances**, **4,651 deduplicated candidates**, **0 problems**. [Batch 71 report](reports/tagging-batch71-20261108/README.md).
