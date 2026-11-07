@@ -6691,6 +6691,31 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 16 Conventional Descriptive Tasks (245 Marks):** Preserved 16 conventional written tasks (Essays, Précis, Letter writing, Proverb expansions, Sentence corrections, and Idiom sentence compositions) totaling 245 marks across all 4 booklets in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (75/75) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,437** (2,837 unique appearances) across 49 candidate reports with zero problems or booklet family conflicts. [Batch 48 report](reports/tagging-batch48-20261108/README.md).
 
+## 2026-11-08 08:55 IST — Source-reviewed tagging batch 49 (Direct 2019-2022 General English Paper-I Booklets 100% Paper Finalization — 50 MCQs & Tasks)
+
+- Completed source-reviewed tagging batch 49 (50 General English MCQs and descriptive tasks, achieving 100% paper completion across all 6 booklets) from:
+  1. *Competitive Examinations for Recruitment to the Post of Circle Education Officer (CEO) under School Education Department (August 2019) — General English Paper-I* (`doc_74d9b3f2ded9bc5c2e9c8b74`, 12 items)
+  2. *General Competitive Examinations for Recruitment to the Post of Inspector under Excise & Narcotics Department (2019) — General English Paper-I* (`doc_da993afc1d299ca9ec8df13c`, 14 items)
+  3. *General Competitive Examinations for Recruitment to the Post of Jr. Grade of MAH & VS (Veterinary Officer) (2019) — General English Paper-I* (`doc_1ab13cb407d3fde6a1a38251`, 3 items)
+  4. *Technical Competitive Examinations for Recruitment to the Post of Informatics Officer (2020) — General English Paper-I* (`doc_5250924536dbee082db7539f`, 8 items)
+  5. *Assistant Soil Conservation Engineer (ASCE) (2021) — General English Paper-I* (`doc_1244a8721bec769394f9b3a7`, 5 items)
+  6. *General Competitive Examinations for Recruitment to the Post of Jr. Grade of MAH & VS (Veterinary Officer) (2021) — General English Paper-I* (`doc_38ddaa760769d6b08c77b1a7`, 8 items)
+  * **50 retags, 0 keeps, 0 holds.**
+  * **Bug Fix & Baseline Rectification:**
+    - Rectified ASCE Q3 (`desc-5e1e5996c1f4b75e5c34`: Office Order drafting) from misclassified `service-rules-and-office-procedure` baseline to active taxonomy `english/writing/letter`.
+    - Restructured 49 untagged/coarse baseline targets into precise active English taxonomy paths:
+      - `english/comprehension` (25 items: 8 CEO Paper-I items Q6–Q13 on *Gilray's Flower-Pot*; 7 Inspector of Excise items Q12–Q18 on Gandhian egalitarianism; 1 Veterinary Officer 2019 item Q11 on science & religion; 8 Informatics Officer 2020 items Q1–Q8 on anti-colonial movements; 1 ASCE 2021 item Q6 on corporate mentoring)
+      - `english/vocabulary/idioms-and-phrases` (12 items: 7 Inspector of Excise items Q4–Q10; 5 MAH Vety 2021 items Q5(a)–(e))
+      - `english/writing/essay` (3 items: CEO Q1, ASCE Q1, MAH Vety 2021 Q1)
+      - `english/writing/letter` (3 items: CEO Q2, ASCE Q3, MAH Vety 2021 Q3)
+      - `english/writing/precis` (2 items: CEO Q3, ASCE Q2)
+      - `english/writing` (3 items: CEO Q5, ASCE Q5, MAH Vety 2021 Q4)
+      - `english/vocabulary/synonyms` (1 item: Veterinary Officer 2019 Q13)
+      - `english/vocabulary/antonyms` (1 item: Veterinary Officer 2019 Q14)
+  * **Preserved 18 Conventional Descriptive Tasks (274 Marks):** Preserved 18 conventional written tasks (Essays, Précis, Letter writing, Proverb expansions, Idiom explanations, and sentence compositions) totaling 274 marks across all 6 booklets in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (50/50) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,487** (2,887 unique appearances) across 50 candidate reports with zero problems or booklet family conflicts. [Batch 49 report](reports/tagging-batch49-20261108/README.md).
+
+
 
 
 
