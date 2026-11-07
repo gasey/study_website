@@ -7207,3 +7207,31 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,535 saved records**, **4,457 unique appearances**, **4,057 deduplicated candidates**, **0 problems**. [Batch 65 report](reports/tagging-batch65-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 66: MCS Combined 2014 Preliminary Paper II (99 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 66 (`reports/tagging-batch66-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Mizoram Civil Services Combined Preliminary Examination 2014 — Paper II (Aptitude, Arithmetic & Comprehension)* (`Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf`, `doc_27f320fe0ca6eed357e122a2`, 99 MCQs, achieving **100% paper completion** with 99/99 items reviewed).
+  - Documented legacy omission: Question 39 was a non-verbal stimulus figure question on page 6 of the printed PDF omitted from legacy database intake due to empty stem text, now recorded in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (99 items: 19 retag, 80 keep, 0 hold):**
+  - All 99 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/comprehension` (23 items): Q1–Q13, Q87–Q90, Q93–Q97, Q100 (reading comprehension).
+    - `english/vocabulary/synonyms` (4 items): Q14, Q91, Q98, Q99.
+    - `english/vocabulary/idioms-and-phrases` (1 item): Q92 ('Stem the tide').
+    - `english/vocabulary/antonyms` (1 item): Q61 ('ascetic').
+    - `english/vocabulary` (4 items): Q59 ('pilaster'), Q60 ('gingival'), Q62, Q71.
+    - `reasoning-and-aptitude/verbal-reasoning` (43 items): Q15–Q29 (interpersonal communication), Q30–Q31 (photo deduction), Q35 (sequence), Q41 (directions), Q43–Q44 (syllogisms), Q45–Q58 (administrative situational judgment), Q63–Q64 (analogies), Q65 (odd out), Q66–Q67 (coding), Q68 (cause-effect), Q69 (blood relations), Q72 (alphabetical sequence).
+    - `reasoning-and-aptitude/series` (3 items): Q32, Q33 (number series), Q36 (letter series).
+    - `reasoning-and-aptitude/numerical-ability` (4 items): Q37–Q38 (figure logic), Q42 (clock), Q70 (pattern count).
+    - `reasoning-and-aptitude/data-interpretation` (4 items): Q83 (pie chart), Q84 (bar graph), Q85 (line graph), Q86 (coordinate graph).
+    - `mathematics/arithmetic` (5 items): Q34 (fraction), Q73 (division), Q78 (book pages), Q80 (unitary), Q81 (work).
+    - `mathematics/arithmetic/percentages` (1 item): Q74 (percentage).
+    - `mathematics/arithmetic/averages` (3 items): Q76 (multiples average), Q77 (mode/mean/median), Q82 (median).
+    - `mathematics/algebra/linear-equations` (1 item): Q40 (digits reverse age).
+    - `mathematics/geometry/triangles` (1 item): Q75 (altitude bisecting base).
+    - `mathematics/mensuration/area` (1 item): Q79 (square & rectangle area).
+- **Ledger Verification:**
+  - Readback validation confirmed 99/99 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,634 saved records**, **4,556 unique appearances**, **4,156 deduplicated candidates**, **0 problems**. [Batch 66 report](reports/tagging-batch66-20261108/README.md).

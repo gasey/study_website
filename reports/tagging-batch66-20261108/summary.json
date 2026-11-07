@@ -1,0 +1,44 @@
+{
+  "batch": 66,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Combined 2014 Preliminary Exam Paper II.pdf",
+      "paper_title": "Mizoram Civil Services Combined Preliminary Examination 2014 — Paper II (Aptitude, Arithmetic & Comprehension)",
+      "document_id": "doc_27f320fe0ca6eed357e122a2",
+      "sha256": "02493b6a8d51cfc86bfa6c8a849452903e2a04ebb63166966112a933a3e01418",
+      "targets": 99
+    }
+  ],
+  "targets": 99,
+  "completion": "100% paper completion achieved for MCS Combined 2014 Preliminary Paper II (99/99 available MCQs reviewed; 1 unextracted figure item preserved in pending-written-intake.json)",
+  "actions": {
+    "retag": 19,
+    "keep": 80,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 1,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/comprehension": 23,
+    "english/vocabulary/synonyms": 4,
+    "reasoning-and-aptitude/verbal-reasoning": 43,
+    "reasoning-and-aptitude/series": 3,
+    "mathematics/arithmetic": 5,
+    "reasoning-and-aptitude/numerical-ability": 4,
+    "mathematics/algebra/linear-equations": 1,
+    "english/vocabulary": 4,
+    "english/vocabulary/antonyms": 1,
+    "mathematics/arithmetic/percentages": 1,
+    "mathematics/geometry/triangles": 1,
+    "mathematics/arithmetic/averages": 3,
+    "mathematics/mensuration/area": 1,
+    "reasoning-and-aptitude/data-interpretation": 4,
+    "english/vocabulary/idioms-and-phrases": 1
+  },
+  "source_defects": [
+    "Unextracted Item Q39: Booklet question 39 is a non-verbal visual figure question with options (1)-(4) on page 6 of the printed PDF; omitted from legacy OCR intake due to empty stem text and safely recorded in pending-written-intake.json.",
+    "Disciplinary Normalization: Re-aligned arithmetic mean, mode, and median questions from statistics into mathematics/arithmetic/averages."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
