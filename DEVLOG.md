@@ -7359,3 +7359,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,229 saved records**, **5,151 unique appearances**, **4,751 deduplicated candidates**, **0 problems**. [Batch 72 report](reports/tagging-batch72-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 73 (Senior Horticulture Demonstrator General English April 2018)
+- **Execution:** Prepared pending source-reviewed tagging batch 73 (`reports/tagging-batch73-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Senior Horticulture Demonstrator (April 2018) — General English* (`Old_Questions/Direct_2014-2018/3.General English.pdf`, `doc_83296a794525fd6c34a58849`, 109 appearances covering all 80 MCQs and 29 legacy duplicate extractions, achieving **100% paper completion**).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (109 items: 62 retag, 47 keep, 0 hold):**
+  - All 109 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and phrases meaning).
+    - `english/comprehension` (12 items): Q17–Q28 (reading comprehension passage).
+    - `english/grammar/prepositions` (7 items): Q29–Q34 (preposition selection across 7 appearances).
+    - `english/grammar/parts-of-speech` (12 items): Q35–Q40 (underlined parts of speech across 12 appearances).
+    - `english/grammar/tenses` (10 items): Q41–Q48 (verb forms and tenses across 10 appearances).
+    - `english/grammar` (32 items): Q49–Q53 (sentence structure: compound, complex, simple), Q54–Q58 (clause identification: noun, adjective, adverb, coordinate), Q59–Q64 (sentence notion and concept).
+    - `english/vocabulary` (12 items): Q65–Q72 (usage of words, homophones).
+    - `english/vocabulary/synonyms` (8 items): Q73–Q80 (nearest in meaning).
+- **Ledger Verification:**
+  - Readback validation confirmed 109/109 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,338 saved records**, **5,260 unique appearances**, **4,860 deduplicated candidates**, **0 problems**. [Batch 73 report](reports/tagging-batch73-20261108/README.md).
