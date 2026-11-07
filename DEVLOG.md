@@ -7303,3 +7303,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,929 saved records**, **4,851 unique appearances**, **4,451 deduplicated candidates**, **0 problems**. [Batch 69 report](reports/tagging-batch69-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 70 (General English Paper - II September 2018)
+- **Execution:** Prepared pending source-reviewed tagging batch 70 (`reports/tagging-batch70-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations (September 2018) — General English Paper - II* (`Old_Questions/Direct_2014-2018/2.General English-II.pdf`, `doc_f41a788556c2566c4c00da87`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 74 retag, 26 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (30 items): Q1–Q10 (underlined parts of speech), Q11–Q20 (relative pronouns), Q21–Q30 (conjunctions).
+    - `english/grammar/prepositions` (5 items): Q31–Q35 (prepositions).
+    - `english/grammar/tenses` (5 items): Q36–Q40 (verb forms and tenses).
+    - `english/grammar` (25 items): Q41–Q50 (sentence transformation: simple, compound, complex), Q51–Q55 (sentence / clause structure classification), Q56–Q60 (sentence synthesis), Q61–Q65 (clause identification).
+    - `english/vocabulary` (15 items): Q66–Q70 (collocation), Q91–Q100 (homophones / vocabulary / correct alternative).
+    - `english/vocabulary/synonyms` (5 items): Q71–Q75 (nearest in meaning).
+    - `english/vocabulary/antonyms` (5 items): Q76–Q80 (opposite in meaning).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q81–Q90 (idioms and phrases meaning).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,029 saved records**, **4,951 unique appearances**, **4,551 deduplicated candidates**, **0 problems**. [Batch 70 report](reports/tagging-batch70-20261108/README.md).
