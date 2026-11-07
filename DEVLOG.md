@@ -6589,6 +6589,30 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 5 Conventional Descriptive Tasks:** Preserved 5 conventional written tasks totaling 80 marks in `pending-written-intake.json` (Sericulture: Précis 10m, Complaint Letter 15m; MES: Essay 20m; MPE & SS: Essay 20m, Précis 15m).
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (81/81) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,107** across 44 candidate reports with zero problems or booklet family conflicts. [Batch 43 report](reports/tagging-batch43-20261108/README.md).
 
+## 2026-11-08 07:05 IST — Source-reviewed tagging batch 44 (Finance Dept ADA, AA & ATA Arithmetic 100% Paper Finalization — 70 MCQs)
+
+- Completed source-reviewed tagging batch 44 (70 Arithmetic, Quant, Mensuration & Data Interpretation MCQs, achieving 100% paper completion across both booklets) from:
+  1. *General Competitive Examinations for Recruitment to the Post of Assistant Divisional Accountant under Finance Department (2015) — 3. Arithmetic* (`doc_b3e48463a72b3b18b82957d0`, 20 MCQs)
+  2. *Competitive Examinations for Recruitment to the Posts of Assistant Auditor, Assistant Treasury Accountant & Assistant Divisional Accountant (2019) — Arithmetic* (`doc_5335e1afbbcfc26d1afa5cd2`, 50 MCQs)
+  * **64 retags, 6 keeps, 0 holds.**
+  * **Triple Bug Rectification:** 
+    - Rectified 3 items (Q13 in Paper 1; Q39, Q40 in Paper 2) with inactive `subject_id: statistics` baseline to `reasoning-and-aptitude/numerical-ability`.
+    - Rectified Q30 in Paper 2 (partnership capital ratio) from misclassified `commerce` baseline to `mathematics/arithmetic/ratio-and-proportion`.
+    - Rectified Q49 in Paper 2 (pie chart miscellaneous expenditure) from misclassified `financial-rules-and-accounts` baseline to `reasoning-and-aptitude/data-interpretation`.
+  * **Untagged Baseline Rectification:** Across all 70 questions, rectified 100% of targets to active taxonomy paths:
+    - `mathematics/arithmetic` (31 items: Place Value, Fractions, Decimals, BODMAS, HCF/LCM, Simple/Compound Interest, Time & Work, Speed/Distance, Surds, Radicals)
+    - `mathematics/arithmetic/averages` (2 items)
+    - `mathematics/arithmetic/ratio-and-proportion` (5 items)
+    - `mathematics/arithmetic/percentages` (6 items)
+    - `mathematics/arithmetic/profit-and-loss` (3 items)
+    - `mathematics/mensuration/area` (4 items)
+    - `mathematics/mensuration/volume` (4 items)
+    - `mathematics/algebra/linear-equations` (2 items)
+    - `reasoning-and-aptitude/numerical-ability` (4 items)
+    - `reasoning-and-aptitude/data-interpretation` (9 items: Bar Chart Analysis 5, Pie Chart Expenditure Analysis 4)
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (70/70) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,177** across 45 candidate reports with zero problems or booklet family conflicts. [Batch 44 report](reports/tagging-batch44-20261108/README.md).
+
+
 
 
 
