@@ -7034,3 +7034,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **3,935 saved records**, **3,857 unique appearances**, **3,457 deduplicated candidates**, **0 problems**. [Batch 59 report](reports/tagging-batch59-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 60: SEO under Sericulture General English Paper-II (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 60 (`reports/tagging-batch60-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Sericulture Extension Officer (SEO) under Sericulture Department, Government of Mizoram (2022) — General English Paper-II* (`Old_Questions/Direct_2022-2023/SEO under Sericulture Deptt 2022 General English-II..pdf`, `doc_488d90639b1b64f05e81c67e`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 60 retag, 40 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/grammar` (30 items, confirmed and kept): Q41–Q50 (clause analysis), Q51–Q60 (sentence transformations), Q61–Q70 (synthesis).
+    - `english/grammar/parts-of-speech` (25 items, retagged): Q1–Q10 (underlined parts of speech), Q21–Q30 (adjectives & adverbs), Q31, Q35, Q36, Q37, Q40 (conjunctions).
+    - `english/grammar/tenses` (10 items, retagged): Q11–Q20 (finite verb forms and aspect).
+    - `english/grammar/prepositions` (5 items, retagged): Q32–Q34, Q38–Q39 (preposition usage).
+    - `english/vocabulary` (10 items, confirmed and kept): Q71–Q80 (contextual vocabulary & blank completions).
+    - `english/vocabulary/synonyms` (10 items, retagged): Q81–Q90 (lexical synonyms of underlined words).
+    - `english/vocabulary/antonyms` (10 items, retagged): Q91–Q100 (lexical antonyms of underlined words).
+- **Source Defects & Verification:**
+  - Q1–Q10 and Q81–Q100 underlined stems and target words verified via vector line drawings.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,035 saved records**, **3,957 unique appearances**, **3,557 deduplicated candidates**, **0 problems**. [Batch 60 report](reports/tagging-batch60-20261108/README.md).
