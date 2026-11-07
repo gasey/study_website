@@ -6747,6 +6747,38 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 21 Conventional Descriptive Tasks (346 Marks):** Preserved 21 conventional written tasks across all 7 booklets in `pending-written-intake.json`.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (70/70) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,557** (2,957 unique appearances) across 51 candidate reports with zero problems or booklet family conflicts. [Batch 50 report](reports/tagging-batch50-20261108/README.md).
 
+## 2026-11-08 09:15 IST — Source-reviewed tagging batch 51 (Assistant Labour Officer General English Paper-II — 100 MCQs 100% Paper Completion)
+
+- Completed source-reviewed tagging batch 51 (100 General English Paper-II MCQs, achieving **100% paper completion**):
+  - *Competitive Examinations for Recruitment to the Post of Assistant Labour Officer under Labour, Employment, Skill Development & Entrepreneurship Department, Government of Mizoram (March 2021) — General English Paper-II* (`Old_Questions/Direct_2020-2021/Assistant LO General English Paper-II.pdf`, `doc_f614daf6ec16a2e1ba92bc19`, 100 MCQs, achieving 100% paper completion with 100/100 items reviewed).
+  * **70 retags, 30 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Structured 100 baseline targets into active English taxonomy paths:
+      - `english/grammar` (30 items, all confirmed and kept from baseline):
+        - Q41–Q50: Sentence conversion among Simple, Complex, and Compound structures.
+        - Q51–Q60: Sentence transformation without losing meaning (affirmative/negative, assertive/interrogative, degrees of comparison, interchange of parts of speech, removal of 'too').
+        - Q61–Q70: Synthesis of sentences using infinitives, participles, apposition, adverbial/adjective/noun clauses, and cumulative conjunctions.
+      - `english/grammar/parts-of-speech` (20 items, retagged from coarse baseline):
+        - Q21–Q30: Conjunctions (*therefore, whereas, so that, yet, unless, as well as, lest, but also, while, although*).
+        - Q31–Q40: Adjectives, adverbs, and determiners (*worst, slowly, near, much, little, well in the test, fortunately, largest, some, too/so*).
+      - `english/grammar/tenses` (10 items, retagged from coarse baseline):
+        - Q1–Q10: Verb forms and tense sequence (*lost, has been waiting, wants, was driving, will call, had written, revolves, will have finished, broken, run*).
+      - `english/grammar/prepositions` (10 items, retagged from coarse baseline):
+        - Q11–Q20: Spatial, temporal, and dependent prepositions (*above, till, keen interest in, respect for, control over, into, beside, worthy of, beyond, congratulated on*).
+      - `english/vocabulary/idioms-and-phrases` (10 items, retagged from coarse baseline):
+        - Q71–Q80: Idiomatic expressions (*kicked the bucket, when pigs fly, set the bar, paid lip service, old school, keep in the loop, make light of, at odds, light years away, wet blanket*).
+      - `english/vocabulary/one-word-substitution` (10 items, retagged from coarse baseline):
+        - Q91–Q100: One-word lexical substitutes for underlined words/definitions (*insolent -> ill-mannered, calligraphy -> beautiful handwriting, philanderer -> chasing after women, zenith -> the highest point, inexorable -> unstoppable, animated -> lively, avarice -> love of money, posthumously -> after her death, obsolete -> outdated, invincible -> cannot be conquered*).
+      - `english/vocabulary/synonyms` (5 items, retagged from coarse baseline):
+        - Q81–Q85: Lexical synonyms (*penitent -> repentant, vengeance -> revenge, revelry -> celebration, succulent -> juicy, drowsy -> sleepy*).
+      - `english/vocabulary/antonyms` (5 items, retagged from coarse baseline):
+        - Q86–Q90: Lexical antonyms (*Fragrant -> smelly, Perpetual -> temporary, Retreat -> advance, Sensible -> foolish, Gratify -> displease*).
+  * **Documented Source Defects:**
+    - Documented Q5 printing defect: source paper printed only options (a), (b), and (c); preserved empty string in 4th slot matching canonical record.
+    - Documented Q61 colloquial phrasing in printed booklet ('You do not hard work. You will fail the test.').
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,657** (3,057 unique appearances) across 52 candidate reports with zero problems or booklet family conflicts. [Batch 51 report](reports/tagging-batch51-20261108/README.md).
+
+
 
 
 
