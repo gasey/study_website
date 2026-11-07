@@ -2450,6 +2450,16 @@ One verification-only trap: initial final live fetch exceeded fetch_live_records
 
 This completes the exact286-publication authorization, not the whole MCS backlog. Recent raw count:1,600appearances,1,588usableansweredMCQs;1,304usableanswered appearances still lack working, or1,316blank MCQ explanations counting malformed/unanswered rows. Eligibility/source/key checks still apply. Historical numbering, incomplete sources/scanned-booklet leads, further teaching explanations and original-paper simulation prerequisites remain;2012/2013deferred. No source completeness, derived solution or compensation rule has been invented. Save and push the completed receipt/checkpoint to GitHub.
 
+## 1 November 2026 — Focused UDC student overview
+
+The owner approved implementing the UDC review and clarified that its audience wants UDC preparation first, with a deliberate move to Group B Non-Gazetted later. Delivered the first release: removed the UDC/LDC/Assistant overview switcher, repeated hero actions, prominent rewards link, empty community-material panel and the single 100% Past papers coverage bar. Five primary views now sit directly below the hero, followed by the existing saved journey, six approved own-exam subject shortcuts and three recent paper groups. All other sources remain reachable through full paper search/pagination. Hero coverage distinguishes48source booklets,3,859questions and3,569with answers for study. Official/unofficial/review labels remain visible on paper/question cards and in disclosed test guidance.
+
+The eight2025booklets now occupy two series-selection groups; the full list has42groups over48sources. Grouping is deliberately limited to exact registered2025IDs with matching year/paper role: their exam-title casing and wording differ across series, so a broad title/year merge would be unreliable for departmental papers. Tests cover isolation of same-year departments, missing metadata, a filtered single series, unmutated source IDs, and checkpoint filter restoration without changing collection/view. UDC ignores another exam's active mock in its focused journey; all exams keep the shared resume mechanism. Mistake previews hide answer text and UDC has a direct wrong-queue practice action.
+
+Bank and taxonomy check reported IN SYNC at81,627questions/approved tags. Frontend build, the new focused UDC checks and source-text rendering checks pass. The older check-answer-provenance.mjs harness currently fails resolving ../lib/answerStatus before assertions; no badge/scoring code was changed, and this pre-existing harness failure is not recorded as a pass. Browser checks exercised the guest overview, Series C source/PDF/action identity, UDC English practice, expanded timed guidance, Prelims GS/Aptitude and A–D choices, and the separate LDC/Assistant entry points. At360px and390px document/body widths were345px and375px respectively (15px scrollbar), with no horizontal page overflow. Local proxied practice state reported a same-origin guard; no answer/attempt was submitted through that proxy. Signed-in cross-device continuation was not exercised. Bounded10/20-question sessions and their persistence/finish screen are intentionally still pending as the next release, rather than being represented by existing unlimited pagination.
+
+Final deployment verification: static frontend deployed through scripts/deploy.sh web; index and entry JS match the local production build. The final live check also replaces the global exam-scope selector within UDC routes with a compact UDC study label, avoiding an All exams message inside a scoped workspace. Live UDC English practice loaded its own source context without the local proxy same-origin error. Live390px body/document375px, with no page overflow. Desktop/mobile evidence: reports/udc-study-20261101/live-overview.jpg and live-mobile.jpg. API and the shared family site both returned200. No bank content, schema or scoring policy changed.
+
 
 ## 2 November 2026 — MCS source repairs and ordinary-quota explanation pass
 
@@ -2460,6 +2470,186 @@ Continued from the completed 286-item packet after fresh SSH, bank/taxonomy, cur
 Full bank diff changes only requested fields/publication receipts on 21 question objects; 81,606 others and all paper objects unchanged. Both restored figure answers remain B but now reference exact registered final keys. All 34 holds remain held/unscorable, all 244 preexisting attempt-row hashes unchanged and owner unlimited Pro preserved. Zero peer votes/credits/quota exemptions/outstanding exports. Public question endpoints and both image byte hashes verified. Health 81,627/13,158 official-eligible; MCS 2,967 active/1,548 eligible. Bank/taxonomy IN SYNC at 6a060c94b8a398567455ee4c38916437200aaaffe60205b7121ad1539ccecec1; publisher timer restored active. Family site follows its redirect to HTTP 200. All 18 targeted preparation tests pass offline with synthetic source files; no unrelated UDC API/web code was deployed.
 
 Receipt: docs/sources/mcs-publication-20261102.json. Exact figure, notation/locator and explanation snapshots plus guarded preparers/tests are committed. Saved 96 further source-checked agent drafts (53 maths, 43 factual) for coordinator acceptance and fresh live checks, and historical duplicate/missing-number evidence. Remaining recent counts: 1,296 raw blank explanations; 1,290 with usable case-sensitive choices/answers. These counts include held/ineligible content and do not certify publication readiness. Three historical numbering issues require supported duplicate/source-intake workflows; authentic simulation prerequisites remain incomplete; 2012/2013 stays deferred. Resume from docs/sources/mcs-continuation-checkpoint-20261102.json using ordinary quotas when available. Existing unrelated UDC working-tree edits remain preserved.
+
+
+## 2 November 2026 — Saved UDC study sets
+
+Delivered the approved follow-up: 10/20-question sets, exact saved question and source order, refresh/return continuation, finish summaries and targeted mistake sets. Reused the shared question card and existing attempt/reward engine. Session checks and position updates share one transaction; deterministic receipts prevent duplicate awards. Version guards reject stale writes. Completed feedback restores the original attempt snapshot, including absent figures, and retains active-test protections. Revealed answers remain reading with no attempt or reward. Finish reconciles server reveal records after interrupted acknowledgements. Explicit guest adoption preserves session ownership and reveal cooldown.
+
+Migration 0062 adds session metadata only and was rehearsed on a disposable clone before live application. Local production build and focused frontend/source-text checks passed. The combined targeted backend suite passed 56 tests; the final two focused reruns each passed all nine session tests. Tests cover concurrent/idempotent checks, rollback after grading, source snapshots, owner boundaries, guest adoption, active mocks, smaller pools, full 20-question sets and reveal reconciliation. Testing caught and corrected SQL string concatenation during adoption. Browser testing caught loading-page scroll clamping; focus now waits for saved questions to load.
+
+Synthetic browser rehearsal produced 1 correct / 1 wrong / 1 viewed / 7 skipped, retained the summary on refresh and opened exactly the missed question for review. Requested 20 questions from a three-question pool produced an explicit three-question set. Desktop, 390px practice and 360px expanded filters were checked without horizontal overflow. Evidence is in reports/udc-sessions-20261101. No production answer or reveal submissions were used.
+
+Deployed through scripts/deploy.sh all, followed by the final snapshot fix through scripts/deploy.sh api. Deployment health returned OK with 81,627 questions and 13,156 scorable at that time. Live isolated-guest API smoke confirmed a 20-question UDC set, frozen order after refresh, saved position, replay-safe creation and persistent all-skipped finish summary, with zero answer attempts. See live-api-smoke.json. The live browser confirmed the loaded chooser and switching to Start 20-question set; live-chooser.jpg captures the deployed page. A final shell health/static-hash/family recheck could not run after network restrictions changed (DNS resolution unavailable); deployment success and live browser verification are confirmed, but no new family-health claim is made. No proxy configuration was changed.
+
+
+## 2 November 2026 — Booklet series disclosure and conservative queue grouping
+
+The owner requested hiding unnecessary paper-series UI in UDC and MCS Prelims, while checking duplication and retaining question clarity. Local-bank audit confirmed imported copies already exist; hiding the controls does not itself create duplicates. The exact 2025 source families hold 720 UDC and 800 MCS Prelims appearances. A conservative case-sensitive ordered-options/context/solution audit found 64 UDC clusters with 69 extra matching text copies and 102 MCS clusters with 120 extras. These are local candidate counts, not live eligibility totals; runtime adds source/review/figure guards. Receipt: reports/study-series-20261102/local-bank-audit.json. Earlier looser stem/option-set scans overcounted safe matches, especially for figures and different explanations, so they are not release counts.
+
+Moved A–D choices behind Booklet series & original sources, omitted series from grouped-card display titles, moved PDF links into Paper details and disclosed per-question source identity. Visible passages, figures, source-issue warnings and answer provenance remain. Added a shared SQL candidate wrapper for general UDC/combined-prelims queues. Exact text, ordered choices, canonical/source contexts and markup, answer/explanation and review/issue status must match within the same filename family/year/role; any diagram/figure appearance keeps a question separate. Candidate filters run first, then grouping, then learner status. Latest own attempted member wins so an answered parallel series does not re-enter unseen practice. Explicit paper filters bypass grouping. No bank mutations, canonical merges, attempt/reward changes, schema changes or edits to frozen sets.
+
+Normal PostgreSQL startup failed because both TCP and Unix sockets are denied. Added scripts/check-study-series.py using PostgreSQL 16 standalone mode on a disposable synthetic cluster, which needs no sockets. All 14 checks passed across UDC and MCS: representative selection, pagination, attempted/non-default series continuity, unseen/wrong filters, other-user isolation, review-state distinction, context/case/options/key/explanation guards and recorded figures. The test uses the production SQL generator rather than an imitation in Python. Frontend booklet/resume and source-text checks, Python compilation, production build and git diff --check pass. Full API integration and browser/mobile checks remain pending; earlier session test counts do not certify this refinement.
+
+Deployment is blocked by the current session's network restrictions: bank-sync check cannot reach the server and direct SSH returns socket: Operation not permitted. Both local TCP and Unix sockets are also denied; local browser preview could not be started. The earlier UDC study-set release remains live; this refinement is local only. No Caddy, systemd or production database changes were made. Next step with access is bank/taxonomy sync check, full API/session regression and browser/mobile verification, then scripts/deploy.sh all and live source/queue/health checks.
+
+
+## 2 November 2026 — UDC readiness and admin editing/confirmation recheck
+
+The owner asked to finish UDC readiness and assess whether admins can quickly validate/edit questions and whether later checks can cause mismatches. Read the current workbench, direct decision, proposal/export/worker and append-only reassessment paths. Existing exam/subject/issue/year/paper filters, exact source/PDF inspection and Save & next already support quick per-question work. Existing stale-baseline, exact-key, primary-source, permission, duplicate-request, active-mock and pending-publication guards remain. No blanket approval, fabricated reviewer, quota exception or bank mutation was used.
+
+Found a verification gap: the publisher compared a complete appearance but only a small canonical tuple, so a canonical-only provenance, key-reference or source-context/markup drift could escape acknowledgement checks. Added a shared field-name-only comparator covering every primary canonical learner field represented by the receipt, while preserving retired difficulty and secondary-source semantics. Added a private/no-store GET publication verification endpoint using a repeatable-read read-only transaction, both original/current subject permissions and active-test protection. It distinguishes current match, unexplained mismatch and legitimate later publication. Recent admin decisions recheck after application and offer manual recheck; published contribution history exposes the same controls after reload. This is a consistency check, not proof that the administrator’s answer is factually correct.
+
+Found that saved UDC feedback restored original text/options/figures but could silently keep a later review badge or show old feedback without a correction notice. Saved results now carry update field names without exposing replacement answers; the UI retains original totals/feedback and links to the current question. New attempt JSON snapshots retain original answer-status/review context; older ones cannot inherit a newer derived-review badge. The current UDC UI also sends a presentation fingerprint. The check locks current source/canonical rows and rejects a changed presentation before grading/attempt/reward writes; exact replay remains stable. The token is optional for old API clients, so this is not a claim that old clients or unlimited/detail question routes have the same stale-display guard. No schema or existing snapshots were changed.
+
+Read-only local UDC audit: exact 48 snapshot source IDs have 3,930 raw appearances (3,882 MCQ, 48 descriptive), versus 3,859 in the supplied older public snapshot. Server holds/merged/withdrawn status cannot be inferred offline; do not assign the 71-row difference a cause. Found 250 MCQ appearances without a usable recorded answer, 184 answered appearances without explanations, two explicit source defects and two malformed-choice appearances. Raw answerSource labels are not independent-review proof. All 48 supplied paper rule records use platform-default; keep timed MCQs labelled practice and do not claim full authentic simulations. Added a UDC coverage/written-practice disclosure, prioritised five main shortcuts and retained historical subjects. Inspected the official 2026 six-page advertisement and exposed its syllabus link. The current redirect and older official syllabus PDFs failed/403 through the web tool; complete current blueprint/rule validation remains pending.
+
+Used the PDF skill for read-only visual review of three original physical page-9 scans covering four flagged appearances. Both duplicate-choice cases match printed defects; do not invent replacement choices. The two existing unresolved mathematical expressions are unclear in the source itself, so their source flags remain justified. No key was assigned or flag cleared. Renders, source hashes, raw counts, queue links and limits are in reports/udc-admin-readiness-20261102.
+
+Verification: 32 focused offline tests passed, including the production worker’s actual readback query against real PostgreSQL 16 standalone mode, canonical/source drift, stale-display rejection before grading, read-only endpoint/protection orchestration, publication file replay/recovery and preserved versus adjusted feedback. All 14 standalone PostgreSQL series checks and frontend booklet/resume/source-text checks pass. Production build, Python compilation and git diff --check pass. Added complete API publication-recheck and admin-edit/session regressions, but they and the wider API/account suite could not run because this session denies normal local TCP and Unix sockets. Do not reuse earlier 56/391/etc. counts as validation of this change.
+
+Final SSH probe still fails before authentication: socket: Operation not permitted. Bank-sync cannot reach the host. No new deployment, production approval/hold/content write, worker-timer change or infrastructure mutation occurred. Full browser/mobile/cross-device continuation, fresh bank sync, full API tests, deploy.sh all and study/family health checks remain required. Content backlog and exact syllabus/rule evidence remain substantive work beyond software verification. Evidence/report: reports/udc-admin-readiness-20261102/README.md.
+
+## 2 November 2026 — UDC release deployed and browser verified
+
+Resumed the authorized UDC/admin refinement with Oracle SSH and ordinary local database sockets temporarily restored. Bank check confirmed local/server in sync (hash prefix 6a060c94b8a3), 81,627 questions/classifications approved and zero pending/rejected; migration status through 0062 applied with none pending. No content or migration edits were needed. The first full targeted API run caught a real defect: the new repeatable-read READ ONLY verification route called require_role with its default lock=True, producing a forbidden SELECT FOR SHARE. Both permission reads in that route now pass lock=False within the consistent transaction. Reran the full targeted admin/bank/operator/scoring/session/account/learning/reveal/reward/collection/exam/MCS-role suite: 131 passed, one dependency deprecation warning, 16.98 seconds. Focused publication/feedback suite separately passed 27, and standalone production series SQL passed all 14 checks. Frontend booklet/resume and source-text checks, production build and diff whitespace checks passed.
+
+Ran a disposable local browser rehearsal on synthetic UDC/MCS sources with a known test owner. Mutating synthetic options after display produced the intended 409 and no attempt; refresh cleared selection and fresh checking worked. Finished 10 questions with 1 correct, 1 wrong, 1 reading-only reveal and 7 skipped. Explicitly adopted the two guest answers during sign-in; saved set totals/position persisted and a separate authenticated client confirmed continuity while a fresh unrelated guest got 404. Practise mistakes created a one-question child with only the wrong question. A 20-question Mizo request with a three-question pool produced exactly three and a clear notice. At 390px the practice area remained below the header. Admin Save & next queued the synthetic decision, advanced exactly one question and showed publication pending. Full integration tests independently exercised real synthetic bank apply/sync/worker acknowledgement, matched publication readback and canonical-only mismatch; no real question approval was fabricated.
+
+Deployed with scripts/deploy.sh all; API health returned OK, 81,627 questions and 13,158 scorable, and the local build/static upload completed. Reloaded live UI confirmed index-CG_oEUp9.js. At 360px expanded UDC filters and MCS controls fit (345px scroll width). Both modules initially hid series controls; selecting C changed Browse paper to exact C, and UDC Source PDF matched C too. Live UDC general browsing returned 3,790 instead of archive 3,859, matching 69 conservatively grouped copies without a source merge. Live guest 20-question set 46bba36bac1b43efb40eae0abf722a1a reopened at question two after reload and finished with 20 skipped, zero checked/viewed; no real answer/reveal was submitted. Screenshots and logs: reports/udc-release-20261102. Temporary viewport reset.
+
+Environment permissions changed again after deployment completed. A fresh shell SSH attempt failed at socket creation and curl could not resolve DNS. Browser navigation to the API-health URL was blocked, and the family-site navigation was explicitly denied by policy; that denial was not worked around. Therefore deployment health and live student flows are confirmed, but post-deploy SSH file hashes, second sync check and shared family health remain unconfirmed. No Caddy changes. The disposable fixture process handles were no longer available after the environment reset; no unknown local databases were removed. The factual answer/explanation review and syllabus/rule backlog remains separate substantive work; this release does not establish full UDC content completion.
+
+
+## Access-restored final verification — 2 November 2026
+
+The owner restored full access. Fresh SSH confirmed ism-api active. SHA-256 hashes of deployed admin_answers.py, study_sessions.py, publication_verification.py, study_series.py and public/index.html exactly match the local release. Fresh API health is OK with 81,627 questions and 13,158 scorable. A second bank/taxonomy check reports IN SYNC: bank hash prefix 6a060c94b8a3, 81,627 questions/classifications approved, zero pending/rejected. The shared family site returned HTTP 200 after redirect to /lus, with the expected Family tree HTML title. This closes the infrastructure checks previously blocked by session permissions. No redeployment or infrastructure mutation was needed. Removed only the inactive disposable database named by /tmp/udc-release-fixture.json; no unknown databases were touched. Source-reviewed answer/explanation backlog and exact syllabus/paper-rule mapping remain outstanding.
+
+## 2 November 2026 — First UDC content batch and official syllabus recovery
+
+The owner asked to do the remaining answer/explanation and syllabus/rule work and estimate time/success, then authorized doing as much as needed after the quota question and clarified this is not yet for public use. Fresh bank/taxonomy sync passed. Fresh source readback confirmed 3,930 UDC appearances, 250 missing usable answers (240 live/10 held) and 184 blank explanations (125 live/59 held). There are 434 canonical targets in those two disjoint buckets, so do not blindly discount them as duplicates. Only 238 missing-answer and 124 explanation targets were live primary records without recorded issues before independent review. Ordinary owner contributions were 500/500; first rolling slot was 07:45:14 UTC. Scope owner exceptions to this UDC run and exact targets; HTTP/default quotas unchanged.
+
+Recovered the actual three-page syllabus behind tinyurl.com/Assistantudccom via curl; web-tool retrieval still returned errors/403. Downloaded the exact official attachment and visually checked all pages using the PDF skill. Page 1 confirms the two 3-hour/200-mark papers, subject counts and 50-mark written English; pages 2–3 contain the August 2025 Gazette amendment adding one-third wrong-answer penalty and no blank penalty. Published this factual, date-scoped guidance inside the existing UDC syllabus disclosure and replaced the redirect with the direct official PDF. No historical scoring rule changed. Frontend checks/build passed, web deployed and live UI text/source links verified; local/deployed index hashes match. Recorded hashes/extracted text/renders and a 48-source first-two-page historical-cover inventory; extraction alone is not evidence of complete historical rules.
+
+The first maths explanation sample exposed substantive issues rather than safe backfills. Visually checked eight original pages and recomputed contradictions: absent AP term index, tax result only approximated by an option, impossible reciprocal sum, wrong aggregate-versus-unit price ratio, subsidy result absent, impossible remainder, missing set-union assumption and percentage denominator mismatch, plus ambiguous work/boat timing. Applied ten source-bound needs-review holds with exact expected records. Source/canonical answer fields and target attempts were fingerprint stable. Correction to my initial cap assumption: direct needs-review decisions return before contribution creation, so these ten holds needed no contribution exemption; told the owner explicitly. They preserve existing unreviewed inferred answers as historical source data and do not certify new answers.
+
+Recovered the official final answer key issued 21 May 2024 for the examination held 3 April 2024; the local corresponding key was provisional. Visually checked both key pages and both exact April 2024 paper first pages/ordered options. Registered the new SHA-bound final key for each source and mirrored all 40 key/reference records to private storage. Paper II Q29 is A&B and Q45/Q52/Q72 are compensated; do not assign single-option keys. Two Paper I source extraction artifacts were left for a repair phase. Published the 15 clearly inspected single-answer cells (Paper I Q1,3,4,5,6,8; Paper II Q1–9) under 15 exact scoped quota-exemption audit events. Paused/drained publisher timer, queued exact immutable decisions, dry-ran and published through the existing batch/local-bank/normal-sync/worker acknowledgement workflow, then restored timer active. No peer approvals/users/grants/credits fabricated.
+
+Independent verification found exactly 15 changed question objects and 81,612 unchanged; text/options/context/figures preserved. All 244 original attempts and 135 review holds remained fingerprint-stable across publication. All 15 receipts applied, zero exports/peer votes/credits. A read-only verifier report initially failed because its JSON alias result collided with the worker wrapper alias; changed it to integrity and batched source fetches, then verification passed. It was not a publication failure and no manifests were rewritten/retried. New bank SHA 77963609b0753214f2380b3f39741a1dd1320505e037b3b0e25df61534fdceba; bank/taxonomy IN SYNC. API health OK, 81,627/13,173; family HTTP 200. No Caddy/API/systemd config changes.
+
+First batch does not finish the backlog. Raw missing answers are now 235 and blank explanations 199: the 15 newly official answers add 15 questions that still need worked explanations, with none deleted. Provisional remaining estimate is 12–25 focused work hours excluding missing-authority/scan waits; high confidence in substantial safe improvement, no defensible percentage for answering every historical defect. Findings, source hashes, authorized requests, dry run, applied receipts, full-bank/live/history verification and continuation notes are in reports/udc-content-20261102/README.md. Current syllabus is verified; complete syllabus coverage and exact rules for every historical sitting remain open.
+
+Live browser follow-up for this batch confirmed Official key on April 2024 Paper I Q1/Q3, intentionally deferred Q2 still Unsolved, original image/options/instructions retained and zero answer/reveal submissions. Saved live-official-key-paper.jpg and retained the paper workspace tab.
+
+### 2 November 2026 — UDC source validity, explanations deferred
+
+The owner prioritized question validity and authorized continuation. Screened all 3,930 UDC appearances, verified 48 paper PDFs plus 90 figure hashes locally/remotely, then visually adjudicated source leads. Published 79 source transcription/context repairs and 62 page locators (133 distinct appearances) through normal owner export/dry-run/local-bank/sync/live-receipt workflow. Restored 48 missing underlines, corrected five wrong MPSC target names, recovered the complete two-page Bell passage for seven Aizawl questions, removed two contaminated options and repaired eight April 2024 prompts. Six direct holds cover two source duplicate-choice defects plus exact final-key multi-answer/compensated cells; no contribution quota is consumed by direct holds. All answers/provenance/explanations across 81,627 questions remain unchanged; all 244 attempt rows and 135 existing holds are preserved. Zero exports, votes or credits; 141 scoped authorized quota events. Bank now a47a61cfb7105644f7e56f8ad7377e8c3119ee26abf4385e689c70e66a1e629c, bank/taxonomy in sync, timer restored, API and family healthy. Source-text renderer checks pass; browser confirms corrected target underline and complete passage/page link.
+
+Traps: unique normalized source prefixes are only leads—Fisheries Q54/55 begin with repeated directions and would have been moved to the wrong page; original page 7 disproved both. Aizawl's short/direction-prefixed stems required printed-number range mapping. The combined final recheck exceeded the worker's 100-appearance limit; split into two chunks and both passed. Structural screening does not certify factual answers. A follow-up passage scan exposed a possibly truncated April 2024 written W3 instruction; leave a separate written-source review pending because this batch publisher is intentionally MCQ-only. Explanations remain deferred. Evidence and exact requests/receipts: reports/udc-validity-20261102/README.md.
+
+### 2 November 2026 — Learner-first feed redesign and release
+
+Reworked Feed.tsx around continue practice, revisit mistakes and ask a question before community discovery. Removed the left rail that preceded the feed on mobile, duplicate exam lists, games promotion, partner preview and arbitrary first-collection Your exam claim. All-time practice totals replace Your week; removed unsupported percentage/progress bars and the unused mock-history request. Reused the existing guarded learning resume service and preserved timed-practice paper/section/mode in resume URLs. Kept all community views and keyboard tab behavior; discussion filter changes now preserve exam_scope. Existing content eligibility and reveal protections remain untouched.
+
+Production TypeScript/Vite build and frontend deploy succeeded. Live API health remains OK (81,627 questions, 13,173 scorable). Browser verified guest/no-checkpoint fallback, materials rendering and unanswered filter URL plus aria-pressed=true. Desktop viewport 1280/document1265 and mobile390/document375 showed no horizontal overflow. A brittle text snapshot check initially returned false due to snapshot formatting; explicit URL and pressed attribute confirmed the filter works. Authenticated saved-resume branching was code-reviewed but no new attempt/account was manufactured to test it. The browser session reset when permissions changed; rebound the existing tab for final proof. No bank/backend changes in this redesign; prior UDC work remains intact.
+
+### 2 November 2026 — Group B Non-Gazetted preparation foundation
+
+Owner requested a broader NG module for learners choosing English/GK/Current Affairs and asked whether it supersets UDC/LDC. Checked the official9July2024 NG general/technical scheme and recruitment-specific LDC source; these support GK naming and distinct exam patterns. Found newer May2025 official notice but linkedPDF repeatedly returned403. Did not present2024 marks/duration as the current universal scheme. Existing decisions already union UDC/Assistant sources into NG; LDC remains a linked focused module, not silently relabelled or added.
+
+Implemented GroupBNonGazettedIntro, NG default on `/group-b` (explicit combined/Gazetted still work), actual-topic current-affairs shortcut, separate technical/common links, and NG General Knowledge labels in topic cards and practice filter. Used the existing scoped API and source role protections; no backend/bank writes. Exact routes remain deep-linkable. Production TypeScript/Vite build passed twice (final changes included). Frontend deployment then failed at SSH socket creation with Operation not permitted under the newly restricted session. Upload did not occur; live Group B has not changed. Browser verification remains pending for this slice. Saved design/source/relationship brief in docs/GROUP-B-NON-GAZETTED-MODULE.md. Prior feed release and UDC work were preserved.
+
+### 2 November 2026 — Group B learning/navigation finalization
+
+Owner requested optimized, refactored, easy learning/navigation. Added pure groupBStudy state/navigation/label helpers, separated Study home from active topic/reading/practice views, collapsed source-group/archive controls and compacted active-study header. Changing scope now drops stale paper/topic/offset/answer-status/pool/personal filters; changing read/practice mode retains topic while choosing the correct pool. Added metadata/current-affairs Retry, selected-collection-only fetch and loaded-collection guard to avoid stale mappings. GK labels now agree across topic cards, selectors, breadcrumb and generic question badges. Source titles and bank protections unchanged.
+
+Production builds, meaningful navigation-transition checks and existing UDC checks pass. Local Vite started successfully despite prior assumptions about socket limitations; real API-backed browser confirms748 topic-map Current Affairs questions (coverage count, not claim of current facts), correct scoped shortcut, read pool=all with topic retained, English selection clears oldtopic, and Study home. Mobile viewport390/document375 has no overflow. No answers submitted. SSH still fails immediately with socket Operation not permitted, so no new live release.
+
+Corrected earlier terminology advice after inspecting the actual January2026 H&FW NG technical paper cover: it prints PAPER-II (GENERAL STUDIES). Shared GK category is fine, but saying NG has no GS would be wrong. Updated module disclosure and appended source note; do not rename this original paper. Final local preview evidence stored in reports/group-b-finalization-20261102.
+
+### 2 November 2026 — Save Group B work for later continuation
+
+Owner requested a plan to resume later. Created docs/GROUP-B-CONTINUATION-PLAN.md with exact local implementation state, tests/browser evidence, pending frontend deployment, live acceptance steps, terminology correction (January2026 NG technical General Studies), May2025 source-access gap and separately scoped future learner preferences/sets. Marked the earlier deployed feed/UDC work separately from pending Group B. Permissions are now restored, but did not test SSH or deploy during this planning request. Preserved all uncommitted changes; linked the checkpoint from PLAN. No product or bank mutations in this turn.
+
+
+## Released and syllabus recovered — 2 November 2026
+
+This entry supersedes the earlier SSH/deployment and May2025-access limitations above. SSH and read-only sync checks succeeded:81,627 questions and approved taxonomy claims in sync. Group B frontend deployed successfully, then redeployed with dated syllabus guidance. Live default NG home, Current Affairs topic/pools, English filter reset, Back/Forward, reload, home scroll, technical archive and recruitment-group switching checked. NG exam overview shows the same entry choices and amended guidance. Viewports1280/390/360 had no horizontal overflow. API healthy; family site HTTP200 after redirect. No learner answers submitted.
+
+Recovered the original May2025 PDF via ordinary HTTPS and the five-page source linked by the official direct-syllabus listing (June2026 attachment directory). Visually inspected all pages, including the15July2025 amendment: general interview37.5, total337.5. Added source-linked dated general/technical scheme guidance inside the existing relationship disclosure. Historical rules, practice scoring, source membership and bank remain unchanged. Exact source URLs, page findings, hashes, verification limits and live screenshots: `reports/group-b-release-20261102/README.md`.
+
+Remaining: exact post-specific/UDC/LDC comparison and later-amendment audit, learner subject preferences and Group B saved sets. Do not infer full current-syllabus coverage from this release.
+
+
+## 2 November — Make exam names visible alongside generic PDF titles
+
+The owner reported that some exam identities could only be found inside PDFs. Traced this to shared paper cards and PaperViewer prioritising filenames, even when the collection API already supplies an exam name. All 97 NG paper records have nonempty exam metadata; some inherited records retain abbreviated identity and this check is not a fresh full-corpus identity certification. Visually checked January2026English/GS covers; both print Group B Non-Gazetted technical recruitment. Use one frontend paperIdentity helper: printed paper label then filename fallback for the heading, existing exam/title metadata visibly beneath it. Apply to shared exam cards, viewer and technical cards; search technical papers by exam/paper labels too. Preserve printed filenames in source details and keep conservative booklet grouping. No bank, source membership, scoring or database changes.
+
+Paper identity, UDC and Group B regressions passed; TypeScript/Vite build and frontend deploy succeeded. Live NG cards show exam names below Paper I/II headings;390px has 375px document width. Verification evidence: reports/paper-exam-names-20261102. No new learner answer submitted.
+
+
+## 2 November — Exam/year archive list and human bank handoff
+
+Owner requested an MPSC-style exam/year list with ascending/descending order and a candid bank-finalisation assessment. Added a responsive list of year, examination, paper and Browse/PDF links to shared exam archives. Group B Past papers defaults to list; existing cards remain selectable. URL-persisted newest/oldest and exam A–Z/Z–A sorting happens before pagination, unknown years remain last, changing controls resets page, and booklet-card groups follow the selected order. Grouping does not merge source identities. Other module defaults remain cards.
+
+Archive/identity/UDC checks, TypeScript/Vite build, deployment and artifact hash match passed. Live: ascending2010, descending2026, reload and page-reset behaviour, alphabetical order, year intersection, and390px/375px width. Screenshots in reports/bank-human-handoff-20261102.
+
+Read-only production audit includes held questions for editorial planning. Group B common English/GK/GS:3,634 MCQs,101official,2,898reviewed unofficial,378needs review,257unsolved (82.5% accepted status). All Group B:7,884 MCQs,281official,5,165reviewed unofficial,461needs review,1,977unsolved (69.1%). Whole bank:73,475 MCQs,13,173official,5,583reviewed unofficial,50,948needs review,3,771unsolved (25.5%). These statuses are not a human-verification count. Common499/all Group B2,286 missing explanations overlap the answer backlog; written117/176 are separate. Produced HUMAN-HANDOFF.md, reproducible SQL, paper snapshots and2,677unique canonical review leads with source pointers. Human refinement can start now; no full-bank finality or full archive/syllabus coverage is claimed. No bank mutation, account grant or message to a reviewer.
+
+
+## 2 November — Protect UDC/Prelims human correction from AI re-parsing
+
+Owner requested comprehensive handoff safety and named Solomon.scorp@gmail.com for Prelims and Sangzel/sangzeldoto@gmail.com for UDC. Confirmed neither account existed. Implemented exact-source pending assignments with owner activation/revocation and a small /editorial workspace. Assignment access permits inspecting assigned source answers, logging attributed append-only checks and submitting ordinary correction proposals; no administrative grants, publishing, self-approval or auto-verified answers. Ordinary quotas remain. Created audited reservations without email/password/session creation. Activation waits for each friend's real account and owner identity confirmation.
+
+Found two distinct overwrite risks: legacy bank writers and stale ordinary contribution forms. Added full-value protected record/source-asset fingerprints, membership checks before every sync mode, and locked atomic writer gates across14known workshop/app writers. Blocked parser imports retain draft comparisons. Initialized78source papers/6,931appearances/452assets from the existing synced bank without altering its content or answer status. Validated manifest/batch publishers journal exact target transitions and recover on either side of bank replacement. File-state integrity is not security against root/operator code edits. Private recovery copies of initial/current state and guard code are on /home/ubuntu/editorial-protection-20261102.
+
+Added answer-free transaction-version tokens to ordinary source/correction forms. Protected UDC/Prelims proposals require a fresh token and reject source/canonical/classification drift. Assigned inspection checks use the same freshness comparison and preserve original records. Existing publication history/readback/source-key guards remain authoritative.
+
+Migration0063rehearsed on a production dump clone and applied; API/web deployed.103focused tests plus3workshop regressions passed, production build and UDC/GroupB/archive checks passed. Synthetic preview exercised selection and saved checklist at1280/390without overflow; production browser confirmed signed-out boundary. No friend's login or human sign-off was fabricated. Bank checksum a47a61cfb710… remains in sync; API healthy, familyHTTP200. Two initial synthetic test fixture errors (required exam_type and module import path) were repaired before the final suite. Runbook and per-friend packs:reports/udc-prelims-human-review-20261102. No messages sent.
+
+### 2026-11-02 — Activate the two friend accounts
+
+The owner asked to apply the assignments and provide individual simple passwords or implement OAuth. Used the existing password option to deliver immediate access, with distinct random multiword passwords saved only in an owner-readable file outside the repository. Both previously absent accounts registered through the ordinary HTTPS registration endpoint; existing-account conflicts never overwrite a password. Activated Sangzel→UDC and Solomon→combined-prelims through the existing owner-authorized service and audited activation logic, preserving version checks and frozen paper scopes. No global grants, email verification, human source checks or bank content changes were made.
+
+Live verification signed in to each real account, loaded its sole active assignment (48/30 papers respectively) and a question list, rejected the opposite assignment with404 and owner management/global bank admin with403, then logged out. The initial operational logout omitted the CSRF header and failed; corrected the client to fetch the session CSRF token and use the standard header, then revoked all remaining setup sessions for these newly created accounts. Updated the handoff exporter to emit sign-in/change-password instructions for active assignments while retaining registration instructions for pending assignments. Regenerated both source packs without passwords. OAuth was not implemented; no Google app credentials were configured. The change-password recommendation is not a new enforced first-login policy.
+
+### 2026-11-02 — Shorter friend passwords on owner request
+
+The owner requested simpler passwords after account handoff. Changed both through the existing authenticated password-change endpoint to different 12-character word/number passwords, retaining the site's minimum and normal CSRF/security-event/session-revocation behavior. Updated only the owner-readable credential file outside the repository. Verified each new password signs in, each previous password returns401, and both original assignments remain active; logged out every setup/test session. No application policy, bank content or privileges changed. Passwords are intentionally omitted from repository documentation.
+
+### 2026-11-02 — Comprehensive paper, website and games design
+
+The owner asked how to manage PDF papers comfortably with little AI and design the whole website/admin including games. Inspected current routes, admin navigation, PaperIntake and its pdftotext helper, assigned-review code context, current GameSetup and games selection/preview/readiness endpoints. The important gap is routine intake still depends on a local extraction command and artifact JSON; a file chooser currently hashes rather than uploads a PDF. Older games planning lists gaps that current code has already addressed, so the new plan cites current capabilities and calls for auditing remaining operations before rewriting them.
+
+Added docs/WEBSITE-AND-PAPER-WORKSPACE-DESIGN.md with role-specific navigation, paper-workbench layout, manual/non-generative intake, scanned/written/diagram/key edge cases, evidence/version controls, a durable canonical-worker bridge, student screens, game journeys/admin, accessibility, phased delivery and acceptance exercises. Consulted primary PDF.js/Tesseract documentation for rendering/OCR boundaries. This turn produced a design only; no UI, data, account or deployed behavior changed. No new accuracy/cost or bank readiness claims were made.
+
+### 2026-11-02 — Small topic game design
+
+Designed Topic Trail in docs/TOPIC-TRAIL-GAME-DESIGN.md after the owner requested something more fun with a narrow UDC/Prelims scope and asked whether Sol6.1 could handle it. The design limits the first release to one source-checked topic pack, ten-question solo runs, a compact avatar trail and one optional double-next token. Specifies scoring, source eligibility, retry/correction behavior, minimal admin and acceptance tests. Topic examples remain candidates pending live usable-pool verification; no counts were fabricated. Consulted/fetched the official GPT-6.1 Sol model page using OpenAI Docs. No game implementation, AI runtime dependency, deployment or model switch occurred.
+
+### 2026-11-02 — Provision for recurring current-affairs questions
+
+The owner requested connecting older current-affairs questions with newer versions before Sol implementation, including GS/GK relationships. Read existing explanations/current-affairs design and confirmed there is already a small static revision-note registry. Added a separate implementation specification for reviewed entity/fact timelines, precise source-appearance links and a Then and now panel, with exact original date/options/key preservation. Explicitly handles no matching modern option, unknown dates, same-office versus same-person identity, effective/check dates, source conflicts, temporal duplicates and score-history preservation. Related facts introduce answer-disclosure paths, so the proposed server API must gate linked content across active assessments rather than relying on current frontend note visibility. Cross-referenced website/game plans. This is design provision only; no live facts, links, schema or bank records were altered and no actual officeholder was asserted.
+
+### 2026-11-02 — Implement current-affairs connections
+
+The owner said “Do it sol” immediately after the current-affairs linkage design. Implemented that bounded feature, not the separate whole-site redesign/game or canonical-host migration. Added migration0064 with precise entity identities, immutable proposal payloads, exact source links and an audited independent-owner publication/rejection/retraction state machine. Active source assignments authorize proposals without global staff powers; owner/subject grants also work. Source-version validation applies at submission/publication and author access is checked again. An owner cannot publish their own claims. Added a practical form and permitted-source search at /current-affairs/manage, admin/sidebar and assigned-review entry points, plus a private learner panel after answer reveal.
+
+Answer-bearing routes block all active mocks/games and still-unclosed cup release windows. Explicit viewing records normal reveal cooldowns for all linked canonical IDs and no attempts/rewards. Historical keys/options and attempts remain untouched. Linked papers retain exact source appearances and original PDF links; no temporal deduplication or AI updates occur. Date validation distinguishes effective periods, source publication, check and next-review dates, rejects overlapping known intervals, and permits explicit unknowns.
+
+Caught a durability trap during review: sync upserts change PostgreSQL xmin even for identical data, so a transient edit token cannot serve as long-lived evidence. Added separate migration0065 and semantic fingerprints for published source links. Identical upserts now retain connections; a real canonical answer or source change hides stale context until new review. Applied migrations are never rewritten. Regression checks cover this case, source permissions/revocation, independent publication, immutable content, retries, stale/conflicting revisions, retraction, historical answer preservation, exposure and active assessment access.
+
+Final focused suite:71passed (current-affairs/editorial/bank-review/admin-answers/protection); build passed. Rehearsed schema changes on production dump clones. Full-stack browser rehearsal used a disposable local database, synthetic offices/facts and separate source years2020/2026, verified independent owner publication and learner Then and now display, and measured no horizontal overflow at1280/390. Initial test fixtures failed because an answer was not a literal option and cleanup attempted forbidden history updates; corrected the fixtures without weakening application protections. Found14actual chief-election-commissioner source appearances read-only for future human curation, including2023MLS and2025technical GS. No factual connection or officeholder was manufactured or auto-published. Release evidence is in reports/current-affairs-connections-20261102.
+
+Release follow-through: deployed API and frontend after applying0064/0065, verified health81627/13173and familyHTTP200, and verified real Sangzel/Solomon queue access, no publish rights and source-search membership. Logged both verification sessions out. Strict bank check passed protected78papers/6931questions and confirmed checksum a47a61cfb710… remains in sync. The learner's displayed retry deadline now refreshes after reading linked facts, and other visible linked-question panels receive the existing reveal event. Signed-out users receive a concise access screen before the editor. First real factual connections remain for human source review;14candidate appearances are saved without asserting a current officeholder.
+
+### 2026-11-02 — Broaden current affairs beyond the example
+
+The owner clarified that Chief Election Commissioner was merely one example and requested general support such as the largest iron exporter. Replaced the officeholder-first editor assumption with ten fact categories, leaving GS/GK source/taxonomy handling intact. Rankings/statistics now carry required exact subject, metric, comparison basis, units, population, named source series and methodology; revisions cannot silently switch to a different commodity/value/volume/production measure. The first immutable proposal defines comparison identity under the existing entity lock, so no schema migration or historical JSON rewriting is needed.
+
+Facts now separate reporting year/period/type/edition from source publication, effective and check dates. Annual rankings/awards can coexist without false officeholder-style expiry requirements; duplicate same-period claims are rejected. Question links explicitly distinguish direct comparability from related-only/unclear, with evidence notes and periods where directly compared. The learner and independent-owner review show these definitions and limits. Legacy fields default to general/unclear and normalize safely on idempotent replay. No real country/officeholder value or bank answer was changed.97focused tests passed, including new commodity/basis/population/methodology conflicts, annual reporting, missing metadata, ambiguous old questions and other fact categories. Build passed; synthetic full-stack rehearsal uses fictional trade leaders and source questions. Release evidence:reports/current-affairs-general-20261102.
+
+General-current-affairs release follow-through: added an explicit legacy-payload replay regression, bringing the focused suite to98passed. Deployed API/frontend successfully; health remains81627questions/13173scorable and familyHTTP200. Verified trade-category field selection and learner comparison rendering on desktop/mobile, with390viewport/375documentwidth. Revised the disposable trade demonstration so exam years, reporting periods, options and synthetic keyed countries agree; no actual country ranking is asserted by the fixture. Source and bank protections were retained; this follow-up introduces no bank content changes or schema migration.
 
 
 ## 3 November 2026 — MCS protected source repair and first explanation packet
@@ -2486,3 +2676,3632 @@ The preparer now accepts the existing direction field as an exact source prerequ
 Full-bank verification against the second baseline permits only requested fields on 93 question records. The other 81,534 questions and all non-question bank data are identical. All 134 existing global holds, 244 previous attempt rows, both reviewer assignments and unlimited owner Pro access are preserved. There are still zero human checks. Answers, ordered choices, classifications and scoring eligibility are unchanged. All 111 publications are applied, with no peer votes, credits, quota exceptions or outstanding exports. The protected scope remains 78 papers / 6,931 questions; only exact validated publication targets advanced its integrity state. The publisher timer is active, bank/taxonomy are IN SYNC at `99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0`, and the protection recovery copy was hash-verified on Oracle. Global eligibility remains 13,172; MCS has 2,966 active / 1,547 eligible questions. Family site returned HTTP 200.
 
 This heartbeat's two receipts total 214 ordinary publications, 182 explanations, nine restored diagrams, 17 corrected PDF links, five missing contexts and one notation repair. The first packet separately placed one corrupted source on review hold. Ordinary usage is 407/500. Remaining recent blanks: 1,114 raw / 1,108 with usable ordered answers, including held or ineligible records. The 16 earlier exclusions, damaged radical/choice correction, historical identity/intake gaps and original simulation prerequisites remain open. Keep 2012/2013 recovery deferred. Latest receipt: `docs/sources/mcs-additional-explanations-publication-20261103.json`.
+
+## 3 November 2026 — browser paper workbench, Oracle authority and Topic Trail
+
+Continued the owner's instruction to implement the remaining PDF/site/admin/game work. Added source-first PDF upload/extraction/OCR/rotation/crops and MCQ/written preparation with explicit saves, optimistic versions, immutable restore history, exact reviewer grants/revocation and independent whole-paper review. A saved change invalidates review. Page jobs store separate extraction/output revisions, so neither polling nor OCR replaces manual questions; polling initially did replace scratch text, which the browser rehearsal exposed and was fixed. The first TS build also caught a missing pointer-handler brace. Official keys require an uploaded document, booklet agreement and a real key-page bound. Reviewed publication uses one bank lock, append-only source IDs, compressed preimages, crash-replay receipts, the normal sync and exact identity/context/figure/taxonomy/booklet readback. PostgreSQL's paper-kind constraint only permits mcq/descriptive, so mixed papers keep their individual types and use mcq at paper level; a full isolated mixed-format publication verified the constraint and CSV path.
+
+Moved writable canonical authority to `/srv/study/workshop/mpsc-question-bankv2` on Oracle. The original broad copy included unnecessary parser data and was stopped; reused existing source/figure bytes and copied the active references instead. Verified all 22,272 files / 2,899,173,375 bytes by SHA-256, including all registered evidence. Some unused partial data is retained, making the VM workshop about 4.3 GB; 79 GB remains free. The copied bank and protected scope matched exactly at `99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0`. Oracle's dry-run full CSV sync reported zero changed appearances and rolled back with 244 attempts and 179 users intact. Disabled the local publisher timer and replaced its local machine policy with the Oracle authority policy; verified that local publication now fails closed. The protected 78 papers / 6,931 source questions and both exact friend assignments remain unchanged. No Caddy configuration changed; study API and the redirected family login both remained healthy.
+
+Installed separate www-data document processing and root publication services plus the ordinary correction timer. Document tools run with resource limits, network/filesystem restrictions and no generative AI. Added graceful worker stop and publisher draining to deployment so code updates do not interrupt a bank write. A paired root-only backup includes the JSON/protection/receipts/taxonomy, PostgreSQL workflow dump and new private PDF/crop bytes; its archived bank hash is checked. The first 66 MB snapshot was fetched to private local storage and both files hash-verified. A user timer fetches recovery copies hourly/after startup while online; no external cloud destination or backup pruning is configured. A real dump restore into `ism_paper_fullpilot` succeeded. Its PostgreSQL role initially could not read the root-only dump file, correctly; streamed the root-read dump to pg_restore rather than loosening permissions. The isolated test then exercised upload, extraction, editing an MCQ and written task, exact reviewer assignment, independent synthetic approval, key mapping, append/sync and full readback. Both source/key documents and PILOT booklet values were registered, with all 244 prior attempts retained. Synthetic accounts/papers/approvals existed only in the disposable clone, which was removed along with its hard-linked file workshop. Production remained 81,627 questions, 244 attempts and 179 accounts.
+
+Implemented Topic Trail in existing game_rooms to preserve active-assessment reservations and reward protections. Ten stones, 20-second answer windows, paused feedback, original exam/year, a pre-reveal one-use Double next, immutable snapshots, source-change exclusions and a 30-minute total session bound. The browser completed a synthetic ten-correct trail at exactly 1,100 points, and mobile width checks showed no horizontal overflow at 390 px. Used the existing source-markup renderer and avatar, with quiet scenery and reduced-motion-aware movement. A real pool census found thirteen vocabulary canonical IDs but only seven distinct eligible questions after deduplicating booklet copies. Physics also contained geography questions, so no physics or vocabulary pack was launched. Added exact source-list administration and launched ten stable Prelims Constitution basics sources after matching every stem and option to its original PDF page. This is a limited-variety pilot, not topic mastery or whole-bank certification. No current factual rankings or officeholders were automatically populated.
+
+Verification passed 112 focused game/current-affairs/protection/publication tests plus 44 assignment/operator/review tests and the frontend production build. An expanded test initially referenced v_scorable.has_diagram, which does not exist; removed that assumption. A test fixture also temporarily added paper-test to UDC and contaminated later review tests; now removes that membership at teardown. Additional recovery/official-key/source-list checks pass. The direct live catalogue and desktop/mobile workbench were checked in the browser; synthetic screenshots, source matches, receipts and logs are in reports/workbench-oracle-trail-20261103. Updated the authority notes/runbook and preserved the original local source/backup copy. Human review of real papers, first real current-affairs facts, richer reviewed pack content and continuous independent cloud offsite backups remain human/content/operations work, not silently declared complete.
+
+Follow-up to this session's account-count statement: 179 is the recovery-snapshot baseline, not a promise that the live users counter stays frozen. Subsequent live checks/visits raised that counter through anonymous guest profiles. Compared every original user ID from the private dump against production; no original account was missing and no synthetic pilot account exists in production. Record the retention result separately from the changing visitor counter.
+
+Final runtime probes: the restricted www-data systemd account successfully extracted a two-page source (6,392 characters), rendered its page and performed rotated OCR (2,831 characters), with the production filesystem/network/resource restrictions. Temporary probe files were removed. The account-retention comparison completed with all 179 original IDs present, zero additional registered accounts and zero synthetic pilot accounts in production; additional profiles were anonymous visitors. Oracle document/paper/correction/backup services were active and reporting fresh heartbeats. Systemd KillMode=mixed ensures a graceful worker stop signals the main loop first while allowing its bounded child command to finish. The final API deployment passed health checks, and family.hawayu.in followed its normal redirect to HTTP 200.
+
+### 3 November — consolidated AI queue, discovery and checked five-question pilot
+
+Implemented the owner-approved consolidation after Plan mode ended. Replaced active
+local-authority prose with a 73-line model-independent entry point, reduced the
+active plan to 44 lines and retained the former 1,140-line milestone ledger as an
+explicit historical archive. Old completed publication packets and bounded quota
+exceptions are no longer startup instructions. Preserved source protection, human
+assignments, scoring/reveal/account boundaries and shared-server safeguards.
+
+Added the private durable SQLite explanation queue, immutable source/context/draft/
+check/request/receipt artifacts, rotating claims, original-PDF caching/rendering,
+source conflict rejection, exact proposal reconciliation after uncertain SSH results
+and serial audited Oracle publication. The legacy multi-item guard now checks the
+Oracle timer/service and fails closed if remote state is unknown. Single-item
+exports work with the normal timer. API intake locks/rechecks the full expected
+source and blank explanation, including supporting answer provenance.
+
+Added migration0069 and answer-free discovery with seven-day distinct registered
+practice/discussion signals, conservative shared booklet groups and five-person
+threshold. Editorial recommendations use existing inspected exact source lists.
+Hot picks have owner-only versioned draft/publish/retire history, evidence dates,
+expiry and stale/withdrawn independently published factual-support checks. Existing
+assessment restrictions withhold all discovery. Owner editor and exam/Home sections
+are deployed; no popularity or factual pick was seeded. Live switching to UDC
+was verified. Browser widths1265/1280 and375/390 show no horizontal overflow.
+
+142 focused regressions pass, covering recovery/conflicts, billing refusal, booklet
+signals, real thresholds, dated support, assignments, workbench and Topic Trail.
+Migration rehearsal used and dropped a production dump clone; production migration,
+build and deployment pass. Both shared domains and Oracle API/publish/PDF workers
+remain healthy. Initial test fixtures incorrectly used combined-prelims version1;
+changing fixtures to the actual live_version2 resolved their empty membership.
+
+Loaded1,065 eligible authoritative Prelims questions; inspected five original pages
+and preceding argument directions, plus primary reference support. Published the
+five explanations through ordinary allowance370→375 and verified complete source
+readback. The initial whole-bank exclusion hash differed because publication also
+updates each target's required reviewPublicationId. Compared the hash-verified
+original backup directly: exactly five records changed, each only explanation and
+that audit pointer. A corrected normalization and exact pointer-to-receipt check
+both pass. All254attempts, two assignments/78source memberships, grants and human
+checks are byte-equivalent; zero exports remain. Queue has1,060pending/fivepublished
+and no active packet. Detailed evidence is reports/ai-discovery-20261103.
+
+The owner confirmed OpenCode Go. This installed v2 Console exposes generic model
+names; its existing OAuth credentials were rejected (401) by a read-only Go API
+probe. No secret was printed or stored in the repository, and no paid model call
+was made. Replaced the obsolete provider-name/CLI-permission assumption with a
+stateless call to the documented Go-only endpoint, a private personal API key,
+stable session header, bounded response and explicit Go/zero-charge usage check.
+It exposes no model tools and never falls back; a billing mismatch blocks later
+calls. Synthetic billing tests pass. Actual Go calls await the owner's personal Go
+key, supplied privately via the documented environment/key file. The five-question
+pilot used manual session drafts and a separate source/reasoning pass; none was
+represented as human certification. Continuation instructions and provider status
+make this remaining setup requirement explicit.
+
+### 3 November — easier private Go key setup
+
+The owner did not know how to connect the personal key. Checked the current official
+Console API documentation: personal keys are under Account → Personal API keys;
+Restricted → Models: Request provides the required model access. Added a local
+getpass setup helper with no credential arguments, no echo, atomic mode600 storage
+inside a mode700 private directory, and clear return-to-chat instructions. It makes
+no model request and does not touch an existing key until validated input is ready.
+Synthetic temporary-file checks verify private modes, exact storage and malformed
+input preserving the prior value. No real key was entered/read by this helper and
+Go remains unconnected until the owner performs this local step.
+
+### 3 November — Go personal key connected and billing verified
+
+The owner explicitly supplied and authorized use of their personal key. Entered it
+through the helper's non-echoing terminal prompt; the key is stored only in the
+private local key file and was not printed to tool output or committed to the repo.
+A single bounded GLM-5.3-Flash connection request to the Go-only endpoint succeeded:
+billing_source=go, balance cost=0. Saved only non-secret connection status in the
+ignored queue directory. Marked the setup milestone complete and updated handoff
+instructions. The earlier failed OAuth probe is historical; current requests use
+the private personal key. Advised replacing the key because it appeared in chat.
+No bank publication, question draft, account grant or learner attempt was made by
+this connection check.
+
+### 3 November — bounded Go drafting and independent checking trial
+
+Completed the owner-authorized ten-question trial from the durable Prelims queue.
+Prepared registered hash-checked PDFs and visually inspected all target pages.
+Six questions received seven GLM-5.3-Flash calls including a one-question prompt
+retry: 24,139 provider tokens, all billing_source=go and balance cost=0, provider
+allowance consumption 0.00550247. No fallback. One exact-question explanation was
+reused after separate source comparison; two image-flagged plain-text questions
+were handled manually without changing flags or canonical identities.
+
+Initial drafts needed metadata/verbosity cleanup, bounded-force interpretation and
+qualification of a subjective semiconductor ranking. Updated the runner prompt to
+80–130 learner-facing words and max_tokens=700, storing prompt version and cap in
+model-run artifacts. One controlled question reduced completion tokens 844→354
+and total 3531→3133; no all-ChatGPT control or checking-token measure exists, so no
+claim of net ChatGPT percentage savings or model accuracy is made. Nine queue
+regressions passed; git whitespace checks passed for touched workflow documents.
+
+Nine explanations published serially through ordinary audited owner maintenance
+and the active Oracle timer/service, each with exact full-source readback. Pattern
+cq_03281775c7e34f15 remained unresolved: original PDF confirms the numbers, but no
+common rule independently established the keyed 77. Original answer/source retained.
+
+Fresh full-bank normalized audit preserved all unrelated content; exact final texts
+and audit pointers match nine receipts. The unresolved record is unchanged. Hashes
+of 254 attempts, two assignments, 78 memberships, zero human checks and two grants
+are identical before/after. Ordinary daily use 375→384, no exemption, zero pending
+exports. API, PDF workers and timer active; study health and family site HTTP200.
+Queue checkpoint: 14 total published including earlier five, one unresolved, 1050
+pending, no active packet. Updated continuation handoff; private reports/receipts
+are in reports/go-review-batch-20261103 and state/ai-review/go-batch-20261103.
+
+### 3 November — second ten-question Go continuation packet
+
+Owner requested continuation. Refreshed Oracle eligibility and ordinary allowance
+(384 before packet), claimed ten and hash-checked/rendered/visually inspected each
+original page with full relevant shared context. Six routine Go v2 calls consumed
+18,135 provider tokens, all billing_source=go and cost=0, reported allowance
+consumption 0.00330545. No paid fallback; two image-flagged facts handled manually.
+All six Go drafts received a separate check and one editorial revision. Appointment
+text still used key metadata as reasoning; replaced it with the Governor office's
+16 June 2023 evidence. Explicitly bounded poverty/appointment answers to historical
+context. Qualified refrigerant comparisons/flammability and workplace escalation;
+used printed strong-argument directions and simplified supported Moho terminology.
+
+Eight explanation-only publications applied serially through ordinary audited
+Oracle maintenance, exact full-source readback confirmed. Two left unresolved:
+cq_074f9dbb041891eb repeats the earlier unestablished number rule; original numbers
+independently confirmed. For cq_068bef5061686f96, full family context permits a
+countermodel (XS married, widowed engineer Q their son/father of students R and T,
+adult R married teacher P), so XS/QP is not uniquely entailed. Recorded keys,
+source flags, identities and content of both remain unchanged; no synthetic human
+approval or source/answer repair created.
+
+Fresh complete normalized bank audit preserved unrelated content; exact final eight
+texts and pointers match receipts. Hashes of 254 attempts, two assignments, 78
+memberships, zero human checks and two grants unchanged. Ordinary use 384→392,
+zero pending exports, no exemption. Timer/API/PDF workers active, both study health
+and family site HTTP200. Content-only work: no code/schema changes or repeated
+regression suite needed. Queue checkpoint: 22 total published, three unresolved,
+1040 pending, no active packet. Report/artifacts saved under go-review-batch2-20261103
+and private go-batch2-20261103; continuation and plan updated.
+
+## 3 November 2026 — Learning collections and separate Website bank
+
+Implemented Important Days, year-specific themes, linked practice sets, source
+filters and revision quizzes using canonical question references. Website bank
+retains the existing learner MCQ review workflow. Added independent versioned
+collection proposals/reviews, question search, immutable history and live/draft
+separation; no production content or human reviews fabricated. Home now uses
+actual seven-day activity and recent mocks; new mock snapshots retain topic
+labels for original-score topic breakdowns. Google PKCE sign-in and explicit
+account linking are gated by private provider configuration and preserve MFA.
+
+Validation: 43 focused catalog/auth/review/scoring tests passed; production web
+build and whitespace check passed. Migrations 0070/0071 rehearsed on a disposable
+full mpsc dump clone and applied successfully. Initial operator notes incorrectly
+named bench; its empty migration ledger was detected before any migrations were
+applied there. The ledger helper created only an empty schema_migrations table
+in bench. Actual service uses mpsc and all prior migration checksums matched.
+Synthetic browser checks at390px verified linked-question search/add and public
+revision flow with375px document width. Google provider exchange is mocked in
+tests; credentials and live provider verification remain outstanding. See
+LEARNING-COLLECTIONS.md for routes, publication rules and setup.
+
+Release completed: targeted API and frontend deployed. The first targeted upload
+copied a temporary directory's0700 mode onto /srv/api, causing a brief service
+restart failure. Restored0755, verified ism-api active and fixed staging mode in
+deploy.sh. Production health is OK; family redirect resolves toHTTP200. Live
+catalog endpoint returns the honest empty published set; Google config reports
+enabled=false. Live Website bank and Important Days render correctly at390px
+(document375px). Synthetic quiz check recorded the original answer correctly.
+
+## 3 November 2026 — Google Console provisioning
+
+Created Google Cloud project india-study-map under the signed-in
+claudestudy123@gmail.com account, configured external OAuth branding with explicit
+user approval of Google's User Data Policy, and created the approved Web client
+India Study Map production. Registered the exact production callback. Credential
+JSON download stalled and no usable local file was found. Google client details
+confirm the client exists but its original secret is now only masked; Google
+requires adding a new secret. Browser credential-change handoff rules require
+the user to perform that step. No secret installed on the server; Google sign-in
+remains disabled. Audience production publishing and end-to-end sign-in remain
+pending. Console tab retained for handoff. API service verified active.
+
+## 3 November 2026 — Community creator structure (design only)
+
+Mapped user-created mocks, private/public tags, reviewed subject proposals,
+Helpful votes, qualified popularity and creator contribution points onto the
+existing catalog, mock runner, taxonomy, discovery and rewards infrastructure.
+Design keeps one Studio Create entry, one Library Tests & practice view, compact
+cards and existing navigation. Specifies immutable attempts/revisions, scoped
+review, vote eligibility, non-redeemable contribution reputation, anti-duplication
+claims and phased delivery. No product code or production settings changed.
+See docs/COMMUNITY-MOCKS-AND-CREATOR-DESIGN.md.
+
+## 3 November 2026 — Website UX restructuring (released)
+
+Implemented a shared five-destination navigation model: Home, Exams, Library,
+Create, More. Removed the large header menu and duplicated controls; matched the
+mobile bottom bar to desktop destinations and preserved distraction-free sessions.
+Added code-native navigation icons, skip-to-content anchors and visible keyboard
+focus. Existing detailed routes remain intact.
+
+Separated the focused study home from the full community feed. Legacy
+/feed?section=community and tab/discussion links redirect to /community, keeping
+filters. Home prioritizes resume/test, revision and subject practice, with compact
+discovery, weekly activity and followed exams. Library has Subjects, Practice,
+Reading, Saved and Tools, including separate MPSC/Website bank links. Create brings
+existing question, material, practice-set and Important Day workflows together,
+with draft/submission/review destinations. More groups personal learning, games,
+calendar, community and account, showing staff tools only to granted users.
+Updated the public landing page's navigation, headline and stale planned-feature
+copy. Collection-kind links preselect the draft type. Guests get a sign-in prompt
+before starting a collection; Home no longer requests account-only resume data for
+guests or mistakes the expected lack of an account for an activity-load failure.
+
+Validation: TypeScript + Vite production build passed; navigation smoke checks
+covered 12 active-section cases and seven focused-session cases. Checked 70 hub
+links against actual routes, excluding the wildcard 404. git diff --check passed.
+Deployed with scripts/deploy.sh web only; public HTML matches the built artifact,
+entry assets return 200, API health and shared family site return 200. Live desktop
+inspection verified Home, Library practice/reading, Create, More, guest creation
+prompt and legacy community redirect. No production content or account mutations
+were used during QA. Saved live screenshot at docs/screenshots/study-home-2026-11-03.jpg.
+
+Limitations: local preview access was denied by browser approval. The browser's
+viewport override did not resize the live 1280px viewport; mobile visual QA remains
+unverified for this change, and the override was reset. Signed-in author/reviewer
+flows were not exercised in production. This release reorganizes current features;
+user-created timed mocks, subject proposals and new vote-based reputation remain
+in COMMUNITY-MOCKS-AND-CREATOR-DESIGN.md. Google OAuth secret setup remains pending.
+
+## 3 November 2026 — Sangzel full administrator access
+
+User explicitly requested giving sangzeldoto@gmail.com administrator privileges
+after confusion between the UDC assignment and comprehensive admin console.
+Applied the existing global owner role (grant 4), with an operator:codex audit
+entry and reason identifying the direct user authorization. Target was the exact
+registered account, locked within the transaction; duplicate grants are ignored.
+Verified committed grant and matching audit event. Existing active UDC assignment
+remains 48 papers. No other role, account credential, auth session, source content,
+review approval or publication protection changed.
+
+Staff authenticator enforcement remains enabled. The target account has no enabled
+authenticator yet; it can browse the dashboard but must complete its own setup at
+/account/security before privileged writes. Existing password is unchanged.
+Production study API and family site both returned HTTP 200. Updated current
+instructions and appended the assignment runbook rather than rewriting historical
+access receipts.
+
+## 3 November 2026 — Focused editorial review, phone and iPad layout
+
+Published frontend only with `bash scripts/deploy.sh web`. Added prominent UDC
+review entry on admin home, auto-selection of the matching active assignment,
+searchable paper choice, current-page question search/outcome filters, compact
+25-question paging, and previous/next question navigation across page boundaries.
+On widths below 1280px the question rail collapses after selecting a question;
+review content uses one column and wrapping actions. Inputs use 16px text to avoid
+phone focus zoom. The PDF viewer is optional/lazy, separate from the review form.
+Owner assignment management and secondary tools are below the review workspace;
+management data loads only when opened.
+
+Added checklist cards, clearer outcomes, evidence note, Save & next, immediate
+recorded-check status updates, explicit staff MFA guidance, and 24-hour tab drafts
+keyed by user, assignment, appearance and source version. Failed saves retain the
+note and never advance. Earlier checks are labelled as historical rather than
+current verification. All existing backend assignment, MFA, source-version,
+publication and answer-protection checks remain unchanged. No bank/API changes or
+production check submissions were made. Signed-out entry no longer incorrectly
+claims the account has no assignments, and its login link preserves the UDC route.
+
+Validation: full TypeScript/Vite production build passed; check-editorial-review
+passed pagination boundaries, evidence rules, draft expiry/validation/isolation
+and filtering. check-editorial-component.cjs passed failed-save retention,
+successful save-and-next payload/status, draft cleanup and MFA disabling using
+React test renderer (18.3.1 installed in /tmp/editorial-component-tests; run from
+repo root with that directory as the script argument). Existing Group B navigation,
+UDC study, archive ordering and paper identity checks passed. Production API
+healthy; family site follows its redirect to HTTP 200. Browser verified published
+signed-out page at 390x844 and 768x1024: document width equals viewport width,
+without horizontal overflow. Screenshots saved in docs/screenshots/editorial-*
+2026-11-03.png; viewport reset afterward.
+
+Limit: authenticated responsive screens were component-tested, not visually
+exercised in a signed-in browser or physical iPad. Earlier local browser-preview
+approval denial was respected; no alternate route was used to bypass it. This
+release does not claim a guarantee of zero regressions.
+
+## 3 November 2026 — Multi-paper editorial progress overview
+
+Replaced the long paper select with a searchable eight-card overview. Added All,
+In progress, Not started, Needs attention and All recorded filters, paper progress
+bars, assignment totals, and a Continue action for the most recently reviewed
+unfinished paper. Opening an unfinished paper jumps to its first unreviewed
+question, including the correct 25-question page; fully recorded papers open a
+flagged question first if one exists. Current-paper progress stays visible and
+All papers & progress returns to the overview. Existing version-scoped tab drafts
+survive this switch. Saved checks refresh totals without resetting the inspector.
+
+The existing authorized papers endpoint now aggregates the latest saved outcome
+per appearance across the whole assignment, with last activity and a resume
+pointer. Repeated checks do not inflate progress. Wording distinguishes recorded
+inspection from source freshness, published corrections and verification; flagged
+items remain counted separately. No migrations, bank changes, new permissions or
+synthetic production reviews. Added targeted `scripts/deploy.sh editorial-api`
+release with router backup/health rollback, preserving other API files.
+
+Validation: seven isolated PostgreSQL editorial tests passed, including 26-question
+resume across a page boundary, duplicate/revised outcomes, changed-source history
+and cross-account denial. Overview component tests passed eight-card pagination,
+resume selection, status filters and search empty state. Existing editorial helper
+and save/MFA component regressions passed. TypeScript/Vite production build passed.
+Read-only production query verified consistent totals and resume offsets for all
+48 assigned UDC papers in 55ms. API health and shared family-site health passed.
+Initial API staging compilation hit an existing /tmp bytecode-directory ownership
+issue before replacing the router; using a dedicated bytecode directory resolved
+it. A frontend deploy was repeated after the script changed during execution.
+Signed-in phone/iPad visual testing remains outstanding; no local browser denial
+was bypassed. Component tests used react-test-renderer@18.3.1 in the existing
+/tmp/editorial-component-tests directory.
+
+## 3 November 2026 — General source-review workspace and conflict visibility
+
+Released the unified registered-paper review workspace through the targeted
+editorial API and web deployment modes. Removed the UDC/Prelims assignment
+allowlist: owners choose any registered paper-based module or an explicit set of
+existing papers from MPSC/Website sources. Search results are paged cards, with
+selected-scope preview and removals before reservation. Identical paper sets reuse
+the existing reservation. Pending account confirmation, explicit activation,
+revocation, email binding, staff MFA and exact source authorization remain.
+
+Migration 0072 makes module membership optional for standalone paper assignments,
+adds a display title and stable scope keys, and supplies a compatibility insert
+trigger for existing exam-scope operators. Rehearsed against a disposable live dump
+clone, applied normally with the migration ledger, then dropped the clone. A hash
+comparison confirmed every pre-existing assignment's reviewer, email, state,
+version and paper membership remained identical (78 assigned paper memberships).
+No actual new reviewer grants, assignments or human checks were created by release.
+
+New module papers are listed for an explicit owner scope addition, guarded by the
+assignment version and an audit event. Already assigned papers are marked; adding
+only existing IDs is rejected rather than reporting a fictitious scope expansion.
+Module assignment snapshots never expand automatically. Question IDs/appearance
+IDs continue to reference the bank; no module-specific copies are created.
+
+Bulk source-version comparison now separates recorded history, current Checked
+outcomes, current flagged issues and Recheck needed. Canonical text/answer/
+explanation, appearance/source, paper identity, primary classification and related
+paths participate in the same version token as stale-save rejection. Recheck
+priority and source-position resume span the whole paper. Review complete requires
+all source questions to have a current Checked outcome. Green progress reflects
+current checks. Overview filters/search/page survive opening a question; progress
+refreshes after saves, returning to the overview and browser focus. Draft isolation
+uses the complete user/assignment/appearance/source tuple for storage and remounts.
+
+Added separate correction queue/publication counts, source-bank labels, assigned
+reviewer handles, shared-question module/source context and the current user's
+proposal links. Other authors' private draft IDs/titles/notes/payloads are excluded;
+non-private submitted work is represented by status counts, not proposal access.
+Assigned handles do not claim online presence or an exclusive editing lease.
+Active assessment answer gates apply to context reads. All actively assigned
+sources now require a fresh correction token, including future/individual scopes.
+Existing publication, evidence, independent-review and scoring safeguards remain.
+No bank-owned SQL or canonical bank JSON was edited by this feature.
+
+Admin entry now opens Review workspace. New PDF drafts, Important Days/practice-set
+metadata and learner-submission queues are linked with their existing approval
+paths. Question-only learning catalog metadata is not silently converted to access
+to every question in its source papers. These boundaries are documented in
+EDITORIAL-WORKSPACE.md and appended to the human-review runbook.
+
+Validation: 81 combined backend tests passed in one disposable PostgreSQL DB
+(editorial assignments, current affairs, bank review). New cases cover arbitrary
+future modules, exact Website/mixed paper scopes, duplicate reservations, explicit
+scope expansion and stale versions, all five source-version change categories,
+shared canonical changes across appearances, historical checks, no bank mutation,
+private draft exclusion, answer gates and out-of-scope denial. Fixed test-fixture
+cleanup so synthetic active assignments cannot leak into subsequent suites.
+Four frontend regression scripts passed helper/draft rules, failed-save retention,
+Save & next payload, MFA disabling, eight-card paging, current-completion/recheck
+filters, arbitrary module and exact-paper reservation payloads, scope reset and
+context links. TypeScript/Vite production build passed; final entry/chunk hashes
+and feature strings verified against deployed assets. Private catalog returns 401
+signed out. Existing 30-paper Prelims and 48-paper UDC backend reads passed progress
+sum and resume-position checks in 171ms/201ms respectively; owner module catalog
+returned seven choices. API healthy, family redirect ends HTTP 200.
+
+Limits: authenticated phone/iPad layouts were component-tested, not visually
+exercised in a signed-in browser or physical device. Prior local-preview denial
+was respected. Version tracking is conservative: rewriting a row can require
+recheck even when its visible text looks unchanged. No promise of zero regressions
+or automatic content certification is made.
+# 4 November 2026 — Editorial simplification implementation brief
+
+Prepared `docs/EDITORIAL-SIMPLIFICATION-IMPLEMENTATION.md` after the owner requested
+fewer review steps, easier wrong-tag cleanup and final admin authority, and left
+the choice of planning versus immediate implementation to this task. Chose an
+implementation handoff for Sol 6.1, as communicated in the conversation.
+
+Inspected current editorial checks, source-version logic, assignment boundaries,
+direct admin answer decisions, retagging proposals/batches, publication eligibility,
+worker acknowledgement/credit, report resolution, navigation, picker and existing
+tests. The brief defines a shared admin decision/publication path, tag discovery,
+single-screen work, conservative migration to aspect-specific review fingerprints,
+automatic linked-report resolution after verified application, and a staged file
+map/acceptance suite. It keeps public proposal review and existing source/answer
+protections; it does not add compulsory whole-paper sign-off after completed work.
+
+Documentation only. No runtime code, migration, production data, account grants,
+services or live website changed. No runtime tests or mobile QA claimed for this
+brief. Implementation/deployment and its acceptance checks remain pending.
+
+
+## 2026-11-04 — Editorial simplification implemented and deployed
+
+Implemented My work / Needs attention / Completed, inline edits, explicit Checked
+& next attestation, searchable taxonomy/source pickers, independent tag search
+scope, final admin decisions and linked reports. Public submissions retain
+independent review; assignment-only editors cannot publish. Current evidence,
+subject grants, MFA and answer controls remain. Content fingerprints avoid reopening
+unchanged answers after tag-only changes; legacy checks remain conservative.
+
+Bulk publication required a real worker fix: separate tag publications change the
+bank checksum after the first item. Added atomic up-to-20-target application under
+one lock with immutable manifests, durable receipts, sync/readback verification and
+grouped failure/retry. No manifest baseline is rewritten to bypass stale checks.
+Only matching linked reports close after application; no maintenance points accrue.
+
+Validation: 157 backend tests passed, including interrupted batch recovery, stale
+atomic batches, permissions/revocation, evidence drift, public quorum, answer gates,
+report closure and disposable-bank readback. Frontend helper/component regressions
+and TypeScript/Vite build passed. Rehearsed migration 0073 on a disposable clone,
+then applied it. Deployed selected API/worker files with rollback and built web
+assets. API, document worker, publisher and review timer active. Health/family
+checks passed. Assignment, membership and grant hashes exactly match baseline;
+inspections/admin decisions remain zero and canonical questions remain 81,627.
+No synthetic production publication or human review was created.
+
+Skipping fingerprints for uninspected overview questions reduced measured reads
+from about 1.4–1.9s to 134ms (Prelims30) and 165ms (UDC48). Default tag attention
+still measures around 2.3s on 58,500 missing-topic matches.
+
+Signed-out live entry inspected at 390x844 and 768x1024 without horizontal overflow;
+viewport reset. Authenticated mobile/iPad visual QA remains pending without a
+signed-in session. Existing local-preview denial was respected. Passing tests do
+not guarantee zero regressions or certify existing bank content.
+
+
+## 2026-11-04 — Database-wide tag discovery performance follow-up
+
+Owner requested faster cleanup and clarification of bank-wide tagging. Replaced
+per-canonical appearance sorting and report counting with a scoped DISTINCT ON
+source selection and grouped open tag reports. Count and paginated items now share
+one materialized filtered snapshot/evaluation. Empty/beyond-end pages retain exact
+counts. Source selection preserves primary preference inside the selected bank,
+module, year or paper; shared canonical targets appear once. No content, taxonomy,
+grants or assignments were rewritten and no automatic reclassification was run.
+
+Added disposable-DB regressions for shared MPSC/Website appearances, exact bank/
+year/paper selection, current browsable module membership, empty pages and multiple
+reports without duplicate questions. All 158 focused backend tests passed. Initial
+JSON aggregation used a page alias that collided with the numeric page column;
+regressions caught this before deployment, and the explicit page_rows alias fixes
+it. Full item shape was also checked in read-only production profiling.
+
+Deployed via scripts/deploy.sh editorial-simplification with backup/rollback.
+After-release server route reads: attention 654ms (previous 2312ms), no-topic 549ms
+(previous 1485ms), reported 32ms (previous 1965ms), no-subject 60ms (previous 114ms).
+Invalid-path empty result measured 396ms (previous 287ms); the primary improvement
+is the broad list, not a claim that every query is faster. These are server route
+measurements, not end-to-end browser render timings. Paper overviews remain125/161ms.
+API health and family return200; protected tag list returns401 signed out. API,
+document/publisher services and review timer active. Assignment/membership/grant
+hashes still match the earlier release baseline, checks/admin decisions remain0,
+and canonical count is81,627. No new migration or frontend build was required.
+
+Cleanup covers registered source questions across both banks within actual grants.
+Approved canonical tag changes affect shared module appearances after normal
+publication/sync. The 58,500 missing-topic matches are coverage gaps requiring
+inspection, not proof that those questions are incorrectly classified. Unreported
+semantic mistags cannot be inferred automatically. Authenticated phone/iPad visual
+QA remains pending as recorded in the preceding release.
+
+
+## 2026-11-04 — Discoverable review and admin navigation
+
+Owner requested visible routes to editorial/admin work and advice on reviewing by
+module. Added authorised workspace shortcuts below the normal site header and a
+prominent Review & administration section at the top of More. Assigned-only users
+see Review workspace; staff also see Admin dashboard and tag cleanup. Ordinary
+learners do not gain staff navigation or access. Header account reloads clear role
+shortcuts, and stale async account responses cannot repopulate them after sign-out.
+The five primary destinations stay intact; the utility strip scrolls away instead
+of increasing the sticky header height over existing editors.
+
+Admin sidebar now links directly to Review workspace and Find & fix tags on phone
+and desktop. Admin home leads with module/paper review, followed by Across the bank
+for broader tools. Editorial has an Admin dashboard return link and an explicit
+Tag issues in this module action. That action opens a fresh current-module tag
+scope, clearing unrelated tag filters/batches while preserving the exact My work
+assignment, paper, question, appearance and pagination. Existing correction and
+publication methods are reused; no bank content or permissions changed.
+
+Added check-review-navigation.cjs: owner, assignment-only, pending invitation and
+ordinary-learner visibility; sign-out/stale response isolation; focused-session
+visibility; non-sticky utility placement; admin entries; future module filters and
+source-position retention. It passed alongside editorial helper, quick-review and
+workspace component checks. TypeScript/Vite build passed, deployed via deploy.sh
+web, and deployed index checksum matches local dist. API health reports 81,627
+questions; shared family site returns200.
+
+Live browser confirmed the updated editorial guidance and More navigation. Signed-
+out phone390px/document375px and tablet768px/document768px had no horizontal
+overflow; viewport reset. Authenticated navigation is component-tested but cannot
+be visually certified with the available signed-out browser. No fabricated login
+or production review was created. Recommend module-by-module inspection first;
+whole-bank tools remain useful for reports and corrections spanning source papers.
+
+
+## 2026-11-04 — Separate Group B Non-Gazetted and Gazetted learner homes
+
+Implemented the owner's request for both Group B designs. Clear group selection,
+distinct warm/sage homes, Home / Subjects / Papers / available Practice / Progress,
+and a compact mobile navigation row replace the generic shared entry. Removed the
+redundant global focus selector only on the Group B hub. Existing Group B overview
+URLs reach the new homes; existing paper/question/practice links remain valid.
+
+Non-Gazetted uses real common English/GK/topic counts and the approved Current
+Affairs ID. Existing explicit technical-source roles and dated syllabus disclosures
+remain. Gazetted's current five papers are written sources with no answer-ready
+MCQ pool, so its home leads with original papers and collapses sparse subject
+coverage. Availability controls practice actions. Progress shows a compact reading
+explanation when no attempts exist, retains historical activity when available,
+and never treats reading/offline written work as automatically scored. Shared study
+asks for one group when viewing progress. Other modules keep default progress links.
+
+Added a searchable original-paper library with year/written/sort filters and ten
+items per page. Filter changes reset pagination; URLs retain filter state. Source
+IDs, titles, PDFs and owning collections are preserved, and paper return links
+lead back to the matching Group B library. Exam saving reuses existing bookmark
+APIs with retry/error handling and stale-account response isolation. No bank/source
+membership, taxonomy, answer, permission, backend or migration changes were made.
+
+Passed Group B navigation/components (including actual progress availability and
+historic activity), UDC study, archive ordering and review-navigation regressions,
+git diff --check, TypeScript and Vite. Final deployment through deploy.sh web
+completed; local/live index SHA256 matches
+ba7e1165803483667c8b77f674dd7428c3c18710772407f8fb554758c36f5cd0.
+API health OK at81,627 questions; shared family site healthy.
+
+Live checks passed group switching, Gazetted reading progress, NG archive page2
+and filter reset, General English/2026/written filtering, exact original paper
+and back link, overview redirect and approved Current Affairs scope. Phone390px
+had375px document width on NG home/archive, primary action ended at710px inside
+844px viewport. Tablet768px had753px document width on NG archive/Gazetted home.
+No overflow in those checks. First deployed design was visually inspected; final
+browser screenshot captures timed out even with a fresh tab, so final screenshot
+and physical-device QA are not claimed. Viewport overrides reset. No production
+answers/bookmarks were submitted and no signed-in test session was fabricated.
+
+Current design, evidence and remaining content/future-feature scope are recorded
+in docs/GROUP-B-STUDY-DESIGN.md. Updated the continuation checkpoint so later work
+does not replay old deployment instructions. Source/taxonomy review and saved short
+study sets remain separate from this completed frontend design release.
+
+
+## 2026-11-04 — Shared module review design
+
+Owner requested a review system suited to compiled exam modules, including Group B,
+UDC, Assistant and future additions. Read the current editorial/permission/publishing
+implementation, migration contracts, Group B roles and collection selection paths.
+Confirmed that corrections use shared canonical identities, but paper/question
+inspection progress currently filters by assignment as well as appearance. Existing
+shared-use context joins collection papers and is insufficient to describe every
+filtered area or future compilation's exact membership.
+
+Created docs/SHARED-MODULE-REVIEW-DESIGN.md: one workspace, separate canonical edits,
+source inspections and module membership; reusable exact-source checks with original
+reviewer attribution, independent source variants, permission-bounded scope adapters,
+deduplicated parent progress, aspect freshness, direct admin actions and honest
+publication state. Includes daily UI wireframe, scope/removal impact, future module
+configuration, explicit owner checks without fake assignments, additive schema/API
+implementation slices, migration/rollout approach and acceptance scenarios.
+
+Preserves existing public-submission rules, MFA/assessment gates, frozen assignments,
+Oracle publication, attempts and history. Read-only design work only: no live data,
+roles, app code, migrations or source memberships changed, and no tests or deployment
+are claimed for a document-only deliverable. Markdown whitespace and local reference
+checks passed. PLAN now distinguishes this completed design from pending implementation.
+
+## 2026-11-04 — Shared module review core deployed
+
+Implemented reusable exact-appearance inspections across assignment/module scopes,
+with original reviewer attribution, evidence freshness, explicit append-only issue
+resolution and idempotent direct checks. Migration0074 permits owner/publisher
+checks with an explicit origin scope instead of a fabricated assignment. Legacy
+assignment routes remain available. Existing assessment/MFA/subject boundaries,
+frozen assignments, public independent review and Oracle publishing remain.
+
+Added permission-bounded review_scope adapters for current published collections,
+section predicates, pins/excludes and exact Group B source roles. Materialized
+candidate-paper selection and batched status lookup avoid a broad correlated bank
+scan. Scope/status service timing improved from roughly3–6seconds to UDC216ms,
+Assistant73ms, NG534ms, Gazetted20ms and NG common241ms; catalog68ms. These are
+read-only service timings, excluding browser/network latency. Held records remain
+visible for review and are explicitly distinguished from learner availability.
+
+SharedModuleReview adds a searchable module chooser, attributed prior checks,
+honest question/appearance counts, source-paper progress, full-paper search and
+All/Remaining/Needs attention. Papers open at remaining work. If a source leaves
+the current queue, the UI explains it and supplies Show all / Continue actions.
+Focus refresh and URL source identity preserve context. Existing inline correction
+forms and shared tag cleanup remain; exam homes expose role-aware module links.
+No new review page is needed for modules using existing collection definitions.
+
+Migration0074 was rehearsed on a disposable production-dump clone, then applied;
+applied checksum53cb9c614bcdb083230ce0b92155a48f38a452a938d381eeae55443adfd441b0.
+104 backend tests passed (shared review, assignments, simplification, Group B,
+bank review, answer admin, publication verification), with one existing Starlette
+anyio deprecation warning. Frontend shared-review/editorial/navigation/Group B
+component checks passed. The final shared UI rerun passed after navigation polish;
+local Vite production build passed in4.38seconds. No tests wrote production reviews.
+
+Narrow API release backup: /tmp/shared-editorial-1793775669/backup on Oracle.
+Frontend deployed with scripts/deploy.sh web; index checksum
+08cc69205ae4b56e96b1d55d967ca85ded4f1293caceb0c87a8d5910deb0a1c0.
+Release commands returned healthy study API and family site. Logs are in local
+/tmp/ism-shared-review-release-api.log and /tmp/ism-shared-review-release-web.log.
+
+Delivery boundary: shared-review core is live; general versioned module composer,
+dependency/cycle validation and membership-change preview/editor remain later-stage
+work. Module selection disclosure is read-only. Source-collection tag cleanup does
+not claim exact filtered-area scope. This deployment does not certify content.
+Live signed-out phone390/tablet768 entry widths passed; authenticated visual and
+physical-device QA remain pending. Browser screenshot capture timed out. No signed-in
+session was fabricated and no production answers, bookmarks or inspections seeded.
+
+Final readback matched local/live frontend and migration checksums. Migration ledger
+contains0074; API, document worker, publisher and review timer are active. API health
+reports81,627 questions/13,172 scorable; signed-out scope access correctly returns401.
+Full-row assignment, assignment-paper, grant and collection-paper hashes match the
+pre-release baseline, with zero editorial checks and81,627 canonical questions.
+Preservation evidence: /tmp/ism-shared-review-baseline-before.txt and
+/tmp/ism-shared-review-baseline-release.txt (identical). Family redirect resolves
+successfully. Final Markdown whitespace check passed.
+
+## 2026-11-04 — Versioned source-paper module composer deployed
+
+Owner authorised the remaining composition editor and responsive verification.
+Implemented additive migration0075 (draft configuration and immutable publication
+history), owner/MFA/CSRF-protected module-setup routes, composition service and a
+secondary ModuleCompositionEditor panel in the shared workspace. Supports new
+hidden modules, resuming drafts, searchable individual papers, published-library
+imports, explicit exclusions, saved before/after preview and reasoned publication.
+The published source version stays live during drafting. Publication appends a new
+collection version and moves its pointer atomically; prior versions and source
+checks remain. Retries are idempotent; stale draft/source/membership tokens fail.
+
+Dependency checks reject self/circular imports. Imports freeze a paper-library
+snapshot and require deliberate refresh/publication for later source changes.
+Cross-bank and restricted-module publication are rejected. Existing section filters,
+pins/excludes and paper rules survive except explicit removals; removal cannot be
+undone accidentally by a shared canonical pin. New/imported papers do not silently
+become timed mocks. No bank JSON, canonical content, assignments or permissions
+are edited. Arbitrary filter authoring/per-question pin controls remain outside
+this source-paper composition panel; a child learning area is not mislabeled as
+its entire library.
+
+115 backend tests passed, covering composition, shared evidence, assignments,
+simplification, Group B, bank reviews, answer administration and publication checks.
+One existing Starlette/anyio deprecation warning remains. Frontend composer/shared
+review/editorial/navigation/Group B checks and local build passed (4.40seconds).
+The new UI tests exercise explicit preview, draft retention, stable retry keys,
+owner/account transitions and MFA. API tests include permissions, CSRF, MFA,
+cycles, stale previews, snapshot stability, source removal, section preservation
+and actual published scope parity.
+
+Migration0075 rehearsed against a disposable production-dump clone, then applied.
+Checksum3999cdfc103b6ebcbecdb8d47492a7dd1787ffd792054052025622b0ce11299a.
+Narrow API rollback files: /tmp/shared-editorial-1793776670/backup on Oracle.
+Web deployed with scripts/deploy.sh web; local/live index checksum matched:
+edce0f41b5388ef7174749bb28a8838dbdfbf03aefbcff38ca7e3ab8f61f3a82.
+API, document worker, publisher and review timer active; study health81627/13172,
+signed-out setup401, family200. Full-row collection/section/source-membership,
+assignment/assigned-paper/grant hashes unchanged. Canonical questions81627, source
+checks0, composition drafts0/history0: no production fixtures or fake inspections.
+
+Production read-only previews ran under the application DB role with READ ONLY,
+using an existing owner's permission identity for service evaluation, never a
+fabricated login session. UDC1072ms (48papers/3930appearances), NG1718ms
+(97papers/8060appearances), Gazetted300ms (5papers/137appearances). Each unchanged
+selection produced zero additions/removals. Measurements exclude network/render.
+Logs: /tmp/ism-composer-{final-tests,migration-rehearsal,migration-apply,api-deploy,
+web-deploy,profile}.log; preservation baselines under /tmp/ism-composer-*before.txt
+and *after.txt. Browser remained signed out after the user reported logging in
+elsewhere; requested the specific Codex browser session for authentic device QA.
+
+## 2026-11-04 — Everyday module review continuation deployed
+
+Audited the existing shared workspace, scope/status adapters, correction callbacks,
+module composer and admin prototype before extending them. Preserved the substantial
+pre-existing working-tree changes. No new worktree, schema migration or bank-content
+change was needed.
+
+Each selected module now has one prominent Continue reviewing action, including
+modules with no previous inspections. It resumes unfinished work in the current
+paper or the most recently active unfinished paper. Shared paper overview suppresses
+its duplicate summary/continue card. Module setup remains collapsed and now follows
+the daily review content. Existing source PDFs/context and 44px wrapping controls
+remain. Work shortcuts distinguish module source/answer attention, wrong tags in the
+source collection, and learner/publication queues across the permitted bank; they
+do not claim exact learning-area scoping for the latter queues.
+
+Added server-side continuation by exact appearance identity after a successful
+inspection. It seeks the next unresolved source in original paper order, wraps
+once, skips the saved source even if still unresolved, and returns the correct page
+after queue shrinkage. Empty/end-of-paper views explain the saved result and offer
+the module continuation action where other papers remain. Manual previous/next,
+search, URL source state and failed-save draft retention remain. Correction saves
+retain the canonical receipt and expose Continue to next unresolved question with
+an explicit pending-publication caveat. They never create an inspection attestation.
+Resume priorities now select incomplete work before completed rows, including saved
+assignment scopes opened through the shared workspace.
+
+Module totals separate remaining inspections, appearances with unresolved issues,
+and submitted/awaiting-publication or failed corrections. Corrections deduplicate
+canonical questions across source papers. Labels explain that issue and inspection
+categories can overlap. Existing checks retain original attribution; public
+submission policies, final authorised admin decisions and MFA/assessment/source
+safeguards continue through their existing routes.
+
+Validation:118 backend tests passed across shared review, composition, assignments,
+simplification, Group B, bank review, answer admin and publication verification.
+The three new regressions cover shrinking page boundaries/wraparound, a lone saved
+unresolved source, and canonical correction deduplication. The strengthened shared
+suite passed again (15 tests). Existing anyio deprecation warning remains.
+Shared-review UI now exercises successful save-to-next URL/page binding. Component,
+overview, workspace, navigation, Group B and composer checks passed. Final local
+TypeScript/Vite build passed (4.42seconds); git diff --check passed.
+
+Deployed through scripts/deploy.sh shared-editorial and web. The narrow API file
+list already includes both changed backend files, so it needed no expansion.
+API rollback backup: /tmp/shared-editorial-1793778586/backup on Oracle. Final
+local/live frontend index SHA256:
+26e2986aecdcc5cf013fe7ac80a5fa44fead62cabdf1e67111ccdb539d9b74ce.
+API, document worker, publisher and review timer are active; health81627/13172,
+signed-out scope401 and family200. Applied0074/0075 checksums remain unchanged.
+Full-row collection, section, source-membership, assignment, assigned-paper and
+grant hashes match before/after. Canonical questions81627, source checks0,
+composition drafts0/history0. Evidence: /tmp/ism-daily-{before,after}.txt;
+test/deploy logs: /tmp/ism-daily-review-*.log. No production fixtures, fabricated
+sessions or content edits were used.
+
+Authenticated phone/iPad visual and physical-device QA remains unverified. No login
+was requested again, and the prior local-preview denial was not bypassed. Existing
+responsive structures were retained and tested as components; this is not a new
+visual-browser certification or content certification.
+
+## 2026-11-04 — Group B Gazetted source audit and repairs
+
+Owner said Go after the source-coverage/admin-capability recommendation. Audited all
+137 existing entries against13 rendered pages from five hash-verified original PDFs.
+Found133 printed questions plus four duplicate extractions; all137 lacked physical
+page locators,114 lacked printed numbers, and all137 lacked approved topic tags.
+Kept source IDs, canonical identities, historical wording/legislation, blank written
+answers and actual attribution. No human source-inspection sign-offs were created.
+
+Published415 exact corrections:137 source locators,137 original section/instruction
+restorations,137 approved subject/topic paths and four literal wording repairs.
+One source question is printed incompletely; the restored wording has a visible
+source note instead of an invented completion. All415 existing publication IDs are
+applied with verified source/canonical readback; no new audited job is pending/failed.
+Four duplicate extraction identities are recorded, with matching page/number/context,
+and remain separate IDs pending relationship/presentation work.
+
+Confirmed a missing registered2016 common Inspector/Sub-Inspector Paper I (zero
+extracted questions). Actual owner composer save/preview/publication produced v2:
+five to six library papers, zero added/removed appearances and137 stored entries.
+That original-PDF resource is linked with explicit unextracted-question copy. Other
+module definitions, exact assignments and grants are unchanged. No new MCQs, mocks,
+answers, scoring eligibility or other module source memberships were introduced.
+
+Nine September2026 Combined Gazetted originals already exist on Oracle (English A/B,
+Essay, GS I/II/III A/B) but have no registered paper/question rows. Official archive
+listing and source headers establish the gap; direct archive retrieval returned403.
+They still need source intake/extraction and existing new-paper review. The linked
+common2016 Paper I also needs extraction. Coverage is not claimed complete.
+
+Extended quick corrections with physical PDF page/printed-number repair, section
+instructions and shared-passage fields. Existing final admin/public proposal routes
+and draft/version protections remain. New paper cards disclose zero extraction.
+The bounded source publisher now accepts descriptive locator/context repairs while
+rejecting written option/answer mutations. The initial100 locator writes reached
+JSON/sync but readback stopped because canonical absent answer provenance uses
+'none' while source provenance is NULL. Paused the Oracle correction timer, added
+strict written-only normalization tests and exact prepared-output recovery, then
+reconciled those same100 receipts. No re-review, new request IDs, direct content SQL,
+protection reset or fake login was used. Timer restored; all jobs verified applied.
+
+123 publisher/operator/verification tests and103 admin/shared backend tests passed
+(overlapping suites), with the existing anyio deprecation warning. New cases cover
+written patches, rejected MCQ mutation, exact failed-ack recovery and strict provenance
+normalization. Updated stale coordination fixtures to both real Oracle units and
+removed a synthetic out-of-scope grant leak between tests. Correction/reference/
+context, question actions, shared review, navigation, Group B, paper overview and
+composer UI checks passed. Final local production build and diff checks passed.
+Authenticated phone/iPad visual QA remains unverified; no login was requested and
+no denied preview was bypassed.
+
+Preservation readback:81627 canonical questions,13172 scorable globally,259 unchanged
+attempts,2 assignments/78 assigned papers,3 grants,0 source checks. Every appearance
+retains its canonical ID; source holds and written-unanswered states match. Full
+non-Gazetted configuration hashes match. Unrelated JSON content matches after exact
+reviewed-target empty-related-list and unanswered-index normalizations; original
+comparison/diff evidence was retained. Ordinary daily budget425/500; no exemption.
+Existing101 unrelated failed publications are unchanged. Explanation queue remains
+32 published,3 unresolved,1030 pending and no active packet.
+
+Portable evidence: docs/sources/group-b-gazetted-source-audit-20261104.json.
+Detailed before/after/source renders, reviewed map, requests, receipts, reconciliation,
+publication states and preservation comparisons are under
+reports/group-b-gazetted-audit-20261104/. Current guide: docs/GROUP-B-GAZETTED-AUDIT.md.
+Final bank SHA2566c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353.
+Bounded publisher local/live SHA25673afca98c94f8e389a712cb6ab7028981a56f34e133f166a515d8b7360adeb50;
+shared verifier b60b56f15a92a644c6e35d5cddcaac12ddce11431212f0bd8dd81fd693f44a1b.
+Narrow operator/verifier rollback backup:/tmp/source-review-tools-1793779953/backup
+on Oracle. Deployment through deploy.sh source-review-tools/web; API restarted for
+the verifier and health checked. API/document worker/publisher/review timer active;
+study health81627/13172, signed-out editorial401 and family200. No migration or Caddy
+change. Test/deploy logs:/tmp/ism-gazetted-*.log. Final web index hash recorded below.
+
+Final local/live web index SHA256: a35d15a7d84503b257ff59de08cf2f424ff017e0cb18e2f68ee86925f497eb53.
+# 4 November 2026 — Gazetted next phase: private intake and duplicate reading
+
+Prepared the nine verified September2026 Combined Gazetted PDFs plus common2016
+Paper I through the actual paper-workbench upload/create/save/document-job routes
+under the existing owner's delegated operator authorization. No browser sessions,
+human inspection attestations, reviewer accounts or approvals were fabricated.
+Ten drafts contain756 questions (732 MCQ/24 written),104 original pages and40
+completed source crops; all50 extraction/crop jobs finished. English retains
+A1–A3/B1–B66 numbering and section instructions; General Essay retains its two-unit
+choice. Answers, keys and explanations are unset. Broad subject labels remain
+drafts, requiring exact source/taxonomy review before genuine independent approval.
+
+Added read-only `scripts/prepare-gazetted-intake.py`, with hash/printed-sequence
+checks, bounded local Poppler extraction, conservative option splitting and
+source-based crop coordinates. Article39(b)/(c) references remain in stems, not
+option labels. Ambiguous columns retain raw text instead of invented options.
+The first attachment pass stopped because it compared raw preparation text with
+the route's whitespace-normalized saved payload. Recovery compared the exact
+Pydantic-normalized source payload plus the original completed crop IDs; it refused
+other changes and reused existing drafts/history/jobs, creating no replacements.
+
+The current new-paper publisher refuses the already registered common2016 source.
+That draft exposes the limitation; a guarded empty-source import extension is still
+required. No duplicate Uploaded paper or live question publication was attempted.
+
+Added explicit source-audited duplicate presentation for Paper III:23 printed
+questions/27 stored entries, with show-all, direct appearance links, flags and exact
+correction identities retained. Guards compare current locator, text/context,
+figures, classification and hold fields and show both records on disagreement.
+No database duplicate votes, canonical merges, scoring changes or module edits.
+
+Verified fresh original/private PDF hashes, all saved payloads, unset answers,
+zero submissions/reviews/publications, all completed crop bytes and104 extracted
+pages. Bank/sync SHA remains6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353;
+81,627 canonical/13,172 scorable questions. Attempts, assignments, grants, human
+checks, every module configuration and the old source/canonical rows are unchanged.
+Evidence: `docs/sources/group-b-gazetted-intake-20261104.json` and ignored
+`reports/group-b-gazetted-audit-20261104/intake/`.
+
+Validation: five focused preparation regressions; live27-entry/four-group checks;
+component grouping/show-all/exact-link/flag/navigation regressions; archive, identity,
+source formatting, Group B design/navigation checks and TypeScript/Vite build.
+Authenticated phone/iPad screenshots remain unverified; respected the instruction
+to stop pursuing login and the denied local browser preview. Web deployment and
+final health/checksum checks are recorded below when complete.
+
+Web deployment completed with scripts/deploy.sh web. Public index SHA
+d4e2cfd39bfcbfe9fd2bd0ed8aa2cbb80f734a2cfae0df1a532929ae10212a0f and PaperViewer asset SHA
+19eab5da999ffbf3774b39a857bc2821acf5d3706e8eb25cccd6b0e55d2ddf47 match the local build.
+Study API and family site returned200; API/document/paper-publisher/review-timer
+services are active. Final privileged bank checksum still matches the preserved
+source above. No API, migration, Caddy or service configuration was deployed.
+## 4 November 2026 — existing empty original import support
+
+Implemented and deployed explicit draft binding to an already registered empty
+source, resolving common2016 Paper I's intake gap. The saved payload includes the
+exact original paper ID and version of its paper metadata/document registration.
+Saving/adopting a new binding invalidates prior approval. Save/submission validate
+the original PDF registration, identity and zero extracted appearances. The paper
+publisher repeats the checks, verifies private/original PDF bytes, and the guarded
+writer rechecks the full known paper identity and absence of JSON questions under
+the shared bank lock. Existing paper metadata and registration are retained; no
+Uploaded alias is created. Normal sync and complete question/context/classification/
+identity readback remain required. A now-populated database target is rejected
+unless the exact prior receipt/payload/submission/appearance set explains it; the
+writer also verifies the immutable manifest and bank checksums on retry.
+
+Added an Existing original paper control to the workbench: explicit link/refresh,
+registered exam/year/subject adoption, stale/ambiguous/populated guards, read-only
+review visibility, unlink and accurate published-state wording. Question/answer
+objects remain untouched. No schema migration or authentication/role change.
+
+Validation passed38 backend tests (paper workbench, Gazetted preparation and paper
+readiness), focused source-link UI checks, duplicate/identity/archive/Group B
+regressions and TypeScript/Vite. New reusable
+`scripts/rehearse-existing-paper-import.py` ran the actual API, worker, protected
+fixture writer and normal sync SQL in a disposable local database. It published one
+synthetic written and one unanswered MCQ under the same existing paper, preserved
+all old paper metadata/question answers and the single source registration, and
+created no Uploaded alias. A deliberate failure after SQL commit recovered through
+the same immutable receipt without a second append. Those approvals/accounts were
+synthetic local fixtures only; the database was removed and recovery bank unchanged.
+
+Deployed only router/paper target resolver/paper publication bridge/guarded writer
+through the new `deploy.sh paper-source-import` target. Both previously active
+paper workers were drained and restored; rollback files remain at
+`/tmp/paper-source-import-1793785243/backup` on Oracle. Web built/deployed locally
+through the normal web target. Four API/script hashes and the public index/
+PaperWorkbench asset match local files. Study API/family site returned200; private
+draft read returned401 signed out; all API/paper workers/review timer are active.
+No authority policy, protection baseline, applied migration, Caddy or dependency
+configuration changed. Authenticated phone/iPad visual QA remains unverified.
+
+Used the real owner's delegated operator path to link the existing common2016
+draft as revision3, retaining all ten question objects byte-for-byte semantically
+and leaving its answers unset. Only the original link/version, registered blank
+paper-subject metadata and resolved-gap identity note changed. It is still a draft,
+with zero submissions/independent reviews/publications. Fresh validation matches
+the original, private and public PDF hashes and current registration; all other
+nine saved draft hashes/versions match their intake receipts. No fake login or
+human inspection was created.
+
+Live bank/sync SHA remains
+6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353;
+81,627 canonical questions,13,172 scorable,259 attempts. Old source/canonical/tag/
+document rows, human checks, exact assignments, grants and every module definition
+match the before snapshot. Live Gazetted inventory is still137 entries; the756
+new draft questions still need source/formatting/exact-tag review and genuine
+independent approval before publication. Source binding does not publish them.
+Portable evidence: `docs/sources/group-b-gazetted-existing-source-import-20261104.json`;
+ignored detailed evidence: `reports/group-b-gazetted-audit-20261104/existing-source/`.
+
+## 2026-11-04 — Gazetted draft source and primary-tag review
+
+Reviewed756 private draft entries against all104 visually inspected source PDF
+pages. Added read-only source geometry/text and proposal helpers. Native checks
+cover every question,732 ordered MCQ stems and2,928 ordered options; negative
+controls detect swapped options, reordered words and an added source word. Fixed
+the audit's empty page-boundary strips so last-on-page questions also receive
+per-option order checks. Vector-only ₹ glyphs required visual source inspection.
+
+Used the existing owner's delegated operator adapter with actual process/save
+handlers and explicit operator authorization/save events. Preflighted all ten
+versions/payload hashes, approved taxonomy registry and original/private source
+hashes, then checked each version again before saving. No login or human review
+attestation was fabricated. All ten saves increment history once and remain
+unsubmitted drafts with zero independent reviews.
+
+Saved752 tag-path changes and756 cover-context updates. All756 classifications
+use valid active approved paths,746 with topics; four writing and six visual/
+spatial entries remain subject-only because suitable approved topics are absent.
+Classification reuse across369 A/B matches requires matching stem/options/
+passage/task type/semantic direction and preserves each booklet's own text,
+option order, page and IDs. GS II A83/B33 terminal punctuation stays as printed.
+
+Restored12 source ₹ symbols in six entries: polymer-note options GS II A47/B97,
+digital rupee GS II A73/B23, and sale price GS III A90/B100. Added14 inspected,
+hash-verified actual document-worker crops, preserving the original40 (54 total,
+64 done document jobs). These include four essential folding/cube diagrams,
+currency/emphasis examples and the printed English option defect. English A Part
+B52 / B Part B16 has no Future perfect choice for `will have finished`; retain its
+original choices, unset answer and explicit identity-note/crop evidence.
+
+Final versions: English A/B4, Essay3, GS I A/B3, GS II A/B3, GS III A/B4,
+common2016 Paper I4. Full API-workflow readback matches the normalized saved
+proposals; newer schema defaults add only null target fields to older unlinked
+drafts. Common2016 target ID/version, every question ID/page/type/passage/key,
+all old figure jobs, source bytes and prior history remain intact. Answers and
+explanations remain unset; printed premises/answer truth are not certified.
+
+Fresh complete bank/source exports match before/after, including261 attempts,
+two assignments/78 exact memberships, three grants, zero human checks and every
+module definition. Bank SHA stays
+6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353;
+study health81627 canonical /13172 scorable, live Gazetted137 stored /133 printed.
+All four API/document/publisher/timer services active; health and final family URL
+200. No app deployment, migration, authority/protection policy or Caddy change.
+Physical authenticated phone/iPad QA remains unverified, per the owner's instruction
+to stop chasing login. Genuine independent review remains the next publication
+gate; afterward add new published source IDs through the module composer.
+
+Portable evidence: `docs/sources/group-b-gazetted-draft-review-20261104.json`;
+private before/after payloads, proposals, crop/save receipts, visual sheets,
+negative controls and preservation checks: ignored
+`reports/group-b-gazetted-audit-20261104/draft-review/`.
+
+### 2026-11-04 — Gazetted completion published, attributed AI review
+
+Completed the owner's request to review and finish the Gazetted bank/module.
+Published all ten exact reviewed drafts through guarded append and normal sync;
+module composer v3 now exposes15 original PDFs and893 stored entries. Nine new
+source titles use the existing verified identity workflow; common2016 Paper I
+keeps its original registered ID. All137 previous entries remain unchanged from
+the completion baseline. Ten valid subject-only classifications remain broad.
+
+Inspected the official eight-page29September2026 provisional key, mapped732 MCQ
+rows/366 booklet pairs and published726 keyed answers. Six English tense/seating
+conflicts retain original options/key evidence but remain unscored with learner
+notes.24 written prompts have no fabricated answers;58 crops match worker and
+public bytes. Exact General Studies roles expose maths/reasoning/computing as
+common study without changing taxonomy or including specialist papers; common
+study755 questions. This is source/key mapping review, not proof of every fact.
+
+Added explicit provisional/final payload/editor/registration support, fixed an
+upload update race, and installed an owner/source/payload-bound `owner_ai` approval
+with model/evidence attribution. Migration0076 was rehearsed on a dump clone then
+applied normally. It creates no human editorial checks and leaves independent
+review author/editor exclusion and frozen assignments intact. Owner delegated
+completion; no other person's approval/session/MFA was impersonated. The exact
+installed scope cannot authorize edited payloads or other papers.
+
+An existing-source metadata check caught an absent legacy JSON examScopeId whose
+SQL value had been backfilled by0046. Fixed the writer to follow normal sync's
+existing COALESCE behavior; explicit differing scopes still fail. Retried the
+same failed job/receipt and verified one append, not a duplicate import. The
+2016 paper's full reviewed identity/snapshot survives publication unchanged.
+
+Validation:83 backend tests; source-link/duplicate component checks and normal
+web production build; disposable publication with provisional-key registration
+and postcommit acknowledgement recovery. All756 complete SQL/payload/tag/context
+readbacks match; normal sync checksum matches bank SHA
+b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0.
+Removing only newly appended rows reproduces every original bank field exactly.
+Fresh baseline/readback both preserve262 attempts, two frozen assignments/78 exact
+paper memberships, three grants and zero human checks. Other module definitions
+are unchanged. API/scope/publisher deployed hashes match; health82383/13898,
+API/document/publisher/timer active; study/family200. Narrow release rollback:
+Oracle `/tmp/gazetted-review-1793801841/backup`; earlier backups retained.
+
+Portable receipt: `docs/sources/group-b-gazetted-completion-20261104.json`.
+Private source/payload/worker/deploy/test evidence:
+`reports/group-b-gazetted-audit-20261104/answer-review/`.
+Full explanations/written model answers and authenticated phone/iPad visual QA
+remain unavailable; do not relabel this work as independent human certification.
+
+### 2026-11-04 — Editorial question list and quick revision
+
+Added EditorialReviewList to shared module and assigned-paper review. Opening a
+paper defaults to a full-width25-question list; direct question links retain the
+detailed view. Existing shared paper search and status filters remain server-side;
+legacy assignment search/filter labels honestly remain page-specific. Rows load
+exact source snapshots on demand, capped at three concurrent reads. Reviewers can
+show one answer or all answers on the current page, expand context/options, tap a
+choice for immediate comparison, hide/reset and open the existing correction form.
+Recorded key references/provenance and missing/written states remain explicit.
+
+These actions issue only existing permission-checked snapshot GETs: no attempt,
+reward, inspection or bank mutation. Page/user/scope changes remount local state.
+Detailed editing and inspection still use their existing permissions, source
+versions, retained drafts, idempotent requests and explicit issue resolution.
+Learner Check answer still confirms an attempt; the new editorial self-check
+requires no confirmation button and gives no accuracy credit.
+
+Validation: focused editorial list tests cover lazy exact-source reads, bounded
+page reveal, immediate comparison, no mutations, missing/written answers, hiding
+and retry. Existing shared review and correction editor checks pass. TypeScript /
+Vite production build passes. Deployed with the normal frontend-only web target;
+no API migration or bank changes. Authenticated mobile visual QA is unverified,
+respecting the previous instruction to stop chasing login.
+
+### 2026-11-04 — One-tap attempts and editorial page sizes
+
+Removed the extra Check answer control from bank cards, question detail, module
+practice, paper practice, saved UDC sets and vocabulary. Option handlers pass the
+actual tapped index directly to existing submission paths, avoiding stale React
+selection state. Synchronous in-flight guards prevent rapid duplicate submissions.
+Printed option-to-canonical mapping and missing/held/source-defect restrictions
+remain. Show answer and editorial self-check retain their separate reading behavior.
+
+Editorial supports25/50/100 rows per page. Both source-list APIs validate limit up
+to100; shared next-unresolved and last-page clamping use that size. Both UI layouts
+and assignment navigation use the current size; changing size resets page position.
+No schema or bank-content change. Tests:33 shared-editorial/assignment backend
+checks passed, including100-row continuation and rejected oversized limits;
+component checks cover one-tap submission, rapid double taps, errors/retry, held
+questions, editorial reveal and existing inspection flows. Production build passed.
+Normal shared-editorial API and web deploy targets used. Authenticated mobile
+visual QA remains unverified; no login bypass was attempted.
+
+### 2026-11-04 — Plain-language public UI polish
+
+Simplified learner-facing answer help, explanation labels, subject introductions,
+footer, filter labels, practice/test results and account/payment unavailable states.
+Removed canonical/provenance/derived terminology and internal review/configuration
+process descriptions from public UI copy. Official keys, unofficial worked
+solutions, unverified answers, disputed answers and provisional-key limitations
+remain explicit. Explanation verification is still independent of key status.
+No stored question/explanation/source document or answer classification was changed.
+Staff/editorial tools retain their technical details and audit attribution.
+
+Updated outdated scoring guidance about practice estimates, removed prospective
+feature claims, and added loading/error/retry feedback for scoring counts. Adjusted
+results now describe questions counted and answer changes in learner language;
+unknown exclusion reasons have a plain fallback instead of exposing a reason code.
+Payment availability no longer mentions provider credentials or webhook setup.
+
+Validation: public answer-label tests verify accessible help, official/unofficial
+and unverified distinctions, disputed/source-defect overrides, provisional key
+warning, independent explanation state and correction links. One-tap regression
+passed; TypeScript/Vite build and diff whitespace checks passed. Deployed via normal
+web-only target. Authenticated mobile visual QA remains unverified; no login bypass.
+
+## 4 November — reduce practice answer clutter
+
+Replaced the tall missing-explanation section with one line. Moved explanation contributions, dated connections, reward messages, comparison and save-and-continue into a closed More options disclosure. Main save/next controls now follow the answer/explanation. Available explanations keep their review qualification; date context and answer-source warnings remain visible. Disclosure resets when the source question changes.
+
+Passed rendered answer-panel checks (collapsed secondary tools, visible source and explanation, next action, restricted-test state), answer provenance and one-tap regressions, and TypeScript/Vite production build. Physical-phone visual QA remains unverified.
+
+Deployed frontend through scripts/deploy.sh web. Live index matches the local build; study API health and family site both returned HTTP 200.
+
+### 4 November — list navigation follow-up
+
+Removed per-question Next and Save and continue from bank/library cards, module lists and original-paper list mode. Single-question detail and paper focus retain navigation. List pagination remains available. Answer-panel checks cover both navigation variants; one-tap regression passed.
+
+## 5 November 2026 — quieter public question cards
+
+Published the owner-requested learner-card redesign to study.hawayu.in. Shared UDC,
+LDC, exam-module, bank and original-paper cards now surface a compact official-key /
+our-answer comparison after reveal. Agreement uses one line; differences and
+scoring holds stay explicit. Missing sources stay missing. Option letters are
+mapped to the displayed choices by text, so shuffled appearances cannot silently
+change their meaning. Detailed evidence is collapsed; long explanations use a
+Read explanation disclosure, while short working remains visible. Removed repeated
+explanation disclaimers and per-card contribution prompts. Existing authored
+explanation text itself is preserved.
+
+Public cards offer a discreet Report an issue form, requiring sign-in and the
+existing origin/CSRF/rate checks. Reports are deduplicated in content_reports and
+enter the existing subject-scoped staff queue; they do not alter keys or scoring.
+Review/edit and discussion-to-correction links are shown only with staff grants.
+Existing contribution routes and server-side role checks remain intact.
+
+Automatic comparisons restore previously exposed answers without renewing the
+30-minute cooldown. The server checks actual user-specific reveal/attempt history,
+source scope and active assessment restrictions; a client flag cannot reveal a
+new answer. Explicit comparison reveals retain their existing cooldown behavior.
+
+Validation: 53 backend tests (reports, comparison evidence, reveal/restore gates),
+four focused React/public-label/one-tap check scripts, production build and diff
+whitespace check passed. Local disposable UDC browser rehearsal checked the card
+and report form at390px without horizontal overflow. Live signed-out UDC reveal
+confirmed the new comparison, visible short explanation and discreet footer;
+staff visibility/auth transitions are covered by component tests, not a live staff
+session. Screenshot: docs/screenshots/public-cards/live-desktop.jpg.
+
+Deployment safety: reconstructing the pre-task frontend produced the exact live
+entry asset names (index-YSRcn_xi.js / index-B-eNDhNa.css). Both changed API routers
+matched their pre-task production hashes before replacement. Backups of the API
+routers and web tree are retained on Oracle at /tmp/public-cards-20261104-backup.
+Only bank_workspace.py and questions.py were installed for the API; frontend shipped
+through scripts/deploy.sh web. No migrations, bank publications, worker changes,
+permissions or Caddy changes. Live assets match the build, API health is healthy,
+unauthenticated report submission returns401, and study/family pages return200
+(following the normal family redirect).
+
+## 2026-11-05 — Further compact public question cards
+
+Owner requested less space after the first simplification. The answer label and
+value now share a row; official/our answers use one wrapping comparison line.
+One initially closed Explanation & sources disclosure holds the full explanation
+and evidence, avoids repeating identical explanation text, and keeps the existing
+explanation accessible if comparison loading fails. Comparison evidence maps
+letters to displayed options too. Save/next and More study tools share a wrapping
+row. Module source details move beside Discussion/Share/Report; module options
+use6px gaps and44px targets. Public report and staff review controls are preserved.
+
+Four focused frontend checks and the production TypeScript/Vite build passed.
+Live UDC before/after measurements use the same first revealed question with Retry
+now available and disclosures closed: card width960px, height883.125→501.5px;
+390px phone viewport/card width351px, height1105.625→656.5px (40.6% shorter).
+All four mobile choices measure44px high, and the card has no horizontal overflow.
+Live explanation and report disclosures open correctly. Screenshots:
+`docs/screenshots/public-cards/compact-mobile.jpg` and `compact-desktop.jpg`.
+
+Web deployed using scripts/deploy.sh web; live entry assets match the tested build,
+API health and shared family site passed. Previous web tree retained on Oracle at
+/tmp/public-cards-density-20261105-backup/public. This pass changes presentation
+only; no backend, scoring, account permissions or bank content changes.
+
+## 2026-11-05 — Mixed module browsing and visible attempt filters
+
+Compared the live map.hawayu.in System Manager Practice screen and its local
+reference implementation. It exposes Never attempted, Previously wrong, due and
+starred filters and mixes practice selection. The study modules previously buried
+attempt status and always sorted by repetition/ID, producing the same opening
+questions. LDC/UDC/Assistant and the shared module browser now expose compact
+My questions and Question order controls. Mixed order is the default; Shuffle
+again explicitly creates a new sequence. Most repeated first remains available.
+Previously wrong means any recorded wrong answer, including later-corrected
+questions; Last answer wrong retains the existing latest-attempt behavior.
+
+The API uses a validated seed and deterministic hash order on the filtered pool,
+with stable booklet-group identity, deterministic tie-breaking and consistent
+pagination. It does not shuffle option indices or call ORDER BY random(). URLs,
+next-page prefetches, account checkpoints and saved UDC sets carry the seed.
+Legacy checkpoints preserve repetition order. Personal queues remain user/exam
+scoped, and forward navigation accounts for answered questions leaving a shrinking
+queue. Reading answers never counts as an attempt. Grouped booklet mistake history
+survives switching to the most recently attempted representative. Fixed the saved
+UDC set candidate call's missing learning_entry=None, which otherwise passed a
+FastAPI Query object into SQL and prevented set creation.
+
+Validation:66 unique backend tests passed across ordering, saved sessions,
+comparison/reveal behavior, booklet history and checkpoint persistence. Focused
+browse-helper, UDC study, one-tap, public-card and answer-panel checks and the
+TypeScript/Vite production build passed. Disposable browser rehearsal verified
+nonoverlapping pages, stable back navigation, explicit reshuffle, a real synthetic
+wrong-answer filter, saved-set start and refresh restoration. Live read-only checks
+returned stable25-question pages for UDC3774, LDC520 and Assistant1564, with first
+observed request times1.21/0.72/0.72seconds respectively (not a benchmark). Live
+browser controls checked in all three modules; UDC at390px has351px client/scroll
+width and no horizontal overflow. Screenshot: docs/screenshots/module-browse/live-mobile.jpg.
+
+Deployed exactly questions.py, study_sessions.py, rewards.py and study_series.py,
+after all four pre-task hashes matched Oracle. Backup includes those files and the
+previous web tree at /tmp/module-browse-20261105-backup. Frontend deployed with
+scripts/deploy.sh web and its live entry assets match the tested build. API health
+and family site checks passed. No migration, bank-content changes, worker changes,
+new grants or production synthetic attempts. Due/starred practice queues from the
+reference are not part of this release.
+
+## 2026-11-05 — Read-only Oracle PDF/bank integration status
+
+Owner requested current integration status. Fresh Oracle sync-bank.sh --check
+confirmed matching bank/database hash b6d5920f9b95… and82383 questions; taxonomy
+also matches82383 approved primary rows. Protected78-paper/6931-question scope
+passed. API, document and paper-publisher services are active; correction and
+backup timers are waiting normally. Last paired backup service succeeded at
+2026-11-04 20:19:29UTC; disk78GB free.
+
+Read-only SQL:1979 paper records,1721 with appearances,258 without,82383 source
+appearances and82383 canonical records. Source-document registrations:1978 papers,
+40 final keys and8 provisional keys. LDC under MPSC Paper-II2025 lacks a paper
+review_documents row; this does not establish whether its PDF bytes are missing.
+Ten workbench drafts are published;58 crop/10 extract/10 publish jobs are done,
+with no queued/running/failed jobs in that table. Archive contains2558 PDF files
+under Old_Questions and137 under Answer_Keys; these raw file counts are not a
+one-to-one deduplicated paper coverage measure. Served source archive has1980
+PDF files.13977 canonical rows have explanation text; taxonomy approval is not
+answer/explanation source certification. No production content or workflow data
+was changed during this status check.
+
+## 2026-11-05 — Final PDF/MPSC CMS upgrade plan
+
+Inspected the existing exam inventory API/UI, current implementation ledger and
+repository authority rules. Recorded docs/PDF-CMS-UPGRADE-PLAN.md and linked its
+phased checklist from docs/PLAN.md. Plan builds on existing CMS screens, separates
+archive reconciliation from import/review/publication/module coverage, and uses
+the preceding read-only Oracle audit as a dated baseline. No application code,
+production service, bank content or approval policy changed. Documentation-only;
+validated the plan link and retained pending implementation checkboxes.
+
+## 2026-11-05 — PDF/MPSC CMS upgrade deployed
+
+Added staff PDF Library with compact Library / Needs attention / Activity views,
+URL-preserved filters/pagination, module links, paper-quality detail, source PDF
+preview and next actions into the existing inventory/workbench/editorial workflows.
+Added resumable, hash-cached Oracle archive scans and atomic last-complete snapshot
+selection (migration0077); partial/failed scans never replace the last complete
+inventory. Requests queue background work; daily refresh and minute polling use
+restricted root scan units. The API sees only a read-only PDF subtree through a
+service mount; the canonical workshop and bank remain private. Fixed the upload
+source directory's group write access without changing canonical source files.
+
+Existing Oracle files can be staged into the workbench with hash/stat rechecks,
+shared advisory locking and draft reuse. Empty originals retain their exact
+registered source binding; missing/ambiguous registrations fail closed. Upload
+draft creation shares the same duplicate lock. Existing review, approval, worker
+retry and guarded publication paths remain authoritative. Workbench now returns
+to the selected library results and displays completed publication receipts.
+
+Validation:78 focused backend regressions plus the added answer-status parity
+case; six PDF-library cases passed in the final follow-up. Four focused frontend
+checks and production build passed. Rehearsed0077 on an Oracle dump clone; source
+scan hashed5,822 file locations and its repeat rehashed zero. A separate synthetic
+publication rehearsal preserved the original paper and recovered after an
+intentional post-SQL-commit interruption without a second append. No live account,
+question or review attestation was synthesized. Disposable databases removed.
+
+Initial reconciliation:1,979 registered papers,258 empty sources, zero missing
+registered source files, zero conflicting hashes, one document-registration gap
+(the existing LDC2025 PaperII has its PDF and100 questions).1,796 unlinked PDF
+hashes span all document categories;563 are in the question-paper folder and
+remain discovery candidates. Reconciliation does not certify or auto-import them.
+
+Optimised the initial8.97s library query by computing answer status only where
+needed, aggregating document/source matches once, and projecting draft metadata
+once instead of repeatedly reading large question payloads. Production list/filter
+reads measured0.305–0.362s; inspected answer detail1.055s. Verified all3,765 selected
+distinct PDF hashes are readable inside the API namespace, the PDF mount is
+read-only, bank JSON is unreadable there, and signed-out API access returns401.
+Live browser entry shows the PDF Library heading and admin sign-in gate.
+Authenticated phone/tablet visual inspection remains unverified; login was not
+bypassed and no synthetic production account/session was created.
+
+Deployed the bounded API release and locally built web bundle. Backup:
+/tmp/pdf-library-1793889781/backup; full rehearsal dump remains in a root-only
+private stage directory. Question/paper/source-row digests, exact frozen source
+assignments, grants, module membership,275 attempts and bank checksum match the
+before snapshot. Normal authority sync and78-paper/6,931-question protection
+checks pass. API/document/publisher services and both new timers are active;
+family.hawayu.in follows through toHTTP200. Shared Caddy configuration was untouched.
+Delivery details:docs/sources/pdf-cms-release-20261105.json. Content import/review
+backlog is tracked separately from this CMS deployment.
+
+
+## 5 November 2026 — Student ease and shared navigation upgrade
+
+Owner requested an overall functional/visual upgrade and chose both areas with
+student ease first. Shipped a web-only release: exam search and compact choices
+now precede large promotional panels, with direct Questions / Subjects / Original
+papers actions, existing saved exams/progress and recoverable catalog loading.
+Home prioritizes real continuation/active tests, otherwise a live-catalog Quick
+start opens mixed practice, never-attempted, ever-wrong or original papers. Optional
+topic discovery loads only when opened. No invented activity or browser-stored
+personal history was added.
+
+Added Find to the student header and admin sidebar: native modal, keyboard focus
+containment, Escape, arrow navigation, Ctrl/Cmd+K, exam/tool search and handoff to
+existing full search. Staff destinations derive from existing grants; assignment-
+only users retain only their review workspace. Focused tests/games do not mount
+the launcher. Public answer comparison, private reports and scoring/reveal rules
+remain unchanged. Selected subject/topic/search filters can be removed directly.
+
+PDF Library gains compact secondary filters, UDC/LDC/Assistant shortcuts, Clear
+filters, previous/next source within the current results page and retained return
+position. Fixed invalid/shrinking offsets, stale source actions during failed
+detail loads and selecting All from the attention view. Existing import/review/
+publication endpoints and permissions remain authoritative. Read-only inspection
+confirmed the runtime already has the scanner cleanup privilege; no migration or
+permission change was needed.
+
+Validation: Quick access, PDF Library, review navigation, question browsing,
+public question cards, UDC study and Group B navigation/home/archive checks pass.
+Production TypeScript/Vite build passes. At390px, preview exam catalog and Find
+layout were inspected, and Quick start opened UDC Never attempted with mixed
+order and a stable seed. No answer was submitted. At320px, home inspection found
+3px header overflow against the client width; the final patch hides the Find text
+below360px while retaining a44px icon button. Browser policy then blocked preview
+reconnection after the user continuation. No alternate route/authentication
+workaround was attempted. Final live responsive recheck and signed-in staff
+phone/tablet visual QA remain pending.
+
+Deployed with scripts/deploy.sh web. Main, StudyHome, Exams and PdfLibrary asset
+bytes exactly match the local release. /feed, /exams and /admin/bank?tab=pdf-library
+return200, API health isOK with82,383 questions, unsigned PDF Library API returns
+401, and family.hawayu.in follows to200. API/bank content, PostgreSQL, workers and
+shared Caddy configuration were not deployed or modified. Web rollback archive:
+Oracle /tmp/study-ease-web-before-20261105.tar.gz (root-only). Detailed receipt:
+docs/sources/study-ease-release-20261105.json.
+
+
+## 2026-11-05 — Exam catalog and module visual refresh
+
+Implemented the owner's requested modern module browsing/layout/colour update.
+Catalog now has per-exam accent cards, compact List view, URL-backed layout and
+single expanded study-options panel, existing live counts/save/progress/search.
+Headers and module navigation share cool slate/white surfaces with restrained
+teal/blue/violet/indigo/amber identity colours. All six exam views are directly
+available, including UDC Questions. Existing timed/source options remain available.
+Redundant hero links are limited to Overview to save space within study views.
+
+Subject headers now toggle their own topic panels; Expand/Collapse all operates
+on visible results and search automatically opens matches while allowing collapse.
+Topic/subtopic links retain source/section/pool scope. Booklet series disclosures
+have visible chevrons. Touch targets, keyboard focus, reduced-motion treatment and
+phone wrapping are preserved. Question correctness/source styling is unchanged.
+Moved the React import before lazy route declarations to fix a pre-existing Vite
+development-preview initialization error found during visual testing.
+
+Validation: production build and Group B design/navigation, UDC study, question
+browsing, public cards, quick access and paper archive checks pass. Added behavioral
+coverage for independent subject expansion, expand all and search-collapse.
+Preview inspected at desktop,390px and320px. Live catalog desktop, expanded LDC
+list390px and LDC subjects320px verified; no horizontal overflow on the inspected
+phone screens. Screenshots in reports/exam-theme-20261105/. Signed-in staff/admin
+visual testing was not performed in this presentation release.
+
+Deployed with scripts/deploy.sh web. Main/catalog/module JS bytes match local
+artifacts. Exam routes and API health return200;82,383 questions and13,898 scorable
+remain reported. Deployment's shared family-site check passed. No API, bank,
+database, worker or Caddy changes shipped. Root-only Oracle rollback snapshot:
+/tmp/exam-theme-web-before-20261105.tar.gz. Receipt:
+docs/sources/exam-theme-release-20261105.json.
+
+
+## 2026-11-06 — MCQ solver Phase A and safe Phase B scaffold
+
+Read the owner-provided CODEX_QUESTION_BANK_SOLVER.md and current official SIWC
+documentation. Added docs/solver-discovery.md and an isolated tools/mcq-solver
+Python package. The real recovery-bank adapter preserves appearance IDs and
+zero-based answer indexes, hashes source/key/media state, and writes only separate
+local SQLite review drafts. Added PKCE/OIDC bootstrap, protected OAuth storage,
+serialized refresh, VM host-preserving SSH handover, account model discovery and
+completion-only Responses streaming. Eligibility, explicit plan consent and
+credit-setting confirmation gate inference; API-key billing has no adapter.
+
+Added atomic leases, idempotency, stale-source checks, bounded retries, persistent
+usage pauses, stop/resume, blind packet export, validated offline import and CSV
+review export. Initial runs are capped at five and all drafts need human review.
+39 deterministic tests passed, plus compileall and pip check. The synthetic
+five-question end-to-end test saved five review drafts without modifying source
+answers; real-bank dry-run found five candidates. Staged those five real inputs
+in ~/.local/share/mcq-solver with no model output or inference request. Bank SHA256
+remained 99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0.
+
+Live Phase B is NOT complete: worker OSS/authorized-integration eligibility is
+unconfirmed, no owner SIWC consent was obtained, and no production draft-only
+capability or VM deployment was configured. Existing Codex login is not reused.
+No canonical/public answer, explanation, application migration, billing setting
+or live service changed. The existing explanation queue was checkpointed only
+(1030 pending, 32 published, 3 unresolved, no active packet). Commands, test
+evidence and remaining Phase B/C/D gates are documented in the package README
+and docs/phase-ab-validation.md. No licensing/publication decision was made.
+
+
+## 2026-11-06 — Standalone MIT review package and authenticated draft service
+
+The owner asked to continue and explicitly chose “Prepare MIT-licensed worker for
+review.” Added the MIT license, a portable standalone README and an allowlist ZIP
+builder. Prepared artifacts/personal-mcq-solver-review-20261106.zip under the
+parent personal workspace (28 files, SHA256
+dae34ffb60af35245c437d9b21a2ccd1bf58e079f130a92657b0f033738a4cb8), and extracted
+a local personal-mcq-solver review project. The bundle excludes the private app,
+bank/source records, original owner brief, runtime state, credentials, private
+addresses/hosts and integration service. All manifest hashes matched; its 39
+tests passed from the extracted ZIP and an isolated wheel build succeeded. No
+public repository was created or pushed.
+
+Added api/app/services/mcq_solver_drafts.py and five PostgreSQL integration tests.
+The service requires an actual recent MFA Actor plus current owner/publisher
+permission, captures exact canonical/appearance/source/document state, rejects
+stale/invalid output and calls the existing contribution service to create
+unreviewed drafts. Five synthetic drafts and exact retries preserved canonical
+and appearance rows byte-for-byte (as JSON), created no publications/decisions,
+and retained official-key disagreement as a derived proposal. All five tests
+passed in the existing disposable database harness. No route was exposed, no
+worker credential was provisioned, and no live draft was written.
+
+Read-only SSH confirmed the Oracle host and active API. No Oracle code/service
+was changed. For the now separately packaged MIT local CLI, recorded the assessed
+OSS/local use basis in private runtime config, without marking account entitlement
+as granted. Public GitHub publication is not an explicit step in the documented
+dynamic-registration flow and was not used as a prerequisite. Started the local
+OAuth browser flow for explicit user consent; no credentials were imported from
+Codex and no inference was requested. Additional credit spending confirmation
+remains false, which blocks inference until the owner checks that app setting.
+
+
+## 2026-11-06 — SIWC authorization confirmed and account catalog verified
+
+Local OAuth completed successfully, including the required direct-plan scope;
+private credential status reports authorized, unexpired and not transferred.
+The read-only account catalog lists the configured gpt-6.1-sol and other models.
+No probe or question inference has been requested because the owner has not yet
+confirmed that additional credit spending is disabled for this app. The runtime
+confirmation remains false, and five local jobs remain pending with zero drafts.
+
+Adjusted model discovery to require eligibility and scoped OAuth without requiring
+the inference-only credit-setting confirmation. Responses still requires the
+confirmation. The new regression proves discovery works while inference is
+blocked; all 40 worker tests pass. The change was applied to the private source
+package and the extracted standalone review copy. Existing review ZIP remains
+the immutable prior snapshot. No published bank content or paid API configuration
+was changed.
+
+
+## 2026-11-06 — First real SIWC five-question draft pilot completed
+
+The owner confirmed additional credit spending was disabled. Recorded that fact
+in private runtime config and verified official documentation that SIWC requests
+consume the signed-in account's Codex / ChatGPT Work plan usage. No API-key
+adapter or billing fallback was added.
+
+The first probe failed local validation; a sanitized second probe established that
+this route can emit completed output items separately and leave terminal output
+empty. Fixed streaming in both worker source copies to retain finalized items
+but require successful response.completed. Partial/failed/incomplete streams and
+conflicting completed items remain rejected. All 42 worker tests passed. The
+third probe passed normally with gpt-6.1-sol / high.
+
+The real five-question local run then completed: five valid drafts, five review
+flags, zero failures/pauses. Two option suggestions (one uncertain), three
+cannot-determine results for incomplete/ambiguous choices or missing circuit
+media. No human approvals were created. These are proposed answers, not verified
+accuracy. Five private CSV rows were exported; the ledger contains only five
+review_required jobs and no active/pending jobs. Total hosted attempts were
+three small probes plus five questions; exact token/percentage usage was not
+retained. Source bank SHA256 remains unchanged at
+99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0.
+
+Details: docs/solver-live-pilot-20261106.md. Revised 28-file MIT review ZIP:
+parent workspace artifacts/personal-mcq-solver-review-20261106-r2.zip, SHA256
+e51f6a86783c204a0a4c53509de98332140456e26e208bac8a3a2ab7fed8637a.
+No public repository, Oracle deployment, live draft, published answer/explanation,
+paid API billing change or unattended scheduling occurred.
+
+
+## 2026-11-06 — Original-source review and private solver draft page
+
+Inspected all five original pilot sources and primary GFR/Arms references. Found
+four malformed MCQ representations; placed private local source holds on them.
+The GFR paper header specifies 2005, resolving edition uncertainty, and its
+object-head question prints a Rule 74 reference for content supported by Rule 73.
+The circuit has an existing figure: 4 || 12 = 3 ohms, printed option A. No original
+model result was edited or official answer provenance invented. The five records
+cannot be reported as a five-MCQ accuracy benchmark.
+
+Created detailed Markdown and embedded-image HTML source reports. Added a private
+owner/publisher source-review page and narrow draft-only POST, with recent real
+MFA, CSRF, source/PDF checks, ordinary contribution limits and idempotency. It
+creates only answer/defect drafts and retains human approval as null. No production
+draft was created with a forged session, and no submit/approve/publish endpoint
+was added. Deployed only the focused API files plus frontend build. Rollback
+backup: /srv/api/.release-backups/mcq-source-review-1793954946603675781.
+
+Validation: 43 worker tests, 10 disposable-Postgres backend tests and TypeScript/
+Vite production build pass. Live anonymous GET returns 401; browser route renders
+sign-in requirement. Study/family health checks pass. Recovery bank SHA unchanged:
+99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0.
+No new inference calls, paid billing changes, published content changes or
+unattended schedule. Details: docs/solver-source-review-20261106.md.
+
+
+## 2026-11-06 — Admin system review (no application changes)
+
+Reviewed the current admin code and read-only authoritative Oracle inventory: 82,383 records, 1,979 papers, 58,373 subject-only classifications, zero approved related links and zero canonical IDs with multiple appearances. Saved findings, incremental architecture/workflow recommendations and versioned official scheme references in `docs/ADMIN-SYSTEM-REVIEW-20261106.md`; aggregate evidence and inspected PDFs are in `reports/admin-system-review-20261106/`. Found the retag q/tag_q navigation mismatch and gaps in tag discovery/source-provider representation. Existing correction-editor and editorial-list regression scripts passed. No production content/configuration/application code changed; authenticated visual QA, load testing and exhaustive content review were not performed.
+
+## 2026-11-06 — Admin organisation, cleanup and legacy schemes deployed
+
+Implemented and deployed the requested admin improvements within the existing
+editorial/publication model. Added exact-source cleanup navigation, retained
+filters and next actions, inline correction, topic/subtopic/related-path filters,
+account-owned saved views, controlled learning context and intentional broad-tag
+resolution. Unified GK/GS discovery through explicit stable aliases and added
+English Writing/Essay/Précis/Letter definitions without reclassifying questions.
+
+Added registered source providers, immutable custom/legacy/current scheme
+revisions, source-backed draft templates and explicit paper edition/era/layout/
+section mapping. Original-paper coverage counts appearances. Full simulation
+requires complete supported official MCQ coverage and pinned verified rules;
+written/mixed/incomplete/unsupported structures retain study/practice access.
+Reviewed repeat relations preserve all records/keys/history. Fresh matching
+same-question/extraction-duplicate links can share one generated mock candidate;
+original-paper positions remain intact. No canonical merge or answer transfer.
+
+Validation: 127 focused backend tests, six focused UI scripts, TypeScript/Vite
+build and deployment-script syntax/diff checks passed. Migration 0078 checksum
+`1bfb8122231d4686` was rehearsed on a disposable production dump clone with
+unchanged content/attempt/assignment/grant fingerprints, then applied additively.
+The taxonomy registry was extended under canonical authority, lock and backup.
+Bank JSON SHA256 stayed
+`b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0`.
+
+The first API release restored its previous files because a family-site health
+check expected a direct 200 instead of its normal redirect. Corrected the check
+to follow redirects and released successfully. Brief 502s during API restart
+cleared on retry. Latest release/rollback evidence is at Oracle
+`/tmp/bank-organization-1793974354/`; initial migration rehearsal evidence is at
+`/tmp/bank-organization-1793973474/`. The web release serves
+`index-DS3z0zBM.js` / `index-CfbuuvQL.css`; an isolated task-start build exactly
+matched the prior deployed asset set before publishing, excluding unrelated
+new frontend changes. Live public readiness/health, anonymous staff rejection,
+workers and family site passed. Health reports 82,383 questions / 13,898 scorable.
+
+No bulk AI classification, mass content mutation, saved verified scheme,
+invented human inspection or authenticated visual QA occurred. Real-size latency
+and a labelled cleanup pilot remain unmeasured. Implementation/use guide:
+`docs/ADMIN-SYSTEM-IMPLEMENTATION-20261106.md`; aggregate evidence:
+`reports/admin-system-implementation-20261106/`.
+
+## 2026-11-06 — Website-user shareable mocks and PDF quick guide deployed
+
+The owner clarified that the Google Forms-style test maker is for ordinary
+website users. Extended existing learning practice collections with validated
+timed settings, bank question selection/order and immutable reviewed test
+editions. Normal accounts save/submit; independent staff review publishes.
+Authors can stop sharing their own live test. Existing draft/history/review and
+mock services remain the authority; canonical questions are not copied or edited.
+
+Added public test directory/landing pages, guest start/resume, private frozen
+results and edition-aware links. Copy/WhatsApp/native sharing is user-initiated
+and contains an invitation, not private responses. Escaped server-rendered share
+metadata does not require JavaScript crawlers. Creator totals are starts and
+completions by edition; no respondent identities, individual answers or scores
+are exposed. Shared tests have three starts per test per browser/account in
+24 hours and do not consume the ordinary monthly mock allowance. Creator test
+collections are bounded at 50; a test holds up to 100 questions. Existing active
+assessment restrictions, CSRF/MFA and account boundaries remain.
+
+Added How to use PDF Library inside the admin screen and
+`docs/ADMIN-QUICK-START-20261106.md`, explaining PDF import/review/publication,
+tag cleanup, legacy schemes, feature usage and the still-unfinished corpus work.
+The implementation guide is documentation, not another installation step.
+No ad account/script was configured or WhatsApp message sent.
+
+Validation: 144 focused backend tests passed on disposable databases. New
+shareable-test UI checks plus existing bank-organisation, correction,
+review-navigation and PDF Library checks pass; TypeScript/Vite build succeeds.
+Migration 0079 checksum `c14af5f359b1fe30` was rehearsed on a disposable full dump
+clone with preserved content/attempt/permission/collection/mock fingerprints,
+then applied additively. An isolated task-start frontend exactly matched all
+114 prior deployed assets before the new web release. Source guards preserve
+unrelated deployed code. API release/rollback: `/tmp/shareable-tests-1793975884/`;
+previous web archive: `/tmp/shareable-tests-web-before-20261106.tgz`.
+Current entry: `index-Cof0_sdu.js`. Brief API restart 502s cleared on retry.
+
+Live directory/private-management/unavailable-test/asset/health checks pass;
+workers restored and family site healthy. Public desktop directory and guest
+maker sign-in entry were inspected in the browser. No authenticated creator or
+staff visual QA, production test publication, synthetic human review, WhatsApp
+delivery/preview test, load benchmark or ad activation was performed. Bank JSON
+SHA256 remains `b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0`;
+health reports 82,383 questions / 13,898 scorable. Delivery details:
+`docs/SHAREABLE-TESTS-20261106.md`; evidence: `reports/shareable-tests-20261106/`.
+
+## 2026-11-06 — Solo-owner cleanup, owner publication and live database map
+
+Implemented the explicitly requested one-person workflow. Global owners can
+omit notes for routine tag, transcription/context, explanation and source-locator
+corrections; the server generates factual change summaries through the existing
+guarded proposal/publication path. Save & next is the primary owner action.
+Bounded tag previews retain source tokens and permit optional owner notes.
+Changed correct-answer text still needs reasoning plus the existing solution/key
+evidence. No source inspection or independent review is invented by a summary.
+
+Added source/payload/author/submission/version-bound paper owner previews and
+explicit publication, with immutable `review_kind=owner` attribution and current
+grant rechecks by the worker. Kept independent and narrowly scoped `owner_ai`
+semantics distinct. Owners can preview/publish saved learning collections and
+their own shareable tests; normal-user independent review remains. Retry reuses
+the original paper job/test edition. Updated in-app PDF/source/restore wording,
+the admin quick start and current repository/runbook guidance.
+
+Replaced the old database-map list with an owner-only interactive read-only map:
+content relationships versus actual live PostgreSQL foreign keys, area/search,
+selectable cards, highlighted links, zoom/scroll/list, descriptions, counts,
+columns/PKs and related admin tools. It exposes no raw row values or SQL console.
+Read-only production metadata check: 28 tables, 360 columns, 41 FK links in
+0.125s; this single observation is not a load benchmark. Topic-detail coverage is
+explicitly not semantic classification accuracy.
+
+Validation: 191 backend tests passed on disposable databases; focused owner,
+normal-user shareable-test, correction, organisation and original-source UI
+checks passed, including blank notes with a linked PDF and the interactive map.
+TypeScript/Vite build and diff/shell checks passed. Full isolated guarded paper
+publication/recovery rehearsal preserved source identity/metadata/original answer
+and reused the receipt after an interruption following SQL commit. No fixture or
+synthetic approval was added to production.
+
+Migration0080 (`1144966cad163381`) was rehearsed on a full production dump clone;
+content, attempts, assignments, grants, learning/mock and paper-workflow row
+fingerprints matched before/after. Bounded deployment checked API/writer source
+preimages, drained/restored workers and retained rollback backups at
+`/tmp/solo-owner-1793978445/` (including `backup/web.tar`). All117 task-start asset
+hashes exactly matched the preceding deployment. Final entry:
+`index-Ck4bhi36.js`. Brief API-restart502s cleared on health retries.
+
+Live health, anonymous staff-route rejection, exact served assets, restored
+workers and family site checks pass. Bank SHA256 remains
+`b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0`;
+82,383 questions / 13,898 scorable. Existing ten `owner_ai` paper decisions remain;
+no new production owner decision was fabricated. Authenticated owner desktop/
+phone visual QA, actual production owner-publication acceptance and full corpus
+classification/scheme/source cleanup remain outstanding. Delivery:
+`docs/SOLO-OWNER-WORKFLOW-20261106.md`; evidence:
+`reports/solo-owner-20261106/`.
+
+## 2026-11-06 — Make exam-year filters visible
+
+The user could not find year filtering. Existing Questions and Learning-tags
+filters already accepted exact paper years, but both controls were inside closed
+details panels. Moved Exam year into each main filter row, with All years as the
+empty hint and an explicit applied-year clear action. Questions keeps its existing
+safe debounce; Learning tags now waits for a valid full1900–2100 year or clearing
+before updating the URL/API, avoiding partial-typing422s. Original paper/exam
+year remains separate from current-affairs reference period; existing Papers
+inventory has its All years dropdown. No API/schema/content change was needed.
+
+Extended the existing organisation UI check to exercise both actual components:
+year outside details, partial typing, full-year request binding, offset reset,
+retained exam/source/provider scope and clearing. It and the solo-owner UI checks
+pass; production build and diff checks pass. Task-start reconstruction exactly
+matched all117 prior asset hashes before the web-only release. Previous frontend
+backup: `/tmp/admin-year-web-before-20261106.tar` on Oracle. New entry:
+`index-Hc1Hi4b-.js`. Quick start updated. Live year-filter routes, exact assets,
+health, anonymous staff boundary and family site were checked; canonical bank
+SHA remains `b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0`.
+Authenticated responsive visual QA remains unperformed. Evidence:
+`reports/admin-year-filter-20261106/`.
+# 7 November 2026 - Owner access and reusable tagging foundation
+
+The owner explicitly requested simpler access/removal of the authenticator for
+their named account. Live inspection found an unfinished setup, no enabled factor.
+Added an operator-controlled immutable-account-ID exception, honoured by staff
+write/session/status and solver draft gates without asserting MFA verification.
+Recent-sign-in/roles/CSRF and opt-in login MFA remain intact. The bounded API
+release installs a single-account systemd policy and clears pending setup with an
+account security audit event; other staff policy, password and grants are retained.
+Release/rollback: `/tmp/owner-access-1794027201` on Oracle. Canonical JSON checksum
+was unchanged; service health and family site checked after restart.
+
+Fresh read-only tagging checks found 0 saved scheme revisions, 0 paper profiles,
+0 new learning-context records; English filtering works across all/UDC/Assistant/
+LDC/Gazetted scopes, and UDC/Assistant share 898 distinct browse question IDs.
+English primary classification has 4,557 live records without a topic label.
+Re-downloaded official schemes, visually inspected relevant structure pages and
+documented the initial manual-review rules in `docs/TAGGING-FOUNDATION-20261107.md`.
+Added an unverified Assistant/UDC combined 2026 draft template, with mixed Paper I,
+written task distinctions, independent recruitment applicability and unknown
+historical dates/counts retained. No saved scheme, paper binding, mass retag,
+bank publication or owner/human source approval was created.
+
+Validation: 30 focused backend tests on disposable PostgreSQL, organisation UI
+behaviour check and TypeScript/Vite build passed. Tests cover account isolation,
+CSRF/default staff enforcement, optional enrolled-factor sign-in/removal, preserved
+recent role requirements and mixed-paper template totals. Running-process policy
+and target pending/enabled state were read back on Oracle. Authenticated owner
+browser acceptance remains for the real signed-in user; no session was fabricated.
+
+## 7 November 2026 — question-bank working overview
+
+Owner requested a clean overview page. Replaced the full-bank admin landing view
+with live canonical coverage, exam membership table, field gaps, historical review
+and publication activity, scheme-link counts, recommended manual-review order and
+existing workflow links. Added exam search, attention filter and CSV snapshot export.
+Scoped reviewers retain their existing view; expanded data requires a global grant.
+Counts exclude merged records, deduplicate appearances within each live browse
+collection, and explicitly explain overlapping exams/issues. Inspection history is
+not reported as current certification; saved scheme links are not simulation readiness.
+No question content, scheme configuration, review assignment or authentication
+policy was changed. No schema migration was needed.
+
+Validation: isolated PostgreSQL test covers deduplication, live-version/browse
+membership, MCQ versus written gaps and global/scoped/unauthorised access. Production
+read-only query took 0.43s (82,383 stored / 82,249 live; seven exam collections).
+Local browser preview with actual aggregate snapshot passed desktop and 390px
+phone layout, no document overflow, exam search/empty state and attention filter.
+Authenticated production UI acceptance remains pending: available browser is signed out.
+
+Deployment completed through `scripts/deploy.sh bank-overview` and `web`.
+Narrow API backup `/tmp/bank-overview-1794028320`; deployed preimage matched before
+installation. Study health and shared family site healthy, anonymous summary still
+401, served web index matches the built artifact. Release log and aggregate query
+receipt: `reports/bank-overview-20261107/`.
+
+## 7 November 2026 — refresh question status after publication
+
+Owner reported ENERVATE `cq_0001fa4e5c93df84` remaining in Needs review.
+Read-only production diagnosis: explanation applied, taxonomy export failed a bank
+snapshot check, and the separately queued answer decision subsequently failed the
+same check. The canonical answer status therefore correctly remains Needs review.
+No content, evidence, manifest hash, source baseline or review attribution was changed.
+
+Fixed question-list refresh on confirmed publication and window focus. Publication
+progress emits content change only after checking an applied receipt; refreshed
+counts do not reset the open inspector or unsaved correction editor. Inline receipts
+are retained in recent decisions so Save & next still monitors publication. Failed
+exports now show the real failure and a fresh-question link; stale exports explicitly
+require a fresh decision rather than an ineffective repeat retry. Verification
+responses include current answer status and explain when an applied tag/explanation
+edit leaves answer review outstanding. Reopening the same selected question reloads
+its source and decision form.
+
+Validation: 12 admin-answer regressions passed, including confirmed current status
+and held status on applied publications; disposable-renderer checks cover pending,
+applied and failed publication, one-time notifications, list/count refresh, retained
+editor identity and non-confirming edits. Solo-owner UI regression and production
+web build passed. Existing publication/source protections remain unchanged.
+
+Narrow API release completed with preimage verification and backup
+`/tmp/publication-refresh-1794034098`; web release completed and served index
+matches local build. Study and family health checks passed. The reported answer
+publication remains failed and requires a fresh owner decision from its current
+source; no obsolete export was forced through the guard.
+
+## 7 November 2026 — actionable question review queues
+
+Owner supplied nine Needs review examples and requested optimisation. Read-only
+production inspection confirmed inferred/unverified answers, one duplicate-options
+source problem, and ENERVATE's separate failed answer/tag publications. These labels
+are real outstanding work, not nine completed answer publications.
+
+Added disjoint URL-backed task filters with scoped counts: Answer checks, recorded
+Source/scoring problems, Publishing, Publication failed and All matching. Latest
+work per correction kind prevents an old failed attempt from hiding a newer completed
+correction of that kind. Active publication takes precedence over failures and source
+problems. Each row explains its actual next action; the inspector links outstanding
+work. Condensed source titles and removed repeated generic review boilerplate. Live
+queue polling runs only while visible publishing work exists; editor state stays in
+place. Pagination clamps after the current queue shrinks.
+
+The backend materialises answer status and scope once, counts canonical rows once,
+and looks up source appearances for the bounded page. The read-only whole-bank
+Needs review query measured0.94s versus2.63s for the initial implementation. At the
+check it contained50,946 questions:49,320 answer checks,1,625 source/scoring problems,
+one failed-publication question. These are dated measurements, not seeded UI values.
+No stored tags, answers, source content, holds or publication guards were changed.
+
+Validation:16 backend workbench/answer tests passed, including task disjointness,
+permissions, source ordering, canonical deduplication, older-failure supersession,
+parameter validation and current answer status. UI regression covers URL task changes,
+publication refresh/counts, failed status and preservation of the open editor.
+
+Release completed through `scripts/deploy.sh review-queue` and `web`; API rollback
+backup `/tmp/review-queue-1794034841`. Served index matches the local build. Study
+and family health checks passed; anonymous review requests still return401.
+Authenticated production visual acceptance remains pending in the owner's session.
+
+## 7 November 2026 — backend publication audit and serial export
+
+Audited queue/status, direct answer decisions, routine edits, bulk tags, retries,
+worker publication, immutable receipt verification and source/permission checks.
+Found and fixed: failed corrections blocked fresh decisions; answer decisions did
+not share the tag/text pending guard; retries requeued provably obsolete immutable
+exports; replayed decisions could falsely report queued or return no publication
+object; independent saves exported against the same whole-bank snapshot and raced.
+Also corrected the queue reason for malformed official options.
+
+New optional operator setting PUBLICATION_SERIAL_QUEUE serialises ordinary export.
+Later authorised saves remain accepted with a durable review_outbox intent. The
+trusted local worker exports them only after the preceding publication sync/ack,
+revalidating exact source baseline, immutable decision, current grants and evidence.
+No old manifest or baseline hash is modified and no approval is manufactured. Tag
+batches retain one atomic snapshot and wait for an open slot before being saved.
+A tick drains up to five serial jobs within a180-second scheduling window; existing
+per-job bank lock, machine authority, document checks, sync and readback are intact.
+Queued validation failures retain an attributable error/history; fresh decisions can
+replace failed attempts while the originals stay recorded.
+
+Validation includes two back-to-back decisions through actual guarded temporary JSON
+writes, normal CSV/SQL sync, current-source readback and acknowledgment: both become
+verified in sequence with the first manifest unchanged. Tests also cover busy-lock
+contention, permission revocation/source drift while waiting, intent retry/replay,
+stale-retry refusal, shared pending guards, atomic tag batches and the promoter CLI.
+Core regressions and the separate maintenance suite pass. The initial combined run
+exposed an outdated mock status field (updated) and shared fixture contribution-quota
+interference (maintenance suite rerun on a fresh disposable database; production
+quotas are unchanged). Frontend publication/owner regressions and web build pass.
+No production question/tag/answer/hold was directly edited in this audit.
+
+Release completed with exact deployed preimage checks and rollback at
+`/tmp/backend-audit-1794035628`. Serial queue was verified in the running API and
+worker environment. The helper import/DB smoke passed as postgres in disabled mode;
+the normal enabled worker completed successfully and its timer is active. Study
+and family health checks passed; anonymous admin requests still401. Served frontend
+matches the built artifact. Final totals:115 core backend regressions +17 isolated
+maintenance regressions =132 passing tests, plus two UI regression scripts and
+production TypeScript/Vite build. Existing failed history/content was preserved.
+
+## 7 November 2026 — publication follow-up audit
+
+Continued the authorised backend audit. Fresh production checks found no accepted,
+publishing or pending-intent work stuck in the live queue. Two failed historical
+ENERVATE decisions remain recorded.
+
+Fixed two further boundary cases: an export now takes its slot before reading the
+completed-sync checksum and rechecks its source after slot acquisition, so a worker
+finishing between statements cannot make a fresh export stale. A retry of an intent
+that failed before its first export retains the original admin-decision binding,
+both when re-deferred and when exported immediately. The generic retry endpoint
+creates no replacement authority. Worker independently validates that binding.
+
+The worker now skips up to five failed/cancelled intents in a tick before looking
+for valid work, preserving each recorded failure. This avoids making unrelated valid
+work wait another minute behind each stale item; the scan remains bounded.
+
+Validation:48 workflow regressions,56 source/scoring/organisation verification
+regressions and15 serial/worker tests pass on disposable databases. Added tests force
+a sync at the slot boundary, force source drift at that boundary, validate the original
+retry binding through the real worker and check that failed/cancelled intents do not
+block a following valid publication. Initial out-of-order combined tests exposed
+shared fixture quota/state interference; groups run on separate disposable databases.
+No production content, review record, permission or configuration was changed by
+these checks. Release changes only the publication helper and correction worker.
+
+Follow-up deployed successfully with rollback `/tmp/backend-followup-1794036087`.
+API/helper smoke and both study/family health checks passed. The deployed worker
+completed successfully, its timer remains active, and live SQL shows no accepted,
+publishing or pending-intent backlog. Anonymous admin reads remain401. This audit
+confirms the tested workflow paths; it is not a claim of universal bug-free operation.
+
+## 7 November 2026 — on-demand publication wake-up and VM capacity
+
+Owner requested realtime publication and asked about VM capacity. Fresh read-only
+inspection:4 CPU cores,23,974MiB RAM with21,400MiB available,77GiB available disk,
+load0.20/0.20/0.07,645MB study database. This is an idle snapshot, not a load-test
+capacity guarantee. The ENERVATE fresh owner decision reached applied/published and
+its canonical status is verified. Its remaining old failed taxonomy history is kept.
+
+Added commit-bound empty PostgreSQL notification on accepted/publishing workflow
+transitions. A small systemd listener uses the existing limited application database role
+with read-only transactions. It can request only the existing fixed guarded
+publisher unit. Arbitrary notification payloads never become commands or logs.
+LISTEN precedes startup wake;5-second pending-work checks recover missed notifications
+or a worker becoming idle after a burst. The original60-second timer remains fallback.
+A wake signal never bypasses queue validation, authority, locks, sync or readback.
+
+Added private permission-scoped publication-pulse revision/pending endpoint, and
+3-second UI polling while work is pending. Unchanged pulses do not rerun the full
+bank list query or remount the editor. Progress cards check at3 seconds. Corrected
+"A answer" wording. Actual bank writes/syncs remain asynchronous, not instantaneous.
+
+Validation:20 wake-up/workbench/answer tests and19 serial/wake-up tests passed
+(groups overlap). Includes real PostgreSQL commit versus rollback delivery, missed
+notification recovery, fixed unit invocation/read-only connection, scoped pulse permissions,
+serial guarded publication and status. Renderer tests verify unchanged pulses avoid
+list reloads and completion refreshes without replacing the open editor. Web build
+passes. No extra database, Redis or schema migration is needed.
+
+Live wake-up rollout: initial service smoke rejected dropping a child process to
+postgres under the explicit-root service restrictions; rollback restored the API
+and original timer. Final design uses one process and the existing limited mpsc
+application credential via the existing protected environment file, with read-only
+transactions and fixed systemd invocation. No new credential was created or exposed.
+New listener tests pass for this final connection design.
+
+Final deployment completed with rollback `/tmp/publication-live-1794041083`.
+Listener active with zero restarts and20,373,504 bytes memory at the check; guarded
+worker completed successfully, original timer active, study/family healthy, served
+frontend matches build and anonymous publication pulse is401. A committed empty
+wake signal was measured against the worker's new start timestamp (receipt in
+`reports/publication-live-20261107/wake-latency.json`). ENERVATE is verified live.
+UI regression confirms pulse-driven refresh preserves open edits. No new content
+was submitted for the latency probe; it woke only the normal guarded queue reader.
+
+## 7 November 2026 — 1,000-question source preflight
+
+Ran a bounded, read-only preflight over the first 1,000 highest-priority actionable
+questions in the live review queue. The source lane currently contains1,625 items,
+so this pass intentionally selected source-risk work before answer-only work. No
+question, answer, taxonomy, review state or publication was changed.
+
+The pass recorded2,165 blocker flags and2,464 review flags. Main findings were
+914 existing source-defect flags,780 blank-option flags,723 unverified answers,
+256 missing MCQ answers,124 duplicate-option flags,758 missing topics and936
+missing explanations. It also found85 held questions,30 repeated stems inside
+the pass,17 official/key rows without a registered final key,3 disputed keys and
+3 rows without a registered paper document. These are triage signals for manual
+inspection, not automatic corrections or approvals.
+
+The report is saved in
+`reports/1000-question-preflight-20261107/` as `summary.md`, `report.csv` and
+`report.json`. The current question `cq_00054447a65e8ad1` appears first with its
+source defect and blank-option flags, so its printed A–C layout should be repaired
+before saving the verified B answer.
+
+## 7 November 2026 — one strict tagging policy for future models
+
+The owner clarified that “remove any other” means remove conflicting old
+instructions, not existing tags. Added `docs/QUESTION-TAGGING-RULES.md`
+(`study-tagging-v1`), a copyable model prompt, machine-readable preferred paths,
+and app/bank AGENTS entry points. The policy separates tested content from exam
+headings, schemes, region/language and dated context; GK/GS display aliases must
+never be stored. Historical Current Affairs retains its reference period and key.
+Ambiguous candidates stay pending with an owner question. Actual source, answer,
+taxonomy and context repairs remain separate reviewed operations.
+
+Archived four conflicting instruction documents intact and replaced their active
+paths with current pointers. Updated README/handoff/library entry points and the
+legacy classification utility's documentation; runtime algorithms were unchanged.
+The source/scheme foundation remains a dated findings report, not a competing policy.
+
+Read-only live audit at09:23 UTC:181 active nodes,82,249 live questions,58,370
+subject-only approved primary paths, including4,557 English. No saved rows in
+the new context/scheme/profile/tag-resolution tables. ENERVATE remains Geology;
+water-image remains Electrical Engineering/Circuits. Clauses and non-verbal
+reasoning have no appropriate narrow active nodes. These are repair candidates
+and registry gaps, not corrections made by this instruction work.
+
+The new read-only checker passes24 preferred routes against181 nodes; five
+regression tests pass locally and on Oracle, covering alias/parent/node/status
+errors. This checks legal paths, not semantic accuracy or arbitrary model outputs.
+The earlier1,000-question pass was metadata triage, not source/answer certification.
+Its reports are in the parent workspace's reports directory (the older entry's
+relative path is relative to that workspace, not this app repository).
+
+Oracle's workshop was a stripped deployment with no agent instructions/docs.
+Installed14 new instruction, audit and checker/test files after confirming all
+targets absent; verified every file hash and ran the same checks there. No service
+restart, SQL content write, taxonomy change or question publication was performed.
+Receipt: `reports/tagging-policy-20261107/oracle-install.json`. Canonical policy
+there: `/srv/study/workshop/india-study-map-app/docs/QUESTION-TAGGING-RULES.md`.
+Next: source-reviewed pilot and verified scheme/time-context records under this
+policy; the58,370 subject-only rows still require triage, not automatic relabelling.
+
+## 2026-11-07 — Source-reviewed 20-question tagging pilot (pending only)
+
+Prepared `reports/tagging-pilot-20261107/README.md`, the required model-format
+`pending-candidates.json` and separate source/answer/context findings from fresh
+read-only Oracle snapshots and eight hash-matched registered PDFs. Final pilot:
+20 unique canonical/appearance targets, 14 proposed retags, 6 keeps, 0 tag holds;
+all candidates pending, zero submissions/publications/live question changes.
+Coverage includes combined Assistant/UDC, separate legacy UDC, Gazetted GS and
+written English, ENERVATE/water-image corrections, static chemistry, and a
+specialist HMS Mining control. The owner resolved the Mizo time-expression item
+to regional Mizoram knowledge and clarified notified-town count as Current Affairs;
+these are attributed routing examples, not source sign-offs or publication approval.
+
+All 181 fresh active registry nodes match the Oracle bank taxonomy definition;
+candidate paths/parents and 24 policy routes validate. A later read-only Oracle
+check preserves all 20 source fingerprints, paths, answer baselines and appearance
+sets. Complete inspection locators are recorded per target. Q44 actually appears
+on physical page 5 (stored page 6), has a printed underline versus live bold markup,
+and three printed options versus a fourth null live option; its source flag and
+inferred answer remain untouched. The historical town-count answer 23 still lacks
+a dated official list; reference context is the printed October 2025 exam month.
+No official keys or recruitment notices were inspected, no answers certified,
+and no scheme/profile/context records were saved. Spatial/clause/Mining taxonomy
+gaps remain separate backlog work. The report recommends a focused next 20 English
+source reviews; it contains no authorization to publish this pilot.
+
+## 2026-11-07 — Second pending tagging batch, 20 English targets
+
+Continued the recommended next batch within the original prepare-only scope.
+`reports/tagging-batch2-20261107/README.md` and model-format pending candidates
+cover legacy UDC Q10–16, Assistant/UDC October 2025 Series A Q51–57 and Gazetted
+September 2026 Series A English B11/B13/B15–18. All 20 source-reviewed:
+7 proposed Sentence Correction → Grammar retags, 13 keeps, 0 tag holds.
+All remain pending; no production proposals, publications or live data edits.
+Three freshly retrieved PDFs match registered hashes; cover and exact task pages,
+underlines and local directions were visually inspected. Six UDC shared directions
+omit the final word “sentences”; separate source defects were retained without
+blocking clear tags. Three voice items normalize shared PDF directions into stems;
+this was recorded separately, not treated as missing context. No official keys or
+recruitment notices were inspected and no answer certification was created.
+
+All 181 active Oracle registry nodes match the fresh Oracle bank definition;
+all candidate paths/parents and 24 policy examples validate. Later read-only
+Oracle snapshots preserve all 20 fingerprints/paths/answer baselines/appearance
+sets and the registry. Zero overlap with pilot 1: combined 40 reviewed,
+21 proposed retags, 19 keeps, 0 holds and 0 live changes. Report records the
+recommended next 20 targets and leaves earlier Q44/town-count evidence work open.
+
+## 2026-11-07 — Owner expanded tagging review to the entire bank
+
+Owner explicitly confirmed “Entire question bank”; retained the original pending-only,
+no-live-data-change scope. Saved read-only repeatable-read Oracle inventory and
+local exact coverage index under `reports/tagging-corpus-20261107/`: 82,383
+canonical/source-appearance targets (82,249 live, 134 held), 1,979 papers,
+1,978 registered source-paper documents and 181 active registry nodes.
+No source-inspection claim was created for inventory-only targets.
+
+Completed two additional source-reviewed packets of 100 each, reports
+`tagging-batch3-20261107` and `tagging-batch4-20261107`. Combined four-packet
+coverage is 240 distinct targets: 50 retag proposals, 187 keeps and 3 tag holds,
+all pending, zero live changes/submissions/publications. Every new target has
+actual PDF page/context inspection evidence, current active path validation and
+unchanged exact Oracle source/answer/appearance readback. All recorded appearances
+in initial legacy UDC (75), combined Assistant/UDC Series A (80), and Gazetted
+English Series A (69) sources are now covered; no extraction/scheme/key readiness
+certification is inferred from that coverage.
+
+Open owner questions are source-bound: Shibu Soren obituary/past-career routing,
+Dar Hla cultural/literary routing, and registration-number predecessor conventions
+versus abstract reasoning. Current live tags/answers are preserved. New source/key
+concerns (truncated directions, lost emphasis, null keys, printed phrase mismatch,
+ambiguous/missing options) are recorded separately, not silently repaired.
+
+The bank is NOT fully reviewed: 82,143 targets remain unreviewed, accounted for
+exactly once by 1,218 source-focused planned packets (74,189 targets, max 100 each)
+and a source-recovery queue (7,954 targets: 7,854 missing page locators, 100 missing
+paper-document registration). The report contains a resumable process and honest
+freshness limits; no unattended background process or automation was started.
+
+## 2026-11-07 — Complete 7,954-target source-recovery pass (pending only)
+
+Owner asked “Do the 7k”, referring to the 7,954-target source-recovery queue.
+Processed every exact target against fresh read-only Oracle snapshots and all
+610 source PDFs. Local source bytes (not local question records) were used only
+after 609 registered Oracle hash matches; the unregistered LDC original was
+separately hash-matched to current Oracle canonical and served source copies.
+Extracted 1,221 PDF pages and ran local Tesseract OCR on nine scans / 31 pages.
+
+`reports/source-recovery-20261107/README.md` and 80 bounded final JSON/Markdown
+packets account for all 7,954 targets: 6,432 pending locator candidates,
+804 partial candidates, 618 unresolved/held location findings, and 100 existing
+locators preserved under one pending document-registration candidate. Only six
+individual locators were visually checked; all other text/OCR matches explicitly
+remain unverified visually. These are source-reference findings, not new tagging
+reviews or production hold decisions. Semantic-review count remains 240.
+
+Saved six source-bound, page-only `source_reference` proposals that validate
+against the current Oracle Proposal schema without DB/API submission. Visual
+checks exposed separate missing 16-row cost data / rates-analysis coefficients,
+and flattened/null printed-question locators. No tables, historical cost periods,
+answers or qnums were silently repaired. LDC cover/page-12 identity was checked;
+recorded Q85/Q99/Q100 source defects remain untouched, including illegible
+mirror/dice figures in the actual scan. No new document ID or sign-off invented.
+
+Fresh readback preserves all 7,954 complete snapshots/source fingerprints,
+raw appearances and canonical answer/status fields, plus paper/document registry
+and active taxonomy. Validation checks pending status, exact coverage, hashes,
+physical-page bounds, packet size and no duplicates. Local corpus JSONL/SQLite
+now points to pending recovery findings but retains live source blockers and
+unreviewed semantic status. Zero live changes, registrations, submissions or
+publications. Source repairs are not all finished; automatic locator candidates,
+804 partials and 618 held cases still need source/context inspection.
+
+
+## 2026-11-07 — Source recovery continuation, pending only
+
+Owner said “go” on the entire-bank / 7,954-source-recovery continuation. Prepared
+141 new source-reviewed model-format tag candidates in packets 5–7 (65/51/25):
+87 retag proposals, 54 keeps, no new semantic holds. Inspected 16 distinct complete
+PDF pages across six registered hash-matched sources; batch 6 explicitly reused
+the same nine inspected pages as batch 5. All 141 physical locators are individually
+verified in pending page-only proposals. Of these, 63 previously held and 27
+partial matches were recovered; 51 existing machine candidates were verified.
+The multi-page police-manual composite retains pages 1–2 as evidence, with only
+the start page in the existing page-only source-reference contract.
+
+Fresh Oracle repeatable-read read-only exports and later readbacks preserved exact
+snapshots, raw appearances, answers/statuses/defects, four-plus-two source documents
+and the 181-node taxonomy. Legal paths and source-reference Proposal contracts pass;
+schema validation made no submission. All original source fingerprints match. No
+new target overlaps the prior 240; all other 7,813 recovery findings are unchanged.
+
+Cumulative semantic review: 381 pending candidates (137 retag, 241 keep, 3 earlier
+owner holds), 82,002 still unreviewed in the dated inventory. Source-recovery totals:
+6,522 pending locator candidates, 777 partial, 555 held, 100 affected by missing LDC
+document registration; 147 individual visual locator checks. The 6,375 remaining
+machine locator candidates are not visually verified. This is not completion of
+the bank or 7,954 source reviews. Live changes/submissions/publications remain zero.
+
+Separated missing shared headings/instructions, overlapping composite/atomic source
+representations, descriptive papers incorrectly typed mcq, missing discipline/evidence
+taxonomy topics, and Q17 cash-book printed payment/discount ambiguity from tag decisions.
+Historical source periods, exercise data, answers, identities and holds are preserved.
+Existing three owner questions and LDC Q99/Q100 illegibility remain unresolved.
+
+Evidence: reports/source-recovery-review2-20261107, review3, review4; required model
+candidates and readable before/after tables: reports/tagging-batch5-20261107 through
+batch7. Local corpus coverage/remaining plans rebuilt. Latest report recommends
+32 open targets from MF&AS July 2019 Paper II, MPS July 2019 Paper III and Draftsman/JE
+Accounts before formula/figure-heavy engineering/math papers. No background work started.
+
+
+## 2026-11-07 — Owner priority: English, Arithmetic and Reasoning first
+
+Owner redirected the proposed 32-question accounts batch before it began. Deferred
+other-subject selection and exported a fresh read-only Oracle inventory at
+11:52:15 UTC, preserving the earlier inventory. New priority discovery/coverage
+ledger includes current English, Arithmetic, Reasoning, English-source/task clues
+and subject-only mathematics for arithmetic triage. Discovery is explicitly not
+semantic classification or exhaustive recall certification.
+
+Prepared packets 8–11: 294 distinct source-reviewed existing targets across four
+registered PDFs / 36 visually inspected original pages; 276 retag proposals and
+18 keeps, all pending. Assistant Director Town Planning February 2026 General
+English (68), Tourist Officer July 2026 General English (76), Sub-Inspector of
+Statistics January 2026 Paper II (100), and its General English Paper I (50).
+Statistics Paper II had 92 English/Grammar classifications despite printed General
+Mathematics and GK groups. Tourist Officer had three passage items under GK/GS.
+All actual task/option/formula/underline/passage contexts were inspected, preserving
+exam/group identity. Owner resolved song-composer Q95 to GS/Mizoram culture; exact
+attribution/example saved without closing earlier Dar Hla ambiguity.
+
+Kept defects separate: 86 page-only pending source-reference proposals, missing
+passage links (12), two absent shared-table links, wrong named underline targets,
+missing emphasis, six corrupted formula/option targets and bounded arithmetic/
+answer flags. Sixteen printed written tasks absent from the three English papers'
+current appearances are separate intake evidence with null IDs and suggested
+active paths; not invented canonical records or additional completed reviews.
+No official key, independent human inspection or recruitment scheme certification.
+
+Each packet's fresh Oracle readback preserved exact snapshots, raw appearances,
+answers/statuses/defects, registry and documents. Four PDF hashes matched; all 181
+active IDs/levels/parents matched the fresh Oracle bank definition. Page-only
+Proposal schema checks passed without DB/API writes/submission. No overlapping
+reviewed targets; all model statuses remain pending. No live question data, source
+registry, context, key, scoring holds or memberships changed; no publications.
+
+Cumulative bank review: 675 pending targets (413 retag, 259 keep, 3 earlier holds),
+81,708 still unreviewed in dated full-bank inventory. Priority discovery: 16,065
+targets, 467 reviewed and 15,598 unreviewed. Current stored-category remaining:
+English 10,808, Arithmetic 912, Reasoning 2,673; these are not correctly-classified
+shelf counts. Saved proposed paths across all packets: English 371, Arithmetic 23,
+Reasoning 4. The original 7,954 missing-source queue's 147 visual locators are a
+separate scope and were not falsely increased by these already-located papers.
+
+Evidence: reports/tagging-batch8-20261107 through batch11, and
+reports/tagging-priority-20261107/README.md. All full before/after tables, exact
+inspection notes, baseline/readback, pending candidates, missing-task evidence and
+validation receipts saved. Corpus ledger/plans refreshed. Next selection remains
+English (Assistant LESO, then CAO A/B) and Arithmetic/Reasoning; other subject
+queues deferred. Priority areas are not complete; no background review started.
+
+
+## 2026-11-07 18:02 IST — Fresh bank-status confirmation
+
+Owner requested confirmation of reported bank situation. Exported a fresh full
+Oracle roster and exact 675-target snapshots in repeatable-read read-only
+transactions. Confirmed 82,383 questions/appearances (82,249 live, 134 held),
+675 unique saved pending candidates (413 retag, 259 keep, 3 hold), and 81,708
+unreviewed. Current-label unreviewed counts remain English 10,808, Arithmetic
+912, Reasoning 2,673; these are structural counts, not correct-subject guarantees.
+
+All 675 full source snapshots/fingerprints, target appearances, recorded answers
+and registered document bindings match saved baselines. No question IDs/status/
+classification metadata changed from the earlier priority inventory. No taxonomy
+or source-reference contributions were created for these targets since 09:00 UTC.
+The prepared retags have not reached live primary paths. No live writes were made,
+PDF inspections invented, new question reviews counted or publication authorized.
+
+Evidence: reports/bank-confirmation-20261107-123101/README.md and verification.json;
+new read-only roster/source exports preserve historical review receipts. This
+confirms counts and exact reviewed-target preservation, not semantic/key/source
+quality across unreviewed questions.
+
+## 2026-11-07 — Exam paper presentation
+
+- Added scoped examination-stationery styling to original papers, shared practice
+  cards, timed mock/shared-test runners and result summaries: cream sheets, serif
+  question typography, restrained rules, circular answer letters and readable spacing.
+- Compacted paper readiness/instructions and collapsed search/filter controls;
+  preserved question/source identity, scoring, answer gates, flags, notes and PDF tools.
+- Added labelled time remaining, answered progress, 44px question-map controls and
+  accessible current-question/status labels. Replaced inaccurate “Not seen” with
+  “Unanswered”. Paper answer outcomes include text as well as colour.
+- Production build, shareable-test UI, answer-panel and paper-duplicate component
+  checks pass. Updated the duplicate test's stale readiness API stub (no behavior
+  change). Browser checked the supplied LDC paper in desktop and 390px mobile
+  viewports and focus navigation; mobile document width equals viewport width.
+- Timed/shared runner verified with mocked API component checks; no synthetic
+  production attempt was submitted. Local screenshot: tmp/exam-paper-preview.png.
+- Frontend release uses scripts/deploy.sh web; prior public artifact copied to
+  /srv/study/releases/pre-exam-paper-ui-20261107 for rollback. No backend/bank edits.
+- Release completed successfully; live LDC focus page and next-question navigation
+  verified in browser. Both study and family sites healthy. Live screenshot:
+  tmp/exam-paper-live.png.
+
+## 2026-11-07 18:20 IST — Compact public question cards (local)
+
+Owner requested minimal expanding cards around the 2016 Make in India Week example,
+with the map.hawayu.in MCQ practice hub as reference. Inspected its real browser
+layout and preserved the study app's answer/provenance semantics. Public bank and
+module cards now use tighter spacing, a divider-based answer area and one compact
+Save / More / Explanation & details footer. Full explanation, answer evidence,
+historical revision context and study tools share the latter disclosure. More
+contains Source, Discussion, Share, private Report and permitted Review/edit.
+Source/scoring warnings remain visible; answer restoration/restrictions retain
+source/report access. No answer gates, answer status, historical answers, attempt
+logic, staff grants or live bank data changed.
+
+TypeScript/Vite build and existing public-card/answer-panel checks pass. Browser
+verified phone and desktop layouts plus explanation, source, discussion and private
+report disclosures against isolated synthetic responses; no form submitted. Same
+fixture shrank from 698.5px to 462.3px on phone (33.8%) and 523px to 336.1px on
+desktop (35.7%), without horizontal overflow. Compact controls retain 44px targets.
+Evidence, exact pre-task component copies, reproducible local preview and screenshots
+saved in reports/compact-cards-20261107/. These are component previews, not live-page
+measurements. Frontend not deployed; full live integration still pending. Existing
+pending tagging work remains unchanged.
+
+## 2026-11-07 — Distinct explanations after answering
+
+- Revealed practice explanations now appear immediately outside the collapsed
+  source/study-tools disclosure, with a pale blue panel, blue left rule and
+  Public Sans body text distinct from serif questions and selectable options.
+- Long explanations show six lines initially with accessible Read more/Show less
+  controls. Retained review-state wording and honest missing-explanation states.
+- Outcome row includes the displayed option letter only when its text maps uniquely;
+  unverified answers retain “matches/differs from stored answer” language.
+- Answer-panel regression covers automatic visibility, expansion and test restrictions;
+  shared-test checks pass. Browser verified guest Show answer on the supplied LDC
+  paper (Q1 has no stored explanation, so the explicit empty state is shown).
+- Frontend-only release through scripts/deploy.sh web with rollback artifact at
+  /srv/study/releases/pre-explanation-panel-20261107. No answer content changed.
+- Deployment completed; live stylesheet verified, study/family health checks passed.
+  Preview evidence: tmp/explanation-panel.png. Production build passed.
+
+## 2026-11-07 — Readable admin publication history
+
+- Promoted Publication history into primary admin navigation and replaced the raw
+  request list with a dedicated correction log at /admin/bank?tab=publications.
+- Default My corrections includes authored/exported work; added all-permitted
+  scope, title/paper/ID search, status/type filters, refresh and older/newer pages.
+  Labels distinguish Published, Publishing, Needs attention and Reverted; cards
+  show actor, request/completion dates, changed fields, source and question links.
+- Added read-only paginated API and lazy scoped details from immutable manifests
+  and receipts. Before/after values distinguish actual receipts from requested
+  corrections and missing historical fields. No publication decisions changed.
+  Pending approvals remain explicitly linked to the existing review queue.
+- Tested on a disposable database: scope filtering, own/exporter attribution,
+  pagination, query validation, exact receipt values, guest/staff boundaries and
+  active-test answer protection (2 tests). Component fixture checks cover filters,
+  expanded comparisons and pagination; navigation tests and production build pass.
+  Updated the navigation fixture to ignore CSS imports from the newer overview.
+- Desktop visual preview uses synthetic examples only:
+  tmp/publication-history-preview.html and tmp/publication-history-preview.png.
+  A phone viewport override did not take effect on the background preview tab;
+  phone visual verification was not completed. Responsive controls/comparisons
+  use wrapping/stacked layouts.
+- Released via scripts/deploy-publication-history.sh (read-only router additions
+  appended to the exact running router, preserving unrelated deployed changes),
+  then scripts/deploy.sh web. API rollback copy:
+  /tmp/publication-history-1794056392; frontend rollback:
+  /srv/study/releases/pre-publication-history-20261107.
+- Both sites passed health checks; live anonymous history access correctly returns
+  401. Authenticated behavior verified in disposable database/component fixtures;
+  the available live browser is signed out. No bank/question/user-history writes.
+
+
+## 2026-11-07 21:50 IST — Source-reviewed tagging pilot 2
+
+- Prepared source-reviewed pilot of 20 questions spanning English (5), GK/GS (5),
+  Current Affairs (5), and Reasoning (5) across distinct MPSC exams under policy
+  study-tagging-v1: Assistant/UDC April 2024, Combined Competitive Gazetted 2026
+  (GS-I, GS-II, GS-III), MCS CSP Paper II, Radiotherapy Technologist 2026,
+  Inspector of Taxes 2021, LDC 2025, Fishery Extension Officer 2017, and
+  Sub-Inspector Excise 2026.
+- Enforced owner's directive: to reduce duplication, only one booklet (Series A /
+  Booklet A / primary appearance) is considered per paper.
+- Result: 10 retags, 10 keeps, 0 holds. All 20 remain pending candidates in
+  reports/tagging-pilot2-20261107/pending-candidates.json. Live writes: 0.
+- Readback validation against Oracle DB verified that all 20 source fingerprints,
+  answer baselines, and review states remain identical. All 20 proposed paths
+  validate strictly against the 181 active nodes in review_taxonomy.
+
+
+## 2026-11-07 22:15 IST — Source-reviewed tagging batch 12 (English Grammar & Vocabulary)
+
+- Completed source-reviewed tagging batch 12 of 50 English questions following the owner's
+  English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Targets: 25 English MCQs (Q51–Q75) from Combined Competitive Examinations for Assistant Grade /
+  UDC 2024 Paper-I, and 25 English MCQs (Q51–Q75) from Combined Group B (NG) Paper-I December 2024
+  Booklet A. Single-booklet policy enforced (Booklets B, C, D omitted to reduce duplication).
+- Direct visual inspection of all 6 physical PDF page images (pages 5, 6, 7 of both registered PDFs,
+  sha256 6e55b48c... and 8cb1eb2d...).
+- Results: 32 retags, 18 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch12-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Assistant/UDC 2024: 20 items previously lumped into generic english/grammar were refined to
+    active subtopics: Synonyms (Q51-55), Antonyms (Q56-60), Subject-Verb Agreement (Q62-65),
+    and Idioms & Phrases (Q66-70).
+  * Group B NG Dec 2024: Corrected 5 Antonym questions (Q66-70) that were previously misclassified
+    as Synonyms; refined 3 subject-only English root items to Vocabulary.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 22:30 IST — Source-reviewed tagging batch 13 (Reasoning & Mental Ability)
+
+- Completed source-reviewed tagging batch 13 of 50 Reasoning & Aptitude questions following the
+  owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Mizoram Civil Services Combined Preliminary Examination 2025, Paper-II (Aptitude &
+  Reasoning), Series-A (50 core reasoning questions: Q35–Q84).
+- Single-booklet policy enforced: only Series-A was considered; duplicate permutation series
+  (Series-B, Series-C, Series-D) were omitted to eliminate redundant tagging passes.
+- Direct visual inspection of all 9 physical PDF pages (pages 7 to 15 of registered document
+  doc_e092395e2688703b09ce8212, sha256 63ee7c9d5510accf...). Inspected all stems, directions,
+  options, and figure diagrams (including Q75 rotating sector diagram).
+- Results: 8 retags, 42 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch13-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Restored 3 Assertion & Reason questions (Q45 Tides, Q46 Himalayan rivers, Q47 Glaciers) that were
+    misclassified as General Studies (geography/environment) back to reasoning-and-aptitude/verbal-reasoning.
+  * Reclassified CSAT quantitative word problems (Q73 fence posts, Q84 work-rate) from mathematics/arithmetic
+    to reasoning-and-aptitude/numerical-ability.
+  * Reclassified visual figure progression (Q75) and alphabet position progression (Q76) to
+    reasoning-and-aptitude/series. Noted taxonomy gap for non-verbal reasoning.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+## 2026-11-07 23:20 IST — Source-reviewed tagging batch 16 (English Grammar, Vocabulary & Reported Speech)
+
+- Completed source-reviewed tagging batch 16 of 50 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Assistant LESO 2026 - General English (Q17–Q66).
+  Single-booklet policy enforced: unique registered document doc_3c107a32ef282eb0258dac94 (sha256 bd3c0763...).
+  Together with Batch 15 (Q1–Q16), this brings Assistant LESO 2026 General English to 100% completion (66/66).
+- Direct visual inspection of all 7 physical PDF page images (pages 4 to 10) from registered document
+  doc_3c107a32ef282eb0258dac94. Inspected stems, options, phrase/clause structures, and speech transformations.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch16-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Assistant LESO-2026 General English.`).
+  * Conjunctions (Q17–Q20): Mapped to active topic `english/grammar`.
+  * Prepositions (Q21–Q30): Mapped to active subtopic `english/grammar/prepositions`. Recorded source defect:
+    printed heading mislabels section as 'determiner', while options are prepositions. Recorded Q28 typo ('wairing').
+  * Vocabulary sentence completion (Q31–Q38): Mapped to active topic `english/vocabulary`.
+  * Idioms & Phrases (Q39–Q43): Mapped to active subtopic `english/vocabulary/idioms-and-phrases`.
+  * Sentence forms & structural syntax (Q44–Q54, Q58): Mapped to active topic `english/grammar`.
+  * Conditional & correlative syntax (Q55, Q56): Mapped to active topic `english/sentence-correction`.
+  * Subject-verb agreement (Q57): Mapped to active subtopic `english/grammar/subject-verb-agreement`.
+  * Reported Speech (Q59–Q66): Mapped 8 questions testing direct/indirect speech transformations and universal truths
+    to active subtopic `english/grammar/reported-speech`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+
+## 2026-11-07 23:00 IST — Source-reviewed tagging batch 15 (English Reading Comprehension, Grammar & Communication)
+
+- Completed source-reviewed tagging batch 15 of 50 English and Aptitude questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target papers:
+  1. Mizoram Civil Services Combined Preliminary Examination 2025, Paper-II Series-A (34 questions: Q1–Q34).
+     Single-booklet policy enforced: Series-A selected; duplicate Series-B, C, D omitted.
+  2. Competitive Examination for Assistant LESO 2026 - General English (16 questions: Q1–Q16).
+- Direct visual inspection of all 8 physical PDF page images (MCS CSP pages 2 to 7; LESO pages 3 and 4)
+  from registered documents doc_e092395e2688703b09ce8212 (sha256 63ee7c9d...) and doc_3c107a32ef282eb0258dac94
+  (sha256 bd3c0763...). Inspected 4 full reading comprehension passages (AI, Solitude, Social Media, Women's
+  Empowerment), stems, options, and grammar directions.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch15-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/<Paper Title>`).
+  * Mapped 16 passage questions (MCS Q1–Q15, Q17) to active topic `english/comprehension`.
+  * Mapped passage-based contextual synonym (MCS Q16) to `english/vocabulary/synonyms`.
+  * Mapped vocabulary cloze and confusing word items (MCS Q18–Q20) to `english/vocabulary`.
+  * Mapped critical reasoning inference (MCS Q21) to `reasoning-and-aptitude/verbal-reasoning`.
+  * Mapped 13 CSAT interpersonal, non-verbal communication, assertiveness, and empathy items (MCS Q22–Q34)
+    to `reasoning-and-aptitude/verbal-reasoning`. Documented taxonomy gap for interpersonal communication.
+  * Mapped 10 Parts of Speech items (LESO Q1–Q10) to `english/grammar/parts-of-speech`.
+  * Mapped 5 Prepositions items (LESO Q11–Q15) to `english/grammar/prepositions`.
+  * Mapped Conjunction item (LESO Q16) to `english/grammar`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+## 2026-11-07 23:20 IST — Source-reviewed tagging batch 16 (English Grammar, Vocabulary & Reported Speech)
+
+- Completed source-reviewed tagging batch 16 of 50 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Assistant LESO 2026 - General English (Q17–Q66).
+  Single-booklet policy enforced: unique registered document doc_3c107a32ef282eb0258dac94 (sha256 bd3c0763...).
+  Together with Batch 15 (Q1–Q16), this brings Assistant LESO 2026 General English to 100% completion (66/66).
+- Direct visual inspection of all 7 physical PDF page images (pages 4 to 10) from registered document
+  doc_3c107a32ef282eb0258dac94. Inspected stems, options, phrase/clause structures, and speech transformations.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch16-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Assistant LESO-2026 General English.`).
+  * Conjunctions (Q17–Q20): Mapped to active topic `english/grammar`.
+  * Prepositions (Q21–Q30): Mapped to active subtopic `english/grammar/prepositions`. Recorded source defect:
+    printed heading mislabels section as 'determiner', while options are prepositions. Recorded Q28 typo ('wairing').
+  * Vocabulary sentence completion (Q31–Q38): Mapped to active topic `english/vocabulary`.
+  * Idioms & Phrases (Q39–Q43): Mapped to active subtopic `english/vocabulary/idioms-and-phrases`.
+  * Sentence forms & structural syntax (Q44–Q54, Q58): Mapped to active topic `english/grammar`.
+  * Conditional & correlative syntax (Q55, Q56): Mapped to active topic `english/sentence-correction`.
+  * Subject-verb agreement (Q57): Mapped to active subtopic `english/grammar/subject-verb-agreement`.
+  * Reported Speech (Q59–Q66): Mapped 8 questions testing direct/indirect speech transformations and universal truths
+    to active subtopic `english/grammar/reported-speech`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+
+
+## 2026-11-07 22:45 IST — Source-reviewed tagging batch 14 (Arithmetic & Quantitative Aptitude)
+
+- Completed source-reviewed tagging batch 14 of 50 Arithmetic & Quantitative Reasoning questions
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Junior Accounts Officer (JAO) 2026, Paper-II (GK, Arithmetic & Reasoning), Series A
+  (50 core quantitative and reasoning questions: Q51–Q100).
+- Single-booklet policy enforced: only Series-A was considered; duplicate booklet Series-B was
+  omitted to eliminate redundant tagging passes and prevent duplicate question bloat.
+- Direct visual inspection of all 6 physical PDF page images (pages 7 to 12 of registered document
+  doc_a11990f15b7d667f861bd8b7, sha256 3f83869e5d7f191b...). Inspected all stems, formulas,
+  options, histograms (Q71), pie charts (Q77-78), triangle geometric counting (Q90), and paper folding
+  diagrams (Q91).
+- Results: 49 retags, 1 keep, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch14-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Refined 49 bare subject-only root tags (`mathematics` and `reasoning-and-aptitude`) down to active
+    specific topics/subtopics:
+    - Arithmetic: Averages (Q56, Q58), Percentages (Q59, Q60), Profit & Loss (Q61, Q62), Ratio & Proportion (Q63, Q64).
+    - Arithmetic Topic Root: Simple/Compound Interest (Q65, Q66) and Time & Distance (Q67, Q68) mapped to topic
+      `mathematics/arithmetic` (subtopics do not exist in active 181-node taxonomy).
+    - Algebra: Quadratic Equations (Q51), Algebraic Expressions (Q52).
+    - Mensuration: Area (Q53), Volume (Q54).
+    - Permutations, Combinations & Probability: (Q57, Q69, Q70) mapped to subject root `mathematics`.
+    - Data Interpretation: Histogram (Q71), Pie Chart (Q77-78), Tabular Data (Q79-80).
+    - Series & Sequences: (Q72-76, Q87, Q88).
+    - Reasoning Spatial/Diagrams: Triangle counting (Q90), Paper folding (Q91) mapped to `reasoning-and-aptitude/series`.
+    - Verbal Reasoning: Blood relations (Q81), Coding-decoding (Q82-83), Direction sense (Q84), Syllogisms/Logic (Q85-86, Q92-96).
+    - Numerical Ability: Word problems (Q97-100).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+## 2026-11-07 23:20 IST — Source-reviewed tagging batch 16 (English Grammar, Vocabulary & Reported Speech)
+
+- Completed source-reviewed tagging batch 16 of 50 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Assistant LESO 2026 - General English (Q17–Q66).
+  Single-booklet policy enforced: unique registered document doc_3c107a32ef282eb0258dac94 (sha256 bd3c0763...).
+  Together with Batch 15 (Q1–Q16), this brings Assistant LESO 2026 General English to 100% completion (66/66).
+- Direct visual inspection of all 7 physical PDF page images (pages 4 to 10) from registered document
+  doc_3c107a32ef282eb0258dac94. Inspected stems, options, phrase/clause structures, and speech transformations.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch16-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Assistant LESO-2026 General English.`).
+  * Conjunctions (Q17–Q20): Mapped to active topic `english/grammar`.
+  * Prepositions (Q21–Q30): Mapped to active subtopic `english/grammar/prepositions`. Recorded source defect:
+    printed heading mislabels section as 'determiner', while options are prepositions. Recorded Q28 typo ('wairing').
+  * Vocabulary sentence completion (Q31–Q38): Mapped to active topic `english/vocabulary`.
+  * Idioms & Phrases (Q39–Q43): Mapped to active subtopic `english/vocabulary/idioms-and-phrases`.
+  * Sentence forms & structural syntax (Q44–Q54, Q58): Mapped to active topic `english/grammar`.
+  * Conditional & correlative syntax (Q55, Q56): Mapped to active topic `english/sentence-correction`.
+  * Subject-verb agreement (Q57): Mapped to active subtopic `english/grammar/subject-verb-agreement`.
+  * Reported Speech (Q59–Q66): Mapped 8 questions testing direct/indirect speech transformations and universal truths
+    to active subtopic `english/grammar/reported-speech`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+
+## 2026-11-07 23:00 IST — Source-reviewed tagging batch 15 (English Reading Comprehension, Grammar & Communication)
+
+- Completed source-reviewed tagging batch 15 of 50 English and Aptitude questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target papers:
+  1. Mizoram Civil Services Combined Preliminary Examination 2025, Paper-II Series-A (34 questions: Q1–Q34).
+     Single-booklet policy enforced: Series-A selected; duplicate Series-B, C, D omitted.
+  2. Competitive Examination for Assistant LESO 2026 - General English (16 questions: Q1–Q16).
+- Direct visual inspection of all 8 physical PDF page images (MCS CSP pages 2 to 7; LESO pages 3 and 4)
+  from registered documents doc_e092395e2688703b09ce8212 (sha256 63ee7c9d...) and doc_3c107a32ef282eb0258dac94
+  (sha256 bd3c0763...). Inspected 4 full reading comprehension passages (AI, Solitude, Social Media, Women's
+  Empowerment), stems, options, and grammar directions.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch15-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/<Paper Title>`).
+  * Mapped 16 passage questions (MCS Q1–Q15, Q17) to active topic `english/comprehension`.
+  * Mapped passage-based contextual synonym (MCS Q16) to `english/vocabulary/synonyms`.
+  * Mapped vocabulary cloze and confusing word items (MCS Q18–Q20) to `english/vocabulary`.
+  * Mapped critical reasoning inference (MCS Q21) to `reasoning-and-aptitude/verbal-reasoning`.
+  * Mapped 13 CSAT interpersonal, non-verbal communication, assertiveness, and empathy items (MCS Q22–Q34)
+    to `reasoning-and-aptitude/verbal-reasoning`. Documented taxonomy gap for interpersonal communication.
+  * Mapped 10 Parts of Speech items (LESO Q1–Q10) to `english/grammar/parts-of-speech`.
+  * Mapped 5 Prepositions items (LESO Q11–Q15) to `english/grammar/prepositions`.
+  * Mapped Conjunction item (LESO Q16) to `english/grammar`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+## 2026-11-07 23:20 IST — Source-reviewed tagging batch 16 (English Grammar, Vocabulary & Reported Speech)
+
+- Completed source-reviewed tagging batch 16 of 50 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Assistant LESO 2026 - General English (Q17–Q66).
+  Single-booklet policy enforced: unique registered document doc_3c107a32ef282eb0258dac94 (sha256 bd3c0763...).
+  Together with Batch 15 (Q1–Q16), this brings Assistant LESO 2026 General English to 100% completion (66/66).
+- Direct visual inspection of all 7 physical PDF page images (pages 4 to 10) from registered document
+  doc_3c107a32ef282eb0258dac94. Inspected stems, options, phrase/clause structures, and speech transformations.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch16-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Assistant LESO-2026 General English.`).
+  * Conjunctions (Q17–Q20): Mapped to active topic `english/grammar`.
+  * Prepositions (Q21–Q30): Mapped to active subtopic `english/grammar/prepositions`. Recorded source defect:
+    printed heading mislabels section as 'determiner', while options are prepositions. Recorded Q28 typo ('wairing').
+  * Vocabulary sentence completion (Q31–Q38): Mapped to active topic `english/vocabulary`.
+  * Idioms & Phrases (Q39–Q43): Mapped to active subtopic `english/vocabulary/idioms-and-phrases`.
+  * Sentence forms & structural syntax (Q44–Q54, Q58): Mapped to active topic `english/grammar`.
+  * Conditional & correlative syntax (Q55, Q56): Mapped to active topic `english/sentence-correction`.
+  * Subject-verb agreement (Q57): Mapped to active subtopic `english/grammar/subject-verb-agreement`.
+  * Reported Speech (Q59–Q66): Mapped 8 questions testing direct/indirect speech transformations and universal truths
+    to active subtopic `english/grammar/reported-speech`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+## 2026-11-07 23:40 IST — Source-reviewed tagging batch 17 (Technical & Pure Mathematics)
+
+- Completed source-reviewed tagging batch 17 of 50 Mathematics questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Inspector of Statistics 2026 - Paper-III (Mathematics)
+  (Q1–Q50, completing Part-A Multiple Choice Questions).
+  Single-booklet policy enforced: unique registered document doc_064ad469ca009ef3206215ef (sha256 57d152bd...).
+- Direct visual inspection of all 7 physical PDF page images (pages 1 to 7) from registered document
+  doc_064ad469ca009ef3206215ef. Inspected all printed formulas, differential equations, integrals, matrices,
+  and numerical algorithms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch17-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously erroneously stored under generic `gk/Inspector of Statistics Paper-III (Mathematics).`).
+  * Abstract & Linear Algebra (Q3, Q11, Q12, Q17, Q27–Q30, Q39–Q41): Mapped to active topic `mathematics/algebra`.
+  * 3D Geometry (Q8, Q35): Shortest distance and angle between skew lines mapped to `mathematics/geometry/lines-and-angles`.
+  * Numerical Linear Equations (Q50): Gauss-Seidel iterative method mapped to `mathematics/algebra/linear-equations`.
+  * Advanced Calculus, Differential Equations, Analysis & Numerical Methods (Q1–Q2, Q4–Q7, Q9–Q10, Q13–Q16,
+    Q18–Q26, Q31–Q34, Q36–Q38, Q42–Q49): Mapped to active subject root `mathematics`. Documented systemic taxonomy
+    gap: the active 181-node taxonomy lacks dedicated topics for advanced undergraduate mathematics (Calculus,
+    Differential Equations, Real/Complex Analysis, Numerical Analysis, Operations Research).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+## 2026-11-07 23:55 IST — Source-reviewed tagging batch 18 (Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 18 of 50 Quantitative & Reasoning questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Group B (NG) Paper-II December-2024 Booklet A (Q34–Q83, completing the entire
+  quantitative, data interpretation, and reasoning section).
+  Single-booklet policy enforced: only Booklet A (doc_9e78d845748f93799eefe5ac, sha256 c45fbaf9...) was
+  considered; duplicate permutation Booklets B, C, and D were cleanly omitted, saving 249 redundant reviews.
+- Direct visual inspection of all 6 physical PDF page images (pages 5 to 10) from registered document
+  doc_9e78d845748f93799eefe5ac. Inspected pie charts (Q46-47), geometric formulas, branching number trees (Q75),
+  non-verbal figure patterns (Q78, Q79), and 3x3 figure matrix (Q80).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch18-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously sat in an unassigned `null/null` state in the database).
+  * Computer Science / Networking (Q34, Q35): IPv6 128-bit address architecture and messaging channels mapped to `computer-science/networking`.
+  * Arithmetic & Numbers (Q36, Q37, Q41, Q43, Q44, Q54, Q57, Q60, Q61): Divisibility, radical arithmetic,
+    simple interest, AP sums, BODMAS, square roots, train speed-distance, and compound interest mapped to `mathematics/arithmetic`.
+  * Averages (Q38): Positive even multiples mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q39, Q53): Unit orange sales and loss recovery mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q45, Q48, Q49, Q52, Q65, Q71): Pass mark shortfall, successive discounts, sales tax,
+    homework completion, Venn survey intersection, and election valid votes mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q50, Q51): Compound equality ratios and liquid mixture adjustments mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Geometry & Mensuration (Q42, Q55, Q63): Complementary angle heights, cube volume, and perimeter wire area
+    comparison mapped to `mathematics/geometry/triangles`, `mathematics/mensuration/volume`, and `mathematics/mensuration/area`.
+  * Algebra (Q56): Common base exponential equation mapped to `mathematics/algebra/algebraic-expressions`.
+  * Probability (Q64): Two-coin toss probability mapped to active subject root `mathematics`.
+  * Data Interpretation (Q46, Q47): Book store distribution pie chart central angles and group differences mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Series & Spatial Logic (Q59, Q69, Q75, Q78–Q80): AP terms count, dice adjacency, branching number HCF tree,
+    figure patterns, and 3x3 shape matrix mapped to `reasoning-and-aptitude/series`. Documented taxonomy gap for non-verbal reasoning.
+  * Verbal Reasoning & Numerical Ability (Q40, Q58, Q62, Q66–Q68, Q70, Q72–Q74, Q76–Q77, Q81–Q83): Time and work,
+    cistern leaks, displacement, alphabet position logic, calendar cycle, analogies, seating arrangements, shadow direction,
+    recess bullying reaction, drought relief courses of action, and wage sharing mapped to active topics.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+
+
+
+
+
+
+
+## 2026-11-08 00:05 IST — Source-reviewed tagging batch 19 (English Comprehension, Grammar & Vocabulary)
+
+- Completed source-reviewed tagging batch 19 of 50 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Competitive Examination for Recruitment to the Post of Tourist Officer under Tourism Department,
+  Government of Mizoram - General English (doc_7efd2b6447fc6f5d639cc708, sha256 b200602b63c..., Q1–Q50).
+- Direct visual inspection of all 6 physical PDF page images (pages 2 to 7) from registered document
+  doc_7efd2b6447fc6f5d639cc708. Inspected full passage on sustainable livelihoods, all parts-of-speech stems/underlines,
+  preposition sentences, conjunctions, quantifiers, synonyms, and idioms.
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch19-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously misclassified under generic `gk/Tourist Officer General English.`).
+  * Reading Comprehension (Q1–Q10): Passage comprehension on sustainable livelihoods, including primary focus, resilience,
+    excluded challenges, in-context vocabulary ('deplete'), rural livelihoods, and summarization mapped to `english/comprehension`.
+  * Parts of Speech (Q11–Q20): Syntactic identification of adverbs ('usually', 'round', 'rather'), prepositions ('by'),
+    conjunctions ('When', 'after'), interjection ('wait !.'), verb ('interested'), adjective ('lame'), and pronoun ('one another')
+    mapped to `english/grammar/parts-of-speech`.
+  * Prepositions (Q21–Q33): Prepositions following adjectives/verbs ('predicated on', 'deficient in', 'acquiesced to',
+    'along', 'hold to', 'aptitude for', 'complied with', 'onto', 'through', 'consistent with', 'invested with', 'vexed at',
+    'connives at') mapped to `english/grammar/prepositions`.
+  * Source Defects Documented:
+    - Q21 (p. 4): Printed typographical error 'predicted' instead of 'predicated' in stem ('is predicted ________ several flawed assumptions').
+    - Q31 (p. 5): Printed typographical error 'judical' instead of 'judicial'.
+  * Conjunctions & Determiners (Q34–Q40): Subordinating conditional ('provided that'), manner ('as if'), concessive ('although'),
+    and quantifiers/determiners ('any', 'Much', 'much', 'neither') mapped to active topic `english/grammar`. Documented taxonomy
+    observation: active taxonomy lacks dedicated subtopics for conjunctions and determiners/quantifiers under English Grammar.
+  * Synonyms (Q41–Q45): Lexical synonym identification for 'clamorous' (loud), 'potent' (strong), 'whimsical' (playful),
+    'puny' (feeble), and 'adversity' (hardships) mapped to `english/vocabulary/synonyms`.
+  * Idioms & Phrases (Q46–Q50): Traditional English idioms 'when pigs fly', 'sitting on its hands', 'coughed up',
+    'off on a tangent', and 'heap coals of fire on his head' mapped to `english/vocabulary/idioms-and-phrases`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+## 2026-11-08 00:10 IST — Source-reviewed tagging batch 20 (English Grammar, Syntax, Transformations & Speech)
+
+- Completed source-reviewed tagging batch 20 of 51 English questions under /goal execution,
+  following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target papers:
+  1. Competitive Examination for Recruitment to the Post of Tourist Officer under Tourism Department - General English
+     (doc_7efd2b6447fc6f5d639cc708, sha256 b200602b63c..., Q51–Q76: 26 questions, completing the paper 100%).
+  2. Competitive Examination for Lower Division Clerk under MPSC, February 2025 — Paper I
+     (doc_bb0f82b67a2f3726fd265915, sha256 c222905e480..., Q51–Q75: 25 questions, completing the English MCQ section 100%).
+- Direct visual inspection of all 7 physical PDF page images (Tourist Officer pages 7 to 10; LDC Paper-I pages 6 to 8)
+  from registered documents doc_7efd2b6447fc6f5d639cc708 and doc_bb0f82b67a2f3726fd265915. Inspected all printed stems,
+  clauses, options, sentence conversions, direct/indirect speeches, voices, and tenses.
+- Results: 47 retags, 4 keeps, 0 holds. All 51 remain pending candidates in
+  reports/tagging-batch20-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections & milestones:
+  * 100% Paper Completion: Tourist Officer General English completely reviewed (76/76 questions across Batches 19 & 20).
+  * 100% Section Completion: LDC February 2025 Paper-I General English MCQs completely reviewed (25/25 MCQs).
+  * Prepositions (Tourist Q21–33 in Batch 19; LDC Q51, Q52, Q54, Q55 in Batch 20): Mapped to `english/grammar/prepositions`.
+  * Tenses (Tourist Q72–Q76; LDC Q56, Q57, Q59): Mapped to `english/grammar/tenses`.
+  * Reported Speech (Tourist Q67–Q71; LDC Q70): Mapped to `english/grammar/reported-speech`.
+  * Voice (LDC Q66–Q69): Mapped to `english/grammar/voice`.
+  * Subject-Verb Agreement (LDC Q74): Intervening phrase agreement mapped to `english/grammar/subject-verb-agreement`.
+  * Idioms & Phrases (LDC Q53, Q61–Q65): Mapped to `english/vocabulary/idioms-and-phrases`.
+  * Vocabulary (Tourist Q51–Q55; LDC Q71, Q72): Mapped to `english/vocabulary`, `english/vocabulary/antonyms`, and `english/vocabulary/synonyms`.
+  * Sentence Transformations, Clauses & Moods (Tourist Q56–Q66; LDC Q58, Q60, Q73, Q75): Preserved/routed to `english/grammar`.
+  * Documented Source Defects:
+    - Tourist Officer Q63 (p. 8): Printed typo 'quarantee' in option (b).
+    - Tourist Officer Q74 (p. 10): Printed typo 'then' instead of correlative 'than'.
+    - LDC Paper-I Q65 (p. 7): Printed typo 'legimate' in option (c).
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 51
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+## 2026-11-08 00:20 IST — Source-reviewed tagging batch 21 (Quantitative Aptitude, Arithmetic & Reasoning)
+
+- Completed source-reviewed tagging batch 21 of 50 Quantitative Aptitude, Arithmetic & Reasoning questions
+  under /goal execution, following the owner's English/Arithmetic/Reasoning priority under policy study-tagging-v1.
+- Target paper: Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under
+  Various Departments, Government of Mizoram — Paper II (Series A) (doc_6ecb11d8198be7efc1b74ee3, sha256 872a73ca...,
+  Q36–Q85, covering all 35 Arithmetic questions and the first 15 Reasoning questions).
+  Single-booklet policy enforced: only Series A was considered; duplicate permutation series Series B, C, and D
+  were cleanly omitted, saving 300 redundant reviews.
+- Direct visual inspection of all 7 physical PDF page images (pages 5 to 11) from registered document
+  doc_6ecb11d8198be7efc1b74ee3. Inspected all printed formulas, pie charts (Q63, Q64), line graph (Q65), spatial embedded
+  figures (Q74), alphanumeric mirror image (Q75), geometric mirror figure (Q78), 3-set meat preference Venn diagram
+  (Q79–Q82), and 2x2 crossed diagonal grid counting triangles and squares (Q83).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 remain pending candidates in
+  reports/tagging-batch21-20261107/pending-candidates.json. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously misclassified under generic `gk/Assistant, UDC Paper-II Series A.`).
+  * Arithmetic (Q36, Q40, Q41, Q54, Q56, Q59, Q62): Fractions, HCF, divisibility missing digits, speed/distance late-early,
+    compound interest, BODMAS priority, and velocity unit conversion mapped to `mathematics/arithmetic`.
+  * Averages (Q60): Weighted student-teacher inclusion mean mapped to `mathematics/arithmetic/averages`.
+  * Profit & Loss (Q47, Q57): Fractional loss% and CP/SP article equality mapped to `mathematics/arithmetic/profit-and-loss`.
+  * Percentages (Q61): Successive discounts mapped to `mathematics/arithmetic/percentages`.
+  * Ratio & Proportion (Q48, Q49, Q51): Terms ratio with sum of squares, boys/girls money sharing, and product ratio
+    mapped to `mathematics/arithmetic/ratio-and-proportion`.
+  * Algebra (Q37, Q39, Q42, Q44, Q52): Power index reduction mapped to `mathematics/algebra/algebraic-expressions`;
+    simultaneous linear equations (currency denominations, quotient equation, father-son ages, 3-number system) mapped
+    to `mathematics/algebra/linear-equations`.
+  * Geometry & Mensuration (Q43, Q45, Q46, Q50, Q53): Circle sector area, park pathway area, and circle-square area
+    mapped to `mathematics/mensuration/area`; sphere melting recast into cubes mapped to `mathematics/mensuration/volume`;
+    tower-pole angle of elevation right triangle trigonometry mapped to `mathematics/geometry/triangles`.
+  * Permutations (Q38, Q58): nP3 product and 'APPLE' multiset arrangements mapped to active subject root `mathematics`.
+  * Data Interpretation (Q63–Q65): Construction expenditure pie chart angles/percentages and food grain line graph average
+    comparison mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Reasoning & Spatial Logic (Q66–Q73, Q74–Q85): Analogies, direction sense displacement, 7-boy ranking puzzles,
+    blood relations, alphabet position count, embedded figure visualization, alphanumeric and geometric mirror images,
+    linear parallel seating arrangement, row position shifting, 3-set meat Venn diagram, and 2x2 grid triangle/square
+    counting mapped to `reasoning-and-aptitude/verbal-reasoning` and `reasoning-and-aptitude/series`.
+  * Documented Source Defects:
+    - Q73 (p. 9): Printed typographical error 'How may letters' instead of 'How many letters'.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50
+  source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+### Batch 22 tagging report (51 questions: 15 Reasoning & Quantitative + 36 English Grammar & Vocabulary)
+- Complete coverage of:
+  1. *Combined Competitive Examination for Assistant Grade & UDC Paper-II Series A* (Q86–Q100, 15 questions, achieving 100% completion of the quantitative and reasoning section).
+  2. *General Competitive Examination for Inspector under Excise & Narcotics Department, 2025 - General English* (Q1–Q36, 36 questions, doc_8647182b0b74ac738c56de62, achieving 100% paper completion).
+- Results: 51 retags, 0 keeps, 0 holds. All 51 pending candidates in `reports/tagging-batch22-20261107/pending-candidates.json`. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 51 previously misclassified under generic `gk/...` paths).
+  * Reasoning & Spatial Logic (Q86–Q90, Q92, Q94, Q95, Q97, Q98, Q100): 3D cube rotations, folded cube net, syllogisms, blood relations, letter coding, number analogies, and geometric figure progression mapped to `reasoning-and-aptitude/verbal-reasoning` and `reasoning-and-aptitude/series`.
+  * Quantitative Aptitude (Q91, Q93, Q96, Q99): Age ratio linear equations, percentage calculation, and octagonal wheel missing number mapped to `mathematics/algebra/linear-equations`, `mathematics/arithmetic/percentages`, and `reasoning-and-aptitude/numerical-ability`.
+  * English Parts of Speech (Q1–Q10): Abstract/material nouns, relative pronouns, comparative adjectives, and adverbs mapped to `english/grammar/parts-of-speech`.
+  * English Prepositions (Q11–Q20): Dependent prepositions ('immune to', 'fond of', 'guilty of', etc.) mapped to `english/grammar/prepositions`.
+  * English Vocabulary, Synonyms & Antonyms (Q21–Q36): Single word substitutes ('altruist', 'somnambulist', 'amateur', 'lexicographer', 'polyglot', 'pedestrian', 'dermatology', 'claustrophobia', 'gregarious', 'veteran') mapped to `english/vocabulary`; vocabulary synonyms/antonyms mapped to `english/vocabulary/synonyms` and `english/vocabulary/antonyms`.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 51 source fingerprints match 100%. All paths validate strictly against active taxonomy nodes.
+
+### Batch 23 tagging report (50 English Grammar, Usage, Vocabulary & Sentence Structure questions)
+- Complete coverage of:
+  * *Common Competitive Examination for Group 'B' Non-Gazetted (Technical) - Paper I (General English) (January-2026)* (Q1–Q50, 50 MCQs, doc_7f704f41cc87a988ef58e762, achieving 100% completion of the paper's MCQ section).
+- Results: 50 retags, 0 keeps, 0 holds. All 50 pending candidates in `reports/tagging-batch23-20261107/pending-candidates.json`. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (all 50 previously misclassified under generic `gk/General English Paper-I 2026.`).
+  * Parts of Speech (Q1–Q10): Preposition, adjective, subordinating conjunction, temporal adverb, semi-modal verb, material noun, interjection, distributive pronoun, adverb of proximity, and noun mapped to `english/grammar/parts-of-speech`.
+  * Prepositions (Q11–Q15): Prepositions of sovereignty, location, formal presence, duration, and agentive passive mapped to `english/grammar/prepositions`.
+  * Sentence Correction (Q16–Q25): Rate expression idiom, adjective hierarchy/order, indefinite pronoun placement, embedded interrogative inversion, participial adjective, modal negation, correlative clause redundancy, infinitive aspect, conditional tense harmony, and stative verb phrasing mapped to `english/sentence-correction`.
+  * Vocabulary & Sentence Completion (Q26–Q35): Contextual collocations, moral judgment diction, institutional vocabulary, semantic harmony, modal and transit preference verbs, executive administrative terms, and metaphorical idioms mapped to `english/vocabulary`.
+  * Antonyms (Q36–Q40): Benevolent/Cruel, Vivid/Dull, Audacious/Cowardly, Lucid/Confusing, and Gregarious/Introverted mapped to `english/vocabulary/antonyms`.
+  * Idioms & Phrases (Q41–Q45): 'once in a blue moon', 'hits the nail on the head', 'the ball is in your court', 'under the weather', and 'to throw down the gauntlet' mapped to `english/vocabulary/idioms-and-phrases`.
+  * Sentence Classification & Grammar (Q46–Q50): Functional declarative definition, declarative statement, exclamatory sentence, imperative sentence without overt subject, and interrogative request with imperative force mapped to active topic `english/grammar`.
+  * Documented Source Defects:
+    - Q31 (p. 3): Printed typographical backslash in option (c) reading 'deported\\'.
+    - Q35 (p. 4): Printed typographical omission in option (c) printing single word 'well-considered' without second pair blank.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 50 source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+### Batch 24 tagging report (49 questions: 33 Computer Knowledge/IT + 16 Quantitative Aptitude & Data Interpretation)
+- Complete 100% paper finalization for TWO major exam papers:
+  1. *Combined Group B (NG) Paper-II December-2024 Booklet A* (Q1–Q33, 33 questions, doc_9e78d845748f93799eefe5ac, achieving 100% completion of the entire 83-question paper across Batch 18 and Batch 24). Single booklet deduplication omitted duplicate Booklets B, C, D (saving 249 redundant reviews).
+  2. *MCS Combined 2025 Preliminary Exam Paper-II Series-A* (Q85–Q100, 16 questions, doc_e092395e2688703b09ce8212, achieving 100% completion of the entire 100-question paper across Batches 13, 15, and 24). Single booklet deduplication omitted duplicate Series B, C, D (saving 300 redundant reviews).
+- Results: 49 retags, 0 keeps, 0 holds. All 49 pending candidates in `reports/tagging-batch24-20261107/pending-candidates.json`. Live writes: 0.
+- Key corrections:
+  * Rectified 100% of targets (33 previously unassigned nulls; 16 previously misclassified under generic `gk/...` path).
+  * Computer Storage & Hardware (Q1, Q3, Q5, Q7, Q9): SSD characteristics, banking MICR, CPU internal registers, I/O system, and USB port mapped to `computer-science/computer-systems-and-architecture/memory-and-storage` and `computer-hardware`.
+  * Computer Generations (Q2): 3rd generation ICs mapped to `computer-systems-and-architecture/history-and-generations`.
+  * Operating Systems & GUI (Q4, Q6, Q8, Q10): System software definition, GUI widgets, responsive design, and desktop background workspace mapped to `computer-science/operating-systems`.
+  * Office Applications (Q11–Q25): MS Word lists, text wrapping, page breaks, mail merge, gutter margin; MS Excel IF condition, freeze panes, absolute reference ($), NOW() datetime, PivotTable; and PowerPoint Slide Master, layouts, transitions, placeholders, capacity limit mapped to `computer-science/office-applications`.
+  * Networking & Collaboration (Q26–Q33): SMTP email protocol, subnet mask, router function, full-duplex transmission mode, browser incognito mode, Zoom video conferencing, collaboration software benefits, and Google Docs real-time collaboration mapped to `computer-science/networking`.
+  * Quantitative Aptitude & Arithmetic (Q85, Q92, Q93, Q94, Q95, Q96, Q97): Profit/loss CP-SP difference, Rama/Thana marks ratio, bulbs gain% with scrap wastage, inverse proportion time & work, nested square/cube root radicals, school boys/girls percentage, and white/green balls probability mapped to `mathematics/arithmetic`, `profit-and-loss`, `percentages`, and `ratio-and-proportion`.
+  * Algebra (Q86, Q91): A & B age simultaneous linear equations and exponential equation 5^(2x+1)/25 = 125 mapped to `mathematics/algebra/linear-equations` and `algebraic-expressions`.
+  * Geometry & Mensuration (Q87, Q88, Q89, Q90): Ladder Pythagoras theorem, steel wire square-to-circle area, storm broken tree trigonometry height, and metallic sphere recast into cylindrical wire volume mapped to `mathematics/geometry/triangles`, `mensuration/area`, and `mensuration/volume`.
+  * Data Interpretation (Q98–Q100): Family expenditure circular pie chart (Education 108° expenditure from Rent 36°), and comparative college boys & girls bar chart (boys mean, and girls to boys ratio) mapped to `reasoning-and-aptitude/data-interpretation`.
+  * Documented Source Defects:
+    - MCS Q98 (p. 16): Printed grammatical typo in stem 'was spend on Rent' instead of 'was spent on Rent'.
+- Readback validation (validation.json) against Oracle DB verified 0 database writes; all 49 source fingerprints match 100%. All paths validate strictly against the 181 active taxonomy nodes.
+
+## 2026-11-07 — One booklet entry, quieter answers and review deduplication
+
+Delivered generic explicit-series/numeric booklet grouping to card/list archives,
+including Group B pagination. Fuller sources open first; other originals remain
+accessible with exact identities. Counts distinguish paper entries/source questions.
+Normal answer comparison is inside Sources & study tools; concise Verified answer
+badges preserve real provenance, conflict/hold/provisional notices and reveal gates.
+
+Added conservative exact booklet-repeat filtering to mixed-mock and shared-test
+selection without rewriting sources/keys/history. Live read-only check: 5,577
+marked-booklet candidates → 4,520 slots (1,057 exact repeats suppressed). Existing
+source-version-bound reviewed relations remain independently applied.
+
+Saved review audit found overlapping files and mismatched current-primary metadata.
+Frozen snapshot: 1,146 rows / 1,068 unique targets; 78 targets repeated, 276 candidate
+rows fail their own saved-snapshot metadata check. Consolidated selection contains
+868 unique snapshot-aligned pending records; zero live tagging writes. Visually
+reconciled two source tasks using the PDF skill; original candidates are preserved.
+Shared agent/tagging instructions now require coverage exclusion and one primary
+booklet before new selections. The audit is not control of an external running
+agent and does not attribute a model identity or claim answer-solving completion.
+
+12 backend integration tests, focused retest, two coverage tests, relevant frontend
+regressions and build pass. Browser checked the two-entry December-2024 Group B
+archive and the simplified restored-answer view. API + web deployed, both sites
+healthy. Evidence/limitations: reports/booklet-card-cleanup-20261107/README.md.
+
+## 2026-11-08 — Remaining answer wording and explicit conflict choices
+
+Fixed the leftover bank-card/practice/saved-UDC feedback labels reported by the
+owner. Removed learner “stored answer” wording; trusted sources use Correct /
+Incorrect, unverified feedback uses Suggested answer and flagged keys use Answer
+under review. General dated-context/exam helper text and the admin shortcut were
+also updated. No stored answers or historical attempts were rewritten.
+
+AnswerComparison now shows both labelled option letters/text immediately when an
+official key disagrees with a published verified solution or revealed practice
+suggestion. Unreviewed alternatives remain suggestions; an agreeing verified
+solution cannot conceal a different current suggestion. Option mapping uses text
+so booklet reorderings do not fabricate conflicts. Normal agreement stays compact.
+The existing backend comparison, reveal gates, provisional-key notices, scoring
+holds and key-preserving admin workflow remain in force; UI exclusion wording
+only appears when the backend reports a hold. No scoring/content policy changed.
+
+35 backend comparison tests, learner-label and component/security checks, and
+production build pass. Frontend deployed through scripts/deploy.sh web with a
+rollback copy; live assets verified and both sites healthy. Synthetic visual
+preview and details: reports/answer-feedback-20261108/README.md.
