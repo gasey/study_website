@@ -7012,3 +7012,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **3,835 saved records**, **3,757 unique appearances**, **3,357 deduplicated candidates**, **0 problems**. [Batch 58 report](reports/tagging-batch58-20261108/README.md).
+
+## 2026-11-08 — Tagging Batch 59: Geologist Junior General English Paper-II (100 MCQs)
+
+- **Execution:** Prepared pending source-reviewed tagging batch 59 (`reports/tagging-batch59-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Geologist Junior under Commerce & Industries Department, Government of Mizoram (November 2022) — General English Paper - II* (`Old_Questions/Direct_2022-2023/Geologist Junior under Commerce Deptt - Gen English-II..pdf`, `doc_a9476c81c3142d879ad48676`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 64 retag, 36 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations.
+  - Active path assignments:
+    - `english/grammar` (30 items, confirmed and kept): Q41–Q50 (sentence analysis: simple/compound/complex), Q51–Q60 (functional sentence types), Q61–Q70 (clause identification).
+    - `english/grammar/parts-of-speech` (24 items, retagged): Q1–Q3, Q5–Q10 (nouns, pronouns, adjectives, adverbs, conjunctions, interjections, verbs), Q21–Q30 (adjectives & determiners), Q31–Q35 (adverbs).
+    - `english/grammar/tenses` (10 items, retagged): Q11–Q20 (finite verb forms and aspect).
+    - `english/grammar/prepositions` (6 items, retagged): Q4 (preposition identification), Q36–Q40 (preposition usage).
+    - `english/vocabulary/idioms-and-phrases` (11 items, retagged): Q71–Q80 (idioms in context), Q99 (phrasal verb / idiom 'bottled up').
+    - `english/vocabulary/one-word-substitution` (11 items, retagged): Q81–Q90 (one-word substitutes), Q94 (definition of 'sadist').
+    - `english/vocabulary` (6 items, confirmed and kept): Q91 (spelling), Q95 (confusable words 'felicitated'), Q96, Q97, Q98, Q100 (contextual vocabulary).
+    - `english/vocabulary/synonyms` (2 items, retagged): Q92 ('primeval'), Q93 ('inception').
+- **Source Defects & Verification:**
+  - Q61–Q70 underlined clauses and Q71–Q80 underlined idioms verified via vector line drawings.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **3,935 saved records**, **3,857 unique appearances**, **3,457 deduplicated candidates**, **0 problems**. [Batch 59 report](reports/tagging-batch59-20261108/README.md).
