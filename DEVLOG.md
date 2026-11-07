@@ -6626,6 +6626,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   * **Preserved 2 Conventional Descriptive Section-A Tasks:** Preserved 2 conventional written tasks totaling 40 marks in `pending-written-intake.json` (Task 1: Essay 20m; Task 2: Précis 20m).
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (60/60) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,237** across 46 candidate reports with zero problems or booklet family conflicts. [Batch 45 report](reports/tagging-batch45-20261108/README.md).
 
+## 2026-11-08 08:00 IST — Source-reviewed tagging batch 46 (Inspector of Statistics & MPE & SS Mathematics 100% Paper Finalization — 47 items)
+
+- Completed source-reviewed tagging batch 46 (47 Mathematics items, achieving 100% paper completion across both booklets) from:
+  1. *Technical Competitive Examinations for Recruitment to Inspector of Statistics under Planning & Programme Implementation Department (February 2017) — Paper-III (Mathematics)* (`doc_baa7d3e36313750a22acdc00`, 20 MCQs)
+  2. *General Competitive Examination for Recruitment to the Post of Junior Grade of Mizoram Planning, Economic & Statistical Service (December 2025) — Mathematics-I* (`doc_cceff4af00fc9b8c74f9e2ab`, 27 items)
+  * **12 retags, 35 keeps, 0 holds.**
+  * **Multi-Subject Bug Rectifications:**
+    - Rectified inactive `statistics` baseline on Paper 1 Q20 (Binomial distribution mean and variance) to `reasoning-and-aptitude/numerical-ability`.
+    - Rectified misclassified `science` baseline on Paper 1 Q11 (projectile least velocity) to `mathematics`.
+    - Rectified misclassified `engineering-mechanics` baseline on Paper 1 Q12 (coplanar forces equilibrium / Lami's theorem) to `mathematics/geometry/lines-and-angles`.
+    - Rectified misclassified `engineering-mechanics` baseline on Paper 2 Q13 (simple pendulum equation of motion using Lagrangian formulation) to `mathematics`.
+  * **Taxonomy Alignment:** Refined 5 items to active algebra topics (`mathematics/algebra` on Paper 1 Q2 Descartes' signs, and Paper 2 Q7 groups/subgroups, Q8 Euclidean rings/PID, Q9(a) fields/integral domains, Q9(b) field extension tower law); confirmed 35 university-level items under active subject `mathematics` (Real Analysis, Multivariable Calculus, Functional Analysis, Topology, Differential Equations, Operations Research, Numerical Analysis, Calculus of Variations); confirmed 2 items under `reasoning-and-aptitude/numerical-ability` (surjections combinatorics, binomial distribution); confirmed 2 items under `mathematics/geometry/lines-and-angles` and 1 item under `mathematics/geometry`.
+  * **Preserved 80 Marks of Conventional Descriptive Problems:** Preserved 7 conventional problems (difference operators, exact differential equations, particle kinematics, friction, simplex method, transportation problem) totaling 45+ marks in `pending-written-intake.json`.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (47/47) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,284** across 47 candidate reports with zero problems or booklet family conflicts. [Batch 46 report](reports/tagging-batch46-20261108/README.md).
+
+
 
 
 
