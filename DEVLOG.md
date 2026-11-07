@@ -6936,6 +6936,42 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - Verified underlined target words in parts of speech questions (*guilty, wants, day, she, quickly, but, After, hiding, story, me*) directly from vector line geometry in the PDF stream.
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **3,157** (3,557 unique appearances) across 57 candidate reports with zero problems or booklet family conflicts. [Batch 56 report](reports/tagging-batch56-20261108/README.md).
 
+## 2026-11-08 10:15 IST — Source-reviewed tagging batch 57 (Programme Co-ordinator General English II — 100 MCQs 100% Paper Completion)
+
+- Completed source-reviewed tagging batch 57 (100 General English Paper-II MCQs, achieving **100% paper completion**):
+  - *General Competitive Examinations for Recruitment to the Post of Programme Co-ordinator under Art & Culture Department, Government of Mizoram (October 2021) — General English II* (`Old_Questions/Direct_2021-2022/Programme Co-ordinator under A&C Deptt. General English-II.pdf`, `doc_8d9eac32e2c709359cc7c145`, 100 MCQs, achieving 100% paper completion with 100/100 items reviewed).
+  * **67 retags, 33 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Structured 100 baseline targets into active English taxonomy paths:
+      - `english/grammar` (30 items, confirmed and kept from baseline):
+        - Q45–Q50: Sentence synthesis using participles, adverb clauses, and infinitives.
+        - Q51–Q58: Sentence transformation (simple, compound, complex, comparative degree, superlative degree).
+        - Q59–Q68: Phrase and clause analysis (adjective phrases, noun clauses, relative adjective clauses).
+        - Q69–Q74: Sentence forms and degrees of comparison (assertive, positive, comparative, imperative).
+      - `english/grammar/parts-of-speech` (15 items, retagged from coarse baseline):
+        - Q16–Q24: Identification of parts of speech of underlined words (*which, innocence, about, but, Never, her, Out, no, all*).
+        - Q91–Q96: Pronouns and determiners (*whom, Few, I, What, A little, Either*).
+      - `english/grammar/prepositions` (10 items, retagged from coarse baseline):
+        - Q35–Q44: Prepositions (*beset with, liable to, onto, subsists on, incitement to*, etc.).
+      - `english/grammar/tenses` (10 items, retagged from coarse baseline):
+        - Q25–Q34: Verb forms and tense sequence (*have gone on strike lately*, etc.).
+      - `english/vocabulary/idioms-and-phrases` (8 items, retagged from coarse baseline):
+        - Q1–Q8: Idioms and phrases (*chewing the cud, teething problems, beggars description*, etc.).
+      - `english/vocabulary` (7 items, confirmed and kept from baseline):
+        - Q9–Q15: Contextual word usage and polysemy (*Benign, Invincible, Court, Peep, Protocol*, etc.).
+      - `english/vocabulary/synonyms` (6 items, retagged from coarse baseline):
+        - Q75–Q80: Lexical synonyms (*Expeditious -> prompt and efficient, rancour -> hatred, soporific -> soothing*, etc.).
+      - `english/grammar/subject-verb-agreement` (5 items, retagged from coarse baseline):
+        - Q86–Q90: Subject-verb concord (*Each of the students is, Either of us has, More than one man was*, etc.).
+      - `english/vocabulary/antonyms` (5 items, retagged from coarse baseline):
+        - Q81–Q85: Lexical antonyms of target headwords.
+      - `english/grammar/articles` (4 items, retagged from coarse baseline):
+        - Q97–Q100: Definite, indefinite, and zero articles (*skips lunch [zero], a thankful office [a], by prejudice [zero], most enemies [zero]*).
+  * **Documented Source Defects & Vector Geometry:**
+    - Verified underlined target words in parts of speech questions (*whole, which, innocence, about, but, Never, her, Out, no, all*) directly from vector line geometry in the PDF stream.
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **3,257** (3,657 unique appearances) across 58 candidate reports with zero problems or booklet family conflicts. [Batch 57 report](reports/tagging-batch57-20261108/README.md).
+
+
 
 
 
