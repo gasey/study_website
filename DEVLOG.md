@@ -7735,3 +7735,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,479 saved records**, **6,401 unique appearances**, **6,001 deduplicated candidates**, **0 problems**. [Batch 91 report](reports/tagging-batch91-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 92 (Employment Officer 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 92 (`reports/tagging-batch92-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Employment Officer under Labour, Employment & Industrial Training Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/Employment Officer under LE&IT Deptt Gen English Paper-II.pdf`, `doc_400ac277d6d2656e9c6ca280`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 46 retag, 54 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (45 items): Q1–Q10 (parts of speech), Q16–Q20 (connectors/conjunctions), Q31–Q35 (determiners & pronouns), Q36–Q40 (articles), Q41–Q48 (sentence types: simple, compound, complex), Q49–Q56 (degrees of comparison), Q57–Q61 (phrases), Q62–Q65 (clauses), Q66–Q70 (sentence notions & concepts).
+    - `english/grammar/tenses` (10 items): Q21–Q30 (verb forms, aspects, and tenses).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and expressions).
+    - `english/vocabulary/antonyms` (8 items): Q87–Q94 (antonyms / opposite words).
+    - `english/vocabulary/synonyms` (6 items): Q81–Q86 (synonyms / nearest meaning).
+    - `english/vocabulary` (6 items): Q95–Q100 (vocabulary fill in the blanks / word choice).
+    - `english/grammar/prepositions` (5 items): Q11–Q15 (prepositions in context).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,579 saved records**, **6,501 unique appearances**, **6,101 deduplicated candidates**, **0 problems**. [Batch 92 report](reports/tagging-batch92-20261108/README.md).
