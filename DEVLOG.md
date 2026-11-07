@@ -7379,3 +7379,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 109/109 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,338 saved records**, **5,260 unique appearances**, **4,860 deduplicated candidates**, **0 problems**. [Batch 73 report](reports/tagging-batch73-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 74 (Middle & Primary School Teacher 2015 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 74 (`reports/tagging-batch74-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to Middle School Teacher & Primary School Teacher (July 2015) — General English* (`Old_Questions/Direct_2014-2018/1.Middle & Primary School Teacher 2015 General English.pdf`, `doc_73d36df5c68f5a69c05bd094`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 27 retag, 53 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and phrases meaning and usage).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passages across 3 passages).
+    - `english/grammar/parts-of-speech` (8 items): Q33–Q40 (form of nouns, verbs, adjectives, adverbs).
+    - `english/grammar/prepositions` (8 items): Q41–Q48 (prepositions).
+    - `english/grammar/voice` (8 items): Q49–Q56 (Active Voice / Passive Voice identification).
+    - `english/grammar` (9 items): Q57–Q65 (sentence structure: simple, compound, complex).
+    - `english/vocabulary` (15 items): Q66–Q70 (speech terminology), Q71–Q75 (sentence completion), Q76–Q80 (word derivation).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,418 saved records**, **5,340 unique appearances**, **4,940 deduplicated candidates**, **0 problems**. [Batch 74 report](reports/tagging-batch74-20261108/README.md).
