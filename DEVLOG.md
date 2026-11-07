@@ -7561,3 +7561,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,058 saved records**, **5,980 unique appearances**, **5,580 deduplicated candidates**, **0 problems**. [Batch 82 report](reports/tagging-batch82-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 83 (Assistant Conservator of Forest 2018 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 83 (`reports/tagging-batch83-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to Junior Grade of Mizoram Forest Service i.e. Assistant Conservator of Forest (ACF) (2018) — General English* (`Old_Questions/Direct_2014-2018/ACF General English.pdf`, `doc_eb2da5629158c3db0a463a50`, 65 MCQs, achieving **100% paper completion** with 65/65 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) and Précis (15 marks) on Page 1 (35 marks total) in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (65 items: 65 retag, 0 keep, 0 hold):**
+  - All 65 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/tenses` (10 items): Q1–Q10 (verb forms and tenses).
+    - `english/grammar/parts-of-speech` (10 items): Q11–Q20 (parts of speech identification).
+    - `english/grammar/prepositions` (10 items): Q21–Q30 (preposition selection).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q31–Q40 (idioms and phrases meaning).
+    - `english/grammar` (20 items): Q41–Q50 (modal concepts / sentence notions: possibility, obligation, request, command, invitation), Q51–Q60 (conjunctions).
+    - `english/vocabulary/one-word-substitution` (5 items): Q61–Q65 (one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 65/65 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,123 saved records**, **6,045 unique appearances**, **5,645 deduplicated candidates**, **0 problems**. [Batch 83 report](reports/tagging-batch83-20261108/README.md).
