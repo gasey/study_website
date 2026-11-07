@@ -7634,3 +7634,20 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,259 saved records**, **6,181 unique appearances**, **5,781 deduplicated candidates**, **0 problems**. [Batch 86 report](reports/tagging-batch86-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 87 (Stenographer Grade-III Contract 2015 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 87 (`reports/tagging-batch87-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Written Examinations for Recruitment to Stenographer Grade-III (Contract) under DP&AR (2015) — General English* (`Old_Questions/Direct_2014-2018/2.Steno Grade-III (Contract) 2015 Under DP&AR(SSW) General English.pdf`, `doc_eb2bb9ce5156b8296eb251f2`, 40 MCQs, achieving **100% paper completion** with 40/40 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (40 items: 39 retag, 1 keep, 0 hold):**
+  - All 40 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (8 items): Q1–Q8 (idioms and phrases meaning).
+    - `english/comprehension` (6 items): Q9–Q14 (reading comprehension passage on battle of Tukaroi and Emperor Akbar).
+    - `english/grammar/prepositions` (7 items): Q15–Q19 (preposition selection), Q20, Q24 (prepositional usage: besides, in spite of).
+    - `english/vocabulary` (2 items): Q21, Q23 (vocabulary word choice: obstruct, borrow).
+    - `english/grammar` (17 items): Q22 (sentence modifier: once a busy city), Q25–Q29 (sentence notions / concepts), Q30–Q35 (sentence structure: simple, compound, complex), Q36–Q40 (clause identification).
+- **Ledger Verification:**
+  - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,299 saved records**, **6,221 unique appearances**, **5,821 deduplicated candidates**, **0 problems**. [Batch 87 report](reports/tagging-batch87-20261108/README.md).
