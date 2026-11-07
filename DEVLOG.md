@@ -7439,3 +7439,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **5,578 saved records**, **5,500 unique appearances**, **5,100 deduplicated candidates**, **0 problems**. [Batch 76 report](reports/tagging-batch76-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 77 (Programmer under PHED General English Paper I July 2018)
+- **Execution:** Prepared pending source-reviewed tagging batch 77 (`reports/tagging-batch77-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to Programmer under Public Health Engineering Department (July 2018) — General English Paper I* (`Old_Questions/Direct_2014-2018/1.General English Paper-I.pdf`, `doc_f65bdaf24aea5195f08880e8`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+  - Preserved unextracted conventional Section A Essay (20 marks) on Page 1 in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (80 items: 76 retag, 4 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/comprehension` (8 items): Q1–Q8 (reading comprehension passage).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q9–Q24 (idioms and phrases meaning).
+    - `english/vocabulary/antonyms` (8 items): Q25–Q32 (opposite in meaning).
+    - `english/grammar/parts-of-speech` (8 items): Q33–Q40 (parts of speech of underlined words).
+    - `english/grammar/prepositions` (8 items): Q41–Q48 (prepositions).
+    - `english/grammar` (16 items): Q49–Q58 (sentence structure: simple, compound, complex), Q59–Q64 (sentence functional classification: declarative, imperative, interrogative, exclamatory).
+    - `english/vocabulary` (8 items): Q65–Q72 (vocabulary / sentence completion).
+    - `english/vocabulary/synonyms` (8 items): Q73–Q80 (nearest in meaning to underlined word).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **5,658 saved records**, **5,580 unique appearances**, **5,180 deduplicated candidates**, **0 problems**. [Batch 77 report](reports/tagging-batch77-20261108/README.md).
