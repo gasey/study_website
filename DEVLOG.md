@@ -6813,6 +6813,42 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
     - Verified authentic 3-option structure for sentence analysis questions Q41–Q50 ((a) Simple, (b) Complex, (c) Compound).
 - Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,757** (3,157 unique appearances) across 53 candidate reports with zero problems or booklet family conflicts. [Batch 52 report](reports/tagging-batch52-20261108/README.md).
 
+## 2026-11-08 09:35 IST — Source-reviewed tagging batch 53 (Inspector of Excise General English Paper-II — 100 MCQs 100% Paper Completion)
+
+- Completed source-reviewed tagging batch 53 (100 General English Paper-II MCQs, achieving **100% paper completion**):
+  - *General Competitive Examinations for Recruitment to the Post of Inspector under Excise & Narcotics Department, Government of Mizoram (February 2021) — General English Paper-II* (`Old_Questions/Direct_2020-2021/Inspector of Excise - General English Paper-II.pdf`, `doc_96761ae7f42a829600dbd517`, 100 MCQs, achieving 100% paper completion with 100/100 items reviewed).
+  * **57 retags, 43 keeps, 0 holds.**
+  * **Granular Structuring & Taxonomy Alignment:**
+    - Structured 100 baseline targets into active English taxonomy paths:
+      - `english/grammar` (30 items, confirmed and kept from baseline):
+        - Q41–Q50: Sentence structure analysis into Simple, Complex, and Compound sentences.
+        - Q51–Q60: Sentence forms and degrees of comparison (affirmative, negative, positive, comparative, superlative).
+        - Q61–Q70: Clause identification (noun clauses, adjective/relative clauses, adverbial clauses).
+      - `english/grammar/parts-of-speech` (20 items, retagged from coarse baseline):
+        - Q1–Q10: Identification of parts of speech of underlined words (*either, Either, Both, both, half, half, above, above, after, after*).
+        - Q11–Q20: Classification of adverbs into manner, degree, time, place, frequency, and negation (*fast, almost, before, round, always*, etc.).
+      - `english/grammar/prepositions` (10 items, retagged from coarse baseline):
+        - Q21–Q30: Prepositions (*among, in, across, along, into, upon, at, under*).
+      - `english/grammar/tenses` (10 items, retagged from coarse baseline):
+        - Q31–Q40: Tenses and verb forms (*have sent, went, have done, appears, has been raining, had left*, etc.).
+      - `english/sentence-correction` (10 items, retagged from coarse baseline):
+        - Q71–Q80: Sentence improvement, modifier placement, politeness order of personal pronouns (*You, your brother and I*), and conditional inversion (*Had you not reached*).
+      - `english/vocabulary` (13 items, confirmed and kept from baseline):
+        - Q81–Q90: Contextual vocabulary, analogies (*life:death :: pleasure:suffering*), and collocations.
+        - Q91, Q93, Q94: Collective nouns (*sheaf of wheat, litter of cubs*) and zoological young (*calf of an elephant*).
+      - `english/vocabulary/idioms-and-phrases` (4 items, retagged from coarse baseline):
+        - Q92 (*as blind as a bat*), Q96 (*beggars cannot be choosers*), Q98 (*beneath the rose lies the serpent/thorn*), Q100 (*spread like wildfire*).
+      - `english/vocabulary/synonyms` (1 item, retagged from coarse baseline):
+        - Q95 (*LAUD -> praise*).
+      - `english/vocabulary/antonyms` (1 item, retagged from coarse baseline):
+        - Q97 (*LETHARGIC -> hyperactive*).
+      - `english/vocabulary/one-word-substitution` (1 item, retagged from coarse baseline):
+        - Q99 (*per centum -> by the hundred*).
+  * **Documented Source Defects:**
+    - Verified authentic 3-option structure for sentence analysis questions Q41–Q50 ((a) Simple, (b) Complex, (c) Compound).
+- Zero live database or API mutations. Readback validation confirmed 100% source fingerprint matches (100/100) and 0 database writes. Cumulative deduplicated unique targets in the review ledger reached **2,857** (3,257 unique appearances) across 54 candidate reports with zero problems or booklet family conflicts. [Batch 53 report](reports/tagging-batch53-20261108/README.md).
+
+
 
 
 
