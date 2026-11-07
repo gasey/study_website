@@ -7263,3 +7263,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 95/95 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **4,729 saved records**, **4,651 unique appearances**, **4,251 deduplicated candidates**, **0 problems**. [Batch 67 report](reports/tagging-batch67-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 68 (CDPO General English Paper II Common)
+- **Execution:** Prepared pending source-reviewed tagging batch 68 (`reports/tagging-batch68-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Child Development Project Officer (CDPO) under Social Welfare Department 2016 — General English Paper II (Common)* (`Old_Questions/Direct_2014-2018/2.CDPO under Social Welfare Department 2016 General English Paper II Common.pdf`, `doc_44de83a1b9447347e93a07df`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 64 retag, 36 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (15 items): Q1–Q10 (underlined parts of speech: adverb, preposition, conjunction, noun, interjection), Q31–Q35 (pronouns).
+    - `english/grammar/prepositions` (10 items): Q11–Q20 (appropriate prepositions).
+    - `english/grammar/tenses` (10 items): Q21–Q30 (appropriate verb forms and tenses).
+    - `english/grammar/articles` (5 items): Q36–Q40 (article insertion).
+    - `english/grammar` (30 items): Q41–Q48 (sentence structure: simple, compound, complex), Q49–Q56 (phrase identification: noun, adjective, adverb, prepositional phrases), Q57–Q65 (clause analysis: noun, adjective, adverb clauses), Q66–Q70 (notion / mood analysis).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and phrases meaning).
+    - `english/vocabulary/synonyms` (6 items): Q81–Q86 (nearest in meaning).
+    - `english/vocabulary/antonyms` (8 items): Q87–Q94 (opposite in meaning).
+    - `english/vocabulary` (6 items): Q95–Q100 (vocabulary / sentence completion).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **4,829 saved records**, **4,751 unique appearances**, **4,351 deduplicated candidates**, **0 problems**. [Batch 68 report](reports/tagging-batch68-20261108/README.md).
