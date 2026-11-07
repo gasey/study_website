@@ -7651,3 +7651,17 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,299 saved records**, **6,221 unique appearances**, **5,821 deduplicated candidates**, **0 problems**. [Batch 87 report](reports/tagging-batch87-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 88 (Assistant Engineer Civil 2016 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 88 (`reports/tagging-batch88-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to Assistant Engineer (Civil) Contract Basis under Trade and Commerce Department (July 2016) — General English* (`Old_Questions/Direct_2014-2018/4.AE (Civil) under Trade & Commerce 2016 General English.pdf`, `doc_8f107f918e95df4a78cb1eb6`, 20 MCQs, achieving **100% paper completion** with 20/20 items reviewed).
+  - Preserved unextracted conventional sections: Comprehension Q1 (20m), Précis Q2 (20m), Essay Q3 (20m), Word Pairs Q6 (10m), Idioms Sentences Q7 (10m) totaling 80 conventional marks in `pending-written-intake.json`.
+- **Candidate Decisions & Taxonomy Structuring (20 items: 19 retag, 1 keep, 0 hold):**
+  - All 20 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/tenses` (10 items): Q1–Q10 (verb form and tense selection).
+    - `english/vocabulary/one-word-substitution` (10 items): Q11–Q20 (word definitions / one-word substitution).
+- **Ledger Verification:**
+  - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,319 saved records**, **6,241 unique appearances**, **5,841 deduplicated candidates**, **0 problems**. [Batch 88 report](reports/tagging-batch88-20261108/README.md).
