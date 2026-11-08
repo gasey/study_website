@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ed9d0f04cae9a886",
+  "appearance_id": "4e3d30f435e2e2126a12",
+  "snapshot": {
+    "record": {
+      "id": "4e3d30f435e2e2126a12",
+      "paperId": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "type": "mcq",
+      "question": "Predict the output of following program. #include <iostream> using namespace std; class A { protected: int x; public: A() {x = 0;} friend void show(); }; class B: public A { public: B() : y (0) {} private: int y; }; void show() { A a; B b; cout << \"The default value of A::x = \" << a.x << \" \"; cout << \"The default value of B::y = \" << b.y; }",
+      "options": [
+        "Compiler Error in show() because x is protected in class A",
+        "Compiler Error in show() because y is private in class b",
+        "The default value of A::x = 0 The default value of B::y = 0",
+        "Compiler Dependent"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "32",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE, P&E CADRE (ELECTRICAL WING) - COMPUTER SCIENCE AND ENGINEERING",
+      "year": 2023,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/Jr.%20Grade%20of%20MES%20(Electrical%20Wing)%20under%20P%26E%20Deptt.%2C%20Computer%20Engg%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "822fdc6129a49c50542ceba94e2f5c407c6729dbb33cd39d7f7a667271c9464c",
+  "appearance": {
+    "id": "4e3d30f435e2e2126a12",
+    "paper_id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "32",
+    "qnum_seq": 32,
+    "page": 5,
+    "question": "Predict the output of following program. #include <iostream> using namespace std; class A { protected: int x; public: A() {x = 0;} friend void show(); }; class B: public A { public: B() : y (0) {} private: int y; }; void show() { A a; B b; cout << \"The default value of A::x = \" << a.x << \" \"; cout << \"The default value of B::y = \" << b.y; }",
+    "options": [
+      "Compiler Error in show() because x is protected in class A",
+      "Compiler Error in show() because y is private in class b",
+      "The default value of A::x = 0 The default value of B::y = 0",
+      "Compiler Dependent"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+    "subject": "gk",
+    "topic": "Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0':19,30 'a.x':47 'b':24,28,38,39,53 'b.y':55 'class':11,23 'cout':40,48 'default':42,50 'follow':5 'friend':20 'includ':7 'int':14,32 'namespac':9 'output':3 'predict':1 'privat':31 'program':6 'protect':13 'public':16,25,27 'show':22,35 'std':10 'use':8 'valu':43,51 'void':21,34 'x':15,18,46 'y':29,33,54",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ed9d0f04cae9a886",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Compiler Error in show() because y is private in class b",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

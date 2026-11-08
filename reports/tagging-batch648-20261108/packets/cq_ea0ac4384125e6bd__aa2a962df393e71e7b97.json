@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ea0ac4384125e6bd",
+  "appearance_id": "aa2a962df393e71e7b97",
+  "snapshot": {
+    "record": {
+      "id": "aa2a962df393e71e7b97",
+      "paperId": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "type": "mcq",
+      "question": "What is the output of the following program? #include <iostream> using namespace std; class Increment1 { public: double add(double x) {return x+0.1;} }; class Increment2 : public Increment1 { public: int add(int x) {return x+1;} }; int main() { Increment2 i; cout<<i.add(20) <<\" \"<<i.add(20.5)<<endl; return 0; }",
+      "options": [
+        "Compile Time Error",
+        "Run Time Error",
+        "21 21",
+        "21 20.6"
+      ],
+      "answerIndex": 2,
+      "answerSource": "official",
+      "answerKeyRef": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "28",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE, P&E CADRE (ELECTRICAL WING) - COMPUTER SCIENCE AND ENGINEERING",
+      "year": 2023,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/Jr.%20Grade%20of%20MES%20(Electrical%20Wing)%20under%20P%26E%20Deptt.%2C%20Computer%20Engg%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "9dfb80febe748991e5cafdd3465611af2a8d449ff61ae32f6517af61a2833eed",
+  "appearance": {
+    "id": "aa2a962df393e71e7b97",
+    "paper_id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "28",
+    "qnum_seq": 28,
+    "page": 4,
+    "question": "What is the output of the following program? #include <iostream> using namespace std; class Increment1 { public: double add(double x) {return x+0.1;} }; class Increment2 : public Increment1 { public: int add(int x) {return x+1;} }; int main() { Increment2 i; cout<<i.add(20) <<\" \"<<i.add(20.5)<<endl; return 0; }",
+    "options": [
+      "Compile Time Error",
+      "Run Time Error",
+      "21 21",
+      "21 20.6"
+    ],
+    "answer_index": 2,
+    "answer_source": "official",
+    "answer_key_ref": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+    "subject": "gk",
+    "topic": "Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+0.1':22 '+1':34 '0':46 '20':41 '20.5':43 'add':17,29 'class':13,23 'cout':39 'doubl':16,18 'endl':44 'follow':7 'i.add':40,42 'includ':9 'increment1':14,26 'increment2':24,37 'int':28,30,35 'main':36 'namespac':11 'output':4 'program':8 'public':15,25,27 'return':20,32,45 'std':12 'use':10 'x':19,21,31,33",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ea0ac4384125e6bd",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "21 21",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

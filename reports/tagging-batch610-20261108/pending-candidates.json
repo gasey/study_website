@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_c23f4c6809e944f7",
+    "appearance_id": "a263f2f7fee53be6cae4",
+    "source_fingerprint": "b3f2de9c74106124955b144ea8a35307ae74a74b5a7634ecf87cbf2f9ca29288",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fcafb671d9bdfd03",
+    "appearance_id": "198b5efabf38e21cc283",
+    "source_fingerprint": "93c98537b65e4ed4497532b890968a4c049c49d9a70f40eba66b7408a0de5f14",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb702a86558318e4",
+    "appearance_id": "8e9be1b1cb453e6aee6d",
+    "source_fingerprint": "736282fad518781da658336102ae3b33657e062c92f5c323439cb396f0c735f7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_714d64fc03720847",
+    "appearance_id": "8165088c8dddefde21e9",
+    "source_fingerprint": "8b2bf26e16501e8f69191d41c5d5695225d2a067ad7c9fd7436330d5138a994c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b6361b98e2c6bad4",
+    "appearance_id": "70895e983ddcfd04d023",
+    "source_fingerprint": "ceb98a48a3053678eb58daf19c523764f4f3fcaf1c0649fb9aaf236794de4d53",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38bae7eddc8b36b4",
+    "appearance_id": "474ee4ef65e5d4c1d67c",
+    "source_fingerprint": "28c2ccf96a2de3a85ae82139b92096b7cac2e09e0d201b2b1a2ab9b96a5bdb53",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_45bdca0ab15a867e",
+    "appearance_id": "043a53166613577fabb1",
+    "source_fingerprint": "776144d593da10ce444c39b9b49da45f731ba237a10a574cbd68d792ebbd9e2c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8d98c05a6d77ed6",
+    "appearance_id": "0963d41d862e2d7e2a32",
+    "source_fingerprint": "ca929a53de4eddf3c41e3b9d7e8d301aa98bba17c9d9a3a2adadbf99a35b3e20",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_83490acfebbaba5b",
+    "appearance_id": "bb2db8cebc64e281d5ed",
+    "source_fingerprint": "444c5aa42fd2637b0c8ea1482ce447d3ef42f1d97c6b47766576af218d14d6d8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc9fe45344d45e5e",
+    "appearance_id": "0ec7eabfe15749d32978",
+    "source_fingerprint": "8d8a0bc3dba819fdd25064098561a4da9195b9275d1849efa2941f4479c2821b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fccbff4af812b01c",
+    "appearance_id": "4ac0771b915aab1841e9",
+    "source_fingerprint": "e91edc2514cbaf03f46c214b46dd4103ec8f6dada667d0d7090939312cc7a793",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c50718aef00478a8",
+    "appearance_id": "ec82cff66a80eeaa36e1",
+    "source_fingerprint": "d5307dfce3be8fcefe8231d016e9aafe283866b7f426d7cc9c20585f06e9b4ea",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bdff8c0e287c0d29",
+    "appearance_id": "5f4e08172e998660d0ee",
+    "source_fingerprint": "8f8b66340b7e1252bdae592a5d8623eb600e85ac5d0364bc79cbf2e990d32a46",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e7a5d3fd9a237a2",
+    "appearance_id": "5f60ae97ebe937a6822f",
+    "source_fingerprint": "8003ca868423d85dbf54d3832c453379cee8a4f1ee858de8022e3bbcaf059ac3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_132e9df4467964e4",
+    "appearance_id": "8008b0fb9e1e2b2b2fff",
+    "source_fingerprint": "04debdeebb445f382c0926d4a8700d0c1ff7e45ff634c69bbf67916dce191d67",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d175e10eec0bd2df",
+    "appearance_id": "6bea6e4c200e129e7223",
+    "source_fingerprint": "2eb29a661d02df36ef3ff292bc545865d5d02e18cd9068314f6d0c526da0ba1b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_df54e692cf3f28e0",
+    "appearance_id": "07d13e5910a4e729183a",
+    "source_fingerprint": "345229633e834a00392cbbadf89b227285c4fa70bce034c56041fea6149a5c64",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc7b69c9067b1af1",
+    "appearance_id": "0e70e5036019d029d72a",
+    "source_fingerprint": "d3a747605c171b8a99a5f62cfca0079dc3b324c5fc910a2f702b814858f51bc9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b346c2be9776a94",
+    "appearance_id": "88648f7aeaabc3c130d6",
+    "source_fingerprint": "2243df1464ba6ffba10c795eeade8fccaafb4d788dbe6f80cce0d8f9e06cf2f7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_68bac398113ae656",
+    "appearance_id": "cbff69491b7f2851002c",
+    "source_fingerprint": "5652538b48fde5c51d875c801088b691899c0d7e047a90275853c5c525825656",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d28db9e2c6479d9",
+    "appearance_id": "10927f4a142110bea92e",
+    "source_fingerprint": "97ffccc0cf010ad8847f95af191736df89ad2fffac0e9451f5b0bed66dbff6d5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e5921c589e17af78",
+    "appearance_id": "581231436dec6aab6451",
+    "source_fingerprint": "3fa27a54121e77f9d0df7c66e41e982796d31f23cc5ffae0477cc9b115e29b25",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_19e753759c3879f6",
+    "appearance_id": "869467cf4429568a0e18",
+    "source_fingerprint": "a89096116db0c2ee4a916e3b6350f2af8343407d8c6f54919c983378807e192a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e0c0f85165644fd",
+    "appearance_id": "89c4779c0183c0e2cd8d",
+    "source_fingerprint": "649d3b03f881d2ec11eeb82a8951f10e5a07ac6dbe17d2a73eb9cdc726977cf0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4583f083b5b3b9d9",
+    "appearance_id": "4fd3da104b4b706e5532",
+    "source_fingerprint": "52be73ecbdafc9082a44a915fb171e385bb1f80df0c414b056a75533f59d1bb4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7328638a7e49a179",
+    "appearance_id": "9a7888e40bf6c9f93f49",
+    "source_fingerprint": "c5032cda8b879f5fea3218b3317c78e89be61e3feacbb5c1d789235d88b5d275",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_00547b420abdf87f",
+    "appearance_id": "3bf79d731dbea373491d",
+    "source_fingerprint": "7ba6e46d0e8d4e7669d6ad3353f8aa7f68d1d2c67ab79209a858dc0018bb6821",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb08116580c439cc",
+    "appearance_id": "d9929d7d67abd0c00930",
+    "source_fingerprint": "bc4a3432ec7f60bd6a20d775ef4fccc121bfae3fcaaa4a7035bd9f8f8601acf8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf3b8063fb0102ea",
+    "appearance_id": "294309745f7e478f194f",
+    "source_fingerprint": "13902034fd167201b17c913b78300056d9fb3a92481cb3b0dbda926da9670a73",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f65888b06182546",
+    "appearance_id": "b15a9a39fbaada3ff937",
+    "source_fingerprint": "7626bd692df3be6f77599f433f0619fa59427c3862af5043c2537b96e5c22808",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_acfc1589c6ff29f2",
+    "appearance_id": "ac41f55b80a2cd22f621",
+    "source_fingerprint": "bf0274e320878966509f181b134276a63fab1f2feaeadf36d0ee6ba3e1e51888",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a3cad34165b61f3",
+    "appearance_id": "71e2e5c4d49627cbb1dd",
+    "source_fingerprint": "e7e7593bfaa8c059eaf6f4b64e5448292143bf8bb001e5da7f097299e71092b2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6bb93fa43b4a4a28",
+    "appearance_id": "3e7aff26649d7de164b0",
+    "source_fingerprint": "e6d8e9874621ed5c9037ddc6e00021a8ade4dc57f3d5cacf153f5ac3bb474fdf",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f52dcfcd04c24ec6",
+    "appearance_id": "75649a47dd0196445503",
+    "source_fingerprint": "58db72146e18f1dc9c1a09ac09e151993c7620ad64e435c1f0dcf820d25a413e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0ed83a35e035462",
+    "appearance_id": "d4a27ae2cc6f95b907bc",
+    "source_fingerprint": "855f3fe2527d20ee2ee80cef60bf90100efcfef989928b4cb104ae11639300fe",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbd2764b6c702d60",
+    "appearance_id": "d67439e52035859aafc8",
+    "source_fingerprint": "3092b1048e01d6527ce0fc174a3bf4d30c29539bf639869a4c4948f27722f190",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c54d90f6f9b41503",
+    "appearance_id": "e7ebf659c91c67e27384",
+    "source_fingerprint": "38a01bd61bdaecf292f02771948a2f7f1519b66623e9ae3e49c323777598e0ae",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2be3f910c95c000",
+    "appearance_id": "18c79cee8690ea9dfca3",
+    "source_fingerprint": "44f94b0bb322d3a0359fa57427e283834d516565f59bfdbf43fdd657c1a0a178",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bbded1161933c07a",
+    "appearance_id": "a828ce0b28149dd730de",
+    "source_fingerprint": "a22aae1dbd93e9d62b9de256ae3c98b39aeb3b7655d519f81ac455343efed5d7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4b847961e26156e6",
+    "appearance_id": "5c036e3746d23299ee33",
+    "source_fingerprint": "a471b267485c96754b338de3640c375ff7c529ecd356fd581166f9b0ae30e880",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a26e99c2cbe075b4",
+    "appearance_id": "b25fceffa1e4e3a1adda",
+    "source_fingerprint": "e7c04970985527b3488e06b5738c7e01a560b9a331d74c815e3f6149b7b3ae35",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9cd4cf288aee71f7",
+    "appearance_id": "57ed6f6fb26c5e555677",
+    "source_fingerprint": "06b06b9cec465227e75d528d2a3ce887df054a3a0ab0f5282ab8c417d146138d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a39fe0f0533e9b11",
+    "appearance_id": "85db9e8cb080551ff178",
+    "source_fingerprint": "8c75ce6f90401a10998ee701219734ec426774d61b9ddf5196e0658a39c34d17",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a867fc697cf55b9e",
+    "appearance_id": "dbcc401ddc9979cf5be5",
+    "source_fingerprint": "ffbad6f60d695a6142d5b35c680d5a186145dd82135e7dc1c24ae51fa78df174",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_513bb6828d64a585",
+    "appearance_id": "f40bbf6866aaa244f400",
+    "source_fingerprint": "4ebb423b756d904822440f62521f3b09340fa282f3c2d3071a5388c1cb1de5a6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9935fa399c48a524",
+    "appearance_id": "0bf045ee2c4c9a55acfd",
+    "source_fingerprint": "4c45bdbc76e1b4b4068ef3c5006f2821f468af2eb939c90c491e9b52bf894022",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4f983dd6d7a9a823",
+    "appearance_id": "7a2d2e987d0bc3a1bd55",
+    "source_fingerprint": "edbbc4abd42312c6fad9878db344f2d724cdd769dba9c0008ec863de3383e170",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ad27cc2e965b0a5",
+    "appearance_id": "e60c71c90a2bbde17e0e",
+    "source_fingerprint": "dc976a9f358edf9110387a29b4cd2868a949c10361ffb36935e396b56277c8a7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22e7b3ef93fe5f2a",
+    "appearance_id": "65726bd5bc08b2f06157",
+    "source_fingerprint": "117a5c464948b432bf555e27ab3a2587ea29de8177711b3b70279a244a29d9e2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08d1d947bcabde0a",
+    "appearance_id": "40eb46ef798bda133c1b",
+    "source_fingerprint": "52bd203a3b784195b88ceae0e9a86f6863cfd424abc6e93f204f51e485a2b0f5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_366bf5eafba22f92",
+    "appearance_id": "915a60023557dd565a31",
+    "source_fingerprint": "6c8a95acfc94243d69f4c5d3a5c1dc21343595ea697c3153bacc50a52bacb704",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3a559998d8f17a6",
+    "appearance_id": "3ff8bf96857cd875d178",
+    "source_fingerprint": "7618a62186c43442c7f2de59671d49486da88abf2e811f6b8821f4851f1c6eb9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2fa1fb51b53ecbff",
+    "appearance_id": "cafef45706b41647dcf6",
+    "source_fingerprint": "4dbb284db47118a5903e66f64d8892efa750f472f4d1f530599414d3c2472f9a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e228dd1eb6383c23",
+    "appearance_id": "e1ad4b249d048d5a4546",
+    "source_fingerprint": "abcbfb10d3062779970e5c5cd61df61556f3fe105d6d9390b050196838666bbd",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9784968e046f743a",
+    "appearance_id": "426e1172815c4f2f8173",
+    "source_fingerprint": "ffa17883e7c8dd2795f09c66d4eaa9ca903d707dd5912672cc28f37d4244ee75",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08dbfedb02cf6d2b",
+    "appearance_id": "2ba82a26f385598b8ca1",
+    "source_fingerprint": "465d1d735f677423a033c16e1e6286d4df7c78a3b4e7a386809ae8d97b54085e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_747d67be2db56de6",
+    "appearance_id": "3166f2eac0786df20088",
+    "source_fingerprint": "87d02da3a907ac6ac01f2af1d20a8c7e470ca8453e3bd0ca5eadc771b71eb275",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_908351e8cfc3940d",
+    "appearance_id": "a7e562e05d3ff6382143",
+    "source_fingerprint": "742c4662112c1519820007c9568f4654a7b5ee7f64f4d2065518be09eff77492",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ce83ab65fafcc7eb",
+    "appearance_id": "b616de3007066444d458",
+    "source_fingerprint": "42798d59203d9e8dd281629699d8b5f26348d1125970afab5ea5e09cc80c2401",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ce43b86bc565d8e2",
+    "appearance_id": "625ac9a4dfa34fc6d4a8",
+    "source_fingerprint": "2659aac31689a51f4d9b6bc767ca9174e6a2249ca180b2fb917ce520d8081831",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f006cc4a42bdf9d6",
+    "appearance_id": "64e1ebe5424aa711800a",
+    "source_fingerprint": "caafd83f6809c45324d37b722ba722a0fad45eec421bb508b3b6149654bc5856",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1062620ed8b2446a",
+    "appearance_id": "58546155e71b9b207895",
+    "source_fingerprint": "c94eea0d9b849eb6ef6fd7e3aef3fc9d611adcc7e947c5dc3716d2a98f521ff6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6c1989e4f6e85324",
+    "appearance_id": "7fc3db4c8213c03ee567",
+    "source_fingerprint": "34f8823b50ebee56023359ad7d9b483ee1ed0b110067686158ce6fafc44de065",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd95218e83a27f64",
+    "appearance_id": "153efac240f9bbb6180d",
+    "source_fingerprint": "fd164886efc89898e10a6248f02b2725dbf0fa57b851f61b7bec412b902ec801",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c65bd0a086ea6abd",
+    "appearance_id": "0c9fb7b9ea14d9dd098c",
+    "source_fingerprint": "abc18aafb9857f5b1da75908cb93b1de651efb78dcbfb8aaf5b49f42a5feb83c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ef98c69f633ff519",
+    "appearance_id": "b1fa1ea70f60a4ba8393",
+    "source_fingerprint": "b8d7d02e2f72eb2b38fc48a5d43891715d930b99c59922290ee3355aff3d04d1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_030bc7eebf8d504c",
+    "appearance_id": "8e495d3806d35b0b5ccf",
+    "source_fingerprint": "617f5310a36373c2d78ff4abdef002623d470a69017a3b58b5dadb69bb2ce10e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f18eb1c6fb428b9f",
+    "appearance_id": "17db9564dbfaa647fe18",
+    "source_fingerprint": "c6aa27e3d883b9db2a2a68b82d982ad311141599e072cee8d7e9dbebf2ab0da3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1fc38decf9c37327",
+    "appearance_id": "ca9f20828382d277e764",
+    "source_fingerprint": "994f1a5009c123d8a2289e381498d1caa6776ad7f585306317ad2e23e26c6f02",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d0aa9e3a31eb1d3e",
+    "appearance_id": "bd3c7cef30ab070098e5",
+    "source_fingerprint": "a0b7206a7a62015f62321c8b1c10d30e1c072a846949419488051ae3b124eee4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ab174aa922ce0b06",
+    "appearance_id": "161d36f55ab2c7ae2c95",
+    "source_fingerprint": "7f6993501c4326b918ed3de1e4d06026acedc107943cf854c2f2fe0adc102d98",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6383fecc32142d8c",
+    "appearance_id": "a484567519d8001ee5e7",
+    "source_fingerprint": "1f148ba5b7e5d232f317ecece9fe45bdb346d061495b646def512d6d5c4c146f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b4749b8fc6398deb",
+    "appearance_id": "bb19b7c550e02ccf72ee",
+    "source_fingerprint": "72bbaf2b250e727fa238025ee6f06dfd4bdc095132446c9db5051485ac0accf1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de6a6c8951020773",
+    "appearance_id": "c16241223711c00aacb8",
+    "source_fingerprint": "f4e6cda6a328a99ba0f2a537dd689946d6aac3d5fb3bba8415cb5d2450ad2d09",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8b51b8fc6a720783",
+    "appearance_id": "699b64b9f2c48e7f2864",
+    "source_fingerprint": "33d79476d7a71ae8a049db497d59921cc02ada859adb84dee21f769e2fbc2f7e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c62e9e36029f288d",
+    "appearance_id": "bf23fed09904d4a68b3f",
+    "source_fingerprint": "c0492c345f9314b84ca43500e16d8d6f859a603ce66bd0c8e87b599b7cc372ce",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0dfad3a52de9a54",
+    "appearance_id": "0943e274fed1f7606ea7",
+    "source_fingerprint": "391210a537ada1236d7110bf1b297fc90726960641016ec9cc072568178bb358",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_11db87f79de69cad",
+    "appearance_id": "80cfb156b6d501f3eec7",
+    "source_fingerprint": "0c7bd5c3451174bc67ba1b2a9f963a1ec67f3f7e6afeb5f2f288207d1bbe420c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_204fe1c5840391c6",
+    "appearance_id": "00647bf31ce7c099ff5c",
+    "source_fingerprint": "02645a09fb3e4854093c828142f83de918103aa7dd8a06ddba01a1072c3adcd7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d83e3fc5346df559",
+    "appearance_id": "6acb5dc9a9a4c8e652a6",
+    "source_fingerprint": "3ef71b3198dcf46bbafd833a43ff444b96ba547be66d904216efafd1b30745b4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9df7eee612354340",
+    "appearance_id": "04b5946f1e67bbc8d979",
+    "source_fingerprint": "e35d2d31b7f0f03b1455c54f97661ac9feddb0366b5f5b16f5856f340232474b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96653abc0aebb8ef",
+    "appearance_id": "199fa7f21c5a85680b85",
+    "source_fingerprint": "661648f3d2a4df15ea0dd20709ccad2251fa393f79a244474a758cf2ee54442a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_968cbc73b67b7e60",
+    "appearance_id": "8fddeda0b2697ef6ed57",
+    "source_fingerprint": "8bfa816d7c3cdb404ca145fc809d95e86ec007e6f034bcc3240f8d5551ee4939",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9cafe266632d67c",
+    "appearance_id": "0d7d1b0c9b1ba5d24062",
+    "source_fingerprint": "f1dbf493186bd9a4c8846b1013a878e1d8721ee46e5741d78dd89d43a865f559",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5628d11fe8068c18",
+    "appearance_id": "82c26c0be8b66e12ce94",
+    "source_fingerprint": "d91681db8449207026d8be4b7213501ffa55724e4409651f2b9d874ee8812c8c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d099774f71268dff",
+    "appearance_id": "b27a1118d0df1cbbc189",
+    "source_fingerprint": "1378b86b4553bd4eeb4104d5f67286c02c193c2c2337a87105baf415a52ebfcb",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_754079fea1178b57",
+    "appearance_id": "637cd7e0a362a49eb847",
+    "source_fingerprint": "b22cb28974914fca439d9d5f65820ec4a93b9eeeebaa8feb43bf3595021b0355",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eed929e47f7323ae",
+    "appearance_id": "e6e3111a0a58400b79ba",
+    "source_fingerprint": "f26449fd970c4b1411792cfb69584a1d4c098d4a7fdb431ff240451043e8a152",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a714ac153920b8e4",
+    "appearance_id": "98976ea8264d518f194b",
+    "source_fingerprint": "49e519c478546c13feb4d2e45a2dae73b6ff5538a6391db8873284d3e0ce560a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e6e8e3aacf40a91c",
+    "appearance_id": "2a51b0efed63804c69af",
+    "source_fingerprint": "e8a824cb4f610d6bad3911a7854e45a7e28137597c3bc1ed9ae85d5c327dd301",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89e914222b534d84",
+    "appearance_id": "ebca0c095584d9415ae2",
+    "source_fingerprint": "53a65d20cdba701d1be63103e434ec7408f62f18e8de3f15e41d5db6ab44e066",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_75ae6d1b12cfbf5b",
+    "appearance_id": "a022336bc4a124fc139a",
+    "source_fingerprint": "306a1c4fa7b087c1410b69b2ef7291e9de7d5560b2e686aedd50dede1b623084",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72433a3c8fa53480",
+    "appearance_id": "3f940fb5cb142d013cec",
+    "source_fingerprint": "c7968ef2aa0f371616d2fce827a021af7559204b0ed4f648a8c0d03d7b346a06",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e39c3b581e4acc15",
+    "appearance_id": "451cc2e39b17e54324bb",
+    "source_fingerprint": "3cf72402f43046163110821384aca2c04852239ac2e444e7415253e44fa02479",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b28d11725d914cfb",
+    "appearance_id": "553f148b10c7ec0cbc05",
+    "source_fingerprint": "f6bb91f514a5916ac930fa1f388541a72b7fbbf8e4717d10430028c7db29e311",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9248c7520730824",
+    "appearance_id": "171e42aa2e2841d90a81",
+    "source_fingerprint": "45301e8713d87134c24174566b3386cb16a5f4df839bf72c4c1fdfbe7a060111",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6cd0826804bd29d",
+    "appearance_id": "10ea7a1838887a44cfd3",
+    "source_fingerprint": "a6f33e78c9a11f3b0e128fd5fd00b55f757eb9c15995e6a99c02762f67a1dd1c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_14dc75e47f2132c4",
+    "appearance_id": "d8305380ab1d719190c8",
+    "source_fingerprint": "fd3b3f99d4a8d6651c29cdf4cc77c990ae5fc4991cdc589b55c8cc5881fa463d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38d90f24206204d8",
+    "appearance_id": "58afcd6aad824e5c8fc0",
+    "source_fingerprint": "f1c249cbf30f99eef352c8a0b2797c91e38f82ea8b2d900d74389541f087b4c1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_350d7ddc0fe1d8a6",
+    "appearance_id": "0f5c149d98c93b8b4a19",
+    "source_fingerprint": "1c0cbf28c6d5c9733c7e929d9ac49e32a89ae8d874041254206433232a544c6b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_1a62d174a9ed2f84f5aa25aa",
+      "sha256": "ad1f1d61b536e5b7592c42b4252eb7c13e8e428cc6cd10d44c8a06098c3a0509",
+      "note": "Verified against registered booklet source for Laboratory Technician Paper-III ( Technical Subject)-2024.."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

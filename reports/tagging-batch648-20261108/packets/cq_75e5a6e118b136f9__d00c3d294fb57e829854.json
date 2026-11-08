@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_75e5a6e118b136f9",
+  "appearance_id": "d00c3d294fb57e829854",
+  "snapshot": {
+    "record": {
+      "id": "d00c3d294fb57e829854",
+      "paperId": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "type": "mcq",
+      "question": "What happens when we try to compile the class definition in following code snippet? Class Vehicle {}; class Car : protected Vehicle {};",
+      "options": [
+        "It will not compile because a class cannot be protectedly inherited from other class.",
+        "It will compile successfully.",
+        "It will not compile because class body of Car is not defined.",
+        "It will not compile because class body of Vehicle is not defined."
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "25",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE, P&E CADRE (ELECTRICAL WING) - COMPUTER SCIENCE AND ENGINEERING",
+      "year": 2023,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/Jr.%20Grade%20of%20MES%20(Electrical%20Wing)%20under%20P%26E%20Deptt.%2C%20Computer%20Engg%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "29896626fe7e8a973b5af118e7b230673840105c3d2a353dad9f8d7311027b3b",
+  "appearance": {
+    "id": "d00c3d294fb57e829854",
+    "paper_id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "25",
+    "qnum_seq": 25,
+    "page": 3,
+    "question": "What happens when we try to compile the class definition in following code snippet? Class Vehicle {}; class Car : protected Vehicle {};",
+    "options": [
+      "It will not compile because a class cannot be protectedly inherited from other class.",
+      "It will compile successfully.",
+      "It will not compile because class body of Car is not defined.",
+      "It will not compile because class body of Vehicle is not defined."
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+    "subject": "gk",
+    "topic": "Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'car':18 'class':9,15,17 'code':13 'compil':7 'definit':10 'follow':12 'happen':2 'protect':19 'snippet':14 'tri':5 'vehicl':16,20",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_75e5a6e118b136f9",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "It will compile successfully.",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

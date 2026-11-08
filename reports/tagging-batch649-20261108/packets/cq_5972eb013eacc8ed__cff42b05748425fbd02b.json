@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_5972eb013eacc8ed",
+  "appearance_id": "cff42b05748425fbd02b",
+  "snapshot": {
+    "record": {
+      "id": "cff42b05748425fbd02b",
+      "paperId": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-III..pdf",
+      "type": "mcq",
+      "question": "Consider the following transactions with data items A and B initialized to zero:\nT1: read (A) ;\nread (B) ;\nif A = 0 then B : = B + 1 ;\nwrite (B) ;\nT2: read (B) ;\nread (A) ;\nif B = 0 then A : = A + 1 ;\nwrite (A) ;\nAny non-serial interleaving of T1 and T2 for concurrent execution leads to",
+      "options": [
+        "A serializable schedule",
+        "A schedule that is not conflict serializable",
+        "A conflict serializable schedule",
+        "A schedule for which a precedence graph cannot be drawn"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "12",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-III..pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE, P&E CADRE (ELECTRICAL WING) - COMPUTER SCIENCE AND ENGINEERING",
+      "year": 2023,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/Jr.%20Grade%20of%20MES%20(Electrical%20Wing)%20under%20P%26E%20Deptt.%2C%20Computer%20Engg%20Paper-III..pdf"
+    }
+  },
+  "source_fingerprint": "21fbe10293122de2efc39e0ced5d68848064069b1e613d0931dda68307064a97",
+  "appearance": {
+    "id": "cff42b05748425fbd02b",
+    "paper_id": "Old_Questions/Direct_2023-2025/Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-III..pdf",
+    "type": "mcq",
+    "qnum": "12",
+    "qnum_seq": 12,
+    "page": 2,
+    "question": "Consider the following transactions with data items A and B initialized to zero:\nT1: read (A) ;\nread (B) ;\nif A = 0 then B : = B + 1 ;\nwrite (B) ;\nT2: read (B) ;\nread (A) ;\nif B = 0 then A : = A + 1 ;\nwrite (A) ;\nAny non-serial interleaving of T1 and T2 for concurrent execution leads to",
+    "options": [
+      "A serializable schedule",
+      "A schedule that is not conflict serializable",
+      "A conflict serializable schedule",
+      "A schedule for which a precedence graph cannot be drawn"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Jr. Grade of MES, P&E Cadre (Electrical Wing) under P&E Deptt. Final Answer Key..pdf",
+    "subject": "gk",
+    "topic": "Jr. Grade of MES (Electrical Wing) under P&E Deptt., Computer Engg Paper-III.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0':21,35 '1':25,39 'b':10,18,23,24,27,30,34 'concurr':52 'consid':1 'data':6 'execut':53 'follow':3 'initi':11 'interleav':46 'item':7 'lead':54 'non':44 'non-seri':43 'read':15,17,29,31 'serial':45 't1':14,48 't2':28,50 'transact':4 'write':26,40 'zero':13",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_5972eb013eacc8ed",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A schedule that is not conflict serializable",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

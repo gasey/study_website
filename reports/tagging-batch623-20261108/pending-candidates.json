@@ -1,0 +1,396 @@
+[
+  {
+    "canonical_id": "cq_a60bbd85f4b698ae",
+    "appearance_id": "b5b4a4e1e68f13f66f15",
+    "source_fingerprint": "41956665de6ce343ee8f6a95d5ba3fd0b1f4e3b80142bf87fc90e7fd102b728d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54410b8e2b2b546c",
+    "appearance_id": "3753cf0efae9b8e462cf",
+    "source_fingerprint": "0477408d6bfc20e6d9caee6794c494ac2be1d039cd21fbc1bbf523f64bc23e5b",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_00ff564556edddc6",
+    "appearance_id": "ae127e8c791023823602",
+    "source_fingerprint": "45093aa84dd27a03c481e484d70b764e748728f6f78cb90f1c8e18bb6ad60408",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2cd59704cfa5052e",
+    "appearance_id": "6af0f20984858dc99e54",
+    "source_fingerprint": "4d53dd7163edf8cb34f7dac908a78d4fb099809c3687ffa0c2ffd26cd82080ff",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bc716a255b99552d",
+    "appearance_id": "a3932bae10f9e54583fa",
+    "source_fingerprint": "e35e2182c31f6b11e20f5bac7cb5d48255d7eb307edfa1b00dfdfc7229d9b8d5",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f4b13d6c6c737e1",
+    "appearance_id": "401166abe35df335e5c7",
+    "source_fingerprint": "b6f25974daa1f3c6589dbbf834eeb786d63cb23a315ac0c40bd5ad0a09294812",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa32d4860a1bae31",
+    "appearance_id": "3cd72e176290bf559c22",
+    "source_fingerprint": "43a1fbe580d6b3db1432257f84c2e7a7a7fd300f8c327cb03fed2da591ecab93",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4342bb9683da88be",
+    "appearance_id": "3bd713cbb0fea042e366",
+    "source_fingerprint": "8293209bb48a885b08c8358e12c0c7b7265088a739e2d885c059130df3a801b1",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a481578e23d4a302",
+    "appearance_id": "61ad68083270f754ae0c",
+    "source_fingerprint": "71bb4964bc0515c2a32d3a681e6fa804c8e6fb842fd9455ba6a6696eb6c04531",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_62a931cf71e0cf78",
+    "appearance_id": "6f560277cb1f96e8e4a6",
+    "source_fingerprint": "84023c73497abf75f0d9c7dc262169c95f530cc95bde687bedd26916db47227b",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9e1cb0b6221d00aade3b583",
+      "sha256": "fce5fa7e80688279a038924defc4e02a720fe903482143c0714345dd3325a40b",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
