@@ -1,0 +1,708 @@
+[
+  {
+    "canonical_id": "cq_cf5b31c3700d9553",
+    "appearance_id": "desc-06e609af89905f9efcfd",
+    "source_fingerprint": "bd9cc5d46c3db000e20aa287409cbb8708ef5859426a5bae10ec4e6c9366b9ef",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b0581e25ea0be078",
+    "appearance_id": "desc-ee525cc27af34501f47a",
+    "source_fingerprint": "0d51eddba302f88e98637d6baf2b70b61d861a0bf566d1e64c473c17fa82cec7",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0070a8d1cd0dd405",
+    "appearance_id": "desc-2175b5e40b7dce74a00b",
+    "source_fingerprint": "a84eaa39031b5dcf1b3146dc358155f555a2944038466c6ae6b05671c60fca5b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81e56aaa73f6e482",
+    "appearance_id": "desc-f7c2044d62351e5c7f6e",
+    "source_fingerprint": "557596c6b55ec1577c3f99d805e208feb31e2cee07f8b7d4c514b523cd6e701d",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06c22765919682c5",
+    "appearance_id": "desc-c34ea38af464b1c00a75",
+    "source_fingerprint": "2ec6eb204cbac8a5fc1c3de947bfa40bef3a152aa9e304d7ccf48966cb908224",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1bf618e41b202851",
+    "appearance_id": "desc-2be8d4ba10cfd7988a72",
+    "source_fingerprint": "039b0fab0babfa828544d11c86409c78adb8757f41ebb705934758fc11ffba05",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2dcc459281b117e",
+    "appearance_id": "desc-c408e1708931c63978fb",
+    "source_fingerprint": "a3c65d1d7bf0a1e91b8bcd10571b2be22eb4ddc8fc88b43d5f6f46fef214ac3c",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_798de09c47b89fcb",
+    "appearance_id": "desc-231615d68f7ee1bc4a59",
+    "source_fingerprint": "5f66da64d5efa0693ff02096c1c400d057ae4235b6965761f78151f12fa9e120",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_314f47a3eec9dacc",
+    "appearance_id": "07e492983bc91df893b8",
+    "source_fingerprint": "ffced874c081e36b82b0146f11a5b7b26ca9a23e634a3d012cac1afd5dbfafeb",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1h assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b9df7adccbf752a",
+    "appearance_id": "1cabb6f7baf3acd88d1a",
+    "source_fingerprint": "d31c102561f2af9aef46516a1bfc4e2571b581102f36929ee29748da314ec35a",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1i assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5717db635eda37ee",
+    "appearance_id": "279423dc7d53ae099ce9",
+    "source_fingerprint": "f656b62631d59c43095b65e4c31f510f4fae69b4c29d527cff4963f11f392e9d",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1b assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5a2a9deecbf95ef",
+    "appearance_id": "2a564f5f11e54ef467ad",
+    "source_fingerprint": "bc30cb6a477aa89601efa8e5e623f81fb0da76112d7606ed622571e02b46376b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1f assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9545c8bf9951285",
+    "appearance_id": "629144a673b6b8505b78",
+    "source_fingerprint": "3857e9642b1b5a9dee8ff82e75689f96d8026b133f6c41dce046ff456e45f18d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1j assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd190dbe1ad85838",
+    "appearance_id": "a5175898ce9aa53a8e3e",
+    "source_fingerprint": "fbae58215488969ee3dc800f3b208e5b768102fc6807bc75cc52d8bb3f662182",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1a assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f221f9a6412db816",
+    "appearance_id": "d945ffebbf61accb5295",
+    "source_fingerprint": "ffc0987a55a1635d61b4bb437a013330bf69858b2be9355211036a6072e3f070",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1d assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4b58d26c02d7965",
+    "appearance_id": "e276b577a7082aef99af",
+    "source_fingerprint": "a87a00c11c4c7ca028e966eef6107ee9e49cfcc3486eb83bd6baa907324a88dc",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1g assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b7f6ceac120d252",
+    "appearance_id": "e32237f19369abe91455",
+    "source_fingerprint": "8e5d225190299764401c9ec2fdcada28aa674cc89a670996f865f88965e8ce5b",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1c assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d4576cf22b305e6",
+    "appearance_id": "e5b21e99ac2bf45e3605",
+    "source_fingerprint": "655f433bd810c00e80ad8bcc70d25f635ce1700e269c2d2041688e86d5969930",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1e assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c4fd48cc2f2e901cc9a449fe",
+      "sha256": "031df3b0f0e286c8922d76be22f5ba5a7e021b71964498849cc838237dc59c6a",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

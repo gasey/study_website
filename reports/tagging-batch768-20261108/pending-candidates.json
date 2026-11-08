@@ -1,0 +1,1562 @@
+[
+  {
+    "canonical_id": "cq_72994a08f02ff98e",
+    "appearance_id": "desc-b5244ea306cbccda3305",
+    "source_fingerprint": "211467b81cf3611e28fa530db1621238556dc6ea7b323709e2bc1f07cdaeb343",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_74f081a44d285d9a",
+    "appearance_id": "desc-bc36a96774047de08bf7",
+    "source_fingerprint": "4c2467f5e0c5fc2cc2942fd059a9ceb403a2391845d3c33e915611d7fc359d10",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8967d2077a0f6cb7",
+    "appearance_id": "desc-e80d5c1eaa06f19d0142",
+    "source_fingerprint": "db86f5aaa70b1a32b1369f275273d66a09845ed73c9877b35eae3dce4705ee3c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1853eaa5975d129",
+    "appearance_id": "desc-e35d16777eb25cd44c6e",
+    "source_fingerprint": "ebb0c4df8b0478d301ea3fdcb527a2933c01074ab9a2ab123f2971f8abbe082e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b722dad2e18f2c0c",
+    "appearance_id": "desc-ff08ec5a346e28ee5d37",
+    "source_fingerprint": "078308e2f534dc321091e5c1875d2020d17bc83af636041dbceb16e41c999182",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54deddd637a0d974",
+    "appearance_id": "desc-374a84a55c7a8b928771",
+    "source_fingerprint": "0ac574a12e4ca7ff27ef03e2e1916f17f0155eb522b133b0ddd5a2c032f8992e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e33251035a70eb86",
+    "appearance_id": "desc-1ef8537b75fbca07cb46",
+    "source_fingerprint": "1bfdbd8bf5d06f98e1774171b1104141db60336148e845c733f4348585be8439",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2545b1a8c52a435",
+    "appearance_id": "desc-2ec3dab29ccb7b98c7cf",
+    "source_fingerprint": "12c274c5b223ec9dd3b40b82afdeb3657cf6d6e7ddebb3e04eba2c32974b74cf",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a51dcc570662132",
+    "appearance_id": "desc-2e17abce1eaa9c0c57d3",
+    "source_fingerprint": "e1c48a2e02fb8308992e30b8df06827ede5839812de882c205330afe092ddc8f",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30bb617c0748beda",
+    "appearance_id": "desc-aaf373480de152f45326",
+    "source_fingerprint": "91dbbca894c2342abdd176b25cf63b13996592de03272a2040f7eb84b7978008",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52b915da562d2916",
+    "appearance_id": "desc-d547fc3c50d0a310b895",
+    "source_fingerprint": "a89e35aa656801ed080fd7423d71cf7d372273bb242ee1b171f79dfdad3aa5fb",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d3c2b8714a78207",
+    "appearance_id": "desc-ded71a2120c13534025d",
+    "source_fingerprint": "352990079d1f6481a760d229e6a34f0dc40da6b91fad9577af8e490ed8a25654",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f5e553a13a3203c3",
+    "appearance_id": "desc-e6b6599455ccb55c29bf",
+    "source_fingerprint": "5868a9ab55bfb549e3e1aadd32296c600dd59d459a8738577097fa6133ea32b5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f4b6a86c683b4a6f",
+    "appearance_id": "desc-4d180e32cea70eb2fe9f",
+    "source_fingerprint": "c3f8bf9a9882021ea007f69157f2f0bd0517677f73f6887efac2aeeaa7854352",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_025412219e998fe2",
+    "appearance_id": "desc-75ca4505008237354021",
+    "source_fingerprint": "a9a31ae7c35e7d087c1794448e2c90adcda43d0417d2384d49e8acccd0bfdb0e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b85feeea5f790104",
+    "appearance_id": "desc-de67ed6b31b336da24d3",
+    "source_fingerprint": "2ae63cff7be4958d702c91b10d59bb52dd8dfe06ffe2a509ddc404fdbc987d33",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d0cb10308e584e3",
+    "appearance_id": "desc-8cc2aba346811b65c052",
+    "source_fingerprint": "e99d3c7abf3161ad84b5fa544f5ea20ba59f569c59ba6a4cb50e4fc60454ff66",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/building-materials",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e8e542751f92d808",
+    "appearance_id": "desc-5ee234d9b4299da3ab15",
+    "source_fingerprint": "ad65f1fde032dfe2fcc3ec4fc4ae8e2798e23cb8ad2e3af19bea55faa0de7958",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4bfc5f7add4a3bfc",
+    "appearance_id": "desc-229210841fab18803f19",
+    "source_fingerprint": "85f39892bc98ec402046681148d34f8de9eb6b33db345358118205f74651586e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7792c686536c39d",
+    "appearance_id": "desc-c5ccf1996dd091df2dae",
+    "source_fingerprint": "6e68a7dca2612911b125eb5081af37b605ea53cf0637a73687c09396e340ac0b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_af5ad42a6fd4ee0a",
+    "appearance_id": "desc-c4de4698c0b49306aee5",
+    "source_fingerprint": "66abf0af4c768cda0ed5386fdb1a2eab179d5506b04dca609c34a2c92e408db9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ac6f98ab612cbfcb",
+    "appearance_id": "desc-81ade3425b5aacec90d4",
+    "source_fingerprint": "5ecf7f46fe11836d942481c5254f69556aeed699d92d0cde532bc09d06daa0d2",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57a16b8784329d77",
+    "appearance_id": "desc-1273ad3921fd01003551",
+    "source_fingerprint": "79bbe6abdf6078efeab6f5a62493d8a669a50f5bbcdb5440f6a14e7331fa638b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a64b9b8e8dbe8287",
+    "appearance_id": "desc-190c5b8979a1f9729459",
+    "source_fingerprint": "eeb44dc7fe6a7d3cef8498989cf11e5970048c374956bd012dc5d6b4e3a7f3ef",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6c74f2c74a683b1d",
+    "appearance_id": "desc-88d545aef95c916bffa8",
+    "source_fingerprint": "bd3dfb865dcb734d8be9f881554695abc1978c2a54804b378e4614fe59aede10",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5dfd6b3c059ac0c4",
+    "appearance_id": "desc-ab382d57be5b58d0a9cd",
+    "source_fingerprint": "cb9d8751e991af2c7fb0e7b7651dfdec1c07ab69fe05f96e70e56c4a9d78cae2",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12fc780238bee42d",
+    "appearance_id": "desc-9432b871a703e2c3c423",
+    "source_fingerprint": "61c781f7b0ab4691e600dca59033f9740fce2c44ad3162e5e233f184525c13c3",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_697ab998965d8d29",
+    "appearance_id": "desc-c708664844502088d1ef",
+    "source_fingerprint": "f3e6fa5652d51a40ececfb087fc625963ee198381290740cbed24c75990571a6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1c4e0639858d435",
+    "appearance_id": "desc-d35e374b9a30ab2d5852",
+    "source_fingerprint": "5596c704583e07111f4519f51851b13c71de7e2be92448e70a6183b4a2c88663",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a53d8fc529f4a1e",
+    "appearance_id": "desc-fe7f39160adc3caaf064",
+    "source_fingerprint": "6e91d6b174f5fab8add686a822400da968b1e56c054a57d505433748c8d76d22",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aca4d1b4da180b6c",
+    "appearance_id": "desc-552d24b7b4f22fe3e070",
+    "source_fingerprint": "fdd150d5ac734027ff7d52d6ed2b9e54b0f8bc4653618383bdf58b4321ab7bab",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b7a683f75013f5e",
+    "appearance_id": "desc-f9da82024ab572abf714",
+    "source_fingerprint": "f9cedb4128f800f4b116b028f51efd4bb6ad78808613ab2a955f6584b515874e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ac2b9fb47b46aa83",
+    "appearance_id": "desc-6bff7bf2c7936b8e14cc",
+    "source_fingerprint": "f8e233b4a6b5b5b676eb4ccd9bed687ea9101320339d6c7e1c1cf47d97d2f219",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7bf9c1e7fd4c35fd",
+    "appearance_id": "desc-f6f9e967edaa80dd8951",
+    "source_fingerprint": "e97a5df0e57c7d4d80cbb6a4af08bc7da775d37eac6638c7369cebf03376f82d",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f1418f6a2c0531bf",
+    "appearance_id": "desc-33a224cf69b2e2bca54b",
+    "source_fingerprint": "bdf1830a13f3ec30e00f5b25eff35dcdad4df6b7fb23d230f7665f3d088827f9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5af531115d0312a",
+    "appearance_id": "desc-26999c0ec998dab63815",
+    "source_fingerprint": "1d9ffd9ad7e3c59ac6faa8909035c921f5d6618651028953ffbc7afe6c958a98",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01839f868ea88aad",
+    "appearance_id": "desc-ec18b44c7c4b88ba8055",
+    "source_fingerprint": "afdcc2ce13b0de8cf22c33f929f541793b49be46b7bbcc991c4278e263085288",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cbde3d9f50150e4a",
+    "appearance_id": "desc-db8d8f7ca0eeeeb74224",
+    "source_fingerprint": "197f70010f28a34fc37413031faa21d794f2d73d09ff480582c3ab2e44a88d0c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3bedbbb28368ad69",
+    "appearance_id": "desc-7f5931ef042ea6ced48d",
+    "source_fingerprint": "da54a4af04a3c3d68aadb091a94530ef8025dd92afe9971dd40f509034ec3224",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20badc2676b6f039",
+    "appearance_id": "desc-a81296b15a77cfe38807",
+    "source_fingerprint": "3dacab47dfd723621fcf9c7d3e92c72825be3464e62180987bba3f2af44fce52",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f08bebcd2a4caf35eadb14ea",
+      "sha256": "6c83219d6f4a7b412af979c5df0999a0a86f8446d558a6e5053604acf296c936",
+      "note": "Verified against registered booklet source for AE/SDO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
