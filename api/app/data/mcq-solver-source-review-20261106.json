@@ -1,0 +1,308 @@
+{
+  "id": "source-review-20261106",
+  "reviewed_on": "2026-11-06",
+  "status": "ai_checked_drafts_and_format_holds",
+  "human_approval": null,
+  "bank_sha256": "99ce7a54d37581a8be55b6f144b677ab8855240371ed1ec67d6a142139dd45e0",
+  "items": [
+    {
+      "id": "443a88ce9d7314ac8aa1",
+      "canonical_id": "cq_82d0fe01d2d3ab20",
+      "title": "GFR loss reporting",
+      "decision": "hold_format",
+      "review_kind": "ai_source_inspection",
+      "human_approval": null,
+      "expected": {
+        "id": "443a88ce9d7314ac8aa1",
+        "paperId": "Old_Questions/Departmental_2019-2020/1. MPS(P) Dec-2019 Paper-I.pdf",
+        "question": "Fill in the blanks: (f) All losses above the value of ____________due to suspected fire, theft, fraud, etc., shall be invariably reported to the Police for investigation as early as possible. (Rule 34 of GFR)",
+        "options": [
+          "Rs. 1000",
+          "Rs. 5000",
+          "Rs. 10000",
+          "Rs. 25000"
+        ],
+        "qnum": 13,
+        "page": 2
+      },
+      "paper_title": "MIZORAM POLICE SERVICE (JUNIOR GRADE) DEPARTMENTAL EXAMINATIONS",
+      "year": 2019,
+      "source_sha256": "ef9c77594b99aee26b29536509a12a0710dd9ef64d01a12323693c174b13e5e3",
+      "document_id": "doc_41d0dfc6cbbde7c3427ecf2a",
+      "original_format": "fill_in_blank",
+      "finding": "The original is Q13(f), a fill-in-the-blank subpart. None of the four stored choices is printed in the paper. The first page names General Financial Rules 2005. Its Rule 34 (physical page 20) supports the short answer Rs. 10,000. The pilot uncertainty about an unspecified edition is resolved by the paper heading; its MCQ representation remains invalid.",
+      "repair": "Preserve Q13(f) as a short-answer blank, retaining its parent question, GFR 2005 context and source location. Do not publish the generated choices as original exam options.",
+      "suggested_answer": "Rs. 10,000 (GFR 2005)",
+      "selected_option_id": null,
+      "references": [
+        {
+          "title": "General Financial Rules 2005, Rule 34",
+          "url": "https://cdnbbsr.s3waas.gov.in/s30f46c64b74a6c964c674853a89796c8e/uploads/2022/11/2022112314.pdf",
+          "page": 20
+        }
+      ],
+      "initial_draft": {
+        "question_id": "443a88ce9d7314ac8aa1",
+        "selected_option_id": "2",
+        "explanation": "Rule 34 of GFR 2005 prescribed reporting such losses above Rs. 10,000 to the Police, matching option 2. However, GFR 2017 specifies Rs. 50,000, which is absent from the options. Because the exam is dated 2019 and the GFR edition is unspecified, this selection depends on the question using the older rules.",
+        "certainty": "uncertain",
+        "review_required": true,
+        "review_reasons": [
+          "The GFR edition is unspecified; option 2 matches GFR 2005, whereas the Rs. 50,000 threshold in GFR 2017 is not offered.",
+          "model_uncertain",
+          "existing_source_or_key_flag",
+          "human_source_and_reasoning_review_pending"
+        ],
+        "topic": "Financial Rules and Accounts",
+        "official_key_agreement": null,
+        "human_approval": null,
+        "question_version_hash": "fd19b3fe0dfbd603b60d2527cc3b243a113acd6777be1f1d49d2e672dfa36708",
+        "model_id": "gpt-6.1-sol",
+        "reasoning": "high",
+        "prompt_version": "mcq-blind-v1",
+        "solver_run_id": "28d2ea1a-0be8-4f1e-9827-f4180eea6d94",
+        "completed_at": 1793950584.766356,
+        "response_outcome": "validated_draft"
+      },
+      "draft_explanation": null
+    },
+    {
+      "id": "3196372f962e3265b42d",
+      "canonical_id": "cq_cdb97d561400c458",
+      "title": "GFR object-head authority",
+      "decision": "hold_format",
+      "review_kind": "ai_source_inspection",
+      "human_approval": null,
+      "expected": {
+        "id": "3196372f962e3265b42d",
+        "paperId": "Old_Questions/Departmental_2019-2020/1. MPS(P) Dec-2019 Paper-I.pdf",
+        "question": "Fill in the blanks: (h) The power to amend or modify these object heads and to open new Object Heads rest with Department of Expenditure of Ministry of Finance on the advice of ____________ (Rule 74)",
+        "options": [
+          "Comptroller and Auditor General",
+          "Reserve Bank of India",
+          "Central Bureau of Investigation",
+          "Planning Commission"
+        ],
+        "qnum": 13,
+        "page": 2
+      },
+      "paper_title": "MIZORAM POLICE SERVICE (JUNIOR GRADE) DEPARTMENTAL EXAMINATIONS",
+      "year": 2019,
+      "source_sha256": "ef9c77594b99aee26b29536509a12a0710dd9ef64d01a12323693c174b13e5e3",
+      "document_id": "doc_41d0dfc6cbbde7c3427ecf2a",
+      "original_format": "fill_in_blank",
+      "finding": "The original is Q13(h), a fill-in-the-blank subpart without printed choices. The CAG answer is supported by GFR 2005 Rule 73, physical pages 35–36. The paper prints Rule 74; Rule 74 itself concerns conformity of budget heads with classification rules. Preserve the printed reference and annotate the discrepancy. The earlier bank rationale claiming that CGA is the intended answer is contradicted by this source.",
+      "repair": "Retain the original blank and record the Rule 73/74 citation discrepancy. Store the source-supported short answer separately; do not manufacture an MCQ from it.",
+      "suggested_answer": "Comptroller and Auditor General of India",
+      "selected_option_id": null,
+      "references": [
+        {
+          "title": "General Financial Rules 2005, Rule 73 and following Rule 74",
+          "url": "https://cdnbbsr.s3waas.gov.in/s30f46c64b74a6c964c674853a89796c8e/uploads/2022/11/2022112314.pdf",
+          "page": 36
+        }
+      ],
+      "initial_draft": {
+        "question_id": "3196372f962e3265b42d",
+        "selected_option_id": "0",
+        "explanation": "Under Rule 74, the Department of Expenditure, Ministry of Finance, may amend or modify Object Heads and open new ones on the advice of the Comptroller and Auditor General of India. Object Heads concern government accounting classification, making the CAG—not the RBI, CBI or Planning Commission—the relevant authority.",
+        "certainty": "confident",
+        "review_required": true,
+        "review_reasons": [
+          "existing_source_or_key_flag",
+          "human_source_and_reasoning_review_pending"
+        ],
+        "topic": "Government financial rules: classification of expenditure and Object Heads",
+        "official_key_agreement": null,
+        "human_approval": null,
+        "question_version_hash": "23855f03da9abea0e821046c893b0f49d9520408ca6021952808a6ede9cee785",
+        "model_id": "gpt-6.1-sol",
+        "reasoning": "high",
+        "prompt_version": "mcq-blind-v1",
+        "solver_run_id": "28d2ea1a-0be8-4f1e-9827-f4180eea6d94",
+        "completed_at": 1793950596.6555812,
+        "response_outcome": "validated_draft"
+      },
+      "draft_explanation": null
+    },
+    {
+      "id": "d9e29d48b9814985f74f",
+      "canonical_id": "cq_f8306aec5a48bc3d",
+      "title": "Imprest question grouping",
+      "decision": "hold_format",
+      "review_kind": "ai_source_inspection",
+      "human_approval": null,
+      "expected": {
+        "id": "d9e29d48b9814985f74f",
+        "paperId": "Old_Questions/Departmental_2019-2020/JE Draftman-I Accoun Paper..pdf",
+        "question": "Choose the correct answer regarding maintenance of permanent imprest and temporary advance",
+        "options": [
+          "The amount of an imprest should be kept as low as possible and should in no case exceed four thousand/five thousand rupees",
+          "The account of imprest cash should be kept in duplicate by the imprest holder/Divisional Accountant",
+          "The imprest-holder is responsible for the safe custody of imprest money and he must at all times be ready to produce the total amount of the imprest in vouchers or in cash / Vouchers only",
+          "The account of Imprest /Temporary Advance should be closed as soon as possible"
+        ],
+        "qnum": 1,
+        "page": 1
+      },
+      "paper_title": "DEPARTMENTAL EXAMINATIONS FOR JUNIOR ENGINEER AND DRAFTMAN-I UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT, GOVERNMENT OF MIZORAM - ACCOUNTS PAPER",
+      "year": 2020,
+      "source_sha256": "3e1b637788eeae35c761d4c3c6770a8f015dd78c7de9e6e3e7738b2345e403b3",
+      "document_id": "doc_0bd46ac0d4beca031ef98253",
+      "original_format": "multipart_either_or",
+      "finding": "Printed Q1 contains five separately marked either/or subquestions, (a)–(e), each worth one mark. The bank treats the first four subquestions as options for one answer and omits (e). The source alternatives are real, not OCR ambiguity; the grouping is wrong. No one option can answer the original five-part task.",
+      "repair": "Stage five source-linked subparts under parent Q1. Recover omitted Q1(e): “The amount remitted as a Temporary Advance should be accounted for in Form 1/Form 2 in the same way as an imprest.” Resolve answers only against the applicable public-works accounts code edition.",
+      "suggested_answer": null,
+      "selected_option_id": null,
+      "references": [],
+      "initial_draft": {
+        "question_id": "d9e29d48b9814985f74f",
+        "selected_option_id": null,
+        "explanation": "The options contain unresolved slash-separated alternatives, so they are not four unambiguous statements. An imprest-holder is responsible for safe custody and must account for the imprest in cash and/or vouchers, not vouchers only. A temporary advance should be cleared promptly, whereas a permanent imprest is a continuing arrangement subject to accounting and recoupment. Several options therefore contain a plausible correct alternative, and the intended wording and applicable financial rules are needed to identify a unique answer.",
+        "certainty": "cannot_determine",
+        "review_required": true,
+        "review_reasons": [
+          "Unresolved slash-separated alternatives make multiple options partly correct.",
+          "The applicable financial rules are unspecified, preventing verification of the monetary ceiling.",
+          "model_uncertain",
+          "no_determinable_option",
+          "existing_source_or_key_flag",
+          "human_source_and_reasoning_review_pending"
+        ],
+        "topic": "Financial Rules and Accounts: Permanent Imprest and Temporary Advances",
+        "official_key_agreement": null,
+        "human_approval": null,
+        "question_version_hash": "db3297460a6604dd0214fed97beb1133b7d3e37ecab08788b7e7c7ed9b232496",
+        "model_id": "gpt-6.1-sol",
+        "reasoning": "high",
+        "prompt_version": "mcq-blind-v1",
+        "solver_run_id": "28d2ea1a-0be8-4f1e-9827-f4180eea6d94",
+        "completed_at": 1793950625.4194436,
+        "response_outcome": "validated_draft"
+      },
+      "draft_explanation": null
+    },
+    {
+      "id": "417ad12713a46c088ad5",
+      "canonical_id": "cq_9a65da3c2424a741",
+      "title": "Arms Act true or false",
+      "decision": "hold_format",
+      "review_kind": "ai_source_inspection",
+      "human_approval": null,
+      "expected": {
+        "id": "417ad12713a46c088ad5",
+        "paperId": "Old_Questions/Departmental_2021-2022/MPS (P) January 2022 Paper IV..pdf",
+        "question": "State whether the following statements are true or false.\n(a) Ammunition includes grenades.\n(b) Acquisition of arms includes accepting as a gift.\n(c) Previous sanction of the District Magistrate is necessary, before prosecuting any person in respect of any of the offence under Section 3 of the Arms Act, 1959.\n(d) Firearms includes artillery and hand grenades.\n(e) Transfer of arms license is an inheritable property.",
+        "options": [
+          "Not applicable - True/False format",
+          "Not applicable - True/False format",
+          "Not applicable - True/False format",
+          "Not applicable - True/False format"
+        ],
+        "qnum": 14,
+        "page": 2
+      },
+      "paper_title": "Mizoram Police Service (Junior Grade) Departmental Examinations - Paper IV",
+      "year": 2022,
+      "source_sha256": "6b938fbe4180d18de4e29bc888d64b995ea58990f7611910efd64b64385e6759",
+      "document_id": "doc_994e865973c4e409926279a1",
+      "original_format": "multipart_true_false",
+      "finding": "The paper prints five independent true/false statements under Q14. It does not print four MCQ choices; all four stored choices are placeholders. Sections 2(1)(a), 2(1)(b), 2(1)(e) and 39 support the first four statements. The final statement is false if read as an automatic inheritable licence right: a legal heir must meet conditions and obtain a grant under Rule 25; the firearm and licensing permission must not be conflated.",
+      "repair": "Preserve a five-part true/false response and its statements. Remove generated placeholder choices only through a separate format-repair proposal. Retain the qualified study answer and primary references outside the original MCQ fields.",
+      "suggested_answer": "Suggested sequence: True, True, True, True, False",
+      "selected_option_id": null,
+      "references": [
+        {
+          "title": "Arms Act 1959, definitions and section 39",
+          "url": "https://www.mahapolice.gov.in/uploads/acts_rules/TheArmsAct1959.pdf"
+        },
+        {
+          "title": "MHA NDAL FAQ: grant of licences to legal heirs",
+          "url": "https://ndal-alis.gov.in/armslicence/faq"
+        }
+      ],
+      "initial_draft": {
+        "question_id": "417ad12713a46c088ad5",
+        "selected_option_id": null,
+        "explanation": "(a) True: the Arms Act, 1959 expressly includes grenades within ammunition. (b) True: its definition of acquisition includes accepting arms as a gift. (c) True: Section 39 requires the District Magistrate’s previous sanction before instituting prosecution for an offence under Section 3. (d) True: the definition of firearms expressly includes artillery and hand grenades. (e) False: an arms licence is not automatically inheritable property; an eligible legal heir must obtain the licensing authority’s approval under the applicable rules. The sequence is True, True, True, True, False, but none of the supplied options represents an answer.",
+        "certainty": "cannot_determine",
+        "review_required": true,
+        "review_reasons": [
+          "All four options are identical placeholders stating 'Not applicable - True/False format'; no option ID can be mapped to the true/false sequence.",
+          "model_uncertain",
+          "no_determinable_option",
+          "existing_source_or_key_flag",
+          "duplicate_options",
+          "human_source_and_reasoning_review_pending"
+        ],
+        "topic": "Arms Act, 1959: definitions, prosecution sanction and inheritance of licences",
+        "official_key_agreement": null,
+        "human_approval": null,
+        "question_version_hash": "18b560a1ed9fafa49209df437ab865f9c35ea5a03db4546935014cabfb2d3b82",
+        "model_id": "gpt-6.1-sol",
+        "reasoning": "high",
+        "prompt_version": "mcq-blind-v1",
+        "solver_run_id": "28d2ea1a-0be8-4f1e-9827-f4180eea6d94",
+        "completed_at": 1793950652.040754,
+        "response_outcome": "validated_draft"
+      },
+      "draft_explanation": null
+    },
+    {
+      "id": "b494509273a6c6ba1364",
+      "canonical_id": "cq_53870f1de911cc90",
+      "title": "Thevenin resistance",
+      "decision": "source_checked_draft",
+      "review_kind": "ai_source_inspection",
+      "human_approval": null,
+      "expected": {
+        "id": "b494509273a6c6ba1364",
+        "paperId": "Old_Questions/Departmental_2026-2028/MES Departmental under PHE, Electrical Engg Paper- II -June, 2026..pdf",
+        "question": "If RL of Fig. A is the load resistance, then Thevenin's equivalent resistance RTH of the circuit will be:",
+        "options": [
+          "3Ω",
+          "5Ω",
+          "7Ω",
+          "10Ω"
+        ],
+        "qnum": 7,
+        "page": 2
+      },
+      "paper_title": "Departmental Examination for Junior Grade of M.E.S. (AE/SDO) under Public Health Engineering Department, Government of Mizoram - Engineering Paper II (Electrical Engineering)",
+      "year": 2026,
+      "source_sha256": "1b02bb44d12a03644276d15dfe926e0cfdeafa49f5c43137f5c288333e0552aa",
+      "document_id": "doc_426efd0111a2015b22a8bda8",
+      "original_format": "single_answer_mcq",
+      "finding": "The diagram exists on physical page 2 of the original and in the existing figure asset. Remove RL = 2 Ω and short the independent 20 V source. The 4 Ω and 12 Ω resistors then lie in parallel across the load terminals: Rth = 4×12/(4+12) = 3 Ω. An independent exact rational conductance calculation gives the same result. The printed choices are Ω; text extraction incorrectly emits V. The pilot correctly declined without the picture, but the source now supplies it.",
+      "repair": "Retain an unreviewed derived-answer proposal with index 0, the exact diagram/page evidence and this calculation. Preserve the source image; do not label the result as an official key.",
+      "suggested_answer": "3 Ω — printed option A (index 0)",
+      "selected_option_id": "0",
+      "references": [],
+      "initial_draft": {
+        "question_id": "b494509273a6c6ba1364",
+        "selected_option_id": null,
+        "explanation": "The question refers to Fig. A, but the circuit diagram is not supplied. Thevenin resistance is found looking into the load terminals with RL removed and independent sources deactivated; any dependent sources must remain active. Without the circuit topology, component values and source types, none of the listed resistances can be selected reliably.",
+        "certainty": "cannot_determine",
+        "review_required": true,
+        "review_reasons": [
+          "Required circuit diagram (Fig. A) is missing.",
+          "model_uncertain",
+          "no_determinable_option",
+          "media_not_supplied",
+          "human_source_and_reasoning_review_pending"
+        ],
+        "topic": "Electrical circuits: Thevenin equivalent resistance",
+        "official_key_agreement": null,
+        "human_approval": null,
+        "question_version_hash": "58ef460e2f88aef353dd0875552c444ecb5af724fda0cd23d19ef7bfad9dd82d",
+        "model_id": "gpt-6.1-sol",
+        "reasoning": "high",
+        "prompt_version": "mcq-blind-v1",
+        "solver_run_id": "28d2ea1a-0be8-4f1e-9827-f4180eea6d94",
+        "completed_at": 1793950661.1366374,
+        "response_outcome": "validated_draft"
+      },
+      "draft_explanation": "The original circuit has R1 = 4 Ω and R2 = 12 Ω. Remove the 2 Ω load and deactivate the independent 20 V source by replacing it with a short circuit. The remaining resistors are in parallel at the open load terminals, so Rth = (4 × 12)/(4 + 12) = 3 Ω. This is printed option A; the answer is derived from the inspected diagram, not an official key."
+    }
+  ]
+}

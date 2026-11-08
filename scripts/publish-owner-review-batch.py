@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Publish an explicit, bounded set of owner-adjudicated source/answer repairs in one bank sync.
+"""Publish explicit owner-adjudicated repairs through guarded bank sync.
 
 Each existing immutable manifest, source baseline and receipt remains independent.
 Only distinct existing questions with already-exported owner decisions qualify.
-Written questions accept source locators/context only; answer paths stay MCQ-only.
+Written questions accept source locators/context and taxonomy; answers stay MCQ-only.
+Default batches remain bounded to 100. An exact SHA-bound taxonomy run may compose
+up to ten independently validated 100-item groups into one atomic sync. Source,
+owner-decision, immutable receipt and protected-record checks remain mandatory.
 The prepared batch journal permits recovery after file replacement/sync/ack failure.
 No decisions, permissions, peer votes or reward credits are created here.
 """
-import argparse,hashlib,importlib.util,json,os,subprocess
+import argparse,gzip,hashlib,importlib.util,json,os,subprocess
 from pathlib import Path
 from review_bank_store import atomic,bank_lock,digest,record,sha,transform
 from editorial_protection import check_candidate,prepare_publication,finish_publication
@@ -15,7 +18,7 @@ SPEC=importlib.util.spec_from_file_location('bank_worker',Path(__file__).with_na
 w=importlib.util.module_from_spec(SPEC);SPEC.loader.exec_module(w)
 
 
-def prepare(bank,publications,input_sha,root,registered_final_keys=None):
+def prepare(bank,publications,input_sha,root,registered_final_keys=None,*,compute_output_hash=True):
     if not 1<=len(publications)<=100:raise ValueError('Choose 1–100 explicit source/answer publications')
     by_id={q['id']:q for q in bank['questions']};targets=set();changes={};receipts=[]
     batch_id='review_batch_'+digest(sorted(p['id']for p in publications))[:32]
@@ -23,7 +26,12 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         m=pub['manifest'];p=m['payload'];target=m['baseline']['record']['id']
         if digest(m)!=pub['manifest_hash']or m.get('schema')!=1 or m['id']!=pub['id']:raise ValueError('Invalid immutable manifest')
         if m['bank_sha256']!=input_sha:raise ValueError('All decisions must refer to this exact original bank')
-        if p['kind']=='answer':
+        if p['kind']=='taxonomy':
+            if (m.get('admin_edit',{}).get('kind')!='taxonomy'
+                    or m['admin_edit'].get('actor_id')!=m['author_id']
+                    or not p['patch'] or set(p['patch'])-{'classification','relatedClassifications'}):
+                raise ValueError('Taxonomy batches require exact final owner admin tag decisions')
+        elif p['kind']=='answer':
             mode=m.get('admin_decision',{}).get('mode')
             if set(p['patch'])-{'answerIndex','answerSource','answerKeyRef','explanation'}:raise ValueError('Publish source repairs before answer decisions')
             if mode=='verified':
@@ -105,9 +113,9 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         if target in targets or target not in by_id:raise ValueError('Targets must be distinct existing appearances')
         targets.add(target);original=by_id[target]
         if original.get('type')!='mcq':
-            if original.get('type')!='descriptive' or p['kind'] not in ('transcription','source_reference'):
+            if original.get('type')!='descriptive' or p['kind'] not in ('transcription','source_reference','taxonomy'):
                 raise ValueError('Written questions accept source locators and context only')
-            if set(p['patch'])-{'question','direction','questionMarkup','passage','page','qnum'}:
+            if p['kind']!='taxonomy' and set(p['patch'])-{'question','direction','questionMarkup','passage','page','qnum'}:
                 raise ValueError('Written source repairs cannot change options, answers or provenance')
         for doc in m['documents']:
             path=(root/doc['source_file']).resolve()
@@ -119,6 +127,14 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         # source/answer patch kinds cannot change other questions or taxonomy.
         branch,qid=transform({'questions':[original],'papers':bank['papers']},m)
         changed=branch['questions'][0];opts=changed.get('options',[])
+        if p['kind']=='taxonomy':
+            # The shared transformer normalizes the old unanswered -1 sentinel.
+            # A taxonomy-only run preserves even that legacy representation;
+            # record()/CSV still expose it as an unanswered question.
+            if original.get('answerIndex')==-1 and changed.get('answerIndex') is None:
+                changed['answerIndex']=-1
+            untouched=lambda q:{k:v for k,v in q.items() if k not in ('classifications','relatedClassifications','reviewPublicationId')}
+            if untouched(changed)!=untouched(original):raise ValueError('Taxonomy publication cannot change content, answers or provenance')
         if p['kind']=='explanation' and any(changed.get(k)!=original.get(k) for k in ('answerIndex','answerSource','answerKeyRef')):
             raise ValueError('Explanation publication cannot change answer or provenance')
         if p['kind']=='answer'and(not 2<=len(opts)<=8 or any(not isinstance(o,str)or not o.strip()for o in opts)or len({o.strip()for o in opts})!=len(opts)):raise ValueError('Repair malformed options before verifying')
@@ -127,7 +143,7 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None):
         changes[qid]=changed
         receipts.append({'publication_id':pub['id'],'manifest_hash':pub['manifest_hash'],'input_sha256':input_sha,'appearance_id':qid,'before':m['baseline']['record'],'before_fields':{k:original.get(k)for k in p['patch']},'after':record(changed),'batch_id':batch_id})
     result={**bank,'questions':[changes.get(q['id'],q)for q in bank['questions']]}
-    output_sha=hashlib.sha256((json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest()
+    output_sha=(hashlib.sha256((json.dumps(result,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest() if compute_output_hash else None)
     for receipt in receipts:receipt['output_sha256']=output_sha
     return result,{'schema':1,'batch_id':batch_id,'input_sha256':input_sha,'output_sha256':output_sha,'receipts':receipts}
 
@@ -148,6 +164,63 @@ def require_recoverable_failures(pubs,journal,current):
         raise ValueError('Failed publications require the exact already-written prepared batch output')
 
 
+def taxonomy_scope(publications,scope):
+    """A larger sync may compose bounded groups only within an exact frozen run."""
+    if scope.get('review_kind')!='owner-delegated-ai-taxonomy' or len(scope.get('authorization','').strip())<20:
+        raise ValueError('Explicit frozen owner taxonomy scope required')
+    targets={i['candidate']['canonical_id']:i for i in scope['items']}
+    for pub in publications:
+        m=pub['manifest'];p=m['payload'];item=targets.get(p['canonical_id'])
+        if (p['kind']!='taxonomy' or not item or digest(m['baseline'])!=item['source_fingerprint']
+                or p['patch'].get('classification')!=item['primary']
+                or set(p['patch'])-{'classification','relatedClassifications'}):
+            raise ValueError('Publication is outside the frozen taxonomy proposal/source scope')
+        related=item.get('related')
+        if related is None:related=m['baseline']['record'].get('relatedClassifications',[])
+        related=[r for r in related if r!=item['primary']]
+        normal=lambda paths:sorted(paths,key=lambda r:(r.get('subject_id') or '',r.get('topic_id') or '',r.get('subtopic_id') or ''))
+        if normal(p['patch'].get('relatedClassifications',[]))!=normal(related):raise ValueError('Related tags differ from the frozen proposal')
+        if item['primary'].get('topic_id')=='general-studies/current-affairs':
+            context=item['candidate'].get('context_candidate')or{}
+            if not context.get('reference_period') or context.get('reference_basis')not in ('printed','exam-date','reviewed-source'):
+                raise ValueError('Current Affairs publication needs a supported historical reference period')
+
+
+def prepare_taxonomy_groups(bank,publications,input_sha,root,scope):
+    if not 1<=len(publications)<=1000:raise ValueError('Compose at most ten bounded taxonomy groups')
+    taxonomy_scope(publications,scope)
+    changes={};receipts=[];targets=set()
+    for start in range(0,len(publications),100):
+        subset=publications[start:start+100]
+        # Validate every bounded group, then hash the actual combined bank once.
+        branch,journal=prepare(bank,subset,input_sha,root,compute_output_hash=False)
+        ids={r['appearance_id'] for r in journal['receipts']}
+        if ids&targets:raise ValueError('Repeated target across taxonomy groups')
+        targets.update(ids)
+        changes.update({q['id']:q for q in branch['questions'] if q['id']in ids})
+        receipts.extend(journal['receipts'])
+    output={**bank,'questions':[changes.get(q['id'],q)for q in bank['questions']]}
+    checksum=hashlib.sha256((json.dumps(output,ensure_ascii=False,indent=2)+'\n').encode()).hexdigest()
+    bid='review_batch_'+digest(sorted(p['id']for p in publications))[:32]
+    for r in receipts:r.update(batch_id=bid,output_sha256=checksum)
+    return output,{'schema':1,'batch_id':bid,'input_sha256':input_sha,'output_sha256':checksum,'receipts':receipts}
+
+
+def validate_taxonomy_admins(pubs):
+    tagged=[p for p in pubs if p['manifest']['payload']['kind']=='taxonomy']
+    if not tagged:return
+    quoted=','.join(w.literal(p['contribution_id'])for p in tagged)
+    rows=w.remote('SELECT d.*,c.revision AS current_revision FROM admin_bank_decisions d JOIN bank_contributions c ON c.id=d.contribution_id WHERE d.contribution_id IN('+quoted+')',True)
+    by_id={r['id']:r for r in rows}
+    for pub in tagged:
+        m=pub['manifest'];decision=m.get('admin_edit',{});d=by_id.get(decision.get('id'))
+        if (not d or d['actor_id']!=decision.get('actor_id') or d['actor_id']!=m['author_id']
+                or d['contribution_id']!=pub['contribution_id'] or d['revision']!=m['revision']
+                or d['current_revision']!=m['revision'] or d['baseline_hash']!=m['baseline_hash']
+                or d['payload_hash']!=digest(m['payload'])):
+            raise ValueError('Exact final owner taxonomy decision no longer matches')
+
+
 def recover_failed_ack_sql(pub,batch_id):
     # Caller must first verify every immutable receipt against synced live rows.
     pid=w.literal(pub['id']);cid=w.literal(pub['contribution_id'])
@@ -155,22 +228,32 @@ def recover_failed_ack_sql(pub,batch_id):
     return "BEGIN; UPDATE bank_publications SET state='exported',error=NULL WHERE id="+pid+" AND state='failed'; UPDATE bank_contributions SET state='publishing' WHERE id="+cid+" AND state='publication_failed'; INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES("+cid+",'operator:owner-source-maintenance','prepared_batch_ack_reconciled',"+detail+"::jsonb); COMMIT;"
 
 
-def publish(ids,dry_run=False):
-    if len(ids)!=len(set(ids))or not 1<=len(ids)<=100:raise ValueError('Choose 1–100 unique explicit publication IDs')
+def publish(ids,dry_run=False,taxonomy_run=None):
+    if not dry_run:
+        from bank_authority import require_writable
+        require_writable(w.BANK)
+    scope=None
+    if taxonomy_run:
+        taxonomy_run=Path(taxonomy_run)
+        if hashlib.sha256(taxonomy_run.read_bytes()).hexdigest()!=taxonomy_run.with_suffix('.sha256').read_text().strip():raise ValueError('Frozen taxonomy run changed')
+        scope=json.loads(taxonomy_run.read_text())
+    if len(ids)!=len(set(ids))or not 1<=len(ids)<=(1000 if scope else 100):raise ValueError('Choose bounded unique explicit publication IDs')
     quoted=','.join(w.literal(x)for x in ids)
     with bank_lock(w.BANK):
         check_candidate(w.BANK)
         pubs=w.remote('SELECT * FROM bank_publications WHERE id IN('+quoted+')ORDER BY id',True)
         if any(digest(p['manifest'])!=p['manifest_hash']for p in pubs):raise ValueError('Immutable manifest changed')
         if len(pubs)!=len(ids)or any(p['state']not in('exported','applied','failed')for p in pubs):raise ValueError('Every requested publication must exist and be exported/applied, or have a recoverable prepared receipt')
+        if scope:taxonomy_scope(pubs,scope)
         check_live_explanation_targets(pubs)
         other=w.remote("SELECT id FROM bank_publications WHERE state='exported'AND id NOT IN("+quoted+')LIMIT 1',True)
         if other:raise ValueError('An unrelated publication is waiting; reconcile it first')
         # Avoid ambiguous overlapping canonical targets, including alternate prints.
         canonical=[p['manifest']['payload']['canonical_id']for p in pubs]
         if len(canonical)!=len(set(canonical)):raise ValueError('One decision per canonical question per batch')
-        allowed=w.remote("SELECT p.id FROM bank_publications p WHERE p.id IN("+quoted+")AND EXISTS(SELECT 1 FROM review_grants g WHERE g.user_id=p.manifest->>'author_id'AND g.role='owner'AND g.subject_id IS NULL AND g.revoked_at IS NULL)AND EXISTS(SELECT 1 FROM contribution_events e WHERE e.contribution_id=p.contribution_id AND e.actor_id='operator:owner-source-maintenance'AND e.action IN('operator_answer_completed','operator_source_adjudication'))",True)
+        allowed=w.remote("SELECT p.id FROM bank_publications p WHERE p.id IN("+quoted+")AND EXISTS(SELECT 1 FROM review_grants g WHERE g.user_id=p.manifest->>'author_id'AND g.role='owner'AND g.subject_id IS NULL AND g.revoked_at IS NULL)AND EXISTS(SELECT 1 FROM contribution_events e WHERE e.contribution_id=p.contribution_id AND e.actor_id='operator:owner-source-maintenance'AND e.action IN('operator_answer_completed','operator_source_adjudication','operator_taxonomy_authorization'))",True)
         if {p['id']for p in allowed}!=set(ids):raise ValueError('Existing owner-delegated audited decisions required')
+        validate_taxonomy_admins(pubs)
         refs={p['manifest']['payload']['patch'].get('answerKeyRef')for p in pubs
             if p['manifest'].get('admin_decision',{}).get('mode')=='official'}
         final_keys={}
@@ -187,14 +270,19 @@ def publish(ids,dry_run=False):
         require_recoverable_failures(pubs,journal,current)
         if not journal or current==journal['input_sha256']:
             raw=w.BANK.read_bytes();bank=json.loads(raw)
-            output,prepared=prepare(bank,pubs,current,w.BANK_ROOT.resolve(),final_keys)
+            output,prepared=(prepare_taxonomy_groups(bank,pubs,current,w.BANK_ROOT.resolve(),scope) if scope else prepare(bank,pubs,current,w.BANK_ROOT.resolve(),final_keys))
             if journal and prepared!=journal:raise ValueError('Prepared output changed')
             journal=prepared
             if dry_run:print(json.dumps({'dry_run':True,**journal},indent=2));return
-            backup=w.BANK.parent/'review-backups'/(current+'.json');backup.parent.mkdir(exist_ok=True)
+            compressed=all(p['manifest']['payload']['kind']=='taxonomy' for p in pubs)
+            backup=w.BANK.parent/'review-backups'/(current+('.json.gz' if compressed else '.json'));backup.parent.mkdir(exist_ok=True)
             if not backup.exists():
                 fd=os.open(backup,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
-                with os.fdopen(fd,'wb')as stream:stream.write(raw);stream.flush();os.fsync(stream.fileno())
+                with os.fdopen(fd,'wb')as stream:
+                    if compressed:
+                        with gzip.GzipFile(fileobj=stream,mode='wb',compresslevel=3)as zipped:zipped.write(raw)
+                    else:stream.write(raw)
+                    stream.flush();os.fsync(stream.fileno())
             journal_path.parent.mkdir(exist_ok=True);atomic(journal_path,journal)
             receipt_dir=w.BANK.parent/'review-receipts';receipt_dir.mkdir(exist_ok=True)
             for receipt in journal['receipts']:atomic(receipt_dir/(receipt['publication_id']+'.json'),receipt)
@@ -211,7 +299,9 @@ def publish(ids,dry_run=False):
         if not live or live[0]['bank_checksum']!=journal['output_sha256']:raise ValueError('Live bank checksum mismatch')
         # Verify every appearance, canonical answer and related classification
         # against its immutable receipt before acknowledging any publication.
-        w.verify_live_batch(journal['receipts'],{p['id']:p['manifest']for p in pubs})
+        manifests={p['id']:p['manifest']for p in pubs}
+        for start in range(0,len(journal['receipts']),100):
+            w.verify_live_batch(journal['receipts'][start:start+100],manifests)
         # Only after exact output hash, current authority, sync and live content
         # verification may an ack failure return to the ordinary ack path.
         for pub in pubs:
@@ -228,4 +318,4 @@ def publish(ids,dry_run=False):
         print(json.dumps({'batch_id':batch_id,'publications':len(pubs),'bank_sha256':journal['output_sha256']}))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--publications',type=Path,required=True);parser.add_argument('--dry-run',action='store_true');args=parser.parse_args();publish(json.loads(args.publications.read_text()),args.dry_run)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--publications',type=Path,required=True);parser.add_argument('--dry-run',action='store_true');parser.add_argument('--taxonomy-run',type=Path);args=parser.parse_args();publish(json.loads(args.publications.read_text()),args.dry_run,args.taxonomy_run)

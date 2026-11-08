@@ -1,0 +1,9 @@
+[Unit]
+Description=Fetch Oracle recovery snapshots when this computer is online
+[Timer]
+OnBootSec=5min
+OnUnitInactiveSec=1h
+OnCalendar=*-*-* 20:45:00 UTC
+Persistent=true
+[Install]
+WantedBy=timers.target

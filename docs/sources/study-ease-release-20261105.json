@@ -1,0 +1,51 @@
+{
+  "released_at": "2026-11-05T16:35:50.711848+00:00",
+  "scope": "Student entry, shared quick navigation, module filters and PDF Library usability; web-only release",
+  "checks": {
+    "/feed": {
+      "status": 200
+    },
+    "/exams": {
+      "status": 200
+    },
+    "/admin/bank?tab=pdf-library": {
+      "status": 200
+    },
+    "/api/health": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "questions": 82383,
+        "scorable": 13898
+      }
+    },
+    "unsigned_pdf_library_status": 401,
+    "family_status": 200
+  },
+  "assets": {
+    "index-DH9hCWDS.js": "06e23afba778cdb4f5ce5a57ecc90439ea910738d5556c240d8b211f046108a7",
+    "StudyHome-kkdKGfSS.js": "8d9bd7e99910527cf24bdb566f757f0c1389b401f0dcf72ae69041e0101ced2d",
+    "Exams-tCVqGY9o.js": "e1fe92f3b9da9d80804ecc9c22035b531e0528748ae61e44295ecff43bd0cbbc",
+    "PdfLibrary-DX8kgYSs.js": "78bc27e86ef795cd1f7418051dc3f22759a9e0d27f497e7a04630eddb7e758f1"
+  },
+  "rollback": "/tmp/study-ease-web-before-20261105.tar.gz on Oracle",
+  "validation": [
+    "Production TypeScript/Vite build",
+    "Quick access component and permission tests",
+    "PDF Library component, pagination, source navigation and error tests",
+    "Review navigation and account boundary tests",
+    "Question order/filter/checkpoint tests",
+    "Public compact-card and report/reveal tests",
+    "UDC study identity/resume tests",
+    "Group B navigation/home/archive tests"
+  ],
+  "visual_qa": {
+    "preview_390px": "Exam catalog and quick-find modal inspected; Quick start opened never-attempted UDC queue with mixed ordering. No recorded answer submitted.",
+    "preview_320px": "Compact home inspected; found 3px header overflow relative to client width, then reduced Find to a 44px icon at widths below 360px. Recheck unavailable after browser blocked reconnect.",
+    "pending": [
+      "Final live responsive visual pass",
+      "Signed-in staff phone/tablet visual pass"
+    ],
+    "limitation": "Browser security policy blocked reconnecting to preview after the continuation. No workaround attempted."
+  }
+}

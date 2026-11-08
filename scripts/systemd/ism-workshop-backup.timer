@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily bank and review-workflow recovery snapshot
+[Timer]
+OnCalendar=*-*-* 20:15:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+[Install]
+WantedBy=timers.target

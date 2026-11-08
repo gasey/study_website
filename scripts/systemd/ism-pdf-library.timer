@@ -1,0 +1,7 @@
+[Unit]
+Description=Process requested PDF library scans
+[Timer]
+OnBootSec=2min
+OnUnitInactiveSec=60s
+[Install]
+WantedBy=timers.target

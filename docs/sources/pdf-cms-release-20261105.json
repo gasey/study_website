@@ -1,0 +1,142 @@
+{
+  "scan": {
+    "id": 1,
+    "state": "completed",
+    "requested_by": null,
+    "created_at": "2026-11-05 14:43:14.262053+00:00",
+    "started_at": "2026-11-05 14:43:14.267167+00:00",
+    "heartbeat_at": "2026-11-05 14:43:24.555637+00:00",
+    "finished_at": "2026-11-05 14:43:24.555637+00:00",
+    "files_seen": 5822,
+    "files_hashed": 5822,
+    "error": null
+  },
+  "queries": {
+    "all": {
+      "total": 3786,
+      "seconds": 0.362
+    },
+    "empty": {
+      "total": 258,
+      "seconds": 0.307
+    },
+    "udc": {
+      "total": 48,
+      "seconds": 0.305
+    },
+    "ldc": {
+      "total": 6,
+      "seconds": 0.32
+    },
+    "assistant": {
+      "total": 22,
+      "seconds": 0.309
+    },
+    "unlinked_question_pdfs": {
+      "total": 563,
+      "seconds": 0.318
+    },
+    "registration": {
+      "total": 1,
+      "seconds": 0.307
+    },
+    "missing_files": {
+      "total": 0,
+      "seconds": 0.311
+    }
+  },
+  "summary": {
+    "ambiguous": 0,
+    "empty_papers": 258,
+    "missing_files": 0,
+    "unlinked_files": 1796,
+    "registered_papers": 1979,
+    "missing_registrations": 1
+  },
+  "registration_gap": {
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/LDC under MPSC Paper-II 2025..pdf",
+    "questions": 100,
+    "file_status": "available",
+    "missing_registration": true
+  },
+  "detail": {
+    "questions": 100,
+    "official": 0,
+    "verified": 82,
+    "needs_review": 18,
+    "unsolved": 0,
+    "written": 0,
+    "seconds": 1.055
+  },
+  "release_date": "2026-11-05",
+  "status": "deployed",
+  "entry_url": "https://study.hawayu.in/admin/bank?tab=pdf-library",
+  "scope": "Staff PDF discovery and workflow integration; no question-bank publication in this release",
+  "migration": {
+    "version": "0077_pdf_library",
+    "sha256": "20d511e664a65600cd26e204f79eb01229a3e15bb223721891942dbf2ad56792",
+    "rehearsed_on_disposable_oracle_dump": true
+  },
+  "preservation_before": {
+    "canonical": "2923b23cfc207b70b93659b2bb9d3881",
+    "appearances": "a0157ce27f7010964b52b843b335ace7",
+    "papers": "1989fea2925788a585f53c975fe60615",
+    "assignments": "9d01b91d489f9bb1fe6ffbf1981b07fa",
+    "grants": "4a073259d5bda5159ee60d1e4d8e0fe2",
+    "module_membership": "468035d9a71fe6367eff9889a1df8b64",
+    "bank_checksum": "b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0",
+    "attempts": 275
+  },
+  "preservation_after": {
+    "canonical": "2923b23cfc207b70b93659b2bb9d3881",
+    "appearances": "a0157ce27f7010964b52b843b335ace7",
+    "papers": "1989fea2925788a585f53c975fe60615",
+    "assignments": "9d01b91d489f9bb1fe6ffbf1981b07fa",
+    "grants": "4a073259d5bda5159ee60d1e4d8e0fe2",
+    "module_membership": "468035d9a71fe6367eff9889a1df8b64",
+    "bank_checksum": "b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0",
+    "attempts": 275
+  },
+  "validation": {
+    "focused_backend_regressions": 78,
+    "additional_answer_status_parity_case": true,
+    "frontend_checks": [
+      "PDF library actions/permissions/navigation",
+      "review navigation",
+      "existing-source target UI",
+      "public card reveal/report boundaries",
+      "TypeScript/Vite production build"
+    ],
+    "synthetic_publication_and_interrupted_sync_recovery": "passed; existing paper identity and source registration retained; no production content or real approval created",
+    "archive_resume_hash_cache_failed_snapshot_checks": "passed",
+    "repeat_oracle_scan_rehashed_files": 0,
+    "selected_distinct_hashes_readable_in_api_namespace": 3765,
+    "selected_hashes_unreadable": 0,
+    "api_archive_mount": "read-only; canonical bank JSON remains unreadable to API user",
+    "signed_out_api_status": 401,
+    "signed_out_browser_entry": "PDF Library heading and admin sign-in gate verified",
+    "bank_sync": "IN SYNC; 82383 questions; 82383 approved classifications",
+    "editorial_protection": "78 papers / 6931 source questions",
+    "family_site_final_http_status": 200,
+    "services_active": [
+      "ism-api",
+      "ism-paper-documents",
+      "ism-paper-publisher",
+      "ism-pdf-library.timer",
+      "ism-pdf-library-refresh.timer"
+    ]
+  },
+  "operations": {
+    "api_rollback": "/tmp/pdf-library-1793889781/backup",
+    "private_rehearsal_dump": "/tmp/pdf-cms-release-20261105/private/workflow.dump",
+    "scan_schedule": "Daily 21:15 UTC plus staff requests processed each minute",
+    "canonical_archive_files_changed": false,
+    "caddy_changed": false
+  },
+  "limits": [
+    "Authenticated phone/tablet visual QA remains pending; no signed-in browser session available.",
+    "258 empty registered sources still require intake and required source/content review.",
+    "Unlinked PDF hashes include non-question documents; folder membership does not verify a new exam paper.",
+    "The single document-registration gap is reported for reconciliation; its existing 100 questions and PDF remain available."
+  ]
+}

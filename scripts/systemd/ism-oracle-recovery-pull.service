@@ -1,0 +1,8 @@
+[Unit]
+Description=Copy verified Oracle recovery snapshots to this computer
+[Service]
+Type=oneshot
+WorkingDirectory=/home/hruaia/workspace/projects/personal/india-study-map-app
+ExecStart=/usr/bin/python3 scripts/pull-oracle-recovery.py
+UMask=0077
+TimeoutStartSec=600

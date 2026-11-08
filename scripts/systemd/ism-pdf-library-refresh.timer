@@ -1,0 +1,8 @@
+[Unit]
+Description=Daily PDF archive reconciliation
+[Timer]
+OnCalendar=*-*-* 21:15:00 UTC
+Persistent=true
+RandomizedDelaySec=300
+[Install]
+WantedBy=timers.target

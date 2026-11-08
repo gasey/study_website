@@ -1,0 +1,29 @@
+[Unit]
+Description=Bounded PDF text extraction, page rendering and local OCR
+After=postgresql.service
+[Service]
+Type=exec
+User=www-data
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+Environment=DATABASE_URL=postgresql://mpsc@localhost:5432/mpsc
+ExecStart=/srv/api/.venv/bin/python -m app.services.paper_jobs --documents
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=600
+KillMode=mixed
+UMask=0027
+Nice=15
+MemoryMax=1G
+CPUQuota=100%
+TasksMax=32
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/srv/study/private/paper-workbench
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+IPAddressDeny=any
+IPAddressAllow=localhost
+[Install]
+WantedBy=multi-user.target

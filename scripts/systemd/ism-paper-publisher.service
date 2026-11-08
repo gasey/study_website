@@ -1,0 +1,21 @@
+[Unit]
+Description=Publish independently inspected PDF drafts through the canonical bank
+After=postgresql.service
+[Service]
+Type=exec
+User=root
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+Environment=DATABASE_URL=postgresql://mpsc@localhost:5432/mpsc
+Environment=ISM_DB_TRANSPORT=local
+ExecStart=/srv/api/.venv/bin/python -m app.services.paper_jobs --publish
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=600
+KillMode=mixed
+UMask=0077
+Nice=10
+MemoryMax=3G
+CPUQuota=150%
+[Install]
+WantedBy=multi-user.target

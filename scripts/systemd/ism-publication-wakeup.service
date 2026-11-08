@@ -1,0 +1,25 @@
+[Unit]
+Description=Wake the guarded study publisher on committed queue changes
+After=postgresql.service
+Requires=postgresql.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+Environment=DATABASE_URL=postgresql://mpsc@localhost:5432/mpsc
+ExecStart=/srv/api/.venv/bin/python /srv/api/publication-wakeup.py
+Restart=always
+RestartSec=3
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

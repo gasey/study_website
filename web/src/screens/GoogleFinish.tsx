@@ -1,0 +1,9 @@
+import {useEffect,useState} from 'react'
+import {Link} from 'react-router-dom'
+import {googleRequest} from '../components/GoogleSignIn'
+export default function GoogleFinish(){
+ const [pending,setPending]=useState<{linking:boolean;mfa_required:boolean}|null>(null);const [code,setCode]=useState('');const [error,setError]=useState('');const [busy,setBusy]=useState(false)
+ useEffect(()=>{googleRequest<{linking:boolean;mfa_required:boolean}>('pending').then(setPending).catch(e=>setError(e.message))},[])
+ async function finish(){setBusy(true);setError('');try{const r=await googleRequest<{next:string}>('finish',{code});window.dispatchEvent(new Event('ism-auth-change'));window.location.assign(r.next==='/account/security'?r.next:'/feed')}catch(e){setError((e as Error).message);setBusy(false)}}
+ return <main className="mx-auto max-w-lg px-4 py-12"><h1 className="font-display text-3xl">{pending?.linking?'Confirm Google linking':'Finish signing in'}</h1>{pending&&<form className="mt-5 space-y-4" onSubmit={e=>{e.preventDefault();void finish()}}><p>{pending.linking?'Link the Google identity you selected to your current Study account.':'Continue to your Study account with the Google identity you selected.'}</p>{pending.mfa_required&&<label className="block">Authenticator or recovery code<input required autoComplete="one-time-code" maxLength={64} value={code} onChange={e=>setCode(e.target.value)} className="mt-2 min-h-11 w-full rounded-lg border border-hairline p-3"/></label>}<button disabled={busy} className="min-h-11 rounded-pill bg-ink px-5 py-3 text-paper disabled:opacity-50">{busy?'Checking…':pending.linking?'Confirm link':'Continue'}</button></form>}{error&&<p role="alert" className="my-4 text-mypick">{error}</p>}<Link to="/login" className="mt-6 inline-block min-h-11 text-link">Back to sign-in</Link></main>
+}

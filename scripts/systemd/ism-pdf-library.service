@@ -1,0 +1,21 @@
+[Unit]
+Description=Resumable read-only Oracle PDF library inventory
+After=postgresql.service
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+Environment=DATABASE_URL=postgresql://mpsc@localhost:5432/mpsc
+ExecStart=/srv/api/.venv/bin/python -m app.services.pdf_library_scan
+TimeoutStartSec=1800
+Nice=15
+CPUQuota=50%
+MemoryMax=512M
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+IPAddressDeny=any
+IPAddressAllow=localhost

@@ -1,49 +1,48 @@
-/** Tokens transcribed from the design handoff. Colours, type and shape are
- *  final per the handoff — do not improvise values. Two rules worth keeping
- *  in mind while using these: a colour names an AREA, never a state; and
- *  vermilion is the brand mark only, never a button.
+/** Tokens transcribed from the design handoff, enhanced with CSS custom
+ *  property channels so students can switch seamlessly between Warm Paper,
+ *  Crisp Focus (Brilliant/Quizlet daylight), and Night Owl (dark study) themes.
+ *  A colour names an AREA, never a state; vermilion is the brand mark only.
  *  @type {import('tailwindcss').Config} */
+const rgb = (v) => `rgb(var(${v}) / <alpha-value>)`
+
 export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        paper: '#F4EFE4',          // page background (warm paper)
-        canvas: '#E9E1D2',         // mobile canvas
-        card: '#FFFFFF',
-        ink: '#1D1B18',            // text and primary buttons
-        secondary: '#49443B',
-        muted: '#6B6457',
-        placeholder: '#7A7366',
-        hairline: '#E4DBC9',
-        hairline2: '#DCD3C2',
+        paper: rgb('--ism-paper-rgb'),          // page background
+        canvas: rgb('--ism-canvas-rgb'),        // secondary/mobile canvas
+        card: rgb('--ism-card-rgb'),            // elevated card surface
+        ink: rgb('--ism-ink-rgb'),              // primary text & action fill
+        secondary: rgb('--ism-secondary-rgb'),
+        muted: rgb('--ism-muted-rgb'),
+        placeholder: rgb('--ism-placeholder-rgb'),
+        hairline: rgb('--ism-hairline-rgb'),
+        hairline2: rgb('--ism-hairline2-rgb'),
         // Brand mark only. Keep the exact handoff colour; primary buttons
         // and text use ink.
         vermilion: '#C0462C',
 
         // Area colours: mid / soft tint / dark ink.
-        // Text in an area colour uses `dark`; `DEFAULT` is for dots, bars,
-        // borders and swatches only.
-        practice:  { DEFAULT: '#2D5BD0', soft: '#E3E9F8', dark: '#1F44A6' },
-        learn:     { DEFAULT: '#7B45B8', soft: '#EEE6F7', dark: '#5E2F98' },
-        map:       { DEFAULT: '#0E8287', soft: '#DCEFEF', dark: '#08605F' },
-        community: { DEFAULT: '#B23A9A', soft: '#F5E1F0', dark: '#86226F' },
-        exams:     { DEFAULT: '#B26B00', soft: '#F7EAD0', dark: '#7E4A00' },
-        rewards:   { DEFAULT: '#8A8A12', soft: '#ECEDCF', dark: '#545A06' },
+        practice:  { DEFAULT: rgb('--ism-practice-rgb'), soft: rgb('--ism-practice-soft-rgb'), dark: rgb('--ism-practice-dark-rgb') },
+        learn:     { DEFAULT: rgb('--ism-learn-rgb'), soft: rgb('--ism-learn-soft-rgb'), dark: rgb('--ism-learn-dark-rgb') },
+        map:       { DEFAULT: rgb('--ism-map-rgb'), soft: rgb('--ism-map-soft-rgb'), dark: rgb('--ism-map-dark-rgb') },
+        community: { DEFAULT: rgb('--ism-community-rgb'), soft: rgb('--ism-community-soft-rgb'), dark: rgb('--ism-community-dark-rgb') },
+        exams:     { DEFAULT: rgb('--ism-exams-rgb'), soft: rgb('--ism-exams-soft-rgb'), dark: rgb('--ism-exams-dark-rgb') },
+        rewards:   { DEFAULT: rgb('--ism-rewards-rgb'), soft: rgb('--ism-rewards-soft-rgb'), dark: rgb('--ism-rewards-dark-rgb') },
 
         // States always pair with a word or symbol, never colour alone.
-        correct:   { DEFAULT: '#2E7D46', soft: '#DCEFE1', dark: '#1F6234' },
-        wrong:     { DEFAULT: '#C0392B', soft: '#F8DEDA', dark: '#9E2A1F' },
-        attention: { DEFAULT: '#1D1B18', soft: '#EDE5D4', dark: '#1D1B18' },
+        correct:   { DEFAULT: rgb('--ism-correct-rgb'), soft: rgb('--ism-correct-soft-rgb'), dark: rgb('--ism-correct-dark-rgb') },
+        wrong:     { DEFAULT: rgb('--ism-wrong-rgb'), soft: rgb('--ism-wrong-soft-rgb'), dark: rgb('--ism-wrong-dark-rgb') },
+        attention: { DEFAULT: rgb('--ism-ink-rgb'), soft: rgb('--ism-attention-soft-rgb'), dark: rgb('--ism-ink-rgb') },
 
-        // Values taken from the prototype markup, which disagrees with the
-        // handoff README's summary. See docs/DESIGN-FIDELITY.md — the markup
-        // wins. Used by the bank card and its option buttons.
-        opt:      { bg: '#FBF8F1', border: '#DCD3C2', muted: '#6B6457' },
-        keyed:    { DEFAULT: '#3D7344', soft: '#E3ECDD' },  // revealed correct
-        mypick:   { DEFAULT: '#B0412A', soft: '#F5E1D8' },  // revealed wrong pick
-        prov:     { DEFAULT: '#2F5E8C' },                   // non-official provenance
-        link:     { DEFAULT: '#33609E' },                   // "View original ↗"
+        // Bank card & option states
+        opt:      { bg: rgb('--ism-opt-bg-rgb'), border: rgb('--ism-opt-border-rgb'), muted: rgb('--ism-opt-muted-rgb') },
+        keyed:    { DEFAULT: rgb('--ism-keyed-rgb'), soft: rgb('--ism-keyed-soft-rgb') },  // revealed correct
+        mypick:   { DEFAULT: rgb('--ism-mypick-rgb'), soft: rgb('--ism-mypick-soft-rgb') },  // revealed wrong pick
+        prov:     { DEFAULT: rgb('--ism-prov-rgb') },                   // non-official provenance
+        link:     { DEFAULT: rgb('--ism-link-rgb') },                   // "View original ↗"
       },
       fontFamily: {
         display: ['Newsreader', 'Georgia', 'serif'],

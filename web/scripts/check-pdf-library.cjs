@@ -1,0 +1,45 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=process.cwd(),wr=require('node:module').createRequire(root+'/web/package.json'),React=wr('react'),ts=wr('typescript');
+const rp=require.resolve('react',{paths:[process.argv[2]]});require.cache[rp]={id:rp,filename:rp,loaded:true,exports:React};
+const {create,act}=require(require.resolve('react-test-renderer',{paths:[process.argv[2]]}));
+const {MemoryRouter,Link}=wr('react-router-dom');
+const requests=[];
+const item={key:'paper:original',paper_id:'original',title:'Synthetic original paper',year:2020,kind:'paper',questions:0,official:0,verified:0,needs_review:0,unsolved:0,written:0,explained:0,registered_documents:1,final_keys:0,provisional_keys:0,modules:[{id:'udc',title:'UDC',version:3}],asset_count:1,sha256:'a'.repeat(64),file_id:7,bytes:120,copies:2,valid_pdf:true,paths:[{root:'canonical',path:'Old_Questions/original.pdf',id:7}],file_status:'available',empty_paper:true,missing_registration:false,unlinked:false,draft:null};
+let currentItem=item,total=41,detailFailure=false,extraItem=null;
+const reviewRequest=async url=>{requests.push(url);if(url.endsWith('/status'))return {snapshot:{id:1,finished_at:'2026-11-05T00:00:00Z',files_seen:2,files_hashed:2},latest:{id:1,state:'completed'},modules:item.modules,workers:[]};if(url.endsWith('/scans'))return {id:2};if(url.endsWith('/activity'))return {jobs:[],scans:[],sync:null};if(detailFailure&&url.includes('key='))throw Error('Source temporarily unavailable');return {items:extraItem&&!url.includes('key=')?[currentItem,extraItem]:[extraItem&&new URL(url,'https://test').searchParams.get('key')===extraItem.key?extraItem:currentItem],total,summary:{empty_papers:1,unlinked_files:0,missing_registrations:0,ambiguous:0}}};
+const cache=new Map();
+function load(file){file=path.resolve(file);if(cache.has(file))return cache.get(file);const mod={exports:{}};new Function('module','exports','require',ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports,id=>id.includes('/review')?{reviewRequest}:id.startsWith('.')?load(path.resolve(path.dirname(file),id)+(fs.existsSync(path.resolve(path.dirname(file),id)+'.tsx')?'.tsx':'.ts')):wr(id));cache.set(file,mod.exports);return mod.exports}
+const Component=load(root+'/web/src/screens/PdfLibrary.tsx').default,helpers=load(root+'/web/src/lib/pdfLibrary.ts');
+let tree;const button=label=>tree.root.findAllByType('button').find(b=>b.children.join('').includes(label));
+async function render(route='/admin/bank?tab=pdf-library',canWrite=true){await act(async()=>{tree?.unmount();tree=create(React.createElement(MemoryRouter,{initialEntries:[route]},React.createElement(Component,{canWrite})));})}
+(async()=>{
+ assert.equal(helpers.pdfLibraryAction(item),'intake');
+ assert.equal(helpers.pdfLibraryAction({...item,missing_registration:true}),'inspect');
+ assert.equal(helpers.pdfLibraryAction({...item,file_status:'ambiguous'}),'inspect');
+ assert.equal(helpers.pdfLibraryAction({...item,valid_pdf:false}),'inspect');
+ assert.equal(helpers.pdfLibraryAction({...item,questions:3}),'review');
+ assert.equal(new URLSearchParams(helpers.pdfReviewHref('original').split('?')[1]).get('paper'),'original');
+ assert.equal(helpers.pdfLibraryAction({...item,draft:{id:'draft',state:'review'}}),'draft');
+ assert.equal(helpers.pdfLibraryReturn('https://untrusted.test'),'/admin/bank?tab=pdf-library');
+ await render('/admin/bank?tab=pdf-library&pdf_q=original&pdf_offset=20');
+ assert.ok(button('Prepare import'));assert.ok(button('Scan archive'));
+ await act(async()=>button('Synthetic original paper').props.onClick());
+ assert.ok(requests.some(u=>u.includes('key=paper%3Aoriginal')));
+ assert.ok(JSON.stringify(tree.toJSON()).includes('Imported questions'));
+ const module=tree.root.findAllByType(Link).find(l=>String(l.props.to).includes('scope=module%3Audc'));assert.ok(module);assert.ok(String(module.props.to).includes('paper=original'));
+ await act(async()=>button('Back to results').props.onClick());
+ assert.ok(requests.at(-1).includes('offset=20'));assert.ok(requests.at(-1).includes('q=original'));
+ extraItem={...item,key:'paper:second',paper_id:'second',title:'Second source'};
+ await render('/admin/bank?tab=pdf-library&pdf_q=original&pdf_offset=20');await act(async()=>button('Synthetic original paper').props.onClick());assert.ok(button('Previous source').props.disabled);await act(async()=>button('Next source').props.onClick());assert.ok(requests.at(-1).includes('key=paper%3Asecond'));assert.ok(button('Next source').props.disabled);await act(async()=>button('Back to results').props.onClick());assert.ok(requests.at(-1).includes('offset=20'));assert.ok(requests.at(-1).includes('q=original'));extraItem=null;
+ await render('/admin/bank?tab=pdf-library&pdf_offset=999999');assert.ok(requests.at(-1).includes('offset=40'));
+ await render('/admin/bank?tab=pdf-library&pdf_offset=Infinity');assert.ok(requests.at(-1).includes('offset=0'));
+ await render('/admin/bank?tab=pdf-library&pdf_module=udc&pdf_gap=empty&pdf_kind=paper&pdf_year=2020');
+ await act(async()=>button('Clear filters').props.onClick());const cleared=new URL(requests.at(-1),'https://test');for(const k of ['q','gap','module','kind'])assert.equal(cleared.searchParams.get(k),'');assert.equal(cleared.searchParams.has('year'),false);
+ detailFailure=true;await act(async()=>button('Synthetic original paper').props.onClick());assert.equal(button('Prepare import'),undefined);assert.ok(JSON.stringify(tree.toJSON()).includes('Source temporarily unavailable'));detailFailure=false;
+ await render('/admin/bank?tab=pdf-library',false);assert.equal(button('Prepare import'),undefined);assert.equal(button('Scan archive'),undefined);
+ currentItem={...item,draft:{id:'draft-one',state:'review',version:2}};
+ await render();const next=tree.root.findAllByType(Link).find(l=>String(l.props.to).includes('draft=draft-one'));assert.ok(next);assert.ok(String(next.props.to).includes('return_to='));
+ await render('/admin/bank?tab=pdf-library&pdf_view=activity');assert.ok(JSON.stringify(tree.toJSON()).includes('No processing jobs recorded'));
+ await act(async()=>tree.unmount());
+ console.log('PDF Library: source action gates, read-only controls, module links, retained filters/page, draft return, invalid/shrinking pagination, filter reset, failed-source action isolation and activity states passed.');
+})().catch(e=>{console.error(e);process.exit(1)});

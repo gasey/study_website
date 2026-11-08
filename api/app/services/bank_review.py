@@ -13,6 +13,19 @@ from ..source_files import source_pdf_url
 owner_maintenance_quota_run = ContextVar('owner_maintenance_quota_run', default=None)
 
 
+def maintenance_scope_allows(scope, actor, proposal):
+    """SSH-only scope; taxonomy acceptance never opens a general quota bypass."""
+    if (scope.get('owner_id') != actor or proposal.canonical_id not in scope.get('canonical_ids', ())
+            or len(scope.get('authorization', '').strip()) < 20):
+        return False
+    if proposal.kind == 'taxonomy':
+        return (scope.get('purpose') == 'owner-taxonomy-publication'
+                and 1 <= len(scope['canonical_ids']) <= 100
+                and bool(proposal.patch)
+                and not set(proposal.patch) - {'classification', 'relatedClassifications'})
+    return proposal.kind in ('answer','explanation','transcription','source_reference','defect')
+
+
 def uid(prefix): return prefix+'_'+uuid4().hex
 
 def conflict(message='This revision changed. Reload and compare before saving.'):
@@ -214,15 +227,25 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         # Retagging can change the subject, but review permissions follow the old subject until publication.
         if p.kind!='taxonomy': raise HTTPException(422,'Use the question’s current subject')
     await validate_evidence(cur,p,baseline,allow_noop=admin_attestation)
-    await cur.execute("SELECT count(*)::int AS n FROM bank_contributions WHERE author_id=%s AND created_at>now()-interval '1 day'",(actor,))
+    # An explicitly scoped operator taxonomy run has its own recorded allowance.
+    # Do not let that run consume the normal browser editing budget.
+    # Both trusted operator records are required; HTTP clients cannot create them.
+    await cur.execute("""SELECT count(*)::int AS n FROM bank_contributions c
+      WHERE c.author_id=%s AND c.created_at>now()-interval '1 day'
+      AND NOT (c.kind='taxonomy' AND EXISTS(
+        SELECT 1 FROM contribution_events x JOIN contribution_events a
+          ON a.contribution_id=x.contribution_id
+        WHERE x.contribution_id=c.id AND x.actor_id='operator:owner-source-maintenance'
+          AND x.action='owner_maintenance_quota_exemption'
+          AND x.detail->>'owner_id'=c.author_id
+          AND a.actor_id='operator:owner-source-maintenance' AND a.action='operator_taxonomy_authorization'
+          AND a.detail->>'owner_id'=c.author_id AND a.detail->>'run_id'=x.detail->>'run_id'))""",(actor,))
     limit=500 if admin_attestation else 30
     used=(await cur.fetchone())['n']
     exemption=owner_maintenance_quota_run.get() if admin_attestation else None
     if exemption:
         await require_role(cur,actor,roles=('owner',))
-        if (exemption['owner_id']!=actor or p.canonical_id not in exemption['canonical_ids']
-                or p.kind not in ('answer','explanation','transcription','source_reference','defect')
-                or len(exemption['authorization'].strip())<20):
+        if not maintenance_scope_allows(exemption,actor,p):
             raise HTTPException(403,'This maintenance target is outside the authorized quota exemption')
     if used>=limit and not exemption: raise HTTPException(429,'Daily staff maintenance limit reached' if admin_attestation else 'Daily contribution limit reached',headers={'Retry-After':'3600'})
     cid=uid('con')

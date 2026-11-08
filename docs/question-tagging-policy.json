@@ -1,0 +1,217 @@
+{
+  "policy_version": "study-tagging-v1",
+  "authoritative_rules": "QUESTION-TAGGING-RULES.md",
+  "purpose": "Preferred routing examples for pending candidates; not classification evidence or an auto-retagging map.",
+  "candidate_review_status": "pending",
+  "display_only_prefixes": [
+    "gk-gs"
+  ],
+  "max_candidate_packet": 100,
+  "max_admin_tag_batch": 20,
+  "routes": [
+    {
+      "key": "current-affairs",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/current-affairs",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "indian-history",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/indian-history",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "world-history",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/world-history",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "geography",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/geography",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "indian-polity",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/indian-polity",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "indian-economy",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/indian-economy",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "environment",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/environment",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "mizoram-knowledge",
+      "path": {
+        "subject_id": "general-studies",
+        "topic_id": "general-studies/mizoram",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "art-and-culture",
+      "path": {
+        "subject_id": "general-knowledge",
+        "topic_id": "general-knowledge/art-and-culture",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "sports",
+      "path": {
+        "subject_id": "general-knowledge",
+        "topic_id": "general-knowledge/sports",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "science-in-the-news",
+      "path": {
+        "subject_id": "general-knowledge",
+        "topic_id": "general-knowledge/science-in-the-news",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "static-gk",
+      "path": {
+        "subject_id": "general-knowledge",
+        "topic_id": "general-knowledge/static-gk",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "english-clauses",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/grammar",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "english-antonyms",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/vocabulary",
+        "subtopic_id": "english/vocabulary/antonyms"
+      }
+    },
+    {
+      "key": "english-comprehension",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/comprehension",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "english-essay",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/writing",
+        "subtopic_id": "english/writing/essay"
+      }
+    },
+    {
+      "key": "english-precis",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/writing",
+        "subtopic_id": "english/writing/precis"
+      }
+    },
+    {
+      "key": "english-letter",
+      "path": {
+        "subject_id": "english",
+        "topic_id": "english/writing",
+        "subtopic_id": "english/writing/letter"
+      }
+    },
+    {
+      "key": "science-physics",
+      "path": {
+        "subject_id": "science",
+        "topic_id": "science/physics",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "science-chemistry",
+      "path": {
+        "subject_id": "science",
+        "topic_id": "science/chemistry",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "science-biology",
+      "path": {
+        "subject_id": "science",
+        "topic_id": "science/biology",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "mizo-grammar",
+      "path": {
+        "subject_id": "mizo",
+        "topic_id": "mizo/grammar",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "mizo-literature",
+      "path": {
+        "subject_id": "mizo",
+        "topic_id": "mizo/literature",
+        "subtopic_id": null
+      }
+    },
+    {
+      "key": "water-image",
+      "path": {
+        "subject_id": "reasoning-and-aptitude",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    }
+  ],
+  "taxonomy_gaps": [
+    {
+      "key": "english-clauses",
+      "missing": "Clause subtopic",
+      "fallback": "English / Grammar; subtopic null"
+    },
+    {
+      "key": "water-image",
+      "missing": "Non-verbal reasoning topic",
+      "fallback": "Reasoning and Aptitude; topic null; record intentional breadth/gap"
+    }
+  ]
+}

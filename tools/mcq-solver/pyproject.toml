@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "personal-mcq-solver"
+version = "0.1.0"
+description = "Private, draft-only MCQ pilot with explicit SIWC authorization"
+license = {file = "LICENSE"}
+requires-python = ">=3.11"
+dependencies = ["PyJWT==2.10.1", "cryptography==46.0.3"]
+
+[project.scripts]
+mcq-solver = "mcq_solver.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["mcq_solver*"]

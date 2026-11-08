@@ -1,0 +1,9 @@
+billing_mode = "chatgpt_plan"
+model = "gpt-6.1-sol"
+reasoning = "high"
+# Remains blocked until eligibility is actually established. See README.
+# Allowed confirmations: oss_self_hosted or openai_authorized.
+eligibility = "unconfirmed"
+eligibility_evidence = ""
+# Confirm in ChatGPT Settings that this app cannot consume additional credits.
+credits_disabled_confirmed = false

@@ -26,7 +26,7 @@ import { AnswerOptions } from "../components/AnswerLayout";
 import { UserAvatar } from "../components/AvatarArt";
 import type { AvatarLook } from "../lib/avatar";
 const BTN =
-  "inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-4 py-2 text-[13px] font-semibold disabled:opacity-40";
+  "ism-tactile-btn inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-[13px] font-semibold disabled:opacity-40 hover:border-hairline2";
 const MODES: {
   id: GameMode;
   body: string;
@@ -200,7 +200,7 @@ export default function Games() {
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 sm:px-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="font-mono text-[11px] uppercase tracking-[.1em] text-[#1F44A6]">
+          <div className="font-mono text-[11px] uppercase tracking-[.1em] text-practice-dark">
             Game time
           </div>
           <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)] leading-tight">
@@ -211,10 +211,10 @@ export default function Games() {
             challenge a friend or meet in a private multiplayer room.
           </p>
         </div>
-        <div className="rounded-[10px] bg-[#F6E7C6] px-4 py-3 text-[13px]">
+        <div className="ism-card-surface rounded-[12px] border border-exams bg-exams-soft px-4 py-3 text-[13px]">
           Games XP today{" "}
-          <b className="ml-2 font-mono">{data?.game_xp_today ?? "—"}</b>
-          <div className="mt-1 text-[11px] text-muted">
+          <b className="ml-2 font-mono text-exams-dark">{data?.game_xp_today ?? "—"}</b>
+          <div className="mt-1 text-[11px] text-secondary">
             Shares the 300 XP daily study/game budget
           </div>
         </div>
@@ -233,28 +233,28 @@ export default function Games() {
           </button>
         </div>
       )}
-      <Link to="/trail" className="mt-5 block rounded-[16px] border border-[#C8D8C9] bg-[#EEF3E8] p-5"><h2 className="font-display text-[28px]">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
-      {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-[#D8A33A] bg-[#F6E7C6] p-4"><div><h2 className="font-display text-[23px]">You have an unfinished mock</h2><p className="mt-1 text-[13px] text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' bg-ink text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
+      <Link to="/trail" className="ism-card-surface group mt-5 block rounded-[16px] border border-correct bg-correct-soft/75 p-5 hover:border-correct"><h2 className="font-display text-[28px] text-correct-dark group-hover:underline">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
+      {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-exams bg-exams-soft p-4"><div><h2 className="font-display text-[23px]">You have an unfinished mock</h2><p className="mt-1 text-[13px] text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' !bg-ink !text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
       {data?.active && (
-        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[10px] border border-link bg-[#E3E9F8] p-4">
+        <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-practice bg-practice-soft p-4">
           <p className="text-[14px]">
             You have an unfinished {MODE_NAMES[data.active.mode]}.
           </p>
           <Link
             to={(data.active.mode==='trail'?'/trail/':'/games/') + data.active.id}
-            className={BTN + " bg-ink text-paper"}
+            className={BTN + " !bg-ink !text-paper"}
           >
             Resume / leave →
           </Link>
         </div>
       )}
       {data?.setup&&<GameSetup data={data.setup}registered={data.registered}selection={selection}onChange={setSelection}mode={chosenMode}matchmaking={matchmaking}onMode={setChosenMode}onConfirm={p=>{if(chosenMode)void start(chosenMode,p,matchmaking)}}busy={busy}disabled={!!data.active||!!data.active_mock}/>}
-      <section className="mt-6 flex flex-wrap overflow-hidden rounded-[14px] bg-ink text-paper">
+      <section className="mt-6 flex flex-wrap overflow-hidden rounded-[16px] border border-white/10 bg-[#141622] text-[#F5F0E6] shadow-[0_14px_34px_-6px_rgba(15,23,42,.3)]">
         <div
           className="relative flex min-h-[240px] min-w-0 flex-[1_1_360px] items-center justify-center overflow-hidden"
           style={{
             background:
-              "repeating-linear-gradient(135deg,#2A2723 0 12px,#33302B 12px 24px)",
+              "radial-gradient(circle at 75% 25%, rgba(216,163,58,0.18), transparent 55%), repeating-linear-gradient(135deg,#1D2030 0 12px,#25293C 12px 24px)",
           }}
         >
           <svg
@@ -299,22 +299,22 @@ export default function Games() {
           </span>
         </div>
         <div className="min-w-0 flex-[1_1_380px] px-6 py-7 sm:px-[30px]">
-          <span className="rounded-pill bg-[#D8A33A] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-ink">
+          <span className="rounded-pill bg-[#D8A33A] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-[#14130F]">
             Featured
           </span>
-          <h2 className="mt-4 font-display text-[40px] leading-tight">
+          <h2 className="mt-4 font-display text-[40px] leading-tight text-white">
             Gauntlet Run
           </h2>
           <p className="mt-3 text-[15px] leading-relaxed text-[#D9D0BF]">
             {featured.body}
           </p>
-          <p className="mt-4 text-[13px]">
+          <p className="mt-4 text-[13px] text-[#E6DFD2]">
             Best in your recent runs{" "}
-            <b className="font-mono">{best.toLocaleString("en-IN")} m</b>
+            <b className="font-mono text-[#FBBF24]">{best.toLocaleString("en-IN")} m</b>
           </p>
           <button
             disabled={busy || !data || !!data.active || !!data.active_mock}
-            className={BTN + " mt-5 bg-paper text-ink"}
+            className={BTN + " mt-5 !border-0 !bg-[#D8A33A] !text-[#14130F] shadow-sm hover:brightness-105"}
             onClick={() => requestStart("gauntlet")}
           >
             Choose area & play Gauntlet
@@ -326,7 +326,7 @@ export default function Games() {
           {MODES.slice(1).map((m) => (
             <article
               key={m.id}
-              className="flex flex-col rounded-[10px] border border-hairline bg-card p-5"
+              className="ism-card-surface flex flex-col rounded-[14px] border border-hairline bg-card p-5"
               style={{ boxShadow: `inset 0 4px 0 ${m.hue}` }}
             >
               <span

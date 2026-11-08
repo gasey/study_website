@@ -1,0 +1,74 @@
+{
+  "routes": {
+    "/exams": {
+      "status": 200
+    },
+    "/exams/udc?view=topics": {
+      "status": 200
+    },
+    "/exams/ldc": {
+      "status": 200
+    },
+    "/exams/assistant": {
+      "status": 200
+    },
+    "/group-b": {
+      "status": 200
+    },
+    "/api/health": {
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "questions": 82383,
+        "scorable": 13898
+      }
+    }
+  },
+  "matching_assets_sha256": {
+    "index-DozANt9d.js": "03248973fc1da84c4bdee68338e0fe31a5c7337b66a5973f89540380474068b0",
+    "Exams-CYqb7rj-.js": "500fed9ec6b42d6ab9bbe1d5e352047bdf0d396a1958231696784c5dd339ba53",
+    "ExamPage-DBUdTk_U.js": "c656c413e21a9e0fb11f594d708236dbe504f40f49951a7227138d5e75928949",
+    "GroupBStudy-B15KNkD8.js": "7fc5f05aaeb4270041a1a891783c8b1e72831e702ee388e4f2fdeffef9e27212"
+  },
+  "date": "2026-11-05",
+  "scope": "Frontend exam catalog and module presentation",
+  "deployment": "scripts/deploy.sh web",
+  "rollback": "Oracle /tmp/exam-theme-web-before-20261105.tar.gz (root-only)",
+  "tests": [
+    "TypeScript/Vite production build",
+    "Group B design including independent expansion, expand all and search-collapse",
+    "Group B navigation",
+    "UDC study and booklet identity",
+    "Question browsing",
+    "Public question cards",
+    "Quick access",
+    "Paper archive ordering"
+  ],
+  "visual_checks": {
+    "preview": [
+      "Desktop catalog cards/list, expanded LDC options, URL state preservation",
+      "Desktop UDC overview",
+      "390px expanded catalog list",
+      "320px LDC topic search, collapse/expand; scrollWidth equals clientWidth"
+    ],
+    "live": [
+      "Desktop catalog screenshot",
+      "390px expanded LDC list; clientWidth=scrollWidth=375",
+      "Catalog Subjects & topics link opens LDC topics",
+      "320px LDC topics; clientWidth=scrollWidth=305"
+    ]
+  },
+  "screenshots": [
+    "reports/exam-theme-20261105/catalog-desktop.png",
+    "reports/exam-theme-20261105/catalog-mobile.png",
+    "reports/exam-theme-20261105/subjects-mobile.png"
+  ],
+  "limitations": [
+    "No signed-in staff/admin visual testing in this release."
+  ],
+  "notes": [
+    "No API, bank, database, worker, or Caddy deployment.",
+    "React lazy import moved before route initialization to fix the development-preview initialization error.",
+    "Existing shared checkout changes preserved."
+  ]
+}

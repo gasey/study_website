@@ -1,0 +1,642 @@
+[
+  {
+    "id": "legacy-custom",
+    "scheme": {
+      "edition": "Unknown historical edition",
+      "period": "legacy",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "",
+      "source_sha256": null,
+      "evidence_page": null,
+      "source_checked": false,
+      "notes": "Inspect the recruitment-specific source. Unknown timing, marks and dates stay unset.",
+      "title": "Legacy examination — source review required",
+      "exam_key": "legacy-custom",
+      "papers": [
+        {
+          "key": "paper-1",
+          "title": "Printed paper title",
+          "format": "mixed",
+          "sections": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "group-b-ng-2024",
+    "scheme": {
+      "edition": "9 July 2024",
+      "period": "legacy",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "https://mpsc.mizoram.gov.in/uploads/attachments/2024/07/63f9bc05c3b756aaa90fbf045d0ae494/syllabuses-for-group-b-non-gazetted-posts.pdf",
+      "source_sha256": null,
+      "evidence_page": 1,
+      "source_checked": false,
+      "notes": "Historical 2024 edition. Superseded by May 2025. Confirm each older recruitment notice; negative marking is left unknown in this template.",
+      "title": "Group B Non-Gazetted — General route (legacy)",
+      "exam_key": "group-b-non-gazetted",
+      "papers": [
+        {
+          "key": "english",
+          "title": "General English",
+          "format": "mixed",
+          "duration_minutes": 180,
+          "marks": 100,
+          "negative_fraction": null,
+          "sections": [
+            {
+              "key": "precis",
+              "title": "Précis writing",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/writing/precis"
+              ]
+            },
+            {
+              "key": "letter",
+              "title": "Letter writing",
+              "format": "written",
+              "marks": 15,
+              "paths": [
+                "english/writing/letter"
+              ]
+            },
+            {
+              "key": "comprehension",
+              "title": "Comprehension",
+              "format": "written",
+              "marks": 15,
+              "paths": [
+                "english/comprehension"
+              ]
+            },
+            {
+              "key": "grammar",
+              "title": "Grammar",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/grammar"
+              ]
+            },
+            {
+              "key": "vocabulary",
+              "title": "Usage and vocabulary",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/vocabulary"
+              ]
+            },
+            {
+              "key": "sentence",
+              "title": "Sentence formation",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/sentence-correction"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "gk-reasoning",
+          "title": "General Knowledge & Reasoning",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "negative_fraction": null,
+          "sections": [
+            {
+              "key": "gk",
+              "title": "General Knowledge",
+              "format": "mcq",
+              "marks": 100
+            },
+            {
+              "key": "arithmetic",
+              "title": "Simple Arithmetic",
+              "format": "mcq",
+              "marks": 60
+            },
+            {
+              "key": "reasoning",
+              "title": "General Intelligence & Reasoning",
+              "format": "mcq",
+              "marks": 40
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "mcs-prelims-2025",
+    "scheme": {
+      "edition": "27 August 2025",
+      "period": "current",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "https://mpsc.mizoram.gov.in/uploads/attachments/2025/08/d89bfbc71ea5cda75b0957627c877416/scheme-of-examination-for-mizoram-civil-services-combined-competitive-examination-2025.pdf",
+      "source_sha256": "628fe0bdc452423291498e1782dd8f2d4d102c2c90ba6ebbba26c6b924f866a4",
+      "evidence_page": 1,
+      "source_checked": false,
+      "notes": "Indicative GS topic counts; explicitly link applicable sittings. This template is not an editor attestation.",
+      "title": "MCS Combined Preliminary Examination",
+      "exam_key": "mcs-combined",
+      "papers": [
+        {
+          "key": "gs",
+          "title": "Paper I — General Studies",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "counts_for_merit": true,
+          "sections": [
+            {
+              "key": "current-affairs",
+              "title": "Current events",
+              "format": "mcq",
+              "questions": 14,
+              "marks": 28,
+              "paths": [
+                "general-studies/current-affairs"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "history",
+              "title": "Indian History",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "general-studies/indian-history"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "geography",
+              "title": "Geography",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "general-studies/geography"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "polity",
+              "title": "Polity",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "general-studies/indian-polity"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "economy",
+              "title": "Economic and social development",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "general-studies/indian-economy"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "environment",
+              "title": "Environment",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "general-studies/environment"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "science",
+              "title": "General Science",
+              "format": "mcq",
+              "questions": 12,
+              "marks": 24,
+              "paths": [
+                "science"
+              ],
+              "allocation": "indicative"
+            },
+            {
+              "key": "mizo",
+              "title": "Mizo society, culture and heritage",
+              "format": "mcq",
+              "questions": 14,
+              "marks": 28,
+              "paths": [
+                "general-studies/mizoram"
+              ],
+              "allocation": "indicative"
+            }
+          ]
+        },
+        {
+          "key": "aptitude",
+          "title": "Paper II — Aptitude Tests",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "qualifying_percent": 33,
+          "counts_for_merit": false,
+          "sections": []
+        }
+      ]
+    }
+  },
+  {
+    "id": "group-b-ng-2026",
+    "scheme": {
+      "edition": "28 October 2026",
+      "period": "current",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "https://mpsc.mizoram.gov.in/uploads/attachments/2026/11/32bc3ed03f920c30e06edaccfa44e6fe/syllabus-for-non-gazetted-posts-28102026.pdf",
+      "source_sha256": "06195106bad39d45b55d491a899f619260fe89ddd06d3eaeac0396017a01610a",
+      "evidence_page": 1,
+      "source_checked": false,
+      "notes": "Supersedes May 2025; apply only after checking the relevant recruitment notice. Technical recruitment needs its own scheme.",
+      "title": "Group B Non-Gazetted — General route",
+      "exam_key": "group-b-non-gazetted",
+      "papers": [
+        {
+          "key": "english",
+          "title": "General English",
+          "format": "mixed",
+          "duration_minutes": 180,
+          "marks": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "precis",
+              "title": "Précis writing",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/writing/precis"
+              ]
+            },
+            {
+              "key": "letter",
+              "title": "Letter writing",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/writing/letter"
+              ]
+            },
+            {
+              "key": "comprehension",
+              "title": "Comprehension",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/comprehension"
+              ]
+            },
+            {
+              "key": "essay",
+              "title": "Essay",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/writing/essay"
+              ]
+            },
+            {
+              "key": "grammar",
+              "title": "Grammar",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/grammar"
+              ]
+            },
+            {
+              "key": "vocabulary",
+              "title": "Usage and vocabulary",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/vocabulary"
+              ]
+            },
+            {
+              "key": "sentence",
+              "title": "Sentence formation",
+              "format": "mcq",
+              "marks": 20,
+              "paths": [
+                "english/sentence-correction"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "gk-reasoning",
+          "title": "General Knowledge & Reasoning",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "gk",
+              "title": "General Knowledge",
+              "format": "mcq",
+              "marks": 100
+            },
+            {
+              "key": "arithmetic",
+              "title": "Simple Arithmetic",
+              "format": "mcq",
+              "marks": 60
+            },
+            {
+              "key": "reasoning",
+              "title": "General Intelligence & Reasoning",
+              "format": "mcq",
+              "marks": 40
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "group-b-gazetted-2025",
+    "scheme": {
+      "edition": "17 July 2025",
+      "period": "current",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "https://mpsc.mizoram.gov.in/uploads/attachments/2026/04/ee26522353e4d860ba5b28834fb35af9/scheme-of-examination-for-mizoram-group-b-gazetted-general-services-combined-competitive-examinations-2025.pdf",
+      "source_sha256": "2e7d815c5a3291fd3d9ebf8f2b2f4e37544f04efce8b98f2649b96fb9614b924",
+      "evidence_page": 1,
+      "source_checked": false,
+      "notes": "Keep historical 2024 and recruitment-specific schemes as separate revisions.",
+      "title": "Group B Gazetted General Services Combined",
+      "exam_key": "group-b-gazetted",
+      "papers": [
+        {
+          "key": "english",
+          "title": "General English",
+          "format": "mixed",
+          "duration_minutes": 180,
+          "marks": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": []
+        },
+        {
+          "key": "essay",
+          "title": "General Essay",
+          "format": "written",
+          "duration_minutes": 180,
+          "marks": 100,
+          "sections": [
+            {
+              "key": "unit-a",
+              "title": "Unit A",
+              "format": "written",
+              "questions": 4,
+              "choose": 1,
+              "marks": 50
+            },
+            {
+              "key": "unit-b",
+              "title": "Unit B",
+              "format": "written",
+              "questions": 4,
+              "choose": 1,
+              "marks": 50
+            }
+          ]
+        },
+        {
+          "key": "gs-1",
+          "title": "General Studies I",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "history",
+              "title": "Modern India and cultures",
+              "format": "mcq",
+              "marks": 100
+            },
+            {
+              "key": "current-affairs",
+              "title": "Current events",
+              "format": "mcq",
+              "marks": 100
+            }
+          ]
+        },
+        {
+          "key": "gs-2",
+          "title": "General Studies II",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "polity",
+              "title": "Indian Polity",
+              "format": "mcq",
+              "marks": 80
+            },
+            {
+              "key": "economy",
+              "title": "Indian Economy",
+              "format": "mcq",
+              "marks": 80
+            },
+            {
+              "key": "geography",
+              "title": "Geography of India",
+              "format": "mcq",
+              "marks": 40
+            }
+          ]
+        },
+        {
+          "key": "gs-3",
+          "title": "General Studies III",
+          "format": "mcq",
+          "duration_minutes": 120,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "science",
+              "title": "Science and technology",
+              "format": "mcq",
+              "marks": 80
+            },
+            {
+              "key": "mizoram",
+              "title": "Mizoram",
+              "format": "mcq",
+              "marks": 80
+            },
+            {
+              "key": "aptitude",
+              "title": "Aptitude",
+              "format": "mcq",
+              "marks": 40
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "assistant-udc-combined-2026",
+    "scheme": {
+      "title": "Assistant Grade & UDC - combined direct recruitment",
+      "exam_key": "assistant-udc-combined",
+      "edition": "Combined syllabus linked for 2026 recruitment",
+      "period": "current",
+      "effective_from": null,
+      "effective_to": null,
+      "state": "draft",
+      "source_url": "https://mpsc.mizoram.gov.in/uploads/attachments/2026/05/f74b4d6652a90a741cd5907be6fad00d/syllabus-for-assistant-udc-combined.pdf",
+      "source_sha256": "1387109c60b985bbcf3a4e2215b04bb3939c2652bd55942c119edce47af87a23",
+      "evidence_page": 1,
+      "source_checked": false,
+      "notes": "Recruitment-specific Assistant/UDC combined route, separate from generic Group B Non-Gazetted. Check the applicable notice and amendments before verification or linking a historical paper. The source has a higher-standard Assistant provision when separate exams are held. Part B of Paper I is written; its total printed question count is deliberately unset. The MCQ negative fraction is from the source amendment; never apply it retroactively.",
+      "papers": [
+        {
+          "key": "paper-i",
+          "title": "Paper I - General Knowledge, General English and written English",
+          "format": "mixed",
+          "duration_minutes": 180,
+          "marks": 200,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "gk",
+              "title": "Part A - General Knowledge",
+              "format": "mcq",
+              "questions": 50,
+              "marks": 100,
+              "paths": [
+                "general-knowledge",
+                "general-studies",
+                "science"
+              ]
+            },
+            {
+              "key": "english",
+              "title": "Part A - General English",
+              "format": "mcq",
+              "questions": 25,
+              "marks": 50,
+              "paths": [
+                "english"
+              ]
+            },
+            {
+              "key": "precis",
+              "title": "Part B - Precis writing",
+              "format": "written",
+              "marks": 10,
+              "paths": [
+                "english/writing/precis"
+              ]
+            },
+            {
+              "key": "essay",
+              "title": "Part B - Essay writing",
+              "format": "written",
+              "marks": 20,
+              "paths": [
+                "english/writing/essay"
+              ]
+            },
+            {
+              "key": "comprehension",
+              "title": "Part B - English Comprehension",
+              "format": "written",
+              "marks": 20,
+              "paths": [
+                "english/comprehension"
+              ]
+            }
+          ]
+        },
+        {
+          "key": "paper-ii",
+          "title": "Paper II - Computer, Arithmetic and Reasoning",
+          "format": "mcq",
+          "duration_minutes": 180,
+          "marks": 200,
+          "questions": 100,
+          "negative_fraction": 0.3333333333333333,
+          "sections": [
+            {
+              "key": "computer",
+              "title": "Basic Computer Knowledge",
+              "format": "mcq",
+              "questions": 35,
+              "marks": 70,
+              "paths": [
+                "computer-science"
+              ]
+            },
+            {
+              "key": "arithmetic",
+              "title": "Simple Arithmetic",
+              "format": "mcq",
+              "questions": 30,
+              "marks": 60,
+              "paths": [
+                "mathematics"
+              ]
+            },
+            {
+              "key": "reasoning",
+              "title": "General Intelligence & Reasoning",
+              "format": "mcq",
+              "questions": 35,
+              "marks": 70,
+              "paths": [
+                "reasoning-and-aptitude"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

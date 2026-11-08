@@ -8872,3 +8872,126 @@ Completed the three pending source-only corrections for 2023 Paper I C Q3, Q28 a
 Verification of the exact historical repair output permits only direction/receipt changes on three question records. All 82,380 other questions and every non-question bank object match that pre-repair baseline. Later unrelated explanation publications are preserved; current repaired snapshots also match. All 134 existing holds and 292 previous learner attempts remain intact, along with assignments, membership, checks and grants; unlimited owner access remains active. The Oracle timer stayed active; the retired developer publisher was not enabled. Bank/taxonomy IN SYNC at `1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d`. Current ordinary usage: 8/500. Fifteen targeted queue/numbering tests pass. No API/frontend/schema release was needed; content reached production through the normal protected publisher.
 
 Fresh numbering audit still finds 600 printed positions versus 601 appearances across six 2014/2016 booklets: duplicate 2016 I C Q4 and Q86 imports, and missing 2014 II Q39. These are not silently merged/appended. The private queue has 32 published, 1,030 pending and three unresolved items, with no active packet. Further explanation review, guarded source/identity work and simulation prerequisites remain; 2012/2013 recovery stays deferred. Checkpoint: `docs/sources/mcs-continuation-checkpoint-20261107.json`.
+
+
+## 2026-11-08 — Baseline Reconciliation & Proposal Conflict Resolutions
+
+- **Scope & Investigation:**
+  - Audited accumulated tagging work across 146 candidate files (10,698 saved candidate records, 10,617 unique appearances / questions).
+  - Identified 476 candidate records in Batches 15–24 with baseline mismatches against saved snapshots: 377 rows recorded coarse appearance placeholders (e.g. `gk` or `statistics`) while Oracle's live repeatable-read snapshot returned classified paths; 99 rows in Batches 23–24 had unpopulated `current_primary` and `source_fingerprint`.
+  - Queried live Oracle database (`appearances`, `canonical_questions`, `question_classifications`) via SSH for all 476 items: confirmed 0 mismatches between `oracle-packet.json` snapshots and the live database.
+  - Generated explicit corrections in `reports/baseline-corrections-20261108/corrections.json` preserving original candidate files on disk untouched.
+  - Resolved 3 proposal conflicts (`8dee949fbd0738eb19ad`, `paper_c538cfe8b8bf4bd895213c85ce108c0e_draft_c208b118b1614ae328024f60`, `paper_c538cfe8b8bf4bd895213c85ce108c0e_draft_7a4ff93d036980b7764acf6f`) plus 6 reopened Tourist Officer English signature variants in `reports/booklet-card-cleanup-20261107/resolutions.json` binding exact proposal signatures and physical PDF page evidence.
+  - Updated `scripts/audit-review-coverage.py` to support explicit corrections while preserving strict snapshot and digest verification.
+- **Coverage Ledger Update:**
+  - **Tagging Reviewed (Pending):** 10,617 unique appearances / questions (7,459 retags, 3,155 keeps, 3 holds). 0 live writes under `study-tagging-v1`.
+  - **Answer Checked:** 13,956 verified (13,230 official, 726 key); 68,427 unverified/provisional (36,272 inferred, 19,916 derived, 12,239 none).
+  - **Explanation Checked:** 13,982 verified explanations stored; 68,401 missing explanations.
+  - **Source Blocked:** 134 status='held', 8 key_disputed, 1,489 source_defects.
+  - **Published:** 82,249 live questions, 134 held questions.
+
+
+## 2026-11-08 — Batch 146 (Group B Gazetted General English Series B & 100% English Subject Completion)
+
+- **Target Scope:** Combined Competitive Examination for Mizoram Group ‘B’ (Gazetted) General Services under Excise & Narcotics & Finance (September-2026) General English Series B (`Old_Questions/Uploaded/a74537a49eb25ea285f9b1a65bd9e8e6856a504fce957f44e6eb91b214532615.pdf`, `doc_cb3e9bfdc14e410b07a5223c`, 69 items across 9 physical PDF pages; 100% paper completion):
+  - Part A (Conventional Written): Q A1 (Precis 14m), Q A2 (Complaint Letter 10m), Q A3 (Reading Comprehension 10m).
+  - Part B (Objective MCQs): Q B1–B66 (66 MCQs covering Prepositions, Tenses, Sentence Types, Clauses/Phrases, Parts of Speech, Antonyms, Synonyms, Contextual Vocabulary, Idioms & Phrases, Subject-Verb Agreement).
+- **Actions:** 69 questions reviewed (2 retags, 67 keeps, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution:**
+  - `english/grammar/subject-verb-agreement` (10 items): Q B57–B66.
+  - `english/grammar/parts-of-speech` (10 items): Q B31–B40.
+  - `english/grammar/prepositions` (10 items): Q B1–B10.
+  - `english/grammar` (14 items): Q B17–B23 (sentence types) and Q B24–B30 (clauses/phrases).
+  - `english/grammar/tenses` (6 items): Q B11–B16.
+  - `english/vocabulary/antonyms` (4 items): Q B41–B44.
+  - `english/vocabulary/synonyms` (4 items): Q B45–B48.
+  - `english/vocabulary/idioms-and-phrases` (4 items): Q B53–B56.
+  - `english/vocabulary` (4 items): Q B49–B52.
+  - `english/writing/precis` (1 item): Q A1.
+  - `english/writing/letter` (1 item): Q A2.
+  - `english/comprehension` (1 item): Q A3.
+- **Subject Completion Milestone:**
+  - **100% of all direct General English, Arithmetic, and Reasoning questions in the entire repository bank are now completely source-reviewed and accounted for under study-tagging-v1.**
+- **Ledger Verification:**
+  - Readback validation confirmed 69/69 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,767 saved records**, **10,686 unique appearances / questions**, **10,686 deduplicated candidates**, **0 problems**. [Batch 146 report](reports/tagging-batch146-20261108/README.md).
+
+
+## 2026-11-08 — Batch 147 (LDC under MPSC Paper-I February 2025 GK/GS Completion)
+
+- **Target Scope:** Competitive Examination for Lower Division Clerk (LDC) under MPSC (February-2025) Paper-I (`Old_Questions/Direct_NG_2024-2027/LDC under MPSC Paper-I 2025..pdf`, `doc_e3d326b3bbda4d1e857b240087d486a0`, 49 items across physical pages 1–5; achieving 100% completion of the entire 78-question LDC Paper-I):
+  - Q1–Q13 and Q15–Q50 covering General Knowledge, Current Affairs, Indian Polity, Economy, Geography, History, Science, and Mizoram Knowledge.
+- **Actions:** 49 questions reviewed (4 retags, 45 keeps, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution & Corrections:**
+  - `general-studies/current-affairs` (10 items): Q1, Q2, Q3, Q5, Q22, Q24, Q28, Q31, Q37, Q41.
+  - `general-studies/mizoram` (10 items): Q4, Q12, Q13, Q15, Q17, Q18, Q23, Q27, Q32, Q46.
+  - `general-studies/indian-polity` (8 items): Q7, Q19, Q20, Q26, Q34, Q35, Q39, Q40.
+  - `general-studies/indian-history` (5 items): Q16, Q21, Q36, Q38, Q48.
+  - `general-studies/indian-economy` (5 items): Q8 (customs duties retagged from current-affairs), Q9, Q25, Q30, Q43.
+  - `general-studies/geography` (3 items): Q11, Q33, Q44.
+  - `science/physics` (2 items): Q6 (-40° scale convergence), Q42 (barometer).
+  - `science/chemistry` (1 item): Q45 (NaCl edible salt).
+  - `science/biology` (2 items): Q49 (anaemia/iron deficiency), Q50 (pituitary gland growth hormone).
+  - `general-knowledge/art-and-culture` (2 items): Q10 (festivals retagged from geography), Q29 (Bharatanatyam retagged from geography).
+  - `general-knowledge/sports` (1 item): Q47 (2024 MotoGP champion Jorge Martin retagged from current-affairs).
+- **Ledger Verification:**
+  - Readback validation confirmed 49/49 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,816 saved records**, **10,735 unique appearances / questions**, **10,735 deduplicated candidates**, **0 baseline issues**, **0 unresolved conflicts**, **0 problems**. [Batch 147 report](reports/tagging-batch147-20261108/README.md).
+
+
+
+## 2026-11-08 — Student theme system, EdTech color palette & micro-interaction transitions
+
+- **Scope & Design Synthesis:** Upgraded the student-facing visual design of `india-study-map-app` by synthesizing "serious academic focus" (Notion, Khan Academy, Quizlet) with "fun, tactile habit-building" (Duolingo, Brilliant.org):
+  1. **3-Mode Student Theme Engine (`web/src/lib/theme.ts`, `web/tailwind.config.js`, `web/src/styles/index.css`):**
+     - **Warm Paper (`paper`, default):** Refined warm editorial parchment (`#F5F0E6` background, `#FFFDF9` cards, `#1C1915` espresso ink) with jewel-toned area accents (Royal Indigo, Electric Violet, Atlas Teal, Berry Community, Golden Ochre, Olive Gold) for zero eye strain during multi-hour reading.
+     - **Crisp Focus (`focus`):** High-clarity daylight studio (`#F2F6FC` cool alabaster background, `#FFFFFF` cards, `#0F172A` Oxford slate ink, vibrant royal blue/emerald accents) inspired by Brilliant.org and Quizlet.
+     - **Night Owl (`night`):** Deep midnight cosmos (`#0D1321` background, `#162035` elevated cards, `#1B2740` option surfaces, `#F1F5F9` text, dark-adapted soft tints and luminous accents) to prevent astigmatism halation during late-night exam prep.
+     - Added one-tap theme cycling in `Header.tsx` and `Home.tsx`, plus a 3-card interactive theme selector in `More.tsx`, persisted via `localStorage` (`ism-study-theme`) with pre-paint initialization in `index.html` and `main.tsx`.
+  2. **Tactile Micro-Interactions & Answer Feedback (`web/src/styles/index.css`, `exam-experience.css`, `exam-paper.css`):**
+     - Upgraded `.answer-option` buttons with a subtle 3D bottom lip (`--ism-opt-lip`), spring hover elevation (`translateY(-1.5px)`), interactive letter-badge illumination, and physical press states.
+     - Added celebratory spring bounce (`@keyframes ism-correct-pop` + `@keyframes ism-badge-pop`) for correct answers and a gentle, non-punitive horizontal nudge (`@keyframes ism-wrong-shake`) for wrong picks.
+     - Added spring entrance transitions (`cubic-bezier(0.22, 1, 0.36, 1)`) for route scopes (`.scope-workspace`), explanation/answer panels (`@keyframes ism-panel-reveal`), and interactive cards (`.ism-card-surface`, `.exam-choice`, `.exam-paper-card`), while strictly honoring `@media (prefers-reduced-motion: reduce)`.
+  3. **Harmonized Student Surfaces (`Home.tsx`, `StudyHome.tsx`, `StudyDashboardPanels.tsx`, `Library.tsx`, `Rewards.tsx`, `Games.tsx`):**
+     - Replaced hardcoded light-only surface hexes with theme-aware CSS/Tailwind tokens and added radial ambient hero lighting, color-coded stat tiles, and animated directional link arrows.
+- **Verification:** `npm run typecheck`, `npm run build` (342 modules transformed), and frontend component/navigation verification scripts (`check-review-navigation.cjs`, `check-answer-panel.cjs`, `check-public-question-cards.cjs`, `check-group-b-design.cjs`, `check-quick-access.cjs`, `check-question-browse.cjs`, `check-answer-provenance.mjs`) passed. No bank data or API schemas were modified.
+
+
+## 8 November 2026 — Owner-accepted AI tagging publication pass
+
+- Owner explicitly authorized accepting the saved approximately 10k model tagging
+  reviews. Frozen scope: 10,686 unique targets, SHA256
+  `1ff1a8623c4edeec94ec29b0eff0c2357106d7cd5aa07a7cc94353971f692409`.
+- Published 6,945 final owner taxonomy corrections through immutable admin
+  decisions, exact live-source guards, protected Oracle JSON publication, normal
+  sync and per-receipt live readback. Confirmed 3,365 already-correct paths with
+  attributed workflow records. Retained 376 blocked outcomes and their reasons.
+  No peer inspections, human source checklists or answer verifications were invented.
+- Reconciled omitted explicit source-evidence wrappers and one document alias by
+  exact registered paper/hash. Retained unknown pages, invalid paths, unsupported
+  historical Current Affairs periods and unresolved policy decisions as blockers.
+  Original candidate reports and receipts remain unchanged.
+- Added bounded resumable operator tools and a SHA-bound taxonomy composition path
+  which preserves independent receipts. Fixed recovery after queue/checkpoint
+  interruptions. Preserved the legacy raw unanswered -1 sentinel and allowed only
+  the existing null/none SQL absence normalization for unanswered tag-only receipts;
+  real answer/source provenance checks remain strict.
+- Added source-bound tagging progress to Admin → Bank → Find & fix tags. Live:
+  6,945 published / 3,365 unchanged / 376 blocked / zero stale / 72,073 remaining.
+  Earlier answer/editorial history and completion measures remain separate.
+- Restored deleted publisher queue/wake-up helpers and fixed generic API deployment
+  to install both after its API sync. Both the timer and wake-up listener are active;
+  the publication queue is empty. Explicit operator taxonomy batches do not consume
+  the ordinary browser edit allowance; regular staff/learner limits remain enforced.
+- Verification: 192 focused backend tests, frontend build, shell validation and
+  public mathematics/English API readbacks passed. Full bank before/after proof
+  preserves all 82,383 IDs, text, options, answers/provenance and paper metadata;
+  only 6,945 exact taxonomy records/publication pointers changed. Editorial protection
+  remains valid for 78 papers / 6,931 sources. Canonical JSON and live PostgreSQL are
+  in sync at `867a2d47ab70882516891c3c5c2b7f34db8990631d00e17b6cb2702328c3e44f`.
+  Both sites healthy. Authenticated progress behavior was tested with disposable
+  fixtures and live service reads; no signed-in phone/browser visual check claimed.
+- Evidence: `reports/owner-taxonomy-publication-20261108/README.md`, exact outcome
+  ledger, immutable scope and final verification. API rollback:
+  `/tmp/owner-taxonomy-release-20261108/backup`; frontend rollback:
+  `/srv/study/releases/pre-owner-taxonomy-20261108`.

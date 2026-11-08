@@ -1,0 +1,72 @@
+// Run from repository root; renderer dependency remains outside the checkout.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
+const root=process.cwd(),webRequire=require('node:module').createRequire(root+'/web/package.json'),React=webRequire('react'),ts=webRequire('typescript');
+const reactPath=require.resolve('react',{paths:[process.argv[2]]});require.cache[reactPath]={id:reactPath,filename:reactPath,loaded:true,exports:React};
+const {create,act}=require(require.resolve('react-test-renderer',{paths:[process.argv[2]]}));
+const store=new Map(),calls=[];let failing=true,createdState='draft',viewer='owner';
+global.sessionStorage={getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v),removeItem:k=>store.delete(k)};
+global.window={addEventListener(){},removeEventListener(){}};
+const nodes=[{id:'english',label:'English',parent_id:null,level:'subject',version:'test'},{id:'mizo',label:'Mizo',parent_id:null,level:'subject',version:'test'}];
+function load(file){const module={exports:{}};const src=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2020}}).outputText;
+ vm.runInThisContext('(function(module,exports,require){'+src+'\n})',{filename:file})(module,module.exports,id=>{
+  if(id==='react-router-dom')return {Link:({children,...p})=>React.createElement('a',p,children)};
+  if(id==='../lib/review')return {reviewRequest:async(...args)=>{calls.push(args);const [url]=args;if(url==='/review/taxonomy')return nodes;if(url.includes('/answer-decision?'))return {viewer_id:viewer,baseline_hash:'answer-proof',snapshot,question_state:'live',documents:[],history:[]};if(failing)throw Error('Source changed. Keep your draft and compare again.');if(url==='/admin/bank/edits')return {contribution_id:'con_test',publication:{id:'pub_test',state:'publishing'}};if(url.endsWith('/answer-decision'))return {state:'queued',contribution_id:'con_answer',publication_id:'pub_answer'};if(url==='/contributions')return {id:'con_learner',lock_version:1,state:createdState};return {}}};
+  if(id==='./SearchableTaxonomyPicker')return {default:({onChange})=>React.createElement('button',{type:'button',onClick:()=>onChange({subject_id:'mizo',topic_id:null,subtopic_id:null})},'Choose Mizo'),pathLabel:p=>p.subject_id};
+  if(id==='./AnswerComparison')return {default:()=>null};
+  if(id==='./SourceQuestionText')return {SourceQuestionText:({text})=>React.createElement('span',null,text)};
+  if(id==='./AdminReviewProgress')return {default:({receipt})=>React.createElement('p',{role:'status'},receipt.state)};
+  return webRequire(id);
+ });return module.exports}
+const Component=load(root+'/web/src/components/QuestionCorrectionEditor.tsx').default;
+const snapshot={canonical_id:'cq_test',edit_hash:'baseline1',baseline_token:'version1',can_publish:true,record:{id:'app_test',paperId:'paper',type:'mcq',question:'Synthetic question?',options:['A','B'],answerIndex:0,explanation:'A complete explanation for testing only.',classification:{subject_id:'english'}},paper:{title:'Synthetic paper',series:null},documents:[]};
+(async()=>{
+ let tree;await act(async()=>{tree=create(React.createElement(Component,{snapshot,user:'owner'}))});
+ let button=()=>tree.root.findAllByType('button').find(b=>b.children.join('')==='Save & publish');
+ await act(async()=>tree.root.findAllByType('button').find(b=>b.children.join('')==='Choose Mizo').props.onClick());
+ await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'Inspected the source; this question belongs to Mizo.'}}));
+ assert.equal(button().props.disabled,false);
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));
+ assert.ok(tree.root.findByProps({role:'alert'}));assert.ok(tree.root.findByType('textarea').props.value.includes('source'));assert.ok(store.size);
+ const first=calls.find(c=>c[0]==='/admin/bank/edits');assert.equal(first[1].proposal.canonical_id,'cq_test');assert.equal(first[1].proposal.appearance_id,'app_test');assert.equal(first[1].source_version,'version1');assert.equal(first[1].proposal.patch.classification.subject_id,'mizo');
+ failing=false;await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));
+ const retries=calls.filter(c=>c[0]==='/admin/bank/edits');assert.equal(retries.length,2);assert.equal(retries[0][2],retries[1][2]);assert.equal(store.size,0);assert.equal(tree.root.findByProps({role:'status'}).children.join(''),'publishing');
+ assert.ok(!calls.some(c=>c[0].includes('/decisions')));await act(async()=>tree.unmount());
+ calls.length=0;createdState='submitted';
+ await act(async()=>{tree=create(React.createElement(Component,{snapshot:{...snapshot,can_publish:false},user:'editor'}))});
+ await act(async()=>tree.root.findAllByType('button').find(b=>b.children.join('')==='Choose Mizo').props.onClick());
+ await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'An assigned reviewer proposes this corrected subject.'}}));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));
+ const draft=calls.find(c=>c[0]==='/contributions');assert.equal(draft[1].kind,'taxonomy');assert.equal(draft[3],'version1');assert.ok(!calls.some(c=>c[0].startsWith('/admin/bank/edits')));assert.ok(!calls.some(c=>c[0].endsWith('/submit'))); // A replayed submitted draft must not submit twice.
+ await act(async()=>tree.unmount());
+ // Source locator and written-context repairs use the canonical admin path.
+ await act(async()=>{tree=create(React.createElement(Component,{snapshot:{...snapshot,record:{...snapshot.record,type:'descriptive',options:[],answerIndex:null,direction:'Old instructions',passage:'Old passage',qnum:null,page:null}},user:'owner'}))});
+ await act(async()=>tree.root.findAllByType('button').find(b=>b.children.join('')==='Source reference').props.onClick());
+ await act(async()=>tree.root.findByProps({'aria-label':'Physical PDF page'}).props.onChange({target:{value:'2'}}));
+ await act(async()=>tree.root.findByProps({'aria-label':'Printed question number'}).props.onChange({target:{value:'13'}}));
+ await act(async()=>tree.root.findAllByType('textarea').find(t=>t.props.maxLength===4000).props.onChange({target:{value:'Compared the printed question number and physical PDF page.'}}));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));
+ assert.deepEqual(calls.findLast(c=>c[0]==='/admin/bank/edits')[1].proposal.patch,{page:2,qnum:'13'});
+ await act(async()=>tree.unmount());
+ await act(async()=>{tree=create(React.createElement(Component,{snapshot:{...snapshot,record:{...snapshot.record,type:'descriptive',options:[],answerIndex:null,direction:'Old instructions',passage:'Old passage'}},user:'owner'}))});
+ await act(async()=>tree.root.findAllByType('button').find(b=>b.children.join('')==='Text / context').props.onClick());
+ await act(async()=>tree.root.findByProps({'aria-label':'Instructions / section context'}).props.onChange({target:{value:'Answer any two questions from Section A.'}}));
+ await act(async()=>tree.root.findByProps({'aria-label':'Shared passage'}).props.onChange({target:{value:'Source-checked passage.'}}));
+ await act(async()=>tree.root.findAllByType('textarea').find(t=>t.props.maxLength===4000).props.onChange({target:{value:'Compared the complete printed section and shared passage.'}}));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));
+ assert.deepEqual(calls.findLast(c=>c[0]==='/admin/bank/edits')[1].proposal.patch,{direction:'Answer any two questions from Section A.',passage:'Source-checked passage.'});
+ await act(async()=>tree.unmount());
+ const Answer=load(root+'/web/src/components/AdminAnswerDecision.tsx').default;
+ const answerProps={qid:'cq_test',appearanceId:'app_test',onSaved:()=>{}};
+ failing=true;await act(async()=>{tree=create(React.createElement(Answer,answerProps))});
+ await act(async()=>tree.root.findAllByType('textarea')[0].props.onChange({target:{value:'User drafted a complete worked solution against this source.'}}));
+ assert.ok([...store.keys()].some(k=>k.startsWith('ism.answer-draft:')));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){},nativeEvent:{}}));
+ assert.ok(tree.root.findByProps({role:'alert'}));assert.ok(tree.root.findAllByType('textarea')[0].props.value.startsWith('User drafted'));
+ viewer='another-admin';await act(async()=>{tree.unmount();tree=create(React.createElement(Answer,answerProps))});
+ assert.equal(tree.root.findAllByType('textarea')[0].props.value,snapshot.record.explanation);
+ viewer='owner';await act(async()=>{tree.unmount();tree=create(React.createElement(Answer,answerProps))});
+ assert.ok(tree.root.findAllByType('textarea')[0].props.value.startsWith('User drafted'));
+ failing=false;await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){},nativeEvent:{}}));
+ assert.ok(![...store.keys()].some(k=>k.startsWith('ism.answer-draft:')));
+ await act(async()=>tree.unmount());console.log('Correction editor checks passed: final admin action, exact source/canonical binding, failed-save draft retention, stable retry key, publication state, assignment-only submission and submitted-replay recovery, and answer draft retention/account isolation/cleanup.');
+})().catch(e=>{console.error(e);process.exitCode=1});

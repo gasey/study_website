@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict'
+import {readFileSync} from 'node:fs'
+import {createRequire} from 'node:module'
+const require=createRequire(new URL('../package.json',import.meta.url)),ts=require('typescript')
+const mod={exports:{}}
+const source=readFileSync(new URL('../src/lib/groupBStudy.ts',import.meta.url),'utf8')
+new Function('module','exports',ts.transpileModule(source,{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports)
+const {groupBState,groupBNavigate,learningSubjectTitle}=mod.exports
+assert.deepEqual(groupBState(new URLSearchParams()),{collection:'group-b-non-gazetted',area:'common',view:'home',nonGazetted:true})
+assert.equal(groupBState(new URLSearchParams('collection=group-b')).collection,'group-b')
+assert.equal(groupBState(new URLSearchParams('collection=unknown&study_area=unknown&view=unknown')).view,'home')
+assert.equal(groupBState(new URLSearchParams('study_area=technical')).view,'topics')
+const old=new URLSearchParams('collection=group-b-gazetted&study_area=technical&view=practice&paper=engineering.pdf&subject_id=science&topic_id=physics&subtopic_id=optics&offset=48&pool=scorable&answer_status=official&status=wrong&q=lens&technical_page=4&exam_scope=all')
+const changed=groupBNavigate(old,'collection','group-b-non-gazetted')
+for(const key of ['paper','subject_id','topic_id','subtopic_id','offset','pool','answer_status','status','q','technical_page'])assert.equal(changed.has(key),false,key)
+assert.equal(changed.get('exam_scope'),'all');assert.equal(changed.get('study_area'),'common');assert.equal(changed.get('view'),'home')
+assert.equal(old.get('paper'),'engineering.pdf','navigation must not mutate previous state')
+const english=groupBNavigate(old,'study_area','english')
+assert.equal(english.get('collection'),'group-b-gazetted');assert.equal(english.get('view'),'topics');assert.equal(english.has('paper'),false)
+const topic=new URLSearchParams('collection=group-b-non-gazetted&study_area=gk-gs&subject_id=gk-gs&topic_id=gk-gs%3Acurrent-affairs&view=browse&offset=12&pool=all&answer_status=unsolved')
+const practice=groupBNavigate(topic,'view','practice')
+assert.equal(practice.get('topic_id'),'gk-gs:current-affairs');assert.equal(practice.get('pool'),'practice');assert.equal(practice.has('offset'),false);assert.equal(practice.has('answer_status'),false)
+assert.equal(groupBNavigate(practice,'view','browse').get('pool'),'all')
+assert.equal(groupBNavigate(practice,'view','home').has('topic_id'),false)
+assert.equal(groupBNavigate(new URLSearchParams(),'view','practice').get('collection'),'group-b-non-gazetted')
+assert.equal(learningSubjectTitle('gk-gs','General Knowledge & Studies','group-b-non-gazetted'),'General Knowledge')
+assert.equal(learningSubjectTitle('gk-gs','General Knowledge & Studies','group-b-gazetted'),'General Knowledge & Studies')
+console.log('Group B navigation checks passed: explicit/default scope, incompatible filter reset, immutable URL transitions, topic-preserving modes and exam-specific terminology.')
+
+const {groupBLink,groupBTitle,groupBOverviewDestination}=mod.exports
+assert.equal(groupBTitle('group-b-gazetted'),'Group B Gazetted')
+for(const view of ['home','papers','progress'])assert.equal(groupBState(new URLSearchParams('collection=group-b-gazetted&study_area=technical&view='+view)).view,view)
+assert.equal(groupBOverviewDestination('group-b-gazetted',new URLSearchParams()),groupBLink('group-b-gazetted'))
+for(const view of ['papers','browse','practice','progress','topics'])assert.equal(groupBOverviewDestination('group-b-gazetted',new URLSearchParams({view,paper:'original.pdf'})),null)
+assert.equal(groupBOverviewDestination('udc',new URLSearchParams()),null)
+const archive=new URLSearchParams('collection=group-b-gazetted&view=papers&paper_q=Inspector&paper_year=2018&paper_kind=written&paper_page=5')
+assert.equal(groupBNavigate(archive,'paper_q','Departmental').has('paper_page'),false)
+assert.equal(groupBNavigate(archive,'paper_sort','oldest').get('paper_year'),'2018')
+const otherGroup=groupBNavigate(archive,'collection','group-b-non-gazetted')
+for(const key of ['paper_q','paper_year','paper_kind','paper_page'])assert.equal(otherGroup.has(key),false)
+assert.equal(new URL(groupBLink('group-b-gazetted','papers',{paper_kind:'written'}),'https://example.test').searchParams.get('collection'),'group-b-gazetted')
+console.log('Group B home/archive checks passed: distinct group titles, legacy deep links, paper-filter reset and explicit scope.')

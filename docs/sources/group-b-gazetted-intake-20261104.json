@@ -1,0 +1,459 @@
+{
+  "schema": 1,
+  "date": "2026-11-04",
+  "status": "Saved private drafts only; no submission, independent approval, publication or solution inference.",
+  "summary": {
+    "drafts": 10,
+    "questions": 756,
+    "mcq": 732,
+    "written": 24,
+    "source_pages": 104,
+    "source_crops": 40,
+    "done_document_jobs": 50,
+    "source_inspection": "AI-assisted extraction and selected page/crop checks, not an all-question human attestation",
+    "tag_status": "Draft broad subject labels only. Exact subject/topic/subtopic review is outstanding.",
+    "live_gazetted_stored_entries": 137,
+    "live_gazetted_printed_questions": 133,
+    "live_registered_pdfs": 6
+  },
+  "drafts": [
+    {
+      "id": "pwdraft_c538cfe8b8bf4bd895213c85ce108c0e",
+      "source_id": "Old_Questions/Direct_2025-2027/general-english-series-a.pdf",
+      "state": "draft",
+      "version": 3,
+      "questions": 69,
+      "written": 3,
+      "mcq": 66,
+      "pages": 9,
+      "page_text_sha256": "7a9523793cf094ae8b2adc7dccb7bf56ffd45c43f302cd0ea06fcfd5c2f2b658",
+      "payload_hash": "2056369b04b53f249285483c16ef7bc2a27bcf2954e405baa697fb0d0067ec6d",
+      "source_sha256": "768a298a6ef575d791958086c0626c7519bfecc094f850d63a05377746246336",
+      "crops": 17,
+      "jobs": 18,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_e3d326b3bbda4d1e857b240087d486a0",
+      "source_id": "Old_Questions/Direct_2025-2027/general-english-series-b.pdf",
+      "state": "draft",
+      "version": 3,
+      "questions": 69,
+      "written": 3,
+      "mcq": 66,
+      "pages": 9,
+      "page_text_sha256": "2e421c2c614da0d3ad8dc98b57d66daa5398edfdecf7e7fbcb0c09329e907783",
+      "payload_hash": "d5b56c65a3840ce0d4184cba05f6b78809c62a68ed7911a84ae11df315d58b0f",
+      "source_sha256": "a74537a49eb25ea285f9b1a65bd9e8e6856a504fce957f44e6eb91b214532615",
+      "crops": 17,
+      "jobs": 18,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_c116f154a7b444f590250900a70c3292",
+      "source_id": "Old_Questions/Direct_2025-2027/general-essay.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 8,
+      "written": 8,
+      "mcq": 0,
+      "pages": 1,
+      "page_text_sha256": "6cabe12f18db2f42b72c0f254ddb2a1b324adc24b7b5ba7a5949f5531605c2cc",
+      "payload_hash": "490958c0d12b6e4e06df6f86b601145c0a4e914d2b9cad13a0674a0d7f634a4d",
+      "source_sha256": "f58ecd74096e970d3c5a99762038c2a61ae2ae24c14003f0c95c5c694819bd6e",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_3af9c8ecd73d4667b788215d66f6563b",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-i-series-a.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 12,
+      "page_text_sha256": "76350aa2d91564df667f710f8fdbd2cf6c9e2c28180d0cc5ae0aa2eaf1cd7c4d",
+      "payload_hash": "dc46164426e39aa0e8189a2fd7edd0910c4ed6a2e5a877caca6ee7cf42483243",
+      "source_sha256": "a22498598e640d83f3dc5ada5c77c826210b6032fd8216985e94f5eb14a3e73c",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_ebd6388dd73c4439bfa6092a9173ef8e",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-i-series-b.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 12,
+      "page_text_sha256": "04f84975bbf49aae78a52e4d2b41b4d9d8d4d155c134f18a4e96f8972c2bb295",
+      "payload_hash": "99f2c3c665295989d0ff28b5615fa14989aa89e1bdba3ea16f2f3c6bb5d3369a",
+      "source_sha256": "d644b383eb0c4825213a89f704f5e23d998d2eae79b05edbd5e444d8072e3040",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_048b1783addf4622b752643f77491520",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-ii-series-a.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 15,
+      "page_text_sha256": "256eee436857ee1ea44d4ea1bbf4e7e862e5b9019e2432bad3e9c4bfe0367442",
+      "payload_hash": "5da1ce5f0e3f6de573286cd2fe02a4f26fb56fe2a5ea790c6ec929e1643931d6",
+      "source_sha256": "4b4e1432e013723e321c0826b31deaf170e08216351300d9ab12e592f4f5a9a2",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_3fa406a655964f8fae9fcc0afa968510",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-ii-series-b.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 15,
+      "page_text_sha256": "5d9e0efea9a59cb279846a854a0cc8feea05a50d9c554fc520d8e3ff13bb20b8",
+      "payload_hash": "60cdc4e82849a9faf0712886b42798d2d35e824cccc74a201a36e9998accea74",
+      "source_sha256": "1e64337cc8c8e8a13de58a823dfcec443c394d60607cdb0a8f194925cc9cb977",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_7187e2bcc5b940c494c35b45232f3615",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-iii-series-a.pdf",
+      "state": "draft",
+      "version": 3,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 14,
+      "page_text_sha256": "c64bf3dab5aba7109e418d29ffb27704372bf401a0d5e183348497c3e228fd53",
+      "payload_hash": "2b91d7b0e8c19f0ddb729a8e456c7cd36ce3ac2bf95c5fafd0818d8cf8b67d21",
+      "source_sha256": "146b96c157cae9cfa091e1cf666b808dfa0c76fb5d2479746dd12f50056ec2ff",
+      "crops": 3,
+      "jobs": 4,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_d7647b0c6ea7497fb37586ae80264697",
+      "source_id": "Old_Questions/Direct_2025-2027/gs-iii-series-b.pdf",
+      "state": "draft",
+      "version": 3,
+      "questions": 100,
+      "written": 0,
+      "mcq": 100,
+      "pages": 14,
+      "page_text_sha256": "c41e26c59b5bcb0e930a6ff8fde7dc3bc0aa37d0d046ad3c8da424252ac0f278",
+      "payload_hash": "e177e76901beae98bbfe82768178b086d080ab422036b8126bfb456d25b909c8",
+      "source_sha256": "82113e921e8f3a984962d61878a9e4ac1add4c81e6398f0029f89f8bf8a726c1",
+      "crops": 3,
+      "jobs": 4,
+      "independent_reviews": 0
+    },
+    {
+      "id": "pwdraft_aee50a8035284354a114a1ddfe949379",
+      "source_id": "Old_Questions/Departmental_2015-2018/1.Departmental Exam for Sub Inspector and Inspector under Excise 2016 Paper I COMMON.pdf",
+      "state": "draft",
+      "version": 2,
+      "questions": 10,
+      "written": 10,
+      "mcq": 0,
+      "pages": 3,
+      "page_text_sha256": "f9bd2d1ce96639f10ea79f4a80ea46e45b1a6ccc7b52746699095ec6282e1d03",
+      "payload_hash": "28689e61b44aabd1a8be9937f01b9bb737407b74cc4360aef2bad1be5d1d2d3c",
+      "source_sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "crops": 0,
+      "jobs": 1,
+      "independent_reviews": 0
+    }
+  ],
+  "review_checks": {
+    "Old_Questions/Direct_2025-2027/general-english-series-a.pdf": [
+      {
+        "number": "B1",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B2",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B3",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B4",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B5",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B6",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B7",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B8",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B9",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B10",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 4
+      },
+      {
+        "number": "B60",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B61",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B62",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B63",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B64",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B65",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      },
+      {
+        "number": "B66",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 9
+      }
+    ],
+    "Old_Questions/Direct_2025-2027/general-english-series-b.pdf": [
+      {
+        "number": "B24",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B25",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B26",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B27",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B28",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B29",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B30",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B31",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B32",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B33",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B34",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 6
+      },
+      {
+        "number": "B35",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      },
+      {
+        "number": "B36",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      },
+      {
+        "number": "B37",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      },
+      {
+        "number": "B38",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      },
+      {
+        "number": "B39",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      },
+      {
+        "number": "B40",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 7
+      }
+    ],
+    "Old_Questions/Direct_2025-2027/general-essay.pdf": [],
+    "Old_Questions/Direct_2025-2027/gs-i-series-a.pdf": [],
+    "Old_Questions/Direct_2025-2027/gs-i-series-b.pdf": [],
+    "Old_Questions/Direct_2025-2027/gs-ii-series-a.pdf": [],
+    "Old_Questions/Direct_2025-2027/gs-ii-series-b.pdf": [],
+    "Old_Questions/Direct_2025-2027/gs-iii-series-a.pdf": [
+      {
+        "number": "84",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 11
+      },
+      {
+        "number": "98",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 13
+      },
+      {
+        "number": "100",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 14
+      }
+    ],
+    "Old_Questions/Direct_2025-2027/gs-iii-series-b.pdf": [
+      {
+        "number": "88",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 12
+      },
+      {
+        "number": "90",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 13
+      },
+      {
+        "number": "94",
+        "issue": "Source image required for printed emphasis/diagram.",
+        "page": 13
+      }
+    ],
+    "Old_Questions/Departmental_2015-2018/1.Departmental Exam for Sub Inspector and Inspector under Excise 2016 Paper I COMMON.pdf": []
+  },
+  "preservation": {
+    "bank_sha256": "6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353",
+    "synced_bank_sha256": "6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353",
+    "canonical_questions": 81627,
+    "scorable": 13172,
+    "unchanged": {
+      "attempts": true,
+      "editorial_assignments": true,
+      "editorial_assignment_papers": true,
+      "editorial_checks": true,
+      "review_grants": true,
+      "collection_papers": true,
+      "collection_sections": true,
+      "collections": true
+    },
+    "live_source_rows_unchanged": true
+  },
+  "duplicate_presentation": {
+    "paper_id": "Old_Questions/Departmental_2015-2018/3.Departmental Exam for Inspector under Excise 2016 Paper III.pdf",
+    "groups": 4,
+    "printed_questions": 23,
+    "stored_transcriptions": 27,
+    "policy": "Explicit audited pairs only, guarded by current matching locator/text/context/tags/holds. Show-all, flagged records and exact appearance links retained. No bank merge or database duplicate-review vote."
+  },
+  "limitations": [
+    "Independent review and exact taxonomy/source checks remain before new paper publication.",
+    "Common 2016 Paper I is already registered and empty. Existing paper publisher refuses a second upload identity. Its staged ten-question extraction must be imported into the existing source through a guarded empty-source extension; no duplicate paper may be published.",
+    "Authenticated phone/tablet visual QA remains unverified; no login or preview bypass attempted."
+  ],
+  "artifacts": {
+    "preparer": "scripts/prepare-gazetted-intake.py",
+    "prepared_sha256": "e8e33847849be3e099c510857482cb2fda31f9f6a050ec760cbaf9d99ad2aae3",
+    "operator_receipt_sha256": "28a03f829dcd39d3c386636940daeacc54dbfeb12ab604f8b5458f2ba7e324b7",
+    "ignored_local_evidence": "reports/group-b-gazetted-audit-20261104/intake"
+  },
+  "release": {
+    "web_index_sha256": "d4e2cfd39bfcbfe9fd2bd0ed8aa2cbb80f734a2cfae0df1a532929ae10212a0f",
+    "paper_viewer_asset": "PaperViewer-Cns_Q3Oe.js",
+    "paper_viewer_sha256": "19eab5da999ffbf3774b39a857bc2821acf5d3706e8eb25cccd6b0e55d2ddf47",
+    "public_web_matches": true,
+    "health": {
+      "https://study.hawayu.in/api/health": 200,
+      "https://family.hawayu.in/": 200
+    },
+    "services": {
+      "ism-api": "active",
+      "ism-paper-documents": "active",
+      "ism-paper-publisher": "active",
+      "ism-oracle-bank-review.timer": "active"
+    },
+    "final_bank_sha256": "6c2c1e38efe97702ad2c24974de9c9720d9dfb2206471f9832a8d2b8357f9353"
+  },
+  "validation": [
+    "5 preparation regressions passed",
+    "27 live transcriptions / 4 audited duplicate groups / 23 printed questions passed",
+    "Duplicate component: show-all, exact correction IDs, flags, direct links and representative navigation passed",
+    "Archive, paper identity, source formatting, Group B design/navigation checks passed",
+    "TypeScript and Vite build passed",
+    "All104 extracted page texts match the source PDFs",
+    "All50 document jobs and40 crop byte hashes verified",
+    "git diff --check passed"
+  ]
+}

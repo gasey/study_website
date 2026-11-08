@@ -1,0 +1,26 @@
+const assert=require('node:assert/strict'),fs=require('node:fs');
+const root=process.cwd(),req=require('node:module').createRequire(root+'/web/package.json'),React=req('react'),ts=req('typescript');
+const rp=require.resolve('react',{paths:[process.argv[2]]});require.cache[rp]={id:rp,filename:rp,loaded:true,exports:React};
+const {create,act}=require(require.resolve('react-test-renderer',{paths:[process.argv[2]]}));
+let calls=[],resolve,reject;
+const mod={exports:{}};
+new Function('module','exports','require',ts.transpileModule(fs.readFileSync(root+'/web/src/components/QuestionCard.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports,id=>{
+ if(id==='../lib/api')return {submitAnswer:(...args)=>{calls.push(args);return new Promise((a,b)=>{resolve=a;reject=b})}};
+ if(id==='../lib/learning')return {savePracticePosition:async()=>{}};
+ if(id==='../lib/questionLabels')return {questionTopicLabel:()=>''};
+ if(id==='../lib/examScope')return {scopeLink:x=>x};
+ if(id==='react-router-dom')return {Link:({children})=>React.createElement('a',null,children)};
+ if(id==='./AnswerLayout')return {AnswerOptions:({children})=>React.createElement('div',null,children)};
+ if(id==='./SourceQuestionText')return {SourceQuestionContext:()=>null,SourceQuestionText:({text})=>React.createElement('span',null,text)};
+ if(id==='./QuestionDiscussion')return {QuestionActions:()=>null};
+ if(id.startsWith('./'))return {default:()=>null};
+ return req(id);
+});
+const C=mod.exports.default,q={id:'q1',question:'Test',options:['One','Two'],type:'mcq',answer_source:'key',times_asked:1};
+(async()=>{let tree;await act(async()=>{tree=create(React.createElement(C,{q}))});let options=()=>tree.root.findAllByType('button');assert.equal(options().length,2);
+ await act(async()=>{options()[1].props.onClick();options()[0].props.onClick()});assert.deepEqual(calls,[['q1',1]]);assert.ok(options().every(b=>b.props.disabled));
+ await act(async()=>reject(Error('Try again')));assert.ok(tree.root.findByProps({role:'alert'}));assert.ok(options().every(b=>!b.props.disabled));
+ await act(async()=>options()[0].props.onClick());assert.deepEqual(calls[1],['q1',0]);await act(async()=>resolve({answer_index:0,correct:true,verified:true}));assert.ok(options().every(b=>b.props.disabled));
+ await act(async()=>{tree.unmount();tree=create(React.createElement(C,{q:{...q,held:true}}))});assert.ok(options().every(b=>b.props.disabled));await act(async()=>options()[0].props.onClick());assert.equal(calls.length,2);await act(async()=>tree.unmount());
+ console.log('One-tap passed: selected index submitted immediately, rapid double tap blocked, retry after failure, results locked and held questions blocked.');
+})().catch(e=>{console.error(e);process.exitCode=1});

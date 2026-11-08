@@ -15,6 +15,14 @@ router = APIRouter(prefix='/api/admin/bank/retag', tags=['retagging'], dependenc
 Account = Annotated[Actor, Depends(identity)]
 
 
+@router.get('/progress')
+async def taxonomy_progress(actor:Account):
+    from ..services.taxonomy_review_progress import progress
+    async with cursor() as cur:
+        await require_role(cur,actor.id,roles=('owner','publisher','senior','reviewer'),lock=False)
+        return await progress(cur)
+
+
 class Target(Strict):
     question_id: str = Field(min_length=1, max_length=100)
     appearance_id: str = Field(min_length=1, max_length=200)

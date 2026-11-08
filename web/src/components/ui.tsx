@@ -22,14 +22,14 @@ export function PillButton({
   disabled?: boolean
 }) {
   const tones = {
-    ink: 'bg-ink text-paper',
-    quiet: 'border border-hairline bg-[#F7F3EA] text-ink',
+    ink: 'bg-ink text-paper shadow-sm',
+    quiet: 'border border-hairline bg-canvas/70 text-ink hover:border-hairline2',
   }
   return (
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`min-h-[44px] whitespace-nowrap rounded-pill px-4 py-[9px] text-[14px] font-semibold disabled:opacity-40 ${tones[tone]}`}
+      className={`ism-tactile-btn min-h-[44px] whitespace-nowrap rounded-pill px-4 py-[9px] text-[14px] font-semibold disabled:opacity-40 ${tones[tone]}`}
     >
       {children}
     </button>
@@ -97,10 +97,10 @@ export function Checkbox({
       onClick={onClick}
       disabled={disabled}
       aria-pressed={on}
-      className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-[14px] disabled:text-muted"
+      className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-[14px] transition-colors hover:text-ink disabled:text-muted"
     >
       <span
-        className={`h-[14px] w-[14px] shrink-0 rounded-[3px] border ${
+        className={`h-[14px] w-[14px] shrink-0 rounded-[3px] border transition-colors ${
           disabled ? 'border-hairline2' : 'border-ink'
         } ${on ? 'bg-ink' : 'bg-transparent'}`}
       />
@@ -119,12 +119,7 @@ export function GroupTitle({ children }: { children: ReactNode }) {
   )
 }
 
-/** White surface card: 14px radius, hairline border, the same faint shadow
- *  the prototype uses on the bank article and the filter rail.
- *
- *  `as` exists because refactoring the filter rail onto this component
- *  silently turned its <aside> into a <div> and removed the only landmark
- *  on the page. A shared wrapper must not flatten semantics. */
+/** White/themed surface card: 14px radius, hairline border, subtle shadow. */
 export function Card({
   children,
   className = '',
@@ -137,7 +132,7 @@ export function Card({
 } & React.HTMLAttributes<HTMLElement>) {
   return (
     <Tag
-      className={`rounded-[14px] border border-hairline bg-card shadow-[0_1px_2px_rgba(29,27,24,.05)] ${className}`}
+      className={`ism-card-surface rounded-[14px] border border-hairline bg-card ${className}`}
       {...rest}
     >
       {children}
@@ -145,9 +140,7 @@ export function Card({
   )
 }
 
-/** Shown wherever today's data cannot honestly support a control. Preferred
- *  over hiding the feature or shipping a control that returns nothing —
- *  see CLAUDE.md, "Build with the data that exists". */
+/** Shown wherever today's data cannot honestly support a control. */
 export function NotYet({ children }: { children: ReactNode }) {
   return <p className="py-1.5 text-[13px] leading-snug text-muted">{children}</p>
 }
@@ -156,7 +149,7 @@ export function NotYet({ children }: { children: ReactNode }) {
 export function Avatar({ initials,look }: { initials: string;look?:AvatarLook|null }) {
   if(look)return <AvatarArt look={look}/>
   return (
-    <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-ink bg-[#F6DDD3] font-mono text-[12px] font-medium">
+    <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-ink bg-community-soft font-mono text-[12px] font-medium text-ink">
       {initials}
     </span>
   )

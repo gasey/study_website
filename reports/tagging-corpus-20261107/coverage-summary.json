@@ -1,0 +1,86 @@
+{
+  "inventory_exported_at": "2026-11-07T09:59:22.72106+00:00",
+  "scope": "entire Oracle canonical bank, all statuses and source appearances",
+  "canonical_questions": 82383,
+  "appearances": 82383,
+  "papers": 1979,
+  "registered_paper_documents": 1978,
+  "active_taxonomy_nodes": 181,
+  "canonical_statuses": {
+    "live": 82249,
+    "held": 134
+  },
+  "coverage_statuses": {
+    "unreviewed": 81708,
+    "candidate_saved": 675
+  },
+  "saved_review_actions": {
+    "retag": 413,
+    "keep": 259,
+    "hold": 3
+  },
+  "unreviewed_source_blockers": {
+    "no_physical_page_locator": 7713,
+    "no_registered_paper_document": 100
+  },
+  "live_changes": 0,
+  "publication_authorized": false,
+  "inventory_sha256": "b24d265cd6a17573d806b04cbafd3fc5cefacb4c3331ae2c99df18deb7ed84a6",
+  "freshness_limit": "Inventory path/document compatibility only. A saved candidate still requires a fresh exact full-source fingerprint check before submission; inventory export alone is not semantic/source review.",
+  "pending_source_recovery": {
+    "targets": 7954,
+    "actions": {
+      "locator_candidate": 6522,
+      "hold": 555,
+      "partial_locator_candidate": 777,
+      "registration_candidate": 100
+    },
+    "visual_locator_checks": 147,
+    "new_tag_reviews": 141,
+    "live_source_gaps_not_cleared": true
+  },
+  "updated_at": "2026-11-08T05:26:21.446503+00:00",
+  "published_canonical_status": {
+    "live": 82249,
+    "held": 134
+  },
+  "coverage_ledger": {
+    "tagging_reviewed_pending": {
+      "unique_reviewed_questions": 10735,
+      "unique_reviewed_appearances": 10735,
+      "saved_candidate_records": 10816,
+      "deduplicated_candidates": 10735,
+      "baseline_issues": 0,
+      "unresolved_conflicts": 0,
+      "actions": {
+        "retag": 7465,
+        "keep": 3267,
+        "hold": 3
+      },
+      "remaining_unreviewed": 71648,
+      "live_published_under_v1": 0
+    },
+    "answer_checked": {
+      "verified_official_or_key": 13956,
+      "official": 13230,
+      "key": 726,
+      "inferred": 36272,
+      "derived": 19916,
+      "none": 12239
+    },
+    "explanation_checked": {
+      "has_explanation": 13982,
+      "missing_explanation": 68401
+    },
+    "source_blocked": {
+      "status_held": 134,
+      "key_disputed": 8,
+      "source_defects": 1489
+    },
+    "published": {
+      "live_questions": 82249,
+      "held_questions": 134
+    }
+  },
+  "meaning": "Exact counts across separate dimensions: tagging reviewed, answer checked, explanation checked, source blocked, and published. These are never interchangeable."
+}

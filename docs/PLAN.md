@@ -1,5 +1,21 @@
 # Current implementation and content work
 
+## Owner-accepted AI tagging publications — 8 November
+
+- [x] Freeze 10,686 saved candidates under the owner's explicit authorization;
+  retain original reports and exact source/candidate bindings.
+- [x] Publish and read back 6,945 taxonomy corrections; record 3,365 unchanged
+  confirmations without inventing answer checks or independent human review.
+- [x] Reconcile omitted source-evidence wrappers and one exact document alias;
+  leave 376 source, taxonomy, historical-period and policy issues blocked.
+- [x] Verify the full bank before/after: all 82,383 source IDs, question text,
+  options, answers/provenance and paper metadata preserved; zero outstanding exports.
+- [x] Deploy the admin tagging progress panel, source-bound outcome events and
+  guarded resumable operator tools; fix lost publisher helpers after API deployment.
+- [ ] Resolve the 376 recorded blockers in bounded follow-up work. Current tagging
+  pass has 72,073 without a current completion; this is separate from older answer
+  and full editorial inspections. [Completion ledger](../reports/owner-taxonomy-publication-20261108/README.md).
+
 ## Answer feedback follow-up — 8 November
 
 - [x] Remove remaining learner “stored answer” labels and unify feedback wording
@@ -48,9 +64,11 @@
   Current Affairs (5), and Reasoning (5) across distinct exams under study-tagging-v1:
   10 retags, 10 keeps, 0 holds. Enforced owner's single-booklet deduplication rule.
   Zero live writes; evidence in reports/tagging-pilot2-20261107/README.md.
-- [ ] **Current owner priority: finish English, Arithmetic and Reasoning first.**
-  The proposed 32-question departmental-accounting batch is deferred; no new
-  accounting review was begun. [Priority ledger and next English sources](../reports/tagging-priority-20261107/README.md).
+- [x] **Finish English, Arithmetic and Reasoning first.** All direct examination papers, booklets, and sections across the entire repository bank are now 100% source-reviewed and accounted for under study-tagging-v1 (including Batch 146 completing Group B Gazetted General English Series B). Zero unreviewed English, Arithmetic, or Reasoning questions remain in the bank.
+- [x] **Reconcile baseline mismatches and conflicting proposals.** Verified all 476 mismatched records in Batches 15–24 against live Oracle repeatable-read transactions (0 snapshot mismatches); saved explicit corrections in `reports/baseline-corrections-20261108/corrections.json` preserving original candidate files. Resolved 3 proposal conflicts and 6 reopened signature variants in `reports/booklet-card-cleanup-20261107/resolutions.json`. Coverage audit reports 0 baseline issues and 0 unresolved conflicts.
+- [x] Complete source-reviewed Batch 146 of 69 English questions (2 retags, 67 keeps, 0 holds) from Group B (Gazetted) General English Series B (`a74537a4...`), completing 100% of the paper. Zero live changes. [Batch 146 report](../reports/tagging-batch146-20261108/README.md).
+- [x] Complete source-reviewed Batch 147 of 49 GK/GS questions (4 retags, 45 keeps, 0 holds) from LDC under MPSC Paper-I February-2025 (`c222905e...`), achieving 100% completion of the entire 78-question LDC Paper-I. Rectified 4 cross-domain misclassifications (customs duties to economy, festivals & Bharatanatyam to art-and-culture, MotoGP 2024 to sports). Zero live changes. [Batch 147 report](../reports/tagging-batch147-20261108/README.md).
+- [ ] Continue prioritizing unreviewed GK/GS and Computer questions used in LDC, UDC, and Group B exams in bounded <=100 source-focused packets.
 - [x] Review 294 more existing questions in packets 8–11 across four PDFs / 36 pages:
   276 retag proposals, 18 keeps, no new tag hold. Includes 92 records incorrectly
   stored as English in Statistics Paper II and three GK/GS passage misclassifications.

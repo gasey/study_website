@@ -54,7 +54,7 @@ deploy_api() {
   '
   if ssh "$HOST" 'sudo test -d /srv/study/workshop/india-study-map-app/scripts'; then
     rsync -az --delete --exclude __pycache__ --exclude bank-authority-policy.json -e ssh "$ROOT/scripts/" "$HOST:/tmp/ism-workshop-scripts/"
-    ssh "$HOST" 'sudo rsync -a --delete --exclude bank-authority-policy.json /tmp/ism-workshop-scripts/ /srv/study/workshop/india-study-map-app/scripts/'
+    ssh "$HOST" 'sudo rsync -a --delete --exclude bank-authority-policy.json /tmp/ism-workshop-scripts/ /srv/study/workshop/india-study-map-app/scripts/ && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/promote-publication-queue.py /srv/api/promote-publication-queue.py && sudo install -m 644 /srv/study/workshop/india-study-map-app/scripts/publication-wakeup.py /srv/api/publication-wakeup.py'
   fi
   ssh "$HOST" '
     if sudo test -f /etc/systemd/system/ism-paper-documents.service; then

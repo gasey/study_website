@@ -1,0 +1,8 @@
+[Unit]
+Description=Check for independently approved bank publications
+[Timer]
+OnBootSec=45
+OnUnitInactiveSec=60
+Unit=ism-oracle-bank-review.service
+[Install]
+WantedBy=timers.target

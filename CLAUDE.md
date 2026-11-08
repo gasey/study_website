@@ -78,6 +78,19 @@ Explanation backfill is explanation-only; source and answer repairs use their
 separate existing workflows. Use ordinary allowance; past bounded quota exceptions
 are historical and do not authorize a new exemption.
 
+On 8 November 2026 the owner explicitly authorized confirmation/publication of
+the saved approximately 10k AI tagging reviews: “do it we should trust atleast one
+model no”. The exact 10,686-target scope is frozen at SHA256
+`1ff1a8623c4edeec94ec29b0eff0c2357106d7cd5aa07a7cc94353971f692409` in
+`reports/owner-taxonomy-publication-20261108/frozen.json`. Its completion ledger
+records 6,945 published taxonomy corrections, 3,365 confirmed unchanged and 376
+blocked. Attribution is owner-delegated AI taxonomy acceptance, without independent
+human checks, answer verification or paper approvals. It does not authorize new
+future batches. Original pending candidate reports remain historical inputs;
+read the completion ledger and current live state before continuing. The scoped
+operator run does not consume the normal browser maintenance allowance; ordinary
+staff limits and all source/permission/publication protections still apply.
+
 ## Product and implementation
 
 - Use approved subject/topic/subtopic classifications. Difficulty labels are retired.

@@ -10,6 +10,15 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:wght@500;600&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
+    <script>
+      try {
+        var t = localStorage.getItem('ism-study-theme');
+        if (t === 'paper' || t === 'focus' || t === 'night') {
+          document.documentElement.setAttribute('data-theme', t);
+          if (t === 'night') document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
