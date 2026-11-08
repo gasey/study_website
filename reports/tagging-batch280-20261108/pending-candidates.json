@@ -1,0 +1,510 @@
+[
+  {
+    "canonical_id": "cq_c11be251210839bd",
+    "appearance_id": "desc-ec34b25c5cf88656355c",
+    "source_fingerprint": "027c26e43e72a97c09a08f96c98b10f0933cf20458f418481f2c5d73cbe5dbbb",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b0ddd84983f9ecd",
+    "appearance_id": "desc-8c83fc589b8e93d966ff",
+    "source_fingerprint": "b2782cb94e53865355be91e1d0d4dc9eba0cf5bf3de90677e13a3f2e02c34a35",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0eaa637ca1acedb2",
+    "appearance_id": "desc-f657ad57bf24b962689c",
+    "source_fingerprint": "799aa946ff8154fbc96fe482ff1f47b87c0e6b7b6a57639c142ddcc077e64d20",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_259f6cb428c43ec4",
+    "appearance_id": "desc-24e004cbe8a5231b20da",
+    "source_fingerprint": "68b160a4b801d0b0c0c63842aeb3c2771753c194a972cae2ac878cf906f91e3b",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5a0f930859fb181",
+    "appearance_id": "desc-f8a20180147c31d051dd",
+    "source_fingerprint": "a1a4725ad229419bde878517e2458b7fdc39483b1b27ce7db024051e685c33a9",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_571a46794913224f",
+    "appearance_id": "desc-3f11b004291ad2f4df75",
+    "source_fingerprint": "a0d6deca284c1ede2ff0c6b008e04cd25955c6efef5ae6c4fcaa238e64d32194",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under financial-rules-and-accounts. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Assessment aligned with syllabus specifications under financial-rules-and-accounts.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_153011bad68125a5",
+    "appearance_id": "desc-c582f1d90dc8e92c570e",
+    "source_fingerprint": "71def1555864d6caba0af1fdd0f7bba87292b7888e9a43fe0c380d7eb500ac4d",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_874fd97bf159fd8f",
+    "appearance_id": "desc-b4113148d9b06c4147ac",
+    "source_fingerprint": "7f43422b3c6be93b8d8bb7bcfce56138fe2f125fe5d0365b59530920a9bf874f",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under financial-rules-and-accounts. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Assessment aligned with syllabus specifications under financial-rules-and-accounts.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91ed21720844df9f",
+    "appearance_id": "desc-fc8df4c479b4132cb758",
+    "source_fingerprint": "f971a3218513b964e63883f1d95fa8dbf3114b36d4fe97da3ad22393681a8c02",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba6926cf96bf96b7",
+    "appearance_id": "desc-d9e45faf515ed8765b93",
+    "source_fingerprint": "943eae7127895a0adb6e8bf706d1d068e5948e582552ebfcf4453cd5643e0fd8",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31ba0c48c9fe580b",
+    "appearance_id": "desc-e6738ed987398684723f",
+    "source_fingerprint": "e202ce149ad63a32a927b795053ba14b1220ba7f8d518aebccd8460994f06fae",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e2c895991841e00",
+    "appearance_id": "desc-43cc24cb34d478343978",
+    "source_fingerprint": "ee1c2623ad8940fe034364ab2fd68e00377e0f204d24da25ed682fd3aa30d2ab",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9016065e44863e2d",
+    "appearance_id": "desc-e7c38af36901e6736ee3",
+    "source_fingerprint": "6c1e9569af2b8cc4f775295b5ea56579b080ece393e0aef6091468663699d561",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under financial-rules-and-accounts. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Assessment aligned with syllabus specifications under financial-rules-and-accounts.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_2a5ecf7392c9b2b201f32109",
+      "sha256": "cb3b305b1e5f0bab5b193dcb46f454fffec9a0599c509ce163b329d5f6e023ea",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

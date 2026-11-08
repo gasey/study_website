@@ -1,0 +1,13 @@
+# Tagging Batch 271: LIMITED DEPARTMENTAL EXAMINATIONS OF LOWER DIVISION CLERK FOR PROMOTION TO UPPER DIVISION CLERK UNDER LABOUR, EMPLOYMENT & INDUSTRIAL TRAINING DEPARTMENT, GOVERNMENT OF MIZORAM - Upper Divisional Clerk (19 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/LDE_2014-2018/4.LDC to UDC LDE under LE&IT 2014 Paper IV.pdf`
+- **Title:** LIMITED DEPARTMENTAL EXAMINATIONS OF LOWER DIVISION CLERK FOR PROMOTION TO UPPER DIVISION CLERK UNDER LABOUR, EMPLOYMENT & INDUSTRIAL TRAINING DEPARTMENT, GOVERNMENT OF MIZORAM (Upper Divisional Clerk)
+- **Total Targets:** 19
+- **Document Binding:** `doc_52e26d666310da9c88a4ef1e` (sha256 `a66ebbeab211b2c5c1022cfd78dd85508578551d315d6f1daf3294316ab9a8d7`)
+
+## Actions
+- **`keep`:** 9
+- **`retag`:** 10
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.
