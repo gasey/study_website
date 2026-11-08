@@ -65,6 +65,8 @@ class Store:
                     self.db.execute('INSERT OR IGNORE INTO exclusions VALUES(?,?)',
                                     (identity, kind))
             excluded = {r[0] for r in self.db.execute('SELECT id FROM exclusions')}
+            completed = set(inventory.get('completed_ids', []))
+            excluded.update(completed)
             docs = {d['paper_id'] for d in inventory['documents'] if d.get('sha256')}
             by_paper = defaultdict(list)
             for a in inventory['appearances']:
@@ -80,7 +82,11 @@ class Store:
                 variants.sort(key=lambda v: (v[0] not in docs, v[1] not in ('A', '1'),
                                             -sum(bool(r.get('page')) for r in v[2]), v[0]))
                 alternate.update(v[0] for v in variants[1:])
-            follow = {f['canonical_id']: f for f in followups}
+            follow = {r['canonical_id']: json.loads(r['legacy']) for r in self.db.execute(
+                "SELECT canonical_id,legacy FROM targets WHERE lane='followup' AND legacy IS NOT NULL")}
+            follow.update({f['canonical_id']: f for f in followups})
+            for cid in completed:
+                follow.pop(cid, None)
             appearances = sorted(inventory['appearances'], key=lambda a: (
                 a['paper_id'] in alternate, not a.get('is_primary', False), a['paper_id'], a['id']))
             chosen = {}
@@ -125,12 +131,18 @@ class Store:
             raise ValueError('Packet is already ' + p['state'])
         return p
 
-    def claim(self, worker, model, lane, size, fetch):
+    def claim(self, worker, model, lane, size, fetch, packet_id=None, token=None):
         if not worker.strip() or not model.strip() or not 1 <= size <= 100:
             raise ValueError('Worker/model required; packet size must be 1–100')
         if lane not in ('new', 'followup'):
             raise ValueError('Invalid lane')
         def run():
+            if packet_id and self.db.execute('SELECT 1 FROM packets WHERE id=?', (packet_id,)).fetchone():
+                previous = self.owned(packet_id, token, active=False)
+                if previous['worker'] != worker or previous['model'] != model:
+                    raise ValueError('Claim retry identity changed')
+                return {'packet': json.loads(previous['payload']), 'token': token,
+                        'state': previous['state'], 'idempotent': True}
             if self.db.execute("SELECT 1 FROM packets WHERE worker=? AND state='claimed'", (worker,)).fetchone():
                 raise ValueError('Worker already has an active packet; resume it using its saved token')
             paper = self.db.execute('''SELECT paper_id FROM targets WHERE present=1 AND
@@ -147,20 +159,20 @@ class Store:
             actual = {(i['canonical_id'], i['appearance_id']) for i in packet['items']}
             if actual != expected or len(packet['items']) != len(rows):
                 raise ValueError('Fresh packet does not match reserved identities')
-            pid = 'tq_' + secrets.token_hex(12)
-            token = secrets.token_urlsafe(32)
+            pid = packet_id or 'tq_' + secrets.token_hex(12)
+            claim_token = token or secrets.token_urlsafe(32)
             packet.update(packet_id=pid, worker=worker, model=model, lane=lane,
                           policy_version='study-tagging-v1', source_inspected=False,
                           publication_authorized=False)
             now = time.time()
             self.db.execute('INSERT INTO packets VALUES(?,?,?,?,?,?,?,?,NULL,NULL)',
-                            (pid, worker, model, digest(token), 'claimed', now, now, json.dumps(packet)))
+                            (pid, worker, model, digest(claim_token), 'claimed', now, now, json.dumps(packet)))
             for row in rows:
                 self.db.execute('INSERT INTO reservations VALUES(?,?,?)',
                                 (row['canonical_id'], row['appearance_id'], pid))
                 self.db.execute("UPDATE targets SET state='claimed' WHERE canonical_id=?", (row['canonical_id'],))
             self.event(pid, 'claim', {'worker': worker, 'model': model, 'targets': len(rows)})
-            return {'packet': packet, 'token': token}
+            return {'packet': packet, 'token': claim_token}
         return self.transaction(run)
 
     def resume(self, pid, token):
@@ -259,6 +271,8 @@ def validate_candidates(packet, candidates, current):
             raise ValueError('Candidate baseline does not match claimed snapshot')
         if c.get('policy_version') != 'study-tagging-v1' or c.get('review_status') != 'pending':
             raise ValueError('Candidates must use current policy and remain pending')
+        if not c.get('reviewer_model') or not c.get('reviewer_tool'):
+            raise ValueError('Record the actual reviewer model and tool; do not invent attribution')
         action = c.get('action')
         if action not in ('keep', 'retag', 'hold') or len(c.get('rationale', '').strip()) < 20 or not c.get('tested_skill'):
             raise ValueError('Specific tested skill, rationale and keep/retag/hold action required')

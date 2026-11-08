@@ -1,5 +1,11 @@
 # Copyable instructions for any tagging model
 
+For repeated or simultaneous work across tools, start with the single reusable
+[worker prompt](TAGGING-WORKER-PROMPT.md) and [central coordinator](TAGGING-COORDINATION.md).
+The classification contract below remains authoritative for each candidate.
+Shared submissions also require `reviewer_tool` and `reviewer_model` with actual
+attribution; those are report metadata, not bank fields or human sign-offs.
+
 Read [QUESTION-TAGGING-RULES.md](QUESTION-TAGGING-RULES.md), policy
 `study-tagging-v1`, before processing a packet. This handoff is a candidate
 contract; it creates no bank changes or approvals.

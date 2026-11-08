@@ -15,6 +15,14 @@ Before preparing a tagging packet, run `python3 scripts/audit-review-coverage.py
 --output /tmp/study-review-coverage.json` and exclude already reviewed target IDs.
 Use one primary booklet per established paper; see section 9 of the tagging policy.
 
+For simultaneous tagging work across Codex, Antigravity, OpenCode or other tools,
+use `scripts/tagging-work.py` and the single reusable entry prompt in
+`docs/TAGGING-WORKER-PROMPT.md`. Read `docs/TAGGING-COORDINATION.md`. Claim exact
+targets centrally before working, resume existing sessions and save drafts there.
+Do not create a local coordination queue, choose unreserved targets, overwrite
+another worker's packet or commit unrelated shared-checkout changes. Submitted
+queue results remain pending candidates, not published/approved corrections.
+
 The owner authorized acceptance/publication of the frozen saved AI tagging pass
 on 8 November 2026. Read `reports/owner-taxonomy-publication-20261108/README.md`
 and its exact completion ledger before continuing that work. Original candidate

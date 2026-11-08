@@ -261,6 +261,14 @@ policy as permission to change those safeguards or the original paper identities
 
 ## 9. One booklet and one saved review target
 
+For simultaneous work by different tools/models, use the central packet claims
+in [TAGGING-COORDINATION.md](TAGGING-COORDINATION.md) and the common
+[worker prompt](TAGGING-WORKER-PROMPT.md). The claim command incorporates the
+coverage audit and fresh Oracle export; reserve IDs before inspecting new targets.
+Local audit exclusions alone cannot prevent two simultaneous selections. This is
+workflow coordination under the same classification policy, not a new tagging
+rule or publication authorization.
+
 Before choosing any new tagging packet, run:
 
 ```bash

@@ -9031,3 +9031,38 @@ ledger reconciliation, existing read-only audit and live progress service read.
 - Physical PDF inspection & defect recording: 4-page PDF inspected. Verified that the uploaded scan contains only even-numbered pages (`-2`, `-4`, `-6`, `-8`), while odd-numbered pages (questions 1–9, 22–32, 45–57, and 68–75) were omitted from the source document. The 34 present questions were mapped to physical pages across Current Affairs (Q10–Q21), Science & Tech (Q33–Q40), Mizoram History & Language (Q41–Q44), and Arithmetic & Reasoning (Q58–Q67).
 - Actions: 34 retags, 0 keeps, 0 holds. Replaced topic-less baselines and retired legacy subjects (`mizoram-administration-and-law`, `pharmacy`, `mizo`) with precise active taxonomy paths (`general-studies/current-affairs`, `general-knowledge/sports`, `general-studies/mizoram`, `science/biology`, `science/physics`, `computer-science/.../computer-hardware`, `mathematics/arithmetic`, `statistics/.../descriptive-statistics`, and `reasoning-and-aptitude/series`).
 - Verification: 34/34 exact Oracle source fingerprints verified. Coverage ledger updated: 10,944 unique appearances / questions reviewed (+34), 11,025 total candidate records across 151 batch files, 0 baseline issues, 0 conflicts, 0 live database writes. All candidates pending under `study-tagging-v1`.
+
+## 2026-11-08 — Shared multi-tool tagging coordinator and reusable prompt
+
+Installed root-owned coordination code under /opt/ism-tagging-coordination on
+Oracle, with private postgres-owned SQLite workflow state under
+/var/lib/ism-tagging-coordination. No bank/API database writes, publications,
+model/provider requests, API restarts or background review workers. The client
+scripts/tagging-work.py supports sync/status, unique claims, resume, central draft
+revisions, validated pending submissions and release/defer. Atomic reservations
+cover canonical and appearance IDs; source-focused packets cap at 100. Saved claim
+identity/token permits idempotent recovery after a lost SSH response, and claims
+never silently expire. Submission rechecks fresh read-only Oracle source/document
+bindings and active taxonomy parentage; structured evidence is not proof of actual
+semantic correctness or truthful source inspection. Actual tool/model attribution
+is retained. Private local resume tokens are ignored by Git and archived outside
+reports.
+
+Seeded historical exclusions and follow-up work, importing concurrent new saved
+Antigravity batches rather than resetting them. At 08:29 UTC: 634 follow-up targets,
+67,772 ready new targets, 3,667 shelved alternate-booklet targets and 10,310 excluded
+historical completions. These are scheduling states, not semantic completion;
+alternate filenames are not proof of equivalent questions. Live published tagging
+counts remain 6,945 corrections / 3,365 unchanged / 376 blocked / zero stale. A live
+one-target operator transport smoke claim was resumed and released without any
+source-review claim or candidate submission; no smoke reservation remains.
+
+Added docs/TAGGING-WORKER-PROMPT.md as the reusable cross-tool prompt and
+TAGGING-COORDINATION.md as its runbook. Linked from AGENTS, tagging policy, candidate
+contract and PLAN. Existing workers selecting outside the coordinator must adopt
+claims; the tool cannot prevent legacy uncoordinated selection. Original reports,
+publication receipts and concurrent workers' edits are preserved. No broad git
+staging, commit or source deployment was performed by this task. Verified 12 queue
+concurrency/recovery/validation tests + 2 coverage tests + 5 policy tests, Python
+compilation and live coordinator sync/status/claim/resume/release. No frontend
+change was made; the coordinator is SSH-only and not a new admin UI.
