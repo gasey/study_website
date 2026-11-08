@@ -1,0 +1,40 @@
+{
+  "batch": 122,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/Coach Grade-I General English.pdf",
+      "paper_title": "Technical Competitive Examinations for Recruitment to the Post of Coach Grade - I under Sports & Youth Services Department, April 2019 — General English",
+      "document_id": "doc_26b74faa2a1b79119a402c5d",
+      "sha256": "cb4872cc002c43effe9d49730939f77b734a11b992ceba9d888eb49420a4ecd4",
+      "targets": 86
+    }
+  ],
+  "targets": 86,
+  "completion": "100% paper completion achieved for Coach Grade-I 2019 General English (86 appearances / 80 booklet MCQs reviewed: 16 Idioms & Phrases, 16 Grammar Core [Sentence Structure, Clauses & Sentence Types], 12 Reading Comprehension [2 passages], 10 Antonyms [5 booklet items + 5 duplicate OCR extractions], 8 Parts of Speech [7 booklet items + 1 duplicate extraction], 7 Prepositions, 6 Contextual Vocabulary, 6 Verb Tenses & Forms, 5 One-Word Substitution; 1 conventional essay question [20 marks] documented in written intake)",
+  "actions": {
+    "retag": 52,
+    "keep": 34,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 1,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/grammar": 16,
+    "english/vocabulary/idioms-and-phrases": 16,
+    "english/comprehension": 12,
+    "english/vocabulary/antonyms": 10,
+    "english/grammar/parts-of-speech": 8,
+    "english/grammar/prepositions": 7,
+    "english/vocabulary": 6,
+    "english/grammar/tenses": 6,
+    "english/vocabulary/one-word-substitution": 5
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Documented Section A (Essay writing, 20 marks) in pending-written-intake.json.",
+    "Documented duplicate database extractions for Q35, Q36, Q37, Q38, Q39 (ingested both with and without 'Select the opposite of the given word:' prefix) and Q46 (ingested twice); all 6 duplicate pairs were consistently reviewed with matching signatures.",
+    "Verified all 86 appearances against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

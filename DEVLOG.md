@@ -8335,3 +8335,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,053 saved records** (Crossed 9,000 threshold!), **8,974 unique appearances**, **8,573 deduplicated candidates**, **0 problems**. [Batch 121 report](reports/tagging-batch121-20261108/README.md).
+
+### Tagging Batch 122 — Coach Grade-I 2019 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Technical Competitive Examinations for Recruitment to the Post of Coach Grade - I under Sports & Youth Services Department, April 2019 — General English (`Old_Questions/Direct_2019-2020/Coach Grade-I General English.pdf`, `doc_8576449cb9ba5aa1982b5f25`).
+- **Paper Structure:** 100 Marks total (Section A: 20 Conventional Marks [Essay 20 Marks] + Section B: 80 MCQs [80 Marks / 86 DB appearances due to duplicate extractions]).
+- **Actions:** 86 appearances reviewed (52 retags, 34 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/vocabulary/idioms-and-phrases` (16 items): Q65–Q72, Q73–Q80 (idioms & phrases).
+  - `english/grammar` (16 items): Q13–Q18 (sentence structure analysis: simple, compound, complex), Q19–Q23 (clauses: noun, adjective, adverb), Q24–Q28 (sentence classification: declarative, imperative, interrogative, exclamatory).
+  - `english/comprehension` (12 items): Q1–Q7 (zoo animals passage), Q8–Q12 (science & progress passage).
+  - `english/vocabulary/antonyms` (10 items): Q35–Q39 (Curtail, Bane, Gruesome, Hefty, Abhor; 5 official items + 5 duplicate OCR extractions without prefix).
+  - `english/grammar/parts-of-speech` (8 items): Q45–Q51 (parts of speech; 7 official items + 1 duplicate extraction for Q46).
+  - `english/grammar/prepositions` (7 items): Q52–Q58 (at, on, in, with, to, through).
+  - `english/vocabulary` (6 items): Q29–Q34 (contextual word choice).
+  - `english/grammar/tenses` (6 items): Q59–Q64 (verb forms and tenses).
+  - `english/vocabulary/one-word-substitution` (5 items): Q40–Q44 (Theology, Misanthrope, Polyandry, Numismatist, Omnipotent).
+- **Defect Documentation:**
+  - Preserved Section A (Essay writing, 20 marks on Child Labour / Save water, Save life / Importance of Sports) in `pending-written-intake.json`.
+  - Fully reconciled 6 legacy duplicate OCR extractions for Q35–Q39 and Q46 with identical tagging signatures.
+- **Ledger Verification:**
+  - Readback validation confirmed 86/86 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,139 saved records**, **9,060 unique appearances**, **8,659 deduplicated candidates**, **0 problems**. [Batch 122 report](reports/tagging-batch122-20261108/README.md).
