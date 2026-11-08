@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_117d92d27429f12e",
+  "appearance_id": "a7216e4065ed0c714391",
+  "snapshot": {
+    "record": {
+      "id": "a7216e4065ed0c714391",
+      "paperId": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "type": "mcq",
+      "question": "Assume that we have constructor functions for both base class and derived class. Now consider the declaration in main( ). Base * P = New Derived; in what sequence will the constructor be called?",
+      "options": [
+        "Derived class constructor followed by Base class constructor.",
+        "Base class constructor followed by derived class constructor.",
+        "Base class constructor will not be called.",
+        "Derived class constructor will not be called."
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "34",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE - COMPUTER SCIENCE & ENGINEERING",
+      "year": 2015,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/7.Jr.%20Grade%20of%20MES%202015%20Computer%20Science%20%26%20Engineering%20Paper%20II.pdf"
+    }
+  },
+  "source_fingerprint": "155ece367350c41bba185244085a5ee88fb34629d4ef7b1c2acba8cb5cbfef5c",
+  "appearance": {
+    "id": "a7216e4065ed0c714391",
+    "paper_id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+    "type": "mcq",
+    "qnum": "34",
+    "qnum_seq": 34,
+    "page": 4,
+    "question": "Assume that we have constructor functions for both base class and derived class. Now consider the declaration in main( ). Base * P = New Derived; in what sequence will the constructor be called?",
+    "options": [
+      "Derived class constructor followed by Base class constructor.",
+      "Base class constructor followed by derived class constructor.",
+      "Base class constructor will not be called.",
+      "Derived class constructor will not be called."
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'assum':1 'base':9,20 'call':31 'class':10,13 'consid':15 'constructor':5,29 'declar':17 'deriv':12,23 'function':6 'main':19 'new':22 'p':21 'sequenc':26",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_117d92d27429f12e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Base class constructor followed by derived class constructor.",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

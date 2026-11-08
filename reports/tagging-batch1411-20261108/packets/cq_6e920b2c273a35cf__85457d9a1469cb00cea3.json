@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_6e920b2c273a35cf",
+  "appearance_id": "85457d9a1469cb00cea3",
+  "snapshot": {
+    "record": {
+      "id": "85457d9a1469cb00cea3",
+      "paperId": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "type": "mcq",
+      "question": "What is the output of following program code?\n#include <iostream>\nusing namespace std;\nint fun(int=0, int=0);\nint main()\n{\ncout << fun(5);\nreturn 0;\n}\nint fun(int x, int y)\n{\nreturn (x+y);\n}",
+      "options": [
+        "Compile error",
+        "5",
+        "0",
+        "10"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "19",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE - COMPUTER SCIENCE & ENGINEERING",
+      "year": 2015,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/7.Jr.%20Grade%20of%20MES%202015%20Computer%20Science%20%26%20Engineering%20Paper%20II.pdf"
+    }
+  },
+  "source_fingerprint": "eb016aa0501f7d3984f2aee35c342ef9d14114c3df36738f7aa61f7f6b8747e8",
+  "appearance": {
+    "id": "85457d9a1469cb00cea3",
+    "paper_id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+    "type": "mcq",
+    "qnum": "19",
+    "qnum_seq": 19,
+    "page": 3,
+    "question": "What is the output of following program code?\n#include <iostream>\nusing namespace std;\nint fun(int=0, int=0);\nint main()\n{\ncout << fun(5);\nreturn 0;\n}\nint fun(int x, int y)\n{\nreturn (x+y);\n}",
+    "options": [
+      "Compile error",
+      "5",
+      "0",
+      "10"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0':16,18,25 '5':23 'code':8 'cout':21 'follow':6 'fun':14,22,27 'includ':9 'int':13,15,17,19,26,28,30 'main':20 'namespac':11 'output':4 'program':7 'return':24,32 'std':12 'use':10 'x':29,33 'y':31,34",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_6e920b2c273a35cf",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "5",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

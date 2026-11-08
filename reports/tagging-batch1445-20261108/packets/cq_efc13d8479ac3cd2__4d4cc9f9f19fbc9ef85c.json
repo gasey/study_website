@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_efc13d8479ac3cd2",
+  "appearance_id": "4d4cc9f9f19fbc9ef85c",
+  "snapshot": {
+    "record": {
+      "id": "4d4cc9f9f19fbc9ef85c",
+      "paperId": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+      "type": "mcq",
+      "question": "In a heat exchanger, the hot liquid enters with a temperature of 1800C and leaves at 1600C. The cooling fluid enters at 300C and leaves at 1100C. The capacity ratio of heat exchanger is",
+      "options": [
+        "0.25",
+        "0.40",
+        "0.50",
+        "0.55"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Heat balance gives Ch(180-160) = Cc(110-30), so Cc/Ch = 20/80 = 0.25. The capacity ratio Cmin/Cmax is therefore 0.25, the first option.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "25",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mechanical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+      "title": "Technical Competitive Examinations for Recruitment to Junior Grade of Mizoram Engineering Service under Public Health Engineering Department - Mechanical Engineering",
+      "year": 2014,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/9.%20Mechanical%20Engineering%20Paper%20-%20I.pdf"
+    }
+  },
+  "source_fingerprint": "89e9ee0b52dd4a789e8216cedee07ea495bbdf394ca81911ec2ead42cf9568e4",
+  "appearance": {
+    "id": "4d4cc9f9f19fbc9ef85c",
+    "paper_id": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+    "type": "mcq",
+    "qnum": "25",
+    "qnum_seq": 25,
+    "page": 3,
+    "question": "In a heat exchanger, the hot liquid enters with a temperature of 1800C and leaves at 1600C. The cooling fluid enters at 300C and leaves at 1100C. The capacity ratio of heat exchanger is",
+    "options": [
+      "0.25",
+      "0.40",
+      "0.50",
+      "0.55"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "9. Mechanical Engineering Paper - I",
+    "difficulty": "medium",
+    "explanation": "Heat balance gives Ch(180-160) = Cc(110-30), so Cc/Ch = 20/80 = 0.25. The capacity ratio Cmin/Cmax is therefore 0.25, the first option.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1100c':27 '1600c':17 '1800c':13 '300c':23 'capac':29 'cool':19 'enter':8,21 'exchang':4,33 'fluid':20 'heat':3,32 'hot':6 'leav':15,25 'liquid':7 'ratio':30 'temperatur':11",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_efc13d8479ac3cd2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0.25",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

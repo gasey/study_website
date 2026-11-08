@@ -1,0 +1,13 @@
+# Tagging Batch 1439: MIZORAM PUBLIC SERVICE COMMISSION TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT, 2014 MECHANICAL ENGINEERING - Junior Grade of Mizoram Engineering Service (50 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_2014-2018/10. Mechanical Engineering Paper - II.pdf`
+- **Title:** MIZORAM PUBLIC SERVICE COMMISSION TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT, 2014 MECHANICAL ENGINEERING (Junior Grade of Mizoram Engineering Service)
+- **Total Targets:** 50
+- **Document Binding:** `doc_b5e39f93dfb2eeea3618fc0e` (sha256 `add710d6f78e5451063fa21d8377d6edf57e0303f08ce61e93f8d8a589927ade`)
+
+## Actions
+- **`keep`:** 0
+- **`retag`:** 50
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.

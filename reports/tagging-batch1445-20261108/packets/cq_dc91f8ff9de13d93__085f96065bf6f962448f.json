@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_dc91f8ff9de13d93",
+  "appearance_id": "085f96065bf6f962448f",
+  "snapshot": {
+    "record": {
+      "id": "085f96065bf6f962448f",
+      "paperId": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+      "type": "mcq",
+      "question": "In a long cylindrical rod of diameter 'D' and a surface heat flux of q0, the uniform internal heat generation rate is given by",
+      "options": [
+        "4q0/D",
+        "2q0",
+        "2q0/D",
+        "4q0/D2"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "For a rod of radius R = D/2 with uniform generation g, the heat balance g x pi R^2 = q0 x 2 pi R gives g = 2q0/R = 4q0/D.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "20",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mechanical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+      "title": "Technical Competitive Examinations for Recruitment to Junior Grade of Mizoram Engineering Service under Public Health Engineering Department - Mechanical Engineering",
+      "year": 2014,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/9.%20Mechanical%20Engineering%20Paper%20-%20I.pdf"
+    }
+  },
+  "source_fingerprint": "38db39ec23bb0b34c56de62d76c02ebff1ce3bc7ce1d0704de78abb3fdfda61a",
+  "appearance": {
+    "id": "085f96065bf6f962448f",
+    "paper_id": "Old_Questions/Direct_2014-2018/9. Mechanical Engineering Paper - I.pdf",
+    "type": "mcq",
+    "qnum": "20",
+    "qnum_seq": 20,
+    "page": 2,
+    "question": "In a long cylindrical rod of diameter 'D' and a surface heat flux of q0, the uniform internal heat generation rate is given by",
+    "options": [
+      "4q0/D",
+      "2q0",
+      "2q0/D",
+      "4q0/D2"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "9. Mechanical Engineering Paper - I",
+    "difficulty": "medium",
+    "explanation": "For a rod of radius R = D/2 with uniform generation g, the heat balance g x pi R^2 = q0 x 2 pi R gives g = 2q0/R = 4q0/D.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'cylindr':4 'd':8 'diamet':7 'flux':13 'generat':20 'given':23 'heat':12,19 'intern':18 'long':3 'q0':15 'rate':21 'rod':5 'surfac':11 'uniform':17",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_dc91f8ff9de13d93",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "4q0/D",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

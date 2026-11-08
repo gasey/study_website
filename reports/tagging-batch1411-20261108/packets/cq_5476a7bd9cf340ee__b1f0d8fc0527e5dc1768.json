@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_5476a7bd9cf340ee",
+  "appearance_id": "b1f0d8fc0527e5dc1768",
+  "snapshot": {
+    "record": {
+      "id": "b1f0d8fc0527e5dc1768",
+      "paperId": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "type": "mcq",
+      "question": "Reflection of a point about x-axis, followed by a counter-clockwise rotation of 90º, is equivalent to reflection about the line.",
+      "options": [
+        "x = − y",
+        "y = x",
+        "y = -x",
+        "x = y"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Reflection about the x-axis maps (x,y)->(x,-y); a subsequent counter-clockwise 90 deg rotation maps (u,v)->(-v,u), so the composite sends (x,y)->(x,-y)->(y,x), i.e. matrix [[0,1],[1,0]], which is exactly reflection in the line y = x, so the option 'y = x' is chosen. Source caveat: on printed page 5 of the PDF, only option (a) 'x = - y' is actually printed; the text layer and a 200-dpi render of the page show options (b), (c) and (d) completely blank (a garbled equation fragment sits in the left margin), so the bank's reconstructions 'y = x', 'y = -x', 'x = y' could not be verified against the paper, and 'y = x' and 'x = y' denote the same line, leaving a small residual ambiguity in picking the intended option.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "45",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE - COMPUTER SCIENCE & ENGINEERING",
+      "year": 2015,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/7.Jr.%20Grade%20of%20MES%202015%20Computer%20Science%20%26%20Engineering%20Paper%20II.pdf"
+    }
+  },
+  "source_fingerprint": "9658d56607634bab282bad31ef5f7a2770970f56ac91e04ff28b9bfb9d73f30e",
+  "appearance": {
+    "id": "b1f0d8fc0527e5dc1768",
+    "paper_id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+    "type": "mcq",
+    "qnum": "45",
+    "qnum_seq": 45,
+    "page": 5,
+    "question": "Reflection of a point about x-axis, followed by a counter-clockwise rotation of 90º, is equivalent to reflection about the line.",
+    "options": [
+      "x = − y",
+      "y = x",
+      "y = -x",
+      "x = y"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II",
+    "difficulty": "medium",
+    "explanation": "Reflection about the x-axis maps (x,y)->(x,-y); a subsequent counter-clockwise 90 deg rotation maps (u,v)->(-v,u), so the composite sends (x,y)->(x,-y)->(y,x), i.e. matrix [[0,1],[1,0]], which is exactly reflection in the line y = x, so the option 'y = x' is chosen. Source caveat: on printed page 5 of the PDF, only option (a) 'x = - y' is actually printed; the text layer and a 200-dpi render of the page show options (b), (c) and (d) completely blank (a garbled equation fragment sits in the left margin), so the bank's reconstructions 'y = x', 'y = -x', 'x = y' could not be verified against the paper, and 'y = x' and 'x = y' denote the same line, leaving a small residual ambiguity in picking the intended option.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'90º':17 'axi':8 'clockwis':14 'counter':13 'counter-clockwis':12 'equival':19 'follow':9 'line':24 'point':4 'reflect':1,21 'rotat':15 'x':7 'x-axi':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_5476a7bd9cf340ee",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "y = x",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

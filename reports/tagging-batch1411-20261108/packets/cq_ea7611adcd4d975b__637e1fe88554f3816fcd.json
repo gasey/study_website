@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ea7611adcd4d975b",
+  "appearance_id": "637e1fe88554f3816fcd",
+  "snapshot": {
+    "record": {
+      "id": "637e1fe88554f3816fcd",
+      "paperId": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "type": "mcq",
+      "question": "Semaphore are used to solve the problems of",
+      "options": [
+        "Race condition",
+        "Process synchronisation",
+        "Mutual exclusion",
+        "None of these"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Semaphores are the standard OS primitive for process synchronisation, which also covers mutual exclusion as a special case. The printed wording is the same as the input, but the stem is broad enough that the key could prefer mutual exclusion.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "12",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+      "title": "JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE - COMPUTER SCIENCE & ENGINEERING",
+      "year": 2015,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/7.Jr.%20Grade%20of%20MES%202015%20Computer%20Science%20%26%20Engineering%20Paper%20II.pdf"
+    }
+  },
+  "source_fingerprint": "221501f883f14395c068286ed011c9e872351ce46066cd75faeaab3d90456a34",
+  "appearance": {
+    "id": "637e1fe88554f3816fcd",
+    "paper_id": "Old_Questions/Direct_2014-2018/7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II.pdf",
+    "type": "mcq",
+    "qnum": "12",
+    "qnum_seq": 12,
+    "page": 2,
+    "question": "Semaphore are used to solve the problems of",
+    "options": [
+      "Race condition",
+      "Process synchronisation",
+      "Mutual exclusion",
+      "None of these"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "7.Jr. Grade of MES 2015 Computer Science & Engineering Paper II",
+    "difficulty": "medium",
+    "explanation": "Semaphores are the standard OS primitive for process synchronisation, which also covers mutual exclusion as a special case. The printed wording is the same as the input, but the stem is broad enough that the key could prefer mutual exclusion.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'problem':7 'semaphor':1 'solv':5 'use':3",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ea7611adcd4d975b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Process synchronisation",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

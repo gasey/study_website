@@ -1,0 +1,13 @@
+# Tagging Batch 1420: MIZORAM PUBLIC SERVICE COMMISSION - TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF JUNIOR GRADE OF MIZORAM PLANNING, ECONOMICS & STATISTICAL SERVICE - Assistant Grade (20 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_2014-2018/4.MPE&SS 2015 Economics Paper II.pdf`
+- **Title:** MIZORAM PUBLIC SERVICE COMMISSION - TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF JUNIOR GRADE OF MIZORAM PLANNING, ECONOMICS & STATISTICAL SERVICE (Assistant Grade)
+- **Total Targets:** 20
+- **Document Binding:** `doc_570c48a25172b7087aafc627` (sha256 `261a6d15c79cc9e47cd1061c3b17f1187998acc79a91d7223fb3be318015b908`)
+
+## Actions
+- **`keep`:** 0
+- **`retag`:** 20
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.
