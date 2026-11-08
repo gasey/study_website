@@ -8705,6 +8705,42 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,227 saved records**, **10,148 unique appearances**, **9,747 deduplicated candidates**, **0 problems**. [Batch 140 report](reports/tagging-batch140-20261108/README.md).
 
+### Tagging Batch 141 — LDE & Departmental General English Collection (11 Papers) (2026-11-08)
+- **Scope & Targets:** Full source review of 11 Limited Departmental Examination (LDE) and Departmental General English papers:
+  1. `Old_Questions/Departmental_2015-2018/General English Common..pdf` (`doc_51aa01aa947a84598a1f12b9`, 4 items).
+  2. `Old_Questions/Departmental_2015-2018/Paper I General English..pdf` (`doc_b2575a6392f3c342386ad464`, 7 items).
+  3. `Old_Questions/Departmental_2015-2018/aper-I General English..pdf` (`doc_b2fe8488b543e9e3c0b6e800`, 4 items).
+  4. `Old_Questions/LDE_2014-2018/1.Functional Manager (LDE) 2016 General English.pdf` (`doc_98f878d275ca87fda8d96a35`, 10 items).
+  5. `Old_Questions/LDE_2019-2020/Asst. Jailor Paper-I.pdf` (`doc_3fdcfae8f35982d53695b72b`, 3 items).
+  6. `Old_Questions/LDE_2019-2020/General English (ASI-UB).pdf` (`doc_977cc358a9c0eb35da3053f0`, 3 items).
+  7. `Old_Questions/LDE_2019-2020/MSS Paper-I.pdf` (`doc_400f9cc4172aaba44334b939`, 2 items).
+  8. `Old_Questions/LDE_2019-2020/Paper-I (UDC-Various Deptt.).pdf` (`doc_e9f2993a3aca5c46b2bc8e3d`, 2 items).
+  9. `Old_Questions/LDE_2021-2022/LDE Inspector of Police (MUC) under Home Deptt. Paper-I..pdf` (`doc_9c89b24d2fe1f5b373f333ec`, 13 items).
+  10. `Old_Questions/LDE_2024-2026/Headmaster (High School)LDE Paper-I-2024..pdf` (`doc_75ab5e5aeef21070b1694dc3`, 10 items).
+  11. `Old_Questions/LDE_2024-2026/LDE, Principal HSS Paper-I..pdf` (`doc_f4091465f2148568fefcff91`, 33 items).
+- **Actions:** 91 questions reviewed (88 retags, 3 keeps, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution:**
+  - `english/grammar` (17 items): sentence transformations and classification (affirmative, negative, interrogative, imperative, exclamatory, simple, compound, complex).
+  - `english/comprehension` (17 items): reading comprehension passages (worship of nature in Police MUC; hospitalized doctor and Bombay in Headmaster LDE; Principal HSS passage).
+  - `english/vocabulary` (12 items): contextual vocabulary, word choice, and collocations.
+  - `english/vocabulary/idioms-and-phrases` (10 items): phrasal verbs (8 in Principal HSS) and idioms (Paper I and Headmaster LDE).
+  - `english/grammar/parts-of-speech` (10 items): parts of speech identification (7 in Principal HSS, 1 abstract nouns, 2 adverbs).
+  - `english/writing/essay` (9 items): essays across Departmental and LDE papers (reclassified from general-studies and education).
+  - `english/writing/letter` (8 items): official memorandums and formal letters (reclassified from service-rules-and-office-procedure).
+  - `english/writing/precis` (4 items): précis writing across LDE papers.
+  - `english/grammar/reported-speech` (3 items): indirect speech transformations.
+  - `english/vocabulary/synonyms` (2 items): synonyms in context (flouted, agony).
+  - `english/grammar/voice` (1 item): active/passive voice transformation.
+  - `english/vocabulary/antonyms` (1 item): antonyms in context (enlightened).
+  - `english/writing` (1 item): paraphrasing.
+- **Defect Documentation:**
+  - Preserved Functional Manager LDE conventional written sections (Essay 25 marks, Précis 15 marks, Letter 10 marks) in `pending-written-intake.json`.
+  - Reclassified multiple cross-subject ingestion anomalies from `general-studies`, `education`, and `service-rules-and-office-procedure` to their sanction policy English writing branches.
+- **Ledger Verification:**
+  - Readback validation confirmed 91/91 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,318 saved records**, **10,239 unique appearances**, **9,838 deduplicated candidates**, **0 problems**. [Batch 141 report](reports/tagging-batch141-20261108/README.md).
+
+
 
 
 
