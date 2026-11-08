@@ -8536,6 +8536,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,661 saved records**, **9,582 unique appearances**, **9,181 deduplicated candidates**, **0 problems**. [Batch 131 report](reports/tagging-batch131-20261108/README.md).
 
+### Tagging Batch 132 — UDC under Social Welfare 2018 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of U.D.C. under Social Welfare Department, June 2018 — Paper-I (`Old_Questions/Direct_2014-2018/1.UDC Paper-I.pdf`, `doc_d15e556c33d3eca00ce079e2`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (17 retags, 58 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (24 items): Q9–Q16 (clause identification: noun, adverb, adjective, co-ordinate clauses), Q17–Q24 (sentence structure: simple, compound, complex), and Q25–Q32 (functional concepts: determination, preference, prediction, necessity, suggestion, assumption, intention).
+  - `english/vocabulary/idioms-and-phrases` (17 items): Q33–Q40 (phrasal verbs: fall out, keep up, look after, carry out, make out, get over, etc.) and Q58–Q66 (idioms: much ado about nothing, burn midnight oil, tooth and nail, through thick and thin, grease the palm, blow one's own trumpet, by leaps and bounds, leave no stone unturned, once in a blue moon).
+  - `english/grammar/prepositions` (9 items): Q49–Q57 (appropriate prepositions: in, with, of, at, to, into, across).
+  - `english/grammar/tenses` (9 items): Q67–Q75 (verb forms, tenses, participles, and conditionals).
+  - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (parts of speech identification: yet, what, half, none, like, after, while, even).
+  - `english/vocabulary/one-word-substitution` (8 items): Q41–Q48 (biennial, contemporary, atheist, invulnerable, posthumous, edible, transparent, legible).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Traffic problem in Aizawl [25 marks] and Question 2 Précis on Democracy and Tolerance [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,736 saved records**, **9,657 unique appearances**, **9,256 deduplicated candidates**, **0 problems**. [Batch 132 report](reports/tagging-batch132-20261108/README.md).
+
+
 
 
 
