@@ -8110,6 +8110,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,297 saved records**, **8,219 unique appearances**, **7,819 deduplicated candidates**, **0 problems**. [Batch 111 report](reports/tagging-batch111-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 112 (Chemist-II Archives 2020 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 112 (`reports/tagging-batch112-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Chemist-II (Archives) under Art & Culture Department, February 2020 — General English* (`Old_Questions/Direct_2019-2020/Chemist-II General Englsih.pdf`, `doc_1dff52e0078028ff515ec920`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 52 retag, 28 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar/parts-of-speech` (18 items): Q33–Q48 (functional parts of speech identification: nouns, verbs, adjectives, adverbs, prepositions, conjunctions), Q77–Q78 (collective nouns: band/troupe of singers, swarm of bees/ants/flies).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q13–Q28 (idioms and idiomatic expressions meaning).
+    - `english/grammar` (16 items): Q49–Q52 (sentence structure: simple, compound, complex), Q53–Q55 (clauses: noun clause, adjective clause, adverb clause), Q56–Q60 (communicative notions: advice, request, probability, permission, ability), Q61–Q64 (sentence synthesis / combinations).
+    - `english/comprehension` (12 items): Q1–Q12 (reading comprehension passage).
+    - `english/vocabulary/one-word-substitution` (8 items): Q65–Q72 (plagiarism, archives, ambiguous, recluse, quarantine, anonymous, soliloquy, homicide).
+    - `english/grammar/prepositions` (4 items): Q29–Q32 (prepositions in context).
+    - `english/vocabulary/synonyms` (2 items): Q73–Q74 (apathy, sagacity).
+    - `english/vocabulary/antonyms` (2 items): Q75–Q76 (tranquil, ameliorate).
+    - `english/vocabulary` (2 items): Q79–Q80 (young ones of animals: foal, calf).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: The effects of plastic bags on the environment & AMC plastic-free city initiative) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,377 saved records**, **8,299 unique appearances**, **7,899 deduplicated candidates**, **0 problems**. [Batch 112 report](reports/tagging-batch112-20261108/README.md).
+
+
 
 
 
