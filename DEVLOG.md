@@ -8776,3 +8776,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 69/69 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,387 saved records**, **10,308 unique appearances**, **9,907 deduplicated candidates**, **0 problems**. [Batch 142 report](reports/tagging-batch142-20261108/README.md).
+
+
+## 2026-11-08 — Batch 143 (Direct General English & Stray Conventional Intake)
+
+- **Target Scope:** 4 Direct General English examination papers (18 total questions across 26 rendered source PDF pages; 100% target completion):
+  1. `Old_Questions/Direct_2014-2018/Genral Enlish..pdf` (`doc_e7f3a8b417df47407a5f6e3c`, 7 items).
+  2. `Old_Questions/Direct_2019-2020/General Englsih Paper-I (EO).pdf` (`doc_76f3f019052a65d7756f7093`, 6 items).
+  3. `Old_Questions/Uploaded/768a298a6ef575d791958086c0626c7519bfecc094f850d63a05377746246336.pdf` (`doc_5191c9f743ba0b6bbf2fc6ee`, 2 items: A1 precis, A2 letter).
+  4. `Old_Questions/Direct_NG_2024-2027/LDC under MPSC Paper-I 2025..pdf` (`doc_d9239856ad7935cf1c42fc58`, 3 items: B1 essay, B2 precis, B3 comprehension).
+- **Actions:** 18 questions reviewed (16 retags, 2 keeps, 0 holds, 0 live changes; 100% target completion).
+- **Taxonomic Distribution:**
+  - `english/vocabulary/idioms-and-phrases` (8 items): idioms in Employment Officer (Hard-pressed, loggerheads, throw down the glove, shoot one's bolt, carry one's point, drive home) and SI Excise (for sale, keep up with).
+  - `english/grammar/parts-of-speech` (2 items): nouns (a loaf of bread) and predicate adjectives (seems sensible).
+  - `english/writing/precis` (2 items): Section A précis writing in Group B Gazetted (25 marks) and Section B précis writing in LDC 2025 (15 marks).
+  - `english/writing/essay` (1 item): Section B conventional essay in LDC 2025 (25 marks).
+  - `english/writing/letter` (1 item): Section A formal complaint letter drafting in Group B Gazetted (25 marks).
+  - `english/comprehension` (1 item): Section B reading comprehension passage in LDC 2025 (10 marks).
+  - `english/grammar/subject-verb-agreement` (1 item): indefinite pronoun subject-verb agreement (Everyone was).
+  - `english/grammar/prepositions` (1 item): preposition after prefer (prefer ... to).
+  - `english/grammar` (1 item): comparative degree of adjective (more useful than).
+- **Defect Documentation & Written Intake:**
+  - Preserved 5 major conventional written questions totaling 100 marks in `pending-written-intake.json`.
+  - Documented typographical source filenames `Genral Enlish..pdf` and `General Englsih Paper-I (EO).pdf`.
+- **Ledger Verification:**
+  - Readback validation confirmed 18/18 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,405 saved records**, **10,324 unique appearances**, **9,921 deduplicated candidates**, **0 problems**. [Batch 143 report](reports/tagging-batch143-20261108/README.md).
