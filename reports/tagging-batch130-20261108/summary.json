@@ -1,0 +1,43 @@
+{
+  "batch": 130,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/AAP General English.pdf",
+      "paper_title": "Competitive Examinations for Recruitment to the Post of Assistant Public Prosecutor under Lokayukta, Vigilance Department, November 2020 — General English",
+      "document_id": "doc_305e4de3ee645f253b6a7dc7",
+      "sha256": "1e01398f00ddf2dd54cbe05075bcafc899b63e364c3ec1fedfd2fd16e58aecea",
+      "targets": 15
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/MES General Englsih.pdf",
+      "paper_title": "Technical Competitive Examinations for Junior Grade of Mizoram Engineering Service (M.E.S.) under PWD, March 2020 — General English",
+      "document_id": "doc_23392c28df5ca400224f7281",
+      "sha256": "f1487ecc3c1cdbe89ec25bf5fe0d0f091a1bbe61e269a65db614f9bbe8e62a9a",
+      "targets": 20
+    }
+  ],
+  "targets": 35,
+  "completion": "100% paper completion achieved across both papers: AAP General English 2020 (15 MCQs: 5 Synonyms, 5 Antonyms, 5 Reading Comprehension; 7 conventional items [80 marks] preserved) and MES General English 2020 (20 MCQs: 8 Confusing Words / Homophones, 6 Subject-Verb Agreement, 4 Grammar / Determiners, 2 Prepositions; 5 conventional items [80 marks] preserved).",
+  "actions": {
+    "retag": 35,
+    "keep": 0,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 12,
+  "conventional_marks_preserved": 160,
+  "breakdown": {
+    "english/vocabulary": 8,
+    "english/grammar/subject-verb-agreement": 6,
+    "english/comprehension": 5,
+    "english/vocabulary/synonyms": 5,
+    "english/vocabulary/antonyms": 5,
+    "english/grammar": 4,
+    "english/grammar/prepositions": 2
+  },
+  "source_defects": [
+    "Reclassified legacy 'gk' tags on General English papers into proper english/vocabulary, english/comprehension, and english/grammar subtopics.",
+    "Documented 12 conventional written sections (160 conventional marks total across both papers) in pending-written-intake.json."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

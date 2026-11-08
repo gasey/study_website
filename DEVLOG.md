@@ -8496,6 +8496,30 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,551 saved records**, **9,472 unique appearances**, **9,071 deduplicated candidates**, **0 problems**. [Batch 129 report](reports/tagging-batch129-20261108/README.md).
 
+### Tagging Batch 130 — AAP 2020 & MES 2020 General English (2026-11-08)
+- **Scope & Targets:** Full source review of two 2020 General English papers:
+  1. Assistant Public Prosecutor under Lokayukta, Vigilance Dept (Nov 2020) — General English (`Old_Questions/Direct_2019-2020/AAP General English.pdf`, `doc_305e4de3ee645f253b6a7dc7`, 15 MCQs).
+  2. Junior Grade of Mizoram Engineering Service (MES) under PWD (March 2020) — General English (`Old_Questions/Direct_2019-2020/MES General Englsih.pdf`, `doc_23392c28df5ca400224f7281`, 20 MCQs).
+- **Paper Structures:**
+  - AAP General English: 100 Marks total (Q1–Q6 & Q9: 80 conventional marks preserved + Q7, Q8, Q10: 15 MCQs; 100% paper completion).
+  - MES General English: 100 Marks total (Q1–Q3 & Q6, Q7: 80 conventional marks preserved + Q4, Q5: 20 MCQs; 100% paper completion).
+- **Actions:** 35 MCQs reviewed across both papers (35 retags, 0 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/vocabulary` (8 items): MES Q7, Q8, Q11, Q12, Q14, Q15, Q16, Q20 (confusing words and homophones: soar, proceeds, further, eligible, latest, loose, latter, last).
+  - `english/grammar/subject-verb-agreement` (6 items): MES Q2, Q4, Q5, Q6, Q9, Q10 (compound subjects, collective nouns, inverted clauses).
+  - `english/vocabulary/synonyms` (5 items): AAP Q7(a)–(e) (frantic, humdrum, alacrity, attenuate, chimera).
+  - `english/vocabulary/antonyms` (5 items): AAP Q8(a)–(e) (ameliorate, fecundity, plethora, continence, decrepit).
+  - `english/comprehension` (5 items): AAP Q10(a)–(e) (passage comprehension on fate, human will, and responsibility).
+  - `english/grammar` (4 items): MES Q13, Q17, Q18, Q19 (degrees of comparison and determiners).
+  - `english/grammar/prepositions` (2 items): MES Q1, Q3 (beside, for).
+- **Defect Documentation:**
+  - Preserved 12 conventional written questions (160 conventional marks total across both papers) in `pending-written-intake.json`.
+  - Reclassified legacy 'gk' tags into proper granular english subtopics.
+- **Ledger Verification:**
+  - Readback validation confirmed 35/35 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,586 saved records**, **9,507 unique appearances**, **9,106 deduplicated candidates**, **0 problems**. [Batch 130 report](reports/tagging-batch130-20261108/README.md).
+
+
 
 
 
