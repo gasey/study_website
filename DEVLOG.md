@@ -7859,4 +7859,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,179 saved records**, **7,101 unique appearances**, **6,701 deduplicated candidates**, **0 problems**. [Batch 98 report](reports/tagging-batch98-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 99 (Veterinary Officer 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 99 (`reports/tagging-batch99-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Veterinary Officer (V.O) under Animal Husbandry & Veterinary Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/General English Paper-II (V.O).pdf`, `doc_b697d23ab86ea47e4975b55d`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 35 retag, 65 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (60 items): Q1–Q10 (functional parts of speech identification), Q21–Q30 (adjective classification), Q31–Q40 (modal auxiliaries), Q41–Q50 (sentence types analysis: simple, compound, complex), Q51–Q60 (phrase types identification: noun, adjective, adverb phrases), Q61–Q70 (sentence communicative notions: affirmative, negative, interrogative, exclamatory, comparative).
+    - `english/grammar/prepositions` (10 items): Q11–Q20 (preposition selection in context).
+    - `english/sentence-correction` (10 items): Q71–Q80 (phrase improvement & grammatical substitution).
+    - `english/vocabulary/one-word-substitution` (10 items): Q81–Q90 (one-word substitution / term definitions).
+    - `english/vocabulary` (5 items): Q93 (female pig: sow), Q94 (Dei gratia), Q95 (chain of mountains), Q98 (astronomy : astrology :: chemistry : alchemy), Q100 (young female horse: filly).
+    - `english/vocabulary/idioms-and-phrases` (3 items): Q92 (cut your coat according to your cloth), Q96 (black will take no other hue), Q99 (as graceful as a swan).
+    - `english/vocabulary/antonyms` (1 item): Q91 (chronic -> acute).
+    - `english/vocabulary/synonyms` (1 item): Q97 (launch -> begin).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,279 saved records**, **7,201 unique appearances**, **6,801 deduplicated candidates**, **0 problems**. [Batch 99 report](reports/tagging-batch99-20261108/README.md).
+
+
 
