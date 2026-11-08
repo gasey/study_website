@@ -1,0 +1,356 @@
+[
+  {
+    "canonical_id": "cq_eedf6933d6741756",
+    "appearance_id": "desc-5236b60dcb5bcb4338f9",
+    "source_fingerprint": "94685708526bf589caff9ce655fbed04faafb3b5c9d5572a2d9e9692d6cb8aa7",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71aaca01487fc145",
+    "appearance_id": "desc-96819a32043f014fba85",
+    "source_fingerprint": "4ba94f46b344ee5699407a57d963f1d396971a4d1c45773c069b08860c6d1722",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c94c2834604c4e0e",
+    "appearance_id": "desc-6513c375e1fa8dc9d720",
+    "source_fingerprint": "73d709d0f4c3d78b7a339ed07536223a38d6bd56f32fdc34ef1a2ceba051957b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5eb76369a2ee2a55",
+    "appearance_id": "desc-90b7d9f81c90b57d2985",
+    "source_fingerprint": "52cb2b1c50ad304bb5e8aeea92e7b0fa868c1935960d79a4ae54c5f03ae61663",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_05b03c4455cb83fd",
+    "appearance_id": "desc-3eb73188fc1118ecf5b2",
+    "source_fingerprint": "c64c98ba20129821246b7d14133d341b50b8d22e1285514e9d39436c14a64823",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e6a23a3358e8f74",
+    "appearance_id": "desc-54cd521b84dee058030e",
+    "source_fingerprint": "e28ff75dc2b60f9602e68863a335ecebcf74b3b45b5db88d990d4c05da81807c",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_957ac20f6ca05582",
+    "appearance_id": "desc-fdb2f0bc3693d17a7192",
+    "source_fingerprint": "bffaa0ca455accf114ca41174f0d26359122ff67f87174b2f3f886e8a8d50c32",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4efc2868d319ee5",
+    "appearance_id": "desc-5b2e6187c91dc6ea53b1",
+    "source_fingerprint": "bdc918821231bfddeacda1fddf62236beaee3ffb1da9b82256fc28a191af97f4",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0a1dec8c3a1af839",
+    "appearance_id": "desc-b2603f8c7f68118a71d2",
+    "source_fingerprint": "caf607f8c9ddaa50da50bd044519b0eba6a6c9ba19753775ca23b7f01d30e4e5",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_03d23df90db61bfaa74c4975",
+      "sha256": "27db245416ed905f3371a780774f83355af1ad62bf8736074aa26ea10a549f65",
+      "note": "Verified against registered booklet source for Principal, Govt. Higher Secondary School."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

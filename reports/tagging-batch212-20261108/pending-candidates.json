@@ -1,0 +1,626 @@
+[
+  {
+    "canonical_id": "cq_7ad0366d9b67bc8f",
+    "appearance_id": "1225d78cbe6399de122f",
+    "source_fingerprint": "62e677c9db55d15841da4f3b2be9f688bcae55a0aa90e3eb834c26b392f17011",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(ii) assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1d642a2c89d2c0d4",
+    "appearance_id": "5665bcd560e4d0c955bc",
+    "source_fingerprint": "06e1c2e18d6bf5f048372f5207567b9fac5850c3551075b97f60bdc195ae35ec",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 11(v) assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cda1a178552e21a5",
+    "appearance_id": "581c4e2b9b69a2d5ddaf",
+    "source_fingerprint": "081ed9e3f72b1921ec18fbe63a64bb85772d704fe966b042aabfe665a929480f",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(vi) assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e33ef67dc8d9e24",
+    "appearance_id": "65bae4b67d02d2f24a79",
+    "source_fingerprint": "e813fd6dbfd2416377a26f92ce588e46757c5c270d8f82cce59ca9652d033eab",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4(iv) assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_590d25a2e3030434",
+    "appearance_id": "70dce4c2c820fee9bf14",
+    "source_fingerprint": "389258f8a3d815b569c3008303aa1fd95c5a02ba6f15164ceac64a90a4347e47",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 11(iv) assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b28084a21f27d662",
+    "appearance_id": "749860c35bcf8177ad09",
+    "source_fingerprint": "2185497d96005c930e926491d8897deb82639f8e52d31cadec6d40751e3e4912",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(i) assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_51d2181ef987dc55",
+    "appearance_id": "7829800cc6be57c38577",
+    "source_fingerprint": "f249e37fa1e29eed867a8081f60b9e5fef773ab5fb01aa680c8f08a374605514",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(v) assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb21de01423132a4",
+    "appearance_id": "7af3cdf95642f14b5ee4",
+    "source_fingerprint": "1ceb902ba492eaebea4b22476953077f5a1995b3a713d911f0ebb9c44920d296",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4(iii) assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_554885980353bb35",
+    "appearance_id": "8af6a6b589e5561bd571",
+    "source_fingerprint": "32958f6cc083f3366e66c88851a47c6d2169888401e8d6964bf99fec4c9d5bbe",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4(i) assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7babb47fff26d390",
+    "appearance_id": "9198aeefd933277f4e69",
+    "source_fingerprint": "5cc22c20c4928622957646ab84c951dc625935e6db580105b25966f5de715e98",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 11(i) assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c662233a7d6a91a",
+    "appearance_id": "a3ec8c3dab26598c586c",
+    "source_fingerprint": "16e931705ce189f7bfb80daeca765d0d41e5ce21354085512265456a932ae1dd",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 11(ii) assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_24ec86d557e0eb75",
+    "appearance_id": "b5137f258a01e5b55b04",
+    "source_fingerprint": "684f2c59ceb9e13e7e9fa379b30ddd6e6c0c7b31a420a7e6373f697908f31068",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4(v) assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7af7aaa043912271",
+    "appearance_id": "c1032552fc3192f74bd8",
+    "source_fingerprint": "66bb2991ad9eb1773bca8a0c4cb8503e6068146a91e4c93cf18db9526e6143b3",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4(ii) assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71803890562af0ac",
+    "appearance_id": "ec7ff4bcac7f0c1941aa",
+    "source_fingerprint": "ae0c4a281a39dff57af8d4a3571accfd0bf0d9695b7a2b447279a768270622a9",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 11(iii) assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20c2cf07c8399ee7",
+    "appearance_id": "f99f593c39a9a2741624",
+    "source_fingerprint": "83e41662483064657bab30c2f103dba651ebdb342698bef43b8c2e8082c48bed",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": "english/vocabulary/synonyms"
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(iv) assesses english vocabulary: Synonym and antonym identification in context. Appropriately classified under english.",
+    "tested_skill": "English vocabulary: Synonym and antonym identification in context.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_46ca51b98e9895f6",
+    "appearance_id": "fbcf3e703c51b9e6c0b1",
+    "source_fingerprint": "631b7a51a74ee02053a3433aee9a3da9d42c5eddc64ca45ca030c352e5707d66",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3(iii) assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d801a097d47a4a55af2c0601",
+      "sha256": "5f3f49d58538b59485d0128e9011719007827872878df225ece1b6e9d108d895",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

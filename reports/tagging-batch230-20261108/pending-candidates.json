@@ -1,0 +1,977 @@
+[
+  {
+    "canonical_id": "cq_0714f0f472234910",
+    "appearance_id": "1be04d61b01a120d9b4a",
+    "source_fingerprint": "185fe0d365afa9439f523e9ce8bcaace03404809abf63271ae23442580ac1dd8",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85575c87c3eb7c12",
+    "appearance_id": "desc-44bdd71bd63e987fa5a4",
+    "source_fingerprint": "99c6f36529eccb12684858cbc0fbb5424e29c1dbe1d447ea302a82cc1cc0fb9b",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_029fb501dccd4d73",
+    "appearance_id": "b0ffe9281e69017c1417",
+    "source_fingerprint": "981a4042b2813b93d22c4ca84e2e1f9314c4492edce841cc3228edbda4dca3e0",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28f2bf121344ed67",
+    "appearance_id": "71a1f42d8011a4226bee",
+    "source_fingerprint": "ba6929e3524bc63cbc32dbebe26e63afac9598b1113d1911973529c18f0aa76e",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d0334643ab9a8c3",
+    "appearance_id": "desc-97afea1dab478631d084",
+    "source_fingerprint": "6162d3d5b5245915f0c2dcffe71c3473c759636baf3de005fb0d93c27c35b16d",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_836e5f8a50062019",
+    "appearance_id": "f732f6dd72d4b156bd29",
+    "source_fingerprint": "45b91245a036123e75c826bbef6bbb5349aa672dbf2f06c79370b9ea4566a67f",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_253e59e4577255d2",
+    "appearance_id": "bdbad43c26ba15fde71a",
+    "source_fingerprint": "a33a1e99b7bf3eb552ea454531119d5b90769ae18528071915082a257720ae04",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_edbae415f4f5399b",
+    "appearance_id": "desc-c328ba6766cf653936a8",
+    "source_fingerprint": "2ee86ecdac320df3d1e7a02df6f3005361b85597fafba0ca1e98771b48f1b0f6",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d526a047153da7c2",
+    "appearance_id": "1df76360b552c2091c04",
+    "source_fingerprint": "1a44f638238813dc2fa7576909c59b28277e411709462095f7bfc5e77115a4ea",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44d992560fa33b25",
+    "appearance_id": "desc-04ef2c5ec2fa43d06870",
+    "source_fingerprint": "dcedcde390442619b8b4dac3cfd006528e19494747476f0e69b080c3d4dd5175",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be040f4a24ae3145",
+    "appearance_id": "desc-7b0a17847c6f1863c2ef",
+    "source_fingerprint": "7e7f840d74204f10c1f5729721dfacc985ecbd45282890544f733604f30d13c8",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa06ff60024d74fa",
+    "appearance_id": "380ac878cf263c3cfbe8",
+    "source_fingerprint": "edf832ac3daab3ec99d81c704734345cccbf9450630f23474a8c9199f28f37d4",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6d7ae4ccabd9541",
+    "appearance_id": "desc-cb5fc4ee83448c128136",
+    "source_fingerprint": "e772d6b13b148600ef3e6d178bd5d0ba4ffab7855e7c45c9fb940b832e1475d4",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f0a8fcc8edaa697a",
+    "appearance_id": "a99dc2b5020cbdadf444",
+    "source_fingerprint": "d95ff7085d189b3d0d529a67e876b30035ebd91204ec0b3a1df72a3f56d49b48",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b294d5a53f8eed6b",
+    "appearance_id": "desc-3692f5e88381a22b47f2",
+    "source_fingerprint": "b7baa5d66503f085d82778ca89740cf43bc578cead6924d0e2d7fdd0089b7d16",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e461c5623702393",
+    "appearance_id": "8da7a96947be337a3bc0",
+    "source_fingerprint": "93204630adc71bb38b0c830498fa61bfd553340a71bdbbdf7c10608189c42422",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87b46586356ea467",
+    "appearance_id": "desc-779ef31b1a58d9750135",
+    "source_fingerprint": "ad2fccfb5dae1e7fea222c8ad20e91fd30bc47dd9c8076e6ecf8dbfdf3cf1dc5",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e01a3a204c5daaa",
+    "appearance_id": "desc-088f1f19519bfbc23072",
+    "source_fingerprint": "2b5b638ae1a86272909373c39fba14a7264b907dab7f456a474e7ebad589e870",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c97dc840eb38793a",
+    "appearance_id": "f2cf610547da7ddabb2a",
+    "source_fingerprint": "6571ba31843fe13f2bf7990d226977317b3beeb97959cf6755361f0c209f8b94",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2da5a4e4414b12d",
+    "appearance_id": "c974baa522fffc6a1863",
+    "source_fingerprint": "c85a7533f19c8df0dea82fa54218bcdd4ae899dbe9271232844f37a55b071eac",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec591fde3e4a1143",
+    "appearance_id": "9f5256b43923363dacab",
+    "source_fingerprint": "2aa35ed1503bf43a5c21d350f4f79c7184dd854640f77a7b6f44f3d02de3d6ae",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1fd41b577cd5279f",
+    "appearance_id": "desc-dd1d369552efab326df7",
+    "source_fingerprint": "2b07ea57e34c88411f925a6986d55811f814a41ccd03132f3b448c6b19f578cc",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b8de0bde408c79c",
+    "appearance_id": "desc-f32220b511aff95639fb",
+    "source_fingerprint": "b77353b5ae285037aa6676a03015554c357471d43d6cc8395e28d7735e2e9495",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7257619cdeb7898",
+    "appearance_id": "desc-d72fc62e6089bd024bd4",
+    "source_fingerprint": "0cf86bbba6432ae8719da1b687bbac358a6fc958d65ab7ca1f7fc859081dedff",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66098ba6f0fa870f",
+    "appearance_id": "desc-f662291875b76f25a132",
+    "source_fingerprint": "18872ae71bc96c8cd27ee6bc2cabb130165ec7cfa3dd935982d004ea1ac1b49e",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_4d4273eb0230759b4636f4c4",
+      "sha256": "256b63507b3ee2de3bd7d622cf2b2458e9fe78647ccdaa13f061bf1f861a80f7",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

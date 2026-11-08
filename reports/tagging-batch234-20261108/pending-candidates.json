@@ -1,0 +1,431 @@
+[
+  {
+    "canonical_id": "cq_9ea2e3b2fec34f5c",
+    "appearance_id": "desc-7ce20ccb8cc6ad60c512",
+    "source_fingerprint": "cdb31835cc03a3b6280dbb4e2cfd15696cff8ec996143aa965f24f2fce44c93d",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8c5756a0e00e95d2",
+    "appearance_id": "desc-66ce643d0ea61cc0a550",
+    "source_fingerprint": "660ac597a566441a25a9fe702e1a6f05707767d00dfd10ac140d6697b0725f58",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_84c3937938c0efcb",
+    "appearance_id": "desc-fe34ff906d0ca8677188",
+    "source_fingerprint": "bf7a5373d4a30515a87371e3259de2121cd1a8147a80333aaa1af520a77ccc8a",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a97dea1205be023b",
+    "appearance_id": "desc-81cc03f924667989e26d",
+    "source_fingerprint": "f080d653e93d5063a0afdd1b51aa5726c68438698ebe3d7589a416c5c696cf43",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06df1a89dfface98",
+    "appearance_id": "desc-2ea2a436d989e570b666",
+    "source_fingerprint": "c8ca835370a1a7bb967c3bedff7fc81bea61453b342b40df663fc6535aac4870",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff07119468a3bb53",
+    "appearance_id": "desc-630bfbbfa1737a3c6a7c",
+    "source_fingerprint": "f7e0c81e809a76da51c62c8f9c0cf4e432c24ab73c47727a855e23a83897b156",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_47e5ce5011441d5e",
+    "appearance_id": "desc-ee3cb3cd4a5e30bc8487",
+    "source_fingerprint": "20920009216ec547a8d34d833861b412018add46760d64d4d8f370c2880dfa8c",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_736cb16644ab0de4",
+    "appearance_id": "desc-0fec0b9a3bc17f7fb867",
+    "source_fingerprint": "da9be9aa58ff2587d26b3e680bf8d92745e6320cc59ca2d35521aa453c838e27",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e7de05893c52e041",
+    "appearance_id": "desc-f36f577d506c04170d48",
+    "source_fingerprint": "b3b0717766bb0e9f26dfefa8d58d2b6062326620686d5780ff11b225814e13ee",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66ef9182378ca447",
+    "appearance_id": "desc-1648e6907f3c0172c52a",
+    "source_fingerprint": "de07b5246b389b383996954474b48c1b484a61cace6dac34955d0d9ce373eaa9",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under service-rules-and-office-procedure. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Assessment aligned with syllabus specifications under service-rules-and-office-procedure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2cbb006e3be07bf",
+    "appearance_id": "desc-013c6ab0ae0d31a9065d",
+    "source_fingerprint": "67bc07edc6e2056683fa0a574205885124cd4d4f287afee405f2840bf78d9bc6",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e8a28fdaeea33eaa70d8d296",
+      "sha256": "9e227c978f5d4ce6975e737e1f8de1d302001e4476c80264ba70af359593e7e8",
+      "note": "Verified against registered booklet source for Veterinary Supervisor."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

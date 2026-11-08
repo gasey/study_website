@@ -1,0 +1,1172 @@
+[
+  {
+    "canonical_id": "cq_4c2a7109112bcc69",
+    "appearance_id": "desc-1420d5d2c34154804a82",
+    "source_fingerprint": "d30d9de4ff11278942c3379d84bc9ac126684cbf5e5a60cd6679593726fbbf6a",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91f3d3eb65f0d8dd",
+    "appearance_id": "desc-6b133effe15413d8639c",
+    "source_fingerprint": "433e2c68832681b92b46a3a69faad3c03346f18be4a781378596d2901f4346f1",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b678e131b72d6ef6",
+    "appearance_id": "desc-736a78904aaa1983001f",
+    "source_fingerprint": "e1136849274e819fb78f935cdeee4b7d66ee03f530f96e9436acb02c36d452df",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3f17557bee8a250d",
+    "appearance_id": "desc-7c24edb7336830dec7f8",
+    "source_fingerprint": "81e67bb596eaa7850e6b6ae60b0be15bc04273e3c9d39c9e95397f9f7d8bef24",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8bb44a50ad7dff1b",
+    "appearance_id": "desc-915afd9e44755e3d3b64",
+    "source_fingerprint": "417b6d8782d996c4bcd1820ad7a3456cd7882eb7d64f3441f9127cf7cd344a5f",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6830b45bff213017",
+    "appearance_id": "desc-976706c6a79d133df532",
+    "source_fingerprint": "07954ed69839361af19b2b61b41d645d9fb07566fab94f847cab02e0ce7ff800",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39e0229c8ec55045",
+    "appearance_id": "desc-9be044dca54709c9634d",
+    "source_fingerprint": "69897b6eb08971c411291f0e88cdaccb856b08d15c3ecd39a513cab30a411586",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_49c2171a14bba5e6",
+    "appearance_id": "desc-a9104fdfe00148aa8c3a",
+    "source_fingerprint": "893ea0102f9fc09fc340d3708c09ddbcf47501a4d23109bc18071243e727fa40",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_525950f227ffe2e6",
+    "appearance_id": "desc-12b194401a814d4abfe4",
+    "source_fingerprint": "02d5ba4216b6e9aec82dc223eba107e0d17bd52779c7bb5af4851ff8c14768bb",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba89092e8452c1a6",
+    "appearance_id": "desc-17ccf5e7a14f75d0e27b",
+    "source_fingerprint": "f55a8c2986553cbaea2536810e76c05a37f69dd313c2003f268a72d0b30a474a",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_143eaffe87b261e5",
+    "appearance_id": "desc-288cd208d5dcc685788f",
+    "source_fingerprint": "19789e82a60fe7ef454cbf863f20482409444b5ded5cfd82e39505f0084de31e",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22ad2e7579f9ca64",
+    "appearance_id": "desc-72fb5d8d088eb020a8eb",
+    "source_fingerprint": "9d36ffbee5c2df417b149d411c765fea85dc73d7446f09435d902ce998d56cdb",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f50c2d73d451720d",
+    "appearance_id": "desc-7c50d76425d8abc3082e",
+    "source_fingerprint": "a28fd3825761a400caa4831c2563abdb58db73447f0c01df1997ec1c350c2da1",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f844c4ce5abf848",
+    "appearance_id": "desc-dd0a57d8c6342ce64c78",
+    "source_fingerprint": "658fc9d987071af43be3faaf15cff0078f60aface7f9c1e5ef2204802a16ffff",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_502c1f2e5711d851",
+    "appearance_id": "desc-2d288d40af905e7d50f1",
+    "source_fingerprint": "c4f0b9639b772586c4db95d351d6b74ba8570696d2f368cb1f3aaf1cc1e0e426",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4fa292ff7daa65f9",
+    "appearance_id": "desc-809d254e58038d62bc0a",
+    "source_fingerprint": "76cda30c8aa21764ecc98ea982eebd7d50154a0a3a993ba2d3a2a87d84b6b9af",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_03daf41c28a9f0d0",
+    "appearance_id": "desc-a4426471e9b61f01440a",
+    "source_fingerprint": "f2707e7d56bca2ae90adf8a117e406a107578cefd60ec20d5d27507333422684",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_774184a5bbfbcd90",
+    "appearance_id": "desc-e5ea5c5dd473d99cf32c",
+    "source_fingerprint": "d3035a81093c89325abc136e28a89df2398bb54524765a8f9435a7b9ed0bd15c",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f00f3441625ba082",
+    "appearance_id": "desc-20f8ec2726500137a8b3",
+    "source_fingerprint": "f7213af0a594db49b64d1105187cfa5d39007fd6672de14a81197a7eb19db7f1",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6eb36b7031e9721a",
+    "appearance_id": "desc-ad94b960c6b403c4604d",
+    "source_fingerprint": "7324f891d97d11979db40fde283f009c34dca83e16dbbb13a221fa9cf36ee7c0",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7eb10edcd2d4c02a",
+    "appearance_id": "1d819b3c34f2414dd313",
+    "source_fingerprint": "a16edc7dae677a560e105ca89ea2bc038136f55e5c672216c4b467a64be1037d",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(f) assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8bb421bcc4273bb8",
+    "appearance_id": "374f8174322672721d6b",
+    "source_fingerprint": "7074c0b57f823bb5ea66c438e7b1fe07653caf5b640049fc1763f92e545bca52",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(a) assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_afa149ac1984d640",
+    "appearance_id": "6b42d101b0999842831b",
+    "source_fingerprint": "5282b63f5ea9365dca81abe33b90c1498cf29938168f8cb508383cdd60421943",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(d) assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56d3a266bbd79dd7",
+    "appearance_id": "88a3d6d1ead952241a88",
+    "source_fingerprint": "b545426339e60e048559af0735cfbe0bd45773e8cc97e332821118de0865249c",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(h) assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5af6cce55f7932ad",
+    "appearance_id": "8fda08ac4e4353888e76",
+    "source_fingerprint": "7dca210f1d029c6b11c2c57ff87225a230499dd3bea00c4d4aa1061c57182720",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(g) assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec6b9c3f95b3bc3d",
+    "appearance_id": "afda4cfd08f6562443c3",
+    "source_fingerprint": "949b7b2058f6f46b04cd757276fb123dbb8eb23775316ddd6bee3e7e298f771f",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(e) assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_95561e9cb87af146",
+    "appearance_id": "d0eda71d064ca22aa174",
+    "source_fingerprint": "2cd90b42bb54330adf5714a56326bc073b6824e04082eb28e5e71310de72caba",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(j) assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a84e5c16c89334d3",
+    "appearance_id": "dfeb343542d75ba401a2",
+    "source_fingerprint": "efbbe82b32f95ee552bff133c06063ccdd8208631c0df115714019a99d4bd86e",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(c) assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3c0046b9b135b085",
+    "appearance_id": "f42fe114ae0e38e0f711",
+    "source_fingerprint": "7fab1c7379d0eaf39ba138e9b1f2ef756a5e5fc6acc755f96d6d00751ef2e7fe",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(b) assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6d9d5e8b1454a909",
+    "appearance_id": "f7eeaff7dbf0ab2353f8",
+    "source_fingerprint": "3de72d4468208f1bd338ecd9ec64fb36695db3e735890deda277da488dd95e9d",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1(i) assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_77b311e145faefb3262c12e2",
+      "sha256": "d87b48fa751b8283e904e1be5cb6e24aad656b1c6a55ecbffa345556717c0466",
+      "note": "Verified against registered booklet source for Headmaster."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

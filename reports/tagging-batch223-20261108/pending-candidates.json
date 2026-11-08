@@ -1,0 +1,236 @@
+[
+  {
+    "canonical_id": "cq_ae6f495df8248de2",
+    "appearance_id": "debefc7096db9980bd7d",
+    "source_fingerprint": "b00f0b7501a0fbdbff1b824cfc81cc3d8dc737c6b2de1bdde28700f74abfa6ea",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8cb4b5e88f78632",
+    "appearance_id": "1dd5022ae6602702831e",
+    "source_fingerprint": "141604db833c4b8e88cfabebccc2dc73426cbafd203e4dfe547b7ae65112eb65",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5eab1cb53f641255",
+    "appearance_id": "208c0d5df73583ce509a",
+    "source_fingerprint": "26cc1b04810b7f2eff535e4f3834e0475fb0b10465c16d8770ba169002ff7d43",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b68ce365df167de6",
+    "appearance_id": "d4d8bdb85c9c6e85f332",
+    "source_fingerprint": "b15810a64bad44c12bbfb88a9e8bb7f96d641d8a8f5b7fb17fb37d91679ce442",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9c4041c2d411014a",
+    "appearance_id": "e8466ff98f7e6d50375a",
+    "source_fingerprint": "ca5419350fc3d908c0f4d00b4de26061c622cc402c261d51538fbfffc5094bb0",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_451d60419b436135",
+    "appearance_id": "d9dd9df6a4e4a0355cb6",
+    "source_fingerprint": "94ec5da1abc55bad3966d46aace8d642ca53d075a9b17e452568842ef53e3a8c",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d6862c9b01d2a88d5519456b",
+      "sha256": "491604dc7007a504fc7dba82f2fc4fdaf0922a2ae2c2c2eb14e134bb4e4054e4",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

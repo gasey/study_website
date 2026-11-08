@@ -1,0 +1,708 @@
+[
+  {
+    "canonical_id": "cq_52af3ec04cad5ba6",
+    "appearance_id": "desc-37d6b9fba52f34a53ad2",
+    "source_fingerprint": "090b49768af0fc89e8bd51d8cf0a67d69ac81806e97920619eed87cdc182739b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8b7b88f12075ec2f",
+    "appearance_id": "desc-ad0cc836ef35fcf7d0a8",
+    "source_fingerprint": "bbc9b7c24418b9427888864a4515e3f4567fc7026737673d3240f1ee1456247b",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_82a5d3f600e0293b",
+    "appearance_id": "desc-dc5fcc224d2370fc1879",
+    "source_fingerprint": "caa515851c1fd186b58699572d4a2ed81e4d61c36190485175abbffe0ef36b39",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under economics. Appropriately classified under economics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under economics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e0ae8fa1b79cf5cc",
+    "appearance_id": "desc-0ac784f511411ff899b4",
+    "source_fingerprint": "5f286c0e33ad2c29a7bb961cd9ea10f621ae83ea8510b1c208aa9c897338d8a1",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_298032c1b5513fc3",
+    "appearance_id": "desc-68399b2e82a33266bf46",
+    "source_fingerprint": "0e0d085173384ae8e15dea0e08b4183ac5a719808e4e52ba4acebc1da07319dd",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54105552c2ee9fc2",
+    "appearance_id": "desc-36ac427128e69368a8a5",
+    "source_fingerprint": "20b84f4fc887540b037f66c3adb90c2b56652da33e6bc19df9e9672c3c69838f",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba3eb051c640a464",
+    "appearance_id": "desc-c119e1b4ff3ff66286d7",
+    "source_fingerprint": "84bb22ffe6ab75ce92c923d363d7116c58f6b655fabc33e3ace0bb896d12527f",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_af41b40ae5fa148c",
+    "appearance_id": "desc-e01cc281d2bcaff7d765",
+    "source_fingerprint": "fbaed614920b0b5a8f234e9ff5582bbf9e5a641d5c712c51a9a6a7d42a39b916",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71dde37fce3e0421",
+    "appearance_id": "desc-6915ea18f3380bfafa42",
+    "source_fingerprint": "13b21d223350e4de8539af0fbbbb8a7a22961af6b59d98605a1c632439afab3a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b74c07f4020bf3c7",
+    "appearance_id": "desc-5f715f1a49286961f8e2",
+    "source_fingerprint": "8dff9fc2d458e23be4faa24290352ac4e8933b5c4d540e11a085b9a62767de91",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0928c0be8555c639",
+    "appearance_id": "desc-fae9969a8022effc5452",
+    "source_fingerprint": "c2a7f920237ce54277d6bb007e95f8ab38b928ce49bed7dfc240fddc8fb1805c",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under commerce. Appropriately classified under commerce.",
+    "tested_skill": "Assessment aligned with syllabus specifications under commerce.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3064a10e4b17194",
+    "appearance_id": "desc-32d9faab2432311dde9e",
+    "source_fingerprint": "65ad61197095de22871cb09d4f257ab2e3645d9865a6d1cb88d4cbacb38c7855",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under commerce. Appropriately classified under commerce.",
+    "tested_skill": "Assessment aligned with syllabus specifications under commerce.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32f1b386e0573324",
+    "appearance_id": "desc-98e7659d6bb4b20c124d",
+    "source_fingerprint": "6ae899d42c18b36edb181b458d45d047adfc0851887d5d57b299b23d5314e2ad",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under commerce. Appropriately classified under commerce.",
+    "tested_skill": "Assessment aligned with syllabus specifications under commerce.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb5093989124b198",
+    "appearance_id": "desc-d656e4f426cc2901027d",
+    "source_fingerprint": "12aa3a387088086e32ba9f27cd1e0fc88014a69b36a3426ad50aa0a65bf24cff",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_689765fef4d3b5d4",
+    "appearance_id": "desc-a12034e422528ce6155e",
+    "source_fingerprint": "79ee62ca1d412a9f95affdb7f3b4c8a36441010bacddff379e3c9f9658c7db42",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1470b33ca896c0a",
+    "appearance_id": "desc-8c59bd6137ebd00d9b18",
+    "source_fingerprint": "50e09f728939e9bc07b81c1bb5b76149770e93544847dd952ce02f6ccbbf452a",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under economics. Appropriately classified under economics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under economics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2c5d5f021d14c99",
+    "appearance_id": "desc-f94a0867fcf0be2e43c5",
+    "source_fingerprint": "d0e13d198a82b1c7250af4c98e253e3412720de7e06ea6792c2596dedf422cf4",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ad1f9a662292951d",
+    "appearance_id": "desc-41284fb783aa66cc531d",
+    "source_fingerprint": "5b69019f358f943e78022be1f76dfacfe8b58643ea97798d21d8ebb634f3767d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fe34c07964c34f45c942dcd5",
+      "sha256": "a52e616a2a8e67eb74ce6d14d69dfef8b31eed34d771dd35295a5312d01aa82e",
+      "note": "Verified against registered booklet source for Functional Manager."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

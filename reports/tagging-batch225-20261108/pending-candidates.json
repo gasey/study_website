@@ -1,0 +1,431 @@
+[
+  {
+    "canonical_id": "cq_bfbcd40df49f9a64",
+    "appearance_id": "dc623dda9b501653d630",
+    "source_fingerprint": "561823e54e2763dd5a11d5ae20206bfe7b6303379ebdb8cf302a39119e185256",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ed33a17565fcf713",
+    "appearance_id": "a746aeb39d579d616360",
+    "source_fingerprint": "e2e203c5640c28c08890516ad3e40cffa68d690195fe39bee26e08c8697c4397",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/comprehension",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses descriptive statistics: Data representation, statistical properties, and frequency analysis. Appropriately classified under statistics.",
+    "tested_skill": "Descriptive statistics: Data representation, statistical properties, and frequency analysis.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd27ee79505c726b",
+    "appearance_id": "95682f643d5576169dc6",
+    "source_fingerprint": "5c8c903a8710b697c1b379c742de718f8a3cf1937161890b18f583baa11ca523",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_42eec82b59fb7ff5",
+    "appearance_id": "b4c3bfe22c4fa36fd461",
+    "source_fingerprint": "983ad6e302e1e4860aa177cdb5f5fd13a02db9024b4484faa2494db55c8a972d",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_736498e8d57d1093",
+    "appearance_id": "7ebb7307f52c756d46e2",
+    "source_fingerprint": "45999985f660353dd30f452f5e88b7cded2d8945a9ec7d898eb497ee6e6b94b0",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/health-programmes",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public health: National health programmes, maternal/child care, and disease prevention protocols. Appropriately classified under public-health.",
+    "tested_skill": "Public health: National health programmes, maternal/child care, and disease prevention protocols.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e175cf2c999dfa7c",
+    "appearance_id": "9c6a72b57f14863ae492",
+    "source_fingerprint": "58f329c84244cd7434668859f6c6da8bd92e6a06aa216b859fcde97aff1d3328",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f785374b1486d9d6",
+    "appearance_id": "494e09ef0315631f1e71",
+    "source_fingerprint": "4ffb4d8e4e5f45e4894a641bf0b004d4daef22e31ff606c69d1cc37aa7c1ff04",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1a1f5d8ef1c8c4d7",
+    "appearance_id": "883ecb1801994191946c",
+    "source_fingerprint": "d748c963f4e8c263f463367e77611d45d873a94a68b389e01065aef52e76db8b",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_723288085ad9dfe5",
+    "appearance_id": "5de534e9d7b7b696fd07",
+    "source_fingerprint": "2fd048bcca64b85ad67784af61d6d612d042b14a250ad3f3c3fe7e50731efeca",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb4d4b9df8b9fcf4",
+    "appearance_id": "9f9e59836c1ac6072fd6",
+    "source_fingerprint": "d4296be786f83f9d4aa5d5c9dee6e90214f4a01382179eef1353c43b4404dd2a",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_617cb506fbf6a847",
+    "appearance_id": "2069cd06349ce0bad6bf",
+    "source_fingerprint": "3355cf2899841e4e26faf76ab229c1b44015b528e8485c64a8f8eaefaecb0db1",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/sentence-correction",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_47baee4dbc51c2f0c68a6d9c",
+      "sha256": "7426e9d7d1d66faa1a49c2473fc6f4722766cda71edc524a5ef820d0c73a298d",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
