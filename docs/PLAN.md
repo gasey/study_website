@@ -509,3 +509,11 @@ Delivery: [Solo-owner workflow](SOLO-OWNER-WORKFLOW-20261106.md).
 - [x] Move existing Questions/Learning-tags exam-year controls into their main filter rows, with an applied-year clear action.
 - [x] Validate/debounce Learning-tags year input; preserve source/exam scope, saved URL state and pagination reset without partial-year API requests.
 - [x] Verify focused UI/build checks and release only frontend artifacts; existing Papers year dropdown and backend filters remain the authority.
+
+
+## 8 November — MCS reconciliation and source notices
+
+- [x] Recover and verify the already-applied ten-explanation packet without repeating publications; retain separate historical and current verification scopes.
+- [x] Publish three exact C-series stale-notice corrections through ordinary Oracle maintenance. Preserve all answers, source mappings, holds, learner/editorial history and unlimited access; 15 targeted tests pass.
+- [x] Confirm protected bank/taxonomy sync at `1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d`, active Oracle timer and zero outstanding exports. Save the latest checkpoint and separate receipts.
+- [ ] Continue the shared queue: 1,030 pending / three unresolved, no active packet; 32 already published. Resolve historical Q4/Q86 duplicates, missing 2014 II Q39 and the held radical through their separate guarded workflows. Keep 2012/2013 deferred and original simulation gated.

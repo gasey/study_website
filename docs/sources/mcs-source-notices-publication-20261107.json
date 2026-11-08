@@ -1,0 +1,433 @@
+{
+  "summary": {
+    "current_bank_sha256": "1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d",
+    "verification_scope": "Exact historical source-repair output verified separately from later unrelated production edits; current repaired snapshots also match.",
+    "status": "published-and-live-verified",
+    "source_notice_publications": 3,
+    "baseline_bank_sha256": "b6d5920f9b951694cb6c92426ff0b8d6fa3b70ce7b82a2ead8f055edd0eb80e0",
+    "holds_preserved": 134,
+    "previous_workflow_rows": {
+      "attempts": {
+        "previous_rows": 292,
+        "current_rows": 308,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_staff_used": 8,
+    "pending_exports": 0,
+    "no_peer_votes_credits_or_exemptions": true,
+    "bank_sha256": "09ee2e1c69e76c607053a452c9b665a3fca62f2dda9fcabe61ebb92f70a94be6",
+    "changed_records": 3,
+    "unchanged_question_records": 82380,
+    "non_question_bank_data_unchanged": true,
+    "changed_fields": {
+      "912a935f73220979b282": [
+        "direction",
+        "reviewPublicationId"
+      ],
+      "5690434537fd27b1953f": [
+        "direction",
+        "reviewPublicationId"
+      ],
+      "0eaceec2e997a58776a3": [
+        "direction",
+        "reviewPublicationId"
+      ]
+    }
+  },
+  "items": [
+    {
+      "canonical_id": "cq_0e10cbafcbf20494",
+      "appearance_id": "5690434537fd27b1953f",
+      "printed_qnum": "28",
+      "physical_page": 3,
+      "key_letter": "D",
+      "old_direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+      "new_direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+      "source_before": {
+        "record": {
+          "id": "5690434537fd27b1953f",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "On an average the temperature decreases with altitude at the rate of:",
+          "options": [
+            "5°C per 1000 meters",
+            "5.5°C per 1000 meters",
+            "6°C per 1000 meters",
+            "6.5°C per 1000 meters"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "On average in the troposphere, temperature falls by about 6.5°C for a rise of 1,000 metres. This normal environmental lapse rate makes 6.5°C per 1,000 metres the appropriate choice. It is an average, not a rule for every location or every atmospheric layer: an inversion can even make temperature rise with height. Do not confuse it with the dry adiabatic lapse rate, about 9.8°C per kilometre, which describes an unsaturated rising air parcel.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 3,
+          "qnum": "28",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/291147a03335620d064d64a1bfa5d7c1c2857095ce52b5e635c634bb66bd3de2.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/geography",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "5690434537fd27b1953f",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "On an average the temperature decreases with altitude at the rate of:",
+          "options": [
+            "5°C per 1000 meters",
+            "5.5°C per 1000 meters",
+            "6°C per 1000 meters",
+            "6.5°C per 1000 meters"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "On average in the troposphere, temperature falls by about 6.5°C for a rise of 1,000 metres. This normal environmental lapse rate makes 6.5°C per 1,000 metres the appropriate choice. It is an average, not a rule for every location or every atmospheric layer: an inversion can even make temperature rise with height. Do not confuse it with the dry adiabatic lapse rate, about 9.8°C per kilometre, which describes an unsaturated rising air parcel.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 3,
+          "qnum": "28",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/291147a03335620d064d64a1bfa5d7c1c2857095ce52b5e635c634bb66bd3de2.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/geography",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "final_key_document": {
+        "id": "key_2a94d912058919022c49a517",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "source_file": "pdfs/Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'C'..pdf",
+        "sha256": "d3407b4d8c086317ef518f426765f11bb66cf9df85ac1f1d54c47a01e3a08217",
+        "kind": "official-key",
+        "key_status": "final"
+      },
+      "publication_id": "pub_30f9cfa7676043aea79bf623e03c133a"
+    },
+    {
+      "canonical_id": "cq_12489852a283175d",
+      "appearance_id": "0eaceec2e997a58776a3",
+      "printed_qnum": "55",
+      "physical_page": 5,
+      "key_letter": "C",
+      "old_direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+      "new_direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+      "source_before": {
+        "record": {
+          "id": "0eaceec2e997a58776a3",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "A micro enterprise is an enterprise where investment in plant and machinery does not exceed how much\n        amount?",
+          "options": [
+            "Rs. 25 Lakh",
+            "Rs. 50 Lakh",
+            "Rs. 1 Crore",
+            "Rs. 5 Crore"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "For this 2023 paper, the investment ceiling was ₹1 crore. The classification effective from 1 July 2020 also required a micro enterprise’s turnover not to exceed ₹5 crore; investment alone was not the whole definition. A later revision, effective 1 April 2025, raised those ceilings to ₹2.5 crore investment and ₹10 crore turnover. That dated change does not replace the 2023 answer. For revision, distinguish the investment limit, the separate turnover condition and the rule’s effective date.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 5,
+          "qnum": "55",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/indian-economy",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "0eaceec2e997a58776a3",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "A micro enterprise is an enterprise where investment in plant and machinery does not exceed how much\n        amount?",
+          "options": [
+            "Rs. 25 Lakh",
+            "Rs. 50 Lakh",
+            "Rs. 1 Crore",
+            "Rs. 5 Crore"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "For this 2023 paper, the investment ceiling was ₹1 crore. The classification effective from 1 July 2020 also required a micro enterprise’s turnover not to exceed ₹5 crore; investment alone was not the whole definition. A later revision, effective 1 April 2025, raised those ceilings to ₹2.5 crore investment and ₹10 crore turnover. That dated change does not replace the 2023 answer. For revision, distinguish the investment limit, the separate turnover condition and the rule’s effective date.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 5,
+          "qnum": "55",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/indian-economy",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "final_key_document": {
+        "id": "key_2a94d912058919022c49a517",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "source_file": "pdfs/Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'C'..pdf",
+        "sha256": "d3407b4d8c086317ef518f426765f11bb66cf9df85ac1f1d54c47a01e3a08217",
+        "kind": "official-key",
+        "key_status": "final"
+      },
+      "publication_id": "pub_fce6b240d4254629b15f3aa20a778d62"
+    },
+    {
+      "canonical_id": "cq_1596b12bc80f50d8",
+      "appearance_id": "912a935f73220979b282",
+      "printed_qnum": "3",
+      "physical_page": 1,
+      "key_letter": "B",
+      "old_direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+      "new_direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+      "source_before": {
+        "record": {
+          "id": "912a935f73220979b282",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "According to the latest economic survey of Mizoram 2022-23, the per capita income of Mizoram during\n        2021-22 is",
+          "options": [
+            "` 1,64,708",
+            "` 1,75,896",
+            "` 1,79,5031",
+            "` 86,133"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "The Economic Survey of Mizoram 2022–23 gives ₹1,75,896 as the advance estimate of per-capita income for 2021–22 at current prices. Its statistical overview places ₹1,79,503 in the previous year’s 2020–21 provisional column; that is a different reporting year. The answer depends on both the year asked and the survey edition cited. Do not substitute a later revised estimate, a constant-price figure or today’s income level into this historical question. The survey’s printed page 8 also states the 2021–22 figure directly.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 1,
+          "qnum": "3",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/cbc2f2faecc7d19693ced56ba9835070bb93a3c2908c2fdaff64e5e588fb1a9c.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/mizoram",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "912a935f73220979b282",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "According to the latest economic survey of Mizoram 2022-23, the per capita income of Mizoram during\n        2021-22 is",
+          "options": [
+            "` 1,64,708",
+            "` 1,75,896",
+            "` 1,79,5031",
+            "` 86,133"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": "The Economic Survey of Mizoram 2022–23 gives ₹1,75,896 as the advance estimate of per-capita income for 2021–22 at current prices. Its statistical overview places ₹1,79,503 in the previous year’s 2020–21 provisional column; that is a different reporting year. The answer depends on both the year asked and the survey edition cited. Do not substitute a later revised estimate, a constant-price figure or today’s income level into this historical question. The survey’s printed page 8 also states the 2021–22 figure directly.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 1,
+          "qnum": "3",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/cbc2f2faecc7d19693ced56ba9835070bb93a3c2908c2fdaff64e5e588fb1a9c.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/mizoram",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "final_key_document": {
+        "id": "key_2a94d912058919022c49a517",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "source_file": "pdfs/Answer_Keys/MCS Combined 2023 Preliminary Exam Final Answer Key Paper-I Series 'C'..pdf",
+        "sha256": "d3407b4d8c086317ef518f426765f11bb66cf9df85ac1f1d54c47a01e3a08217",
+        "kind": "official-key",
+        "key_status": "final"
+      },
+      "publication_id": "pub_a6cd475082724d04b66bf45250a9de58"
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub_30f9cfa7676043aea79bf623e03c133a",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_a6cd475082724d04b66bf45250a9de58",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_fce6b240d4254629b15f3aa20a778d62",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    }
+  ],
+  "scope": "Only stale imported provisional/pending-key clauses removed for three exact inspected C-series sources. Source-image reminder retained. No question/choice/key/page/image/tag/history mutation or whole-paper certification."
+}

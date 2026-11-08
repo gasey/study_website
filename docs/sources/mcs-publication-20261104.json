@@ -1,0 +1,1634 @@
+{
+  "summary": {
+    "status": "Historical packet recovered and verified; all ten exact source/explanation snapshots also match current production.",
+    "explanations": 10,
+    "ordinary_publications": 10,
+    "baseline_bank_sha256": "d962b8d1fb5f825345c175ffe71439dc93075dd7aae7116eb81dac09ff8cdd12",
+    "packet_output_bank_sha256": "7945e28bb6befa0f01ef27f2883c24cc26862af4c80136067b97c1e1a9d7cc81",
+    "unrelated_historical_bank_content_unchanged": true,
+    "live_full_target_snapshots_match": true,
+    "peer_votes_credits_exemptions": 0,
+    "go_calls": 6,
+    "go_provider_tokens": 17998,
+    "go_prepaid_cost": 0,
+    "historical_numbering_findings": 3,
+    "verification_date": "2026-11-07",
+    "limitations": "Other tasks have published since this packet. Historical whole-bank equality is checked at this packet output, not asserted for today. Current workflow counts are separate; no human certification or new publication in this recovery step."
+  },
+  "items": [
+    {
+      "canonical_id": "cq_0e10cbafcbf20494",
+      "appearance_id": "5690434537fd27b1953f",
+      "source_snapshot": {
+        "record": {
+          "id": "5690434537fd27b1953f",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "On an average the temperature decreases with altitude at the rate of:",
+          "options": [
+            "5°C per 1000 meters",
+            "5.5°C per 1000 meters",
+            "6°C per 1000 meters",
+            "6.5°C per 1000 meters"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": null,
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 3,
+          "qnum": "28",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/291147a03335620d064d64a1bfa5d7c1c2857095ce52b5e635c634bb66bd3de2.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/geography",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "75c576af38462a205c55665c390d71561f49076ad52fb6358f623ce012508c45",
+      "explanation": "On average in the troposphere, temperature falls by about 6.5°C for a rise of 1,000 metres. This normal environmental lapse rate makes 6.5°C per 1,000 metres the appropriate choice. It is an average, not a rule for every location or every atmospheric layer: an inversion can even make temperature rise with height. Do not confuse it with the dry adiabatic lapse rate, about 9.8°C per kilometre, which describes an unsaturated rising air parcel.",
+      "draft_model": "Codex coordinator (manual source-grounded draft)",
+      "check": {
+        "draft_sha256": "1a152a34474f54c0e87d77d3381b1f13581fb6a5905cc0511f8c4571e3e74767",
+        "source_fingerprint": "75c576af38462a205c55665c390d71561f49076ad52fb6358f623ce012508c45",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 C physical page 3 Q28 and four Celsius/1000 m choices inspected visually. The average environmental value is distinguished from a lifted parcel rate and inversions; no temperature option, answer or provisional source instruction is changed.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://ebooks.inflibnet.ac.in/esp08/chapter/7-lapse-rate-and-atmospheric-stability/",
+            "note": "Read the environmental lapse rate section: 6.5°C per 1000 m is a general average and varies with season/region. Static atmospheric concept applicable to the 2023 question."
+          },
+          {
+            "kind": "reference",
+            "url": "https://forecast.weather.gov/glossary.php?word=LAPSE+RATE",
+            "note": "NOAA distinguishes environmental lapse rate from the dry adiabatic parcel rate of 9.8°C per km; used only to explain the contrast."
+          }
+        ]
+      },
+      "publication_id": "pub_ddf7afc7bce14347bbf335501c31b0ff"
+    },
+    {
+      "canonical_id": "cq_104d8c53aefd4eef",
+      "appearance_id": "06b92a105db84764190d",
+      "source_snapshot": {
+        "record": {
+          "id": "06b92a105db84764190d",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "type": "mcq",
+          "question": "Which of the following is important for speciation?",
+          "options": [
+            "Seasonal isolation",
+            "Reproductive isolation",
+            "Behavioral isolation",
+            "Temporal isolation"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 7,
+          "qnum": "73",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/environment",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "title": "Paper-I (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27A%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_d73e88830c77f2dc462542df",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "title": "Paper-I (A)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "5dba344af57d4d80ea52d82a5fa983f07f24378984bfe064bec0c5752524d4b3",
+      "explanation": "Reproductive isolation is the broad concept: barriers reduce interbreeding and gene flow between populations, allowing them to diverge into distinct species. Seasonal or temporal isolation separates breeding times; behavioural isolation separates mating behaviour. These can be mechanisms of reproductive isolation, so they are not irrelevant to speciation. Among the choices, reproductive isolation is the most inclusive answer. Avoid treating the narrower mechanisms as competing theories, or assuming that all speciation requires an immediate, complete end to gene flow.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "aeef4c5b330316f248d8969fc73c6ca56eedc86d46abfcdefeb99734b8561dba",
+        "source_fingerprint": "5dba344af57d4d80ea52d82a5fa983f07f24378984bfe064bec0c5752524d4b3",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 A physical page 7 Q73 and all four options inspected visually. Independently checked broad versus specific mechanisms; edited the draft to avoid denying the role of temporal/behavioural barriers or overstating the need for zero gene flow.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://openstax.org/books/biology/pages/18-2-formation-of-new-species?modal=MH",
+            "note": "Read the reproductive isolation section: temporal and behavioural barriers are mechanisms within reproductive isolation. Removed the Go draft’s absolute assertion that all gene flow must stop before divergence. Static biological-species context."
+          }
+        ]
+      },
+      "publication_id": "pub_955f4728f67545a9aaa88c29f1288e63"
+    },
+    {
+      "canonical_id": "cq_1156cfbda503151a",
+      "appearance_id": "932e41456bdc3d3cae4e",
+      "source_snapshot": {
+        "record": {
+          "id": "932e41456bdc3d3cae4e",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "type": "mcq",
+          "question": "The Mizo's name for the group of stars known as 'Taurus' is",
+          "options": [
+            "Sichakai",
+            "Khiangte zawng zim",
+            "Sikawikap",
+            "Thlasik kawng"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 9,
+          "qnum": "97",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/mizoram",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "title": "Paper-I (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27A%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_d73e88830c77f2dc462542df",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "title": "Paper-I (A)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "be3476e948860fc30f8e4becf6b7de1f496d8d46f231ca509af82dc166fe0e50",
+      "explanation": "Khiangte zawng zim is the matching name. Lorrain’s Dictionary of the Lushai Language, page 263, records Khiangte Zâwng-zîm for a star grouping in Taurus near Aldebaran. This identifies the traditional Mizo star pattern intended by the question. The dictionary’s description is more precise than equating every boundary of that traditional pattern with the entire modern Western constellation Taurus; the question is testing the name association.",
+      "draft_model": "Codex coordinator (manual source-grounded draft)",
+      "check": {
+        "draft_sha256": "b6ccb4a58fdedf482e063264520e6e43b05240984e9cb23e5662078bf6177bec",
+        "source_fingerprint": "be3476e948860fc30f8e4becf6b7de1f496d8d46f231ca509af82dc166fe0e50",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 A physical page 9 Q97 and the four Mizo choices inspected visually. Independently retrieved and inspected Lorrain page 263 in text and scan; used its limited grouping-near-Aldebaran description without inventing a translation or broadening the traditional constellation boundary.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://dsal.uchicago.edu/cgi-bin/app/lorrain_query.py?page=263",
+            "note": "Read Lorrain’s original dictionary entry and inspected its linked scan of printed page 263: the named grouping is in Taurus near Aldebaran. Historical linguistic evidence, not a newly asserted astronomical boundary."
+          }
+        ]
+      },
+      "publication_id": "pub_63f5df6530ab46dbb578a4e0b26b6df1"
+    },
+    {
+      "canonical_id": "cq_11789ccd184e2964",
+      "appearance_id": "9b944a1bd15a0d7d5631",
+      "source_snapshot": {
+        "record": {
+          "id": "9b944a1bd15a0d7d5631",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+          "type": "mcq",
+          "question": "Consider the following pairs:\nArticle - Provisions\n1. Article 371-A - Special provisions for Nagaland\n2. Article 371-B - Special provisions for Goa\n3. Article 371-F - Special provisions for Sikkim\n4. Article 371-H - Special provisions for Arunachal Pradesh\nWhich of the pairs given above is/are correctly matched?",
+          "options": [
+            "1, 2 & 3",
+            "1 & 2 only",
+            "3 & 4 only",
+            "1, 3 & 4"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 4,
+          "qnum": "43",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/indian-polity",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+          "title": "CSP Paper-I (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27B%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_697b03326d52868f994cfdaa",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "title": "CSP Paper-I (B)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "sha256": "b48ee8b3b35f7b3f6f05ee7055fbc4249524eee007114f7175748dbd6eab8c01",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "daf3bbe244a58239f5e512a756d9bd49addbee9234d704a80070db4b2636386c",
+      "explanation": "Pairs 1, 3 and 4 are correctly matched: Article 371A concerns Nagaland, 371F Sikkim and 371H Arunachal Pradesh. Pair 2 is wrong because Article 371B concerns Assam; Goa is covered by Article 371I. This eliminates both combinations containing pair 2. The choice containing only 3 and 4 is also incomplete because pair 1 is correct. These provisions are state-specific and their letter suffixes matter; knowing only the shared Article 371 prefix is not enough.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "57f1d4f817ac8394b997c24f5189369bb6dce5350b4e01a0345f64252780f574",
+        "source_fingerprint": "daf3bbe244a58239f5e512a756d9bd49addbee9234d704a80070db4b2636386c",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 B physical page 4 Q43, all four pairs and all combination options inspected visually. Matched every article independently against the official Constitution, including the wrongly paired Assam/Goa distractor. Options and official answer remain intact.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://www.legislative.gov.in/static/uploads/2025/08/7af1daa22d65f9d04c00ae9b9aa5a799.pdf",
+            "note": "Inspected the official Constitution headings and text for 371A/B/F/H/I: Nagaland, Assam, Sikkim, Arunachal Pradesh and Goa. Physical pages 476, 482, 490, 496 and 498; these historical state mappings apply to the 2023 stem."
+          }
+        ]
+      },
+      "publication_id": "pub_1e18fb3b9b5b42a8b554b945182299ec"
+    },
+    {
+      "canonical_id": "cq_1209406f3e38adfb",
+      "appearance_id": "50e10dc5ba23176551ce",
+      "source_snapshot": {
+        "record": {
+          "id": "50e10dc5ba23176551ce",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "type": "mcq",
+          "question": "International Day for the Elimination of Violence Against Women is observed on",
+          "options": [
+            "30th April",
+            "25th November",
+            "10th December",
+            "8th March"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 1,
+          "qnum": "3",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/current-affairs",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "title": "Paper-I (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27A%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_d73e88830c77f2dc462542df",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "title": "Paper-I (A)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "a67cc2e38f121d103f7a93206e549726ff83f31a27d14b5ca8ba871bb9f2f065",
+      "explanation": "The observance is held on 25 November. The date commemorates the Mirabal sisters, who were killed on 25 November 1960, and the UN established the international day in 1999. Keep it separate from International Women’s Day on 8 March and Human Rights Day on 10 December. These days are related to rights and equality but have different names and dates; 25 November is the one specifically addressing the elimination of violence against women.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "f8016b4e266b8cd0a1be261162d994a068288f17b4eae9d05b09e6e3df8ef232",
+        "source_fingerprint": "a67cc2e38f121d103f7a93206e549726ff83f31a27d14b5ca8ba871bb9f2f065",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 A physical page 1 Q3 and all four date options inspected visually. Checked the named UN observance and contrasted the two relevant alternate dates; removed internal key-confirmation wording from the Go draft. Annual historical date, without inventing a current campaign theme.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://www.unesco.org/en/days/elimination-violence-against-women",
+            "note": "UNESCO confirms the annual 25 November observance, the 1960 Mirabal sisters connection and UN establishment in 1999. Used the historical facts only, not the page’s 2026 campaign."
+          },
+          {
+            "kind": "reference",
+            "url": "https://www.un.org/en/observances",
+            "note": "Official UN observances reference confirms 8 March International Women’s Day and 10 December Human Rights Day for comparison."
+          }
+        ]
+      },
+      "publication_id": "pub_2520333e09fb464485de6a8e737d1ff6"
+    },
+    {
+      "canonical_id": "cq_121b87946986b6fd",
+      "appearance_id": "bb0748fc80eeb0faed17",
+      "source_snapshot": {
+        "record": {
+          "id": "bb0748fc80eeb0faed17",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "type": "mcq",
+          "question": "Which among the following correctly defines Global 200?",
+          "options": [
+            "An annual list of top ranking 200 companies released by Forbes Magazine",
+            "List of 200 World Heritage Sites released by UNESCO",
+            "List of 200 Cities which are of strategic importance by UNO",
+            "List of 200 Ecoregions identified by the WWF for conservation"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 7,
+          "qnum": "74",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/environment",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "title": "Paper-I (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27A%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_d73e88830c77f2dc462542df",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "title": "Paper-I (A)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "bc2c07e960a7cddc56dc28af5f3bff5e806019e0dc6901922f7a9df83385bacf",
+      "explanation": "Global 200 is WWF’s conservation-priority framework for outstanding ecoregions, so the option linking ecoregions, WWF and conservation identifies the intended initiative. It is not a company ranking, a UNESCO World Heritage list or a list of strategic cities. “Global 200” is the initiative’s name, not a precise census: WWF’s own report lists 238 ecoregions. Learn the organisation and conservation purpose rather than treating the rounded number in the printed option as an exact total.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "91e2d8e35368b4d58f4492ea242afaa1b6317d2133c7f508c747694697007c70",
+        "source_fingerprint": "bc2c07e960a7cddc56dc28af5f3bff5e806019e0dc6901922f7a9df83385bacf",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 A physical page 7 Q74 and all four definitions inspected visually. Checked the original WWF report and FAO annex; removed the misleading exact-200 count and false suggestion that UNESCO/UN have no ecological conservation role. The historical printed option and answer are preserved.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://wwfint.awsassets.panda.org/downloads/EGinG200rep.pdf",
+            "note": "WWF’s original Indigenous and Traditional Peoples of the World and Ecoregion Conservation report explains the framework on physical page 7 and lists Global 200 (238) Ecoregions in Appendix 6. This corrects the draft’s literal exact-200 claim while preserving the intended keyed option."
+          },
+          {
+            "kind": "reference",
+            "url": "https://www.fao.org/4/w7746e/w7746e0c.htm",
+            "note": "FAO Annex 4 describes WWF’s Global 200 as distinctive biodiversity ecoregions, supporting the organisation/purpose contrast. Does not imply UNESCO has no conservation role."
+          }
+        ]
+      },
+      "publication_id": "pub_8516f516fe8645afacfd523b78986f38"
+    },
+    {
+      "canonical_id": "cq_12489852a283175d",
+      "appearance_id": "0eaceec2e997a58776a3",
+      "source_snapshot": {
+        "record": {
+          "id": "0eaceec2e997a58776a3",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "A micro enterprise is an enterprise where investment in plant and machinery does not exceed how much\n        amount?",
+          "options": [
+            "Rs. 25 Lakh",
+            "Rs. 50 Lakh",
+            "Rs. 1 Crore",
+            "Rs. 5 Crore"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": null,
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 5,
+          "qnum": "55",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/indian-economy",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "b7bf2ce66a420d149b2beab32eb921e4c50e36207cfcc5a4de0c22ec6bede144",
+      "explanation": "For this 2023 paper, the investment ceiling was ₹1 crore. The classification effective from 1 July 2020 also required a micro enterprise’s turnover not to exceed ₹5 crore; investment alone was not the whole definition. A later revision, effective 1 April 2025, raised those ceilings to ₹2.5 crore investment and ₹10 crore turnover. That dated change does not replace the 2023 answer. For revision, distinguish the investment limit, the separate turnover condition and the rule’s effective date.",
+      "draft_model": "Codex coordinator (manual source-grounded draft)",
+      "check": {
+        "draft_sha256": "ee8fe2edf29b2e56622f9254f7a58a275c9b083f3de5c1489f23faea1744acf4",
+        "source_fingerprint": "b7bf2ce66a420d149b2beab32eb921e4c50e36207cfcc5a4de0c22ec6bede144",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 C physical page 5 Q55 and all rupee choices inspected visually. Checked the 2020 rule applicable to 2023 and the distinct 2025 notification effective date against primary government sources. The update is explicitly dated, not substituted into historical scoring; no current-affairs revision or human sign-off is created.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=1628925&lang=2&reg=48",
+            "note": "Ministry of MSME release dated 3 June 2020 confirms effective 1 July 2020 and micro limits ₹1 crore investment / ₹5 crore turnover, applicable to the 2023 exam."
+          },
+          {
+            "kind": "reference",
+            "url": "https://sansad.in/getFile/loksabhaquestions/annex/185/AU4777_hYwqbL.pdf?source=pqals",
+            "note": "Read Ministry’s 21 August 2025 Lok Sabha reply, physical page 1: revised micro limits ₹2.5 crore / ₹10 crore effective 1 April 2025. Explicit dated comparison only; the historical 2023 key is unchanged."
+          }
+        ]
+      },
+      "publication_id": "pub_6e43308fa3ab4c5fad5e8387678fbb79"
+    },
+    {
+      "canonical_id": "cq_12612413c4c04dcf",
+      "appearance_id": "c5cfad9843974874b853",
+      "source_snapshot": {
+        "record": {
+          "id": "c5cfad9843974874b853",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "You have recently joined as a District Magistrate. General elections have been ordered in your District, but you find that many of your subordinates are not politically neutral. You have called a meeting. What will be the most appropriate decision?",
+          "options": [
+            "You will punish those who are not neutral as election laws recommend heavy punishment for such behaviour.",
+            "You will tell them that everybody will be watching them, so they will get caught.",
+            "You will tell them to appear neutral, but they may take sides.",
+            "You will tell them to follow the instructions of the Election Commission of India strictly."
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 3,
+          "qnum": "14",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_9b9f5f6f90fa0a1602423ff2",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "title": "Civil Service Examination Paper-II (B)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "c79b0d5f36c74b9c9ef05b6dac43052da4718f44ffc7b9f242d1b6f104f70ac2",
+      "explanation": "Tell staff to follow the Election Commission’s instructions strictly. This gives everyone a clear, common standard for impartial election work. Government officers must both act impartially and avoid conduct that reasonably suggests favouritism. Merely appearing neutral while taking sides defeats that duty; threatening that staff will get caught does not provide proper guidance. Immediate punishment of everyone thought to be biased also skips establishing an individual breach. Any actual misconduct should be handled through the applicable process, alongside clear directions on neutrality.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "aa05ebb45da589da244dd1022db3b8938d491754b4022bf49bdbf1a74af660f6",
+        "source_fingerprint": "c79b0d5f36c74b9c9ef05b6dac43052da4718f44ffc7b9f242d1b6f104f70ac2",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 II B physical page 3 Q14 and all four complete responses inspected visually. Compared the alternatives against the reproduced ECI impartiality instructions. Edited out a blanket jurisdiction assertion and avoided treating punishment without an established breach as the appropriate first response.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://www.mcrhrdi.gov.in/FC2020/week11/conduct%20rules%202.pdf",
+            "note": "Read the reproduced ECI letter No. 62/71 of 13 January 1971 on physical page 57: employees must be and appear impartial and avoid use of office to assist a side. Historical pre-2023 support for the decision, not a claim about all employees’ formal ECI appointment status."
+          }
+        ]
+      },
+      "publication_id": "pub_ca25767ff7614e98a12a3ebaa237a581"
+    },
+    {
+      "canonical_id": "cq_1401e3b1f64692be",
+      "appearance_id": "37345d9e43142ebdf59c",
+      "source_snapshot": {
+        "record": {
+          "id": "37345d9e43142ebdf59c",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+          "type": "mcq",
+          "question": "Deccan Traps are largely made of",
+          "options": [
+            "Flow of basalt",
+            "River deposit",
+            "Limestone",
+            "Lava flow alternating with sedimentary deposits"
+          ],
+          "answerIndex": 0,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 3,
+          "qnum": "29",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/geography",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+          "title": "CSP",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27D%27.pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_494d8cc99fa9cb95a7d23db6",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "title": "CSP",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "sha256": "ea98579ba44d7695518b766693f34c461f587c59c24bb797cfa6b787d5e86e66",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "5590d7070c7774a27e1de6056703935c547b03f7a075650b77b077d08b73feea",
+      "explanation": "The Deccan Traps are predominantly successive flows of basaltic lava. Basalt is an igneous rock formed when lava cools, so “flow of basalt” identifies the dominant material and volcanic origin. River deposits and limestone do not describe the main rock sequence. Sedimentary layers can occur between some flows, but that does not make them the principal material. The word “largely” is decisive: choose the predominant basalt flows without incorrectly claiming that every layer is basalt.",
+      "draft_model": "opencode-go/glm-5.3-flash; source-edited by Codex coordinator",
+      "check": {
+        "draft_sha256": "dd16eaa3b1e41b178a2235c27a669c940c9273e414c87fa2b7b7d039c30829ad",
+        "source_fingerprint": "5590d7070c7774a27e1de6056703935c547b03f7a075650b77b077d08b73feea",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 D physical page 3 Q29 and all four options inspected visually. Independently checked basaltic predominance and the existence of intertrappean beds against government geological material; removed unsupported etymological detail. Do not turn a best-answer predominance contrast into a false claim that no sedimentary beds exist.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://gsda.maharashtra.gov.in/en-hydrogeology-of-maharashtra/",
+            "note": "Read Maharashtra GSDA’s original Hydrogeology of Maharashtra page, Deccan Trap section and stratigraphic table: basalt lava flows formed through fissure eruptions, with freshwater intertrappean deposits between episodes. Supports predominant basalt and the qualification that sedimentary interbeds can coexist."
+          }
+        ]
+      },
+      "publication_id": "pub_44cc2c3ae1a5404b8e4b4436e387fa1e"
+    },
+    {
+      "canonical_id": "cq_1596b12bc80f50d8",
+      "appearance_id": "912a935f73220979b282",
+      "source_snapshot": {
+        "record": {
+          "id": "912a935f73220979b282",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "type": "mcq",
+          "question": "According to the latest economic survey of Mizoram 2022-23, the per capita income of Mizoram during\n        2021-22 is",
+          "options": [
+            "` 1,64,708",
+            "` 1,75,896",
+            "` 1,79,5031",
+            "` 86,133"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "explanation": null,
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": null,
+          "page": 1,
+          "qnum": "3",
+          "hasDiagram": true,
+          "figureImage": "images/page-renders/cbc2f2faecc7d19693ced56ba9835070bb93a3c2908c2fdaff64e5e588fb1a9c.png",
+          "classification": {
+            "subject_id": "general-studies",
+            "topic_id": "general-studies/mizoram",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "title": "CSP: 23 Paper-I (C)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-I%20Series%20%27C%27..pdf"
+        }
+      },
+      "source_document": {
+        "id": "doc_7635b2f7d54dbad96c63160f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "title": "CSP: 23 Paper-I (C)",
+        "source_file": "pdfs/Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "kind": "paper",
+        "key_status": null,
+        "registered_by": "operator:bootstrap",
+        "registered_at": "2026-10-21 11:52:43.780371+00:00"
+      },
+      "source_fingerprint": "88f4dc409cdd9b13f30af8ee46ab190a031e6ab3d01401fe4248cd4c777180e9",
+      "explanation": "The Economic Survey of Mizoram 2022–23 gives ₹1,75,896 as the advance estimate of per-capita income for 2021–22 at current prices. Its statistical overview places ₹1,79,503 in the previous year’s 2020–21 provisional column; that is a different reporting year. The answer depends on both the year asked and the survey edition cited. Do not substitute a later revised estimate, a constant-price figure or today’s income level into this historical question. The survey’s printed page 8 also states the 2021–22 figure directly.",
+      "draft_model": "Codex coordinator (manual source-grounded draft)",
+      "check": {
+        "draft_sha256": "32272bee55c184dc4ff02f69892844aeff7b9a747c54ea18a1192509cff2dae2",
+        "source_fingerprint": "88f4dc409cdd9b13f30af8ee46ab190a031e6ab3d01401fe4248cd4c777180e9",
+        "source_inspected": true,
+        "options_checked": true,
+        "reasoning_checked": true,
+        "exam_date_checked": true,
+        "checker": "Codex coordinator (original-source and reasoning check)",
+        "notes": "Original 2023 C physical page 1 Q3, four printed rupee strings and shared page context inspected visually. Downloaded and hash-recorded the named government survey; compared year, price basis and advance/provisional columns visually on physical page 16 and the prose on page 22. Retained the original typo in a distractor and all answer provenance.",
+        "evidence": [
+          {
+            "kind": "reference",
+            "url": "https://planning.mizoram.gov.in/uploads/attachments/2023/03/f8c3d0c1cd877bff6853f09c2e9b1b22/mizoram-economic-survey-2022-23.pdf",
+            "note": "Downloaded official survey, SHA256 5020c3ab4a6b1c959ca8947d8ea8fb0b610de16c69558237b03abc4b45e25b91. Visually inspected physical pages 16 and 22 (printed 2 and 8): 2021–22 advance current-price income ₹1,75,896, previous 2020–21 provisional ₹1,79,503. Historical edition-specific value, not a current estimate."
+          }
+        ]
+      },
+      "publication_id": "pub_a5efce31ea494eefb4c70586db1f054e"
+    }
+  ],
+  "publications": [
+    {
+      "id": "pub_ddf7afc7bce14347bbf335501c31b0ff",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "5690434537fd27b1953f",
+          "page": 3,
+          "qnum": "28",
+          "type": "mcq",
+          "options": [
+            "5°C per 1000 meters",
+            "5.5°C per 1000 meters",
+            "6°C per 1000 meters",
+            "6.5°C per 1000 meters"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "On an average the temperature decreases with altitude at the rate of:",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 3,
+          "explanation": "On average in the troposphere, temperature falls by about 6.5°C for a rise of 1,000 metres. This normal environmental lapse rate makes 6.5°C per 1,000 metres the appropriate choice. It is an average, not a rule for every location or every atmospheric layer: an inversion can even make temperature rise with height. Do not confuse it with the dry adiabatic lapse rate, about 9.8°C per kilometre, which describes an unsaturated rising air parcel.",
+          "figureImage": "images/page-renders/291147a03335620d064d64a1bfa5d7c1c2857095ce52b5e635c634bb66bd3de2.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/geography",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "5690434537fd27b1953f",
+          "page": 3,
+          "qnum": "28",
+          "type": "mcq",
+          "options": [
+            "5°C per 1000 meters",
+            "5.5°C per 1000 meters",
+            "6°C per 1000 meters",
+            "6.5°C per 1000 meters"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "On an average the temperature decreases with altitude at the rate of:",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": "images/page-renders/291147a03335620d064d64a1bfa5d7c1c2857095ce52b5e635c634bb66bd3de2.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/geography",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "d962b8d1fb5f825345c175ffe71439dc93075dd7aae7116eb81dac09ff8cdd12",
+        "appearance_id": "5690434537fd27b1953f",
+        "before_fields": {
+          "explanation": null
+        },
+        "manifest_hash": "704e360b25f0c250bb2d13f4bcfb5e4373ea08e2f76f995ef2fd51f6e3bbce52",
+        "output_sha256": "0caf0f95b6f540d4688fe7a75e4efd9f241de01d049e6daa50b267df6f844826",
+        "publication_id": "pub_ddf7afc7bce14347bbf335501c31b0ff"
+      }
+    },
+    {
+      "id": "pub_955f4728f67545a9aaa88c29f1288e63",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "06b92a105db84764190d",
+          "page": 7,
+          "qnum": "73",
+          "type": "mcq",
+          "options": [
+            "Seasonal isolation",
+            "Reproductive isolation",
+            "Behavioral isolation",
+            "Temporal isolation"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "Which of the following is important for speciation?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": "Reproductive isolation is the broad concept: barriers reduce interbreeding and gene flow between populations, allowing them to diverge into distinct species. Seasonal or temporal isolation separates breeding times; behavioural isolation separates mating behaviour. These can be mechanisms of reproductive isolation, so they are not irrelevant to speciation. Among the choices, reproductive isolation is the most inclusive answer. Avoid treating the narrower mechanisms as competing theories, or assuming that all speciation requires an immediate, complete end to gene flow.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/environment",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "06b92a105db84764190d",
+          "page": 7,
+          "qnum": "73",
+          "type": "mcq",
+          "options": [
+            "Seasonal isolation",
+            "Reproductive isolation",
+            "Behavioral isolation",
+            "Temporal isolation"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "Which of the following is important for speciation?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/environment",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "0caf0f95b6f540d4688fe7a75e4efd9f241de01d049e6daa50b267df6f844826",
+        "appearance_id": "06b92a105db84764190d",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "787a498920a653d3049ecf06f0e527de623abb0b77e276cc3c57e0630420e324",
+        "output_sha256": "7f00c5fef7ad0bbeb759df0ebe3149d1f4ab21ee4fc4a2e4d772034a5a52432c",
+        "publication_id": "pub_955f4728f67545a9aaa88c29f1288e63"
+      }
+    },
+    {
+      "id": "pub_63f5df6530ab46dbb578a4e0b26b6df1",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "932e41456bdc3d3cae4e",
+          "page": 9,
+          "qnum": "97",
+          "type": "mcq",
+          "options": [
+            "Sichakai",
+            "Khiangte zawng zim",
+            "Sikawikap",
+            "Thlasik kawng"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "The Mizo's name for the group of stars known as 'Taurus' is",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": "Khiangte zawng zim is the matching name. Lorrain’s Dictionary of the Lushai Language, page 263, records Khiangte Zâwng-zîm for a star grouping in Taurus near Aldebaran. This identifies the traditional Mizo star pattern intended by the question. The dictionary’s description is more precise than equating every boundary of that traditional pattern with the entire modern Western constellation Taurus; the question is testing the name association.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/mizoram",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "932e41456bdc3d3cae4e",
+          "page": 9,
+          "qnum": "97",
+          "type": "mcq",
+          "options": [
+            "Sichakai",
+            "Khiangte zawng zim",
+            "Sikawikap",
+            "Thlasik kawng"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "The Mizo's name for the group of stars known as 'Taurus' is",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/mizoram",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "7f00c5fef7ad0bbeb759df0ebe3149d1f4ab21ee4fc4a2e4d772034a5a52432c",
+        "appearance_id": "932e41456bdc3d3cae4e",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "dfcf846d6513a32537041c0667d34bca60f128971ee85da2acaf53ed4cc0ff0f",
+        "output_sha256": "f437b1d1db76db7919c53b1100ce8e5afa121ecd90af06b5ff56de4b18991424",
+        "publication_id": "pub_63f5df6530ab46dbb578a4e0b26b6df1"
+      }
+    },
+    {
+      "id": "pub_1e18fb3b9b5b42a8b554b945182299ec",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "9b944a1bd15a0d7d5631",
+          "page": 4,
+          "qnum": "43",
+          "type": "mcq",
+          "options": [
+            "1, 2 & 3",
+            "1 & 2 only",
+            "3 & 4 only",
+            "1, 3 & 4"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+          "passage": null,
+          "question": "Consider the following pairs:\nArticle - Provisions\n1. Article 371-A - Special provisions for Nagaland\n2. Article 371-B - Special provisions for Goa\n3. Article 371-F - Special provisions for Sikkim\n4. Article 371-H - Special provisions for Arunachal Pradesh\nWhich of the pairs given above is/are correctly matched?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": "Pairs 1, 3 and 4 are correctly matched: Article 371A concerns Nagaland, 371F Sikkim and 371H Arunachal Pradesh. Pair 2 is wrong because Article 371B concerns Assam; Goa is covered by Article 371I. This eliminates both combinations containing pair 2. The choice containing only 3 and 4 is also incomplete because pair 1 is correct. These provisions are state-specific and their letter suffixes matter; knowing only the shared Article 371 prefix is not enough.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/indian-polity",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "9b944a1bd15a0d7d5631",
+          "page": 4,
+          "qnum": "43",
+          "type": "mcq",
+          "options": [
+            "1, 2 & 3",
+            "1 & 2 only",
+            "3 & 4 only",
+            "1, 3 & 4"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+          "passage": null,
+          "question": "Consider the following pairs:\nArticle - Provisions\n1. Article 371-A - Special provisions for Nagaland\n2. Article 371-B - Special provisions for Goa\n3. Article 371-F - Special provisions for Sikkim\n4. Article 371-H - Special provisions for Arunachal Pradesh\nWhich of the pairs given above is/are correctly matched?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/indian-polity",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "f437b1d1db76db7919c53b1100ce8e5afa121ecd90af06b5ff56de4b18991424",
+        "appearance_id": "9b944a1bd15a0d7d5631",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "16eef914301b9d4512a36e7bb33c49d49ec9ddcbadee5f17130f3bf9993d64bf",
+        "output_sha256": "85ba1dd806e1009261f40cac79809939dc113c6dd81345788919b5583010b849",
+        "publication_id": "pub_1e18fb3b9b5b42a8b554b945182299ec"
+      }
+    },
+    {
+      "id": "pub_2520333e09fb464485de6a8e737d1ff6",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "50e10dc5ba23176551ce",
+          "page": 1,
+          "qnum": "3",
+          "type": "mcq",
+          "options": [
+            "30th April",
+            "25th November",
+            "10th December",
+            "8th March"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "International Day for the Elimination of Violence Against Women is observed on",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": "The observance is held on 25 November. The date commemorates the Mirabal sisters, who were killed on 25 November 1960, and the UN established the international day in 1999. Keep it separate from International Women’s Day on 8 March and Human Rights Day on 10 December. These days are related to rights and equality but have different names and dates; 25 November is the one specifically addressing the elimination of violence against women.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/current-affairs",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "50e10dc5ba23176551ce",
+          "page": 1,
+          "qnum": "3",
+          "type": "mcq",
+          "options": [
+            "30th April",
+            "25th November",
+            "10th December",
+            "8th March"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "International Day for the Elimination of Violence Against Women is observed on",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/current-affairs",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "85ba1dd806e1009261f40cac79809939dc113c6dd81345788919b5583010b849",
+        "appearance_id": "50e10dc5ba23176551ce",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "3df5a265e43479365a6cb6fde5e1c04e36512c4c3cad1e5bc7abcb9a03e42e22",
+        "output_sha256": "06ebd7ba280fab55ba0ae0394be16ffad9e3089eebeaf4bf41484edfb81c6c4e",
+        "publication_id": "pub_2520333e09fb464485de6a8e737d1ff6"
+      }
+    },
+    {
+      "id": "pub_8516f516fe8645afacfd523b78986f38",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "bb0748fc80eeb0faed17",
+          "page": 7,
+          "qnum": "74",
+          "type": "mcq",
+          "options": [
+            "An annual list of top ranking 200 companies released by Forbes Magazine",
+            "List of 200 World Heritage Sites released by UNESCO",
+            "List of 200 Cities which are of strategic importance by UNO",
+            "List of 200 Ecoregions identified by the WWF for conservation"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "Which among the following correctly defines Global 200?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": "Global 200 is WWF’s conservation-priority framework for outstanding ecoregions, so the option linking ecoregions, WWF and conservation identifies the intended initiative. It is not a company ranking, a UNESCO World Heritage list or a list of strategic cities. “Global 200” is the initiative’s name, not a precise census: WWF’s own report lists 238 ecoregions. Learn the organisation and conservation purpose rather than treating the rounded number in the printed option as an exact total.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/environment",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "bb0748fc80eeb0faed17",
+          "page": 7,
+          "qnum": "74",
+          "type": "mcq",
+          "options": [
+            "An annual list of top ranking 200 companies released by Forbes Magazine",
+            "List of 200 World Heritage Sites released by UNESCO",
+            "List of 200 Cities which are of strategic importance by UNO",
+            "List of 200 Ecoregions identified by the WWF for conservation"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "Which among the following correctly defines Global 200?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/environment",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "06ebd7ba280fab55ba0ae0394be16ffad9e3089eebeaf4bf41484edfb81c6c4e",
+        "appearance_id": "bb0748fc80eeb0faed17",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "94b34df15cc1114638dd05d3773b29ad1821e8a55c2733b7a5850ebdf3cd915e",
+        "output_sha256": "a3c001b925349b16c0199e7fb5504f6bac582cac5fbb193e339b6e4cd32a52f1",
+        "publication_id": "pub_8516f516fe8645afacfd523b78986f38"
+      }
+    },
+    {
+      "id": "pub_6e43308fa3ab4c5fad5e8387678fbb79",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "0eaceec2e997a58776a3",
+          "page": 5,
+          "qnum": "55",
+          "type": "mcq",
+          "options": [
+            "Rs. 25 Lakh",
+            "Rs. 50 Lakh",
+            "Rs. 1 Crore",
+            "Rs. 5 Crore"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "A micro enterprise is an enterprise where investment in plant and machinery does not exceed how much\n        amount?",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 2,
+          "explanation": "For this 2023 paper, the investment ceiling was ₹1 crore. The classification effective from 1 July 2020 also required a micro enterprise’s turnover not to exceed ₹5 crore; investment alone was not the whole definition. A later revision, effective 1 April 2025, raised those ceilings to ₹2.5 crore investment and ₹10 crore turnover. That dated change does not replace the 2023 answer. For revision, distinguish the investment limit, the separate turnover condition and the rule’s effective date.",
+          "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/indian-economy",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "0eaceec2e997a58776a3",
+          "page": 5,
+          "qnum": "55",
+          "type": "mcq",
+          "options": [
+            "Rs. 25 Lakh",
+            "Rs. 50 Lakh",
+            "Rs. 1 Crore",
+            "Rs. 5 Crore"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "A micro enterprise is an enterprise where investment in plant and machinery does not exceed how much\n        amount?",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 2,
+          "explanation": null,
+          "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/indian-economy",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "a3c001b925349b16c0199e7fb5504f6bac582cac5fbb193e339b6e4cd32a52f1",
+        "appearance_id": "0eaceec2e997a58776a3",
+        "before_fields": {
+          "explanation": null
+        },
+        "manifest_hash": "032cba01dea8d72a18c421521d3642360a7a60d4a5556fd3d531048dfd6e5ad6",
+        "output_sha256": "438229015f1ba3171d01e0c7dfb591a582f126289fdbb0725c752a82973843b7",
+        "publication_id": "pub_6e43308fa3ab4c5fad5e8387678fbb79"
+      }
+    },
+    {
+      "id": "pub_ca25767ff7614e98a12a3ebaa237a581",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "c5cfad9843974874b853",
+          "page": 3,
+          "qnum": "14",
+          "type": "mcq",
+          "options": [
+            "You will punish those who are not neutral as election laws recommend heavy punishment for such behaviour.",
+            "You will tell them that everybody will be watching them, so they will get caught.",
+            "You will tell them to appear neutral, but they may take sides.",
+            "You will tell them to follow the instructions of the Election Commission of India strictly."
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "You have recently joined as a District Magistrate. General elections have been ordered in your District, but you find that many of your subordinates are not politically neutral. You have called a meeting. What will be the most appropriate decision?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": "Tell staff to follow the Election Commission’s instructions strictly. This gives everyone a clear, common standard for impartial election work. Government officers must both act impartially and avoid conduct that reasonably suggests favouritism. Merely appearing neutral while taking sides defeats that duty; threatening that staff will get caught does not provide proper guidance. Immediate punishment of everyone thought to be biased also skips establishing an individual breach. Any actual misconduct should be handled through the applicable process, alongside clear directions on neutrality.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "c5cfad9843974874b853",
+          "page": 3,
+          "qnum": "14",
+          "type": "mcq",
+          "options": [
+            "You will punish those who are not neutral as election laws recommend heavy punishment for such behaviour.",
+            "You will tell them that everybody will be watching them, so they will get caught.",
+            "You will tell them to appear neutral, but they may take sides.",
+            "You will tell them to follow the instructions of the Election Commission of India strictly."
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "You have recently joined as a District Magistrate. General elections have been ordered in your District, but you find that many of your subordinates are not politically neutral. You have called a meeting. What will be the most appropriate decision?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "438229015f1ba3171d01e0c7dfb591a582f126289fdbb0725c752a82973843b7",
+        "appearance_id": "c5cfad9843974874b853",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "36da082e7cdb809a0ec4ab4b144191075b5011464e2cedcb08000d8cd135fc80",
+        "output_sha256": "69b21b91a0d94c50acd396968f6117820deee358c3df148f9713c140a84d77fa",
+        "publication_id": "pub_ca25767ff7614e98a12a3ebaa237a581"
+      }
+    },
+    {
+      "id": "pub_44cc2c3ae1a5404b8e4b4436e387fa1e",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "37345d9e43142ebdf59c",
+          "page": 3,
+          "qnum": "29",
+          "type": "mcq",
+          "options": [
+            "Flow of basalt",
+            "River deposit",
+            "Limestone",
+            "Lava flow alternating with sedimentary deposits"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+          "passage": null,
+          "question": "Deccan Traps are largely made of",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 0,
+          "explanation": "The Deccan Traps are predominantly successive flows of basaltic lava. Basalt is an igneous rock formed when lava cools, so “flow of basalt” identifies the dominant material and volcanic origin. River deposits and limestone do not describe the main rock sequence. Sedimentary layers can occur between some flows, but that does not make them the principal material. The word “largely” is decisive: choose the predominant basalt flows without incorrectly claiming that every layer is basalt.",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/geography",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "37345d9e43142ebdf59c",
+          "page": 3,
+          "qnum": "29",
+          "type": "mcq",
+          "options": [
+            "Flow of basalt",
+            "River deposit",
+            "Limestone",
+            "Lava flow alternating with sedimentary deposits"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+          "passage": null,
+          "question": "Deccan Traps are largely made of",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 0,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/geography",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "69b21b91a0d94c50acd396968f6117820deee358c3df148f9713c140a84d77fa",
+        "appearance_id": "37345d9e43142ebdf59c",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "aaf78a0941990f7b73fe73721033bfbd361aed26c588ae637dd0a9bb764f4a0c",
+        "output_sha256": "f716bd47f67f9ece17816839e22c8af03a318dd44a455f14b010a434d5d82c91",
+        "publication_id": "pub_44cc2c3ae1a5404b8e4b4436e387fa1e"
+      }
+    },
+    {
+      "id": "pub_a5efce31ea494eefb4c70586db1f054e",
+      "state": "applied",
+      "receipt": {
+        "after": {
+          "id": "912a935f73220979b282",
+          "page": 1,
+          "qnum": "3",
+          "type": "mcq",
+          "options": [
+            "` 1,64,708",
+            "` 1,75,896",
+            "` 1,79,5031",
+            "` 86,133"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "According to the latest economic survey of Mizoram 2022-23, the per capita income of Mizoram during\n        2021-22 is",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 1,
+          "explanation": "The Economic Survey of Mizoram 2022–23 gives ₹1,75,896 as the advance estimate of per-capita income for 2021–22 at current prices. Its statistical overview places ₹1,79,503 in the previous year’s 2020–21 provisional column; that is a different reporting year. The answer depends on both the year asked and the survey edition cited. Do not substitute a later revised estimate, a constant-price figure or today’s income level into this historical question. The survey’s printed page 8 also states the 2021–22 figure directly.",
+          "figureImage": "images/page-renders/cbc2f2faecc7d19693ced56ba9835070bb93a3c2908c2fdaff64e5e588fb1a9c.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/mizoram",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "912a935f73220979b282",
+          "page": 1,
+          "qnum": "3",
+          "type": "mcq",
+          "options": [
+            "` 1,64,708",
+            "` 1,75,896",
+            "` 1,79,5031",
+            "` 86,133"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+          "passage": null,
+          "question": "According to the latest economic survey of Mizoram 2022-23, the per capita income of Mizoram during\n        2021-22 is",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": "images/page-renders/cbc2f2faecc7d19693ced56ba9835070bb93a3c2908c2fdaff64e5e588fb1a9c.png",
+          "answerKeyRef": "key_2a94d912058919022c49a517",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "general-studies/mizoram",
+            "subject_id": "general-studies",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "f716bd47f67f9ece17816839e22c8af03a318dd44a455f14b010a434d5d82c91",
+        "appearance_id": "912a935f73220979b282",
+        "before_fields": {
+          "explanation": null
+        },
+        "manifest_hash": "8266110a06b069a7df385733708f53be16cd80650467bcc0146ee6aadaacabae",
+        "output_sha256": "7945e28bb6befa0f01ef27f2883c24cc26862af4c80136067b97c1e1a9d7cc81",
+        "publication_id": "pub_a5efce31ea494eefb4c70586db1f054e"
+      }
+    }
+  ],
+  "publication_audit": [
+    {
+      "id": "pub_1e18fb3b9b5b42a8b554b945182299ec",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_2520333e09fb464485de6a8e737d1ff6",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_44cc2c3ae1a5404b8e4b4436e387fa1e",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_63f5df6530ab46dbb578a4e0b26b6df1",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_6e43308fa3ab4c5fad5e8387678fbb79",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_8516f516fe8645afacfd523b78986f38",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_955f4728f67545a9aaa88c29f1288e63",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_a5efce31ea494eefb4c70586db1f054e",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_ca25767ff7614e98a12a3ebaa237a581",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    {
+      "id": "pub_ddf7afc7bce14347bbf335501c31b0ff",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    }
+  ]
+}
