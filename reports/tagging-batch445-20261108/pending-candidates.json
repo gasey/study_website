@@ -1,0 +1,3915 @@
+[
+  {
+    "canonical_id": "cq_5d5339b5094417c5",
+    "appearance_id": "081ec11fbf2c6932b26d",
+    "source_fingerprint": "4ea3fc01d046dc6e191b5fb63ab219df7cb3f932e28e70b158cb80253ee9f408",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_664668b790663451",
+    "appearance_id": "a033c260406da9df0ba3",
+    "source_fingerprint": "d75db774575a535f09bb0246014576264ccec63dbfe1dd22b5b42c1e1146ab2a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ddbe1c6b631819e8",
+    "appearance_id": "022a25e47504a8927193",
+    "source_fingerprint": "4c513a6b8161381859522c89478d64c64abf0ec392b7fababe3319bc6ecfc6bb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b28cb446ba65da80",
+    "appearance_id": "f41a31bdc48c24ac760a",
+    "source_fingerprint": "374b6ae9d0edc12f7bf4ebb4f4bc117434371baadc008ae0feb2f60b21cb0a53",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_10f43a9053faf716",
+    "appearance_id": "51484759db8547e0f180",
+    "source_fingerprint": "c6d74910440c1f5bc429b703dfec3b2faa6d67cdad71a38c1ba9e0b9cb40bb38",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e3d83e60962b2d7",
+    "appearance_id": "506f19aa8126017c60c4",
+    "source_fingerprint": "167d9031eec722202961b57995a9cf7b5ea0128a88e1fb474d9af920366208ca",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_841af253b2eedee4",
+    "appearance_id": "d3033d98ddda76f81d2a",
+    "source_fingerprint": "a4d3d54ddd4dd1a0acded5a12374b213567a48d3a9033d1f70e800467f36b998",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96a71371f9e8b0b8",
+    "appearance_id": "f2cc5380b3c6ce68fe06",
+    "source_fingerprint": "005ba3b4135cad2437fd1b07379e0736068111f00b1f4c62f2332f1e4ee3c967",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d0780a7b15bf2e2",
+    "appearance_id": "acdc1ba16a07b3b36384",
+    "source_fingerprint": "9b520eaf6803c5667a3f2ebb9f948bb32a11df027036d990ea98df68f70f3e35",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6779008d9e2ebc7f",
+    "appearance_id": "8fd37471202faed446bd",
+    "source_fingerprint": "b0a8a45405c641534939f18f847319d2d14e525b161f86bb783fdb226b8d80d3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_925e4d778c8f050c",
+    "appearance_id": "26325d07443a8d14448d",
+    "source_fingerprint": "c5a316896764e46d3259e563a2dc28297188226ab18eba28420dcbff4ec9e5e3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de104bf2dc40c720",
+    "appearance_id": "76f55752e194471b2430",
+    "source_fingerprint": "a05a6cf9adfa6b16fbe7f608fac3497fc5696c8aa47c0ffbe03c258efe38c250",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_338abafe89b545d9",
+    "appearance_id": "fbcf5b617e045e48c687",
+    "source_fingerprint": "9c5a16145e54a65ee38657f8f906dd885a19c5987491f1ae333d7ddf1f7bb980",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9e6dcc88d936bba3",
+    "appearance_id": "d7eb74fb8eaa35648e10",
+    "source_fingerprint": "9972ef73819e8b6cda5e736511b68346b6c5617d0e3546790912dc9be2459c31",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f2516c28a81f34d1",
+    "appearance_id": "6c636f2bf71b94327140",
+    "source_fingerprint": "955077b92a3712c68b22a3dfcb2ec62fec748954cb057f3174a9b5a984ee283a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2806a7e860c1be9",
+    "appearance_id": "b94dc2c4109c55634119",
+    "source_fingerprint": "de27a4334d131e6c04cefa4c68cabd6ab44663c938e4e9961c7f9b8fd02023e4",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8c07310eb054ed6d",
+    "appearance_id": "cc7cf4eb068733c3d227",
+    "source_fingerprint": "e841f39a9f59cf9396c4139f8faccdd7f6f4b988552dcd028e2572cf7aac4d71",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2d0d152712a5154f",
+    "appearance_id": "223413d362527e43e9a1",
+    "source_fingerprint": "5ed1e643d4f110b7093e452ec60496a1aee02074bb56a3e26bf03b030d86f49f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3fd592f457f4ade",
+    "appearance_id": "e724932feffec5717a9b",
+    "source_fingerprint": "efe5bf7954c0d93e6525863ade4205c4c538095b0b553d9618f9bd7b0b8adebe",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_911380d2991ca6fb",
+    "appearance_id": "1893f1240d7f7865c39a",
+    "source_fingerprint": "f7744f39da2a6e524a8907361d04933c5cc86fddccb593fe3d0e8ff1e9fb9d7b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ca80d2e1417389c",
+    "appearance_id": "c8e4205a5e2e8346a01f",
+    "source_fingerprint": "c97ee9def27ffa3e5160662962a2accbbe28639081da5e1e2e5014672c5f7ce6",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_875136b2125b3295",
+    "appearance_id": "4f3bbcca46aa85a9267e",
+    "source_fingerprint": "e3dda79610a31aab157e83165a24113c675c0aee5bc020c79538cf684afa0295",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56871fe4acbd8e69",
+    "appearance_id": "8f191a174352f893169d",
+    "source_fingerprint": "62d466b93b90298480803b306f39a18cc61fbe9a10a8a2694ac4d6060e9c4ccb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ef8b357e8fc0adc9",
+    "appearance_id": "af46fffc0f55403b9f80",
+    "source_fingerprint": "4c0cf339eb887e792eb9066e3a14c286cfc33508ee7f5df3b4e9691475b569e7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a01a25884b2c5ae4",
+    "appearance_id": "ecf3466ec36317484fcd",
+    "source_fingerprint": "ac24788d1a2dd937dbac34f2211e21e87f2c7019d32fd15da700a77b0a4400b9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c400aa373caca50c",
+    "appearance_id": "43c99bde5abbe860a1c0",
+    "source_fingerprint": "1cfb531b8bd8c1a4bcea60bc9ea9a650244cb452f9f9734a82b4f7b8c14a05ea",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_24bb4018ab9713b8",
+    "appearance_id": "311b9af1dd71513259aa",
+    "source_fingerprint": "2cf213ebbe883802a95be60ec15061df0525b22593c15f5f9d3767d8b6038df4",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6900feccecb91651",
+    "appearance_id": "afd30493b2b4c4f36cbf",
+    "source_fingerprint": "ae197fbb98e5e29640df61704cf179c0348f633256fce41c9fbb83c3d614b614",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23151f14a5439833",
+    "appearance_id": "62c2284feec56665ed10",
+    "source_fingerprint": "adcaf1efef77dc40768cbbeee80b4931cd5b22333fcce2e1b77a7583ae1d79eb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b578e7452b61e70",
+    "appearance_id": "ab00109b61a7b5051d87",
+    "source_fingerprint": "50cf3f0338a324de724c3a238713ba6173f9f02734a5efb2dd14aa5fba3faa25",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a98dd8957704e2f2",
+    "appearance_id": "d51cf05698999c06af57",
+    "source_fingerprint": "b89b3d904153614a3788b93565f9370f53408cb6e10375a2f85accd63412acc8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses environmental studies: Ecology, conservation reserves, and environmental protection. Appropriately classified under general-studies.",
+    "tested_skill": "Environmental studies: Ecology, conservation reserves, and environmental protection.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2465f41996f1df89",
+    "appearance_id": "1107cc49602241f2784e",
+    "source_fingerprint": "caf1588822176894fabb580b4f850d6b1f5fc33985ad740390b940b1b6b26131",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32f7bb724ea28295",
+    "appearance_id": "5f7f7d8f4b4228a7b2f6",
+    "source_fingerprint": "7bd404c13ab1c3a70bc69037a95308903023043200934df425194268d54a3701",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76bf548d3da232fc",
+    "appearance_id": "35b480dfb3dfa2d9e805",
+    "source_fingerprint": "ce731bf759e3c7aee75d6377b6163a98c6a3ad728d1fb0534c4d78b46f740fed",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_acb0275c56ea1677",
+    "appearance_id": "7b95d47c5f59de9e526b",
+    "source_fingerprint": "946af69a8b900e226fe08e2902f944eb2f5b4607b85ef53ce92de8825a4adcf0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_075b59de8cc78ee2",
+    "appearance_id": "e1ef7fd2286760155277",
+    "source_fingerprint": "afbfcf044c3be91c9d2d3abd0d661bbebe2e63dfc05ee38e229f2f6c2335f205",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_492eefe87789b040",
+    "appearance_id": "e32536c908cacba52ffb",
+    "source_fingerprint": "2925775e54f9ced39b503c7acfcd00caa1a73be2c36e6c8d4b92cf5ded564270",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f276ba1079eb035f",
+    "appearance_id": "7f86893d3dc953714c19",
+    "source_fingerprint": "000f48328bea288218c98be956b9b920ab7215c3a3c6fdbd6199b073eb13a287",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d4685513d7b9d558",
+    "appearance_id": "0bc39d5f75205e5e296d",
+    "source_fingerprint": "063e674d5d7b205f00d233511324648e3ff6b9a9c118874bdbfbccd5a936bfb1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3eb498b2db88c5e9",
+    "appearance_id": "369847a1a1433fd1787b",
+    "source_fingerprint": "2c79fa9bb9ade0b9ab2e2c1a75b7fc00837437db45987c5025662f8d6c394230",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a08570faeb617138",
+    "appearance_id": "225650764d3e06d18d51",
+    "source_fingerprint": "a7a4e441c8d3cd43a1f0670e38b93c6e5704cfb50223b946acdffed86f34a21b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8ec60f0cdc8ba4e3",
+    "appearance_id": "90e540725d8b90a3574e",
+    "source_fingerprint": "2610b398c5447b0605364a469fc17e818573b7d665cdc75104960303e137b19d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81e1665303c0a00d",
+    "appearance_id": "a2bb5fff4b5f7fc9c117",
+    "source_fingerprint": "68a29bab084a3ee5482b31e1dbc1b71e0f52c4a8f301bc1338650c792d048126",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d354e94054517b7",
+    "appearance_id": "5efbd069c71b989d7774",
+    "source_fingerprint": "18a092683c41a32678c70756b6e95c9ef8ccdbff8f1a3f2d310293c43ddb9c64",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be3e36ff7560677f",
+    "appearance_id": "c3cf9cba0d54af49b2b9",
+    "source_fingerprint": "db2e24bffc3bde4b39f8b0ebde2eb2403e5df91fb48f1cd014e6de92a5b1984a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa1f811eb20a1965",
+    "appearance_id": "5549908ad96a23437fab",
+    "source_fingerprint": "5cd0b8311407f43b699837d5f6b5742999eda74603210fcf1abe8bebca3df490",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33edc18c2ca80580",
+    "appearance_id": "f593f021c57e12de539b",
+    "source_fingerprint": "fa3357307fdbf65d763de02e6f29b637a59729ee9c39946789b932a151562196",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cfa440fb6a64a7a0",
+    "appearance_id": "bd7747aff5d32ebc2b81",
+    "source_fingerprint": "f8c82eddf63b4a652fa22f7f5ab1988d4944bd6719b2ac3460ac434b15927cdd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08afb437e8a3abef",
+    "appearance_id": "2dbd6020498fb2a48096",
+    "source_fingerprint": "8bf4802a1c2d07c4f051e718fb7fe38ac855e347879eabe9762200f78382a9dd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb09feaf02c57c12",
+    "appearance_id": "045d5a6c16e99719244d",
+    "source_fingerprint": "d2314d8858437c3f4f94f7c81967232bc29a6a3f766e5ffd2c3a762529aa3ff3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_209ff38f6c9570d0",
+    "appearance_id": "df7149d749403b26deec",
+    "source_fingerprint": "1f8da86970486ce1d2034d0f3dc0bacb4b83eaaefc0e5bea0bd6d1af1b249fa8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_21b4bbce0c3cd203",
+    "appearance_id": "cad8f399dee032662876",
+    "source_fingerprint": "7972eb740f675a271456872df996ffcf2b69c2268b40db71fa154db7498ee96d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7448dc263b72f4ff",
+    "appearance_id": "39ef161f5d449fa1b70d",
+    "source_fingerprint": "8400c13b31af2ef24ec531f8844bebc728fe33e4dab04061cf0fa00d32ecfe37",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6023a32365e92ff3",
+    "appearance_id": "2584ba5ed6b790e81925",
+    "source_fingerprint": "026d8440425c8bd034128a9341100d11842afc5a9e131a87ab2e661451f02c18",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d5bb07f13334f24",
+    "appearance_id": "2fea6c1ff8eb94785e10",
+    "source_fingerprint": "f39c5f9737b66fcfa3009d33eb8461bfd3ff519bd3ed1fba0d678680755e72d1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_310f9a2555499dad",
+    "appearance_id": "64325c4a736508a5c25e",
+    "source_fingerprint": "36ec99e32a73a5f5a2331eba65c8823f62e446dd539378ae25f9b53b48f3cd00",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses world History: International relations, diplomatic treaties, and multilateral institutions. Appropriately classified under general-studies.",
+    "tested_skill": "World History: International relations, diplomatic treaties, and multilateral institutions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e16ea53c408ce9c7",
+    "appearance_id": "57569752518e14e14d2f",
+    "source_fingerprint": "06b8c92306c8475eebc7818dad790ac8d43acd07982b891a8e81662585f87393",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b33d3043254ba2bf",
+    "appearance_id": "11a634c7dbf1cedeef5b",
+    "source_fingerprint": "acc189a2af920aac12d83878ab77ba11f0cb1b8b0b3e8048e48c7e82b46ead6b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ead2d7e9ba3df3f3",
+    "appearance_id": "1205496788c35e7f5cfd",
+    "source_fingerprint": "0aef789afef246e0f89cd61a21e0ac810e1f0138bafe356ab157e8ad4d65cef0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9fbaa4868763bf22",
+    "appearance_id": "bbe1efc9f48ae42637ee",
+    "source_fingerprint": "0c8f595498bcb398ee130c99f87e01b945a7055f32cb63efb41e66282c788301",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_49df70fd3c0030be",
+    "appearance_id": "c2cbd3169b7730461684",
+    "source_fingerprint": "43df77f8d38694d99e3705f84416537b89e5a1b3ade4f1870053b75b9fdc350e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0c78a64bd2afc25e",
+    "appearance_id": "4bb93a711dfb6ff31840",
+    "source_fingerprint": "4e6498b94cba0185ae9758deb457297edbd24792054d45434e15a900ebf4a31f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c8cb6cbcfa6fe4f4",
+    "appearance_id": "3ac5641096d51d2e259a",
+    "source_fingerprint": "650e9a82ac8fcc88fb63129fb2adb63337279b7bda1c532acc12a63f488559ee",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ee60f27487a6bff",
+    "appearance_id": "5b7c37050b1ad1438f20",
+    "source_fingerprint": "42d3663004153bce94d8691f37709f23dd0ebdac9e15fd4fc3b64dfa58ecae1e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0414630cff0f6963",
+    "appearance_id": "d8deb469aa195b4d26df",
+    "source_fingerprint": "e6fac470568f7b6554285e8a40d3b6297a63c14f347c4cf391492ceabd1a5456",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd5d924f2e18476b",
+    "appearance_id": "4eda835e517bdfeb2cb3",
+    "source_fingerprint": "6cb3a88899f0179bb0b170da646ce1949e396a4c3c7e1a4c8dc6b36c14629373",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c915f142e82646a3",
+    "appearance_id": "53624977fb6451e617b1",
+    "source_fingerprint": "f6ed781486c76fb39b63dc0da447c754a8894dc01b33517d5de78dcd9257f3a2",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc26cea0e81f5e8e",
+    "appearance_id": "83308765a961002cc5d1",
+    "source_fingerprint": "ba4f1e426d45da7b40821d956457d0c77042db49914a2f116588b1057265d201",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_119162902ad56764",
+    "appearance_id": "f1323c15144b87cc70c2",
+    "source_fingerprint": "fa69ed089e5e2e20f1c6d951e78c9e566093ff5529e0589609a669296f277062",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b47df5751b804f93",
+    "appearance_id": "aa9a1983deb1e22e815d",
+    "source_fingerprint": "0cb907699e3dd63e982bfa5dfebf9d2c4d6db37437d3f8364c45fbc173f7c167",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a5afee9b60ee1eb2",
+    "appearance_id": "4a8f9406365a3cf06780",
+    "source_fingerprint": "e05d20967c33377d0a1258d20836c529543b39a70d5ac2f6942524206b782223",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec2493494589fd78",
+    "appearance_id": "f3c576e8466bb304229a",
+    "source_fingerprint": "e4acc5064ef23aa1c06eb0d90a475d54e4dc9d4c99fd4a201307fb0a75d8b9d7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8107e7ee1c04a17",
+    "appearance_id": "67aa2da983e804b3b153",
+    "source_fingerprint": "c919177be373839f3968bfff5a842033ce5c873654efdf469c41ced0e3fa862a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b62ff4a47bbc4ec0",
+    "appearance_id": "d05a5d34b9bda1d4d934",
+    "source_fingerprint": "f8e00d2d5988205efd9cc8fc02cacc5fce634059bae477dffd815ec7dc12b546",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9709f4b2f6eb1d6b",
+    "appearance_id": "c74a66264d38d19d2077",
+    "source_fingerprint": "7899aa4eac28bf47dff72d5d3aa237d635af2e53babb22dea2725e29ec2c8bcb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses environmental studies: Ecology, conservation reserves, and environmental protection. Appropriately classified under general-studies.",
+    "tested_skill": "Environmental studies: Ecology, conservation reserves, and environmental protection.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0af460ad56cdcb13",
+    "appearance_id": "c153347db33ca4e099e2",
+    "source_fingerprint": "54a26481773cc3f92ca35a0ec7e6ddcb60e5bfd3f23ab30c37a1d2f4bc7fe1c4",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_482ab305ac5fccd2",
+    "appearance_id": "93a26bd6746fd9f0abc8",
+    "source_fingerprint": "58fcdcc72d7bb417a842a52e3abba932cb68054f86f69143d5946006f2aad9c2",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd896ee2d4582118",
+    "appearance_id": "d2ca8d9933cffd1cf50e",
+    "source_fingerprint": "8bcb48e947170d0e0d4e32644081edb46b83c940552ac821b36576e147e275e0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_496f9a836ef4be96",
+    "appearance_id": "b338c28efc596c13ff89",
+    "source_fingerprint": "3e06309240276cd65326af90a1cc9065a06972df1667102553c74661245f9b62",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de6be8c0d53ed022",
+    "appearance_id": "71adb31c58b09f60e771",
+    "source_fingerprint": "0855a8b79e6ff649394d339f7f309d21216b9890488a17a7a6537ba92bba4d92",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72a1a657fe9f29d5",
+    "appearance_id": "a0b23cd2edaba2c95519",
+    "source_fingerprint": "3decb7dfdf61d7a87376ee3aab0407dfe0d12939df3d7211d13676955d2b6fd4",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4bc594f65f05cb44",
+    "appearance_id": "6edc6d46e0dc2fb19ca9",
+    "source_fingerprint": "f08af91ed21eec0be284412b25de593c5e65d1808ea38fab9da084542b5a4bdd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2025"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc558484b818cb83",
+    "appearance_id": "dbebbf0c648b470afc2b",
+    "source_fingerprint": "e9fe26abd90e04367ef7bb58b400f03e5418d449dc3359535ed91134fc0cf82f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/chemistry",
+      "subtopic_id": "science/chemistry/atoms-and-molecules"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/chemistry",
+      "subtopic_id": "science/chemistry/atoms-and-molecules"
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c348b17dc98213d6",
+    "appearance_id": "c8dd8a7dc48b48dfa0a0",
+    "source_fingerprint": "c2dea2bfe1ee9c77bd9130abe1e31858bb10ba51b730945ce321cb0c1f30ed5d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2c1b0339e0ee191",
+    "appearance_id": "599abe7c0a7820aac160",
+    "source_fingerprint": "f919d3ea8a8a784405eb77713cb2292a0ce9796ac5367c69770ac76ff08354c7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02a9299a8af0687b",
+    "appearance_id": "5579e0eee28ab1b90f69",
+    "source_fingerprint": "3bd05c0c29260cbf895fff938828906eb6dff8e84bb0aaf8ef0a1e319d29c815",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6787a26a42914910",
+    "appearance_id": "68d4eb4fcb75807e6dee",
+    "source_fingerprint": "c2abccbedefde75189351c8e82ac48047574e7235992db14ae333604e133d605",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3f9811c1fefdc9ac",
+    "appearance_id": "130c37c5ca0a0522ae3d",
+    "source_fingerprint": "32f3b16b49f510a0b14e46183718667670082067f2effd6d4ba0d5de6de40295",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_14247146be303129",
+    "appearance_id": "e2260b5fc55aeaa69e86",
+    "source_fingerprint": "239f1d1283bbf6c034ed67f31685675c0695c235fc96c4b7cd459b4d168cc907",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_633fc1b36f0f6882",
+    "appearance_id": "c084cff5cceaea6d69bb",
+    "source_fingerprint": "9bd1f3019608c81ff40a12e1907d0f6eec2609905219bb8d2afacf5d0afcb5d2",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d76373bfb7f8f771",
+    "appearance_id": "dd904166f96438693b23",
+    "source_fingerprint": "ce8f3b187c021d843b2c3e6428237386940f2636b2a6fa81292cbd8ecf907a2b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ecd9ea967cf821af",
+    "appearance_id": "267a2da71b288145b49b",
+    "source_fingerprint": "844564285f12ad6dd0f731db6a211173a3fc967c52df2b8e99820567e4f973c8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_457e17f6faf69608",
+    "appearance_id": "6d4694f1f5a0d396eeda",
+    "source_fingerprint": "1a004823fc2fe971501957b7eca0b8d9587b489366f66999adc5eb80ef32292b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_478d854977da34cd",
+    "appearance_id": "61f6b4b6640fa83ca91d",
+    "source_fingerprint": "a9af5a7056ed7ba120da97c7da92fe43fe75d235e7708a909da66f6534e4093e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_527a59d7081683f9",
+    "appearance_id": "a74ad2592ad2ea39fa69",
+    "source_fingerprint": "0e9ef5077c45ae168f21aeaff5eb25fdf518eb7fe7cad4c966acce86e41f131a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e9bce6c6933cb3c",
+    "appearance_id": "90ebc065bfceed8788de",
+    "source_fingerprint": "8709cc5acbb592957cbdd46cb7b3068324fe82ad0c23fb2e3405b10854dcffc1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c79af3fa68d1452c",
+    "appearance_id": "fbe5132f435aa01f4365",
+    "source_fingerprint": "146949a1bb6dc5e1069fcef79fb02af03cd19f9dbc596edf75157017cd525487",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8cd63e1b7defe25",
+    "appearance_id": "d403f56dcfe3489ab50c",
+    "source_fingerprint": "2ac67c89bf9a6a39a68c5dee3f75bb9772c7b1aace0ffa9bab76e29ab1972913",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec70871e1788f1a2",
+    "appearance_id": "8a19970bd9bba16cf31f",
+    "source_fingerprint": "e0a6219f7534e5a1a8c7847a44ba0398b53f69639f8911e6e73f2efab82ceca9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72c109d0fba3f6b0",
+    "appearance_id": "1d67bad3268b6ef03ccb",
+    "source_fingerprint": "ab31f8a9086320ae61ef0287d0f3cc6020e2c7147b3b52ee3c71e44452f93c1e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_026598c0f150b9311ad9a097",
+      "sha256": "dae69c3cd93a727e5d4fcdc26298ee9d1e759b20d1175fe6dec2147bd41c9339",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

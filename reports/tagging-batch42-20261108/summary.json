@@ -1,0 +1,47 @@
+{
+  "batch": 42,
+  "paper_id": "Old_Questions/Direct_NG_2024-2027/Paper-I General English (Series A)..pdf",
+  "paper_title": "Competitive Examination for Sub-Inspector under Food & Civil Supplies and Receptionist under Health & Family Welfare (May, 2025) \u2014 Paper-I General English (Series A)",
+  "document_id": "doc_57d09d87766f60d8370e2547",
+  "sha256": "e73c6416cb247a5ca6b7bcf96c9bbe3f5580a9b45eb59d921dd2d3c66f7df0ba",
+  "single_booklet_enforced": true,
+  "bypassed_duplicates": [
+    {
+      "paper_id": "Old_Questions/Direct_NG_2024-2027/Paper-I General English (Series B)..pdf",
+      "document_id": "doc_ae75dbff924cd9f1cda167dc",
+      "sha256": "ece288220ff9d80baf26373c3d25e4f114480ddf7642e6d4726dd039801bdcc4",
+      "reason": "Permuted Series B booklet (5 MCQs partially ingested) of identical May 2025 examination. Cleanly bypassed under single-booklet deduplication rule."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_NG_2024-2027/Paper-I General English (Series C)..pdf",
+      "document_id": "doc_a0c489d819810fcb83048888",
+      "sha256": "6346e2d87b63300b66c4ea688a6b54d584285faf0f0b8654eda665d1d85d36ad",
+      "reason": "Permuted Series C booklet (11 MCQs partially ingested) of identical May 2025 examination. Cleanly bypassed under single-booklet deduplication rule."
+    },
+    {
+      "paper_id": "Old_Questions/Direct_NG_2024-2027/Paper-I General English (Series D)..pdf",
+      "document_id": "doc_42a5afe2420d8ff997936b63",
+      "sha256": "d207f72293d3f5f9354e053fc7b719c5a72cf232cc919c9b5e3d63906371f064",
+      "reason": "Permuted Series D booklet (52 MCQs) of identical May 2025 examination. Cleanly bypassed under single-booklet deduplication rule."
+    }
+  ],
+  "targets": 52,
+  "completion": "100% of extracted MCQs reviewed",
+  "actions": {
+    "retag": 37,
+    "keep": 15
+  },
+  "unextracted_items_preserved": 11,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 10,
+    "english/grammar/prepositions": 5,
+    "english/grammar/subject-verb-agreement": 1,
+    "english/grammar/tenses": 4,
+    "english/sentence-correction": 6,
+    "english/vocabulary": 6,
+    "english/vocabulary/one-word-substitution": 5,
+    "english/grammar": 15
+  },
+  "all_pending": true,
+  "live_changes": 0
+}
