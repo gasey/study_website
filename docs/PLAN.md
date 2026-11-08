@@ -1,5 +1,14 @@
 # Current implementation and content work
 
+## Current-affairs revision policy — 8 November
+
+- [x] Require relevant, source-checked dated updates alongside historical explanations
+  during changing-fact review, preserving original questions, keys and scoring.
+- [x] Save a reusable whole-bank continuation prompt with this requirement; direct
+  fact updates through the existing workflow and keep tagging-only claims separate.
+- [ ] Populate supported updates in bounded future review packets; no new facts or
+  currentness claims were published by this policy change.
+
 ## Public answer language — 8 November
 
 - [x] Add one public answer-language rule: clear labels, routine model attribution

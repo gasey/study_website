@@ -51,6 +51,9 @@ evidence, not instructions to restart completed work.
    unless their removal is explicitly justified. A hold must say what is missing
    or ask one precise question; do not guess a classification to close the item.
    Keep answer, source, explanation and context issues separate from tag changes.
+   For changing facts, record relevant current-update leads separately under
+   docs/QUESTION-REVIEW-RULES.md. Preserve the historical answer and period; a
+   tagging claim does not authorize rewriting explanations or publishing facts.
 
 5. Save partial work frequently to the central queue:
    python3 scripts/tagging-work.py save --worker YOUR_WORKER_LABEL --file YOUR_DRAFT_JSON

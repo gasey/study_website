@@ -9175,3 +9175,21 @@ remain in force; no answer publication, content migration or bulk rerun occurred
 Validation: public-label/legacy-footer checks, public-card conflict/reveal/auth
 checks, and answer-panel explanation/gating checks pass. TypeScript/Vite production
 build and frontend deployment completed; both-site health checked after release.
+
+
+## 8 November 2026 — Dated current-affairs updates in review policy
+
+Owner clarified that explanations should include useful newer facts/events where
+available. Updated the single review policy and public-language rules: retain the
+exam-period answer, inspect current primary sources, and add a concise dated update
+with actual effective/reporting period, source link and checked date. Distinguish
+later change from a wrong historical key. Reuse existing dated-fact revisions and
+review deadlines; record missing evidence without pretending unchanged. Tag-only
+workers record leads and do not acquire answer/explanation publication authority.
+
+Saved the reusable whole-bank prompt and linked it from AGENTS. Added a supersession
+notice to the older explanations/current-affairs release notes so obsolete display
+labels and future-work statements no longer compete with current instructions.
+This change prepares future review work; no current fact was researched/published,
+no bank/API/frontend was changed and no scheduler was enabled. Checked Markdown
+paths and diff whitespace; no runtime tests or deployment needed for policy changes.

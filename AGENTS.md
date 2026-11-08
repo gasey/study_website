@@ -2,6 +2,8 @@
 
 Read `CLAUDE.md` and `docs/PLAN.md` before working in this repository.
 For question review or solving, follow `docs/QUESTION-REVIEW-RULES.md`.
+Use `docs/BANK-COMPLETION-PROMPT.md` for reusable whole-bank continuation,
+including source-checked current-affairs updates alongside historical answers.
 For question tagging, classification, extraction labels or bank repairs, read
 `docs/QUESTION-TAGGING-RULES.md` first and use
 `docs/QUESTION-TAGGING-MODEL-PROMPT.md` for candidate work.

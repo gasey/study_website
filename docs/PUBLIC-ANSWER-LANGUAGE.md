@@ -53,3 +53,9 @@ Use the subject-specific expectations in QUESTION-REVIEW-RULES.md: useful techni
 working where supported, simple facts without filler, and Mizo explanations only
 where reliable language/source evidence supports them. Answer/source review and
 actual conflicts remain separate from explanation availability.
+
+For changing facts, an explanation may show **At the time of this exam** followed
+by **Update — checked DATE**. State the newer fact's effective date or reporting
+period and link its inspected primary source. Newer facts supplement the historical
+answer; they do not replace the official key or imply the old answer was wrong.
+Keep updates concise and retain applicable stale/recheck notices.

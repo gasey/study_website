@@ -89,12 +89,52 @@ Existing publication endpoint contracts still apply. This policy does not waive
 required review evidence or authorize filler in an explanation-only submission;
 that queue only selects items for which a useful explanation can be supported.
 
+## Current-affairs explanations: historical answer and dated update
+
+When reviewing a changing fact, check whether a relevant newer event or fact can
+help the learner revise. If supported, include a concise dated update alongside
+the historical explanation. This applies to officeholders, appointments, schemes,
+rankings, statistics, awards, records and other changing facts, including questions
+whose primary tag is a specialist subject rather than Current Affairs.
+
+- First explain the answer for the question's original reference period. Keep the
+  printed question, ordered choices, historical key and scoring attached to that exam.
+- Browse and inspect a current primary source before asserting a newer fact. Record
+  its direct URL/title, publication date, effective date or reporting period, and
+  actual checked date. Model memory or the newest search-result date is insufficient.
+- Present the addition as **Update — checked DATE**, with the fact's own date/edition
+  stated explicitly. A report published this year may describe an older period;
+  never relabel its figures as this year's measurements. Compare like units and
+  definitions, and distinguish related events from directly comparable facts.
+- For named award/tournament editions, retain the original winner; any later edition
+  is a separately labelled revision fact. A newer fact is not an error in the old key
+  and must not trigger an answer-conflict hold solely because time has passed.
+- Use the existing dated current-affairs workflow at `/current-affairs/manage` for
+  reusable fact revisions, source-bound links and review deadlines. A brief explanation
+  addition uses the existing explanation-correction workflow when authorized, tied to
+  the same inspected evidence. Do not create competing copies of the current fact.
+- Reuse a still-applicable inspected revision across matching questions. Check the
+  actual freshness/source context before claiming it is current; prioritize missing,
+  changed or recheck-due facts. Do not research unrelated news or redo accepted tags.
+- If no useful change is found, keep the explanation concise. Record internally
+  whether no change was verified or current evidence was unavailable; never infer
+  unchanged from a missing connection. Missing update evidence alone does not
+  invalidate a sound historical answer. Omit an unsupported update.
+
+Updates remain dated snapshots, with real sources and recheck deadlines, rather than
+claims of permanent currency. Existing stale/archived notices, fact-review permissions
+and answer-reveal/assessment gates remain in force. Tagging-only workers record the
+update lead separately; their tagging claim does not authorize explanation/fact edits.
+This policy asks future review work to prepare relevant updates; it does not claim
+that current facts have already been populated or enable automatic news publication.
+
 ## Which procedure to use
 
 | Work | Current procedure |
 | --- | --- |
 | Classification | QUESTION-TAGGING-RULES.md + TAGGING-WORKER-PROMPT.md; central Oracle claims |
 | Existing-answer explanation backfill | AI-QUESTION-REVIEW-HANDOFF.md; checkpoint and resume its explanation queue |
+| Newer current-affairs facts | Existing `/current-affairs/manage` dated-fact workflow; retain the historical exam answer |
 | Answer, key or source correction | Existing admin answer/correction workflow; ORACLE-PAPER-WORKBENCH-RUNBOOK.md |
 | Local solver | tools/mcq-solver/README.md; drafts only until accepted through the existing workflow |
 | Public wording | PUBLIC-ANSWER-LANGUAGE.md; shared answerStatus.ts |

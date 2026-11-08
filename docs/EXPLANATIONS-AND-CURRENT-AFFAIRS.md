@@ -1,5 +1,12 @@
 # Explanations and current-affairs context
 
+Current policy: [Question review rules](QUESTION-REVIEW-RULES.md), including the
+historical-answer + dated-update requirement, and [Public answer language](PUBLIC-ANSWER-LANGUAGE.md).
+The release notes below are historical: their old empty-explanation labels and
+future-work statements do not override current policy or deployed features.
+The existing dated-fact editor is `/current-affairs/manage`; use its current
+permissions and revision workflow. No automatic current-fact population is implied.
+
 MCQ/written response is the question format. Official/transcribed key, derived solution and inferred suggestion describe answer provenance. Published answer verification and explanation availability are separate. These presentation changes never grant scoring eligibility, clear holds or modify historical answers.
 
 After answering, Bank, question detail, module study and paper browsing show a shared explanation panel:
