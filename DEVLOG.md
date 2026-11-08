@@ -8640,6 +8640,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,111 saved records**, **10,032 unique appearances**, **9,631 deduplicated candidates**, **0 problems**. [Batch 137 report](reports/tagging-batch137-20261108/README.md).
 
+### Tagging Batch 138 — UDC under Fisheries 2021 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of Upper Division Clerk (U.D.C.) under Fisheries Department, April 2021 — Paper-I (`Old_Questions/Direct_2021-2022/UDC Direct under Fisheries Deptt - Paper-I.pdf`, `doc_ba1b7c0235e88947662db162`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Précis 25 Marks, Essay 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (0 retags, 75 keeps, 0 holds, 0 live changes; 100% compliant existing tagging verified against source booklet).
+- **Taxonomic Distribution:**
+  - `english/grammar` (30 items): Q46–Q50 (sentence completion & usage), Q51–Q56 (sentence analysis: simple, compound, complex), Q57–Q62 (clause analysis: noun, adjective, adverb), and Q63–Q75 (sentence transformations).
+  - `english/grammar/prepositions` (8 items): Q1–Q8 (prepositions and prepositional collocations).
+  - `english/vocabulary/idioms-and-phrases` (8 items): Q26–Q33 (idioms and phrases).
+  - `english/vocabulary/one-word-substitution` (7 items): Q34–Q40 (one-word substitution for descriptive definitions).
+  - `english/grammar/tenses` (6 items): Q9–Q14 (tenses and verb forms).
+  - `english/grammar/parts-of-speech` (6 items): Q20–Q25 (parts of speech identification).
+  - `english/grammar/voice` (5 items): Q15–Q19 (active and passive voice).
+  - `english/vocabulary/antonyms` (5 items): Q41–Q45 (antonyms / opposite in meaning).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Précis on Modern Boredom and Motivation [25 marks] and Question 2 Essay on Environment vs Growth / Discipline / Women Empowerment [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,186 saved records**, **10,107 unique appearances**, **9,706 deduplicated candidates**, **0 problems**. [Batch 138 report](reports/tagging-batch138-20261108/README.md).
+
+
 
 
 
