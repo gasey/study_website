@@ -7950,6 +7950,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,657 saved records**, **7,579 unique appearances**, **7,179 deduplicated candidates**, **0 problems**. [Batch 103 report](reports/tagging-batch103-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 104 (District Organiser March 2020 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 104 (`reports/tagging-batch104-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to the Post of District Organiser (Contract) (March 2020) — General English* (`Old_Questions/Direct_2019-2020/General English(DO, March).pdf`, `doc_cbc152761905acf953b683b6`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 49 retag, 31 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (24 items): Q29–Q36 (functional parts of speech: still, off, round, better, but, etc.), Q49–Q58 (sentence kinds: simple, compound, complex), Q59–Q64 (sentence types: affirmative, negative, interrogative, exclamatory, imperative, assertive).
+    - `english/vocabulary/idioms-and-phrases` (19 items): Q1–Q16 (give a wide berth, flesh creep, rub wrong way, gets on nerves, high and dry, burn candle at both ends, speak volumes, etc.), Q65 (firm as a rock), Q67 (fair share), Q74 (taken after).
+    - `english/comprehension` (7 items): Q17–Q23 (reading passage questions on an extravagant man and money).
+    - `english/vocabulary` (7 items): Q66, Q68–Q73 (contextual vocabulary: scalded, dispersed, wince, exercise restraint, sumptuous, averted, neglected).
+    - `english/grammar/tenses` (6 items): Q37–Q42 (verb tense selection: moves, has gone, went, had started, etc.).
+    - `english/grammar/prepositions` (6 items): Q43–Q48 (prepositions in context: on diet, by, in, into, etc.).
+    - `english/vocabulary/synonyms` (6 items): Q75–Q80 (synonyms / closest meaning: vigilant, etc.).
+    - `english/vocabulary/antonyms` (5 items): Q24–Q28 (antonyms from passage: admired, extravagant, despised, careful, popularity).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,737 saved records**, **7,659 unique appearances**, **7,259 deduplicated candidates**, **0 problems**. [Batch 104 report](reports/tagging-batch104-20261108/README.md).
+
+
 
 
 
