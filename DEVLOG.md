@@ -8431,3 +8431,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,391 saved records**, **9,312 unique appearances**, **8,911 deduplicated candidates**, **0 problems**. [Batch 126 report](reports/tagging-batch126-20261108/README.md).
 
+### Tagging Batch 127 — Circle Officer April-2026 Paper-I (Series A) (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examination for Recruitment to the Post of Circle Officer under Social Welfare, Women and Child Development Department, April 2026 — Paper-I (Series A) (`Old_Questions/Direct_2025-2027/Circle Officer April-2026 Paper-I (Series A)..pdf`, `doc_ed1528c3d8735906fc1bb395`).
+- **Paper Structure:** 100 Marks total (Part-A: 40 Conventional Marks [Essay 10 Marks, Précis 10 Marks, Letter Drafting 10 Marks, Reading Comprehension 10 Marks] + Part-B: 60 Objective Marks [60 MCQs]; 100% paper completion).
+- **Actions:** 60 MCQs reviewed (59 retags, 1 keep, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (13 items): Q41–Q45 (clause identification: adjective, adverb, noun, conditional clauses) and Q51–Q58 (sentence transformation: interrogative, affirmative, exclamatory, negative, simple, complex, compound).
+  - `english/grammar/parts-of-speech` (10 items): Q1–Q10 (parts of speech identification: still, better, most, right, since, near, but, fast, heavens, such).
+  - `english/grammar/prepositions` (10 items): Q11–Q20 (appropriate prepositions: fawning upon, lost to, lying at hand, limit to, elated with joy at, talks to/like, passion for, cured of, acquitted of, committed to).
+  - `english/vocabulary/antonyms` (10 items): Q21–Q30 (antonyms: senility, warily, grumpy, vicious, vanity, sturdy, intently, gradually, abstemious, mendacious).
+  - `english/vocabulary/idioms-and-phrases` (5 items): Q31–Q35 (go abegging, tread on toes, damp squib, bore the palm, jack of all trades).
+  - `english/vocabulary/one-word-substitution` (5 items): Q36–Q40 (sceptic, omniscient, epitaph, amnesty, expatriate).
+  - `english/grammar/reported-speech` (5 items): Q46–Q50 (direct to indirect and indirect to direct speech conversions).
+  - `english/sentence-correction` (2 items): Q59–Q60 (pronoun order and subjunctive suggestion syntax).
+- **Defect & Deduplication Documentation:**
+  - Preserved Part A (40 conventional marks: Essay 10 marks on NGOs/Governance/Working Women, Précis 10 marks on urbanization and rural development, Letter to Mayor on burglary 10 marks, Reading Comprehension on youth and social media 10 marks) in `pending-written-intake.json`.
+  - Permutation Series B (`doc_377910aec4160662181961c8`) bypassed under single-booklet deduplication policy to avoid multi-booklet conflicts.
+- **Ledger Verification:**
+  - Readback validation confirmed 60/60 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,451 saved records**, **9,372 unique appearances**, **8,971 deduplicated candidates**, **0 problems**. [Batch 127 report](reports/tagging-batch127-20261108/README.md).
+
+
