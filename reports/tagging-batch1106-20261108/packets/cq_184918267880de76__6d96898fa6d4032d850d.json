@@ -1,0 +1,106 @@
+{
+  "canonical_id": "cq_184918267880de76",
+  "appearance_id": "6d96898fa6d4032d850d",
+  "snapshot": {
+    "record": {
+      "id": "6d96898fa6d4032d850d",
+      "paperId": "Old_Questions/Departmental_2019-2020/Electrical Engineering Paper-I (AESDO-P&E).pdf",
+      "type": "mcq",
+      "question": "The centre point of the Battery Bus is connected to earth fault relay through a resistance voltage divider circuit. The earth fault relay actuates when leakage current through this circuit or Bus is more than",
+      "options": [
+        "3mA",
+        "5mA",
+        "7mA"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Battery-bank earth-fault monitoring circuits commonly alarm at leakage above 5 mA; this threshold is equipment/guideline-specific and the cited source was unavailable.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "9(b)",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Departmental_2019-2020/Electrical Engineering Paper-I (AESDO-P&E).pdf",
+      "title": "Departmental Examinations for Junior Grade of M.E.S. (AE/SDO) - Electrical Engineering Paper I",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Departmental_2019-2020/Electrical%20Engineering%20Paper-I%20(AESDO-P%26E).pdf"
+    }
+  },
+  "source_fingerprint": "627fc198d8f5ddfde87d9d25e2ff20a799a3ec97394d2df6158fbc695f1eec94",
+  "appearance": {
+    "id": "6d96898fa6d4032d850d",
+    "paper_id": "Old_Questions/Departmental_2019-2020/Electrical Engineering Paper-I (AESDO-P&E).pdf",
+    "type": "mcq",
+    "qnum": "9(b)",
+    "qnum_seq": null,
+    "page": 3,
+    "question": "The centre point of the Battery Bus is connected to earth fault relay through a resistance voltage divider circuit. The earth fault relay actuates when leakage current through this circuit or Bus is more than",
+    "options": [
+      "3mA",
+      "5mA",
+      "7mA"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-I (AESDO-P&E)",
+    "difficulty": "medium",
+    "explanation": "Battery-bank earth-fault monitoring circuits commonly alarm at leakage above 5 mA; this threshold is equipment/guideline-specific and the cited source was unavailable.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'actuat':24 'batteri':6 'bus':7,32 'centr':2 'circuit':19,30 'connect':9 'current':27 'divid':18 'earth':11,21 'fault':12,22 'leakag':26 'point':3 'relay':13,23 'resist':16 'voltag':17",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_184918267880de76",
+    "option_order": [
+      0,
+      1,
+      2
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "5mA",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
