@@ -1,0 +1,57 @@
+{
+  "batch": 139,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2014-2018/MCS Main 2014 General English.pdf",
+      "paper_title": null,
+      "document_id": "doc_45e5a25777a2fbc67bbc54e5",
+      "sha256": "013d5da5f7aff9c0511409dd3ac27aff944f92839b3d798b277129c597e816c6",
+      "targets": 7
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2022-2023/MCS Main 2022 General English..pdf",
+      "paper_title": "General English",
+      "document_id": "doc_fc219fb86b2a1c5f010dc87a",
+      "sha256": "43ae349c40192318a2f200b71f591d78d59169e9cbb6de13855e981b8358c88c",
+      "targets": 7
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Main 2023 General English..pdf",
+      "paper_title": "MIZORAM CIVIL SERVICES (COMBINED COMPETITIVE) MAIN EXAMINATION",
+      "document_id": "doc_47386efa3f8ad958fe3a67be",
+      "sha256": "37c167fdf7f93bea62bc2439977cb6d60313c2b64f5c12542127594de65918ff",
+      "targets": 5
+    },
+    {
+      "paper_id": "Old_Questions/Direct_2025-2027/MCS (Main) General English - 2025..pdf",
+      "paper_title": "General English",
+      "document_id": "doc_b546f1a2adc30b19a5ef6076",
+      "sha256": "d53cd4051a61ffdf7a50644c5f66f31bf995524c73d2ab337123a5660cbd0cc3",
+      "targets": 2
+    }
+  ],
+  "targets": 21,
+  "completion": "100% paper completion achieved for 4 MCS Main General English examinations (21/21 questions reviewed: 9 Comprehension, 4 Grammar, 4 Vocabulary, 1 Synonyms, 1 Précis, 1 Letter, 1 Essay; 7 major conventional items [195 marks] preserved in pending-written-intake.json)",
+  "actions": {
+    "retag": 20,
+    "keep": 1,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 7,
+  "conventional_marks_preserved": 195,
+  "breakdown": {
+    "english/comprehension": 9,
+    "english/grammar": 4,
+    "english/vocabulary": 4,
+    "english/vocabulary/synonyms": 1,
+    "english/writing/precis": 1,
+    "english/writing/letter": 1,
+    "english/writing/essay": 1
+  },
+  "source_defects": [
+    "Preserved 7 major conventional items (195 marks: Essays, Précis, Letters) across MCS Main papers in pending-written-intake.json.",
+    "Refined 20 subject-only tags to specific topics and subtopics."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

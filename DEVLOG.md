@@ -8659,6 +8659,31 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,186 saved records**, **10,107 unique appearances**, **9,706 deduplicated candidates**, **0 problems**. [Batch 138 report](reports/tagging-batch138-20261108/README.md).
 
+### Tagging Batch 139 — MCS Mains General English Collection (2014, 2022, 2023, 2025) (2026-11-08)
+- **Scope & Targets:** Full source review of 4 Mizoram Civil Services (MCS) Mains General English examination papers:
+  1. `Old_Questions/Direct_2014-2018/MCS Main 2014 General English.pdf` (`doc_45e5a25777a2fbc67bbc54e5`, 7 items).
+  2. `Old_Questions/Direct_2022-2023/MCS Main 2022 General English..pdf` (`doc_fc219fb86b2a1c5f010dc87a`, 7 items).
+  3. `Old_Questions/Direct_2023-2025/MCS Main 2023 General English..pdf` (`doc_47386efa3f8ad958fe3a67be`, 5 items).
+  4. `Old_Questions/Direct_2025-2027/MCS (Main) General English - 2025..pdf` (`doc_b546f1a2adc30b19a5ef6076`, 2 items).
+- **Actions:** 21 questions reviewed (20 retags, 1 keep, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution:**
+  - `english/comprehension` (9 items): Q1a, Q1b, Q1d, Q1e, Q1f, Q1g (MCS Main 2022 password fatigue passage); Q1 (MCS Main 2023 William Hazlitt journey & solitude); Q1, Q2 (MCS Main 2025 adolescent peer pressure).
+  - `english/grammar` (4 items): Q4(g)(i)–(ii) (determiners/adverbs) and Q8(e) (modals) from 2014; Q6 (10 sentence transformations) from 2023.
+  - `english/vocabulary` (4 items): Q8(a)–(d) (homophones: stationary/stationery, descent/dissent, council/counsel, precede/proceed) from 2014.
+  - `english/vocabulary/synonyms` (1 item): Q1c (synonym in context: mitigate -> lessen) from 2022.
+  - `english/writing/precis` (1 item): Q2 (précis on knowledge is power and history of education) from 2023.
+  - `english/writing/letter` (1 item): Q3 (formal letter on drainage) from 2023.
+  - `english/writing/essay` (1 item): Q9 (expansion of ideas / proverbs) from 2023.
+- **Defect Documentation:**
+  - Preserved 7 major conventional written sections totaling 195 marks across these 4 papers in `pending-written-intake.json`:
+    - 2014: Q1 Essay (20 marks) and Q2 Précis (15 marks).
+    - 2022: Q2 Précis (15 marks) and Q3 Letter (10 marks).
+    - 2025: Q1 Short Essays (100 marks: 2x50), Q4 Précis (20 marks), and Q5 Formal Letter (15 marks).
+- **Ledger Verification:**
+  - Readback validation confirmed 21/21 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,207 saved records**, **10,128 unique appearances**, **9,727 deduplicated candidates**, **0 problems**. [Batch 139 report](reports/tagging-batch139-20261108/README.md).
+
+
 
 
 
