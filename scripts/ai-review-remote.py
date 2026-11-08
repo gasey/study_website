@@ -33,8 +33,26 @@ async def run(data):
                 for table in ('attempts','editorial_assignments','editorial_assignment_papers','editorial_checks','review_grants'):
                     await cur.execute('SELECT to_jsonb(t) AS row FROM '+table+' t ORDER BY to_jsonb(t)::text')
                     rows=await cur.fetchall();result[table]={'count':len(rows),'sha256':digest(rows)}
-                await cur.execute("SELECT count(*) AS n FROM bank_contributions WHERE created_at>now()-interval '1 day' AND author_id=(SELECT id FROM users WHERE lower(email)='hruaitluangasailo20@gmail.com')")
-                result['ordinary_used']=(await cur.fetchone())['n']
+                # Match bank_review.create's ordinary budget: a fully attributed,
+                # scoped operator taxonomy run has a separate recorded allowance.
+                await cur.execute("""SELECT count(*)::int AS total,
+                  count(*) FILTER (WHERE NOT (c.kind='taxonomy' AND EXISTS(
+                    SELECT 1 FROM contribution_events x JOIN contribution_events a
+                      ON a.contribution_id=x.contribution_id
+                    WHERE x.contribution_id=c.id AND x.actor_id='operator:owner-source-maintenance'
+                      AND x.action='owner_maintenance_quota_exemption'
+                      AND x.detail->>'owner_id'=c.author_id
+                      AND a.actor_id='operator:owner-source-maintenance'
+                      AND a.action='operator_taxonomy_authorization'
+                      AND a.detail->>'owner_id'=c.author_id
+                      AND a.detail->>'run_id'=x.detail->>'run_id')))::int AS ordinary
+                  FROM bank_contributions c WHERE c.created_at>now()-interval '1 day'
+                  AND c.author_id=(SELECT id FROM users WHERE lower(email)='hruaitluangasailo20@gmail.com')""")
+                usage=await cur.fetchone()
+                result['total_contributions_last24h']=usage['total']
+                result['ordinary_used']=usage['ordinary']
+                result['ordinary_staff_limit']=500
+                result['ordinary_staff_remaining']=max(0,500-usage['ordinary'])
                 await cur.execute("SELECT count(*) AS n FROM bank_publications WHERE state='exported'")
                 result['pending_exports']=(await cur.fetchone())['n']
                 return result

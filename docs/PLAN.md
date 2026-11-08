@@ -601,3 +601,16 @@ Delivery: [Solo-owner workflow](SOLO-OWNER-WORKFLOW-20261106.md).
 - [x] Complete Sub-Inspector under Excise 2014 General Studies Paper-I full 75-question booklet with Batch 149 (70 retags, 5 keeps, 0 holds; Modern Indian History Q1–Q30, Indian Polity Q31–Q45, Indian Economy Q46–Q60, Indian Geography Q61–Q75).
 - [x] Complete Sub-Inspector under Excise 2014 General Studies Paper-II all 34 available questions with Batch 150 (34 retags, 0 keeps, 0 holds; documented source scan defect of omitted odd-numbered pages).
 - [x] Maintain coverage ledger: 10,944 unique questions / appearances, 11,025 saved candidate records across 151 batch files, 0 baseline issues, 0 conflicts, all pending under `study-tagging-v1`.
+
+
+## 9 November — MCS continuation
+
+- [x] Publish and exact-readback three useful explanations (2023 I A Q12, II B Q54, II C Q65), with a dated current reference on MicroPay.
+- [x] Record two direct-recall explanation-not-needed dispositions without filler; implement guarded private queue support and remove prompt word minimum.
+- [x] Correct ordinary allowance audit after separately authorized taxonomy publication; normal 500/day limit unchanged, 3 used, zero pending exports.
+- [x] Preserve all bank content outside explanation fields/pointers, 134 holds, 322 prior attempts, reviewer scope and unlimited owner; 36 focused tests pass.
+- [ ] Continue 1,025 explanation candidates selectively under current optional-explanation policy; retain 3 unresolved reasoning cases.
+- [ ] Reconcile II C Q65's generic pending-key notice against actual key mapping before a separate source correction.
+- [ ] Historical guarded source repairs remain; keep 2012/2013 booklet recovery deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261109.json`; queue has no active packet.

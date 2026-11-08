@@ -217,3 +217,43 @@ The ten explanations applied on 3 November UTC now have their missing final rece
 Three new ordinary source publications removed only stale provisional/pending-key clauses on 2023 Paper I C Q3/Q28/Q55, after original-source and exact final-key inspection. The source-image reminder remains; answers, options, provenance, explanation, page and image mappings are unchanged. Full historical repair-output verification touches three records only, preserves 82,380 other questions/all other bank data, all 134 holds and 292 previous attempts, reviewer workflow and unlimited owner access. No peer/human certification, credit or exception was added. Fifteen focused tests pass. Oracle publisher active; bank/taxonomy IN SYNC at `1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d`. Receipt: `docs/sources/mcs-source-notices-publication-20261107.json`.
 
 The fresh historical numbering audit still has three issues across six booklets (600 printed positions / 601 bank appearances): duplicate 2016 I C Q4 and Q86, and missing 2014 II Q39. Protected identity/intake work remains separate. Queue: 32 published, 1,030 pending, three unresolved, no active packet. Original simulation prerequisites remain unmet; keep 2012/2013 recovery deferred. Resume from `docs/sources/mcs-continuation-checkpoint-20261107.json`, not the older completed packet.
+
+
+## 9 November 2026 — MCS explanation continuation and accurate ordinary usage
+
+Published and verified three explanation-only updates: 2023 I A Q12 (MicroPay,
+23 March 2023 launch plus a separately dated current Axis reference), II B Q54
+(strong/weak arguments) and II C Q65 (examination confidentiality). All applied
+receipts, exact source snapshots, canonical explanation storage and answer-safe
+public question readbacks match. No learner attempt or answer reveal was created
+for verification; authenticated learner reveal UI was not visually inspected.
+
+Two direct recall items, I D Q92 and II B Q44, need no extra prose. Added a private
+source-bound `not-needed` queue outcome that requires prepared source context and
+a current live fingerprint, cannot abandon checked/publishing work, and reopens
+on a later source change. Removed the obsolete minimum-word-count model prompt.
+These dispositions do not certify answers or create production review records.
+
+Corrected the read adapter's misleading ordinary usage counter: the fully
+attributed frozen operator taxonomy run has a separate allowance. The audit now
+reports total contributions and ordinary use separately, using the writer's exact
+matching-event exclusions. Normal limits and authorizations are unchanged. Live
+ordinary use after this packet is 3/500, not the 58,502 total contributions seen
+before this packet. The operator scripts are deployed with matching SHA256 hashes.
+
+Bank `845282c602f000e93b44e60a37f129446a267f4a751c74dff9e401809c8208d0` is
+IN SYNC: 82,383 questions, 13,898 scorable. The full-bank comparison permits only
+the three explanation fields and publication pointers; everything else matches.
+All 134 holds, 322 prior attempts, reviewer assignments/grants and unlimited owner
+access are preserved. No peer votes, credits or new quota exceptions; zero pending
+exports. The Oracle publisher timer remains active; retired local timer untouched.
+
+Validation: 36 focused queue, ordinary-budget and historical-numbering tests pass;
+healthy API and Study route HTTP 200. Queue: 35 published, 2 explanation-not-needed,
+1,025 pending candidates, 3 unresolved, no active packet. Blank prose alone does
+not establish an unfinished answer review. Historical source repairs remain open;
+2012/2013 recovery stays deferred and original-paper simulation stays gated.
+II C Q65 retains its old generic pending-key source notice; reconcile actual mapping
+before a separate source correction. Durable receipt and next checkpoint:
+`docs/sources/mcs-publication-20261109.json`. Private evidence:
+`reports/mcs-continue-20261109/verified.json`.

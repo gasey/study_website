@@ -85,7 +85,9 @@ The runner checks the installed model catalog and saves returned usage with draf
 Use `opencode-go/glm-5.3-flash` for routine drafts when connected; escalate complex
 items rather than repeatedly spending allowance. Manual drafts remain supported.
 
-The v2 prompt targets 80–130 learner-facing words and caps output at 700 tokens.
+The current prompt has no minimum word count and caps output at 700 tokens.
+Direct supported recall may use the source-bound private `not-needed` disposition
+without publishing filler or claiming any new answer review.
 It omits bank metadata, does not invent reference URLs and requires care with
 subjective rankings and broad administrative-force wording. A single-question
 calibration reduced completion tokens from 844 to 354; that is not a measured
@@ -212,3 +214,36 @@ other tasks published unrelated explanations later. All existing holds, previous
 learner rows, assignments and access passed preservation checks. Latest durable
 resume file: `docs/sources/mcs-continuation-checkpoint-20261107.json` (verified
 8 November). Read fresh authority/queue/live eligibility before claiming new work.
+
+
+## 9 November 2026 — ordinary allowance and optional explanations
+
+`ai-review-remote.py` now reports total contributions separately from ordinary
+usage. Its ordinary counter follows `bank_review.create`: only taxonomy records
+with both matching trusted authorization and exemption events are excluded. The
+large frozen tagging publication must not falsely block ordinary explanation work.
+No budget, exemption scope or API permission changed.
+
+After inspecting a direct supported recall item, record why extra prose adds no
+learning value:
+
+```bash
+python3 scripts/ai-question-review.py not-needed --id QUESTION --claim CLAIM --reason "Substantive source-specific reason"
+```
+
+This is a private queue disposition, not an answer verification, editorial sign-off
+or production content change. It requires prepared source context, a current claim
+and an unchanged live source fingerprint. A later source change reopens the item
+on refresh. It cannot discard checked or publishing work. Keep this outcome
+separate from unavailable evidence and unresolved answers.
+
+Submit the next explanation only after the previous publication is applied; the
+ordinary writer rejects overlapping outstanding exports. If a submission is
+uncertain or refused, resume that exact item so its persisted request is reconciled.
+Do not create a new request or leave a submitting/publishing item abandoned.
+
+Latest checked packet: `docs/sources/mcs-publication-20261109.json`. Queue at
+9 November IST: 35 published, 2 explanation-not-needed, 1,025 pending, 3 unresolved,
+no active packet. These counts supersede prior dated continuation counts; do not
+replay completed publications. Ordinary allowance after publication is 3/500,
+with zero exports waiting and Oracle timer active.

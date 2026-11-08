@@ -84,9 +84,64 @@ def test_go_runner_is_stateless_and_requires_subscription_billing(tmp_path,monke
  calls=[]
  def request(body,session,key):
   calls.append(body);assert key=='test-only-key' and session==row['packet'];assert 'tools' not in body
+  prompt=json.dumps(body,ensure_ascii=False)
+  assert 'no minimum word count' in prompt and '80–130' not in prompt
+  assert 'current primary evidence is supplied' in prompt
   return {'usage':{'cost':0,'opencode':{'billing_source':'go'}},'choices':[{'finish_reason':'stop','message':{'content':json.dumps({'explanation':'A bounded source-grounded synthetic explanation.','model':'test','evidence':[]})}}]}
  r=a.opencode_draft(q,'q',row['claim'],'opencode-go/glm-5.3-flash',requester=request,key_loader=lambda:'test-only-key')
  assert r['billing_source']=='go' and len(calls)==1 and q.item('q',row['claim'])['draft_attempts']==1
  def paid(*args):return {'usage':{'cost':0.01,'opencode':{'billing_source':'balance'}}}
  with pytest.raises(ValueError,match='subscription-only'):a.opencode_draft(q,'q',row['claim'],'opencode-go/glm-5.3-flash',requester=paid,key_loader=lambda:'test-only-key')
  with pytest.raises(ValueError,match='billing is blocked'):a.opencode_draft(q,'q',row['claim'],'opencode-go/glm-5.3-flash',requester=request,key_loader=lambda:'test-only-key')
+
+
+def test_not_needed_is_source_bound_and_does_not_publish(tmp_path):
+ q=a.Queue(tmp_path);source=item();q.refresh({'collection_id':'combined-prelims','items':[source]});row=q.claim('combined-prelims',5)[0]
+ reason='Direct supported recall; extra explanation would merely repeat the selected answer.'
+ with pytest.raises(ValueError,match='Inspect the source'):q.not_needed('q',row['claim'],reason)
+ context=q.immutable('context',{'text':'Synthetic inspected source.'})
+ with q.db:q.db.execute('UPDATE items SET context_data=? WHERE id=?',(context,'q'))
+ with pytest.raises(ValueError,match='Source changed'):q.not_needed('q',row['claim'],reason,transport=lambda d:{'fingerprint':'changed'})
+ with pytest.raises(ValueError,match='ineligible'):q.not_needed('q',row['claim'],reason,transport=lambda d:{'fingerprint':source['fingerprint'],'eligible':False})
+ assert q.item('q',row['claim'])['status']=='claimed'
+ q.not_needed('q',row['claim'],reason,transport=lambda d:{'fingerprint':source['fingerprint']})
+ assert not q.packet()
+ r=q.db.execute("SELECT * FROM items WHERE id='q'").fetchone()
+ assert r['status']=='not-needed' and r['publication'] is None and r['draft'] is None
+ q.refresh({'collection_id':'combined-prelims','items':[source]})
+ assert q.db.execute("SELECT status FROM items WHERE id='q'").fetchone()[0]=='not-needed'
+ changed=item();changed['fingerprint']='new-source'
+ q.refresh({'collection_id':'combined-prelims','items':[changed]})
+ assert q.db.execute("SELECT status FROM items WHERE id='q'").fetchone()[0]=='pending'
+
+
+def test_not_needed_cannot_abandon_checked_or_publishing_work(tmp_path):
+ q,row,source,draft=prepared(tmp_path)
+ with pytest.raises(ValueError,match='claimed item'):q.not_needed('q',row['claim'],'A substantive explanation disposition must not erase a checked draft.')
+ assert q.item('q',row['claim'])['status']=='checked'
+
+
+def test_remote_audit_uses_ordinary_allowance_not_total_contributions(client,actor,database):
+ import ast
+ from uuid import uuid4
+ from psycopg.types.json import Jsonb
+ from test_learning_workflows import official
+ source=Path(__file__).resolve().parents[2]/'scripts/ai-review-remote.py'
+ tree=ast.parse(source.read_text())
+ sql=next(node.value for node in ast.walk(tree) if isinstance(node,ast.Constant) and isinstance(node.value,str) and 'AS total,' in node.value)
+ # Bind the disposable fixture account, never a production connection.
+ sql=sql.replace("lower(email)='hruaitluangasailo20@gmail.com'", "id='owner'")
+ q,appearance,_=official(database);actor('owner');conn=database[1];prefix='audit_budget_'+uuid4().hex
+ before=conn.execute(sql).fetchone()
+ conn.execute("INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash) SELECT %s||n::text,'owner',%s,%s,'taxonomy','english','Synthetic audit budget',%s||n::text,%s FROM generate_series(0,2)n",(prefix,q,appearance,prefix,'a'*64))
+ detail=Jsonb({'owner_id':'owner','run_id':prefix})
+ try:
+  # An exemption event alone is insufficient; both trusted records must agree.
+  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) SELECT id,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',%s FROM bank_contributions WHERE id LIKE %s",(detail,prefix+'%'))
+  assert conn.execute(sql).fetchone()==(before[0]+3,before[1]+3)
+  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES (%s,'operator:owner-source-maintenance','operator_taxonomy_authorization',%s)",(prefix+'0',detail))
+  # Mismatched run authorization must still consume ordinary allowance.
+  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES (%s,'operator:owner-source-maintenance','operator_taxonomy_authorization',%s)",(prefix+'1',Jsonb({'owner_id':'owner','run_id':'wrong-run'})))
+  assert conn.execute(sql).fetchone()==(before[0]+3,before[1]+2)
+ finally:
+  conn.execute("UPDATE bank_contributions SET created_at=now()-interval '2 days' WHERE id LIKE %s",(prefix+'%',))
