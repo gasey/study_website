@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_cdc39627245c119a",
+    "appearance_id": "desc-e742e9a9ece13635623a",
+    "source_fingerprint": "7e6dff2ae91877be50a4e8bffee98c58fa665a00e75bb5781e42becb783c2652",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c79bc62c16a30b6f",
+    "appearance_id": "desc-b461b7786806b74a16e7",
+    "source_fingerprint": "b898d786648b39443b02a25a3c24f9f25112074854bb1cff0fd8baf70698b9ad",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd188383733303ff",
+    "appearance_id": "desc-4d15c0dc1a1483894274",
+    "source_fingerprint": "e3f3a51c4d3f2b4f7aa319294add8ba12c428e4755cb1f7a82a0d12469d7c9a8",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a01b5da575af1ffd",
+    "appearance_id": "desc-982fe9285f2213129ae7",
+    "source_fingerprint": "2c50d6c64e8bd76d299c0823bab9aabd15153106b1ff9cf4433175d6423f2962",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e6139ab919f1a24c",
+    "appearance_id": "desc-baec1d568ff29008dd9b",
+    "source_fingerprint": "9140c365b195d25e63bdcd0f202bd3e2c87799ff2dd4d744c8a4df1bd795cd68",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54ad6c8a71cad5de",
+    "appearance_id": "desc-7bf0e2bca671abca7b21",
+    "source_fingerprint": "085e81070283315b3d71d6b354b45da08b2eb924e2b1cd9703e623950114ddb3",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1377b85706d2655f",
+    "appearance_id": "desc-e837fa810fd417704f00",
+    "source_fingerprint": "5df28c58bb49e5870f0355537bdb37cfc4b8ee87d98686cb8616460b2212c674",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b2e5c645831b8b7",
+    "appearance_id": "desc-e7b21cf47ee35c16d22c",
+    "source_fingerprint": "a37abdb33bd98316ea666310970d8cff6a96a5b1e9fb08337a50116c089955cb",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5724fee53e11fb91aa6b3c98",
+      "sha256": "cbb53e61cabb21f6b15deca8ac753d646857c3bbcda59a56758b61453999283e",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

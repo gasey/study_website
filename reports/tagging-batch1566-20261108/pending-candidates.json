@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_e93fac23af094598",
+    "appearance_id": "desc-9d1c7a2e7afcf486d48a",
+    "source_fingerprint": "bceccdb9dab2ab644f113a0c8533557e2265147f31e9650dfe9923a91835da95",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7088945278fa7ce3",
+    "appearance_id": "desc-893c8f2f1985d6f8ece2",
+    "source_fingerprint": "386bb55dffc9504661b344d8eec8929bd90c1a801ab9add3d10dba7998944647",
+    "current_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses animal husbandry: Veterinary pathology, livestock management, and animal nutrition. Appropriately classified under animal-husbandry.",
+    "tested_skill": "Animal husbandry: Veterinary pathology, livestock management, and animal nutrition.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9d6fb301ac75fcb1",
+    "appearance_id": "desc-62cd27f8503f247d9737",
+    "source_fingerprint": "278680bbc2d456a30380830224d68dce8fa59b16b0cfd05d8d7290c9efee9a6e",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aeee7745c521337d",
+    "appearance_id": "desc-5a49f188c6a2b9c7dc83",
+    "source_fingerprint": "d76ce7f4452ab24d904912b526e21fbd82f0f72b88195e496b0d67a913315cce",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses animal husbandry: Veterinary pathology, livestock management, and animal nutrition. Appropriately classified under animal-husbandry.",
+    "tested_skill": "Animal husbandry: Veterinary pathology, livestock management, and animal nutrition.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5fe88580cf94c47e",
+    "appearance_id": "desc-73c3695944572dd57882",
+    "source_fingerprint": "03df2795d1deda88b02b5e600a990b4d7c765e9e02f37bc6c3813e1633c26735",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses animal husbandry: Veterinary pathology, livestock management, and animal nutrition. Appropriately classified under animal-husbandry.",
+    "tested_skill": "Animal husbandry: Veterinary pathology, livestock management, and animal nutrition.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c8ed702b6f1664aa",
+    "appearance_id": "desc-1bad5d4107f7b799320b",
+    "source_fingerprint": "2523c880b338a019d34bf520a81d73451f293375b57dfce07d179a775570e4bf",
+    "current_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses animal husbandry: Veterinary pathology, livestock management, and animal nutrition. Appropriately classified under animal-husbandry.",
+    "tested_skill": "Animal husbandry: Veterinary pathology, livestock management, and animal nutrition.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02db557e9a3d86a5",
+    "appearance_id": "desc-7113e7500e2336ffbe04",
+    "source_fingerprint": "ffa68f837e4b454cd414f2cd29b76d3489cfa2748d68d95add98a5bff4e4405a",
+    "current_primary": {
+      "subject_id": "animal-husbandry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff40afac175e850b",
+    "appearance_id": "desc-7a4a665a4eb2187ab04b",
+    "source_fingerprint": "7d33d2888c65a60da935608eea14f1c6cb307f07bd67cb67a660fb2a9021caa6",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b378f04cde836c536ff80b83",
+      "sha256": "0916eef34ec058ad3cb154b43b1146bf69e3f999e2e7f20838c4898cd75de751",
+      "note": "Verified against registered booklet source for Animal Husbandry."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_3b7a98d43a204091",
+    "appearance_id": "desc-60e4352d40de1723c444",
+    "source_fingerprint": "cbf3a61844ca24373480b40eba214526cc64bc7fc44e26469191a8ed2ff64003",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0719f646176df7c7",
+    "appearance_id": "desc-4f873b12c11b802c3b43",
+    "source_fingerprint": "750857cf59df2c5fa4f4c6fb5cae9337905590fbf89b1df0f6f7a8b12acccc38",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fba1b5b05c7567a1",
+    "appearance_id": "desc-d23f4e9964d4721349e6",
+    "source_fingerprint": "5711e13193e50043fff4696da6a8e81b60e01324eae515177edafc625b240d3c",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8836213294fae57",
+    "appearance_id": "desc-1b37a0d1abf5a4382cd0",
+    "source_fingerprint": "6f1578add8b18962da364c1731a0043852ee824b2a42feb0631f7fb243320c3b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_244bf9183c40844c",
+    "appearance_id": "desc-a8e787898925c2789df7",
+    "source_fingerprint": "dc10473fb9e832f6ff094ddf76629673bdc069a0ec45b4e1bee759bdc1d91bae",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8ffd7475c2b7cc28",
+    "appearance_id": "desc-f78e5588be5bb9deeee9",
+    "source_fingerprint": "62d65e7a1b431598b306a61e24f0a379026ec1686e5c4c99c8997153ef8f97a3",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e755776f268c6340",
+    "appearance_id": "desc-768e4da364da8853fb33",
+    "source_fingerprint": "a1f2ced6e9906fe8b45b4237c4ea750c42d44d169de3bfb0e7eb7435fcae4195",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2dffd422aede48dd",
+    "appearance_id": "desc-3506e06085772424e8b9",
+    "source_fingerprint": "cf5cce634801a0a7fefc18225bf4a1cbdf13c92c37fb368a9e9723c1d04ada28",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a3b997964084fec7e4624cae",
+      "sha256": "0e2599f88686a207628a4075f1a22390368847f881cc7b95dac8376ed9d722e0",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

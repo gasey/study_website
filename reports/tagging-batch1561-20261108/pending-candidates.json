@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_e942812f1c7bb887",
+    "appearance_id": "desc-0463b9e8a294680c0ad2",
+    "source_fingerprint": "b6fec40e40180f4025cc2ff3836c74d5dd497f35fb9ae58a32d764b31b4c40d4",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses geography: Physical geography, geomorphology, and environmental regions. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, geomorphology, and environmental regions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccfe6bf484e59e73",
+    "appearance_id": "desc-bdea4f652b5c48783d90",
+    "source_fingerprint": "231a08bb43613aa75867617af091df4cafee512c593ac4d66739a9ff91a87757",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be1fc1cd3a913cb3",
+    "appearance_id": "desc-25df417aa0e843f471c6",
+    "source_fingerprint": "03b68a71c0f4c4bb2d0283ed110cbdda726b0bf4f6a8fd54cb18e5cfb1bd8047",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec235cedb03fd7a6",
+    "appearance_id": "desc-e5c0c769cd35f2739c9b",
+    "source_fingerprint": "6ad2056c1ed45bbb28ed78588e427022335ae295cef0e2a37184e6a20c8ca7ad",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses geography: Physical geography, geomorphology, and environmental regions. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, geomorphology, and environmental regions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_16506a544ab53ee5",
+    "appearance_id": "desc-80d7b6cd8d7eeb6c8d57",
+    "source_fingerprint": "aabd2e6ed5e30409da3206539fdd1624076f7f7b9b9808367236135cc31eb41e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses geography: Physical geography, geomorphology, and environmental regions. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, geomorphology, and environmental regions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a638b9397d0ad4fe",
+    "appearance_id": "desc-60bed2899d5048105dfb",
+    "source_fingerprint": "9606e6579bb34220ab255213c49ec269802060a661b8f0d5aedfd97c782bac30",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses geography: Physical geography, geomorphology, and environmental regions. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, geomorphology, and environmental regions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_27f23dbfcdb6659c",
+    "appearance_id": "desc-e0aee0c44c7a8b0552d8",
+    "source_fingerprint": "c3d8f8d9145df241af41934f091a8cbf3ef5a0b9ae9073c38b540ba7837b2658",
+    "current_primary": {
+      "subject_id": "sociology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ab0e9d51de02cf75",
+    "appearance_id": "desc-1d02f8014bcbe92af96f",
+    "source_fingerprint": "cab31d3361d64fc6d44e2a2c1bcec329b155c3fcae676312d8ce0a550af5a06e",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_96e28e4a2c0c8c7f28a56930",
+      "sha256": "a6ab8f7370fcdc3ee34f1f5e3dd5acce14a670ccd7ec0d9181206699cf6855ce",
+      "note": "Verified against registered booklet source for Geography."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

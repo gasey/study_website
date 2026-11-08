@@ -1,0 +1,315 @@
+[
+  {
+    "canonical_id": "cq_ae22ec874d8ace97",
+    "appearance_id": "desc-6c659ccab951b89fbf86",
+    "source_fingerprint": "44a58cccca5526d7be547243c4047f432a35be42f644bff84104158f7bdba80f",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0509ceb05673e6c2",
+    "appearance_id": "desc-59ab2519b0149a2c3463",
+    "source_fingerprint": "b5ef712eef72e6b5b5a0d2deefc64dc155924f73f42e04cd6f755fb45d4fad6c",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d00ed96f203d06f8",
+    "appearance_id": "desc-e2509b554d0be02855c0",
+    "source_fingerprint": "b8ffffdc59eb22d521a58fd6d84bf2a7e4e6a5c4903f89c86d52c0dcba8473a6",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under education. Appropriately classified under education.",
+    "tested_skill": "Assessment aligned with syllabus specifications under education.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_884ae2360c0d69a5",
+    "appearance_id": "desc-c9f6da8644c0b2dc3420",
+    "source_fingerprint": "c53469cfa4960f923b9ae7c3980c4c5edeec86adcc1ca5c35e12adf7951ac5f1",
+    "current_primary": {
+      "subject_id": "architecture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "architecture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under architecture. Appropriately classified under architecture.",
+    "tested_skill": "Assessment aligned with syllabus specifications under architecture.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88d4be4e3abeb738",
+    "appearance_id": "desc-0bf6c44aafd688db63ab",
+    "source_fingerprint": "a518ce0e150f0cdf52db6acee3ad1427038b681e961afc66799e105cba4f08be",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d189e077ee784a81",
+    "appearance_id": "desc-ae255f0e41f87e8edb9c",
+    "source_fingerprint": "57e59f796b8b8c5488e393dc84d6aee459af178026726ff343ee5b4d81683671",
+    "current_primary": {
+      "subject_id": "workshop-calculation-and-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "workshop-calculation-and-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under workshop-calculation-and-science. Appropriately classified under workshop-calculation-and-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under workshop-calculation-and-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_34eb7679c2f4efdc",
+    "appearance_id": "desc-11451eb6b3141776df91",
+    "source_fingerprint": "8114609a61e295fc9072ce428dbc85e2f03e0c33ca96e237dfeda78fd0615aad",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a3319c54319215be",
+    "appearance_id": "desc-646e4621a842330648ba",
+    "source_fingerprint": "961bb7923ffbf2fbb001033b56dbcf6fd6f4ffa99e903a257e05743663739047",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under psychology. Appropriately classified under psychology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under psychology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9255171ee4e6c64032b98d82",
+      "sha256": "796cbdacac445cb51dba90c34315f89017c26bcf2a75c865af1f828461ace90d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

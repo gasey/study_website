@@ -1,0 +1,315 @@
+[
+  {
+    "canonical_id": "cq_8ccef7f2d4f018fe",
+    "appearance_id": "desc-a5533bf1c264246e4b15",
+    "source_fingerprint": "24665214311749329c9d4fd4b777765d3bc79d87d33f0be86db70a0f9a8b9575",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6be98f4762cefeef",
+    "appearance_id": "desc-90b9cde83159fb72fc7b",
+    "source_fingerprint": "e5487a363582015fae4795a96be64b2bcd2b3622a835fc09d39fa43747a668cb",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cb2d5e3b35ae63e4",
+    "appearance_id": "desc-cb969c052d507ea2fabc",
+    "source_fingerprint": "457409c50fb68a6c886c62ec45d58da133c768ed20690d780570ebdd5767b712",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf3620567d3bc317",
+    "appearance_id": "desc-04d81fb72294748cfbc5",
+    "source_fingerprint": "99aeb759fb4ae0b2a81bace8bd8c3d106651bd6526e25a8c52dd709b73440788",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ebf3383ca1301aa",
+    "appearance_id": "desc-fad01942166b61912846",
+    "source_fingerprint": "8fa6d0929743d0c7a78fa9b8ef4682f3fea62055a65423ae50e387232529e6e5",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf274db80cad9526",
+    "appearance_id": "desc-946a4f6e944fe14477db",
+    "source_fingerprint": "cf1344e4c6f14e24dfadd58c52dc8b9c5cf5ef26f248d8cbdc7fca628210a6f8",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1362c96e7bee5bd7",
+    "appearance_id": "desc-dc864fff0c2b791052fa",
+    "source_fingerprint": "d0234d6ade43cb16795c2e1eeb934b6d146fdf4636afd39fd2787785ee8f26b8",
+    "current_primary": {
+      "subject_id": "forestry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb8eb2a2be589dba",
+    "appearance_id": "desc-99ebe1c1a2897e1b9ccc",
+    "source_fingerprint": "ff8a2def3ea110916db84234fba30b6db54fa57e1d7f9f5ad5879c2e225ee40b",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_a184aa96c91d4962fe09667d",
+      "sha256": "17b0d37e3d952b78644bbba4e2ada637653ee505b997e42a83dfdfad36628b21",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

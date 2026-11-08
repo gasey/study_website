@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_b3256b8406a0a933",
+    "appearance_id": "desc-f6a6297e4591c02e9a2e",
+    "source_fingerprint": "3230b7e4d1501895aadc127b712f4ff7702b34e61c15402462fcb00e43322a49",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_64d88d065e745e1f",
+    "appearance_id": "desc-33f02d75013f2a6be6ed",
+    "source_fingerprint": "dda98ecd66e40a2f149deddc01cb0b9fb55bb3d3d02c329e263d570276345d6e",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ad7cb0fb4c525615",
+    "appearance_id": "desc-c5049e932d7a067c5515",
+    "source_fingerprint": "ab5059225776d7098ef07c147426682f73e88ca937106ed58ca69231773e44ae",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a15bedc1a5b9fdb8",
+    "appearance_id": "desc-ffbf0292ba71e97ee42f",
+    "source_fingerprint": "b73ea7804318ebd2908985ab22045dda4bd56d1c0a918cfd6a369b8b2f0dd25a",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1755d51ead6e6cb1",
+    "appearance_id": "desc-44f19178b0357868a934",
+    "source_fingerprint": "e9ba5724a06717d0daac8eb756847d757415534fc6b7be3516effe9c8bc25020",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f72eedff4e1da54",
+    "appearance_id": "desc-c8283d17d6d04510612a",
+    "source_fingerprint": "ad8c9b81bf512dafbf2ff1572459e40dcd22c9ff61926e815ae4f0258e593804",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9aee9fe6ad47feaa",
+    "appearance_id": "desc-765b7967a15db4b19ca3",
+    "source_fingerprint": "279ca6c748a81d1c3648503b733cf7cdd16a929f8ddbc2d0d7be337ea5797577",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1624947b471812c4",
+    "appearance_id": "desc-a86351a5044d8bf2d2da",
+    "source_fingerprint": "01521c0dba864555fce51290e18a2faa1450bdc7c5a3d0d8b278a47ebdaab6e1",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_b59df4bf5e6ebec49444d32c",
+      "sha256": "44312615359924224cb9828bbdf61b01b4365ab079abb894e81b54c5f410d90c",
+      "note": "Verified against registered booklet source for CSM."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
