@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_7bf1e6b8b62fe20b",
+  "appearance_id": "1e382cb59c268cce744d",
+  "snapshot": {
+    "record": {
+      "id": "1e382cb59c268cce744d",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "What does the “https://” part of a URL indicate?",
+      "options": [
+        "The protocol used to transfer data",
+        "The server address",
+        "The file location",
+        "The search engine"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "A is uniquely best. The https scheme identifies secure HTTP communication, whereas a URL's authority identifies the server and its path identifies the resource. RFC 9110 defines the https URI scheme for secured HTTP communication. Strictly, https is the scheme name and :// is syntax introducing the authority; saying that this URL part indicates the transfer protocol is a valid introductory interpretation. That syntax precision does not support the server-address, file-location, or search-engine distractors. Precision note: Strictly, https is the URI scheme, and :// introduces the authority. It indicates secure HTTP; this is distinct from the hostname and resource path. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc9110.html#section-4.2.2",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 3,
+      "qnum": "13",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/7d87a53bf4a48877888a59d9f5d64af55685763c3942c42f3de69609774a84b7.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/networking",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "88314d0f741dfba45bfbb6c9727a4a554d444a92d916137626963af3ed7566e4",
+  "appearance": {
+    "id": "1e382cb59c268cce744d",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "13",
+    "qnum_seq": 13,
+    "page": 3,
+    "question": "What does the “https://” part of a URL indicate?",
+    "options": [
+      "The protocol used to transfer data",
+      "The server address",
+      "The file location",
+      "The search engine"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "A is uniquely best. The https scheme identifies secure HTTP communication, whereas a URL's authority identifies the server and its path identifies the resource. RFC 9110 defines the https URI scheme for secured HTTP communication. Strictly, https is the scheme name and :// is syntax introducing the authority; saying that this URL part indicates the transfer protocol is a valid introductory interpretation. That syntax precision does not support the server-address, file-location, or search-engine distractors. Precision note: Strictly, https is the URI scheme, and :// introduces the authority. It indicates secure HTTP; this is distinct from the hostname and resource path. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc9110.html#section-4.2.2",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/7d87a53bf4a48877888a59d9f5d64af55685763c3942c42f3de69609774a84b7.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'indic':8 'part':4 'url':7",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_7bf1e6b8b62fe20b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "The protocol used to transfer data",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

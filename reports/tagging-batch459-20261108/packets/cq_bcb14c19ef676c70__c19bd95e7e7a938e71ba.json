@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_bcb14c19ef676c70",
+  "appearance_id": "c19bd95e7e7a938e71ba",
+  "snapshot": {
+    "record": {
+      "id": "c19bd95e7e7a938e71ba",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "Which of the following is the correct order of the OSI model layers (bottom to top)?",
+      "options": [
+        "Application, Transport, Session, Network, Data Link, Physical, Presentation",
+        "Physical, Data Link, Network, Transport, Session, Presentation, Application",
+        "Physical, Data Link, Network, Session, Transport, Presentation, Application",
+        "Transport, Network, Session, Physical, Data Link, Application, Presentation"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Bottom to top is Physical, Data Link, Network, Transport, Session, Presentation, Application. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.cisco.com/c/dam/en/us/products/collateral/switches/catalyst-2950-series-switches/prod_white_paper0900aecd8013313e.pdf",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 13,
+      "qnum": "87",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/b6dbf01a829883ab03edc582329ac35928beb624cd72f8d0eda571778cb15209.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/networking",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "bbb4599f4a5d344510f2b2dafe59b64a8540de380f741142cf3e0db57a847def",
+  "appearance": {
+    "id": "c19bd95e7e7a938e71ba",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "87",
+    "qnum_seq": 87,
+    "page": 13,
+    "question": "Which of the following is the correct order of the OSI model layers (bottom to top)?",
+    "options": [
+      "Application, Transport, Session, Network, Data Link, Physical, Presentation",
+      "Physical, Data Link, Network, Transport, Session, Presentation, Application",
+      "Physical, Data Link, Network, Session, Transport, Presentation, Application",
+      "Transport, Network, Session, Physical, Data Link, Application, Presentation"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "Bottom to top is Physical, Data Link, Network, Transport, Session, Presentation, Application. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.cisco.com/c/dam/en/us/products/collateral/switches/catalyst-2950-series-switches/prod_white_paper0900aecd8013313e.pdf",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/b6dbf01a829883ab03edc582329ac35928beb624cd72f8d0eda571778cb15209.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'bottom':14 'correct':7 'follow':4 'layer':13 'model':12 'order':8 'osi':11 'top':16",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_bcb14c19ef676c70",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Physical, Data Link, Network, Transport, Session, Presentation, Application",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

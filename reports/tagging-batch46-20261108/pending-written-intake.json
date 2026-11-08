@@ -1,0 +1,107 @@
+[
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "26",
+    "physical_page": 4,
+    "marks": 5,
+    "task_type": "finite_differences",
+    "prompt": "Show that \u0394^n e^x = (e^h - 1)^n e^x, where \u0394 denotes the forward difference operator.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional descriptive proof on finite difference operators, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "27",
+    "physical_page": 4,
+    "marks": 5,
+    "task_type": "differential_equations_proof",
+    "prompt": "Show that the differential equation (1 + e^(x/y)) dx + e^(x/y) (1 - x/y) dy = 0 is exact.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional descriptive proof of exactness condition \u2202M/\u2202y = \u2202N/\u2202x, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "28",
+    "physical_page": 4,
+    "marks": 5,
+    "task_type": "particle_kinematics",
+    "prompt": "If a particle moves so that its normal acceleration is always zero, show that the path is a straight line.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional kinematics proof relating normal acceleration v\u00b2/\u03c1 = 0 to straight-line curvature, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "29",
+    "physical_page": 4,
+    "marks": 5,
+    "task_type": "particle_kinematics",
+    "prompt": "If a particle moves in a plane with constant speed, prove that its acceleration is perpendicular to its velocity.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional vector calculus proof differentiating v \u00b7 v = c\u00b2 to yield v \u00b7 a = 0, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "30",
+    "physical_page": 4,
+    "marks": 5,
+    "task_type": "statics_friction",
+    "prompt": "Prove that if a body be on the point of sliding down an inclined plane under its own weight, the inclination of the plane is equal to the angle of friction.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional statics proof establishing limiting friction condition tan \u03bb = \u03bc, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "35(a)",
+    "physical_page": 5,
+    "marks": 10,
+    "task_type": "simplex_method",
+    "prompt": "Using simplex method solve the given LPP: Maximize Z = 5x\u2081 + 4x\u2082 + 3x\u2083 subject to constraints x\u2081 + 2x\u2082 + x\u2083 \u2264 10, 3x\u2081 + x\u2082 + 2x\u2083 \u2264 12, x\u2081 + 2x\u2082 + 3x\u2083 \u2264 15, x\u2081,x\u2082,x\u2083 \u2265 0.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional multi-variable simplex tableau calculation, excluded from automated MCQ database ingestion."
+  },
+  {
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Paper-III (Mathematics).pdf",
+    "section": "CONVENTIONAL / DESCRIPTIVE SECTION (80 Marks)",
+    "question_number": "35(b)",
+    "physical_page": 5,
+    "marks": 10,
+    "task_type": "transportation_problem",
+    "prompt": "Three factories ship goods to three warehouses with supplies 50, 40, 60 and demands 20, 95, 35. Find initial basic feasible solution using (i) Northwest-corner rule and (ii) Least-cost method.",
+    "taxonomy_target": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "reason_unextracted": "Conventional transportation problem matrix calculations, excluded from automated MCQ database ingestion."
+  }
+]

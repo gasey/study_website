@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_0892ba82b16bcdb0",
+    "appearance_id": "cd2ce8b805cc0fe3d4db",
+    "source_fingerprint": "a06256e19da1f77d1d3dd1c8f4325406ff352fbf73649fa79f845905ba1e2259",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccb2f06f6297ecd1",
+    "appearance_id": "c06b22c742484128aecc",
+    "source_fingerprint": "1b220903f2e7577c05445f5ca365dc78348e40063579eb8325169302595144fc",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9a66700f5ef5719",
+    "appearance_id": "6d6f7e3931346902796f",
+    "source_fingerprint": "0fe0103f191ba66591751b710e1c6c2273e49a2b0cca097aa4b3fae46fc3d268",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5bd6bd386e02ee4e",
+    "appearance_id": "5394e5d6f6aeab3589bc",
+    "source_fingerprint": "1279ff9514e26d5abfc07551f11af2897fbb7f5b4f131a2786bd59c874d0240f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f399be8dde6a2ade",
+    "appearance_id": "be31059d695b0165dbdd",
+    "source_fingerprint": "71c5df4263169eed8357febe25f57026f795822ce092677f0ef1f5d4b741cc6e",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_587250f604ef462e",
+    "appearance_id": "93340ce159037155d3f2",
+    "source_fingerprint": "ffecff8c20c3b669a74f61ceada4717ae2adc0a477cde71d580d021cb10f4173",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_846726fbb1b089eb",
+    "appearance_id": "6c44e7554573f5b6c9b8",
+    "source_fingerprint": "bdccfa091fe10a71db49f3b954f89e79e5fc5154227cb71f255c7c0caac5d147",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cfb8b2df473d93ff",
+    "appearance_id": "146d4d9ff85bbdeab98a",
+    "source_fingerprint": "97308ea275bebf46867f27cb45a0b0d5faf7dc33d9299678f126a9c8bddd588d",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3cd4bb4e79c9e34",
+    "appearance_id": "ca6cdbad4f67eef5c70d",
+    "source_fingerprint": "60d594142c9a237cfacef8c66738f6b392557d115379811094503bf874ae56fe",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_79f8b92f03d0176d",
+    "appearance_id": "7faf98d8eb657a451aad",
+    "source_fingerprint": "99a81b0ca2dbb8a507c88caa0b396aecfe755ff6340a8e176bfc2b5085bef88b",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9144ad1ec29f9302",
+    "appearance_id": "bf1dbebb88b4d19f6679",
+    "source_fingerprint": "7a75770d762d5ae4d8dc57a6bf821a8381a9959d17e03e7645537a789f04f742",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1019e5744634d1fa",
+    "appearance_id": "fc3c8c678934d42b1494",
+    "source_fingerprint": "a148e35a6bfc878b8fadf973c9d1f5d33fc3d9da58f8ed1370068750d6bea5a8",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ae8cd606ba1be22a",
+    "appearance_id": "9c318dcbd7e3dbe93aaf",
+    "source_fingerprint": "3ad03930a4243cf9c204791c6181c4c2d3949c66e868120f60592d01b4d6d975",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_297a507be44b5d40",
+    "appearance_id": "326cce96b3dfcf8e6f5c",
+    "source_fingerprint": "450061c68f67a6f19111250675298285bbf11a58ee47b1a03398361b28daf593",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91c52d253b5e5e2f",
+    "appearance_id": "9206383d255b654040fe",
+    "source_fingerprint": "49a9f7dbd09ca210a43d8d14588bd2f63d6d8a71ca621959c6d22a00784ce8d9",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_51a28afe346dc971",
+    "appearance_id": "6c7263a30cf533504e79",
+    "source_fingerprint": "c35d28ed0d49bb269a3c08a7483dbcb1cbf57f9df2b88a1e5e0503f08af53d62",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_138e03c1709cf17a",
+    "appearance_id": "f603cec560d060e2b38b",
+    "source_fingerprint": "7c2c008dac0f603f5661385356cf254236b47a4e02bf6d751d1f47649a634b64",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fdff0ef020d875bd",
+    "appearance_id": "a478d5902959c2e09ef1",
+    "source_fingerprint": "4d51edcbf7cf76d6d034a4569aa342a3828d34371403e879e91c7e3fdbbcde3d",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33dce8ebadd69bda",
+    "appearance_id": "57751155fb9f995668d7",
+    "source_fingerprint": "b5570306412ad4889c76db4ffa8867cbb5b7008e686354e55927ab725ca376d4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e7cc02af73b39b9",
+    "appearance_id": "1902e96cb874bc7c0e19",
+    "source_fingerprint": "cb1043df589fd901c9819c73cdc283bbebedc6277eeaf33c954613190f075637",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8cc92b22ee5dff8d",
+    "appearance_id": "e66ef7b2868fac2ca2e1",
+    "source_fingerprint": "fc469fca87022c411a39bcadda2f05af96a1318e0aa61cc45acd80084031660f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7a064ae3e75c4aa5",
+    "appearance_id": "0baebbf9058578a90780",
+    "source_fingerprint": "400122b321f1cc264a23b667b40388091103b6653e917eb69c10f82985c0e724",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a68d0c550f00c0b",
+    "appearance_id": "c0d7d78b67df77006011",
+    "source_fingerprint": "01c1375a99191bcb69b347a3f9692923c42e3015d02fca0b8cbf055ab0c83f25",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98cfef9fc5a19a45",
+    "appearance_id": "a0487dbe3266fba959cc",
+    "source_fingerprint": "ead156fb0833d7a2d0589ed9c26cf7df83a2f76f94a17630d172d0ccf4d1b1e3",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_195143de68b1a5be",
+    "appearance_id": "91c6051c728881cffd4c",
+    "source_fingerprint": "7cb35db70a57c3ab5968230b26bd61eb7e5aeafc09393657ebe6bd3a9942093c",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a1198bb245105b26",
+    "appearance_id": "3775f683bfd29c1185c2",
+    "source_fingerprint": "e8d92834c68529da72181838f683d8ed8bfbca9b386680cf24bc205da8c7a635",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9e0be52058f53be9",
+    "appearance_id": "38297e7c9a8095ca7ee5",
+    "source_fingerprint": "1973c4c88ee3ca83aaf9736fc6cae8c473b8bc193f4ce2bf17fa8b2561768859",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_632d4369fba50774",
+    "appearance_id": "ae87b0af8352153e004a",
+    "source_fingerprint": "e210e9cbefa8d423abdfe252b7102dd9b4435a18e892e6b03394874ec0e9bbc4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_445b66ff38754912",
+    "appearance_id": "e2d75d59e7ede4f0a52d",
+    "source_fingerprint": "25947e136af682eecde0ce3dbaf2869e628b85e7e8d6fd057747433566976ce6",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_046775dbd9bd19e6",
+    "appearance_id": "98e5a9c23dd9304766f9",
+    "source_fingerprint": "0691e1ba3cbae8bf07627df2b86e9208523528020f1c93ec9bb4dec6bbb9bbb3",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a9fadf70df784d9",
+    "appearance_id": "9ec434096ef81ee411b8",
+    "source_fingerprint": "dce404a7798492d6eda7b5023936dfe4ff62a30a4cea698b604833fd9e83748c",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_958045b066a709b8",
+    "appearance_id": "898956d00bcd5fbb6a26",
+    "source_fingerprint": "1b75dfc0a00d80681f3b00559528b89fa09c5bd592d30bae9fd9fd1c5b5ae622",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ea96f64ddf87a03",
+    "appearance_id": "8c3d6330fbd064045fdb",
+    "source_fingerprint": "c0149132a56e4923540853117cddb06913ef2c06c6382622976bb881c03e6d23",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f993ce51c42b88d5",
+    "appearance_id": "c7af1e140c7347d2efe1",
+    "source_fingerprint": "3178d0ef9fa11ca7e855ce9017ffb563fde270251e701af2f04fbc90169e4b3e",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe596a3c76b14305",
+    "appearance_id": "d6f0f7fc1d484bf8070b",
+    "source_fingerprint": "42c0f4b01a03f326abbb5935521b3ff034188eaec9002235b47a3abd7e74d2b0",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d93f63640c740f1",
+    "appearance_id": "a189b89909c02545ebfa",
+    "source_fingerprint": "3c10472ebd223f62237036a281e63e804ea346bf7481f0d2e72a5a030de44cd3",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fae5a65e352f5296",
+    "appearance_id": "9228adca6c33ff063f86",
+    "source_fingerprint": "7273e1325418e35b6c0b48543c52919b63a40c0d806d9f292e917dc42a849e2f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7adba06b6805da3b",
+    "appearance_id": "b3a9a1f35958263f1161",
+    "source_fingerprint": "406ea933ac05e653e318e458629de2ae7849f44af8b46c00d6cf783d5a977ea5",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e38f1b5b8aa918f8",
+    "appearance_id": "db73fed91ebead5d6a9a",
+    "source_fingerprint": "445f1199c5678dcec382f3164bafea1330fb203ec97bc142a78b6c248b2ff6e2",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d314e4856aedac2a",
+    "appearance_id": "4b20adcb76c973c70bd2",
+    "source_fingerprint": "ec94be5a24ea170d8666a9d32058efe8e5134283cc251d7f3c91abdc0257d97c",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cdcd9e9c17e8b8d9",
+    "appearance_id": "6c50e18940cd82c31dce",
+    "source_fingerprint": "d9c53b50de419774770391041dffb25b7868099a6b4821592f0cb91c7fa140c0",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6aba12c138212f61",
+    "appearance_id": "1e36c312636c5e9ef8f5",
+    "source_fingerprint": "dc4be5b8edee6ec372b270061b377ffee94461dbd79c4422ecd909fe73201e24",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30015e7e324db617",
+    "appearance_id": "7a7ade146f5228570ebe",
+    "source_fingerprint": "986ab9438cd07896d3a8b8dbb9f626b3a5b517ac01b005c343d10bf5d4ba7559",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_79e186200ec1cb49",
+    "appearance_id": "8b53f2e4a6bb49f820fd",
+    "source_fingerprint": "c839be19155c6494b95df51f501f8dd6180f234e92179c73bfa37a1069a424c0",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0470f68d067218df",
+    "appearance_id": "586eb1229c4ed67056d8",
+    "source_fingerprint": "d00dbdca2a3652f1def94a5097d5db2cbaa7b421e68e3ab33f6e5781d92cb217",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6e400d36bf66ee6",
+    "appearance_id": "c37b64a12fcb0d611af6",
+    "source_fingerprint": "6cca29596b5ebb2088506bbdadfbc8d296e8f5fdd89b811b3ae76c2140ef811d",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02d049db31b281a0",
+    "appearance_id": "4c42b542d9caa1a38b89",
+    "source_fingerprint": "b4dbceee6195bb0880bf4e7aba76a12f95140ff060c0a6cf4d22f20face0cead",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e95221b42e13e71",
+    "appearance_id": "ed461ce648a56a2db998",
+    "source_fingerprint": "03a44c2722c346bdcf68db9616df780c938a334bed284ee6bc7210f01a3973fc",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e9716c6c6b3bb2f",
+    "appearance_id": "8a934358afee65008c56",
+    "source_fingerprint": "3ce3ac9905cb145101704c74a97698da55405b39c4f5ae099292701c9ff6fbd9",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_24f13be0de1da0ac",
+    "appearance_id": "c904e67c4f34999b9e75",
+    "source_fingerprint": "a6fe7da2f78503a7bbcd873313e831810aca170c9749d046de76783fca8ced6a",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88848c8bafb84d1e",
+    "appearance_id": "caaf3caf555a617e519e",
+    "source_fingerprint": "ef180c526d7bd31b40b360618f6dc0ef4a7f03710a1518c7cccb362804a128e8",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe2205dce1ab3629",
+    "appearance_id": "44b8726042b545221e6c",
+    "source_fingerprint": "876e24aca78c57755ae13aee19226515214f1fc2c536db4221bbfb8fbf472480",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52d445d1a26b6235",
+    "appearance_id": "dba3ae50d070f4ba6a8c",
+    "source_fingerprint": "dfef12a8bd866073aa7eef2e9290a86406bb0c7045bc82cb4ced7845b6ac38ce",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_10b852a0afba320a",
+    "appearance_id": "de4c48d97707902194e8",
+    "source_fingerprint": "348df35389aa5f8e6e536ab659fabd2ae468a524639c1f2a801f387f9da2c731",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e6265b3c21a45129",
+    "appearance_id": "9126d64758c2a99a51cd",
+    "source_fingerprint": "a6b9818980dc724a68903c277998e8bde20f7b6c602422aba8ed7d81b9034e08",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3308e92a9c7965ef",
+    "appearance_id": "cccf1649877b16f1bf37",
+    "source_fingerprint": "113aadf71a993da2551d2b591257a180af2cb6503a745fdff2320f087ad4d1d4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4f7249f9ff5b1fa0",
+    "appearance_id": "06f7aca6ec68c33fa7ab",
+    "source_fingerprint": "fdcddb8ede5eac03db917bdc2c09881b48a0745946658390ab338ca90ff6320d",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd3f0d93c5777e07",
+    "appearance_id": "68e0a1495cfb850a8f6c",
+    "source_fingerprint": "b557cf18ee47f43ecafcef27d7c4dd3425cda9cce03d8c94739ca17e30b0a632",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61c8a45f66004016",
+    "appearance_id": "6765411dc7c4fb53b084",
+    "source_fingerprint": "89971490f842ecc71bdb0a25aa7dd70cc85c8cc756a0498affcd1ab15be666a4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd9ab8f7107eb433",
+    "appearance_id": "b7490617e52efcb02ba5",
+    "source_fingerprint": "1aadb9d68210f54e87aacbb7628a63a901981aeb9f651c9c7246841d7874d780",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9263858bd416455",
+    "appearance_id": "922d8341fb8c672c1fb0",
+    "source_fingerprint": "c0bbc02b5fa1d777a5930ef8b24e238e63795929a92b4654fdb7e2ef182c86ee",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18707e29f37ca521",
+    "appearance_id": "28e61f2f5320585ac205",
+    "source_fingerprint": "3695faf7024536b49fe68c2d2e0934529b705f6bf40298bd28a970748b430eea",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cee4940b3c96c8d4",
+    "appearance_id": "013f82b5239944f26bf4",
+    "source_fingerprint": "4860452a0cb0f251fa30d131df45568baf0f89d32b941f3629eec15b67360054",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_af105b862fd7af26",
+    "appearance_id": "23174c60a8e31cd5f78b",
+    "source_fingerprint": "a225a7f257233653bd1cf88ee31b0b426d281d1719efefb951d2380f5a6dcb72",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2c14ed9ba256da0",
+    "appearance_id": "30b170e50702a6efc4ce",
+    "source_fingerprint": "cfdf8caf77ab862ca52866f80bfd888d8aa6c9544a2c966dc32a685daf6bd614",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60b27f8db5071af0",
+    "appearance_id": "42b0faf4d347e6d4662d",
+    "source_fingerprint": "8057c67e07c6c31f35e4c5a3f35140bb3e5c6babcf383da66d02deae14fce46f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5991c7ad695e84b3",
+    "appearance_id": "8c3662ee24c9e726e2bd",
+    "source_fingerprint": "0e09b22a88a4ae1c198677a1afaf38a76233e6bc5fb3f24aa78558ea563dbcb5",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bef126b05d6ca17c",
+    "appearance_id": "240cac9044e2c3496fef",
+    "source_fingerprint": "ed638473b14973e641c5d277fb66aa4f0885d67c15cb8aa5cfca8d80bad26884",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e09ddb4f23f0a46",
+    "appearance_id": "5b9afdaeaeed117c8bf3",
+    "source_fingerprint": "79c29d500ab84c967f7d83a9894b201d218ee8b70a6a0d578ef4395f41c2a42c",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e5091d63e5e78a9",
+    "appearance_id": "ac1f1de6bf485342d0b8",
+    "source_fingerprint": "c01f4383c326c4df78871b09c140871987a1a98cbed21dc8c5eb5b6e3a9d8e65",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f11220170b99ab36",
+    "appearance_id": "78d748894f83db8f56b1",
+    "source_fingerprint": "19823126a09b2378302df468d593d168eb67d7272b8ca4353b1c67fcc1c09c64",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5d478c00abefa62",
+    "appearance_id": "9a45149ee44a86291a88",
+    "source_fingerprint": "503d7c6cb9a6d70bb8f1ce542558b061417ae96fa27c76956e68aaf40e631bcc",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85f1c2b052e1a922",
+    "appearance_id": "6d38eb59a93f61fcde49",
+    "source_fingerprint": "c7be7af8cbbcf3d1459b1e2a13e1d914f9a8b6236f248d4307bc265fdc64f265",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3b70e9fe3b04156",
+    "appearance_id": "871dc2e11eb1b8376750",
+    "source_fingerprint": "5a081bc716991fe836202f1af8fffceefbc2e377403224f04e52e51c94be4ebb",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_90c319f3903c1794",
+    "appearance_id": "ed6351c51cabadcef15d",
+    "source_fingerprint": "5e51d30cbe54e7ecd7f8ac58ddd51db334443c5e7e11a4c399ed50f00a69bf4e",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6a029c4737a308f9",
+    "appearance_id": "097bd561b2271d33533b",
+    "source_fingerprint": "7fbbaa566cb4182e8b11e40b6c6b09e20e620f05447bf5fadb8ea73a2973b301",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76c1fce962b91dc3",
+    "appearance_id": "6d87b58df93cff982e7c",
+    "source_fingerprint": "85339d7ca2f4d3544f64b6a42b285016c4c541c1c8d0265e010f0172871e8799",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_db2e381a781f8aec",
+    "appearance_id": "52275ffe0b00e7bce211",
+    "source_fingerprint": "e25aa739a716a23848769d3be9caac996ae5bc7b24fb8b50c9089c022ecab025",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c8abedc266fa1ec8",
+    "appearance_id": "ef62d3a676cfb73d0e18",
+    "source_fingerprint": "940021bcfa54a81a65ddb4a4dde13dbcf7ec4d8973ec792cfd5f2a6f5d663430",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0dffe8bae2f2e285",
+    "appearance_id": "281dd2f9b56277c82c66",
+    "source_fingerprint": "e446c8f4d1928ce0ce3025bbb0debbf753e17088d004303c06e38e8df1f5ef27",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3085bd5f9f0d6629",
+    "appearance_id": "887d4ff2f32724d34189",
+    "source_fingerprint": "7a24cf6cd863c28ba078ad110d5496e6ddc042cbce4c85997fce8b277ad4f4f4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52c0e07f936c6302",
+    "appearance_id": "7393d4cd171f41fef3d4",
+    "source_fingerprint": "ea5b3d0f9757b5f9ebba05ce3c940e69fad7ea764cceba21f87c446cc9cdee39",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_018ba3fdf250b87d",
+    "appearance_id": "e9d744897e6811a415b1",
+    "source_fingerprint": "b1587058baadcdb96c5b54b401e804fc4bf3ff4aafddb15473caf41ad11c992f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a5ce65e2d2d288db",
+    "appearance_id": "9989216327457d3361e7",
+    "source_fingerprint": "be2e8cf7fb3e48c4ed68cb1b3ad54ea466205d82bda0ed24a979a6e4610ea92c",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Fluid mechanics: Fluid statics, continuity equations, and turbomachinery fundamentals.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_282fb9063d6f5af8",
+    "appearance_id": "dfcbd278d33dd5561fd5",
+    "source_fingerprint": "d1ea23be2bbef2659855352921c2f87966fb0c5d24890dc8a16884b0867307cf",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3952b1c1c8f943df",
+    "appearance_id": "c08ea6696949bfdd6028",
+    "source_fingerprint": "95f86d80f667f3a9949a3c50af0b2887c86a1517fe190f92aa4127906c541f93",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/thermodynamics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Thermodynamics: Heat engines, thermodynamic laws, and refrigeration cycles.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_119d9e4b77dae127",
+    "appearance_id": "a47d0412990f120097dc",
+    "source_fingerprint": "e8b32a16bc7dfe5da37d5a67a1c0df10b453ce034df95d1012d8555b931f79f9",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e3b868fbd108654d",
+    "appearance_id": "1821ded3dede40d4c9ef",
+    "source_fingerprint": "9e6d039ad11ef662f390bf4853ca34a713ad44db9c4cc0571aeecfb3637cf244",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06bb011e0cd42d38",
+    "appearance_id": "51f5008362e6613b3356",
+    "source_fingerprint": "7ecb7ae1c85d7c285a926be5477e2ab51fe0815779cd9cc9b081288e3b5e9cb5",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_19078945a96b5925",
+    "appearance_id": "dfdc7b8116b853b5c6e5",
+    "source_fingerprint": "eb6bb2377bc1f0b096ade9ca93a385e87fc8748b623d0b7f070aa5e59c0adfd9",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f76e4f9496a0cb65",
+    "appearance_id": "7628cd87400629a17090",
+    "source_fingerprint": "f490f9795f36f30d67770e037081c49c5641bd0e3f61ef1709ca8a3eb777cc77",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_016315f8db58f486",
+    "appearance_id": "ea2e712c1604202d95e8",
+    "source_fingerprint": "eb38d096dfe769d746929a003fb72111b2dda7c1b1d0bf9234b772f4b67540f6",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6188d8a326b96712",
+    "appearance_id": "8edbbfabd3597e5189cc",
+    "source_fingerprint": "c29f0149e6f2aa59b5c986fcce968b8ffa65c27846ec91e8a75835343b296c18",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b73bfdc2aaba411d",
+    "appearance_id": "6aba96d8caafa9ea9df3",
+    "source_fingerprint": "0bac88a5aafe9467953af7c2f58e2d676bcb301da62b029939adc27766cde6b4",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6dd8a38706b5122f",
+    "appearance_id": "8aa18a2f5467b160972d",
+    "source_fingerprint": "c3b85410ba93445b8bbb30447a0b8ed8c15d230863ac83da5b9cc75244f2fb3d",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_913365d0bc6c0d97",
+    "appearance_id": "a88165c67dc82a810cb2",
+    "source_fingerprint": "1485d3e666f390dbbb199e52d74b6121871c93d2de70c530c800b8d188240cef",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_694eca4662db939f",
+    "appearance_id": "be9c3549de9b1ee1c6e8",
+    "source_fingerprint": "cf35fa5b0ac408ebacbcf61efee8a03a5d3fec0e534ec2b039bbda14f8879e96",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5251d1e8f05e16bc",
+    "appearance_id": "11e6506b5e60c6b473d2",
+    "source_fingerprint": "f9b8243f37be94078b8d3e2a4a85e99a1a23b5bd5f36672952ecec64a7121744",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2c781c4d80e28f5",
+    "appearance_id": "9dd9c44b2b9bc03b61bb",
+    "source_fingerprint": "0a08b2b7c0192617b622b546edcfe209e67800a7968b4206de947e5829c8363f",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e811304391a3565a",
+    "appearance_id": "3e5afde7f8565679c795",
+    "source_fingerprint": "0a219583ec7383da6998759ab7a7cc785c6f11773bcce0ecf0e7cef9d47e7dba",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/machine-design",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses machine design: Mechanical design principles, gears, fasteners, and stress factors. Appropriately classified under mechanical-engineering.",
+    "tested_skill": "Machine design: Mechanical design principles, gears, fasteners, and stress factors.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_767610f8ef8b17cd0922ab9a",
+      "sha256": "11f827a208b6102c558cac1d9f1fdad0d8ad09f198bbab6d4b95970c27fb8fa1",
+      "note": "Verified against registered booklet source for Motor Vehicle Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

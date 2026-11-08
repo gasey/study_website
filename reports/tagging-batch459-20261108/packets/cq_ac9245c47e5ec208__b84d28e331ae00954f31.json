@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ac9245c47e5ec208",
+  "appearance_id": "b84d28e331ae00954f31",
+  "snapshot": {
+    "record": {
+      "id": "b84d28e331ae00954f31",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "Computer processing speed is usually expressed in?",
+      "options": [
+        "Bits per second (bps)",
+        "Dots Per Inch (DPI)",
+        "Gigahertz (GHz)",
+        "Megabytes per sec (MB/s)"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "C is the uniquely best printed answer for the ordinary processor-speed specification. Intel explicitly explains clock speed in GHz and distinguishes it from overall performance. The word usually and the supplied units support this normal introductory interpretation: bps and MB/s are data-transfer rates and DPI is spatial resolution. The imprecise umbrella phrase computer processing speed requires a visible explanation about clock frequency, but none of the alternatives is a comparably good processor clock unit. Precision note: GHz measures CPU clock frequency (billions of cycles per second), not overall performance by itself. Architecture, work per cycle, core count and workload also affect performance. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.intel.com/content/www/us/en/gaming/resources/cpu-clock-speed.html",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 14,
+      "qnum": "100",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/341b4e5423659f6ebdf1293eb5e8496722fc484669bf7c33ecfdaf2d827b678b.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/computer-systems-and-architecture",
+        "subtopic_id": "computer-science/computer-systems-and-architecture/computer-hardware"
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "5cdcaf8015b64f0fdaf942befd4acbe0ec2d0e3c086f7639ac8d0a275ed3421d",
+  "appearance": {
+    "id": "b84d28e331ae00954f31",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "100",
+    "qnum_seq": 100,
+    "page": 14,
+    "question": "Computer processing speed is usually expressed in?",
+    "options": [
+      "Bits per second (bps)",
+      "Dots Per Inch (DPI)",
+      "Gigahertz (GHz)",
+      "Megabytes per sec (MB/s)"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "C is the uniquely best printed answer for the ordinary processor-speed specification. Intel explicitly explains clock speed in GHz and distinguishes it from overall performance. The word usually and the supplied units support this normal introductory interpretation: bps and MB/s are data-transfer rates and DPI is spatial resolution. The imprecise umbrella phrase computer processing speed requires a visible explanation about clock frequency, but none of the alternatives is a comparably good processor clock unit. Precision note: GHz measures CPU clock frequency (billions of cycles per second), not overall performance by itself. Architecture, work per cycle, core count and workload also affect performance. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.intel.com/content/www/us/en/gaming/resources/cpu-clock-speed.html",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/341b4e5423659f6ebdf1293eb5e8496722fc484669bf7c33ecfdaf2d827b678b.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'comput':1 'express':6 'process':2 'speed':3 'usual':5",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_ac9245c47e5ec208",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Gigahertz (GHz)",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

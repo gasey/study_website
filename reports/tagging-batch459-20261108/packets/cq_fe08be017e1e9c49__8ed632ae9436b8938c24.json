@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_fe08be017e1e9c49",
+  "appearance_id": "8ed632ae9436b8938c24",
+  "snapshot": {
+    "record": {
+      "id": "8ed632ae9436b8938c24",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "When inserting a chart linked to Excel, which paste option allows future updates?",
+      "options": [
+        "Paste as Picture",
+        "Embed Object",
+        "Paste Link",
+        "Paste Values"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Paste Link preserves a link to the Excel source, allowing a linked chart to update when that source changes (assuming the link remains available). Verified solution (unofficial); reviewed 26 October 2026. References: https://support.microsoft.com/en-us/powerpoint/link-to-an-excel-chart-from-your-presentation; https://support.microsoft.com/en-gb/powerpoint/update-or-remove-a-broken-link-to-an-external-file",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 2,
+      "qnum": "9",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/74f3f10bf564f861857579ba4484f74db487f7c37ebc6b18079b171835483a2f.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/office-applications",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "2055500ebed756002469f70e28730de062bfb5a5447987f6bee188ae64032445",
+  "appearance": {
+    "id": "8ed632ae9436b8938c24",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "9",
+    "qnum_seq": 9,
+    "page": 2,
+    "question": "When inserting a chart linked to Excel, which paste option allows future updates?",
+    "options": [
+      "Paste as Picture",
+      "Embed Object",
+      "Paste Link",
+      "Paste Values"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "Paste Link preserves a link to the Excel source, allowing a linked chart to update when that source changes (assuming the link remains available). Verified solution (unofficial); reviewed 26 October 2026. References: https://support.microsoft.com/en-us/powerpoint/link-to-an-excel-chart-from-your-presentation; https://support.microsoft.com/en-gb/powerpoint/update-or-remove-a-broken-link-to-an-external-file",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/74f3f10bf564f861857579ba4484f74db487f7c37ebc6b18079b171835483a2f.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'allow':11 'chart':4 'excel':7 'futur':12 'insert':2 'link':5 'option':10 'past':9 'updat':13",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_fe08be017e1e9c49",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Paste Link",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

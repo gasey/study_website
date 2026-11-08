@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_892fc3208fabd39a",
+  "appearance_id": "0d2bbf7261938f982298",
+  "snapshot": {
+    "record": {
+      "id": "0d2bbf7261938f982298",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "In how many ways can the letters of the words ‘APPLE’ be arranged?",
+      "options": [
+        "30",
+        "60",
+        "90",
+        "120"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "APPLE has five letters with P repeated twice. The number of distinct arrangements is 5!/2! = 120/2 = 60. Dividing by 2! avoids counting exchanges of the identical Ps as new arrangements. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 5,
+      "qnum": "38",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/de79e22f5e66fe1da93380d3ceb41b1bf769a8d2a838333debae7cc3c5095153.png",
+      "classification": {
+        "subject_id": "statistics",
+        "topic_id": "statistics/probability-and-statistics",
+        "subtopic_id": "statistics/probability-and-statistics/probability"
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "59bf4e35fdbfb2bd6bc667c9d8ba44e772b39e1efc548780e9e1048503ec676e",
+  "appearance": {
+    "id": "0d2bbf7261938f982298",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "38",
+    "qnum_seq": 38,
+    "page": 5,
+    "question": "In how many ways can the letters of the words ‘APPLE’ be arranged?",
+    "options": [
+      "30",
+      "60",
+      "90",
+      "120"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "APPLE has five letters with P repeated twice. The number of distinct arrangements is 5!/2! = 120/2 = 60. Dividing by 2! avoids counting exchanges of the identical Ps as new arrangements. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/de79e22f5e66fe1da93380d3ceb41b1bf769a8d2a838333debae7cc3c5095153.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'appl':11 'arrang':13 'letter':7 'mani':3 'way':4 'word':10",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_892fc3208fabd39a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "60",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

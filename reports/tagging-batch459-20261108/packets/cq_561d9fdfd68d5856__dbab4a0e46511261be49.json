@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_561d9fdfd68d5856",
+  "appearance_id": "dbab4a0e46511261be49",
+  "snapshot": {
+    "record": {
+      "id": "dbab4a0e46511261be49",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "A sum of Rs 2,000 becomes Rs. 2,315.25 after some times at 5% per annum at compounded interest. Then the time in years is :",
+      "options": [
+        "1 year",
+        "2 years",
+        "3 years",
+        "4 years"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "With annual compounding, A = P(1+r)^t. Here 2315.25/2000 = 1.157625 = 1.05³. Therefore t = 3 years. Direct check: 2000 × 1.05 × 1.05 × 1.05 = 2315.25. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "36",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/arithmetic",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "b3b03bbb7ce3853816cf6229f451c74032fd00345621419944df33b8254ecaed",
+  "appearance": {
+    "id": "dbab4a0e46511261be49",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "36",
+    "qnum_seq": 36,
+    "page": 5,
+    "question": "A sum of Rs 2,000 becomes Rs. 2,315.25 after some times at 5% per annum at compounded interest. Then the time in years is :",
+    "options": [
+      "1 year",
+      "2 years",
+      "3 years",
+      "4 years"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Assistant, UDC Paper-II Series B.",
+    "difficulty": "medium",
+    "explanation": "With annual compounding, A = P(1+r)^t. Here 2315.25/2000 = 1.157625 = 1.05³. Therefore t = 3 years. Direct check: 2000 × 1.05 × 1.05 × 1.05 = 2315.25. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'000':6 '2':5,9 '315.25':10 '5':15 'annum':17 'becom':7 'compound':19 'interest':20 'per':16 'rs':4,8 'sum':2 'time':13,23 'year':25",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_561d9fdfd68d5856",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "3 years",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

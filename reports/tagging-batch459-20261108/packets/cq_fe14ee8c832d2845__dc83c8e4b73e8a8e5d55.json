@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_fe14ee8c832d2845",
+  "appearance_id": "dc83c8e4b73e8a8e5d55",
+  "snapshot": {
+    "record": {
+      "id": "dc83c8e4b73e8a8e5d55",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "The top of a 21m high tower makes an angle of elevation of 60° with the bottom of an electric pole and an angle of elevation of 30° with the top of the pole. What is the height of the electric pole?",
+      "options": [
+        "14m",
+        "16m",
+        "7m",
+        "8m"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Let the horizontal separation be d and the pole height be h. From the foot of the pole, tan60° = 21/d, so d = 7√3 m. From the top of the pole, tan30° = (21−h)/d, so 21−h = 7. Therefore h = 14 m, assuming vertical structures on the same level ground. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 4,
+      "qnum": "30",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/a6a2c31ced2cbc04ad47484264787717d115fce6acd656a2c3a32fa3179ba6b0.png",
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/geometry",
+        "subtopic_id": "mathematics/geometry/triangles"
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "06968245f44a0e1f1f49b02e3953bcd6dd4e7131476fa0c1ed8d8d07a217dc68",
+  "appearance": {
+    "id": "dc83c8e4b73e8a8e5d55",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "30",
+    "qnum_seq": 30,
+    "page": 4,
+    "question": "The top of a 21m high tower makes an angle of elevation of 60° with the bottom of an electric pole and an angle of elevation of 30° with the top of the pole. What is the height of the electric pole?",
+    "options": [
+      "14m",
+      "16m",
+      "7m",
+      "8m"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "Let the horizontal separation be d and the pole height be h. From the foot of the pole, tan60° = 21/d, so d = 7√3 m. From the top of the pole, tan30° = (21−h)/d, so 21−h = 7. Therefore h = 14 m, assuming vertical structures on the same level ground. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/a6a2c31ced2cbc04ad47484264787717d115fce6acd656a2c3a32fa3179ba6b0.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'21m':5 '30':28 '60':14 'angl':10,24 'bottom':17 'electr':20,41 'elev':12,26 'height':38 'high':6 'make':8 'pole':21,34,42 'top':2,31 'tower':7",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_fe14ee8c832d2845",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "14m",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

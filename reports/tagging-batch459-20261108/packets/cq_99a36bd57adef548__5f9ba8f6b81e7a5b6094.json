@@ -1,0 +1,119 @@
+{
+  "canonical_id": "cq_99a36bd57adef548",
+  "appearance_id": "5f9ba8f6b81e7a5b6094",
+  "snapshot": {
+    "record": {
+      "id": "5f9ba8f6b81e7a5b6094",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "A square park is surrounded by a path of uniform width 2m all around it. If the area of the park is 169m². Find the area of the path.",
+      "options": [
+        "56m²",
+        "120m²",
+        "192m²",
+        "116m²"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The park has side √169 = 13 m. An outside path 2 m wide adds 4 m to each total dimension, so the outer square has side 17 m. Path area = 17² − 13² = 289 − 169 = 120 m². Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "passage": null,
+      "difficulty": null,
+      "page": 4,
+      "qnum": "26",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/a6a2c31ced2cbc04ad47484264787717d115fce6acd656a2c3a32fa3179ba6b0.png",
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/arithmetic",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "31509388fdfb8a55b0d78fea314bb019d50a40f13be1cf294fbbfc79e23feb16",
+  "appearance": {
+    "id": "5f9ba8f6b81e7a5b6094",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "26",
+    "qnum_seq": 26,
+    "page": 4,
+    "question": "A square park is surrounded by a path of uniform width 2m all around it. If the area of the park is 169m². Find the area of the path.",
+    "options": [
+      "56m²",
+      "120m²",
+      "192m²",
+      "116m²"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "The park has side √169 = 13 m. An outside path 2 m wide adds 4 m to each total dimension, so the outer square has side 17 m. Path area = 17² − 13² = 289 − 169 = 120 m². Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/a6a2c31ced2cbc04ad47484264787717d115fce6acd656a2c3a32fa3179ba6b0.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'169m':23 '2m':12 'area':18,26 'around':14 'find':24 'park':3,21 'path':8,29 'squar':2 'surround':5 'uniform':10 'width':11",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_99a36bd57adef548",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "source_context_ref": null,
+    "context_revision": 1,
+    "canonical_status": "live",
+    "canonical_answer_text": "120m²",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

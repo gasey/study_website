@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_3677bf10955424f0",
+  "appearance_id": "a59b2ae02b1f85438b7d",
+  "snapshot": {
+    "record": {
+      "id": "a59b2ae02b1f85438b7d",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "Find the side of the largest possible square slabs which can be paved on the floor of a room 2m50cm long and 1m50cm broad",
+      "options": [
+        "25 cm",
+        "30 cm",
+        "50 cm",
+        "72 cm"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Convert the room dimensions to centimetres: 250 cm by 150 cm. The largest square tile that fits both dimensions exactly has side gcd(250,150) = 50 cm. It gives 5 tiles along the length and 3 along the breadth. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 3,
+      "qnum": "20",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/7d87a53bf4a48877888a59d9f5d64af55685763c3942c42f3de69609774a84b7.png",
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/mensuration",
+        "subtopic_id": "mathematics/mensuration/area"
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "b4d625584dda1d1b861807180d405968eb204be866c132bd5391d1acfaed8669",
+  "appearance": {
+    "id": "a59b2ae02b1f85438b7d",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "20",
+    "qnum_seq": 20,
+    "page": 3,
+    "question": "Find the side of the largest possible square slabs which can be paved on the floor of a room 2m50cm long and 1m50cm broad",
+    "options": [
+      "25 cm",
+      "30 cm",
+      "50 cm",
+      "72 cm"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "Convert the room dimensions to centimetres: 250 cm by 150 cm. The largest square tile that fits both dimensions exactly has side gcd(250,150) = 50 cm. It gives 5 tiles along the length and 3 along the breadth. Verified solution (unofficial); original printed paper and worked derivation checked on 26 October 2026.",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/7d87a53bf4a48877888a59d9f5d64af55685763c3942c42f3de69609774a84b7.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1m50cm':23 '2m50cm':20 'broad':24 'find':1 'floor':16 'largest':6 'long':21 'pave':13 'possibl':7 'room':19 'side':3 'slab':9 'squar':8",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_3677bf10955424f0",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "50 cm",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

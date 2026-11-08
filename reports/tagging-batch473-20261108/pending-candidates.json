@@ -1,0 +1,2307 @@
+[
+  {
+    "canonical_id": "cq_31087fd163a16dc4",
+    "appearance_id": "e6d1c2b7777d9578fe9a",
+    "source_fingerprint": "bf842c9ecd50bfc294b8b8bbfd5c9c4efc4737c7d07e830b908facc6c9803cbd",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f43711cb22314889",
+    "appearance_id": "e567fe3032c5c61ed749",
+    "source_fingerprint": "bf325e4f2c0075c29ccefa9341c4bcdc7c206ee0f3d56111d4ff61e6aca56b8e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d73389617762ca5",
+    "appearance_id": "b6470f283ea22b33e780",
+    "source_fingerprint": "53f9896e4422dd3eaf160f33568e0b7722e224b43410f359bb796a2264369fa3",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_21e1496817c5f8d9",
+    "appearance_id": "4aecdc91b96c954b319c",
+    "source_fingerprint": "2278441051f83ba9d961e8fc193ae00dcb6ee8736a1a1d0e2749896413ed2459",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3704643cb1096742",
+    "appearance_id": "9fb1f00ecf13a629da60",
+    "source_fingerprint": "eb394244424109617cb1f5c27b520c4a533b2719e27ae791cfebb6426ac9cb3d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4e8621a5ffe249f",
+    "appearance_id": "fd8428c4a97948d46ca4",
+    "source_fingerprint": "0accea45e0852aea5bd2039251cdc13a77adbeffd968019fa85391a431224719",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_491e4707c93bfed3",
+    "appearance_id": "4e22e2bad746208ef2fa",
+    "source_fingerprint": "7847d63bc068dd2249723a72a702844c2905640a5ad1f36612dd21cb4850c2a7",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca24a655addc5bae",
+    "appearance_id": "f046b9ff32bd5a716623",
+    "source_fingerprint": "9460bf9981988224d1d5ed345d5be2f680d93841811edb21dc7db6ff35e3da4f",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_155e79dcf7a764b9",
+    "appearance_id": "367c7da269b66f8340c1",
+    "source_fingerprint": "ec183298b943a7dc25490fd5dda5f4ad788afc1dc25f4c219cd24c09b849fced",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7650415dfb864f18",
+    "appearance_id": "f53707037df8d2598293",
+    "source_fingerprint": "6bc52db140b96455251c73796467f9d7ff6e0e54be591d318dffe4e749924bac",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_11026c924de20071",
+    "appearance_id": "0497089e3701dcfc926e",
+    "source_fingerprint": "1793ad300468af2debd5ddaea5d00ff5bace892b24bd97bfa900733cdc792dfb",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b4ec275fe0f58553",
+    "appearance_id": "785176c1702c3261527b",
+    "source_fingerprint": "3b10f2f03f95d26808b47d874f64dcae68946fd1febf281c61f1e77863710388",
+    "current_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under microbiology. Appropriately classified under microbiology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under microbiology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89a9f71d99fcdc03",
+    "appearance_id": "65d8263f874f792e8a54",
+    "source_fingerprint": "01bf13a17c8a666210e5a8566516892e0bcfea895fe85bba0f7ba39615d2091b",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b65019766ecb8c7",
+    "appearance_id": "e061dff82f384209ba18",
+    "source_fingerprint": "e77017d61e6c83380c39a222f87abfc2d5bac1623c6b885f86cce669f9f77bc0",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91cc76cd92ea34ef",
+    "appearance_id": "748fba586cd7e8d3f60a",
+    "source_fingerprint": "7a8e0d8e2208fa247504df8aa1760698c5b7b101c3ebf5962b1b9f65e15cea95",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01c9b7bf23f4f48b",
+    "appearance_id": "892bde0aea09a1f605ad",
+    "source_fingerprint": "321a9239249f8de42b7633cfbd7ae14a473e05e675f21206c4be9b9414b36770",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1edab78d6d72f6f",
+    "appearance_id": "c4adb47224e5385bb186",
+    "source_fingerprint": "251abf39846cf38147bb85ea3312db38f6ead89f3c36e557e81f265301b5ccb1",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e959b0c336fe4733",
+    "appearance_id": "83a84d894141a57cbf05",
+    "source_fingerprint": "a31bca8cc0a93e0e6f2b5c7f35fa7eee59a1915cc7e81aa951ce6ca397d2b3ac",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ddbed47ce063c3b2",
+    "appearance_id": "be97a9674220f341a539",
+    "source_fingerprint": "0723e99cd66b05ada884d0364eb081bb39f12ab88c145ba50655c0cdeb4e4f65",
+    "current_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under microbiology. Appropriately classified under microbiology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under microbiology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58ebb0ce46426165",
+    "appearance_id": "85237c45d6a9304843ac",
+    "source_fingerprint": "629331fd88fedc1b26e72d50b494186d05a570aee1ba1f8f8beda1ace5cdefb7",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_345cb1bfee9c9dc1",
+    "appearance_id": "cf33c29ee05513c11ddf",
+    "source_fingerprint": "06d40466e0629afdbed10207e5a213e070ccf2ad965625d3811e2243aaefc522",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf606956dc932379",
+    "appearance_id": "571bcce245ff69b2b462",
+    "source_fingerprint": "9be41f7f05b716ff4d21cc064cc427bf0f8012e3159d316a7c910631d4334840",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9bc72839309388d0",
+    "appearance_id": "84260ac1d1ea4c3a7f8c",
+    "source_fingerprint": "aed4d2f39cb09ecce6e885a1ca65703f05c0b15dad90054ce94a13406d03640c",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36c9850397f66c45",
+    "appearance_id": "363791d9c64b04953848",
+    "source_fingerprint": "d05fb5bf4e3e01f3ace5880953cf3e1356fda14486071f6947547f61e4291dc0",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7fd442831d6e04e",
+    "appearance_id": "ccb4c041df349e889837",
+    "source_fingerprint": "20b8329def4fb7c3ad5a2265c8c2cbad88eb27949aceb12b898b7b319e84498d",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eff1b843ef85fa4a",
+    "appearance_id": "6bc28b5d8eca49be4202",
+    "source_fingerprint": "b86cdcefc1c8182ad3c3a0c84aa24fee09cd69e6d8494a26522cff7611f7af88",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_07f4533b7caad650",
+    "appearance_id": "8f9e5fc06f188685e440",
+    "source_fingerprint": "685c57d8e4d6b94ecb6093039e343bb56bd54c1ee0392d797c5473b9d30a690b",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85d283a7b2cfea2f",
+    "appearance_id": "86005c16bc4b2dcb2295",
+    "source_fingerprint": "9ff09d7cc81b31ad144e7a0664c30f710c1a0eb38c14817059836d9cd8df0848",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58471ea63b9e2c11",
+    "appearance_id": "87f041387d9f4c546aaa",
+    "source_fingerprint": "ac01b3d8fce09b56b8f6baa798b1088195108ff454d2925c3668983de3e43b05",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5f55b1d6fa47836e",
+    "appearance_id": "930b5292c155072972fc",
+    "source_fingerprint": "abaf090173a815a322485e24650fea94348fb67cc20b1f26d02884546ac703cb",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses assessment aligned with syllabus specifications under mizo. Appropriately classified under mizo.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mizo.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_637a78760a07b4fb",
+    "appearance_id": "1cbddb9b7f5e7f913c61",
+    "source_fingerprint": "b5d2b40b3d19c7a1dc12e29a438b0bd3e7bc1dce20519c88791ff58efb56d2fb",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under mizo. Appropriately classified under mizo.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mizo.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_65a32b0c84e257a8",
+    "appearance_id": "980cf587cfa31d2ddcbc",
+    "source_fingerprint": "ee42717fdbf212a88ca46eca5d48cfbfd6856cd1040d41589a9c5e1ebc42c8f2",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57df6fd4a860eb3f",
+    "appearance_id": "ade384f0fa7f7a24a0c8",
+    "source_fingerprint": "8a0499e9fb3bab5d02077849d922c632980e797a86b756aaeac1a4b0602183a3",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd37bc90497e20c9",
+    "appearance_id": "2487e6ef8f730de60bef",
+    "source_fingerprint": "5d7dae04b061f925fb74234cf8d82cb90af6138970636045325fa559e6b989d5",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under mizo. Appropriately classified under mizo.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mizo.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6edbe734bab33e62",
+    "appearance_id": "0062632249fd10a6ad92",
+    "source_fingerprint": "bbfeb93c6a6b8643f79d148724c17a08a0865ee41ddd85b070bca73eb086734d",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses assessment aligned with syllabus specifications under mizo. Appropriately classified under mizo.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mizo.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f83516c323618aa0",
+    "appearance_id": "867ef94d134f7452ec1b",
+    "source_fingerprint": "67fab4f015e508012ac68ece45530d5a395640f6768794ae9a31c68ba0d8d71b",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ace3a2ab4410accb",
+    "appearance_id": "b9e95056419117f69187",
+    "source_fingerprint": "4b29ff4a031c428dfb0c1c6fde19f7d6b3e6fc270856a15a134588edcd7efe07",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_62ba429cd8242aec",
+    "appearance_id": "e747e6297b819870580a",
+    "source_fingerprint": "e734fccd3462dba9fb904ac41be23eeadd19e9bf08751e24f86e1a96bcc17fd7",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ee9ce953c55d5dae",
+    "appearance_id": "c4ab25cbd32deffab65b",
+    "source_fingerprint": "707e1f18cef38a628b0fd201e876f003083dfb0633b198d43b6f61eb909c1af7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/mizoram",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_154ff3b2930b826c",
+    "appearance_id": "bd0673acceb8067ed25f",
+    "source_fingerprint": "abea8823e97931cb1305c68bf1bb37e835a7dfd0670e197f20ed7429e977a39b",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22d73d2dc306151a",
+    "appearance_id": "072a8a361ec49a9ca1bb",
+    "source_fingerprint": "ae68f73b616756c5b5f75bea808001d8bd0bb68bf17aefdd7820b09254cd9358",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d2a978214c51563",
+    "appearance_id": "79d20b7b6a4c3d613b33",
+    "source_fingerprint": "bcad9e8d59850d141626435acce5550c301050022f71a1c82acaa6dfc95132a8",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/village-and-district-councils",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses mizoram local governance: Village Councils and Autonomous District Council administration. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram local governance: Village Councils and Autonomous District Council administration.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1a6927e5540c6c7",
+    "appearance_id": "1c71d4c868bfae3295b5",
+    "source_fingerprint": "b088fbd33c989ced30f0f678a009a4e4c39f8db3dfc684580b1b5966b7bde6da",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4ca159b784c254d5",
+    "appearance_id": "d1a310f92265fb52054b",
+    "source_fingerprint": "a832f479ac317d8a06f35776e2c1ed7c9025359c4791ef8407bcd2e45f4c2707",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58af931d9b15c599",
+    "appearance_id": "f0e8ac51b9b63baa067d",
+    "source_fingerprint": "483d248e1f869f98a624b67be0f8d73c09d44b5f3f25937312febd408d8a2329",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81d88f4c3c6f06bb",
+    "appearance_id": "0c282fa389086ba853d0",
+    "source_fingerprint": "89418073d53fddb3d2c1a0ff860c18eaf27018e3f2fd057561940a59ac6ecace",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/village-and-district-councils",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses mizoram local governance: Village Councils and Autonomous District Council administration. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram local governance: Village Councils and Autonomous District Council administration.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb1b53b27ce99bfa",
+    "appearance_id": "11cd2f17b73b24f0be5d",
+    "source_fingerprint": "7e0ea038cc28e45d7ad36435161af8623def18a0b171ca1625abb04be949adeb",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ac5754d24f8c4c4",
+    "appearance_id": "1ac65245748924ca1232",
+    "source_fingerprint": "35065c91bdabef78ed3174e96d017ed77352a9656d9c2ffbddd8a1e910c13c89",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b6824f98abe96fd8",
+    "appearance_id": "992170a5d52f1a9e059a",
+    "source_fingerprint": "7cdbccf38fd8eb6653a56694015fcb31303f9d9b9bd62bc9e9880d1996bcedf4",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9a3555264684655",
+    "appearance_id": "c281b39e487d4532f88e",
+    "source_fingerprint": "2eff603aa498b5960aafc585d2e191542a381fd3ee8f3ccd0c16db1a71ea2b8a",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9424189f396a85ab",
+    "appearance_id": "eb7101c65577577b36b4",
+    "source_fingerprint": "90ad2a4b7a004b6007a68ee2669c28679a1d7855b1ee8beff931890cd8da9ab7",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44e6c1ce1cf3b23b",
+    "appearance_id": "e369eaf6b8b55403a552",
+    "source_fingerprint": "0811858df04bdd4330393a0e148a9b5064eff06aee2d3a8d23b46890bad624f3",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7448c7eeb51a843f",
+    "appearance_id": "463e33f5e28c27ad3cad",
+    "source_fingerprint": "c072ce794cbaf00a961226a48ce318c0ebcbbed1ef122ead46a016595525c8e2",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_041e1122b3d36215",
+    "appearance_id": "4f7bb65d7d72b8c6e82e",
+    "source_fingerprint": "72ac1659892dc9923016aa91c630c1090cf879fb9d260ff141dcc01749cbc706",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8285fea987c33f5d",
+    "appearance_id": "6ce13537c2fbef0f8ecc",
+    "source_fingerprint": "205475a58ea187d272d4feac91614aa017d6f72dafe3f3d7a84c5b8f5be3d691",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c14537cf0ca3c229",
+    "appearance_id": "87353500d6dd1e884933",
+    "source_fingerprint": "e2c6f397f2dabe577556b862beb88817a524cb9b9a3bd37e7135cc7b57c42fde",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": "reasoning-and-aptitude/series",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa54b17ca98dd547",
+    "appearance_id": "27ee90580915a9885b38",
+    "source_fingerprint": "aa27c693126ae02ed75333fd322b0d00a42ae3f3e220906776c61e5910c1525b",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3a6fcd231c1348f",
+    "appearance_id": "52760d1de38d6837ea93",
+    "source_fingerprint": "77a2ecd4cb94c31fef662e962277881587c1ecb00a9da6f1ee325cef18c7270f",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_596de78005636af7",
+    "appearance_id": "7e6765db2e80fca54e86",
+    "source_fingerprint": "efa3c108a32ecba40f70a00036a29aa287abb09d2a4ccd3d618215094bfc8498",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_0109543cc2d1873f9612029e",
+      "sha256": "942747986221f41e43043a23136b820447fbdcc02c46636926062f8257d748b1",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

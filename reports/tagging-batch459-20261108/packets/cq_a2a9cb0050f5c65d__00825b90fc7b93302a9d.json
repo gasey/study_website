@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a2a9cb0050f5c65d",
+  "appearance_id": "00825b90fc7b93302a9d",
+  "snapshot": {
+    "record": {
+      "id": "00825b90fc7b93302a9d",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "What is a web cookie in the context of internet browsing?",
+      "options": [
+        "Sent from a website and stored in user’s web browser while a user is browsing a website",
+        "Sent from user and stored in the server while a user is browsing a website",
+        "Sent from root server to all servers",
+        "Sent from the root server to other root servers"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "An HTTP server sets cookies in responses and the browser/user agent stores them and may return them in later requests. The option is the intended simplified description. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc6265.html",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 2,
+      "qnum": "11",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/74f3f10bf564f861857579ba4484f74db487f7c37ebc6b18079b171835483a2f.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/networking",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "6707bba18ffa1e110dd82f7392951fd0d850626de39ecb24f1fe7507f2d36c05",
+  "appearance": {
+    "id": "00825b90fc7b93302a9d",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "11",
+    "qnum_seq": 11,
+    "page": 2,
+    "question": "What is a web cookie in the context of internet browsing?",
+    "options": [
+      "Sent from a website and stored in user’s web browser while a user is browsing a website",
+      "Sent from user and stored in the server while a user is browsing a website",
+      "Sent from root server to all servers",
+      "Sent from the root server to other root servers"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "An HTTP server sets cookies in responses and the browser/user agent stores them and may return them in later requests. The option is the intended simplified description. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc6265.html",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/74f3f10bf564f861857579ba4484f74db487f7c37ebc6b18079b171835483a2f.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'brows':11 'context':8 'cooki':5 'internet':10 'web':4",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_a2a9cb0050f5c65d",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Sent from a website and stored in user’s web browser while a user is browsing a website",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

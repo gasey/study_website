@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_665551a9f6ad518b",
+  "appearance_id": "de4e8072da71201f83c5",
+  "snapshot": {
+    "record": {
+      "id": "de4e8072da71201f83c5",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "type": "mcq",
+      "question": "In a URL such as https://www.example.com:443/index.html, the number 443 refers to",
+      "options": [
+        "Port number",
+        "IP address",
+        "File size",
+        "Security certificate ID"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "In the URL authority, the colon followed by 443 denotes the port number; 443 is also the default port associated with HTTPS when omitted. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc9110.html",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": null,
+      "page": 13,
+      "qnum": "92",
+      "hasDiagram": true,
+      "figureImage": "images/page-renders/b6dbf01a829883ab03edc582329ac35928beb624cd72f8d0eda571778cb15209.png",
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/networking",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+      "title": "Combined Competitive Examination for Recruitment to the Post of Assistant Grade & UDC under Various Departments, Government of Mizoram",
+      "year": 2025,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/Assistant%2C%20UDC%20Paper-II%20Series%20B..pdf"
+    }
+  },
+  "source_fingerprint": "bf22b58e1315da18060329d58d87d84bb95832a6445784059635fb8b094f2a87",
+  "appearance": {
+    "id": "de4e8072da71201f83c5",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/Assistant, UDC Paper-II Series B..pdf",
+    "type": "mcq",
+    "qnum": "92",
+    "qnum_seq": 92,
+    "page": 13,
+    "question": "In a URL such as https://www.example.com:443/index.html, the number 443 refers to",
+    "options": [
+      "Port number",
+      "IP address",
+      "File size",
+      "Security certificate ID"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": null,
+    "topic": null,
+    "difficulty": null,
+    "explanation": "In the URL authority, the colon followed by 443 denotes the port number; 443 is also the default port associated with HTTPS when omitted. Verified solution (unofficial); reviewed 26 October 2026. References: https://www.rfc-editor.org/rfc/rfc9110.html",
+    "marks": "2",
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": "images/page-renders/b6dbf01a829883ab03edc582329ac35928beb624cd72f8d0eda571778cb15209.png",
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'/index.html,':8 '443':11 'number':10 'refer':12 'url':3 'www.example.com:443':7 'www.example.com:443/index.html,':6",
+    "created_at": "2026-10-25 09:43:16.850201+00:00",
+    "canonical_id": "cq_665551a9f6ad518b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Port number",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
