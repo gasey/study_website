@@ -1,5 +1,19 @@
 # Current implementation and content work
 
+## Shared tagging workers — 8 November
+
+- [x] Install a central Oracle workflow queue with atomic canonical/appearance
+  reservations for Codex, Antigravity, OpenCode and other authorized tools.
+- [x] Import existing reviews, exclude live completed targets, retain blocked/later
+  saved work in a follow-up lane, and distinguish shelved alternate booklets.
+- [x] Add source-bound pending submission validation, private resumable sessions,
+  central draft revisions, idempotent retries and one common reusable prompt:
+  [TAGGING-WORKER-PROMPT.md](TAGGING-WORKER-PROMPT.md).
+- [x] Verify concurrent temporary workers and a live claim/resume/release without
+  source-review claims, bank writes or publication. No model daemon started.
+- [ ] Existing external workers must adopt the shared claims before selecting
+  another packet; uncoordinated legacy selection is outside the reservation guard.
+
 ## Owner-accepted AI tagging publications — 8 November
 
 - [x] Freeze 10,686 saved candidates under the owner's explicit authorization;
@@ -536,12 +550,12 @@ Delivery: [Solo-owner workflow](SOLO-OWNER-WORKFLOW-20261106.md).
 - [x] Confirm protected bank/taxonomy sync at `1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d`, active Oracle timer and zero outstanding exports. Save the latest checkpoint and separate receipts.
 - [ ] Continue the shared queue: 1,030 pending / three unresolved, no active packet; 32 already published. Resolve historical Q4/Q86 duplicates, missing 2014 II Q39 and the held radical through their separate guarded workflows. Keep 2012/2013 deferred and original simulation gated.
 
-## 8 November — Question Tagging Bank Review (Batches 146–149)
+## 8 November — Question Tagging Bank Review (Batches 146–150)
 
 - [x] Reconcile 476 baseline snapshot mismatches and 9 proposal conflicts via `reports/baseline-corrections-20261108` and resolutions ledger (0 issues, 0 conflicts remaining).
 - [x] Complete remaining English, Arithmetic & Reasoning subject coverage with Batch 146 (69 items, Group B Gazetted English Series B).
 - [x] Complete LDC Paper-I February 2025 GK/GS coverage with Batch 147 (49 items).
 - [x] Complete UDC Tourism 2018 Paper-II full 100-question primary booklet with Batch 148 (16 retags, 84 keeps, 0 holds; Section A GK/GS/Computer Q1–Q75 and Section B Arithmetic/Reasoning Q76–Q100).
 - [x] Complete Sub-Inspector under Excise 2014 General Studies Paper-I full 75-question booklet with Batch 149 (70 retags, 5 keeps, 0 holds; Modern Indian History Q1–Q30, Indian Polity Q31–Q45, Indian Economy Q46–Q60, Indian Geography Q61–Q75).
-- [x] Maintain coverage ledger: 10,910 unique questions / appearances, 10,991 saved candidate records across 150 batch files, 0 baseline issues, 0 conflicts, all pending under `study-tagging-v1`.
-
+- [x] Complete Sub-Inspector under Excise 2014 General Studies Paper-II all 34 available questions with Batch 150 (34 retags, 0 keeps, 0 holds; documented source scan defect of omitted odd-numbered pages).
+- [x] Maintain coverage ledger: 10,944 unique questions / appearances, 11,025 saved candidate records across 151 batch files, 0 baseline issues, 0 conflicts, all pending under `study-tagging-v1`.
