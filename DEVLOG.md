@@ -7801,3 +7801,20 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,879 saved records**, **6,801 unique appearances**, **6,401 deduplicated candidates**, **0 problems** (reached **5,000 retags** milestone). [Batch 95 report](reports/tagging-batch95-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 96 (Inspector FCS&CA 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 96 (`reports/tagging-batch96-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to Grade-V of Mizoram Food, Civil Supplies & Consumer Affairs Service (Inspector) (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/Inspector under F,CS & CA Dept-2019, General English Paper II..pdf`, `doc_1bae5c6e6df2c18914fb9558`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 60 retag, 40 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (40 items): Q1–Q10 (parts of speech), Q41–Q50 (transformations: comparison, negative, assertive, interrogative), Q51–Q60 (sentence structure conversions), Q61–Q70 (synthesis).
+    - `english/grammar/tenses` (20 items): Q11–Q20 (tense selection / form completion), Q31–Q40 (tense identification).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and phrases).
+    - `english/vocabulary/synonyms` (10 items): Q81–Q90 (synonyms / closest meaning).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution / definitions).
+    - `english/grammar/prepositions` (10 items): Q21–Q30 (prepositions in context).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **6,979 saved records**, **6,901 unique appearances**, **6,501 deduplicated candidates**, **0 problems**. [Batch 96 report](reports/tagging-batch96-20261108/README.md).
