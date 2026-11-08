@@ -1,0 +1,395 @@
+[
+  {
+    "canonical_id": "cq_61cede0f31811023",
+    "appearance_id": "2f7ef0d89b593c45bde7",
+    "source_fingerprint": "fd3ee39f8fb4df1352eb99b3546a26efb3cf469fb3dd734d2f7ae987dd7833d5",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2680382932f71d7c",
+    "appearance_id": "7a89fd1233efc9b3a4ba",
+    "source_fingerprint": "aea94c80bc15f5d0fbe283752ddd8e80e7eb8106241225e002a1bf039104de7d",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7ce16f0f442bf38",
+    "appearance_id": "826e4317275676970b1b",
+    "source_fingerprint": "a2e675259710b3ae1cbda075eee058cbaba4d53ee7c056c37e944b434220e0f6",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6ae8e86beb39c6c",
+    "appearance_id": "9cf0c75c474c3f347f66",
+    "source_fingerprint": "af1a3de6154b83a2da76ee58b16e6434d8c3a2aa5915428a22f4bcd746186b5a",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_264189eeb019230a",
+    "appearance_id": "d14c861315487324064b",
+    "source_fingerprint": "5bc518bb17032e7b13ed35f788251fc7e3ed5d7bf209471af1b5f14d753dfb84",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a3670bc2980a25bb",
+    "appearance_id": "3cf575fabc29b93c78a0",
+    "source_fingerprint": "f97974b9a9519d799732f0cab26f677a39f737834f3089b5381752f9de5f7af6",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_27119cd492705732",
+    "appearance_id": "65a17149a38e58b39941",
+    "source_fingerprint": "5ff9060449863f0387e7d963ea74e970b0bab7befd9d9683a379716790d445b9",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8501e1efceec7b35",
+    "appearance_id": "757cf31c5ab4707f4c05",
+    "source_fingerprint": "67de1f25611b572c2c104a8e603391a0f0033909b5467c9597ff69a21f6d3c97",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4ca76eadade0588d",
+    "appearance_id": "7b98def3e23ddf3614dd",
+    "source_fingerprint": "0a9143ee16ab6c09bc72eb0695b0b2e09b9118836664c09f43c9b7ca5980e886",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_311c5d4bebe6253d",
+    "appearance_id": "c04b6235bd271e14c056",
+    "source_fingerprint": "853b0f179d1faecab6919ddc2a4cb710c8f33aebfa6f27bf1e0a14048f7375cb",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d11b852e3909006825d69e63",
+      "sha256": "15653b360d7aec9d610d641eaa5b61ee472a9334ce2a03722d1b496b998012a8",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
