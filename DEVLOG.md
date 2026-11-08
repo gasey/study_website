@@ -8277,3 +8277,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 58/58 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,821 saved records**, **8,742 unique appearances**, **8,341 deduplicated candidates**, **0 problems**. [Batch 118 report](reports/tagging-batch118-20261108/README.md).
+
+### Tagging Batch 119 — CDPO & AD (Food & Drugs) 2025 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examination for Child Development Project Officer (CDPO) & Assistant Director (Food & Drugs), November 2025 — General English (`Old_Questions/Direct_2025-2027/CDPO General English-2025..pdf`, `doc_e3fbaeb39cf72833130d226a`).
+- **Paper Structure:** 100 Marks total (Section A: 34 Conventional Marks [Précis 14 Marks, Reading Comprehension 10 Marks, Formal Letter Drafting 10 Marks] + Section B: 66 MCQs [66 Marks]).
+- **Actions:** 66 MCQs reviewed (66 retags, 0 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar/parts-of-speech` (18 items): Q1–Q10 (parts of speech: though, uninclined, well, what, love, adore, himself, before, until, wish), Q12, Q14, Q15 (adverbs / conjunctive adverbs: ago, consequently, besides), Q57–Q61 (sentence connectors / conjunctions: hence, therefore, before, provided, if).
+  - `english/grammar` (11 items): Q21–Q26 (phrases & clauses identification: noun clause, noun phrase, adjective clause, adjective phrase, adverb clause), Q27–Q31 (sentence transformations: affirmative, assertive, negative, exclamatory).
+  - `english/grammar/tenses` (10 items): Q47–Q56 (verb tenses and aspect usage).
+  - `english/grammar/prepositions` (7 items): Q11, Q13, Q16, Q17, Q18, Q19, Q20 (prepositions: about, on, with, of, in/within, upon, of).
+  - `english/grammar/reported-speech` (5 items): Q32–Q36 (direct and indirect speech narration transformation).
+  - `english/vocabulary/idioms-and-phrases` (5 items): Q62–Q66 (idioms meaning: a lone wolf, rule of thumb, close-fisted, up to one's elbows, hold one's tongue).
+  - `english/vocabulary/one-word-substitution` (4 items): Q37, Q38, Q41, Q42 (teetotaler, ineligible, monarchy, bigot).
+  - `english/sentence-correction` (3 items): Q44–Q46 (spotting errors in sentence syntax).
+  - `english/vocabulary` (3 items): Q39, Q40, Q43 (word choice: magnanimous, epitome, credible).
+- **Defect Documentation:**
+  - Preserved Section A (3 conventional questions, 34 marks: Précis 14 marks on communication, Reading Comprehension 10 marks on industrial life & advertising, and Formal Letter Drafting 10 marks by CDPO on child malnutrition intervention) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 66/66 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,887 saved records**, **8,808 unique appearances**, **8,407 deduplicated candidates**, **0 problems**. [Batch 119 report](reports/tagging-batch119-20261108/README.md).
