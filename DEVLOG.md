@@ -8553,6 +8553,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,736 saved records**, **9,657 unique appearances**, **9,256 deduplicated candidates**, **0 problems**. [Batch 132 report](reports/tagging-batch132-20261108/README.md).
 
+### Tagging Batch 133 — UDC under Agriculture (Crop Husbandry) 2018 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of U.D.C. under Agriculture (Crop Husbandry) Department, March 2018 — Paper-I (`Old_Questions/Direct_2014-2018/1.UDC under Agriculture Deptt. Paper-I.pdf`, `doc_4093b58ac698971e09d70978`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (17 retags, 58 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (24 items): Q9–Q16 (clause identification: noun, adverb, adjective, co-ordinate clauses), Q17–Q24 (sentence structure: simple, compound, complex), and Q25–Q32 (functional concepts: determination, possibility, permission, necessity, suggestion, assumption, intention).
+  - `english/vocabulary/idioms-and-phrases` (17 items): Q33–Q40 (phrasal verbs: look into, make out, put off, run across, take after, etc.) and Q58–Q66 (idioms: by and large, fair and square, in the nick of time, give cold shoulder, etc.).
+  - `english/grammar/prepositions` (9 items): Q49–Q57 (appropriate prepositions and collocations).
+  - `english/grammar/tenses` (9 items): Q67–Q75 (verb forms, tenses, conditionals, and sequence of tenses).
+  - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (parts of speech identification).
+  - `english/vocabulary/one-word-substitution` (8 items): Q41–Q48 (omniscient, legible, mercenary, invulnerable, perennial, etc.).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Electricity in the Service of Man [25 marks] and Question 2 Précis on The Sporting Spirit [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,811 saved records**, **9,732 unique appearances**, **9,331 deduplicated candidates**, **0 problems**. [Batch 133 report](reports/tagging-batch133-20261108/README.md).
+
+
 
 
 
