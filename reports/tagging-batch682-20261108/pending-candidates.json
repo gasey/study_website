@@ -1,0 +1,437 @@
+[
+  {
+    "canonical_id": "cq_13cd50ca7989e7a3",
+    "appearance_id": "desc-225cb125b7b33d011435",
+    "source_fingerprint": "82ab82af696e1c391b32905e571736837700d04c0de4e57e870bb26f54964474",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa4f00cbe4671f53",
+    "appearance_id": "desc-7ea567068cdf2a4097da",
+    "source_fingerprint": "d55913705a0fdb741f90d2460bc7ce2f89e33ddfe44f02b9d3de613b3fe429e8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1482f32b6fb3557e",
+    "appearance_id": "desc-7dbe20d40ab289da575b",
+    "source_fingerprint": "b9da7e0b378ffd6d45874d9fbc001e0b3774a67f4f90ac156f1be17482ab640b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be29b669fe723d29",
+    "appearance_id": "desc-218faeec3578bedf768b",
+    "source_fingerprint": "a7b21d3ed057bd6def5cd96f69f0a15be04dca0c3d21e0150438ffce0960909d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_46f46b618c91e98d",
+    "appearance_id": "desc-fe83e33c4872998fe636",
+    "source_fingerprint": "8c846fd9a5a7715564e8c122eeb88edd120c49e0ebdae31d4cfb7b14eb7db266",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f5016c3dc85af513",
+    "appearance_id": "desc-77b3ab0b216c11440c83",
+    "source_fingerprint": "d57293b6ce28061a4d4546647ec0702192efc7b99c40a357907105563b98bd71",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_498aa705d9b00789",
+    "appearance_id": "desc-d467ba2a167b126c58b6",
+    "source_fingerprint": "818b068ebbe0c73bbe367e70a53b97dd0dc2c1964a3bc4154346b8bd42f66372",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_15b4750699414cb0",
+    "appearance_id": "desc-7c073fe02a6748cf4c28",
+    "source_fingerprint": "d0279af2228332b47c396c5639d626ca03942a1b551b5550e240fc65978d6b70",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e8de391215a4489",
+    "appearance_id": "desc-17ec4b6490615d14137c",
+    "source_fingerprint": "03075e5dc3f664c003fe510f6474b45dccc1af58947b5baaee950450f66fa7d2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c95b510a3172229",
+    "appearance_id": "desc-1cbe7f3a7c7a7464f172",
+    "source_fingerprint": "74281530fbe0d6343ddb321927ae619c533a1f860abde9cefe6446f0a0bc1a2e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f71eadbb4836cab",
+    "appearance_id": "desc-7f5dd996ae29908ca14a",
+    "source_fingerprint": "f9e1cbe8818a37512366495a314ac5e8e6eebd8cf4c5db571d9587655f0e5dfe",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d5b8d31d575ed31d9abb4e5f",
+      "sha256": "5308ed2f141ee3ab3c94b00cc809ec0c6dab6c926dd09fd0a3f347f5d967e50f",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

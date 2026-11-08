@@ -1,0 +1,599 @@
+[
+  {
+    "canonical_id": "cq_0fd24e5444a1a8df",
+    "appearance_id": "desc-33da8dbfd2f9a6547213",
+    "source_fingerprint": "56e8a75452f7066f3896bb81a5ced6945d23cd16d94ebdfcb6362b730428676d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5fabb1028279427a",
+    "appearance_id": "desc-d3c8e93a6893cbbf664f",
+    "source_fingerprint": "0a0d60b9722d0743ca35634245e0453dc8f574e8922a9ae778d87a1f91c2f3e1",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6dcbdf184aefaa5",
+    "appearance_id": "desc-d5aa6b46df956b6302e5",
+    "source_fingerprint": "08aa25389c8a8aa78f5582280eb787d561a9d077b11baec4e20d51a9f569fa60",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb25a92c6de25461",
+    "appearance_id": "desc-8679e679046f22ed0872",
+    "source_fingerprint": "c3ba0df16990488b7047edf660dd56ec170721cc231583f5af9f89ef2eb81c06",
+    "current_primary": {
+      "subject_id": "sociology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c321d93eb5726f79",
+    "appearance_id": "desc-0e2f4832f9b32c2ea9f4",
+    "source_fingerprint": "57ba67dcada1d40d1aa265d3bb8014909118a5a0984e4139a4b6703fc2ae0cb4",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bfdff0ce092529cf",
+    "appearance_id": "desc-ef43d5f2ede120298e98",
+    "source_fingerprint": "ae544259b3c6d69fb76b7af98042b5a6d73b7351d4013a6a6375d250f7dd932a",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32a0f8168c7bf5f2",
+    "appearance_id": "desc-26223358df4311f25ff9",
+    "source_fingerprint": "74a4df0e1a252fd2e6befe4aec6991f85dc1f46bcee73f3010325709b815d3fd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_14393b83d204a6f0",
+    "appearance_id": "desc-de824f656bdcf0a5fe22",
+    "source_fingerprint": "3f94c7e94b6f7246db052818976b9f71ffb5bd21a624e42885142da6243c58cd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48f22f43beaf30df",
+    "appearance_id": "desc-b9cbce1ee15ee26d934a",
+    "source_fingerprint": "69dca3c259efec29ceecc51c02b8eec0257721c90fbb76650ae82c99093bce4c",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d9417b1539d2f0b5",
+    "appearance_id": "desc-e01ce02e618b72475d32",
+    "source_fingerprint": "f2e6493fff56b0249c2a431dba76a0ec7d321e4f80e70c2be53dfd94fb2a3609",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0cc99e2a05a30770",
+    "appearance_id": "desc-41526eb8f381c27fc2b8",
+    "source_fingerprint": "141bbe82b695c9d416a257d3368e21ebc276f148add9fbd7e6fd9a928f0cf85a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_609793da94a54394",
+    "appearance_id": "desc-a163177b75cbe9b12a05",
+    "source_fingerprint": "f82b152d8ab13d9da40c1e69fe468d4fee09f70264addc02e54fbe2cbc385c95",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3c0141a84087454a",
+    "appearance_id": "desc-bf11b7074f33ec201833",
+    "source_fingerprint": "51c3705b6133c4b8a6a02413539b09d4c3fa6fca24e3aacff3f5c047ef5c7b90",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_811321a1198c5cdb",
+    "appearance_id": "desc-015d14b55dbde270d716",
+    "source_fingerprint": "4a3c09576ed7f3f019d9b6af580ac067522f30fd16f4ab351fd54cd8e419e098",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7f03208ec50ffa7",
+    "appearance_id": "desc-c3fa1bb68130ea4eb944",
+    "source_fingerprint": "d5bdcebcffb99213ea2c9783c31f823136b3eb344c6828cb8d9f5f942f795cdd",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c14e593ef1c13521c98bd9db",
+      "sha256": "26e6664d45cfaf6b40eec11fc2ba109a7b8b6fed6075d1f9ea64a32c2a6d41ff",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

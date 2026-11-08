@@ -1,0 +1,321 @@
+[
+  {
+    "canonical_id": "cq_5ca42ae219ad3a80",
+    "appearance_id": "desc-4d8c293d3e588273aa3b",
+    "source_fingerprint": "33ee71e80f56a7989d584b43f903f3de2badc780eab53d68da2444d15b86250f",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d469f55c1122fba",
+    "appearance_id": "desc-6213688529f8aa112112",
+    "source_fingerprint": "cde57418d2b0f72ffceed33085a9ec6fc4cc8db1030eb8648300a7f64cf26637",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22456763c06ca68e",
+    "appearance_id": "desc-e6c172ebeddb6faae794",
+    "source_fingerprint": "f2411fa47a45cb2a45e33f62ea990603d794b4f5ee92c2d54b36958c3700bd43",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea725b70f7da7729",
+    "appearance_id": "desc-20be46c620d0bc9e54c1",
+    "source_fingerprint": "e8b804a35be5ed8727ac079249a7b0a59b9cbb795da42b659c3a8a1951622ea0",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1a6a974a6dc25055",
+    "appearance_id": "desc-d644d3df95d7517e0fb0",
+    "source_fingerprint": "32855410e5012b1491b37a21e72a5380097b06dc60fd1c713b6f2340d1137082",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e46b0b9eed57f4d1",
+    "appearance_id": "desc-c7c021a0e0f20917ce0e",
+    "source_fingerprint": "59e96f52226b4ccbd1ee279df2b1ff969a92a5b07f736120b871b8c53fc1ddb7",
+    "current_primary": {
+      "subject_id": "public-health",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_74647275421a071e",
+    "appearance_id": "desc-a812408da503c92dc709",
+    "source_fingerprint": "1f43e31b0fb67863b6e623576893b115818eb9410a835ca67c9ee9d3ee166523",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eda909d7df1f928d",
+    "appearance_id": "desc-2856ddef25b32bbc5e14",
+    "source_fingerprint": "7ba975beaf4752802e344c92b2f819638ff95867267ba4407b3fd0a6b07d59f9",
+    "current_primary": {
+      "subject_id": "veterinary",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_be123ea60fd4fd7bc1308bd2",
+      "sha256": "13d9c354419171cd8e4965bf9d7d1014c7cfd556cb3e4873363988ae3f33a472",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

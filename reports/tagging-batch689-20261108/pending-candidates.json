@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_2ec1a53791f27eab",
+    "appearance_id": "desc-577eae363639fe73afc3",
+    "source_fingerprint": "d946818a1693739f46ea409bb2678bacdc259c90565cdf54e5be873e33c6a971",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_feaafe1674c9b29e",
+    "appearance_id": "desc-9941860dff0715c812b8",
+    "source_fingerprint": "8f183ae48f87d8660d2a9bcfc850b9ece3f019ee8f78de1ed2656749fc62c6ee",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_53188ab5d8370a3c",
+    "appearance_id": "desc-81f0f4d1742dd86a179a",
+    "source_fingerprint": "87ef2be609921c2716a4c111822314802e9ab9653084adb5375975eb1c9109dd",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96919c210df1ded8",
+    "appearance_id": "desc-1d491cc3aa9e9f44e62f",
+    "source_fingerprint": "2495ecac2e017ac81e47cc67f2159f76254621e8493c53bcbd3114e6f6dc6816",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4368e124b21826a",
+    "appearance_id": "desc-099daeac08455e184ea6",
+    "source_fingerprint": "5e9fffd4d549aea358546079c9e226924180ccd9fe518d3a081fee1a8a510bd5",
+    "current_primary": {
+      "subject_id": "public-health",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb4f9f6fb06af1e4",
+    "appearance_id": "desc-060f0e267d6ab17ff76a",
+    "source_fingerprint": "300fabcfa5c83aa1b9fcdf729db92b673fb9e8e982b4229a8c199a418d4fc9f2",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7b86d449adff68e",
+    "appearance_id": "desc-ffacb09d23661b1c2acf",
+    "source_fingerprint": "a029b53f768b8b473e488023827549f9ccfe938ac3be234521058bcb9058edc7",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fca424c64ee86ac5",
+    "appearance_id": "desc-48086f8bb3b6090e0064",
+    "source_fingerprint": "72f3acbb83e88045863054f54f9d5e3dc0164f1e6219be61a28b375a59ddc7a6",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e73505598f235e866ef2a9e8",
+      "sha256": "12917e0e238781093fa06d8d0fa43867b7d486cdf3f188887675f8f8d8bd534d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
