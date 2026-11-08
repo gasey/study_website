@@ -8387,3 +8387,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,256 saved records**, **9,177 unique appearances**, **8,776 deduplicated candidates**, **0 problems**. [Batch 124 report](reports/tagging-batch124-20261108/README.md).
+
+### Tagging Batch 125 — MES (PHED) 2019 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Technical Competitive Examinations for Junior Grade of Mizoram Engineering Service (M.E.S.) under Public Health Department, March 2019 — General English (`Old_Questions/Direct_2019-2020/General English (PHE).pdf`, `doc_380b06b02a7b6cf2c3554b4f`).
+- **Paper Structure:** 100 Marks total (Questions 1–2: 35 Conventional Marks [Essay 20 Marks, Précis 15 Marks] + Questions 3–7: 65 Objective Marks [35 MCQs]; 100% paper completion).
+- **Actions:** 35 MCQs reviewed (35 retags, 0 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/comprehension` (10 items): Q26–Q35 (agricultural distress, MSP, and APMC reading comprehension passage analysis).
+  - `english/grammar/prepositions` (6 items): Q16, Q17, Q19, Q21, Q22, Q23 (sprang upon, devoted to, glanced at/through, comply with, intrude on, wonderful about).
+  - `english/vocabulary/synonyms` (5 items): Q1–Q5 (abominable, convivial, inhibit, candid, industrious).
+  - `english/vocabulary/antonyms` (5 items): Q6–Q10 (bizarre, boon, frivolous, acquit, altruism).
+  - `english/vocabulary/idioms-and-phrases` (5 items): Q11–Q15 (hand over fist, talk through one's hat, wet behind the ears, keep eyes peeled, hold your horses).
+  - `english/vocabulary` (3 items): Q20, Q24, Q25 (eloquent, appropriate, showed).
+  - `english/grammar/tenses` (1 item): Q18 (was having my bath).
+- **Defect Documentation:**
+  - Preserved Question 1 (Essay 20 marks on Human capital / Globalization / Religion and Politics) and Question 2 (Précis 15 marks on money and duty of soldiers, doctors, clergymen) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 35/35 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,291 saved records**, **9,212 unique appearances**, **8,811 deduplicated candidates**, **0 problems**. [Batch 125 report](reports/tagging-batch125-20261108/README.md).

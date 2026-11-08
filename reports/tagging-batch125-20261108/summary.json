@@ -1,0 +1,37 @@
+{
+  "batch": 125,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English (PHE).pdf",
+      "paper_title": "Technical Competitive Examinations for Junior Grade of Mizoram Engineering Service (M.E.S.) under Public Health Department, March 2019 — General English",
+      "document_id": "doc_2f887abafcb366e70badefa6",
+      "sha256": "0de9e893eff287924591897bd9a5419f9c6d8cd37b0c2e938266ed42be04b92a",
+      "targets": 35
+    }
+  ],
+  "targets": 35,
+  "completion": "100% paper completion achieved for MES (PHED) 2019 General English (35/35 MCQs reviewed: 10 Reading Comprehension [Agricultural distress passage], 6 Prepositions, 5 Synonyms, 5 Antonyms, 5 Idioms & Phrases, 3 Contextual Vocabulary, 1 Verb Tenses; 2 conventional written questions [35 marks total: Essay 20 marks, Précis 15 marks] documented in written intake)",
+  "actions": {
+    "retag": 35,
+    "keep": 0,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 35,
+  "breakdown": {
+    "english/comprehension": 10,
+    "english/grammar/prepositions": 6,
+    "english/vocabulary/synonyms": 5,
+    "english/vocabulary/antonyms": 5,
+    "english/vocabulary/idioms-and-phrases": 5,
+    "english/vocabulary": 3,
+    "english/grammar/tenses": 1
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy, including classifying Reading Comprehension questions Q26–Q35 into english/comprehension.",
+    "Documented Question 1 (Essay 20 marks) and Question 2 (Précis 15 marks) in pending-written-intake.json.",
+    "Verified all 35 MCQs against 5 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
