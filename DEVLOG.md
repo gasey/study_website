@@ -8028,6 +8028,28 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,977 saved records**, **7,899 unique appearances**, **7,499 deduplicated candidates**, **0 problems**. [Batch 107 report](reports/tagging-batch107-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 108 (Librarian Lunglei 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 108 (`reports/tagging-batch108-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Librarian under Health & Family Welfare Department (Lunglei), May 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (Lib.-Lunglei).pdf`, `doc_a19e5d4cb2fc1385f9bc1ec3`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 78 retag, 2 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q41–Q56 (at sixes and sevens, wrong side of sixty, white feather, cross-purposes, for good, turned corner, blow own trumpet, piece of cake, under weather, sitting on fence, leave no stone unturned, etc.).
+    - `english/grammar/parts-of-speech` (15 items): Q1–Q10 (preposition, adverb, conjunction, collective noun, indefinite pronoun, interjection, noun, adjective, adverb, conjunction), Q16–Q20 (pronoun selection: one's, whom, Each, what, that).
+    - `english/grammar` (15 items): Q26–Q35 (sentence structure: simple, compound, complex), Q36–Q40 (sentence types: interrogative, declarative, assertive, imperative, request).
+    - `english/comprehension` (12 items): Q63–Q74 (reading comprehension passages: Passage 1: Information and knowledge, Q63–Q67; Passage 2: Science and religion, Q68–Q74).
+    - `english/vocabulary` (6 items): Q57–Q62 (word choice and vocabulary in context: fatally, accused, alienated, adequate, acquisition, common).
+    - `english/vocabulary/synonyms` (6 items): Q75–Q80 (mitigate, empathy, monotonous, scrupulous, deteriorating, impromptu).
+    - `english/grammar/articles` (5 items): Q21–Q25 (article determination: elected chairman, a university, a white, an S.D.O., The English).
+    - `english/grammar/tenses` (5 items): Q11–Q15 (verb forms and tenses: drinks, have been playing, had caught, is growing, saw).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Memorable Book / Aizawl a Better Place / Smart Phones in Student Life) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,057 saved records**, **7,979 unique appearances**, **7,579 deduplicated candidates**, **0 problems**. [Batch 108 report](reports/tagging-batch108-20261108/README.md).
+
+
 
 
 
