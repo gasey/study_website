@@ -85,6 +85,10 @@ class Store:
             follow = {r['canonical_id']: json.loads(r['legacy']) for r in self.db.execute(
                 "SELECT canonical_id,legacy FROM targets WHERE lane='followup' AND legacy IS NOT NULL")}
             follow.update({f['canonical_id']: f for f in followups})
+            blocked=inventory.get('blocked_outcomes',{})
+            for cid,detail in blocked.items():
+                prior=follow.get(cid)or{'canonical_id':cid,'appearance_id':detail['appearance_id'],'kind':'publication_blocked'}
+                follow[cid]={**prior,'latest_publication_blocker':detail}
             for cid in completed:
                 follow.pop(cid, None)
             appearances = sorted(inventory['appearances'], key=lambda a: (
@@ -104,6 +108,25 @@ class Store:
                 state = ('ready' if legacy else 'excluded' if cid in excluded or a['id'] in excluded
                          else 'alternate' if a['paper_id'] in alternate else 'ready')
                 old = self.db.execute('SELECT * FROM targets WHERE canonical_id=?', (cid,)).fetchone()
+                reservation=self.db.execute('''SELECT r.packet_id,p.touched FROM reservations r
+                  JOIN packets p ON p.id=r.packet_id WHERE r.canonical_id=?''',(cid,)).fetchone()if old and old['state']=='submitted'and cid in blocked else None
+                if reservation and float(blocked[cid].get('blocked_at',0))>reservation['touched']:
+                    # A final owner publication blocker is the disposition of the
+                    # saved candidate. Retain its immutable result, but schedule
+                    # a new source-bound follow-up instead of trapping it forever.
+                    self.db.execute('DELETE FROM reservations WHERE canonical_id=?',(cid,))
+                    self.event(reservation[0]if reservation else None,'publication_blocked_requeued',
+                               {'canonical_id':cid,'reason':blocked[cid].get('reason'),'run_id':blocked[cid].get('run_id')})
+                    old=None
+                if cid in completed and (not old or old['state'] != 'claimed'):
+                    state = 'completed_live'
+                    # Retain saved results/history/reservations, but don't show an
+                    # already applied target as pending just because its input was.
+                    self.db.execute('''INSERT INTO targets VALUES(?,?,?,?,?,1,?,?)
+                      ON CONFLICT(canonical_id) DO UPDATE SET state='completed_live',present=1,
+                      payload=excluded.payload''',
+                      (cid,a['id'],a['paper_id'],lane,state,json.dumps(a),json.dumps(legacy)if legacy else None))
+                    continue
                 if old and old['state'] in ('claimed', 'submitted', 'deferred'):
                     self.db.execute('UPDATE targets SET present=1,payload=? WHERE canonical_id=?',
                                     (json.dumps(a), cid))

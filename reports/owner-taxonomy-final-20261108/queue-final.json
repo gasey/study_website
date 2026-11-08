@@ -1,0 +1,46 @@
+{
+  "counts": [
+    {
+      "lane": "followup",
+      "state": "completed_live",
+      "targets": 4164
+    },
+    {
+      "lane": "followup",
+      "state": "ready",
+      "targets": 258
+    },
+    {
+      "lane": "new",
+      "state": "alternate",
+      "targets": 2968
+    },
+    {
+      "lane": "new",
+      "state": "completed_live",
+      "targets": 73627
+    },
+    {
+      "lane": "new",
+      "state": "ready",
+      "targets": 1366
+    }
+  ],
+  "active": [],
+  "inventory": {
+    "at": "2026-11-08 15:31:50.834635+00:00",
+    "sha256": "af6edf4a168965024c54525c7c6ec564f8c9babded3e9a8480c91dc680a4f61a"
+  },
+  "meaning": "Scheduling/candidate states only; submitted is not published. Claims never expire automatically.",
+  "published_tagging_pass": {
+    "published": 58197,
+    "confirmed": 19594,
+    "blocked": 258,
+    "stale": 0,
+    "updated_at": "2026-11-08 15:12:05.779214+00:00",
+    "total": 82383,
+    "remaining": 4592,
+    "review_kind": "owner-delegated-ai-taxonomy",
+    "includes_answer_verification": false
+  }
+}

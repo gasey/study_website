@@ -230,7 +230,14 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
     # An explicitly scoped operator taxonomy run has its own recorded allowance.
     # Do not let that run consume the normal browser editing budget.
     # Both trusted operator records are required; HTTP clients cannot create them.
-    await cur.execute("""SELECT count(*)::int AS n FROM bank_contributions c
+    exemption=owner_maintenance_quota_run.get() if admin_attestation else None
+    if exemption:
+        await require_role(cur,actor,roles=('owner',))
+        if not maintenance_scope_allows(exemption,actor,p):
+            raise HTTPException(403,'This maintenance target is outside the authorized quota exemption')
+    used=None
+    if not (exemption and p.kind=='taxonomy'):
+        await cur.execute("""SELECT count(*)::int AS n FROM bank_contributions c
       WHERE c.author_id=%s AND c.created_at>now()-interval '1 day'
       AND NOT (c.kind='taxonomy' AND EXISTS(
         SELECT 1 FROM contribution_events x JOIN contribution_events a
@@ -240,14 +247,9 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
           AND x.detail->>'owner_id'=c.author_id
           AND a.actor_id='operator:owner-source-maintenance' AND a.action='operator_taxonomy_authorization'
           AND a.detail->>'owner_id'=c.author_id AND a.detail->>'run_id'=x.detail->>'run_id'))""",(actor,))
+        used=(await cur.fetchone())['n']
     limit=500 if admin_attestation else 30
-    used=(await cur.fetchone())['n']
-    exemption=owner_maintenance_quota_run.get() if admin_attestation else None
-    if exemption:
-        await require_role(cur,actor,roles=('owner',))
-        if not maintenance_scope_allows(exemption,actor,p):
-            raise HTTPException(403,'This maintenance target is outside the authorized quota exemption')
-    if used>=limit and not exemption: raise HTTPException(429,'Daily staff maintenance limit reached' if admin_attestation else 'Daily contribution limit reached',headers={'Retry-After':'3600'})
+    if used is not None and used>=limit and not exemption: raise HTTPException(429,'Daily staff maintenance limit reached' if admin_attestation else 'Daily contribution limit reached',headers={'Retry-After':'3600'})
     cid=uid('con')
     await cur.execute('''INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *''',
@@ -259,5 +261,6 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
     if exemption:
         await event(cur,cid,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',
                     {'owner_id':actor,'run_id':exemption['run_id'],'authorization':exemption['authorization'],
-                     'canonical_id':p.canonical_id,'ordinary_daily_limit':limit,'observed_last24h':used})
+                     'canonical_id':p.canonical_id,'ordinary_daily_limit':limit,'observed_last24h':used,
+                     'budget_basis':'explicit-bounded-taxonomy-scope' if p.kind=='taxonomy' else 'ordinary-count-with-authorized-scope'})
     return c

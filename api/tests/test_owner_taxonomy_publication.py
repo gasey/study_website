@@ -2,10 +2,66 @@ import copy
 import hashlib,json
 from uuid import uuid4
 import pytest
+import importlib.util,os
+from pathlib import Path
 from psycopg.types.json import Jsonb
 from review_bank_store import record,digest
 from test_owner_batch_source_warnings import packet,batch
 from test_learning_workflows import official
+
+
+def test_operator_scope_cache_still_rehashes_frozen_file(tmp_path):
+    source=Path(__file__).resolve().parents[2]/'scripts/publish-owner-taxonomy-run.py'
+    spec=importlib.util.spec_from_file_location('taxonomy_operator_cache_test',source)
+    operator=importlib.util.module_from_spec(spec);cwd=os.getcwd()
+    try:spec.loader.exec_module(operator)
+    finally:os.chdir(cwd)
+    frozen={'authorization':'Explicit synthetic test scope only','review_kind':'owner-delegated-ai-taxonomy','items':[]}
+    file=tmp_path/'frozen.json';file.write_text(json.dumps(frozen))
+    (tmp_path/'frozen.sha256').write_text(hashlib.sha256(file.read_bytes()).hexdigest())
+    (tmp_path/'source-hashes.json').write_text('{}')
+    first=operator.load(tmp_path)
+    assert operator.load(tmp_path)is first
+    file.write_text(json.dumps({**frozen,'authorization':'Changed scope'}))
+    with pytest.raises(ValueError,match='Frozen owner scope changed'):operator.load(tmp_path)
+
+
+def test_operator_context_guard_covers_related_ca_and_changing_non_ca():
+    source=Path(__file__).resolve().parents[2]/'scripts/publish-owner-taxonomy-run.py'
+    spec=importlib.util.spec_from_file_location('taxonomy_context_test',source)
+    operator=importlib.util.module_from_spec(spec);cwd=os.getcwd()
+    try:spec.loader.exec_module(operator)
+    finally:os.chdir(cwd)
+    item={'candidate':{'context_candidate':{}},'primary':{'topic_id':'general-knowledge/sports'},'related':[]}
+    assert operator.context_blocker(item)is None
+    item['candidate']['context_candidate']={'time_behavior':'dynamic','reference_period':'2017','reference_basis':'question_stem'}
+    assert operator.context_blocker(item).startswith('Changing-fact')
+    item['candidate']['context_candidate']['reference_basis']='printed'
+    assert operator.context_blocker(item)is None
+    item['candidate']['context_candidate']={}
+    item['related']=[{'topic_id':'general-studies/current-affairs'}]
+    assert operator.context_blocker(item).startswith('Current Affairs')
+
+
+def test_serial_progress_cache_preserves_dedup_and_source_changes(client,actor,database):
+    from app.services.taxonomy_review_progress import record as record_progress,existing_records
+    q,a,_=official(database);actor('owner')
+    run={'run_id':'synthetic-cache-'+uuid4().hex}
+    item={'candidate':{'canonical_id':q,'appearance_id':a},'candidate_file':'synthetic.json','candidate_signature':'a'*64}
+    async def add():
+        from app.db import cursor
+        async with cursor()as cur:
+            known=await existing_records(cur,run['run_id'])
+            await record_progress(cur,'owner',run,item,'confirmed',known_records=known)
+            await record_progress(cur,'owner',run,item,'confirmed',known_records=known)
+            await cur.execute("UPDATE appearances SET question=question||' changed' WHERE id=%s",(a,))
+            await record_progress(cur,'owner',run,item,'confirmed',known_records=known)
+            loaded=await existing_records(cur,run['run_id'])
+            assert loaded==known and len(known)==2
+            await record_progress(cur,'owner',run,item,'confirmed',known_records=loaded)
+            await cur.execute("SELECT count(*) AS n FROM contribution_events WHERE action='owner_ai_taxonomy_progress' AND detail->>'run_id'=%s",(run['run_id'],))
+            assert (await cur.fetchone())['n']==2
+    client.portal.call(add)
 
 
 def taxonomy_packet(tmp_path,written=False):
@@ -87,6 +143,9 @@ def test_taxonomy_budget_scope_does_not_change_http_or_normal_staff_limits(clien
         assert error.value.status_code==429
         result=client.portal.call(create,True)
         assert conn.execute('SELECT count(*) FROM contribution_decisions WHERE contribution_id=%s',(result['id'],)).fetchone()[0]==0
+        detail=conn.execute("SELECT detail FROM contribution_events WHERE contribution_id=%s AND action='owner_maintenance_quota_exemption'",(result['id'],)).fetchone()[0]
+        assert detail['observed_last24h'] is None
+        assert detail['budget_basis']=='explicit-bounded-taxonomy-scope'
     finally:conn.execute('DELETE FROM bank_contributions WHERE id LIKE %s',(prefix+'%',))
 
 

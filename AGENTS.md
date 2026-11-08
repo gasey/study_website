@@ -23,7 +23,14 @@ Do not create a local coordination queue, choose unreserved targets, overwrite
 another worker's packet or commit unrelated shared-checkout changes. Submitted
 queue results remain pending candidates, not published/approved corrections.
 
-The owner authorized acceptance/publication of the frozen saved AI tagging pass
+The reconciled Batch 1632 publication is complete. Read
+`reports/owner-taxonomy-final-20261108/README.md` and the latest source-bound
+Oracle outcomes before continuing. Current accepted tagging outcomes: 77,791;
+258 blocked; 4,334 without a saved review in this pass. Never restart the completed
+frozen runs or combine historical pending files into a new publication. This owner
+authorization does not extend to unseen future batches.
+
+The owner authorized acceptance/publication of the earlier frozen saved AI tagging pass
 on 8 November 2026. Read `reports/owner-taxonomy-publication-20261108/README.md`
 and its exact completion ledger before continuing that work. Original candidate
 files remain historical pending inputs; they do not describe current publication

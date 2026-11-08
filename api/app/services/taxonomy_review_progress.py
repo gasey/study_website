@@ -17,7 +17,7 @@ JOINS=""" FROM appearances a JOIN canonical_questions c ON c.id=a.canonical_id
     JOIN papers p ON p.id=a.paper_id LEFT JOIN question_classifications qc
     ON qc.question_id=c.id AND qc.review_status='approved' """
 
-async def record(cur,owner,run,item,status,reason='',contribution_id=None):
+async def record(cur,owner,run,item,status,reason='',contribution_id=None,known_records=None):
     row=item['candidate'];qid=row['canonical_id'];aid=row['appearance_id']
     await cur.execute('SELECT '+signature_sql()+JOINS+'WHERE a.id=%s AND c.id=%s',(aid,qid))
     current=await cur.fetchone()
@@ -26,11 +26,25 @@ async def record(cur,owner,run,item,status,reason='',contribution_id=None):
             'candidate_file':item['candidate_file'],'candidate_signature':item['candidate_signature'],
             'status':status,'source_signature':signature,'reason':reason,
             'review_kind':'owner-delegated-ai-taxonomy','independent_human_review':False}
-    await cur.execute("""SELECT 1 FROM contribution_events WHERE action=%s
-       AND detail->>'run_id'=%s AND detail->>'canonical_id'=%s AND detail->>'status'=%s
-       AND detail->>'source_signature' IS NOT DISTINCT FROM %s LIMIT 1""",
-       (ACTION,run['run_id'],qid,status,signature))
-    if not await cur.fetchone():await event(cur,contribution_id,'operator:owner-source-maintenance',ACTION,detail)
+    key=(qid,status,signature)
+    if known_records is None:
+        await cur.execute("""SELECT 1 FROM contribution_events WHERE action=%s
+           AND detail->>'run_id'=%s AND detail->>'canonical_id'=%s AND detail->>'status'=%s
+           AND detail->>'source_signature' IS NOT DISTINCT FROM %s LIMIT 1""",
+           (ACTION,run['run_id'],qid,status,signature))
+        exists=bool(await cur.fetchone())
+    else:
+        # Trusted serial operator batches preload the exact run's immutable keys.
+        # Still compute the live source signature above on every individual record.
+        exists=key in known_records
+    if not exists:
+        await event(cur,contribution_id,'operator:owner-source-maintenance',ACTION,detail)
+        if known_records is not None:known_records.add(key)
+
+async def existing_records(cur,run_id):
+    """Run-local history lookup once per serial operator transaction."""
+    await cur.execute("SELECT detail FROM contribution_events WHERE action=%s AND detail->>'run_id'=%s",(ACTION,run_id))
+    return {(r['detail']['canonical_id'],r['detail']['status'],r['detail'].get('source_signature'))for r in await cur.fetchall()}
 
 async def progress(cur):
     await cur.execute("SELECT count(*)::int AS total FROM canonical_questions WHERE status<>'merged'")

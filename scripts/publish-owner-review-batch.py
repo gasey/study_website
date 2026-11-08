@@ -125,7 +125,10 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None,*,comput
             if not asset.is_relative_to(root/'images')or not asset.is_file():raise ValueError('Figure asset is absent')
         # Reuse the existing publication validator on the exact target. The restricted
         # source/answer patch kinds cannot change other questions or taxonomy.
-        branch,qid=transform({'questions':[original],'papers':bank['papers']},m)
+        # Taxonomy patches cannot read or change papers. The final output below
+        # retains the original paper table; avoid deep-copying all 1,979 papers
+        # for each individual tag correction inside the shared transformer.
+        branch,qid=transform({'questions':[original],'papers':[] if p['kind']=='taxonomy' else bank['papers']},m)
         changed=branch['questions'][0];opts=changed.get('options',[])
         if p['kind']=='taxonomy':
             # The shared transformer normalizes the old unanswered -1 sentinel.

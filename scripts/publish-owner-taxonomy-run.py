@@ -4,7 +4,7 @@
 Uses final owner admin decisions, exact source guards, ordinary immutable exports
 and the guarded Oracle publisher. It never invents editorial/answer inspections.
 """
-import argparse,asyncio,copy,hashlib,json,os,subprocess,sys,tempfile
+import argparse,asyncio,copy,hashlib,json,os,subprocess,sys,tempfile,pwd,traceback
 from collections import Counter
 from datetime import datetime,timezone
 from pathlib import Path
@@ -19,6 +19,7 @@ from app.services.review_identity import Actor,require_role
 from app.services.admin_bank_edits import decide
 from app.services.editorial_access import source_version
 from app.services.taxonomy_review_progress import record as record_progress
+from app.services.taxonomy_review_progress import existing_records
 import psycopg
 from psycopg.rows import dict_row
 
@@ -31,10 +32,16 @@ def save(path,data):
     finally:
         if os.path.exists(tmp):os.unlink(tmp)
 
+RUN_CACHE={}
+
 def load(directory):
     file=directory/'frozen.json'
     expected=(directory/'frozen.sha256').read_text().strip()
-    if hashlib.sha256(file.read_bytes()).hexdigest()!=expected:raise ValueError('Frozen owner scope changed')
+    with file.open('rb')as source:actual=hashlib.file_digest(source,'sha256').hexdigest()
+    if actual!=expected:raise ValueError('Frozen owner scope changed')
+    key=(str(directory.resolve()),expected)
+    HASHES.update(json.loads((directory/'source-hashes.json').read_text()))
+    if key in RUN_CACHE:return RUN_CACHE[key]
     run=json.loads(file.read_text())
     if len(run['authorization'].strip())<20 or run['review_kind']!='owner-delegated-ai-taxonomy':raise ValueError('Explicit owner scope required')
     items=run['items'];ids=[x['candidate']['canonical_id'] for x in items]
@@ -58,6 +65,7 @@ def load(directory):
             item['document']=binding
             item['document_binding']={'basis':'Exact same registered paper identity and PDF SHA256',
                                       'original_document_id':doc['id'],'registered_document_id':binding['id'],'sha256':binding['sha256']}
+    RUN_CACHE[key]=run
     return run
 
 async def owner_id(cur,run):
@@ -89,10 +97,13 @@ def proposal(item):
                   {'kind':'reasoning','note':(reason+'; source proposal '+item['candidate_signature'])[:4000]}])
 
 def context_blocker(item):
-    if (item.get('primary')or{}).get('topic_id')=='general-studies/current-affairs':
-        context=item['candidate'].get('context_candidate')or{}
+    primary=item.get('primary')or{};context=item['candidate'].get('context_candidate')or{}
+    paths=[primary,*(item.get('related')or[])]
+    ca=any(p.get('topic_id')=='general-studies/current-affairs'for p in paths)
+    changing=context.get('time_behavior')in('dated-event','changes-over-time','dynamic')
+    if ca or changing:
         if not context.get('reference_period') or context.get('reference_basis')not in ('printed','exam-date','reviewed-source'):
-            return 'Current Affairs review lacks a supported historical reference period/basis'
+            return ('Current Affairs' if ca else 'Changing-fact')+' review lacks a supported historical reference period/basis'
     return None
 
 async def inspect(cur,owner,item):
@@ -212,6 +223,7 @@ async def record(directory,chunk=None):
     async with await psycopg.AsyncConnection.connect('dbname=mpsc',row_factory=dict_row,options='-c jit=off') as conn:
         async with conn.cursor() as cur:
             owner=await owner_id(cur,run)
+            known=await existing_records(cur,run['run_id'])
             if chunk:
                 queued=json.loads(chunk.with_suffix('.queued.json').read_text())
                 await cur.execute("SELECT id FROM bank_publications WHERE id=ANY(%s) AND state='applied'",(queued['publications'],))
@@ -222,8 +234,8 @@ async def record(directory,chunk=None):
                     if not expected['record'].get('relatedClassifications'):expected['record'].pop('relatedClassifications',None)
                     current=await review.snapshot(cur,target['canonical_id'],item['candidate']['appearance_id'])
                     if digest(expected)!=digest(current):
-                        await record_progress(cur,owner,run,item,'blocked','Source changed after publication; recheck required',target['contribution_id'])
-                    else:await record_progress(cur,owner,run,item,'published',contribution_id=target['contribution_id'])
+                        await record_progress(cur,owner,run,item,'blocked','Source changed after publication; recheck required',target['contribution_id'],known_records=known)
+                    else:await record_progress(cur,owner,run,item,'published',contribution_id=target['contribution_id'],known_records=known)
             else:
                 pre=json.loads((directory/'preflight.json').read_text())
                 for result in pre['results']:
@@ -234,8 +246,8 @@ async def record(directory,chunk=None):
                             _,_,same=await inspect(cur,owner,item)
                             if not same:raise ValueError('Saved keep is no longer unchanged')
                         except Exception as exc:
-                            await record_progress(cur,owner,run,item,'blocked',str(getattr(exc,'detail',str(exc))));continue
-                    await record_progress(cur,owner,run,item,result['status'],result.get('reason',''))
+                            await record_progress(cur,owner,run,item,'blocked',str(getattr(exc,'detail',str(exc))),known_records=known);continue
+                    await record_progress(cur,owner,run,item,result['status'],result.get('reason',''),known_records=known)
     if not chunk:save(directory/'keeps.complete.json',{'at':datetime.now(timezone.utc).isoformat()})
     print(json.dumps({'progress_recorded':str(chunk or 'keeps-and-blockers')}),flush=True)
 
@@ -250,9 +262,27 @@ async def record_context_blockers(directory):
     print(json.dumps({'context_blockers_recorded':count}),flush=True)
 
 def child(mode,directory,chunk=None):
-    cmd=['sudo','-u','postgres','env','ISM_DB_TRANSPORT=local','PUBLICATION_SERIAL_QUEUE=true',sys.executable,__file__,mode,str(directory)]
-    if chunk:cmd+=['--chunk',str(chunk)]
-    subprocess.run(cmd,check=True)
+    # Fork the serial root coordinator's verified immutable scope, not its DB
+    # connections (there are none in the parent). Every child still hashes the
+    # frozen file, drops all privileges to postgres and opens fresh connections.
+    # Avoid parsing the 244 MB scope twice for each 100-target chunk.
+    if os.geteuid()!=0:raise ValueError('Operator child requires the root coordinator')
+    sys.stdout.flush();sys.stderr.flush()
+    pid=os.fork()
+    if pid==0:
+        try:
+            account=pwd.getpwnam('postgres')
+            os.initgroups(account.pw_name,account.pw_gid);os.setgid(account.pw_gid);os.setuid(account.pw_uid)
+            if mode=='--preflight':asyncio.run(preflight(directory))
+            elif mode=='--queue':asyncio.run(queue(directory,chunk))
+            elif mode=='--record':asyncio.run(record(directory,chunk))
+            else:raise ValueError('Unsupported operator child mode')
+            sys.stdout.flush();sys.stderr.flush();os._exit(0)
+        except BaseException:
+            traceback.print_exc();sys.stdout.flush();sys.stderr.flush();os._exit(1)
+    _,status=os.waitpid(pid,0)
+    code=os.waitstatus_to_exitcode(status)
+    if code:raise subprocess.CalledProcessError(code,[mode,str(directory),str(chunk)])
 
 def execute(directory):
     if os.geteuid()!=0:raise ValueError('Guarded bank publication requires the Oracle operator')

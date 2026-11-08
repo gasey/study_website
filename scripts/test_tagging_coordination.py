@@ -3,6 +3,7 @@ import importlib.util
 import json
 import tempfile
 import threading
+import time
 import unittest
 from pathlib import Path
 
@@ -134,7 +135,31 @@ class CoordinationTests(unittest.TestCase):
         inv = inventory(); inv['completed_ids'] = ['q0']
         f = {'canonical_id': 'q0', 'appearance_id': 'a0', 'kind': 'blocked'}
         self.store.sync(inv, {'canonical': [], 'appearance': []}, [f], audit.family)
-        self.assertEqual(self.store.db.execute("SELECT lane,state FROM targets WHERE canonical_id='q0'").fetchone()[:], ('new', 'excluded'))
+        self.assertEqual(self.store.db.execute("SELECT lane,state FROM targets WHERE canonical_id='q0'").fetchone()[:], ('new', 'completed_live'))
+
+    def test_applied_target_reconciles_submitted_state_without_erasing_results(self):
+        r=self.claim();p=r['packet'];pid=p['packet_id'];token=r['token']
+        rows=[candidate(i)for i in p['items']]
+        self.store.submit(pid,token,rows,lambda p,c:validate_candidates(p,c,p))
+        inv=inventory();inv['completed_ids']=['q0']
+        self.store.sync(inv,{'canonical':[],'appearance':[]},[],audit.family)
+        self.assertEqual(self.store.db.execute("SELECT state FROM targets WHERE canonical_id='q0'").fetchone()[0],'completed_live')
+        self.assertEqual(self.store.resume(pid,token)['result'],rows)
+
+    def test_publication_blocker_requeues_only_that_target_and_retains_submission(self):
+        r=self.claim();p=r['packet'];pid=p['packet_id'];token=r['token'];rows=[candidate(i)for i in p['items']]
+        self.store.submit(pid,token,rows,lambda p,c:validate_candidates(p,c,p))
+        self.store.db.execute('UPDATE packets SET touched=1 WHERE id=?',(pid,))
+        inv=inventory();inv['blocked_outcomes']={'q0':{'canonical_id':'q0','appearance_id':'a0','reason':'Missing exact PDF page','run_id':'owner-run','blocked_at':time.time()}}
+        self.store.sync(inv,{'canonical':[],'appearance':[]},[],audit.family)
+        self.assertEqual(self.store.db.execute("SELECT state,lane FROM targets WHERE canonical_id='q0'").fetchone()[:],('ready','followup'))
+        self.assertEqual(self.store.db.execute("SELECT state FROM targets WHERE canonical_id='q1'").fetchone()[0],'submitted')
+        self.assertEqual(self.store.resume(pid,token)['result'],rows)
+        follow=self.store.claim('next-worker','test','followup',1,packet)
+        self.assertEqual(follow['packet']['items'][0]['canonical_id'],'q0')
+        p=follow['packet'];self.store.submit(p['packet_id'],follow['token'],[candidate(i)for i in p['items']],lambda p,c:validate_candidates(p,c,p))
+        self.store.sync(inv,{'canonical':[],'appearance':[]},[],audit.family)
+        self.assertEqual(self.store.db.execute("SELECT state FROM targets WHERE canonical_id='q0'").fetchone()[0],'submitted')
 
     def test_release_keeps_drafts_and_defer_is_not_reclaimed(self):
         r = self.claim(); pid = r['packet']['packet_id']

@@ -9066,3 +9066,78 @@ staging, commit or source deployment was performed by this task. Verified 12 que
 concurrency/recovery/validation tests + 2 coverage tests + 5 policy tests, Python
 compilation and live coordinator sync/status/claim/resume/release. No frontend
 change was made; the coordinator is SSH-only and not a new admin UI.
+
+## 2026-11-08 — Final owner-authorized tagging publication (in progress)
+
+Owner explicitly requested “merge it and publish it” after Batch 1632 reconciliation
+75eea6a532d4a68d801a54e16e134906c1f44040, confirmed present on origin/main. Fresh
+audit: 78,049 unique candidates, zero schema/baseline/unresolved conflicts. The
+executing 68,124-target scope excludes 9,925 already matching source-bound live
+completions; SHA256 2d9737104889f1f512412463ef403cb7abf0f130bc0ec507b438f855c40f5855.
+Read-only preflight: 51,366 ready, 16,127 unchanged, 631 blocked. All 1,978 registered
+paper files exist and actual hashes were exported. Metadata-binding recovery from
+original hash-bound packet documents + current registry + actual bytes admits
+46 exact targets (6 corrections, 40 unchanged); supplemental scope SHA256
+94ed9a37e7b9327cb03c4d4c162714dea27f18338fa9c1911387eafde9e7576f. Other bindings and
+one known MotoGP dated-winner-to-static-Sports policy conflict remain blocked.
+
+Runtime: /var/lib/ism-taxonomy-final-20261108 on Oracle. Active main unit:
+ism-owner-taxonomy-final-complete-20261108. Do not replay or expand frozen scope.
+The root wrapper saves/restores timer, wake-up and document/paper publisher state;
+API stays running. Pending exact exports keep correction workers drained until
+reconciliation. An initial upload/preflight retry wrote no review decisions;
+subsequent resumptions preserve committed manifests/checkpoints and reconcile
+applied receipts. At the latest observed checkpoint 24,000 corrections are live
+and verified; main and supplemental completion + full proof are still pending.
+
+Measured serial operator bottlenecks were addressed without changing publication
+limits or source/role guards: cache exact run-local history deduplication keys while
+still fetching a fresh source signature per record; reuse a parsed immutable scope
+via postgres-privilege fork children, rehashing the actual frozen file on every load
+and opening fresh connections after privilege drop; omit unused paper-table copies
+inside individual taxonomy-only transformations, retaining the complete original
+paper table in output. Valid bounded taxonomy scope authority is checked before
+ordinary budget accounting; its diagnostic observed_last24h is null with an explicit
+scope basis rather than a fabricated count. Ordinary HTTP/staff/learner budgets and
+fully attributed exemption requirements remain tested and unchanged. Rollback source
+copies are in the run's code-backup directory. No protection baseline reset, new role,
+answer decision, peer vote, provider/model call or question-content SQL repair.
+
+Validation so far: 126 focused backend tests, 13 coordination tests and 2 preparation
+tests pass; Python compilation and diff whitespace checks pass. Live health remains
+82,383 questions / 13,898 scorable; Study HTTP 200, Family HTTP 307. The final verifier
+now pages full manifests in groups of 100 to avoid PostgreSQL's single JSON value
+limit, checks each manifest digest, verifies every receipt live and obtains global
+progress from source-bound history rather than treating this continuation as the
+entire bank. Shared queue reconciliation will mark accepted current question
+outcomes completed_live while preserving original submitted proposals/history.
+
+
+## 2026-11-08 — Final saved tagging publication COMPLETE
+
+Completed the explicitly authorized Batch 1632 pass at source commit 75eea6a5.
+Main + four exact metadata/context supplements: 51,543 publications, 16,312
+confirmations, 269 blockers. Final 24-target policy reconciliation: 14 publications,
+ten confirmations; 13 intentional reclassifications overlap earlier accepted targets,
+eleven source-context blockers cleared. Unique live outcomes: 58,197 published,
+19,594 confirmed, 258 blocked, zero stale; 4,334 without a saved review in this pass.
+The 258 need 186 page references, 25 valid taxonomy paths, 47 context/routing decisions.
+No new independent human review or answer certification was asserted.
+
+Both full-bank proof runs passed every manifest/receipt and preserved all question
+IDs, text/options/answers, provenance and paper identities. No peer/answer decisions
+or unapplied exports. Final bank SHA 352908ec4e94b7cb3d63738700374b0a1e12d62c87082e80513863824b24da9c.
+Final remote --check: IN SYNC, 82,383 questions/classifications, protected 78 papers /
+6,931 questions unchanged. Services API, paper/doc publishers, review timer and wakeup
+all active; health 82,383 / 13,898; Study 200, Family redirects to its healthy locale.
+
+Shared queue reconciliation preserves submitted evidence, marks 77,791 current live
+outcomes complete and schedules 258 blockers as follow-up. A blocker must postdate a
+submission to requeue it; newer follow-up submissions remain submitted. Queue:
+258 follow-up ready,1,366 new ready,2,968 alternate, no active claim. Consistent SQLite
+backup retained remotely. No queue reset or baseline regeneration.
+
+Validation:127 backend tests,14 coordination tests,2 preparation tests, compilation and
+whitespace checks. Full frozen scopes are archived compressed with original-byte
+SHA256s, final unique dispositions and verification proofs in
+reports/owner-taxonomy-final-20261108/. Original proposals/history remain immutable.

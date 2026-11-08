@@ -1,5 +1,25 @@
 # Current implementation and content work
 
+## Final saved AI tagging publication — 8 November
+
+- [x] Verify 78,049 unique saved targets at reconciled main commit `75eea6a5`,
+  with zero audit/schema/baseline/unresolved conflicts; owner explicitly requested
+  “merge it and publish it”. Exclude 9,925 matching current live completions.
+- [x] Freeze 68,124 remaining targets; preflight admits 51,366 corrections and
+  16,127 unchanged confirmations, preserving 631 blockers with exact reasons.
+- [x] Recover 46 exact original-packet/registered-document/actual-byte bindings
+  in an immutable supplemental scope: 6 corrections and 40 unchanged.
+- [x] Complete the main run and four disjoint supplements: 51,543 published,
+  16,312 confirmed, 269 blocked. Verify every receipt and full-bank preservation.
+- [x] Complete 24-target policy/context reconciliation: 14 publications and ten
+  confirmations, including eleven formerly blocked targets. Final global outcomes:
+  58,197 published / 19,594 confirmed / 258 blocked / zero stale.
+- [x] Reconcile shared queue, live admin counters and immutable publication evidence.
+- [ ] Resolve 258 explicit blockers (186 missing pages, 25 invalid taxonomy paths,
+  47 context/routing cases); separately schedule 4,334 without saved candidates,
+  respecting alternate-booklet exclusions. No automatic publication of future work.
+  [Completed run and exact evidence](../reports/owner-taxonomy-final-20261108/README.md).
+
 ## Shared tagging workers — 8 November
 
 - [x] Install a central Oracle workflow queue with atomic canonical/appearance

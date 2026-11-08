@@ -55,8 +55,14 @@ def read_bank(mode, rows=()):
                       WHERE r.detail->>'status' IN ('published','confirmed')
                       AND r.detail->>'source_signature'=""" + signature_sql())
                     completed = [r['id'] for r in await cur.fetchall()]
+                    await cur.execute("""WITH latest AS (
+                      SELECT DISTINCT ON(detail->>'canonical_id') detail,created_at FROM contribution_events
+                      WHERE action='owner_ai_taxonomy_progress' ORDER BY detail->>'canonical_id',id DESC)
+                      SELECT detail,extract(epoch from created_at)AS blocked_at FROM latest WHERE detail->>'status'='blocked'""")
+                    blocked={r['detail']['canonical_id']:{**r['detail'],'blocked_at':float(r['blocked_at'])}for r in await cur.fetchall()}
                     return {'exported_at': at, 'appearances': appearances,
-                            'documents': documents, 'taxonomy': taxonomy, 'completed_ids': completed}
+                            'documents': documents, 'taxonomy': taxonomy, 'completed_ids': completed,
+                            'blocked_outcomes':blocked}
                 items = []
                 for row in rows:
                     snap = await snapshot(cur, row['canonical_id'], row['appearance_id'])

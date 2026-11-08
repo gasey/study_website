@@ -91,6 +91,22 @@ read the completion ledger and current live state before continuing. The scoped
 operator run does not consume the normal browser maintenance allowance; ordinary
 staff limits and all source/permission/publication protections still apply.
 
+On 8 November 2026, after the final Batch 1632 reconciliation at commit
+`75eea6a532d4a68d801a54e16e134906c1f44040`, the owner explicitly instructed
+"merge it and publish it" for the 78,049 saved unique tagging candidates. The new
+`owner-taxonomy-final-20261108` run excludes 9,925 matching source-bound live
+completions and freezes 68,124 outstanding targets at SHA256
+`2d9737104889f1f512412463ef403cb7abf0f130bc0ec507b438f855c40f5855`.
+Publication is complete, including four disjoint metadata/context supplements and
+a separate 24-target policy reconciliation within the same authorized question IDs.
+Final source-bound outcomes: 58,197 published corrections, 19,594 confirmed unchanged,
+258 blocked, zero stale; 4,334 bank questions have no saved review in this pass.
+Both full-bank proof runs passed, preserving text/options/answers, provenance and
+paper identities. These are owner-delegated AI taxonomy acceptances, not independent
+human review or answer verification. Consult
+`reports/owner-taxonomy-final-20261108/README.md` and its immutable evidence before
+continuing; never replay old pending files or extend authority to future batches.
+
 ## Product and implementation
 
 - Use approved subject/topic/subtopic classifications. Difficulty labels are retired.

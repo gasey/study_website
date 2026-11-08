@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-08T15:12:10.106905+00:00",
+  "run_id": "owner-taxonomy-final-policy-20261108",
+  "frozen_sha256": "d04c5c84d806f20e98451d72dedfacda418bfa0f816725744f731f25f764db04",
+  "published": 14,
+  "phase_counts": {
+    ".": {
+      "ready": 14,
+      "confirmed": 10
+    }
+  },
+  "late_context_blocks": 0,
+  "source_questions": 82383,
+  "changed_sources": 14,
+  "all_answers_options_text_provenance_preserved": true,
+  "paper_identity_preserved": true,
+  "peer_votes_created": 0,
+  "answer_decisions_created": 0,
+  "initial_bank_sha256": "1c63502b38a3c6d2f2ee0fa8a106dc25546ea36d4801abdaa08b94009356a225",
+  "final_bank_sha256": "352908ec4e94b7cb3d63738700374b0a1e12d62c87082e80513863824b24da9c",
+  "unapplied_exports": 0,
+  "publication_ids": [
+    "pub_0af674f22b6a405ea0d75ee5e2429725",
+    "pub_4171ce68e9a14e37aba631696297a829",
+    "pub_380e86d2e003400b991e664ee85f01ea",
+    "pub_92e366bc7c79410e91079c9a29bb7012",
+    "pub_71266c62c4334144894db9d96b9980bf",
+    "pub_61df175473504bce8a285c12f030b5f1",
+    "pub_8600d1946a3846ffbba84d8bcebf43ae",
+    "pub_90fac54799614866b0fdb56a14fd21f6",
+    "pub_f2e1713d6e9e48c2b0d87c3461c7a50f",
+    "pub_99ecff9df160457eb5676fa66ba63596",
+    "pub_5cf089032aa5449486a8b5f05edb1cb1",
+    "pub_2d6f8231742147a88a0c4e989b91e6b9",
+    "pub_89c20270ec204b789a8a91c080a2d3b6",
+    "pub_b7cac2cb43d645138086dc0f2e76004d"
+  ],
+  "blocker_reasons": {},
+  "recorded_outcomes": {
+    "published": 14,
+    "confirmed": 10
+  },
+  "global_progress": {
+    "published": 58197,
+    "confirmed": 19594,
+    "blocked": 258,
+    "stale": 0,
+    "updated_at": "2026-11-08 15:12:05.779214+00:00",
+    "total": 82383,
+    "remaining": 4592,
+    "review_kind": "owner-delegated-ai-taxonomy",
+    "includes_answer_verification": false
+  },
+  "prior_completed_matching_live_paths": 0,
+  "remaining_in_entire_bank_tagging_pass": 4592
+}

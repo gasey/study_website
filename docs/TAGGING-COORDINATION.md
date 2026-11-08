@@ -5,6 +5,11 @@ The copyable entry point for every tool/model is
 queue, separate from the existing answer/explanation queue and bank publisher.
 It invokes no model, creates no approval and changes no bank content.
 
+After an explicitly authorized publication, `sync` marks current source-bound
+question completions as `completed_live`, while retaining earlier drafts and
+submitted proposals unchanged. This means the question has a current accepted
+tagging outcome; it does not claim every historical model proposal was applied.
+
 ## One coordination authority
 
 `python3 scripts/tagging-work.py` always connects to Oracle over existing authorized
@@ -104,3 +109,12 @@ python3 -m unittest discover -s scripts -p 'test_tagging_coordination.py' -v
 Tests use temporary stores and artificial records only. They cover simultaneous
 claims, canonical/booklet exclusions, idempotency, failed-read rollback, token
 isolation, interrupted drafts, fresh-source rejection and submission preservation.
+
+## Final publication reconciliation — 8 November 2026
+
+Source-bound accepted live outcomes become `completed_live` while submitted packets,
+drafts and results remain immutable. A later explicit owner-publication blocker
+returns an older submitted reservation to the follow-up lane. The blocker must be
+newer than the submission timestamp; a fresh submission after that blocker remains
+submitted until its next disposition. This prevents repeated requeueing and retains
+the original candidate, publication reason and audit event. No active claim is stolen.
