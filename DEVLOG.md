@@ -8683,6 +8683,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 21/21 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,207 saved records**, **10,128 unique appearances**, **9,727 deduplicated candidates**, **0 problems**. [Batch 139 report](reports/tagging-batch139-20261108/README.md).
 
+### Tagging Batch 140 — Direct General English Papers Collection (2014–2018) (2026-11-08)
+- **Scope & Targets:** Full source review of 5 Direct General English examination papers:
+  1. `Old_Questions/Direct_2014-2018/1. General English.pdf` (Assistant Divisional Accountant 2014; `doc_8fdbfc59656a9d958d3dc9d5`, 5 items).
+  2. `Old_Questions/Direct_2014-2018/1.CDPO under Social Welfare Department 2016 General English Paper I Common.pdf` (`doc_93a9c277ed331cd9f39ba49b`, 3 items).
+  3. `Old_Questions/Direct_2014-2018/2. Jr. Grade of MES 2015 General English (Common).pdf` (`doc_54ef3c96c59c2724aa49a225`, 1 item).
+  4. `Old_Questions/Direct_2014-2018/21. General English.pdf` (`doc_a55d55c924fcd9aebdea6753`, 5 items).
+  5. `Old_Questions/Direct_2014-2018/6.General English.pdf` (`doc_314d319b1ecf5b0f761989d1`, 6 items).
+- **Actions:** 20 questions reviewed (19 retags, 1 keep, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution:**
+  - `english/vocabulary` (10 items): Q11, Q13, Q14, Q15 (ADA 2014); Q6 (Paper 21); Q5 x 5 (Paper 6 word meanings: invidious, apotheosis, anarchy, fastidious, anomaly).
+  - `english/writing/essay` (5 items): Q1, Q5 (CDPO); Q1 (MES); Q1 (Paper 21); Q1 (Paper 6).
+  - `english/writing/letter` (1 item): Q3 (CDPO letter to Director, Social Welfare).
+  - `english/writing/precis` (1 item): Q2 (Paper 21 précis).
+  - `english/vocabulary/idioms-and-phrases` (1 item): Q9 (Paper 21 idioms).
+  - `english/comprehension` (1 item): Q3 (Paper 21 reading comprehension).
+  - `english/grammar` (1 item): Q12 (ADA 2014 prepositional connective).
+- **Defect Documentation:**
+  - Preserved Section A conventional written items in ADA 2014 (`pending-written-intake.json`): Question 1 Essay on Pleasures of Reading / Mizoram Economy / Politics / Women (20 marks) and Question 2 Précis on Human Instincts and Peace (10 marks).
+- **Ledger Verification:**
+  - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,227 saved records**, **10,148 unique appearances**, **9,747 deduplicated candidates**, **0 problems**. [Batch 140 report](reports/tagging-batch140-20261108/README.md).
+
+
 
 
 
