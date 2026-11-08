@@ -8519,6 +8519,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 35/35 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,586 saved records**, **9,507 unique appearances**, **9,106 deduplicated candidates**, **0 problems**. [Batch 130 report](reports/tagging-batch130-20261108/README.md).
 
+### Tagging Batch 131 — UDC under Excise & Narcotics 2018 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of U.D.C. under Excise & Narcotics Department, June 2018 — Paper-I (`Old_Questions/Direct_2014-2018/1.UDC Excise Deptt. Paper-I.pdf`, `doc_7a1b7730f16d48d33f3d6d39`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (17 retags, 58 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (24 items): Q9–Q16 (clause identification: noun, adverb, adjective, co-ordinate clauses), Q17–Q24 (sentence structure: simple, compound, complex), and Q25–Q32 (functional concepts: invitation, request, permission, probability, refusal, suggestion, necessity).
+  - `english/vocabulary/idioms-and-phrases` (17 items): Q33–Q40 (phrasal verbs: brought out, called in, clear up, fallen out, went about, etc.) and Q58–Q66 (idioms: sharp practice, by fits and starts, hold water, turn a deaf ear, cold water, devil's advocate, smell a rat, lion's share, apple of one's eye).
+  - `english/grammar/prepositions` (9 items): Q49–Q57 (appropriate prepositions: live under, leaning against, presided over, blind to, etc.).
+  - `english/grammar/tenses` (9 items): Q67–Q75 (verb forms, tenses, participles, and conditionals).
+  - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (parts of speech identification: on, in the steel of might, less, all alone, after, correctly, above, round).
+  - `english/vocabulary/one-word-substitution` (8 items): Q41–Q48 (effeminate, novice, mercenary, convalescent, conscience, sceptic, omniscient, martyr).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Preserving Mizo Culture [25 marks] and Question 2 Précis on Freedom of Press and Aberdeen Quintuplets [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,661 saved records**, **9,582 unique appearances**, **9,181 deduplicated candidates**, **0 problems**. [Batch 131 report](reports/tagging-batch131-20261108/README.md).
+
+
 
 
 
