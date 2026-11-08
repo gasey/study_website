@@ -7878,5 +7878,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,279 saved records**, **7,201 unique appearances**, **6,801 deduplicated candidates**, **0 problems**. [Batch 99 report](reports/tagging-batch99-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 100 (Geologist Junior 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 100 (`reports/tagging-batch100-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** and reached the **Batch 100 Milestone** for:
+  - *Competitive Examinations for Recruitment to the Post of Geologist Junior under Commerce & Industries Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/Geologist Junior General English Paper-II.pdf`, `doc_513e7d40a192db657479c727`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 39 retag, 61 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (56 items): Q1–Q10 (functional parts of speech identification), Q11–Q20 (pronouns identification and case usage), Q21–Q30 (conjunctions in context), Q38 (gerund reading), Q39 (modal stir), Q43 (degrees of comparison: stronger), Q44 (adverb quickly), Q46–Q51 (sentence transformation & connector integration), Q52–Q56 (sentence types: simple, complex, compound), Q57–Q61 (sentence synthesis & clause combination), Q62–Q66 (clause analysis: noun, adverb, adjective clauses), Q98 (passive verb form: rejected).
+    - `english/vocabulary/antonyms` (10 items): Q77–Q86 (arrogant, blunt, sparse, rigid, expand, arrive, jubilant, moderate, gargantuan, hastily).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q87–Q96 (rank and file, at daggers drawn, cry for the moon, take to heels, in high spirits, house of cards, kick the bucket, close fisted, cock sure, cut and dried).
+    - `english/vocabulary` (7 items): Q67–Q71 (lexical collocations: warm welcome, fatally wounded, urban legend, controversy surrounding, valuable asset), Q99 (principles), Q100 (bored).
+    - `english/grammar/tenses` (7 items): Q36, Q37, Q40, Q41, Q42, Q45, Q97 (have been waiting, died, working, fought, runs, admire, would arrive / will arrive).
+    - `english/grammar/prepositions` (5 items): Q31–Q35 (prepositions: on a diet, off the bridge, opposite, onto, across).
+    - `english/vocabulary/synonyms` (5 items): Q72–Q76 (writer, ask, coarse, ancient, amends).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,379 saved records**, **7,301 unique appearances**, **6,901 deduplicated candidates**, **0 problems**. [Batch 100 report](reports/tagging-batch100-20261108/README.md).
+
+
 
 
