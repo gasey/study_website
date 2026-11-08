@@ -1,0 +1,39 @@
+{
+  "batch": 106,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English (DSO).pdf",
+      "paper_title": "General Competitive Examinations for Recruitment to the Post of Deputy Store Officer under Home Department, August 2019 — General English",
+      "document_id": "doc_ffe3a81602eb0cbf3c6feb22",
+      "sha256": "acea57eec5dc79b9f393f1ed1968881056a92f94d6c6a1ae3c8d2795ea39582d",
+      "targets": 80
+    }
+  ],
+  "targets": 80,
+  "completion": "100% paper completion achieved for Deputy Store Officer 2019 General English (80/80 MCQs reviewed: 16 Idioms & Phrases, 12 Reading Comprehension, 16 Grammar Core [Clauses, Sentence Kinds, Notions], 8 Synonyms, 8 One-Word Substitution, 8 Tenses, 6 Prepositions, 6 Parts of Speech; 1 conventional essay question documented in written intake)",
+  "actions": {
+    "retag": 80,
+    "keep": 0,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 1,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/vocabulary/idioms-and-phrases": 16,
+    "english/grammar": 16,
+    "english/comprehension": 12,
+    "english/grammar/tenses": 8,
+    "english/vocabulary/one-word-substitution": 8,
+    "english/vocabulary/synonyms": 8,
+    "english/grammar/parts-of-speech": 6,
+    "english/grammar/prepositions": 6
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Realigned 3 reading comprehension questions (Q23, Q26, Q28) erroneously tagged as general-knowledge into english/comprehension.",
+    "Documented Section A (Essay writing, 20 marks) in pending-written-intake.json.",
+    "Verified all 80 MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

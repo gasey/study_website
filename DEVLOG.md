@@ -7988,6 +7988,28 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,817 saved records**, **7,739 unique appearances**, **7,339 deduplicated candidates**, **0 problems**. [Batch 105 report](reports/tagging-batch105-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 106 (Deputy Store Officer 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 106 (`reports/tagging-batch106-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to the Post of Deputy Store Officer under Home Department, August 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (DSO).pdf`, `doc_ffe3a81602eb0cbf3c6feb22`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 80 retag, 0 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (bury the hatchet, kick the bucket, babe in the woods, cut corners, hit the sack, once in a blue moon, under thumb, etc.).
+    - `english/grammar` (16 items): Q49–Q53 (sentence structure: simple, compound, complex), Q54–Q58 (clauses: noun clause, adjective clause, adverb clause, coordinate clause), Q59–Q64 (communicative functions and speech acts / notions: request, command, exclamation, statement).
+    - `english/comprehension` (12 items): Q17–Q22 (Passage 1: Vincent van Gogh's art & life), Q23–Q28 (Passage 2: Ferdinand Magellan expedition; corrected legacy misclassification as general-knowledge).
+    - `english/vocabulary/synonyms` (8 items): Q73–Q80 (acceptable, alluring, atrocious, ample, brilliant, harmony, exhilaration, vexed).
+    - `english/vocabulary/one-word-substitution` (8 items): Q65–Q72 (anomaly, polygamy, pseudonym, arcane, maelstrom, pariah, plethora, quaint).
+    - `english/grammar/tenses` (8 items): Q41–Q48 (verb form selection & tense usage).
+    - `english/grammar/prepositions` (6 items): Q35–Q40 (preposition usage: among, off, behind, of, against, among).
+    - `english/grammar/parts-of-speech` (6 items): Q29–Q34 (parts of speech identification: not, rotten, conveyed, themselves, where, and).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Brain Drain / Social Media / Cleanliness / Water Scarcity) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,897 saved records**, **7,819 unique appearances**, **7,419 deduplicated candidates**, **0 problems**. [Batch 106 report](reports/tagging-batch106-20261108/README.md).
+
+
 
 
 
