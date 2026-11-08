@@ -8315,3 +8315,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 66/66 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,953 saved records**, **8,874 unique appearances**, **8,473 deduplicated candidates**, **0 problems**. [Batch 120 report](reports/tagging-batch120-20261108/README.md).
+
+### Tagging Batch 121 — Employment Officer under LE&IT 2019 General English Paper-II (2026-11-08)
+- **Scope & Targets:** Full source review of Technical Competitive Examinations for Recruitment to the Post of Employment Officer under Labour, Employment and Industrial Training Department, April 2019 — General English Paper - II (`Old_Questions/Direct_2019-2020/General Englsih Paper-II (EO).pdf`, `doc_e3d3680e6cbfda6e9c636f01`).
+- **Paper Structure:** 100 Marks total (100 Objective MCQs, 1 mark each; 100% paper completion).
+- **Actions:** 100 MCQs reviewed (64 retags, 36 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (30 items): Q41–Q48 (sentence structure analysis: simple, compound, complex), Q49–Q56 (degrees of comparison: positive, comparative, superlative), Q57–Q61 (phrase structures: adjective, noun, adverb), Q62–Q65 (clause analysis: adverb, adjective, noun), Q66–Q70 (sentence communicative notions: supposition, concession, purpose, condition, result).
+  - `english/grammar/parts-of-speech` (20 items): Q1–Q10 (parts of speech identification: verb, noun, adjective, adverb, conjunction, pronoun, interjection), Q16–Q20 (conjunctions: but, neither, nevertheless, moreover, on the other hand), Q31–Q35 (pronouns: relative, reflexive, demonstrative, indefinite).
+  - `english/grammar/tenses` (10 items): Q21–Q30 (verb forms and tenses in context).
+  - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms & phrases meaning: gift of the gab, spill the beans, burn the midnight oil, dark horse, turn a deaf ear, etc.).
+  - `english/vocabulary/antonyms` (8 items): Q87–Q94 (hostile, obscure, artificial, expand, genuine, rigid, despair, transparent).
+  - `english/vocabulary/synonyms` (6 items): Q81–Q86 (abundant, benevolent, frugal, obstinate, candid, transient).
+  - `english/vocabulary` (6 items): Q95–Q100 (contextual word choice: discredit, renounced, rewarded, inevitable, erosion, unanimous).
+  - `english/grammar/prepositions` (5 items): Q11–Q15 (behind, in, in, into, to).
+  - `english/grammar/articles` (5 items): Q36–Q40 (definite, indefinite, and zero articles).
+- **Defect Documentation:**
+  - Realigned legacy generic classifications; full 100 MCQs verified against 8 rendered page images from source PDF.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,053 saved records** (Crossed 9,000 threshold!), **8,974 unique appearances**, **8,573 deduplicated candidates**, **0 problems**. [Batch 121 report](reports/tagging-batch121-20261108/README.md).
