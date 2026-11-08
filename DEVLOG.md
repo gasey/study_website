@@ -8132,6 +8132,30 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,377 saved records**, **8,299 unique appearances**, **7,899 deduplicated candidates**, **0 problems**. [Batch 112 report](reports/tagging-batch112-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 113 (Junior Engineer Agriculture 2020 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 113 (`reports/tagging-batch113-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Junior Engineer under Agriculture (Crop Husbandry) Department, March 2020 — General English* (`Old_Questions/Departmental_2019-2020/JE General English..pdf`, `doc_b9d99723ec0d6b0559ebf04f`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 80 retag, 0 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (21 items): Q51–Q54 (sentence structure: simple, compound, complex), Q55–Q58 (clauses: noun clause, adjective clause, adverb clause), Q59–Q62 (sentence synthesis and combinations), Q63–Q66 (transformations: assertive, interrogative, affirmative, imperative), Q67–Q69, Q71–Q72 (pronoun cases, response additions, question tags, pronoun complements).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passages: Passage 1: Q17–Q24; Passage 2: Q25–Q32).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and idiomatic expressions meaning).
+    - `english/grammar/parts-of-speech` (10 items): Q41–Q50 (functional parts of speech identification: nouns, verbs, adjectives, adverbs, prepositions, conjunctions).
+    - `english/grammar/prepositions` (5 items): Q34, Q37–Q40 (preposition usage in context: to, despite, on, of, into).
+    - `english/sentence-correction` (4 items): Q73–Q76 (error detection and sentence correction: luggage, some advice, quality is, setting affects).
+    - `english/vocabulary/one-word-substitution` (4 items): Q77–Q80 (lexicographer, teetotaller, florist, speleology).
+    - `english/grammar/subject-verb-agreement` (2 items): Q36 (Six months is), Q70 (Each of the students has).
+    - `english/vocabulary` (1 item): Q33 (affect vs effect).
+    - `english/grammar/tenses` (1 item): Q35 (has borne).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Plastic Ban / Conservation of Resources / Be the Change / Sustainable Agriculture) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,457 saved records**, **8,379 unique appearances**, **7,979 deduplicated candidates**, **0 problems**. [Batch 113 report](reports/tagging-batch113-20261108/README.md).
+
+
 
 
 
