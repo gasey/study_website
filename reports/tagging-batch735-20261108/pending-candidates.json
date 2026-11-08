@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_164c77141053600f",
+    "appearance_id": "fc8899fbead8027d7ac2",
+    "source_fingerprint": "b4bdfce5c906d55ee345c2b7841c1f121e71d6facdaed0adc659edf2375a687c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89952d22fd2a517d",
+    "appearance_id": "a77a36a4009c3425e09c",
+    "source_fingerprint": "9381b8790815a617f2f2c53f75cbacee0dbf3017e3451980406c4f73956e4ef9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c98d4e9f17eca0f1",
+    "appearance_id": "b1b354ac28b49bfa7d9f",
+    "source_fingerprint": "1b4563ff3160bcfeb78b082937b6d49451e16e7b8ee7f91ade16737c34abb44b",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cdbe65e531fd462e",
+    "appearance_id": "0366b14cba15b3afb59c",
+    "source_fingerprint": "b77dc13084fe86b89d1bdbe8a3ed0d64ca93830efdad65bb2e86fd7dca6541f7",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9fa6eabc9f46665d",
+    "appearance_id": "709f68a60e715c251d8f",
+    "source_fingerprint": "ce5478aa91890b0b311b79f222dc581a97b4f9ed11587296ab894c275bb4b437",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e068dd7509bc030",
+    "appearance_id": "bc73098a5ef98c1a1217",
+    "source_fingerprint": "906d1909b43f90c28bda1887565bbd23688beceec37a716d221b960122032f7f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6009f9cb7652c9e0",
+    "appearance_id": "2a8db8d9e7ecb3dc13ae",
+    "source_fingerprint": "817d2fd78430d6db37785919a330e7685fb9e3c30adff7e9ccddd0da7949139e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a4d784bec2a4169",
+    "appearance_id": "1926035cb992412cc6b6",
+    "source_fingerprint": "1a206b79ed3fc88bb1409153da1a51d90e30ba543e00072c3e4bd4292bd29f53",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7587f5d5abcdec07",
+    "appearance_id": "591030f031e6429787da",
+    "source_fingerprint": "7b4500b25811b1b45caec18d38051e8dd0314abf71189d91f9f1b100ae9538ab",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d71cc637bb1f55a",
+    "appearance_id": "560145560f2b341bb04c",
+    "source_fingerprint": "9a749830e556ce4ee517431d6c78b1bf30b55b643bcf5d8c7d3ac9eadbe72cd3",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6386869f47114b96",
+    "appearance_id": "e1f059594380e4f971d7",
+    "source_fingerprint": "68052d9d89a422bc62c84a7c7848378a87d18e53612ed0faf0f9e71acee83462",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1226e28b3f7ddad5",
+    "appearance_id": "3cc76c66d2736e7d9923",
+    "source_fingerprint": "2523e91b6e24904f5b98413e7482dd2a1611443839335e81fd30a685c111d4b0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_157d337fd679c74e",
+    "appearance_id": "d2160afa1978f7b2de8e",
+    "source_fingerprint": "75f660428d4e8ad980ab29a22d0c4020ed0f46f6cfc31b69af98359da106aea0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0061cb00bd90b78d",
+    "appearance_id": "55706819e08a27afa07c",
+    "source_fingerprint": "aa8ffa3fe973330ba1a57cbf453f9eaf5eacfb8ab68b68e003086a0bd29574ff",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_41b3253c4ace730a",
+    "appearance_id": "5916e2ca88674fd27b0b",
+    "source_fingerprint": "8c368a13dde52f122ec6e9e8f1a585af2f7ca06c99b3292260306f487665ed80",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c54231b4fcf4a1ef",
+    "appearance_id": "6e5f4f16981a84cb87a0",
+    "source_fingerprint": "ac7513e2293f7731fa09c03709c4b451881958dc6f494710921a0506a3043da5",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91aa552e5ad9839b",
+    "appearance_id": "016779f69607dc306050",
+    "source_fingerprint": "0bd2b9f8ce4478105470675c6b8de48eade9ef194861341917f0f7a37508e4ba",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e217fc647600caf7",
+    "appearance_id": "341a806eb7200ad49820",
+    "source_fingerprint": "efd9913c13741a5e048de8741632355cf4d1ce5910188c9dad6b75d14a07bd8e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2dcc59a1a0e4ce34",
+    "appearance_id": "cf072b600793c5843a24",
+    "source_fingerprint": "ebfe676e6e8cb1f766cf700971adc1b899ee073ae14647cf61bccb81d7f9f2bb",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a3b49779608da0c",
+    "appearance_id": "a9f94585da12f67b6d6d",
+    "source_fingerprint": "dd9d8927f97f1d7b67ed89bcfa81b571c60f8635e3439c4b2103a0ce7ada35b1",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c60d6c166e94c26c",
+    "appearance_id": "620996e0039155ec4fc0",
+    "source_fingerprint": "cb945c1ba1c7f24194771dc1623754b3fff733c2699b98bec7941088ee6b0670",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59859fb9c1808590",
+    "appearance_id": "a5ad3fb6cf9b31f15c9a",
+    "source_fingerprint": "468ab96d4bb6700f4a20eb499d05f4b65d5b86f533d444b56a65884ce0c8921c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d5eb4bec36e796b0",
+    "appearance_id": "7b58e6a7ace630c985fb",
+    "source_fingerprint": "19ebb9256313ec0f63baf9908aceb7ba493ac8f2a2b0e643f006306672f25aaf",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f22a91c9009befa",
+    "appearance_id": "108db0256013b3f33a8f",
+    "source_fingerprint": "5762715f0e59f4a1b2a475bed8f226be72a6d0058df8d0e4898ae06ea9c116e5",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3f64ee8f6bb9b704",
+    "appearance_id": "2fb3f310bb82330fdeaf",
+    "source_fingerprint": "1fd9bfffa6d7fb741f02e1a208d024c543755f7f24e2b9dbe4775639ff574102",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72993ae8d0f1edcb",
+    "appearance_id": "98b4bed5cd8c90bc0ce9",
+    "source_fingerprint": "7a3bbd9021afaa1d149491fa42fcf6aa9438777afcaeefd84ba57a00a31f7142",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81d03d2d36a36b82",
+    "appearance_id": "c20263295effebb84c59",
+    "source_fingerprint": "6cd73b743491fea4c6e82d096f68c688db29785f4a2f5f8419191990722a5bdc",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b175489b078a6a1d",
+    "appearance_id": "b0257dfb39d2b0eb5e7b",
+    "source_fingerprint": "2f1736e51c803897c71f7d045f5d42526c3515652e6b2af956f05f767b07cad1",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48e1fc21ed026d97",
+    "appearance_id": "bda993d3f5af8ee2608a",
+    "source_fingerprint": "79629727a503cad2ee1866a850853ff43a189ede6104ac96b75b4530b6526961",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4423911036fb9fc4",
+    "appearance_id": "5736106f0f1ec1facf35",
+    "source_fingerprint": "e539decfca22fb7815ac16dc053047ab8182103b1b361bd2eb98bf8446dcda93",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_db4aa2db7bbdb5a3",
+    "appearance_id": "ef0c09b857ea2e0f2adc",
+    "source_fingerprint": "c6fb64210fc0118c4b2cae09cba5c03a86c614a54d83399dfd690ba246480849",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1664a34f4a74450a",
+    "appearance_id": "b4fe683a562dcb24b5ad",
+    "source_fingerprint": "f66c6e01b54208943f5b57a262135fddca2876243f24ae87b859c2968499d9ba",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5176bd8b1af5576d",
+    "appearance_id": "eeeaeaf15985e2365f3b",
+    "source_fingerprint": "de4eb8fd5505f087103dcef00fe41323c184bb9ae15324310108738f728bcac0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ca2345b1aaba500",
+    "appearance_id": "6699124187ea6f18edaf",
+    "source_fingerprint": "bacdfea7c6ad94a4ca3ece3f6d7b5e3a910597045a3977c49e61c0189977d1b8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1275ee83f773af81",
+    "appearance_id": "1603890cc6a11bfa3229",
+    "source_fingerprint": "776af121bc2bdd1ef182e3cef0020d0e9bb16a62a4eeda3b3e8f0d03dbed2923",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54be69038b41bd76",
+    "appearance_id": "687744229298a04b3a02",
+    "source_fingerprint": "0842d892d6b82a79522037fdaeb728c547f9d29d83d70cf358836f148b4d46d0",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cecf48bebd48a668",
+    "appearance_id": "b7b9c8f9d2998a1477af",
+    "source_fingerprint": "c1d47b634737702dbdf2edc6a0ba90a352cdab762120e446b21d2fae02c92b6a",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85fa76a1f800913b",
+    "appearance_id": "140b34f3d0e46f5e7377",
+    "source_fingerprint": "bc39e74492e79e81a2a0e7cc161dce304ab3e327e5cf8411b3d470db8705ce5d",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f90420f76215edc2",
+    "appearance_id": "ec269ea568cad0574285",
+    "source_fingerprint": "6bd89fb67c7c1963ab6db8e4b77f4ad5df751a9490314c9213b0871dcf0c129e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa29b76052441214",
+    "appearance_id": "bc46c8dfdc0e79fed066",
+    "source_fingerprint": "a6c9a29d9683330efa7a2542933c67636b973c79c57d4a6d0b3209f09991462f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0800f380535b1679",
+    "appearance_id": "e781203470ad5deafc2c",
+    "source_fingerprint": "517473f3a5922ee0786313676d27c0d0167837b7e1b0fc134f4b145c687181d8",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c0cc1378965ee92",
+    "appearance_id": "e184fce152fdba428555",
+    "source_fingerprint": "4e81bf80232a1d9876b7bf965077662586a45f54d110b7e74bec9ca477db447e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_65e6fc67a88d3c73",
+    "appearance_id": "b9556bfb32745815bd97",
+    "source_fingerprint": "2bfcbecc4e9854a1decd0973b76a6474df5806cc179b3f54cd6bf7b71c20fc73",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_623207d0340c3fb3",
+    "appearance_id": "b76cd2bebe46fe8bf46f",
+    "source_fingerprint": "3548e5190b25dc7b6be41bcee25c9df942f918d46dadc61d2fb7ccf89fb3e06f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5015421e0ce57844",
+    "appearance_id": "6cc48ed64e07f30afdb0",
+    "source_fingerprint": "58cf14b444dfb9cd09e901cf21c6e68d85f42a2aa56567f089ffd5bebda4f5d1",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1333581e66f7f82c",
+    "appearance_id": "33fd3551eb5a080265e5",
+    "source_fingerprint": "66c4a32b4df6be83d65aee87455c8c76735a76d9c39846d243446be7de41b521",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6ac6b1a33ec9f1a",
+    "appearance_id": "58394bf65e15d7abb25d",
+    "source_fingerprint": "d5345d7d8de9aed50bda8f021ed35acf3eac03088c652cadd1432e663998bf40",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ce17bb4fa77f3ff",
+    "appearance_id": "bfaa1024e9f46f666570",
+    "source_fingerprint": "f0482d7460ca9b15f9239fede71400f375e6cf29a756ee06282a5ac55a9ce463",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8915ad84ccf3fc6",
+    "appearance_id": "5c0b4160fa113929434a",
+    "source_fingerprint": "d6e4b112f0611c302c82f34a2af42d2e48929cd628ad34c6da0378bd1992f154",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b63dc146efb3698",
+    "appearance_id": "b03344802eb2d02ca1c9",
+    "source_fingerprint": "36d76e6110cc2a5940fb161938ce7753155752c19734795363c2099c7381284c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_becfc118d2269948",
+    "appearance_id": "e97364bab1496743def9",
+    "source_fingerprint": "a052ecffebf26c05b92fe90b91480232763e5b947f2b3792e262b18dd06db980",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7bb0993d2d67ecba",
+    "appearance_id": "284c3d2b9c28fa335d88",
+    "source_fingerprint": "f6699c98cb1d7151a5f85dd0f873ab58113b7e20f4c888cb37d08b59dd546e62",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72cad28f34ab6630",
+    "appearance_id": "e2a3170baee4c75e3356",
+    "source_fingerprint": "ba443891e67ae87f3598aa4f97dabf528ee0647555b7e5ea936e0156dc95b51e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b8b451b5859df78",
+    "appearance_id": "ec763ea60eb1d2a02f6a",
+    "source_fingerprint": "843e8d65da47506bad785195eaf25bd1d63d38ce8e8dc4886964ac20c37b0954",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7f38d94c528253bc",
+    "appearance_id": "d79ae7441aea40e34eb2",
+    "source_fingerprint": "96a3bee357a1fffc7361e8a30e7b2f86ad8a60e88792cc7ec9d1dbfb15427c78",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9b65d50bf2753bd",
+    "appearance_id": "7a27e588beb1a7110322",
+    "source_fingerprint": "6521adf13b49a725ca9c108b675548ad197e14b7068702760ec1d00387a99aa3",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0d8c2be40ff8ef1",
+    "appearance_id": "dff09ef09f7688e71b4d",
+    "source_fingerprint": "21bae651036a12cb8467a2c424c6f551e25b8bc5d6865db028344e54fe108090",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a48bfc8e1e2b82ef",
+    "appearance_id": "3b02ce2b5f1ababd1140",
+    "source_fingerprint": "3a39b6c021581bc22e6147c444060d2715588e7376f37754bcc3190d455544da",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb081b4c136c7982",
+    "appearance_id": "34418f61253735dad1dc",
+    "source_fingerprint": "a10b1d1f6aecf6f5e8d275d333710472e36ead924139ee0047571ce92dd8c8fa",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9342568c6d7f903",
+    "appearance_id": "ccea72b668eb044f45c7",
+    "source_fingerprint": "b48ea4d9e1846f14877fd731422213b24669a7dab5131778c1b681f685248966",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0039eea025c1e45f",
+    "appearance_id": "4d2ea0014ef1efe57d6b",
+    "source_fingerprint": "d76c73b1a358a6a977f366bf3efe2ac6b46597427e3123734df4eb7d63954c7c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7050aa91534f5ea4",
+    "appearance_id": "eaebb7778cc69a44e6a0",
+    "source_fingerprint": "91a3b8cf56c4b0cc31566ccfcf3c2099ea4bca22d219d20b9fef6ca1fc612b37",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d98055a8cbf4947b",
+    "appearance_id": "28fac2ae7025c4fffd0f",
+    "source_fingerprint": "25b28636d958d71a6f3ba358fe345b6379be65dbccb4bf50efc7907199334898",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7ee3ca0fda4ad81",
+    "appearance_id": "aa34179592032214a34e",
+    "source_fingerprint": "3cf8ab8a3c18109b7de67325866c41acebc97111db37eac962d51a8ad9c443ee",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1f78541969f7c42",
+    "appearance_id": "bdc42d7a2e3da493acba",
+    "source_fingerprint": "c6f5de0a7ac95a7308341fd71f97fbf5297d9aec18cf32b28160ba2d0cfabd5d",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e3f51f69bf5f39c",
+    "appearance_id": "80d6c9d478dd6da08a3a",
+    "source_fingerprint": "7d0d254d2906f0b66fba638cbf5cab0f0df5f0ab3092b966d11fb9bf71c8d1bb",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c74f1e287276b93",
+    "appearance_id": "2d38ff13671d062e3470",
+    "source_fingerprint": "98778794a8cef48d3925a12c390684d01823e2708263eb2a2920c38fcda68e2c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_356d181e3defdcac",
+    "appearance_id": "1ba28cbb5f94e7e3a01c",
+    "source_fingerprint": "a2b6f26c8e327acd31111642e2e54683bb6af38380eb560c6fcdc2a86ffa9f03",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2c47d161f68a2ba",
+    "appearance_id": "2adf9ead2b202b2d7749",
+    "source_fingerprint": "f215e1c0ceb94c00c84cb92f879920312ca1801a09642f79e9d4a7650ba5282c",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_681a9ccf621439bb",
+    "appearance_id": "5c7eee675191bb4eca5f",
+    "source_fingerprint": "9980d5b6426c9381762e07ae81bf2d9713fc8df15433e251cd14ec6ffe99a781",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7041cc16dbf2f920",
+    "appearance_id": "c487cec03119c8dafb09",
+    "source_fingerprint": "6a3d6b852a4bc094beaadba6843b8a49b76d171e56c82822c867336db4b25326",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b8d16f041aadd57d",
+    "appearance_id": "03ed027e62bdc3b71764",
+    "source_fingerprint": "69d1d22f0b84c42ffd6ec77a4deaaf145c12a3b3fc99988d00260f2bee5a6acc",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e2d772ed0262028",
+    "appearance_id": "ebc6d419c7c4e9e2ceaf",
+    "source_fingerprint": "fb2c71b2d4a63d26ebd6acdad5701e9842dcd5ef5c15347c87810bc7f2e0826f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1a5dda7432a87e6d",
+    "appearance_id": "55c070d937aabf3ba9a3",
+    "source_fingerprint": "282c661b423d176173486973f06c17af33d2479d1eba6280b1970996a6f4d1e4",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88067c00a87fcf95",
+    "appearance_id": "0537736ed8cf9bb7c7ca",
+    "source_fingerprint": "1924bb09cd6a60034f79059bd0211a1966da90ad0bc7a5f8445137460294e901",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d67dd27c66884547",
+    "appearance_id": "0d6db213d419e5bbc53d",
+    "source_fingerprint": "05095ed58ef45c24423fb50b246be4b58ad4e92d9a9bf1778dae38568aeb1572",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28d765b99c7fe3e6",
+    "appearance_id": "3a946b1665d6d46651ec",
+    "source_fingerprint": "717509b537dc92e59a2d3a4d431f97c4df9d69a73aead2af36627c98651519ab",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_272be688b272c568",
+    "appearance_id": "904df863712a9f89281e",
+    "source_fingerprint": "6087eb5f5e1695cb86c03f99b2b6ed3cfd8ddee5186fda54b1a0c47ba32d8acc",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_64b73e97f8f97b4f",
+    "appearance_id": "f2a7438a541d00ce7f7e",
+    "source_fingerprint": "a09f9dcee5d6ecad76fcd13d7781f32e1d666660d7d7b7b326b9685c3b2e97ab",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60c027f4ccc58907",
+    "appearance_id": "e41663ed72f606067470",
+    "source_fingerprint": "025ba0de069d49658600f952168d0feb8a8144b3471adcf665ed3c00a28d3946",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f66bc300a119aeb7",
+    "appearance_id": "4a1bcc4946c58c01d757",
+    "source_fingerprint": "2781aa15a85c308f4b6c5d54b2d39154b09a590ab140a40428181fb289a53c5e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1881caf649f145b8",
+    "appearance_id": "0958b8f8777efbfa075a",
+    "source_fingerprint": "998feabb3b01f75df9c1f89da63c8eee7f0fce802f99fd02d31235c1f6758def",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b2f4f2118e55fcc",
+    "appearance_id": "a89c50e426b77d7725f5",
+    "source_fingerprint": "54dc57fa15a9a239b44c13873fcd32f34d0180c7fe5d91b9289ab130364303a0",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_68e759899d4127c2",
+    "appearance_id": "56198914477e730c3d84",
+    "source_fingerprint": "bebe2e8a00ad038658ca6658503f962c6caa803b67b7eecace8659f61aa379d7",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63a78f845476ee70",
+    "appearance_id": "b4dd578935eb1df7167e",
+    "source_fingerprint": "51a8da5b3c6f773ec7d30ecd655d75929c8cd662a32b057bd355babc348791e6",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8bcb37defbab97b1",
+    "appearance_id": "9981f348cc278057d91e",
+    "source_fingerprint": "09d91ce582356a4c1da2f9d4afa0f3155f3f25d969c3f88b7e6ce3964b6fd5dd",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d2163c770e78207",
+    "appearance_id": "b1d33899c17472ddb810",
+    "source_fingerprint": "4c10016353281f5955dccb2fb45f8c085bed6cb21d35a0fc279f47a7e144f7a8",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4febe2232071781c",
+    "appearance_id": "4e8ed81a88c38c75c2c5",
+    "source_fingerprint": "f4c38d80b94c315485126f6edf578c76f844316c2394f381a00ec144586d93c9",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8263a93065570e58",
+    "appearance_id": "d53e623045fcd7167bdd",
+    "source_fingerprint": "c22b98cdb64bd7afe5d7e614bc74ca4ff8924f3437c9a116c9fc81b4ca6fe97e",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa054abae275962d",
+    "appearance_id": "09dd0e0e3bf146bb2c6d",
+    "source_fingerprint": "4a9a310cb397d947a6991dc1542a52a36d3b7d55fd9c46d30f2674b046b8ecbd",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_889cd6f70feb74d5",
+    "appearance_id": "1f1617e8856a268633a2",
+    "source_fingerprint": "1150146c03736c9a2b38702f664bd7bbf8ad346d36d1180f0a67d5ade10f5e16",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23549ec8871d3882",
+    "appearance_id": "7762dc5bda0e115505de",
+    "source_fingerprint": "cf9114a5716231133f06fb6975bb4b81c619f7b93fc11a586e9720dffd0aef84",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a9bfa29d5c298fa",
+    "appearance_id": "88fa8d2ebbbac8760b87",
+    "source_fingerprint": "6c738ad3099801733f7aed59394f5f4a348ed5e4f36cda0e62b84acaeb624fe8",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6194f3e8f2c1e54",
+    "appearance_id": "acccea019132f0ccfbd3",
+    "source_fingerprint": "1883124baf38446588676fa99abd494244f681d6b48d7c6a3212faa38e21ecf7",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_00206a6b2d35ee6a",
+    "appearance_id": "898f624ef0013b5529f4",
+    "source_fingerprint": "5991959e03a8d6b7fa7313372c62b53c16a405a2c82dc48b133cafbed8603445",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_19484f1881e477fb",
+    "appearance_id": "87a475107004f761e0d8",
+    "source_fingerprint": "ea49659e2cd17d1d9b9f3fd5f0c212802adbd6f4c4d2cbe5bea91004819ae8de",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d06f87b63f7a57d7",
+    "appearance_id": "79da310071f888fb1e7b",
+    "source_fingerprint": "4a2fcc3bd16ac58c367ee751b6361da27adf3671cbcf2e8593bc503ce353e47f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9335d54ae13c552",
+    "appearance_id": "a5bf1557019009bcac2e",
+    "source_fingerprint": "35a91af2bc0f3a89267b1b176cfb57ba06cded5bbf6ed311bc2d59a5bc030d05",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_401b3ecc1ecc8d25",
+    "appearance_id": "8aabca4ca84d0df0bb3f",
+    "source_fingerprint": "c8fb8eff115aa5c015b64dceed71fb8a56f0fc43fae636031da5cd56f836719f",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b3d4f5f2083533f",
+    "appearance_id": "be4f78d94337a5ac4cf5",
+    "source_fingerprint": "6d5a965b90d0a43253a5f4c30fd7126c664775dd276f05f892b7035eebf8c9a4",
+    "current_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "dental",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics. Appropriately classified under dental.",
+    "tested_skill": "Dental surgery: Oral pathology, operative dentistry, periodontics, and prosthodontics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f0d98458508782f092d3f181",
+      "sha256": "2cfbf4d8faf0bc74ba507850b6d5f05a537e5451ebc67fae32c696ae86cade06",
+      "note": "Verified against registered booklet source for Grade-III of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

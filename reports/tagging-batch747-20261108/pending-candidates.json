@@ -1,0 +1,3926 @@
+[
+  {
+    "canonical_id": "cq_11a183ab465566db",
+    "appearance_id": "54bc69f0eb9b0a09da65",
+    "source_fingerprint": "9a4f4f0aa0d6c5bc4444db634a546ed54c3b94da17017d3c6205aab1dffbcd52",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e1b9514a329fce68",
+    "appearance_id": "99fdf84bf7b1f485197c",
+    "source_fingerprint": "ff23e9c5c61dac74586e6a116d46474af1bc575025881f5f64d702ab963d33d2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8939ed0c3ca764f6",
+    "appearance_id": "b45fd1d044e87fef875c",
+    "source_fingerprint": "a6d9df026fffe10819088d448de71819043b73133747749ff340e526ba81b7e1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_80291caa193c8325",
+    "appearance_id": "53fba7270bd19648c0e2",
+    "source_fingerprint": "0cc31d9c3b7615f8e50a624cfd045349c3d4913e609fadb34bdc1f6d795a8a7d",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39d5084a5ed3dd30",
+    "appearance_id": "ae6f8cad814a7972b3a5",
+    "source_fingerprint": "28efea6658ba4fc7c03802e71c7415d38a523acde37d9935fcd2c1cf24c88bcd",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7d938f60b2f879f1",
+    "appearance_id": "2522fd3436bc001c2d9b",
+    "source_fingerprint": "01234510d124f4b19b9d8fb750ad01addabd5712da4342e1db9ec8ed884b6fcb",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1dc1cb91e4da982e",
+    "appearance_id": "b7de2a0afbb4bbeae75e",
+    "source_fingerprint": "bac58603dfef75b51acd59b4cc1ef8ebd6c13493077fa97c0815977fbb0676d0",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7785a6e811b9ea5",
+    "appearance_id": "18f138622473c3586f78",
+    "source_fingerprint": "e8348994c5b75606970efc914ac0078c1f47b0f26018a99f5a0075802ce1af98",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d61b81afa6c43cd",
+    "appearance_id": "2fa7890fb88117b13ffb",
+    "source_fingerprint": "a6fe61ec42a6a99cb02915c6312666ad4fd213284a0b8c48edee60e47b34faf4",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d15be13c74e26d8d",
+    "appearance_id": "9d5f5fbf77a04da30198",
+    "source_fingerprint": "638d5eac5ed558f5197836bce14faa8b799718346b99cf7c65c30604b9b6ff9e",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d20b2cc0c0e81196",
+    "appearance_id": "958da650dccebbe3210b",
+    "source_fingerprint": "97f8923083d2f8c0f365247140bec51326ef95107f9e46c1991aeb9d05bbebef",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_75b397f58174f233",
+    "appearance_id": "11d0a59c08acd14c7cb4",
+    "source_fingerprint": "52382ffc86ddb9735fea62298d3229018b30cb1e39473adf50aa6ad899ed8d68",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a06f22bbf8d376c",
+    "appearance_id": "8a672c897adabb5bc741",
+    "source_fingerprint": "2c324fef90c6f9c4b1210c9371bd0b9d20dabd2b18d8247448a9f95168bd6c89",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ebab6d365e9043f4",
+    "appearance_id": "fd1c8ab43e2416ddeabb",
+    "source_fingerprint": "da50c4ac8abc67697210123ec43e79695a422a23e2fa7e37a39dc81d91500bcc",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a708b2fe5041ad3",
+    "appearance_id": "7393e58ab5194e08e964",
+    "source_fingerprint": "c1751f45f3d9c24c77b179b1edd33d028970c7349baaef9c8c8646925d778440",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7939cd66babf2c19",
+    "appearance_id": "90ae67d63eb04f79fede",
+    "source_fingerprint": "4195d6bb3a806381931a53cea700ff1ffbba8934c49ea9f993d76caee7e54565",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa14a7b81c43abc0",
+    "appearance_id": "f067139858b08f690348",
+    "source_fingerprint": "9cda412a4b99abd54f71838b3f552bfab36e6ebeb7ced082d0cec10caed555b5",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_820f015953706186",
+    "appearance_id": "7b8165739aee49c4dfa6",
+    "source_fingerprint": "c1b22ef6e41713a6e98e63483380f60f35df5dc32683540660dd34da2ff8dad2",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d5e09311071add24",
+    "appearance_id": "47eac67549580cbb87a6",
+    "source_fingerprint": "c55232ad4e3f071080bf4d72b5592961fb1a53923f3bfc3b0b970e082f5e8ccc",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b253761c8393ed5",
+    "appearance_id": "c807b58b061a82801e14",
+    "source_fingerprint": "5efe7d6e184486f0df6041410b809e501f8e188ce63bd05f3761812d0cd952db",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0db175ac584ced7b",
+    "appearance_id": "aab773efa8ee045e4761",
+    "source_fingerprint": "f2fc4ae6f69c8ba75e0b4274d4231c360317b5e61bec31b0469977f7f5120433",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61c9d35f9ee25980",
+    "appearance_id": "0511e1abaa724564c055",
+    "source_fingerprint": "c74c37868ba3009b6b98d3dc6391efc9120287d92dac0e1deedbfd857c062e15",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e1dfb8382ee6f3fb",
+    "appearance_id": "4e89da9f2d4873974074",
+    "source_fingerprint": "4661c673ba28877a34d91c74f60a16f3036ab9b81841188ba4ec62a303dbde0d",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63e37f4e804e5032",
+    "appearance_id": "5a3dfe9abfeb182774c3",
+    "source_fingerprint": "4f6ceefdd36d72ac9a0fb63c224338676bf648f0f9d45e020d58676229685c35",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bc8448719275c87b",
+    "appearance_id": "179668effa0b807d283e",
+    "source_fingerprint": "4f3e60e0df4f1fc982bd347dd9e4fed50d20e3688c31971c74eeb26404609b47",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33c825834505b18b",
+    "appearance_id": "7384117238274e5e002c",
+    "source_fingerprint": "39e4f0f6d87b06ddd4a42107a7dac8525ea88c7accdb0f6e7d9710a165e98bd8",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b33cbee4634275c6",
+    "appearance_id": "67f8e6b8c5f9f905f616",
+    "source_fingerprint": "b3a43419758e858d09eddf63714ec49de0ad339739903d78618f99c9d04c1a49",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_861a9602097c7b4a",
+    "appearance_id": "1c0ae287f9c5745f675c",
+    "source_fingerprint": "27ea927e8abfd3328c6807662716f79f2796d5602c4a89931adcf6456df095ac",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_402e8c9f4a35ca9c",
+    "appearance_id": "b58d41d809f6e033caec",
+    "source_fingerprint": "57991d980d27bf947454eccffd75935b6ed6a53f03c8f1bac8f5a85eeba23c8b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_138331d615c31c7b",
+    "appearance_id": "b38e454f9bddd4a1fd41",
+    "source_fingerprint": "62987deb9cbfce12ae8de04493c6847db46b3553f7e42f7d9e137a001b39144f",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28bf857b2e1e3163",
+    "appearance_id": "651ce4a4382a045c1b3e",
+    "source_fingerprint": "d5931ae00e1c700ec4262a2c744ad55f1948f7f07fbc40923c877cdf0fec5d07",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb469cf0f372039a",
+    "appearance_id": "e32f7b9d381e0a20339e",
+    "source_fingerprint": "6c36efe7e4d95ecda415a46fb2e24de019a5235c20e57859e9346e58e51ea50f",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc6197b21500932b",
+    "appearance_id": "cd8edab027e2afab1952",
+    "source_fingerprint": "643faaaa89d4e45490b9a1f254aaa1c0499a5c2ef4a6d986fd694b24da3e3ed2",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_326033d975ed72fd",
+    "appearance_id": "5969af4721b8af7a8b7b",
+    "source_fingerprint": "88b1458d2063291848a3aa0f20e754b740356eb2257af9afbbe9628f5969e333",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd97aca658f6dbfc",
+    "appearance_id": "58254e045e2cffb60e8a",
+    "source_fingerprint": "446e99a025e9a40e2c71821b36329923f46abc70b7360d87ab95a5329ee26d67",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa28427e171a4d1e",
+    "appearance_id": "00ce587303618b7ebdeb",
+    "source_fingerprint": "13b184b5ecf8ae6931656ba3e516e01ac611d70e47b6049619d9800ebfeae8cb",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": "law/civil-law",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e7a4d5859212686",
+    "appearance_id": "0a3d399d6968b8016d60",
+    "source_fingerprint": "7dd59320f789e5a19b18921e317d6aea38fc9aba2365072e02bedb8ba1c34d18",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": "law/civil-law",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ed78a53f7a26cb4c",
+    "appearance_id": "7d0a765d9ce7bdc2412f",
+    "source_fingerprint": "9c482474ff9591bb959531179d759f9c4a00beedbea8df63d1245a876eea2829",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3963519c9b4f44d0",
+    "appearance_id": "42d25a998cf80a661286",
+    "source_fingerprint": "ccee32fc1d0a4c1524c42b24001284534282337c081325f4ec361ad0fbdff51a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_25b5bba57d6ec295",
+    "appearance_id": "bb04deb2a679759ba233",
+    "source_fingerprint": "74baaa9ae76ad1d432c4e5e253b3fa58e163676a541823c285b01d1ec7a3a71d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be31d7dd222e74eb",
+    "appearance_id": "9606689d57a04dfd405b",
+    "source_fingerprint": "13c1e159e20cec4c5b412d580ba848e52a4f20bd7c8070e8e6c2d88623b7e226",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7196d4f860fa78c9",
+    "appearance_id": "1186f2787cb394b5690a",
+    "source_fingerprint": "d0a20f3e8004a6295b4e5b38d229ef0131e24ae7573ce6593dc6cc1cf27ae580",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_516960ae25b91437",
+    "appearance_id": "071c1b0b07757f9803f9",
+    "source_fingerprint": "a6b228cb75211badf65d6b924cc1fdf574fc8dc62325db713e1f84f67425932d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56309fd4d908dbf9",
+    "appearance_id": "311d3ab9ef8eda0b6a8a",
+    "source_fingerprint": "c19552e42f882d9515702c8ef025a824b34cea2ac48869b81a689c5cc91b550a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e85b4ee8b1e1a3a8",
+    "appearance_id": "0b1da2e9d04f22af6fe1",
+    "source_fingerprint": "0fb7a8127c2d444d1006ab49a4c725be9e93cae11af06e8c30a585444b0e9101",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_67fb2749e5a8396c",
+    "appearance_id": "97c37a4571e16f0eaa1d",
+    "source_fingerprint": "7ee3cfb3a23b96094e440b0b433537d4a6f34ce9d0469b4f9e5e2c20d55c7236",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9fbcafa592ae26f0",
+    "appearance_id": "3061bf79797a4d1eedd2",
+    "source_fingerprint": "654379f71c814f1a2d9e86488084a6beb728412eb4316fd48ec9c403b4cf932c",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b745ecfa3bda4fb5",
+    "appearance_id": "484086c764259950f612",
+    "source_fingerprint": "f2565e8ba053f3f8cc66f4f180827d634374da3c53e902af64e53714fc1b285a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b995816b2abf5ed",
+    "appearance_id": "16f81bcc2fe1c7074c26",
+    "source_fingerprint": "35994029537128de71ce408b5a3c2b2d61e9f37813ccb157f764783da4827064",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9c4490b6537d0aec",
+    "appearance_id": "04ef545c5af9a189eaac",
+    "source_fingerprint": "1f57da6ad490abd5169aef7286b4f0264c784d3233e0f0e6aefcc3b9a55d699c",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_452b5371a0fa9549",
+    "appearance_id": "c11b467fe0c68182be46",
+    "source_fingerprint": "2a8f507b973b799490bfd951f3637fe40c6f0c9493236e2c3f3be6f1443805db",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9bb8b6510adf81f5",
+    "appearance_id": "e6bbdf4badb4a802b56e",
+    "source_fingerprint": "86c39b3c3f548fa79a25c9a8d270c293f2e8ca99fa04d040e876d226bf08ebf0",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6081d6e5ec9780be",
+    "appearance_id": "4dfac2d2770571d2141d",
+    "source_fingerprint": "8464f99a764791ad4aadb571ea1baaf2e1e4b4f271346a42eccac9cff00a77ed",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22088b0e049488b1",
+    "appearance_id": "c704e12010a94661895e",
+    "source_fingerprint": "2fdfe23bfdbb059080a4cfc3624f45c3def08a0f26ed72b2ecb43254a5f678b1",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c36ee5201f00a48",
+    "appearance_id": "1289b57e6c4764d2fcfa",
+    "source_fingerprint": "b8523df160c4b38f529705170be2259baa729e3a17f432d375dc9de1bdcd3afb",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59b161be92ac1c99",
+    "appearance_id": "b7b18c8579447ae5146c",
+    "source_fingerprint": "681318b2e0083a848a55f74e8c8dd0189d361c1f94d596cc8b5e77736adec1d7",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c9af732be897b223",
+    "appearance_id": "d74feb9f2c4b188e360d",
+    "source_fingerprint": "d743c53dfebda15d68d8230ba60e80b6bde807b91103c5fbe2df6ffd21abeed4",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8615460b9243bc07",
+    "appearance_id": "155b5c582b658c41705d",
+    "source_fingerprint": "977b1e705f37d5b2005bf3812533fd74e110abc264fa4ec273e7452736f35f53",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_891977cb5fbf406e",
+    "appearance_id": "5f9bd0dea5a9ca632cde",
+    "source_fingerprint": "8b36e6c156ded9bb8b153b22785cb29dbd72fec5024a9b3136320a8f2827606a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06f4de6180cfee16",
+    "appearance_id": "018fbbb3cc0cd98b1a60",
+    "source_fingerprint": "36c9b571d13012c25bf2b41760dd3fcca8dffcc439e53b9b6afd8f521589027f",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3898cd2ed3231bfd",
+    "appearance_id": "11b25f60f466b2886701",
+    "source_fingerprint": "e9d9e09e0663107b1a25c4e6c48d03be9143d4a7049b7e16c17da94d2b1018c2",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7198b018b7424419",
+    "appearance_id": "b7fde73ca3936e9ec8cc",
+    "source_fingerprint": "bfcfef5573a568823d3ace7afe3dc6f79ce79fcbf2fc95f11485ee6916800788",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec8395a2040ffcaf",
+    "appearance_id": "2557042eaa3b68ad6961",
+    "source_fingerprint": "2dc0650c971eaef392ef2bf91d188f1f107d09d5da99fe72999fa63cfb2192e1",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": "law/criminal-law",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_feec58d0cb2b7439",
+    "appearance_id": "9518b87f46b5488d9042",
+    "source_fingerprint": "1a9d77ef8f7140b28d6ffaa45c86f4460bd6579ca92a0d5bee29406e00de0cd3",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_40731845dd47339c",
+    "appearance_id": "83690856293d0941eac8",
+    "source_fingerprint": "470d500d61eaf86be09e038cf82be66fdeeff6d4b8a67b28c81fdd9caff4ff44",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e33ba1192a583f16",
+    "appearance_id": "cecbd194c2c0b0740d66",
+    "source_fingerprint": "49c4eb61dd6b2da60ad1279e8ddf4a106e27b80875d080f2d09f697aeaf1efee",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8538d5c3fbf1f22f",
+    "appearance_id": "a48ea8b782657dda6aca",
+    "source_fingerprint": "2dfe8ffd1176f27b7fd4f172442a356c4ec6373fa3cd4904edeae8fe59687edd",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06cecaf632788ab6",
+    "appearance_id": "ac9053634fb19ae92a58",
+    "source_fingerprint": "1c9425d0887728a6799f4a0aa0c4ad5ef49254b161750b269b5d54f7baf2442f",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_774687d44ee28bcc",
+    "appearance_id": "355a331fa46aa7f708c8",
+    "source_fingerprint": "206594fba23035dcca6e21adedfe5730c4a1f35f9ec34b77d54f46e2fc356298",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_115461c0288c87f0",
+    "appearance_id": "5ba31e399bd13ebb6e1c",
+    "source_fingerprint": "1108c58ba92087481f2d09bcacbd20a4f130d989db84b1134c5e3ce3271600f1",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a18415de4b9964f4",
+    "appearance_id": "bf98e4207bf8f71d5351",
+    "source_fingerprint": "e2a509e66cb391679cbbdf4aab57b53bb76374e01312e605eb0b681d10613da1",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6c3c921a04a408a",
+    "appearance_id": "736cc2c166e7f6eeba40",
+    "source_fingerprint": "b3fcf4aed91839b587e341f73274dd4876dfc7ee2de6f9e31cfddcf5e864d4e3",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b11ff5bd3e8bd76",
+    "appearance_id": "d5f34948206822393561",
+    "source_fingerprint": "ddaa48df4bfabe3f4c40ad763433bf12eacc9676b6adcdf8a9944e24f8445c6c",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4cfb5aedec18760f",
+    "appearance_id": "40f70f3cf4276de1777c",
+    "source_fingerprint": "8deea9f6f68e0790fc03e167c16cf8ecf0fe51745730efa5ebaddcb9382dc12a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e10cd0cf2d6cf65b",
+    "appearance_id": "9b904c4aa577f89c380c",
+    "source_fingerprint": "59989124ee83e33847a9a422aaa0474bc6efaa0ceed4fe6b8f25a3bc3869140d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0b01fcd9ae4c850c",
+    "appearance_id": "bf8095fcfab5014eafc4",
+    "source_fingerprint": "eb4b35dd95c1de0a2fc29af713e31fecbf48550fe32848e295223ec522156a15",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c187e6f89ba6381c",
+    "appearance_id": "f98a1101fa4f293ce5c4",
+    "source_fingerprint": "9e41bcd68c8cb25c77dbce61ded9aa21cae8a624a0cbb26db51fc0b75e99fdfb",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1107ad3cc2b8c1ca",
+    "appearance_id": "fd5642c9f26ffb9140d3",
+    "source_fingerprint": "032acb9d41e6d3406612b9fcfbb82b7b306088cc43f27e23fdb9c1a0014ca69b",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff8eeb80025dff56",
+    "appearance_id": "b6fb49a80acc27a0dea5",
+    "source_fingerprint": "e0cb3e6bbf370cfa22b6628ed378daf69c38764e0d8b9f8f8ac457f89c94ea72",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eafd117c81020a76",
+    "appearance_id": "d9bf01e2eb0bb95d781d",
+    "source_fingerprint": "cb98f73658b3a4bfe9b87ed1a03850b0eee0a530803801372757dd6fadae46da",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18390542240ceef8",
+    "appearance_id": "5b1defa021638e5000f0",
+    "source_fingerprint": "fbe96025e182d81a07cac30296cae53233f2b91cab5f8770b888f86662ecb2d8",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33498b5b837a1fb3",
+    "appearance_id": "abba335f9abb8ffda53f",
+    "source_fingerprint": "57c6fb41913562effa955f095817295c8cc00f3fde79776a3b27e9a23e028a1a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2478bfaf5cdccded",
+    "appearance_id": "2129ad6842988935a362",
+    "source_fingerprint": "28a34d27ac4635139b67be41d478da0bb1870bb89020402cf246934563a4bb4e",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01922a52f37f8e53",
+    "appearance_id": "da69101aab403a3f047c",
+    "source_fingerprint": "9c444874561317b631d1f6551fd737385338f4003f64b89b98d8d6e70b600bde",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a8d4ca58bdbeaab",
+    "appearance_id": "95ad210ef4b71dea342d",
+    "source_fingerprint": "a2acda2bd8649c38712cbbd2562ed6ae0a68225f938de92c585ace1ca8fcdc13",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d947c52aac05d13",
+    "appearance_id": "dc7ab28bbe21966fb7a2",
+    "source_fingerprint": "2f408924d16662bae6cf046ce600fe0a27cd7bd3c1f0be133e536af42f31b282",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ce6c9a76004b8026",
+    "appearance_id": "39f52333e0961c3f9f68",
+    "source_fingerprint": "c85ba18f7826d1112d2a67dcb6eaa16a68286c9637322a9052cb19f27b9460ed",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b17a998c967f4293",
+    "appearance_id": "84dde9fee7e774c1de69",
+    "source_fingerprint": "ccf05b44fb9fa81ff12cc4072d04067e30fef4ae4db0de570f6cd50545b7f888",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7d0ba9975b6c8bbe",
+    "appearance_id": "f45b90aec799b2b2e868",
+    "source_fingerprint": "16837f2690cbe58385c90acbe885bb3a49015baa14e1a0b4050cb966358b1933",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e806bb88234fb3c",
+    "appearance_id": "03bfdabd0dcc3a4fcea7",
+    "source_fingerprint": "ca50d5822f6f09e2afefe99d722cbb26274c7f251659ce5ef974fc6892e435ba",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd669c4bd35655d1",
+    "appearance_id": "e3b3af0413df6388932f",
+    "source_fingerprint": "32ddac456ed90a104509236ef570d1df2566373a174fcd8416c9cd8d39e2b859",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb99284d3b15801b",
+    "appearance_id": "698480c0b51d27dea680",
+    "source_fingerprint": "7558416b51a31411458770d4eeba957e8bcf86e2645b18b35775c1ab7f2aef09",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_392cba8663cdb1fa",
+    "appearance_id": "fcaa67d11ce91e084854",
+    "source_fingerprint": "ed4963d07dae1580d69e58ac7a2cdd1e2f0a5ad07b3fe0f8689d7cbe4ae90e14",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9af67b0cc1100b7a",
+    "appearance_id": "30cdea5450e2ce983e54",
+    "source_fingerprint": "4f18850d24973507e3fc74a2359bd0c1dade5b9892ede47a25023378c49977d7",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c6efc2363183e96",
+    "appearance_id": "29c9d4532e181de06793",
+    "source_fingerprint": "1ae1023f56658befc45f6251f7c05a423bfc4ced490844ab9603216e2aa88f29",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c899431de7786ce1",
+    "appearance_id": "354c9ae62145f3486ba1",
+    "source_fingerprint": "727808665e0d840783d929300899273a4e5d980867c4965cd619d18ab8f8d4ed",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": "english/vocabulary/synonyms"
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses english vocabulary: Synonym and antonym identification in context. Appropriately classified under english.",
+    "tested_skill": "English vocabulary: Synonym and antonym identification in context.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76fc5da69e71bee5",
+    "appearance_id": "4b2428d0d9ad92eb373b",
+    "source_fingerprint": "657f15bfc123b4b666e58f8ff3c4185f21237f151ff8f8cce8b8d5932286448c",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": "english/vocabulary/idioms-and-phrases"
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses english vocabulary: Idioms, phrasal expressions, and figurative language. Appropriately classified under english.",
+    "tested_skill": "English vocabulary: Idioms, phrasal expressions, and figurative language.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b585e36ea8cd260",
+    "appearance_id": "3d49df293df12818296f",
+    "source_fingerprint": "2dd1e3b28bfb25f62bcdaf2dd2804029549ef95e271ad657e07787f885d73bef",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ffff9514a4f596fe",
+    "appearance_id": "78a9d576552cbd3b994d",
+    "source_fingerprint": "a480ee5542289b246685271e8fae4a1031e1f58e4600aa8dbe7830a2dd3b477e",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_7798ba1e84a6b129b05478f3",
+      "sha256": "85df4a7675b2dd40727139cd9d8d5f5d3a565e63be66ff4b8f2c6612126a65d4",
+      "note": "Verified against registered booklet source for Civil Judge."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

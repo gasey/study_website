@@ -1,0 +1,159 @@
+[
+  {
+    "canonical_id": "cq_fb5ff92f34facc83",
+    "appearance_id": "0b786f8b8203c254f406",
+    "source_fingerprint": "0014d1fc90780e6d1d1ce099773532ebb546770182cbdd7f317c56305a25c60c",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d82ce514532b101abe8ffd55",
+      "sha256": "16d21e06750b9bca8f76ed95e40046520423d0289105b73f21749edc5888b7d9",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dda3d013f4ba8d61",
+    "appearance_id": "4f9a16470a0d47ad41d0",
+    "source_fingerprint": "767820a7131a71a97489e046c8786b80ccb1b7b398e002c3d36eba4360c255eb",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d82ce514532b101abe8ffd55",
+      "sha256": "16d21e06750b9bca8f76ed95e40046520423d0289105b73f21749edc5888b7d9",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccb1dd45a7d2a51d",
+    "appearance_id": "915275c811fa982fcffa",
+    "source_fingerprint": "e7a0bf2cca51c2fced64a1bb648eb48a5dee2045c28c53a4f37ff4a30b70af66",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d82ce514532b101abe8ffd55",
+      "sha256": "16d21e06750b9bca8f76ed95e40046520423d0289105b73f21749edc5888b7d9",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bccfa4dca994df73",
+    "appearance_id": "a0a8673e8b9a7a48a193",
+    "source_fingerprint": "cb4b2bc9220864e690abaadcfa447decb0597f7ee13a4ea73ee3580c02133358",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d82ce514532b101abe8ffd55",
+      "sha256": "16d21e06750b9bca8f76ed95e40046520423d0289105b73f21749edc5888b7d9",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

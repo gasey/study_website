@@ -1,0 +1,3903 @@
+[
+  {
+    "canonical_id": "cq_455f7ae96002cefe",
+    "appearance_id": "e5b3a19f9c29a34913b9",
+    "source_fingerprint": "f62249ac0b201ea1c01058f11d6d2ba8f24905e05f694abfb8109de6ced7858a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02659169ddad4891",
+    "appearance_id": "cdda8fc0fcedeb2bd0ca",
+    "source_fingerprint": "1a378426ff54d21dc295cff5a1baaa817b12434ad541c6c456d4b7fada48e750",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb0c8a8afd5e1f74",
+    "appearance_id": "5bffea4bcc281abc3072",
+    "source_fingerprint": "bcafb60efb59d2cfd2ca11e96a511858baf2a8d7b59fc7daf74343a24b90d0b4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c3851d3afd787cd",
+    "appearance_id": "942b7b91e52ac37f03c5",
+    "source_fingerprint": "adb96cad0f3e8ff43916647aaf14e9bab1872c2c67201a86baa7e713b9b1b431",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_40aa9a22cae10606",
+    "appearance_id": "ea57316f2af9c771926c",
+    "source_fingerprint": "5e5504016c4678adb978ab1e4b4a721e086290d1cbe849612aa19e7e37d92273",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57bc94075fe9b082",
+    "appearance_id": "b3465a63a351a4a5a59f",
+    "source_fingerprint": "696e5005736ec85a7136b4055ebbfe74ca0c1ba0eb2eb34ccab17686182d80a1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca4aa8c16de9b670",
+    "appearance_id": "9b222bd00f130d5ad205",
+    "source_fingerprint": "fbe9f2982ce5bf0c31293ce3ac6c3eda1213b838c56e6d0fb2bd51da8ee50f2d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7b00a88bb19cfd9",
+    "appearance_id": "f20dc215f48c517d3b86",
+    "source_fingerprint": "f8a1fabce3319000c079b8d12f71206d9618ad2a78004f4c7474b3d1ae98d276",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_70f2bd4298775af3",
+    "appearance_id": "eed3f31c6e34cb664fd4",
+    "source_fingerprint": "3c115e96cd20d5eb94f51674c55535db452f1583f99740512d814504cae43ec8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eda2cbe435869c27",
+    "appearance_id": "11751ac4c534ec84bc6e",
+    "source_fingerprint": "18cc97c62b304a235b02009a95c9d1a38c57aa89314a0c84535c2086fc0984d5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0ca51814d15a90a0",
+    "appearance_id": "85cf28386351d09fdb0f",
+    "source_fingerprint": "94425d01d4cef6952ece85620031d1419092fdeae66d09cefdf21980caac992c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_34035eb5e97529d6",
+    "appearance_id": "ac55de1b24937a4b6b8f",
+    "source_fingerprint": "6a692f370476cb6bc0fa6fd301efdb9a55f945fb98161b2589894f972c88e74d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b185477f08644c7",
+    "appearance_id": "3fa2ece36ac08c26589b",
+    "source_fingerprint": "c833948a342f35804ec207decc8e7365a4a9b90d795011fcfb9bf117b13ef1a9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e746a66c811546a",
+    "appearance_id": "786b9a2e990712eb9305",
+    "source_fingerprint": "7f203d842060f5bbdfbb7f3990cfcc37fa9583717bd0726568c2c3607a9744f3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0b8019e18c30ad68",
+    "appearance_id": "0d7ea5029ab0f2732aad",
+    "source_fingerprint": "05f2f07ad400893d521f9c3bf6b18f12d49459ceccee41cc94d3ae85a9dacbf2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0127ceff6d5fe0a4",
+    "appearance_id": "dd16dbdd4179ff265a01",
+    "source_fingerprint": "4739cb2b840a4f0de003278b242e1f0076fc4b389e6cb0f4e2f6ac55b4d7e9f3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61af840f7d1f704f",
+    "appearance_id": "b2c12900967a2b5c4526",
+    "source_fingerprint": "d1da59e257f79d35bb5021a380f2320d944cb67e8fd78e52be784dfb820104c1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44db0d61efd189de",
+    "appearance_id": "dfcff0c839ce87a50e45",
+    "source_fingerprint": "f6b02b1f932a300273cd5bac266546fc94bd58e8b0017783b0bd024192710cf2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4413a31ebf6ec324",
+    "appearance_id": "dcb822fa7fe1fc310be3",
+    "source_fingerprint": "5233b9659b52b3ab58c6d652198ce42c16b4b31cc97b8d9d350afaab44f55c15",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6afc65522a56b562",
+    "appearance_id": "45e73219fa1a32940828",
+    "source_fingerprint": "6578ef680735d720903131fda6d42d24cbec272d39ca0c5cbf2862ade5017268",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_95474635fa879d7c",
+    "appearance_id": "2d2bd538853760299083",
+    "source_fingerprint": "611609edb4fa29f58db249c6a4279a6f9b28f64e96deb1411b6e2641910383d4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0a36a3bb8b64e96",
+    "appearance_id": "d42f09b7eeecf18b9489",
+    "source_fingerprint": "25bcf61ec259525324d0e1c6530b31ec9e3f7ca921fc1a9185be9daadec6b078",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_deb650e501b91ead",
+    "appearance_id": "ac95361dad4a9e239d86",
+    "source_fingerprint": "7aedc75e12ae492061b9acf1dcbf08bde94a90956a584aeaba066a06e2dd13a4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89eddedffb12970d",
+    "appearance_id": "f98c527cc6dc7b62eda9",
+    "source_fingerprint": "16f13c9b3d6ee5e44f16618cfb4de7077fb0f2686b4a04e6af35c8a03670c063",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d47cba573170a2cc",
+    "appearance_id": "6570717025863c2dd232",
+    "source_fingerprint": "59954d9973076f2991a64eecd5db1559320df643e6e2ac7b3db3da8e73aa6657",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_497dc6ee56f5043f",
+    "appearance_id": "e85d8b6eb9913b44c148",
+    "source_fingerprint": "42ddc9c5ece2d274fb00e6052fba068f56133dbee00ee15304f29f99854b0e9a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3838158d46c8bed",
+    "appearance_id": "aec8641a39d6469fce8f",
+    "source_fingerprint": "51aa67e5f9bd1e74a4e8629c1a1facb75ee0082d8bc3eee23063dc12b6be3c20",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1d5ca05f0f0e4bad",
+    "appearance_id": "2a6697c64be5e0448af7",
+    "source_fingerprint": "94ee16ad7985f68d8f333b42f02606adf2402f97f79d3b20bc40beed5e8d707d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd5aa96eb9f0c4df",
+    "appearance_id": "fec0cf5c704a83741e61",
+    "source_fingerprint": "955d7d2f9167d952508f90d39cf10484f6bb4328e466775b4464e85876b2c592",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_184a440de4d12fe2",
+    "appearance_id": "84b8bfa9c9f1a2b15050",
+    "source_fingerprint": "311c86774a821d6c56d77edb5b2c13bf8fc1e9448d5a25987efa7db170bf249b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a797d8027aa49386",
+    "appearance_id": "3c728033537323e6ad46",
+    "source_fingerprint": "9f52228a90d7511e30a1519b8799687d90cdf65ae80624aa6fe165cf7554b4e2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e2e9b095e7169bd",
+    "appearance_id": "bec88b441f2c92289daf",
+    "source_fingerprint": "b7d510f23951de44a8e7ccaac736f603873a8359f160480f24b2209e735f7e35",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_138ab1fc5d34f617",
+    "appearance_id": "a008d0aaa07deaa75bc6",
+    "source_fingerprint": "f93c96cd71f446725f521f40409b1a5679db8c4c1825d261e9757ed90b084d94",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7704597f5f1b5b3d",
+    "appearance_id": "ca2abccab2e59aad1c3f",
+    "source_fingerprint": "4cfae53b34a6c295a6074b89f71f7a153d25dbabb390c6ff450ade558912231c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d58017cbe321398",
+    "appearance_id": "e581894ca098c2da5a84",
+    "source_fingerprint": "6d4f32a2548c1f6de8bb8c66e04e4f40482835e8942081c4996931b7eec1c5a8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_26bee7efb4986c0d",
+    "appearance_id": "236361aefc453d80dfe2",
+    "source_fingerprint": "9c0ce29ea6a52891d168a225d72b42c709ce8a4642d0e035028f318e67fa15a0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8af1d02cdebc0eff",
+    "appearance_id": "f5ea17d88d4f8275df4f",
+    "source_fingerprint": "5b76d57d939d357f7e9b52b64180873fb4cbeafaf4cfc4bd4dd68e505dddceef",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d85077e93f435ecc",
+    "appearance_id": "ed4cb73fd00a93a640c2",
+    "source_fingerprint": "77f5277bd1b23308cabec9850caa26af4492c628ef75c59a797547f1890941d3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a5e2f51258e506cf",
+    "appearance_id": "5531668e10219a129582",
+    "source_fingerprint": "906008ab694d113bdb8e4da1cc271cf3f3d2518a9934ed2432a8c57b65dc59b8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a29e6bd63758673",
+    "appearance_id": "07e1c90ec03a27dddc05",
+    "source_fingerprint": "32f04505dcdb11f2acfdc7877fa4341e77421c100ec043153c14a28023d6a8a1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5632fa5c8920ec4f",
+    "appearance_id": "05e32a53681e33291894",
+    "source_fingerprint": "4688bda41d09e568100a216e35ec44f7a080e39ae31303c32e7a35a3e9e37fc2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c42fef2e53314cdf",
+    "appearance_id": "2e2f4fc89914638e11d0",
+    "source_fingerprint": "e5a1bbf966b5d9afc3f0861e8be787fb41428604eef64012bb550c9cf06a2af4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85844b09f7f6eaf4",
+    "appearance_id": "89311df80d12b723edec",
+    "source_fingerprint": "f2d41941f7b52de6934391896e9bf881bde981b23e0096fddce4937afdb4f505",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50888b09b7704d47",
+    "appearance_id": "0901e9ad9dfe55cb983c",
+    "source_fingerprint": "3d97ff64312109b40cdce9c7b642b1087ca67c46adafb9e1ff7e43f9fe959a8e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9ba36a80aad316d",
+    "appearance_id": "415d1d6d0536438dd83b",
+    "source_fingerprint": "6746d6cb64a5dacbd443ea953b40d03cdd30caaabbcf4b0d8feeb9c56ab4beb8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6d5cda4b5d14f57d",
+    "appearance_id": "be1556df56f833425c4d",
+    "source_fingerprint": "5c6b0a82a1647a127f99a3ab96f8b6d7beb546e129590b340d3d6c512e21a01f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd888b07fbd59853",
+    "appearance_id": "214ae6d199f202a50eb3",
+    "source_fingerprint": "37fb5801c8c113ea2dc76454405c69a3ca7aef25361f3b54f4359b1aa11e9b94",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5292064ccc8228bf",
+    "appearance_id": "7b398eb23e65c29b7947",
+    "source_fingerprint": "9c176fe27c7d939ef487783cbc2147232b5b02cbcce97f21531dc4da47044dcf",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f620f67adc23ff66",
+    "appearance_id": "f8370ee9f80be4290236",
+    "source_fingerprint": "6d0cef5f6b0bc45ca950efc599544adb1bf6c9a5feb099a6dc2e0ea118ea94c4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f63c19cb135d0420",
+    "appearance_id": "a43fffbc0188de6e1827",
+    "source_fingerprint": "49d12f8926d1bf0915e6711801e777a963df5075b4d334dff8315e4299d9eafa",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43e3335e24245665",
+    "appearance_id": "861043451ce24409c2e2",
+    "source_fingerprint": "dfe201495592daa23b83eedf7fdf1f57e849154fb17b0566cd75860309fa5c15",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39bc7d8e9c3ebc94",
+    "appearance_id": "b1ca3cba4deff54cc61e",
+    "source_fingerprint": "568a989b2604a10622c5636262e5a25795ff6da07b65d8bf874b45801d71540d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d4280c4b5d8573a9",
+    "appearance_id": "29d2d2cfe278e46ec165",
+    "source_fingerprint": "b29533a261da17e2449a4efc267029dd2e8a08c08712f716ab68c7508a1f938a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f50ff66f3270c0fc",
+    "appearance_id": "2e5e630a4587228d77e7",
+    "source_fingerprint": "b362b8cd1f1ada9042294dc9a8e33976ee1495a4bc075e44e2959af4ddc2ec3f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4cf1b2aaf15e19a",
+    "appearance_id": "6025611b4ce719ea9f66",
+    "source_fingerprint": "c05732c25d7798b0c78198a44884cada1f310218883bcd265881bc43228f222f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98af74317f525b6d",
+    "appearance_id": "ad99beb49fd82c8cd9d4",
+    "source_fingerprint": "d913ff2e1acae7f0f5651842f5a0ac85f5f65bea81cead23b9961a1799ff0f2c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b06cf0233438793",
+    "appearance_id": "000ab309c16f3fd4f7ea",
+    "source_fingerprint": "a9ad4ddd47a9bca5d732e05134d3b511122b9811889e3ed47152d5dfbb56ef2c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08504ecbd983a691",
+    "appearance_id": "be3068d3276601a2b3ac",
+    "source_fingerprint": "c8f658658505406c981e1a9380bb974247f09766134a4bd3a0395b8e5ab274fe",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a42f335062cabb0b",
+    "appearance_id": "88262f6f7850a0c8bce9",
+    "source_fingerprint": "60d245136489bfca8b67aa9b52619151acf341461f5e13c43a9b4a241c47e687",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6dd16c8586703b9",
+    "appearance_id": "e6c35fae2b51cc9d7164",
+    "source_fingerprint": "d3fdab1b5da39023d6c8e2b174d8b397f454e5bc77a6e946047c367ea690795f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_228ae151f720a7c8",
+    "appearance_id": "81b7c92387c3d05927c4",
+    "source_fingerprint": "edd3cace94700dc8c6801073613e292a1118a80177533858aa803633d82fda15",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4f501f71d68845e1",
+    "appearance_id": "34f889bbca928773647e",
+    "source_fingerprint": "60749d15e4b99276d2fefda5937c8eecb53cccf0f0f979cd797e462175014764",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7547e7c020524fb5",
+    "appearance_id": "770ec638308aed1be7c6",
+    "source_fingerprint": "a07d16fe80db2ee9025200e90960ddf817a59484a193e7e15b3f726dd576cbfd",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e5a172e959038138",
+    "appearance_id": "3534eb19c6a62970f43e",
+    "source_fingerprint": "1d9c6a4c7bb7af072db77454a075593559bec9963da79f16aee62ec842b2df6d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d7be785e303009f4",
+    "appearance_id": "65638b034388f87e8871",
+    "source_fingerprint": "e1fa1e0d3100239341a9b6c0a4ed65e945d64bb04028c6fecf5b65d02432ce4f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58aaac6598bd4a3e",
+    "appearance_id": "910d5245d062b3972287",
+    "source_fingerprint": "153239e5e13b0d0d5e86a1a1a0c802a175bee0fe6a7ebda3718c38cd69b36ea1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a666f8520178c9d6",
+    "appearance_id": "f320c645b684a575b02c",
+    "source_fingerprint": "b4d745492f81d2f998788ed346a39d7dad67442dd3da59aaf88356ddb0d63dac",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5dbee2e04fc8f921",
+    "appearance_id": "7ba688f99bde6a5514b6",
+    "source_fingerprint": "1e3e40cbf479cba6ee7d783013987dbdc685c8c7850b9a1c042273413f96a061",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d61709eee171e092",
+    "appearance_id": "f5bcd769b9595230495c",
+    "source_fingerprint": "0ed5427ddb2f8b6aac9a3dc3ea7cb010e6decb4b24eb129d49c05a0a8241039d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63dd22a147d53f9f",
+    "appearance_id": "d8407f20c2bc1f68c9c3",
+    "source_fingerprint": "5a0b8d69c9de75e7ff2fe46a18c643d4ca96802371d09132f506ba411b91def3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3842cb814585466",
+    "appearance_id": "8acfa8022e9acbe10e64",
+    "source_fingerprint": "c15ee6849f42e05206ddc3f039bf8b50f01d38845c5f58df82113a68643ab980",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccb9ca51aa75c695",
+    "appearance_id": "cbcf2740fc2969d96a3a",
+    "source_fingerprint": "f9eaab1d2ce9c5e68403039b1e27bc9f11297c3ac647402fa4caf78b2a3e2c27",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d3d7dc32f76a77d8",
+    "appearance_id": "a30de6e416442e2d7160",
+    "source_fingerprint": "0cfc01e88b504b9cb9c1ae3b74af488b3f29c9d81e95afcec5af86c42e09e8b6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5cb041fbbc3d9bf",
+    "appearance_id": "4a1f9b96a372a1aa096b",
+    "source_fingerprint": "5b34cd4bac5338602103218f2bd13db448524b633d37be21bebcd278c9fb3c5a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2da03e7fe6b4d578",
+    "appearance_id": "975183f697880f85d7a4",
+    "source_fingerprint": "79e10d932e9e4eb2d3a8faf20c8cbc0c2d9c2cd12cfc4bb327c21ffb64def2d9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43b1b900b9e61b3b",
+    "appearance_id": "abe6aef10685041caff3",
+    "source_fingerprint": "d28ded3ab65ff4084995d53753e643fa40dab562190ac4b291467ac8682565cd",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b632f587d7b576db",
+    "appearance_id": "0edde27d29217fb82a7e",
+    "source_fingerprint": "f38b4e3e329ecd8ad2ccd999be11ba9d0347d039c7a998d5b6f9882fa5e6a58b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85967d0191b2a9cf",
+    "appearance_id": "40a8348eb67a7f74e71d",
+    "source_fingerprint": "6b9cd46b23773df5b083ae4b513ed6255fd1b0edc2baa97a3c29db528732a90f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4373cf502950cf2",
+    "appearance_id": "2a4c6af116711532f885",
+    "source_fingerprint": "e7088799d96e068a31032c1dc64cb9f2b4324b70c3ebe6aa4f197edbb4d68ec1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e88f82974d6959c1",
+    "appearance_id": "59ad3076f116cc9e51d9",
+    "source_fingerprint": "b9896fc4c0e29f43272fc0dad04483b4e9eb216a1fc47b045d7dde7309d2b71e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_27a6a90c0645a0fa",
+    "appearance_id": "508de83f5602491d21f4",
+    "source_fingerprint": "1e9a0ab7a32024451421376cfdc975c735401f3f7647794df0d6851a5aa165cc",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3905f84f233349d",
+    "appearance_id": "2e77a2010d562a634689",
+    "source_fingerprint": "aa5e065956e634d01d7a7b79db08cfd80e433b2afeb557ac78b3d4709bce024c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_894d67d18bc38b12",
+    "appearance_id": "3cef83f7b52c00ff1f97",
+    "source_fingerprint": "a6ac29951010bdb623d9d0fdf974fb1876e4f1ea5ca53cf04348e6616ebc6e82",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7c2a80d49d22a8fa",
+    "appearance_id": "7e610cb3bc14c67280a6",
+    "source_fingerprint": "50f0aaf2abd89d8dd5e4e5252fa19e7a18a6633e5f5e2b70902666facc1984d9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4179d0d71fa0ef6a",
+    "appearance_id": "7c9e634b2508403ec43c",
+    "source_fingerprint": "f8873048d283f52f2bc9f4d42823b66c3d4062bbeb52a1926e75921f6b8b9c73",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7dbfc5d40262ddef",
+    "appearance_id": "0cff0ffd7944cfb04bbc",
+    "source_fingerprint": "3dded6de62c86aa14b791aff00d752e47b335daba8ee77ffd797e00b13b4185f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c193dcd0a3dec6a",
+    "appearance_id": "a03116648710e0eed047",
+    "source_fingerprint": "d3eb0138112d5626e1282feaf71e1c7703f85edbee4d5fb8a76e64ec0fbe598a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22446e620b94f867",
+    "appearance_id": "910dbe83eb80a085975f",
+    "source_fingerprint": "890caeb87ec82e1698b94d7f5d3900a3912b486090ddaa8dc65657fb30d6d146",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a51490007b2261e3",
+    "appearance_id": "d33d13b7d077b15df77a",
+    "source_fingerprint": "45e8114b707b435dc6d85068a4f18dc0d1c8f9d2785a97f31b78bec49ea916a5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3dea4da00006fb17",
+    "appearance_id": "9735b52c494f2e184f96",
+    "source_fingerprint": "295b3ad7c35206756ffa194b1f298cf07f817ba1a64d92fba585a6e0ba57c45e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50eeefd6b8d361d2",
+    "appearance_id": "3243efbaa1bf93965865",
+    "source_fingerprint": "bb56aac192bd6bce665470d8c85ef437be8897981931e51e707d7a34623b43bb",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66edceee9354adda",
+    "appearance_id": "2b6f8d00aeb2c7e53537",
+    "source_fingerprint": "c5f82ed6adeb3a788a3749920dfed2d6766341f9e91e65bfbb187c2dae988f09",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30778b396ad790ef",
+    "appearance_id": "7c8bc9c7377fa4488198",
+    "source_fingerprint": "79806e882c9d3d2ea268a07b475ef7ba4cfd227ee26d3bbc2ee51186dbbc2d7a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_17dfa95b0755796b",
+    "appearance_id": "8c40300bb9f428bbb5f3",
+    "source_fingerprint": "b22bdedc85b8530e4078ab60b573d06e8c07e319f243b19809b50fd5ed788b27",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7af69262a9fd9e59",
+    "appearance_id": "19e76119a3a8dde411f0",
+    "source_fingerprint": "b0f9ed03b1581ae52f74475d268c39c397aa4e25cf49dbc9b2771ab5ba27fbd8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6eee24e18f61371",
+    "appearance_id": "7ebe61af9110e20e46a5",
+    "source_fingerprint": "044e17be42407e29e449e76009722008f483fcdb2f4d9f1ae9f2e4cf151a92c4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_275d273d187912b6",
+    "appearance_id": "e84cd4086a9e1b50ec6e",
+    "source_fingerprint": "866cc3f84d99a7e363145a931870e814c116a9c8d2b34512d5a77e472053b5f1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_79a4f89f9b3d11a8",
+    "appearance_id": "a022791d593487ce9cd4",
+    "source_fingerprint": "7d6048be4bb6bb5a8a1fe9ffcbbaac7c0969da003cf3c4876afbb2beebc63b6e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba90efdf205c5739",
+    "appearance_id": "3f5feff1b044d18021a1",
+    "source_fingerprint": "0a98ffa068918d36853ffa89f3a33633ffcbe1561a253e188e686f042d0e0fc6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cbe48d92cca74d4a",
+    "appearance_id": "2fc8cd72c0d3f3e39337",
+    "source_fingerprint": "e487c9293a7bb56358afc8025dbc75070b029e1b73e7648cb0b7cd35c2c791c8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_f20d612e9fb26282a0d934f4",
+      "sha256": "717780c74988835a7a46da3e5bd3e5eb621316ea5a1643b92050e56aa1f8ba86",
+      "note": "Verified against registered booklet source for Grade-II of Mizoram Health Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

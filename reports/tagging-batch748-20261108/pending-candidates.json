@@ -1,0 +1,3863 @@
+[
+  {
+    "canonical_id": "cq_45da7a16a4eb1142",
+    "appearance_id": "8aeb22d7ce1fef881675",
+    "source_fingerprint": "ca493bb3e73ededdc300556ecf701058d0272734ac40077de9bf7f3f50b51ec7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_13b1e27be34f6567",
+    "appearance_id": "04679c40cab7cb414191",
+    "source_fingerprint": "580232c0f7165645840bf72b18ab6f6e91972814266fe5b50b51bfc2ce6b4932",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f5cd4e38b5e2093",
+    "appearance_id": "f3b01fe67bca12a326d0",
+    "source_fingerprint": "f6ff55e99b8985043f29ca52e63dcea8f7b79c7ab58ecee6e502ba20154a492a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52c3ff2923d94cf8",
+    "appearance_id": "7cf132bf359f06421542",
+    "source_fingerprint": "6b0422bf6d16840c3e88794701b47a990720c85d44caf3bd134a8fb6159a16a1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3deaf5f7774c23dc",
+    "appearance_id": "7e40aa5b56d00a12f212",
+    "source_fingerprint": "f5bc320d822e36283a57bbb602facf42c0e5c8d9dd0bc06e87d663a3e813cc29",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d36642f13e1b3299",
+    "appearance_id": "496c8261e671d1f5adc1",
+    "source_fingerprint": "b0f1ef3b77782ac9dc71e51718fcc6e6d9e4212529e7a35bc3aa3470663598d9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_13a4d281d2918930",
+    "appearance_id": "c059d1fb1e3d02cc8fef",
+    "source_fingerprint": "ae0bbb389a55bfc11b333e3946b3f2e1a3a6e96852c9bf94270ef17db98eaf30",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb765f84b919651e",
+    "appearance_id": "6c74c06379a812daf178",
+    "source_fingerprint": "1ecb6fc63ba1ee8514580103a41e401960735fd50e872a8038d2d60df61c7f2d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4ffd5f822a484ebd",
+    "appearance_id": "9b7c8d2ae9041316ced7",
+    "source_fingerprint": "fcddc0a9f419bdcefa86f7dc07dccdab09d811930b86a63eec6f286acfcea4d2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b6d25e850d043db4",
+    "appearance_id": "20686a2e24cdd7db602f",
+    "source_fingerprint": "92382b5a35d663576ea27960f737aef5b9c7fb4469b2db90fe41cdcd0d49a247",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8dc29f40c0e9f686",
+    "appearance_id": "a3273d033ee518c0eaa0",
+    "source_fingerprint": "c36400c0d891565862a6aae71eff111dbd9c6428e090a605bcf31f4e5f49fc24",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28fb4e12d209e5e0",
+    "appearance_id": "935dcbacd65aa3009e7b",
+    "source_fingerprint": "65a3f53d96c64b235505d50451dbb75511c02db174d39f1c033cc712bf8bb684",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bfe8faac4b10eb89",
+    "appearance_id": "bb12f2adba0c97ae5e50",
+    "source_fingerprint": "2fa0b204b5d725013138156885f6abe24c16f97c8783737d34bcbb0807ca9e1e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0be327bbf7ea9f73",
+    "appearance_id": "3c22d53b95e084a50c10",
+    "source_fingerprint": "29444ee10fa5696db00bda17d0adc329871777d3b689aed51736f5b167e9790b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f76110e05e1c213",
+    "appearance_id": "1e37a1d79451de061f4c",
+    "source_fingerprint": "fcbae23a99d87f7a4440294374288112061a13afec1777ac7757bb03996c2b12",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a12dfcfa29f1ad85",
+    "appearance_id": "dbf0d81c567994fac798",
+    "source_fingerprint": "d1481d55ca68923af51349e45f7c2a5fb61472ac49e943e76af2d6505d355920",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_13e149114b3f5605",
+    "appearance_id": "6dba2ca789325f5c462b",
+    "source_fingerprint": "ebae3da39c9b6a260437249aca93f0c00da2c03e7735601f22683c0bde071178",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_78c48ab0e4c473fe",
+    "appearance_id": "fc95c80a5abaa4d87afc",
+    "source_fingerprint": "7e6f8a34b2549d6d95563ac0d90c07050e35aa9945753ab75918e15fd5a3b940",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_addb5fcb954d4cd6",
+    "appearance_id": "49316188a1822382d810",
+    "source_fingerprint": "167487405b732dcc4f90031de0a8595c3837c14d1de962017ddffb7b3f0c46d7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f910102cbfdf7b88",
+    "appearance_id": "e67e0a8add8a991d7757",
+    "source_fingerprint": "5b6f6766ec796db957ba6f0734758572064f46c2982ad951b88e5d7e2fc93d4a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71a172e9c5c0f305",
+    "appearance_id": "83d5b714d6642746552e",
+    "source_fingerprint": "bd395203aca963803d439374cba5205884ed7469fc9c6202ba52a10129d42373",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_75e093105ae9855a",
+    "appearance_id": "055c3e6825a43a9e3cc1",
+    "source_fingerprint": "c175104a8b4f1fc2ea7ac9b693b01b23aa78889563a36f3fe11d7ac7de0dfea7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f5c5ecf18078ec02",
+    "appearance_id": "ae7d8976811c00ea9ba0",
+    "source_fingerprint": "d61f6a27229aadadc8fdba964451815570a49fa3bfa629aff31accb7223413ca",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81f69c4de37e48cc",
+    "appearance_id": "be425906bdef3b2e16b7",
+    "source_fingerprint": "d77054d08679af4da437b0c8049d814bfe1bb58efd348c75d2269310c9d701a7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ae582a22688e2ccc",
+    "appearance_id": "af8b14e4b86ce0093eed",
+    "source_fingerprint": "5c521c1e2ab87aa5612a7a312a416f18976d1e81a0b15bdfc6b861148e618171",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5adc640498488690",
+    "appearance_id": "aeec85678e9a24f08d53",
+    "source_fingerprint": "24a4e8c622ef9c2ce87b33e957a8ad48f2d3492292bcff9074d2b4b2bfe5f447",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9937932fa2d63b2",
+    "appearance_id": "72e61cf6530f7f38b2ba",
+    "source_fingerprint": "0eb26ac0c97a1db4f4eda7d5b24e2cda85aaf0b4d2cccb9856e812e91aeae2f5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_69ebb99fc21b9f70",
+    "appearance_id": "a62a5655346c191be8b0",
+    "source_fingerprint": "4680f89f0a777d0fd4c4306ca569d357c9b8d2c2d27332638f2dc04f01a25e40",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f4c42ad11c7eb64",
+    "appearance_id": "4a4f82857720c7ad55a0",
+    "source_fingerprint": "5a396b428acc0c81c0f73a11686f2e3f064a20c7f19150ae7b6cd239c9e837c7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f99f5ac8f67781d",
+    "appearance_id": "1dbf31c06790c0c8ba9f",
+    "source_fingerprint": "b1110b3c80d56c8422b126ba63bc07acf9849ac93500212465fed73023e893e3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7793d293a1b435a",
+    "appearance_id": "318851b6d0c2c4765939",
+    "source_fingerprint": "21cb160f48b2f7d7ec82156f3e7669ae63cf47c5577d89461f6bfd0b5b50b19b",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_531c2b2cd9937058",
+    "appearance_id": "4d6a3fe7e2a5798ca47f",
+    "source_fingerprint": "ab5199abe4572551b0b8c47d53beb17fd701a31cfdddf2040594d3bf27999a67",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20eec3a8ec369f3e",
+    "appearance_id": "76789546641714296399",
+    "source_fingerprint": "ba6e8e708572455e8841db7a06624d5ea3b2cacd00f1e987e21efd7e2ab75626",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a2b8a557065db0f",
+    "appearance_id": "bcfe732d9a5686f4cdb5",
+    "source_fingerprint": "dce5da27edac1bc0874ffefeeb9a158911e64a6f5d1cdfc9e913fbe80e30c3d9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_049d45c8c208f213",
+    "appearance_id": "25feadf922ad2e661007",
+    "source_fingerprint": "a120faeb8e9dc2f1e2f9fa19f720141c640b56d785298c8aaa6e83c5b3110a61",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3eaa99de5aa09904",
+    "appearance_id": "f079dbc2739c0e5615b1",
+    "source_fingerprint": "925c7aef9cf18b99fea4b2f702bdeec9204aabbd4daff58b75f895186a6a9649",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22159cc70f0456af",
+    "appearance_id": "7da943f9a9c5cfd0c85e",
+    "source_fingerprint": "4b99f9207374082a607137e7dff90128fb56e49cdf7331bd200130cec165f3a4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4292c8c6a1b050b",
+    "appearance_id": "7a38b48131843e1c19a1",
+    "source_fingerprint": "beb7bbc2b174eaa926bd801c00b3a6df95aa035c2ed013fda2502be8feeb4fd9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_573fc56a2f6ddcfe",
+    "appearance_id": "7168f579b1233f884181",
+    "source_fingerprint": "1df502fb70b31035190239e8bfb4b12f938215f3275b30ff457825d026947607",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2d8f9e7aa2b9d6d4",
+    "appearance_id": "b30c20f9bf5e5ddb0a9e",
+    "source_fingerprint": "aa775997410f363d63655ce91217adeb9240dacb3f396e2d1790c22cb07b0e3e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d7a1327f125e4c05",
+    "appearance_id": "6193097bcff729822f6a",
+    "source_fingerprint": "57ca47a4d6cbb176a661c7bc7d8d32b1bc596dee32099c53196a99400f3ecb79",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f2fed77a9b44c88d",
+    "appearance_id": "2db70cfbd3cba79be685",
+    "source_fingerprint": "f6f6f0eba8437d8a644f1190f16f886f6b5bbaf1513d5f741f2773c0f85f0a8c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4880a2da46db1f9a",
+    "appearance_id": "39cbb113bf25ab71030e",
+    "source_fingerprint": "8adf75845fbd6814661cd28bf5d82ab5534ba54f665e88caf77fa85e25bf8fc9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4952123fb4856822",
+    "appearance_id": "6df034f7ae6193799086",
+    "source_fingerprint": "4bcb5f660ef822d7e54fecf90592a4a6cbdbc83dd52fbbecebd8733d5a9269c4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_365afd1d7cbc3f50",
+    "appearance_id": "de329dfdd4469f90388e",
+    "source_fingerprint": "80ffc9e9e0ab3e45299575a0c42155608bc0cd6e8189bc13ee730485662e31fe",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2efe037e9abd3679",
+    "appearance_id": "e7abb8f6df15abf1884d",
+    "source_fingerprint": "6273bebc0a6de41d49f38694907763d3031489198d3a28e0a80a57c29a42159f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d48df5ac080ada01",
+    "appearance_id": "d23a050c11804ff10e8f",
+    "source_fingerprint": "23a0c47cb42169203447d1ee5183b42a5c76e38e32187b234cb8e3f30df8fce3",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_64e15bef78da2da0",
+    "appearance_id": "c233a20f31a5e710ea40",
+    "source_fingerprint": "cba95e4b02ede25df3bdc9ab58c78b7d219d9fbcfb7bdb93b158cff44b308228",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ef154a2101672b80",
+    "appearance_id": "2e686843334cf5035aa2",
+    "source_fingerprint": "e4902adab539d981144056c9190f8b52abb0c55a2a1c98db6acae7fa785d7236",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a75fd0812d287507",
+    "appearance_id": "b635d7cb9173fcfcb6c3",
+    "source_fingerprint": "e2bf3a24d58dd1f8832f4c6252838323ef67ef0c03e00ecf2c75d44d08fce05f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa2f3c2151a207cc",
+    "appearance_id": "facc886f16708c7ba4a9",
+    "source_fingerprint": "18ff1e04b48a4516bfe0a4235f092a1b5f249f247e1413ac298d932f3aeeba29",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ea3b1fff1cc7750",
+    "appearance_id": "11bc4cab858d4fd2f156",
+    "source_fingerprint": "46daa209bb2608d6825c7d7a401a1c1d6b02ed071171c9214c1f69d664bfe549",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dcf2f1d6ea5f878e",
+    "appearance_id": "074dfedac390ea0a1145",
+    "source_fingerprint": "99374ca2d949f2cc402af4867e5e4930be329f4ff8b455bc1653aae3c9e32091",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b76e73a219672998",
+    "appearance_id": "ef7b8019ec8cad474cc1",
+    "source_fingerprint": "a078d50090dffa6c3437aad1cba437e1a90eed9aba77a78557a2823a8d15092a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d9fb6423d6c1fc6f",
+    "appearance_id": "b4663879a85f6db5526b",
+    "source_fingerprint": "b15791d957e5a202c4c2e9e4ff7c49cbcd391295c4ea2db849bba71cd56a079f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f688b5698d51bf7c",
+    "appearance_id": "aabd3cb35f47a3ee68e3",
+    "source_fingerprint": "2a60a3291e912fb3e6bbe6ccff9b860c7534b07aeb47e7a218fefcb3304b8498",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9e0bf87286dac00",
+    "appearance_id": "75519b60dd54d11b05e3",
+    "source_fingerprint": "101d2c849b19387eb8869eab9e1727269345b26dc16192025ce5be2198848964",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f56f5dfd4c149c12",
+    "appearance_id": "d5855d799ca5106ba6d8",
+    "source_fingerprint": "ede56e1a74cf41ec553b63657a62cd45fc96385d3a60098609aacb572b6cd412",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43886df5daa9e8c0",
+    "appearance_id": "6ddcb47836aacabf82f7",
+    "source_fingerprint": "ad17ea2e8ed071b7ef8b04ff4a6fcfcc6c7c41fe9f6975312d005d316dd235a2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8c71e3cdb1a24ac",
+    "appearance_id": "ee986a5b8cb4a6c4d7ad",
+    "source_fingerprint": "629a19eeac4b89798b05f9de854232e83f23299f248f7777781bc3b5b2d0ae33",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57c3be60b5f4b8c2",
+    "appearance_id": "d935c2ff00e228c646e6",
+    "source_fingerprint": "25b0c13d522db9c8456f84d55fe743ba79dc440a02c987ed802f4b50ce4fea55",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6cd40f7bdd41575d",
+    "appearance_id": "e7321187739f3176f3ae",
+    "source_fingerprint": "22db97e47f8cf24a650aef6ff50bf39575023395cd40583acca704fcb9a21494",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_90c507922518a234",
+    "appearance_id": "05a354f278af4bdacb50",
+    "source_fingerprint": "2dc8ad855ef5a8f2aacbb303b7ad5f9183b365cc435ea709c69be2dabf0fa39c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec5731f934006761",
+    "appearance_id": "ce4c966a06e4fe556a28",
+    "source_fingerprint": "c40491f71fe52c3992c1c4b087346635c67e1710ca782823b81a8d1ede52f2ce",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc4d2fa6c524b764",
+    "appearance_id": "f28652199cad2daec760",
+    "source_fingerprint": "c0d6a2915eac712034c6a65c625c92a2b2e7d0df3c11972da11a0d8e9810b2fd",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_83292cade8c24969",
+    "appearance_id": "bcd83d941cec57de789b",
+    "source_fingerprint": "362c5db9e41a510b4377a11ae99541756e0906e250a13b51417d7116a693a2e4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_47d13c8e37355e8b",
+    "appearance_id": "6da577a1755cca3621ed",
+    "source_fingerprint": "1069630c859e3cdc9cd7b1103f36e8411be55037dd8eba15420a8e34ece81f52",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_debb0f048ab9d6b8",
+    "appearance_id": "5c3de7ef6b8ac3b25bb7",
+    "source_fingerprint": "b5fd3beebd18881cd3ff85a85db13cc47229742fdb2024b41994f25543891870",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb8b4fddbfaa88de",
+    "appearance_id": "c98523d0d61931b44cc8",
+    "source_fingerprint": "d923502d020269930fae6deefc47b0becc727ef5e7c97791add6ecc96b98a2ab",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32c680194dc410c4",
+    "appearance_id": "23cefd45167ecf51b9c8",
+    "source_fingerprint": "db177a62653cbcca502a32b6b2de28fe096e183dffff6fa90afe86116e031399",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b55698ab38c1fbf",
+    "appearance_id": "aecdf5817746c6342d11",
+    "source_fingerprint": "bbc6a3d5dd515673b046812f3b993aa2496c3743ed1301812c44185514ee22ff",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa444d272e74a336",
+    "appearance_id": "0ba8d096d0814c49959b",
+    "source_fingerprint": "e03136a79f91da8782ca0ec2c36d2c5a18b3fc0c78b93cd111aae16d5ccfb694",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_78d8de9713a1c3cf",
+    "appearance_id": "858967b95896db225cf0",
+    "source_fingerprint": "1c983a945ec0f42900e5d4f12884079fb749010b4e5580c666fe8e9d217a4472",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_032c99fd0fb0e461",
+    "appearance_id": "62daa14918b1d7232630",
+    "source_fingerprint": "e28fca57b0d250ab17dc329437e407aa8c304b499e0e8f6f3769298d05baa7f6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd699189f1b5f71d",
+    "appearance_id": "28978d9466d9952b913f",
+    "source_fingerprint": "f04fd4a790e45a622ba65c10ded8c733de0616f572390e6a13ebbd7fab7639e2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94cad962b17475a2",
+    "appearance_id": "ae1c398450b02c0ab110",
+    "source_fingerprint": "ca52ba43e4d57694170d0002838ac2a666ed77045109e177883bec98dbfed3f4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d899008c44cd770b",
+    "appearance_id": "2af829c8adc2b7e93ae9",
+    "source_fingerprint": "2d5bba758e44265d6857439f23040ace9efe7a7001788e50df4805a83dd2dfcb",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4049faf756cf7321",
+    "appearance_id": "b6bd86fd32436e5190b6",
+    "source_fingerprint": "904e6a13805ab4c10fcdd42e73bb6ed33368e7b400011710d7ee68b5734f0c29",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_162c23fba3f28d8d",
+    "appearance_id": "53b6802684706df64cc3",
+    "source_fingerprint": "6a306e1a651807677df0a4ffe63ca059fcc7c0d39ec3c383e83652b3cf9d80da",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e20fedd3f8f2c9d6",
+    "appearance_id": "d13472878ca752c981c5",
+    "source_fingerprint": "e1e6f98cf120a82f237f4b820a8a6ef3eb9b218af9dbf1f531f804866cb9923c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_465782457fcecd65",
+    "appearance_id": "8bfacca6f457c218fb1d",
+    "source_fingerprint": "1e0d3f2acd6d5cb494dc22f82a4922c3a27877968c24d7de388f78e491b8df1e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_343adcd22058668d",
+    "appearance_id": "3c6f63dd206b63ae02ba",
+    "source_fingerprint": "ce6c9b30c0398d573f1d707373c4d5a93a96cf9046bd368bdaaf8539c651366f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7772be895d58eb02",
+    "appearance_id": "e8192a0da6b0c86f17d2",
+    "source_fingerprint": "d060d6dcdbe249e0b12ea6c4ef0153b2bc54081480fbf801623c263386ce2bd9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39928244188a41cc",
+    "appearance_id": "b2348b6d87a87679c6a0",
+    "source_fingerprint": "cbec9c8fe060dc0d133bb80ac06675b3a3ac0cbb1cca893a01c52f66003822a7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9cef408a100fd108",
+    "appearance_id": "634c0fdaa33d47788a08",
+    "source_fingerprint": "495d642db5a6a045948cfb99d3bb4f2d320b5bcd441d3337dfc4dc22b86777df",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f06e70ea8136438",
+    "appearance_id": "f610010ba6d1975608a1",
+    "source_fingerprint": "2bcccd423692593592d7d346eaf5610cf9e93b862e7b50e1e5bc91c234060af5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_350d2831333d9623",
+    "appearance_id": "298ec3740937db7ddd01",
+    "source_fingerprint": "4c24474f7e624e2eeef5c1020f72feaa5c82a3e0d8f798dcae4f5a04ecdf1cd8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a1700757de191202",
+    "appearance_id": "9d214ec37a505a47cff2",
+    "source_fingerprint": "8ab3bd25f975354e2e449beb74e282f1da40e0464ce2d48adacc733296afe738",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f301c0d3fec4e3b",
+    "appearance_id": "f68b3bc75f2bffd2eb76",
+    "source_fingerprint": "be50aa857250fed49f1d314508aa35720b710fec60ce85d8ac63573ff89bae25",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_acfef89718718176",
+    "appearance_id": "1244c5bc6ce4c355e0a7",
+    "source_fingerprint": "7e1f7c49930890343e0812a5a491b23b10f50d92ef08704aed0e38e5eb05be69",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c98f788920072e57",
+    "appearance_id": "ada6bf859ce14737dc45",
+    "source_fingerprint": "e53bc724bf528d5872490a63ee912354c6a9fc3e6c436405fd84b972e6c66b23",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_83b20c53fa4a8c39",
+    "appearance_id": "3fc5cd5ee86b38dda265",
+    "source_fingerprint": "d3c8cad5e17c9b3b61451cbc34c19638061746d7134d371d09e5d7bdf1e5b864",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e25f13bd6d7f4d3",
+    "appearance_id": "bbce73b052200170c60a",
+    "source_fingerprint": "ca8cce164eda1c2603ee6bbaed6027833bbee2acaa476a02588fd824f0e159a6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_097720f47640dfff",
+    "appearance_id": "7df86534d77be03dcf02",
+    "source_fingerprint": "6757f1cf8369238d89be4e4f327e228c598fd3a86fa3a5ce82bef3a5a97e5fe6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58ee4bbbe4d491ab",
+    "appearance_id": "c7d634975641260ec11e",
+    "source_fingerprint": "ea9623a2606344165c452ea172c642b2b48234aea28cc52672fe1be42416cef9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4315c6c5a8ad7795",
+    "appearance_id": "e9f8f56cf815b6f77859",
+    "source_fingerprint": "9a51e1b8c5fc0a3713b24ce096ecea713ef014f8deb8fcbca208d904d282434a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3e3bfe583569fdf",
+    "appearance_id": "58342841e9f928e7162c",
+    "source_fingerprint": "7a954d0ba4e94d01cb4923f1b8bcaa2b71c7c66fcfad429f62de7d1cdae8bd14",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a75f058e2b51a992",
+    "appearance_id": "8fa81db65d776e08717d",
+    "source_fingerprint": "92d27d9878b251448ff9a6f6e6924f9e3862e1b77c8311c0e98b082eb309005c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_198798102784a8d8",
+    "appearance_id": "4432370991ea9d78c581",
+    "source_fingerprint": "2a022bb1b2624916701e1880925111a804ff7577929e01abfce97f25a44dc8e7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics. Appropriately classified under medicine.",
+    "tested_skill": "Medicine and clinical sciences: Diagnostic pathology, pharmacology, and therapeutics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_5e5d63ffb735c76e18900ad6",
+      "sha256": "bdb6baaff68d09e99a880e2a2e31a43312c30f8c311e00f2f23ae10820f00460",
+      "note": "Verified against registered booklet source for Mizo Administration and Law."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

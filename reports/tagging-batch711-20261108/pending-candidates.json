@@ -1,0 +1,318 @@
+[
+  {
+    "canonical_id": "cq_5a406e17a8b66da5",
+    "appearance_id": "desc-1f2684517e10c2317ea1",
+    "source_fingerprint": "d7b347653b39db800698dc40e1678e8508fef5c7733cedbcf03ed714d548fa77",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": "science/biology/cell-biology"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec3bcd479689f7b2",
+    "appearance_id": "desc-772bf6aba3ca15441f53",
+    "source_fingerprint": "6ef9451c2dfe82709ba508b2b9a1a4468a6e4266f74c7a38f59b8c7c867a6b9c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f4b39ff4b09c34fc",
+    "appearance_id": "desc-b454064d676457c192b7",
+    "source_fingerprint": "b6826c1af265b3da72c485ec0eecc4dbe74a8100d2be5cb477901658a185de0b",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d019389673391838",
+    "appearance_id": "desc-e4d5c8f5223eda0f8b2a",
+    "source_fingerprint": "c4aa4cf7c9ea409f5a4ad84f1f28819d6a45a59e1f4032b932bcaa52f9b91044",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_45782ecc180bb745",
+    "appearance_id": "desc-41c4061a14b8aff31907",
+    "source_fingerprint": "23f43bae285d387f3b1955cad19712cc61f8c3c882c63bae90c0a1ebcd8717e8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_066ba9e3dac1b8cf",
+    "appearance_id": "desc-9f014396195ef7262746",
+    "source_fingerprint": "9bd45eaf34a2b697b7e5889abafd3d2f492291fe557b6fd07252e33f99f991f8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_248f2a6c9c7c6691",
+    "appearance_id": "desc-162df0ebb3f1b1f7be6d",
+    "source_fingerprint": "ffc7e9c5f4c9d32bded1a92381a4b664d7d9ee84b8dc946afa47bc7c1ae109f8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e115d0517daad7f",
+    "appearance_id": "desc-2b7ab371557da7cad075",
+    "source_fingerprint": "0f22ae88033067c22f7a2d79035165cadcbe0983b559d82bb5cef56f41603533",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_9d5b237850927495ba981d12",
+      "sha256": "bc17a3e192c436d0468833ca313377dfc6db2072361cbc762cb2fce98bc6070d",
+      "note": "Verified against registered booklet source for MCS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

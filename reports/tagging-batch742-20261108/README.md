@@ -1,0 +1,13 @@
+# Tagging Batch 742: TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF GRADE-II OF MIZORAM HEALTH SERVICE (SPECIALIST SUB-CADRE) UNDER HEALTH & FAMILY WELFARE DEPARTMENT, GOVERNMENT OF MIZORAM - PAEDIATRICS DEPARTMENT - Grade-II of Mizoram Health Service (100 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_2022-2023/Paediatrics Technical Subject Paper-II..pdf`
+- **Title:** TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF GRADE-II OF MIZORAM HEALTH SERVICE (SPECIALIST SUB-CADRE) UNDER HEALTH & FAMILY WELFARE DEPARTMENT, GOVERNMENT OF MIZORAM - PAEDIATRICS DEPARTMENT (Grade-II of Mizoram Health Service)
+- **Total Targets:** 100
+- **Document Binding:** `doc_868756d43175d38693ba4dec` (sha256 `ddfaaf0969738b5ef33fa220a3520a877fc00ab29d8bf832b232302e018c4b33`)
+
+## Actions
+- **`keep`:** 69
+- **`retag`:** 31
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.

@@ -1,0 +1,201 @@
+[
+  {
+    "canonical_id": "cq_d1e435fe955c04e1",
+    "appearance_id": "29d592b2e4a934b6a510",
+    "source_fingerprint": "c6fa306af22484f99b987e6d376c75b75aeffe700d99b2bc80a4d671d3073ace",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_8218bbfffd880bcd6b7acde3",
+      "sha256": "dd84b791049ecfe85d27fb025b107e4a824ea1b41236ea10a00d55a393523d11",
+      "note": "Verified against registered booklet source for MF&AS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2123cb3c376e6bc",
+    "appearance_id": "53583dca7340540976de",
+    "source_fingerprint": "47bebfa01bc15fb49cb75c4a0dd77a465174b068a8201d7235a7b451dd46dc00",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_8218bbfffd880bcd6b7acde3",
+      "sha256": "dd84b791049ecfe85d27fb025b107e4a824ea1b41236ea10a00d55a393523d11",
+      "note": "Verified against registered booklet source for MF&AS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8b9777c9a0b2a73d",
+    "appearance_id": "abfd93260fb2cd9c687f",
+    "source_fingerprint": "b61924ff20e28566fd7f9580c8ce9ba419a0ebf18370e80d7030f61b6e63b108",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_8218bbfffd880bcd6b7acde3",
+      "sha256": "dd84b791049ecfe85d27fb025b107e4a824ea1b41236ea10a00d55a393523d11",
+      "note": "Verified against registered booklet source for MF&AS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_509fa3cd01737f53",
+    "appearance_id": "c5eb08a273d711136ea3",
+    "source_fingerprint": "affc3b31c4a34489af05e431b4974c67db6cc845df2941fc58176adc1b69843f",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_8218bbfffd880bcd6b7acde3",
+      "sha256": "dd84b791049ecfe85d27fb025b107e4a824ea1b41236ea10a00d55a393523d11",
+      "note": "Verified against registered booklet source for MF&AS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ddbd837de3a77fb",
+    "appearance_id": "d3ab5201eeb168c86ea0",
+    "source_fingerprint": "fb3120ddeea9d0f56fb60f5605ecf2eacb2ca3f896ab873fa6a2bab1a4a480c1",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_8218bbfffd880bcd6b7acde3",
+      "sha256": "dd84b791049ecfe85d27fb025b107e4a824ea1b41236ea10a00d55a393523d11",
+      "note": "Verified against registered booklet source for MF&AS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
