@@ -8198,6 +8198,27 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 79/79 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,615 saved records**, **8,537 unique appearances**, **8,137 deduplicated candidates**, **0 problems**. [Batch 115 report](reports/tagging-batch115-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 116 (Computer Operator AH&Vety 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 116 (`reports/tagging-batch116-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Computer Operator under Animal Husbandry & Veterinary Department, May 2019 — General English* (`Old_Questions/Direct_2019-2020/General English(AH&Vety).pdf`, `doc_1dbdb293efaa53fe5973dcf2`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake, seamlessly reconciled Q44 pilot baseline).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 46 retag, 34 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (18 items): Q63–Q80 (ups and downs, odds and ends, turn up nose, eager beaver, heart and soul, gift of the gab, etc.).
+    - `english/grammar` (18 items): Q28–Q36 (sentence structure: simple, compound, complex), Q37–Q45 (clauses: noun clause, adjective/relative clause, adverb clause; including Q44).
+    - `english/comprehension` (10 items): Q1–Q10 (reading comprehension passage).
+    - `english/grammar/tenses` (9 items): Q11–Q18 (was hanged, lay, have been residing, has passed, would come, sank, had come, gave), Q54 (arrived yesterday).
+    - `english/grammar/parts-of-speech` (9 items): Q19–Q27 (nouns, verbs, adjectives, adverbs, prepositions, conjunctions).
+    - `english/vocabulary` (8 items): Q46–Q53 (word choice: weigh, allow, revenged, notorious, crimes, incident, admitted, entered).
+    - `english/vocabulary/one-word-substitution` (8 items): Q55–Q62 (one-word substitution: Chemistry, crematory, misanthropist, etc.).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Electronic Media vs Print Media / State of Education in Mizoram / Role of YMA) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,695 saved records**, **8,616 unique appearances**, **8,215 deduplicated candidates**, **0 problems**. [Batch 116 report](reports/tagging-batch116-20261108/README.md).
+
+
 
 
 
