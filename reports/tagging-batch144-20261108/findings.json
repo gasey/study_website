@@ -1,0 +1,23 @@
+[
+  {
+    "id": "finding_b144_mizoram_legal_service_aptitude_intake",
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Jr. Administrative Grade and Sr. Grade of Mizoram Legal Service 2016 GK & Aptitute Test (Common).pdf",
+    "type": "composite_paper_partitioning",
+    "severity": "info",
+    "details": "Source-reviewed Questions 81-100 in the composite 2016 Mizoram Legal Service GK & Aptitude booklet: successfully partitioned 9 Verbal Reasoning concept questions, 3 Arithmetic/Unitary math problems, 6 Vocabulary synonyms, 1 One-Word Substitution (Agoraphobia), and 1 Proverb meaning into their respective taxonomy branches."
+  },
+  {
+    "id": "finding_b144_series_permutations_deduplication_ledger",
+    "paper_id": "multiple",
+    "type": "series_deduplication",
+    "severity": "info",
+    "details": "Identified and catalogued secondary permutation series booklets that duplicate already-reviewed Series A papers: CAO March-2026 Series B (duplicates Series A from Batch 120), Jr. Accounts Officer Paper-I Series B (duplicates Series A from Batch 114), Jr. Accounts Officer Paper-II Series B (duplicates Series A from Batches 14 & 128), Direct NG General English Series B/C/D (duplicates Series A), and Uploaded Group B Gazetted Series B (duplicates Series A). Under single-booklet deduplication policy, secondary booklets are safely bypassed without double-counting appearances."
+  },
+  {
+    "id": "finding_b144_geology_misnomer_defect_register",
+    "paper_id": "Old_Questions/Direct_2019-2020/Geologist Junior General English Paper-III.pdf",
+    "type": "ingestion_misnomer",
+    "severity": "info",
+    "details": "Formally registered defect for 'Geologist Junior General English Paper-III.pdf' (96 items) and 'Geologist Junior General Englsih Paper-III Nov.pdf' (99 items). Visual inspection of source PDFs confirms these are Mining & Geology Paper-III technical exams (structural geology, mineralogy, stratigraphy) erroneously titled 'General English' by source uploaders."
+  }
+]

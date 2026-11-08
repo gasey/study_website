@@ -8802,3 +8802,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 18/18 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,405 saved records**, **10,324 unique appearances**, **9,921 deduplicated candidates**, **0 problems**. [Batch 143 report](reports/tagging-batch143-20261108/README.md).
+
+
+## 2026-11-08 — Batch 144 (Mizoram Legal Service 2016 Aptitude & Vocabulary + Deduplication Register)
+
+- **Target Scope:** Mizoram Legal Service 2016 GK & Aptitude Test (`Old_Questions/Direct_2014-2018/5.Jr. Administrative Grade and Sr. Grade of Mizoram Legal Service 2016 GK & Aptitute Test (Common).pdf`, `doc_378ff26756ee8a6c8e312a02`, 20 target questions across 9 rendered source PDF pages; 100% section completion):
+  - Questions 81-100 covering Verbal Reasoning, Arithmetic/Unitary math, and English Vocabulary.
+- **Actions:** 20 questions reviewed (11 retags, 9 keeps, 0 holds, 0 live changes; 100% section completion).
+- **Taxonomic Distribution:**
+  - `reasoning-and-aptitude/verbal-reasoning` (9 items): deductive reasoning (Q81, 82, 85) and analogical classification (bears and foxes, music and painting, Fahrenheit and Celsius, lecturer and reader, aliens and angels, floors and ceilings).
+  - `english/vocabulary/synonyms` (6 items): vocabulary synonyms (Obnoxious, Liberty, Flaunt, Degrade, Persuade, Crave).
+  - `mathematics/arithmetic` (2 items): unitary method arithmetic (postcard purchase, time and work field ploughing).
+  - `mathematics/arithmetic/ratio-and-proportion` (1 item): speed, distance, and time proportion (family drive 180 km in 4 hours).
+  - `english/vocabulary/one-word-substitution` (1 item): phobia terminology (fear of open spaces = Agoraphobia).
+  - `english/vocabulary/idioms-and-phrases` (1 item): proverb meaning (Early to bed, early to rise).
+- **Deduplication Ledger & Defect Registers:**
+  - Documented single-booklet deduplication bypass for secondary permutation booklets (CAO Series B, JAO Paper-I/II Series B, Direct NG Series B/C/D, Uploaded Series B).
+  - Formally registered defect for Geologist Junior Paper-III misnomer (geology technical exam titled as general english).
+- **Ledger Verification:**
+  - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,425 saved records**, **10,344 unique appearances**, **9,941 deduplicated candidates**, **0 problems**. [Batch 144 report](reports/tagging-batch144-20261108/README.md).
