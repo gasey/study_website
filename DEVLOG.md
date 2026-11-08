@@ -8587,6 +8587,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,886 saved records**, **9,807 unique appearances**, **9,406 deduplicated candidates**, **0 problems**. [Batch 134 report](reports/tagging-batch134-20261108/README.md).
 
+### Tagging Batch 135 — UDC under Tourism 2018 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of U.D.C. under Tourism Department, June 2018 — Paper-I (`Old_Questions/Direct_2014-2018/1.UDC under Tourism Deptt.-I.pdf`, `doc_cb213ed2ed970b662cf2fdab`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (15 retags, 60 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (26 items): Q9–Q16 (clause identification: noun, adverb, adjective, co-ordinate clauses), Q17–Q24 (sentence structure: simple, compound, complex), Q25–Q32 (functional concepts: duty, deduction, ability, cause, degree, assertive, assumption, command), and Q36–Q37 (verb infinitive and clause conjunction).
+  - `english/grammar/tenses` (12 items): Q38–Q40 (modals, passive voice, continuous tenses) and Q67–Q75 (verb forms, tenses, subject-verb agreement, and conditionals).
+  - `english/vocabulary/idioms-and-phrases` (12 items): Q33–Q35 (phrasal verbs: call up, keep back, look up) and Q58–Q66 (idioms and phrases).
+  - `english/grammar/prepositions` (9 items): Q49–Q57 (appropriate prepositions and prepositional collocations).
+  - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (parts of speech identification).
+  - `english/vocabulary/one-word-substitution` (8 items): Q41–Q48 (one-word substitution / closest meaning).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Social Media impact on Mizo youth [25 marks] and Question 2 Précis on Tourism industry and environment [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,961 saved records**, **9,882 unique appearances**, **9,481 deduplicated candidates**, **0 problems**. [Batch 135 report](reports/tagging-batch135-20261108/README.md).
+
+
 
 
 
