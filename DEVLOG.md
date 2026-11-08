@@ -8755,3 +8755,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 
 
 
+
+
+## 2026-11-08 — Batch 142 (MCS Main English Literature Optional Collection)
+
+- **Target Scope:** 7 MCS Mains English Literature Optional examination papers (69 total questions across 19 rendered source PDF pages; 100% paper completion):
+  1. `Old_Questions/Direct_2014-2018/18. English Paper II.pdf` (`doc_ea3060f06511a7667d468ae3`, 8 items).
+  2. `Old_Questions/Direct_2014-2018/English-I.pdf` (`doc_71b9e0789710f274cbafca37`, 8 items).
+  3. `Old_Questions/Direct_2014-2018/English-II.pdf` (`doc_a6eb5e6486187974015690b2`, 8 items).
+  4. `Old_Questions/Direct_2022-2023/MCS Main 2022 English Paper-I..pdf` (`doc_957ce545f7a42743aadff7db`, 11 items).
+  5. `Old_Questions/Direct_2022-2023/MCS Main 2022 English Paper-II..pdf` (`doc_4cd065ec895718670f80cb25`, 11 items).
+  6. `Old_Questions/Direct_2023-2025/MCS Main 2023 English Paper-I..pdf` (`doc_ec854b7ae9f5abff7137f8ad`, 11 items).
+  7. `Old_Questions/Direct_2023-2025/MCS Main 2023 English Paper-II..pdf` (`doc_c26922ba8151ea46ba544158`, 12 items).
+- **Actions:** 69 questions reviewed (69 retags, 0 keeps, 0 holds, 0 live changes; 100% paper completion).
+- **Taxonomic Distribution:**
+  - `english/writing/essay` (69 items): descriptive literature analysis, critical appreciation, and essay writing across British, American, and Indian English Literature (Shakespeare, Donne, Milton, Wordsworth, Jane Austen, George Eliot, Mark Twain, Dickens, Joseph Conrad, Virginia Woolf, D.H. Lawrence, Raja Rao, V.S. Naipaul, A.K. Ramanujan, Samuel Beckett, Henrik Ibsen).
+- **Defect Documentation & Written Intake:**
+  - Standardized legacy capitalized subject `English` and unstructured question-specific slugs into canonical active policy `english/writing/essay`.
+  - Preserved all 69 conventional literature questions in `pending-written-intake.json` for long-form written evaluation.
+- **Ledger Verification:**
+  - Readback validation confirmed 69/69 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,387 saved records**, **10,308 unique appearances**, **9,907 deduplicated candidates**, **0 problems**. [Batch 142 report](reports/tagging-batch142-20261108/README.md).
