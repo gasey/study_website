@@ -7931,6 +7931,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,577 saved records**, **7,499 unique appearances**, **7,099 deduplicated candidates**, **0 problems**. [Batch 102 report](reports/tagging-batch102-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 103 (District Organiser Oct 2020 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 103 (`reports/tagging-batch103-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to the Post of District Organiser (Contract) (October 2020) — General English* (`Old_Questions/Direct_2019-2020/General English (DO, Oct).pdf`, `doc_edb3109f0a62cb5bb80c86f0`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 39 retag, 41 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (21 items): Q34 (word class / noun derivation: loss), Q45–Q48 (functional parts of speech), Q49–Q53 (sentence kinds: simple, compound, complex), Q54–Q64 (sentence transformations: use noun form, voice, negative, comparison, synthesis).
+    - `english/comprehension` (16 items): Q1–Q16 (reading comprehension passage on Philosophy of Education).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q17–Q32 (what goes around comes around, good hand, throw cold water, hard nut to crack, no spring chicken, take a toll, grease palm, on cloud nine, hit ceiling, etc.).
+    - `english/vocabulary` (6 items): Q33 (hope, except, expect, accept), Q76–Q80 (words often confused: adapt/adopt, affect/effect, complement/compliment, etc.).
+    - `english/vocabulary/synonyms` (6 items): Q65–Q70 (synonyms / closest meaning to underlined words).
+    - `english/grammar/tenses` (5 items): Q35–Q39 (verb tenses and irregular past participles: hurt, will have arrived, frozen, was raining, have not completed).
+    - `english/grammar/prepositions` (5 items): Q40–Q44 (appropriate prepositions in context).
+    - `english/vocabulary/antonyms` (5 items): Q71–Q75 (antonyms / opposite meaning: apathetic, etc.).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,657 saved records**, **7,579 unique appearances**, **7,179 deduplicated candidates**, **0 problems**. [Batch 103 report](reports/tagging-batch103-20261108/README.md).
+
+
 
 
 
