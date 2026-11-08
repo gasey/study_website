@@ -8178,6 +8178,27 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 79/79 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,536 saved records**, **8,458 unique appearances**, **8,058 deduplicated candidates**, **0 problems**. [Batch 114 report](reports/tagging-batch114-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 115 (Junior Inspector of Cooperative Societies 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 115 (`reports/tagging-batch115-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *General Competitive Examinations for Recruitment to the Post of Junior Inspector of Cooperative Societies under Cooperation Department, April 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (JICS).pdf`, `doc_1d71fe43336214be3919fcda`, 79 MCQs, achieving **100% paper completion** with 79/79 items reviewed; 1 conventional essay question preserved in written intake, 1 legacy OCR dropped question documented).
+- **Candidate Decisions & Taxonomy Structuring (79 items: 46 retag, 33 keep, 0 hold):**
+  - All 79 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (19 items): Q1–Q5, Q7–Q8 (idioms meaning: feather in cap, see eye to eye, Scylla and Charybdis, grease palm, bite dust, cry wolf, plain sailing), Q9–Q16 (rings a bell, smell a rat, no smoke without fire, poking nose in, call spade a spade, take bull by horns, leave no stone unturned, in high spirits), Q62–Q63 (in black and white, for good), Q69–Q70 (Absence makes heart grow fonder / Home is where heart is).
+    - `english/vocabulary` (17 items): Q60, Q61, Q64 (quiet, confident, waste), Q65–Q68 (homophones: effected/affected, principal/principle, soar/sore, raised/razed), Q71–Q75 (definitions: pedantic, archaic, brine, thwart, tithe), Q76–Q80 (word pairs: human/humane, angel/angle, tampered/tempered, childish/childlike, lightning/lengthening).
+    - `english/comprehension` (12 items): Q17–Q28 (reading comprehension passages: Passage 1: Q17–Q20; Passage 2: Q21–Q24; Passage 3: Q25–Q28).
+    - `english/grammar/parts-of-speech` (12 items): Q29–Q40 (functional forms of nouns, verbs, adjectives, and adverbs in context).
+    - `english/grammar` (11 items): Q49–Q59 (sentence structure: simple, compound, complex, sentence types, and communicative notions).
+    - `english/grammar/prepositions` (8 items): Q41–Q48 (prepositions in context).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: The importance of recycling / Preserving Our Mizo Language / Saving for a rainy day) in `pending-written-intake.json`.
+  - Documented legacy OCR drop defect: Question 6 ("To drive home") was omitted from initial DB extraction from Physical Page 2. Preserved for future intake.
+- **Ledger Verification:**
+  - Readback validation confirmed 79/79 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,615 saved records**, **8,537 unique appearances**, **8,137 deduplicated candidates**, **0 problems**. [Batch 115 report](reports/tagging-batch115-20261108/README.md).
+
+
 
 
 

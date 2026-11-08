@@ -1,0 +1,37 @@
+{
+  "batch": 115,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English (JICS).pdf",
+      "paper_title": "General Competitive Examinations for Recruitment to the Post of Junior Inspector of Cooperative Societies under Cooperation Department, April 2019 — General English",
+      "document_id": "doc_9c2e0d165b6cfeb7a50e6024",
+      "sha256": "0bed10fd00d7e2f499b5009267b1cd0624e6c321f412f790279ae1f97bb40071",
+      "targets": 79
+    }
+  ],
+  "targets": 79,
+  "completion": "100% paper completion achieved for Junior Inspector of Cooperative Societies 2019 General English (79/79 MCQs reviewed: 19 Idioms & Proverbs, 17 Vocabulary & Homophones, 12 Reading Comprehension, 12 Parts of Speech, 11 Grammar Core [Sentence Structure & Notions], 8 Prepositions; 1 conventional essay question and 1 legacy OCR dropped question documented)",
+  "actions": {
+    "retag": 46,
+    "keep": 33,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/vocabulary/idioms-and-phrases": 19,
+    "english/vocabulary": 17,
+    "english/comprehension": 12,
+    "english/grammar/parts-of-speech": 12,
+    "english/grammar": 11,
+    "english/grammar/prepositions": 8
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Documented Section A (Essay writing, 20 marks) in pending-written-intake.json.",
+    "Documented legacy OCR drop defect: Q6 ('To drive home') was omitted from initial DB extraction.",
+    "Verified all 79 MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
