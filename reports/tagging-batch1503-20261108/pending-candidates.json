@@ -1,0 +1,470 @@
+[
+  {
+    "canonical_id": "cq_2b6ccd8ead1ef7d2",
+    "appearance_id": "5387e975caa92b21a765",
+    "source_fingerprint": "f22993c39230ffc3388ea0a12657255c9531105199861c3aadb6e776f05ece81",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d8213b97d97dce2",
+    "appearance_id": "cff32f0fbdb92fcdae55",
+    "source_fingerprint": "e1106a4aecd29d8e42f37d8053f14b271fdd2dcb0992bf2e768d556b5f7fc0fa",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4516af42bf1801b5",
+    "appearance_id": "019330af91e3b95d715d",
+    "source_fingerprint": "707b98b09581237fa136f4dc8920b88e37c71518cf895e932dec1f8cc02013c5",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9624ccac90a99c57",
+    "appearance_id": "093167ebd673773a3823",
+    "source_fingerprint": "21de1eebb036c6eb4fe16b61706c6447ddfae5e7c466fd977105ad899a007a5b",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_957bc1edc4bd81f4",
+    "appearance_id": "dd244bb290f28b336b47",
+    "source_fingerprint": "1c6c88e4460dcb1769a170575c53d7e2fcd539d8a5d9be2e45b9224019b7f206",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eee8664b3e45376a",
+    "appearance_id": "709a274f02ed44ce787d",
+    "source_fingerprint": "23a148cfc291483c15673f5d76d5e2d5afbd98d9a37a03aa4100ef8b96651f3a",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6dece3e37a7cf5f9",
+    "appearance_id": "3ab1e902d4d9da588f4d",
+    "source_fingerprint": "27c6a7423f25dfff121806f8cb26281dd65f3d589bcba5f2a79dda0d257bb62e",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7bd3790d856864c9",
+    "appearance_id": "78af811af825763d4b0d",
+    "source_fingerprint": "c3876d509e22a66549d46bc289e09c6da95001ee9b13faae6caae8b9bd56c90c",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca089e50e8083016",
+    "appearance_id": "9e0a244dddccb8d8fdf6",
+    "source_fingerprint": "208fb254f63ebcf4897e19ec3d8f6336dedf5768f36712b604d2ff312e65aeb2",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48ce17574b88469c",
+    "appearance_id": "7799d002d67ed6a7c03f",
+    "source_fingerprint": "658fbac58ac41c6371587e140de5bdb24a6c3af3c232621e391557c641deeabd",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e91f7467cc2bcbc9",
+    "appearance_id": "55f8adf1ff3177765e31",
+    "source_fingerprint": "47f203a93d9ac8e39745cfe95d8cbdeb0abc1b84f55f83b120791548ab3e3e2f",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_778eedbe78361eab",
+    "appearance_id": "b98135f3b3e65a5c673a",
+    "source_fingerprint": "982044251de0fc46ff4f5abf5d0d191682941be4b65d3b6898dc2cad6933714b",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses geology: Lithology, stratigraphic classification, and structural geology. Appropriately classified under geology.",
+    "tested_skill": "Geology: Lithology, stratigraphic classification, and structural geology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_11aaf8271b6ce7a3fd6c62b1",
+      "sha256": "3c00d121b9d1b152b3455cab55bf25cdd449999736e2a4a73c6bf6ed10df5197",
+      "note": "Verified against registered booklet source for Geology."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
