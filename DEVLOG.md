@@ -8451,4 +8451,32 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 60/60 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,451 saved records**, **9,372 unique appearances**, **8,971 deduplicated candidates**, **0 problems**. [Batch 127 report](reports/tagging-batch127-20261108/README.md).
 
+### Tagging Batch 128 — Jr. Accounts Officer 2026 Paper-II Series A (Part 1: Q1–Q50) (2026-11-08)
+- **Scope & Targets:** Source review of Competitive Examination for Recruitment to the Posts of Junior Accounts Officer (JAO) under FCS&CA Department, July 2026 — Paper-II (Series A) (`Old_Questions/Direct_2025-2027/Jr. Accounts Officer Paper-II (GK, Arithmetic & Reasoning) -Series A..pdf`, `doc_a11990f15b7d667f861bd8b7`). Targets Questions 1 to 50 (General Knowledge, Science & Current Affairs) completing 100% paper coverage alongside Batch 14 (which reviewed Q51–Q100 Arithmetic & Reasoning).
+- **Paper Structure:** 200 Marks total (100 Objective MCQs, 2 marks each; 100% paper completion achieved across Batch 14 and Batch 128).
+- **Actions:** 50 MCQs reviewed (49 retags, 1 keep, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `general-studies/mizoram` (9 items): Q21–Q24, Q26, Q47–Q50 (Zupui Ni, Operation Jericho, folklore, Lushai Hills 1898 unification, Project Thaichhawninu, mythic world tree, Thingdim lam, Ram sem sap, 2nd Governor).
+  - `general-studies/indian-history` (6 items): Q5–Q7, Q27–Q29 (Subsidiary Alliance, Gupta administration, Anglo-Maratha Wars, Ilbert Bill, Vernacular Press Act 1878, Cripps Mission).
+  - `general-studies/geography` (6 items): Q8–Q10, Q30–Q32 (rainfall types, heat budget, ITCZ, tropical cyclones, equator & tropics, Tibetan plateau).
+  - `general-studies/indian-polity` (6 items): Q11–Q12, Q33–Q36 (Fundamental Duties, Drafting Committee, Money Bills, Judicial Review, 10th Schedule, non-constitutional bodies).
+  - `general-studies/indian-economy` (5 items): Q13–Q15, Q37–Q38 (GNP, HDI indicators, WTO subsidies, SHGs, dependency ratio).
+  - `general-studies/environment` (5 items): Q16, Q39–Q41, Q43 (Red Data Book, Brundtland Report, acid rain, biosphere reserves, wetlands & coral bleaching).
+  - `science/*` (8 items):
+    - `science/biology/ecology` (2 items): Q17, Q42 (Amensalism, biomagnification).
+    - `science/biology/human-physiology` (2 items): Q20, Q44 (Iodine-131, cerebellum balance).
+    - `science/physics/mechanics` (1 item): Q18 (work done pushing against a rigid wall).
+    - `science/chemistry` (1 item): Q19 (Lithium-ion vs lead-acid batteries).
+    - `science/physics/light` (1 item): Q45 (Rayleigh scattering of blue sky).
+    - `science/biology/cell-biology` (1 item): Q46 (human chromosomes & RNA).
+  - `general-studies/current-affairs` (4 items): Q1–Q4 (INTERPOL Silver Notice, Project Waterworth, TALASH programme, Yala glacier).
+  - `general-knowledge/sports` (1 item): Q25 (Estadio Azteca FIFA World Cup).
+- **Integration & Deduplication:**
+  - Integrates seamlessly with Batch 14 (Q51–Q100 Arithmetic & Reasoning) yielding 100/100 complete coverage with 0 duplicated reviews.
+  - Permutation Series B (`doc_da3d581ae85f52a4bbe97c34`) bypassed under single-booklet deduplication policy.
+- **Ledger Verification:**
+  - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,501 saved records**, **9,422 unique appearances**, **9,021 deduplicated candidates (9,000+ candidate milestone passed)**, **0 problems**. [Batch 128 report](reports/tagging-batch128-20261108/README.md).
+
+
 
