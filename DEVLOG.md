@@ -8822,3 +8822,42 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 20/20 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,425 saved records**, **10,344 unique appearances**, **9,941 deduplicated candidates**, **0 problems**. [Batch 144 report](reports/tagging-batch144-20261108/README.md).
+
+
+## 2026-11-08 — Batch 145 (Direct UDC Paper-II Arithmetic Series)
+
+- **Target Scope:** All 11 Direct UDC Paper-II examination booklets (273 total Arithmetic & Reasoning questions across 103 rendered source PDF pages; 100% section completion):
+  1. `Old_Questions/Direct_2014-2018/2.UDC Direct-2014 Health Deptt.& Co-operation Dept.Paper-II.pdf` (`doc_7dc73685c72199b4566eb1f3`, 25 items: Q76-100).
+  2. `Old_Questions/Direct_2014-2018/2.UDC (contract) 2016 Art& Culture Paper-II.pdf` (`doc_92da5cf2333fe4445fc68ec9`, 25 items: Q76-100).
+  3. `Old_Questions/Direct_2014-2018/2.UDC Excise Deptt. Paper-II.pdf` (`doc_2da6fc7c98007ae01b5003f4`, 25 items: Q76-100).
+  4. `Old_Questions/Direct_2014-2018/2.UDC Paper-II.pdf` (`doc_3126ecbc2e4860b2b8c56fa7`, 23 items: Q76-100).
+  5. `Old_Questions/Direct_2014-2018/2.UDC under Agriculture Deptt. Paper-II.pdf` (`doc_79c88e7228807759d57a41ec`, 25 items: Q76-100).
+  6. `Old_Questions/Direct_2014-2018/2.UDC under EF&CC Deptt. Paper-II.pdf` (`doc_cf70fece397f2bf05a964344`, 25 items: Q76-100).
+  7. `Old_Questions/Direct_2014-2018/2.UDC under SAD Paper-II.pdf` (`doc_3ea5aaeb7412e6945bead3eb`, 25 items: Q76-100).
+  8. `Old_Questions/Direct_2019-2020/UDC ARC Paper-II.pdf` (`doc_bcf0c2d7fc3ef88ffbbd30c5`, 25 items: Q76-100).
+  9. `Old_Questions/Direct_2020-2021/UDC Direct under Taxation Deptt - Paper-II.pdf` (`doc_a926ea614341aa508cf31168`, 25 items: Q76-100).
+  10. `Old_Questions/Direct_2021-2022/UDC Direct under Fisheries Deptt - Paper-II.pdf` (`doc_4e1a0b3e5108b3ba28ddc87d`, 25 items: Q76-100).
+  11. `Old_Questions/Direct_NG_2024-2027/Assistant UDC under MPSC paper-II..pdf` (`doc_54743c49e75529f79882a84c`, 25 items: Q76-100).
+- **Actions:** 273 questions reviewed (122 retags, 151 keeps, 0 holds, 0 live changes; 100% target completion).
+- **Taxonomic Distribution:**
+  - `mathematics/arithmetic` (93 items): core numerical computation, fractions, LCM/HCF, speed & distance, time & work, simple/compound interest.
+  - `mathematics/arithmetic/percentages` (29 items): percentage gain, depreciation, and change.
+  - `mathematics/arithmetic/ratio-and-proportion` (28 items): ratio division, direct/inverse proportion, partnership business profit share.
+  - `reasoning-and-aptitude/verbal-reasoning` (24 items): logical reasoning, coding-decoding, and verbal deduction puzzles.
+  - `mathematics/algebra/algebraic-expressions` (17 items): polynomial factors, expansion identities, algebraic simplification.
+  - `mathematics/mensuration/area` (16 items): perimeter and area of rectangular, square, and triangular plots.
+  - `mathematics/algebra/linear-equations` (14 items): linear equation solving and word problem formulations.
+  - `mathematics/mensuration/volume` (12 items): 3D volume and capacity of cylinders, cones, and spheres.
+  - `mathematics/arithmetic/profit-and-loss` (11 items): cost/sale prices, discounts, and trade margins.
+  - `statistics/probability-and-statistics/descriptive-statistics` (9 items): mean, median, and average metrics.
+  - `statistics/probability-and-statistics/probability` (8 items): card deck, coin toss, and dice probabilities.
+  - `mathematics/geometry/circles` (3 items): circular geometry and chord properties.
+  - `mathematics/geometry/triangles` (3 items): triangle angles and right-angle properties.
+  - `mathematics/arithmetic/averages` (2 items): committee and group age averages.
+  - `reasoning-and-aptitude/series` (1 item): AP sequence term calculation.
+  - `mathematics/algebra/quadratic-equations` (1 item): quadratic root determinations.
+- **Defect Documentation:**
+  - Resolved cross-domain anomalies: partnership profit problem (Q92 in Health & Cooperation UDC Paper-II) reclassified from general-studies to mathematics/arithmetic/ratio-and-proportion; speed of sound distance problem (Q97 in SAD UDC Paper-II) reclassified from science/physics to mathematics/arithmetic.
+- **Ledger Verification:**
+  - Readback validation confirmed 273/273 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,698 saved records**, **10,617 unique appearances**, **10,214 deduplicated candidates**, **0 problems**. [Batch 145 report](reports/tagging-batch145-20261108/README.md).

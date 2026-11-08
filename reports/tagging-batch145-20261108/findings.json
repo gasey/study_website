@@ -1,0 +1,16 @@
+[
+  {
+    "id": "finding_b145_udc_paper2_arithmetic_corpus_completion",
+    "paper_id": "multiple",
+    "type": "arithmetic_section_completion",
+    "severity": "info",
+    "details": "Completed 100% full-corpus source-review of all Arithmetic sections across 11 Direct UDC Paper-II examination booklets (273 questions reviewed across 103 rendered source PDF pages). Verified all mathematical domains: Arithmetic (Percentages, Profit & Loss, Ratio & Proportion, Averages, Time & Work, Speed & Distance, Simple/Compound Interest, LCM/HCF), Algebra (Linear & Quadratic Equations, Polynomials), Mensuration (Area, Perimeter, Volume), Geometry (Circles, Triangles, Angles), Statistics (Probability, Central Tendency), and Reasoning (Sequences & Numerical Ability)."
+  },
+  {
+    "id": "finding_b145_cross_domain_ingestion_anomalies_resolved",
+    "paper_id": "multiple",
+    "type": "taxonomic_refinement",
+    "severity": "info",
+    "details": "Corrected legacy cross-domain auto-tagging anomalies: Q92 in 2014 Health & Cooperation UDC Paper-II (partnership business profit sharing) was misclassified under general-studies/indian-economy, reclassified to mathematics/arithmetic/ratio-and-proportion; Q97 in 2018 SAD UDC Paper-II (speed of sound distance calculation) was misclassified under science/physics/mechanics, reclassified to mathematics/arithmetic."
+  }
+]
