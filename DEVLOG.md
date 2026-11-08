@@ -8297,3 +8297,21 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 66/66 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,887 saved records**, **8,808 unique appearances**, **8,407 deduplicated candidates**, **0 problems**. [Batch 119 report](reports/tagging-batch119-20261108/README.md).
+
+### Tagging Batch 120 — Assistant Controller of Mines March-2026 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examination for Recruitment to the Post of Assistant Controller of Mines under Geology & Mining, Commerce & Industries Department, March 2026 — General English (`Old_Questions/Direct_NG_2024-2027/Asistant Controller of Mines March-2026 General English..pdf`, `doc_dd2eef7ce57688cbe7b4aee1`).
+- **Paper Structure:** 100 Marks total (Part A: 34 Conventional Marks [Précis 14 Marks, Official Letter Drafting 10 Marks, Reading Comprehension 10 Marks] + Part B: 66 MCQs [66 Marks]).
+- **Actions:** 66 MCQs reviewed (59 retags, 7 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar/parts-of-speech` (25 items): Q1–Q10 (parts of speech identification: pronoun, noun, adverb, verb, adjective, preposition, conjunction, interjection), Q19, Q20, Q23, Q24, Q25 (conjunctions: yet, since, though, or, if), Q27–Q36 (word formation & conversion: bravery, arrived, unlucky, easily, laughter, sweet, firmly, loneliness, wrong, proud).
+  - `english/grammar` (15 items): Q37–Q41 (sentence structure & functions: imperative, complex, compound, assertive, optative), Q42–Q46 (phrase and clause identification: adjective phrase, noun phrase, adverb phrase, adverb clause, adjective clause), Q52–Q56 (phrase and clause identification: adverb clause, noun phrase, adjective clause, adverb phrase, noun clause).
+  - `english/vocabulary` (6 items): Q11–Q16 (word choice: alleviate, steadfast, momentous, catalyst, inconsistent, mislead).
+  - `english/grammar/prepositions` (5 items): Q17, Q18, Q21, Q22, Q26 (prepositions: beside, on, over, among, below).
+  - `english/grammar/reported-speech` (5 items): Q47–Q51 (direct and indirect speech narration transformation).
+  - `english/vocabulary/one-word-substitution` (5 items): Q57–Q61 (nepotism, philanthropist, ephemeral, eclectic, fastidious).
+  - `english/vocabulary/idioms-and-phrases` (5 items): Q62–Q66 (barking up the wrong tree, rite of passage, end in smoke, harp on same string, give oneself airs).
+- **Defect Documentation:**
+  - Preserved Part A (3 conventional questions, 34 marks: Précis 14 marks on social media tourism, Official Letter Drafting 10 marks by ACM on illegal mining enforcement, and Reading Comprehension 10 marks on Jeff Bezos Princeton speech) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 66/66 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,953 saved records**, **8,874 unique appearances**, **8,473 deduplicated candidates**, **0 problems**. [Batch 120 report](reports/tagging-batch120-20261108/README.md).
