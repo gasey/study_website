@@ -8604,6 +8604,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,961 saved records**, **9,882 unique appearances**, **9,481 deduplicated candidates**, **0 problems**. [Batch 135 report](reports/tagging-batch135-20261108/README.md).
 
+### Tagging Batch 136 — UDC under ARCS Office (Cooperation) 2020 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of Upper Division Clerk (Contract) under ARCS Office, Cooperation Department, January 2020 — Paper-I (`Old_Questions/Direct_2019-2020/UDC ARC Paper-I.pdf`, `doc_6c04049be7947d9060db463c`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (41 retags, 34 keeps, 0 holds, 0 live changes).
+- **Milestone Reached:** **10,000+ candidate records milestone achieved** (10,036 saved candidate records across 137 batch files).
+- **Taxonomic Distribution:**
+  - `english/grammar` (33 items): Q19–Q27 (sentence structure: simple, compound, complex), Q28–Q35 (subordinate clause analysis: noun, adjective, adverb clauses), Q52–Q59 (sentence improvement / error correction), and Q60–Q67 (question tags).
+  - `english/grammar/parts-of-speech` (9 items): Q1–Q9 (parts of speech identification: wrong, up, till, right, such, next to, no, before, both).
+  - `english/grammar/prepositions` (9 items): Q10–Q18 (appropriate prepositions and collocations).
+  - `english/vocabulary/idioms-and-phrases` (9 items): Q36 (phrasal verb: put in a brief appearance) and Q68–Q75 (idioms and phrases: fly off the handle, etc.).
+  - `english/vocabulary/one-word-substitution` (8 items): Q44–Q51 (one-word substitution for descriptive expressions).
+  - `english/vocabulary` (7 items): Q37–Q43 (contextual vocabulary and word choice: proceeds, basics, awarded, beverage, indicating, illusions, outmoded).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Solving Educated Unemployment [25 marks] and Question 2 Précis on Advertising Industry and Consumer Psychology [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,036 saved records**, **9,957 unique appearances**, **9,556 deduplicated candidates**, **0 problems**. [Batch 136 report](reports/tagging-batch136-20261108/README.md).
+
+
 
 
 
