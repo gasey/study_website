@@ -5,8 +5,9 @@ Historical logs explain past work; they do not authorize new operations.
 
 ## Start here
 
-Read this file and `docs/PLAN.md`. For AI question work also read
-`docs/AI-QUESTION-REVIEW-HANDOFF.md` and run its checkpoint command.
+Read this file and `docs/PLAN.md`. For question review/solving read
+`docs/QUESTION-REVIEW-RULES.md`. Use `docs/AI-QUESTION-REVIEW-HANDOFF.md` and its
+checkpoint only for the explanation-backfill queue.
 Read the relevant specialist runbook before operating that subsystem.
 For tagging, classification, extraction labels or bank repairs, first read
 `docs/QUESTION-TAGGING-RULES.md`. It is the single current tagging policy and
@@ -108,6 +109,12 @@ human review or answer verification. Consult
 continuing; never replay old pending files or extend authority to future batches.
 
 ## Product and implementation
+
+For learner answer labels follow `docs/PUBLIC-ANSWER-LANGUAGE.md`: Official key,
+Verified answer only after answer review, Worked solution for content, Explanation
+for reasoning. Keep actual AI/model attribution in admin/audit history; preserve
+public conflicts, provisional-key notices and scoring restrictions. Tag acceptance
+never certifies answers.
 
 - Use approved subject/topic/subtopic classifications. Difficulty labels are retired.
 - Use existing scoring eligibility and answer-status views. Never promote an AI

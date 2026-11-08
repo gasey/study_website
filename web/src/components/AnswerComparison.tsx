@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import {useEffect, useState, type ReactNode} from 'react'
 import {getAnswerComparison, type AnswerComparisonData, type ComparedAnswer, type AnswerResult} from '../lib/api'
 import {SourceQuestionText} from './SourceQuestionText'
@@ -7,7 +8,7 @@ function AnswerEvidence({label,answer,explanation,options}: {label:string;answer
   return <section className="min-w-0">
     <h4 className="font-semibold text-ink">{label} · {optionLabel(answer,options)}</h4>
     <div className="mt-1 break-words"><SourceQuestionText text={answer.answer_text}/></div>
-    {answer.explanation&&answer.explanation!==explanation&&<div className="mt-2 whitespace-pre-wrap break-words"><SourceQuestionText text={answer.explanation}/></div>}
+    {answer.explanation&&learnerExplanation(answer.explanation)!==learnerExplanation(explanation)&&<div className="mt-2 whitespace-pre-wrap break-words"><SourceQuestionText text={learnerExplanation(answer.explanation)}/></div>}
     {answer.document&&<p className="mt-2 text-[12px]">{answer.document.title} · {answer.document.key_status||'Key'} · p. {answer.document.page}</p>}
     {answer.imported&&<p className="mt-2 text-[12px]">Transcribed from the official key; the key document is not linked here yet.</p>}
   </section>
@@ -43,7 +44,7 @@ function Comparison({qid,paperId,revealed=false,options,children,explanation,act
   const alternative=reviewedConflict?data!.solution:candidateConflict?candidate:data?.solution||candidate
   const reviewed=!!(alternative&&alternative===data?.solution)||!!(alternative&&alternative===candidate&&answerReviewed&&candidate?.answer_source==='derived')
   const conflict=!!(official&&alternative&&official.answer_text!==alternative.answer_text)
-  const alternativeLabel=reviewed?'Verified solution':'Suggested answer'
+  const alternativeLabel=reviewed?'Verified answer':'Suggested answer'
   const choice=(value:Pick<ComparedAnswer,'answer_index'|'answer_text'>)=>{
     const label=optionLabel(value,options)
     return label===value.answer_text?value.answer_text:label+' · '+value.answer_text
@@ -70,9 +71,9 @@ function Comparison({qid,paperId,revealed=false,options,children,explanation,act
         <summary className="min-h-11 cursor-pointer py-3 font-semibold text-link">Sources & study tools</summary>
         <div className="space-y-3 border-t border-hairline py-3 text-secondary">
           {data&&<>
-            {data.relation==='agree'&&data.official&&data.solution&&<p>Official key and reviewed solution agree.</p>}
+            {data.relation==='agree'&&data.official&&data.solution&&<p>Official key and verified answer agree.</p>}
 
-            <AnswerEvidence label="Reviewed solution" answer={data.solution} explanation={explanation} options={options}/>
+            <AnswerEvidence label="Verified answer" answer={data.solution} explanation={explanation} options={options}/>
             <AnswerEvidence label="Official answer key" answer={data.official} explanation={explanation} options={options}/>
             {data.review_note&&<p className="whitespace-pre-wrap">{data.review_note}</p>}
           </>}

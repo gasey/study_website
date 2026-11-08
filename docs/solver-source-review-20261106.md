@@ -1,5 +1,9 @@
 # Pilot source review and private draft page
 
+Historical implementation evidence, not current review instructions. Follow
+[Current review and solving rules](QUESTION-REVIEW-RULES.md); preserve these findings
+and receipts without replaying the pilot.
+
 The five original papers/pages were inspected after the SIWC pilot. Four records
 are malformed MCQ representations: two original blanks without printed choices,
 one five-part either/or question collapsed into four options, and one five-part

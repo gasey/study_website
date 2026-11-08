@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getAccountSession } from "../lib/api";
@@ -371,7 +372,7 @@ export default function Vocabulary() {
                 )}
                 {result.explanation && (
                   <p className="mt-2">
-                    <SourceQuestionText text={result.explanation} />
+                    <SourceQuestionText text={learnerExplanation(result.explanation)} />
                   </p>
                 )}
                 <p className="mt-3 text-[13px]">

@@ -1,4 +1,8 @@
-# AI question review — portable continuation
+# Explanation backfill — operational continuation
+
+Content decisions follow [Current review and solving rules](QUESTION-REVIEW-RULES.md).
+This file is the explanation-only queue procedure; dated counts below are historical.
+Run a fresh checkpoint, preserve source/answer boundaries and do not replay old packets.
 
 For any tagging decision, first read [Question tagging rules](QUESTION-TAGGING-RULES.md)
 and use [the model candidate prompt](QUESTION-TAGGING-MODEL-PROMPT.md). An explanation

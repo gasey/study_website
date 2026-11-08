@@ -1,5 +1,18 @@
 # Current implementation and content work
 
+## Public answer language — 8 November
+
+- [x] Add one public answer-language rule: clear labels, routine model attribution
+  in admin/audit, no invented verification or hidden official-key conflicts.
+- [x] Unify reviewed-answer badges, legends, comparisons and public filters as
+  Verified answer; preserve internal sources, scoring and reveal gates.
+- [x] Validate and deploy presentation changes for existing records; omit the exact
+  legacy review certificate at render time and preserve stored/audit text.
+- [x] Consolidate review/solving policy, archive the obsolete October handoff and
+  mark pilot/discovery notes historical. Keep technical runbooks and receipts.
+- [x] Define optional explanation coverage: useful supported technical working,
+  no filler for simple facts or unsupported Mizo explanations; omit empty blocks.
+
 ## Final saved AI tagging publication — 8 November
 
 - [x] Verify 78,049 unique saved targets at reconciled main commit `75eea6a5`,
@@ -46,9 +59,9 @@
   options, answers/provenance and paper metadata preserved; zero outstanding exports.
 - [x] Deploy the admin tagging progress panel, source-bound outcome events and
   guarded resumable operator tools; fix lost publisher helpers after API deployment.
-- [ ] Resolve the 376 recorded blockers in bounded follow-up work. Current tagging
-  pass has 72,073 without a current completion; this is separate from older answer
-  and full editorial inspections. [Completion ledger](../reports/owner-taxonomy-publication-20261108/README.md).
+- [x] Reconcile this historical 376-blocker checkpoint in the final saved pass
+  above. Use its current 258-blocker / 4,334-no-saved-review ledger, not these older
+  counts. [Original completion ledger](../reports/owner-taxonomy-publication-20261108/README.md).
 
 ## Answer feedback follow-up — 8 November
 

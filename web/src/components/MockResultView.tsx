@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import TestShare from './TestShare'
 import {lazy,Suspense,useState} from 'react'
 const AdjustedMockResults=lazy(()=>import('./AdjustedMockResults'))
@@ -94,7 +95,7 @@ export default function MockResultView({
               {!r.correct && <span className="text-keyed">{r.answer_text?`Answer: ${r.answer_text}`:'Original key unavailable'}</span>}
             </div>
             {r.explanation && (
-              <p className="mt-2 text-[14px] leading-[1.6] text-secondary"><SourceQuestionText text={r.explanation}/></p>
+              <p className="mt-2 text-[14px] leading-[1.6] text-secondary"><SourceQuestionText text={learnerExplanation(r.explanation)}/></p>
             )}
           </div>
         ))}

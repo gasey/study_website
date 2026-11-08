@@ -1,6 +1,7 @@
 # Instructions for agents
 
 Read `CLAUDE.md` and `docs/PLAN.md` before working in this repository.
+For question review or solving, follow `docs/QUESTION-REVIEW-RULES.md`.
 For question tagging, classification, extraction labels or bank repairs, read
 `docs/QUESTION-TAGGING-RULES.md` first and use
 `docs/QUESTION-TAGGING-MODEL-PROMPT.md` for candidate work.
@@ -36,3 +37,7 @@ and its exact completion ledger before continuing that work. Original candidate
 files remain historical pending inputs; they do not describe current publication
 state. This bounded owner delegation is not an independent human review, answer
 verification, or authorization to publish future model batches automatically.
+
+For learner answer wording, follow `docs/PUBLIC-ANSWER-LANGUAGE.md`. Keep routine
+AI/model processing labels in admin/audit history, use shared public answer labels,
+and never turn unreviewed suggestions or tagging acceptance into verified answers.

@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import { useEffect, useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getHome, submitAnswer, type AnswerResult, type HomeData } from '../lib/api'
@@ -109,7 +110,7 @@ export default function Home() {
                 })}
               </div>
               {answerError && <p role="alert" className="mt-3 text-[13px] text-wrong-dark">{answerError}</p>}
-              {answer && <div aria-live="polite" className="mt-4 rounded-panel border border-hairline bg-paper p-3.5"><p className="font-semibold text-[14px]">{answer.correct ? 'That’s right.' : 'Not quite — the keyed answer is shown above.'}</p><p className="mt-1 text-[12px] leading-relaxed text-secondary">{answer.verified ? 'This key is published or transcribed from a paper.' : 'This answer is unverified.'}{answer.explanation ? ` ${answer.explanation}` : ''}</p></div>}
+              {answer && <div aria-live="polite" className="mt-4 rounded-panel border border-hairline bg-paper p-3.5"><p className="font-semibold text-[14px]">{answer.correct ? 'That’s right.' : 'Not quite — the keyed answer is shown above.'}</p><p className="mt-1 text-[12px] leading-relaxed text-secondary">{answer.verified ? 'This key is published or transcribed from a paper.' : 'This answer is unverified.'}{answer.explanation ? ` ${learnerExplanation(answer.explanation)}` : ''}</p></div>}
               <div className="mt-4 border-t border-hairline pt-3 font-mono text-[10px] leading-relaxed text-muted">{data?.featured_source ?? 'Question bank'} · {question.answer_source === 'official' ? 'Official key' : 'Transcribed key'} · Choosing records practice on this device</div>
               <Link to={`/bank/${question.id}`} className="mt-3 inline-flex min-h-10 items-center text-[12px] font-semibold text-link hover:underline">See question details →</Link>
             </div>}

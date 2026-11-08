@@ -1,3 +1,7 @@
+> Implementation reference. Current question-content decisions follow
+> [QUESTION-REVIEW-RULES.md](../../../docs/QUESTION-REVIEW-RULES.md).
+> This brief does not grant new publication or model-spending authority.
+
 # Codex Implementation Brief: High-Accuracy MCQ Solver (Oracle VM + ChatGPT Plan)
 
 > **Instructions to Codex:** Treat this document as the implementation specification. First inspect the existing repository and database/API conventions; integrate with what actually exists. Do not assume schemas, endpoints, deployment paths, or credentials. Implement in small, testable phases. The objective is accuracy and resumable processing of thousands of questions, **not maximum throughput**.

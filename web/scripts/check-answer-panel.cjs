@@ -8,7 +8,7 @@ const router={Link:({children,...p})=>React.createElement('a',p,children),useNav
 const source={SourceQuestionText:({text})=>React.createElement('span',null,text)};
 const Explanation=load('components/QuestionExplanation.tsx',{'react-router-dom':router,'./SourceQuestionText':source,'../lib/answerStatus':load('lib/answerStatus.ts',{})}).default;
 const marker=name=>({default:({children})=>React.createElement('div',{'data-tool':name},children)});
-const Comparison=load('components/AnswerComparison.tsx',{'./SourceQuestionText':source,'../lib/api':{getAnswerComparison:async()=>({official:null,solution:null,relation:'not-compared',held:false})}}).default;
+const Comparison=load('components/AnswerComparison.tsx',{'../lib/answerStatus':load('lib/answerStatus.ts',{}),'./SourceQuestionText':source,'../lib/api':{getAnswerComparison:async()=>({official:null,solution:null,relation:'not-compared',held:false})}}).default;
 let next=0;
 const Panel=load('components/PracticeAnswerPanel.tsx',{'react-router-dom':router,'../lib/api':{},'../lib/answerStatus':load('lib/answerStatus.ts',{}),'../lib/practiceState':{getPracticeState:async()=>({restricted:true,message:'Finish your test.'})},'../lib/desk':{getDesk:()=>({saved:[]}),getDeskSync:()=>({loading:false}),subscribeDesk:()=>()=>{}},'../lib/examScope':{scopeLink:x=>x},'./SourceQuestionText':source,'./QuestionExplanation':{default:Explanation},'./AnswerProvenance':marker('source'),'./QuestionCurrentness':marker('date'),'./CurrentAffairsConnections':marker('connections'),'./RewardOutcome':marker('reward'),'./AnswerComparison':{default:Comparison}}).default;
 const props={qid:'q1',question:'Who?',context:{},result:{answer_text:'Al Biruni',answer_source:'key',correct:false,verified:true,reward:{status:'incorrect'}},onViewed(){},onNext(){next++}};
@@ -27,7 +27,8 @@ const props={qid:'q1',question:'Who?',context:{},result:{answer_text:'Al Biruni'
  await act(async()=>tree.update(React.createElement(Panel,props)));
  const nav=tree.root.findByProps({'aria-label':'Continue studying'});assert.equal(nav.findAllByType('button').length,2);
  await act(async()=>nav.findAllByType('button')[1].props.onClick());assert.equal(next,1);
- assert.ok(JSON.stringify(tree.toJSON()).includes('Explanation not available yet.'));
+ assert.equal(tree.root.findAllByProps({'aria-label':'Explanation'}).length,0);
+ assert.ok(!JSON.stringify(tree.toJSON()).includes('Explanation not available yet.'));
  assert.ok(!JSON.stringify(tree.toJSON()).includes('You can check the original paper'));
  await act(async()=>tree.update(React.createElement(Panel,{...props,result:{...props.result,explanation:'A useful explanation.'}})));
  const explanation=tree.root.findByProps({'aria-label':'Explanation'});assert.equal(explanation.findByType('span').children.join(''),'A useful explanation.');assert.equal(explanation.props['data-explanation-status'],'available');assert.equal(extra.findAllByProps({'aria-label':'Explanation'}).length,0);assert.ok(explanation.props.className.includes('answer-explanation'));
@@ -42,5 +43,5 @@ const props={qid:'q1',question:'Who?',context:{},result:{answer_text:'Al Biruni'
  assert.ok(JSON.stringify(tree.toJSON()).includes('Correct'));
  await act(async()=>tree.update(React.createElement(Panel,{...props,qid:'restricted',result:null})));
  assert.equal(tree.root.findAllByType('details').length,0);assert.ok(JSON.stringify(tree.toJSON()).includes('Finish your test.'));
- await act(async()=>tree.unmount());console.log('Answer panel passed: secondary tools collapsed, explanation auto-visible outside collapsed sources, long explanation expands, short empty state, next action and test restrictions preserved.');
+ await act(async()=>tree.unmount());console.log('Answer panel passed: secondary tools collapsed, explanation auto-visible outside collapsed sources, long explanation expands, empty explanation omitted, next action and test restrictions preserved.');
 })().catch(e=>{console.error(e);process.exitCode=1});

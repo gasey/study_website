@@ -1,5 +1,9 @@
 # MCQ solver discovery
 
+Historical implementation evidence, not current review instructions. Follow
+[Current review and solving rules](QUESTION-REVIEW-RULES.md); preserve these findings
+and receipts without replaying the pilot.
+
 Inspected 6 November 2026. This is Phase A and a safe Phase B scaffold for the
 owner's `CODEX_QUESTION_BANK_SOLVER.md`. No production data, schema, billing or
 service configuration was changed. Live OAuth and inference remain unverified.

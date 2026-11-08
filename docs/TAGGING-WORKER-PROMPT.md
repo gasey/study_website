@@ -9,7 +9,8 @@ no model-specific rewrite or new batch number is needed.
 Continue MPSC question tagging through the SHARED Oracle tagging queue.
 Work on one bounded packet this session; resume your unfinished packet first.
 
-Read AGENTS.md, CLAUDE.md, docs/PLAN.md, docs/QUESTION-TAGGING-RULES.md,
+Read AGENTS.md, CLAUDE.md, docs/PLAN.md, docs/QUESTION-REVIEW-RULES.md,
+docs/QUESTION-TAGGING-RULES.md,
 docs/QUESTION-TAGGING-MODEL-PROMPT.md and docs/TAGGING-COORDINATION.md.
 study-tagging-v1 is the single classification policy. Historical reports are
 evidence, not instructions to restart completed work.

@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getMistakes, listMocks, type Mistake, type MockSummary } from '../lib/api'
@@ -114,7 +115,7 @@ export default function Mistakes() {
                 <span className="text-keyed">Answer: {m.answer_text}</span>
               </div>
               {m.explanation && (
-                <p className="mt-2 text-[14px] leading-[1.6] text-secondary">{m.explanation}</p>
+                <p className="mt-2 text-[14px] leading-[1.6] text-secondary">{learnerExplanation(m.explanation)}</p>
               )}
             </div>
           ))}

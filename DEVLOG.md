@@ -9141,3 +9141,37 @@ Validation:127 backend tests,14 coordination tests,2 preparation tests, compilat
 whitespace checks. Full frozen scopes are archived compressed with original-byte
 SHA256s, final unique dispositions and verification proofs in
 reports/owner-taxonomy-final-20261108/. Original proposals/history remain immutable.
+
+
+## 8 November 2026 — One review policy and clearer public answer language
+
+Owner requested confident public labels without routine AI/process attribution,
+retirement of conflicting old solving rules, and optional explanations suited to
+the subject. Added QUESTION-REVIEW-RULES.md as the content-review entry point and
+PUBLIC-ANSWER-LANGUAGE.md as its display policy. Existing tagging policy remains
+its specialist rule. Updated AGENTS/CLAUDE/common tagging prompt; explanation
+backfill handoff is explicitly a technical explanation-only procedure. Archived
+the obsolete October NEXT-REVIEW-HANDOFF (including unsafe local-authority/timer
+instructions), retaining a redirect and all original text. Solver discovery/pilot
+notes are marked historical; implementation brief defers to current content rules.
+
+Public badges, legends, comparisons and learner filters consistently call actual
+reviewed-derived outcomes Verified answer. Official key, Suggested answer, Needs
+review, provisional notices, actual conflicts and scoring/reveal restrictions remain.
+No model, role, approval, answer or provenance state was changed. Read-only live
+inspection found the exact historical printed-source/independent-review certificate
+appended to real explanations. A narrow trailing-footer presentation helper omits
+that fixed text across shared question/comparison views, mock results, mistakes,
+vocabulary, games and landing feedback. It does not strip arbitrary AI words,
+substantive caveats or conflicts, and stored text/admin/receipts remain intact.
+
+Explanation coverage is separate from answer acceptance: simple supported facts
+may stand alone, technical methods are preferred where supportable, Mizo reasoning
+requires competent/source-backed support rather than invented translation or filler.
+Missing public prose does not invalidate existing accepted answers. Shared question
+views now omit empty explanation blocks. Existing endpoint evidence requirements
+remain in force; no answer publication, content migration or bulk rerun occurred.
+
+Validation: public-label/legacy-footer checks, public-card conflict/reveal/auth
+checks, and answer-panel explanation/gating checks pass. TypeScript/Vite production
+build and frontend deployment completed; both-site health checked after release.

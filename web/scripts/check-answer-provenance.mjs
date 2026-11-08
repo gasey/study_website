@@ -5,7 +5,7 @@ const require=createRequire(new URL('../package.json',import.meta.url)),ts=requi
 function load(file){const mod={exports:{}};const js=ts.transpileModule(readFileSync(new URL(file,import.meta.url),'utf8'),{compilerOptions:{jsx:ts.JsxEmit.ReactJSX,module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2020}}).outputText
 new Function('require','module','exports',js)(id=>id==='react-router-dom'?{Link:({to,children,...props})=>React.createElement('a',{href:to,...props},children)}:id==='../lib/answerStatus'?load('../src/lib/answerStatus.ts'):require(id),mod,mod.exports);return mod.exports}
 const {answerProvenance,evidenceLink,default:Badge}=load('../src/components/AnswerProvenance.tsx')
-const {answerStatus,explanationPresentation,answerFeedbackLabel}=load('../src/lib/answerStatus.ts')
+const {answerStatus,explanationPresentation,answerFeedbackLabel,learnerExplanation}=load('../src/lib/answerStatus.ts')
 assert.equal(answerProvenance('derived').status,'needs-review')
 assert.equal(answerProvenance('derived',true).status,'verified')
 assert.equal(answerProvenance('inferred',true).trusted,false)
@@ -32,3 +32,10 @@ assert.equal(answerFeedbackLabel({correct:false,answer_source:'official'}),'Inco
 assert.equal(answerFeedbackLabel({correct:true,answer_source:'derived'}),'Suggested answer')
 assert.equal(answerFeedbackLabel({correct:false,answer_source:'derived'},{reviewed:true}),'Incorrect')
 assert.equal(answerFeedbackLabel({correct:true,answer_source:'key'},{disputed:true}),'Answer under review')
+
+const certificate='Original printed source and ordered choices independently reviewed. Verified worked solution, unofficial; no matching examiner key is asserted.'
+assert.equal(learnerExplanation('The answer follows from the diagram. '+certificate),'The answer follows from the diagram.')
+assert.equal(learnerExplanation('The official key differs. '+certificate),'The official key differs.')
+assert.equal(learnerExplanation('What is AI? The reasoning was independently reviewed.'),'What is AI? The reasoning was independently reviewed.')
+assert.equal(learnerExplanation(certificate+' This key remains disputed.'),certificate+' This key remains disputed.')
+assert.equal(learnerExplanation(null),'')

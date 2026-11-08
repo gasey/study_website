@@ -9,7 +9,7 @@ const source={SourceQuestionText:({text})=>React.createElement('span',null,text)
 const entry=i=>({answer_index:i,answer_text:'Option '+i,explanation:'Reasoning '+i,document:null});
 const json=t=>JSON.stringify(t.toJSON());
 let calls=[],reply={official:entry(1),solution:entry(1),relation:'agree',held:false},fail=false,pending;
-const Comparison=load('components/AnswerComparison.tsx',{'./SourceQuestionText':source,'../lib/api':{getAnswerComparison:(q,p,signal,restore)=>{calls.push([q,p,signal,restore]);return pending?new Promise(r=>pending.resolve=r):fail?Promise.reject(Error('Network failed')):Promise.resolve(reply)}}}).default;
+const Comparison=load('components/AnswerComparison.tsx',{'../lib/answerStatus':load('lib/answerStatus.ts',{}),'./SourceQuestionText':source,'../lib/api':{getAnswerComparison:(q,p,signal,restore)=>{calls.push([q,p,signal,restore]);return pending?new Promise(r=>pending.resolve=r):fail?Promise.reject(Error('Network failed')):Promise.resolve(reply)}}}).default;
 let authenticated=true,posted=[],postError=false,staff=false;
 const account={accountContext:async()=>({authenticated})};
 const review={reviewRequest:async(...args)=>{posted.push(args);if(postError)throw Error('Please retry');return {id:1,status:'open'}}};
@@ -19,7 +19,7 @@ const Actions=load('components/QuestionDiscussion.tsx',{'react-router-dom':route
  let tree;await act(async()=>{tree=create(React.createElement(Comparison,{qid:'q1',paperId:'p1'}))});
  assert.equal(calls.length,0);assert.ok(!json(tree).includes('Reasoning'));
  await act(async()=>tree.root.findByType('button').props.onClick());
- assert.deepEqual(calls[0].slice(0,2),['q1','p1']);assert.equal(calls[0][3],false);assert.ok(json(tree).includes('Official key and reviewed solution agree'));assert.ok(!tree.root.findByType('details').props.open);
+ assert.deepEqual(calls[0].slice(0,2),['q1','p1']);assert.equal(calls[0][3],false);assert.ok(json(tree).includes('Official key and verified answer agree'));assert.ok(!tree.root.findByType('details').props.open);
  reply={official:entry(1),solution:entry(2),relation:'disagree',held:true};
  await act(async()=>tree.update(React.createElement(Comparison,{qid:'q2',paperId:'p2',revealed:true})));
  assert.equal(calls.at(-1)[3],true);assert.ok(json(tree).includes('Answer conflict'));assert.ok(json(tree).includes('Excluded from scored tests pending review.'));assert.equal(tree.root.findAllByType('dd').length,2);
@@ -31,7 +31,7 @@ const Actions=load('components/QuestionDiscussion.tsx',{'react-router-dom':route
  // A current unreviewed answer can differ from a key without becoming verified.
  reply={official:entry(1),solution:null,relation:'not-compared',held:false};
  await act(async()=>tree.update(React.createElement(Comparison,{qid:'candidate',revealed:true,options:['Option 1','Option 2'],answer:{answer_text:'Option 2',answer_index:1,answer_source:'inferred'}})));
- assert.ok(json(tree).includes('Answer under review'));assert.ok(json(tree).includes('Suggested answer'));assert.ok(!json(tree).includes('Verified solution'));
+ assert.ok(json(tree).includes('Answer under review'));assert.ok(json(tree).includes('Suggested answer'));assert.ok(!json(tree).includes('Verified answer'));
  await act(async()=>tree.update(React.createElement(Comparison,{qid:'candidate',revealed:true,options:['Option 1','Option 2'],answer:{answer_text:'Option 1',answer_index:0,answer_source:'inferred'}})));
  assert.equal(tree.root.findAllByProps({'aria-label':'Answer conflict'}).length,0);
  // An agreeing verified solution must not hide a differing unverified practice answer.

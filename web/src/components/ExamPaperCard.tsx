@@ -55,7 +55,7 @@ export default function ExamPaperCard({ paper: p, examId, hideSeriesInTitle=fals
         {(keyTest || reviewedTest) && <div className="rounded-[8px] border border-hairline bg-canvas p-3">
           <p className="font-semibold text-ink">Timed practice</p>
           <p className="mt-1">{p.rule_source === 'platform-default' ? 'Uses practice timing and marks. Original paper rules are not confirmed.' : `Configured paper rules${p.duration_minutes !== null ? ` · ${p.duration_minutes} minutes` : ''}${p.marks_correct !== null ? ` · +${p.marks_correct} correct` : ''}${p.marks_wrong !== null ? ` · ${p.marks_wrong > 0 ? '-' : ''}${p.marks_wrong} incorrect` : ''}.`} Only eligible questions are included.</p>
-          {reviewedTest && <p className="mt-1">The reviewed estimate uses verified unofficial solutions alongside available official keys.</p>}
+          {reviewedTest && <p className="mt-1">The reviewed estimate uses verified answers alongside available official keys.</p>}
           <div className="mt-3 flex flex-wrap gap-2">
             {keyTest && <Link to={`${base}/mock?paper=${paper}`} className={`${button} border-hairline bg-card text-ink`}>Official-key practice · {count(p.scorable)}</Link>}
             {reviewedTest && <Link to={`${base}/mock?paper=${paper}&mode=derived`} className={`${button} border-hairline bg-card text-ink`}>Reviewed estimate · {count(p.practice_count)}</Link>}

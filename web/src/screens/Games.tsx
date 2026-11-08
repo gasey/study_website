@@ -1,3 +1,4 @@
+import {learnerExplanation} from '../lib/answerStatus'
 import GameSetup from "../components/GameSetup";
 import {useEffect,useRef,useState} from "react";
 import {
@@ -1368,7 +1369,7 @@ export function GamePlayer() {
                   ) : (
                     q.explanation && (
                       <p className="mt-2 text-[14px] text-secondary">
-                        {q.explanation}
+                        {learnerExplanation(q.explanation)}
                       </p>
                     )
                   )}
