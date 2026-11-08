@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_eaf3922603cb0396",
+  "appearance_id": "ca84cfd3f1d7f722aa9a",
+  "snapshot": {
+    "record": {
+      "id": "ca84cfd3f1d7f722aa9a",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Chemical Engineering.pdf",
+      "type": "mcq",
+      "question": "The Laplace transform of 1/(s+1) is:",
+      "options": [
+        "1/(s+1)",
+        "2/((s+1)² + 1)",
+        "1/(s+2)",
+        "1/((s+1)² + 1)"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The source PDF page 1 shows the stem as 'The Laplace transform of e^(-t) sin t is:' (the bank extraction lost the time-domain function). Using L{e^(-at) sin wt} = w/[(s+a)^2 + w^2] with a = 1 and w = 1 gives 1/[(s+1)^2 + 1], which is the supplied option at index 3.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "2",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Chemical Engineering.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Junior Grade of Mizoram Forest Service (ACF) - Chemical Engineering",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Chemical%20Engineering.pdf"
+    }
+  },
+  "source_fingerprint": "1e296dbf9501a0942d8e1786ab8ae50a881ce3ff8db3cbfb617f3c395fb84b84",
+  "appearance": {
+    "id": "ca84cfd3f1d7f722aa9a",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Chemical Engineering.pdf",
+    "type": "mcq",
+    "qnum": "2",
+    "qnum_seq": 2,
+    "page": 1,
+    "question": "The Laplace transform of 1/(s+1) is:",
+    "options": [
+      "1/(s+1)",
+      "2/((s+1)² + 1)",
+      "1/(s+2)",
+      "1/((s+1)² + 1)"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Chemical Engineering",
+    "difficulty": "medium",
+    "explanation": "The source PDF page 1 shows the stem as 'The Laplace transform of e^(-t) sin t is:' (the bank extraction lost the time-domain function). Using L{e^(-at) sin wt} = w/[(s+a)^2 + w^2] with a = 1 and w = 1 gives 1/[(s+1)^2 + 1], which is the supplied option at index 3.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+1':7 '1':5 'laplac':2 'transform':3",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_eaf3922603cb0396",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "1/((s+1)² + 1)",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

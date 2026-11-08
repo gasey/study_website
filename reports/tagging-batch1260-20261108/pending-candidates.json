@@ -1,0 +1,549 @@
+[
+  {
+    "canonical_id": "cq_db9ce56a9d35aefc",
+    "appearance_id": "desc-3cb120b743daf898c440",
+    "source_fingerprint": "303df16be73410e673651ec019027441ba427dbc36bc3ae723bc0e06985fe72e",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/land-and-revenue",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses mizoram land administration: Land Revenue Act, acquisition, eviction, and land records. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram land administration: Land Revenue Act, acquisition, eviction, and land records.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cfe1aa36b1c4c032",
+    "appearance_id": "desc-cebe5b524a515fcafba4",
+    "source_fingerprint": "c85acacaed0e1132d9af2eea023a6479a140a5299120ba5111b7d998f15620e3",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ce3a3fc0994bfd1e",
+    "appearance_id": "desc-8f41b44489022761bbb7",
+    "source_fingerprint": "85316013888dc2c00444347c2f6d918c05c1b77d09268a26503003f230c088e0",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_86a061d50a771d0e",
+    "appearance_id": "desc-2558e75b2b658538d29e",
+    "source_fingerprint": "272604c1fa3eeab663de2821961313fe81ae6bee8cf5d18dc673300359815c87",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c045bb8f51851400",
+    "appearance_id": "desc-b5ec0a0c96f15babe96d",
+    "source_fingerprint": "8df238538488ef964a99e153272f0e21de314d393fdd9035aaad6906595accd9",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b6577a5836030094",
+    "appearance_id": "desc-82fb1a10eb7008472502",
+    "source_fingerprint": "bcddf42e6a1cefb284522765cf05c7d1099f6442ed9140346c77468b2bed3582",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5498ef39437d1dce",
+    "appearance_id": "desc-7fd05fb6028aed00cfbf",
+    "source_fingerprint": "bc072357e6b9c8023e9edd633acef2e59b906916b98c3fa4dc70015142f96ea9",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a15439a731311948",
+    "appearance_id": "desc-78b69fd0d71ce21519f2",
+    "source_fingerprint": "56feec1c941ac035425df2a6eb128ef7b9ef5615174293f36ca12d0ad991255a",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9fbe1baea14abc1",
+    "appearance_id": "desc-dd44229461bad58b5bca",
+    "source_fingerprint": "ac26520bcb2a54f1645432fda1d317aa52ceeebd98064fc89cd762705f7a70a8",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_754938eaf9ccb9ec",
+    "appearance_id": "desc-84cbed41925937f426fb",
+    "source_fingerprint": "e394b58f937c4920be4366adc83079012a654b854a58796d47a5a1a65de12f66",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88467edbe77afe76",
+    "appearance_id": "desc-422403c5867dcc6f0791",
+    "source_fingerprint": "06c1ad77122e2fa5abf2f1d55232c8a2c2579b326b59c365b1b69311c7dfbb82",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dcdf3631d406a48b",
+    "appearance_id": "desc-605ff897d6740fcb4e28",
+    "source_fingerprint": "5206101f3cab06ad1ca8bbecdc5419a08a9d2130f50962b616168eb8caf15d76",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ee3e3e748d8d4487",
+    "appearance_id": "desc-c0ab0523fdeb80685806",
+    "source_fingerprint": "212432802a3b63b606f7ddd1363c655d417d9cd4c014b88f4edbe3a7ee05e6fb",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b670635cc09cfc1",
+    "appearance_id": "desc-639d5783a61393dad6bc",
+    "source_fingerprint": "9082f4645b20f679da9ef594a45a31365823bfa84514347a0d92b38d8082e424",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0c164e8ba331ba345985bbbb",
+      "sha256": "b09079f6c4bec5c7539abc4e08557c0cf20c983d992a23ad9fe86cdd1d4374e0",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Forest Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
