@@ -8405,3 +8405,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 35/35 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,291 saved records**, **9,212 unique appearances**, **8,811 deduplicated candidates**, **0 problems**. [Batch 125 report](reports/tagging-batch125-20261108/README.md).
+
+### Tagging Batch 126 — Stenographer Grade-II (Contract) 2025 Paper-II (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examinations for Recruitment to Stenographer Grade-II (Contract) under MPSC, May 2025 — Paper-II (`Old_Questions/Direct_NG_2024-2027/Stenographer Grade-II (Contract) under MPSC - Paper-II..pdf`, `doc_1eaa4f24a9e11090e0bb8154`).
+- **Paper Structure:** 100 Marks total (100 Objective MCQs, 1 mark each; 100% paper completion).
+- **Actions:** 100 MCQs reviewed (93 retags, 7 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `general-studies/current-affairs` (58 items): Q1–Q10, Q12, Q14, Q16–Q19, Q21–Q23, Q25–Q27, Q29–Q32, Q34–Q36, Q39–Q51, Q53–Q55, Q57–Q60, Q63–Q64, Q67–Q70, Q72–Q75 (national and international events, summit venues, awards, and schemes).
+  - `mathematics/arithmetic/*` (13 items): Arithmetic section Q76–Q88:
+    - `mathematics/arithmetic/profit-and-loss` (4 items): Q85–Q88.
+    - `mathematics/arithmetic/ratio-and-proportion` (3 items): Q82–Q84.
+    - `mathematics/arithmetic/averages` (2 items): Q76–Q77.
+    - `mathematics/arithmetic/percentages` (2 items): Q78–Q79.
+    - `mathematics/arithmetic` (2 items): Q80–Q81 (speed, distance, time, and train lengths).
+  - `reasoning-and-aptitude/*` (12 items): Reasoning section Q89–Q100:
+    - `reasoning-and-aptitude/verbal-reasoning` (8 items): Q91, Q94–Q100 (coding-decoding, linear ranking, letter positions, direction sense).
+    - `reasoning-and-aptitude/series` (4 items): Q89, Q90, Q92, Q93 (number series completion).
+  - `general-knowledge/sports` (10 items): Q1, Q4, Q13, Q24, Q33, Q56, Q61, Q62, Q66, Q71 (championships, trophies, medals, tournaments).
+  - `general-studies/indian-polity` (3 items): Q20, Q52, Q65 (Right to Know, Census Union subject under Art 246, President's Rule under Art 356).
+  - `general-studies/geography` (2 items): Q11, Q28 (national parks and wildlife sanctuaries in India).
+  - `general-knowledge/art-and-culture` (2 items): Q37, Q38 (archaeological discoveries and UNESCO Memory of the World classical texts).
+- **Domain Reclassification:**
+  - Legacy ingestion had erroneously labeled all 100 questions as `english/grammar`. Fully reclassified: 75 General Knowledge / Current Affairs / Polity / Geography / Sports questions cleaned, 13 Arithmetic questions placed under `mathematics/arithmetic/*`, and 12 Reasoning questions placed under `reasoning-and-aptitude/*`.
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,391 saved records**, **9,312 unique appearances**, **8,911 deduplicated candidates**, **0 problems**. [Batch 126 report](reports/tagging-batch126-20261108/README.md).
+
