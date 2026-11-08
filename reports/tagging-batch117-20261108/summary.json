@@ -1,0 +1,39 @@
+{
+  "batch": 117,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English(Staff Nurse).pdf",
+      "paper_title": "Competitive Examinations for Recruitment to the Post of Staff Nurse under Health & Family Welfare Department, May 2019 — General English",
+      "document_id": "doc_78d0b8fd15d46d116bf9050d",
+      "sha256": "ba5e00caa039e6cf700c5383e0c2c734be5203f4da82cfc18f5b032408421048",
+      "targets": 68
+    }
+  ],
+  "targets": 68,
+  "completion": "100% paper completion achieved for Staff Nurse under H&FW 2019 General English (68/68 MCQs reviewed: 22 Grammar Core [Clauses, Synthesis, Transformation, Classification, Functions, Punctuation], 16 Idioms & Phrases, 5 Tenses, 5 Prepositions, 5 Parts of Speech, 4 Synonyms, 4 One-Word Substitution, 2 Subject-Verb Agreement, 1 Vocabulary in Context; 2 conventional written questions [32 marks total: Essay 20 marks, Comprehension 12 marks] documented in written intake)",
+  "actions": {
+    "retag": 65,
+    "keep": 3,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 32,
+  "breakdown": {
+    "english/grammar": 26,
+    "english/vocabulary/idioms-and-phrases": 16,
+    "english/grammar/tenses": 5,
+    "english/grammar/parts-of-speech": 5,
+    "english/grammar/prepositions": 5,
+    "english/vocabulary/synonyms": 4,
+    "english/vocabulary/one-word-substitution": 4,
+    "english/grammar/subject-verb-agreement": 2,
+    "english/vocabulary": 1
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy, including reclassifying Q67 ('Odontology') incorrectly tagged as 'dental' into 'english/vocabulary/one-word-substitution'.",
+    "Documented Section A (Essay writing [20 marks] and Reading Comprehension [12 marks]) in pending-written-intake.json.",
+    "Verified all 68 MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

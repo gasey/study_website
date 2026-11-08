@@ -8237,3 +8237,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 
 
 
+
+### Tagging Batch 117 — Staff Nurse under H&FW 2019 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Staff Nurse under Health & Family Welfare Department, May 2019 — General English (`Old_Questions/Direct_2019-2020/General English(Staff Nurse).pdf`, `doc_d5d0f6630f9a7d32c9497e2f`).
+- **Paper Structure:** 100 Marks total (Section A: 32 Conventional Marks [Essay 20 Marks, Comprehension 12 Marks] + Section B: 68 MCQs [68 Marks]).
+- **Actions:** 68 MCQs reviewed (65 retags, 3 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (22 items): Q19, Q20, Q37–Q40 (clause analysis: adverb, noun, adjective), Q41–Q44 (sentence synthesis: too...to, participle, negative, comparative), Q45–Q48 (sentence transformation: simple, compound, complex, conditional), Q49–Q52 (sentence classification: simple, compound, complex), Q53–Q56 (semantic/functional: condition, optative, maxim, frequency), Q57–Q60 (punctuation and capitalization mechanics).
+  - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms & phrases).
+  - `english/grammar/tenses` (5 items): Q18, Q29–Q32 (tenses: present perfect continuous, present perfect, future perfect, past perfect continuous, simple present).
+  - `english/grammar/prepositions` (5 items): Q25–Q28, Q34 (prepositions: into, by, beneath/under, at, for duration).
+  - `english/grammar/parts-of-speech` (5 items): Q21–Q24, Q33 (parts of speech: that book, That is, only three, Call back, Whose).
+  - `english/vocabulary/synonyms` (4 items): Q61–Q64 (Dedicate, Candid, Moderate, Taboo).
+  - `english/vocabulary/one-word-substitution` (4 items): Q65–Q68 (Psephologist, Verbatim, Odontology, Drey). Corrected Q67 erroneously tagged as `dental` to English vocabulary.
+  - `english/grammar/subject-verb-agreement` (2 items): Q17 (Either he or you are), Q36 (No one has come).
+  - `english/vocabulary` (1 item): Q35 (collocation: felt my pulse).
+- **Defect Documentation:**
+  - Preserved Section A (2 conventional questions, 32 marks: Essay 20 marks on Balanced Diet / Past & Present / Social Problems, and First Aid reading comprehension 12 marks) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 68/68 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,763 saved records**, **8,684 unique appearances**, **8,283 deduplicated candidates**, **0 problems**. [Batch 117 report](reports/tagging-batch117-20261108/README.md).
