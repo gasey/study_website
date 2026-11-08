@@ -1,0 +1,2537 @@
+[
+  {
+    "canonical_id": "cq_efdf733cbaa08f24",
+    "appearance_id": "a4db38460a980215988b",
+    "source_fingerprint": "d16002018c56afcb077066f05f76a7b92ad69aae744dc2111279e8ac631fb679",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de18e26f18b33991",
+    "appearance_id": "cd08f506854fdb6c1b46",
+    "source_fingerprint": "1e25ab7fd00688a52f20ef82a9ab840d03cbaa7c16cd10dcdfb76c3b86f09173",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2d097ddaabe77a7f",
+    "appearance_id": "53fb5d656083d1bcdae1",
+    "source_fingerprint": "0847cabe066b2627c5337d9bd307709205804581504cd054aef4150adbc1e2f8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ebca4d13f6df05d",
+    "appearance_id": "5b3141ebfd784a871afd",
+    "source_fingerprint": "6f14e164e14c26cad49521070c081a221edb14f822069ad6b3f2c8ce24762800",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5427afe3214e61e4",
+    "appearance_id": "cf05e30092b55e0d8fd6",
+    "source_fingerprint": "a16a43fb733a21ff8d001e1aefc720f90fe05130833f8d29dc964b6a53014fe1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_313c686c7ae02caa",
+    "appearance_id": "117a853798ca25987a36",
+    "source_fingerprint": "fecbd3c410cb7765a0c006bfe8494e474048b18639a4adaea963da3d071ae18f",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_df3d5334bcc9c756",
+    "appearance_id": "9241abb4c39573bae75b",
+    "source_fingerprint": "cc5b5bc9c7e0d0f02ac048d8caab8c62237d6ec4cbca806295869399f217e89e",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_729928a1d58cb5df",
+    "appearance_id": "490f91ad671798420484",
+    "source_fingerprint": "fa70174d729a125562553ffb27dc5106c9a2e1afdf268cd3372fc9f8a1483571",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7fad19e493e873a3",
+    "appearance_id": "0953fd691894cf2f9a8a",
+    "source_fingerprint": "9a503756e9de0f490abcc29199b1d2ca1a96901f719b437e336c1a5406a32ef5",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_da0ab628b2d5b726",
+    "appearance_id": "0af82848e098487018db",
+    "source_fingerprint": "4046d6d6d512db856859025e140f5d46e0b7e7f7416e4a8c8edbc4241daf9909",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4425d95323e88fde",
+    "appearance_id": "19dc578ce327ad03afa0",
+    "source_fingerprint": "cc74ab58717e714ea5cff487bac304c434e8cc4da1480ab3a61828844712d259",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_78ab8b680dae19ae",
+    "appearance_id": "59a2c9c52df86f7ddd3f",
+    "source_fingerprint": "e99f386d08c8e4a5d5ad866421d6a52442d26d43d2cd3b902902350f7e02a05b",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e4c9cea8d3d8ae2",
+    "appearance_id": "a91b9cf24404f8869aa5",
+    "source_fingerprint": "211ff55b474c55a82c09004b386892dbff506d7ff70f2f0b6271a912eab82616",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4066bed45872618c",
+    "appearance_id": "e70ce269b30af185478b",
+    "source_fingerprint": "494e84720f3ac40418157f10d2e974e54d19ec4faa9c1eea293430d2d1d568fe",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1111b3f60a8ca591",
+    "appearance_id": "ca1bc5e7341f1e0924d0",
+    "source_fingerprint": "3c758b89d45a50edcb2b0d064e3bd3012f6dc130be8528608deb5270925ace33",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_62ea5f84a8220088",
+    "appearance_id": "7ff2c501ba1a5b87ecbb",
+    "source_fingerprint": "2bbd7f3ef060ec4c8d0bf1b6ba2c0ed411385bfa24398f57edf0c8168374825d",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3bb5df3847fcd435",
+    "appearance_id": "495cac0e7c3dc96e2a06",
+    "source_fingerprint": "00830f783cde4fb73f9bc2f63b8c3d27e9103d9b77756656abb91f399be4cea6",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccbb784477c6250c",
+    "appearance_id": "69a74618f315f6d61ebd",
+    "source_fingerprint": "40c0447d8d9249495ade873c114994b99ba62f485f8d5ab40ff0cb9e87a0f0e8",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d34aef8facf11c82",
+    "appearance_id": "cf6ffed09a526905b36d",
+    "source_fingerprint": "f3bebc93eedbe983496dae30b6053f343c73e7e452113dcf90f760736f2c5f69",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_247156aa4943f257",
+    "appearance_id": "18164657ae900d750bcb",
+    "source_fingerprint": "7193e8f16bb0fecbafc7cc99e77a8bc504308c3126a710cd221e0eb7b9383dc5",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d243f8a61a601b54",
+    "appearance_id": "6f2877a2432549e8da1b",
+    "source_fingerprint": "a38832e824b85c88e0b848b81c8ba2346bc59a891d2fe4a59a95c75885c51de5",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9ade11cdb683dd6",
+    "appearance_id": "b3690f9ad4b22a00fa0d",
+    "source_fingerprint": "6e424edc7b2124e00b5049a83a46114be40aab4a8b8b4c4ecedc5f582e239d69",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_226dfa3272e8c2a1",
+    "appearance_id": "aae06031c539cd1a7f05",
+    "source_fingerprint": "51dd8edbe85e54670c1a90fbc72d7dcba540b728494d33f4c899cfce49b5e753",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b66607c49da290e",
+    "appearance_id": "1da02f60989c00b05252",
+    "source_fingerprint": "19134d525e91052d54f139b3292a6db6602de036a67d305eedb34cc69bc98dee",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0566a4b88a4b0c1b",
+    "appearance_id": "6e8f95790e609a640ffd",
+    "source_fingerprint": "416f0da732106c1c36e9c36c982f5e3f19a9db6c1cc99102cc2d85dd58b35210",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6820037dfe70c343",
+    "appearance_id": "e2cf858ffc8af768390a",
+    "source_fingerprint": "f1f99319488a31bf26e934ef95e60c768242f5eeacb8e7b7aca5a74ac45911d6",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b8a159220dde7af",
+    "appearance_id": "232515ee9267fcfa748b",
+    "source_fingerprint": "015082e72f704f541562c4702b22476dfc35ac0a90667180c1625861682c4bf6",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_deb50dcf3903ce42",
+    "appearance_id": "a19ba41da899c55efd4c",
+    "source_fingerprint": "e9ae2c05e77219ffcfa90ec0514a81e3f6e24d69bc3f5c1412fbb6d7ec5bde99",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ee6992d96688ac09",
+    "appearance_id": "436e242f83a175c6c597",
+    "source_fingerprint": "b38cc680ba43f13fdeb961c8e8b691d58541f60f7590e96e00ecc75489aafec2",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba6d450ee2d5c1b1",
+    "appearance_id": "bb9c703cf1fba33229b0",
+    "source_fingerprint": "264ee02f10e6791cec8e70aac53a37bc66cd0173f61a86882aedbf3c9facc9f8",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b7e372765573038",
+    "appearance_id": "19918c654ae92b486786",
+    "source_fingerprint": "a748d63e4f4e3c356c637e15df82fa1ea91feaafde01a935cfc030f2152c9422",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e81758752317e9fd",
+    "appearance_id": "b9fc727ce1879bd4169d",
+    "source_fingerprint": "4420d5973c232843e1dfc0cb71d092c9b181405310589553bd17ec446d044232",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_34f09eece14da9c6",
+    "appearance_id": "cd0a2694fe61095c2f9f",
+    "source_fingerprint": "64e6febb290108604dc7fa43c7b84cd39d6f692ec79eef5b806f26b0d253f6cc",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dae79c0f26338a33",
+    "appearance_id": "6aa6be0985557885fc08",
+    "source_fingerprint": "c4de76edd67b1b13f61077ac71fb17202d12e3831f7df5a81fdc67ddb209a5c6",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9e501f6590861d2b",
+    "appearance_id": "0a60ff950c3664c082e2",
+    "source_fingerprint": "0e157563bceb849149e827b5ef7cb11384eddd88ef9e3e9c4fd86bf9f2f21fea",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e0e3d29c91a0eee8",
+    "appearance_id": "e4bbf186774ee38074bb",
+    "source_fingerprint": "eb8c94f5a27ac091126d6eca53d1996105a7ef549b70b24b78c3fff59b80c829",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3047c0542d95ba9c",
+    "appearance_id": "35b789e7e3b447784824",
+    "source_fingerprint": "e1626a37a3ba6d94ea2e9aefcd773d033e13403e060b928eb8ae50857beb17a3",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2e11e19957920a2",
+    "appearance_id": "7b312413d8a4dcd23f0a",
+    "source_fingerprint": "9bf3f59eb95285eeef9049b71e223efd5445f98c6baaf09ea4cdf5a824f6c9c2",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cad89c11c70124a7",
+    "appearance_id": "9253cb4de7f046a74e84",
+    "source_fingerprint": "88369de10dd38a6109c2ef2ef8e5880fa11045558e66e013ad3e6ccf1a0fba47",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4c9d0866e5553c5",
+    "appearance_id": "c997996ff63c2d4c0964",
+    "source_fingerprint": "eb91112c5bd43e4249bf9ffdcacff100372983b2e5b84209b809746d55750895",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7005bbaad0d2fb06",
+    "appearance_id": "66097d3e317cbc6b3bcc",
+    "source_fingerprint": "307e6b91e77fedb4f7e5e7942be48d4a11d6749dd212e8a74ac8a6f36133621f",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b86db6b67721cd4",
+    "appearance_id": "e8c99f96022977012ba3",
+    "source_fingerprint": "db412de5758af9c2433a7d0e42803b257f03c547e58af357647ee6ea77ac4372",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6761bb01bf82b0f6",
+    "appearance_id": "0ed4ed8aaab0bd1b4152",
+    "source_fingerprint": "2c12a77bb94b9e0898c2ef8cdacef33447f94aeb590ea1c2be1f9fd291d0fe22",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a65b6a02dcc9799",
+    "appearance_id": "db94c54575826e8f3177",
+    "source_fingerprint": "62f7cb0fdb8877a02c97d11cbd33423081f90d14f6d6073aec0d4cf672d8c312",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_67bac3deb6ab3818",
+    "appearance_id": "9a8422e51beb376ac769",
+    "source_fingerprint": "38746ff02db6c134cdd99e56c5b8a22a6a2f13191bbacb853aa5468c74500cef",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_73078a18a12ee1d9",
+    "appearance_id": "40683c4435533c6ba46e",
+    "source_fingerprint": "696b5aec167796ac97d7ee402c98117be386149afb2741f2e7f8b4581a767a8c",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ac95868b57d3b035",
+    "appearance_id": "df4a6348e92be27d4c6f",
+    "source_fingerprint": "42c542f68c5135c49f40b769eed262bd50d2a1c256f54e200bac1b1630de4e1e",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76a3164c1eb0a701",
+    "appearance_id": "cfc229354620c5a72f09",
+    "source_fingerprint": "536681424f2803b37624d6e02b809373f2503d8d4be02878255b41ed7329a01b",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf0667724638e419",
+    "appearance_id": "8d222f3c82877e21489c",
+    "source_fingerprint": "a4d75c9ebcc78de3f991f35f89350dde7969d0aeddd1606fb6af0e1f65c1d178",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e7e40f247379643b",
+    "appearance_id": "ea0a67b63f58ba3a58b9",
+    "source_fingerprint": "0a5d3f197eb500175f6e9e4a42aa3d74b743ed40f60cfb50b2d1c4e218c054c2",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2960c7e0f819889c",
+    "appearance_id": "ba76f1cbc32c1edf9fe5",
+    "source_fingerprint": "34ce544150b5c9815012c48cdcdbd4a285543204ba89bd6fd6b96a13aff0aa17",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28c1dce0585d3961",
+    "appearance_id": "a69bd39f3d1272d5873e",
+    "source_fingerprint": "0c9d701c5ae3b29c008a020fb2e4e0ef9c53a5d7ac296a01d23ef4b26b08ef68",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96f3340932708f47",
+    "appearance_id": "1d1bddf2c1164819213e",
+    "source_fingerprint": "3784b7ff4c399265f563fc2bdb3d2ca3b93e56d8789c382aea626fa8c945a9da",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_14237fc434d6648b",
+    "appearance_id": "5b59cec21e8d0584517c",
+    "source_fingerprint": "3cc2054846463bf761994be36a1d495cd5c65ea393ce6b04bcab96e06593c034",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0248a8e689c3debb",
+    "appearance_id": "c1e424ec2e00a97d2cad",
+    "source_fingerprint": "0014885dafad70d3ee62fec4ba5528d3933b2348db1047eb36c8e6e352b3dff0",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb2f3b848eda19d9",
+    "appearance_id": "edbe1cac53b81b890c2a",
+    "source_fingerprint": "9236e8fdabb8fd8f5fd3c68145a15a528a627e23fd043415c629efd8e8ddcc8d",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd4bc703762d565d",
+    "appearance_id": "63bbb4f411e37d6392b7",
+    "source_fingerprint": "074124780cc0f5456dddfd36511f61b2d3b883269c35b235806523e54c45718f",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6c1599dc1d13c41",
+    "appearance_id": "498804ac002568578569",
+    "source_fingerprint": "86877c8359b08f5000924b08c3b458884fbd1c0fb59a1ef8d2dbbfc5877c67a6",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb7f65197d178e27",
+    "appearance_id": "6632956acdb975d3839d",
+    "source_fingerprint": "5763f1d3272a17a777317f67bfb1731f95cc9fabe75b94639128784539b8e339",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b50f375a773faa92",
+    "appearance_id": "58a856bef495b3972b37",
+    "source_fingerprint": "aaac7e626d075d9ef9659e3bc480bff895f15679297b53b98695e7364193930a",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8bf4e2d14836e1bd",
+    "appearance_id": "5c88aef67641916c665a",
+    "source_fingerprint": "d53e1940f028bfcc98116c2f0623f1afdb7a9d54a7ede2f477353472d4577627",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0e8bd4233f77819",
+    "appearance_id": "d1cf79c42b29758568c0",
+    "source_fingerprint": "19bfb5bbe6de1c6cfad58ac50143e6185093ba13ebfca881f05fbd6acd0f53f4",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d59dcf775c3bef4",
+    "appearance_id": "41258806014fa4e509d0",
+    "source_fingerprint": "2363d884d9e35ad4ea3cb5a642f9d2b38ee827941ae1d920bad4d72c91c77ac2",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6e294d5355b8bd5",
+    "appearance_id": "87a81d8391aece76be03",
+    "source_fingerprint": "7b097775edaad5f6f328bed57c096d55cc777fab4519006453b8593be8984a1c",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cb914b673e8d82ce",
+    "appearance_id": "9693dfc54be296b791d3",
+    "source_fingerprint": "4bfd4000615a15fe64f6cf36a169a94ad720e97510b5386dba2b67be5417ad51",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c25f339fde023f748e690a23",
+      "sha256": "57d9438edf27c4bea51b92fed82cf11589f6a3f131498a4d3b566b80c076d0a7",
+      "note": "Verified against registered booklet source for District Social Welfare Officer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
