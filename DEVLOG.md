@@ -7818,3 +7818,22 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **6,979 saved records**, **6,901 unique appearances**, **6,501 deduplicated candidates**, **0 problems**. [Batch 96 report](reports/tagging-batch96-20261108/README.md).
+
+### 2026-11-08: Source-Reviewed Question Tagging Batch 97 (Inspector of Taxes & Excise 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 97 (`reports/tagging-batch97-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Inspector of Taxes & Inspector of Excise under Excise & Narcotics Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/General English Paper-II (Inspector of Excise).pdf`, `doc_8a5e05a82f577a746bcc2509`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 49 retag, 51 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (51 items): Q1–Q10 (parts of speech), Q21–Q30 (word class / noun derivation), Q31–Q40 (connectors & conjunctions), Q41–Q50 (sentence structure conversions), Q51–Q60 (synthesis), Q61–Q70 (transformations: voice, negative/affirmative, degrees of comparison).
+    - `english/grammar/prepositions` (10 items): Q11–Q20 (preposition selection in context).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q71–Q80 (idioms and phrases).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution / term definitions).
+    - `english/grammar/tenses` (9 items): tense forms and sequences.
+    - `english/vocabulary/synonyms` (5 items): Q81–Q85 (synonyms / closest meaning).
+    - `english/vocabulary/antonyms` (5 items): Q86–Q90 (antonyms / opposite meaning).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,079 saved records**, **7,001 unique appearances**, **6,601 deduplicated candidates**, **0 problems**. [Batch 97 report](reports/tagging-batch97-20261108/README.md).
+
