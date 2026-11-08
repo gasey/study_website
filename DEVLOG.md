@@ -8049,6 +8049,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,057 saved records**, **7,979 unique appearances**, **7,579 deduplicated candidates**, **0 problems**. [Batch 108 report](reports/tagging-batch108-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 109 (Surveyor-I 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 109 (`reports/tagging-batch109-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Surveyor-I under Land Revenue & Settlement Department, June 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (Surveyor-I).pdf`, `doc_a011a84f3eb731f4571d7a3d`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 78 retag, 2 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (17 items): Q49–Q56 (sentence types and communicative notions: declarative, exclamatory, negative, interrogative, advice, imperative), Q57–Q65 (sentence structure: simple, compound, complex; degrees of comparison: positive, comparative, superlative).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passages: Passage 1: Martin Luther King Jr.'s "I Have a Dream", Q17–Q22; Passage 2: Rabindranath Tagore on English literature and Indian thought, Q23–Q27; Passage 3: Plato, freewill, and cognitive capacity, Q28–Q32).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q8 (Scot free, few and far between, next to nothing, by fits and starts, behind the scenes, by leaps and bounds, better half, black and blue), Q9–Q16 (barking up wrong tree, don't put all eggs in one basket, beat a dead horse, drop of a hat, make hay while sun shines, under weather, riding high horse/gravy train, maggot in meat).
+    - `english/vocabulary` (15 items): Q66–Q70 (contextual meaning: grief/sob, upset, ambiguity, inebriated, indefatigable), Q71–Q75 (word choice: inquisitive, meddle, eyelashes, gradually, traffic light), Q76–Q80 (word forms: tradition, broadcast, lecture, grudges, thoughtful).
+    - `english/grammar/prepositions` (8 items): Q41–Q48 (preposition usage: by, between/among, by/on, in, into, on, till, into).
+    - `english/grammar/parts-of-speech` (8 items): Q33–Q40 (correct form of nouns, verbs, adjectives, and adverbs in context).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Problem of educated unemployed / Communal Harmony / Hazard of mobile phones) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,137 saved records**, **8,059 unique appearances**, **7,659 deduplicated candidates**, **0 problems**. [Batch 109 report](reports/tagging-batch109-20261108/README.md).
+
+
 
 
 
