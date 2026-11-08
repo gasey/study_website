@@ -8622,6 +8622,25 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **10,036 saved records**, **9,957 unique appearances**, **9,556 deduplicated candidates**, **0 problems**. [Batch 136 report](reports/tagging-batch136-20261108/README.md).
 
+### Tagging Batch 137 — UDC under Taxation 2021 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of Upper Division Clerk (U.D.C.) under Taxation Department, March 2021 — Paper-I (`Old_Questions/Direct_2020-2021/UDC Direct under Taxation Deptt - Paper-I.pdf`, `doc_837238c875027c242a3a741d`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Précis 25 Marks, Essay 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (15 retags, 60 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar/parts-of-speech` (18 items): Q1–Q10 (parts of speech identification) and Q61–Q68 (collective nouns: library of books, mob of rioters, school of fish, constellation of stars, bevy of ladies, flock of sheep, clump of trees, team of players).
+  - `english/grammar/tenses` (10 items): Q11–Q20 (tense form identification: Future Indefinite, Present Continuous, Past Perfect Continuous, etc.).
+  - `english/grammar/subject-verb-agreement` (10 items): Q41–Q50 (subject-verb agreement and pronoun agreement).
+  - `english/grammar/prepositions` (10 items): Q51–Q60 (prepositions and prepositional phrases).
+  - `english/grammar` (10 items): Q21–Q30 (sentence types: affirmative, negative, interrogative, imperative, exclamatory).
+  - `english/vocabulary` (10 items): Q31–Q40 (homophones and contextual word choices: beech/beach, knot/not, whether/weather, etc.).
+  - `english/vocabulary/idioms-and-phrases` (7 items): Q69–Q75 (similes and idiomatic comparisons: as cunning as a fox, as quick as lightning, etc.).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Précis on Ancient Indian Science and Panini [25 marks] and Question 2 Essay on Saving Planet Earth / Chapchar Kut / YMA / Corruption [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **10,111 saved records**, **10,032 unique appearances**, **9,631 deduplicated candidates**, **0 problems**. [Batch 137 report](reports/tagging-batch137-20261108/README.md).
+
+
 
 
 
