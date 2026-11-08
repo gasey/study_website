@@ -8257,3 +8257,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 68/68 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,763 saved records**, **8,684 unique appearances**, **8,283 deduplicated candidates**, **0 problems**. [Batch 117 report](reports/tagging-batch117-20261108/README.md).
+
+### Tagging Batch 118 — Translator under Art & Culture 2019 General English (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of Translator under Art & Culture Department, May 2019 — General English (`Old_Questions/Direct_2019-2020/General English (Translator).pdf`, `doc_1d713c23315a4439c086e097`).
+- **Paper Structure:** 100 Marks total (Section A: 42 Conventional Marks [Essay 20 Marks, Précis 10 Marks, Verse Paraphrase 6 Marks, Mizo-to-English Translation 6 Marks] + Section B: 58 MCQs [58 Marks]).
+- **Actions:** 58 MCQs reviewed (58 retags, 0 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q8 (idioms meaning: hit upon, backed up, come off, losing ground, far cry, came to grief, fast life, bone of contention), Q9–Q16 (idioms in context: beggars description, harp on same string, followed suit, moved heaven and earth, sixes and sevens, threw cold water, wrong side of sixty, sum and substance).
+  - `english/grammar` (14 items): Q27–Q32 (clause analysis: adverb clause, adjective/relative clause, noun clause), Q33–Q37 (sentence structure analysis: simple, compound, complex), Q44 (linking verbs & predicate adjectives), Q45 (degrees of comparison), Q47 (adverb modifier structure).
+  - `english/grammar/parts-of-speech` (11 items): Q17–Q26 (parts of speech: preposition, pronoun, conjunction, verb, adverb, adjective, noun), Q48 (conditional subordinating conjunction: unless).
+  - `english/vocabulary` (6 items): Q50–Q53 (word choice: adapt, prescribe, admittance, petition), Q55–Q56 (nouns: consignment, catalogue).
+  - `english/grammar/voice` (5 items): Q38–Q42 (active and passive voice transformation).
+  - `english/vocabulary/one-word-substitution` (3 items): Q54 (Ambidexterous), Q57 (colleague), Q58 (Ethnology).
+  - `english/grammar/subject-verb-agreement` (1 item): Q43 (My friend and mentor has arrived).
+  - `english/grammar/tenses` (1 item): Q46 (laid the book).
+  - `english/grammar/prepositions` (1 item): Q49 (on behalf of).
+- **Defect Documentation:**
+  - Preserved Section A (4 conventional questions, 42 marks: Essay 20 marks on Cultural Values, Précis 10 marks on Nehru's letter to Indira, Verse paraphrase 6 marks on Shirley's Death the Leveller, and Mizo-to-English translation 6 marks) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 58/58 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,821 saved records**, **8,742 unique appearances**, **8,341 deduplicated candidates**, **0 problems**. [Batch 118 report](reports/tagging-batch118-20261108/README.md).
