@@ -8373,3 +8373,17 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 77/77 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,216 saved records**, **9,137 unique appearances**, **8,736 deduplicated candidates**, **0 problems**. [Batch 123 report](reports/tagging-batch123-20261108/README.md).
+
+### Tagging Batch 124 — Tutor under H&FW (MCON) 2019 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examinations for Recruitment to the Post of Tutor under Health & Family Welfare Department (MCON), September 2019 — General English (`Old_Questions/Direct_2019-2020/General English (Tutor, MCON).pdf`, `doc_f74e64f7df554a9fc96489b1`).
+- **Paper Structure:** 100 Marks total (Questions 1–5: 60 Conventional Marks [Essay 20 Marks, Précis 10 Marks, Job Application Letter 10 Marks, Proverb Expansion 10 Marks, Reading Comprehension 10 Marks] + Questions 6–45: 40 MCQs [40 Marks]; 100% paper completion).
+- **Actions:** 40 MCQs reviewed (40 retags, 0 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/vocabulary/idioms-and-phrases` (16 items): Q30–Q45 (phrasal verbs & idioms: run up, saw through, takes after, worked upon, takes up, go by, looks down upon, hear me out, hot water, smell a rat, stands well with, at a stretch, goes to heart, come to grief, when pigs fly, keeps a good table).
+  - `english/grammar/parts-of-speech` (14 items): Q6–Q19 (parts of speech identification: noun, pronoun, adjective, adverb, preposition, verb, conjunction).
+  - `english/grammar/subject-verb-agreement` (10 items): Q20–Q29 (subject-verb agreement rules with collective, compound, disjunctive, and distributive subjects).
+- **Defect Documentation:**
+  - Preserved Questions 1 to 5 (60 conventional marks: Essay 20 marks on Health / Environment, Précis 10 marks on Travel effects, Job Application Letter 10 marks, Proverb expansion 10 marks, and Reading Comprehension 10 marks on Football in India) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 40/40 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,256 saved records**, **9,177 unique appearances**, **8,776 deduplicated candidates**, **0 problems**. [Batch 124 report](reports/tagging-batch124-20261108/README.md).
