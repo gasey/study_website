@@ -1,0 +1,13 @@
+# Tagging Batch 291: COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF ASSISTANT LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP OFFICER (ASSISTANT LESO) - ENGINEERING PAPER-II (ELECTRICAL ENGINEERING) - Assistant Grade (50 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_NG_2024-2027/Assistant LESO-2026 Electrical Engineer Paper-II..pdf`
+- **Title:** COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF ASSISTANT LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP OFFICER (ASSISTANT LESO) - ENGINEERING PAPER-II (ELECTRICAL ENGINEERING) (Assistant Grade)
+- **Total Targets:** 50
+- **Document Binding:** `doc_d6beeeb9111fb6d334081ebd` (sha256 `95bace355918f8592eb11ad44d90437355e643fd799d66f6b33a2fbd1eb520c2`)
+
+## Actions
+- **`keep`:** 0
+- **`retag`:** 50
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.
