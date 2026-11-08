@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_c02d8edbc279bf6a",
+    "appearance_id": "804f33f3cb5d8093fc53",
+    "source_fingerprint": "bea95ee83789a1fb265113c24ce5ccc3de93779c8c571cef05494c6d8124644a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ce427dfd5db8ab2",
+    "appearance_id": "23edd40ae080686eb042",
+    "source_fingerprint": "077f24d65f1f1d3873bcbdb85ba2a06a51c43a22797c1eff0a15419444a626cc",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cb7de5a7dfaeaba6",
+    "appearance_id": "082e6d265dc24247cad2",
+    "source_fingerprint": "9810193706a016630780aaaa0cce89978d3dcf3f1c3b49a11cf268f34596bf4e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1482b98cd17cefce",
+    "appearance_id": "cd455e0332a93ac497a4",
+    "source_fingerprint": "4b4e2cc9f1f7dcae227bd7e8fd9f7c3cc6c3dc78c57367b193840def92447ca0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a37c4290c9d4a2d",
+    "appearance_id": "067bf95f7f800e96bdae",
+    "source_fingerprint": "33cd94af1e33569fd681eaab646b685821d728af74971a38817bf00585f872f8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d0a96049e91f5893",
+    "appearance_id": "a8c8ddff6a2dd961ca93",
+    "source_fingerprint": "b4ef54aa9575abe124cd75dc7afa080430df5e66a00877986006c2e0510e71e5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f1c17068797529d6",
+    "appearance_id": "2e0979a322580b2f9073",
+    "source_fingerprint": "97054a66e824c18b92ff2cf93cd0f97ce5aa0d2a7f2d0cbca901430d56441d24",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e55cac4e2a9123c0",
+    "appearance_id": "c957ad63beb48faaa959",
+    "source_fingerprint": "a4ba3b92580251315b93088bee2bf617a86caedec0422644b7b0ee9a1e593f45",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_202dff5871c2cb01",
+    "appearance_id": "4eb1dc57761863653e10",
+    "source_fingerprint": "052831067da095b66fbdf5550304d2d53c56e056d84e12952c6db0653ab4cc88",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d2315c346ef3852",
+    "appearance_id": "5a42bfbdcd9157a6e543",
+    "source_fingerprint": "b6f9d4d3f62eee8365c549565ca634d00d449987cc083bade011560307f956e9",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c82f868eac7cc261",
+    "appearance_id": "80c676f043a728fab9e7",
+    "source_fingerprint": "448b9b4b1af6be139f25b16dfcc7d061002ebb22cecc838d3b037edee8c9eff1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6bba6e1adfca2ce4",
+    "appearance_id": "e8bfe68285ef6191c1c4",
+    "source_fingerprint": "ff1a49513ae0664789cbabaee089698193574e7c694b206cc36141c9fa73f139",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89dbbec21d48242a",
+    "appearance_id": "4f0be134ea526b032303",
+    "source_fingerprint": "4ee97a3d787a49634b2492f17c3becfddf719eee26402948ec7638994d5f711e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd1d2d6658b34551",
+    "appearance_id": "b00b841f80eeabcea7c7",
+    "source_fingerprint": "0fb8525b1bca40a52a74e324d0444987652d165df247cf136f7f8bdc8d3a5f08",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e5689525fd35d01",
+    "appearance_id": "97b863d67248314dd20d",
+    "source_fingerprint": "20968b9ead22cfcc663a021ce26e64c8b3349055c480718b88bee701cdfa78f7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c2aefc8e9abf3ddb",
+    "appearance_id": "cbeeaca4556219342841",
+    "source_fingerprint": "189614c14b85e91ad35ed82b797ceaf5dcf20ecf0963bd21df001a60a135b46c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12818ef5f4303ee6",
+    "appearance_id": "d9cbdc769d78d5904103",
+    "source_fingerprint": "9eee52eabc909abcb66bfd6ab19c0fa627f53336ff47c8fbeb674a80ad15edb1",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b47770ef752a5033",
+    "appearance_id": "8c4bbdcd7861bbcb4d01",
+    "source_fingerprint": "6a1fe2e8c038a321db70780b3e69b1e2479294a8046a2aacffcd26d3201f8da0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_910e9b1daa5bb943",
+    "appearance_id": "01a903d9d3132cdc0c2b",
+    "source_fingerprint": "3ce5e42e0452e4a8e419068fc36f42d289ec366b483139becb74dc3c2e264702",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5c5ce92cf0df2a9",
+    "appearance_id": "a8f6acc1d5701362399d",
+    "source_fingerprint": "814d6ed78c45d5397e4eb01d6295491a83bc0aa365a50cb00b9ac71ebaee133a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_321f406428e89774",
+    "appearance_id": "5c564408ab0f2432cf64",
+    "source_fingerprint": "07940cccc23af6826c96e558c0a6fc3bf2a78b6f32ce03eda896aa48b14ba6ad",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses world History: International relations, diplomatic treaties, and multilateral institutions. Appropriately classified under general-studies.",
+    "tested_skill": "World History: International relations, diplomatic treaties, and multilateral institutions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89bcabd5cc8cafb0",
+    "appearance_id": "376a645e50b1fbc5ca18",
+    "source_fingerprint": "aa9d83e5e63827cdf362db2f5d54a717822c9030a790404e181c698f0a508d35",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e37741b2428b0f5",
+    "appearance_id": "f13a1235c34efbbb1c6f",
+    "source_fingerprint": "513dc9a52aeab4098d284f096b0418e02e8c18963c6ad1e3d874b2bdd3f0f7ee",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c2c4501d6f12587e",
+    "appearance_id": "9edb9b1431e296c22796",
+    "source_fingerprint": "def6b4e5679cc3724ab266298ad2f52d1e7ffeca2accb1c07ebf3d6287461ff5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a68a560324fde756",
+    "appearance_id": "0a0dddb06ed53162b28b",
+    "source_fingerprint": "2f8c6e43bb87c9442922fd30c4309eb5707d246befd2f31cd3a8e748b621cb5d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71c4760353b7c74f",
+    "appearance_id": "8bb7f5af874eaac22906",
+    "source_fingerprint": "433c59b96ad82e5b635db4550e279b0803618200866c64160a628a7801a2a21a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_24bb6877b6ab819a",
+    "appearance_id": "dd83f79023dc3c3543eb",
+    "source_fingerprint": "fc16c1f3b3b493a6e59cd5d43f0358aceb8af98f6a20e2ac383ea7c0fa58058f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81bd210e2c1d335e",
+    "appearance_id": "185cf4f09092d6c160da",
+    "source_fingerprint": "62d203575761cdfe76602a0d6698602edd3d152e114da48497726a6502f02a91",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e0f94dc278954bd",
+    "appearance_id": "9953427f94fb120dc4ad",
+    "source_fingerprint": "0fd617364a31e553c0ce5669438143a812f51812fb0efc72ef975ad078861607",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33e46e87d6a9ef05",
+    "appearance_id": "d69b5d9077658df2d99f",
+    "source_fingerprint": "cd1e5882e25a49a80e83badace8c1692114d4dabf425b3cf38b845b82561bae6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4aa0e528e77983f6",
+    "appearance_id": "d2eebacaa9e9e60d8ac7",
+    "source_fingerprint": "0eb66df3ef878df302abeda1abf87fd647b0e45b862bbb85508268e1ce669364",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1637bce96147e7a8",
+    "appearance_id": "0a2ce0a73e77a9587839",
+    "source_fingerprint": "221a3f9dabfe1bcb4d0736fc0e1280d1c906f788378fbba8e7dc21f454be9da7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_09f3e1d3f3039d79",
+    "appearance_id": "8c79c27658688f1f6d13",
+    "source_fingerprint": "689465dc80798ec79a433a584a966727dafd0860b175cfd433b5a270d36a9cfa",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ac521f2d8d81b8d",
+    "appearance_id": "8a95c4cd4f54cd6d1648",
+    "source_fingerprint": "749a81d672d9a5f29f51901fa7d74b3580e2605f0e378de11eca2a43ee2fb6fa",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_575e4d8861fc3fc0",
+    "appearance_id": "43049c67a481e254086f",
+    "source_fingerprint": "9be7c21f9943be92b5d29994bedf8f0a7c816264c7cc0898b19889892d8c07e1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bead55d777ebe97e",
+    "appearance_id": "1ae9342d996742616556",
+    "source_fingerprint": "5acad86e8c3f6262dc206369d46616bf42c9af47ae6234c75dde19e930b4462b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2502f26421cd715",
+    "appearance_id": "0e6a62e35f8a30b2bee8",
+    "source_fingerprint": "3b333a44c2ee8e9bd4b30ccf008ade817968b2809fc6628dc18574b8183498b7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dead094b72a21867",
+    "appearance_id": "93c08267666472607393",
+    "source_fingerprint": "e02cabccb3a29d186d5fd69a44ed2ba0d1c2ef2bfff42e1e54c6170c5c489b2d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_268310b053a38ae7",
+    "appearance_id": "fd83b8a4e6ef6cceeafd",
+    "source_fingerprint": "f0ffb176c78f72ee44ca422c443160e31980c73d20d6fc9e7c52201d482e14eb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5681fb60c6362ad",
+    "appearance_id": "a8be37662f95d45c0a73",
+    "source_fingerprint": "9935bb84629540dde3734bef65fc9657eb1f9a0cdfadaf570dd0efa1d8f1084a",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb348cf06ab2fec2",
+    "appearance_id": "d47b15c78b1977553f84",
+    "source_fingerprint": "37d44a4fafe75c92566bb48a53cab70cefe94e43878c583d7d96e1000a6bb7a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aaeab76d74de4af6",
+    "appearance_id": "d56e673a9d3dfcccf511",
+    "source_fingerprint": "58ed0b2706b7b557f9af1e6e5cec07e744999e2ff8fcd94e5946bcb6d9c8e4d0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_162cacde08c9e1df",
+    "appearance_id": "d5177859a8dfb73e0343",
+    "source_fingerprint": "06f1cd4eb4539ffc0b29b230a0e3f414386e1733536023f25725aa4c7a785f25",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_53eec385ceeea681",
+    "appearance_id": "540605d07aff3f461e17",
+    "source_fingerprint": "4d8399de3403b50a7aee76ad327423c3e7ad8c4f26720ac71a21d799ed0471eb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43ad190dc32f4c60",
+    "appearance_id": "5ebf8ed0558ebc0c49c6",
+    "source_fingerprint": "539ab41edf2747d04d810ea8a01b9aa7c00e8c310c51b28e6a3993c15560fe33",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_64a4db81af7418cb",
+    "appearance_id": "2d1cf478e73b7459ee9c",
+    "source_fingerprint": "5640c59402bd25bb19a92e815054f12abd2f87ed6ad19024cb2232fd320278cc",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d71188ec942c588",
+    "appearance_id": "6a77486a97bba613701b",
+    "source_fingerprint": "2b724a809fb84526878144f1a9bea4b3a042e88972ea31af432f5979a3aedb53",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e710be2b28464d62",
+    "appearance_id": "3d69fc1e7f58b83eb247",
+    "source_fingerprint": "071c44b6b683156c3cb4bce8ffdad4e8df97af31d8cbbdbafb3b1379938fa280",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e88167087e5d7411",
+    "appearance_id": "8b8afcf9b75246f2a15b",
+    "source_fingerprint": "65677860f001783065aaabc05e85a4acb2162f76a8fda0e859a6a74af70f93a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a6310458c8e31db",
+    "appearance_id": "39fc110fa3d87ff6a5c9",
+    "source_fingerprint": "2d9c101ccd22d3fd9437c9efdddb8ad1b6cff2362a649e8c92ba27fcfe077ad2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e53c9d9573118ad5",
+    "appearance_id": "03f577cf1c7506d8ad18",
+    "source_fingerprint": "5cf3511f9cde8b08e03d11e8702d852899612d05c25efdf5a06a13ada0faf140",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b787783d8668992e",
+    "appearance_id": "d3b65bcf8ebefd232bf3",
+    "source_fingerprint": "beddfec22048a990fc6698ff48c6788edb2781482ec74f73b5eea48013cee813",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9adfff8f2c111e56",
+    "appearance_id": "24ec11c649d182545262",
+    "source_fingerprint": "41d76213ceb587b77bcafa731239b729ce3b30fbb57094fe549a8fd06c042ff9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3625b5169dcd8b0",
+    "appearance_id": "7a7380c280ac6a5c43bc",
+    "source_fingerprint": "33cc591f6e1f40ba8659f235c58ebd7c086a7a627eb21e01c9b36e21e8d6f434",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d69d9808a292a1d",
+    "appearance_id": "b70b398872e0a1fe625f",
+    "source_fingerprint": "04d8fe6a3acc6fda184b2bb3b2ba9f726f96a56f6658a8b158d261eda638eedb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_280ecf8da0f13980",
+    "appearance_id": "e7f3060bf4d11977c57c",
+    "source_fingerprint": "1c718d181be4be5e6c8f821bea712a97168260f59dbd7dff49d1bba3c2943ecd",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5b6b5b2eb487f13",
+    "appearance_id": "f038d656e6b509fe7da9",
+    "source_fingerprint": "59d756fe4eaa38020dc0a1a8917c8d74b9c77d8f437e78c4349b85b5441e4d51",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_adcdf8579eb22c94",
+    "appearance_id": "3de3f9d3c01f9fe4d722",
+    "source_fingerprint": "4caa5f08f83591f83d2e6a1c77415e4d3779f36d388dd4f846de97aa2e30d0ac",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c434c0364f39d533",
+    "appearance_id": "e957f05dda4746369ea2",
+    "source_fingerprint": "e03bcf964c88726860a4e0a058ee655c0ad247564e60c690ba08ef171acf0175",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9d54b0ce621fbba",
+    "appearance_id": "c545092fd29a1727aed4",
+    "source_fingerprint": "87e71851d5059fa240489e7003e0dcc3579f1d92ff9abd37d5f6a271c36e0654",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_26d389217c3ccab0",
+    "appearance_id": "2d276563bab07adea048",
+    "source_fingerprint": "228f496e447ac8f77ad101ad37b9e6adbd3673048f552aab0119c16673c47982",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f4de109e5828388",
+    "appearance_id": "4484d9bd1b6fec8e47c5",
+    "source_fingerprint": "ee876871ac5c7c8908e1971ff4d278837c809ff2c4611dea16fb305bd4aa87a5",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d109fde43d9ba95b",
+    "appearance_id": "9dc33e0654a83f82a129",
+    "source_fingerprint": "bfd6ce40a3726f99210aece8ade32036a34598ba99fda73fc0b6b695d10fa995",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7eb5c8fdeeb55f6",
+    "appearance_id": "d4c8fd47b209d53e1752",
+    "source_fingerprint": "7891da59b2de2d73f2558009774cf4cfc85f36c560d8d3db6e4b24e565cd00b0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e95938ccefec1068",
+    "appearance_id": "192815db43e61ee4df94",
+    "source_fingerprint": "d716b3c8c403f8b7330b9269ca4760552c91357960ed47f413d9d9c52c2bd235",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_11342e6c8bab17eb",
+    "appearance_id": "177c54c9087554b68ab8",
+    "source_fingerprint": "bf2fc74b3b34da8956fabfaf0148113c05ff128001eea8a366b27febe665da7d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c03968b4f9da2e2e",
+    "appearance_id": "5c2bc61c4c87b7d307d4",
+    "source_fingerprint": "ec4469bfaa2d793ff65aa00dee5496a91aeca98fc9a0eb1e9476ae2afbcbb4b9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_86622fa8e3b2b92f",
+    "appearance_id": "46ef35c20934d0f9df7a",
+    "source_fingerprint": "f8468ca6d5f705f4dcf7c3421054f58a2e6c317a16e69aab9191cce11daa96e2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dc181bb007f5c6bf",
+    "appearance_id": "7f39102dbc71c3790679",
+    "source_fingerprint": "0b83b846ec15d1fdcf69c3c13601000b0efadcb97c2146ed564213a75d0fcc8b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e9f630f3615453c",
+    "appearance_id": "5a7943ac52be595a562b",
+    "source_fingerprint": "9b0e9ef02dbc5578ae8f5f3ef998269f3096243696cd3bb3cc3b7fecb50ddaaa",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e44cfa7f4f9ebcbc",
+    "appearance_id": "fae9e14d4018fdceaa1e",
+    "source_fingerprint": "048fca6e146f1e48f2170fc851542a26beb8b730a8128afaff46ea86354b4778",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb96de06bd59208d",
+    "appearance_id": "07fe1e317eb9cc9a3024",
+    "source_fingerprint": "9dbd2116fbebec24734f0575d7065e2b4bb5a47961f240a0e905204cca5497c6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_19cfa02c0def9ee8",
+    "appearance_id": "fa7a366a7fb001dde1c1",
+    "source_fingerprint": "6775ff0476ba4d516bc9b222e66939bdccb8371857557eab0889190e7d189a06",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32c0d429ba2d8f76",
+    "appearance_id": "9f213952019f6a9b5586",
+    "source_fingerprint": "5b1d24ed76d02d97eb88484eaf35eb38c10fe4708943264709806383389e1875",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a687d59ef4b2de6b",
+    "appearance_id": "f812628003e75c68bafe",
+    "source_fingerprint": "9cbe991a66f5f21d7219e1fad319547721833ac9f34e41d55d555dc39d72e474",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses world History: International relations, diplomatic treaties, and multilateral institutions. Appropriately classified under general-studies.",
+    "tested_skill": "World History: International relations, diplomatic treaties, and multilateral institutions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9fc795d40fa868c",
+    "appearance_id": "3c95bc45b2d3abe29400",
+    "source_fingerprint": "ff0dbff063a724fef3d81e4d081b96eb0f66ecef9c9d060f4876f95d7c8ca025",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52c6021c2fa1dcae",
+    "appearance_id": "2a688a96dea71bdd8a91",
+    "source_fingerprint": "f7b4b1fb72210efd6bb9fa52939e9bbc6e801f0a60c397759732cc990e013c87",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3f8a2f22c7ddc071",
+    "appearance_id": "743bbc6379b1385c250a",
+    "source_fingerprint": "a1c63d013687294d6db070e56c88398a85de663c11546e1a09102f2315f7666e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff554ae1689f90d9",
+    "appearance_id": "d3300027125e73d4a52b",
+    "source_fingerprint": "95130214c5e05e8c2ed47e6dafeec008c7d514cb31b8422bc04f336b16796aef",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7043bdb2f7f88499",
+    "appearance_id": "41876a928cde8040b3fd",
+    "source_fingerprint": "cbe3599c3b7a9c6eeff818f5caa02e66673d9720b25064db18146bafde6aa9a6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f068abb557260ed2",
+    "appearance_id": "4bb1b07fe31042e919ae",
+    "source_fingerprint": "16c4c4d50a4c348f12a9a33bad958c788e0b95986622b4d44a7900b61acdd269",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6f4d15e357e84e1",
+    "appearance_id": "af4f16fd74c0c672b77c",
+    "source_fingerprint": "2f0b0588b71dc7222447d11310b2cf3397b2e3f25391eea36986730b0393ef36",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0057bd7280689069",
+    "appearance_id": "815f1afa88e5692c2365",
+    "source_fingerprint": "24675d8d94786ec38a09e6f0aa70f7479de84c3d6cd0303d02f266eb2ded6790",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7f48c6d52bbf592",
+    "appearance_id": "9fe52b9783e14208736c",
+    "source_fingerprint": "f5a8122157db66460cdce42c9c728f52ca64d9b7a36fd66b12eb2bb6c49dc0c0",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39284b0ed11345d1",
+    "appearance_id": "433710f2b5e5fb16843f",
+    "source_fingerprint": "033122236f784905868e6a7aaa74fc7e8e5e0b8423312696d74c09d5f8d87b0e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8741cb6b15ce80fb",
+    "appearance_id": "36f09c8022b76b62f8dc",
+    "source_fingerprint": "a6989f622a39e1af75597814c9cfc01df402130ad483e2e8478fbe822c428bc7",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_463eae3885db4d06",
+    "appearance_id": "d6a697bcfb2f68f59349",
+    "source_fingerprint": "10bffe37f6ac5071c027d395d438123e49d27bc201443ca6397464ddfd082463",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_758c70fc84fef884",
+    "appearance_id": "85144d1f0a3ca914e243",
+    "source_fingerprint": "77b5237bff91a9d283ca8206811cbcd296b0b0325814f2c9bc6b0bf3e9c2c8ac",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23a10d802b5101ca",
+    "appearance_id": "1ee10ee590655d0efb8f",
+    "source_fingerprint": "f17eb68283a10390b5ed71e530d19e4aade1b9c2e58a99f10b23e1f0111c3ccb",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cfde3df54611d5d5",
+    "appearance_id": "cde01b7c4aa5658cf45d",
+    "source_fingerprint": "02939f1f17864d19b39fff95bc49d1e8d7462845b4021a799837adece399f65d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_564589cc346cc71d",
+    "appearance_id": "ba7e97c9cfd4d4647cc3",
+    "source_fingerprint": "db597390252a1ea96dea204bbaa7a74c043dd377f01b3718b6e30bafefe12487",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_afc9458613189884",
+    "appearance_id": "fd3552f8c554dbd17092",
+    "source_fingerprint": "fa0da2dddb3d77a8d4d949890b152487ee153d8d99b21cc837d3e61c5b24197a",
+    "current_primary": {
+      "subject_id": "public-health",
+      "topic_id": "public-health/epidemiology",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e998050fc2d1a69",
+    "appearance_id": "d1e77f62216695d0fbb5",
+    "source_fingerprint": "a52b0faa51d8c5aa8f50119160a48898f9d06de482fb51c40a458fdb47716ae4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_063f0f9ef0e995fc",
+    "appearance_id": "d3527aabebbfee29dc0b",
+    "source_fingerprint": "ea703ba0f72b301052a323b1cbae81c1fd5b0c349601b2ee6b9871d2984c5bcc",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30f16e94780039d5",
+    "appearance_id": "4af4331dd80d47c9e8a1",
+    "source_fingerprint": "be02ff7f34ac71a0eacad06f10ba0c9ce7f864ed7c55e806c8faddf3bd2c805e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9d7f8b5efec1645",
+    "appearance_id": "ce2916de3f9d68ffabb2",
+    "source_fingerprint": "02041528cbe35433ad5d9ee07d710765aa2e50d3fa50944b0ea425a19b0db569",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6e704ef8c9ce70f4",
+    "appearance_id": "8410103b1162b26420d4",
+    "source_fingerprint": "7ddcb3ae3525edeec08c8f472dd8131ce357459d79e5fe57db9f83bf04ce3cc6",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa1e1dd876f1ab9e",
+    "appearance_id": "91f4b08c2e70c0d5b3ec",
+    "source_fingerprint": "1d4810aa9ee870fffd24c7321a5412789ac4a8ce916314c2b6be8bdd3517fc99",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c22612fa1840b1a",
+    "appearance_id": "20ae2d936c276315277b",
+    "source_fingerprint": "d6f4f5ca5bf50735697e5931ee0ee3ec3927eadcd3d90e22d097f5c6997ae604",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses assessment aligned with syllabus specifications under medicine. Appropriately classified under medicine.",
+    "tested_skill": "Assessment aligned with syllabus specifications under medicine.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_668f9660f065d93f",
+    "appearance_id": "ff949bc35b96283af1bb",
+    "source_fingerprint": "00260778017ff78b3b0e412b4a5b5aabe570787c0b35a43d2ace6c98dbc3cc3f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_bcf7668891aa0e0eaa2ee5f4",
+      "sha256": "b25b5ad545bb98e603d80ec8ba2cb2f41c922f976312ef4a5f9ad4c0587829b1",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

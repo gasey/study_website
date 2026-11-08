@@ -1,0 +1,13 @@
+# Tagging Batch 318: COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM - Instructor, ITI (100 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf`
+- **Title:** COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM (Instructor, ITI)
+- **Total Targets:** 100
+- **Document Binding:** `doc_c37840c02594c693a34a6ab7` (sha256 `22677851cc66920e8ccce8c6c66a4f2ba42e0133c561950ee9f7b18403afe7b9`)
+
+## Actions
+- **`keep`:** 40
+- **`retag`:** 60
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.

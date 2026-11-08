@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_23b64089a870312e",
+  "appearance_id": "c9bdb6f4c187cdabce59",
+  "snapshot": {
+    "record": {
+      "id": "c9bdb6f4c187cdabce59",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "An e-commerce site stores credit card numbers in plain text in the database. The database is breached. What fundamental security principle was violated?",
+      "options": [
+        "Using HTTPS on the website",
+        "Data encryption at rest",
+        "Two-factor authentication for customers",
+        "Rate limiting on the login page"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Final Answer Key of Instructor, ITI.pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 10,
+      "qnum": "86",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "5ea4fcf5a79d035013dc80d08bea6b39e2ec47748000a9c81e00f8ba02ea8b0c",
+  "appearance": {
+    "id": "c9bdb6f4c187cdabce59",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "86",
+    "qnum_seq": 86,
+    "page": 10,
+    "question": "An e-commerce site stores credit card numbers in plain text in the database. The database is breached. What fundamental security principle was violated?",
+    "options": [
+      "Using HTTPS on the website",
+      "Data encryption at rest",
+      "Two-factor authentication for customers",
+      "Rate limiting on the login page"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Final Answer Key of Instructor, ITI.pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'breach':19 'card':8 'commerc':4 'credit':7 'databas':15,17 'e':3 'e-commerc':2 'fundament':21 'number':9 'plain':11 'principl':23 'secur':22 'site':5 'store':6 'text':12 'violat':25",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_23b64089a870312e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Data encryption at rest",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

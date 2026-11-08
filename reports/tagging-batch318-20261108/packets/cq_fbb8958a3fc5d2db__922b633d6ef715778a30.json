@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_fbb8958a3fc5d2db",
+  "appearance_id": "922b633d6ef715778a30",
+  "snapshot": {
+    "record": {
+      "id": "922b633d6ef715778a30",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "A program needs to store each student's roll number as the key and their name as the value, then retrieve any student's name instantly by roll number. What will this code output?\nstudents = {101: \"Mama\", 102: \"Zara\", 103: \"Puii\"}\nprint(students[102])",
+      "options": [
+        "101",
+        "Zara",
+        "1",
+        "Error"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Final Answer Key of Instructor, ITI.pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 12,
+      "qnum": "100",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "9f830ac6c26695c722f7f78fc2ce75268ef15476965fc24d61964fc99715eb39",
+  "appearance": {
+    "id": "922b633d6ef715778a30",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "100",
+    "qnum_seq": 100,
+    "page": 12,
+    "question": "A program needs to store each student's roll number as the key and their name as the value, then retrieve any student's name instantly by roll number. What will this code output?\nstudents = {101: \"Mama\", 102: \"Zara\", 103: \"Puii\"}\nprint(students[102])",
+    "options": [
+      "101",
+      "Zara",
+      "1",
+      "Error"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Final Answer Key of Instructor, ITI.pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'101':36 '102':38,44 '103':40 'code':33 'instant':26 'key':13 'mama':37 'name':16,25 'need':3 'number':10,29 'output':34 'print':42 'program':2 'puii':41 'retriev':21 'roll':9,28 'store':5 'student':7,23,35,43 'valu':19 'zara':39",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_fbb8958a3fc5d2db",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Zara",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

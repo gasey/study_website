@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_0da59647cebbfd10",
+  "appearance_id": "4445b67fed8ec0456437",
+  "snapshot": {
+    "record": {
+      "id": "4445b67fed8ec0456437",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "A Java ArrayList stores student names. The code calls studentList.remove(2). What happens?",
+      "options": [
+        "The element at index 2 (the third element) is removed",
+        "The second element (index 1) is removed",
+        "The element with value '2' is removed",
+        "The first two elements are removed"
+      ],
+      "answerIndex": 0,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 12,
+      "qnum": "97",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "1c91fa9ab395bcb1ae4770328da7895134d8c2330552d234df8326a4465459a2",
+  "appearance": {
+    "id": "4445b67fed8ec0456437",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "97",
+    "qnum_seq": 97,
+    "page": 12,
+    "question": "A Java ArrayList stores student names. The code calls studentList.remove(2). What happens?",
+    "options": [
+      "The element at index 2 (the third element) is removed",
+      "The second element (index 1) is removed",
+      "The element with value '2' is removed",
+      "The first two elements are removed"
+    ],
+    "answer_index": 0,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'2':11 'arraylist':3 'call':9 'code':8 'happen':13 'java':2 'name':6 'store':4 'student':5 'studentlist.remove':10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_0da59647cebbfd10",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "The element at index 2 (the third element) is removed",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

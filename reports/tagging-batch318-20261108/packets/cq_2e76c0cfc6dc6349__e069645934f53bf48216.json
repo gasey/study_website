@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_2e76c0cfc6dc6349",
+  "appearance_id": "e069645934f53bf48216",
+  "snapshot": {
+    "record": {
+      "id": "e069645934f53bf48216",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "In the given Java program, what are the values of x:\nint x = 5;\nSystem.out.println(x++);\nSystem.out.println(x);",
+      "options": [
+        "5, 5",
+        "5, 6",
+        "6, 5",
+        "6, 6"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 12,
+      "qnum": "98",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "aeb2569d95bb6fe7176cd85255191d4dbde36a23275de61606b9fcecb0d1c434",
+  "appearance": {
+    "id": "e069645934f53bf48216",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "98",
+    "qnum_seq": 98,
+    "page": 12,
+    "question": "In the given Java program, what are the values of x:\nint x = 5;\nSystem.out.println(x++);\nSystem.out.println(x);",
+    "options": [
+      "5, 5",
+      "5, 6",
+      "6, 5",
+      "6, 6"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'5':14 'given':3 'int':12 'java':4 'program':5 'system.out.println':15,17 'valu':9 'x':11,13,16,18",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_2e76c0cfc6dc6349",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "5, 6",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

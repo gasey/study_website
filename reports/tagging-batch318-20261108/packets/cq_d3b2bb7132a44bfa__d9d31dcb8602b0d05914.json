@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_d3b2bb7132a44bfa",
+  "appearance_id": "d9d31dcb8602b0d05914",
+  "snapshot": {
+    "record": {
+      "id": "d9d31dcb8602b0d05914",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "You run: SELECT DeptName, COUNT(*) FROM Employees GROUP BY DeptName HAVING COUNT(*) > 5; — What does this query return?",
+      "options": [
+        "All departments with their employee counts",
+        "The first 5 departments alphabetically",
+        "Employees who belong to more than 5 departments",
+        "Departments where the count of employees is greater than 5"
+      ],
+      "answerIndex": 3,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 7,
+      "qnum": "59",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "6375585d48ab65c92b6bbd4e3da4e68dcdcf6d45b2dd1f0c699e557a55c67698",
+  "appearance": {
+    "id": "d9d31dcb8602b0d05914",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "59",
+    "qnum_seq": 59,
+    "page": 7,
+    "question": "You run: SELECT DeptName, COUNT(*) FROM Employees GROUP BY DeptName HAVING COUNT(*) > 5; — What does this query return?",
+    "options": [
+      "All departments with their employee counts",
+      "The first 5 departments alphabetically",
+      "Employees who belong to more than 5 departments",
+      "Departments where the count of employees is greater than 5"
+    ],
+    "answer_index": 3,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'5':13 'count':5,12 'deptnam':4,10 'employe':7 'group':8 'queri':17 'return':18 'run':2 'select':3",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_d3b2bb7132a44bfa",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Departments where the count of employees is greater than 5",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

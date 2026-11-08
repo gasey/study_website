@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_d7426c1780109ac6",
+  "appearance_id": "2269b884e517c5c0faf9",
+  "snapshot": {
+    "record": {
+      "id": "2269b884e517c5c0faf9",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "In a banking system, a transfer subtracts money from Account A and adds it to Account B. If the system crashes after the subtraction but before the addition, which ACID property ensures the partial transfer is undone?",
+      "options": [
+        "Consistency",
+        "Isolation",
+        "Atomicity",
+        "Durability"
+      ],
+      "answerIndex": 2,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 7,
+      "qnum": "62",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "44409a2060fc5606680540849d684f981a6bc4d511d022ba4165e015fab6c1b2",
+  "appearance": {
+    "id": "2269b884e517c5c0faf9",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "62",
+    "qnum_seq": 62,
+    "page": 7,
+    "question": "In a banking system, a transfer subtracts money from Account A and adds it to Account B. If the system crashes after the subtraction but before the addition, which ACID property ensures the partial transfer is undone?",
+    "options": [
+      "Consistency",
+      "Isolation",
+      "Atomicity",
+      "Durability"
+    ],
+    "answer_index": 2,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'account':10,16 'acid':30 'add':13 'addit':28 'b':17 'bank':3 'crash':21 'ensur':32 'money':8 'partial':34 'properti':31 'subtract':7,24 'system':4,20 'transfer':6,35 'undon':37",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_d7426c1780109ac6",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Atomicity",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

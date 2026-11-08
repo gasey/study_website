@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_97886095147c3e86",
+  "appearance_id": "9c402b37006af760d44e",
+  "snapshot": {
+    "record": {
+      "id": "9c402b37006af760d44e",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/X-Ray Technician Paper-IV 2026..pdf",
+      "type": "mcq",
+      "question": "What is the primary method used in conventional MRI systems to mathematically reconstruct the raw data acquired during a scan into a final image?",
+      "options": [
+        "Back projection",
+        "Inverse Radon Transform",
+        "Fast Fourier Transform (FFT)",
+        "Discrete Cosine Transform (DCT)"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Answer C: Fast Fourier Transform (FFT). Conventional MRI reconstructs spatial information from k-space using Fourier transforms. Reference: https://www.radiologyinfo.org/en/info/mri; https://cs.acr.org/-/media/ACR/Files/Radiology-Safety/MR-Safety/Manual-on-MR-Safety.pdf. Verified worked solution, unofficial. Original printed wording and option order reviewed; no matching examiner key is asserted.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "24",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "science",
+        "topic_id": "science/physics",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/X-Ray Technician Paper-IV 2026..pdf",
+      "title": "Competitive Examination for Group 'B' Non-Gazetted (Technical) - X-Ray Technician",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/X-Ray%20Technician%20Paper-IV%202026..pdf"
+    }
+  },
+  "source_fingerprint": "8068007d9855336221ea806cf3fbb6bfdd059f1c2df4f1470321d83fce7fc7dd",
+  "appearance": {
+    "id": "9c402b37006af760d44e",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/X-Ray Technician Paper-IV 2026..pdf",
+    "type": "mcq",
+    "qnum": "24",
+    "qnum_seq": 24,
+    "page": 3,
+    "question": "What is the primary method used in conventional MRI systems to mathematically reconstruct the raw data acquired during a scan into a final image?",
+    "options": [
+      "Back projection",
+      "Inverse Radon Transform",
+      "Fast Fourier Transform (FFT)",
+      "Discrete Cosine Transform (DCT)"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "X-Ray Technician Paper-IV 2026.",
+    "difficulty": "medium",
+    "explanation": "Answer C: Fast Fourier Transform (FFT). Conventional MRI reconstructs spatial information from k-space using Fourier transforms. Reference: https://www.radiologyinfo.org/en/info/mri; https://cs.acr.org/-/media/ACR/Files/Radiology-Safety/MR-Safety/Manual-on-MR-Safety.pdf. Verified worked solution, unofficial. Original printed wording and option order reviewed; no matching examiner key is asserted.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'acquir':17 'convent':8 'data':16 'final':23 'imag':24 'mathemat':12 'method':5 'mri':9 'primari':4 'raw':15 'reconstruct':13 'scan':20 'system':10 'use':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_97886095147c3e86",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Fast Fourier Transform (FFT)",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

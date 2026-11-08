@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_5534e0370b6171d8",
+  "appearance_id": "0e3dcdf00bcd0daa3430",
+  "snapshot": {
+    "record": {
+      "id": "0e3dcdf00bcd0daa3430",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-III (COPA-Technical Paper-I)..pdf",
+      "type": "mcq",
+      "question": "Which formula counts cells in A1:A100 that contain the text 'Passed'?",
+      "options": [
+        "=COUNT(A1:A100,'Passed')",
+        "=FIND('Passed',A1:A100)",
+        "=SUMIF(A1:A100,'Passed')",
+        "=COUNTIF(A1:A100,'Passed')"
+      ],
+      "answerIndex": 3,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "79",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-III (COPA-Technical Paper-I)..pdf",
+      "title": "Competitive Examination for Recruitment to the Post of Instructor, ITI under Labour, Employment, Skill Development & Entrepreneurship Department, Government of Mizoram",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-III%20(COPA-Technical%20Paper-I)..pdf"
+    }
+  },
+  "source_fingerprint": "a25b6f43c35736a0d2fe99920359bfcf33b07f8879ecd8e40213b8314185870a",
+  "appearance": {
+    "id": "0e3dcdf00bcd0daa3430",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-III (COPA-Technical Paper-I)..pdf",
+    "type": "mcq",
+    "qnum": "79",
+    "qnum_seq": 79,
+    "page": 9,
+    "question": "Which formula counts cells in A1:A100 that contain the text 'Passed'?",
+    "options": [
+      "=COUNT(A1:A100,'Passed')",
+      "=FIND('Passed',A1:A100)",
+      "=SUMIF(A1:A100,'Passed')",
+      "=COUNTIF(A1:A100,'Passed')"
+    ],
+    "answer_index": 3,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-III (COPA-Technical Paper-I).",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'a1':6 'a100':7 'cell':4 'contain':9 'count':3 'formula':2 'pass':12 'text':11",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_5534e0370b6171d8",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "=COUNTIF(A1:A100,'Passed')",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

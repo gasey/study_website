@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_2d2546229956fa16",
+  "appearance_id": "414e6c45c33475adf959",
+  "snapshot": {
+    "record": {
+      "id": "414e6c45c33475adf959",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "An attacker floods a web server with millions of requests per second from thousands of compromised computers worldwide, making it inaccessible to real users. What is this attack, and what is the term for the network of compromised computers?",
+      "options": [
+        "Phishing attack using a Trojan network",
+        "A SQL injection attack using a worm network",
+        "A DDoS (Distributed Denial of Service) attack using a botnet",
+        "A brute force attack using a zombie cluster"
+      ],
+      "answerIndex": 2,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 10,
+      "qnum": "88",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "00fcadf163b948c8f548da90b6191b4a3974a2fc94a1d0517f1494b2b508046d",
+  "appearance": {
+    "id": "414e6c45c33475adf959",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "88",
+    "qnum_seq": 88,
+    "page": 10,
+    "question": "An attacker floods a web server with millions of requests per second from thousands of compromised computers worldwide, making it inaccessible to real users. What is this attack, and what is the term for the network of compromised computers?",
+    "options": [
+      "Phishing attack using a Trojan network",
+      "A SQL injection attack using a worm network",
+      "A DDoS (Distributed Denial of Service) attack using a botnet",
+      "A brute force attack using a zombie cluster"
+    ],
+    "answer_index": 2,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'attack':2,28 'compromis':16,38 'comput':17,39 'flood':3 'inaccess':21 'make':19 'million':8 'network':36 'per':11 'real':23 'request':10 'second':12 'server':6 'term':33 'thousand':14 'user':24 'web':5 'worldwid':18",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_2d2546229956fa16",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A DDoS (Distributed Denial of Service) attack using a botnet",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

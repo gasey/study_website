@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_2b2f2968d16a007b",
+    "appearance_id": "43ca9a67e96ad6b10771",
+    "source_fingerprint": "bc90fec5c2882ba523f16ce9f2ae04c7f9f9557d5c3b7412f5de08799594deaa",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b76931b6bce1b806",
+    "appearance_id": "43ac3c587345fe8341f6",
+    "source_fingerprint": "758db0e665bc0caf4a26eb22a5be08dc8866b89b0f1562b258cca4f78f828f29",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d6bf8613d951d57",
+    "appearance_id": "ece89cc4c36f69b24e4b",
+    "source_fingerprint": "8b1cbaf07dee61b224211e4cc0b6935ff0761c901ee46e17ec7f58639e456bee",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_79bebd07a0f2848d",
+    "appearance_id": "b2ff69779590486a084b",
+    "source_fingerprint": "cc78bc742789a2377be7b7ca8ad9f93b906d9792c54c5c8c8db051ab1b685695",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_163e53d853d245ff",
+    "appearance_id": "2a6a0f2810a7f94d4d94",
+    "source_fingerprint": "fdc7663025e25f78c7db240b2c6c64586834074aa0b74223ca9412e69a081bfe",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5eb288615467bdd",
+    "appearance_id": "93c3cb6ad0ceae077bfb",
+    "source_fingerprint": "f6816743df8eae42ea6c7065cb138a0c0fb71f9a8e63ebac0aba1459c5a71570",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1c2bc1db4432e26",
+    "appearance_id": "a2ff8220f5c07dfd85d6",
+    "source_fingerprint": "6f10da0e0c386c3aba8ef9c870c77ea0c565e98134edf4ef5f928cec9d49263b",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32cc8d7085c25a7d",
+    "appearance_id": "acb4b50200e1d1beb00a",
+    "source_fingerprint": "d455d61e15ecaa7a18aece9e2f8ddac6215813162e219489b167a5886cf681ab",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd097af36cac9180",
+    "appearance_id": "6ce2a048462526bcfa95",
+    "source_fingerprint": "6772e291d7e8b15ca7a804ecb4fe4332d5255bad4372e7afc11fed77e0bb3b1d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_afd7082e2b0f5962",
+    "appearance_id": "03330f312f44507ebec9",
+    "source_fingerprint": "1d63bffdb7da982a0fc0daa82c9b9af0356446571b8e10c9efb52e7609a07f6d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c824859dfe87f16",
+    "appearance_id": "7fa3013eb1c211e4fe6d",
+    "source_fingerprint": "8b62cef46ae83c6df18ace46e56486fd4c22bf79a44d6cc795e5a6e0176df595",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca051975cbef907b",
+    "appearance_id": "de6d94b6bcf9e394f0b6",
+    "source_fingerprint": "0aae1cea506da64ce25b0a2068e367c12312f1d9c632e509d76de2dae4c1e7a7",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dab6a7169865630c",
+    "appearance_id": "29641749a5d40d9de046",
+    "source_fingerprint": "593894ecd94e64da10f21bae0df4342aad71d218f36c35021f260bd702c7003d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89e46e4952af830b",
+    "appearance_id": "9d1067f23c68e7fbd0d7",
+    "source_fingerprint": "dd0924358973a9e7b00ce835c4ddf6174c50bf543ed78383e0796a1a2c8a9755",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0a9b4ed6d286e59",
+    "appearance_id": "72700cf9d6fe7fde8b23",
+    "source_fingerprint": "4c886359d20725ca8db4d250fee1b524f4a70ce283fe9c56149dc50224b48035",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7a4fcdd9bacd6d47",
+    "appearance_id": "5ae5754a30ae213dd013",
+    "source_fingerprint": "c3f1eb1db6c3f66fe5401c99a9b8401240fc1d1bdf03bd0fe1a4646c5612a8dd",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f3a4a8e36f0bd31",
+    "appearance_id": "eccea440df0358205234",
+    "source_fingerprint": "70a9996bb2eeb7dc73cbd8cdbda0df52f7c4162ce35cdaf9db2a743bd72a115b",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_630174dbfec10d47",
+    "appearance_id": "470e560b66501dc100ac",
+    "source_fingerprint": "b269e644616eaf6f8a81e2f9e887c602ae19a6379c5d79cb93eb3e24a06c52d3",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a0c940c20ce672f",
+    "appearance_id": "6d1d6274174d04eb58af",
+    "source_fingerprint": "e97167803fe475e49636e55b01ebc06d315687d45366f7cec2cfa3e55871724f",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8adf5adfbd8e9b37",
+    "appearance_id": "71ddacac5df8ac3b6984",
+    "source_fingerprint": "549dc558a85927bb46fed8346e67cdb41d4002561469c92bf8c7d65ef8609309",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a3dfb1fd3155652e",
+    "appearance_id": "994b4e9ff1dcd4291763",
+    "source_fingerprint": "fb228746e56f98c15c877f74489836b4e59ec3b7c809bfdddf63928592dd659d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e888a9cfe4673c0",
+    "appearance_id": "ed5db84b0a6ad6e6050e",
+    "source_fingerprint": "df3d3d2442be9deb15af27c9aa16e0c4027246d443d56b3cf4ab988e778cc8eb",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5cb50569e66b2257",
+    "appearance_id": "8a524fde6c0479448707",
+    "source_fingerprint": "aa2f10cd5f0515dfa37ae8f7d489f79fa6962bd691b6be2b305b5d9ce649a5c0",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18e2ee81e6e03d77",
+    "appearance_id": "b1c63f464f32bcbb902b",
+    "source_fingerprint": "74a9df18925ba3dbd7bfb1236326414ba7d38840cb27fee9dc1fa8d256153bb3",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_10782266bf9859a3",
+    "appearance_id": "ba098fadbb66d1054ec7",
+    "source_fingerprint": "d66da109c6c9c9e62998f75db84dbf70c242ecac85be5d126354d5d1706ea57b",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d0c71f000cb8417",
+    "appearance_id": "0b4e9d894b38d7287be4",
+    "source_fingerprint": "b56972bf48a984be8ed3b9175a0dcdbb1057a17df7c6720c6fb5940a1dfa62c3",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_749f0361a53629a7",
+    "appearance_id": "c4388f4d9d7a54e13d83",
+    "source_fingerprint": "d79e7005d09a459a4423ee87a64d7350551b86f14a8e45a66f13472ed7aba0ea",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_138ec50c2411557b",
+    "appearance_id": "cfd9e03d63fa7fc3aae2",
+    "source_fingerprint": "2cd3230cb169be4daab2c9982c779ed7434e04325de7eed799456c956f1889ba",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b01898613b5c5b99",
+    "appearance_id": "dab14ead20439d4f8dc9",
+    "source_fingerprint": "a82f8af1e62abd05b800a7f32994d9b07c7f245775a41e879c034d153d5a5d86",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd6cea6eee62ffd0",
+    "appearance_id": "6a9c80ebc25298dc34f3",
+    "source_fingerprint": "38614d1172ff52c26e628b468f3c8a6b4019b72a8da687068acb96e54db0ff17",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08411676ba966683",
+    "appearance_id": "779ba8217e7ba84c7ecb",
+    "source_fingerprint": "1b2854746c16aa8ad25c159eeb21a81a2ab866a67ed57c0534b87071da75f393",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3f2180842e00cacb",
+    "appearance_id": "01f3acc6c596307d310c",
+    "source_fingerprint": "0491bd9d8bf17234ba1f9b2f33b4228903832a5549c51974ccc01741e653329f",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a5d717cc849a6fca",
+    "appearance_id": "c5a8f77565ef79d7b90d",
+    "source_fingerprint": "1abb6db855b0a162029d1cfa25c108e4edcba742733033c24be6daa5112b019d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_26829cac77e059f5",
+    "appearance_id": "fcde64b480ef7bd8561d",
+    "source_fingerprint": "4af8f9aac13a832bd3195b235b4d9e60ae7feeedcb5bd54d4ac13bb269936987",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d9a0f08bc1d140f",
+    "appearance_id": "1a2dfe337af89e789b3e",
+    "source_fingerprint": "81d434093053b8e81bb1f90448f65e6951a8c6886c2f8c15cd93a81c53b73022",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_25270de052c86d3f",
+    "appearance_id": "b6b0a7f2f4ca3bb105bf",
+    "source_fingerprint": "c76d8b3615e9ea7a4da4a225abc67f696a727b9326c44084593505cc050db615",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ec5a2f24d2fdc8b",
+    "appearance_id": "27f89100c429d1dba88c",
+    "source_fingerprint": "b0ac84a2ca726270b3fc77ef1ab6c60373d32f387d799a209c3cf6c127a7310c",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea9c44deb52145b7",
+    "appearance_id": "86f3052966dce095cbe4",
+    "source_fingerprint": "0f0820e8e62f7b7b9100c40831ba46d0ac8af120701b2ac190e38edd0b1ca8c0",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_51c3f2abc3e7e25b",
+    "appearance_id": "45675944c3a82a4974c9",
+    "source_fingerprint": "32a4ad6310c0cb55391acc2ee56cf75edc55a7e4d6e214705cf7245513b44270",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f755b886f0063be9",
+    "appearance_id": "4ab257c9f191790225e3",
+    "source_fingerprint": "d0a17f7fdf57f6139bcf2865d51d7c816ee10709d40f7156a0eed5eb51c31c87",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e225a7c4985dc00d",
+    "appearance_id": "ef8dca26d6a3942b97ed",
+    "source_fingerprint": "cce8a80c53902196800c87ff7e6ca1459591490f1bfb392e01036a7a9721f78f",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bc91bb4cf2b5de22",
+    "appearance_id": "75a421ec0f7b67fefd7f",
+    "source_fingerprint": "924ade5c920a47de06b57e47516d54ca44e4a6b2aeb5ef17dd27641fa01f47f7",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8226f4fefe5caaee",
+    "appearance_id": "4b5281d3ac63ee447824",
+    "source_fingerprint": "45f9ea5d451ac3c391613ee74c9458af041c3c5477f5c0cb29fb6024607a2f25",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9ead71ca6b68d5e",
+    "appearance_id": "7d3865ad838bffc720bf",
+    "source_fingerprint": "9f905cc3488b2ecd8533cc16f987e8464b6d20597a3e40c7b932ade4c043fd6e",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c2a3d960349197c6",
+    "appearance_id": "f301d36816ed5b48e0d6",
+    "source_fingerprint": "fce6df5783d2151a3574a3fb3885ed87d1b91dd8911070363f58ecc8d7a569d3",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8045e4ee9b62cc9",
+    "appearance_id": "bec87dee6c4e0f8461fa",
+    "source_fingerprint": "9277396e085c6af0d022ccf2aeb8e59cc80c6acd154c3aa9b3b23b4c277f3cf7",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc664150c9015f77",
+    "appearance_id": "bd3be5153987434af18d",
+    "source_fingerprint": "da7dc1aa25815bde20fa324ffe29ca5f2887bd98497a9fbb997852c9d45a1f9a",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9bec76c0d04020a5",
+    "appearance_id": "c3f5a4c4c344d3394c92",
+    "source_fingerprint": "2ee9063b9acf03718acdee31f7bba9c045ef0ef907d59287cf9617cc1974f45c",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54a02523faac7da5",
+    "appearance_id": "f48932107e50f2a9016a",
+    "source_fingerprint": "b6f089ce43e59e3ec4fb60a1c01361c7b2ae9c0d1a7fab9edb30136a60f0383f",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87f25c4f7b047a35",
+    "appearance_id": "a24c1228fd933547ba1a",
+    "source_fingerprint": "e4c2531e7ceb9ffd2b0b5a85cdf03de3af2af6f2b1a744003c1b102796bf00bb",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5a28ce095cff8d8c",
+    "appearance_id": "80a879d64ffdbbea9487",
+    "source_fingerprint": "2eb3ede51ae44fee7bb895f7293823b9a87b66f0d60d790ba43375a1531ea433",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9971364c5ad2663a",
+    "appearance_id": "54dc1a26706b352a6646",
+    "source_fingerprint": "7cd23d37e6bba0cec115be8b9eaa8e0880095681f3dc642516a438c9aecceb17",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7dbe8a301c35906",
+    "appearance_id": "b5d44b01af78e613ae1a",
+    "source_fingerprint": "ffdd02cacd656d434c0c5520b114d8ad51ebb71900453af21e990cc98b8f46a6",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_363e4e5440fb7e78",
+    "appearance_id": "08c54a358f2418a94dae",
+    "source_fingerprint": "6be04032367b2354290f46d584c041363bfb54dd027763063f4767e98ed7ab61",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e72decab716595f9",
+    "appearance_id": "33335f25711bdd9854ed",
+    "source_fingerprint": "0d2e6045c2606b893e465e73bf1b178900ba19ef4c6bb0cae1ccbe2fffd778b0",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a587cf950d640979",
+    "appearance_id": "1d1e38edcb45960c18cc",
+    "source_fingerprint": "56f5db8391aeea6dffbf461efc2adab7bf32d14b67b9f1c183ec3cdb937434a9",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c639fffb8b93eb0c",
+    "appearance_id": "572b3e87462437729f67",
+    "source_fingerprint": "bfbfbbc140b7ffbf2d57119d73e71127933c35ccea02cdf2e0bf9b7b3dc6b8b7",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f5234c5d67dd288",
+    "appearance_id": "bce29307e9d6b2b522fc",
+    "source_fingerprint": "1a1585906719ad425a6795715b8ea58d645d5cc58ff9ffc6f67c5a45a9f09e94",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5a72ac1a43a24a71",
+    "appearance_id": "809705dd46e0e5fd35c1",
+    "source_fingerprint": "165379f9b257569844d1ca5a748b9a9ea10b329601f72b2a37e2f0f3a38e2118",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c786a702081fde4d",
+    "appearance_id": "4ef75f9dfa293c55a34d",
+    "source_fingerprint": "a713f8bf0fc88f712e04d89160b91378eafa849012fd125f099d0cfc62514792",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_407f2370c061476e",
+    "appearance_id": "12ed265b36deaa6b7247",
+    "source_fingerprint": "190212019a7186df4d0bd006e2fe3a4fa7ec840f3304245eb96b523c9ced7650",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31c99e6d20e1a9c7",
+    "appearance_id": "59ace05ed13b438eb6bd",
+    "source_fingerprint": "ea345408cfb5b4e9783820cdf965fa1924bbfa89dbf0c684eed3e4fbfe52f253",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8517e9886fc4e7f3",
+    "appearance_id": "63ecdadf8fb491add6fd",
+    "source_fingerprint": "d19b6a347477ef66e38178ca8d6bb0d95b248ca7785a86c3d9b090e572a8c7e0",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3edf9f815f317f83",
+    "appearance_id": "d6d8bf8fe9b1243d7acb",
+    "source_fingerprint": "cb0b9f9fa7c44a126f34dac20037e96d3cb9105dd87ffca5a679d35044c42d2c",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7726325787737b49",
+    "appearance_id": "81d94034d14ecfa7fed8",
+    "source_fingerprint": "a4f02265e355f95e06bf70a00f3a1205def076d1485bb58c8b3f4dda8e706663",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0df43518f3f5173b",
+    "appearance_id": "6c4a6024cdbe7edd940e",
+    "source_fingerprint": "e16c12ab24e3e68d9eaccbfb78512ecbbf408894d357dcbbdc7bc23a44279583",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ac3de041f883171c",
+    "appearance_id": "230824e8a5950b327486",
+    "source_fingerprint": "741fdb88ed15297ffd78c126cd20568b32b1e19e41738f0f60cee0e8d8ea033b",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e55d1d089c9352f8",
+    "appearance_id": "6b0c7bf8070edf5c0518",
+    "source_fingerprint": "c3e425089153d64941fc2035df2d2e800f664040df0077564cd8ab7598594343",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ce67703c99518e05",
+    "appearance_id": "422fd398a837d949dfdc",
+    "source_fingerprint": "ed399787c8b6f9ca1cd6219d2927eb528d09e32d4e611f88f76729b3d3e09ac5",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_84b5b95c173399d3",
+    "appearance_id": "29fef13a9380c3c67cef",
+    "source_fingerprint": "00272ff79043978a7d0615777854f98d8ce9f2dfe37ff9661763b1b69fd1191d",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1fed0aadf6de8024",
+    "appearance_id": "2013ef575d001adb6e98",
+    "source_fingerprint": "442958be30f38eac95978214654505693d8f3188748aa11ac0ffebaaafb7f626",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_40657632a724c508",
+    "appearance_id": "931aef12f08e86ab92b7",
+    "source_fingerprint": "b21f01c08889087f8fdd1a64c19c929370ce8873b3f041beddbc6d144e5fc890",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7c6fe8b65c2d250d",
+    "appearance_id": "90bed311e898f0cd3329",
+    "source_fingerprint": "09e5355f7d7424165f61a1423cf4742db82955dc01d75551479a9f4c72df0ddb",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e39485b441679f51",
+    "appearance_id": "dac2b7e896c0b6154d8b",
+    "source_fingerprint": "0ea70b264bcd7c55543abd89a8bd1de9204a7d331fb64d040afb63f8a8b234bf",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b520b86d8eb0ffc1",
+    "appearance_id": "161cbfae3688ece7501b",
+    "source_fingerprint": "628552f40f27cc1966b290bef071ee9e0031898483d966c2a5d1ce893a28e820",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23d662e0bbbfd71a",
+    "appearance_id": "aeff129782a9a951e2bd",
+    "source_fingerprint": "2aaac6e1a0d938cc6d14cc5aee96a626f02183282ca8cb372831ca27c8097490",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e18125ab1d04abc",
+    "appearance_id": "a1ad316ceb80e4b21918",
+    "source_fingerprint": "60c50245cac3ab992f08f74d468158bdb387218b4ff8025ce4e4ba3e32d605d2",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33c695f34b8faa7d",
+    "appearance_id": "f5b6e5fef6dcc4ef6ae0",
+    "source_fingerprint": "68e18a2f8c5ac254f98f7cc7b7cd5bb7121b09a0d7545a8f9501afa6f9c7cb33",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0a5d3e20a77fddcf",
+    "appearance_id": "146e959ce3a18fd0d40f",
+    "source_fingerprint": "ac945ef30ba464ec31cd32e7b5e3584a10fd08530f73282e51a1621c47b2ce4a",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_09d81a500b4c55eb",
+    "appearance_id": "62645f3d81d8139367d7",
+    "source_fingerprint": "c6ab1f7af730f6e58c4ca9bde2a9657c3160e3f094f64271366b68bbe3892af4",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ad4446b60245718a",
+    "appearance_id": "61407f5a685da8060563",
+    "source_fingerprint": "c20536a691468fb86ad73ae66e8aa38b0877430c26d081ead429f005c64e4515",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5adfc4d2f51ee9fa",
+    "appearance_id": "87dd7847817d566473c3",
+    "source_fingerprint": "560728e2f63e103080ecf739546f743161822c7243da3e5b9b34e3e6a1e1cd53",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e13cea955c7c267c",
+    "appearance_id": "e7ccdf4b599284667b0c",
+    "source_fingerprint": "2d8d918f63a8506c0b773a9c238ae004a76a41787fc777228ecc1d8e93047fb8",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e3783f879977ae36",
+    "appearance_id": "ef1da11c814352b8274c",
+    "source_fingerprint": "06374bc2ad5debdfce65a870548e8aa1030f7eb4ed6bbbf3d07f8aacdd601e06",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dc30e3d5aeb9182a",
+    "appearance_id": "9f0e98bc56a62389f6ac",
+    "source_fingerprint": "5a8583b22f1839a0228aa74ee7712a2ec70947669e06ab3a826cc2dffd771fd8",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c3a56176ad007124",
+    "appearance_id": "9b0596095c4c19173af2",
+    "source_fingerprint": "b5c5fe2dd7e5be1380efe05386ad31ccdc8f22cf9beef8a2fedac34ef7da56a7",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_84671294a004ff68",
+    "appearance_id": "21f78d29c29fad986deb",
+    "source_fingerprint": "6758bdc564ca52b18f1812866027d2b060dc91b5bea294ef37daa2241e4948e5",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ac579b552350a8d",
+    "appearance_id": "ed731e825dfa37cc0f2c",
+    "source_fingerprint": "6c6ea3c955947818f6f5303a09b48e4fbecc67645a265c9a3c3928c786e53bc1",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc1e7b78bdd26edb",
+    "appearance_id": "861329a44bc224c3e957",
+    "source_fingerprint": "a48d8047a739bc6143b47eb50c39236b0e2706ed9f8b40ef2aedc1d42532d639",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b5876e4e356be8d",
+    "appearance_id": "2ef6be1292e1069bdb62",
+    "source_fingerprint": "8045c3aa2d6ac7c1040c84bca7542e77b676c42bb356be40e0b972d6cb70e60c",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b6eaaf3148611d9c",
+    "appearance_id": "36bfc73a7ce812c911ee",
+    "source_fingerprint": "5d90dfff326f610e7c1bb368623789d25c81319553a2a2e8b88ad63dd5c260fb",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4215092ba8b90033",
+    "appearance_id": "0e2b6455b2a23609c90e",
+    "source_fingerprint": "e69cd7bb510bc24285957424c10165a5388dc1c2fe71d8893cb282be2e84a375",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d98584bc6283afb2",
+    "appearance_id": "b36f1ee7beac63a78602",
+    "source_fingerprint": "77484c39f01df496219fa1f41d843e392b1e9bb577a659687947a855e26fda90",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2bbe03f270f35b6",
+    "appearance_id": "cfad5664b487620d7901",
+    "source_fingerprint": "f99ef05951ab3733097c6bd0399938246696a20cc36388583b79d52c61786327",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff8a1c83dc45ecee",
+    "appearance_id": "76053d0971a55b7d47dc",
+    "source_fingerprint": "b72e56d992d24617b6a8739d759afb6218d514e0bd6802a0f57ebf36450ad0ba",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_354bb130a5f9e57c",
+    "appearance_id": "8553c6804e188c8cbd5d",
+    "source_fingerprint": "f106e334151bafa8ab0d01456f46f6dd516d5d058772e0b3c35370b75cd9cc46",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a07e434bfb838d00",
+    "appearance_id": "ff1395ef581860454e79",
+    "source_fingerprint": "e45d1380b67b044a44304bce73c445399c63aca06e18da02b6f2392348ec51e9",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66ee7b3c30abccef",
+    "appearance_id": "0398ff74cf68b28fc640",
+    "source_fingerprint": "1f63e136633233d1fda7e263911bfdfe4eb061ce78c5acd56ea21ac7ff7bdfe1",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_15bc8ae11dfdbbe0",
+    "appearance_id": "b517e95eff08123a5004",
+    "source_fingerprint": "32d9090c2a6e15b4515aea2d9b0a69e6d4d30fdb5d0bfd6a6117f8935faa203f",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c56d9675a4adf409",
+    "appearance_id": "f55ac01d58ee86bdb210",
+    "source_fingerprint": "a1b96f6264a66ed8bb44e81774b0e6feceed86b061fe964b5042d52ac5f3e58b",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_63b0ff8ef65c710f70e3e254",
+      "sha256": "36883cb5f79b8a08b91d045569aec49b564cc42569b924a52c1429d5d32ba20a",
+      "note": "Verified against registered booklet source for Group 'B' Non-Gazetted."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_de4ed32c5a2c1c26",
+  "appearance_id": "d01c8a5fb582ba477803",
+  "snapshot": {
+    "record": {
+      "id": "d01c8a5fb582ba477803",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "What is the output of the following Python code?\nx = [1, 2, 3, 4, 5] print(x[1:4])",
+      "options": [
+        "[1, 2, 3, 4]",
+        "[2, 3, 4]",
+        "[1, 2, 3]",
+        "[2, 3, 4, 5]"
+      ],
+      "answerIndex": 1,
+      "answerSource": "official",
+      "answerKeyRef": "Provisional Answer Key of Instructor ITI..pdf",
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 11,
+      "qnum": "91",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "e93827055c417e15ea2a953a5905c83f3fcdff164aa2e4b99dbbf038c8e9de9e",
+  "appearance": {
+    "id": "d01c8a5fb582ba477803",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "91",
+    "qnum_seq": 91,
+    "page": 11,
+    "question": "What is the output of the following Python code?\nx = [1, 2, 3, 4, 5] print(x[1:4])",
+    "options": [
+      "[1, 2, 3, 4]",
+      "[2, 3, 4]",
+      "[1, 2, 3]",
+      "[2, 3, 4, 5]"
+    ],
+    "answer_index": 1,
+    "answer_source": "official",
+    "answer_key_ref": "Provisional Answer Key of Instructor ITI..pdf",
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1':11,18 '2':12 '3':13 '4':14,19 '5':15 'code':9 'follow':7 'output':4 'print':16 'python':8 'x':10,17",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_de4ed32c5a2c1c26",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "[2, 3, 4]",
+    "canonical_answer_source": "official",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

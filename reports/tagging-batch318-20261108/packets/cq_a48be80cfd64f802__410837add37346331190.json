@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a48be80cfd64f802",
+  "appearance_id": "410837add37346331190",
+  "snapshot": {
+    "record": {
+      "id": "410837add37346331190",
+      "paperId": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "type": "mcq",
+      "question": "Which of the following best distinguishes a stateful firewall from a stateless firewall?",
+      "options": [
+        "A stateful firewall filters packets only based on IP address and port number",
+        "A stateless firewall maintains a table of active connections and tracks session state",
+        "A stateful firewall tracks the state of active connections and makes decisions based on context",
+        "A stateless firewall provides better protection against application-layer attacks"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "11",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+      "title": "COMPETITIVE EXAMINATION FOR RECRUITMENT TO THE POST OF INSTRUCTOR, ITI UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2025-2027/Paper-IV%20(COPA-Technical%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "366fa96cae888b38fd342f55944dd9a00e8d85dd63c588477ea51e4bce28c462",
+  "appearance": {
+    "id": "410837add37346331190",
+    "paper_id": "Old_Questions/Direct_2025-2027/Paper-IV (COPA-Technical Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "11",
+    "qnum_seq": 11,
+    "page": 2,
+    "question": "Which of the following best distinguishes a stateful firewall from a stateless firewall?",
+    "options": [
+      "A stateful firewall filters packets only based on IP address and port number",
+      "A stateless firewall maintains a table of active connections and tracks session state",
+      "A stateful firewall tracks the state of active connections and makes decisions based on context",
+      "A stateless firewall provides better protection against application-layer attacks"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Paper-IV (COPA-Technical Paper-II.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'best':5 'distinguish':6 'firewal':9,13 'follow':4 'state':8 'stateless':12",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a48be80cfd64f802",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A stateful firewall tracks the state of active connections and makes decisions based on context",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
