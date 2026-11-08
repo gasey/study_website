@@ -1,0 +1,36 @@
+{
+  "batch": 107,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English (LA).pdf",
+      "paper_title": "Technical Competitive Examinations for Laboratory Assistant under Commerce and Industries Department, March 2019 — General English",
+      "document_id": "doc_c97fe2ca4900abea0b9c642c",
+      "sha256": "463c437db96e7b85f0f515108298ec87ca27e141623695fd1e8430b2a3257897",
+      "targets": 80
+    }
+  ],
+  "targets": 80,
+  "completion": "100% paper completion achieved for Laboratory Assistant 2019 General English (80/80 MCQs reviewed: 28 Grammar Core [Communicative Notions, Sentence Structure, Sentence Types], 14 Idioms & Phrases, 11 Reading Comprehension, 10 Parts of Speech, 9 Subject-Verb Agreement, 8 Prepositions; 1 conventional essay question documented in written intake)",
+  "actions": {
+    "retag": 78,
+    "keep": 2,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 1,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/grammar": 28,
+    "english/vocabulary/idioms-and-phrases": 14,
+    "english/comprehension": 11,
+    "english/grammar/parts-of-speech": 10,
+    "english/grammar/subject-verb-agreement": 9,
+    "english/grammar/prepositions": 8
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Documented Section A (Essay writing, 20 marks) in pending-written-intake.json.",
+    "Verified all 80 MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

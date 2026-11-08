@@ -8009,6 +8009,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,897 saved records**, **7,819 unique appearances**, **7,419 deduplicated candidates**, **0 problems**. [Batch 106 report](reports/tagging-batch106-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 107 (Laboratory Assistant 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 107 (`reports/tagging-batch107-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Laboratory Assistant under Commerce and Industries Department, March 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (LA).pdf`, `doc_806b72a6a12be40f7b0f0a59`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 78 retag, 2 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (28 items): Q11–Q20 (communicative concepts and notions: possibility, obligation, command, polite request, frequency, willingness, wish/prayer, purpose, condition), Q40–Q48 (sentence structure: simple, compound, complex), Q58–Q66 (sentence types: interrogative, assertive, imperative, exclamatory, optative).
+    - `english/vocabulary/idioms-and-phrases` (14 items): Q67–Q80 (hands are full, put on the market, at a stretch, goes to heart, come to grief, bag and baggage, old head on young shoulders, when pigs fly, tried hand, put good face, moved heaven and earth, man of straw, man of words, wolf in sheep's clothing).
+    - `english/comprehension` (11 items): Q29–Q39 (Jawaharlal Nehru's 'Tryst with Destiny' address reading comprehension).
+    - `english/grammar/parts-of-speech` (10 items): Q1–Q10 (parts of speech identification: pronoun, proper adjective, distributive adjective, collective noun, proper noun, adverb, interjection, abstract noun, preposition).
+    - `english/grammar/subject-verb-agreement` (9 items): Q49–Q57 (subject-verb agreement concord: was/were, takes place, do not agree, is/are at door, seems/seem, singular subjects, collective nouns, titles, fractions).
+    - `english/grammar/prepositions` (8 items): Q21–Q28 (preposition usage: since, over, into, with, by, among, on, off).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Science and its benefits / Importance of Education / Health is Wealth) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,977 saved records**, **7,899 unique appearances**, **7,499 deduplicated candidates**, **0 problems**. [Batch 107 report](reports/tagging-batch107-20261108/README.md).
+
+
 
 
 
