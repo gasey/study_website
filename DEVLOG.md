@@ -7969,6 +7969,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,737 saved records**, **7,659 unique appearances**, **7,259 deduplicated candidates**, **0 problems**. [Batch 104 report](reports/tagging-batch104-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 105 (Coach Grade-III General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 105 (`reports/tagging-batch105-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Coach Grade-III under Sports & Youth Services Department — General English* (`Old_Questions/Direct_2019-2020/Coach Grade-III General English.pdf`, `doc_674bbbda31b6972462cdee92`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 37 retag, 43 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (31 items): Q29–Q38 (functional parts of speech: all, about, around, better, but, down, etc.), Q49–Q64 (sentence kinds: simple, compound, complex; sentence types: declarative, exclamatory, interrogative), Q65–Q66, Q68, Q79, Q80 (pronouns, predicate adjectives, possessive gerund qualifier, adverb comparisons).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (arm's length, wolf in sheep's clothing, made a pile, under his wing, at sixes and sevens, etc.).
+    - `english/comprehension` (12 items): Q17–Q28 (reading comprehension passages: Passage 1: Memorials to Mahatma Gandhi, Q17–Q23; Passage 2: Man vs Machines / Modern life, Q24–Q28).
+    - `english/grammar/tenses` (10 items): Q39–Q48 (verb tense forms and tense identification in context).
+    - `english/grammar/subject-verb-agreement` (8 items): Q67, Q72–Q78 (subject-verb agreement concord: neither of, fraction of business, neither...nor, along with, compound subjects).
+    - `english/grammar/prepositions` (1 item): Q69 (superior to).
+    - `english/grammar/articles` (1 item): Q70 (The book).
+    - `english/vocabulary` (1 item): Q71 (written vs oral statement).
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,817 saved records**, **7,739 unique appearances**, **7,339 deduplicated candidates**, **0 problems**. [Batch 105 report](reports/tagging-batch105-20261108/README.md).
+
+
 
 
 
