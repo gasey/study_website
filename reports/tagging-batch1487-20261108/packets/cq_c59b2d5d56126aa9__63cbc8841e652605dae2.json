@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_c59b2d5d56126aa9",
+  "appearance_id": "63cbc8841e652605dae2",
+  "snapshot": {
+    "record": {
+      "id": "63cbc8841e652605dae2",
+      "paperId": "Old_Questions/Direct_2014-2018/9. Electronics Engineering - III.pdf",
+      "type": "mcq",
+      "question": "A zero memory source generates two messages with probabilities 0.8 and 0.2. These are coded as 1 and 0.2. The code efficiency is",
+      "options": [
+        "0.2",
+        "0.5",
+        "0.7",
+        "1.0"
+      ],
+      "answerIndex": null,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The printed Q31 on PDF page 4 (printed page 4) explicitly gives the codes as \"1 and 0.2\", so the defect is present in the source. This does not specify a valid binary code from which an average codeword length can be established; replacing \"0.2\" with \"0\" would give H = -0.8 log2(0.8) - 0.2 log2(0.2) = 0.7219 bits and efficiency 0.7219 for one-bit codewords, but that repair is unconfirmed. Hold pending clarification of the intended codewords.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "31",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/9. Electronics Engineering - III.pdf",
+      "title": "ELECTRONICS ENGINEERING",
+      "year": 2012,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/9.%20Electronics%20Engineering%20-%20III.pdf"
+    }
+  },
+  "source_fingerprint": "240a3c9b1dc15b98b7b8fdcdee1fe47e8062c4b4f49ce12cacb135d588dfb2bf",
+  "appearance": {
+    "id": "63cbc8841e652605dae2",
+    "paper_id": "Old_Questions/Direct_2014-2018/9. Electronics Engineering - III.pdf",
+    "type": "mcq",
+    "qnum": "31",
+    "qnum_seq": 31,
+    "page": 4,
+    "question": "A zero memory source generates two messages with probabilities 0.8 and 0.2. These are coded as 1 and 0.2. The code efficiency is",
+    "options": [
+      "0.2",
+      "0.5",
+      "0.7",
+      "1.0"
+    ],
+    "answer_index": null,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "9. Electronics Engineering - III",
+    "difficulty": "medium",
+    "explanation": "The printed Q31 on PDF page 4 (printed page 4) explicitly gives the codes as \"1 and 0.2\", so the defect is present in the source. This does not specify a valid binary code from which an average codeword length can be established; replacing \"0.2\" with \"0\" would give H = -0.8 log2(0.8) - 0.2 log2(0.2) = 0.7219 bits and efficiency 0.7219 for one-bit codewords, but that repair is unconfirmed. Hold pending clarification of the intended codewords.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.2':12,19 '0.8':10 '1':17 'code':15,21 'effici':22 'generat':5 'memori':3 'messag':7 'probabl':9 'sourc':4 'two':6 'zero':2",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_c59b2d5d56126aa9",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": null,
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

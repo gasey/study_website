@@ -1,0 +1,81 @@
+[
+  {
+    "canonical_id": "cq_cd42ce3fd0468b34",
+    "appearance_id": "e48763524ab149938566",
+    "source_fingerprint": "7778e355993b45510dfa2bce88c55b40ca84457eff1a5412555d884a5e9d1457",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ba0bd8a8b4680d7a213bb84f",
+      "sha256": "5c91153b238d1adc65aeadc54670a5a8d718ead76c64d312cb9e9f2a9792d8f4",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2039a4e3b322e7e",
+    "appearance_id": "162ce56b02950b084a3f",
+    "source_fingerprint": "2b63e6b5ad9e813cf20670880ae46d8c8fd0e08c9c7e721d3d8003884f3604d3",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ba0bd8a8b4680d7a213bb84f",
+      "sha256": "5c91153b238d1adc65aeadc54670a5a8d718ead76c64d312cb9e9f2a9792d8f4",
+      "note": "Verified against registered booklet source for Category-V of Mizoram Secretariat Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

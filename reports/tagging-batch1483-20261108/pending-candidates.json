@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_5d3b68ca8e49f8a5",
+    "appearance_id": "desc-7a467ab1ebe8fec00e38",
+    "source_fingerprint": "9e6a20d1c63b546a74b384d44a0c4b1081edc4929f55f6b13fea21267051af9a",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56226269aa90b404",
+    "appearance_id": "desc-9f7a438578bdb1f1e710",
+    "source_fingerprint": "4791f6faa15580fb0c2230032a77be357f153525e34967ab9508d7b9d6a970fc",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60792156d58903d7",
+    "appearance_id": "desc-1fbf9c163a25f098de59",
+    "source_fingerprint": "0bbaf2d703b81abd143136574fd1721c9d10678786491343c226ea738d75ac45",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bab77499df9b947b",
+    "appearance_id": "desc-10663105880139e181a0",
+    "source_fingerprint": "5b26e78e94630615c66b307c32d3fb776b2fcd9726c5c46ee85520f6fae18c63",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6adf3c2de6d904b7",
+    "appearance_id": "desc-60875b2308815427e145",
+    "source_fingerprint": "ebc49ff261c70e5d521d36c1022017ce0e9a6983a1152e6c8ac6fbae2c4fb532",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8998ca000f407da8",
+    "appearance_id": "desc-80c3b40f5175a0c43de9",
+    "source_fingerprint": "bc8ea201502d16f5c28637b28c9133306f806ce2de2005893b62062632b37a4c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1f6bb6c6be443eb",
+    "appearance_id": "desc-ef4c752bd159e23f9f74",
+    "source_fingerprint": "bb00c27d10db4dcdd2e40599af92cbf0d3f5627f4fa7339cf9f47bf46cfad8de",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44ffcbc2b4e3f975",
+    "appearance_id": "desc-7a68ecf94aed7a4487f6",
+    "source_fingerprint": "dc7078b5582240995ec94a35ec5c64a7a976c616aebfdcfd774ce6c62d4e3d7f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_46e013b29d15299a90f4efe0",
+      "sha256": "22a3678479b6e9ce473695ddb03df0abdcf9d98359bd4109500fbdca2c9ea711",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
