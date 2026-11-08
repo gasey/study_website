@@ -1,0 +1,36 @@
+{
+  "batch": 52,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - General English Paper-II.pdf",
+      "paper_title": "Technical Competitive Examinations for Recruitment to the Post of Informatics Officer \u2014 General English Paper-II (February 2021)",
+      "document_id": "doc_e7390bd6cab5dd95ac26ed38",
+      "sha256": "08db2b194c01205f6a2164e50da751cbc9e519ec99879dc17b8439a32ac9bb93",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for Informatics Officer General English Paper-II (100/100 MCQs)",
+  "actions": {
+    "retag": 32,
+    "keep": 68
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 10,
+    "english/grammar/prepositions": 11,
+    "english/grammar": 50,
+    "english/vocabulary": 17,
+    "english/vocabulary/idioms-and-phrases": 6,
+    "english/vocabulary/one-word-substitution": 4,
+    "english/vocabulary/synonyms": 1,
+    "english/vocabulary/antonyms": 1
+  },
+  "source_defects": [
+    "Q1\u2013Q10 Underlined Target Words in PDF Geometry: Target words in parts of speech questions (any, before, even, by, master, One, back, deep, than, fix) were rendered with vector horizontal lines in the PDF stream; verified via exact PyMuPDF geometry.",
+    "Q41\u2013Q50 3-Option Distribution: Original printed paper booklet provided 3 answer options ((a) Simple sentence, (b) Complex Sentence, (c) Compound sentence) for sentence analysis items Q41 to Q50, matching canonical record."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

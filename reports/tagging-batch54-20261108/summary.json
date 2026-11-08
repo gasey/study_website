@@ -1,0 +1,36 @@
+{
+  "batch": 54,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2021-2022/ASCE - General English Paper-II.pdf",
+      "paper_title": "Technical Competitive Examinations for Recruitment to the Post of Assistant Soil Conservation Engineer (ASCE) \u2014 General English Paper-II (February 2021)",
+      "document_id": "doc_55f0caf9ddb8ed0aa2607152",
+      "sha256": "f595f6305bec2efe9d6632a97a6d46c129203a860f52f9c62aa02948432dd324",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for ASCE General English Paper-II (100/100 MCQs)",
+  "actions": {
+    "retag": 50,
+    "keep": 50
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 10,
+    "english/grammar": 40,
+    "english/grammar/tenses": 10,
+    "english/grammar/prepositions": 10,
+    "english/vocabulary/idioms-and-phrases": 10,
+    "english/vocabulary": 10,
+    "english/vocabulary/one-word-substitution": 10
+  },
+  "source_defects": [
+    "Q1\u2013Q10 Underlined Target Words in PDF Geometry: Target words in parts of speech questions (and, None, swimmer, Freedom, amusing, Lift, look, too, Ohh!, off) were rendered with vector line strokes in the PDF stream; verified via exact PyMuPDF geometry.",
+    "Q21\u2013Q30 3-Option Distribution: Original printed paper booklet provided 3 answer options ((a) present tense, (b) past tense, (c) future tense) for tense identification items Q21 to Q30, matching canonical record.",
+    "Q41\u2013Q50 3-Option Distribution: Original printed paper booklet provided 3 answer options ((a) Simple, (b) Compound, (c) Complex) for sentence analysis items Q41 to Q50, matching canonical record."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
