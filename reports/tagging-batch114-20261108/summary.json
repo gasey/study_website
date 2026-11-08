@@ -1,0 +1,40 @@
+{
+  "batch": 114,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English (JE).pdf",
+      "paper_title": "Technical Competitive Examinations for Recruitment to the Post of Junior Engineer under Public Health Engineering Department, June 2019 — General English",
+      "document_id": "doc_a9a3919b7617e9997dfb9583",
+      "sha256": "a5b36688166e354582663328439c8e1a6dfc73d8f7563ea21696b4a1f9753334",
+      "targets": 79
+    }
+  ],
+  "targets": 79,
+  "completion": "100% paper completion achieved for Junior Engineer (PHED) 2019 General English (79/79 MCQs reviewed: 16 Idioms & Phrases, 16 Grammar Core [Sentence Structure, Clauses, Notions], 11 Reading Comprehension, 8 Tenses, 8 Synonyms, 6 Prepositions, 6 Parts of Speech, 5 One-Word Substitution, 3 Word Choice; 1 conventional essay question and 1 omitted booklet number defect documented)",
+  "actions": {
+    "retag": 51,
+    "keep": 28,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/vocabulary/idioms-and-phrases": 16,
+    "english/grammar": 16,
+    "english/comprehension": 11,
+    "english/grammar/tenses": 8,
+    "english/vocabulary/synonyms": 8,
+    "english/grammar/parts-of-speech": 6,
+    "english/grammar/prepositions": 6,
+    "english/vocabulary/one-word-substitution": 5,
+    "english/vocabulary": 3
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Documented Section A (Essay writing, 20 marks) in pending-written-intake.json.",
+    "Documented source booklet omission defect: Q26 was omitted in the printed question paper (jump from Q25 to Q27).",
+    "Verified all 79 MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

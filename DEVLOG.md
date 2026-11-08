@@ -8155,6 +8155,30 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,457 saved records**, **8,379 unique appearances**, **7,979 deduplicated candidates**, **0 problems**. [Batch 113 report](reports/tagging-batch113-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 114 (Junior Engineer PHED 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 114 (`reports/tagging-batch114-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Junior Engineer under Public Health Engineering Department, June 2019 — General English* (`Old_Questions/Direct_2019-2020/General English (JE).pdf`, `doc_dd7ee5b1f64f43405f6399c0`, 79 MCQs, achieving **100% paper completion** with 79/79 items reviewed; 1 conventional essay question preserved in written intake, 1 omitted booklet number defect documented).
+- **Candidate Decisions & Taxonomy Structuring (79 items: 51 retag, 28 keep, 0 hold):**
+  - All 79 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (idioms and idiomatic expressions meaning).
+    - `english/grammar` (16 items): Q49–Q53 (sentence structure: simple, compound, complex), Q54–Q58 (clauses: noun clause, adjective clause, adverb clause, coordinate clause), Q59–Q64 (communicative functions and speech acts / notions).
+    - `english/comprehension` (11 items): Q17–Q28 excl. omitted Q26 (reading comprehension passages: Passage 1: Q17–Q20; Passage 2: Q21–Q25, Q27–Q28 on Mewar kingdom).
+    - `english/grammar/tenses` (8 items): Q41–Q48 (verb tense forms in context).
+    - `english/vocabulary/synonyms` (8 items): Q73–Q80 (industrious, immaculate, puerility, judicious, arduous, insatiable, eventually, integrity).
+    - `english/grammar/prepositions` (6 items): Q35–Q40 (prepositions in context).
+    - `english/grammar/parts-of-speech` (6 items): Q29–Q34 (functional parts of speech: noun, pronoun, adjective, verb, adverb, preposition/conjunction).
+    - `english/vocabulary/one-word-substitution` (5 items): Q65–Q67, Q71–Q72 (ambidextrous, anonymous, omnipotent, epitaph, polygamy).
+    - `english/vocabulary` (3 items): Q68–Q70 (commonly confused words: adopt/adept, effect/affect, precede/proceed).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Smartphone / New Aizawl City / Swachh Bharat Abhiyan) in `pending-written-intake.json`.
+  - Documented printed question paper omission defect: Question number 26 was omitted by the exam paper setter in the printed booklet (jumped from 25 directly to 27 on Physical Page 4). Total MCQs in booklet = 79.
+- **Ledger Verification:**
+  - Readback validation confirmed 79/79 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,536 saved records**, **8,458 unique appearances**, **8,058 deduplicated candidates**, **0 problems**. [Batch 114 report](reports/tagging-batch114-20261108/README.md).
+
+
 
 
 
