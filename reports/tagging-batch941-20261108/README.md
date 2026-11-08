@@ -1,0 +1,13 @@
+# Tagging Batch 941: DEPARTMENTAL EXAMINATIONS FOR JUNIOR ENGINEER AND DRAFTMAN-I UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT - ACCOUNTS PAPER - Junior Engineer (58 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Departmental_2019-2020/JE Draftman-I Account Paper..pdf`
+- **Title:** DEPARTMENTAL EXAMINATIONS FOR JUNIOR ENGINEER AND DRAFTMAN-I UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT - ACCOUNTS PAPER (Junior Engineer)
+- **Total Targets:** 58
+- **Document Binding:** `doc_08fc4ca7b35cbe66614db768` (sha256 `3e1b637788eeae35c761d4c3c6770a8f015dd78c7de9e6e3e7738b2345e403b3`)
+
+## Actions
+- **`keep`:** 0
+- **`retag`:** 58
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.

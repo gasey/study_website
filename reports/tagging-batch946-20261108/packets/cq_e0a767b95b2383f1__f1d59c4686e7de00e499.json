@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_e0a767b95b2383f1",
+  "appearance_id": "f1d59c4686e7de00e499",
+  "snapshot": {
+    "record": {
+      "id": "f1d59c4686e7de00e499",
+      "paperId": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+      "type": "mcq",
+      "question": "At a hydraulic jump, the depth at the two sides are 0.4 m and 1.4 m. The head loss in the jump is",
+      "options": [
+        "0.45",
+        "1.0",
+        "0.35",
+        "0.9"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "For a hydraulic jump, head loss = (y2 - y1)^3 / (4 y1 y2) = (1.0)^3 / (4 x 0.4 x 1.4) = 1/2.24 = 0.446 m, which rounds to 0.45.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "4",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+      "title": "Mizoram Engineering Service (M.E.S.) - Civil Engineering Paper II",
+      "year": 2020,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/MES%20Civil%20Engineering%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "f467ddb35d26c284cda57d4007e0bcd5c827e3ee9c57c2fdaa8073818dba485a",
+  "appearance": {
+    "id": "f1d59c4686e7de00e499",
+    "paper_id": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "4",
+    "qnum_seq": 4,
+    "page": 1,
+    "question": "At a hydraulic jump, the depth at the two sides are 0.4 m and 1.4 m. The head loss in the jump is",
+    "options": [
+      "0.45",
+      "1.0",
+      "0.35",
+      "0.9"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "MES Civil Engineering Paper-II",
+    "difficulty": "medium",
+    "explanation": "For a hydraulic jump, head loss = (y2 - y1)^3 / (4 y1 y2) = (1.0)^3 / (4 x 0.4 x 1.4) = 1/2.24 = 0.446 m, which rounds to 0.45.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.4':12 '1.4':15 'depth':6 'head':18 'hydraul':3 'jump':4,22 'loss':19 'm':13,16 'side':10 'two':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_e0a767b95b2383f1",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0.45",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

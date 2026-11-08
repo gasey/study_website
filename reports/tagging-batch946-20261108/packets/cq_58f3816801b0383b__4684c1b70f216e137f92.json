@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_58f3816801b0383b",
+  "appearance_id": "4684c1b70f216e137f92",
+  "snapshot": {
+    "record": {
+      "id": "4684c1b70f216e137f92",
+      "paperId": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+      "type": "mcq",
+      "question": "The Froude number of flow in a rectangular channel is 0.8. If the depth of flow is 1.5 m, the critical depth is",
+      "options": [
+        "1.8 m",
+        "1.56 m",
+        "1.36 m",
+        "1.29 m"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Critical depth yc = y x Fr^(2/3) = 1.5 x 0.8^(2/3) = 1.5 x 0.862 = 1.29 m for a rectangular channel.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "50",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+      "title": "Mizoram Engineering Service (M.E.S.) - Civil Engineering Paper II",
+      "year": 2020,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/MES%20Civil%20Engineering%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "ef468bbff6a801fe554d180cf7fa880173625968e54f801a146a2c9b19061e3f",
+  "appearance": {
+    "id": "4684c1b70f216e137f92",
+    "paper_id": "Old_Questions/Direct_2019-2020/MES Civil Engineering Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "50",
+    "qnum_seq": 50,
+    "page": 5,
+    "question": "The Froude number of flow in a rectangular channel is 0.8. If the depth of flow is 1.5 m, the critical depth is",
+    "options": [
+      "1.8 m",
+      "1.56 m",
+      "1.36 m",
+      "1.29 m"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "MES Civil Engineering Paper-II",
+    "difficulty": "medium",
+    "explanation": "Critical depth yc = y x Fr^(2/3) = 1.5 x 0.8^(2/3) = 1.5 x 0.862 = 1.29 m for a rectangular channel.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.8':11 '1.5':18 'channel':9 'critic':21 'depth':14,22 'flow':5,16 'froud':2 'm':19 'number':3 'rectangular':8",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_58f3816801b0383b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "1.29 m",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
