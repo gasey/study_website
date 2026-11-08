@@ -7896,6 +7896,23 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,379 saved records**, **7,301 unique appearances**, **6,901 deduplicated candidates**, **0 problems**. [Batch 100 report](reports/tagging-batch100-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 101 (Forest Ranger 2019 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 101 (`reports/tagging-batch101-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Forest Ranger under Environment, Forests & Climate Change Department (2019) — General English Paper-II* (`Old_Questions/Direct_2019-2020/General English-II (FR).pdf`, `doc_bead3bb71835fdb97283f30a`, 98 MCQs extracted, achieving **100% paper completion** with 98/98 items reviewed; 2 legacy OCR drops Q66 & Q67 documented in intake ledger).
+- **Candidate Decisions & Taxonomy Structuring (98 items: 92 retag, 6 keep, 0 hold):**
+  - All 98 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (58 items): Q1–Q10 (functional parts of speech identification), Q21–Q30 (determiners & quantifiers), Q31–Q40 (modal auxiliaries), Q41–Q50 (clause identification), Q51–Q60 (sentence types analysis: simple, complex, compound), Q61–Q65, Q68–Q70 (sentence completion & connectors).
+    - `english/grammar/tenses` (10 items): Q11–Q20 (verb tenses in context).
+    - `english/vocabulary/synonyms` (10 items): Q71–Q80 (infructuous, recondite, mitigate, innocuous, abjure, ephemeral, clandestine, loquacious, supercilious, recalcitrant).
+    - `english/sentence-correction` (10 items): Q81–Q90 (phrase improvement & grammatical error correction).
+    - `english/vocabulary/one-word-substitution` (10 items): Q91–Q100 (one-word substitution / term definitions).
+- **Ledger Verification:**
+  - Readback validation confirmed 98/98 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,477 saved records**, **7,399 unique appearances**, **6,999 deduplicated candidates**, **0 problems**. [Batch 101 report](reports/tagging-batch101-20261108/README.md).
+
+
 
 
 

@@ -1,0 +1,35 @@
+{
+  "batch": 101,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/General English-II (FR).pdf",
+      "paper_title": "Competitive Examinations for Recruitment to the Post of Forest Ranger (2019) — General English Paper-II",
+      "document_id": "doc_bead3bb71835fdb97283f30a",
+      "sha256": "b9df0cd7beee835d6078ef0da0432abf058a86f5584f0d76f572a172ea069437",
+      "targets": 98
+    }
+  ],
+  "targets": 98,
+  "completion": "100% paper completion achieved for Forest Ranger 2019 General English Paper-II (98/98 extracted MCQs reviewed: 58 Grammar Core, 10 Tenses, 10 Synonyms, 10 Sentence Correction, 10 One-Word Substitution; 2 legacy OCR drops Q66 & Q67 documented in intake ledger)",
+  "actions": {
+    "retag": 92,
+    "keep": 6,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/grammar": 58,
+    "english/grammar/tenses": 10,
+    "english/vocabulary/synonyms": 10,
+    "english/sentence-correction": 10,
+    "english/vocabulary/one-word-substitution": 10
+  },
+  "source_defects": [
+    "Documented 2 legacy OCR drops: Q66 and Q67 (short stems) omitted in DB ingestion.",
+    "Realigned legacy generic classification into standard English curriculum taxonomy.",
+    "Verified all 98 extracted MCQs against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
