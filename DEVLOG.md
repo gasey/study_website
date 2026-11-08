@@ -7837,3 +7837,26 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **7,079 saved records**, **7,001 unique appearances**, **6,601 deduplicated candidates**, **0 problems**. [Batch 97 report](reports/tagging-batch97-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 98 (Geologist Junior Nov 2020 General English Paper-II)
+- **Execution:** Prepared pending source-reviewed tagging batch 98 (`reports/tagging-batch98-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Geologist Junior under Commerce & Industries Department (November 2020) — General English Paper-II* (`Old_Questions/Direct_2019-2020/Geologist Junior General Englsih Paper-II Nov.pdf`, `doc_a05a7fb9038cb7ec16c28f3b`, 100 MCQs, achieving **100% paper completion** with 100/100 items reviewed).
+- **Candidate Decisions & Taxonomy Structuring (100 items: 97 retag, 3 keep, 0 hold):**
+  - All 100 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (37 items): Q12 (auxiliary do), Q17 (gerund), Q18 (modal would), Q22 (determiner such), Q23–Q25 (conjunctions: neither...nor, as if, so that), Q41–Q50 (sentence kinds: simple, compound, complex), Q51–Q60 (sentence synthesis & clause combination), Q61–Q70 (sentence transformation & communicative substitution).
+    - `english/vocabulary/idioms-and-phrases` (10 items): Q1–Q10 (gave a hand, got rid of, burned herself out, up to date, wheel and deal, chickened out, put the bite on, have kittens, leaving for, up to her ears).
+    - `english/sentence-correction` (10 items): Q81–Q90 (phrase improvement, grammatical correction).
+    - `english/comprehension` (10 items): Q91–Q100 (cloze test reading passage completion).
+    - `english/grammar/prepositions` (6 items): Q21, Q26–Q30 (because of, from, to, of, like, of).
+    - `english/grammar/tenses` (5 items): Q11, Q13, Q14, Q19, Q20 (goes, have been learning, was waiting, had practiced, were).
+    - `english/grammar/voice` (5 items): Q31–Q35 (active to passive voice).
+    - `english/grammar/reported-speech` (5 items): Q36–Q40 (direct and indirect speech).
+    - `english/vocabulary/synonyms` (5 items): Q71–Q75 (temperance, empirically, misogynism, propensity, garrulous).
+    - `english/vocabulary` (5 items): Q76–Q80 (verbal analogies and word relationships).
+    - `english/grammar/subject-verb-agreement` (2 items): Q15, Q16 (the number of, scissors).
+- **Ledger Verification:**
+  - Readback validation confirmed 100/100 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **7,179 saved records**, **7,101 unique appearances**, **6,701 deduplicated candidates**, **0 problems**. [Batch 98 report](reports/tagging-batch98-20261108/README.md).
+
+
