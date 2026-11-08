@@ -8088,6 +8088,29 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,217 saved records**, **8,139 unique appearances**, **7,739 deduplicated candidates**, **0 problems**. [Batch 110 report](reports/tagging-batch110-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 111 (Soil Conservation Ranger 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 111 (`reports/tagging-batch111-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Competitive Examinations for Recruitment to the Post of Soil Conservation Ranger under Land Resources, Soil & Water Conservation Department, March 2019 — General English* (`Old_Questions/Direct_2019-2020/General English(SCR).pdf`, `doc_1d7f6a73c1d1297e61502479`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 50 retag, 30 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/vocabulary/idioms-and-phrases` (22 items): Q1–Q16 (green-eyed, sitting on fence, point blank, high and low, burning question, feather in cap, in offing, not cut out, gift of gab, on wane, in doldrums, make head or tail, foot bill, pulling leg, put foot down, took to heels), Q75–Q80 (cold feet, apple of discord, skeleton in cupboard, sail in same boat, red-letter day, at beck and call).
+    - `english/grammar` (16 items): Q49–Q58 (sentence structure: simple, compound, complex), Q59–Q64 (sentence types: declarative, interrogative, imperative, exclamatory).
+    - `english/vocabulary` (10 items): Q65–Q74 (contextual word choice: eruption, respectable, cursory, fair share, apprehend, impair, endowed, altercation, evoked, resemblance).
+    - `english/grammar/parts-of-speech` (8 items): Q29–Q36 (parts of speech identification in context).
+    - `english/grammar/prepositions` (6 items): Q43–Q48 (prepositions in context).
+    - `english/grammar/tenses` (6 items): Q37–Q42 (verb forms and tenses in context).
+    - `english/comprehension` (5 items): Q17–Q21 (reading comprehension passage).
+    - `english/vocabulary/antonyms` (4 items): Q25–Q28 (antonyms from passage context).
+    - `english/vocabulary/synonyms` (3 items): Q22–Q24 (synonyms from passage context).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: The Ideal Politician / Conservation of Forest Cover / Transparency in Administration) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,297 saved records**, **8,219 unique appearances**, **7,819 deduplicated candidates**, **0 problems**. [Batch 111 report](reports/tagging-batch111-20261108/README.md).
+
+
 
 
 
