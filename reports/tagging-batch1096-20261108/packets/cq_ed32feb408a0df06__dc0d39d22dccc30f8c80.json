@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ed32feb408a0df06",
+  "appearance_id": "dc0d39d22dccc30f8c80",
+  "snapshot": {
+    "record": {
+      "id": "dc0d39d22dccc30f8c80",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-II (PHE)-May.pdf",
+      "type": "mcq",
+      "question": "For a stable closed loop system, the gain at phase crossover frequency should always be:",
+      "options": [
+        "< 20 dB",
+        "< 6 dB",
+        "> 6 dB",
+        "> 0 dB"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "For a stable closed-loop system, the gain at phase crossover frequency (where phase = -180°) must be < 0 dB (i.e., magnitude < 1). The gain margin is the negative of this value in dB and must be > 0 dB for stability. The literal correct answer (< 0 dB) is not among the options. Option '> 0 dB' (index 3) matches the gain margin stability criterion, suggesting the question likely contains a wording error and intends to ask about gain margin rather than gain at phase crossover.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "50",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-II (PHE)-May.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE (M.E.S.) UNDER PUBLIC HEALTH DEPARTMENT, GOVERNMENT OF MIZORAM - ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-II%20(PHE)-May.pdf"
+    }
+  },
+  "source_fingerprint": "ac040c61c7031b1fa6238c96ab88c68486929007136130f514375ba7b9769be1",
+  "appearance": {
+    "id": "dc0d39d22dccc30f8c80",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-II (PHE)-May.pdf",
+    "type": "mcq",
+    "qnum": "50",
+    "qnum_seq": 50,
+    "page": 5,
+    "question": "For a stable closed loop system, the gain at phase crossover frequency should always be:",
+    "options": [
+      "< 20 dB",
+      "< 6 dB",
+      "> 6 dB",
+      "> 0 dB"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-II (PHE)-May",
+    "difficulty": "medium",
+    "explanation": "For a stable closed-loop system, the gain at phase crossover frequency (where phase = -180°) must be < 0 dB (i.e., magnitude < 1). The gain margin is the negative of this value in dB and must be > 0 dB for stability. The literal correct answer (< 0 dB) is not among the options. Option '> 0 dB' (index 3) matches the gain margin stability criterion, suggesting the question likely contains a wording error and intends to ask about gain margin rather than gain at phase crossover.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'alway':14 'close':4 'crossov':11 'frequenc':12 'gain':8 'loop':5 'phase':10 'stabl':3 'system':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ed32feb408a0df06",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "> 0 dB",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

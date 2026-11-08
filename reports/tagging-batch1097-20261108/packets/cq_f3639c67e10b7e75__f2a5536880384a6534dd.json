@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_f3639c67e10b7e75",
+  "appearance_id": "f2a5536880384a6534dd",
+  "snapshot": {
+    "record": {
+      "id": "f2a5536880384a6534dd",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+      "type": "mcq",
+      "question": "Two sinusoidal signals of same amplitude and frequency 10 KHz and 10.1 KHz are added together. The combined signal is given to an ideal frequency detector is",
+      "options": [
+        "0.1 KHz sinusoid.",
+        "20.1 KHz sinusoid.",
+        "A linear function of time.",
+        "A constant."
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Two equal-amplitude tones at 10 kHz and 10.1 kHz sum to a carrier at 10.05 kHz with an envelope that flips sign, so the instantaneous frequency is a constant 10.05 kHz apart from phase reversals. An ideal frequency detector therefore gives a constant output.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "13",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+      "title": "MIZORAM PUBLIC SERVICE COMMISSION - TECHNICAL COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE (M.E.S.) - ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-III%20(PHE)-March.pdf"
+    }
+  },
+  "source_fingerprint": "efae249a86e41fdea5dac90b1b64712f56ec013fc49ed82dc698ef530493373c",
+  "appearance": {
+    "id": "f2a5536880384a6534dd",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+    "type": "mcq",
+    "qnum": "13",
+    "qnum_seq": 13,
+    "page": 2,
+    "question": "Two sinusoidal signals of same amplitude and frequency 10 KHz and 10.1 KHz are added together. The combined signal is given to an ideal frequency detector is",
+    "options": [
+      "0.1 KHz sinusoid.",
+      "20.1 KHz sinusoid.",
+      "A linear function of time.",
+      "A constant."
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-III (PHE)-March",
+    "difficulty": "medium",
+    "explanation": "Two equal-amplitude tones at 10 kHz and 10.1 kHz sum to a carrier at 10.05 kHz with an envelope that flips sign, so the instantaneous frequency is a constant 10.05 kHz apart from phase reversals. An ideal frequency detector therefore gives a constant output.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'10':9 '10.1':12 'ad':15 'amplitud':6 'combin':18 'detector':26 'frequenc':8,25 'given':21 'ideal':24 'khz':10,13 'signal':3,19 'sinusoid':2 'togeth':16 'two':1",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_f3639c67e10b7e75",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A constant.",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

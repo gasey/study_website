@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_1f53c04e34cfdcd4",
+  "appearance_id": "d64d7392df1ff10d55a4",
+  "snapshot": {
+    "record": {
+      "id": "d64d7392df1ff10d55a4",
+      "paperId": "Old_Questions/Direct_2019-2020/Paper-II(Election).pdf",
+      "type": "mcq",
+      "question": "If N devices are connected with each other in mesh topology, then total number of parts that is required by each device is",
+      "options": [
+        "N",
+        "N-1",
+        "N/2",
+        "2N"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "N-1 links are needed per device in a mesh.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "1",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Paper-II(Election).pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF COMPUTER OPERATOR UNDER ELECTION DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Paper-II(Election).pdf"
+    }
+  },
+  "source_fingerprint": "5d14f874bb2891bbbcb844b8081819771792e7caa3665025855db0acdfa1aedf",
+  "appearance": {
+    "id": "d64d7392df1ff10d55a4",
+    "paper_id": "Old_Questions/Direct_2019-2020/Paper-II(Election).pdf",
+    "type": "mcq",
+    "qnum": "1",
+    "qnum_seq": 1,
+    "page": 1,
+    "question": "If N devices are connected with each other in mesh topology, then total number of parts that is required by each device is",
+    "options": [
+      "N",
+      "N-1",
+      "N/2",
+      "2N"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Paper-II(Election)",
+    "difficulty": "medium",
+    "explanation": "N-1 links are needed per device in a mesh.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'connect':5 'devic':3,22 'mesh':10 'n':2 'number':14 'part':16 'requir':19 'topolog':11 'total':13",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1f53c04e34cfdcd4",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "N-1",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

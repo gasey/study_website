@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ac3d01ca55c20d51",
+  "appearance_id": "af828f27001342b4d566",
+  "snapshot": {
+    "record": {
+      "id": "af828f27001342b4d566",
+      "paperId": "Old_Questions/Direct_2019-2020/Civil Engineering Paper-III (PHE).pdf",
+      "type": "mcq",
+      "question": "A two-lane urban road with one-way traffic has a maximum capacity of 1800 vehicles/hour. Under jam condition, the average length occupied by the vehicles is 5.0 m. The speed versus density relationship is linear. For a traffic volume of 1000 vehicles/ hour, the density is",
+      "options": [
+        "46 vehicles/km",
+        "58 vehicles/km",
+        "67 vehicles/km",
+        "73 vehicles/km"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Using Greenshields linear speed-density model: q = k·v_f·(1 - k/k_jam). Maximum capacity q_max = 1800 veh/hr for the two-lane road. Jam density k_jam = 2 lanes × (1000 m / 5.0 m) = 400 veh/km. Free-flow speed v_f = 4·q_max/k_jam = 4×1800/400 = 18 km/h. For q = 1000 veh/hr: 1000 = k·18·(1 - k/400) → 0.045k² - 18k + 1000 = 0 → k = 66.67 or 333.33 veh/km. The uncongested branch gives k ≈ 67 veh/km.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "21",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Civil Engineering Paper-III (PHE).pdf",
+      "title": "MIZORAM ENGINEERING SERVICE (M.E.S.) - CIVIL ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Civil%20Engineering%20Paper-III%20(PHE).pdf"
+    }
+  },
+  "source_fingerprint": "b10d38a58194f94185dd622dec9a30e3a7b7b976073a30eee8f45de8d03d6bb3",
+  "appearance": {
+    "id": "af828f27001342b4d566",
+    "paper_id": "Old_Questions/Direct_2019-2020/Civil Engineering Paper-III (PHE).pdf",
+    "type": "mcq",
+    "qnum": "21",
+    "qnum_seq": 21,
+    "page": 3,
+    "question": "A two-lane urban road with one-way traffic has a maximum capacity of 1800 vehicles/hour. Under jam condition, the average length occupied by the vehicles is 5.0 m. The speed versus density relationship is linear. For a traffic volume of 1000 vehicles/ hour, the density is",
+    "options": [
+      "46 vehicles/km",
+      "58 vehicles/km",
+      "67 vehicles/km",
+      "73 vehicles/km"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-III (PHE)",
+    "difficulty": "medium",
+    "explanation": "Using Greenshields linear speed-density model: q = k·v_f·(1 - k/k_jam). Maximum capacity q_max = 1800 veh/hr for the two-lane road. Jam density k_jam = 2 lanes × (1000 m / 5.0 m) = 400 veh/km. Free-flow speed v_f = 4·q_max/k_jam = 4×1800/400 = 18 km/h. For q = 1000 veh/hr: 1000 = k·18·(1 - k/400) → 0.045k² - 18k + 1000 = 0 → k = 66.67 or 333.33 veh/km. The uncongested branch gives k ≈ 67 veh/km.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1000':44 '1800':17 '5.0':30 'averag':23 'capac':15 'condit':21 'densiti':35,48 'hour':46 'jam':20 'lane':4 'length':24 'linear':38 'm':31 'maximum':14 'occupi':25 'one':9 'one-way':8 'relationship':36 'road':6 'speed':33 'traffic':11,41 'two':3 'two-lan':2 'urban':5 'vehicl':28,45 'vehicles/hour':18 'versus':34 'volum':42 'way':10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ac3d01ca55c20d51",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "67 vehicles/km",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

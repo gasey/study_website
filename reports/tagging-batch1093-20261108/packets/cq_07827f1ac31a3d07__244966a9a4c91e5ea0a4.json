@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_07827f1ac31a3d07",
+  "appearance_id": "244966a9a4c91e5ea0a4",
+  "snapshot": {
+    "record": {
+      "id": "244966a9a4c91e5ea0a4",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "type": "mcq",
+      "question": "If a = 0.995, IE = 10 mA and Ico = 0.5 mA, then ICEO will be",
+      "options": [
+        "100 mA",
+        "200 mA",
+        "300 mA",
+        "400 mA"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "ICEO = Icbo/(1-α) = 0.5 mA / (1 - 0.995) = 0.5 mA / 0.005 = 100 mA; this matches (1+β)Icbo with β = 199.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "27",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "title": "ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-I%20(PHE)-March.pdf"
+    }
+  },
+  "source_fingerprint": "e07312abdb89455f6b7f14d574142788e9422a6c326089aa1dd2c3175ccafcd5",
+  "appearance": {
+    "id": "244966a9a4c91e5ea0a4",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+    "type": "mcq",
+    "qnum": "27",
+    "qnum_seq": 27,
+    "page": 3,
+    "question": "If a = 0.995, IE = 10 mA and Ico = 0.5 mA, then ICEO will be",
+    "options": [
+      "100 mA",
+      "200 mA",
+      "300 mA",
+      "400 mA"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-I (PHE)-March",
+    "difficulty": "medium",
+    "explanation": "ICEO = Icbo/(1-α) = 0.5 mA / (1 - 0.995) = 0.5 mA / 0.005 = 100 mA; this matches (1+β)Icbo with β = 199.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.5':9 '0.995':3 '10':5 'iceo':12 'ico':8 'ie':4 'ma':6,10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_07827f1ac31a3d07",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "100 mA",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

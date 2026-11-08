@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_60de485dfe1e11c8",
+  "appearance_id": "0d861ec03d31787ff4a3",
+  "snapshot": {
+    "record": {
+      "id": "0d861ec03d31787ff4a3",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "type": "mcq",
+      "question": "Which of the following relation among two port parameters is not correct?",
+      "options": [
+        "y12 = -h12/h11",
+        "z12 = h12/h22",
+        "B = -h12/h22",
+        "None of these"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The standard relations y12 = -h12/h11 and z12 = h12/h22 are correct, but B = -1/h21 in terms of h-parameters, not -h12/h22, so option c is the incorrect relation.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "7",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "title": "ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-I%20(PHE)-March.pdf"
+    }
+  },
+  "source_fingerprint": "a69e448df61774ae5d431475844317cb0c37f12bfaae60bf3b700a405003a97b",
+  "appearance": {
+    "id": "0d861ec03d31787ff4a3",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+    "type": "mcq",
+    "qnum": "7",
+    "qnum_seq": 7,
+    "page": 2,
+    "question": "Which of the following relation among two port parameters is not correct?",
+    "options": [
+      "y12 = -h12/h11",
+      "z12 = h12/h22",
+      "B = -h12/h22",
+      "None of these"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-I (PHE)-March",
+    "difficulty": "medium",
+    "explanation": "The standard relations y12 = -h12/h11 and z12 = h12/h22 are correct, but B = -1/h21 in terms of h-parameters, not -h12/h22, so option c is the incorrect relation.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'among':6 'correct':12 'follow':4 'paramet':9 'port':8 'relat':5 'two':7",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_60de485dfe1e11c8",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "B = -h12/h22",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

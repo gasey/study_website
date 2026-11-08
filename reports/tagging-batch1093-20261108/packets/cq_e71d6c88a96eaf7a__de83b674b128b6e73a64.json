@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_e71d6c88a96eaf7a",
+  "appearance_id": "de83b674b128b6e73a64",
+  "snapshot": {
+    "record": {
+      "id": "de83b674b128b6e73a64",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "type": "mcq",
+      "question": "The initial value of F(s) = 1/(s(s²+3s+2)) is given by",
+      "options": [
+        "0.5",
+        "1",
+        "0.8",
+        "0.2"
+      ],
+      "answerIndex": null,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The printed page 5 confirms that the question asks for the initial value and gives F(s) = 1/[s(s²+3s+2)]. The initial-value theorem gives f(0+) = lim(s→∞) sF(s) = lim(s→∞) 1/(s²+3s+2) = 0, which is absent from the options; 0.5 is instead the final value. Hold pending correction of the printed stem or options.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "42",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+      "title": "ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-I%20(PHE)-March.pdf"
+    }
+  },
+  "source_fingerprint": "aedeb4d17840548b1ff5b5ef4d630684317b674aa5509c654b693d2edec9684b",
+  "appearance": {
+    "id": "de83b674b128b6e73a64",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-I (PHE)-March.pdf",
+    "type": "mcq",
+    "qnum": "42",
+    "qnum_seq": 42,
+    "page": 5,
+    "question": "The initial value of F(s) = 1/(s(s²+3s+2)) is given by",
+    "options": [
+      "0.5",
+      "1",
+      "0.8",
+      "0.2"
+    ],
+    "answer_index": null,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-I (PHE)-March",
+    "difficulty": "medium",
+    "explanation": "The printed page 5 confirms that the question asks for the initial value and gives F(s) = 1/[s(s²+3s+2)]. The initial-value theorem gives f(0+) = lim(s→∞) sF(s) = lim(s→∞) 1/(s²+3s+2) = 0, which is absent from the options; 0.5 is instead the final value. Hold pending correction of the printed stem or options.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+2':12 '+3':10 '1':7 'f':5 'given':14 'initi':2 'valu':3",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_e71d6c88a96eaf7a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": null,
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

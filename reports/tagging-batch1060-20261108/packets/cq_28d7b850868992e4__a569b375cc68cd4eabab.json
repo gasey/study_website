@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_28d7b850868992e4",
+  "appearance_id": "a569b375cc68cd4eabab",
+  "snapshot": {
+    "record": {
+      "id": "a569b375cc68cd4eabab",
+      "paperId": "Old_Questions/Direct_2019-2020/Paper-I (Basic Sciences).pdf",
+      "type": "mcq",
+      "question": "(cos x - sin x)/(cos x + sin x) = .....................",
+      "options": [
+        "tan 2x",
+        "2 tan 2x",
+        "2 tan x",
+        "tan(x/2)"
+      ],
+      "answerIndex": null,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Source page 6 prints (cos x + sin x)/(cos x - sin x), while the bank stem has the fraction inverted; neither form equals any listed option (they simplify to tan(π/4 + x) and tan(π/4 - x) respectively). No defensible option.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "62",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Paper-I (Basic Sciences).pdf",
+      "title": "SOIL CONSERVATION RANGER - BASIC SCIENCES",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Paper-I%20(Basic%20Sciences).pdf"
+    }
+  },
+  "source_fingerprint": "5d222d4d855ee6696263ab667b418734672c3c24a3f05de3e2a48335e682cfc2",
+  "appearance": {
+    "id": "a569b375cc68cd4eabab",
+    "paper_id": "Old_Questions/Direct_2019-2020/Paper-I (Basic Sciences).pdf",
+    "type": "mcq",
+    "qnum": "62",
+    "qnum_seq": 62,
+    "page": 6,
+    "question": "(cos x - sin x)/(cos x + sin x) = .....................",
+    "options": [
+      "tan 2x",
+      "2 tan 2x",
+      "2 tan x",
+      "tan(x/2)"
+    ],
+    "answer_index": null,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Paper-I (Basic Sciences)",
+    "difficulty": "medium",
+    "explanation": "Source page 6 prints (cos x + sin x)/(cos x - sin x), while the bank stem has the fraction inverted; neither form equals any listed option (they simplify to tan(π/4 + x) and tan(π/4 - x) respectively). No defensible option.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'cos':1,5 'sin':3,7 'x':2,4,6,8",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_28d7b850868992e4",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": null,
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_1a70db7f5c8b2e88",
+  "appearance_id": "6fbf5d78d06d7bc87286",
+  "snapshot": {
+    "record": {
+      "id": "6fbf5d78d06d7bc87286",
+      "paperId": "Old_Questions/Direct_2019-2020/Paper-I(Election).pdf",
+      "type": "mcq",
+      "question": "Assume that you have typed =vlookup(101,A1:B5,2,FALSE) in cell C2, what will be printed in C2?",
+      "options": [
+        "#REF",
+        "Apple",
+        "Banana",
+        "Orange"
+      ],
+      "answerIndex": 3,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "57",
+      "hasDiagram": true,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Paper-I(Election).pdf",
+      "title": "Technical Competitive Examinations for Recruitment to the Post of Computer Operator under Election Department, Government of Mizoram",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Paper-I(Election).pdf"
+    }
+  },
+  "source_fingerprint": "e71d9b1ae41487f97693148da33877a5eb6abbc3b57ce41c87adddab1e505682",
+  "appearance": {
+    "id": "6fbf5d78d06d7bc87286",
+    "paper_id": "Old_Questions/Direct_2019-2020/Paper-I(Election).pdf",
+    "type": "mcq",
+    "qnum": "57",
+    "qnum_seq": 57,
+    "page": 6,
+    "question": "Assume that you have typed =vlookup(101,A1:B5,2,FALSE) in cell C2, what will be printed in C2?",
+    "options": [
+      "#REF",
+      "Apple",
+      "Banana",
+      "Orange"
+    ],
+    "answer_index": 3,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Paper-I(Election)",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": true,
+    "used_vision": false,
+    "figure_group_id": "30fe105b2e7cceacf84f",
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'101':7 '2':10 'a1':8 'assum':1 'b5':9 'c2':14,20 'cell':13 'fals':11 'print':18 'type':5 'vlookup':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1a70db7f5c8b2e88",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Orange",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

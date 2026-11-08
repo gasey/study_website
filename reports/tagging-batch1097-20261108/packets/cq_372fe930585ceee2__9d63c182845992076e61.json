@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_372fe930585ceee2",
+  "appearance_id": "9d63c182845992076e61",
+  "snapshot": {
+    "record": {
+      "id": "9d63c182845992076e61",
+      "paperId": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+      "type": "mcq",
+      "question": "A mast antenna consisting of a 50m long vertical conductor operates over a perfectly conducting ground plane. It is base-fed at a frequency of 600 KHz. The radiation resistance of the antenna is",
+      "options": [
+        "5π²/2",
+        "4π²/5",
+        "20π²/5",
+        "5π²"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "A quarter-wave monopole has R = 40 pi^2 (h/lambda)^2. Here lambda = 3e8/600e3 = 500 m and h = 50 m, so h/lambda = 0.1 and R = 40 pi^2 x 0.01 = 2 pi^2/5 ohm.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "35",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+      "title": "MIZORAM PUBLIC SERVICE COMMISSION - TECHNICAL COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF MIZORAM ENGINEERING SERVICE (M.E.S.) - ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electronics%26Communication%20Engg%20Paper-III%20(PHE)-March.pdf"
+    }
+  },
+  "source_fingerprint": "ece8416c74e6773dd07e67de34d5c9e44294d34e4c9ac9e0e0ca756098fcd325",
+  "appearance": {
+    "id": "9d63c182845992076e61",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electronics&Communication Engg Paper-III (PHE)-March.pdf",
+    "type": "mcq",
+    "qnum": "35",
+    "qnum_seq": 35,
+    "page": 4,
+    "question": "A mast antenna consisting of a 50m long vertical conductor operates over a perfectly conducting ground plane. It is base-fed at a frequency of 600 KHz. The radiation resistance of the antenna is",
+    "options": [
+      "5π²/2",
+      "4π²/5",
+      "20π²/5",
+      "5π²"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electronics&Communication Engg Paper-III (PHE)-March",
+    "difficulty": "medium",
+    "explanation": "A quarter-wave monopole has R = 40 pi^2 (h/lambda)^2. Here lambda = 3e8/600e3 = 500 m and h = 50 m, so h/lambda = 0.1 and R = 40 pi^2 x 0.01 = 2 pi^2/5 ohm.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'50m':7 '600':27 'antenna':3,34 'base':21 'base-f':20 'conduct':15 'conductor':10 'consist':4 'fed':22 'frequenc':25 'ground':16 'khz':28 'long':8 'mast':2 'oper':11 'perfect':14 'plane':17 'radiat':30 'resist':31 'vertic':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_372fe930585ceee2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "5π²/2",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
