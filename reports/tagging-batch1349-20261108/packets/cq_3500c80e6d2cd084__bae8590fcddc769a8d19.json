@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_3500c80e6d2cd084",
+  "appearance_id": "bae8590fcddc769a8d19",
+  "snapshot": {
+    "record": {
+      "id": "bae8590fcddc769a8d19",
+      "paperId": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "type": "mcq",
+      "question": "What is the name of routing type in which every incoming packet is sent to every neighbor router except the one from which the packet came?",
+      "options": [
+        "distribution",
+        "multicast",
+        "link-state",
+        "flooding"
+      ],
+      "answerIndex": 3,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "50",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "title": "COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.%20Computer%20Sc.%20Engineering%20Paper%20I.pdf"
+    }
+  },
+  "source_fingerprint": "bb3751b51e8ee45503d46cc0be4499dafa647b16de5fb887b9dfd42900f22044",
+  "appearance": {
+    "id": "bae8590fcddc769a8d19",
+    "paper_id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+    "type": "mcq",
+    "qnum": "50",
+    "qnum_seq": 50,
+    "page": 6,
+    "question": "What is the name of routing type in which every incoming packet is sent to every neighbor router except the one from which the packet came?",
+    "options": [
+      "distribution",
+      "multicast",
+      "link-state",
+      "flooding"
+    ],
+    "answer_index": 3,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3. Computer Sc. Engineering Paper I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'came':26 'everi':10,16 'except':19 'incom':11 'name':4 'neighbor':17 'one':21 'packet':12,25 'rout':6 'router':18 'sent':14 'type':7",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_3500c80e6d2cd084",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "flooding",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

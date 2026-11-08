@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_620c3d9e6cc8ea1e",
+  "appearance_id": "fd3781996becc66800db",
+  "snapshot": {
+    "record": {
+      "id": "fd3781996becc66800db",
+      "paperId": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "type": "mcq",
+      "question": "Which of the following are the channels defined by ISDN.",
+      "options": [
+        "Bearer, Data and Hybrid.",
+        "Bearer, Data and Mesh.",
+        "Bearer, Bit and Mesh.",
+        "Baud, Bit and Hybrid."
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "ISDN defines B (bearer) channels for user data and voice, D (data) channels for signalling and control, and H (hybrid) channels for higher-rate traffic. Option A, Bearer, Data and Hybrid, is the only set that matches these standard channel types.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "59",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "title": "COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.%20Computer%20Sc.%20Engineering%20Paper%20I.pdf"
+    }
+  },
+  "source_fingerprint": "243f869bc80616d44145726113e9d9d3b69d7cc63726c0ba9a729bdc05248ae4",
+  "appearance": {
+    "id": "fd3781996becc66800db",
+    "paper_id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+    "type": "mcq",
+    "qnum": "59",
+    "qnum_seq": 59,
+    "page": 6,
+    "question": "Which of the following are the channels defined by ISDN.",
+    "options": [
+      "Bearer, Data and Hybrid.",
+      "Bearer, Data and Mesh.",
+      "Bearer, Bit and Mesh.",
+      "Baud, Bit and Hybrid."
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3. Computer Sc. Engineering Paper I",
+    "difficulty": "medium",
+    "explanation": "ISDN defines B (bearer) channels for user data and voice, D (data) channels for signalling and control, and H (hybrid) channels for higher-rate traffic. Option A, Bearer, Data and Hybrid, is the only set that matches these standard channel types.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'channel':7 'defin':8 'follow':4 'isdn':10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_620c3d9e6cc8ea1e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Bearer, Data and Hybrid.",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

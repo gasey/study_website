@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_e504c156b51156ce",
+  "appearance_id": "e9b6f1cc8ea0b8c7f17e",
+  "snapshot": {
+    "record": {
+      "id": "e9b6f1cc8ea0b8c7f17e",
+      "paperId": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "type": "mcq",
+      "question": "How does CSMA/CD react to collisions?",
+      "options": [
+        "All systems jam the network, and then all begin transmitting again.",
+        "Hosts involved in a collision send an RTS signal indicating a time frame in which to retransmit.",
+        "Hosts involved in the collision send a jam signal, and then run an algorithm before retransmitting.",
+        "Collisions do not occur on CSMA/CD."
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "55",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "title": "COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.%20Computer%20Sc.%20Engineering%20Paper%20I.pdf"
+    }
+  },
+  "source_fingerprint": "d3127e7cb5805baac2ec330f98d330f4343346b99b4c771dcc14bbf4bb2cb1a9",
+  "appearance": {
+    "id": "e9b6f1cc8ea0b8c7f17e",
+    "paper_id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+    "type": "mcq",
+    "qnum": "55",
+    "qnum_seq": 55,
+    "page": 6,
+    "question": "How does CSMA/CD react to collisions?",
+    "options": [
+      "All systems jam the network, and then all begin transmitting again.",
+      "Hosts involved in a collision send an RTS signal indicating a time frame in which to retransmit.",
+      "Hosts involved in the collision send a jam signal, and then run an algorithm before retransmitting.",
+      "Collisions do not occur on CSMA/CD."
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3. Computer Sc. Engineering Paper I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'collis':6 'csma/cd':3 'react':4",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_e504c156b51156ce",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Hosts involved in the collision send a jam signal, and then run an algorithm before retransmitting.",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

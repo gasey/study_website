@@ -1,0 +1,3863 @@
+[
+  {
+    "canonical_id": "cq_0aaec14b79823588",
+    "appearance_id": "6a059397dc3487ae85af",
+    "source_fingerprint": "66f3b90a00bd0afeb0d0cd28d512e854f49aa4f8c1555edddb5243acf43bc850",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7011ee92b4be587",
+    "appearance_id": "6c14efb522496657cee6",
+    "source_fingerprint": "731e44f331e5cd716d957ef2eb33870566b41fdf9b33621a042a44d8bebd4671",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1fa4cace16000f49",
+    "appearance_id": "3b9701b14a95239d6229",
+    "source_fingerprint": "f345722ad5c0492bcdcb6d54f54b94bbe4b03777cc8775d95d616c5e970a8099",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30ae04535aff0632",
+    "appearance_id": "bd5e6dda3e38ec786916",
+    "source_fingerprint": "a1bbfdb02f4d7328d633ed0310a33e566fb7f96033a5957b639f2612395f23c6",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd0f80408b6ad8ba",
+    "appearance_id": "31233f3a10bbd54ca0aa",
+    "source_fingerprint": "3f5c937592a7d246ded2f398d92fd4f52c3726c587096335d8693e5f4d2b4bda",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6613991fe35026e",
+    "appearance_id": "5a7840e7790b1e16bc6d",
+    "source_fingerprint": "ffbe92bb6bf08a534f7fa9d1d08ae88f24603e3fd420fcddc1f2e6317f1a6763",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_92c3a19935693d86",
+    "appearance_id": "be6cc5045b6845c65c2c",
+    "source_fingerprint": "a6540f4ff323fd0a0df0968a8069ca0783adc8b47492ff209dc0f0a065ee2b1c",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c03e32adb0493b70",
+    "appearance_id": "66b89fc7bc102d46af3e",
+    "source_fingerprint": "633f1d51cc365c6f39cd8f8d5b134b0860c725bffd7928c8627e226857d548d1",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_775fc85e90a62b0f",
+    "appearance_id": "f6f13e60dff1f1535ec7",
+    "source_fingerprint": "3e428ddfc5a4ef9359810d8c5b6659dc82079d179f13cd92975ffd894b8e3b4a",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d7bbe317055795c3",
+    "appearance_id": "c0d19f2f9db4c29b52e1",
+    "source_fingerprint": "05b653f4adf09ff6857c661b8c231671008a03c399ca79c926aab5cf97466a6d",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a99e50b96be5978d",
+    "appearance_id": "a6f3cbcaf56e0f952ccc",
+    "source_fingerprint": "a3068df72597d718167b92a2e093c5eca99391295f2a4f33583126a758c39d57",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58f49bc85db0c2bd",
+    "appearance_id": "28192a7e77670146a6a7",
+    "source_fingerprint": "8bfc8fb4e87c2750344da3082e8c8228fbd70882c09301038bb1dbc10f5e112e",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f0e03e0d7603802",
+    "appearance_id": "f81b9f345978933f92ef",
+    "source_fingerprint": "dffffb8f7073a551c7203b48ace5f60b3a121fb76332d5c2ac1682f0f611fa63",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_db5b1e5902591617",
+    "appearance_id": "d985cd8c251f8e8dde96",
+    "source_fingerprint": "0a5b82c4665907bb94ceee5571b1a0e45eae223da1838f3f27fe14d01808d3f2",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_590c5a8952f975d9",
+    "appearance_id": "d82df9c6a5d28b07f7cd",
+    "source_fingerprint": "a20310cc2c93a166d8a048421efafad8c5e1a077e67b5ced4970420551c3fff3",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5533eae9694437c",
+    "appearance_id": "d15d415763fb6b7b2310",
+    "source_fingerprint": "5d58ce6e5df905a880d4c4e9a837776dfd3d1bc1206a4266faf44f6e117ec482",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_29a3cd3a86bb8bed",
+    "appearance_id": "8a59bd1e2bff6195bffa",
+    "source_fingerprint": "43adcad24835343c03510883112ecee0d9e024a013b14f605e480ceb9aa1d063",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_99ccec6bf95410ff",
+    "appearance_id": "bcda207445438893d21e",
+    "source_fingerprint": "6ce057f76c2584aadbbc713103143a0fcc28309dfb8fdc090a9059144db01a3b",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7af8f1cb8d9262ee",
+    "appearance_id": "ac83e97a3226ecdbd791",
+    "source_fingerprint": "4d15c9da9cbd7e3e4e0159b0e6b9e0533145d319c54dbfa3ed1c54431da7e740",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_976bbf68f750b72d",
+    "appearance_id": "d49d3acaa52de60973dc",
+    "source_fingerprint": "889cb54527fb7ad4bbfdb9f40a82d3c6cc6d51ccc1465a4831a61bacde69dcc2",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a4bb2ec5910e35b",
+    "appearance_id": "13004bd103a3c6b4a753",
+    "source_fingerprint": "149d5ab68731e3ae153758305f256815858c8aa5dcf30ac1b45549ae197245c6",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_974c015872e5fae2",
+    "appearance_id": "6b7333aea50ea731f5ea",
+    "source_fingerprint": "2c228de0861407634fbad097ef8d49947dd09358ed7fede0743caffb49f7c53e",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3339e5af5f843ad2",
+    "appearance_id": "887831b2df48e77b056f",
+    "source_fingerprint": "64424d7b18367722f69b026cc461647fb0e9489b2169cb9d27bd64dc88a4706c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6a6bcc3925d7d08",
+    "appearance_id": "5030a46102ad06c48b60",
+    "source_fingerprint": "db296a90a69458125356b4ab6750f647751a4064b748cffe2597739fd2543fb5",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_77dadb8de2381778",
+    "appearance_id": "fa6ff36eabf9d286aa4a",
+    "source_fingerprint": "75aa96ea89937addbb2be4839bfaf18fae899dd7001e54c2c1eb7fa93d72a110",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8fd17ad8a28ff848",
+    "appearance_id": "ca46f68cc386aebed689",
+    "source_fingerprint": "722703de51de44bce30d7f6fc7ec20e76c0ea18d0b42887f172f944856a3ba7a",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_40be0e41f3163b55",
+    "appearance_id": "bc1c93836b23f9437407",
+    "source_fingerprint": "f98d5d01afdefa0da645c89b1c39389cb0deea000c02cce9aa3f1ec5654a6577",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca6f896a91ad6ab4",
+    "appearance_id": "7f339180d29ad7dcb84a",
+    "source_fingerprint": "ea18a32221439b99d72d663a565256d8488099a0431a940fa1369d61d5070256",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01d70c0a721dd258",
+    "appearance_id": "8b5e64eb19bdd49347cb",
+    "source_fingerprint": "75c63ddf39424eb304e1f46348101d35b75ac103e94a6e29c6057c0c0a06639c",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e8076d501afd7fa",
+    "appearance_id": "05fd471e8cd57251f8be",
+    "source_fingerprint": "d6d91fdb085386b9ed869bc49c01355852c20660775f174c23fa3fe23571685f",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7598a79905e0d9ec",
+    "appearance_id": "6402c7893afdad8a8dcd",
+    "source_fingerprint": "a4034427c1223ab41c5b3ce411b1ca9fff6dc9a36ed894cf5c62a8d0040b3fe3",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fae1f4b34a283460",
+    "appearance_id": "b348684c1735c2d64df8",
+    "source_fingerprint": "e2ddec30fff832f3dae0048025a04ae4946910bdbb5dd2f856d9ae364c08453d",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2961b5ad698b2699",
+    "appearance_id": "6a8e6b0824c8aae38149",
+    "source_fingerprint": "cefdb91439bb47a1b850bc7a1a385a47267ac0430adbb2af7bf88bf1051430be",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7b204051f966b32d",
+    "appearance_id": "f6380f246f89bdeeb9ec",
+    "source_fingerprint": "6246b1c0f661d36ec89881fec7f8c7c07bb69f9456de076b971f5fa0faa747c8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9967cbd62f6abd8",
+    "appearance_id": "4ac4a90f2fd25b140268",
+    "source_fingerprint": "40a0da4ef9e1adf43537d09918e9862e6e05527287b797b03c554a69174b83c1",
+    "current_primary": {
+      "subject_id": "pharmacy",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8a82c5f8d662327",
+    "appearance_id": "34e15b10f307f9aa3739",
+    "source_fingerprint": "84dd486063cb87078f508d1a78f4f59419739db8d8a0a49cc5935231125e5be8",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6300cbb0d2305966",
+    "appearance_id": "9da5adff91ac3c67a41a",
+    "source_fingerprint": "832f9df69d27984de87008c11dcebe011fd7b42f13688d1103093c06b0deb89a",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_987d0d2c0fbc452f",
+    "appearance_id": "0055d46aa7a16dfaa3c2",
+    "source_fingerprint": "d6b671ccd4e58ffdf8a5192b86fdff72f570abb2a9aae0db02fa8811ea42ff7e",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_af2540817fc62adc",
+    "appearance_id": "9aa4507ddc1b6a902f3a",
+    "source_fingerprint": "ff5362c65ea9ceca7b7878d94e5caa7d3668549e16ac08671dc4e968d2536257",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e5fb1585997f5586",
+    "appearance_id": "56495edd01802b8d7924",
+    "source_fingerprint": "fbd2aa1ef1f4f4c7ddc5fc303532b95c9ccaa93cecc66b928ac8f1a4a271b435",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f188e4c099032787",
+    "appearance_id": "9e7a7123758d2771c624",
+    "source_fingerprint": "4d9d21c31f465bf5ecc1e38fa1c6bc56f805fb10606699402f2b42d33bb3f509",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_37da3cd4f441e660",
+    "appearance_id": "46ad96e5cc20d066129a",
+    "source_fingerprint": "69dcfb7b93318972a77c0f888042a3251a6a48e795e3bb03fb9e64cb9a74000a",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_390e1ae340e31cad",
+    "appearance_id": "048db21b64747911af70",
+    "source_fingerprint": "794245a0a4d2a2ae65fc7a2766bb99837bd06871fac105b20ecbdd601cafb63c",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9f27738fce33ecd",
+    "appearance_id": "9a3345cfae2a71963a92",
+    "source_fingerprint": "48c1755770576236afbea4d1b3ed97f8c42739790df4256946b97f08cd5b4308",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c2f79b9b3961b872",
+    "appearance_id": "d925f354b2a5e1323cd9",
+    "source_fingerprint": "f8b88c3a3b79d7d796841ac381e5558af6b3693bc859ff3e5ff84f442e190a29",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_86b2129d193da1d9",
+    "appearance_id": "15b6ddb2c8e733443a42",
+    "source_fingerprint": "b4a62f1a8a63c17499134b865967403a650b851c84094a17eb027503060ca9a5",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec5c4ab0175d26dc",
+    "appearance_id": "3091e65a012eabf56597",
+    "source_fingerprint": "4975abf05c8fa4aab58c880cfeba7f3552a15e558d0b7989cdfe565282053ded",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3da235cf65aa7d72",
+    "appearance_id": "313e1e646e36f14701c3",
+    "source_fingerprint": "701c95391d2d76937bcd9d8839de48954b10965b13c10b2aba9a38ccf360a18b",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9468681a95bd3fe0",
+    "appearance_id": "a3a3a37421a3351464a5",
+    "source_fingerprint": "8dd779379563c70497014715cdf821fb7020f5bd5d64c90ee538085d20bb0929",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_25e6849df5fe6fe9",
+    "appearance_id": "79cb03e57a61373d792b",
+    "source_fingerprint": "9d76d5c89349cd90e91ddfc583773d01a8b81346027865cf6b14fc3a3da4d87d",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd042222e326df8b",
+    "appearance_id": "28712939e164b1d5a7ce",
+    "source_fingerprint": "66551f596a23353382fd3990ee7332c56a2b0be02bad67b35badace97710e4bd",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9635c4f2541f823",
+    "appearance_id": "073e6baaf9b526a41ffa",
+    "source_fingerprint": "9b9399a380a7b4f89b7b5cdd220850ff283e2492c30433d6952529e3d6ca54fe",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1654daeb19ae4397",
+    "appearance_id": "6d4d4fe7ae6e24fddb63",
+    "source_fingerprint": "6535f1824865e86eb35376c2be63dcf6f2b5e7fd445f53c7b24fcdf8d2d42ad0",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de89f2a435c37caf",
+    "appearance_id": "e565d3f669b25c855186",
+    "source_fingerprint": "9dc5c94a9faf8d8d275c3fcda83a4942c4074b0e0c4aa22fae6a302790cf77ff",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6953b859e7442959",
+    "appearance_id": "b3cdd5b7e60e1b2ee29a",
+    "source_fingerprint": "c351172af56322edc8bbd7a207de201af118e77f062a6131a717b5bd0611df0c",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_190912ed961f5133",
+    "appearance_id": "4b024f249ba688e9d06b",
+    "source_fingerprint": "2ed8ed712b533a1cd04a2c70253057de5f94196a32e2f9bc42370002114ac7ed",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6516ffa3a54d08d9",
+    "appearance_id": "5b528a14087bb7fd8d2e",
+    "source_fingerprint": "af9c6a5819da7dbc202b364190d9805e271c06b2e7727b05a05997caa1da9969",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06f8a45ea9776f9e",
+    "appearance_id": "4573b711dc43b423301e",
+    "source_fingerprint": "b97fdad8b2bbaec84c2964b8f33a16c6113c4780fb59049866f9c08baec605b7",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aaac623fb21e8021",
+    "appearance_id": "22d029bfb4ec5102d4c7",
+    "source_fingerprint": "f16235ffe02edf499774bd169803b57126efd3893d2a9edeee2523f08729f67f",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0783653fccfede2e",
+    "appearance_id": "0fa5aad4b9e5df045e44",
+    "source_fingerprint": "f8fd18d4387bdb51cbe070ba580f6e045fb1d162410899d3a14d3e8ba754f022",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2710932f405afb8",
+    "appearance_id": "ffe63295048b80fa8083",
+    "source_fingerprint": "c377aeca97cd4aca80cfbadb5536a96cbec737e4a1d77a92e3872c89c86a0256",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_04c4b2d55fd43b67",
+    "appearance_id": "9a86b49edea09ca516ef",
+    "source_fingerprint": "91a6bbd5a54d03c98cad1a4292173913f2b3249a41d4f2225dd54aae6ecf057a",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a8893ef33d38bc3",
+    "appearance_id": "af5a755fdb6b63f55c71",
+    "source_fingerprint": "c16bd7b97ee34a4920af7fe29b565decd1b8ec5ce591d5d914b1edaca7622a00",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_21a58e3b168c3877",
+    "appearance_id": "f3fc490a1f9e1aca5121",
+    "source_fingerprint": "86621836c8ab1582ac0a4adb98fe7c26de7a1859534560d7968acf540909ef19",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39b98f326aa2390c",
+    "appearance_id": "b622d0cc1620660c2e5e",
+    "source_fingerprint": "a5fabba49f16f95f67f5fbe921862f58f6bb9e3bdbb60ec0c7ad6896b7a8b6ee",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7f908a230766e688",
+    "appearance_id": "a3a804762445822ef7e9",
+    "source_fingerprint": "48353b4e9ce47f302649877e0841b05bf3db6bce338b83e01af1c96cfab2887d",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8837a91088efd1df",
+    "appearance_id": "0269771e9e7bb71b16c3",
+    "source_fingerprint": "fe9e83871adb6381fb44e5753f0141094785fc2553184d00e394ab5e66285e14",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9848571ce1d93205",
+    "appearance_id": "2eccaabdebb2d4a55904",
+    "source_fingerprint": "ac7f675ca6871525a5c5bd106c72087126207fe654ebdf2c4a21458f9c27e427",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d8c7609dd017062",
+    "appearance_id": "0f0b2425ab430aa16b4e",
+    "source_fingerprint": "91b79f73ad755edca8c9afd3febbbf57c19eab74427e394570a5327653e25482",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59b61906a9b28c8a",
+    "appearance_id": "32a15650cbc0c5e583cf",
+    "source_fingerprint": "19cf16aebd98451c968fdbf820596e114135f1e702fd109ae6606cbcfaa5948b",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32a67de1024ff821",
+    "appearance_id": "0acff426d9ff2505d1b1",
+    "source_fingerprint": "b1c1d688d55dd9d423ba3ae1796d8e04b11ab5c69b139e22395f9b908b90e590",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_25b4aaca60daa5dc",
+    "appearance_id": "a6884514d02759fd8810",
+    "source_fingerprint": "a362d7e5d1dd87c63d155c17abe60caae2e7f36cdabd459e2bf01ce74b99ca7e",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_03e95d8e57d199a6",
+    "appearance_id": "001c1f509863a403d2c5",
+    "source_fingerprint": "0d0f22a09bed998948965f42a99a119e63cec18205fd91fdafed2c40eb67ef54",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7961f9e121dbeec9",
+    "appearance_id": "c372c03200c3e63cd438",
+    "source_fingerprint": "d96e2ab1b41823c13cb7d0011f696981c303059e1a6964b97331b2d84a6bcb68",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d5257381dc66748",
+    "appearance_id": "f1e0b7894515e86bf01b",
+    "source_fingerprint": "a32a735879b7d879636cefe349ef33012e86de9e3ac3f79a3ca81ac860e207b9",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_90ace8e84a6707af",
+    "appearance_id": "1e3288343351d4c71cd7",
+    "source_fingerprint": "4baa3a16adc1b31eb2ffaed8853dc485c72d34fe1beb5db11ea806b58366e7d0",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5d93076120a364f",
+    "appearance_id": "bd384aa1491d7419351c",
+    "source_fingerprint": "f1eaa61a64bb4ed86356467e5e387cf1636a7304f569bcdae5f06ca0bff83da3",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf13c39ef9be3b16",
+    "appearance_id": "021eb9b67dca4d77ca98",
+    "source_fingerprint": "f3f3d29b2b0488732737c1af3aea59dcdf4b22fb72e18fbb447cb7ed838e2b56",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a1ef1b6aab376366",
+    "appearance_id": "08ba6dc230d5e4653caf",
+    "source_fingerprint": "f20b9778ad3041d98ac2c305263dfef5e59e6d28344b6debba9b58188ed2df44",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_832d82b621ff50b3",
+    "appearance_id": "24fc110d2172bf2f90d5",
+    "source_fingerprint": "129550485288a51973e8def7a26bfec2c55de4f248f7c5d25b7cca6b2b554b61",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d3eb026d47ad4001",
+    "appearance_id": "987d8d9fee671bf30d09",
+    "source_fingerprint": "e914cbc136091cf69f3b656badf941ead62cc4c1e6f09b64c7a58170cca26b5a",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8b270f3b7ce454e0",
+    "appearance_id": "7af1a45eca72c7fea148",
+    "source_fingerprint": "49958b178ef7a1ad25806c3200a627f64f3e51f1f87cc1669b562f44693bc115",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec844c68ab24aa66",
+    "appearance_id": "1a5b65baf896f24c7d0e",
+    "source_fingerprint": "ea59193aa656783a2311aeaf7d06fa663bb01a4a345fed673d6ad02f3de3e482",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b2ca99b9061d988",
+    "appearance_id": "86f53a73a62c897919a9",
+    "source_fingerprint": "db54edc955fde1b48c11896d7d83186ba479482eaa701c2a3dea0c1f009a2afa",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87acc1a178b823b8",
+    "appearance_id": "9eb95a6702270da48cc6",
+    "source_fingerprint": "96cb396fe435d6897e6761f456122633a1781ed5b87a887bdab3988f2ced5527",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a437be3cad3e359a",
+    "appearance_id": "8e2ad2f997e1941509ff",
+    "source_fingerprint": "fc28e4e533291bb9c3f540816ef18fe3d71a35c1b9357b65d70abbc8bc28f23c",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8fe40b8d96e41dcb",
+    "appearance_id": "835cb816109aa8cf766a",
+    "source_fingerprint": "3d99c4389f850cd2110cc888f5c86bcfb48bbd4330d8fffd9f6fe3222e054c1f",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2beae51430f04f2b",
+    "appearance_id": "aeb3f5a253b18c10ad17",
+    "source_fingerprint": "1ddff3a0707ac5105eea1e639c484469cf4ef7680dfb73aa08f1067eab344a06",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7d66d497451c0f4",
+    "appearance_id": "08ffbc5012cc0654431b",
+    "source_fingerprint": "a48bf4ddfd6d340bac62a29f4123fb5e7ce98aca6f668f0b317501c1a2a84c43",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e5cd935f5a4d9a0c",
+    "appearance_id": "88b34d4d88f70bd09b90",
+    "source_fingerprint": "32418325866ef77a9ec241d42f0c44784e0274e9dce3bcdd244e5b6dbf074945",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a8818aa620a3bb5",
+    "appearance_id": "457faaac2a1b8e295445",
+    "source_fingerprint": "aacc5afabb4f8d59d48ce91556bf9c5f57a407391ec6fb845ebfa6a90ab61503",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31457e87d394cf9d",
+    "appearance_id": "c7d10a7901f5c3ed5a62",
+    "source_fingerprint": "0676737692f1b37930038d6e8b1e562372f169c2fba68b061c1cab68668ee4fe",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4b3f055c603fa41d",
+    "appearance_id": "2c40d840d8c57ad508db",
+    "source_fingerprint": "337554ba978d8198764b645cb75c05f8ef2a83dd0afc90f9e838ff9e732657e4",
+    "current_primary": {
+      "subject_id": "medicine",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb1bc33fa6957872",
+    "appearance_id": "a5d2572b08d1b33bcf17",
+    "source_fingerprint": "697bbd21a4926007b0c83fd3f71bd449f1ecddd66aa0043a0ee9b75e3a45c580",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6d788af92310dda",
+    "appearance_id": "d19eaa39ecc6473dcc88",
+    "source_fingerprint": "a3bdac553e697c69075fc82fef6ac1ab5acee47bb0263648f2bb3e1557fa475d",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd3793e805780d44",
+    "appearance_id": "525962f834635566e91e",
+    "source_fingerprint": "62074be726016bf21a63abcc479e6bbea831dabbeb6d9db45c8921e7d88c7c03",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_716d529e319118df",
+    "appearance_id": "5c8df2b2958dba70f904",
+    "source_fingerprint": "b667731ed090a6a98ae4b6d6b02c6b714e35febab2e5034ecbb04bb7c82f34a2",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7dced7da01e4c15",
+    "appearance_id": "5f7de6c1f59110f6faca",
+    "source_fingerprint": "ab4b7c96ac75debb0738b26a1f22773547bf7a8406d4e25425860dd0fdff6508",
+    "current_primary": {
+      "subject_id": "nursing",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_795c449da5bac51e",
+    "appearance_id": "67536996343b7fa69d2f",
+    "source_fingerprint": "38ab74036f23ee02c92270525364348b43e273348c03efde3efbd9e4ccf827ad",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "nursing",
+      "topic_id": "nursing/medical-surgical-nursing",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions. Appropriately classified under nursing.",
+    "tested_skill": "Medical-surgical nursing: Pathophysiology, diagnostic evaluation, and medical interventions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_c69a25010698677ab134321b",
+      "sha256": "748df99f1253ce4d2ffdb06bd05760c3054e3013bc2d0d2373dfa9d12d8b7df0",
+      "note": "Verified against registered booklet source for Staff Nurse."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

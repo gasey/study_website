@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_b4fe94a29016d1ef",
+  "appearance_id": "5f85bc110b180e348024",
+  "snapshot": {
+    "record": {
+      "id": "5f85bc110b180e348024",
+      "paperId": "Old_Questions/Direct_2014-2018/2.Computer Operator (CB) under Mizoram Information Commission 2016 Paper I.pdf",
+      "type": "mcq",
+      "question": "Find the output of the following program:\n#include<stdio.h>\n#include<conio.h>\nvoid main()\n{\nint i=4;\nclrscr();\nprintf(\"%d\",i);\nprintf(\"\\n%d\",i--);\nprintf(\"\\n%d\",--i);\ngetch();\n}",
+      "options": [
+        "4 4 2",
+        "4 4 3",
+        "4 4 4",
+        "4 3 2"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "28",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/2.Computer Operator (CB) under Mizoram Information Commission 2016 Paper I.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF COMPUTER OPERATOR (CONTRACT) UNDER MIZORAM INFORMATION COMMISSION",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/2.Computer%20Operator%20(CB)%20under%20Mizoram%20Information%20Commission%202016%20Paper%20I.pdf"
+    }
+  },
+  "source_fingerprint": "9666fddfd83cfa07609075c4ae5f5e05fff0027f73b72e610e7409c09d08acc1",
+  "appearance": {
+    "id": "5f85bc110b180e348024",
+    "paper_id": "Old_Questions/Direct_2014-2018/2.Computer Operator (CB) under Mizoram Information Commission 2016 Paper I.pdf",
+    "type": "mcq",
+    "qnum": "28",
+    "qnum_seq": 28,
+    "page": 3,
+    "question": "Find the output of the following program:\n#include<stdio.h>\n#include<conio.h>\nvoid main()\n{\nint i=4;\nclrscr();\nprintf(\"%d\",i);\nprintf(\"\\n%d\",i--);\nprintf(\"\\n%d\",--i);\ngetch();\n}",
+    "options": [
+      "4 4 2",
+      "4 4 3",
+      "4 4 4",
+      "4 3 2"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "2.Computer Operator (CB) under Mizoram Information Commission 2016 Paper I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'4':14 'clrscr':15 'd':17,21,25 'find':1 'follow':6 'getch':27 'includ':8,9 'int':12 'main':11 'n':20,24 'output':3 'printf':16,19,23 'program':7 'void':10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_b4fe94a29016d1ef",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "4 4 2",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

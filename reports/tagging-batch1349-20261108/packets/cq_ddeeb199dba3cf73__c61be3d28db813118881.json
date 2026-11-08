@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ddeeb199dba3cf73",
+  "appearance_id": "c61be3d28db813118881",
+  "snapshot": {
+    "record": {
+      "id": "c61be3d28db813118881",
+      "paperId": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "type": "mcq",
+      "question": "The number of allowed hops for an IP packet is kept in which of the following field.",
+      "options": [
+        "AHF",
+        "IHL",
+        "TTL",
+        "ToS"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "51",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+      "title": "COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.%20Computer%20Sc.%20Engineering%20Paper%20I.pdf"
+    }
+  },
+  "source_fingerprint": "6e132829da538167b3b485aca0165d98d17dd6ad9f58b6d599883cdab8f847d8",
+  "appearance": {
+    "id": "c61be3d28db813118881",
+    "paper_id": "Old_Questions/Direct_2014-2018/3. Computer Sc. Engineering Paper I.pdf",
+    "type": "mcq",
+    "qnum": "51",
+    "qnum_seq": 51,
+    "page": 6,
+    "question": "The number of allowed hops for an IP packet is kept in which of the following field.",
+    "options": [
+      "AHF",
+      "IHL",
+      "TTL",
+      "ToS"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3. Computer Sc. Engineering Paper I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'allow':4 'field':17 'follow':16 'hop':5 'ip':8 'kept':11 'number':2 'packet':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ddeeb199dba3cf73",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "TTL",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

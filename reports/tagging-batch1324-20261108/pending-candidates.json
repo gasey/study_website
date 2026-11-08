@@ -1,0 +1,629 @@
+[
+  {
+    "canonical_id": "cq_9b2ebce0cde11c96",
+    "appearance_id": "desc-fb10f9dcbbed795745f6",
+    "source_fingerprint": "bf939d6d7e06091b6dab74e9c50b1fdd39afc31d61f6f2d877d701a796bd9012",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_793798233680c6c5",
+    "appearance_id": "desc-01d8f3d8393d0fd56ed5",
+    "source_fingerprint": "fa70e39bb1dec5f7b7ae6abf6a16d8dc156816712be0d4930aa58dcf949396bf",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_92772631ad8b31a3",
+    "appearance_id": "desc-827630ee16602fb49375",
+    "source_fingerprint": "cd1c760ca3d3c48cc5951f3c8c63e6fdee6bb9ddc98496581a9d8b3d155af5f3",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3b96d188f63ce12f",
+    "appearance_id": "desc-81886303b085de8ff2d9",
+    "source_fingerprint": "e9a1e5b5c5baca2c338020bb20e6e054fe57af75514a6e8ee7155b555174681d",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_486aae65777901f9",
+    "appearance_id": "desc-6186290114afd19d8267",
+    "source_fingerprint": "dc53c4029fa69775cc8991cb75b58992f9390afeb8613f667482fff76a2d072e",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd26a309598853ea",
+    "appearance_id": "desc-66244a370e39d7ab309f",
+    "source_fingerprint": "9dd8f7317608104692986aed5e42dff214d47839fcc2c13380fb5b7e34a045cf",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3fbe7be50864c4e9",
+    "appearance_id": "desc-855b0a8039703eab4ab1",
+    "source_fingerprint": "8a01dc37abaf2c4d48814842334dfd421abdaddbc68a8da17a06b2a960052dc6",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_219555b8ed5b82c9",
+    "appearance_id": "desc-54402778960367c41245",
+    "source_fingerprint": "57bb667d8979f04b7a3547dfef18d89f5554b11d6f96fd8857692f842556280a",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3b9d2513194041c3",
+    "appearance_id": "desc-89189e9900242493d952",
+    "source_fingerprint": "09ea8809abbf9e81961185caedc76baa85a08eeb361b345decde905b6acc16bd",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9944215a271f6dba",
+    "appearance_id": "desc-c2429e41207b3280e758",
+    "source_fingerprint": "00e6917294e5ca0f7778e1d395d07067a0d4dca0f628ea2c31a0f93d0fdc4ee1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f1a42d7e7e5cb403",
+    "appearance_id": "desc-db816a69bb12b530e01e",
+    "source_fingerprint": "792c401887777073e73750e939b545543b0a03700b6f01fff46ccbecd4a489fd",
+    "current_primary": {
+      "subject_id": "town-planning",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "town-planning",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under town-planning. Appropriately classified under town-planning.",
+    "tested_skill": "Assessment aligned with syllabus specifications under town-planning.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b0f9c55a060a6ce8",
+    "appearance_id": "desc-9bc5097c591a8435964f",
+    "source_fingerprint": "41bad6dc1fc404ae85ab6a140d7b735f93e2301d53d771c2ffada75867688f6c",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fca6039744cfadbf",
+    "appearance_id": "desc-cef9cc642d134cbae4f1",
+    "source_fingerprint": "88a609447770e43d546efaa6870d99ea2ec31ba45ce8fbc0b1d39d5e672f24da",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_743774e595212a67",
+    "appearance_id": "desc-86281493231d6717c0f7",
+    "source_fingerprint": "b0d49b9be4168aba7acef16ced49263f195c8a558b92ec69ccad1ccd4ba12211",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60a877c2ccd27263",
+    "appearance_id": "desc-e3cac61c9c7382bdd70d",
+    "source_fingerprint": "f55d54e33367da92634f836af9266f51e529ddc7970e788e2df6b7b760297f78",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71d087d8c231d2b4",
+    "appearance_id": "desc-4d138fdb39ab12668814",
+    "source_fingerprint": "f6ca27e3a206b0277006073ff4ce92fe51eedd5f0510ed363c1d5807bd5c0c3e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_20518842f94f6dbabe87c4f2",
+      "sha256": "a0b067277cb22a27b3cfd54739c0f853174e7f95e0ef74606731feaff5db830d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

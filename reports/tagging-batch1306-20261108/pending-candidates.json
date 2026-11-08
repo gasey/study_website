@@ -1,0 +1,3824 @@
+[
+  {
+    "canonical_id": "cq_d951dbe39a3214e4",
+    "appearance_id": "fa131074262f059b7fda",
+    "source_fingerprint": "9000851577a396ea9e2ab3a6716cb4d964102afa9032d95873bcd2bcc15f9822",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f4c03e8a4d8fd492",
+    "appearance_id": "2ce96e84d481846b6af5",
+    "source_fingerprint": "1d6a201752570755017b38dd9a211d8b6cc933bc7207cad1ccfbf012df2fe2d8",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6315fd65c48b95fa",
+    "appearance_id": "e9bf785002df4a362844",
+    "source_fingerprint": "eff78de5e57335dae3e589bb8bf930f6b043936299c01053266c75925dc97cfb",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6eda920cbb87c563",
+    "appearance_id": "5c19e9b1b9fea0d6e49d",
+    "source_fingerprint": "bd5578b2d8c73146bdc613517a5223fc1c76f5b71960704929b4e557fad64be7",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_04d9f83341197ea3",
+    "appearance_id": "bd96b21451d43c3374ae",
+    "source_fingerprint": "b5ee2532189ba2339da4792f84f2696ac4531aa13bc60a5a5184631f09cd296f",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_599050be8815829c",
+    "appearance_id": "6717203a0a45ae4f1821",
+    "source_fingerprint": "1654996a43ea9a8848c5815fe6aa6e03af8762720dfd8ac38a9f134a1a03a21f",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1a5c6fdc533948fd",
+    "appearance_id": "485bdad1e6062e30348a",
+    "source_fingerprint": "f8ecfac1363aec90b568ff75672353af57e2cb7137c436515eeb6abb3afa712f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf7cf13be935b16d",
+    "appearance_id": "25183f02a2c5a7a53b6c",
+    "source_fingerprint": "5b926c6c641f388e8807a9d01cee93c4126b16c471a84e8c4ad262d59bc73072",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91eb229ec8d159c5",
+    "appearance_id": "98fe14c32e024e7af177",
+    "source_fingerprint": "3ea09b64e912085608bc05a2300a0244dc80903a40fe19b3a6e55e85b8856ae2",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6f7b4542fd1cef8",
+    "appearance_id": "8397d9a77ac8d01db0d9",
+    "source_fingerprint": "535c4d1822d099dc0afe28ad57aec8980de209874a46d276ce19beffad3a40dd",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8eaf7cfc4f8a5c54",
+    "appearance_id": "5a4b6a24a11c111bcf77",
+    "source_fingerprint": "c998745cf44438872c381b7214aef88f23aaf6f2c8ea6bacfe305bb6ed7fc9b5",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ac78ca54498230a0",
+    "appearance_id": "e0932074b2534800f335",
+    "source_fingerprint": "079fa9c599bca3e9088e44d699dbb359f6772b7b12272828da5a1b2b419a50f7",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63fb7367de639603",
+    "appearance_id": "e237affc04fa45185502",
+    "source_fingerprint": "d6ca5b75b87a5bdf45e7e8fe559a835871b9e7e0eab1dd4edb23cc9cb07f4dfd",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f21034ad30b82d9a",
+    "appearance_id": "dc23d312125ad76b883e",
+    "source_fingerprint": "97b26ca46231f9a388c900dccf3ac5cc8b7fbaeb086c91f81b0c48cd7b98b488",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf3be3dc5a435800",
+    "appearance_id": "00eeeb1ce57cf46cbfd0",
+    "source_fingerprint": "52487bb11d61fcbb3d57ff6f6ad06dfe8d682d6a0addaaca8c58ccf0891a51fa",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f99bf804e9ec23e7",
+    "appearance_id": "84f400a4a89ff117b13d",
+    "source_fingerprint": "843e561a10a08b9139eb3faaa11ed3dabd93e11a6dc9e276e43c825cac782338",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4ccd8541232b5327",
+    "appearance_id": "adccd5960203bc3437b7",
+    "source_fingerprint": "b0de13c37c4cc86bc8e12dfdcfbbfdc6590aca75de09f7db64583866a8f4cbea",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7cadf8315a18676",
+    "appearance_id": "9d09a77329a1906199d0",
+    "source_fingerprint": "307ca7f965bca910652bf48916e236aea6fb805f7ca4b331a218ccff269889d9",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1fac51d6af4cc8f6",
+    "appearance_id": "061bc69f469fb3ce5171",
+    "source_fingerprint": "7da7b7bf7ec3f213ae435b4fd70add8d76f5fc6c70c75c5a2b6d9c0d8663eb6a",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96069dfae152cb9c",
+    "appearance_id": "0557cdd3ef07859044ec",
+    "source_fingerprint": "490a6a14af46c29ed686c92d9f842f0324c8953d5ecf30d641a079125cb7cd83",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_146f306650fcb930",
+    "appearance_id": "b60a26514ab617905c98",
+    "source_fingerprint": "aebf4ab850847203503481e7debd4855d99daecf3186a25269e6355130386fd1",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_341c49d40f9e1aec",
+    "appearance_id": "6e53b1f997b1e18ed3d5",
+    "source_fingerprint": "63b85918c15c6292a08d664a00fa33293bb5150054f676d9bf36c729117fe649",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18288f54d8c285fc",
+    "appearance_id": "aa0668442bd48e1c764a",
+    "source_fingerprint": "4ef8c1cfbb3ab696fd70925f949bccda7a6bbf1d019dd741314feeeb549cfde8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbd2dba7478e73b3",
+    "appearance_id": "fc272088d64638d34cb1",
+    "source_fingerprint": "ba51d6e6c5cb48f9894c53e1f01a989a32020de3648bd53d63993f0b75cc3fe7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50d253dc5c17d6b7",
+    "appearance_id": "041583302e4eb842e35c",
+    "source_fingerprint": "258288375f560748d24556354c3487c381340901f52a9b2f347edc8bd3792928",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f43cd9dd5ada20bc",
+    "appearance_id": "08f3a0dcade42ea38dcc",
+    "source_fingerprint": "50421f6b5d9bc4785d6182b90e39b44670d996046eefc5f503d683c6731afae0",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4825329470194232",
+    "appearance_id": "199dac6e9ae8f9fe9b57",
+    "source_fingerprint": "72c60ba9aee79d5b8bd95c4bcb6dae5eccdcd08fbb4b624cdaaad1b3186a4bf6",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_df8bef7060bb6359",
+    "appearance_id": "6d61cc2359b5af0e9f63",
+    "source_fingerprint": "0ea838bd1961bc5f161338c6e85532b6be4fe97c994d2280ae42824856bd02d0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6953584b479d216",
+    "appearance_id": "c8aa370a3aa95f28e47b",
+    "source_fingerprint": "5886c824ee16d5fba1d8a24f518969ee340c5f645ccc4ef966be4c5f1bf0d0ea",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_108837e77319d121",
+    "appearance_id": "9f4260df310e0af110b0",
+    "source_fingerprint": "a02d29c29f7646a4c52bd571b0da8f48d4cbdcb7384b0dd081206f7ae5dacfff",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6d5eb5bf8437820f",
+    "appearance_id": "72d80ca39f0029136da6",
+    "source_fingerprint": "7689c5b22a4b57ce5817147c9683fbe63852d32ebd770df8f2c260ffdcae458b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1c20f99705595e9",
+    "appearance_id": "fd027fced789165e86d1",
+    "source_fingerprint": "cc33b1b809ff480e5e2ce9f000f9b05a6eff46ac24be91348d9be369c1afcd81",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7af8383ce64be778",
+    "appearance_id": "532bcf65d4fa5fd25e61",
+    "source_fingerprint": "f7e4eb974a4431fee10faec9b56ec398838ac6a1905b224ea9a2bba87f257530",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e5363a6b78fe9701",
+    "appearance_id": "e59a85ee3f4870660c05",
+    "source_fingerprint": "5f7c3d2f9e7e37be030daf88a482a34eb4bc0d87d81781ee38b49b82cc1cbc08",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6434f7d6123ede86",
+    "appearance_id": "ccf00e841c7bf0aa2303",
+    "source_fingerprint": "c3967965a153682cedf5a0e10b884a43dd249783ac6033af7e3f17297ae240cd",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c60a381456f5c393",
+    "appearance_id": "ab970c4b0b842cdde760",
+    "source_fingerprint": "bc85f4336c3df33ad67792fc493e0330f2be489a308e98173e1f34d9d087a32f",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36946c492d1132ff",
+    "appearance_id": "0b926be62685f17457cd",
+    "source_fingerprint": "52b4a3bfcc44c1c585960d7ec5d2ce435bc906d282abdf7e3c4dc92565e55063",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4ee1e98640c22f9",
+    "appearance_id": "3dee573133f1962c9c50",
+    "source_fingerprint": "c486b2b8d51519da3c3bec85dbb64e499c83b8040463df1cd1c9fa41fb606349",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81424ecbdcb635e9",
+    "appearance_id": "44ddfaf2a7ebd64ab405",
+    "source_fingerprint": "4c8fc413d1500437bfd8fa10d4f4c75563c43901a7991047f79d63e9dd3ca0d1",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0aea10779257cc99",
+    "appearance_id": "e052c9a462d681f51062",
+    "source_fingerprint": "e0b446086f7aeb0dd063002eb3c47ee7311643b9d8fa98094099f2560ee6ba3e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be707d925d31793a",
+    "appearance_id": "e28169e900bda7b09eca",
+    "source_fingerprint": "bee60408afba283ec1bcc7dc1b905a5aefe6cf633845bce4ce62d8df987da255",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e8cd2e0222f53749",
+    "appearance_id": "b38e43111bdf3ec01f2e",
+    "source_fingerprint": "f8d639e024de0c8f328ebb164b561e76a954e4290a0d08a13ca13473cd7ae9a3",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0c30427a9258f6b0",
+    "appearance_id": "382a2e2aa7a2b5cef8b3",
+    "source_fingerprint": "74d39992ff68cd2ba3ffe16c159992a9d98a48aaf89266f4cdb37b72028e0ad4",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_92f62a8693d43a4d",
+    "appearance_id": "6a823b2b2da9119277b2",
+    "source_fingerprint": "e26c5807a0dcba8b620654d5c885cc136a1152518038c5c1a85d9c1b73bffb02",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/office-procedure",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses secretariat office procedure: File management, official communications, and administrative workflows. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Secretariat office procedure: File management, official communications, and administrative workflows.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a1361a3e243c99e",
+    "appearance_id": "77ab93d6f48ed555a614",
+    "source_fingerprint": "32d6277f136a120e6b6c9a3b1f6f44cc7bd0b85b07f39b3cd4708ba09d6414dc",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a642d0ad38463573",
+    "appearance_id": "3b00bab6fccd306871c3",
+    "source_fingerprint": "1149e96ece006e9c940392cee8414b5b7b5faa2cf5cc45dd1831e5aec4cff4f4",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_756f9dd1a0afed93",
+    "appearance_id": "36f5afac65c81981eec7",
+    "source_fingerprint": "1837656bf37c343cd85c8caec6039e382b69b0b5a0f52cdc6b508297ca7226e2",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b04699897f844b47",
+    "appearance_id": "d21a0d04b8403f099882",
+    "source_fingerprint": "3fd39f00dc2246a0848e7e9c9e361f21b5358debad0d28abb0fad92094f13640",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f64cde8be5557c5",
+    "appearance_id": "2ec006bf4c1345efbfcf",
+    "source_fingerprint": "97d9f0be715772b5879bbfbda600762a672246a05b966e728ca1d2eb877aa403",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6414f03de484fc21",
+    "appearance_id": "bdb0c29f028ba6c48e90",
+    "source_fingerprint": "57e341045b6ed556c034c3030fc096b10e53b730f927d44165d0422a89319ce5",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8ddc4d5689cbe25",
+    "appearance_id": "7ce05c364da0f6ab7985",
+    "source_fingerprint": "66c1e55f92374cadce257002713cd3be6489220e70a5d6a87941ebbcffcd64ce",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_408da907d4cb9f60",
+    "appearance_id": "3e75d849977817b9a3eb",
+    "source_fingerprint": "a80e0e0151fe7cd2bae8289c39d18a7bad2a5a1d628a2a781d8438c6248a7493",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a691ef651c326c3",
+    "appearance_id": "d696a834cb17b1a784c5",
+    "source_fingerprint": "73700acf68549cf50b8e836d6458be3d67b5e7c63cd99948ea32cb354872e314",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_298f89f89cc595ac",
+    "appearance_id": "baad2ae3809cf89a0dd0",
+    "source_fingerprint": "c4d04a026d11d218141e9cf82194f747545fc4396019ea4a70e7d4b7e901bee7",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ddd6f6cdca85fe10",
+    "appearance_id": "d775e7a3b75c846778ad",
+    "source_fingerprint": "486062473afae713b6128a2551404229151c2a0ae7196f2382907ca2c001efeb",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9032eec1658f86d1",
+    "appearance_id": "c082dc710fbdd514284d",
+    "source_fingerprint": "e51ad5f956a2c542e22b57ab6327068cae163482b5461438a401b7b8d9c920a6",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f4d3fec7a3da5f8",
+    "appearance_id": "74a92e3ea5d3490297ce",
+    "source_fingerprint": "7250243554a2240a7d3cd74d8991fd87d503d78551d95dec89df274165afe9ee",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a8c6a234901e54b",
+    "appearance_id": "1c6a648720ed91c26c33",
+    "source_fingerprint": "aec521a655312ec50bae3cfebbfd4eb5ceb96e41574293860c01b6275582d51f",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9434ea911ff2e4c1",
+    "appearance_id": "8c65bef244ea868d5383",
+    "source_fingerprint": "cfa46fcc3d68aa833775ee1962eadc8a05483c2e8f169e865575343637f01a5e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1987570c2011578",
+    "appearance_id": "aa87bc294d1c5e27887a",
+    "source_fingerprint": "b6f11b8748808fd69beea0d97465f337414309c754bce0ff475f77fb59840c90",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a155386bdefb580",
+    "appearance_id": "d06d71c940443ffb9c55",
+    "source_fingerprint": "b279ba2fbe29660815d367c299190af787d5480bbe2ed563111fc3265a02f048",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e46aef01fc2f9f30",
+    "appearance_id": "df2ee0bc8b77c088eb61",
+    "source_fingerprint": "1890fc8aa43ba9768f6796497a506752451dd6b2eec2af5c43e2ede04b4dc1fd",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e84f826ca2109afb",
+    "appearance_id": "77ef949d7905fe060214",
+    "source_fingerprint": "1ea5949e072dec9d6443e46d7226e9a03ebeb85b5b1be2f4fe3c99a47ff1b259",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18bbe763cd32d7e1",
+    "appearance_id": "0ee5d43ece9183eaeca0",
+    "source_fingerprint": "d4aaea6ab85d7f2dfe3613b4f77a0b1f435fac1dedef44957d4113d6850a5357",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dafc490f31fcee32",
+    "appearance_id": "bf0eed1c873b35616ef6",
+    "source_fingerprint": "73310a64e69e82f201c9d0eb58bd15cd35ab31b29c0a795a7c90df2539df4fba",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8c17fced2fb8013",
+    "appearance_id": "ee3a9e9f3de901af8586",
+    "source_fingerprint": "7a99c2c50113915f4817ea0afd0fb680e64f9d8eee81ef36c63d01301e3c667f",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_535af17ddc3c2e78",
+    "appearance_id": "2496be1d2f5d318d57b3",
+    "source_fingerprint": "e3b2911b22f22231d746b3f0f3a2b18abd01c452ced776584bae38a877b2ca6a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6fc9d50f727e04e7",
+    "appearance_id": "d6b417873e5c589004a9",
+    "source_fingerprint": "c44ec6a34ed0c6e9e473edbc57e9358402d4375ac81c1a68d2999fb8cc20d5c6",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8c7a861280c9a45",
+    "appearance_id": "a9cda30d3e7a49e02909",
+    "source_fingerprint": "16728c9b92fecac6ac9964b7604af8f05ecee0a746b44fd1518355679b08aa5a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a791ce2ae14294d9",
+    "appearance_id": "298cb96e4b0df122b672",
+    "source_fingerprint": "3a3772ca49ca2a281533460d9e83ac1a394abd44faafc62acc1a2f74ea76d29a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_206d7465d6bc00e9",
+    "appearance_id": "bd27488fabbcb51f9d33",
+    "source_fingerprint": "195de7b22c914f3d90099c057fdf30d539d7cde056c332d487ee13a6097bd810",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9972dd710e15ed4e",
+    "appearance_id": "2f28840c1d6b6a82c5cf",
+    "source_fingerprint": "fe0a36faed0f81544bd0f1cf4b13ea8b46de0eeb73800a546c02c8ea41d1043c",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d69b3a12862910fe",
+    "appearance_id": "b392e74dfc4f7b8d38c7",
+    "source_fingerprint": "9950f54a9ebb535e7aa57eb11a726ba923b76577439d66c02e8dcbe072b6deca",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ab088424730a2c5a",
+    "appearance_id": "2ba4246dfc7a4148337d",
+    "source_fingerprint": "d13b680e902d380a07a8f0c2db11088b8ebc81877f84b0c167587022c1de6161",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_757b4ac2904de400",
+    "appearance_id": "4e4d8624c00311e342d2",
+    "source_fingerprint": "83c832e8f11cba594c487497d452c80106a3deb36fbf21fe30f26417fd302288",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9cbfd21621064823",
+    "appearance_id": "7bd6c9416e8269d04579",
+    "source_fingerprint": "6facb9141818eba7d349b77508e7e94143ccf92e82a1ca7e5e824d1854dca1cd",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d187e5f9a3152d45",
+    "appearance_id": "089d34aed59737a86cb6",
+    "source_fingerprint": "3157a75f8512f48f7ce95b5aaf3b0c4da26a65aec637c77bb8c288919ae65efd",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1c475c64714e8d0",
+    "appearance_id": "e0869b8895b3bd0805ae",
+    "source_fingerprint": "8c4368856b51fca8367d927a731c32422a89cba2c141eeec8abc302bedbf86c9",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ce7f5eb1a28de88",
+    "appearance_id": "9bc891b7ac5230d22de7",
+    "source_fingerprint": "99d51d760bb18d79aec1e07131630b6e4f049839242862ebdd16e655009bd105",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a3f637c469ce0703",
+    "appearance_id": "ef1b4283b767493b5445",
+    "source_fingerprint": "28d95df77c122be3a0449b86c6a0742909bf96ad6b79ddf88559e582bdad9844",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_054c33ce6d9df385",
+    "appearance_id": "e069cddec3809fe5a847",
+    "source_fingerprint": "f88618e59a6ffa37c95ca9ab105453327001d502cd0c8b4793cb2b3424a18710",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ab9d298fca22fb2",
+    "appearance_id": "e2a2f92e87744551c8ba",
+    "source_fingerprint": "c9d6d260a089120ad963a8c8667a15cfe94088cf33aa2cd4b01973345715f15a",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_399910316e63ec28",
+    "appearance_id": "fa1773493a4fc8cc824c",
+    "source_fingerprint": "0aa7fa54fa4acfddd4941e767eb2fa851e4d7d263da8862909f53f6ad6f04e3f",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_976411d4d4dc18d4",
+    "appearance_id": "21ccc5486ff7f23eff45",
+    "source_fingerprint": "3c4409d0610e4d7b0178bc97600fa721ced06c9a425b80f8c6c2be8abe215ad7",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_497512de19ff7f15",
+    "appearance_id": "78bc3266a366abef6792",
+    "source_fingerprint": "59bcdcfbe93c4f64bf73230f78ecb92fd3248a71ae26585fa8557072b0677410",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08cb74342fe91ab4",
+    "appearance_id": "b9fde75044f7c627177a",
+    "source_fingerprint": "3addf2c3bd91b1497c99af2d6729df7dac8c793938cd7a781949292fda8f869d",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3854e1ddf4e4e64c",
+    "appearance_id": "6f78d1a92f96b08b2b4b",
+    "source_fingerprint": "be18b86dc8dfb2c0641b01949cd2b71f0b3521c7972d4390c76455deeb940100",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9c227969f6b284e",
+    "appearance_id": "197a83e9eab7479c4dad",
+    "source_fingerprint": "23de6accabd40a289bd9d4da89cde206ba1b816b9994887ab5db37149264ef33",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c81157d975ca381a",
+    "appearance_id": "f42dd09b913cbc41f4bb",
+    "source_fingerprint": "fd6d1ad91cb7dac944c51df2e5bccb6f88e53f0c665dd57c44843c788a561b37",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4866b62bc9988b10",
+    "appearance_id": "087721da495826b35540",
+    "source_fingerprint": "c759bd710fe1c96c94c9e2b17ad7b7ccf88d4864bac0f75bb8784cfb8c65a207",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2679efec79fb5438",
+    "appearance_id": "83cc88b6a7bb72dfb6b0",
+    "source_fingerprint": "1c7a26c6a9f5fdc887a06b00862d09747dc1461d67cded5213852e28863adea6",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b7fe3b5efb3c31d",
+    "appearance_id": "9f45c86613e10e3fee61",
+    "source_fingerprint": "10bfb39994fd1732bcf01dc4dcaf2892fc682d59c1465876e0c493486d99bfca",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c7ee6b61c73b671",
+    "appearance_id": "b1772d068cbb8eaed7ef",
+    "source_fingerprint": "99ec6434428b10bf170e60f92eb7a92bdf409c9bc6b9bb8c7f20c6100b84e5a6",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_035b50c97b5fa32b",
+    "appearance_id": "c57b5eb01b9c933a2672",
+    "source_fingerprint": "40c0babadac4f8c5330563992641f25b32cde0a82f90c3cd9fe5482f85f4a3b0",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f48cd710a89f718",
+    "appearance_id": "9c87133f434ffd21f5b8",
+    "source_fingerprint": "ace5f8262fb1ddf13f58f92f0995062c14a43a4cb1e24ca0397b7096a8d01b6a",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f48a7bd41d453f3d",
+    "appearance_id": "c7b60a5bdef577546ba3",
+    "source_fingerprint": "ec5866c6e291366e48498d2131ddb75ca1c7e7224b308aa90f6c195d39781278",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e16597706aef86b",
+    "appearance_id": "4de911e83469ab4eb1d2",
+    "source_fingerprint": "45d5618f30e378fa596aa1a7327d88af3678657e9767aafcd83a23a714a13e29",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20f71701e401bb79",
+    "appearance_id": "788a8b65f8bdd0d83c62",
+    "source_fingerprint": "e83c8a7029b7df199917a6cde1f431ac5b7ed393d34db3639f8671dc0e988850",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_ea3ed31f81d4964491ba60bf",
+      "sha256": "039da27ee3fb224e58babb38f78d4fd40b8c0b3e32e8e2a9a76828cd282698bf",
+      "note": "Verified against registered booklet source for Grade-V of Mizoram Horticulture Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
