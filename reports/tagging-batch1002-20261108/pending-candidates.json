@@ -1,0 +1,41 @@
+[
+  {
+    "canonical_id": "cq_9a65da3c2424a741",
+    "appearance_id": "417ad12713a46c088ad5",
+    "source_fingerprint": "65149348019367ae6984e10c052044def9bc47129901c9ca9f275d198fd6f0dd",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_994e865973c4e409926279a1",
+      "sha256": "6b938fbe4180d18de4e29bc888d64b995ea58990f7611910efd64b64385e6759",
+      "note": "Verified against registered booklet source for MPS."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,4020 @@
+[
+  {
+    "canonical_id": "cq_5e48de9852a06e84",
+    "appearance_id": "717756e9014ee84cc206",
+    "source_fingerprint": "aa1074f6b972822cdad80548b64a988314be262437ee4270ed99083e2f96b006",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_559ecc35cdbd7633",
+    "appearance_id": "3dada1045a337fe4bb3d",
+    "source_fingerprint": "a9879f0959fd694cc21193f1581318196517f1a123468862eb1d53963ac0f882",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e07e7dc5e43a6e5",
+    "appearance_id": "cdc0440b5272fc0a926a",
+    "source_fingerprint": "c65bd5b66f7c974f4840e1b63fef43ea3f481d865004c598a732686217ba1d14",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_97670fde2720e59c",
+    "appearance_id": "bfd7bb418ea8bda2ad06",
+    "source_fingerprint": "2fa60513c4f523a06191b54fcfdd6b80f2ef4d4c40c513d2b8924a1eae20f450",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_103d38825d4ac696",
+    "appearance_id": "3f1c1c3b97069dea47c1",
+    "source_fingerprint": "5b86d5ae941fb15affc186d78f37b9236760809e40c67965fd5d3ea9e877cbfb",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76d34a805ec497ee",
+    "appearance_id": "7a85770079292a3a0bb6",
+    "source_fingerprint": "c9dd43dd6cf5f5ee3338e11d714757f5be92c45593306cdb89856e29a57986f4",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d765c0ef4648e203",
+    "appearance_id": "31760e4e065a6034fea2",
+    "source_fingerprint": "0b3bdd3f59686bce40cb23eff7c99d17a4131deafe272ace766b8a2dc9551ab6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_637579d2e22fd683",
+    "appearance_id": "0995e22f86fcde36cad9",
+    "source_fingerprint": "d019115089388bc1fb2e38f517273887aef38fa7634736c97a64367ca2d559bd",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0a7d8ac6d51ca63b",
+    "appearance_id": "fd3e9289483646e57e31",
+    "source_fingerprint": "c3f659817900358a97f4e3a1d25441396831957c57f6aa454d64c0c342ee02a6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fcfb32c9a81ba8aa",
+    "appearance_id": "47ad37e527e2cc89eada",
+    "source_fingerprint": "ed55f536aac72b17e30b79127c5c4c61b39babe84114f2172b16f487a7914548",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ddc58e5b2efe9a6",
+    "appearance_id": "bb61c25d728c3e727184",
+    "source_fingerprint": "db7d060b1eb32e6f06fc283e82b0c7c47e10235c12f838092cef1ceb187f1e1c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dff97786cd9318de",
+    "appearance_id": "9dd5a44ca34b88d32542",
+    "source_fingerprint": "0028e34a22a5ec45c1b6f3c9575731d1744d69667a1ce55b9ce08f0d2a3cacba",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bc1b3143efd0cc7e",
+    "appearance_id": "26f1b27e5372ae82c29c",
+    "source_fingerprint": "8e32336af29bb54baf950013a698b1ee8db16b3a8b7028053e86e47ff063e66c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_684f5a2eab9ed2c0",
+    "appearance_id": "a547ceed0e86349bef7b",
+    "source_fingerprint": "633ecef27727fcba5ab9ad33cac273a65082f7bf8be75eda0ed03f2d0168d5ce",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3c00a02a1c96a8df",
+    "appearance_id": "5ae6ab240ae6e02298e6",
+    "source_fingerprint": "58381f7f5d9a4a774fde1a755aed365c8bb75f15700a9c361d2f052cd84f9da1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2592fadc30676f54",
+    "appearance_id": "2398aacad91328262b5e",
+    "source_fingerprint": "9848a371bcab4a4ec524081bd64745d5670acb82009ab05412bba695f4462cda",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_16374ebcb9b3455f",
+    "appearance_id": "371a289390b7c569cd1f",
+    "source_fingerprint": "0aa03178064aa3fb9d95dc2d8110063913a95e3484bb4cabcf0fa11e9dc0bf4c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c3e917cdb110607",
+    "appearance_id": "4f4e8260506dd7fe2c5a",
+    "source_fingerprint": "b597f7a00ec8d318621d11b5bc695fab322470d1e71be23925804f9280129fb1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_139e01070f4fbd1e",
+    "appearance_id": "b221904f3574df6eb92b",
+    "source_fingerprint": "8f26d4a34d4b4dff86820fd059d3826d6592a52edc7533ad8924a942d8e92cb3",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_17c359e93a4a3fe7",
+    "appearance_id": "f7c70d1a4f407ec7beb1",
+    "source_fingerprint": "0860ab3672b38b80b960e5421f2227a8bf8257f1e51dc1ba535227eaf9eabd7b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd990c6f1677fb2b",
+    "appearance_id": "e9e406b67dda4876e2a0",
+    "source_fingerprint": "23951271998204f2ca1cd6b0d45854bb5c797effe1bd18dcc5d543cab19aaaba",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1904351b77137f96",
+    "appearance_id": "30a35c8b7f0ba740a35e",
+    "source_fingerprint": "e8cc184d27d4021f1136ea15e19495a62ba1ae08ac75cfdcfbb0836a251d90cb",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_503e20e6677367f4",
+    "appearance_id": "8d6e0e0b9811e7c1ce8e",
+    "source_fingerprint": "e38a3f76f01cc651a2f0cebd6e693209c79c84acf93a3f86f457ff7e8bc83a1e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_955fc74e410a8fde",
+    "appearance_id": "7b247633811b51032c72",
+    "source_fingerprint": "7d7998239467216d8de656efc5c7d260bd566eced7ba9f86cb2b4386ca7eec62",
+    "current_primary": {
+      "subject_id": "architecture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c00e4feef3d73508",
+    "appearance_id": "42ce95eab10169267dea",
+    "source_fingerprint": "af314e2b59b98a1c55004812fa105e299e198b1d8246b38b1152077148e0b355",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88e0fe161e058571",
+    "appearance_id": "116dbedefcf56f17c8a2",
+    "source_fingerprint": "ddf543ad61bdd32af1fe174c3b7e5d4fcdd963ea1780d26085f1fe83e65e9aac",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ff506be741fc81d8",
+    "appearance_id": "1f98f1acbf6906cc6d4e",
+    "source_fingerprint": "0588467e8d7ad3c776fcf9561f32eda8f10a447e674d8422e57f4a2d3868c06f",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_736ff13f1e5fb952",
+    "appearance_id": "1b38f7cca4c6cf9331c0",
+    "source_fingerprint": "b5504db9cc7bea5cda3fffcdf7a6d8b8aa7836074cac6c7b44f16b3f0343339c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_928abe2da14e7358",
+    "appearance_id": "47fc3661528220737c9b",
+    "source_fingerprint": "a5bdffb6ce9450df19486c126e770ab6a8b294390f60bf4c75be03d76478c7d2",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_075cf58872496428",
+    "appearance_id": "d0c6570a50470cb63e21",
+    "source_fingerprint": "f7e4f8c8aca6ccc1bac07d506ab3a1dde04bf17f7cf5534957134ba1f40c69f5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08c4b480fbac2fa8",
+    "appearance_id": "342687abc6c5d58bee17",
+    "source_fingerprint": "290c517ee161429a784f7166c0ad08172bb8fa8e9c56a7c94b0a78eadb330599",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f9ce1ef7bc38141",
+    "appearance_id": "a86f932002bf44471598",
+    "source_fingerprint": "9e49931a69a2db50c09e3b438270234069abeab941a66b065f54332db39e5e4e",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6a986374f4647fa",
+    "appearance_id": "7b4798a7fc4ffd1ecefe",
+    "source_fingerprint": "0f0628ba0f651197ba2e4d32d50910835fe3ce4e78f172d5cc7ae235dfb0be6d",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e36057ed9b0212ab",
+    "appearance_id": "56705febc54d0ba64dba",
+    "source_fingerprint": "4d9a09920e3a3a22139f0aff0830f808f5f853ce9f7219baf5370497476d06b5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b82613a36c195ec9",
+    "appearance_id": "37d6cf261e37dcb20557",
+    "source_fingerprint": "c0b19c18585c0ca09070f0952527818fa2f04562293f946baab8243f1cd9463b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a651d4fc148551b7",
+    "appearance_id": "72d496bcbc1657b7091a",
+    "source_fingerprint": "b2f623bbed1aaaa1d9ed423113f950e672aeb04e521134849d34a0e866d28130",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1ef3372b9146327",
+    "appearance_id": "cf0ab9703c4e260510ae",
+    "source_fingerprint": "e215fb9fb59786f8ce546361e84b92fcadc2a05471e5daaa193856ad8c6fac76",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8aa2e43f0a43060a",
+    "appearance_id": "8137bcbb2e6d1c0e135b",
+    "source_fingerprint": "e8342c06e6382d758c297a8d761d27246e1259381368e3238701d805a89a8d73",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38d1bbabe2a15431",
+    "appearance_id": "530d9c58a901a38c1bf1",
+    "source_fingerprint": "af04378e06e50a6bb9f7a5a000615614455c5bef75bebf218f59b845c7ad4aa4",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_738e072c89c7f224",
+    "appearance_id": "c880daacb80c69a05333",
+    "source_fingerprint": "c16b781172b3f197250c7820c1dbfb943cf8122ad41b46c01be9956596023270",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca9d0a63f4c23eac",
+    "appearance_id": "57ecbd34ea88565138dc",
+    "source_fingerprint": "85f9aaaad7e5d145a54a402ba402d0ac6f9d4cb584c3af61306825cd668246e9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3c50f3ccfd90801",
+    "appearance_id": "1249b3b414ac71ca55ba",
+    "source_fingerprint": "2da4464c9b3712400b61b40ec24a7f784bae93237add244553be5b429ddbe465",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd75360c97532110",
+    "appearance_id": "d1057ad7c4ba1964f5ab",
+    "source_fingerprint": "aabd9834a19cfa7a37cb76fcbbdf5b83201aa8ff4e3514147ee7a9f509043bb9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1010c35e94ca78a",
+    "appearance_id": "eeeb8d5dc4f2651fcb94",
+    "source_fingerprint": "1dd2023bfd5d76cfe2b37be48c2ef1cd557d0393b9e4226efcce41caa3bb4959",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/structural-engineering",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ab9e5e7c50e6f213",
+    "appearance_id": "4632c1827cdd0ce54f35",
+    "source_fingerprint": "3432b4c6bab075d5e68f1c4ad2cc07a639ce4a7ac77ee3ad76bb5468879e60dc",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5df888465f389e93",
+    "appearance_id": "c8940471b0345dfa1600",
+    "source_fingerprint": "a4622e1e60ba0a44d1b1124f63080e12892cdc040dd33b2723dc807acc43cb51",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aff68bf6609dc927",
+    "appearance_id": "d3d7904414493ba368ab",
+    "source_fingerprint": "b5f170e98dc038af187e64570dfa53287bbb1dc6bed03b0b4df3f82d91e0b330",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ca23d081bf4bed2",
+    "appearance_id": "abaa3fcabe8a9263c994",
+    "source_fingerprint": "94ef14b91f9ec6868ea558a1209138b51802277588e8259f54a43b859ecddf9b",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_03879e3cf3503c9e",
+    "appearance_id": "c37dd96764af72130479",
+    "source_fingerprint": "0a4bea7ada1680f8b2f14602f6f89cb5a74167cc072804b17d13cd10e19fb93f",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d5c40bebec9915e4",
+    "appearance_id": "826a239ee97f5ca9b029",
+    "source_fingerprint": "e089e07eaa302eba8c2c1faf90c4d90055c2d3055c26d56e752c5c09f92717db",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a22a47ee43cad40f",
+    "appearance_id": "c8e9011a6d5a0df3690d",
+    "source_fingerprint": "fec129142094ad254631ad75786bc6b0d37b51b2c7bb85bce4d3f09ed3a041d9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/structural-engineering",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc5fd1ba7033f265",
+    "appearance_id": "f7e43062f3da363f18b8",
+    "source_fingerprint": "59d5a8ed6c93312ebfff5ac67029184ee3c8e9ed7a2a0770a3361fefaadd5636",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_825fd6f97b991154",
+    "appearance_id": "ae76c47adb130bdb78d9",
+    "source_fingerprint": "46736bb56f1a31666f1f5a08bd7c97d9c4b36ac77aa5a8157137e732c3eb4c78",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1cca9bc20cfe0f0",
+    "appearance_id": "0eff6c9141aae5b766b8",
+    "source_fingerprint": "65be2478b07f247e7f15b49a602378e4d124ba6dd1b8aed6ff4df4ebd33d91a3",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a5558828f5495a8",
+    "appearance_id": "4bbffeaa38b8dbca6e7e",
+    "source_fingerprint": "fd9986fff9790be7972b0078d74b066f69d45ef1ec1f245ac8e145cb04da418e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b2929cfb3b44e42",
+    "appearance_id": "785104d4aa67a28ec374",
+    "source_fingerprint": "a2848cde97950fdddf78d5f000241f94121f5c047d72d78d3c8101dd2b4b319b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2f54adc3c08f8db",
+    "appearance_id": "89830b1949efe26fe785",
+    "source_fingerprint": "7985554bc984ca05b9d76f2786dcebe0c7c33f082c7a75bed161fd30e9121595",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_da970ea9a6c609c9",
+    "appearance_id": "028e8d671c91e5fc697a",
+    "source_fingerprint": "a8f72ad1ab3a7b7852b46afeb9c06bf94508cf9da5a0c2083abb4b487fb08989",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6a54952225d75680",
+    "appearance_id": "3203e80b537eb78abfde",
+    "source_fingerprint": "e5c8e7308926cb71b8c25b6d346ee02518e8cbd0547ef4bd9a2332aabadfe6e9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6e3260198aa3c476",
+    "appearance_id": "84d814e1424812e22350",
+    "source_fingerprint": "4a6a9b8512068469ba8203b12b37ae9f3bbb11b60dabd2af1d6d3ba8e7905130",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94f602a2f2cf1c05",
+    "appearance_id": "ba90eb916ad71d6afd3e",
+    "source_fingerprint": "f80e603e1ab23edfccb2459eb785ded2af20d6b83fbf9cfdda5ebb81dd1ed02e",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d1a70107db372c5",
+    "appearance_id": "d7ef9782eacdb20085f3",
+    "source_fingerprint": "68cdcbc2ed4c5cfde860f6169caceb9b9afcbc8bfd81897e498cb8bf051e5ec6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbf7d8a0c113bc06",
+    "appearance_id": "97562ac727d1cde52a97",
+    "source_fingerprint": "01da8c76683a54b225d4bc236da88206663a8266048420aa337984793b1130cd",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8660de529c73b16f",
+    "appearance_id": "755f5f1a5d48e8cd7d07",
+    "source_fingerprint": "b8ac0f191c6730bf7e0dfa9568cb01b75b268a228b3c619a59ce4693bbae54ec",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b2364ecfab78592",
+    "appearance_id": "7bdf672c8fddec9fb44f",
+    "source_fingerprint": "325b9a79c3d7e5c1b41c7090cf2d001dda1c8fa85d7bb28627c99f91756fe5b8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7d6d6cf857040ba",
+    "appearance_id": "2e3c4a9a8392e1339751",
+    "source_fingerprint": "7cf45d6467d4e20c4d3b553def8dbd97f4310def8eac27aa597ec064dea41617",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f19eb1960ce389e",
+    "appearance_id": "ff1a3b16e6c67355c0a4",
+    "source_fingerprint": "776011562a5c35adf08cd4ee1bdbc72b585462f5da60eb260812a1c9d2c5fcf9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3800459aabf12264",
+    "appearance_id": "d7a06444ca228a04ac4e",
+    "source_fingerprint": "4facbc5285b130c842d58363a6e6b5ac71b72b8b7177e04abfd9f8593fcb6436",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c77b54f83b304ec2",
+    "appearance_id": "9762debfec205410c553",
+    "source_fingerprint": "0faffc1b57a9798c259ec14c94a5b3f3363a126d6ee8934132bfd2520aff8bec",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_635f464e50336b2e",
+    "appearance_id": "216a5f2f32e7223bd00e",
+    "source_fingerprint": "38bce6939f7cb206377eb57e80966141c67dc9695788d24b67e4e4eede909748",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_80da2356eddeb9df",
+    "appearance_id": "eb230d4c8dd51d52706f",
+    "source_fingerprint": "1fca623920b1b522b2fc980aca0303d3e070adfefaac05d8b0334d99287f0df7",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d4143eeb358e6f6f",
+    "appearance_id": "910c5543583efa7e5e87",
+    "source_fingerprint": "b27376535e4833dcb9ab3930404aedea32bce93779d28d9d7f3bc616c771441d",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7b541d7a0da9e06",
+    "appearance_id": "b091bc502409dc24cdde",
+    "source_fingerprint": "847d55991a2048072bceb046d73c06b492144f546b69bb8e4608d2b702f0066b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8567146090334e6",
+    "appearance_id": "2e6403f6a987d71d61c9",
+    "source_fingerprint": "225d9b64257e13c3841e38a0ec9fe9badbf9182d634ba456e05fa76b061e0fbd",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1be2ea140cdb9d1d",
+    "appearance_id": "41ba3e897e8d7a5a5723",
+    "source_fingerprint": "273232bd68a40538a0eda7432d81457811d3ae23e4f001049cd7f68c6a0e8fad",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5e0836644cff0746",
+    "appearance_id": "7d79f9f41796521e1994",
+    "source_fingerprint": "266f4c47f5e6c5a208ccce842d75778d7af52936e012c459676cc83cab539d33",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_245965df926db1d9",
+    "appearance_id": "18dd27e9e89d14c27474",
+    "source_fingerprint": "14288d1e1358d15af60baaa39da03a378ab08d62b368b93a7ecf8e375ba7bfe3",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d32e7f19ba57f697",
+    "appearance_id": "d478b360d901160b6446",
+    "source_fingerprint": "f4e071819a5d1c2e36aa142c5389b6d64cf87b2a1a10afe306277a17f05fc688",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a84245b347b7cef1",
+    "appearance_id": "a5f20f1803eb6b70dc21",
+    "source_fingerprint": "aa26cade51103f1905efc7213e31cb022abc2f53fcd41a30396746cc681a716b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f8e67d115164f2b",
+    "appearance_id": "78ff494cab4940ff5ee7",
+    "source_fingerprint": "7d7d16f39897e33782de57716715842bededa2a44c7eaaf39daff45614c8c121",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61cbb00a62dc0925",
+    "appearance_id": "a8f8e78738c70d1fe943",
+    "source_fingerprint": "2d9c42eb762eca0f5149c7680c5917d1c5a731cd195af9438c52b83deb20c257",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_07bed17091f2c2c3",
+    "appearance_id": "87f43981a549fb03e99f",
+    "source_fingerprint": "7fb0e2b42dbdf6dd0da0cba183da98440fcbe1501cd0a571a456f04190877795",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_730edf3416128451",
+    "appearance_id": "359e43241980ce7be1e7",
+    "source_fingerprint": "52db819a0cbecdeccafbe95eda4ae352ec3c69716f534691a38be84adf2c060e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b8e3b23aa42f3af3",
+    "appearance_id": "dbb790bbc0d769003e20",
+    "source_fingerprint": "853f536b0be118acecbdec8a0f1f29d73418ef45f659f851ad5542e0e4e9a900",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbf4cfe5b6c3d9ac",
+    "appearance_id": "ecc5219b7629312a765e",
+    "source_fingerprint": "de564bf75fda9bbd7c0288018bb73e485aedbabc332a911d8c615e72dfc1b0b1",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43786e2e2cd7aa32",
+    "appearance_id": "4b662421b678c4108176",
+    "source_fingerprint": "4f7bbd07549a356b7bb2c012f368fab6074bb14a96443e359c89b70f81954380",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f4460f1271355ea8",
+    "appearance_id": "677a98d481c43b9f17a5",
+    "source_fingerprint": "a75a72ed913e2494f61b37a6b8cbc2aae9c1609c4244bc08a13a0f30d4602f72",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e89ce4f1e2879893",
+    "appearance_id": "6692f2a346503a7c7393",
+    "source_fingerprint": "0ef5b831e20603cad7c8bfdd09bc4db7e7c5224cc3316693752b75c20f8e34fa",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38ecb2f1946d56dd",
+    "appearance_id": "0ddcfee515291cac7c8f",
+    "source_fingerprint": "8c4fafc63bf812ee75363049c7797b7a716dbb0bff91cecf7c5ff9d63e80117f",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd3a4f324733f225",
+    "appearance_id": "6af76c51206e122723c2",
+    "source_fingerprint": "cd80bc769a7eef8ef0994a23f6ef59ace3efcb1c25f752553a3c6290c2838aba",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fdedee3875256509",
+    "appearance_id": "62906b82b50321f20cb1",
+    "source_fingerprint": "4b5ced9a3baf81ab9e9850815dd82d8fb78317cca0405ada3f923fdc285444b8",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e7d342c03eb24c0a",
+    "appearance_id": "5a6211144e2af2aaace5",
+    "source_fingerprint": "3b51a6c1b678b696931689b5c7b634ef069eeea50910e5e232d682967881c1f4",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_afabdcbfe34d5aaa",
+    "appearance_id": "318359ce118078aa0fad",
+    "source_fingerprint": "c9d9d5863b07e2bc9e05ef99ddeebdc042ae6d4bfa6ac6ad554de1d0134dac53",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4f4090ef022475a5",
+    "appearance_id": "e2326e960f64e2624f17",
+    "source_fingerprint": "8243f636d605854065e62e7dc9facf43a615f4c763a76c41c8830f40528871fa",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7df2618d2f6faebd",
+    "appearance_id": "8436bd197b96ed06e30a",
+    "source_fingerprint": "22d702a89edc6c2e733bc879552ee36c8108fa826675a979d6e36ea21c90a15f",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf07b66df011185e",
+    "appearance_id": "5b0dbaaf6f99ba5943f3",
+    "source_fingerprint": "ef05073535b628597f8391b204f71da73f0d9358790cd3921bfb4c7d9057d88c",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dac3d2097dc3b555",
+    "appearance_id": "3ca2105566fb4dfca480",
+    "source_fingerprint": "7202fdbe51783a49030a7d5ff62a6121bbe44d2b82fcbb9ac7560a45b4a6c355",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c037c6d3b385997e",
+    "appearance_id": "6e126ad1e66911b24b5e",
+    "source_fingerprint": "182828a3b740dc421495c67f88125ed8ac7fd99093ebd7a7f574e52378116465",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2170d76c83466b19",
+    "appearance_id": "7e828295def51b81f53a",
+    "source_fingerprint": "2bb1d1cb1728b8dc3989aabe5cdee39627381f536b9c4dc295bb1003650c5e6c",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_018c0e496d41e324",
+    "appearance_id": "49eb59214888bc7280bb",
+    "source_fingerprint": "cc900e7ec5d6b4dac41e52e2f961a375767edc52bce617bfd52e29df6afd2927",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/conduct-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service rules: CCS (Conduct) Rules provisions, integrity standards, and employee conduct.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44e88f577778bffa",
+    "appearance_id": "c1cddb3f738f2661a083",
+    "source_fingerprint": "8141a6565fda96710e053f4358a46fdf2824da4f860d6fd6afc076ea98cf2f20",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_12a67d0ad4acde14aba5d91e",
+      "sha256": "7a1fa3183dd53cfe7094566bc80176973d23bf8d987525fc1af8935402b0c6a9",
+      "note": "Verified against registered booklet source for Assistant Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

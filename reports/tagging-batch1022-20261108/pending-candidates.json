@@ -1,0 +1,3911 @@
+[
+  {
+    "canonical_id": "cq_2e2d7ed1f9486918",
+    "appearance_id": "083fb565bf85aea4f4ac",
+    "source_fingerprint": "b5b156c14fbe04ad70a2af4cbec5d7d7defa0e1d9707fbc5f63a491930c8f609",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fc8f949d2406832f",
+    "appearance_id": "820888223589941f7c1d",
+    "source_fingerprint": "5535e1b9b7b8914acf2dc6aec5dbfa7f97e44ebe456389ec596a6239a47b4d1e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b986adfaeeaf7540",
+    "appearance_id": "9f86c8599a8c7fa87b1c",
+    "source_fingerprint": "9d1d8530d1a88a810d96ecbba10e6b03ec2ca941767396445a634d98c25d0705",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6d2a0b3d6074b31d",
+    "appearance_id": "61b34e01b5aea7dfc22b",
+    "source_fingerprint": "6539102ca0ca410dc6f53d9c95962bad194178c68582ec4bf03c341159907676",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8fc69d79839f5657",
+    "appearance_id": "f1c50873a63316a3d1a3",
+    "source_fingerprint": "514db0f83f01776e9e0e8eeb0a227d8b6a29cfb131472a989d85435af3eda2cb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_461b55c69ae6a9df",
+    "appearance_id": "e1f9faae70e7d0be9535",
+    "source_fingerprint": "c0348c22b2a57e23f6ae6222a8df4b57a42fa62bbf1c3efe1e4bcb67268230cd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea7f38223322f50c",
+    "appearance_id": "602e76d7db7149002702",
+    "source_fingerprint": "d33d920a37733ecc0d686b185f0feee24067219985814f445f32b1e08213531b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a012eb0d14d9b9c6",
+    "appearance_id": "31dfe4b304960c79b222",
+    "source_fingerprint": "241ce365d678c19b4d332d085703ffe7906945690d78f728f89df69061b80967",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2d41cdadbd742331",
+    "appearance_id": "b5b04933c5cb5f7fa450",
+    "source_fingerprint": "67ff74608f13479c7a452c644c4204b45ab180dc0652aff32b6d4a00e33684c9",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b152c48b459ccb6b",
+    "appearance_id": "f43f8fb996d4bbb971eb",
+    "source_fingerprint": "c2123a244d657dbe902ed91a651d6a929c82f0d6a615366f2fe78000ae604476",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_544eba8230a39161",
+    "appearance_id": "532c7f0697f0b1af7c2d",
+    "source_fingerprint": "202a03c5d2af12a7de00f5475773af43429bf007757d3d5675c56a35ccc449ae",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94905ae863729727",
+    "appearance_id": "1d38e2ede2297ce5cafd",
+    "source_fingerprint": "08efa8e184e8bc1c35712a19ef55626cf9dd3a9e55dfeed8ca6b4ece276c07f3",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_742a371ac6b2d64b",
+    "appearance_id": "ecf10756d48d284e7fc6",
+    "source_fingerprint": "30f9bf1ae16449686aa30eefc325296375a72bf5ebfbfcf911db5b52a4eca1c1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5429ef6677dbc36e",
+    "appearance_id": "f1967bfcbf2c0ef86735",
+    "source_fingerprint": "6eaca3e73b9367caf0ab4640a5923f93672d57dbb7ddfe6499468182a8887522",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": "science/biology/human-physiology"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": "science/biology/human-physiology"
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f49e4b51b5d86e3",
+    "appearance_id": "7b2d9d1e04d14505541c",
+    "source_fingerprint": "1aef21689bb0de93054e322d850229f2b418dfb58b34d399cbc6ba8de03e79ac",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31b7ba8e6b1bb281",
+    "appearance_id": "16b92f6b945c28b70aaf",
+    "source_fingerprint": "a58a1b8a27015e0032e4e470c10952878a69c0a48e49b794164be9b84d6b27a3",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": "science/biology/human-physiology"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_00855e8484afee85",
+    "appearance_id": "01668d770eece49fbde7",
+    "source_fingerprint": "8edf564c2014366f0e0c657135f2f8e446fa289a922bfdeb54e28200a32029dc",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a4e3f1922938003",
+    "appearance_id": "675c339213c881843db0",
+    "source_fingerprint": "ba9ebd514fd0f07d3d0f51d701b23eb60ba3b5c025a832f146500e701d844da3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a65c15391aee8e34",
+    "appearance_id": "7a8db27635a873d199d9",
+    "source_fingerprint": "d59ac63173d47d62fd73625bf20e1f6f6c079355690febaf9c9cae9bc2d30908",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/chemistry",
+      "subtopic_id": "science/chemistry/chemical-reactions"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/chemistry",
+      "subtopic_id": "science/chemistry/chemical-reactions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f23b865969bb48a7",
+    "appearance_id": "93ab9933d9a991f6e9c6",
+    "source_fingerprint": "fe39554c8352ee283d7ffd41ff670794c9b6edee78c1fc30a00f1a91eca25a44",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bdfd9f73e3f331bc",
+    "appearance_id": "f922847f2da857b5fc69",
+    "source_fingerprint": "e066c401424f4e13c1c763c123b08321955944924637c7ee9725a262c9752623",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/chemistry",
+      "subtopic_id": "science/chemistry/water-chemistry"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7cd4e62550d8f52b",
+    "appearance_id": "51d82b5ba5916a12c55a",
+    "source_fingerprint": "1c32230f469ebf875a7d4dab6de7c37545921a8311d4ce7201971b8e23717fe6",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ea16924f5944967",
+    "appearance_id": "6530ef23e4d1451d7e8a",
+    "source_fingerprint": "90e365ecacfbdcaf43b71ac80b5fd5ebdc9fa2784aaeedd700376aaba02adb82",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_097d495a67bbcd1d",
+    "appearance_id": "fdd9b9780a0dcc89e5e1",
+    "source_fingerprint": "772ee7574233ba354edecd4c1293839b6ee08a2de5a9a2535aef222d37dbd009",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_10006bbf576b47d0",
+    "appearance_id": "83978c852b840a083873",
+    "source_fingerprint": "1bdf56d26015465386d15a131bd776ac413183318fac271dff64dfaeaec68649",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22d95957540fd18f",
+    "appearance_id": "902827cce8f3ef39b615",
+    "source_fingerprint": "bcc8b45eb8197ebed1e44b99fd42838b459814fa15b81fb5dd2d06c8752317c0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": "science/physics/electricity"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": "science/physics/electricity"
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ad1522a00f154baa",
+    "appearance_id": "55e73ad16fd6d6378d64",
+    "source_fingerprint": "256317b1679bf6a6ac016a823c9875916fc8cf7c48ee653a7daac6f31e92e378",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3955b9a42a8ffb42",
+    "appearance_id": "e4be47290060d70ceff7",
+    "source_fingerprint": "8716fe120c3cc88ce480b2b81e9a5fe3290e5ce20cdf0494560aee6e9939f537",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56cfa16aa0f7f416",
+    "appearance_id": "a21063f963a727157506",
+    "source_fingerprint": "b00cd3f382328644743c4104be6b4bbcb8b382b2954a351116b9ea31eb312eda",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_963308ef3da6053d",
+    "appearance_id": "89f25b69cec6d4013acc",
+    "source_fingerprint": "1f8fbf26bcb30ea8365f5e1fc30f6e8123a11732bcc621f98e2565affcd0f2df",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4b8777018e657b14",
+    "appearance_id": "22c549c9988736d5006a",
+    "source_fingerprint": "7cf8833750c3985ee9bf2052803cda87ce1041653040c088b9b3a201395c11bd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_126a9b54d19d986b",
+    "appearance_id": "c696180196fb52a43f8c",
+    "source_fingerprint": "07f92138dc627a50c76f14a0b219ce7cbdf66a49755e40b7e523a42468e265b3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b03d92d5c4366d85",
+    "appearance_id": "5c4c47f80398e7a0bcf1",
+    "source_fingerprint": "49aae345920e0f6a4368150059e88a197b85c2c7ec2739c2e41d9779acd6cb18",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58e748cf6dbf7154",
+    "appearance_id": "b41fcdd3dc8d2721ea95",
+    "source_fingerprint": "838b496b7dc75496d11fd372f1c93e5ce891b683e52f700cef37960c41b943ee",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98a8d5f2fe25c414",
+    "appearance_id": "86f1a7bcec3910f2313a",
+    "source_fingerprint": "070c424c6f46eacaa4124acf21ff7b7c69743b6f27f777faba1bb5bb37f098a5",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7a90ac62c3ecee2f",
+    "appearance_id": "c6d33fe93ee8520df5dd",
+    "source_fingerprint": "9deee56ceb250473c5980e806979e5e4ac063d4340bd02598a8aeda6414b42ac",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8b469f06cc710763",
+    "appearance_id": "0d7f94e97a1c89e770ce",
+    "source_fingerprint": "f51baa023bbd3bf6683a07b802de1c7181644ed9470315d4a8f0068ee6e583d6",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7c0cf75371d2549",
+    "appearance_id": "78e73048d5dafb26ea24",
+    "source_fingerprint": "f7e699f2bb0f006771990e29fac0a5bde714bf08868e63cd3e1648a617d0b78e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9677cb04fd39363d",
+    "appearance_id": "8f5c424a1f00daf6b695",
+    "source_fingerprint": "37f7983a866cab58e4bc71c276805da6f6048cc65ac80eba06450c952bb38599",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d2e5a6c823cd0f39",
+    "appearance_id": "b238713af18f8d068221",
+    "source_fingerprint": "01bbd7a15e6db3a70ebbd5e085cc4578ca5606f28f49ddbafd012a42c0497ac6",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_544c5851cfaa464a",
+    "appearance_id": "008c3ea172667251aabc",
+    "source_fingerprint": "86d8e81c448be42e29ca6a90959f2dd686f5a7e5a7388b049b52c61a833d8776",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_15df4f705308f2fb",
+    "appearance_id": "690598413960157af322",
+    "source_fingerprint": "5abdd0369843f52dd0351c43eb2553ab40d1e2fe726abe2c491aadc3c962a053",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81fd5ff1db39bba5",
+    "appearance_id": "4a6a7311697a936975f5",
+    "source_fingerprint": "38eab80a7c842fdf6c6e8f4e2b8ede4a24ab1849bbc073c7f019c5f95f8b7199",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_886f354be295b5d9",
+    "appearance_id": "4ee557f2227a5603d264",
+    "source_fingerprint": "84c30e1f5fcc198523d46203f452ae698e89bfc379430b4ad67fdace53d691d4",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_53a107871c74c561",
+    "appearance_id": "e0f6cdd0c1af430ffa8c",
+    "source_fingerprint": "add6810b9b7070b3e9f6badc9d9bd37031bd7785ab246c08e32aac07f7d99e3e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_93628ddd6620ba8d",
+    "appearance_id": "cfaf630b1e16c6d90931",
+    "source_fingerprint": "f976c8c4d9663a0b7effb519cd93495c9844b4c42859bc61d6d7d9231264d389",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c44a50b1702f953",
+    "appearance_id": "cd10392ecf875584d231",
+    "source_fingerprint": "1bb330447ac65cece11b27c08c2f434431ab9d83da7837462e865cc3ed6d9e45",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e8c873d9f810c23a",
+    "appearance_id": "bd9d94c6fed96e7ae0b0",
+    "source_fingerprint": "1b5b316be48b5aacbe59a5ea99ff2a2153df035002546b7b975118672b5e9ef9",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b28b104b84ef1044",
+    "appearance_id": "b0db5d456b626b092d68",
+    "source_fingerprint": "7e1b00220c01e488fe3b2bd4cc430713c645225022e09d37443286e4e23a372b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b422c972ceda6100",
+    "appearance_id": "15edb5ba8b1820666e69",
+    "source_fingerprint": "4760cd0a522c9e648f0fa38e9bf8c70ebac7d69e4b70a3648a3dcb4354416b0a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5785464c36734b03",
+    "appearance_id": "f7f3fcb65fa2a9c27b66",
+    "source_fingerprint": "74d9e6107f62e7f5eacad421ce3b6777f17e3645ceaea89cf723f36d1f4a5710",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_820ec33cf13ee9ad",
+    "appearance_id": "eea7309934be8359bba9",
+    "source_fingerprint": "2e012cd8ef97e359dacf5900f3111c8789f354b881b20c6739998496ed681f7e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_570c7e7bbdaec484",
+    "appearance_id": "09f5f3f601e6c43b069c",
+    "source_fingerprint": "561fd1aaa096127c52a6c070c4c168bbdef9d56768118bad1f8ae0bc96a4159a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d6f1a294b5594e0",
+    "appearance_id": "e8dfa031fad7391f44b9",
+    "source_fingerprint": "38bf3e792e71f3f31326416c3c88e0754c5056f84aeb719525d7ca3089caaeb3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a3b8e3b8c23eedc",
+    "appearance_id": "7abf3f3d96c464bcbb0f",
+    "source_fingerprint": "54a07932f9262db4072c4193e2f2d470c3dccb7fcf27e13d886653491a891af4",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ac04b66a0d5332d",
+    "appearance_id": "5c184424cf1dab558c41",
+    "source_fingerprint": "19b646feaf8c17ef7ff101e03eacbefdd6a47d776aa739d35cdf4110181eb39b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec97f0f703a01e5e",
+    "appearance_id": "9e29decc0d18473a9dbb",
+    "source_fingerprint": "dbbb31bc842bdccbe82c667d88d7a00037d1fd0241d13129e2ef8127fd62c2b9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0e03ef311433ee9",
+    "appearance_id": "60eed742b987bc590557",
+    "source_fingerprint": "164080b3f3ade4befa7e4d24445ebbc2d1e517526c41cfbefbefb0dec40bce44",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe3d7e1f483c2256",
+    "appearance_id": "3e8f9428c050e99f6ccf",
+    "source_fingerprint": "8957a1deae5ac129455328ded037c2c7ebeaf4b729d069977e66e3c7d613e83f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e0c364cbea87a199",
+    "appearance_id": "52dfa26db4f34a90e02e",
+    "source_fingerprint": "cbe46f7a2c17a7585266d9f180c3d7649baa558ec8cfa3ac3878730ffd23d787",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0da2866acc00b659",
+    "appearance_id": "f907ca97dfbf7dbc9adc",
+    "source_fingerprint": "07a7ec28c784faf82c3b62d851fbcfb150f144b3f2c9093bcef740a1956f9a50",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20c0ff39f3d5e7f5",
+    "appearance_id": "83d603fe075092f429f6",
+    "source_fingerprint": "0bcd41182829581e865e5af9163352d99eac09c488d22d21576dcb5cb0bfb4b6",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0f2ead4b3845f8b",
+    "appearance_id": "1c663ccf1f95945cc01c",
+    "source_fingerprint": "d66c2333beae74483659c097d70a71c645a670887881c8ce6bd9433a86946631",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d1371c1e8bc792fa",
+    "appearance_id": "dfe933059e0d06f6a1c4",
+    "source_fingerprint": "01dac26608c9f988f59a1e271fe5f49f740388d9048109084b94790ed09de0e4",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ee4c4623df016da",
+    "appearance_id": "eccdca8a9d8df2c8d73a",
+    "source_fingerprint": "9a7c4677d6fc2e2882bea9429288e142bee027cbc5891e01be7743bf7dba4036",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_059002044ae7b514",
+    "appearance_id": "4deb294058a038268164",
+    "source_fingerprint": "6b63240e9da61bb59687038c57053b79a9cc95968d150ba2968ff362921e92c9",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d367eca239fda29f",
+    "appearance_id": "6ba920d83cbf8109f4d2",
+    "source_fingerprint": "37fd980e52ad56fa4b87ab1e9c66381e79ddc4fc93b5bf92a1c3aeed18024037",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_369d282925008e45",
+    "appearance_id": "3263565dba1e04620f07",
+    "source_fingerprint": "7aefc0bdd87b18c68ef6ff8d8a14cf47128aff3e367003fb5357ed3ce98c1195",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_496351f4aad2dbcc",
+    "appearance_id": "014d077bf5f1e77b718e",
+    "source_fingerprint": "b3a2728186ec04f3f8e03e096cff9df2fe478d4962967bf610b04c745bd51f82",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32441022a4988f69",
+    "appearance_id": "1d6e7d08a210ce5ba30c",
+    "source_fingerprint": "16e3190a419eb2d9eca4fae2d1178f90877286aaabddd20f72daeea2b090dfa0",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7d15cfd88b1819b",
+    "appearance_id": "549623b93a16cb828699",
+    "source_fingerprint": "f329361c6fd048d45bdea80a8603f376e6f2c830a00aa28770e4bf9fc1029d38",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/history-and-generations"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8058a89132992155",
+    "appearance_id": "ba044c004ad5c9638d03",
+    "source_fingerprint": "840fde86190a7008b85340eb0237d0aefe577c1e16911a5cf59175803bb78c4f",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e73a3a6529bdc952",
+    "appearance_id": "27f760c02b103e7eef9f",
+    "source_fingerprint": "dccf9968e2219790b70150669278ef61e1415d94fb86fd063b83d3bfdce1eaa0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71a628c80ec49ec5",
+    "appearance_id": "d740b92701b9505d936a",
+    "source_fingerprint": "f7d2effa7d3010a77d3e6f953dc42ce93d16a61841558dd6fb6ca169c9b85755",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2019"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9689589b28b76e0d",
+    "appearance_id": "49d3fdbcec7698e7eaf5",
+    "source_fingerprint": "3626b446fa43d46883b4b5738c75f1e8bfe94003bdac310d147e9f66094ad157",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1091df8eba9abc34",
+    "appearance_id": "f1fe367150ee193bd60e",
+    "source_fingerprint": "83ca72089c3af5b3c30b6095ddda1fab1f1ea3de8f242351fed38d4fb2862f2e",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_083b8c7a8c4a9ad2",
+    "appearance_id": "5671cda6d74e4222418a",
+    "source_fingerprint": "3ee547e149301605f52dc0a7c3df6a06aee89fded5d11538931d8937c5e088ea",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_82159f29fec26ea1",
+    "appearance_id": "de7279a719b8d704c409",
+    "source_fingerprint": "138ca5c73c7928fb07943bc98e4d82a81890911ba94da9ee035b2421bab359c7",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0bd30f738008b4e5",
+    "appearance_id": "db69aa0b2f25731638b3",
+    "source_fingerprint": "3bb8cf8c21c29f02de19f93426aa700192c072e6284e71daca8211a24b7c4950",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4dba6e614a4c5b8a",
+    "appearance_id": "f19bd88558bea8b02d11",
+    "source_fingerprint": "457422a68b3ee713d6c735f8b31e6020b43a3ded674426986e3946e9efb9b512",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32d4cbb716553eb8",
+    "appearance_id": "13d8b3fbbd551a31c555",
+    "source_fingerprint": "f7ee9f8dc29e7242add2258d9f9f474390fea9e8c29f6d04ba6dfb23d043f37f",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_882f8949d20b41e1",
+    "appearance_id": "fbc601feff68ec1a671c",
+    "source_fingerprint": "e7ce11ad4166a68243c92d52fcc85196b80dec4647694f841906e8f61c983d2f",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d9387c5507e27ab0",
+    "appearance_id": "a45c29cb8c15a97e13f4",
+    "source_fingerprint": "05463b0f6f65adfc8fb5ec741f122224fb66bb612a075f90853ab7dc3afa29b9",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52b960878afdf6a8",
+    "appearance_id": "75b91667048dbbc7a218",
+    "source_fingerprint": "1ee55247f6c3c9a1d238ad67ad13ac878293d24634b04f3bbe7cbbd0fe6846ed",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66c109330ef82133",
+    "appearance_id": "3bcb2ce7304585f6aa02",
+    "source_fingerprint": "e99646862ed8f2fd2b118bbfe0f045e1b1e4f142baef365a0141ae85b0ea4031",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5427452d5ba22372",
+    "appearance_id": "beaf5e248a6e85c4b430",
+    "source_fingerprint": "ea54e2d356ba7a8cc9d2af9f7cc2794b325dcfc2857dddba4fee482bf3a975ce",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb85b10745167946",
+    "appearance_id": "7ca1c1bd448e48d3381b",
+    "source_fingerprint": "18312120280ce7d88701bbcf0f006ab7f34df5e1cc3a3882e3dff2b05fc5cfa1",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9ea9ace45f7aed4",
+    "appearance_id": "92199b925caaafbfe246",
+    "source_fingerprint": "a1136f078ad05bb1b0af935f7579e48773983bc3d6107cd8ee48b56b4a73bc17",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses assessment aligned with syllabus specifications under statistics. Appropriately classified under statistics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under statistics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_feb1ce6a58d1395b",
+    "appearance_id": "9cd7cc6fa27feb529275",
+    "source_fingerprint": "bd1de61a4043753ebfb005f0fc360171796a8497695c55a0933f3150d11d0a53",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses assessment aligned with syllabus specifications under statistics. Appropriately classified under statistics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under statistics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39e539c600d579cb",
+    "appearance_id": "29a1e3f4cca3dfa386c0",
+    "source_fingerprint": "07cc0503de773a552dfc54b5c1f038ea3e3006d46a2664ec3fd8ea4ee88b3282",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/mensuration",
+      "subtopic_id": "mathematics/mensuration/area"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56e80fa7f729d3a6",
+    "appearance_id": "7801382d7db68ba49bd7",
+    "source_fingerprint": "fa5669fe899858cbca59c13155224c0f10243d4146d3a6d2fa83444ba3ae94ae",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f499440bfb330885",
+    "appearance_id": "00d6192142f55b618063",
+    "source_fingerprint": "ba4468852ae004b8a8e5d299ebd03597d063aefe50da3cb72ea2fe122e608ff4",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/geometry",
+      "subtopic_id": "mathematics/geometry/triangles"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b948d2c853224fe2",
+    "appearance_id": "e696a9c8d1ef96019e1c",
+    "source_fingerprint": "5f07f75803dd515843963d858ba250efa32d9ca9bd5e7af745c45312abf7d73b",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2176215b5042882e",
+    "appearance_id": "3bac4d0de789d28a5600",
+    "source_fingerprint": "5a3bf4831e23ebf0c7718170dff922552e6f898c54160f11cf1445a8bb7dcd30",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/linear-equations"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/linear-equations"
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8439eb0e1c55f37",
+    "appearance_id": "95997d8e8a709c131fca",
+    "source_fingerprint": "8b998071b8ffc670ac65cba28c79b6adb8d008672890f8aaa6a2e0611d4667e1",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d7529840dce6c6da",
+    "appearance_id": "d84130d7b315196f030b",
+    "source_fingerprint": "1cee3d0216c0474550fd9a6ee3ded21d9b74a8de3be3a6a3ce5c61aa23c0c41c",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a924ee821fddeef4",
+    "appearance_id": "9fd45ec31152288cedf4",
+    "source_fingerprint": "c1958dcfd8984f580461f3224d0c2a6d267f1e185bff6b568d92596e9947b151",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses assessment aligned with syllabus specifications under mathematics. Appropriately classified under mathematics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mathematics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_73c7427b0976ca80",
+    "appearance_id": "99eedbb65a0c84917aeb",
+    "source_fingerprint": "c55274f9a0a707d7f8121116fa5603e5d390d6c6e45a635aca62c53020ab4945",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_84311343dedbc8a2",
+    "appearance_id": "3384243d57e4de102dec",
+    "source_fingerprint": "1d85604248ee0e218c63518740ae7ea82ce3c004e6a7a421aaf4f6f26ef05ded",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_37029d482f4beb2e",
+    "appearance_id": "63a9712b69a0c7d1a653",
+    "source_fingerprint": "1f06da68f24aae8ca2de10e458e8e802cacaef5ced25c042f9fc24c78d74896d",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/mensuration",
+      "subtopic_id": "mathematics/mensuration/volume"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_227b9f867ad5fbc9874f5fff",
+      "sha256": "da5053b3c04942e39aea343b90993835f3bba736debf4db38342b5dc8a9f9602",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

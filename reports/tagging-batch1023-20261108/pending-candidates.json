@@ -1,0 +1,3973 @@
+[
+  {
+    "canonical_id": "cq_741bb8f0cb5dccb3",
+    "appearance_id": "e2ee0779d638c082ffc7",
+    "source_fingerprint": "50547b8984cb6385d340a31d537620ab9fbe7467de3d2326ed9c41d318330f06",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb9119e6b14f06bf",
+    "appearance_id": "bba88ddb25fa22fe47df",
+    "source_fingerprint": "f52246411ec1ec8fc3344c904599d8235ee451d136d164dc8261b8e62fcb7a1a",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08240519128a6942",
+    "appearance_id": "57a61cbf632c51f11fc3",
+    "source_fingerprint": "26d8fd68a64f92741334c73037126c1d157ab71a0693275b45755cfdd44f0d81",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_beba49f3c5db1c1a",
+    "appearance_id": "98a32fc87aebad6f2728",
+    "source_fingerprint": "2a8ebc343fbe5dba3100201d8876d8ec2dd5d1471c93210030bcfc57e8d640d3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea96de1ae6d9773a",
+    "appearance_id": "088d89651243561939d3",
+    "source_fingerprint": "e6ab2720055797de8b355517d94ee8245ee46b9588ebf9b821b2ebfacec1d380",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a31b683d733351f9",
+    "appearance_id": "17d60b68c8183273cb53",
+    "source_fingerprint": "c76a41e1844c282b0791b7f1370032dffaa2219a64dc51d68201fd47a804af26",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_27ab4601a4e323ef",
+    "appearance_id": "5005eab65fbd191826b3",
+    "source_fingerprint": "c3676bba3ef57eb8f6b9a829dddea22392b4866c4014cffaa8df85edef433a2d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_762182bc66208500",
+    "appearance_id": "30150ca5cf06a55e986b",
+    "source_fingerprint": "1ff516c22f394e9d84d7326bee4b5d8ef6337c985fa06d4613f22599f9ba16f8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c6c2fe4d7509cac",
+    "appearance_id": "0ace87c227b42c3c6af3",
+    "source_fingerprint": "bb76511fb9bfd18233b3449be7a1088766ccf282afcf6b7ee4b1d42545ecf032",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": "science/physics/mechanics"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a9b23531de2e692",
+    "appearance_id": "d9161f638c7aaf13363f",
+    "source_fingerprint": "3642fa536263fb2bb82f55d65f659a89e27319ca44e93869ba901453b44e12dd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63da163b60e47832",
+    "appearance_id": "c49d36970f2671fc4c90",
+    "source_fingerprint": "8a59fdfbcdc6625dcbc74f6402ca0e6f9ba6e7eefdcc52044f908df08bb80b7e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5dfb6f2b2ee3451",
+    "appearance_id": "efc74ff620f606df9a82",
+    "source_fingerprint": "e39ad0384e55450b704c185c0b5424850602a5fc9676050eb33252d9b8c4bc24",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f72875faa70f2d4b",
+    "appearance_id": "bd01b375f4059af08cf5",
+    "source_fingerprint": "89eeaab12faef0203d5aea4ff5b22626c46f524f54ce80496582208ac9ce7b73",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d68fa43fb8537804",
+    "appearance_id": "7fc1c732fd1d048a4737",
+    "source_fingerprint": "4f7bf65302df6c0d836b8f369dcf9492d16364f170b8f8582687e3cc9d12f34e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31d07540ca49e26f",
+    "appearance_id": "428acd33b46171241264",
+    "source_fingerprint": "3c9c8493cfe94c06b8211d3841730f281680182ed00c9d46e245ac390ddbfc68",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_264b891cef4600a9",
+    "appearance_id": "202ec2d4564b46362977",
+    "source_fingerprint": "13c221425ff846c09fd74ae9a962e89102214af2ae384af12f029d4829954c89",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d88391c066e0055",
+    "appearance_id": "9c1d743a725abea6f9c6",
+    "source_fingerprint": "ba367f68a3e0065a4a4662b948cd1db272700368c0cb9b4f41c94c9866dda0e3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_92de51473f02323b",
+    "appearance_id": "ba00eaf493dd5fb983b3",
+    "source_fingerprint": "9d885c9b5ca2b80b92c3c83e97315a407411e9de1283c10f98239ffbe4947657",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0bc75dc17e4823b7",
+    "appearance_id": "eb270f2925212a4e1919",
+    "source_fingerprint": "f0df15d8c9ae81f41348cac23c71b584d7d73857d3777a595ab8c1cff747255e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98b45ad41cfa5905",
+    "appearance_id": "5f76c775b3c847cc5462",
+    "source_fingerprint": "6ddeb0523d928381627182eaaa010998967aeb3873252d1355c6b8764f9717ed",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf8271e269fb84d0",
+    "appearance_id": "35c9d11c5302cddfc313",
+    "source_fingerprint": "9c99b57039ff7a5e43f750ddf3b731833af48d2873ffb27fbcca7fe231cf46c5",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_16f7ba2fa76f216b",
+    "appearance_id": "69bac09675b367b4254b",
+    "source_fingerprint": "3922500b9f4fa2b848cc38da901219d024f11c465390e01b5bc346ffdff3587f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd1fa33677cff267",
+    "appearance_id": "67f6092306e0ab98d781",
+    "source_fingerprint": "fd77b654456cbd2fb7a8824064581b7f6970f07d85a2a367a75b301be4eb664d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c9bb76462d20cebb",
+    "appearance_id": "9b30755b78a94082fc22",
+    "source_fingerprint": "edcde227239e10c53ac9a27febe77712d37c9be65b84134695a8cc040931839b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f9ad11a4e10ddc9",
+    "appearance_id": "e0335231e0cf94a4df2f",
+    "source_fingerprint": "60f51c7dcc2a19c4e0ffc0af783d70cae5023f166c5480b007c503f7d1efb68f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7c17ee41fb5f00d3",
+    "appearance_id": "5a72dcd9b1ddb70b5376",
+    "source_fingerprint": "d7f8223f97ee550081e02e65ace0d3abc144681272a2549b949030c6fd0a0ec1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c64d378277074f9b",
+    "appearance_id": "48ec37ed827824efbc25",
+    "source_fingerprint": "d93792fd8370680469a2b711d431f62684f2b7dad31c4ab3fa4c3f7544b85d11",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a3b0b1cf74c5a13",
+    "appearance_id": "b39156d864337a0a555b",
+    "source_fingerprint": "1ebf7e3c7aee80e570b17b91a855e2109aaf36053d5aefac18cff9538369b24d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6f0f6dee09387b6",
+    "appearance_id": "1a5bdbb67fd26d82f79a",
+    "source_fingerprint": "7c85ac748177afc0a9bf7aea774f975ce2649ac0ecec465d683afec8753ab049",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a8417855ccf8df3",
+    "appearance_id": "22ac134e5d229ce83cc9",
+    "source_fingerprint": "1c18c906114f9c84e21e7cddcc1e7d7f8d624950710aa95270542d2a9da328af",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf43e29875560bef",
+    "appearance_id": "abd688769a3a497d88bc",
+    "source_fingerprint": "73224095d915d6b356cbece9d2f43daf6126b1dc14c5ea62dc221e4364f9f498",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bff7b6812d82fb02",
+    "appearance_id": "2c2927c6f9947501023c",
+    "source_fingerprint": "9c829c8403f65f336fd3c79e4bf82c63e32c008d4e348e716e6295bee79901a9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36e3313acaa5a2de",
+    "appearance_id": "9844e702cb9eecf9a482",
+    "source_fingerprint": "4d89d4ef7bce772c2db80a812b0edad7ee6768ecc87c11b3021ca061fd464aea",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50838d01b43f0d35",
+    "appearance_id": "a1db0c28ebf3d5e41313",
+    "source_fingerprint": "d7ef69f8ded8eaec4c88bd04adbb3e5b28d667e28ac2ebd1b893851122408289",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aea46d54f94ff732",
+    "appearance_id": "9b0c4fdb9140a877a2e5",
+    "source_fingerprint": "7ed3391c022c6e1e234928cd15b7a302cc152f9fd5d1aaf1fc64d79cb9e61e33",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_515ac2018498499c",
+    "appearance_id": "d33151864ca1906f02da",
+    "source_fingerprint": "72ba9e8a759811c669f0aaae678d07df617fde4dd1235dd91ae2328319b1aae8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f8542c4c3a181f8",
+    "appearance_id": "8bfebb9e37278e42d882",
+    "source_fingerprint": "84a188a6bd1687ac4c77322289b818bb72083af32df488110b4d6185cb8dc9c0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59e13424e596a993",
+    "appearance_id": "ce03304f36efcf4459e4",
+    "source_fingerprint": "72cca27b0a7d7847bf2b657d86dea5cc0befa754a4890f88af44c9f20bfe0cb8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8dffb569d348c67d",
+    "appearance_id": "825892d89720f831b2b9",
+    "source_fingerprint": "c173f49db8098eb6ff2f6037b82c4b8be9983403908b2bceff7ee18db78f6a76",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1585b2692dbb91fd",
+    "appearance_id": "eba2a41ccf8c02c02ecb",
+    "source_fingerprint": "ae1be982dd6bb9728361431ef85a52b11b5fad1ae83622df60a78202ebfc711e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_450d704b3822a800",
+    "appearance_id": "c57f586fa4ae45098a55",
+    "source_fingerprint": "bfc6a1991183141a6ef79d3f6cd70ee4455993bda7b014c85fda9c6c6fb1cab6",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12259b8d59eb0556",
+    "appearance_id": "581981c025b7d4be5b6b",
+    "source_fingerprint": "a482caac985daa73edd40ad1c05e56986579d5384c8ae9f3f9a7f63ee3384413",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60f23c502192441b",
+    "appearance_id": "650a7fd3f596e84391e0",
+    "source_fingerprint": "5f66b1626c3876d7f127a7f7060ab4f87f8ac069d107c23d63a30b507b56e49d",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33abcf26c5f7610c",
+    "appearance_id": "d80148007fb515d4e483",
+    "source_fingerprint": "34b97b9a35b2c1f2755989af3f77ee13da26758ad5354cfe8dea942fca9a049b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_532552bdabe19b4a",
+    "appearance_id": "3de41c8cfdbaad936f76",
+    "source_fingerprint": "fe6fbcfe350a29d8df629d1e71cfa5c3a7f12cbb0f2f0c2e9ac88c0b56b468f7",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_001fa4788cca41e7",
+    "appearance_id": "df58aaa1990171af746b",
+    "source_fingerprint": "a26fb3df3340488eb7e6260e773dc41fa6d52656351f3c3860df3e8bf0498494",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_755355fc1f56f4c4",
+    "appearance_id": "7b4253fecc6d41816af8",
+    "source_fingerprint": "d3328df170fa917db11b51107f7ca735da14b8b695b9c2b31a7543a9f94fa499",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c3396d9e39e36e54",
+    "appearance_id": "241f6e06a6bd5a7f6f99",
+    "source_fingerprint": "ae569ca3ff8a3e2309b8cf9bba575b2dce8a511e877bae78d35272e0871db2d3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_77df7df04e6e4a20",
+    "appearance_id": "969f79126b9104570ed9",
+    "source_fingerprint": "0d769ca3eb7efb6af580ed4dc506c1eeff758ec54200fe3600d3efd909974e1a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b7d7b745d196881",
+    "appearance_id": "b1e6c7eaf030feb58638",
+    "source_fingerprint": "4d77b7841ec031dfa59486d32c988eeafcbf81d00311c64ac612a3c6acc0990e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a74cb03a73963b1d",
+    "appearance_id": "618642f79473d931c1c7",
+    "source_fingerprint": "7cd709b39d1a6dbffbde13f63970f65d56a4ee8aa295f2ed53c00037700b7bf0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3904bdf50f3bf9a8",
+    "appearance_id": "aa9990fb1563fe05eff8",
+    "source_fingerprint": "e0d37d2e568c92236ef7635108be981eff6acf3fa58f35cbf9fd64bd557eb5ab",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eedf1be55222fc0b",
+    "appearance_id": "74fdb022d3466d3ba544",
+    "source_fingerprint": "b95a29c2c9a1a0e1dfd0f0395c6bb635329edbe224dcb5a37fdea2539bb8eded",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9d530e21ff446974",
+    "appearance_id": "30994e7d7e8941592297",
+    "source_fingerprint": "0f9cf9befd5a69619e2cd27fa470cb7d7015b017ca0de40d9d4f864db5ce8a66",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_25b423a31d8b3166",
+    "appearance_id": "1e35812fbd52889b7984",
+    "source_fingerprint": "7973d9de6caf474ea1d09c676478cfa7f184e5f6ffc866259d72b3944ba5ade7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30f0da8d9fa2a40c",
+    "appearance_id": "07bb98e2a17871b3fc72",
+    "source_fingerprint": "559d644eeb97aefaf29e32640e809b4e74b6188258454a1de3a22a3a50b516eb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d2127b0a80b42fc9",
+    "appearance_id": "d397fa7de75f12b502c7",
+    "source_fingerprint": "0aa1f51739c6d089e9bdf455020ce05d75907f37af5200c84c216375dcc52f67",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3f56f9d2f7b5f1a",
+    "appearance_id": "5f205af2153cdb5c8387",
+    "source_fingerprint": "f46195a72158aa7b490b8e465ceee77b0fb70f8060b60fb73633798d1fd92d5f",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d902176ee5a6f23f",
+    "appearance_id": "1f8ae66b7fee82bcb760",
+    "source_fingerprint": "2fe60307b7ee13a94284c535e413f894c28baa4e4cf5d82653ebe19adde947ac",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50637797d485a961",
+    "appearance_id": "f03b8973ae5d7c8dc457",
+    "source_fingerprint": "05bf62f36c65452af9f2f29538c0c8ed93e908d27851bd97f95b153c16cea3d5",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa8ee11500eff693",
+    "appearance_id": "abe850e6e86ad0028057",
+    "source_fingerprint": "215abb1c40486ce5b7fb841b17e962c261c94436636bcd5fc99718668e756e44",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c24116a41e372d6",
+    "appearance_id": "83fb92a47873b17f0b9e",
+    "source_fingerprint": "7956e9b67ba65d57d6d88e38c178d97110045209a356d48371310ba399fcccbf",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_159297efef2f98cd",
+    "appearance_id": "de03ab901e943b74d77f",
+    "source_fingerprint": "a38bd474fd74d159fc5c2e3e8a384634c7b071b2a8592da18b8d33f9eb6148e6",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f215800fb097548",
+    "appearance_id": "c72f61ce3fe6b3b7c37d",
+    "source_fingerprint": "dbbbdb7545ef097fd355ff6b238f3c20f1c8b9dc90d19046aac7531680fee65c",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0033a5f88b59f7df",
+    "appearance_id": "bac677fb372736f19eca",
+    "source_fingerprint": "f2061647c88170d29075d09dfe9e4c0e8b323e9b9e03ed33a7c763658e0a33c0",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_459eb4c5a4f63f5a",
+    "appearance_id": "6eaf1f74333e6c35527c",
+    "source_fingerprint": "cde7aab8c8810bc7dde8787c518149070780ad7a98e74281f4d9fee6c60f868b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_77bc5761fd2cbeb5",
+    "appearance_id": "f5b7e6af878d7395aa33",
+    "source_fingerprint": "eba000903d7ba295a3add0f0f95a279ce4ef85c05dbf568a4822dd9b624b1369",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/science-in-the-news",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f1db014ead6dc08",
+    "appearance_id": "5887bf7505769853740d",
+    "source_fingerprint": "32f5a4cbc2d89207b8c5f4a5b970db92f7199f2f6e90b00824475a94846dd4d2",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f2d36932400fb111",
+    "appearance_id": "e82648036ebbbcd49c93",
+    "source_fingerprint": "1c86e3ca4d8a6105250529333faad8f43aceb65d49b764788fc1fbb13a8ab298",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/computer-hardware"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_079198b9e137b8f9",
+    "appearance_id": "b87cc67fc3dbefb43abc",
+    "source_fingerprint": "6994fce4a851dc38fa48ba1c95fe9517b0d0b9b94961281aa5d70a1aea699b91",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/data-processing"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b519a245dfaa27cf",
+    "appearance_id": "c76347c917b29e5feee2",
+    "source_fingerprint": "4066c9337e25d300cb55738413f57eeb73d9127773d27c49ffe799e64194966a",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/computer-hardware"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5cda20fd71f0ed95",
+    "appearance_id": "1120701cbfcbb5de231e",
+    "source_fingerprint": "08cce3a6a20861e82335f6d375425b0114b2664e91c8e6630bb95cb0afa236ee",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/computer-hardware"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e7bde76f5fb76a85",
+    "appearance_id": "dea9dc9788bce10525c6",
+    "source_fingerprint": "6378f423add93ef72ae29495884e14f979fd81d7f35e9d6d58997d3ac17fe907",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": "computer-science/computer-systems-and-architecture/memory-and-storage"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ac1efa34549de6b",
+    "appearance_id": "43e3a13f932547871fd5",
+    "source_fingerprint": "ee52c77f73dd5d5e3b9d7b1ad235145832ca4f53c9beae61b610eee0d980a863",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c4b455895725948f",
+    "appearance_id": "976aa14d9f9a448d56e5",
+    "source_fingerprint": "bfccb2eb4257a1e43f18a7d28ded8066b847771bdba42a96805511f5bbe911db",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e11f000a9d907614",
+    "appearance_id": "7e60ecadf50eb12f474f",
+    "source_fingerprint": "9380bf14fa8f346caf4ad13a8de357a5e7e73623e95c9d48d59bd4b31e4d268f",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a44ea9d667a82e1c",
+    "appearance_id": "7799fb9cfe8973fad118",
+    "source_fingerprint": "2ce4ef650d08c24cd9840256f6f17ec63fe9c637ee5776a51b359fdb9ec53f5c",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0b51bf48d8542fff",
+    "appearance_id": "7e77a5574fc1eea45b09",
+    "source_fingerprint": "69c832bd7dcb1659eda48e0cfe24b0394bce75ff57a6ce2049ed8aa0ac343b45",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_67bf0d37ee1d2ecd",
+    "appearance_id": "1af2d900a6d56640179d",
+    "source_fingerprint": "8deab96228e2470f364eea93bbc73766ff7033a4eb089773485e1d4cb7317303",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52f77c0c1f21ddba",
+    "appearance_id": "35ab6ed7350788491ef4",
+    "source_fingerprint": "8c6f71c4597918f04e0ff175ac768c6fb83e03803d807329d0f77c4cf6192a2b",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7bcc011806b85dc6",
+    "appearance_id": "bfb50f4b53c42723004e",
+    "source_fingerprint": "702aff3cc27de40768d4c77bb6d1538b6c74fe79644965c58f188a7750b95892",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_162ce2460101ac32",
+    "appearance_id": "a152db1d204a4844e38a",
+    "source_fingerprint": "b882a935871318d053405c35ecbff27910e472f665a972ca12d4f4c9ffdde47d",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_abba2138924ba23e",
+    "appearance_id": "febb1e8d7332d1bbf38a",
+    "source_fingerprint": "b9db96a418d694b71098bc81ae023e5a51d3066280fc99e171d01520a946c752",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/descriptive-statistics"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6da1bd9a12480110",
+    "appearance_id": "2d88b25ef3b6505138d4",
+    "source_fingerprint": "30f7b0b01329260209c15d797e761307970e8e172a29598f121d901358d9d37a",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_413b7d3b81d579b3",
+    "appearance_id": "7a2f0d0ed14e1d6be02c",
+    "source_fingerprint": "57ea8e5ebd91cbda1dcbb280e4c1d5a331eb8a08a5613b0757b8133a48bd1d0a",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9015a257114d16b",
+    "appearance_id": "408becf77037c85cacd3",
+    "source_fingerprint": "dd5c42fe4f46e5bdc972d0d86378e37e0db7d51e3d5f072f108c9f8e8b576235",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/ratio-and-proportion"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2ab06e174385950b",
+    "appearance_id": "ff52bf81fec5dc83afe6",
+    "source_fingerprint": "136f79a0fdc905a3a7f79d635e1cd7e3e5f807aa660cdd90d1c71d2587ff6970",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cbb3324fa4501c4b",
+    "appearance_id": "cb573a9194773c197e1a",
+    "source_fingerprint": "3f2a980e7db361c2d71f2fcc62c8aa4f34c8d1a5ebba3908bf4235a3a64a44aa",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/linear-equations"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7db5a70efc00fdc2",
+    "appearance_id": "f984fc3af2e39bc0b8d0",
+    "source_fingerprint": "7e85de7bffc7e11d49589065b17e38c4c5425c4a8df31b64995cb50b6c349dfa",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/geometry",
+      "subtopic_id": "mathematics/geometry/triangles"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ac42c5594533169",
+    "appearance_id": "d6fbd5dee676ac0a1bfb",
+    "source_fingerprint": "4c1f93077d2b946b8c15935b535436ff5a5401bf6ca171293ee1702285400ebd",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/averages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f49e3b05aee8012",
+    "appearance_id": "b7940d7d7908089bfe01",
+    "source_fingerprint": "3de0ff4d5ca979c398195ecbeff7f6b175872a1e996bc10b30e82e7c8b540250",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": "mathematics/arithmetic/percentages"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2fc7032bc954e83e",
+    "appearance_id": "f3cf43a7d44093166872",
+    "source_fingerprint": "b426e522d45d4eccc2cc09b1be7e1229722478a3a5b7fb710256b76cf6391425",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7af48e8119b80813",
+    "appearance_id": "f9c17494789e53e974cc",
+    "source_fingerprint": "d585036ed83a5a2ef4a0f2518c00ba5e7c2ca45bdabe340202a0c8a3baae8b15",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_677ac68a7fcbc0e0",
+    "appearance_id": "a3228661f4b79051c47f",
+    "source_fingerprint": "07ea3b88a60a4f7b535fcf58e766d91a2404251c521b544118c29891b5f4a040",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/mensuration",
+      "subtopic_id": "mathematics/mensuration/area"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_867118cab427fae2",
+    "appearance_id": "298b81410d1a4562b7bf",
+    "source_fingerprint": "7fcf79eac8008d80fb5cf35ac599f015379f356e89a271d167bd89ed22de0423",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_19114a83894d73ad",
+    "appearance_id": "7de7cf966049d368b1e3",
+    "source_fingerprint": "e7bbbc8a4d16c67ad18f4d7771755f3695322a01f9be344cbc565dd455e4bbe9",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/algebra",
+      "subtopic_id": "mathematics/algebra/algebraic-expressions"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e04f95bab7f53a51",
+    "appearance_id": "998b8e6ca49c28c05723",
+    "source_fingerprint": "213a1127f1f5d8cd906321a1c4ba6a27d74e2472c75c5b3cb0562cf70fdf0ead",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/mensuration",
+      "subtopic_id": "mathematics/mensuration/volume"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_414c31e93c319f6e",
+    "appearance_id": "82cd13c3bf8763e8c380",
+    "source_fingerprint": "5b3c746e87c51de908c7559d8bd238a18699741411e15de1abe832f0d9eeb64b",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_803bee48679088af",
+    "appearance_id": "ec06dcf435b7670f4717",
+    "source_fingerprint": "a2c87732b8e2f50f0c1de9770bac2c0fa7535b90399138b9daa7b8d481daa3aa",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature. Appropriately classified under mizo.",
+    "tested_skill": "Mizo language: Linguistic grammar, interpretation, syntax, and vernacular literature.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_471b22c523bd97ca",
+    "appearance_id": "d7b947e7e1c9d4a00556",
+    "source_fingerprint": "bb323522bf53e173d26d53849f8e6ce4a9bfda5d1254511fc25dcf9ddf0edee7",
+    "current_primary": {
+      "subject_id": "statistics",
+      "topic_id": "statistics/probability-and-statistics",
+      "subtopic_id": "statistics/probability-and-statistics/probability"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_fab89d02cbb3a071a4c68d53",
+      "sha256": "ffa473285f58545eba47a3258d0be90461cb3aa63ec667c6e30f1c3adb68f93c",
+      "note": "Verified against registered booklet source for Upper Divisional Clerk."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

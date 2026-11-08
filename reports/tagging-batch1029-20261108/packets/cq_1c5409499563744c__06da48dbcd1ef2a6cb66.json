@@ -1,0 +1,119 @@
+{
+  "canonical_id": "cq_1c5409499563744c",
+  "appearance_id": "06da48dbcd1ef2a6cb66",
+  "snapshot": {
+    "record": {
+      "id": "06da48dbcd1ef2a6cb66",
+      "paperId": "Old_Questions/Direct_2019-2020/Paper-II (Various Deptt).pdf",
+      "type": "mcq",
+      "question": "The HCF of (x − 3)² (x + 4)² and (x − 1) (x + 4) (x − 3)² is",
+      "options": [
+        "(x + 3) (x + 12)²",
+        "(x − 3)² (x + 4)",
+        "(x − 1) (x − 3)² (x + 4)²",
+        "(x + 1) (x + 4)²"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Use the smallest exponent of each shared factor. Both polynomials contain (x−3)^2 and (x+4), giving HCF=(x−3)^2(x+4). Original printed source and ordered choices independently reviewed. Verified worked solution, unofficial; no matching examiner key is asserted.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "77",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/algebra",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Paper-II (Various Deptt).pdf",
+      "title": "Upper Division Clerk (U.D.C.) Under Various Department",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Paper-II%20(Various%20Deptt).pdf"
+    }
+  },
+  "source_fingerprint": "30150f437bb4d0552ff9e9a0021e653d9f86de7cfd5b596366c87edc99a34fa3",
+  "appearance": {
+    "id": "06da48dbcd1ef2a6cb66",
+    "paper_id": "Old_Questions/Direct_2019-2020/Paper-II (Various Deptt).pdf",
+    "type": "mcq",
+    "qnum": "77",
+    "qnum_seq": 77,
+    "page": 8,
+    "question": "The HCF of (x − 3)² (x + 4)² and (x − 1) (x + 4) (x − 3)² is",
+    "options": [
+      "(x + 3) (x + 12)²",
+      "(x − 3)² (x + 4)",
+      "(x − 1) (x − 3)² (x + 4)²",
+      "(x + 1) (x + 4)²"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Paper-II (Various Deptt)",
+    "difficulty": "medium",
+    "explanation": "Use the smallest exponent of each shared factor. Both polynomials contain (x−3)^2 and (x+4), giving HCF=(x−3)^2(x+4). Original printed source and ordered choices independently reviewed. Verified worked solution, unofficial; no matching examiner key is asserted.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1':10 '3':5,14 '4':7,12 'hcf':2 'x':4,6,9,11,13",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1c5409499563744c",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "source_context_ref": null,
+    "context_revision": 1,
+    "canonical_status": "live",
+    "canonical_answer_text": "(x − 3)² (x + 4)",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
