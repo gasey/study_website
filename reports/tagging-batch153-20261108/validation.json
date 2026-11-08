@@ -1,0 +1,15 @@
+{
+  "batch": 153,
+  "valid_count": 75,
+  "failed_count": 0,
+  "status": "PASS",
+  "checks": [
+    "100%_target_coverage",
+    "exact_oracle_baselines",
+    "exact_source_fingerprints",
+    "100%_active_paths_and_parents",
+    "keep_retag_logic_verified",
+    "source_evidence_bound_to_registered_document",
+    "temporal_context_enums_validated"
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_d2bfe5aaf53a311f",
+  "appearance_id": "6e295a434ae14342a1ae",
+  "snapshot": {
+    "record": {
+      "id": "6e295a434ae14342a1ae",
+      "paperId": "Old_Questions/Direct_NG_2024-2027/LDC under SW, WCD Paper-II..pdf",
+      "type": "mcq",
+      "question": "HTTPS is more secure than HTTP because it:",
+      "options": [
+        "loads webpages faster",
+        "uses encryption to protect data",
+        "works only on private networks",
+        "blocks all cookies automatically"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "HTTPS uses TLS to protect HTTP data in transit with encryption and integrity protection; it does not block all cookies or guarantee trustworthiness. Verified solution (unofficial); original printed source and technical explanation audited26October2026. References: https://www.rfc-editor.org/rfc/rfc8446.html; https://www.rfc-editor.org/rfc/rfc9110.html#section-4.2.2",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "46",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": "computer-science/networking",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_NG_2024-2027/LDC under SW, WCD Paper-II..pdf",
+      "title": "Competitive Examination for Recruitment to the Post of Lower Division Clerk",
+      "year": 2026,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_NG_2024-2027/LDC%20under%20SW%2C%20WCD%20Paper-II..pdf"
+    }
+  },
+  "source_fingerprint": "e3213f052c5764d74d8ea40971658481972c28d48043a90ce3c1138ca603f45a",
+  "appearance": {
+    "id": "6e295a434ae14342a1ae",
+    "paper_id": "Old_Questions/Direct_NG_2024-2027/LDC under SW, WCD Paper-II..pdf",
+    "type": "mcq",
+    "qnum": "46",
+    "qnum_seq": 46,
+    "page": 9,
+    "question": "HTTPS is more secure than HTTP because it:",
+    "options": [
+      "loads webpages faster",
+      "uses encryption to protect data",
+      "works only on private networks",
+      "blocks all cookies automatically"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "LDC under SW, WCD Paper-II.",
+    "difficulty": "medium",
+    "explanation": "HTTPS uses TLS to protect HTTP data in transit with encryption and integrity protection; it does not block all cookies or guarantee trustworthiness. Verified solution (unofficial); original printed source and technical explanation audited26October2026. References: https://www.rfc-editor.org/rfc/rfc8446.html; https://www.rfc-editor.org/rfc/rfc9110.html#section-4.2.2",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'http':6 'https':1 'secur':4",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_d2bfe5aaf53a311f",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "uses encryption to protect data",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
