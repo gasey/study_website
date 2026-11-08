@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_056eaffb415f8a7c",
+  "appearance_id": "f76d7afd13a4517b6856",
+  "snapshot": {
+    "record": {
+      "id": "f76d7afd13a4517b6856",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+      "type": "mcq",
+      "question": "A 6mm thick mild steel plate is connected to a 8mm thick plate by 16 mm diameter shop rivets. What is the number of rivets required to carry 80 kN load?",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Single-shear value of one 16 mm shop rivet at 100 MPa = (pi/4)(16^2)(100) = 20.1 kN, which is less than bearing on the 6 mm plate (16 x 6 x 300 = 28.8 kN), so shear governs. Number of rivets = 80/20.1 = 3.98, rounded up to 4. The stress values are assumed from standard steel-design practice, not stated on the page.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "55",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-I-2018..pdf"
+    }
+  },
+  "source_fingerprint": "92943881455af758ef77958a2b14a11df1785d67c63e9629232db39160e14be5",
+  "appearance": {
+    "id": "f76d7afd13a4517b6856",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+    "type": "mcq",
+    "qnum": "55",
+    "qnum_seq": 55,
+    "page": 6,
+    "question": "A 6mm thick mild steel plate is connected to a 8mm thick plate by 16 mm diameter shop rivets. What is the number of rivets required to carry 80 kN load?",
+    "options": [
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-I-2018.",
+    "difficulty": "medium",
+    "explanation": "Single-shear value of one 16 mm shop rivet at 100 MPa = (pi/4)(16^2)(100) = 20.1 kN, which is less than bearing on the 6 mm plate (16 x 6 x 300 = 28.8 kN), so shear governs. Number of rivets = 80/20.1 = 3.98, rounded up to 4. The stress values are assumed from standard steel-design practice, not stated on the page.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'16':15 '6mm':2 '80':29 '8mm':11 'carri':28 'connect':8 'diamet':17 'kn':30 'load':31 'mild':4 'mm':16 'number':23 'plate':6,13 'requir':26 'rivet':19,25 'shop':18 'steel':5 'thick':3,12",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_056eaffb415f8a7c",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "4",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

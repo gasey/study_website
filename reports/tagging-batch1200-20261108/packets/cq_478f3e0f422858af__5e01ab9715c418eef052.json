@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_478f3e0f422858af",
+  "appearance_id": "5e01ab9715c418eef052",
+  "snapshot": {
+    "record": {
+      "id": "5e01ab9715c418eef052",
+      "paperId": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "Consider the following functions: f(n)=2n, g(n)=n!, h(n)=nlog n Which of the following Statement about the asymptotic behavior of f(n),g(n) and h(n) is true?",
+      "options": [
+        "f(n)=O(g(n));g(n)=O(h(n))",
+        "f(n)=(g(n));g(n)=O(h(n))",
+        "g(n)=O(f(n));h(n)=O(f(n))",
+        "h(n)=O(f(n));g(n)=(f(n))"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "34",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "title": "GENERAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF PROGRAMMER UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "03a734843ada4d9446f06856387eb3a980098dac99cdfc179cb348963930b46a",
+  "appearance": {
+    "id": "5e01ab9715c418eef052",
+    "paper_id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "34",
+    "qnum_seq": 34,
+    "page": 4,
+    "question": "Consider the following functions: f(n)=2n, g(n)=n!, h(n)=nlog n Which of the following Statement about the asymptotic behavior of f(n),g(n) and h(n) is true?",
+    "options": [
+      "f(n)=O(g(n));g(n)=O(h(n))",
+      "f(n)=(g(n));g(n)=O(h(n))",
+      "g(n)=O(f(n));h(n)=O(f(n))",
+      "h(n)=O(f(n));g(n)=(f(n))"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3.Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'2n':7 'asymptot':22 'behavior':23 'consid':1 'f':5,25 'follow':3,18 'function':4 'g':8,27 'h':11,30 'n':6,9,10,12,14,26,28,31 'nlog':13 'statement':19 'true':33",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_478f3e0f422858af",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "f(n)=O(g(n));g(n)=O(h(n))",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_1b946785f8ff862a",
+  "appearance_id": "28612341b301b10d13c0",
+  "snapshot": {
+    "record": {
+      "id": "28612341b301b10d13c0",
+      "paperId": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "In memory-mapped I/O ___________",
+      "options": [
+        "The I/O devices and the memory share the same address space",
+        "The I/O devices have a seperate address space",
+        "The memory and I/O devices have an associated address space",
+        "A part of the memory is specifically set aside for the I/O operation"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "47",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "title": "GENERAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF PROGRAMMER UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "c8b1f736813e3c8bdcea1cc1d9c8734cc4caaf339913f8cb58d0c461001ffa9f",
+  "appearance": {
+    "id": "28612341b301b10d13c0",
+    "paper_id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "47",
+    "qnum_seq": 47,
+    "page": 5,
+    "question": "In memory-mapped I/O ___________",
+    "options": [
+      "The I/O devices and the memory share the same address space",
+      "The I/O devices have a seperate address space",
+      "The memory and I/O devices have an associated address space",
+      "A part of the memory is specifically set aside for the I/O operation"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3.Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'i/o':5 'map':4 'memori':3 'memory-map':2",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1b946785f8ff862a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "The I/O devices and the memory share the same address space",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

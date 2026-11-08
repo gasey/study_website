@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_1289a96475aa4f0c",
+  "appearance_id": "329dc5c97af24978c11f",
+  "snapshot": {
+    "record": {
+      "id": "329dc5c97af24978c11f",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "type": "mcq",
+      "question": "If root zone depth is 2m, existing water content is 5%,the dry density of soil is 1.5g/cm2, water applied to the soil is 500m3, water loss due to evaporation etc is 10% and the area of the plot is 100m2. What will be the field capacity of the soil",
+      "options": [
+        "5%",
+        "10%",
+        "20%",
+        "50%"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Stem/options verified against printed page 8 (printed as Q81; bank's qnum 82/page 9 differs but text matches verbatim). With the printed 500 m^3 applied, net storage = 450 m^3 = 4.5 m depth over 100 m^2 against only 300 t of dry soil (100 m^2 x 2 m x 1.5 t/m^3), giving a 150% water-content increase (FC ~155%), which is impossible and matches no option. With the evidently intended 50 m^3, net depth = 0.45 m, i.e. 450 kg water per 3000 kg dry soil = 15%, so field capacity = 5% + 15% = 20%. Medium confidence due to the apparent typo in the printed water volume.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "82",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-II-2018..pdf"
+    }
+  },
+  "source_fingerprint": "19a20ba324c709f7757a8aeb84d82416baeb85739d2fbc2a640912a5514909f7",
+  "appearance": {
+    "id": "329dc5c97af24978c11f",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+    "type": "mcq",
+    "qnum": "82",
+    "qnum_seq": 82,
+    "page": 9,
+    "question": "If root zone depth is 2m, existing water content is 5%,the dry density of soil is 1.5g/cm2, water applied to the soil is 500m3, water loss due to evaporation etc is 10% and the area of the plot is 100m2. What will be the field capacity of the soil",
+    "options": [
+      "5%",
+      "10%",
+      "20%",
+      "50%"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-II-2018.",
+    "difficulty": "medium",
+    "explanation": "Stem/options verified against printed page 8 (printed as Q81; bank's qnum 82/page 9 differs but text matches verbatim). With the printed 500 m^3 applied, net storage = 450 m^3 = 4.5 m depth over 100 m^2 against only 300 t of dry soil (100 m^2 x 2 m x 1.5 t/m^3), giving a 150% water-content increase (FC ~155%), which is impossible and matches no option. With the evidently intended 50 m^3, net depth = 0.45 m, i.e. 450 kg water per 3000 kg dry soil = 15%, so field capacity = 5% + 15% = 20%. Medium confidence due to the apparent typo in the printed water volume.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1.5':18 '10':34 '100m2':42 '2m':6 '5':11 '500m3':26 'appli':21 'area':37 'capac':48 'content':9 'densiti':14 'depth':4 'dri':13 'due':29 'etc':32 'evapor':31 'exist':7 'field':47 'g/cm2':19 'loss':28 'plot':40 'root':2 'soil':16,24,51 'water':8,20,27 'zone':3",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1289a96475aa4f0c",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "20%",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

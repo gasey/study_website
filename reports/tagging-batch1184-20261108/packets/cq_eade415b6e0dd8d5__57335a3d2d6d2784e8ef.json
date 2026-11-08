@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_eade415b6e0dd8d5",
+  "appearance_id": "57335a3d2d6d2784e8ef",
+  "snapshot": {
+    "record": {
+      "id": "57335a3d2d6d2784e8ef",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+      "type": "mcq",
+      "question": "The modulus of rupture of concrete in terms of its characteristic cube compressive strength (fck) is MPa according to IS 456: 2000 is",
+      "options": [
+        "5000 f ck",
+        "5000 f ck",
+        "0.7 f ck",
+        "0.7 f ck"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Checked the printed source page (Civil Engineering Paper-I-2018, PDF page 1, Q2): the four options are actually (a) 5000 f_ck, (b) 5000 sqrt(f_ck), (c) 0.7 sqrt(f_ck), (d) 0.7 f_ck - the radical signs were dropped in text extraction, which is why the bank string shows duplicated pairs. IS 456:2000 Table 11 gives the modulus of rupture f_r = 0.7 sqrt(f_ck) for grades M20-M50 (e.g. f_ck = 20 -> 0.7 x 4.47 = 3.13 N/mm2, matching Table 12), so the correct printed option is (c), index 2. Confidence is medium only because the bank option text itself is defective (index 2 and index 3 read identically as '0.7 f ck'); the printed page itself is unambiguous.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "2",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": "duplicate-options",
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-I-2018..pdf"
+    }
+  },
+  "source_fingerprint": "bda8208718d25383d50f248fe5d475bde1343da322231b16779fd0bdda98e59a",
+  "appearance": {
+    "id": "57335a3d2d6d2784e8ef",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-I-2018..pdf",
+    "type": "mcq",
+    "qnum": "2",
+    "qnum_seq": 2,
+    "page": 1,
+    "question": "The modulus of rupture of concrete in terms of its characteristic cube compressive strength (fck) is MPa according to IS 456: 2000 is",
+    "options": [
+      "5000 f ck",
+      "5000 f ck",
+      "0.7 f ck",
+      "0.7 f ck"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-I-2018.",
+    "difficulty": "medium",
+    "explanation": "Checked the printed source page (Civil Engineering Paper-I-2018, PDF page 1, Q2): the four options are actually (a) 5000 f_ck, (b) 5000 sqrt(f_ck), (c) 0.7 sqrt(f_ck), (d) 0.7 f_ck - the radical signs were dropped in text extraction, which is why the bank string shows duplicated pairs. IS 456:2000 Table 11 gives the modulus of rupture f_r = 0.7 sqrt(f_ck) for grades M20-M50 (e.g. f_ck = 20 -> 0.7 x 4.47 = 3.13 N/mm2, matching Table 12), so the correct printed option is (c), index 2. Confidence is medium only because the bank option text itself is defective (index 2 and index 3 read identically as '0.7 f ck'); the printed page itself is unambiguous.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": "duplicate-options",
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'2000':22 '456':21 'accord':18 'characterist':11 'compress':13 'concret':6 'cube':12 'fck':15 'modulus':2 'mpa':17 'ruptur':4 'strength':14 'term':8",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_eade415b6e0dd8d5",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0.7 f ck",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": "duplicate-options",
+    "canonical_key_disputed": false
+  }
+}

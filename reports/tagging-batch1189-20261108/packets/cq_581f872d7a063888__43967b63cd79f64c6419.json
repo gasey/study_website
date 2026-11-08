@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_581f872d7a063888",
+  "appearance_id": "43967b63cd79f64c6419",
+  "snapshot": {
+    "record": {
+      "id": "43967b63cd79f64c6419",
+      "paperId": "Old_Questions/Direct_2014-2018/12.Electronics&Comm Engineering Paper-III.pdf",
+      "type": "mcq",
+      "question": "An 8085 microprocessor based system uses a 4K x 8-bit RAM whose starting address is AA00H. The address of the last byte in this RAM is",
+      "options": [
+        "0FFFH",
+        "1000H",
+        "B9FFH",
+        "BA00H"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "86",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/12.Electronics&Comm Engineering Paper-III.pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Legal Metrology",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/12.Electronics%26Comm%20Engineering%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "735de8e4349fc9c6c781a5486a5a0de7e6ab448ed5f203f8fb54b26f69e85ea3",
+  "appearance": {
+    "id": "43967b63cd79f64c6419",
+    "paper_id": "Old_Questions/Direct_2014-2018/12.Electronics&Comm Engineering Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "86",
+    "qnum_seq": 86,
+    "page": 9,
+    "question": "An 8085 microprocessor based system uses a 4K x 8-bit RAM whose starting address is AA00H. The address of the last byte in this RAM is",
+    "options": [
+      "0FFFH",
+      "1000H",
+      "B9FFH",
+      "BA00H"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "12.Electronics&Comm Engineering Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'4k':8 '8':10 '8085':2 'aa00h':17 'address':15,19 'base':4 'bit':11 'byte':23 'last':22 'microprocessor':3 'ram':12,26 'start':14 'system':5 'use':6 'whose':13 'x':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_581f872d7a063888",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "B9FFH",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

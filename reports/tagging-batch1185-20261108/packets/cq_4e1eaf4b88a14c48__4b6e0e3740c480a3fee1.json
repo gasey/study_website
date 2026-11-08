@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_4e1eaf4b88a14c48",
+  "appearance_id": "4b6e0e3740c480a3fee1",
+  "snapshot": {
+    "record": {
+      "id": "4b6e0e3740c480a3fee1",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "type": "mcq",
+      "question": "Wheat crop requires 55 cm of water during 120 days of base period. The total rainfall during this period is 100 mm. Assume the irrigation efficiency to be 60%. The area (in ha) of the land which can be irrigated with a canal flow of 0.01 m3/s is",
+      "options": [
+        "13.82",
+        "18.65",
+        "23.42",
+        "234.20"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Net requirement = 550 mm - 100 mm rainfall = 450 mm; gross at 60% efficiency = 450/0.6 = 750 mm = 0.75 m. Base period 120 days gives volume = 0.01 m3/s x 120 x 86400 s = 103,680 m3, so area = 103,680/0.75 = 138,240 m2 = 13.82 ha.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "80",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-II-2018..pdf"
+    }
+  },
+  "source_fingerprint": "a20a2fe5d6bb658b09702c81186e74811819ef3e966f71b658fa3c45382b68ca",
+  "appearance": {
+    "id": "4b6e0e3740c480a3fee1",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+    "type": "mcq",
+    "qnum": "80",
+    "qnum_seq": 80,
+    "page": 9,
+    "question": "Wheat crop requires 55 cm of water during 120 days of base period. The total rainfall during this period is 100 mm. Assume the irrigation efficiency to be 60%. The area (in ha) of the land which can be irrigated with a canal flow of 0.01 m3/s is",
+    "options": [
+      "13.82",
+      "18.65",
+      "23.42",
+      "234.20"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-II-2018.",
+    "difficulty": "medium",
+    "explanation": "Net requirement = 550 mm - 100 mm rainfall = 450 mm; gross at 60% efficiency = 450/0.6 = 750 mm = 0.75 m. Base period 120 days gives volume = 0.01 m3/s x 120 x 86400 s = 103,680 m3, so area = 103,680/0.75 = 138,240 m2 = 13.82 ha.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.01':46 '100':21 '120':9 '55':4 '60':29 'area':31 'assum':23 'base':12 'canal':43 'cm':5 'crop':2 'day':10 'effici':26 'flow':44 'ha':33 'irrig':25,40 'land':36 'm3/s':47 'mm':22 'period':13,19 'rainfal':16 'requir':3 'total':15 'water':7 'wheat':1",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_4e1eaf4b88a14c48",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "13.82",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

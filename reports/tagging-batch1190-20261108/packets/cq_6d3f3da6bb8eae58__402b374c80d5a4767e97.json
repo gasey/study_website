@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_6d3f3da6bb8eae58",
+  "appearance_id": "402b374c80d5a4767e97",
+  "snapshot": {
+    "record": {
+      "id": "402b374c80d5a4767e97",
+      "paperId": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+      "type": "mcq",
+      "question": "A control mass gives out 10 kJ of energy in the form of heat transfer at 500°C. Find the change in availability of the control mass",
+      "options": [
+        "-4.14 kJ",
+        "-5.14 kJ",
+        "-6.14 kJ",
+        "-7.14 kJ"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "With heat loss Q = 10 kJ at T = 773 K and surroundings T0 = 298 K, ΔS = -10/773 = -0.01294 kJ/K and ΔA = ΔU - T0ΔS = -10 + 298(0.01294) ≈ -6.14 kJ. The paper does not state T0, so 298 K is an assumed standard value; the printed '5000C' is read as 500°C.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "21",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mechanical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+      "title": "Inspector of Legal Metrology - Mechanical Engineering",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/15.Mechanical%20Engineering%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "e6baf41182ef00a670b67db2d31070bf11ad39b259492c22b92c0bded4c69f8a",
+  "appearance": {
+    "id": "402b374c80d5a4767e97",
+    "paper_id": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "21",
+    "qnum_seq": 21,
+    "page": 2,
+    "question": "A control mass gives out 10 kJ of energy in the form of heat transfer at 500°C. Find the change in availability of the control mass",
+    "options": [
+      "-4.14 kJ",
+      "-5.14 kJ",
+      "-6.14 kJ",
+      "-7.14 kJ"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "15.Mechanical Engineering Paper-I",
+    "difficulty": "medium",
+    "explanation": "With heat loss Q = 10 kJ at T = 773 K and surroundings T0 = 298 K, ΔS = -10/773 = -0.01294 kJ/K and ΔA = ΔU - T0ΔS = -10 + 298(0.01294) ≈ -6.14 kJ. The paper does not state T0, so 298 K is an assumed standard value; the printed '5000C' is read as 500°C.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'10':6 '500':17 'avail':23 'c':18 'chang':21 'control':2,26 'energi':9 'find':19 'form':12 'give':4 'heat':14 'kj':7 'mass':3,27 'transfer':15",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_6d3f3da6bb8eae58",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "-6.14 kJ",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

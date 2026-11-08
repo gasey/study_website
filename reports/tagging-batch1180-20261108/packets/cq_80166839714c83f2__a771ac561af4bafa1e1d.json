@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_80166839714c83f2",
+  "appearance_id": "a771ac561af4bafa1e1d",
+  "snapshot": {
+    "record": {
+      "id": "a771ac561af4bafa1e1d",
+      "paperId": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "type": "mcq",
+      "question": "The characteristic equation of a control system is given by s6+2s5+8s4+12s3+20s2+16s+16=0. The number of the roots of the equation which lie in the imaginary axis of s-plane is",
+      "options": [
+        "zero",
+        "2",
+        "4",
+        "6"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The Routh array has an all-zero s³ row, and the auxiliary polynomial from the s⁴ row is 2s⁴+12s²+16=0, giving s²=-2 and s²=-4. That means four roots on the imaginary axis, with no sign changes in the rest of the array.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "26",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Legal Metrology under Food, Civil Supplies & Consumer Affairs Department, Government of Mizoram",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/8.Electrical%20Engineering%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "eef078ac328db513e816d9646347eb1f7f0bb602a7e0ec1628b62d5aa2952096",
+  "appearance": {
+    "id": "a771ac561af4bafa1e1d",
+    "paper_id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "26",
+    "qnum_seq": 26,
+    "page": 3,
+    "question": "The characteristic equation of a control system is given by s6+2s5+8s4+12s3+20s2+16s+16=0. The number of the roots of the equation which lie in the imaginary axis of s-plane is",
+    "options": [
+      "zero",
+      "2",
+      "4",
+      "6"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "8.Electrical Engineering Paper-II",
+    "difficulty": "medium",
+    "explanation": "The Routh array has an all-zero s³ row, and the auxiliary polynomial from the s⁴ row is 2s⁴+12s²+16=0, giving s²=-2 and s²=-4. That means four roots on the imaginary axis, with no sign changes in the rest of the array.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+12':16 '+16':20,22 '+2':12 '+20':18 '+8':14 '0':23 'axi':37 'characterist':2 'control':6 'equat':3,31 'given':9 'imaginari':36 'lie':33 'number':25 'plane':41 'root':28 's-plane':39 's2':19 's3':17 's4':15 's5':13 's6':11 'system':7",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_80166839714c83f2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "4",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

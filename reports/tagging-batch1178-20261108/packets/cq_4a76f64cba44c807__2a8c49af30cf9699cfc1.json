@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_4a76f64cba44c807",
+  "appearance_id": "2a8c49af30cf9699cfc1",
+  "snapshot": {
+    "record": {
+      "id": "2a8c49af30cf9699cfc1",
+      "paperId": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+      "type": "mcq",
+      "question": "Which of the following is the smallest perfect square, exactly divisible by 8, 15, and 24?",
+      "options": [
+        "1521",
+        "2500",
+        "3600",
+        "4624"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The least common multiple is 120; the least square multiple must have even prime exponents. LCM(8,15,24)=2³·3·5. Multiply by 2·3·5=30 to get 2⁴·3²·5²=3600. Verified solution (unofficial); original PDF and derivation reviewed26October2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "80",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/arithmetic",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Assistant under DP & AR (SSW), Government of Mizoram",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/2.Assistant%20Grade%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "3d9e22931dd0803d9a69b7d424225befa0e2e4d22c3883cf88da3fc325c8cc3c",
+  "appearance": {
+    "id": "2a8c49af30cf9699cfc1",
+    "paper_id": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "80",
+    "qnum_seq": 80,
+    "page": 8,
+    "question": "Which of the following is the smallest perfect square, exactly divisible by 8, 15, and 24?",
+    "options": [
+      "1521",
+      "2500",
+      "3600",
+      "4624"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "2.Assistant Grade Paper-II",
+    "difficulty": "medium",
+    "explanation": "The least common multiple is 120; the least square multiple must have even prime exponents. LCM(8,15,24)=2³·3·5. Multiply by 2·3·5=30 to get 2⁴·3²·5²=3600. Verified solution (unofficial); original PDF and derivation reviewed26October2026.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'15':14 '24':16 '8':13 'divis':11 'exact':10 'follow':4 'perfect':8 'smallest':7 'squar':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_4a76f64cba44c807",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "3600",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

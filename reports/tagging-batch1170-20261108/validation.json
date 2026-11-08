@@ -1,0 +1,14 @@
+{
+  "batch": 1170,
+  "valid_count": 7,
+  "failed_count": 0,
+  "status": "PASS",
+  "checks": [
+    "100%_target_coverage",
+    "exact_oracle_baselines",
+    "exact_source_fingerprints",
+    "100%_active_paths_and_parents",
+    "document_binding_verified",
+    "actions_consistent_with_proposals"
+  ]
+}

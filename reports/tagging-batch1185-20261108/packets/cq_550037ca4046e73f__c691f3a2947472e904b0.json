@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_550037ca4046e73f",
+  "appearance_id": "c691f3a2947472e904b0",
+  "snapshot": {
+    "record": {
+      "id": "c691f3a2947472e904b0",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "type": "mcq",
+      "question": "Water flow at a depth of 0.1m with a velocity of 6 m/s in a rectangular channel. The alternate depth is",
+      "options": [
+        "0.30 m",
+        "0.40 m",
+        "0.60 m",
+        "0.80 m"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Stem/options verified against printed page 1. Strict alternate depth (equal specific energy E = 0.1 + 6^2/19.62 = 1.935 m, q = 0.6 m^2/s) is ~1.93 m, which is not offered; the paper evidently intends the conjugate (sequent) depth: Fr1^2 = 36/(9.81*0.1) = 36.7, so y2 = (0.1/2)[sqrt(1+8*36.7) - 1] = 0.05*16.16 = 0.81 m, matching 0.80 m. Medium confidence because the term 'alternate depth' is used loosely; the true equal-energy alternate depth has no matching option.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "6",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-II-2018..pdf"
+    }
+  },
+  "source_fingerprint": "05f4c25f1b9f3b9023670b5e83c4002323291ef8c5999180934b855338d39088",
+  "appearance": {
+    "id": "c691f3a2947472e904b0",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+    "type": "mcq",
+    "qnum": "6",
+    "qnum_seq": 6,
+    "page": 1,
+    "question": "Water flow at a depth of 0.1m with a velocity of 6 m/s in a rectangular channel. The alternate depth is",
+    "options": [
+      "0.30 m",
+      "0.40 m",
+      "0.60 m",
+      "0.80 m"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-II-2018.",
+    "difficulty": "medium",
+    "explanation": "Stem/options verified against printed page 1. Strict alternate depth (equal specific energy E = 0.1 + 6^2/19.62 = 1.935 m, q = 0.6 m^2/s) is ~1.93 m, which is not offered; the paper evidently intends the conjugate (sequent) depth: Fr1^2 = 36/(9.81*0.1) = 36.7, so y2 = (0.1/2)[sqrt(1+8*36.7) - 1] = 0.05*16.16 = 0.81 m, matching 0.80 m. Medium confidence because the term 'alternate depth' is used loosely; the true equal-energy alternate depth has no matching option.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.1':7 '6':13 'altern':20 'channel':18 'depth':5,21 'flow':2 'm':8 'm/s':14 'rectangular':17 'veloc':11 'water':1",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_550037ca4046e73f",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0.80 m",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

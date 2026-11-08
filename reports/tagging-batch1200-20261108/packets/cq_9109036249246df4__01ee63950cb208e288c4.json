@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_9109036249246df4",
+  "appearance_id": "01ee63950cb208e288c4",
+  "snapshot": {
+    "record": {
+      "id": "01ee63950cb208e288c4",
+      "paperId": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "Consider the following set of processes, the length of the CPU burst time given in milliseconds: Processes: P1 Burst Time: 6 Arrival time: 0, P2 Burst Time: 8 Arrival time: 0, P3 Burst Time: 7 Arrival time: 0, P4 Burst Time: 3 Arrival time: 0. Assuming the above process being scheduled with the SJF scheduling algorithm, what is the waiting time for process P1?",
+      "options": [
+        "3ms",
+        "0ms",
+        "16ms",
+        "9ms"
+      ],
+      "answerIndex": 3,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "80",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "title": "GENERAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF PROGRAMMER UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "d6dedbba7ea5411e6156e3ed34d2f65f0b627a76454b15487660354577f0cfe0",
+  "appearance": {
+    "id": "01ee63950cb208e288c4",
+    "paper_id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "80",
+    "qnum_seq": 80,
+    "page": 8,
+    "question": "Consider the following set of processes, the length of the CPU burst time given in milliseconds: Processes: P1 Burst Time: 6 Arrival time: 0, P2 Burst Time: 8 Arrival time: 0, P3 Burst Time: 7 Arrival time: 0, P4 Burst Time: 3 Arrival time: 0. Assuming the above process being scheduled with the SJF scheduling algorithm, what is the waiting time for process P1?",
+    "options": [
+      "3ms",
+      "0ms",
+      "16ms",
+      "9ms"
+    ],
+    "answer_index": 3,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3.Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0':24,31,38,45 '3':42 '6':21 '7':35 '8':28 'algorithm':56 'arriv':22,29,36,43 'assum':46 'burst':12,19,26,33,40 'consid':1 'cpu':11 'follow':3 'given':14 'length':8 'millisecond':16 'p1':18,64 'p2':25 'p3':32 'p4':39 'process':6,17,49,63 'schedul':51,55 'set':4 'sjf':54 'time':13,20,23,27,30,34,37,41,44,61 'wait':60",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_9109036249246df4",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "9ms",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

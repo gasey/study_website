@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_39aa9e8c8d146cbd",
+  "appearance_id": "e308ef87e674f7354a45",
+  "snapshot": {
+    "record": {
+      "id": "e308ef87e674f7354a45",
+      "paperId": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "type": "mcq",
+      "question": "The diameter of a circular sewer laid at a slope of 1 in 400 when it is running half full and with a velocity of 1.9 m/s (n in manning's formula = 0.012) will be",
+      "options": [
+        "0.012 m",
+        "0.70 m",
+        "1.12 m",
+        "1.23 m"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Half-full circular section has R = D/4, so v = (1/n)(D/4)^(2/3) S^(1/2). With S = 0.0025, n = 0.012, v = 1.9 m/s: (D/4)^(2/3) = 0.456, so D/4 = 0.308 and D = 1.23 m.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "60",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+      "title": "INSPECTOR OF LEGAL METROLOGY - CIVIL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Civil%20Engineering%20Paper-II-2018..pdf"
+    }
+  },
+  "source_fingerprint": "3e1c248d5335d9c3127a0dab482306fd16de5ab569f03cd500af44b32bd14d45",
+  "appearance": {
+    "id": "e308ef87e674f7354a45",
+    "paper_id": "Old_Questions/Direct_2014-2018/Civil Engineering Paper-II-2018..pdf",
+    "type": "mcq",
+    "qnum": "60",
+    "qnum_seq": 60,
+    "page": 6,
+    "question": "The diameter of a circular sewer laid at a slope of 1 in 400 when it is running half full and with a velocity of 1.9 m/s (n in manning's formula = 0.012) will be",
+    "options": [
+      "0.012 m",
+      "0.70 m",
+      "1.12 m",
+      "1.23 m"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Civil Engineering Paper-II-2018.",
+    "difficulty": "medium",
+    "explanation": "Half-full circular section has R = D/4, so v = (1/n)(D/4)^(2/3) S^(1/2). With S = 0.0025, n = 0.012, v = 1.9 m/s: (D/4)^(2/3) = 0.456, so D/4 = 0.308 and D = 1.23 m.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.012':33 '1':12 '1.9':26 '400':14 'circular':5 'diamet':2 'formula':32 'full':20 'half':19 'laid':7 'm/s':27 'man':30 'n':28 'run':18 'sewer':6 'slope':10 'veloc':24",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_39aa9e8c8d146cbd",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "1.23 m",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_557e7453048fed1d",
+  "appearance_id": "2764b9f6bf5e84397011",
+  "snapshot": {
+    "record": {
+      "id": "2764b9f6bf5e84397011",
+      "paperId": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+      "type": "mcq",
+      "question": "In an examination, 80% of the students passed in English, 85% in Maths and 75% in both English and Maths. If 40 students failed in both the subjects, what is the total number of students?",
+      "options": [
+        "400",
+        "600",
+        "800",
+        "can not be determined"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Use inclusion–exclusion for students passing at least one subject. Passed at least one=80+85−75=90%, so failed both=10%=40 students. Total=40/0.10=400. Verified solution (unofficial); original PDF and derivation reviewed26October2026.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 11,
+      "qnum": "105",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": "mathematics/arithmetic",
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Assistant under DP & AR (SSW), Government of Mizoram",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/2.Assistant%20Grade%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "18f7246f3e2e11dab5698afb02174b5a2321670ee1615a8a9c640e8264a287b9",
+  "appearance": {
+    "id": "2764b9f6bf5e84397011",
+    "paper_id": "Old_Questions/Direct_2014-2018/2.Assistant Grade Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "105",
+    "qnum_seq": 105,
+    "page": 11,
+    "question": "In an examination, 80% of the students passed in English, 85% in Maths and 75% in both English and Maths. If 40 students failed in both the subjects, what is the total number of students?",
+    "options": [
+      "400",
+      "600",
+      "800",
+      "can not be determined"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "2.Assistant Grade Paper-II",
+    "difficulty": "medium",
+    "explanation": "Use inclusion–exclusion for students passing at least one subject. Passed at least one=80+85−75=90%, so failed both=10%=40 students. Total=40/0.10=400. Verified solution (unofficial); original PDF and derivation reviewed26October2026.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'40':22 '75':15 '80':4 '85':11 'english':10,18 'examin':3 'fail':24 'math':13,20 'number':33 'pass':8 'student':7,23,35 'subject':28 'total':32",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_557e7453048fed1d",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "400",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

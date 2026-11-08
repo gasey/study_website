@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_63ba08e8853fe91a",
+  "appearance_id": "e452581892b08c116b9c",
+  "snapshot": {
+    "record": {
+      "id": "e452581892b08c116b9c",
+      "paperId": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "Empdt1(empcode, name, street, city, state,pincode). For any pincode, there is only one city and state. Also, for given street, city and state, there is just one pincode. In normalization terms, Empdt1 is a relation in",
+      "options": [
+        "1 NF only",
+        "2 NF and hence also in 1 NF",
+        "3NF and hence also in 2NF and 1NF",
+        "BCNF and hence also in 3NF, 2NF and 1NF"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "15",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INSPECTOR OF LEGAL METROLOGY UNDER FOOD, CIVIL SUPPLIES & CONSUMER AFFAIRS DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/6.Computer%20Science%26Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "4dcf4cd1b02dce6d53b96a71236e604ad24a8c47bdd344ddc1222c777887fda7",
+  "appearance": {
+    "id": "e452581892b08c116b9c",
+    "paper_id": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "15",
+    "qnum_seq": 15,
+    "page": 2,
+    "question": "Empdt1(empcode, name, street, city, state,pincode). For any pincode, there is only one city and state. Also, for given street, city and state, there is just one pincode. In normalization terms, Empdt1 is a relation in",
+    "options": [
+      "1 NF only",
+      "2 NF and hence also in 1 NF",
+      "3NF and hence also in 2NF and 1NF",
+      "BCNF and hence also in 3NF, 2NF and 1NF"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "6.Computer Science&Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'also':18 'citi':5,15,22 'empcod':2 'empdt1':1,33 'given':20 'name':3 'normal':31 'one':14,28 'pincod':7,10,29 'relat':36 'state':6,17,24 'street':4,21 'term':32",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_63ba08e8853fe91a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "3NF and hence also in 2NF and 1NF",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

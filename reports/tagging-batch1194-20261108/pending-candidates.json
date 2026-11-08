@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_1fbcfbe1c79f4c04",
+    "appearance_id": "3e0bcbda0c7d4ed35b91",
+    "source_fingerprint": "8a4afe03db844a7b4c00cdfbb7826a40b5e85c41a1fb03f261009c5e48eb0145",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe3dd136279db057",
+    "appearance_id": "db7bbe89d274760b6b3e",
+    "source_fingerprint": "e6fc5d43f628006862e8dea945f964eb438d730c7172408df01ceb3b7cdc4555",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_60bdef0819e37de7",
+    "appearance_id": "eb7feb9fafbe6da638ce",
+    "source_fingerprint": "dd8645bcadfa27e731714edb1c7676a119b74e654f4ac23a56d2007f9f8b0609",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91172b905d301b8a",
+    "appearance_id": "2ef578ccf6049be4d1de",
+    "source_fingerprint": "1836a9b5fd6e6340d7415c3351d0bb79dc16a8874a99fd2356a4ff286985a1ef",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6e0a67c781cf156f",
+    "appearance_id": "54eae65f0c423e70f14a",
+    "source_fingerprint": "7d4cc9717b7858227751ee26ef12e937931a0c507b2dfe316df6fefb4db440a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f81f487698234fb1",
+    "appearance_id": "014da644b993966a2110",
+    "source_fingerprint": "fa147567225fca7d19e84f5dc1703abd6cbcb4f0419395a1287a8bcbac54260b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a33fb2e203ccb69d",
+    "appearance_id": "c7074fa73dbac19e4f5c",
+    "source_fingerprint": "d72057d6be2ab3126e4ece80e43bded578370a13cefc48feb524e011f019626d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f55b0b426ff46274",
+    "appearance_id": "af3ce4eb9dfed173f3f3",
+    "source_fingerprint": "b2cff33d3df94dc0a9d04982d57f7055e8f409d380fd59fa5202e46cc3c4784f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_178e031231ef998c",
+    "appearance_id": "217f9f22ede31071f2b4",
+    "source_fingerprint": "05427fa7c518337211465144e6334f902fd079fe387c5b200409526c08328818",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_251750dd2e213261",
+    "appearance_id": "dcde3ce33c8efcebb69a",
+    "source_fingerprint": "75ead27f0ea90efa023bde14b16b28176607df566b790c0dd300a6dc3a7f58d8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a55fa497a137927",
+    "appearance_id": "0876a1f9cdfbf1cc4299",
+    "source_fingerprint": "c0736f0cd6b640ac70938a5be935071e8200a8abb9fe935f8bf9d0155a081f95",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_84608917e5a1cc71",
+    "appearance_id": "bf50b3400a8333e85328",
+    "source_fingerprint": "d48c4a701b89d6e6013978e24b055c902bcfcc35d2c9241ae552990a041a26d7",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4efff1309671ba56",
+    "appearance_id": "8f0a359c774865eb1448",
+    "source_fingerprint": "08cc620de83ba886dbc3487fde15c10bc1ae1cf905af1e8a9f99028bf61c9b47",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_812eba939d11816f",
+    "appearance_id": "d0529830085562f2acf9",
+    "source_fingerprint": "c8016bdfae51a93a7725170f7b1e070581655f31e290d262267ee165c9b7f9c6",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7064a4983b63a9a0",
+    "appearance_id": "734daa760690dc1446ce",
+    "source_fingerprint": "00eaa77bb7d41830694b9f8f71266a4fc39b8dc9f0d15828b243d0d0bb0cdbeb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b3552541a6d323a",
+    "appearance_id": "11753e9c4c287dea732e",
+    "source_fingerprint": "8f8dc7c1ec029b41f17544d91e6e7c63bd8f0b5ddd9c3f6a0b5ec8d7bf53c3fb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2fa5af8f97c1e216",
+    "appearance_id": "d8d97e5667df92c38850",
+    "source_fingerprint": "fc69c2ba091587cc97017fbe3de2f1a9b12549706219a85d77eeabdafbe8d9d8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_05b820c6175d43ed",
+    "appearance_id": "00d7bd7f2eebdf4fd973",
+    "source_fingerprint": "95e1c260c963e79a774ad2a3b5f660db6e290dff2fc810fb3498a440ea0779af",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4769b10c9c55ecc3",
+    "appearance_id": "7ebc1886102e3f43c72d",
+    "source_fingerprint": "83d1c228141d5ef1454d74fc0617579faa59d69e73ba99e5214b6f0c889ff5ba",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d84e8ed8c5b44d99",
+    "appearance_id": "751bd90e20ec51af318b",
+    "source_fingerprint": "55379d240671f80dc84040f66b279e9691fddb54028276a4bdaf37ed72b3f095",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2dd8a8ca28d1b3bb",
+    "appearance_id": "75d6e108e229b7d8fc28",
+    "source_fingerprint": "11ae3895aa7831d73970560dc0ff87337810a345d4814b805afd545cb3953e45",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_460f38da1d20bd42",
+    "appearance_id": "49c2065a086cd9d80bbd",
+    "source_fingerprint": "1f21e2fea664186ead1492c34e29031b55d3019d22bad645e5583e02b5e56c62",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a8f61625b14d355",
+    "appearance_id": "2f7c17883baa69271b52",
+    "source_fingerprint": "8c1dac7ce7ba5dd1f44dc5f57632efcd0c97ee849a102b1a61981e3dbfa2a879",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7a1c8f44b4ddad64",
+    "appearance_id": "1ff2f5b740e1b0592893",
+    "source_fingerprint": "784900181e5c8edfbb7f971d052bd5a799cc28f8c43fc12435ed39a4a8b65e4d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2e17945ca07d352b",
+    "appearance_id": "6a3521604e9bc5b124f9",
+    "source_fingerprint": "5097906323b04ae37e687adc242b4b7fc4bc9f389e09ba65e2091f9ace0c78b0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b7ca3cca4efcb17",
+    "appearance_id": "192db354c39f0ede743c",
+    "source_fingerprint": "da84cba0725ca0d289b0e018bff17e8edeefe306d76d90f7bbd93d15e7ec944d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54fff24d3bfe50ae",
+    "appearance_id": "e778e216aedba82d0788",
+    "source_fingerprint": "3acd72e31ffac660dcd0ed141ef190fddad9719eec2fa1c41adae9732b5f9248",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4df8d3917a023d30",
+    "appearance_id": "188136d4b6c9b8e09274",
+    "source_fingerprint": "908b0f2624d5c9e9cf9fd7e6df3bdb9ac559fb078f28ca7655049260939fd077",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c2174a7cb8d28393",
+    "appearance_id": "16505f17b104dbb8cb3b",
+    "source_fingerprint": "e2c7e0c91dc720e3bfea8f522361128179123abb3a259316120eefdc701343a2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_99a598bb91931167",
+    "appearance_id": "334e81bd5f7b7f295fcb",
+    "source_fingerprint": "9fea4b743b9e09a72801b9a14a79ba7044dd74354489c9f4519fd206ff3c5f3b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e81fc0f7babbb67d",
+    "appearance_id": "ec43e79d4b19f24a9d8a",
+    "source_fingerprint": "12712e30bf0c3457a115ad51dd80f9ada7e8d720d16de775f022c2bd6beb3cc9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_af5e81d775a267cc",
+    "appearance_id": "d32cc6fdec2b9fe66fb5",
+    "source_fingerprint": "644a558e1ce51058a4b60b919f54f4e48b23c0d67e859562bfafff0c6abeb84e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7c44ebd2b820daa2",
+    "appearance_id": "6b2dafdd5f954e0ce38d",
+    "source_fingerprint": "b41b6264852c32ded6e018fc88f82a38120640b6fbf78f68285f03a6677bace3",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6e48ef7351c9bb8e",
+    "appearance_id": "568f8d41866cdf9a12ab",
+    "source_fingerprint": "2bede3406958a19b3e8fe044a22c6568d238fe8f135ec2a7823fdffc6ad10468",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_323be357196e974a",
+    "appearance_id": "c02738515ab7c3dffe4d",
+    "source_fingerprint": "267bf68a28971b1ecf9c0f0b1132ca4d7b3a0deae9c483d0f4ff16e8b522531c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e62e0ce705dc9511",
+    "appearance_id": "728364b5a28cc9d75fa7",
+    "source_fingerprint": "b39d053044dfa39b6fbbcfdc23eb244667715717c2c88f7b9a1339e7be3513f7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_de327aebc9dfdd2b",
+    "appearance_id": "acc9a6bc95b36881617d",
+    "source_fingerprint": "157a161e79468b242e38435040b0f7d6a6a4ee9c99fad8f3eba69f30482d18c9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6cde9223e768582d",
+    "appearance_id": "2182830d009cd772ece6",
+    "source_fingerprint": "076e9ad3eac59a88a924ea12ae24d9be635a5d1d4f15828897f327df57fa79f1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0c41e06738232c37",
+    "appearance_id": "ed79b34d6503670d71c0",
+    "source_fingerprint": "6b30a8b837c445050628a091b1fc18f1116c99c0d98f30d72e65f81d5a8961c0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f23ebbcca300ee01",
+    "appearance_id": "789fd735d656772bd461",
+    "source_fingerprint": "f314e3844742cfb9c51348fb00b0a9a5a1f77ab8d6105046792764adfd0ec874",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_56498c7918dc23a3",
+    "appearance_id": "465a39edbb9767e7539c",
+    "source_fingerprint": "caea32b5e6ae9a074127675d24693d202feb04018af417c29f8eb38276a950c4",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63b67188b1e6b6f9",
+    "appearance_id": "4642db19fe509d70c5b7",
+    "source_fingerprint": "f095708df2f9bb5ede868c82f490ceaf21c72c797b38faacf8c42953144ae16d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f36e4d916f5c79a",
+    "appearance_id": "c475be22e2b8583eb5ad",
+    "source_fingerprint": "10c539e61020e06f84789a542028335ae100810433ca772978e94820caad64bc",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d35834931e245cb",
+    "appearance_id": "41a3de51185544b36d63",
+    "source_fingerprint": "18e4f02b05c1b07a28dd3b59104f7b1b1dfddbaa2661b316ff4b4136eb153d28",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01fdc8006b3dd235",
+    "appearance_id": "f61e61fd149f5c8b2716",
+    "source_fingerprint": "e31e1c6297231f96310a3a8d0b775be7b933f2008880f1fdc464fb314cc7de23",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28da2032da8f1355",
+    "appearance_id": "89e4d39382474bee3cf8",
+    "source_fingerprint": "74da55199f6ba891c8bb2d545a38d7538415875dd5061f774958f0309a0114c1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1b6a5e7cafac480",
+    "appearance_id": "e21106f68eee16c9581b",
+    "source_fingerprint": "e2c856247c1f0512856ab934efc11358f032462096f77c5a124e2c89bde686f6",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e13e80ed102c9fff",
+    "appearance_id": "0433ed594b9210e0eb74",
+    "source_fingerprint": "196b2f2c1c55e3f04aafd3faac45417e575ca825a71500563357c6006f0ab133",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa2c0f207d71e662",
+    "appearance_id": "9936b817d915de6801a5",
+    "source_fingerprint": "572db0d63e5e5cffcdbc5514d4d63900e62921497f19d26cb2e2f35179928e87",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12a1cd87558eefc3",
+    "appearance_id": "77001e27afa3410146d5",
+    "source_fingerprint": "0cdfcde1dcd1c2c5773469e9e405c3bc894c039fc7f09010165f4eb1f8cb318e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5cb890fa5ec02285",
+    "appearance_id": "612dc7e50aa04c2cf7d6",
+    "source_fingerprint": "1a45f27a4948233b4e7a544e34638a95e7d9cac4157a839e0a64e7a633494543",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8862c818890e1b0",
+    "appearance_id": "a45820a41d03cf7637b1",
+    "source_fingerprint": "7a2fa4e92c0ce2388a92948bf9c56091418375bb603aeb3af52ef1a75ace178d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0719821ab5a1d089",
+    "appearance_id": "dbe530a5b58d83624905",
+    "source_fingerprint": "6ee492a10d81ab4cc7657268c003f29f475cf9bd3bd7cfa097bbc5f0636e8b32",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5f20fba97080b137",
+    "appearance_id": "ebd2276908628340c01f",
+    "source_fingerprint": "8ed1e7c7784661fbc35144a347c3cd492692cb49292103f0524ffa15c29e05ec",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d552e73b4bb9d7a",
+    "appearance_id": "595c724ab4a43ea66d85",
+    "source_fingerprint": "df91ce972451921e238512593827c36e02423eb57b1d94bc74e2291595ec5f46",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b923ee2252bdeef",
+    "appearance_id": "4b60eb493d614609c408",
+    "source_fingerprint": "d13042938142b0691ff9d827ccf06e14eccad5ffdf18daf1bc2adbe9426dab02",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3471b7c9291e843c",
+    "appearance_id": "889d4e3bb2c0dc585625",
+    "source_fingerprint": "9634052e6d419fc8c1a860a3de48c3448a1389d1813bffa1d24e9549f691093f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0deeea0a265faa8f",
+    "appearance_id": "bbf636d739716d78d24c",
+    "source_fingerprint": "bcb252000d7d683a16e07223407fdb425f79df6ccf5cbcc43f181a8d19750efb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e993e52d36b32362",
+    "appearance_id": "d06a9f74eeadef91d4ec",
+    "source_fingerprint": "d627c42b84664068fe48c0d5ae3b4b1729dc4650fe681a0d05d8e6d99fca78ad",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9e3b29e9e312f4b4",
+    "appearance_id": "1577ea11aa21b6664b78",
+    "source_fingerprint": "9dc58db206065f6a1fbd5bd3854d966e78f94c34a0381d6f257f9e1fe5d52b39",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b91d4b6c31130425",
+    "appearance_id": "5f832f1f6d9197acca8f",
+    "source_fingerprint": "1d53cf3dc65019a8a23afadd224002148a56505a50c180f5c035626d70073ba7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d7a759242d89520",
+    "appearance_id": "66166a58e6d3ee9a0145",
+    "source_fingerprint": "3495171750cf25a7aa0b4ca4af44d0c8e81350bd3e72453b374aa28f399a37bf",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_00db82b431b73b96",
+    "appearance_id": "383bffada146c0bf8a9b",
+    "source_fingerprint": "6c3551aadc7a4e627ceeb83c8ce8fd421675a845ef94d1de8a31ade368410c53",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d7f91b263dcc8452",
+    "appearance_id": "2fc200f108643eecf5a3",
+    "source_fingerprint": "084162b4246985ff7b49f0020bf9530c26c2f0d47024e5bb0cc15dfde9ca91a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_272ceba132b433de",
+    "appearance_id": "58ba2dddb93730c0db87",
+    "source_fingerprint": "dcbe5853b4aae15c2755e7bfd48b2b9ff7b99775c2be45d32e4a61f35dc6c45f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d77fade73624529a",
+    "appearance_id": "ada7e42c50a367bb8d43",
+    "source_fingerprint": "696337e32f1376ae64bd327fe2565ffa9f4e27861a266fb10f6b1bbb4e613d20",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7813783890004eec",
+    "appearance_id": "d43af9fb9a30582f28a1",
+    "source_fingerprint": "3eb5697bbfd420f6d7b5012ddb59e7f7c4f2a4336fab57920150b6c59d852674",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57529344050e7652",
+    "appearance_id": "197be5ae381e008e6645",
+    "source_fingerprint": "56a7c80a579a868ef544eba6d603fafbfcf154b37a9bfd68af6c7f7a9c0c0af5",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_11d9eb3f787e5e32",
+    "appearance_id": "f9fcc19a2cc2feadd3a4",
+    "source_fingerprint": "d8d53e1d8e0c5747395ffccc47eb07b547a581c01fc0bf1cb600e8bb7b917435",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e97481271b726ebd",
+    "appearance_id": "d4a638817223102e21b6",
+    "source_fingerprint": "643bcc1b8b140ef9a550570e3b4848e76910203a2535cee02801248a2229d846",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1bc8890f2bdccb60",
+    "appearance_id": "665c0cf0b7c46760280a",
+    "source_fingerprint": "a2471d43ab92f0325e80934b32af30161f532ee110776020be98c02900e625ff",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38bf453105678e08",
+    "appearance_id": "1c96168dc97feab7f173",
+    "source_fingerprint": "db123fd541d607e2e0ee0438d40da547eeba9a2168fd422fa385f1dcf146a04d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd0eb9a8f2202fb3",
+    "appearance_id": "3f3b11bd4fe721f18636",
+    "source_fingerprint": "42ab773c9cbf20dd083bb82c06582b8c94479672fe2277d3de54da201928b4de",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_642dbfdc1555ed1d",
+    "appearance_id": "ef8fdb963d250ab753f2",
+    "source_fingerprint": "5eca74ffcfecf287fee5dfdb89d7efd92cb9e6796a5235b1a89137eb2bb273a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_838ce921be24cf01",
+    "appearance_id": "90683a8f4b4f3af1a1dd",
+    "source_fingerprint": "94a91d3047fee82e7b574d0a4f9edb20728544ad255ed93bea96017cc1e70cef",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a8f7ea855b737cd",
+    "appearance_id": "de847f04b5e6bfcf9600",
+    "source_fingerprint": "af29593211a75735fce830370c455f5604ab5458392cd61e817f0ab69bea6559",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9980694b882a2f11",
+    "appearance_id": "3bbc0f51f0cbf170aa15",
+    "source_fingerprint": "99958b70bb94de1c21ba9ee0a939528388308c91494b7e2cb7d06324de283586",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eabde83fcc07e03e",
+    "appearance_id": "0bfa838867ae33470c95",
+    "source_fingerprint": "5039215c38ee70d9519f5f319d147d6f851e8e1e30c880f34a7aa4ba78f6f02b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4fe2a5b7fcba28b0",
+    "appearance_id": "c30e2dd6f000165186cf",
+    "source_fingerprint": "0963cc96e455e7b9ac9f7017246b8656b4e9c330cfc5f4e62e578269492c55b4",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ad8c1da32636c36",
+    "appearance_id": "4a39bcbb07ab744f4464",
+    "source_fingerprint": "c65a76b9e14fd17a16d338706790be8bf8843e7270030b10955a272254b811d0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_956626b600cb95ce",
+    "appearance_id": "5c8f0a3549e78eb25571",
+    "source_fingerprint": "48f38098c6cb6522222ba9d602021f08f8183404bee404b0c25935eaae6d995b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a642d77eaa4ac5d4",
+    "appearance_id": "2e7a73d1aa712c498551",
+    "source_fingerprint": "8c842d13a64784fa989374570f5e342ac3a4b5c1fa4b304d38890797e1eda960",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_96b33ac2c9038724",
+    "appearance_id": "1aa92be38454998c3261",
+    "source_fingerprint": "c056b7589d196c349cd4317d0674d535d2d0c26933cf67e6d52c1191f642d4ce",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8004d9dd98392be3",
+    "appearance_id": "20307e1d67f43b4567e9",
+    "source_fingerprint": "25b8b9645d01f3ef13a1b05285cd481aeb4830dd5a26870e6d7402a2c2e87baf",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8eddc1f96d4ec0fc",
+    "appearance_id": "9eece7dcb81ec5eec197",
+    "source_fingerprint": "d83fa175c5e7f63f9d753715607c4f978b0d2b888b2cdcc514e9d36dcd6690f4",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_220bd4b052490ea6",
+    "appearance_id": "5643cbfd03c9d041a86e",
+    "source_fingerprint": "2d8682b01083e548261ed826cfa769d97b4b392b1cf561b14457d760e330e5f4",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f07c617c91cf367",
+    "appearance_id": "c25be1273abf6e76adac",
+    "source_fingerprint": "d806c1703090444f5236f4d8015deeee7a10c02e8cf140b3d8e488ac8fa3d815",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_867d764ee4751931",
+    "appearance_id": "e1d93616bd088e04a42e",
+    "source_fingerprint": "83da52e033f9c5144876211a67794b83955759a5d5050e7d60e4d777286a37e4",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_543085503ffc5551",
+    "appearance_id": "4c9133fb037d4eef82cd",
+    "source_fingerprint": "08cac23ab6abf33b644f6435d603b1e2853331c3622eb79ae5837a93c70e511f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3003186d479e0b6",
+    "appearance_id": "8af7789a7e56aa394288",
+    "source_fingerprint": "c80ace92901377a2afb3ea8554500377133dbf072276d4dda93425b7104e64a9",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f5a6db6b8c23337b",
+    "appearance_id": "e79b31ea107cebb55419",
+    "source_fingerprint": "21bcdbbd31758f05b4b8eec86e465f268cc6b663bd8f09567a332b2fa8b3491c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0dbeda5c1d097ec6",
+    "appearance_id": "321c52bf2fc5f36ca1a1",
+    "source_fingerprint": "43b445cc3d3387000ea89cb68914c1783449908991b115471118f809dba071d1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0d7b9af49d68f3d",
+    "appearance_id": "ccf9e027c442d7ffc2eb",
+    "source_fingerprint": "3045a9ea149d1bffcb83e656659676548896099e1ab40667083b0c065e122327",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf67686cc76e4c66",
+    "appearance_id": "b459d21c3244cdd06cd8",
+    "source_fingerprint": "00c110f84a9334eab0bf9ac9cab0a906cb8302918ea1237cdc82413d1da52e2f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9768ba6f27cf2e5",
+    "appearance_id": "6bc16839ab19a5e28464",
+    "source_fingerprint": "0375ceb91081684da2d0da6625778e7c60e2e90a4f3e6516376bd8b9bd7921f1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c8b104d0b8024578",
+    "appearance_id": "e74ef13fb4371bce76fb",
+    "source_fingerprint": "ca31a3aba484fc5201a9a1900460034bfb82a2cdcb248e6875c2b85461bacaca",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1274b512dd5602c",
+    "appearance_id": "8eaa5018979fc6af969c",
+    "source_fingerprint": "bb74258f31f0dde78669e21e163891df327598451dc5994dc48dcd5b755953d3",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses physics: Physical principles, mechanics, electromagnetism, and modern physics. Appropriately classified under science.",
+    "tested_skill": "Physics: Physical principles, mechanics, electromagnetism, and modern physics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd903ec8ac3474e5",
+    "appearance_id": "b4c4a679e3f6b89a1558",
+    "source_fingerprint": "09e9c9d84912d60147052ec28ab5164a5c944dcbf2efa17213f0b5011e1dbeae",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b4b166f33303217",
+    "appearance_id": "cd4cf98fa78094e8611d",
+    "source_fingerprint": "a1004ddfb3840310fdf0891f569e4c25efd0ed4a06c7d771f23e80f1a20b910f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ec2226e193c56ef",
+    "appearance_id": "631d63e4ad3b1e825835",
+    "source_fingerprint": "264dcbeba9a20af6a73ecff023d497adaecc49b246d2eab046798d68b853fbb7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_3c24a90be4e8dd3f6d2c5821",
+      "sha256": "c267b47b778190415aeae7a81c6ba2fdbfe8cde55be5484572a8beb533bbd089",
+      "note": "Verified against registered booklet source for Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

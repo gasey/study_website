@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_34d29d50a846931f",
+  "appearance_id": "91c2677e23a37bbd5062",
+  "snapshot": {
+    "record": {
+      "id": "91c2677e23a37bbd5062",
+      "paperId": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "Which of the following deletes all tuples in the instructor relation for those instructors associated with a department located in the MilleniumCenter building which is in department relation.",
+      "options": [
+        "DELETE FROM instructor WHERE dept_name IN ' MilleniumCenter ';",
+        "DELETE FROM department WHERE building=' MilleniumCenter ';",
+        "DELETE FROM instructor WHERE dept_name IN (SELECT dept name FROM department WHERE building = ' MilleniumCenter');",
+        "None of these"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "10",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INSPECTOR OF LEGAL METROLOGY UNDER FOOD, CIVIL SUPPLIES & CONSUMER AFFAIRS DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/6.Computer%20Science%26Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "104b40851d20ef850e29a1c003e3cc42e7d47b8c4d21ad9b0ca170d6fe467788",
+  "appearance": {
+    "id": "91c2677e23a37bbd5062",
+    "paper_id": "Old_Questions/Direct_2014-2018/6.Computer Science&Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "10",
+    "qnum_seq": 10,
+    "page": 2,
+    "question": "Which of the following deletes all tuples in the instructor relation for those instructors associated with a department located in the MilleniumCenter building which is in department relation.",
+    "options": [
+      "DELETE FROM instructor WHERE dept_name IN ' MilleniumCenter ';",
+      "DELETE FROM department WHERE building=' MilleniumCenter ';",
+      "DELETE FROM instructor WHERE dept_name IN (SELECT dept name FROM department WHERE building = ' MilleniumCenter');",
+      "None of these"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "6.Computer Science&Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'associ':15 'build':23 'delet':5 'depart':18,27 'follow':4 'instructor':10,14 'locat':19 'milleniumcent':22 'relat':11,28 'tupl':7",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_34d29d50a846931f",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "DELETE FROM instructor WHERE dept_name IN (SELECT dept name FROM department WHERE building = ' MilleniumCenter');",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

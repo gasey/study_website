@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_2514dc7c238456ca",
+  "appearance_id": "4f82a61d0ed64ae97029",
+  "snapshot": {
+    "record": {
+      "id": "4f82a61d0ed64ae97029",
+      "paperId": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+      "type": "mcq",
+      "question": "When H1=total heat of air entering the coil (heating or cooling), H2= total heat of the air leaving the coil (heating or cooling), H3= total heat of air at the end of the process (humidification or dehumidification), then the sensible heat factor (H2-H1)/(H3-H1) represents the process of",
+      "options": [
+        "Cooling and humidification",
+        "Cooling and dehumidification",
+        "Heating and humidification",
+        "Heating and dehumidification"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Sensible heat factor is sensible heat change over total heat change; for a coil that both cools and dehumidifies, the total heat removed exceeds the sensible part, so the ratio falls between 0 and 1. The printed definition of H3 as the end-of-process state is taken as given, and the printed page 2 stem is legible.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "13",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mechanical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+      "title": "Inspector of Legal Metrology - Mechanical Engineering",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/15.Mechanical%20Engineering%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "9bffd034c69521ed776056d4b2018a7f2da7bd8ee20efd95a5c729853290ec1a",
+  "appearance": {
+    "id": "4f82a61d0ed64ae97029",
+    "paper_id": "Old_Questions/Direct_2014-2018/15.Mechanical Engineering Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "13",
+    "qnum_seq": 13,
+    "page": 2,
+    "question": "When H1=total heat of air entering the coil (heating or cooling), H2= total heat of the air leaving the coil (heating or cooling), H3= total heat of air at the end of the process (humidification or dehumidification), then the sensible heat factor (H2-H1)/(H3-H1) represents the process of",
+    "options": [
+      "Cooling and humidification",
+      "Cooling and dehumidification",
+      "Heating and humidification",
+      "Heating and dehumidification"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "15.Mechanical Engineering Paper-I",
+    "difficulty": "medium",
+    "explanation": "Sensible heat factor is sensible heat change over total heat change; for a coil that both cools and dehumidifies, the total heat removed exceeds the sensible part, so the ratio falls between 0 and 1. The printed definition of H3 as the end-of-process state is taken as given, and the printed page 2 stem is legible.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'air':6,18,29 'coil':9,21 'cool':12,24 'dehumidif':38 'end':32 'enter':7 'factor':43 'h1':2,46,49 'h2':13,45 'h2-h1':44 'h3':25,48 'h3-h1':47 'heat':4,10,15,22,27,42 'humidif':36 'leav':19 'process':35,52 'repres':50 'sensibl':41 'total':3,14,26",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_2514dc7c238456ca",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Cooling and dehumidification",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

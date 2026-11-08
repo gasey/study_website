@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_9b49bc7318d1e90b",
+  "appearance_id": "a5a3a684ac6ed7ef083e",
+  "snapshot": {
+    "record": {
+      "id": "a5a3a684ac6ed7ef083e",
+      "paperId": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "A situation where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which access takes place is called :",
+      "options": [
+        "data consistency",
+        "race condition",
+        "degree of concurrency",
+        "concurrent ordering"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "82",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+      "title": "GENERAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF PROGRAMMER UNDER PUBLIC HEALTH ENGINEERING DEPARTMENT",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/3.Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "5cb516cd434b3e90e2e135661e8c7b58ce2c196aea874abc9ebdc0f63428601f",
+  "appearance": {
+    "id": "a5a3a684ac6ed7ef083e",
+    "paper_id": "Old_Questions/Direct_2014-2018/3.Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "82",
+    "qnum_seq": 82,
+    "page": 9,
+    "question": "A situation where several processes access and manipulate the same data concurrently and the outcome of the execution depends on the particular order in which access takes place is called :",
+    "options": [
+      "data consistency",
+      "race condition",
+      "degree of concurrency",
+      "concurrent ordering"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "3.Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'access':6,26 'call':30 'concurr':12 'data':11 'depend':19 'execut':18 'manipul':8 'order':23 'outcom':15 'particular':22 'place':28 'process':5 'sever':4 'situat':2 'take':27",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_9b49bc7318d1e90b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "race condition",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

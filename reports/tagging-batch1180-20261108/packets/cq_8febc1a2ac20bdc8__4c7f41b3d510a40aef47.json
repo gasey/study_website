@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_8febc1a2ac20bdc8",
+  "appearance_id": "4c7f41b3d510a40aef47",
+  "snapshot": {
+    "record": {
+      "id": "4c7f41b3d510a40aef47",
+      "paperId": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "type": "mcq",
+      "question": "Consider a system with the transfer function G(s) = (s + 2)/(ks² + s + 6). Its damping ratio will be 0.5 when the value of k is",
+      "options": [
+        "2/6",
+        "3",
+        "1/6",
+        "6"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "For ks²+s+6 the characteristic form gives ωn²=6/k and 2ζωn=1/k. With ζ=0.5, ωn=1/k, so 1/k²=6/k, giving k=1/6 (check: ωn=6, ζ=6/12=0.5).",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "13",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Legal Metrology under Food, Civil Supplies & Consumer Affairs Department, Government of Mizoram",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/8.Electrical%20Engineering%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "3f969fbe4b5b620861d0e78e9d357e831f8b8af80c38bd3a5120a9b8b04c49e6",
+  "appearance": {
+    "id": "4c7f41b3d510a40aef47",
+    "paper_id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "13",
+    "qnum_seq": 13,
+    "page": 2,
+    "question": "Consider a system with the transfer function G(s) = (s + 2)/(ks² + s + 6). Its damping ratio will be 0.5 when the value of k is",
+    "options": [
+      "2/6",
+      "3",
+      "1/6",
+      "6"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "8.Electrical Engineering Paper-II",
+    "difficulty": "medium",
+    "explanation": "For ks²+s+6 the characteristic form gives ωn²=6/k and 2ζωn=1/k. With ζ=0.5, ωn=1/k, so 1/k²=6/k, giving k=1/6 (check: ωn=6, ζ=6/12=0.5).",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.5':20 '2':11 '6':14 'consid':1 'damp':16 'function':7 'g':8 'k':25 'ks':12 'ratio':17 'system':3 'transfer':6 'valu':23",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_8febc1a2ac20bdc8",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "1/6",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_abfd893e4a998bf2",
+  "appearance_id": "4d07000ae61c0b4f3c58",
+  "snapshot": {
+    "record": {
+      "id": "4d07000ae61c0b4f3c58",
+      "paperId": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "type": "mcq",
+      "question": "The forward-path transfer function of unity feedback system is G(s) = K(s+2)/((s+1)(s²+4s+1)). The range of K, for which will be only two closed loop RHP poles, is",
+      "options": [
+        "-33 < K < -12",
+        "K < -33",
+        "K < 2",
+        "0 < K < 2"
+      ],
+      "answerIndex": null,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Held: printed page 3 has G(s)=K(s+2)/[(s²+1)(s+4)(s−1)], unlike the packet denominator. With negative unity feedback the characteristic polynomial is s⁴+3s³−3s²+(K+3)s+2K−4, whose Routh first column is 1, 3, −(K+12)/3, K(K+33)/(K+12), 2K−4; exactly two RHP poles occur for K>2, absent from the supplied options. The packet’s cubic denominator also yields no range with exactly two RHP poles, so the stem/options require review.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "18",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Legal Metrology under Food, Civil Supplies & Consumer Affairs Department, Government of Mizoram",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/8.Electrical%20Engineering%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "a87a31481dea0e00c2d1843877c7980ccff569ca27b319dd3ee5853013afb8d9",
+  "appearance": {
+    "id": "4d07000ae61c0b4f3c58",
+    "paper_id": "Old_Questions/Direct_2014-2018/8.Electrical Engineering Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "18",
+    "qnum_seq": 18,
+    "page": 3,
+    "question": "The forward-path transfer function of unity feedback system is G(s) = K(s+2)/((s+1)(s²+4s+1)). The range of K, for which will be only two closed loop RHP poles, is",
+    "options": [
+      "-33 < K < -12",
+      "K < -33",
+      "K < 2",
+      "0 < K < 2"
+    ],
+    "answer_index": null,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "8.Electrical Engineering Paper-II",
+    "difficulty": "medium",
+    "explanation": "Held: printed page 3 has G(s)=K(s+2)/[(s²+1)(s+4)(s−1)], unlike the packet denominator. With negative unity feedback the characteristic polynomial is s⁴+3s³−3s²+(K+3)s+2K−4, whose Routh first column is 1, 3, −(K+12)/3, K(K+33)/(K+12), 2K−4; exactly two RHP poles occur for K>2, absent from the supplied options. The packet’s cubic denominator also yields no range with exactly two RHP poles, so the stem/options require review.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+1':18,22 '+2':16 '+4':20 'close':33 'feedback':9 'forward':3 'forward-path':2 'function':6 'g':12 'k':14,26 'loop':34 'path':4 'pole':36 'rang':24 'rhp':35 'system':10 'transfer':5 'two':32 'uniti':8",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_abfd893e4a998bf2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": null,
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
