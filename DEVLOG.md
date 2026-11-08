@@ -8570,6 +8570,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,811 saved records**, **9,732 unique appearances**, **9,331 deduplicated candidates**, **0 problems**. [Batch 133 report](reports/tagging-batch133-20261108/README.md).
 
+### Tagging Batch 134 — UDC under SAD 2018 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of U.D.C. under Secretariat Administration Department, February 2018 — Paper-I (`Old_Questions/Direct_2014-2018/1.UDC under SAD Paper-I.pdf`, `doc_a5a64436f508cce36fdad685`).
+- **Paper Structure:** 125 Marks total (Section-A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section-B: 75 Objective Marks [75 MCQs]; 100% paper completion).
+- **Actions:** 75 MCQs reviewed (31 retags, 44 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar` (24 items): Q9–Q16 (clause identification: noun, adverb, adjective, co-ordinate clauses), Q17–Q24 (sentence structure: simple, compound, complex), and Q25–Q32 (functional concepts: possibility, polite request, determination, simultaneous action, regret, promise).
+  - `english/vocabulary/idioms-and-phrases` (17 items): Q33–Q40 (phrasal verbs: put down, assured of, gives off, took to their heels, worn out, etc.) and Q58–Q66 (idioms: snap fingers at, maiden speech, apple of discord, elbow room, etc.).
+  - `english/grammar/prepositions` (9 items): Q49–Q57 (appropriate prepositions and prepositional collocations).
+  - `english/grammar/tenses` (9 items): Q67–Q75 (verb forms, tenses, subject-verb agreement, and conditionals).
+  - `english/grammar/parts-of-speech` (8 items): Q1–Q8 (parts of speech identification).
+  - `english/vocabulary/one-word-substitution` (8 items): Q41–Q48 (germicide, linguist, turncoat, revel, filicide, articulate, verbose, litter).
+- **Defect Documentation:**
+  - Preserved Section A (50 conventional marks: Question 1 Essay on Moral Values in Schools [25 marks] and Question 2 Précis on Lord Chesterfield's Advice [25 marks]) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 75/75 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,886 saved records**, **9,807 unique appearances**, **9,406 deduplicated candidates**, **0 problems**. [Batch 134 report](reports/tagging-batch134-20261108/README.md).
+
+
 
 
 
