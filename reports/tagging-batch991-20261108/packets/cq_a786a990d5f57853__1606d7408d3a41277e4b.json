@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a786a990d5f57853",
+  "appearance_id": "1606d7408d3a41277e4b",
+  "snapshot": {
+    "record": {
+      "id": "1606d7408d3a41277e4b",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "If the accumulator of an Intel 8085 A microprocessor contains 37 H and the previous operation has set the carry flag, the instruction ACI 56 H will result in",
+      "options": [
+        "8E H",
+        "94 H",
+        "7E H",
+        "84 H"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "37H + 56H + carry = 8EH.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "46",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "e81cf343aa51bfd884de7e81c5e8d1c4caa3c0cc52dd70d7c47ac16b52931ab0",
+  "appearance": {
+    "id": "1606d7408d3a41277e4b",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "46",
+    "qnum_seq": 46,
+    "page": 5,
+    "question": "If the accumulator of an Intel 8085 A microprocessor contains 37 H and the previous operation has set the carry flag, the instruction ACI 56 H will result in",
+    "options": [
+      "8E H",
+      "94 H",
+      "7E H",
+      "84 H"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "37H + 56H + carry = 8EH.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'37':11 '56':25 '8085':7 'accumul':3 'aci':24 'carri':20 'contain':10 'flag':21 'h':12,26 'instruct':23 'intel':6 'microprocessor':9 'oper':16 'previous':15 'result':28 'set':18",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a786a990d5f57853",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "8E H",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

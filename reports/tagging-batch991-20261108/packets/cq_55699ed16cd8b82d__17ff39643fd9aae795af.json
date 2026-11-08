@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_55699ed16cd8b82d",
+  "appearance_id": "17ff39643fd9aae795af",
+  "snapshot": {
+    "record": {
+      "id": "17ff39643fd9aae795af",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "The open collector output of two 2- input NAND gates are connected to a common pull-up resister. If the inputs of the gates are A, B and C, D respectively, the output is equal to",
+      "options": [
+        "A. B. C. D",
+        "A. B + C . D",
+        "A. B + C. D",
+        "A. B. C. D"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Open-collector NANDs give (AB+CD) wired output.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "23",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": "duplicate-options",
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "b7ebcd27b0b682ca84a8a8de172141a4ee47639ff8128643a9d635aa6b4b3d95",
+  "appearance": {
+    "id": "17ff39643fd9aae795af",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "23",
+    "qnum_seq": 23,
+    "page": 3,
+    "question": "The open collector output of two 2- input NAND gates are connected to a common pull-up resister. If the inputs of the gates are A, B and C, D respectively, the output is equal to",
+    "options": [
+      "A. B. C. D",
+      "A. B + C . D",
+      "A. B + C. D",
+      "A. B. C. D"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "Open-collector NANDs give (AB+CD) wired output.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": "duplicate-options",
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'2':7 'b':28 'c':30 'collector':3 'common':15 'connect':12 'd':31 'equal':36 'gate':10,25 'input':8,22 'nand':9 'open':2 'output':4,34 'pull':17 'pull-up':16 'resist':19 'respect':32 'two':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_55699ed16cd8b82d",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A. B + C . D",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": "duplicate-options",
+    "canonical_key_disputed": false
+  }
+}

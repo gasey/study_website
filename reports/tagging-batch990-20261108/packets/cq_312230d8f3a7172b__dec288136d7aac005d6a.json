@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_312230d8f3a7172b",
+  "appearance_id": "dec288136d7aac005d6a",
+  "snapshot": {
+    "record": {
+      "id": "dec288136d7aac005d6a",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-II (IoF).pdf",
+      "type": "mcq",
+      "question": "What is the steady state error for a unity feedback control system having G(S) = 1/S(S+1) due to unit ramp input?",
+      "options": [
+        "1",
+        "0.5",
+        "0.25",
+        "0.5"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "17",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": "duplicate-options",
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-II (IoF).pdf",
+      "title": "Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-II%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "0f20380886bfea80bd58c3773fcc4392dac987fe95d078b03ba0c994c109e5da",
+  "appearance": {
+    "id": "dec288136d7aac005d6a",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-II (IoF).pdf",
+    "type": "mcq",
+    "qnum": "17",
+    "qnum_seq": 17,
+    "page": 2,
+    "question": "What is the steady state error for a unity feedback control system having G(S) = 1/S(S+1) due to unit ramp input?",
+    "options": [
+      "1",
+      "0.5",
+      "0.25",
+      "0.5"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-II (IoF)",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": "duplicate-options",
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'+1':18 '1/s':16 'control':11 'due':19 'error':6 'feedback':10 'g':14 'input':23 'ramp':22 'state':5 'steadi':4 'system':12 'unit':21 'uniti':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_312230d8f3a7172b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0.5",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": "duplicate-options",
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_97336190703c0f72",
+  "appearance_id": "3f3ce4c2b42d01d68c9e",
+  "snapshot": {
+    "record": {
+      "id": "3f3ce4c2b42d01d68c9e",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "How many FFs are needed for MOD-16 ring counter and MOD-16 Johnson counter?",
+      "options": [
+        "16, 16",
+        "16, 8",
+        "4, 8",
+        "8, 16"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "MOD-16 ring needs 16 FFs, Johnson needs 8.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "22",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "66f9a5270e7b81197d2d7974c5669ca3d386a24b140ccf986f90f6e7f84783ae",
+  "appearance": {
+    "id": "3f3ce4c2b42d01d68c9e",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "22",
+    "qnum_seq": 22,
+    "page": 3,
+    "question": "How many FFs are needed for MOD-16 ring counter and MOD-16 Johnson counter?",
+    "options": [
+      "16, 16",
+      "16, 8",
+      "4, 8",
+      "8, 16"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "MOD-16 ring needs 16 FFs, Johnson needs 8.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'-16':8,13 'counter':10,15 'ffs':3 'johnson':14 'mani':2 'mod':7,12 'need':5 'ring':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_97336190703c0f72",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "16, 8",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

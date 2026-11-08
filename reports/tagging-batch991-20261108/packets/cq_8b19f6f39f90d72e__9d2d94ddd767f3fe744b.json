@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_8b19f6f39f90d72e",
+  "appearance_id": "9d2d94ddd767f3fe744b",
+  "snapshot": {
+    "record": {
+      "id": "9d2d94ddd767f3fe744b",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "A microprocessor has 24 address lines and 32 data lines. If it uses 10 bits of op-code, the size of its Memory Buffer Register is",
+      "options": [
+        "22 bits",
+        "24 bits",
+        "32 bits",
+        "14 bits"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Memory buffer register size equals data bus width, 32 bits.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "52",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "591cc785dab050aa05e90c4afd45abf332b000d1aaa5617855923501dbe40df7",
+  "appearance": {
+    "id": "9d2d94ddd767f3fe744b",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "52",
+    "qnum_seq": 52,
+    "page": 5,
+    "question": "A microprocessor has 24 address lines and 32 data lines. If it uses 10 bits of op-code, the size of its Memory Buffer Register is",
+    "options": [
+      "22 bits",
+      "24 bits",
+      "32 bits",
+      "14 bits"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "Memory buffer register size equals data bus width, 32 bits.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'10':14 '24':4 '32':8 'address':5 'bit':15 'buffer':25 'code':19 'data':9 'line':6,10 'memori':24 'microprocessor':2 'op':18 'op-cod':17 'regist':26 'size':21 'use':13",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_8b19f6f39f90d72e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "32 bits",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

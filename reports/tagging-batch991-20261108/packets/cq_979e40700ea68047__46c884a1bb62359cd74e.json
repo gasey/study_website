@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_979e40700ea68047",
+  "appearance_id": "46c884a1bb62359cd74e",
+  "snapshot": {
+    "record": {
+      "id": "46c884a1bb62359cd74e",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "For 15 bit PCM system the signal to quantisation noise ratio is 20 dB. If the number of bits are increased by 4, the signal to quantisation noise will be",
+      "options": [
+        "increase by 6 dB",
+        "increase by 12 dB",
+        "increase by 18 dB",
+        "increase by 24 dB"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Four more bits improve SNR by 24 dB.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "56",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "e3cc7cd7aaa2b3c1d67a8660b01df8cb75e4bea233203cd3629d16e08d4c68a0",
+  "appearance": {
+    "id": "46c884a1bb62359cd74e",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "56",
+    "qnum_seq": 56,
+    "page": 5,
+    "question": "For 15 bit PCM system the signal to quantisation noise ratio is 20 dB. If the number of bits are increased by 4, the signal to quantisation noise will be",
+    "options": [
+      "increase by 6 dB",
+      "increase by 12 dB",
+      "increase by 18 dB",
+      "increase by 24 dB"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "Four more bits improve SNR by 24 dB.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'15':2 '20':13 '4':23 'bit':3,19 'db':14 'increas':21 'nois':10,28 'number':17 'pcm':4 'quantis':9,27 'ratio':11 'signal':7,25 'system':5",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_979e40700ea68047",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "increase by 24 dB",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

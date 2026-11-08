@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ef05fb192002ead5",
+  "appearance_id": "a6a37d69d4f05ecc9a22",
+  "snapshot": {
+    "record": {
+      "id": "a6a37d69d4f05ecc9a22",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "In Boolean algebra if F = ( A + B )( A + C ) then",
+      "options": [
+        "F = AB + AC",
+        "F = AB + AB",
+        "F = AC + AB",
+        "F = AC + AB"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The printed source on page 3 has F = (A + B)(Ā + C), and the third printed option is AC + ĀB; these overbars are lost in the packet text. Expanding gives AĀ + AC + ĀB + BC = AC + ĀB + BC, and the consensus theorem removes BC, leaving AC + ĀB.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "26",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": "duplicate-options",
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "1037ad74717bf64d9fb5373883899d7b980736530679465bf06792837e64be1a",
+  "appearance": {
+    "id": "a6a37d69d4f05ecc9a22",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "26",
+    "qnum_seq": 26,
+    "page": 3,
+    "question": "In Boolean algebra if F = ( A + B )( A + C ) then",
+    "options": [
+      "F = AB + AC",
+      "F = AB + AB",
+      "F = AC + AB",
+      "F = AC + AB"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "The printed source on page 3 has F = (A + B)(Ā + C), and the third printed option is AC + ĀB; these overbars are lost in the packet text. Expanding gives AĀ + AC + ĀB + BC = AC + ĀB + BC, and the consensus theorem removes BC, leaving AC + ĀB.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": "duplicate-options",
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'algebra':3 'b':7 'boolean':2 'c':9 'f':5",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ef05fb192002ead5",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "F = AC + AB",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": "duplicate-options",
+    "canonical_key_disputed": false
+  }
+}

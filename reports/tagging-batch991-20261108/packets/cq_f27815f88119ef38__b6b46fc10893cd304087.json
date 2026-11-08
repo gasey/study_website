@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_f27815f88119ef38",
+  "appearance_id": "b6b46fc10893cd304087",
+  "snapshot": {
+    "record": {
+      "id": "b6b46fc10893cd304087",
+      "paperId": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "type": "mcq",
+      "question": "If instruction RST-5 is written in a program. The programme will jump to location",
+      "options": [
+        "0020 H",
+        "0024 H",
+        "0028 H",
+        "002 CH"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "RST 5 jumps to 0028H.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "32",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+      "title": "Competitive Examinations for Recruitment to the Post of Inspector of Factories - Electrical Engineering",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/Electrical%20Engineering%20Paper-III%20(IoF).pdf"
+    }
+  },
+  "source_fingerprint": "e7743793d2d2351a1cf93911468e7932d721238371eaf818569232ba0ebb9b87",
+  "appearance": {
+    "id": "b6b46fc10893cd304087",
+    "paper_id": "Old_Questions/Direct_2019-2020/Electrical Engineering Paper-III (IoF).pdf",
+    "type": "mcq",
+    "qnum": "32",
+    "qnum_seq": 32,
+    "page": 3,
+    "question": "If instruction RST-5 is written in a program. The programme will jump to location",
+    "options": [
+      "0020 H",
+      "0024 H",
+      "0028 H",
+      "002 CH"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Electrical Engineering Paper-III (IoF)",
+    "difficulty": "medium",
+    "explanation": "RST 5 jumps to 0028H.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'-5':4 'instruct':2 'jump':13 'locat':15 'program':9 'programm':11 'rst':3 'written':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_f27815f88119ef38",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "0028 H",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

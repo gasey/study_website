@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_d276815bcce20cfa",
+  "appearance_id": "afd71cbf0f13c10f9d73",
+  "snapshot": {
+    "record": {
+      "id": "afd71cbf0f13c10f9d73",
+      "paperId": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+      "type": "mcq",
+      "question": "A, B, C, D, E, F, G, and H are eight girls who are sitting around a octagonal enclosure facing the centre. B is sitting between G and D. H is third to the left of B and second to the right of a. C is sitting between A and G, B and E are not sitting opposite to each other, who is sitting third to the left of D?",
+      "options": [
+        "H",
+        "G",
+        "F",
+        "E"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Placing B at position 0 with H at +3 and A at +5 gives G at position 7 and D at position 1, and C at 6. Only E at position 2 and F at position 4 satisfy the non-opposite condition, so the person third to the left of D (position 4) is F.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 12,
+      "qnum": "96",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "reasoning-and-aptitude",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+      "title": "Circle Education Officer - Technical Paper III",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/CEO%20Technical%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "78ffa8907a9e77889479121fcb196f930b2848ed012a3c8810a630e986361318",
+  "appearance": {
+    "id": "afd71cbf0f13c10f9d73",
+    "paper_id": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "96",
+    "qnum_seq": 96,
+    "page": 12,
+    "question": "A, B, C, D, E, F, G, and H are eight girls who are sitting around a octagonal enclosure facing the centre. B is sitting between G and D. H is third to the left of B and second to the right of a. C is sitting between A and G, B and E are not sitting opposite to each other, who is sitting third to the left of D?",
+    "options": [
+      "H",
+      "G",
+      "F",
+      "E"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "CEO Technical Paper-III",
+    "difficulty": "medium",
+    "explanation": "Placing B at position 0 with H at +3 and A at +5 gives G at position 7 and D at position 1, and C at 6. Only E at position 2 and F at position 4 satisfy the non-opposite condition, so the person third to the left of D (position 4) is F.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'around':16 'b':2,23,37,52 'c':3,45 'centr':22 'd':4,29,70 'e':5,54 'eight':11 'enclosur':19 'f':6 'face':20 'g':7,27,51 'girl':12 'h':9,30 'left':35,68 'octagon':18 'opposit':58 'right':42 'second':39 'sit':15,25,47,57,64 'third':32,65",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_d276815bcce20cfa",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "F",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

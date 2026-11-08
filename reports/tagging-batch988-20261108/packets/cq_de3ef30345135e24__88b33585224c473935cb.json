@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_de3ef30345135e24",
+  "appearance_id": "88b33585224c473935cb",
+  "snapshot": {
+    "record": {
+      "id": "88b33585224c473935cb",
+      "paperId": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+      "type": "mcq",
+      "question": "In a dice A and F, C and D are written on the adjacent faces, in a clockwise order E and F at the top and bottom. When C is at the top, what will be at the bottom?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Taking the printed clockwise sequence of lateral faces as A, F, C, D, opposite faces are two positions apart, so C is opposite A. The diagram shows E above A and D, consistent with A and D being adjacent, but the wording repeats F as both a lateral and bottom label; this source defect warrants low confidence.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 11,
+      "qnum": "94",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "reasoning-and-aptitude",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+      "title": "Circle Education Officer - Technical Paper III",
+      "year": 2019,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2019-2020/CEO%20Technical%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "b39d946e5c555523be38d402c9f9daed7eeb12f46ce769d94333378c70bee1e8",
+  "appearance": {
+    "id": "88b33585224c473935cb",
+    "paper_id": "Old_Questions/Direct_2019-2020/CEO Technical Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "94",
+    "qnum_seq": 94,
+    "page": 11,
+    "question": "In a dice A and F, C and D are written on the adjacent faces, in a clockwise order E and F at the top and bottom. When C is at the top, what will be at the bottom?",
+    "options": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "CEO Technical Paper-III",
+    "difficulty": "medium",
+    "explanation": "Taking the printed clockwise sequence of lateral faces as A, F, C, D, opposite faces are two positions apart, so C is opposite A. The diagram shows E above A and D, consistent with A and D being adjacent, but the wording repeats F as both a lateral and bottom label; this source defect warrants low confidence.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'adjac':14 'bottom':27,39 'c':7,29 'clockwis':18 'd':9 'dice':3 'e':20 'f':6,22 'face':15 'order':19 'top':25,33 'written':11",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_de3ef30345135e24",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
