@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a0331a0601cd2f8e",
+  "appearance_id": "d02154ae1483e7bcefac",
+  "snapshot": {
+    "record": {
+      "id": "d02154ae1483e7bcefac",
+      "paperId": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-I (Re-Exam).pdf",
+      "type": "mcq",
+      "question": "The maximum strain in the tension reinforcement in the section of flexural member shall not be less than",
+      "options": [
+        "fy/Es - 0.002",
+        "(fy/1.15Es) - 0.002",
+        "1.15(fy/Es - 0.002)",
+        "(fy/2.15Es) - 0.002"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Q33 (page 3): the IS 456 minimum tension steel strain is fy/(1.15Es) + 0.002. The PDF shows plus signs, while the extracted input text shows minus signs; this answer follows the PDF, option B.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "33",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-I (Re-Exam).pdf",
+      "title": "ASSISTANT SOIL CONSERVATION ENGINEER (ASCE) - CIVIL ENGINEERING PAPER - I",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2021-2022/ASCE%20-%20Civil%20Engineering%20Paper-I%20(Re-Exam).pdf"
+    }
+  },
+  "source_fingerprint": "3854f17cbce7b3357fbf0cd43e2b2483ecc9eeafecbb620884d9596e0df2ae51",
+  "appearance": {
+    "id": "d02154ae1483e7bcefac",
+    "paper_id": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-I (Re-Exam).pdf",
+    "type": "mcq",
+    "qnum": "33",
+    "qnum_seq": 33,
+    "page": 3,
+    "question": "The maximum strain in the tension reinforcement in the section of flexural member shall not be less than",
+    "options": [
+      "fy/Es - 0.002",
+      "(fy/1.15Es) - 0.002",
+      "1.15(fy/Es - 0.002)",
+      "(fy/2.15Es) - 0.002"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "ASCE - Civil Engineering Paper-I (Re-Exam)",
+    "difficulty": "medium",
+    "explanation": "Q33 (page 3): the IS 456 minimum tension steel strain is fy/(1.15Es) + 0.002. The PDF shows plus signs, while the extracted input text shows minus signs; this answer follows the PDF, option B.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'flexur':12 'less':17 'maximum':2 'member':13 'reinforc':7 'section':10 'shall':14 'strain':3 'tension':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a0331a0601cd2f8e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "(fy/1.15Es) - 0.002",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

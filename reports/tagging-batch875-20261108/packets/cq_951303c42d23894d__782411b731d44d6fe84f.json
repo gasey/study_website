@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_951303c42d23894d",
+  "appearance_id": "782411b731d44d6fe84f",
+  "snapshot": {
+    "record": {
+      "id": "782411b731d44d6fe84f",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Which of the following is false regarding PKI infrastructure?",
+      "options": [
+        "Controller of Certifying Authorities(CCA) licence and regulate working of Certifying Authorities",
+        "Licensed Certifying Authorities can issue Digital Signature Certificates to end users",
+        "Registration Authorities are authorized by CA to certify the public key of the subscriber",
+        "Subscribers are end users who apply for Digital Signature Certificates to Licensed CA"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Registration authorities do not certify public keys.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "87",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "01f2a764f6829ece05f7610fa43c2007361aaa8fa619a697633420977c9e4167",
+  "appearance": {
+    "id": "782411b731d44d6fe84f",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "87",
+    "qnum_seq": 87,
+    "page": 9,
+    "question": "Which of the following is false regarding PKI infrastructure?",
+    "options": [
+      "Controller of Certifying Authorities(CCA) licence and regulate working of Certifying Authorities",
+      "Licensed Certifying Authorities can issue Digital Signature Certificates to end users",
+      "Registration Authorities are authorized by CA to certify the public key of the subscriber",
+      "Subscribers are end users who apply for Digital Signature Certificates to Licensed CA"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Registration authorities do not certify public keys.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'fals':6 'follow':4 'infrastructur':9 'pki':8 'regard':7",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_951303c42d23894d",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Registration Authorities are authorized by CA to certify the public key of the subscriber",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

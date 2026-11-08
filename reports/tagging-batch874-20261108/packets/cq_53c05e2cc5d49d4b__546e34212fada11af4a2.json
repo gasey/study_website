@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_53c05e2cc5d49d4b",
+  "appearance_id": "546e34212fada11af4a2",
+  "snapshot": {
+    "record": {
+      "id": "546e34212fada11af4a2",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "A system is in a __________ state if there exists a set of transactions such that every transaction in the set is waiting for another transaction in the set.",
+      "options": [
+        "Idle",
+        "Waiting",
+        "Deadlock",
+        "Ready"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "80",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER UNDER INFORMATION & COMMUNICATION TECHNOLOGY DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "ff05a5893ad426500f8f42479326a82c9a869724434fe9b8816ec97d4dc932d2",
+  "appearance": {
+    "id": "546e34212fada11af4a2",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "80",
+    "qnum_seq": 80,
+    "page": 8,
+    "question": "A system is in a __________ state if there exists a set of transactions such that every transaction in the set is waiting for another transaction in the set.",
+    "options": [
+      "Idle",
+      "Waiting",
+      "Deadlock",
+      "Ready"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'anoth':24 'everi':16 'exist':9 'set':11,20,28 'state':6 'system':2 'transact':13,17,25 'wait':22",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_53c05e2cc5d49d4b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Deadlock",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

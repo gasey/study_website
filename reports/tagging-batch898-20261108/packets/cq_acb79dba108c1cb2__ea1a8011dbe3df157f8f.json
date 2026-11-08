@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_acb79dba108c1cb2",
+  "appearance_id": "ea1a8011dbe3df157f8f",
+  "snapshot": {
+    "record": {
+      "id": "ea1a8011dbe3df157f8f",
+      "paperId": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-III.pdf",
+      "type": "mcq",
+      "question": "260 g of wet soil was taken in a pycnometer jar of weight 400 g in order to find the moisture content in the soil, with specific gravity of soil particles 2.75. The weight of soil and remaining water filled in pycnometer without air bubbles was 1415 g and the weight of pycnometer filled with water alone was 1275 g. The moisture content in the soil is:",
+      "options": [
+        "24.2 %",
+        "18.2 %",
+        "53.8 %",
+        "None of these"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Pycnometer method with pycnometer 400 g, pycnometer+water 1275 g, and pycnometer+soil+water 1415 g. With dry soil Md and G = 2.75: 1415 = 400 + Md + (1275 - 400 - Md/2.75), giving Md = 220 g. Water in soil = 260 - 220 = 40 g, so w = 40/220 = 18.2%.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "84",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "civil-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-III.pdf",
+      "title": "ASSISTANT SOIL CONSERVATION ENGINEER (ASCE) - CIVIL ENGINEERING PAPER III",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2021-2022/ASCE%20-%20Civil%20Engineering%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "b7c7e2397ac563b6219117bd6ae2eba2492f75ff803cbfd3fbe78b8abfc84888",
+  "appearance": {
+    "id": "ea1a8011dbe3df157f8f",
+    "paper_id": "Old_Questions/Direct_2021-2022/ASCE - Civil Engineering Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "84",
+    "qnum_seq": 84,
+    "page": 9,
+    "question": "260 g of wet soil was taken in a pycnometer jar of weight 400 g in order to find the moisture content in the soil, with specific gravity of soil particles 2.75. The weight of soil and remaining water filled in pycnometer without air bubbles was 1415 g and the weight of pycnometer filled with water alone was 1275 g. The moisture content in the soil is:",
+    "options": [
+      "24.2 %",
+      "18.2 %",
+      "53.8 %",
+      "None of these"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "ASCE - Civil Engineering Paper-III",
+    "difficulty": "medium",
+    "explanation": "Pycnometer method with pycnometer 400 g, pycnometer+water 1275 g, and pycnometer+soil+water 1415 g. With dry soil Md and G = 2.75: 1415 = 400 + Md + (1275 - 400 - Md/2.75), giving Md = 220 g. Water in soil = 260 - 220 = 40 g, so w = 40/220 = 18.2%.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1275':59 '1415':47 '2.75':32 '260':1 '400':14 'air':44 'alon':57 'bubbl':45 'content':22,63 'fill':40,54 'find':19 'g':2,15,48,60 'graviti':28 'jar':11 'moistur':21,62 'order':17 'particl':31 'pycnomet':10,42,53 'remain':38 'soil':5,25,30,36,66 'specif':27 'taken':7 'water':39,56 'weight':13,34,51 'wet':4 'without':43",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_acb79dba108c1cb2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "18.2 %",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

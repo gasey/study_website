@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_afe78fd7e7974231",
+  "appearance_id": "11bb631e2ed50e2d2306",
+  "snapshot": {
+    "record": {
+      "id": "11bb631e2ed50e2d2306",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "Which case of a session bean obtains the UserTransaction object via the EJBContext using the get UserTransaction() method in EJB transaction management?",
+      "options": [
+        "Bean-managed transactions",
+        "Container-managed transactions",
+        "Both (a) & (b)",
+        "None of the above"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "60",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER UNDER INFORMATION & COMMUNICATION TECHNOLOGY DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "72e1c89d321a999adfd9164d2770eb11ca58740a9dcf5c900039b936eb9b4ea8",
+  "appearance": {
+    "id": "11bb631e2ed50e2d2306",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "60",
+    "qnum_seq": 60,
+    "page": 6,
+    "question": "Which case of a session bean obtains the UserTransaction object via the EJBContext using the get UserTransaction() method in EJB transaction management?",
+    "options": [
+      "Bean-managed transactions",
+      "Container-managed transactions",
+      "Both (a) & (b)",
+      "None of the above"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'bean':6 'case':2 'ejb':20 'ejbcontext':13 'get':16 'manag':22 'method':18 'object':10 'obtain':7 'session':5 'transact':21 'use':14 'usertransact':9,17 'via':11",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_afe78fd7e7974231",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Bean-managed transactions",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

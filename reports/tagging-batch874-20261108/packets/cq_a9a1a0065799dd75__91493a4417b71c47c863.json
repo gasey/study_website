@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a9a1a0065799dd75",
+  "appearance_id": "91493a4417b71c47c863",
+  "snapshot": {
+    "record": {
+      "id": "91493a4417b71c47c863",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "Which type of entity cannot exist in the database unless another type of entity also exists in the database, but does not require that the identifier of that other entity be included as part of its own identifier?",
+      "options": [
+        "Weak entity",
+        "Strong entity",
+        "ID-dependent entity",
+        "ID-independent entity"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "78",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER UNDER INFORMATION & COMMUNICATION TECHNOLOGY DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "4768210daa7ecb4ce3221ee4b1898530e84da50e599f88b54e81a3ec2e3f7073",
+  "appearance": {
+    "id": "91493a4417b71c47c863",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "78",
+    "qnum_seq": 78,
+    "page": 8,
+    "question": "Which type of entity cannot exist in the database unless another type of entity also exists in the database, but does not require that the identifier of that other entity be included as part of its own identifier?",
+    "options": [
+      "Weak entity",
+      "Strong entity",
+      "ID-dependent entity",
+      "ID-independent entity"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'also':15 'anoth':11 'cannot':5 'databas':9,19 'entiti':4,14,30 'exist':6,16 'identifi':26,38 'includ':32 'part':34 'requir':23 'type':2,12 'unless':10",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a9a1a0065799dd75",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Weak entity",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

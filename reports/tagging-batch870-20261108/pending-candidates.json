@@ -1,0 +1,3902 @@
+[
+  {
+    "canonical_id": "cq_0954e9a2e58b7ab6",
+    "appearance_id": "ceadee417a65b17cb05b",
+    "source_fingerprint": "0755c0314f60b28a4989d8e91a7f178c550363850f544351068395e2630bec83",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3c9e85139a2893ff",
+    "appearance_id": "6db8e047cbb8925fe383",
+    "source_fingerprint": "fdadaf1912df627733c69d5b8bbb98d7a97faa73b8f58d3b94b980cc3acd2be6",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_596676b0a7b06c8c",
+    "appearance_id": "9a7cb658f2d3e2936c30",
+    "source_fingerprint": "d4e09de0c80022d7e24888f59383a0b690a04be00d6d60a01bd63ef00098754b",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b90f7649c9f07329",
+    "appearance_id": "b5dea18d10593ba8f20c",
+    "source_fingerprint": "e7692d19cdac8ff016de86007b8e16518b4d164da2eedf50f552d6d8cc4d4336",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses environmental studies: Ecology, conservation reserves, and environmental protection. Appropriately classified under general-studies.",
+    "tested_skill": "Environmental studies: Ecology, conservation reserves, and environmental protection.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_534650e05c0d1b5a",
+    "appearance_id": "a38f27cb92d0865f7b28",
+    "source_fingerprint": "439a517e849e05d118a2b31d5168c818eaea3c76af87af3c7b3614aa32833b23",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d9dcf91083226ac9",
+    "appearance_id": "6b74a66d599376021cb4",
+    "source_fingerprint": "ef804885472f61b0f3b60482954cb1fb4c877145de6ad8dff860cad0e97d111b",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ae55d44a5fce21d",
+    "appearance_id": "d781a5f7ca806b499e23",
+    "source_fingerprint": "3b3fc5a36963027ef2d0412553da8123a0d1949844f180ae5ad12b1da23889f3",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d4819e0295877156",
+    "appearance_id": "47ee97b56601bf8af7fa",
+    "source_fingerprint": "7643d2c5009db6604928548bc3ccbc2af968617897c0b18ca83e749e758aea49",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_848add9219b9e8f0",
+    "appearance_id": "e5252ced487ca28b04ab",
+    "source_fingerprint": "ee4cf15040310b14471e67a5be1b7473e1dac250483d621a95686802ee57bd5a",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_587a157ddb81b91a",
+    "appearance_id": "9d865fdedb4191c69f99",
+    "source_fingerprint": "a8813960bc8322d8bc83aa0b66548e8a8955d50f553b0e1fc11f20883f3072ff",
+    "current_primary": {
+      "subject_id": "biochemistry",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5af2e51ea6952a48",
+    "appearance_id": "ec7848a3d53d75b8c720",
+    "source_fingerprint": "4530a93577d337589f3ea9647430f53169fbb8625346600bebc2cfea1696165f",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_35c2a188bc19fd88",
+    "appearance_id": "54b4968929188849a605",
+    "source_fingerprint": "530d81cf9c72e5a966163ae6874f7ebb573fecf84e3c60f16e64c8a3be1f3352",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_abcc16361334f9ed",
+    "appearance_id": "982d4d562e7494000776",
+    "source_fingerprint": "66c23422215d8e7c2daff9ffbcecb187ec5f79047d45aac5fc801411308cdf28",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f0856fbab7466f1",
+    "appearance_id": "db80b0292c19d0f12e8b",
+    "source_fingerprint": "96e431d8f0356b63da02ba60f13e92c6e154c8702cdc10f662d0346fcc6902a2",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a47251eb4560d6d",
+    "appearance_id": "d7b30e9fc34d4498e27e",
+    "source_fingerprint": "06d52030ab13f967a0b491434678b93ec25fe5bdfde5efc01a993dab12b2e204",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_414d5467cd444b00",
+    "appearance_id": "9c1806c27fe7e4e11e97",
+    "source_fingerprint": "72f081379e231eecd6446206fa6b1162ec0e1bb61b32ea039c8ca33dfbb5f310",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a7f43c2c529d922c",
+    "appearance_id": "b6c0fd925195b0091509",
+    "source_fingerprint": "0684f95eee98259e301463e129c03bdf4425e5aafbcc7173572710961a3dc046",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses world History: International relations, diplomatic treaties, and multilateral institutions. Appropriately classified under general-studies.",
+    "tested_skill": "World History: International relations, diplomatic treaties, and multilateral institutions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9959125da636bd33",
+    "appearance_id": "1bb06c2a02405a7ad56d",
+    "source_fingerprint": "209b579a8e4779243d7d58921cb91d06159d05235b1261d1a355e2c838707461",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5368c48245b83888",
+    "appearance_id": "6eb701013b6676df97b8",
+    "source_fingerprint": "afb1f87046de00c59808fcf2263e75cebdb77e308ac1ee6fb7a9c5c7c857935c",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea59fd6ae754eee0",
+    "appearance_id": "2b9873018d653ef2376f",
+    "source_fingerprint": "96c8bc8266ef37168210063bb2cc9c9389398f2a7b804d8a96f0a11ffa6977e8",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1deaf11e4833dd4c",
+    "appearance_id": "e6ddbbfb22fce1c079d7",
+    "source_fingerprint": "24ce27e77521a65c8bb6919c4284ed77c1f327dfc22244064298497c84286457",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/world-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses world History: International relations, diplomatic treaties, and multilateral institutions. Appropriately classified under general-studies.",
+    "tested_skill": "World History: International relations, diplomatic treaties, and multilateral institutions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9f8a2e9b2ca5f3b5",
+    "appearance_id": "042978dad51445f949dc",
+    "source_fingerprint": "8457cace78a5ca08c07a3554b8b29c84f2d15be6123788c26cb04a1d321baee2",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7a482501aa108141",
+    "appearance_id": "f37b2856e6687e7d8f56",
+    "source_fingerprint": "99af437daccdbb57ee13a5a0163f7080c14911cf15c1462c06e886c1ca67f182",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02f6ba731b9ebd77",
+    "appearance_id": "5fe67840f688d9fa6861",
+    "source_fingerprint": "8abecfe09f0fd5e0adfa1b14498aa2dc03d991d60030c4b54ffcc4c1353687ec",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e8e256d257605b7",
+    "appearance_id": "f9bbbdfea4fb77286e74",
+    "source_fingerprint": "a06bc7059c6dae6e994097a426264ee67e19d042f60db368ec46618f4d4e5f88",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d93f0d1b93ac2d5",
+    "appearance_id": "8dbeb840897a88c337ff",
+    "source_fingerprint": "9abd0db1acee716064e6b44a3edd5b222eaa0eed0297c730f99310775da54100",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_15bb9dd3e380662f",
+    "appearance_id": "cd18fa7da8bb89575c75",
+    "source_fingerprint": "0aadedaced6b826c874a951512bce7984bd9fb9167f82d30a26f9a6f8a771ccc",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7123d06b590ffdfc",
+    "appearance_id": "cff57dbdfd6301c034d7",
+    "source_fingerprint": "94dcf7d4805a1ca722780b135b11bc0e244c925823419bfc17e38cbfe9d4385a",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_028cf71108b0a27d",
+    "appearance_id": "2724dcf3d3d3f89d24c7",
+    "source_fingerprint": "3442097fd12dde5882c23d8a38c09685bd7fcade5a65c1d7f964de697aa866c7",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c14f026fa4bc2fc0",
+    "appearance_id": "091034d2c649df9011be",
+    "source_fingerprint": "2f45d2aca9ca9e6c2457331098da4e8f54ba617a87679680397d3ef6df3bd339",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_65f7d658515e9f2c",
+    "appearance_id": "2528d74bcb5cb62d3707",
+    "source_fingerprint": "13c717e18a00ce846b39cc72bc74be375e68c44970cb529b1d852d8894f1bd1e",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d2d863367ec062fc",
+    "appearance_id": "623628e011e359fc68f9",
+    "source_fingerprint": "0e895ae53160b0abc0a78fb2d3ff09b9f632f16813f49110e69302f83defda73",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_07fc4ee3876542ca",
+    "appearance_id": "d665b556dd1aca2a7805",
+    "source_fingerprint": "d2a95c686c167df2c9e4d257c5f5b9f2466ab0d2dd2ae48bb980fab7bba43fa5",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf639a4b13f0eb2c",
+    "appearance_id": "4f928fbcd4d390d6cbbe",
+    "source_fingerprint": "e11879f3cc769004fa84ced257a1b1dff8af62753671dff98d16feff98b1bd13",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3fcbd3741aa2c6be",
+    "appearance_id": "5523d49b2a7f892406f7",
+    "source_fingerprint": "f1f61931239bc8bbe36acb568f6d803773b5aab7e5d8cfbeae5973389d7599fc",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b4ab205ea5b75ee5",
+    "appearance_id": "e921ef6a9c54b8e5ea1e",
+    "source_fingerprint": "eb5b88d5d405628535ce8c8ac6bc3016ba2100782db2886ca786b12fe1d4618e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_570dae3346310def",
+    "appearance_id": "284d81faa6fe51a3bcaa",
+    "source_fingerprint": "c48abbfb2f753612026d7e03876fe63da7d5897f9d9abc2dbdc44c1ae170e0c9",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bc3729e0659e29cf",
+    "appearance_id": "85794c59daf4d2ed19a2",
+    "source_fingerprint": "ea670031170241b38055901c9f9b8c3e7e46567d7d8c8ed9584bf3007dcd1843",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_24324a2d2a1b5ea5",
+    "appearance_id": "775919cf7345f7a2d89c",
+    "source_fingerprint": "ffbc7d9a6fc5be441dce206d3cff3c011385c066d1f7a4d8a6b4b6365c2d945a",
+    "current_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "microbiology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses assessment aligned with syllabus specifications under microbiology. Appropriately classified under microbiology.",
+    "tested_skill": "Assessment aligned with syllabus specifications under microbiology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3987a44e75374e94",
+    "appearance_id": "6da462be4bd4042b6cb6",
+    "source_fingerprint": "449bd8a9ee19bd93c8c9356d4696545a1dc7fe50bd59e694a730b142987e19c8",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe4ca6b882c61853",
+    "appearance_id": "79cc980d0fa6e24ace46",
+    "source_fingerprint": "b177fd8c1566f7f1f68630db6818811522ce012b3c7fbe7ae7523cbbca10385d",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f3f2273766f0ac8",
+    "appearance_id": "b02788763dac030c6eea",
+    "source_fingerprint": "96ad07dadbbf9b881a71f43897e54f8c2812d453ea93c512c3a4def8b7ee0be7",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8c5620896138cffc",
+    "appearance_id": "c79c87df91927cd47093",
+    "source_fingerprint": "fc45a21ee9849dd5ed636fd4320d5fcb54b9f0828be89adae2eeaf7e94482b08",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e3adc959e387896",
+    "appearance_id": "05631e4b89ac324c6d8f",
+    "source_fingerprint": "4a7d900243485155e6864201a3dd4a5446894051001c493f84bddd8021dae4a3",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94163665ab186574",
+    "appearance_id": "bec76de3a8cb0386b3ff",
+    "source_fingerprint": "d92281143938a670ec820e2fd2f986466ebdb14e87c028f0d834c6b515bc26b0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7114ffcc72eaac9",
+    "appearance_id": "17e2b52de0671e3c6e8b",
+    "source_fingerprint": "20b3a5517ca780f378adb9194c754351db8bdb307d4cdd199da5f6c842205cb0",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_82c667d9be848308",
+    "appearance_id": "b1463eff9cf97f5b17a7",
+    "source_fingerprint": "3c3e5ecef68eb933c1b997c32eb9f56a4c119a43d123cf71a9329e753e692b79",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_357394519ebd991d",
+    "appearance_id": "f622c1d34b418825784a",
+    "source_fingerprint": "148955414b93c8ea251095de892c0aa1230bf119919c3273794f44f048d283aa",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1029bed2ceba5847",
+    "appearance_id": "be6e89a6a4c65a46bcf2",
+    "source_fingerprint": "5a1f39f987da252a816352fca9ef5163ba4f617eff3552062c9d74aa61ca9cd1",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12263a8500c95fbe",
+    "appearance_id": "ad7d07b4771224705fd4",
+    "source_fingerprint": "fa64ed90c4209f9776ce8fef76a83d6abf829fcd4148c45550225c67d977cbda",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c2a6a49bd5b0576",
+    "appearance_id": "6dd0f18ef74c913f25e8",
+    "source_fingerprint": "981c14edb752e7fc298adf8093f5385bae79ecfdf16199dc86aedc663d26030c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2e95fde0b6f43f6",
+    "appearance_id": "ffbcd4cc85309d94e4b6",
+    "source_fingerprint": "2ff86fc256551183dccecf7be6121f6f8c0a85305cc73cc564cf8460c3fc2cc7",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eeeefdcf4329f288",
+    "appearance_id": "6bc0ae576c529c6078cc",
+    "source_fingerprint": "d30e32d94bdf6ec6cff93184b836bbcb5e0b525083559a6bd146a1f38a80faa1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d38864913d13e5cc",
+    "appearance_id": "64677fc902248ca9b4b0",
+    "source_fingerprint": "43008bcec7bd3015a4bbffe6f5bbd80b7759e6a20959b69db7e28f698888cec5",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9626c3ced3b67bff",
+    "appearance_id": "9b5715906b73786ad8bd",
+    "source_fingerprint": "a634933b2525084e07b65318aea68a87f10804e798000993f5bf6e25a8cf3730",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a238e67877e5b5ef",
+    "appearance_id": "2eb5aa9e926d627800c2",
+    "source_fingerprint": "14eb27535815c49fc8bc39f22951a6102b7228ad71c3354daf61e68254fb4dde",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cca5f7ba5f991fcc",
+    "appearance_id": "11eaad38828a70c8db04",
+    "source_fingerprint": "b9978ccbe45988212cbc8e3eda364668097b5655724a7164d54ce28bbe0d01ec",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9631bc04de549bb",
+    "appearance_id": "14c62214a7b2f9982554",
+    "source_fingerprint": "fecccfcc1fc87dc73422fc6268d420ed1be71427482463650a1e63b99ed8b672",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_82c8a1a653c2d719",
+    "appearance_id": "590f7e98ce7f97b8a4ac",
+    "source_fingerprint": "c6c45b1eb4f9bebfb2b82f26d59f7e6a6dba566892704b904b175f0867e2fb0d",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94a2e7511387bd9d",
+    "appearance_id": "2ad1483f63bb93b8674b",
+    "source_fingerprint": "68add5775eea53fa4caff8aa90d19b971da2f7ea990b1b7ae0a5d13079b40f4c",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe94c60ac33ff2ac",
+    "appearance_id": "9617259a414a27afd3a4",
+    "source_fingerprint": "8c4361b262869a3d18e1e241d973c8487900ec4999c13d5871c3501536246c83",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d31207f5d46083ab",
+    "appearance_id": "a0511fa6e11a44bc5e5b",
+    "source_fingerprint": "c62448a502873499548a8dcac5acf2d6f9d864a57dc23b0b3fd90f4b0872db7b",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7e55b41e9267984d",
+    "appearance_id": "cee530c9a612b753fab7",
+    "source_fingerprint": "003364a848871574facb6a9f7c4450d2ba913ab2c3e6ee2d5efc6feb99f81cb5",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_179a577be8fdde59",
+    "appearance_id": "d67a6414f816a66b6941",
+    "source_fingerprint": "09b40f47cd64688a624c485dc362f9267ba25ada512d60af959546bc86fd8864",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61455fc9bccd9666",
+    "appearance_id": "b1c343d3674ea04007a2",
+    "source_fingerprint": "f46aa76a514d688ceaf293fce1568758d7d7a8c07f75d1c60d01f1415c8c264e",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87960f9ae91b690a",
+    "appearance_id": "2070143d425280c3e8f1",
+    "source_fingerprint": "df1cfceba70a451ed0ebcb63118bb08ca5d15af6857dbdee685f96b4ea230545",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_006e8e3507eb24f6",
+    "appearance_id": "341c0fdc93e3a860e167",
+    "source_fingerprint": "9d0d2a34dae707d7ead4bcdcf82a876c462f9fa88410da7adc5909c315ad2b5b",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_093686ae540f6b1c",
+    "appearance_id": "df5abbf406915bd19885",
+    "source_fingerprint": "cda12ac7c77f0bdf71e937cc52698636549445f7096ba5988fe72b4937c330a0",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dfa7e1eea4dcf9a0",
+    "appearance_id": "fe7231f73a8e2c6dbab7",
+    "source_fingerprint": "e11b817077d877d92ff6d3e25d3797486ca7bcb8d75073845e5d9c6b6f2c2f37",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_812be7851e9d31b9",
+    "appearance_id": "2aa2dedb1ab10c9c3703",
+    "source_fingerprint": "e01b195769ed6f86d356d7955ee8b720b5f93ed586c8638ef4a3d33f554872f2",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3603e3a0fb079d0a",
+    "appearance_id": "e7b0ff4d1619cc43a1f0",
+    "source_fingerprint": "b0c71e18f7b28e9e2b2f02e949569456142ea5d399dd238b481b503cbbaf82ec",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_54de0db100284123",
+    "appearance_id": "53c4cb65c117fea232d2",
+    "source_fingerprint": "16b0a4021ee519cfc0a8bbf28d5224d16557e014241ce8007432755951de13e9",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c73e740a9f6d6f30",
+    "appearance_id": "1365e3e3ecfd0b62a2c9",
+    "source_fingerprint": "13d9fa654c274206181bef8037ddd3d5f0e1062b1c506575f227701aa291833f",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aebb4f792ffdec10",
+    "appearance_id": "357a64822c4ecefcfee5",
+    "source_fingerprint": "3993410a2813bf77d3df36a7566c12aada3c647805b6d3d5c007b84ba6fcb281",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f392f4edee9163a2",
+    "appearance_id": "9d08859dbe173846f613",
+    "source_fingerprint": "130319a8c71120da278d52b956cd1971bb70501baea1c5393a666c213f186b0c",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5ab801664e21825",
+    "appearance_id": "cb766eb10d24d50c374f",
+    "source_fingerprint": "fe3aa37103d6c04e784f32d021e856cb790e85441121fb9fc4c6025092937a7c",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5aee16e13c543b79",
+    "appearance_id": "8bf7c37f8b4a69637959",
+    "source_fingerprint": "4f93447c50b1b62333eda6203a8a87694ced52e1f7905ed70cb3f5da80a5f110",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4ea6655e70a583c",
+    "appearance_id": "a4ad92d81c6d06ad6591",
+    "source_fingerprint": "c8fb3f8bfe72b3a4db23b5274b08838fd2c6642938c0bdea3757e3d2e3b5d1bc",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a2f77fc622f071f6",
+    "appearance_id": "845f78ae6eec1dbd1fa3",
+    "source_fingerprint": "72200657c9b9175c04a4cc5ac7e9a6fa4fae55423d23961aa5b1849723e8e903",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_acf347b1fe2474ff",
+    "appearance_id": "5f9076f85509daf2af4f",
+    "source_fingerprint": "e7110b968f1d43eb76d12f40a2fb97b536902338625d23cbeed2c366c5f45111",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_29103ec2575ba8fc",
+    "appearance_id": "60d1cf3db8666a9be8ab",
+    "source_fingerprint": "928841468f375457bce85123b971293b56186874c5cbc431064adba15ff49b22",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d8ca09f8715b2928",
+    "appearance_id": "ffeb0b2a7216a90005cc",
+    "source_fingerprint": "9f128c00938736f04f2be149a9817eb9f0a10a7dcd6655fea2dbba9a54fe2232",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa0955ad8ecb6f46",
+    "appearance_id": "4431450aa1ea2dc34d7e",
+    "source_fingerprint": "1e97cb5327d45e91718cda194170cb541675cee85cac0e7e41ba4b1dfeab04e5",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_906f94605f236301",
+    "appearance_id": "cbfa36ffc9dcb6b693af",
+    "source_fingerprint": "f96c6d5919709e7849bb93ed5a5b94c6b57bef5641bd1e01964945f14dbcc6c9",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_395ff4b89b35851d",
+    "appearance_id": "e7afc85b5c2a6c0b24cb",
+    "source_fingerprint": "732c88710859b07199ccd15d65ce0d065bffd7b062f8cff3334a69675a5a855c",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3bf8e58e69c914e",
+    "appearance_id": "45eb0a167e72ff32242c",
+    "source_fingerprint": "1abde6a16d36a71f2d5fe8ae8d185153fe463cd5b58b92e9dc5895e26dd576f8",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7813ece5e87d1db3",
+    "appearance_id": "6cd97de77b84c6aa6d99",
+    "source_fingerprint": "e50fc44801a2df5516a05e853cb7053fd750a67a7a47c566c49e3ec3c1605b7a",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ebfffe6f0e19e964",
+    "appearance_id": "5acdabc70e5debf047a4",
+    "source_fingerprint": "fdaea4ed525ba26a1d2864c49d889bc6b941325af716896932dc68e0dd710b47",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e3a0cabb520220ed",
+    "appearance_id": "b01c505eaa9ecdbc2736",
+    "source_fingerprint": "c9b8f03e2b6312184bbb2d97faa32d35bf0a83e980193a16d4a55e7e8bafb875",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e26876f88ee2099c",
+    "appearance_id": "d4b7222eeb5ed8e37cc9",
+    "source_fingerprint": "0ad1f4297ec40f28551e3ad587e1107a7e6d73b271ad40cf71ca5809b9c5cc88",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d938402d81fe620b",
+    "appearance_id": "0c86a30477f7116c891d",
+    "source_fingerprint": "c65f94cf86f5f4ac0a48c170baa350253f28826add3ba6ba0d1f0c91756757ff",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3cb31e183666d980",
+    "appearance_id": "2543191488a58f8b1c20",
+    "source_fingerprint": "2d551c90bb175f7061cec677c19b451b8b44fdac38f917957e07309a2fc2b41f",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_15577f6e9413234b",
+    "appearance_id": "f08861cea8c8e3154104",
+    "source_fingerprint": "4bb246250ee595cad2333bf94e985caa018507273d7dba963656085fe09a6821",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f13852a046df2328",
+    "appearance_id": "e91ba5909877934de07f",
+    "source_fingerprint": "53e749be3b095494269fa028bfd5d05e01637c5b58f56094075c9f77ebd1bf8a",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_99bfea8f9ef0adb5",
+    "appearance_id": "7eaa127d396ebadf9a0a",
+    "source_fingerprint": "fb2004e0b42eb0386b10e39b40c2cc727e3291c2c4929a28860391b265329e17",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4e35e0b00ffb069f",
+    "appearance_id": "fa6f514400c672502325",
+    "source_fingerprint": "63c60a633820c2320afac13c71d954763682243d8a193535d902583179dfb8ad",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_282dcb9fbc5a9a8d",
+    "appearance_id": "acbaba09ca7fd572505b",
+    "source_fingerprint": "b45794a0da94fc815d020625faa6d848043257131f6ad5e5e18ad3023dceddcd",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3635879c330cc0cc",
+    "appearance_id": "09f41f6d8b9b4702f961",
+    "source_fingerprint": "cd0cba211c6a30e1f59e874d16176f844edd6243cb05267dc1d9c9c4f1ee8137",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e28fdd9f9fc71cc4",
+    "appearance_id": "812572b72e32e0939c62",
+    "source_fingerprint": "13fa6277a236a2174da488f7d29efef9e0da240840d4a4d25da136a104e8dbad",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a16ae926b4c153e8",
+    "appearance_id": "e76e29b94c342163588c",
+    "source_fingerprint": "93ac41f96253733db53f5e1d56aeba506f4f9d99965646c42b566a3fe2b70923",
+    "current_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "fisheries",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses assessment aligned with syllabus specifications under fisheries. Appropriately classified under fisheries.",
+    "tested_skill": "Assessment aligned with syllabus specifications under fisheries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_29968fea024e06872e27e8bf",
+      "sha256": "1f71000a6ca915fef8487cf5031816340fb3b13240f48f2cde04492883b0c695",
+      "note": "Verified against registered booklet source for Assistant."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

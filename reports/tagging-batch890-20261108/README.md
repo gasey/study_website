@@ -1,0 +1,13 @@
+# Tagging Batch 890: COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF LABOUR OFFICER UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM - GENERAL STUDIES PAPER-I - Labour Officer (100 Targets)
+
+## Paper Identification
+- **Paper ID:** `Old_Questions/Direct_2021-2022/Labour Officer under LESD&E Dept. - General Studies-I.pdf`
+- **Title:** COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF LABOUR OFFICER UNDER LABOUR, EMPLOYMENT, SKILL DEVELOPMENT & ENTREPRENEURSHIP DEPARTMENT, GOVERNMENT OF MIZORAM - GENERAL STUDIES PAPER-I (Labour Officer)
+- **Total Targets:** 100
+- **Document Binding:** `doc_079da87fe6158df063d1096c` (sha256 `a99eb5bab51a7eca774574e34e370646f742ddf9cdcbc60b3c65897791cec149`)
+
+## Actions
+- **`keep`:** 0
+- **`retag`:** 100
+- **`hold`:** 0
+- **Validation:** 100% compliant with `study-tagging-v1`.

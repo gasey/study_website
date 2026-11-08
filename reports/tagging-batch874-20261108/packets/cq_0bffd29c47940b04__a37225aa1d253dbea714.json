@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_0bffd29c47940b04",
+  "appearance_id": "a37225aa1d253dbea714",
+  "snapshot": {
+    "record": {
+      "id": "a37225aa1d253dbea714",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "type": "mcq",
+      "question": "In a network of LANs connected by bridges, packets are sent from one LAN to another through intermediate bridges. Since more than one path may exist between two LANs, packets may have to be routed through multiple bridges. Why is the spanning tree algorithm used for bridge-routing?",
+      "options": [
+        "For shortest path routing between LANs",
+        "For avoiding loops in the routing paths",
+        "For fault tolerance",
+        "For minimizing collisions"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "13",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER UNDER INFORMATION & COMMUNICATION TECHNOLOGY DEPARTMENT, GOVERNMENT OF MIZORAM",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "920cb47f467c04304a1fa7e703c0456bdf6939302102f93d4d65386686da5cdd",
+  "appearance": {
+    "id": "a37225aa1d253dbea714",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "13",
+    "qnum_seq": 13,
+    "page": 2,
+    "question": "In a network of LANs connected by bridges, packets are sent from one LAN to another through intermediate bridges. Since more than one path may exist between two LANs, packets may have to be routed through multiple bridges. Why is the spanning tree algorithm used for bridge-routing?",
+    "options": [
+      "For shortest path routing between LANs",
+      "For avoiding loops in the routing paths",
+      "For fault tolerance",
+      "For minimizing collisions"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'algorithm':44 'anoth':16 'bridg':8,19,38,48 'bridge-rout':47 'connect':6 'exist':26 'intermedi':18 'lan':5,14,29 'may':25,31 'multipl':37 'network':3 'one':13,23 'packet':9,30 'path':24 'rout':35,49 'sent':11 'sinc':20 'span':42 'tree':43 'two':28 'use':45",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_0bffd29c47940b04",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "For avoiding loops in the routing paths",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

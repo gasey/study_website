@@ -1,0 +1,314 @@
+[
+  {
+    "canonical_id": "cq_a48c876745aa7795",
+    "appearance_id": "desc-f5a3189e5962154cb76c",
+    "source_fingerprint": "8e35e70fa42d93aae95cb64a6d49a01c591b071d2a8586b7933f78938faaec82",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fae78b491253e548",
+    "appearance_id": "desc-3b6c851b2c819c9f358c",
+    "source_fingerprint": "5fb3b3592cd0aad0dba578b7ef74c86d81a16b671ec78fa1963e8db8de950139",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ce70f8c139a2b22",
+    "appearance_id": "desc-508eff4be49754e3d640",
+    "source_fingerprint": "31d1f75749c4216fbdb9b9511bc578e5adff27570192eab60b075271ffb8085a",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_03ac2a2f0a9e4c5f",
+    "appearance_id": "desc-e5caf8b9e8f50b906584",
+    "source_fingerprint": "86040f3d7f3970e8db42bc21b4be95b6f18ca2b9a77bcc8f8cdcee9ebdcfe8ac",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/databases",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses databases: Relational schema design, normalization, and SQL data queries. Appropriately classified under computer-science.",
+    "tested_skill": "Databases: Relational schema design, normalization, and SQL data queries.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8ff1114c9400f8c0",
+    "appearance_id": "desc-a8426800c55f7ed0078f",
+    "source_fingerprint": "45947b0531cc7da79a1a5a6cb8226a9cf1feb905fe08cc8778a2808305fcf772",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_750d98e6d2e6215e",
+    "appearance_id": "desc-48b93faefbf29fe4011d",
+    "source_fingerprint": "ed1f178c08bdd1f80d38680b397ce22a212bea6ded96969977dd6afd631133d5",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9d77013faf3d1df2",
+    "appearance_id": "desc-83cda12b6bc37ae9fb67",
+    "source_fingerprint": "4a67f55d06e13a8dc0aa40d14320d553e7f884508ab02b7005ee8a9fa7bcf9ef",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72e45b3aceb1d1ab",
+    "appearance_id": "desc-1da8d442b2d562aa1823",
+    "source_fingerprint": "a423fe9a25b39618a9fd51162802dfdfab40386ea5001a9b1d59a34ade7e9312",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses biological sciences: Plant and animal biology, genetics, and ecology. Appropriately classified under science.",
+    "tested_skill": "Biological sciences: Plant and animal biology, genetics, and ecology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_571e2e2907e9f6e556831dce",
+      "sha256": "ced3965a4f82795d1fab26b0a093d278db947cbd2160c50c9acd4a8b3a79085d",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_f1f1ae642376b929",
+  "appearance_id": "e7cf02a78704ddb65ab4",
+  "snapshot": {
+    "record": {
+      "id": "e7cf02a78704ddb65ab4",
+      "paperId": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Which of the below is false in regards to the usage of firewall?",
+      "options": [
+        "Firewall performs application-level screening",
+        "Application level firewall capture and compare packets to state information in connection tables",
+        "Firewall may provide additional services such as DHCP,NAT",
+        "Application level firewalls provide the strongest level of security and is the fastest"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Application-level firewalls are not the fastest.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "62",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INFORMATICS OFFICER",
+      "year": 2021,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2020-2021/Informatics%20Officer%20-%20Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "b82f27c307fa6767b7bc57e97feee2665227cb4b3b94a78f97f0afdecdc33948",
+  "appearance": {
+    "id": "e7cf02a78704ddb65ab4",
+    "paper_id": "Old_Questions/Direct_2020-2021/Informatics Officer - Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "62",
+    "qnum_seq": 62,
+    "page": 6,
+    "question": "Which of the below is false in regards to the usage of firewall?",
+    "options": [
+      "Firewall performs application-level screening",
+      "Application level firewall capture and compare packets to state information in connection tables",
+      "Firewall may provide additional services such as DHCP,NAT",
+      "Application level firewalls provide the strongest level of security and is the fastest"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Informatics Officer - Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Application-level firewalls are not the fastest.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'fals':6 'firewal':13 'regard':8 'usag':11",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_f1f1ae642376b929",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Application level firewalls provide the strongest level of security and is the fastest",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
