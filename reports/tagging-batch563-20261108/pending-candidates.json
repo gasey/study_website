@@ -1,0 +1,1913 @@
+[
+  {
+    "canonical_id": "cq_bf1fd799ef30bdd0",
+    "appearance_id": "ae889ed9b67408a1af8b",
+    "source_fingerprint": "f6d41afa2f7e2883a762066216d0f79057ceb19362a2e596e0e9bbf83231572a",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4a96b34d80ca07f",
+    "appearance_id": "4859a6ff259a02eb94c7",
+    "source_fingerprint": "5362a2eaf8e858e09685832fbfe89f30105fc85950afc5323ae6be3aa2be8bac",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4401528b167b4b9",
+    "appearance_id": "1ce1d94d2514c22d727f",
+    "source_fingerprint": "7fdbb95ca32beab5123bfa9a7d4bbe45964ac12cb7292a677f8f0bdb95973229",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_df88c63a17a0bf89",
+    "appearance_id": "4ffaee55e75df1c6b92b",
+    "source_fingerprint": "809d92768bec43926ed533fcfab1cad7e7ddcf1beb28ecc5b3a953a907746367",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f13b4a2035004a11",
+    "appearance_id": "0e8a634bcab8e81878f5",
+    "source_fingerprint": "024c6676f84a919e9da02da6673ec7b0b8302ab95b8af433a7e5a1d4947da179",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0e5f3b2a671efdd3",
+    "appearance_id": "8bf0809c9489c3af5fb4",
+    "source_fingerprint": "b012ce9669580b8dd574e163c6dd91a7119c165f8fddd9bf6b93b0c9df852d0e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ac4b689a991d281",
+    "appearance_id": "76d494e24f163210ce99",
+    "source_fingerprint": "4e7ef5bec179a522976695c62ad22d537363a49e64dd4c512988d61dd514ad2f",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e04ef9aa59ff8013",
+    "appearance_id": "dfc665291808b4fa0183",
+    "source_fingerprint": "cc8659cf1f04f3051f221b4c0b60ecd1cd27718df0ddf8d696715c17e862a9e7",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9077d5166f47fea",
+    "appearance_id": "aee68b4e1c75e3c8c5c5",
+    "source_fingerprint": "84d6669761d3f6a89d7eab4d9c62848bcb16232ef9fd349b0eb0997bc78c39ad",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6a812814341ca2e",
+    "appearance_id": "b5f2cb8c93a8fe094c6b",
+    "source_fingerprint": "076717fc2158165abcf8b76dd0cd1a4acdfc0d574805e439ca6d44167e3938e9",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0b378aea3e97555",
+    "appearance_id": "4d5e6633ce4dd22681ab",
+    "source_fingerprint": "9817cd9c8dee2e793eceaf827b7c46dcd440294e682679b50b8c52efde5375e3",
+    "current_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fe6fdf4046262900",
+    "appearance_id": "c17439d3d7fe0b5d4450",
+    "source_fingerprint": "55c6ecc5916e4daa7597de54d0348591d8f58c378ba555be57e191ea94a0042c",
+    "current_primary": {
+      "subject_id": "sociology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a711fd4177002ed",
+    "appearance_id": "7bcd45589530c307ee6e",
+    "source_fingerprint": "8209896b5207f9a1967fad76d32678067397ad6aca4ed93b8f803086952c832e",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_65ecc1efd607d542",
+    "appearance_id": "c491605f522639bc5397",
+    "source_fingerprint": "a40996d733e0a5233e2ce5eac8ba7cfd23c347595ef5c13a707cb175665648d4",
+    "current_primary": {
+      "subject_id": "journalism",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06688fb7955fe7f1",
+    "appearance_id": "5cdb9ba591af494a663c",
+    "source_fingerprint": "20b9a8f3943e746bee4160979787145f3617db89915c3ded17a52ff40d02bc47",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d61fa371d2dd08ea",
+    "appearance_id": "b83dbec5a1e6f35cb2ad",
+    "source_fingerprint": "db0b24748994e267568c5fe2bdec02dc59571cc2f7c7250a8df979df691df9ae",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2a12dc797a51b98",
+    "appearance_id": "bc111b3198213013b735",
+    "source_fingerprint": "d053685f02a3563ac7ca0f6f8060ba437b6258867b2aa50980c85e335e3329b0",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_544dd801eabd971b",
+    "appearance_id": "dad2325068fd71adaa0a",
+    "source_fingerprint": "d99007f7abd6eff2315245b3c8d3d73dcd4eb14a6ab0beef54a88c56f90f5cd2",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e169316bd46ec81",
+    "appearance_id": "cf5ea750e7d300a6a1c6",
+    "source_fingerprint": "3f0b52dfb264bc82718ea526a78b81a1dd5b2c25a541a4ab65536adb6a70a343",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5aedffc2f3162527",
+    "appearance_id": "2cef4d4d869949cea547",
+    "source_fingerprint": "fbb1d7ecf2858211040b1a59dbd1ab41843cc9df118a15062b1bbb2997aa88f6",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4055c4462be3df5a",
+    "appearance_id": "3cb79e295673e965efba",
+    "source_fingerprint": "55e64160898c4392d983980edbb3f97858afe7a6fec100925e372a611528fde9",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d22a48adfc05ce0",
+    "appearance_id": "b0361409fb2bc40e23ba",
+    "source_fingerprint": "75559b983200f2cba7159859083233f5b3c927f952213a68a13af1e97e660d30",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bee9ee6a5062b292",
+    "appearance_id": "dd8d03e976ef828e4eb4",
+    "source_fingerprint": "98e8a575554352f85dc50692f881eac6c54178cb78e731eaa27c2f03dbf0d470",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d3156e053419a218",
+    "appearance_id": "1d378ed048a98a3d28e0",
+    "source_fingerprint": "3db8ecdf90988d39dd03275a837af4b9f769c89d5d9414ab7913f66d0ab32603",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b9f6f93990b3e925",
+    "appearance_id": "5f0438262258a2f9c18f",
+    "source_fingerprint": "a33c731ddc0e508270455e3f1637d5d1d095c4af2074b28bfb13dfccfa266d16",
+    "current_primary": {
+      "subject_id": "psychology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2a1b1f9e75a2cf9",
+    "appearance_id": "62d4e5cef9b1c7baad76",
+    "source_fingerprint": "9822eb7676b8520aa0908415bc435a458e59e53a78987167fc83c14e3c3e69fe",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_89a18d16ef872ed8",
+    "appearance_id": "8227cfde13291b1b5f1b",
+    "source_fingerprint": "b2ea0559e62641600813f17c593607b8ced4096cc5389659ae1de3d56fb98888",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6cac802dc217651f",
+    "appearance_id": "9e3e8796b5a942cdf7d0",
+    "source_fingerprint": "b696082bf3665fa0cbeb7bd14da2a81c357d4e26da5ce20d9a9429757f333a75",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c1e70ed1022751e6",
+    "appearance_id": "ff1630430eeb2efd7316",
+    "source_fingerprint": "86697ea605d22dae814b559fde937b4c45e01029dee1d5450dc32f7d51ddea6f",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_353d346f7e51c705",
+    "appearance_id": "56e932c9f25efd8521c8",
+    "source_fingerprint": "d37f1e150ea1808a8288c30c749d205eaa8be11edba0081f373ea32fcf28cbaf",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4ddfab82b2c58ee",
+    "appearance_id": "9da8424cebc3b00c0981",
+    "source_fingerprint": "bd62702a56c0497ccb9b6f3543bc84b3b2f1328c0b1f9f60daadf252f6483697",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6963b3fe1b724756",
+    "appearance_id": "9dc7545386dca3b3b832",
+    "source_fingerprint": "1f32d3c3ed2a4c2cbaf09d81a4ca6bfe45c270aefeba9ff46cbd2bb7064c81fd",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6498af57be203e8d",
+    "appearance_id": "ffa5d80b4bd63b608258",
+    "source_fingerprint": "d47525cc353d13b1ec0813709d6372d988fc59b15dbfdf23bbc2c54c3f410377",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5047c50a2ce473a1",
+    "appearance_id": "4af9e5461a15420b9e6a",
+    "source_fingerprint": "15c00eb712b54e82892c613b9791e8ade4166b967c48894c89944b8dbfb03a7f",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0aaa3c1ada78ad8d",
+    "appearance_id": "b60786f2079ef780cd28",
+    "source_fingerprint": "9bc8c966d82be79c3962ff8f53ca01041c98d421387174c8a7bd75be769495e6",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2de13b9513106f58",
+    "appearance_id": "f08b7ad6f24adedbc06b",
+    "source_fingerprint": "353c952e568629b42bcf6d6185867868057ac66167f0a91ebcb582b0c939835e",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbafdc9d9b0e7979",
+    "appearance_id": "b2539e5ef7f80e270854",
+    "source_fingerprint": "95d020ba043df707cd05788d86a2e424d0fa4fe3044ac1acbd8e7045e07cd2b2",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb599529d6d74587",
+    "appearance_id": "c0fc5be2743a36c6ab33",
+    "source_fingerprint": "cb5f1b20c52e9b06c0f03ea6983f5dae322ce11461d4e4d5f44d9eec0ebb9018",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2eddcb00215286d6",
+    "appearance_id": "95bb252563c58d59d15d",
+    "source_fingerprint": "11575911f7b34a6477d9329bc0c86607c8d4d3d82d92f6792bb5fabdd4ee2b2b",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d331dcf17b62770",
+    "appearance_id": "910ca3ce9adf3bb07af3",
+    "source_fingerprint": "2c6075b5bed053367ffa7ff3a794084e21c5c9ea042c5e0b421cb0d9cb241cdc",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_093914be9dc4ae4c",
+    "appearance_id": "d637b70605c66cb1a044",
+    "source_fingerprint": "2908fc68f1e84e1f439d6c52f8f0a52d373cb3c819db5da2c40ccfb6ceadf5cb",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb7932daf9a682d2",
+    "appearance_id": "c6df587a7f275af69b62",
+    "source_fingerprint": "d23431831c4bf6efd43763b839fc32232a5e16180083f594a8c257bdb60f93a2",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_db81b7fb37344fb4",
+    "appearance_id": "6ea04a0fa1faa83df5a0",
+    "source_fingerprint": "5b7794b4c48afcefab3a729189612f34b6f17beee0363b8eec33838b7070d0d8",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a320da86bb555e5e",
+    "appearance_id": "fa3d7aaa3525fa9e01bd",
+    "source_fingerprint": "c5f33f439b7edcf014e673a728b37b66ea5c86e24b7ced928212e06225805f6b",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f16f09e2d8b0f9de",
+    "appearance_id": "9d4dc4a100013e3048a4",
+    "source_fingerprint": "3921f179033df54753e3841eed2ae3996635f54900f2aaa2cf8e154c6c0ead87",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0fbb62b688d4f0e0",
+    "appearance_id": "11a17eccd36f6334e6fe",
+    "source_fingerprint": "6ef3a3dce612e80ab2f7c7ec01aa73fff06209a1f9953a3d64bd605eb79bea75",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "social-work",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses social work: Child development, welfare administration, and community nutrition programmes. Appropriately classified under social-work.",
+    "tested_skill": "Social work: Child development, welfare administration, and community nutrition programmes.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1e3bf50cf0cf0dfc",
+    "appearance_id": "5a037f83d23fea95d493",
+    "source_fingerprint": "e8cf3399d3f259c31ed8781a6fe519f69bf0a5b5e0a9d68e0c1f68820eab72a2",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_335a4221b4c37837",
+    "appearance_id": "66e8708f2f4717aebc5f",
+    "source_fingerprint": "863cceed293d487c148ac2888283102384659556bbeea0a65bd936edf1411ed0",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aff4803d738a7c10",
+    "appearance_id": "4da6721060edd41e9a6f",
+    "source_fingerprint": "985e1718c8060c54d40ff661051514f8ac2431f4f0153ec0e4946b85ae5d95fd",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_e30558500d66eb54e818908e",
+      "sha256": "546b197a23543d4aec902b32dfad91d7d1473ead5c9b9d24d1c38514dfd62021",
+      "note": "Verified against registered booklet source for CDPO."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

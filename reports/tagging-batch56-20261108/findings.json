@@ -1,0 +1,1802 @@
+[
+  {
+    "appearance_id": "e7f0d172d675fc090592",
+    "canonical_id": "cq_15024199803a7de8",
+    "qnum": "1",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "The judge declared him guilty.",
+    "options": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'guilty' functioning as object complement predicate adjective."
+  },
+  {
+    "appearance_id": "5c9f4d5d126f499bea00",
+    "canonical_id": "cq_a9e42a839c5b3252",
+    "qnum": "2",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "My sister wants to be a teacher.",
+    "options": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'wants' functioning as finite transitive verb."
+  },
+  {
+    "appearance_id": "1faa4cfbaa1b8c21d6e5",
+    "canonical_id": "cq_bd5ef95fd3d5b64e",
+    "qnum": "3",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "Night follows day.",
+    "options": [
+      "Noun",
+      "Verb",
+      "Adjective",
+      "Adverb"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'day' functioning as direct object noun."
+  },
+  {
+    "appearance_id": "58696f5e5f658d754907",
+    "canonical_id": "cq_65a47e1a1f575e64",
+    "qnum": "4",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "What did she ask you to do?",
+    "options": [
+      "Adjective",
+      "Pronoun",
+      "Adverb",
+      "Preposition"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'she' functioning as third-person feminine subject pronoun."
+  },
+  {
+    "appearance_id": "4ec81837c3cb9dd3a64e",
+    "canonical_id": "cq_e0a4cf652d2be65b",
+    "qnum": "5",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "If we finish our work quickly, we can go to the movies.",
+    "options": [
+      "Adjective",
+      "Conjunction",
+      "Adverb",
+      "Preposition"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'quickly' modifying verb phrase as adverb of manner."
+  },
+  {
+    "appearance_id": "8c100e58a22d83002411",
+    "canonical_id": "cq_1856d3fab79082d5",
+    "qnum": "6",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "I knocked on the door but nobody answered.",
+    "options": [
+      "Adverb",
+      "Conjunction",
+      "Adjective",
+      "Preposition"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'but' joining contrasting clauses as coordinating conjunction."
+  },
+  {
+    "appearance_id": "27673480cbdb9f283488",
+    "canonical_id": "cq_db58b3402ecf3e4f",
+    "qnum": "7",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "After lunch let's go out for coffee.",
+    "options": [
+      "Adverb",
+      "Verb",
+      "Noun",
+      "Preposition"
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'After' governing temporal noun phrase as preposition."
+  },
+  {
+    "appearance_id": "4cec691946b5478cef58",
+    "canonical_id": "cq_b9415dc8092e6358",
+    "qnum": "8",
+    "page": 1,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "This wood will make a good hiding place.",
+    "options": [
+      "Verb",
+      "Adverb",
+      "Adjective",
+      "Noun"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'hiding' functioning as non-finite participial verb/gerund."
+  },
+  {
+    "appearance_id": "dc1adcbbf153bf274f4f",
+    "canonical_id": "cq_a3a818bb8db0c694",
+    "qnum": "9",
+    "page": 2,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "She was made to repeat the whole story.",
+    "options": [
+      "Verb",
+      "Adverb",
+      "Adjective",
+      "Noun"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'story' functioning as direct object noun."
+  },
+  {
+    "appearance_id": "8e51697a4704b4dd6e6a",
+    "canonical_id": "cq_64aa60d01b19e8d5",
+    "qnum": "10",
+    "page": 2,
+    "topic_label": "Parts of Speech (Underlined Words)",
+    "stem": "Can you make me a cake by Monday?",
+    "options": [
+      "Verb",
+      "Adverb",
+      "Pronoun",
+      null
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Identifies 'me' functioning as indirect object personal pronoun."
+  },
+  {
+    "appearance_id": "1ac08488d9370f2f942d",
+    "canonical_id": "cq_6f4b56dc90629196",
+    "qnum": "11",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "He _________ his car on Sundays.",
+    "options": [
+      "wash",
+      "washed",
+      "washes",
+      "had washed"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects simple present tense 'washes' for habitual action occurring on Sundays."
+  },
+  {
+    "appearance_id": "1b88381c0575b1238627",
+    "canonical_id": "cq_01de8a6e1ce7583d",
+    "qnum": "12",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "My father _________ to Paris next month.",
+    "options": [
+      "went",
+      "had gone",
+      "will go",
+      "go"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects future simple tense 'will go' for scheduled future event next month."
+  },
+  {
+    "appearance_id": "467d8f8af9c685478a62",
+    "canonical_id": "cq_584213c338e6af3c",
+    "qnum": "13",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "While I _________ for you, I fell asleep.",
+    "options": [
+      "wait",
+      "waited",
+      "waits",
+      "was waiting"
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects past continuous tense 'was waiting' for action interrupted by past event."
+  },
+  {
+    "appearance_id": "d52ba91778e8f0027a5a",
+    "canonical_id": "cq_f83295c5ac45cab9",
+    "qnum": "14",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "When they arrived, I _________.",
+    "options": [
+      "bathe",
+      "was bathing",
+      "bathed",
+      "will bathe"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects verb form completing past or perfect construction."
+  },
+  {
+    "appearance_id": "6ba616deb94bd24fe631",
+    "canonical_id": "cq_c9e00ff9f3800f8f",
+    "qnum": "15",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "One of the eggs _________ broken.",
+    "options": [
+      "were",
+      "are",
+      "was",
+      "will have"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects verb form completing tense sequence."
+  },
+  {
+    "appearance_id": "96d288e79ac25c60380a",
+    "canonical_id": "cq_a641bbcfce0e3675",
+    "qnum": "16",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "His company is greatly _________ after.",
+    "options": [
+      "seek",
+      "sought",
+      "seeking",
+      "had sought"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects appropriate verb form."
+  },
+  {
+    "appearance_id": "ec45050f47e498606482",
+    "canonical_id": "cq_65570ae9124422b3",
+    "qnum": "17",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "He _________ ill since last week",
+    "options": [
+      "was",
+      "has been",
+      "had been",
+      "is"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects past simple tense indicating completed action."
+  },
+  {
+    "appearance_id": "193048b2abe3ec1e0bd9",
+    "canonical_id": "cq_a8d466f6f5bf2272",
+    "qnum": "18",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "We _________ anything from them for months.",
+    "options": [
+      "hadn't heard",
+      "haven't heard",
+      "didn't hear",
+      "haven't hear"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects present perfect or past perfect verb form."
+  },
+  {
+    "appearance_id": "6668ac9e6855053bcf9a",
+    "canonical_id": "cq_5552d17923074e9d",
+    "qnum": "19",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "I didn't know how long she _________ there.",
+    "options": [
+      "was sitting",
+      "has been sitting",
+      "had been sitting",
+      "sat"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects conditional or modal verb form."
+  },
+  {
+    "appearance_id": "dffc44c3bb940d4e69dc",
+    "canonical_id": "cq_a7f993c43922c3c1",
+    "qnum": "20",
+    "page": 2,
+    "topic_label": "Verb Forms & Tenses",
+    "stem": "If he _________ hard, he will pass.",
+    "options": [
+      "works",
+      "will work",
+      "worked",
+      "had worked"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/tenses",
+    "action": "retag",
+    "rationale": "Selects appropriate finite verb form."
+  },
+  {
+    "appearance_id": "66043ea18dd6f75bb5a2",
+    "canonical_id": "cq_18016524c3caa177",
+    "qnum": "21",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "I did not go to the show _________ I had already seen it.",
+    "options": [
+      "until",
+      "because",
+      "so",
+      "but"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects causal subordinating conjunction 'because' expressing reason."
+  },
+  {
+    "appearance_id": "07ae965dbee5262e1393",
+    "canonical_id": "cq_560d57df298a749e",
+    "qnum": "22",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "_________ he is thin, he is strong.",
+    "options": [
+      "but",
+      "as",
+      "though",
+      "because"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects concessive subordinating conjunction 'though' introducing contrast."
+  },
+  {
+    "appearance_id": "19b55640b6b6a87c8b5b",
+    "canonical_id": "cq_bd5e3debe830f438",
+    "qnum": "23",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "He was rich _________ not contented.",
+    "options": [
+      "and",
+      "but",
+      "so",
+      "though"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects adversative coordinating conjunction 'but' joining contrasting predicates."
+  },
+  {
+    "appearance_id": "12f9145a6ffc06ddd9db",
+    "canonical_id": "cq_0e05fc4225b024f9",
+    "qnum": "24",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "He must participate _________ he will be fined.",
+    "options": [
+      "as",
+      "but",
+      "or",
+      "and"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects alternative coordinating conjunction 'or' denoting consequence/threat."
+  },
+  {
+    "appearance_id": "39929219f71a65e2ad3e",
+    "canonical_id": "cq_08ceb6db6d991d68",
+    "qnum": "25",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "He must be punished _________ he is guilty.",
+    "options": [
+      "so",
+      "because",
+      "but",
+      "though"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects causal conjunction 'because' introducing reason."
+  },
+  {
+    "appearance_id": "58a711afe7cffbd5ddfa",
+    "canonical_id": "cq_6b14d0302509a2c3",
+    "qnum": "26",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "You will not get the prize _________ you deserve it.",
+    "options": [
+      "if",
+      "whether",
+      "unless",
+      "until"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects appropriate coordinating or subordinating conjunction."
+  },
+  {
+    "appearance_id": "d50d8e469f1bb6465792",
+    "canonical_id": "cq_8b13146b0bd50351",
+    "qnum": "27",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "The kidnappers will not release the child _________ the parents do not pay the ransom.",
+    "options": [
+      "if",
+      "or",
+      "when",
+      "but"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects conjunction joining clauses."
+  },
+  {
+    "appearance_id": "788025b61d1e68928396",
+    "canonical_id": "cq_01bf47ddbc9da37a",
+    "qnum": "28",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "_________ he was not invited, he did not come.",
+    "options": [
+      "so",
+      "as",
+      "for",
+      "that"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects conjunction expressing relation."
+  },
+  {
+    "appearance_id": "af1ac82754ae0011ed31",
+    "canonical_id": "cq_5219a28a44688ebe",
+    "qnum": "29",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "Give every man thy ear, _________ few thy voice.",
+    "options": [
+      "but",
+      "as",
+      "for",
+      "and"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects conjunction expressing condition or concession."
+  },
+  {
+    "appearance_id": "20f5185930c579013ed5",
+    "canonical_id": "cq_c8b86dbd670151f5",
+    "qnum": "30",
+    "page": 3,
+    "topic_label": "Conjunctions",
+    "stem": "Either you are mistaken, _________ I am.",
+    "options": [
+      "and",
+      "nor",
+      "or",
+      "but"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/parts-of-speech",
+    "action": "retag",
+    "rationale": "Selects appropriate conjunction connecting ideas."
+  },
+  {
+    "appearance_id": "b52fb1ef43c371e928e5",
+    "canonical_id": "cq_350ab6fab5402176",
+    "qnum": "31",
+    "page": 3,
+    "topic_label": "Prepositions",
+    "stem": "We went to Manali _________ train.",
+    "options": [
+      "on",
+      "in",
+      "by",
+      "with"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects spatial or temporal preposition."
+  },
+  {
+    "appearance_id": "55af56fadf679b406f35",
+    "canonical_id": "cq_2bc0550308c1f8ba",
+    "qnum": "32",
+    "page": 3,
+    "topic_label": "Prepositions",
+    "stem": "The train went _________ the tunnel.",
+    "options": [
+      "to",
+      "into",
+      "in",
+      "through"
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects spatial containment preposition."
+  },
+  {
+    "appearance_id": "b7cb865e10d3c58de351",
+    "canonical_id": "cq_82516ae3e4b9e1d3",
+    "qnum": "33",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "The moon is a barren, rocky world _________ air and water.",
+    "options": [
+      "with",
+      "of",
+      "without",
+      "in"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects preposition of privation/absence 'without' air and water."
+  },
+  {
+    "appearance_id": "a44cd6360d81686e5523",
+    "canonical_id": "cq_b4356afd0810cab1",
+    "qnum": "34",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "Students are responsible _________ any kind of irresponsible behaviour.",
+    "options": [
+      "of",
+      "for",
+      "to",
+      "with"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects dependent preposition 'for' following adjective 'responsible for'."
+  },
+  {
+    "appearance_id": "2832abb4eea5c806da14",
+    "canonical_id": "cq_2064fe0ee3899b8a",
+    "qnum": "35",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "My brother's birthday is _________ 22nd May.",
+    "options": [
+      "on",
+      "in",
+      "at",
+      "from"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects temporal preposition 'on' governing specific calendar date '22nd May'."
+  },
+  {
+    "appearance_id": "d3c3574f0e933ddc1d4d",
+    "canonical_id": "cq_484f1b7aa936cd78",
+    "qnum": "36",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "I will finish this work _________ today evening.",
+    "options": [
+      "on",
+      "at",
+      "by",
+      "for"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects temporal limit preposition 'by' today evening."
+  },
+  {
+    "appearance_id": "40c83362f1d23f987bf8",
+    "canonical_id": "cq_74182bc0a8356773",
+    "qnum": "37",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "I have been waiting for you _________ two hours.",
+    "options": [
+      "for",
+      "since",
+      "from",
+      "in"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects duration preposition 'for' governing period of two hours."
+  },
+  {
+    "appearance_id": "37cd0e4f32e9ae898972",
+    "canonical_id": "cq_2b5d6e294b1c0365",
+    "qnum": "38",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "His thoughts are identical _________ mine.",
+    "options": [
+      "as",
+      "to",
+      "with",
+      "for"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects spatial or dependent preposition."
+  },
+  {
+    "appearance_id": "ba4f8240cc69d6de53f7",
+    "canonical_id": "cq_777c017bc44c7a0f",
+    "qnum": "39",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "He was sitting with his back _________ me.",
+    "options": [
+      "from",
+      "to",
+      "in",
+      "towards"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects dependent preposition completing verbal phrase."
+  },
+  {
+    "appearance_id": "4b71044f7a8955a3d45c",
+    "canonical_id": "cq_41e95bac46fbd6be",
+    "qnum": "40",
+    "page": 4,
+    "topic_label": "Prepositions",
+    "stem": "He is prepared _________ the examinations.",
+    "options": [
+      "for",
+      "to",
+      "from",
+      "with"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar/prepositions",
+    "action": "retag",
+    "rationale": "Selects appropriate preposition completing sentence."
+  },
+  {
+    "appearance_id": "d951e77f43e8e45d1ffb",
+    "canonical_id": "cq_64c24c66c748c151",
+    "qnum": "41",
+    "page": 4,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "The match was cancelled, because it was raining.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence structure according to clause composition."
+  },
+  {
+    "appearance_id": "b85c03c1bd11907a1bef",
+    "canonical_id": "cq_e9f8d46ea249a984",
+    "qnum": "42",
+    "page": 4,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "The sky is clear; the stars are twinkling.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence with single independent clause as simple sentence."
+  },
+  {
+    "appearance_id": "a8e5174f98f5c0a4f32d",
+    "canonical_id": "cq_218c90c0a6bc469d",
+    "qnum": "43",
+    "page": 4,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "The music is too loud for my ears.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence joined by coordinating conjunction as compound sentence."
+  },
+  {
+    "appearance_id": "f57baa6eaef574ee3ebb",
+    "canonical_id": "cq_0ca0fe8d74edfc53",
+    "qnum": "44",
+    "page": 4,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "Wherever you go, you can always find beauty.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence containing dependent subordinate clause as complex sentence."
+  },
+  {
+    "appearance_id": "f6fb718e83550ef3853d",
+    "canonical_id": "cq_56347a50720ec42b",
+    "qnum": "45",
+    "page": 4,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "You can put wings on a pig, but you don't make it an eagle.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence structure according to independent and dependent clauses."
+  },
+  {
+    "appearance_id": "f82e3ece6eb3dae43423",
+    "canonical_id": "cq_19313b08473b7ffb",
+    "qnum": "46",
+    "page": 5,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "When I was younger, I believed in fairy-tales.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence introduced by subordinate temporal clause 'When I was younger' as complex sentence."
+  },
+  {
+    "appearance_id": "3ea76315357a7b84aa2a",
+    "canonical_id": "cq_b9d3a2f839bfa456",
+    "qnum": "47",
+    "page": 5,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "He got there early, and they got really good seats.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies coordinated independent clauses joined by 'and' as compound sentence."
+  },
+  {
+    "appearance_id": "103538787370b332fb2e",
+    "canonical_id": "cq_07fd749dfe3fec3c",
+    "qnum": "48",
+    "page": 5,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "Because he did not know the route well, he drove slowly.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence with subordinate causal clause 'Because he did not know...' as complex sentence."
+  },
+  {
+    "appearance_id": "45fc921b30b7ea205aea",
+    "canonical_id": "cq_ed48b2edd423c64e",
+    "qnum": "49",
+    "page": 5,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "The frog jumped and landed in the pond.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence with compound predicate sharing single subject as simple sentence."
+  },
+  {
+    "appearance_id": "b6ac4c17101541c4a371",
+    "canonical_id": "cq_84cc07fe5742fd30",
+    "qnum": "50",
+    "page": 5,
+    "topic_label": "Sentence Structure Analysis (Simple, Compound, Complex, Compound-Complex)",
+    "stem": "Jane doesn't like cartoons because they are loud, so she doesn't watch them.",
+    "options": [
+      "compound sentence",
+      "complex sentence",
+      "compound-complex sentence",
+      "simple sentence"
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Classifies sentence containing both coordinate and subordinate clauses as compound-complex sentence."
+  },
+  {
+    "appearance_id": "e1a86268e9a9eea0b17f",
+    "canonical_id": "cq_3b000f3d694129e1",
+    "qnum": "51",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "The news has been brought to us by him. (Change to Simple sentence)",
+    "options": [
+      "He brought us the news.",
+      "He has brought us the news.",
+      "He brought the news to us.",
+      "We brought the news to him."
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence structure as directed preserving semantic meaning."
+  },
+  {
+    "appearance_id": "1f0b17c1802930691b77",
+    "canonical_id": "cq_024b17c228ff7aa5",
+    "qnum": "52",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "They created such a fuss over a trivial matter. (Change to Simple sentence)",
+    "options": [
+      "Such a fuss is being created over a trivial matter.",
+      "Such a fuss was created over a trivial matter.",
+      "Such a fuss has been created over a trivial matter.",
+      "By then such a fuss has been created over a trivial matter."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence structure without alteration of meaning."
+  },
+  {
+    "appearance_id": "e00b445fa8d750ff0f21",
+    "canonical_id": "cq_b3b96440ec1e7823",
+    "qnum": "53",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "Although he was wealthy and educated, he never made a name. (Change to Simple sentence)",
+    "options": [
+      "He was wealthy and educated, but never made a name.",
+      "Inspite of being wealthy and educated, he never made a name.",
+      "He never made a name because he was wealthy and educated.",
+      "Since he was wealthy and educated, he never made a name."
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence structure according to grammatical specification."
+  },
+  {
+    "appearance_id": "b4494d918c8fb6857fb3",
+    "canonical_id": "cq_096f5a6b05df9266",
+    "qnum": "54",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "It is kind of you to visit us. (Change to Exclamatory sentence)",
+    "options": [
+      "How kind of you to visit us!",
+      "How kind it is of you to visit us!",
+      "It is so kind you visit us!",
+      "How kind of you that you visit us!"
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence structure preserving proposition."
+  },
+  {
+    "appearance_id": "9ae1b8108d7abd9576db",
+    "canonical_id": "cq_3ef3e8698566a38d",
+    "qnum": "55",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "O that I could fly like birds! (Change to Assertive sentence)",
+    "options": [
+      "How I wish I could fly like birds.",
+      "I wish that I could fly like birds.",
+      "I wish to fly like birds.",
+      "How I wish to fly like birds."
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence as directed."
+  },
+  {
+    "appearance_id": "889668a97579e2d69587",
+    "canonical_id": "cq_0d7877deb4296972",
+    "qnum": "56",
+    "page": 5,
+    "topic_label": "Sentence Transformation",
+    "stem": "If you speak the truth, you will be honoured. (Change to Compound sentence)",
+    "options": [
+      "Speak the truth and you will be honoured.",
+      "Speak the truth to be honoured.",
+      "Speaking the truth will honour you.",
+      "Speak the truth so that you would be honoured."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms sentence structure as directed."
+  },
+  {
+    "appearance_id": "f8d04b7767c308b5f8e7",
+    "canonical_id": "cq_f034145ae1639e1b",
+    "qnum": "57",
+    "page": 6,
+    "topic_label": "Sentence Transformation",
+    "stem": "He worked hard to earn money. (Change to Complex sentence)",
+    "options": [
+      "He worked hard as to earn money.",
+      "He worked hard and earn money.",
+      "He worked hard that he might earn money.",
+      "He worked hard so he could earn money."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms simple sentence into complex sentence with purpose clause 'that he might earn money'."
+  },
+  {
+    "appearance_id": "fe6353ec79c7ee941ecf",
+    "canonical_id": "cq_bc24b49badae5fc1",
+    "qnum": "58",
+    "page": 6,
+    "topic_label": "Sentence Transformation",
+    "stem": "He is better than any other student. (Change to Superlative degree)",
+    "options": [
+      "He is best than other studens.",
+      "He is best of the students.",
+      "He is best student of all.",
+      "He is the best student."
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms comparative degree into superlative degree 'He is the best student'."
+  },
+  {
+    "appearance_id": "b87696c15e01c5e48ec2",
+    "canonical_id": "cq_9b96b21b9eaf49f7",
+    "qnum": "59",
+    "page": 6,
+    "topic_label": "Sentence Transformation",
+    "stem": "The patient is so weak that he cannot move about. (Change to Simple sentence)",
+    "options": [
+      "The patient is too weak and cannot move about.",
+      "The patient is too weak to move about.",
+      "The patient cannot move about as he is too weak.",
+      "Because the patient is too weak, he cannot move about."
+    ],
+    "answer_index": 1,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms complex sentence with result clause into simple sentence with 'too weak to move about'."
+  },
+  {
+    "appearance_id": "f21ba43f6a39eb5c8101",
+    "canonical_id": "cq_e4f7da4bcf913e32",
+    "qnum": "60",
+    "page": 6,
+    "topic_label": "Sentence Transformation",
+    "stem": "No other boy in the class is as tall as John. (Use Comparative degree)",
+    "options": [
+      "John is the tallest boy in class.",
+      "John is taller of all the boys in the class.",
+      "John is taller than any other boy in the class.",
+      "John is taller than many boys in the class."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Transforms positive degree into comparative degree 'John is taller than any other boy in the class'."
+  },
+  {
+    "appearance_id": "1929cebea8ab00695328",
+    "canonical_id": "cq_d65d8802a76901ee",
+    "qnum": "61",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "The dinner was over. The guests were shown out. They got into their cars.",
+    "options": [
+      "The dinner was over and the guests got into their cars as they were shown out.",
+      "The dinner having been over, the guests were shown out to get into their cars.",
+      "As the dinner was over, the guests were shown out and got into their cars.",
+      "The dinner getting over, the guests were shown out and they got into their cars."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises three clauses into single sentence using participial absolute phrase."
+  },
+  {
+    "appearance_id": "411a5b826a47ab3f803d",
+    "canonical_id": "cq_c9717670626a822d",
+    "qnum": "62",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "It is very hot. One cannot go out.",
+    "options": [
+      "It is too hot to go out.",
+      "It is very hot and one cannot go out.",
+      "One cannot go out as it is very hot.",
+      "It is too hot and one cannot go out."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises clauses into single periodic sentence."
+  },
+  {
+    "appearance_id": "1f2c6bd9cb13d56830b0",
+    "canonical_id": "cq_480a28ccb54f6cc1",
+    "qnum": "63",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "She stood on tip-toe. She reached for the mangoes on the tree.",
+    "options": [
+      "She reached for the mangoes on the tree by standing tip-toed.",
+      "She reached for the mangoes on tree when she stood on tip-toe.",
+      "Standing on tip-toe she reached for the mangoes on the tree.",
+      "She reached the mangoes on the tree standing on tip-toe."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences into single compound or complex structure."
+  },
+  {
+    "appearance_id": "f4a14f89b98d6a7a2b9b",
+    "canonical_id": "cq_e297719527bcba6b",
+    "qnum": "64",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "I must finish this novel. There are still few chapters.",
+    "options": [
+      "I still have few chapters in the novel to finish.",
+      "I still have few chapters in the novel before I finish.",
+      "Few chapters are still left for me to finish the novel.",
+      "There a still few chapters for me to finish the novel."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences into coherent single sentence."
+  },
+  {
+    "appearance_id": "b569426fecc3d275bb80",
+    "canonical_id": "cq_1534a8ad023f62e4",
+    "qnum": "65",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "They decided to start a travel group. All agreed to this.",
+    "options": [
+      "They all agreed to start a travel group.",
+      "They jointly decided to start a travel group.",
+      "They agreed to jointly start a travel group.",
+      "They unanimously decided to start a travel group."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences into single complex sentence using relative clause."
+  },
+  {
+    "appearance_id": "07e2dc2aee0fa8877986",
+    "canonical_id": "cq_f872f5dbd82a0aaf",
+    "qnum": "66",
+    "page": 6,
+    "topic_label": "Sentence Synthesis",
+    "stem": "Ani speaks English. She also speaks French.",
+    "options": [
+      "Ani speaks English as well as French.",
+      "Ani speaks English apart from French.",
+      "Ani speaks both English and French.",
+      "Ani speaks English and French."
+    ],
+    "answer_index": 0,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences using conjunctions or participial structures."
+  },
+  {
+    "appearance_id": "b469d2d81d1d95af28a1",
+    "canonical_id": "cq_918d534aed9c47c6",
+    "qnum": "67",
+    "page": 7,
+    "topic_label": "Sentence Synthesis",
+    "stem": "Get inside. You may catch cold.",
+    "options": [
+      "Get inside else you may catch cold.",
+      "You may catch cold, get inside.",
+      "Get inside, otherwise you may catch cold.",
+      "Get inside or you may catch cold."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises alternatives into single sentence using alternative coordinator 'or / otherwise'."
+  },
+  {
+    "appearance_id": "4d6128ee0328c92f66b3",
+    "canonical_id": "cq_c64c713cfbb6ab3e",
+    "qnum": "68",
+    "page": 7,
+    "topic_label": "Sentence Synthesis",
+    "stem": "She was honest. This was his statement. It was right.",
+    "options": [
+      "He rightly said in his statement that she was honest.",
+      "She was rightly said as honest in his statement.",
+      "His statement was right in which he said she was honest.",
+      "His statement that she was honest was right."
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises three propositions into single sentence with noun clause in apposition 'His statement that she was honest was right'."
+  },
+  {
+    "appearance_id": "3cba88457b31c3a034c1",
+    "canonical_id": "cq_84262dca97c0d663",
+    "qnum": "69",
+    "page": 7,
+    "topic_label": "Sentence Synthesis",
+    "stem": "Mohan is industrious. He is very particular in his work.",
+    "options": [
+      "Mohan is very particular in his work as he is industrious.",
+      "Mohan is not only industrious but also very particular in his work.",
+      "Mohan is industrious and particular in his work.",
+      "Mohan is industrious as well as particular in his work."
+    ],
+    "answer_index": 3,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences using correlative conjunction 'not only... but also'."
+  },
+  {
+    "appearance_id": "e8ddb0f751f510c31f08",
+    "canonical_id": "cq_012a755f36154be0",
+    "qnum": "70",
+    "page": 7,
+    "topic_label": "Sentence Synthesis",
+    "stem": "James is my friend. He is the son of a doctor.",
+    "options": [
+      "James is my friend and is the son of a doctor.",
+      "James who is my friend is also the son of a doctor.",
+      "James, my friend, is the son of a doctor.",
+      "James, my friend, who is the son of a doctor."
+    ],
+    "answer_index": 2,
+    "target_path": "english/grammar",
+    "action": "keep",
+    "rationale": "Synthesises sentences using noun phrase in apposition 'James, my friend, is the son of a doctor'."
+  },
+  {
+    "appearance_id": "c24c433c942f46450256",
+    "canonical_id": "cq_fa06f912aab57033",
+    "qnum": "71",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Exotic",
+    "options": [
+      "Beautiful",
+      "Colorful",
+      "Excellent",
+      "Unusual"
+    ],
+    "answer_index": 3,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest synonym of 'Exotic'."
+  },
+  {
+    "appearance_id": "c16a6c824f1da1e6f5a1",
+    "canonical_id": "cq_da5bd0443bd68e68",
+    "qnum": "72",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Rectify",
+    "options": [
+      "Connect",
+      "Mend",
+      "Resolve",
+      "Solve"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "2411e399010b32cd7c1a",
+    "canonical_id": "cq_f3acd4ba36735f8c",
+    "qnum": "73",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Bluster",
+    "options": [
+      "Abuse",
+      "Tolerate",
+      "Suffer",
+      "Threat"
+    ],
+    "answer_index": 3,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "f49b44a6e4e65f20b538",
+    "canonical_id": "cq_80299572c72591bd",
+    "qnum": "74",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Reticence",
+    "options": [
+      "Reserve",
+      "Sincerity",
+      "Frankness",
+      "Generosity"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "b7d8f2a8383ef8258a78",
+    "canonical_id": "cq_97c23f1f8304b3a5",
+    "qnum": "75",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Brash",
+    "options": [
+      "Slow",
+      "Cultured",
+      "Aggressive",
+      "Humble"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "d6dcbec2c9e61c9404c7",
+    "canonical_id": "cq_d46cbbdff65a86a0",
+    "qnum": "76",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Renegade",
+    "options": [
+      "Rebel",
+      "Substitute",
+      "Informer",
+      "Reformer"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "d0f7d2af5cf3973a53ea",
+    "canonical_id": "cq_dd53396853bd8e70",
+    "qnum": "77",
+    "page": 7,
+    "topic_label": "Synonyms",
+    "stem": "Retribution",
+    "options": [
+      "Contempt",
+      "Revenge",
+      "Punishment",
+      "Discount"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest lexical synonym of target headword."
+  },
+  {
+    "appearance_id": "fc9d91b0abf42acb04c8",
+    "canonical_id": "cq_35530874d0ea5ca2",
+    "qnum": "78",
+    "page": 8,
+    "topic_label": "Synonyms",
+    "stem": "Haggle",
+    "options": [
+      "Crisis",
+      "Impeach",
+      "Ignore",
+      "Bargain"
+    ],
+    "answer_index": 3,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest synonym of 'Haggle' as 'Bargain'."
+  },
+  {
+    "appearance_id": "c298828da82d8cfe58d0",
+    "canonical_id": "cq_a78a282216f9b623",
+    "qnum": "79",
+    "page": 8,
+    "topic_label": "Synonyms",
+    "stem": "Connoisseur",
+    "options": [
+      "Lover of art",
+      "Ignorant",
+      "Stubborn",
+      "Violent"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest synonym of 'Connoisseur' as 'Lover of art'."
+  },
+  {
+    "appearance_id": "c3195532f23656ec51c2",
+    "canonical_id": "cq_51b91b5b5f079879",
+    "qnum": "80",
+    "page": 8,
+    "topic_label": "Synonyms",
+    "stem": "Zenith",
+    "options": [
+      "Middle",
+      "Under",
+      "Pinnacle",
+      "Nadir"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/synonyms",
+    "action": "retag",
+    "rationale": "Identifies closest synonym of 'Zenith' as 'Pinnacle'."
+  },
+  {
+    "appearance_id": "de0bce4ba08527d43c3c",
+    "canonical_id": "cq_dbeaea5573cf8211",
+    "qnum": "81",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "A remedy for all diseases.",
+    "options": [
+      "Narcotics",
+      "Antiseptic",
+      "Panacea",
+      "Lyric"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies universal remedy for all diseases as 'Panacea'."
+  },
+  {
+    "appearance_id": "07303b7dda85a7de7ae2",
+    "canonical_id": "cq_56edb53ce50114cf",
+    "qnum": "82",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "One who has good taste for food.",
+    "options": [
+      "Gourmet",
+      "Curator",
+      "Parasite",
+      "Stoic"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies person with refined taste for food as 'Gourmet'."
+  },
+  {
+    "appearance_id": "b3765490c23bf8bf6dff",
+    "canonical_id": "cq_2dec366d091bfc02",
+    "qnum": "83",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "Occuring at irregular intervals in time.",
+    "options": [
+      "Endemic",
+      "Temporal",
+      "Sporadic",
+      "Epidemic"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "keep",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "a619eb50be072186f878",
+    "canonical_id": "cq_bf0b4e088d0492e2",
+    "qnum": "84",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "Something kept as a reminder of an event.",
+    "options": [
+      "Souvenir",
+      "Antique",
+      "Trophy",
+      "Prize"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "keep",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "5db99eb7391bf07e70a7",
+    "canonical_id": "cq_8793135b5a7f73df",
+    "qnum": "85",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "Unfair advantages for members of one's own family.",
+    "options": [
+      "Optimism",
+      "Plagiarism",
+      "Nepotism",
+      "Regionalism"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "334d537565f24ca266c9",
+    "canonical_id": "cq_b3c397444c820c6a",
+    "qnum": "86",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "Done with good judgment.",
+    "options": [
+      "Judicious",
+      "Judicial",
+      "Eminent",
+      "Enviable"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "54aff99bb261ab8dacc3",
+    "canonical_id": "cq_cf596d86e75353af",
+    "qnum": "87",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "A broad road bordered with trees.",
+    "options": [
+      "Boudoir",
+      "Avenue",
+      "Boulevard",
+      "Fa\u00e7ade"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "44da31c0e6e742553c69",
+    "canonical_id": "cq_5020ffbe17e6ada4",
+    "qnum": "88",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "A doctor who specializes in diseases of the nose.",
+    "options": [
+      "Rhinologist",
+      "Otologist",
+      "Pathologist",
+      "Podiatrist"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "ac663a569a844bd29dfb",
+    "canonical_id": "cq_475f68a9e8723c54",
+    "qnum": "89",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "Incapable of being seen through.",
+    "options": [
+      "Brittle",
+      "Opaque",
+      "Ductile",
+      "Transparent"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "f9b83c79c660517bd4b8",
+    "canonical_id": "cq_aa490aee4b44144f",
+    "qnum": "90",
+    "page": 8,
+    "topic_label": "One-Word Substitution",
+    "stem": "A geometrical figure with eight sides.",
+    "options": [
+      "Parallelogram",
+      "Pentagon",
+      "Hexagon",
+      "Octagon"
+    ],
+    "answer_index": 3,
+    "target_path": "english/vocabulary/one-word-substitution",
+    "action": "retag",
+    "rationale": "Identifies concise single-word equivalent for given definition."
+  },
+  {
+    "appearance_id": "85d2e91e7ca2ece3f2d7",
+    "canonical_id": "cq_c126a59c7c1d25b5",
+    "qnum": "91",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "He wants to get a better _______ and earn more money.",
+    "options": [
+      "employ",
+      "job",
+      "work",
+      "employment"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects count noun 'job' in collocation 'get a better job'."
+  },
+  {
+    "appearance_id": "54bbf130c0d779e71352",
+    "canonical_id": "cq_6cbadfc75f4f17b6",
+    "qnum": "92",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "Managers who are ambitious are ________ oriented managers.",
+    "options": [
+      "socially",
+      "success",
+      "well",
+      "non"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects noun adjunct 'success' in compound 'success-oriented managers'."
+  },
+  {
+    "appearance_id": "c99810aa7ffd6c06f782",
+    "canonical_id": "cq_454ac56a01b4d0f7",
+    "qnum": "93",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "We haven't had _______ news from our agent.",
+    "options": [
+      "some",
+      "any",
+      "no",
+      "none"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects negative polarity determiner 'any' in 'haven\\'t had any news'."
+  },
+  {
+    "appearance_id": "f8223e2fc5d95966cea6",
+    "canonical_id": "cq_9620a73b6097d97a",
+    "qnum": "94",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "Be quiet! Its rude to __________ people when they are speaking.",
+    "options": [
+      "interfere",
+      "interrupt",
+      "prevent",
+      "introduce"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects transitive verb 'interrupt' in speech context."
+  },
+  {
+    "appearance_id": "2d1e2fd6481b2ac2dbf9",
+    "canonical_id": "cq_e6e5ae9b97263391",
+    "qnum": "95",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "The businessman proved to be an apparently well-behaved ________ middle aged man.",
+    "options": [
+      "offensive",
+      "unoffending",
+      "inoffensive",
+      "innocent"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually fitting adjective modifying middle-aged man."
+  },
+  {
+    "appearance_id": "58c57ada1624346ca42a",
+    "canonical_id": "cq_4830b1448802a074",
+    "qnum": "96",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "The local tourist bureau will send you _______ about hotels in the area.",
+    "options": [
+      "knowledge",
+      "information",
+      "news",
+      "notice"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually appropriate word completing sentence meaning."
+  },
+  {
+    "appearance_id": "85230a3c8a1ab967b7ba",
+    "canonical_id": "cq_e51ac2cd4f9c0ce9",
+    "qnum": "97",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "I cut my finger on a rusty tin and it became badly _______.",
+    "options": [
+      "infected",
+      "affected",
+      "effected",
+      "diseased"
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually appropriate word completing sentence meaning."
+  },
+  {
+    "appearance_id": "4d4ea72da243045afc64",
+    "canonical_id": "cq_a9a5ac1936b13c41",
+    "qnum": "98",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "Teachers are doing _______ work.",
+    "options": [
+      "innovative",
+      "inventive",
+      "inovative",
+      null
+    ],
+    "answer_index": 0,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually appropriate word completing sentence meaning."
+  },
+  {
+    "appearance_id": "d081feac35c930edd6ca",
+    "canonical_id": "cq_37bae35c9ea195c4",
+    "qnum": "99",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "The manager is usually calm but today he appears rather _______.",
+    "options": [
+      "unwell",
+      "disturbed",
+      "restless",
+      "humorous"
+    ],
+    "answer_index": 2,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually appropriate word completing sentence meaning."
+  },
+  {
+    "appearance_id": "68f7d70e8a7b08051737",
+    "canonical_id": "cq_90bae77b79694142",
+    "qnum": "100",
+    "page": 9,
+    "topic_label": "Contextual Vocabulary & Collocations",
+    "stem": "You won't be allowed into the club _______ you wear a suit and tie.",
+    "options": [
+      "if",
+      "unless",
+      "whether",
+      "apart"
+    ],
+    "answer_index": 1,
+    "target_path": "english/vocabulary",
+    "action": "retag",
+    "rationale": "Selects contextually appropriate word completing sentence meaning."
+  }
+]

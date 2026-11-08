@@ -1,0 +1,35 @@
+{
+  "batch": 55,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2021-2022/Jr. Gr. of MAH Vety General English Paper-II.pdf",
+      "paper_title": "General Competitive Examinations for Recruitment to the Post of Junior Grade of MAH & VS (Veterinary Officer) \u2014 General English Paper II (November 2021)",
+      "document_id": "doc_fbd803035525d42a414da40f",
+      "sha256": "9321bbe52f79ff14f596c272b2c7ceda6dcfabee9bb86f5dffa1bfa39f7e6d17",
+      "targets": 100
+    }
+  ],
+  "targets": 100,
+  "completion": "100% paper completion achieved for Jr. Gr. of MAH & VS General English Paper-II (100/100 MCQs)",
+  "actions": {
+    "retag": 70,
+    "keep": 30
+  },
+  "unextracted_items_preserved": 0,
+  "conventional_marks_preserved": 0,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 23,
+    "english/grammar/tenses": 10,
+    "english/grammar/prepositions": 7,
+    "english/grammar": 30,
+    "english/vocabulary/one-word-substitution": 10,
+    "english/vocabulary/synonyms": 10,
+    "english/vocabulary/antonyms": 10
+  },
+  "source_defects": [
+    "Q1\u2013Q10 Underlined Target Words in PDF Geometry: Target words in parts of speech questions (admiration, comfortable, about, down, book, As, Some, need, What!, They) were rendered with vector line strokes in the PDF stream; verified via exact PyMuPDF geometry.",
+    "Q81\u2013Q100 Underlined Words in Synonyms & Antonyms: Target words in vocabulary sections were underlined with vector geometry in the original printed booklet."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

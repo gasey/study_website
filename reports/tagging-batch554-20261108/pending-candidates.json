@@ -1,0 +1,1952 @@
+[
+  {
+    "canonical_id": "cq_67e71a7c5584f2f6",
+    "appearance_id": "f3685cc8bb8953226be1",
+    "source_fingerprint": "225bfda97652ca000079bd15d5111725592f20d985331ef7ec2258fb65047e1e",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd9d1f00337914d5",
+    "appearance_id": "0246d16f50195da46426",
+    "source_fingerprint": "5e8eec960397334c62b73d96d72c760afff4ff7960c29723ddf2b08565e6041c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1564a88cb5f7465",
+    "appearance_id": "cbc56ea5412734e84411",
+    "source_fingerprint": "15fe3db5c5d8005f70869ca0cba36693f7bfab2a91b7ff6fd673ac4638eb46cd",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_464d3e3e42c33c68",
+    "appearance_id": "a224fd62aa8d901f32b8",
+    "source_fingerprint": "ba39fe7f30754e80fea866849d4417a3877d4f462afe4cad8c9dca280b4404d4",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57d2b6144d5edf75",
+    "appearance_id": "f90af773d8364575f72f",
+    "source_fingerprint": "b68cb77c62d0f02e36fc17667aa919d98a97648cc10ca75cd7f3bd4e7a11cc5b",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2b888882487f5641",
+    "appearance_id": "7ffaec9cf4f9c7f0349c",
+    "source_fingerprint": "43582b722134662b635815baa39a90fbd6e489e1ee03b4d2995d842b584d5acb",
+    "current_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_20a599b595e5898b",
+    "appearance_id": "ab34715025256e3e23d5",
+    "source_fingerprint": "c98e2147ed200684141cbf76cd743b15b998a7d4aa412a0afc8785775739abce",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_34c5a1f3ab8f5ad1",
+    "appearance_id": "af935c6ad5ae2f0e44f6",
+    "source_fingerprint": "7fe2f27c04fff334e9e6b93fc7b490f4c422adbd8a3d339575112fd6af1fc3e8",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ed229e01c0706440",
+    "appearance_id": "272d7f55e30f8b0cf972",
+    "source_fingerprint": "2f68a076123e96fa51efbdf21ee1cdfbfe08b58166f923540d2e9820e0813e26",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e1e22f0682f69ece",
+    "appearance_id": "55117f708d6d3d473161",
+    "source_fingerprint": "f0c0623f8cdf26e3617965d058ecfa7c667ce346c2c39b175ddff98dc82ee08d",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1923a108cc0c8fe5",
+    "appearance_id": "0641076fc9a6432d6d75",
+    "source_fingerprint": "96b6952b049738579d85036bf1bc8ea62e460567beab9b8360c614c64c1a5e2e",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e260f85df1bae2cc",
+    "appearance_id": "c1d017319ea42b25e5cc",
+    "source_fingerprint": "8db14ac9dac1999f55df804774ca1dd29573d00dfde195d1f5744748d0d5969b",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66c8138fc3215f9e",
+    "appearance_id": "616849c1c1aed39c5f5a",
+    "source_fingerprint": "7d75441d56559966bc0a685c5615a566920ca2f76d97d3f61104871a91d047a6",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3ec0407d56ab6b1",
+    "appearance_id": "60f83f7178707df4339d",
+    "source_fingerprint": "5cba59a11461e12249b629a600bf33ccba0762d7ff622be2b35ca848ed86121a",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4cde22d0c6ba08a9",
+    "appearance_id": "b0af798ecd179ce609c8",
+    "source_fingerprint": "729a5dead7c1665afd3753463e12d208d5b0b29d321dca9074da505bfd9cadbe",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c93e2b3e6443ff3b",
+    "appearance_id": "552b63f77d0b0af5aee5",
+    "source_fingerprint": "2ef1cad5d9476dfe37466ba236f9a0077257b2d5cea57eb15229053413c3d01a",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5bd1f2e1a58240b0",
+    "appearance_id": "7071496754957fd0f4a0",
+    "source_fingerprint": "71d842362e677d3250fc16c87fca76fdab04945b88b90d2a3f1a13fb8479b967",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b2cd068b08dd199",
+    "appearance_id": "87333a1feed175af2859",
+    "source_fingerprint": "f6f8bd4b12f8f73502f65a12b5cbda213cce301da4ed455b300100b67d13e7ba",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3107390197e3a16e",
+    "appearance_id": "9b04c415a7717e547dbd",
+    "source_fingerprint": "a25d143c8b28e257e2f7ca8c8e2b3b4e8f7f776c329440c2c6a9fca83a870164",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f6d39b3a8d0c11f7",
+    "appearance_id": "c19761771ae791537150",
+    "source_fingerprint": "83f7afa1eb1f5349a710a3753d46ed72d483f9f6154a32fe958ccbb7a40218a2",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/digital-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses digital electronics: Combinational logic, sequential circuits, and digital IC operation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Digital electronics: Combinational logic, sequential circuits, and digital IC operation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6e8a76f920ebf23",
+    "appearance_id": "e29a315291a58ed2b13e",
+    "source_fingerprint": "8f098621f0862251f0c41e05d4629bbf6faa6f8c684fab2bca1bc05a92db4ff3",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4ae4c47ce7ddc607",
+    "appearance_id": "35675fa0225af6e63703",
+    "source_fingerprint": "e604877085053f8dbda4e5883453e5fdbcb7edd0e850be2de6bf5c0ee23b39a7",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9787c7ccd0c71a96",
+    "appearance_id": "9fab4d86504dffd9e218",
+    "source_fingerprint": "87e1c4a4d8af09b2197522c5632bddf7eb22a0a31ed0a7ae764e6c196484ea7b",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a3170be8a1a28c6",
+    "appearance_id": "14e25dbef0b4d7b40a96",
+    "source_fingerprint": "c24c01e415ed0bba7b7c5b1d30c8db9945d04ab193fc5789607441b671a7a7c9",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58021b98419be82c",
+    "appearance_id": "e98a318ae5c871f62c2d",
+    "source_fingerprint": "ec9159fc704085c41e8933dc1c56cdc01b0303d0f14f16b35da5afe4e167b2d4",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f1fe1de1c357c4b",
+    "appearance_id": "b4f88efcd6c881d43e40",
+    "source_fingerprint": "a0cc7a94d8b033e37d45dade9498f6c9b8f4fd42f36a22389218010c8d4638e5",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f38ec882f95168f2",
+    "appearance_id": "9966101a2d4a7f819783",
+    "source_fingerprint": "9f1164d1abf6e99fc164fb154e87345f42df58899e9f65dbcf6ef16ac2c41503",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_70a2d8601fef1639",
+    "appearance_id": "848789f9c2574ac8fd28",
+    "source_fingerprint": "301b58be5ed5e6665c2b600fb83fe6ed7db282d6b52f84d3346b185510881888",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/digital-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses digital electronics: Combinational logic, sequential circuits, and digital IC operation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Digital electronics: Combinational logic, sequential circuits, and digital IC operation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_28159becb812ba31",
+    "appearance_id": "e60c63c8a9819c4a337b",
+    "source_fingerprint": "00ffe3802ae551a0715b7bd18a950ba11d6dc905d42e00011d9aacc85ba44274",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0f2f591f7d75e03d",
+    "appearance_id": "1fb4e76678e8e27b73e0",
+    "source_fingerprint": "e5bfc5bcb77a918c6aa6fc72f03bd779b884141c8c2737251d32201fc09e8ba5",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3d711e02e206fffa",
+    "appearance_id": "ead4ba710d34ce4d335a",
+    "source_fingerprint": "0982fb51572dbf9303e4be3998b2c92b6fb576530521e2afee5eb0441c9432b9",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_194250f1b274355e",
+    "appearance_id": "c06af72827c7fa2c9aa4",
+    "source_fingerprint": "fa29a36baa3cb9e3e983aca69d58982667c1d33850e076eec0a7b321b2107812",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f374919a6eaeb5d2",
+    "appearance_id": "16c3162bdb7592f796a7",
+    "source_fingerprint": "27dfdf8fcf0fe1ee7300a0894d3e6288fcbe79cb7c6ee8f545d1771e5134e689",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c84232f3f6edbccf",
+    "appearance_id": "e44d5334c79813ce1e57",
+    "source_fingerprint": "fbf1349af25974a8552184e2aa91f9e0f710a0a24622a58b6ef2799c61a2d7bc",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d61774b0d9b102b",
+    "appearance_id": "57daf50d2d292ce625c7",
+    "source_fingerprint": "2e0369aa4e85d74852279e35ba7c6e011f893e8227da4c550e4c170bb2b35776",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e04e4e2dba597d24",
+    "appearance_id": "30b29914af9c06ac1fa1",
+    "source_fingerprint": "67b959ace8829912afed12aa5293dd5f8fd6438c100f1283e1e13a610dd772d7",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9eefa032d6827d12",
+    "appearance_id": "6c1f72df9728e5e4a715",
+    "source_fingerprint": "66ec0191f031fb7be975785eeac4694fa8db6d1f845c322b9a45ae251eeec19f",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c573f74c60793722",
+    "appearance_id": "d6509261db52af8842fb",
+    "source_fingerprint": "68725cec8213361f68929a9441dbe667ef9dcb1b438bf3f9a1baf42e3ebb3603",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4a7031f5eb075a7",
+    "appearance_id": "4cad59a13a051bba5197",
+    "source_fingerprint": "e052a6867597c9457351aee3dd51cde394a1a1ed27cbc30f34c75605e7878f3a",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c061b03a469f0bcd",
+    "appearance_id": "14ac89d4a67028211ebe",
+    "source_fingerprint": "837131e2266fb5503ad4ad1cbdf0b4bead5a9ba4f8ab3b7bbda9693e4c0fef73",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bcda8afbdd3a35ab",
+    "appearance_id": "55f8cee96c2eb6b33995",
+    "source_fingerprint": "578916f0023e630bac316cdcfae950e2bf620d42998fe3d2c5016155ef545658",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_317616675e323a0e",
+    "appearance_id": "926644a9ba31ac411dc2",
+    "source_fingerprint": "3f8ccdf19668d9f6022df3ac6a2b507d13fe11315dd773b317700437347fe9f7",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6909751ce64a2647",
+    "appearance_id": "358dcb69c3dbcfc8219b",
+    "source_fingerprint": "dab1b7893d8fc1d76515e8502154b06a826b5b83bad7279e2b36591b3c2911dd",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8ee1c95eacd4dac5",
+    "appearance_id": "5988c13b2a4084054901",
+    "source_fingerprint": "ad9962ff009c62f8f5da882a4b906c1a12f1b89f0fb9c701385becea91421fe0",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_35878e9cdb454263",
+    "appearance_id": "620f078ad53b18cc720c",
+    "source_fingerprint": "c7155f0438032e38f47a45c5f77809c220a8892beebdca293bfaed4c3e73285e",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4d823c9c2ef977f1",
+    "appearance_id": "eb1e729e02a7f5b35fbd",
+    "source_fingerprint": "cafb1a50dd9160b8e1535789f5190d3f0e2415044b789ff7c499b6ad3029cd8e",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/communication-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses communication systems: Analog and digital signal transmission, modulation, and wave propagation. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Communication systems: Analog and digital signal transmission, modulation, and wave propagation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_411ce8614c3ffd7a",
+    "appearance_id": "8bb00e03395e70babda8",
+    "source_fingerprint": "d7759c866970d8a1320e946e57aebc2ac7b78123e273ee92714dd83144d92a4c",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36085a30d98fb32d",
+    "appearance_id": "9abd1ef161429cba7128",
+    "source_fingerprint": "b5909fd67ee1aad9777832c4e4d1ba01a44bf867928ad7e777cbb679693d0bfa",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd6b198b5b05aaba",
+    "appearance_id": "471df178a4c38f174aa1",
+    "source_fingerprint": "4044b6e7060c39a7e5923cf0e957ea9bc037a5fd06cc13d9021e40a9417e29e8",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7547e01a1341c1bc",
+    "appearance_id": "0b0afbd1f4852236d1d8",
+    "source_fingerprint": "06d289e74b61b979130ae4faabd5cf7c027b7150565caef41d6dfc23de78c3fb",
+    "current_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electronics-and-communication",
+      "topic_id": "electronics-and-communication/analog-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses analog electronics: BJT, FET, operational amplifiers, and small-signal amplification. Appropriately classified under electronics-and-communication.",
+    "tested_skill": "Analog electronics: BJT, FET, operational amplifiers, and small-signal amplification.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_d28f93bf5a15e3796e71f351",
+      "sha256": "95d6f837b134f70b3c785ccd8307ee646ee1b8d5d1158871a6188a63f3167df6",
+      "note": "Verified against registered booklet source for Junior Grade of Mizoram Engineering Service."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

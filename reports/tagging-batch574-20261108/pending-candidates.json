@@ -1,0 +1,977 @@
+[
+  {
+    "canonical_id": "cq_262907d30e876355",
+    "appearance_id": "ca498ebd1fedc412ac2d",
+    "source_fingerprint": "d0a7c28ab352f103f9df01f7fa15377be14665fcf67b35a382ab3af848d06bd1",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33195042d58ad305",
+    "appearance_id": "36c2b573ad390a7d19a4",
+    "source_fingerprint": "2f7bde00ff8105a1dd4e9df2c82a6c8e73bde5e16dcb8d1b2dab5621c31fffe2",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_135b0820c59f6fdd",
+    "appearance_id": "2c1b840935315f1fcb09",
+    "source_fingerprint": "701d04537689067484febd5701f6feddea47e3016f48561beb9d772f1cf64622",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9968bbb073f4c2a9",
+    "appearance_id": "0f74f72bdf7c3798f903",
+    "source_fingerprint": "21f64967df9b32c8576ac913415ae4a59bacfea568735888c244870649527202",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_529774ba8b3eb3d1",
+    "appearance_id": "bda701f45e9871af958a",
+    "source_fingerprint": "655f4e285a68b63f21ed02b7c71991ab304410192a097f92a8e1a960f2dca8ba",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e415291c100846d2",
+    "appearance_id": "5ed1e27bb3eaac616965",
+    "source_fingerprint": "a0a56779e57e73922246ed8eea57ef19be1ec59c0c087ad8832f9d8baf1c6c94",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_18a8f55140b6938e",
+    "appearance_id": "e7537d7e6ed8cf0893a9",
+    "source_fingerprint": "2ffd79901d4ff068d3e3d43d3973a55f99021b77f261e8837320371c07fac1f4",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_146e4866a896bc5f",
+    "appearance_id": "003697a413a20e5a673f",
+    "source_fingerprint": "831aed927e5eee558673a81f3edcbdafc399975bd4e77839e4b77008bbe24b12",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7e25d8465eb1f2a",
+    "appearance_id": "f1ed73aa83aed167c977",
+    "source_fingerprint": "d9adcf2d8b8a24fd57a07edb4f7bd83d779fe5945ed5e58446d75f847ba29bc1",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98120d0cb2c9eb3d",
+    "appearance_id": "1fd9ca23762a64aa4251",
+    "source_fingerprint": "a7ac7f420e0756ef53a262ffa20f18a2a05027d1127cad9ab700a582fb3f83ef",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32e29127ba8c93be",
+    "appearance_id": "f5992f2a82852116dcb5",
+    "source_fingerprint": "3115dcd8beba2a2def7851c11581422f8b11c9580d0395883371d0d3dedd9591",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aecaf2a7c328be20",
+    "appearance_id": "60cfe8653b7d9342db67",
+    "source_fingerprint": "229eba26156b6b6231f395e0b8171f0ce4c1fb6639905b0a231b27e7fad5ed6f",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_10d0f714f1c86885",
+    "appearance_id": "93c00d1925373800b921",
+    "source_fingerprint": "48331f4fd6a61bd769194a3da545932d033f50c563d3e8f0f78dfb3c77cae011",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccbae6790e432dbc",
+    "appearance_id": "7d5d055ad21ebaf147bc",
+    "source_fingerprint": "5574badb435ceed08d0d75f3d5d7d4c10940146954543b1ff60764079e772a89",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_193d355ee4b89c39",
+    "appearance_id": "c99455c7dc75a2845b1a",
+    "source_fingerprint": "0e3bd6cb7fc4bb1dc4dd2aa69224aab0c2c9ccdf68e7dee0668ef0559700341b",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e36f772124835847",
+    "appearance_id": "68642813865295d0b420",
+    "source_fingerprint": "6569d17a29170f57c0ba1c91ae33e967e8dc8520ed2b4b23c0050781d3d6c08a",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ba58a16ba053b43",
+    "appearance_id": "f9e0acfcc12c24f8fc57",
+    "source_fingerprint": "7cf6ece8d55eee683e9aa6693f91510fbaa76f5a3f0d5b898b7cc53a7df7f2c0",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63c279aba60ae02b",
+    "appearance_id": "e01a8107d43a57a515fb",
+    "source_fingerprint": "ee52adb37cb5b83a01e8a3f1b016c318dcf05080aac5ef8d063b93a4f8a60502",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1d57dd5b21a87cc0",
+    "appearance_id": "a3b99539688c3d0b6178",
+    "source_fingerprint": "05e6c904fd4e2333295b0c939f8d30747e5aede21d757cb379ed379da0e3d81f",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_09abf2507c72fcaa",
+    "appearance_id": "5f7cf5d553857a562e65",
+    "source_fingerprint": "50e8ae419850cab2b44056491e71bd7c48ff17956b6df6f58449bff5a6a536cd",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f3278196530927b",
+    "appearance_id": "43b09fd149f0fe5acbcb",
+    "source_fingerprint": "d7a87486ade60132bfe2339e79f377196e6778d252874733ed572d83ab0e6a2e",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ee98c0b7b93a8476",
+    "appearance_id": "4a5f261239b80398ea9d",
+    "source_fingerprint": "fe7c7f6da019c40ac153d10dd13067f6961aa78a4173f625347cf99a824b111a",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_68564a80d880f74a",
+    "appearance_id": "8def38acf0d95edc7417",
+    "source_fingerprint": "ffb030de5d3e768d18fa1c5b28a33909a9d032721910751fff020f9c8c740702",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb72a7eae422b013",
+    "appearance_id": "e842e38af00526485eda",
+    "source_fingerprint": "5977146dbd83b95dbc70b32a0e01026f6b78a9ff9ea348d02eb9ea81f7247867",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_014da46877ed265d",
+    "appearance_id": "3f9f64e0ac31ee7545b4",
+    "source_fingerprint": "1e6844dc644a38ba209a554580ca25ab99b2e1f602ec1b47d849e6d0698f2f4c",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_e91055ec175d14aa984c4871",
+      "sha256": "587ba15e6156e09bfc88f0d201f28e3b2797cbfc28e88471914af880b71a1d4a",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
