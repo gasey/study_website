@@ -535,3 +535,12 @@ Delivery: [Solo-owner workflow](SOLO-OWNER-WORKFLOW-20261106.md).
 - [x] Publish three exact C-series stale-notice corrections through ordinary Oracle maintenance. Preserve all answers, source mappings, holds, learner/editorial history and unlimited access; 15 targeted tests pass.
 - [x] Confirm protected bank/taxonomy sync at `1a292774de853a751a3c64c9886719c3f3daf515d34a644e7024e0a830bbd76d`, active Oracle timer and zero outstanding exports. Save the latest checkpoint and separate receipts.
 - [ ] Continue the shared queue: 1,030 pending / three unresolved, no active packet; 32 already published. Resolve historical Q4/Q86 duplicates, missing 2014 II Q39 and the held radical through their separate guarded workflows. Keep 2012/2013 deferred and original simulation gated.
+
+## 8 November — Question Tagging Bank Review (Batches 146–148)
+
+- [x] Reconcile 476 baseline snapshot mismatches and 9 proposal conflicts via `reports/baseline-corrections-20261108` and resolutions ledger (0 issues, 0 conflicts remaining).
+- [x] Complete remaining English, Arithmetic & Reasoning subject coverage with Batch 146 (69 items, Group B Gazetted English Series B).
+- [x] Complete LDC Paper-I February 2025 GK/GS coverage with Batch 147 (49 items).
+- [x] Complete UDC Tourism 2018 Paper-II full 100-question primary booklet with Batch 148 (16 retags, 84 keeps, 0 holds; Section A GK/GS/Computer Q1–Q75 and Section B Arithmetic/Reasoning Q76–Q100).
+- [x] Maintain coverage ledger: 10,835 unique questions / appearances, 10,916 saved candidate records, 0 baseline issues, 0 conflicts, all pending under `study-tagging-v1`.
+

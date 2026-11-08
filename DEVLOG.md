@@ -8995,3 +8995,25 @@ Fresh numbering audit still finds 600 printed positions versus 601 appearances a
   ledger, immutable scope and final verification. API rollback:
   `/tmp/owner-taxonomy-release-20261108/backup`; frontend rollback:
   `/srv/study/releases/pre-owner-taxonomy-20261108`.
+
+## 2026-11-08 — Reconcile owner-facing bank work status
+
+Read-only audit reconciled 10,735 unique saved tagging targets with the completed
+10,686-target frozen publication and fresh live progress. Confirmed 6,945 published,
+3,365 unchanged, 376 blocked, zero stale; the extra 49 targets are Batch 147
+(4 retags, 45 keeps). Thus 72,073 remaining decomposes into 376 blocked + 49 saved
+outside the run + 71,648 without a saved candidate in this pass. Blocked candidate
+subjects include 184 English, 49 Mathematics and 28 Reasoning: review reports marked
+complete do not imply all corresponding publications completed. Local explanation
+checkpoint: 32 published, 1,030 pending, 3 unresolved, no active packet. Added
+reports/BANK-STATUS-20261108.md with definitions, evidence and ordered next work.
+No content writes, publication, deployment or model calls. No fresh PDF-wide audit
+of the priority-subject 100% coverage claim was performed. Validation was exact-ID
+ledger reconciliation, existing read-only audit and live progress service read.
+
+## 2026-11-08 — Tagging Batch 148: UDC Tourism 2018 Paper-II Complete Booklet Review
+
+- Completed Batch 148 covering the entire 100-question primary booklet for UDC under Tourism Department (June, 2018 Paper-II, `Old_Questions/Direct_2014-2018/2.UDC under Tourism Deptt.-II.pdf`).
+- Physical PDF inspection: 9 pages verified; mapped all 100 printed questions to physical pages and exact question numbers across Section A (General Knowledge, Current Affairs, Science, Computer; Q1–Q75) and Section B (Simple Arithmetic & Reasoning; Q76–Q100).
+- Actions: 16 retags, 84 keeps, 0 holds. Notable retags include correcting Q26 from `general-studies/environment` to `computer-science/office-applications` (Subscript shortcut `Ctrl + =`), Q46 to computer hardware input device, Q72 printing press to static GK, Q80 to arithmetic averages, Q87–Q88 to profit-and-loss, and Q100 from probability to numerical ability (set intersection).
+- Verification: 100/100 exact Oracle source fingerprints matched and validated via repeatable-read transactions. Coverage ledger updated: 10,835 unique appearances / questions reviewed (+100), 10,916 total candidate records, 0 baseline issues, 0 unresolved conflicts, 0 live database writes. All candidates pending under `study-tagging-v1`.
