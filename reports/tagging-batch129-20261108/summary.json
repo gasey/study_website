@@ -1,0 +1,35 @@
+{
+  "batch": 129,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/Museum Guide General Englsih.pdf",
+      "paper_title": "Competitive Examinations for Recruitment to the Post of Museum Guide under Art & Culture Department, February 2020 — General English",
+      "document_id": "doc_cab22df51d7ed4870b20451e",
+      "sha256": "79c73f14b611dc652b7f4faa980d0fd195195ec1444dc99c14cf9382fc129c62",
+      "targets": 50
+    }
+  ],
+  "targets": 50,
+  "completion": "100% paper completion achieved for Museum Guide February 2020 General English (50/50 MCQs reviewed: 10 Idioms & Phrases, 10 Reading Comprehension, 10 Parts of Speech, 10 Grammar / Sentence Structure & Transformation, 5 Subject-Verb Agreement, 5 Synonyms; Section A Essay [20 marks] preserved in pending-written-intake.json)",
+  "actions": {
+    "retag": 48,
+    "keep": 2,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 1,
+  "conventional_marks_preserved": 20,
+  "breakdown": {
+    "english/vocabulary/idioms-and-phrases": 10,
+    "english/comprehension": 10,
+    "english/grammar/parts-of-speech": 10,
+    "english/grammar": 10,
+    "english/grammar/subject-verb-agreement": 5,
+    "english/vocabulary/synonyms": 5
+  },
+  "source_defects": [
+    "Reclassified legacy misattributions where comprehension questions on the press were tagged under 'journalism' or 'general-studies' into 'english/comprehension'.",
+    "Preserved Section A (20 conventional marks: Essay on Country vs Town Life / Choice of Professions / Youth and Social Media) in pending-written-intake.json."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}

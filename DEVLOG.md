@@ -8478,5 +8478,24 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,501 saved records**, **9,422 unique appearances**, **9,021 deduplicated candidates (9,000+ candidate milestone passed)**, **0 problems**. [Batch 128 report](reports/tagging-batch128-20261108/README.md).
 
+### Tagging Batch 129 — Museum Guide February-2020 General English (2026-11-08)
+- **Scope & Targets:** Full source review of Competitive Examinations for Recruitment to the Post of Museum Guide under Art & Culture Department, February 2020 — General English (`Old_Questions/Direct_2019-2020/Museum Guide General Englsih.pdf`, `doc_cab22df51d7ed4870b20451e`).
+- **Paper Structure:** 100 Marks total (Section-A: 20 Conventional Marks [Essay 20 Marks] + Section-B: 50 Objective Marks [50 MCQs]; 70 active booklet marks; 100% paper completion).
+- **Actions:** 50 MCQs reviewed (48 retags, 2 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/vocabulary/idioms-and-phrases` (10 items): Q1–Q10 (hole and corner, plough the sands, raw deal, scot-free, with a grain of salt, wild-goose chase, fair and square, eat humble pie, chew the cud, blow hot and cold).
+  - `english/comprehension` (10 items): Q11–Q20 (reading comprehension passage on newspapers, press power, freedom of speech, and sensationalism).
+  - `english/grammar/parts-of-speech` (10 items): Q21–Q30 (parts of speech identification: evidence, off, like, less, after, pleasing, etc.).
+  - `english/grammar` (10 items): Q31–Q35 (simple, compound, complex sentence analysis) and Q36–Q40 (degrees of comparison, assertive, affirmative, and negative forms).
+  - `english/grammar/subject-verb-agreement` (5 items): Q41–Q45 (subject-verb agreement and determiners: either/neither, means sufficient, distributive subjects).
+  - `english/vocabulary/synonyms` (5 items): Q46–Q50 (contextual synonyms: exonerated, clandestine, promulgate, segregation, ubiquitous).
+- **Defect Documentation:**
+  - Preserved Section A (Question I: 20 conventional marks: Essay in 300+ words on Country vs Town Life / Choice of Professions / Youth and Social Media) in `pending-written-intake.json`.
+  - Reclassified comprehension questions on the press previously misattributed to `journalism` or `general-studies` into `english/comprehension`.
+- **Ledger Verification:**
+  - Readback validation confirmed 50/50 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,551 saved records**, **9,472 unique appearances**, **9,071 deduplicated candidates**, **0 problems**. [Batch 129 report](reports/tagging-batch129-20261108/README.md).
+
+
 
 
