@@ -8068,6 +8068,27 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
   - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **8,137 saved records**, **8,059 unique appearances**, **7,659 deduplicated candidates**, **0 problems**. [Batch 109 report](reports/tagging-batch109-20261108/README.md).
 
+### 2026-11-08: Source-Reviewed Question Tagging Batch 110 (Computer Operator Election 2019 General English)
+- **Execution:** Prepared pending source-reviewed tagging batch 110 (`reports/tagging-batch110-20261108`) under policy `study-tagging-v1` (`docs/QUESTION-TAGGING-RULES.md`).
+- **Target Paper & Milestone:** Achieved **100% paper completion** for:
+  - *Technical Competitive Examinations for Recruitment to the Post of Computer Operator under Election Department, December 2019 — General English* (`Old_Questions/Direct_2019-2020/General English(Election).pdf`, `doc_8576449cb9ba5aa1982b5f25`, 80 MCQs, achieving **100% paper completion** with 80/80 items reviewed; 1 conventional essay question preserved in written intake).
+- **Candidate Decisions & Taxonomy Structuring (80 items: 72 retag, 8 keep, 0 hold):**
+  - All 80 candidates remain strictly pending; zero live database mutations (`live_changes: 0`).
+  - Active path assignments:
+    - `english/grammar` (21 items): Q49–Q56 (sentence structure: simple, compound, complex), Q57–Q64 (clauses: noun clause, adjective clause, adverb clause), Q65, Q69–Q72 (determiners, adjective forms, sensory verb complements, adverbs, conditional conjunctions).
+    - `english/grammar/parts-of-speech` (16 items): Q33–Q48 (functional parts of speech: any, before, his, after, yet, again, what, enough, place, that, round, above, till, on).
+    - `english/comprehension` (16 items): Q17–Q32 (reading comprehension passages: Passage 1: Wildlife poaching and species extinction, Q17–Q22; Passage 2: Abraham Lincoln and emancipation of slavery, Q23–Q32).
+    - `english/vocabulary/idioms-and-phrases` (16 items): Q1–Q16 (face the music, hand to mouth, sitting on fence, thick and thin, take exception, white elephant, spur of moment, Hobson's choice, snake in grass, etc.).
+    - `english/vocabulary/antonyms` (8 items): Q73–Q80 (vivacious, common, lethargic, enmity, frugal, relinquish, busy, perilous).
+    - `english/grammar/subject-verb-agreement` (2 items): Q67–Q68 (cost of articles has risen / neither food nor water was found).
+    - `english/grammar/prepositions` (1 item): Q66 (fond of playing).
+- **Defect Documentation:**
+  - Preserved Section A (1 conventional essay question, 20 marks: Aung San Suu Kyi statement on democracy and negotiation of different views) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 80/80 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **8,217 saved records**, **8,139 unique appearances**, **7,739 deduplicated candidates**, **0 problems**. [Batch 110 report](reports/tagging-batch110-20261108/README.md).
+
+
 
 
 
