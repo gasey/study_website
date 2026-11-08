@@ -1,0 +1,2927 @@
+[
+  {
+    "canonical_id": "cq_ca45f12d0386b163",
+    "appearance_id": "fca63a68ccebb483990e",
+    "source_fingerprint": "b26c5d5a772e33839d4fe8050d252306cb907860433f5584ff2c163be8bb9c8d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_eb0beeef0e5d56fc",
+    "appearance_id": "ff672ce6816e5684f74c",
+    "source_fingerprint": "fabfa2ea88edf766035dce26456d17a8c88ea1e76129e23a5fb69be4341107ca",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0b83f1b780c576cd",
+    "appearance_id": "fb5b96d2e190176aa74c",
+    "source_fingerprint": "286f9f82df4849ce0a84edc8577c1ae387ec005ae88a6c1def539f6270fb2abb",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f9ce1e58ee0cac8",
+    "appearance_id": "c83da241ed31dc5594c4",
+    "source_fingerprint": "02bb8709aaacd7108a89116c89bb4856ad4eb09390fb7f4ede6faaf70bf9b7b8",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5f49e10b91825279",
+    "appearance_id": "841feadcbc6126dda390",
+    "source_fingerprint": "b4e74019b8e58e82515fd8ced4534446d1b19245e087685434e3596cc6596b84",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4cecb54c91ffbd2",
+    "appearance_id": "4405093339b9ab24b550",
+    "source_fingerprint": "1d6e20014fc1784e2361f0e40fe05279689802eac34d201f7ec4be45c8a639e5",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3969a5204be3dba4",
+    "appearance_id": "29fa59ac1d41a01dfd8f",
+    "source_fingerprint": "6719658f0b86b34dbd3eb445a3c2b1724e83bf10823e5da5922ca0aa00943bfa",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_79d764178a5bff42",
+    "appearance_id": "1bdebc5790887861b376",
+    "source_fingerprint": "a13d5cf18fbf998a062dada5f246b922e6388a9a86cf18f6958a33e663a32f60",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4c738b45d781a58",
+    "appearance_id": "8460b41ecfafc9278995",
+    "source_fingerprint": "d4f84dfa0206f2155c0d54341fd745a6486a49a7bc36e8ecb94d715eca1309d3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36116b312a025957",
+    "appearance_id": "65d3d3d59ff510f46ce1",
+    "source_fingerprint": "0a643354bf56bbc5efe45fb0648d353fa27a9efbb6c15e5a92a60fd26cd91c23",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8c7aea83c922b11",
+    "appearance_id": "29fddb94e4d867ddd2aa",
+    "source_fingerprint": "58096baf7911fc6d14c255131188e2e0515ff6a14ce3810765c33c10c0a69fcd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_121638a819910ccd",
+    "appearance_id": "67833518bdb18916ba09",
+    "source_fingerprint": "9f92423f96e85eaeacd2820345b5061460e198f2dc142b88c4377f49a8bb49da",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ae530c836c2de53",
+    "appearance_id": "e58a9e3049e95bca2142",
+    "source_fingerprint": "e4359eb5d73d3eee189812a7896ee0fc87459d1dc88cd7939917569819218713",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_78dd538d7561e41e",
+    "appearance_id": "61596aa26ca6992a2a20",
+    "source_fingerprint": "2b37c4ebef369fde4bbdd4abc67859b88a16888bb964216767855c1a5cc7183b",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a787a104821805ab",
+    "appearance_id": "5d2606839ffd9ea03db6",
+    "source_fingerprint": "a33c2c102e156534a98856acd372ec39a77cddcff96a543e4aa13418e2ce6022",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44de7f43f03407e5",
+    "appearance_id": "cbda14610274ef6b61f6",
+    "source_fingerprint": "4998966e79f71f452b6c18dc80c0a2304921475af8f561a7b74384d7524cdbb1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_71f3e55eef36e444",
+    "appearance_id": "9f13b57b45327b416fa1",
+    "source_fingerprint": "d0baebf3778fcd3cc66932aefe643f00a42fed8ed3c2993d0990fe07a55de316",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c0de6c052591b07",
+    "appearance_id": "0949d23ea58d3aae1793",
+    "source_fingerprint": "437f97089b01414cc254b5cc34b341b0b9eef9153687ebb19e2e227a5010e439",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8fae0d7392e5ad87",
+    "appearance_id": "00116f3629b899933cd9",
+    "source_fingerprint": "0f7ae622bff5c7bd3f30d03e86ae5bc9c6264c16b90b7ad5a1812a4785289fbe",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0440aca0c088d8fd",
+    "appearance_id": "9526808b26cb075b6056",
+    "source_fingerprint": "fdb5f0fa501d2d4d3a9680e5a57e7b41b134c00b12b6c3db4f962c763496bc56",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4642d47ba57611f",
+    "appearance_id": "86bea5e9ab6092b191f9",
+    "source_fingerprint": "7e87514d53f3917b33d3327a6a6f6dd8dbe48e7950e03328d65e9a4b4c0d9b6f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8670b7680e2e044",
+    "appearance_id": "3fc84b26f7a5cf68ef32",
+    "source_fingerprint": "da3bbd9508a90fbbaa954bc876abb854f39477dfa508a7a1658c8ca712c9374c",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ec82fd580963fff",
+    "appearance_id": "ed9e8b583e8f53ae429e",
+    "source_fingerprint": "83eb24a4209fabeec58c94eb991f5de4b8dc616cd4b9c49c6146af8f45fce647",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d633aa5be5b2cc06",
+    "appearance_id": "9dad33499fa3c1cf4796",
+    "source_fingerprint": "e3b53dbf5371ffc224548e31da48408d4bc644d736039b7411b40f5bb97d3729",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_41d2b3642a3554b8",
+    "appearance_id": "715eeb062e8e0c9b8e2c",
+    "source_fingerprint": "6ab04904ad55bd0336815c9d24c9ad6132a7c7600b261d855590de92c4e3a529",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9e36cad0fee4118",
+    "appearance_id": "e0c5a2330825c4cbc6f0",
+    "source_fingerprint": "043407eac1455c60a61157eba8ab8ba70a856d084b82a6de8cfa273fba81a242",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6961e30cadf7f0d",
+    "appearance_id": "4c502d3b3031695eabd7",
+    "source_fingerprint": "754aa3eae0c5d9fa5f790c323796dee10701e5214ad18974c36937428f820b2e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c3faebb16e682fe2",
+    "appearance_id": "88dd660c3cdc726c0c65",
+    "source_fingerprint": "f9b9c89ebd69db7447b77d6b9ed6a1d9988d6d8d10a73cf02e5ab4ca943cba98",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d472a529f48edc64",
+    "appearance_id": "7380e0e1c1543ee8180c",
+    "source_fingerprint": "e7fcc3f29aa20f096d22e2fbb91803b0c30dc31a5bc21ad5fc288d9cd8ee9a34",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_01ecbae22c7aa6e2",
+    "appearance_id": "7e8ffab9c3f9027c1c43",
+    "source_fingerprint": "201c3a1f361d75d4d5ef3d40a0b2e33118a378bf4f85e39f1e96ddff3f74d916",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f02f46a47faf64f",
+    "appearance_id": "6ae37c385f7a8a8946a0",
+    "source_fingerprint": "4682c9ca06be0986a5b07a123c8f838aa78d87e8bce27f0cee3414cbfa1d4fc8",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aa91769e7ded48ec",
+    "appearance_id": "408bb47f692edf42a5d0",
+    "source_fingerprint": "38024212bc4e2cce5e89845bbc9289a45cefd54a15f004820516b25748252472",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dabc26eb3eb54b3e",
+    "appearance_id": "54cdb4dffe4042420c32",
+    "source_fingerprint": "cba6ee45f0292b1f4438e798a6b5f3bad19ec963f26e508c134a363ea79154f2",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23d2d577aec53b57",
+    "appearance_id": "02cf2742f5092d81510b",
+    "source_fingerprint": "39ea16d84d397d9c62b7352cd439f89d62c4f679136321d5cbacc0599afad223",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_53bc7cbce1959404",
+    "appearance_id": "d3d130a8c5dbcadc4c1d",
+    "source_fingerprint": "e7fb74195a07eb8d72dec64280ff90b606ad65baaca56cb5ec625bc8ed207384",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5a2929ea1939886",
+    "appearance_id": "27a05f139a1252ade962",
+    "source_fingerprint": "c4681bfee3db909c6829747bf9ace4440d3ffc016ad6f37d73a9a4d3fd46aa0f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c91395fa78a54dc",
+    "appearance_id": "bc2f312cf895f5de51fa",
+    "source_fingerprint": "f8ac6446ced18c3a00b28cdbcd80c1ef9820cdbde6e1761b915ec6fe7fc5a97f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf3af8d9271a4d91",
+    "appearance_id": "e1b44bcff649ee8ab6a5",
+    "source_fingerprint": "847677879a7f049eebcfe313be9d0b806d38e7d45db6c1b8c2e58259aa49ea10",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_88b87c4072842ee4",
+    "appearance_id": "55eaed29eb56e7a333d0",
+    "source_fingerprint": "d3e6f348a19596fa47783ed31b7d3e423bde2703ebb1e0c352cd62ceb3f54e93",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30da690da0ad49ae",
+    "appearance_id": "8c8c85fbfe9f8bd407fe",
+    "source_fingerprint": "22b43980fb2f957772a93645babd47ffa10f7565ad3aa31fe9004dcf3ba83ad8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ff7792f005280e3",
+    "appearance_id": "ae74067399fb5ba4a564",
+    "source_fingerprint": "8a0ce23913dbed4292a21f45c0a5a3d80f145072bd2db82eaa22dbd064c795f8",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a58bc6e4847bfa3",
+    "appearance_id": "f7999821d73322d10de1",
+    "source_fingerprint": "4c3635bfbe3c33b68e28450d588b7eee9cd4e141e8984209724585f574d33a9f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9d20167fd62bfd71",
+    "appearance_id": "529cd383aa7dcdb39a46",
+    "source_fingerprint": "b1036238930628cb8762b17713750515dc50b6d072f245f8e47b745056f6237a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8d6775e4a2c04dde",
+    "appearance_id": "0f7458aa2a61c9e0089a",
+    "source_fingerprint": "4f51d9c1ed19f771a653487ed6862d2a8fa407996592d6358c33c85ccacb1935",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b4dc6a07ceb53092",
+    "appearance_id": "4d36f9602896718fe3ce",
+    "source_fingerprint": "6defeb7608c4f01679112c652b5aa47a1d0ee7b3598e6c189fabbdb69b68708f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7f0c709a25d1572",
+    "appearance_id": "ca20c468e000dbcc2d67",
+    "source_fingerprint": "d04746707c3ee94592756c1eba76bb8a13d7e037038ab26cc81858a6bb74ce65",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses assessment aligned with syllabus specifications under economics. Appropriately classified under economics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under economics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7ef32e3d935b44ec",
+    "appearance_id": "fca5101210c7765c6f64",
+    "source_fingerprint": "95bcb70ab2b94c68a62fa598745cee2bd53b099b617a63bebc44898cbaaac49f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c186838bbbce72e",
+    "appearance_id": "c42a97ce11624470c0ba",
+    "source_fingerprint": "60e02b87f7a8bce31b1991739b9c13ec3cde07688d74de3946fb8c5a9be90bdc",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses assessment aligned with syllabus specifications under economics. Appropriately classified under economics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under economics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b67e199e6c197f43",
+    "appearance_id": "686be5a40b459907d055",
+    "source_fingerprint": "c829cd5695e83d1ab48223dbedfbd4ddd05b9d1fce6618131aa030b4d525cfee",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_333283d52a316660",
+    "appearance_id": "18f7e50f1d3843e62b4a",
+    "source_fingerprint": "64debdb5985bef7aac7a34d88e7be504926f4d215731d1d810497df103362557",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e3d0ad9f3ec902f",
+    "appearance_id": "774c790f938f85a62a7d",
+    "source_fingerprint": "f9fc4c569385354eed65fac99aeab2201516174ab009b43bb6f1173249afcb08",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a29e41ce9ed942a0",
+    "appearance_id": "2a570d6364f5a845f6d7",
+    "source_fingerprint": "17c502d3dbf80b9c309ab6084d815620c7862fbfdb7740b333af6fc75fdb6030",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0856120f98bde1eb",
+    "appearance_id": "82c09a651712d7ec9bf6",
+    "source_fingerprint": "c259370b41a5faa7285fb31a2389e7bf6992e771f84d1d5a5bc6df568f5eff97",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a87f662d21bd4e4",
+    "appearance_id": "a8287ea6c8e31ecf5690",
+    "source_fingerprint": "536cb20332b5f0c6adfaef4fc75834eed7af5e847175e0a3c0b8e1788e52397c",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e63154a08ae9ccb",
+    "appearance_id": "6a0901fbc851b78954a0",
+    "source_fingerprint": "20b0b37edb4372acd54fcd49778e7449ca6507b5f96b373ad8b1b6b3e655cfbe",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_49cc0dcf0c792920",
+    "appearance_id": "1f16bd4e9198fd473fca",
+    "source_fingerprint": "97761d668117fc329a913180ce79ec00c799f87474f6c24c4dd1bf617b93ada8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9c987b7eb802ae3",
+    "appearance_id": "0d77d285ba7eaf6f1f28",
+    "source_fingerprint": "359deae31afadb1c03964abd6a8fccae2ace0c8e85de38c345bc9053149adced",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2a8dceabe39e486e",
+    "appearance_id": "d57af2177b2b1b3e3059",
+    "source_fingerprint": "7e4e87d949430921ccb6c6d2ed42cc82c914e3dc862f282a9f2785bbdd677228",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fd26297488605acb",
+    "appearance_id": "29698786c4f7cfe20001",
+    "source_fingerprint": "00d28de1389ec17f70c2cd7700a4dc9c704fbaf103037eaba73c2cd78365ed77",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under economics. Appropriately classified under economics.",
+    "tested_skill": "Assessment aligned with syllabus specifications under economics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e27a19eb09d062cf",
+    "appearance_id": "27e9402383ef5d772dee",
+    "source_fingerprint": "cb79a97241da41711d0c8b823e1343fc7b66ddb008040f3c37cec14406e64381",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f2ba5982d6d3d308",
+    "appearance_id": "b7e6ae15275c5e27e349",
+    "source_fingerprint": "9f22eef5e0d8b1b7cba80b8a5da1884f730a6ae08309cd41bfef5b9004561bcd",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_74ad9affcae9347b",
+    "appearance_id": "7483e036eb7925b20f46",
+    "source_fingerprint": "c8650e4e30048035dd146766b7cb24dea631df05c85ddf19d7863a2946a58723",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b511eaecfd7288ac",
+    "appearance_id": "07dba7ba9a84499d0d8a",
+    "source_fingerprint": "6282497b779eaf48cacb8a36ae4066e5b64fe5a84bdc986d7be996566809e79a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e1cde602259c2461",
+    "appearance_id": "ca2220ef8c76b392bdbf",
+    "source_fingerprint": "124f35bb722f9fd77626a6d07558fa822887d89ccba852d9a29f12447032217a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3003f15597d034e6",
+    "appearance_id": "2fbe0b7e1046844a5e4f",
+    "source_fingerprint": "be2f7c43d3655976187b5d15c0717f0f29601f7053bdf01e417d677f27996830",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_85dc4e17e657496c",
+    "appearance_id": "5d87a13eb3973c53d991",
+    "source_fingerprint": "09b94d4cd12a35cbb4e153571e116f7df36080f154dab6bf2b72859fa6dd6414",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c7c99065f90bbd81",
+    "appearance_id": "18581e1d55c0296aa139",
+    "source_fingerprint": "dacebd67f8a383495fea61c3ca3d65b99009b116cefef370a9d1886906ab2cd8",
+    "current_primary": {
+      "subject_id": "geology",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6a7e98e7eece477d",
+    "appearance_id": "b394db0afc006cf7ff0a",
+    "source_fingerprint": "4abfbd536d4048abf906202e550f5c5b0640ffc4e9d83c8688c20bb192031fbd",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e136f1912ee34bc2",
+    "appearance_id": "97fbe05efccacef48012",
+    "source_fingerprint": "7f5ef9d2ae1c757d0ad5ec9bafa447f66b67de0662794ba1f8fe6ec101393670",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2c939e97d5fdd50c",
+    "appearance_id": "b0f579c933a20c6e3350",
+    "source_fingerprint": "6d00db90d1cf6486349248c053dc3b99fc8e67e07ef74e13c4011553783fc942",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses assessment aligned with syllabus specifications under agriculture. Appropriately classified under agriculture.",
+    "tested_skill": "Assessment aligned with syllabus specifications under agriculture.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8736cb4b6357236",
+    "appearance_id": "618c9953a46e99898326",
+    "source_fingerprint": "5718bd38ee37a838d26cc1b660b9e830cd7e961683cf2bdcbabcf5e6ceddbac5",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_307965328f12de9e",
+    "appearance_id": "c8b8ba583c63a8968954",
+    "source_fingerprint": "ddca01327244c834e6c5c6ef8a745c4e7e8ac4ac18f2b7bb636355fa2e893ed3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_831761637bbcb77e",
+    "appearance_id": "974a67961a2edf23dcfd",
+    "source_fingerprint": "66111666c700341b9844d83dd930e4bd7143daadab487a2ad56112fbeba4357a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b1f0118734a1d49f",
+    "appearance_id": "09d8be8ccdb6e8b9cd58",
+    "source_fingerprint": "6251e8cc3caeba529fd1d78cb6203eb49c6f9b021c89a2ecdb633893f679c4bf",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_488a24993f019b87",
+    "appearance_id": "17f34a70814af60e7b80",
+    "source_fingerprint": "51dce7aaf6bf6f3ae7aeec944d7b45157cd52a7be9d9a02c52d42533b2218b01",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses environmental studies: Ecology, conservation reserves, and environmental protection. Appropriately classified under general-studies.",
+    "tested_skill": "Environmental studies: Ecology, conservation reserves, and environmental protection.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_dbe2944c02f98f9632dad94c",
+      "sha256": "c91e3fa0c6dae65846606ab15b43df0af8aaba5690a4cca7fcbeefac697e47e4",
+      "note": "Verified against registered booklet source for Sub-Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a4fc674f217836e7",
+  "appearance_id": "9ba871de3ceeb53062ef",
+  "snapshot": {
+    "record": {
+      "id": "9ba871de3ceeb53062ef",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Consider the following schema STUDENTS (student_code, first_name, last_name, email, phone_no, date_of_birth,); Which of the following query would display all the students whose first name starts with the character 'A'?",
+      "options": [
+        "select first_name from students where first_name like 'A%';",
+        "select first_name from students where first_name like '%A';",
+        "select first_name from students where first_name like '%A%';",
+        "select first_name from students where first_name like 'A';"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "53",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "4c7c57aa4031611f81edc33afbe2523c9d935031942b6df55fb8dd759b1bcfcc",
+  "appearance": {
+    "id": "9ba871de3ceeb53062ef",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "53",
+    "qnum_seq": 53,
+    "page": 6,
+    "question": "Consider the following schema STUDENTS (student_code, first_name, last_name, email, phone_no, date_of_birth,); Which of the following query would display all the students whose first name starts with the character 'A'?",
+    "options": [
+      "select first_name from students where first_name like 'A%';",
+      "select first_name from students where first_name like '%A';",
+      "select first_name from students where first_name like '%A%';",
+      "select first_name from students where first_name like 'A';"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'birth':17 'charact':34 'code':7 'consid':1 'date':15 'display':24 'email':12 'first':8,29 'follow':3,21 'last':10 'name':9,11,30 'phone':13 'queri':22 'schema':4 'start':31 'student':5,6,27 'whose':28 'would':23",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a4fc674f217836e7",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "select first_name from students where first_name like 'A%';",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

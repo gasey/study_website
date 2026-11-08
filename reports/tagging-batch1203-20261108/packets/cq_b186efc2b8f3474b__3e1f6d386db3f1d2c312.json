@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_b186efc2b8f3474b",
+  "appearance_id": "3e1f6d386db3f1d2c312",
+  "snapshot": {
+    "record": {
+      "id": "3e1f6d386db3f1d2c312",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Which of the following is a procedure for acquiring the necessary locks for a transaction where all necessary locks are acquired before any are released?",
+      "options": [
+        "Record controller",
+        "Exclusive locking",
+        "Authorization rule",
+        "Two phase locking"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 8,
+      "qnum": "66",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "2fd9f250306f8e292f0b62affd33af14afd65e6302141a2c445f815533649a81",
+  "appearance": {
+    "id": "3e1f6d386db3f1d2c312",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "66",
+    "qnum_seq": 66,
+    "page": 8,
+    "question": "Which of the following is a procedure for acquiring the necessary locks for a transaction where all necessary locks are acquired before any are released?",
+    "options": [
+      "Record controller",
+      "Exclusive locking",
+      "Authorization rule",
+      "Two phase locking"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'acquir':9,21 'follow':4 'lock':12,19 'necessari':11,18 'procedur':7 'releas':25 'transact':15",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_b186efc2b8f3474b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Two phase locking",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

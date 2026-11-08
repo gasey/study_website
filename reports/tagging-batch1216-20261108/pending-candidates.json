@@ -1,0 +1,2928 @@
+[
+  {
+    "canonical_id": "cq_f7153013b126b940",
+    "appearance_id": "b3b1cdb85f14743e79aa",
+    "source_fingerprint": "bfcf99a3ab5d40aaa83a2258581f5239a882dfc1e9e61d38ba22797b94b1ab77",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48aa595f225d2ac5",
+    "appearance_id": "7061b8e6f7aa5b872228",
+    "source_fingerprint": "bd53bcfaf3192098fb14b3c9159c89eb3a4a74f1207e52aac8ae4dcfb420c6ff",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_670f0bb88968d54b",
+    "appearance_id": "adef9fe504fdc954d399",
+    "source_fingerprint": "2ef5a2b533d3bda68cbd0b84f15217885b9b7287d0e40a16ef229b717f936c4e",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_12ae478d0fbea27e",
+    "appearance_id": "469c64e59d63bbe8806f",
+    "source_fingerprint": "2298c8f3e26fbc8c7d8ecac5fb92245df86309e21e3cb95162dcaae948d0558c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b6588771b7dd034",
+    "appearance_id": "b465ca28fa3a2b7d6cea",
+    "source_fingerprint": "05ce23cb3049f0c91ef2334582f56b67f7ac7a8ccdb14e8c99ad274cb27ef2b2",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6df9b6dfab2f0a1",
+    "appearance_id": "02b48493550d61c06d85",
+    "source_fingerprint": "7158284bae58e6dde0289029f594ab8eb9110e78b83dbc58d9e886ec16fbf9b8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_315400dbbf561fa0",
+    "appearance_id": "3f93cfe07c170542979d",
+    "source_fingerprint": "8e0e40322d1174b8c6c5d86d510da81add8140e5b488cba6b5927f7d50bd1999",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_701577cccde6a8e1",
+    "appearance_id": "8a9788a17a4ee047c795",
+    "source_fingerprint": "1e2a9c146ac83ff0694281b46404859c1ec4e09f8d344375242eb9339d46c10c",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_083560dec369bd96",
+    "appearance_id": "e3c851c05d5200c9771e",
+    "source_fingerprint": "f6541c408000f9fa01b7d46cd25a1edbfac86be5286aa1683f1f3c70d00b9a3e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dce6e653335abe27",
+    "appearance_id": "a3c67c44480cfffa5a03",
+    "source_fingerprint": "39444e96c85d7473174d6322f7e294009593fd5e76127fa62b5c36a3b93ff1a0",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a88441875e5c9bec",
+    "appearance_id": "5ed53ac7923a6813ce44",
+    "source_fingerprint": "94288dd4a42b1cc4729b8ab43b8d8ac15fbdcda2bf5e60a75bf6ec2b511cf76a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_045fcee29d863516",
+    "appearance_id": "a664bdb2ff3918e53246",
+    "source_fingerprint": "7c08ac2265ae586388e8041f1a06ea229e21205acfdb3bf1b07d3a91d2ac5f44",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_44763415a81754d0",
+    "appearance_id": "7c2e679b03866999bc6f",
+    "source_fingerprint": "3323d2593317052dba3aa6c0055cf670ede1dd0fc05a6c86ecb40d71438365f9",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e2b100c9fdc54403",
+    "appearance_id": "a1dd8f771128a05eeace",
+    "source_fingerprint": "4ed49d731ea227c9e9b0e4046d9f7a60f62f75208c5c3b1d04a4e99e90fce7e6",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_17807652fbe56d01",
+    "appearance_id": "1adf8df376d008b0c2e4",
+    "source_fingerprint": "998336312cdd7dbf4585a8278d3cccc483902e74adf585e8d19ac35b7ff2f475",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_67f98c49b5f22ed3",
+    "appearance_id": "691df77bae00d5281fad",
+    "source_fingerprint": "0766dd67d9e0cd7ba4c9ecec71b76b56454fed07838a50588934a67fe448b6ac",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a9809dc88a5589fd",
+    "appearance_id": "0ffba9424a4390359349",
+    "source_fingerprint": "d5b6b26143fffda7fbb31924b17d16c19e67535f1daf1663de37c6c7fe389cc6",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_98f041c08d05e7f6",
+    "appearance_id": "aa161761f5acbd895e63",
+    "source_fingerprint": "7d4ccdbdaa66bc3f8c4843324895572d6e3bc5f85db3dd4a94346105f3fa5ab9",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50b6cdd144ebb37a",
+    "appearance_id": "859cd52343f4b1222c95",
+    "source_fingerprint": "539a7602b5e910dffdf77234cf75de419828148fc7953bca81c58d0a91d7c624",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_827c0eeaf9ce7e28",
+    "appearance_id": "4d9b539905a5bc000cb1",
+    "source_fingerprint": "b12e3b846503c19291dc47a247aea83de40788bc065091e6abee81c937a18797",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_063fbafd9d36652d",
+    "appearance_id": "76064ec620367046dc87",
+    "source_fingerprint": "78902747cda123226f66940626a8183f04a08893fbd6126570c3d9d44c5e43df",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f91fae0c74e2647e",
+    "appearance_id": "fc0d2ceec37b90a46c4c",
+    "source_fingerprint": "16c9686925ced120194af45b2cdc3a3a0e1ffa694ebe9a40c9b86e1826c4b134",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_310fb2384939f5d3",
+    "appearance_id": "0839421b117680ed297e",
+    "source_fingerprint": "cb4ffe69b4a347eee80d9c88f340a07e067918973e41a65e0175adaa48a47793",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_001e23598079956b",
+    "appearance_id": "54e24f808b2941cc7622",
+    "source_fingerprint": "40e67388372f5bdbbd3b930fdb9d57aa00943dd945ad879451dabe74d4d4bb9a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_97e28a9192f10685",
+    "appearance_id": "1c59840046916f01b07f",
+    "source_fingerprint": "235cdc7f69b7e5e0ad130ab0ac4c62de8d33a7ac4ef7a4ddeada44d95da92244",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5e378665a0736e3",
+    "appearance_id": "c2d31136be8c6fcd5d2d",
+    "source_fingerprint": "33315ded0531a7853a278a84b40d244bae0116a934478bd6bbe48226ace1732e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1189c3d1ab3a5c7c",
+    "appearance_id": "3740f898f3c6e1b6c6e4",
+    "source_fingerprint": "4d40c362fdbc36a028a7858a3500acd670274eb6c64ef9101c0eec297af8ba15",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_634315e4b10a90b4",
+    "appearance_id": "e71d33c982909c3c799c",
+    "source_fingerprint": "feb8f9e5f9c089e4f06afbcadc024db830f228497e1e4c0919e66238d80c6884",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8f4b6f559b0eb81",
+    "appearance_id": "1927e2aabecf50344885",
+    "source_fingerprint": "60d56752dc1e6d810a644c2eb7931178551aeeedcb123433831a7d824d341915",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_be0da3299d652606",
+    "appearance_id": "eb5a8345029bb61f2e89",
+    "source_fingerprint": "d766f0af4e18f3375385079fb87b919f031e5917ed9dae01cf4584fcb2051f16",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33564d9283e48779",
+    "appearance_id": "5c66419b2c5e4c610a2b",
+    "source_fingerprint": "378029a215c5a478481a2c7b3907e64853eca98299328ed76fe634c42c253a84",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_254a29062883c5aa",
+    "appearance_id": "1526a03d4a965c8fcbcd",
+    "source_fingerprint": "573481735e2342839ca01e15945dbb3749786b0b43f7bc1ed6e5504c1869bd3f",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f9ceb7da329612f",
+    "appearance_id": "40ef765dfc33f7779f43",
+    "source_fingerprint": "11e2dc8c1f8d7146e8737eb94e7aae4c680d993c35a3dc3920bf1b31209eb17a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_009a104fa462aa03",
+    "appearance_id": "6711f3b42a3183304622",
+    "source_fingerprint": "14a146b84db6a73ace8669011293c07a3b5087dc6a2b84e2b6dcb5973c7adafc",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1d2492f13e71b812",
+    "appearance_id": "bd2d1240f309c74b29cc",
+    "source_fingerprint": "5810ab42b3dc3d2a5a5b98f12016632c628ac752a4181560d4d2af30d28bd7bf",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_70f5b7b88790dbf2",
+    "appearance_id": "1b6b9c77d911b6202d23",
+    "source_fingerprint": "fba1fd003534b26b4fb97c5c73be0a9c4b6f52ca0bafde56430cf45263816311",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_51852e843e457119",
+    "appearance_id": "5b528081749e2ad2e054",
+    "source_fingerprint": "e804f3605d4d2507f629537f740ac197b3fee96920bee67361dd2afbc0239fa9",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b51e3b616717359e",
+    "appearance_id": "206ad9c4fd981f6e1d34",
+    "source_fingerprint": "f7aef08019bbb340640115cdf20c3e8b2916ab6e11a1876f7640b99ab627280d",
+    "current_primary": {
+      "subject_id": "horticulture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b041c0b492dbd62d",
+    "appearance_id": "0ed8b1d7ab485ccde15b",
+    "source_fingerprint": "fda5dd859e5873f5afee270507ec9a08fac68cab1362f4f916a6ebf734bd9dce",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c027282fe7c9067b",
+    "appearance_id": "cceeb486e6305c61ae8f",
+    "source_fingerprint": "5f9f0de22c87b26232c93df47da7ae962eb4936edf94f94688e672c7eb080de1",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ed39a6be84369fd",
+    "appearance_id": "469ccff14d2d3db743ca",
+    "source_fingerprint": "4af8bee7e27cb8566d4cf0d0f41a32ebb3de031ddbffe5f46d0250f0232756ae",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b92e8e125559bc12",
+    "appearance_id": "47047fa32c7f56654df7",
+    "source_fingerprint": "06d429f100a47821eb34a1f3315e461dae1dac6f9e3e1c0178e78f7f9bf0d45e",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd72ad02f15bd882",
+    "appearance_id": "d5bacc755187a9bd778e",
+    "source_fingerprint": "a4075f8317891c3eee1c0a2388f16e30d4d04db31417841ba1e91747ba601001",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb33ec69a10ad646",
+    "appearance_id": "e91346c307d0658de822",
+    "source_fingerprint": "5af19172d2069854f2667abadadda10e190122075d36c72521d1b80081becde7",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_328040ca54c88ddc",
+    "appearance_id": "cfa5a448900a5edd7992",
+    "source_fingerprint": "2279376f00263dcb92a5714237bd4b65ed3ff3cdd5816c9e7097c11e3b697ec7",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9782a58739569250",
+    "appearance_id": "d071f9b8fc4351265370",
+    "source_fingerprint": "cd66dda8e545232451c99d524cc6d6875517c1c6a82e2c278652d0fd5bdffcb4",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d4becbdc486555e4",
+    "appearance_id": "bfb47a93a5ff23170ebb",
+    "source_fingerprint": "39e422abba274736fb8b15da5628779246cb44b710b1e6361dcf8e8df58a89e0",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/plant-protection",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses plant protection: Entomology, plant pathology, weed management, and integrated pest control. Appropriately classified under agriculture.",
+    "tested_skill": "Plant protection: Entomology, plant pathology, weed management, and integrated pest control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba9f4e3c462983e8",
+    "appearance_id": "1346d731084c232793be",
+    "source_fingerprint": "b7fac5b3735c25bef7a8c7030b8b3d81c80165ec63699016a9e530cff867f27f",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06ea0404ac27ded4",
+    "appearance_id": "c2db13e73c6758986543",
+    "source_fingerprint": "ea11c3b0dd8dba7314832280b9d104082a383297ca8956f0bee6438f3fe16fae",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f27e9f383baaf7e",
+    "appearance_id": "b5f055eb0b947ba56a36",
+    "source_fingerprint": "7d09cfa6d1e58fc692b1749c8003161e4b6b44ac8f2114d70d97dea638a15f06",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_932db884dfa97766",
+    "appearance_id": "0ace248657d7443960b5",
+    "source_fingerprint": "91c87f47394eeb3ff08b00ea93b294039634359b8cd8cbad1ebef7ee438d5827",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8a0013aab9ab6887",
+    "appearance_id": "3e4799f40ac8cbcf2c08",
+    "source_fingerprint": "d03a7a106a37bf4755dcdfa9f31e8958223b24bd83ae2ace2662e32bfdde6319",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4076a58ac241a8f1",
+    "appearance_id": "d38af188b2126386cb56",
+    "source_fingerprint": "9768e679c14043eab67845598f9c4d2eed39b63ec27dfd92b90a1ad0e8904e9d",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/leave-and-service-conditions",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Service conditions: CCS Leave/Pension Rules, Fundamental Rules pay fixation, and service entitlements.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f548afacba64bf58",
+    "appearance_id": "75b210def7c2631f4e2c",
+    "source_fingerprint": "97a87bae42c6c4003fe7ab02554bbbd2e04d63801d741fd58e730d412d86b6e9",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f8bd9227df3de4f",
+    "appearance_id": "5b24401ba27a2f4780ae",
+    "source_fingerprint": "b5cc693db68b5c1dcc7061f9ccb678da56f58284d94a040bd0cd0e6eae0c1394",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ea1eff67eda108fc",
+    "appearance_id": "79c57a09516e73fdd357",
+    "source_fingerprint": "03d0b09f59ad31baf2ee05d8ec5ed5b8ae7ecea528380292dc6e6779a14b3f05",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4b702010ebeac68c",
+    "appearance_id": "6269b0135ebbf81c5064",
+    "source_fingerprint": "463350990b7d479c7fa755cf97e76119461b0c7d2c42dc096a2fe8509efe8ee5",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6826530fe2d83f90",
+    "appearance_id": "000646d3cd3a2362d9d7",
+    "source_fingerprint": "65285398f362d7f213fb05d513de7ff75fb19959b08ff136f49072027fef2fbf",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa846834d8723396",
+    "appearance_id": "5decde9f72f2078d59a2",
+    "source_fingerprint": "5915d5d9b551576bedfe2b4c00e4cd9c8f3475799026ef986c23d067225f1d1c",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_11857761d87ab11e",
+    "appearance_id": "aa4a32f1d7086bf637a3",
+    "source_fingerprint": "2c7b3b957513c270261dda011e708f234cb530db331d8cf3273cef9df47c3da4",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ae7d4e7e7513b20",
+    "appearance_id": "9cc816e720ff905935e1",
+    "source_fingerprint": "a73e6db2cdd0627e2755c5a06dbfdda1d3b6645b9f74f7b19c97e8e6c6ce968a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_197b6e199a563418",
+    "appearance_id": "6f8d95ddc5c6280cece0",
+    "source_fingerprint": "87edcc42c02253f1171104d621e6bbc9cb6ef9bccdcc38b1ce7283f1b959f4fd",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_043f3ac4ef8dd642",
+    "appearance_id": "9b87c82bfed2304868b8",
+    "source_fingerprint": "b5c32ecb19548db9e78e30cda25ba00a54584fca77353eeadd17bd3f45a32d17",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8f47fc5f47f8a16b",
+    "appearance_id": "ed99f46d93b35fb2510b",
+    "source_fingerprint": "a62838baea8607de43afe2072a674972e22bb8c5bdf2393990813255e9f6961f",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d89cb6b646f6f1e",
+    "appearance_id": "c7f71b32eb70a16b5091",
+    "source_fingerprint": "e52e5cc715d8bece9c98d605a5c4193b040428e85801f5f9fe6446f9bd95ddd4",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_541e4200643e987f",
+    "appearance_id": "10b8953180e6549dc9a1",
+    "source_fingerprint": "c43c2a563ab67897920f74e042ea493c501666dc5df4a4791c74172230c88275",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7c16961110896159",
+    "appearance_id": "832ef138d38a56ccb075",
+    "source_fingerprint": "8ea8ac77fde54d35b7c4eec2f1d8cbc961f2cd297c620a94e15ff39d865227fa",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9060e28899dcbb8b",
+    "appearance_id": "dcbb4a7e6aeebf183170",
+    "source_fingerprint": "6b95d81607c07b8cbaf584506ec2a8afa82e2bca2d58a6bbbc8325669694c494",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9bec6a76d69827da",
+    "appearance_id": "68ef329af34a4abba6ec",
+    "source_fingerprint": "efcbc89c362611a5aa6ccaf061b2a74fb68511a18e5b71072bc521326bb78210",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02867bc6bb866482",
+    "appearance_id": "4e1cddfd93f203567bad",
+    "source_fingerprint": "2f2e70ab42095666ac3ff9a3a2be68632abfec1146163036af6e3ce4040aedad",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_68ce91ca2611bba1",
+    "appearance_id": "000272eae6dfd9f9dd61",
+    "source_fingerprint": "d8717a2b6dde9b4acc17a67272793e8803d40c164418e4cfd5ed5d52a0a0e8de",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d63c9f5288f5d01d",
+    "appearance_id": "4dba7f8c2dac5bd82bee",
+    "source_fingerprint": "1337fca3464af8f362a7b0893b2a7e9d6e680e38128885d0245ab1faba323c1a",
+    "current_primary": {
+      "subject_id": "agriculture",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c6aaa58c7e4f7a18",
+    "appearance_id": "30a3af82a6e1843b08cc",
+    "source_fingerprint": "2c7c60ff90c056e7973c2a1fba99ce432b5a3958c2a6d2ef2a4e8c64ce3cd2f5",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c57d0a132abdb3f6",
+    "appearance_id": "bf24bb2488e398561189",
+    "source_fingerprint": "6045f0931d908b969d1d77fa135feeb32653c80e7802c7f50227acdea7054a79",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b5767837176cc91",
+    "appearance_id": "18ea16b87d57daf6c112",
+    "source_fingerprint": "8e2cb7f4f4f16f711eda795a9803d76100c4f0007415dd83daba9cbe6e2cf0b7",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": "english/vocabulary/synonyms"
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses english vocabulary: Synonym and antonym identification in context. Appropriately classified under english.",
+    "tested_skill": "English vocabulary: Synonym and antonym identification in context.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_1dc08716cf25dd1d6f0fabd1",
+      "sha256": "5e32d8317a5b85b3d60c203054895d2a36d6003c145bf8170025d1cf0c3bbeeb",
+      "note": "Verified against registered booklet source for Assistant Grade."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

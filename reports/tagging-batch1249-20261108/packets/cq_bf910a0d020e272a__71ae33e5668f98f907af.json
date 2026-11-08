@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_bf910a0d020e272a",
+  "appearance_id": "71ae33e5668f98f907af",
+  "snapshot": {
+    "record": {
+      "id": "71ae33e5668f98f907af",
+      "paperId": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "Diffusion of impurities in a semiconductor is carried out in a furnace through which a steady stream of impurity atoms is passed during the entire diffusion process. What would be the type of profile of the impurity atoms inside the semiconductor?",
+      "options": [
+        "Linear",
+        "Gaussian",
+        "Complementary error function",
+        "Exponential"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "A steady, continuous stream of impurity atoms supplied at the surface is a constant-surface-concentration diffusion, whose impurity profile is the complementary error function erfc(x/2√(Dt)). The printed stem matches this standard diffusion setup.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "1",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF M.E.S. UNDER PUBLIC WORKS DEPARTMENT - ELECTRICAL ENGINEERING PAPER-III",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Jr.%20Grade%20of%20MES%20under%20PWD%202018%2C%20Electrical%20Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "b74854926c9aa659fdb09a0ddd4a0847b74605aa8aa16d35db9b02b3b3ac8c60",
+  "appearance": {
+    "id": "71ae33e5668f98f907af",
+    "paper_id": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "1",
+    "qnum_seq": 1,
+    "page": 1,
+    "question": "Diffusion of impurities in a semiconductor is carried out in a furnace through which a steady stream of impurity atoms is passed during the entire diffusion process. What would be the type of profile of the impurity atoms inside the semiconductor?",
+    "options": [
+      "Linear",
+      "Gaussian",
+      "Complementary error function",
+      "Exponential"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": "A steady, continuous stream of impurity atoms supplied at the surface is a constant-surface-concentration diffusion, whose impurity profile is the complementary error function erfc(x/2√(Dt)). The printed stem matches this standard diffusion setup.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'atom':20,38 'carri':8 'diffus':1,26 'entir':25 'furnac':12 'impur':3,19,37 'insid':39 'pass':22 'process':27 'profil':34 'semiconductor':6,41 'steadi':16 'stream':17 'type':32 'would':29",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_bf910a0d020e272a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Complementary error function",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,2927 @@
+[
+  {
+    "canonical_id": "cq_14d22a7eaac55597",
+    "appearance_id": "e2e6b4daa79fd6d83bc4",
+    "source_fingerprint": "36d51906654fc88c34c5fbb5e4799d60888c751d66c336f0b90774c9fcf2aad2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59d3a0ec43766855",
+    "appearance_id": "885462f58929195841d3",
+    "source_fingerprint": "654b638844801b25accd39a7c6aabceef29a2025ee2fe666461634c79c935b57",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/environment",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses environmental studies: Ecology, conservation reserves, and environmental protection. Appropriately classified under general-studies.",
+    "tested_skill": "Environmental studies: Ecology, conservation reserves, and environmental protection.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc7b757c798d4835",
+    "appearance_id": "0e9bb51d672f6af91421",
+    "source_fingerprint": "14fb2899e946a1c8b1bd78a5397dae1aa8814397eda29fdc2f242df5fbb6f80e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9a3df60c023f219c",
+    "appearance_id": "06481d0733f494f23e08",
+    "source_fingerprint": "eb562749f9e8a35dcefa629b1b600cc984e9986bcfa6906801fc1c79410be80c",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3db7aea792771afa",
+    "appearance_id": "2940cd705d28d05b5f69",
+    "source_fingerprint": "8184808fcfc940f139d8e440e27e4b915558fa26bf73a596bf6a7bf3f647c4d1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_92121776c68b77d3",
+    "appearance_id": "a441dbfcd3c3cd243b36",
+    "source_fingerprint": "44811480fdb12b225ec40414e6b96e9f7e738dc5c012a9f0dea43329ff3346d1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1c117814f7ea2d28",
+    "appearance_id": "dca7a2c65baa71e0e4e7",
+    "source_fingerprint": "5dd225d2954a9ecdee0c284d2a18c1f0add138743488105c3e087fcd1ea92d04",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6d7bc57ae0dcd86",
+    "appearance_id": "dfba865fbd0f2201080f",
+    "source_fingerprint": "19611357709213b976c6807413f29913d853534d460ba400a0522f0210bfce12",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0426449c0d569006",
+    "appearance_id": "1abfa06355f51ccd8c5c",
+    "source_fingerprint": "abfa5ad88b011cd83cb292014aa07a851a32d28169bb6ba0b92452a45483f7dd",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5317aa3b50f9fa02",
+    "appearance_id": "ea68e6d6d38e1ea0266f",
+    "source_fingerprint": "d978835e49b60e4c176b18451ace2ce16c9e5f7b9b9d6c8ad2d91e7d87c12252",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c31863604e016f1",
+    "appearance_id": "05a2009142d00bdf15e4",
+    "source_fingerprint": "1ef5be37941eb266a18acd8e27fcf53a94f8494e2713c3ded2854160fe78a3ee",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c530cfc8d3af8c53",
+    "appearance_id": "c48f55ae15ea3c1b8cd7",
+    "source_fingerprint": "60973dd70bdcf18adeba6da233a46130279e6a1f4840615b2c66aeed1adf7a43",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cf0a14f04f181260",
+    "appearance_id": "213f61762fcd4ee31ddf",
+    "source_fingerprint": "93f59f94b7c2b9bb4de165601776406a1a67c567bdc9a95e7c26805d5354044b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2116a0c168810cc3",
+    "appearance_id": "f31d1ba39536fc93f47c",
+    "source_fingerprint": "5f68ff5f99917f406c1505cb42d42d1dcd86033daafcf18e8c717e1c451af4f8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/surveying",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/surveying",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_461f6b10c88d761f",
+    "appearance_id": "431baaeb3957562f9b62",
+    "source_fingerprint": "bbe94b920d9289c504f4f09debcae99194cd636fdb33b1dbf1f24d2a7a3a5cc0",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c9148f048b0742b",
+    "appearance_id": "8838a66ae0785327ca7f",
+    "source_fingerprint": "cf68ece20e09fac5accaa278d1b0ad28d7792fc69e5136753a787c9bbcfe0e70",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a8d5edaea5c8a7e2",
+    "appearance_id": "c21676728111e17dfb24",
+    "source_fingerprint": "0f65ac53ec5d9298779bde094d9e0993e2990d8578e20736a0a5f727fef0c0e8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a186e0dcacceb529",
+    "appearance_id": "57754772ecdb7274ab15",
+    "source_fingerprint": "4a389004d91cd346f88f3bcf45f8c01d64a1816c639a959b481315e5b0c0b0cb",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_47e103723bcfa44e",
+    "appearance_id": "0e3b4a58aaef83bb22e7",
+    "source_fingerprint": "966cfa5669f29b3671591ed364c30d38eda67aff0a41418e4ed661116bcd6271",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c967abd4c897f68",
+    "appearance_id": "9b4c586897d66afdf4ff",
+    "source_fingerprint": "cf786142fe6e9b022cb848b1f39585922948498b2c4f089297cfe5cb34f02895",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d67c95cadc3c1f0",
+    "appearance_id": "1a7a1167b26faa6f3760",
+    "source_fingerprint": "e9910af7f14bf52fc41d59aa1734b57358683ba0cc32a857332e2a9cbd4bb456",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48ad88fa974ab7b9",
+    "appearance_id": "858587cb87a967269732",
+    "source_fingerprint": "a918a05612b5969a69e31e64ccb30a1520a71c9aacaeb3e4d43caa5010de4680",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d96f5be1061cfb8b",
+    "appearance_id": "fcb530b21a86a3ae7a75",
+    "source_fingerprint": "d82c7d0d4447e34bde48a6f2e880cd8fd727a511f112bf5bc6d319ebb516350e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1203432a348edb24",
+    "appearance_id": "bd5f284c91e9c80e6bfc",
+    "source_fingerprint": "6ce0bc396622e7f276b4b341e56058333951a7a37459acea86c410add1c8bd0a",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses geography: Physical geography, drainage systems, climate patterns, and regional topography. Appropriately classified under general-studies.",
+    "tested_skill": "Geography: Physical geography, drainage systems, climate patterns, and regional topography.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6b2922118b8d0e02",
+    "appearance_id": "695137724f72d3d32bd1",
+    "source_fingerprint": "dc1aa87da5a2dcaa7a68d8b8d0e0ce3178c562330a2f6c2f9604454ca6ad02f9",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fb0d8fa8c7d0f150",
+    "appearance_id": "98198cde58b141428e88",
+    "source_fingerprint": "3d512a7e926a89cd481a5fd151609441ed12c34286482d830fe2c4156509a4e3",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_794f6488f103bee4",
+    "appearance_id": "f20866950f39cdd4119a",
+    "source_fingerprint": "24b4257b4ef66776df24a93c4d0d4530c1a70c81ea832899ee8a5487bc756abd",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_199f9a972369ae1f",
+    "appearance_id": "ff68951ad2b16001e797",
+    "source_fingerprint": "67ed6502a67c9c0e02ff7c279916d1ad5ff1c1d6b068051e780476d1ad3c2fba",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_43172197a496653a",
+    "appearance_id": "3e815c3b891c11f9dd12",
+    "source_fingerprint": "391d8860bc62b4d6342c772fc23464acc8bd6fd1c02d770ba227819f93ef18ee",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_45ffc800dc558e88",
+    "appearance_id": "c6a64f4384845d197086",
+    "source_fingerprint": "f237503d3c1c94062a25472085a2afaf84a14387f111a25f44475f6b27e91cf6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_262ee89682cea3f4",
+    "appearance_id": "6cbd7895fc3f556dcafc",
+    "source_fingerprint": "a86f880f080afbeecc7ff4e16858bc7fb732e8b1e303bee111304a4287746031",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/building-materials",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": "civil-engineering/building-materials",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_67c73464b2ea652e",
+    "appearance_id": "9ae5a102321097aacb1c",
+    "source_fingerprint": "891eff6cb8d10e930776dd2913175af457a5a5e3d3961ff072eb68fbdf899072",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_750f18559025d2ae",
+    "appearance_id": "9026f2fbafeb049767c4",
+    "source_fingerprint": "cb3dc92ca3797869ba6e80888d01eefb7ca0c14da206cb44eea2be212755ba44",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_003fdcd48fc423d1",
+    "appearance_id": "8726f429c7d6016596ab",
+    "source_fingerprint": "66034661334afb476c0026677ba249fe9422cc65307866ea194eeb90fd87dc11",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d0ef995cad812cbb",
+    "appearance_id": "f77bb50bfaf58c58a7e5",
+    "source_fingerprint": "ad5f8697c68c0313c88e113a9097e33d65689a9926ef2f5af5b78172d7fe7dbf",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9fd7289df159d567",
+    "appearance_id": "28b0392602d3a0cc577e",
+    "source_fingerprint": "ee5f6674b0d59d9dc0b2d75032792ef9eb0ba83b97057ec5f05b56a8dbc63626",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_81831c6828a3ea3e",
+    "appearance_id": "9318b98b2c501acd2712",
+    "source_fingerprint": "3b6e98684d1de62a37a71c7f70c673a14849e155a5ed5003b1665c29936a1e7f",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e897a8753788ebeb",
+    "appearance_id": "2f2254840179d066ddab",
+    "source_fingerprint": "268032f24d0997cc9962885b02ee7195db5f61d99b16149ed890570f457270b8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_719854fe44c1b165",
+    "appearance_id": "5e2924bb8679cc4f25ee",
+    "source_fingerprint": "6af0f329ad32e5d545f1240000993fa43bd1bc754e73be67095a54bcb70804a2",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6940da60209133ed",
+    "appearance_id": "175e1893f09b67ba60df",
+    "source_fingerprint": "9ad5bf1222cba039e1252a21f42586de9b867dcc5679708f52c367d7e3685ee1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc3d2d4d790b8e1b",
+    "appearance_id": "3d5e50ae2fbc01eb8981",
+    "source_fingerprint": "61e8e3f673aa6d5653fc45e13eac8fe29649f8c6eb89dbdbf73a322e3e845ec5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57a9231b1f249b60",
+    "appearance_id": "290ed4f7dc85ba7809b1",
+    "source_fingerprint": "0da9cf70e397e9d47236c54b5dc5f3685342877eef2247b561069b530e709f22",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_650f23fb12a44618",
+    "appearance_id": "10fa257f61620b8c6221",
+    "source_fingerprint": "6ed5d71cfb341c4bb28d34ddd5987fc43821de54006be1e7714785f1f2b78ed8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e593b990fabbe980",
+    "appearance_id": "c8ac59a2243f0fefd33b",
+    "source_fingerprint": "e5b349d1bd16d5644b14fecba1d1363aa3f67484b0cca5d357f50d577ae71915",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b5e7c8d94bfc7aa5",
+    "appearance_id": "4edd3ee5476916728a17",
+    "source_fingerprint": "ab5863026ea34d82f8b8e1973742bd3e915c3cfff212a43698e8881a7a60878e",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_049ae94858a53a82",
+    "appearance_id": "5c54182af95000d8aec9",
+    "source_fingerprint": "eeff80ed8f6200d47635979aca4e178f34c43803c10c67ab78c70011b38679e0",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5ad6d5bf1e66dca2",
+    "appearance_id": "2756b48d5cad45a267cf",
+    "source_fingerprint": "d01c217e6eff557ed3a26e8851d825dd7ec59f24cd7c620adce20dbaf55615b0",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d02c6632b4367872",
+    "appearance_id": "0b19ee30de60fc89a132",
+    "source_fingerprint": "0b3090ade87246f4520d7a6f9314ae69a38e2096d24637aff75fc579b7173621",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_502f4f4ced0d62e7",
+    "appearance_id": "b0ade90865fb646ceef8",
+    "source_fingerprint": "7bef029b024da901e0d891d22a64ddbec4d11d00027ab7a92c8e23fcf2be031b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f8df62dc48084382",
+    "appearance_id": "104ad6cbe46be1abe73a",
+    "source_fingerprint": "c7e54c7c7c11a13477eca2d44ca3d37d46d90a08446837accbb1065961a3a920",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f1c8394ef850cdce",
+    "appearance_id": "7ffaa7c248aa80c9c955",
+    "source_fingerprint": "0c009d9fcea76b0ecd090a336e7e0505e467b79d8e13533b1ebbf6d424e0e8d7",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_55476d95ec79133e",
+    "appearance_id": "4cfdd95b77bd1270bdc6",
+    "source_fingerprint": "7c220b0f9a0708e5fb759b06730f3273cd05e6e852b71886328df67b426f8212",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32ccc8883d4908e9",
+    "appearance_id": "21bcba2de124f43a0fd8",
+    "source_fingerprint": "ddcafbace7ffb0513491717dd66f755e3983a42bdd69cc3aeecbd3d3efa85fb2",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5b66e314d5e9acd6",
+    "appearance_id": "059b7d5cacfa3580368e",
+    "source_fingerprint": "dcebd84ba16311c354e3999f7732caea5b75e052680739cb965ca68add237466",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76941785354ef225",
+    "appearance_id": "ce40c7f564086769541a",
+    "source_fingerprint": "3e81456288a6703b74352151be393b32eb3bdd66e0d5ee9d685295b5afed81fb",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under civil-engineering. Appropriately classified under civil-engineering.",
+    "tested_skill": "Assessment aligned with syllabus specifications under civil-engineering.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_61af8617a73acd16",
+    "appearance_id": "ec84ce94fe52c5fd8497",
+    "source_fingerprint": "cf276b6a02dc545f8fc41ead82a69ae5b179cf7a64ef9b8cb2277a973c440d0a",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_50165bd9c2e403ad",
+    "appearance_id": "26e77d8e9444eff8b9cf",
+    "source_fingerprint": "23546f86d0fef5d55fb9f8430e1065ef3d66a238bf2b61cbbd8c37c09899b081",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fbd0057e3da7bee2",
+    "appearance_id": "51e99de3a2df19d8050c",
+    "source_fingerprint": "f19cfe1a442a8586765b0457680e7ed24d4e6d9ce51cc3241f1295398422c889",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses assessment aligned with syllabus specifications under law. Appropriately classified under law.",
+    "tested_skill": "Assessment aligned with syllabus specifications under law.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f423594ef11da5a0",
+    "appearance_id": "a22ac0a62d6eb75b635f",
+    "source_fingerprint": "82e4880780a13fa457f0d2b0d61788df97056011b55620a83bf270fc0b294c36",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ff4aed80e6fe985",
+    "appearance_id": "0750490df1378972c509",
+    "source_fingerprint": "f3cf16b9244c39e8dcaf22fb9439990f8c49c5361cfa1b5496022d99a36a6270",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_63c337019af8176d",
+    "appearance_id": "7e9cc2101778494995fc",
+    "source_fingerprint": "fa30831f413d458804b87a4ed86c995b35c79116da30fc7b9c58aa38c381eb9a",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bf46bcb9f1f6976b",
+    "appearance_id": "df954c844432b3c9043e",
+    "source_fingerprint": "e4d1c021b0622a59e62b8a6d2d30c89de4e3a34472258b39918949d5a74f1fe5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_efc04c6eb6e4301e",
+    "appearance_id": "c06ea331cd5639ed9680",
+    "source_fingerprint": "a189bc7f243311c8e24bf229d35d6097cafc504fe6e0345800ec0c1b641e0e98",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_582337989da5daf8",
+    "appearance_id": "8776f30a668d05eb04c6",
+    "source_fingerprint": "02033d6efb464ef3038b88e9633d1e111c8d5e357357b9c16fb8b36e832f772a",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_30ea40de4b129686",
+    "appearance_id": "4a42841bd1a2182e1da2",
+    "source_fingerprint": "6589482bff4cc1eaa0a135914d159967bde2340299f64b8c201775dfb6fb1a9f",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_76465e0ba111e394",
+    "appearance_id": "70cd62b3130bc5780e9d",
+    "source_fingerprint": "9afd1bcd334c5d47ebfc06396d1d018b09a39307a429c55df036f715d43fd2a8",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4cb71ef4b89d3b66",
+    "appearance_id": "7f70d25864ea96f982c8",
+    "source_fingerprint": "3b5bea128a9653da448077cf5040a966f643a4e1d81be868934c7335ff0830fa",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66cab5e140076910",
+    "appearance_id": "40a5c93d648cc4cba2c9",
+    "source_fingerprint": "05a397e5515e139c79b719e3882452ba89782027d96af89e767dd941e53fbe73",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bef9c3f7c59a1107",
+    "appearance_id": "ea94e3e15364a1216a79",
+    "source_fingerprint": "d23a17a048a8dda6817ea75c49e96bec798594ca5645f1e010b30203b1c8024d",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_38e396dddd9b278a",
+    "appearance_id": "5668f2e4cebb75e27909",
+    "source_fingerprint": "ee9ea0b713eade33cd837c26f1672046fe563a5396ea76f678e89060bd9c9c01",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/tenses"
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses english grammar: Verb tense inflection, concordance, and syntax structure. Appropriately classified under english.",
+    "tested_skill": "English grammar: Verb tense inflection, concordance, and syntax structure.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_986fa8473d6027c4",
+    "appearance_id": "8458896bb367655909fc",
+    "source_fingerprint": "ba797445dea5a628ef55706f12c905534fbf7d50dad010f9dac3731c51b54337",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c3937a641887974d",
+    "appearance_id": "042eae59166792593216",
+    "source_fingerprint": "dae67475597a3f7c84eaebd95c0ff38fb5724278d37213b41520278a9aae639e",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_985b05a436471efe",
+    "appearance_id": "7ab100b2b96a2cfd8dac",
+    "source_fingerprint": "d0cf03e6bd13ea6b0fde53ae769f26c82a30c14222740f22f199cd45039fe8bb",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3ef6023be10dfa5e",
+    "appearance_id": "f284a7573c46a41b3eb1",
+    "source_fingerprint": "1e4916c00b458348c03f9f04bf32e7324027333cd0131ee03768792f29be4ad2",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4359da0cced8c31",
+    "appearance_id": "73aa34091432c6418486",
+    "source_fingerprint": "5a3a3c4036b81ade367cc33e4df3156a29747aca5731d2a68753eb307c307ec5",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses assessment aligned with syllabus specifications under reasoning-and-aptitude. Appropriately classified under reasoning-and-aptitude.",
+    "tested_skill": "Assessment aligned with syllabus specifications under reasoning-and-aptitude.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_c9cda11380dbafc6aae14da4",
+      "sha256": "35f033e0802a17422bdb4ab04d7a674425121eab881694c53cc7427fc3de9e98",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "canonical_id": "cq_691656d29935eda5",
+    "appearance_id": "5192418df7963a26e1bc",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "1",
+    "question": "Which of the following contains overloaded insertion operator?"
+  },
+  {
+    "canonical_id": "cq_3b810a5e6bc3b06f",
+    "appearance_id": "d397187768067a3bc652",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "2",
+    "question": "In C++, a process by which a class contains object of another class is called"
+  },
+  {
+    "canonical_id": "cq_28febb264d1b3a28",
+    "appearance_id": "5b579fb98bb801254a94",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "3",
+    "question": "In a class definition in C++, the access specifier used by default is:"
+  },
+  {
+    "canonical_id": "cq_c068edf4055b3a9e",
+    "appearance_id": "8bddfd5293d4e2cac93e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "4",
+    "question": "How many objects can be created from an abstract class?"
+  },
+  {
+    "canonical_id": "cq_f12a2af80dc2c554",
+    "appearance_id": "3f0ab2cb6bfb0d670318",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "5",
+    "question": "Identify which of the following statement is the technical difference between structures and classes in C++?"
+  },
+  {
+    "canonical_id": "cq_b78998bcb7cdbc3f",
+    "appearance_id": "1917d84dff069f1f9dec",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "6",
+    "question": "Identify which of the following statement will be correct if the function has three arguments passed to it?"
+  },
+  {
+    "canonical_id": "cq_8c6aa72a2b86a9ec",
+    "appearance_id": "1e158952887ec7e7483b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "7",
+    "question": "Which of the following type of data member can be shared by all instances of its class?"
+  },
+  {
+    "canonical_id": "cq_814fb6f0800ee390",
+    "appearance_id": "cfec73ae78d7c0274864",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "8",
+    "question": "A function prototype is used for which of the following reason:"
+  },
+  {
+    "canonical_id": "cq_4b042b425d04894a",
+    "appearance_id": "b9d9c075d4725e30825c",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "9",
+    "question": "Which of the following statements are correct for a static member function? (i) It can access only other static members of its class. (ii) It can be called using the class name, instead of objects."
+  },
+  {
+    "canonical_id": "cq_f63719ffca680110",
+    "appearance_id": "696421902a1e4076cddd",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "10",
+    "question": "Copy constructor must receive its arguments by __________."
+  },
+  {
+    "canonical_id": "cq_eaa1b5b2585abf60",
+    "appearance_id": "149c9c19b0f6ccfab977",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "11",
+    "question": "Which of the following is used in class to basic type conversion?"
+  },
+  {
+    "canonical_id": "cq_8dca73a70213d1bd",
+    "appearance_id": "d4b1222e0506d2df4d15",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "12",
+    "question": "Operator overloading is desirable for __________."
+  },
+  {
+    "canonical_id": "cq_232439ae21b3bf74",
+    "appearance_id": "119755c06a49200c610e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "13",
+    "question": "When a binary operator is overloaded as a non-member function, how many parameters will it require?"
+  },
+  {
+    "canonical_id": "cq_d6efaddfc809c790",
+    "appearance_id": "a891382d10664dccef10",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "14",
+    "question": "What would result for the following code: Class Test{ public: ~Test( ) { cout<<\"\\nDestructor called\"; } }; int main( ) { Test t; t.~Test(); return 0; }"
+  },
+  {
+    "canonical_id": "cq_c45a7696388c1a91",
+    "appearance_id": "4c93d2f7c811ee64e4b9",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "15",
+    "question": "Identify which of the following is a legal way to access a class data member using this pointer?"
+  },
+  {
+    "canonical_id": "cq_fb8277e11af6084a",
+    "appearance_id": "ad3778a823fa47d14069",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "16",
+    "question": "Which of the following function can never have a body/definition:"
+  },
+  {
+    "canonical_id": "cq_0a0d122487b9625a",
+    "appearance_id": "7dfa8cfc5ed9195c15a7",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "17",
+    "question": "Consider inheritance: B and C inherit from A and D inherits from B and then from C. A happens to be an abstract base class. When you make an object of type D, what would be the order of execution of a constructor:"
+  },
+  {
+    "canonical_id": "cq_87f8edb4538c97a4",
+    "appearance_id": "e7a12b4c348ddac39a5c",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "18",
+    "question": "Implementation of virtual functions implies"
+  },
+  {
+    "canonical_id": "cq_aab86654f3e5b630",
+    "appearance_id": "cd9c11e1374e2a659b08",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "19",
+    "question": "When we create a file by 'ifstream', then the default mode of the file is __________."
+  },
+  {
+    "canonical_id": "cq_1a81b27cfd2df29f",
+    "appearance_id": "c6ea90804ec09c49cdfd",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "20",
+    "question": "File is always associated with the following pointers:"
+  },
+  {
+    "canonical_id": "cq_3b1dd8c0ac47e4b6",
+    "appearance_id": "8e52b3bdacb493538aab",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "21",
+    "question": "If an end of file is reached in C++, the eof() function returns which of the following value."
+  },
+  {
+    "canonical_id": "cq_7a86eb3d88318713",
+    "appearance_id": "1fe8eb8ef2c3a45667ff",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "22",
+    "question": "How many parameters are there in getline function?"
+  },
+  {
+    "canonical_id": "cq_4f8b8a0f6433695d",
+    "appearance_id": "f72685ba1850131ae19f",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "23",
+    "question": "In exception handling mechanism, we have to put which of the following statement inside a try block."
+  },
+  {
+    "canonical_id": "cq_8d4f7b8fb976060d",
+    "appearance_id": "50d6db188986c2c3a567",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "24",
+    "question": "Which of the following catches exception of 'any type'?"
+  },
+  {
+    "canonical_id": "cq_52899b018c705d6a",
+    "appearance_id": "745b10484376cdef2a7d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "25",
+    "question": "cin stops extraction of data __________."
+  },
+  {
+    "canonical_id": "cq_c89dd5fc2d1d48ef",
+    "appearance_id": "d53e072332f306dd2b96",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "26",
+    "question": "To implement virtual function, we need to have__________."
+  },
+  {
+    "canonical_id": "cq_63acade14029c6a8",
+    "appearance_id": "d3665305235417b1ea68",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "27",
+    "question": "In inheritance, which of the following statement is true?"
+  },
+  {
+    "canonical_id": "cq_080726f41de3b6b3",
+    "appearance_id": "46a10e1553b6eb153c6e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "28",
+    "question": "In a group of nested loops, which loop is executed the most number of times?"
+  },
+  {
+    "canonical_id": "cq_8c5224f1c77fb21e",
+    "appearance_id": "f019121f52a35dcfede4",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "29",
+    "question": "Size of an array can be allocated dynamically by using __________."
+  },
+  {
+    "canonical_id": "cq_0df3bafff26b2885",
+    "appearance_id": "07318d2d49d50dead042",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "30",
+    "question": "Which of the following is done by compiler for templates?"
+  },
+  {
+    "canonical_id": "cq_f93d718cdf813f09",
+    "appearance_id": "e294595066c388cd65df",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "31",
+    "question": "What is meant by template parameter?"
+  },
+  {
+    "canonical_id": "cq_07a0a6f41ce35d44",
+    "appearance_id": "b77a12f6a3d06a92c2c3",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "32",
+    "question": "Which of the following is used when accessing a member function through a pointer?"
+  },
+  {
+    "canonical_id": "cq_08d16b8944fd7894",
+    "appearance_id": "374371fbc30c2f7c06b3",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "33",
+    "question": "What would be the output for the program: int main() { int a=90; int b=a++; cout<<a<<\"\\t\"<<b; return 0; }"
+  },
+  {
+    "canonical_id": "cq_407b6307e4999275",
+    "appearance_id": "6cd2435bff6f41157fdc",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "34",
+    "question": "What would be the output for the program: int main() { int a = 5, b = 6, c; c = (a > b) ? a : b; cout << c; return 0; }"
+  },
+  {
+    "canonical_id": "cq_9ae7a5df649bf796",
+    "appearance_id": "f98a8432945754bebd4d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "35",
+    "question": "Identify from the following variable whose life time is during the entire program?"
+  },
+  {
+    "canonical_id": "cq_7d50fdb10b6b6575",
+    "appearance_id": "d21bc4359fc0b632d770",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "36",
+    "question": "Which of the following schema is a high level description of the whole database?"
+  },
+  {
+    "canonical_id": "cq_113c452ce65570a4",
+    "appearance_id": "8389b9d4334e93acb78b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "37",
+    "question": "__________ is used for specifying database retrievals and updates"
+  },
+  {
+    "canonical_id": "cq_4707756625d58740",
+    "appearance_id": "3c443569e321d8d009c7",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "38",
+    "question": "The capacity to change the conceptual schema without having to change external schemas is called:"
+  },
+  {
+    "canonical_id": "cq_f2825ad0e221ca73",
+    "appearance_id": "5f721493e09a88ac27b6",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "39",
+    "question": "Consider two attributes namely, age and birth_date. Identify which one of the attributes will be classified as derived attribute and the other as stored attribute."
+  },
+  {
+    "canonical_id": "cq_4f990a8b516a436e",
+    "appearance_id": "be5a1b3ce3288abffe56",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "40",
+    "question": "Which of the following specifies the set of values that may be assigned to each attribute for each individual entity?"
+  },
+  {
+    "canonical_id": "cq_db6060f5caeb6afe",
+    "appearance_id": "842528e3ef07815cb531",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "41",
+    "question": "Degree of a relationship type is the number of participating __________"
+  },
+  {
+    "canonical_id": "cq_b4f33504d69d184f",
+    "appearance_id": "f0dd79d479fb199a5bd2",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "42",
+    "question": "With respect to its identifying relationship, a weak entity always has __________"
+  },
+  {
+    "canonical_id": "cq_fd1f1a8f583dcf76",
+    "appearance_id": "9a953185251d8bfe5bfc",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "43",
+    "question": "For binary relationships, which of the following specifies the maximum number of relationship instances that an entity can participate in?"
+  },
+  {
+    "canonical_id": "cq_a2e54381f5e044ff",
+    "appearance_id": "4e5213127d4be2ba8b25",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "44",
+    "question": "An entity in A is associated with at most one entity in B, and an entity in B is associated with at most one entity in A. This is called as __________"
+  },
+  {
+    "canonical_id": "cq_ccfdbf863050b4fa",
+    "appearance_id": "b3486b96b0b1542aced8",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "45",
+    "question": "Which one of the following is a set of one or more attributes taken collectively to uniquely identify a record?"
+  },
+  {
+    "canonical_id": "cq_dce406c305c2b7fe",
+    "appearance_id": "a7e73984fcc3da11be8f",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "46",
+    "question": "Which of the following is used to denote the selection operation in relational algebra?"
+  },
+  {
+    "canonical_id": "cq_7ae3454373a1add3",
+    "appearance_id": "f8b9a0f4a117e370827e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "47",
+    "question": "When performing a join operation and to get rid of the superfluous attribute in the join result, which of the following operation is used (considering the relation A and B has one attribute name in common):"
+  },
+  {
+    "canonical_id": "cq_d0dbe06ea9be4ccd",
+    "appearance_id": "52d9251bbf1699f97661",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "48",
+    "question": "Identify the expression: {t.Fname,t.address | Employee (t) AND (d) (Department (d) AND d.Dnames= \"Research\"}"
+  },
+  {
+    "canonical_id": "cq_9e02486aa81eb543",
+    "appearance_id": "8ab396df9092ac4c1572",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "49",
+    "question": "What is the result of the Delete statement in SQL: DELETE FROM EMPLOYEE"
+  },
+  {
+    "canonical_id": "cq_d93703d3c00b28db",
+    "appearance_id": "01d8c1b2015e5541502a",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "50",
+    "question": "Which statement in SQL allows us to change the definition of a table is?"
+  },
+  {
+    "canonical_id": "cq_a4ed11e7d05057a2",
+    "appearance_id": "c83c3eda9e9156f2f0fa",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "51",
+    "question": "Consider the following schema LOCATIONS (subject_code, department_name, location_id, city); Which code snippet will alter the table LOCATIONS and add a column named Address, with datatype VARCHAR2(100)?"
+  },
+  {
+    "canonical_id": "cq_95eedf7e5f39ad97",
+    "appearance_id": "7b1556df8ff07d1d6b6f",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "52",
+    "question": "Which statement is used for allocating system privileges to the users?"
+  },
+  {
+    "canonical_id": "cq_a4fc674f217836e7",
+    "appearance_id": "9ba871de3ceeb53062ef",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "53",
+    "question": "Consider the following schema STUDENTS (student_code, first_name, last_name, email, phone_no, date_of_birth,); Which of the following query would display all the students whose first name starts with the character 'A'?"
+  },
+  {
+    "canonical_id": "cq_90acd91c63e6f6f5",
+    "appearance_id": "af608fc2f525b525131b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "54",
+    "question": "A view is which of the following?"
+  },
+  {
+    "canonical_id": "cq_4c573c2aa3751cee",
+    "appearance_id": "d41fc5afe53d29652b4d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "55",
+    "question": "Which one of the following sorts rows in SQL?"
+  },
+  {
+    "canonical_id": "cq_4d165731b06d12b1",
+    "appearance_id": "fbf9fc0b146c855181dd",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "56",
+    "question": "Identify a tuple relational calculus query from the following expressions:"
+  },
+  {
+    "canonical_id": "cq_4271ae6238892a28",
+    "appearance_id": "ba1d2e3d71ac106d5b9c",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "57",
+    "question": "Functional Dependencies are the types of constraints that are based on__________"
+  },
+  {
+    "canonical_id": "cq_5f3be47be508dcc1",
+    "appearance_id": "842c26113bca65dc79c8",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "58",
+    "question": "Which of the following Normal Forms check that there should be no transitive dependency of a non-key attribute on the primary key?"
+  },
+  {
+    "canonical_id": "cq_b866dd5d5d79d37a",
+    "appearance_id": "7034b5a71f103e4c427e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "59",
+    "question": "Which of the following statement is true?"
+  },
+  {
+    "canonical_id": "cq_46e56ed007cadb73",
+    "appearance_id": "f20a64ec450a533b5b1a",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "60",
+    "question": "The property which ensures that each functional dependency is represented in some individual relation resulting after decomposition:"
+  },
+  {
+    "canonical_id": "cq_28c82ff6f10e2df6",
+    "appearance_id": "dfe82aa39548719c4fb9",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "61",
+    "question": "The lost update problem in Concurrency control occurs when:"
+  },
+  {
+    "canonical_id": "cq_8993bf7677f816ec",
+    "appearance_id": "025075b27b431661958b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "62",
+    "question": "Which of the following scenarios may lead to an irrecoverable error in a database system?"
+  },
+  {
+    "canonical_id": "cq_d7a36538c1b9ce5a",
+    "appearance_id": "a51fb8ef6010f2e151fb",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "63",
+    "question": "Which one of the following is not a part of the ACID properties of database transactions?"
+  },
+  {
+    "canonical_id": "cq_93b416a392e274d7",
+    "appearance_id": "2f68e87e5bb668c6f568",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "64",
+    "question": "Which of the following statement is/are incorrect? A: A schedule following strict two phase locking protocol is conflict serializable as well as recoverable. B: Checkpoint in schedules are inserted to ensure recoverability."
+  },
+  {
+    "canonical_id": "cq_7189ec6a78b39a8f",
+    "appearance_id": "fe96f7eac9b62b228b3b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "65",
+    "question": "If the wait for graph contains a cycle:"
+  },
+  {
+    "canonical_id": "cq_b186efc2b8f3474b",
+    "appearance_id": "3e1f6d386db3f1d2c312",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "66",
+    "question": "Which of the following is a procedure for acquiring the necessary locks for a transaction where all necessary locks are acquired before any are released?"
+  },
+  {
+    "canonical_id": "cq_3e3e6a72f12ece61",
+    "appearance_id": "f0ac81762073c3c46057",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "67",
+    "question": "When transaction TS (Ti) < TS (Tj ), then (Ti older than Tj ) Ti is allowed to wait; otherwise (Ti younger than Tj ) abort Ti (Ti dies) and restart with a different timestamp (TS). This is"
+  },
+  {
+    "canonical_id": "cq_a245a0fa29c72393",
+    "appearance_id": "31ff0631994ddad39b05",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "68",
+    "question": "Which of the following is the preferred way to recover a database after a transaction in progress terminates abnormally?"
+  },
+  {
+    "canonical_id": "cq_20017435dde9a727",
+    "appearance_id": "363efefb02b956a34575",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "69",
+    "question": "The transaction log includes which of the following?"
+  },
+  {
+    "canonical_id": "cq_5a6038f6214372ad",
+    "appearance_id": "e292bcb40d76fb79414a",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "70",
+    "question": "Backward recovery is which of the following?"
+  },
+  {
+    "canonical_id": "cq_5f66551f69222c13",
+    "appearance_id": "0e16fb01fddfbf49a68d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "71",
+    "question": "From the following phases of software life cycle, which phase consumes the maximum effort?"
+  },
+  {
+    "canonical_id": "cq_13a710af839590b1",
+    "appearance_id": "a5591f4891cfc8c49aac",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "72",
+    "question": "Which of the following Software life cycle model is suitable for products that are vulnerable to large number of risks?"
+  },
+  {
+    "canonical_id": "cq_6cd37248d5bf41e2",
+    "appearance_id": "e17c3fbcbe359b790cc5",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "73",
+    "question": "A module is said to have logical cohesion, if"
+  },
+  {
+    "canonical_id": "cq_f57ff59f8ec54672",
+    "appearance_id": "49bf8993986f603de305",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "74",
+    "question": "A module is said to be functionally independent of other modules when a module has"
+  },
+  {
+    "canonical_id": "cq_a7707c57bf26550a",
+    "appearance_id": "cf571639fedb27fb686d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "75",
+    "question": "Two modules are said to have stamp coupling, if"
+  },
+  {
+    "canonical_id": "cq_f2f373360f0be69d",
+    "appearance_id": "d9a81d2bf53871f45ae7",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "76",
+    "question": "The most important desirable characteristics of good software design is"
+  },
+  {
+    "canonical_id": "cq_76e98703dbf89b7f",
+    "appearance_id": "e8b7ffbfb6cb2cfd5a6b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "77",
+    "question": "The purpose of structured analysis is"
+  },
+  {
+    "canonical_id": "cq_cef32febbb0fcb67",
+    "appearance_id": "eaaddc5043b2e4cf834e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "78",
+    "question": "The context diagram of a DFD is also known as"
+  },
+  {
+    "canonical_id": "cq_e530d8c214061810",
+    "appearance_id": "42dcab5ce299b3503e9b",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "79",
+    "question": "In software design phase, decomposition of a bubble should be carried on"
+  },
+  {
+    "canonical_id": "cq_fe766f708025ff26",
+    "appearance_id": "009d3321ca50cb58f7b7",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "80",
+    "question": "The input portion in the DFD that transform input data from physical to logical form is called"
+  },
+  {
+    "canonical_id": "cq_c154d705c77eccbc",
+    "appearance_id": "4e3ce8c491f9aa2fe477",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "81",
+    "question": "Which of the following view captured by UML diagrams can be considered as black box model of a system?"
+  },
+  {
+    "canonical_id": "cq_dcb5cdebf5bf32bc",
+    "appearance_id": "1356f7ba8b9600338654",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "82",
+    "question": "A class diagram describes"
+  },
+  {
+    "canonical_id": "cq_d7ba507ea151a2b5",
+    "appearance_id": "7a83818198bd5b8b3ddc",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "83",
+    "question": "Which of the following estimation is carried out first by a project manager during project planning?"
+  },
+  {
+    "canonical_id": "cq_6eaf7651acaab15b",
+    "appearance_id": "96ccc771997257308742",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "84",
+    "question": "Sliding Window Planning involves"
+  },
+  {
+    "canonical_id": "cq_e7199e818d583b8e",
+    "appearance_id": "7a093cc31198e3f0ae9e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "85",
+    "question": "A project estimation technique based on making an educated guess of the project parameters (such as project size, effort required to develop the software, project duration, cost etc.) is"
+  },
+  {
+    "canonical_id": "cq_eded565050d594d9",
+    "appearance_id": "d37a9b5128be03283b7d",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "86",
+    "question": "An example of single variable heuristic cost estimation model is"
+  },
+  {
+    "canonical_id": "cq_1a80723307137afb",
+    "appearance_id": "f8d90ad2894cddebd250",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "87",
+    "question": "Critical path in Activity network of Software project management is"
+  },
+  {
+    "canonical_id": "cq_ef9458fd7d2675d1",
+    "appearance_id": "d5c7e13e380cf73efd03",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "88",
+    "question": "During project scheduling, resource allocation to different activities is done using which of the following representations?"
+  },
+  {
+    "canonical_id": "cq_7c3d3a59455c5f8c",
+    "appearance_id": "bb9e14fbf8171b1cd9ab",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "89",
+    "question": "Job specialization is one of the main advantages in case of which organization structure?"
+  },
+  {
+    "canonical_id": "cq_17b4370b698f6a72",
+    "appearance_id": "84feed23af6d7b942b17",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "90",
+    "question": "In which type of team organization a single point failure of development is susceptible?"
+  },
+  {
+    "canonical_id": "cq_49c547b1dd142a68",
+    "appearance_id": "e2fb8014740168738854",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "91",
+    "question": "The first activity in risk management is"
+  },
+  {
+    "canonical_id": "cq_00e5e1bcabdbd69d",
+    "appearance_id": "e054818def0d9ad0906e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "92",
+    "question": "A development team's insufficient knowledge of the product being developed is one of the main factors contributing to"
+  },
+  {
+    "canonical_id": "cq_b44a2b2dfcd2d96b",
+    "appearance_id": "7fbcef614cbc87bdc2cc",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "93",
+    "question": "Repeatable software development implies which of the following?"
+  },
+  {
+    "canonical_id": "cq_7ff7ae2a94971d92",
+    "appearance_id": "0b445962d084a39571bf",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "94",
+    "question": "A reverse engineering cycle during maintenance phase is required for which type of software products?"
+  },
+  {
+    "canonical_id": "cq_3f6cd7c820879fe2",
+    "appearance_id": "ca1aa3b56bf57605348e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "95",
+    "question": "An integration testing approach, where all the modules making up a system are integrated in a single step is known as"
+  },
+  {
+    "canonical_id": "cq_7bc2405bed369608",
+    "appearance_id": "08418d33519d1a718a77",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "96",
+    "question": "Which of the following system testing is performed by a select group of friendly customers?"
+  },
+  {
+    "canonical_id": "cq_c916e0485f5ec943",
+    "appearance_id": "71b9751386fa66549e9e",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "97",
+    "question": "In which type of testing do we require driver and stub modules."
+  },
+  {
+    "canonical_id": "cq_01cf9826422cb9b7",
+    "appearance_id": "47a220299106ae5749a2",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "98",
+    "question": "Identify from the following debugging technique where the program is loaded with the print statements to print intermediate values with the hope that some of the printed values will help to identify the error."
+  },
+  {
+    "canonical_id": "cq_3acf2f5fd92937c6",
+    "appearance_id": "ddcb2f7e760820fc565a",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "99",
+    "question": "Improving and enhancing the functionality of the system is called as __________"
+  },
+  {
+    "canonical_id": "cq_aefa8af92a213472",
+    "appearance_id": "b994850ddcbb88ff3cf3",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "qnum": "100",
+    "question": "The principle of detecting errors as close to their point of introduction as possible is known as __________"
+  }
+]

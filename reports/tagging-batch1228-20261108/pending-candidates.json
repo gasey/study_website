@@ -1,0 +1,2888 @@
+[
+  {
+    "canonical_id": "cq_cace1e7ad93f7f34",
+    "appearance_id": "34b30c084b6bf947eed2",
+    "source_fingerprint": "4001130dbfa8c9547008a89b18dceec0649ced9bda7ec319de25600ac67fb794",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9e225b3cc2594a9b",
+    "appearance_id": "0076342608aed653b4af",
+    "source_fingerprint": "6c5c6add6f1b1c38316c007f69cb12ee697acd64972fd1716bff2a5659047846",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_47a3687cab0afabb",
+    "appearance_id": "bc7b08011ff5790ddf42",
+    "source_fingerprint": "a0cd4b11263e54895c7c71da95fd7053ef916e16b0a888c75168a6d9afcab7ba",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd397d327d1bcda1",
+    "appearance_id": "edc67eb496d22edd2a1a",
+    "source_fingerprint": "0bbed4b8aaa06a3dc39305321ceb13485f7839a8883aa723a45c892afd30fe78",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_17bf54ed3c44744b",
+    "appearance_id": "b1086404453e4dbb4a6b",
+    "source_fingerprint": "fba1e8707503c3c3f419fe68b9dae5f4b9fb4d5f656f21e3cb33d31836262905",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9319cc880017034e",
+    "appearance_id": "d360715b2cb64953e473",
+    "source_fingerprint": "74a5f9dec2d79aa2df80ea643f2c0a120172e1ee3ad6db65a19418a7ed7ddfbb",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f4516bf4156f5f49",
+    "appearance_id": "ff4355588d2751f99af7",
+    "source_fingerprint": "e18b77791e78130ec9c8f5bfe04b9125f1a7af822197de4d1dcff69438757258",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6209fbf54a9279c8",
+    "appearance_id": "02feed7d3b96afd9008f",
+    "source_fingerprint": "27401e7523fd7917202e2562c1054a5e202e439a833392572f64c25e10c19d78",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_86c121aa7514e6c3",
+    "appearance_id": "0c1d6f552b572760ac2c",
+    "source_fingerprint": "d494b77cadbf6bf8fc1291487779c4b1a3ba8bfcf0ce514bca571925a8932257",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0224fd06e3ed9e96",
+    "appearance_id": "f40db9275a38f629e845",
+    "source_fingerprint": "fdfdf3fbb72418c79cf246501a994d99333993a8b0f2099e67b74956fb1faea5",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_755974a0f9576a0b",
+    "appearance_id": "7739b93d74a355c0693d",
+    "source_fingerprint": "3fa76d41768ae6a346bbb4e199423e077693cd2a51ca7baad885a45e6f58f799",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d36f11a1d1358ad0",
+    "appearance_id": "cb64f90c167367f4ca3f",
+    "source_fingerprint": "055383245d54bf55a41e0e67acfacaa8cec03dfb6f488dac6b0add78bb82a26b",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_27ed60c491b1ac57",
+    "appearance_id": "db40bf0117ba1db3d08c",
+    "source_fingerprint": "3f2ed62ac324fb6d7fb50ef480ff59af3f250cd87bc892ba3f7e008833e51147",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_619ea0398ca0e99b",
+    "appearance_id": "5ae1c7eb9de6c943802c",
+    "source_fingerprint": "673b753f33511735d684f9239cb027f18763c2c72507ff09832f122e3c416c23",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_535996b984f77acf",
+    "appearance_id": "dd267da441f876c10cdf",
+    "source_fingerprint": "2d03831c8b61b31d9607020e25185216d5ec92227c9c1bf5813ce36f71f434d5",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb1efcb2f9da7fe4",
+    "appearance_id": "79179a4f1dc4e8d06be6",
+    "source_fingerprint": "685c9822ea16617487a901455a5e2ed5507fbceee896d0a262111f8cd190d374",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5590d310cc8e5996",
+    "appearance_id": "9f764f680cf0d94580ef",
+    "source_fingerprint": "f9f59506bac97365ad3417f5ef7534c81b2af25540f86aa435c43ecce652280c",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1987d710a5000894",
+    "appearance_id": "78931bf8f32debc12ea5",
+    "source_fingerprint": "65c9176a64a2741cfef6e5c9222a597a9b7291e5cb0e5d77014e7c5a09db031e",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e10642fb4a03a7ac",
+    "appearance_id": "2a583adc0f33ab1597c2",
+    "source_fingerprint": "42e404dafc4846b50e9ee1169b0b2e717115eebeac1b375c2e3088380b4c5494",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_04e31466e0d82096",
+    "appearance_id": "c4da43f8cbc187fade7c",
+    "source_fingerprint": "cbfc5b8176be445016182c62b8e7c3b2d7dfd74596c4062cb67646bd85a5b212",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57940dbb50f73963",
+    "appearance_id": "b931df0ac0d88b6f97ed",
+    "source_fingerprint": "7bbf200011e2694fa8b6af20db42fe7e614951deaab2d05a925dae6b7352960b",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0e99c75001368f9",
+    "appearance_id": "edae44236f2d22485b53",
+    "source_fingerprint": "f3349ca0f601cdc4139b2ba71ef7deb2462c20466a0fa419f475a06ceb2d2d79",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cc382e845b3c0db1",
+    "appearance_id": "c6d66a44c703f4da8c36",
+    "source_fingerprint": "a5bf335df0fc4c862a707008427923f36b8198e8b4de5380523b5b8f0572398f",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_260d10eadd4c12b6",
+    "appearance_id": "31300583cb2b3afa21c2",
+    "source_fingerprint": "d035e9f17897af79b76608c3f06eea54fefbc3d1811c915a181bf17df59a921a",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_fa9c9845c6303be3",
+    "appearance_id": "bf10fab810b3b49944e7",
+    "source_fingerprint": "71e5cdf3dea3156acc1d58aba831521c6111906729654c252007ea7edb451458",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d06bb44921a5b2bc",
+    "appearance_id": "175311342bf9a5fdef1e",
+    "source_fingerprint": "6873af2988d1ff256b3ff1cedac30b232caa48bc830293a640d5f688aba3f3e1",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5f49ecbaaa6031a",
+    "appearance_id": "23278dbd2a88c593e678",
+    "source_fingerprint": "d98c51d309b4af4fc1ea586e78bc5c6864370630ec87c85f63a01ed8e4c402e5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/soil-science",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation. Appropriately classified under agriculture.",
+    "tested_skill": "Soil science: Soil chemistry, soil fertility, macro/micronutrients, and soil conservation.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a86ca3c520699f93",
+    "appearance_id": "33651c2b7c6ba17c4ce2",
+    "source_fingerprint": "0c907f56ef48dd17d409419c24e870713a55fa073dcc2d1d82a3a15c130584d4",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_573e4eeb1f9d223c",
+    "appearance_id": "d8cf27e4168c05468178",
+    "source_fingerprint": "a7345811b9a337337b0c7cac92d9a5f7b640b8111bbeee0b68f4ebbdd50f0bf5",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e98de2bd9ec6b32d",
+    "appearance_id": "121b83f49193524a5cdc",
+    "source_fingerprint": "1053fd147a52605bec96003ebd1b8b622efe8fe990c725113568c0e65983ab0a",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6939d27bd9f4a95a",
+    "appearance_id": "d9dcc8952104ec45d84b",
+    "source_fingerprint": "f83476b8f427ccbf9abae8b661101219b23b1254bcf00cddf184e7ead5a8ebb5",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9683149b44974347",
+    "appearance_id": "2bd8dc8fcd8b8b5f26a7",
+    "source_fingerprint": "88fad96b63b1679a430635c651e210605346065b905a6d77d5b9461e751e2dac",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_42123f31a24484aa",
+    "appearance_id": "0e6b8921ddada668bee1",
+    "source_fingerprint": "7fca78bced3414f7a2b46078504ee8cb7cca702132193aca29b0292891859dba",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8434d5a9d640956d",
+    "appearance_id": "da36ed60623beced9ff7",
+    "source_fingerprint": "dc0c881ce44bf5a3da758460744b1a762d15acbd7b637ebf6d50ecb832de9401",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9141d97c5a318c0d",
+    "appearance_id": "ed67b9c08845a95f9275",
+    "source_fingerprint": "5e5ae994972847157a6a0407dd46c521f7598aa773b280c9a1cea2042162f6f0",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_55ce12bc031fcd43",
+    "appearance_id": "e34ca4e179a0a121d82b",
+    "source_fingerprint": "10611337143ae5a9a8b6bb56d830db10ef5afc40fb4ef4a5fab2753a9e4877fb",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39ad4e0ffc45493c",
+    "appearance_id": "52fa145f87b2da4b2326",
+    "source_fingerprint": "a7887d3659f25b2acec4f25a5b74b71387bc3079f5e70000ea14208286aa35f7",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f018c03b853e42a",
+    "appearance_id": "c3b22fe6ad21cf786468",
+    "source_fingerprint": "933af6d38442aa152bc10dfbef887e4b832bda50361eac0a6ec07d3f5503b723",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1ad0da31047b6225",
+    "appearance_id": "0032ce026807202004c0",
+    "source_fingerprint": "59dec8fdccb7a65e926238da37d637e7377819ba9f01df53fad4453258e28fbc",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e922555302256649",
+    "appearance_id": "4e8ed59649aa58533f9f",
+    "source_fingerprint": "d67384252cf46c23dc1171b8c5304b29a1571b6e34c0b04695c31e1ce26617b6",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b41530e1644dded5",
+    "appearance_id": "aeada778c096a5f49a2d",
+    "source_fingerprint": "63a4fdd686f56ca8f8496f51d0f7d24eb579f2b3c8177f3a26b6d53baf81106f",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9748c9c6ceb5b5b",
+    "appearance_id": "a5653afa4b59373b5084",
+    "source_fingerprint": "26cf8c21c955a47a76911ccd7d2903577255433ba5fc9aedc6b11675e948c8fe",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c0b4da25756573e1",
+    "appearance_id": "ba348dbda79c7a39137b",
+    "source_fingerprint": "1db73213882486ca5dd9a4999458fe6c00986fbce89e7bab8a3fa4aaab343317",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_155ed363ee186c35",
+    "appearance_id": "0153b66d221505ad39c8",
+    "source_fingerprint": "81daff02199f0746f64604c08a09a5fdb9c4a9839bd34df4dd8f9cb7c2cb83fa",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b8cfe3ae5aa84d11",
+    "appearance_id": "a90580c7e54263b47f0a",
+    "source_fingerprint": "99e8b40398ac52cf4c63c76f59f470c5148ea2b5cbaf1b9a624dc63f31c146df",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_57e49552674637a6",
+    "appearance_id": "16d0df11713341933261",
+    "source_fingerprint": "2d672257e524a0b9bfb0edcd82579de0e16db6b87bf443fb4fcecfda570bc206",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a5ec7973b926e4ce",
+    "appearance_id": "8bab3a15f2c1b92eb973",
+    "source_fingerprint": "5fa26b95b229107b99156570ef293885df9b928b0bad6f609dc1267ac07e1b52",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_02c65e1b308159e9",
+    "appearance_id": "bcfe1e4784730da8c518",
+    "source_fingerprint": "29f609153b6f28158317f6e032d33e09aa3af8d81432234018c01caf2139cefa",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c59a4f3160a6f437",
+    "appearance_id": "9fff308cfb2833d2e84b",
+    "source_fingerprint": "a2c5cbe8e037ddaa51784783a03bd081a758d698e49a1c15467122cf3998f4f8",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b793c4a5ce02f0b9",
+    "appearance_id": "9ee6ed7a8292edf6ed65",
+    "source_fingerprint": "5fed225fbd3a2e7e8e0b863e9a7c5c1b63c42cb62521de496827107036a0c3e6",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87969624e4b3daa8",
+    "appearance_id": "e08cfab2a33d4105edfb",
+    "source_fingerprint": "7fb0fb256323c6bb00e09c04b43c95f24d9d111fa2327ca9627ed4050cf6a21f",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b0fbd5a3f0e6040a",
+    "appearance_id": "b8416a1fd8b7996d4dba",
+    "source_fingerprint": "34f6a2286f355d9e9484294bc0906bb7162fb7ea0e639c0403c2a1168b480be7",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7beb666c52d8ca31",
+    "appearance_id": "79e88bc585fb08060364",
+    "source_fingerprint": "a478b9bbfb117ccdc1429e9124d2730309f94015390f970e450f1d0aa45ea5e8",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1a868ebbba31328a",
+    "appearance_id": "0636bc1aa4cacddfd455",
+    "source_fingerprint": "3611f14e938f8950a16f8489885082b81d6a3cd497f72469acafcd6889ef04c0",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f296d5bc77880760",
+    "appearance_id": "37c0bc10581d83923dd0",
+    "source_fingerprint": "6e46aa6862e84fe89f8cc6771cb8242d2a8cc778edddb0cc63926c40f13d0792",
+    "current_primary": {
+      "subject_id": "agricultural-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a478752fa3fac398",
+    "appearance_id": "48f6ad7da773972adfef",
+    "source_fingerprint": "c4093119c91385985b362073df6a8bec5293e7e7fab2d45981bedea767b5eb10",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6f1c077e79d62536",
+    "appearance_id": "5802596f9029362b3d9e",
+    "source_fingerprint": "606e54818af5811def04d4e0ea6e7ea6068f98d2b7a517767467b21853096ebb",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cd5758cb5bc107c6",
+    "appearance_id": "056a0d6e2d55761083c5",
+    "source_fingerprint": "24d31b6b06e0274c12920427cc5f47538773a12a41d02297f9efa4f720452d66",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a60d06083af660a3",
+    "appearance_id": "0ebf4bd0f42c75f1e453",
+    "source_fingerprint": "17e96cef4fef07a6f17563252b070f267cfcf15c3c7c2eb34a7b23a8cb94f8db",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e6c7fcb58641e724",
+    "appearance_id": "7cdacad55caffa4a451a",
+    "source_fingerprint": "a33e406950718401f0b7c2eb79eb0ff105b8486e98a6e55336ffd409dacd5016",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_349a6f8988bdd01a",
+    "appearance_id": "0b05fd6b15182f5c071d",
+    "source_fingerprint": "bc7cc7d11d52bd8cb80addbbbc33659a6aec412c60796d0d02584a3ea9a6cb0d",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_aaeeae5864f0b145",
+    "appearance_id": "4a21f200796711444d60",
+    "source_fingerprint": "cc45e9082d660ae03f1c23f948f8fe9e4cde3177759907f8c5d2fe967b041d17",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b7ad406a61135a9c",
+    "appearance_id": "0c8918df36b605e4b314",
+    "source_fingerprint": "cde2c62b79cf98466f7af4c78562191c94a12f04d1c7106ae1e91798e687dae6",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_da1e599b9eb06870",
+    "appearance_id": "51824c95148ee46838e9",
+    "source_fingerprint": "e95e597c58b7435a79266cf3af161389f6089c65ac94d5cfd17334cc3445fb68",
+    "current_primary": {
+      "subject_id": "civil-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_533d837fb75dde12",
+    "appearance_id": "a157e6c0f2a1d75670d2",
+    "source_fingerprint": "91b1080136268bc67bdccc368770386c5bd1eca68287f813361d2c798da9af12",
+    "current_primary": {
+      "subject_id": "engineering-mechanics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a361c247b66d13c6",
+    "appearance_id": "42ed5b7aa34b0ba408ed",
+    "source_fingerprint": "b85d8629b5a49972a0a7ba468a3fae6582d0f48ba4cae0b739f80dfd05f7510e",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec3753fed84134d2",
+    "appearance_id": "b2adf1309dc55f023486",
+    "source_fingerprint": "a4c0ccde11024c44ba11449624a16f95d848b7bc3799ef086f37672a5908784a",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94b4c38cc90c84e5",
+    "appearance_id": "78f6fb575dca357d8c7a",
+    "source_fingerprint": "7a7ca71d6d60d391960b8338c574e9b3404fc5c3bc684bd3a749a0b7989dce74",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c79383e62adf50a",
+    "appearance_id": "9c7eedefc4e0bb325fe0",
+    "source_fingerprint": "7f70efedd2cc149dd0ba09a0b54b6c4caf80551b6043e3800a7ef7a0b3f1e201",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5db8730ce4f1d05c",
+    "appearance_id": "756dd9ab3f411ab6ad30",
+    "source_fingerprint": "7d849e3c27e80f5da840de970e6604c85c0485a2f80efd18f1d06700bc5d6061",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1f67d2eb1a74f55a",
+    "appearance_id": "f6eed53792158fed9786",
+    "source_fingerprint": "38a5df8b8fbd471f49c1c1d5c0aecb8d8caaa19d00df581a611d12ecd620a092",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e6c21a19231c8dd8",
+    "appearance_id": "35fb9d5383efb2ac70e4",
+    "source_fingerprint": "6df5266ffd27002505b59718bda49e996588c698f7c1a6e73f5b02415c3a70fc",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b26cc37ff9cf9668",
+    "appearance_id": "c5e944095a7e7a6876aa",
+    "source_fingerprint": "e4de670836ba7e49effcac38289552def2abf414a96773dd34249d7d85e8d6aa",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d31a766836fa11e",
+    "appearance_id": "01504d1ee60ba28f64bc",
+    "source_fingerprint": "c7d36c8a50e94b2718f7fc29538523b9c27ed8c1e75bccf3bf407a4535cb2b5d",
+    "current_primary": {
+      "subject_id": "reasoning-and-aptitude",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "agriculture",
+      "topic_id": "agriculture/agronomy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses agronomy: Crop production principles, seed rate, tillage, and agronomic management. Appropriately classified under agriculture.",
+    "tested_skill": "Agronomy: Crop production principles, seed rate, tillage, and agronomic management.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_439b75e5bf33a8bd412b7510",
+      "sha256": "80be3d5ccdd9c5638a8408c297423130a949256ee328da6d03391026c261343b",
+      "note": "Verified against registered booklet source for Junior Engineer."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_704da0f97498b6da",
+  "appearance_id": "af2e911ed56ea6264cf8",
+  "snapshot": {
+    "record": {
+      "id": "af2e911ed56ea6264cf8",
+      "paperId": "Old_Questions/Direct_2014-2018/5.Computer Science&Engg Paper-II.pdf",
+      "type": "mcq",
+      "question": "If a programmer defines a class and defines a default value parameterized constructor inside it. He has not defined any default constructor. And then he try to create the object without passing arguments, which among the following will be correct?",
+      "options": [
+        "It will not create the object (as parameterized constructor is used)",
+        "It will create the object (as the default arguments are passed)",
+        "It will not create the object (as the default constructor is not defined)",
+        "It will create the object (as at least some constructor is defined)"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "64",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/5.Computer Science&Engg Paper-II.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO THE POST OF INSPECTOR OF LEGAL METROLOGY UNDER FOOD, CIVIL SUPPLIES & CONSUMER AFFAIRS DEPARTMENT, GOVERNMENT OF MIZORAM - COMPUTER SCIENCE & ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/5.Computer%20Science%26Engg%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "94882690f75fc0ca399acb0ae1d87de3a4d7a9758bbc34df909312aef759ef84",
+  "appearance": {
+    "id": "af2e911ed56ea6264cf8",
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Computer Science&Engg Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "64",
+    "qnum_seq": 64,
+    "page": 6,
+    "question": "If a programmer defines a class and defines a default value parameterized constructor inside it. He has not defined any default constructor. And then he try to create the object without passing arguments, which among the following will be correct?",
+    "options": [
+      "It will not create the object (as parameterized constructor is used)",
+      "It will create the object (as the default arguments are passed)",
+      "It will not create the object (as the default constructor is not defined)",
+      "It will create the object (as at least some constructor is defined)"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "5.Computer Science&Engg Paper-II",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'among':35 'argument':33 'class':6 'constructor':13,22 'correct':40 'creat':28 'default':10,21 'defin':4,8,19 'follow':37 'insid':14 'object':30 'parameter':12 'pass':32 'programm':3 'tri':26 'valu':11 'without':31",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_704da0f97498b6da",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "It will create the object (as the default arguments are passed)",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

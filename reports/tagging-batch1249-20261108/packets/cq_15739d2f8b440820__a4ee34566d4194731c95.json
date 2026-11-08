@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_15739d2f8b440820",
+  "appearance_id": "a4ee34566d4194731c95",
+  "snapshot": {
+    "record": {
+      "id": "a4ee34566d4194731c95",
+      "paperId": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "A Signed integer has stored in a byte using 2's complement format. We wish to store the same integer in 16-bit word. We should copy the original byte to the less significant byte of the word and fill the more significant byte with",
+      "options": [
+        "0",
+        "1",
+        "equal to the MSB of the original byte",
+        "complement of the MSB of the original byte"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 7,
+      "qnum": "44",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF M.E.S. UNDER PUBLIC WORKS DEPARTMENT - ELECTRICAL ENGINEERING PAPER-III",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/Jr.%20Grade%20of%20MES%20under%20PWD%202018%2C%20Electrical%20Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "47277a38c57e9a43160ceaa74732bece16fa7847f5df1bf80fd760491bad6c47",
+  "appearance": {
+    "id": "a4ee34566d4194731c95",
+    "paper_id": "Old_Questions/Direct_2014-2018/Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "44",
+    "qnum_seq": 44,
+    "page": 7,
+    "question": "A Signed integer has stored in a byte using 2's complement format. We wish to store the same integer in 16-bit word. We should copy the original byte to the less significant byte of the word and fill the more significant byte with",
+    "options": [
+      "0",
+      "1",
+      "equal to the MSB of the original byte",
+      "complement of the MSB of the original byte"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "Jr. Grade of MES under PWD 2018, Electrical Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'16':22 '2':10 'bit':23 'byte':8,30,35,44 'complement':12 'copi':27 'fill':40 'format':13 'integ':3,20 'less':33 'origin':29 'sign':2 'signific':34,43 'store':5,17 'use':9 'wish':15 'word':24,38",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_15739d2f8b440820",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "equal to the MSB of the original byte",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

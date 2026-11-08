@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_99d0736a80d0e8ab",
+  "appearance_id": "9d605b2d6979a7fbb4a7",
+  "snapshot": {
+    "record": {
+      "id": "9d605b2d6979a7fbb4a7",
+      "paperId": "Old_Questions/Direct_2014-2018/5.Technical Paper-III.pdf",
+      "type": "mcq",
+      "question": "What is the output of following program? class Output { public static void main(String args[ ]) { int x , y; x = 10; x++; —x; y = x++; System.out.println(x + \" \" + y); } }",
+      "options": [
+        "11 11",
+        "10 10",
+        "11 10",
+        "10 11"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 5,
+      "qnum": "49",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/5.Technical Paper-III.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/5.Technical%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "310df5448e3c5062ca863375f1cdd691c3dc271d84980a06a9a949673c4cb6d8",
+  "appearance": {
+    "id": "9d605b2d6979a7fbb4a7",
+    "paper_id": "Old_Questions/Direct_2014-2018/5.Technical Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "49",
+    "qnum_seq": 49,
+    "page": 5,
+    "question": "What is the output of following program? class Output { public static void main(String args[ ]) { int x , y; x = 10; x++; —x; y = x++; System.out.println(x + \" \" + y); } }",
+    "options": [
+      "11 11",
+      "10 10",
+      "11 10",
+      "10 11"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "5.Technical Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'10':20 'arg':15 'class':8 'follow':6 'int':16 'main':13 'output':4,9 'program':7 'public':10 'static':11 'string':14 'system.out.println':25 'void':12 'x':17,19,21,22,24,26 'y':18,23,27",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_99d0736a80d0e8ab",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "11 10",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_b52fd56d5e5973a1",
+  "appearance_id": "daaf35ee8194a2b01634",
+  "snapshot": {
+    "record": {
+      "id": "daaf35ee8194a2b01634",
+      "paperId": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+      "type": "mcq",
+      "question": "Parseval's identity states that Σ(n=-∞ to ∞) |x(n)|² is",
+      "options": [
+        "(1/2πj) ∫π_{-π} |X(e^(jω))|² dω",
+        "∫π_{-π} |X(e^(jω))|² dω",
+        "2π ∫π_{-π} |X(e^(jω))|² dω",
+        "∫π_{-π} [1/(2π)] |X(e^(jω))|² dω"
+      ],
+      "answerIndex": 1,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "32",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+      "title": "Competitive Examinations for Junior Grade of M.E.S. under Power & Electricity Department - Electronics & Communication Engineering Paper I",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/12.Electronics%20%26%20Commnication%20Engg%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "95715f2af5a429544209cd7f75a555ed43b6251a8b34a28e4c54d51ef27fa04c",
+  "appearance": {
+    "id": "daaf35ee8194a2b01634",
+    "paper_id": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "32",
+    "qnum_seq": 32,
+    "page": 4,
+    "question": "Parseval's identity states that Σ(n=-∞ to ∞) |x(n)|² is",
+    "options": [
+      "(1/2πj) ∫π_{-π} |X(e^(jω))|² dω",
+      "∫π_{-π} |X(e^(jω))|² dω",
+      "2π ∫π_{-π} |X(e^(jω))|² dω",
+      "∫π_{-π} [1/(2π)] |X(e^(jω))|² dω"
+    ],
+    "answer_index": 1,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "12.Electronics & Commnication Engg Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'ident':3 'n':7,10 'parsev':1 'state':4 'x':9 'σ':6",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_b52fd56d5e5973a1",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "∫π_{-π} |X(e^(jω))|² dω",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

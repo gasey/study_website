@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_f99502b6bbe884a6",
+  "appearance_id": "d2ed5b3663e1b69e376f",
+  "snapshot": {
+    "record": {
+      "id": "d2ed5b3663e1b69e376f",
+      "paperId": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+      "type": "mcq",
+      "question": "A linear time invarient, causal, continuous time system has a natural transfer function with sample poles at s = -2 and s = -4, and one sample zero at s = -1. A unit step u(t) is applied at the input of the system. A steady state output has constant value 1. The impulse response of this system is",
+      "options": [
+        "-4e^(-2t) u(t)",
+        "-12e^(-4t) u(t)",
+        "(-4e^(-2t) + 12e^(-4t)) u(t)",
+        "-4e^(-4t) u(t)"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "39",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+      "title": "Competitive Examinations for Junior Grade of M.E.S. under Power & Electricity Department - Electronics & Communication Engineering Paper I",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/12.Electronics%20%26%20Commnication%20Engg%20Paper-I.pdf"
+    }
+  },
+  "source_fingerprint": "2760ddc78032a79a325e29039a8b29ac3c7d97026a68ace07ce4e700d6bbe542",
+  "appearance": {
+    "id": "d2ed5b3663e1b69e376f",
+    "paper_id": "Old_Questions/Direct_2014-2018/12.Electronics & Commnication Engg Paper-I.pdf",
+    "type": "mcq",
+    "qnum": "39",
+    "qnum_seq": 39,
+    "page": 4,
+    "question": "A linear time invarient, causal, continuous time system has a natural transfer function with sample poles at s = -2 and s = -4, and one sample zero at s = -1. A unit step u(t) is applied at the input of the system. A steady state output has constant value 1. The impulse response of this system is",
+    "options": [
+      "-4e^(-2t) u(t)",
+      "-12e^(-4t) u(t)",
+      "(-4e^(-2t) + 12e^(-4t)) u(t)",
+      "-4e^(-4t) u(t)"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "12.Electronics & Commnication Engg Paper-I",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": true,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'-1':29 '-2':19 '-4':22 '1':50 'appli':36 'causal':5 'constant':48 'continu':6 'function':13 'impuls':52 'input':39 'invari':4 'linear':2 'natur':11 'one':24 'output':46 'pole':16 'respons':53 'sampl':15,25 'state':45 'steadi':44 'step':32 'system':8,42,56 'time':3,7 'transfer':12 'u':33 'unit':31 'valu':49 'zero':26",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_f99502b6bbe884a6",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "(-4e^(-2t) + 12e^(-4t)) u(t)",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

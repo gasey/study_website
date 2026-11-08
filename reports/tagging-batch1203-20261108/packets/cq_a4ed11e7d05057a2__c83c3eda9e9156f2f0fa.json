@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_a4ed11e7d05057a2",
+  "appearance_id": "c83c3eda9e9156f2f0fa",
+  "snapshot": {
+    "record": {
+      "id": "c83c3eda9e9156f2f0fa",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Consider the following schema LOCATIONS (subject_code, department_name, location_id, city); Which code snippet will alter the table LOCATIONS and add a column named Address, with datatype VARCHAR2(100)?",
+      "options": [
+        "ALTER TABLE locations ADD (address varchar2(100));",
+        "ALTER TABLE locations ADD COLUMN(address varchar2(100));",
+        "MODIFY TABLE locations ADD COLUMN (address varchar2(100));",
+        "None of the above."
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "51",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "5ac45f26758b80ed757dfb22e0621c448ce9ef45494402da3d1f2b45af93b586",
+  "appearance": {
+    "id": "c83c3eda9e9156f2f0fa",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "51",
+    "qnum_seq": 51,
+    "page": 6,
+    "question": "Consider the following schema LOCATIONS (subject_code, department_name, location_id, city); Which code snippet will alter the table LOCATIONS and add a column named Address, with datatype VARCHAR2(100)?",
+    "options": [
+      "ALTER TABLE locations ADD (address varchar2(100));",
+      "ALTER TABLE locations ADD COLUMN(address varchar2(100));",
+      "MODIFY TABLE locations ADD COLUMN (address varchar2(100));",
+      "None of the above."
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'100':30 'add':22 'address':26 'alter':17 'citi':12 'code':7,14 'column':24 'consid':1 'datatyp':28 'depart':8 'follow':3 'id':11 'locat':5,10,20 'name':9,25 'schema':4 'snippet':15 'subject':6 'tabl':19 'varchar2':29",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_a4ed11e7d05057a2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "ALTER TABLE locations ADD (address varchar2(100));",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

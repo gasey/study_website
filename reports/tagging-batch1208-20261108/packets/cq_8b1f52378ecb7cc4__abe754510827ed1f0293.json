@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_8b1f52378ecb7cc4",
+  "appearance_id": "abe754510827ed1f0293",
+  "snapshot": {
+    "record": {
+      "id": "abe754510827ed1f0293",
+      "paperId": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+      "type": "mcq",
+      "question": "If matrices are A = [2 3; 1 4; 4 2; 5] and B = [1 2 3; 2 1; 0 4], then AB is given by",
+      "options": [
+        "[0 10; 3]",
+        "[0 7; 3; 2]",
+        "[5 1; 0; 5]",
+        "0"
+      ],
+      "answerIndex": null,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The source PDF shows A as a 2×2 matrix [[2,3],[4,5]], but B is displayed with three row-groups ([1 -2 3], [-4 2 5], [2 1]) suggesting a non-2×2 matrix. For AB to yield the 2×2 options shown, B must be 2×2, but the printed source does not clearly present a 2×2 B. The matrix dimensions are ambiguous/garbled in the source, making a defensible computation impossible.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 9,
+      "qnum": "67",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+      "title": "Inspector of Legal Metrology - Physics Paper III",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/20.Physics%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "8651de14a2f826dfa72a0ae682d25d5633d2782e45067014b39dc4c805ae1bfa",
+  "appearance": {
+    "id": "abe754510827ed1f0293",
+    "paper_id": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "67",
+    "qnum_seq": 67,
+    "page": 9,
+    "question": "If matrices are A = [2 3; 1 4; 4 2; 5] and B = [1 2 3; 2 1; 0 4], then AB is given by",
+    "options": [
+      "[0 10; 3]",
+      "[0 7; 3; 2]",
+      "[5 1; 0; 5]",
+      "0"
+    ],
+    "answer_index": null,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "20.Physics Paper-III",
+    "difficulty": "medium",
+    "explanation": "The source PDF shows A as a 2×2 matrix [[2,3],[4,5]], but B is displayed with three row-groups ([1 -2 3], [-4 2 5], [2 1]) suggesting a non-2×2 matrix. For AB to yield the 2×2 options shown, B must be 2×2, but the printed source does not clearly present a 2×2 B. The matrix dimensions are ambiguous/garbled in the source, making a defensible computation impossible.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0':19 '1':7,14,18 '2':5,10,15,17 '3':6,16 '4':8,9,20 '5':11 'ab':22 'b':13 'given':24 'matric':2",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_8b1f52378ecb7cc4",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": null,
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

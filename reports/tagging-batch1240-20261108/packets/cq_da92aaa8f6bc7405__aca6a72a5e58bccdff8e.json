@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_da92aaa8f6bc7405",
+  "appearance_id": "aca6a72a5e58bccdff8e",
+  "snapshot": {
+    "record": {
+      "id": "aca6a72a5e58bccdff8e",
+      "paperId": "Old_Questions/Direct_2014-2018/14.Electronics & Commnication Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "An 8085 assembly language program is given below.\nLine 1: MVI A, B5H\nLine 2: MVI B, OEH\nLine 3: XRI 69H\nLine 4: ADD B\nLine 5: ANI 9BH\nLine 6: CPI 9FH\nLine 7: STA 30101 H\nLine 8: HLT\nAfter execution of line 7 of the programme, the status of the CY and Z flags will be",
+      "options": [
+        "CY = 0, Z = 0",
+        "CY = 1, Z = 0",
+        "CY = 0, Z = 1",
+        "CY = 1, Z = 1"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "50",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electronics-and-communication",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/14.Electronics & Commnication Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF M.E.S. UNDER POWER & ELECTRICITY DEPARTMENT - ELECTRONICS & COMMUNICATION ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/14.Electronics%20%26%20Commnication%20Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "d9ef7ff0769c310ac43bbed54e5cc607a0c5dcdbe7eff432392cc56f6a9a6809",
+  "appearance": {
+    "id": "aca6a72a5e58bccdff8e",
+    "paper_id": "Old_Questions/Direct_2014-2018/14.Electronics & Commnication Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "50",
+    "qnum_seq": 50,
+    "page": 6,
+    "question": "An 8085 assembly language program is given below.\nLine 1: MVI A, B5H\nLine 2: MVI B, OEH\nLine 3: XRI 69H\nLine 4: ADD B\nLine 5: ANI 9BH\nLine 6: CPI 9FH\nLine 7: STA 30101 H\nLine 8: HLT\nAfter execution of line 7 of the programme, the status of the CY and Z flags will be",
+    "options": [
+      "CY = 0, Z = 0",
+      "CY = 1, Z = 0",
+      "CY = 0, Z = 1",
+      "CY = 1, Z = 1"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "14.Electronics & Commnication Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1':10 '2':15 '3':20 '30101':38 '4':24 '5':28 '6':32 '69h':22 '7':36,47 '8':41 '8085':2 '9bh':30 '9fh':34 'add':25 'ani':29 'assembl':3 'b':17,26 'b5h':13 'cpi':33 'cy':55 'execut':44 'flag':58 'given':7 'h':39 'hlt':42 'languag':4 'line':9,14,19,23,27,31,35,40,46 'mvi':11,16 'oeh':18 'program':5 'programm':50 'sta':37 'status':52 'xri':21 'z':57",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_da92aaa8f6bc7405",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "CY = 0, Z = 0",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

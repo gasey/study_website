@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_ac7adc072f466a4e",
+  "appearance_id": "abd19d1ccafb5ecafa32",
+  "snapshot": {
+    "record": {
+      "id": "abd19d1ccafb5ecafa32",
+      "paperId": "Old_Questions/Direct_2014-2018/10.Electrical Engg Paper-II.pdf",
+      "type": "mcq",
+      "question": "Consider a system with the transfer function G(S) = (S + 6)/(K*S^2 + S + 6). Its damping ratio will be 0.5 when the value of K is",
+      "options": [
+        "2/6",
+        "3",
+        "1/6",
+        "6"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Taking G(S) as the closed-loop form (S+6)/(KS^2+S+6), the characteristic equation gives wn^2 = 6/K and 2*zeta*wn = 1/K, so zeta = 1/(2*sqrt(6K)). Setting zeta = 0.5 gives sqrt(6K) = 1, so K = 1/6, which is option (c) 1/6.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "2",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "electrical-engineering",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/10.Electrical Engg Paper-II.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF M.E.S. UNDER POWER & ELECTRICITY DEPARTMENT - ELECTRICAL ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/10.Electrical%20Engg%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "0ab9552ce060de663d2db0377c10bb0c4692a8c3f0426275db2cb7d836672e22",
+  "appearance": {
+    "id": "abd19d1ccafb5ecafa32",
+    "paper_id": "Old_Questions/Direct_2014-2018/10.Electrical Engg Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "2",
+    "qnum_seq": 2,
+    "page": 1,
+    "question": "Consider a system with the transfer function G(S) = (S + 6)/(K*S^2 + S + 6). Its damping ratio will be 0.5 when the value of K is",
+    "options": [
+      "2/6",
+      "3",
+      "1/6",
+      "6"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "10.Electrical Engg Paper-II",
+    "difficulty": "medium",
+    "explanation": "Taking G(S) as the closed-loop form (S+6)/(KS^2+S+6), the characteristic equation gives wn^2 = 6/K and 2*zeta*wn = 1/K, so zeta = 1/(2*sqrt(6K)). Setting zeta = 0.5 gives sqrt(6K) = 1, so K = 1/6, which is option (c) 1/6.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'0.5':22 '2':14 '6':11,16 'consid':1 'damp':18 'function':7 'g':8 'k':12,27 'ratio':19 'system':3 'transfer':6 'valu':25",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_ac7adc072f466a4e",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "1/6",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

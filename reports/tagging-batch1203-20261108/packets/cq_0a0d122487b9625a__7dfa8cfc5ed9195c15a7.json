@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_0a0d122487b9625a",
+  "appearance_id": "7dfa8cfc5ed9195c15a7",
+  "snapshot": {
+    "record": {
+      "id": "7dfa8cfc5ed9195c15a7",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Consider inheritance: B and C inherit from A and D inherits from B and then from C. A happens to be an abstract base class. When you make an object of type D, what would be the order of execution of a constructor:",
+      "options": [
+        "A,B,C,D",
+        "A,C,D,B",
+        "C,D,B,A",
+        "D,C,B,A"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "17",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "c15a0bf5507ff208ec1ccc2b839e1f382983b6d3e5aacac7d3bc58608363ea76",
+  "appearance": {
+    "id": "7dfa8cfc5ed9195c15a7",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "17",
+    "qnum_seq": 17,
+    "page": 3,
+    "question": "Consider inheritance: B and C inherit from A and D inherits from B and then from C. A happens to be an abstract base class. When you make an object of type D, what would be the order of execution of a constructor:",
+    "options": [
+      "A,B,C,D",
+      "A,C,D,B",
+      "C,D,B,A",
+      "D,C,B,A"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'abstract':23 'b':3,13 'base':24 'c':5,17 'class':25 'consid':1 'constructor':43 'd':10,33 'execut':40 'happen':19 'inherit':2,6,11 'make':28 'object':30 'order':38 'type':32 'would':35",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_0a0d122487b9625a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A,B,C,D",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

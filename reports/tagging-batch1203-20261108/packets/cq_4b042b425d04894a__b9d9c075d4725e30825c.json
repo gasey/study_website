@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_4b042b425d04894a",
+  "appearance_id": "b9d9c075d4725e30825c",
+  "snapshot": {
+    "record": {
+      "id": "b9d9c075d4725e30825c",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Which of the following statements are correct for a static member function? (i) It can access only other static members of its class. (ii) It can be called using the class name, instead of objects.",
+      "options": [
+        "Only (i) is correct",
+        "Only (ii) is correct",
+        "Both (i) and (ii) are correct",
+        "Both (i) and (ii) are incorrect"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "9",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "6eb9817424e500363a758d4cf933cde9706a998f7be46d2d18e7ae8a16004d88",
+  "appearance": {
+    "id": "b9d9c075d4725e30825c",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "9",
+    "qnum_seq": 9,
+    "page": 2,
+    "question": "Which of the following statements are correct for a static member function? (i) It can access only other static members of its class. (ii) It can be called using the class name, instead of objects.",
+    "options": [
+      "Only (i) is correct",
+      "Only (ii) is correct",
+      "Both (i) and (ii) are correct",
+      "Both (i) and (ii) are incorrect"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'access':16 'call':28 'class':23,31 'correct':7 'follow':4 'function':12 'ii':24 'instead':33 'member':11,20 'name':32 'object':35 'statement':5 'static':10,19 'use':29",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_4b042b425d04894a",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Both (i) and (ii) are correct",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

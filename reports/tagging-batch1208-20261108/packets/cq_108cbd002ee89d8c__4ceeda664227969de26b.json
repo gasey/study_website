@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_108cbd002ee89d8c",
+  "appearance_id": "4ceeda664227969de26b",
+  "snapshot": {
+    "record": {
+      "id": "4ceeda664227969de26b",
+      "paperId": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+      "type": "mcq",
+      "question": "The eigen values of the matrix [cos θ sin θ; sin θ cos θ] are",
+      "options": [
+        "e^iθ",
+        "e^2iθ",
+        "e^3iθ",
+        "e^iθ/2"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "The matrix [[cos θ, -sin θ], [sin θ, cos θ]] is a 2D rotation matrix. Its characteristic equation is λ² - 2λ cos θ + 1 = 0, giving eigenvalues λ = cos θ ± i sin θ = e^(±iθ). This matches option (a).",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 4,
+      "qnum": "26",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "mathematics",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+      "title": "Inspector of Legal Metrology - Physics Paper III",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/20.Physics%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "fdb9c28821fd91304c323d04c0f3bf53f526805597b30df8484f17d86fd4639c",
+  "appearance": {
+    "id": "4ceeda664227969de26b",
+    "paper_id": "Old_Questions/Direct_2014-2018/20.Physics Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "26",
+    "qnum_seq": 26,
+    "page": 4,
+    "question": "The eigen values of the matrix [cos θ sin θ; sin θ cos θ] are",
+    "options": [
+      "e^iθ",
+      "e^2iθ",
+      "e^3iθ",
+      "e^iθ/2"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "20.Physics Paper-III",
+    "difficulty": "medium",
+    "explanation": "The matrix [[cos θ, -sin θ], [sin θ, cos θ]] is a 2D rotation matrix. Its characteristic equation is λ² - 2λ cos θ + 1 = 0, giving eigenvalues λ = cos θ ± i sin θ = e^(±iθ). This matches option (a).",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'cos':7,13 'eigen':2 'matrix':6 'sin':9,11 'valu':3 'θ':8,10,12,14",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_108cbd002ee89d8c",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "e^iθ",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

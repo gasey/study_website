@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_3b1dd8c0ac47e4b6",
+  "appearance_id": "8e52b3bdacb493538aab",
+  "snapshot": {
+    "record": {
+      "id": "8e52b3bdacb493538aab",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "If an end of file is reached in C++, the eof() function returns which of the following value.",
+      "options": [
+        "Non-zero",
+        "Zero",
+        "Pointer pointing to beginning of file",
+        "None of the above"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "21",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "e5219f90ebc9a03faf53a2d2c3a329a71376bc26eef7fb4fb8ae3b5550237d72",
+  "appearance": {
+    "id": "8e52b3bdacb493538aab",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "21",
+    "qnum_seq": 21,
+    "page": 3,
+    "question": "If an end of file is reached in C++, the eof() function returns which of the following value.",
+    "options": [
+      "Non-zero",
+      "Zero",
+      "Pointer pointing to beginning of file",
+      "None of the above"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'c':9 'end':3 'eof':11 'file':5 'follow':17 'function':12 'reach':7 'return':13 'valu':18",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_3b1dd8c0ac47e4b6",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Non-zero",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_85f7c30f7817330b",
+  "appearance_id": "dd205ce16a313641596b",
+  "snapshot": {
+    "record": {
+      "id": "dd205ce16a313641596b",
+      "paperId": "Old_Questions/Direct_2014-2018/8.Computer Science&Engg Paper-III.pdf",
+      "type": "mcq",
+      "question": "In case of any shut down during transaction before commit which of the following statement is done automatically?",
+      "options": [
+        "View",
+        "Commit",
+        "Rollback",
+        "Flashback"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 2,
+      "qnum": "10",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/8.Computer Science&Engg Paper-III.pdf",
+      "title": "COMPETITIVE EXAMINATIONS FOR JUNIOR GRADE OF M.E.S. UNDER POWER & ELECTRICITY DEPARTMENT, COMPUTER SCIENCE & ENGINEERING",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/8.Computer%20Science%26Engg%20Paper-III.pdf"
+    }
+  },
+  "source_fingerprint": "7ec28e5b039d56bdc00411c9391c7f5cda580d430e2bfe76e55108eb68e57b8a",
+  "appearance": {
+    "id": "dd205ce16a313641596b",
+    "paper_id": "Old_Questions/Direct_2014-2018/8.Computer Science&Engg Paper-III.pdf",
+    "type": "mcq",
+    "qnum": "10",
+    "qnum_seq": 10,
+    "page": 2,
+    "question": "In case of any shut down during transaction before commit which of the following statement is done automatically?",
+    "options": [
+      "View",
+      "Commit",
+      "Rollback",
+      "Flashback"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "8.Computer Science&Engg Paper-III",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'automat':18 'case':2 'commit':10 'done':17 'follow':14 'shut':5 'statement':15 'transact':8",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_85f7c30f7817330b",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Rollback",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

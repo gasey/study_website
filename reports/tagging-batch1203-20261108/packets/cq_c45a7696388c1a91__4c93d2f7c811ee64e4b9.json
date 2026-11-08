@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_c45a7696388c1a91",
+  "appearance_id": "4c93d2f7c811ee64e4b9",
+  "snapshot": {
+    "record": {
+      "id": "4c93d2f7c811ee64e4b9",
+      "paperId": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "type": "mcq",
+      "question": "Identify which of the following is a legal way to access a class data member using this pointer?",
+      "options": [
+        "this.x",
+        "*this.x",
+        "*(this.x)",
+        "(*this).x"
+      ],
+      "answerIndex": 3,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Supported by the cited source page and standard subject knowledge.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "15",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+      "title": "General Competitive Examinations for Recruitment to the Post of Programmer Under Public Health Engineering Department",
+      "year": 2018,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4.Technical%20Paper-II.pdf"
+    }
+  },
+  "source_fingerprint": "949a5be1b4912b0c28ac3102d3740b5e5a16db48ebe4898f36eafe02afae7427",
+  "appearance": {
+    "id": "4c93d2f7c811ee64e4b9",
+    "paper_id": "Old_Questions/Direct_2014-2018/4.Technical Paper-II.pdf",
+    "type": "mcq",
+    "qnum": "15",
+    "qnum_seq": 15,
+    "page": 3,
+    "question": "Identify which of the following is a legal way to access a class data member using this pointer?",
+    "options": [
+      "this.x",
+      "*this.x",
+      "*(this.x)",
+      "(*this).x"
+    ],
+    "answer_index": 3,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.Technical Paper-II",
+    "difficulty": "medium",
+    "explanation": "Supported by the cited source page and standard subject knowledge.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'access':11 'class':13 'data':14 'follow':5 'identifi':1 'legal':8 'member':15 'pointer':18 'use':16 'way':9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_c45a7696388c1a91",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "(*this).x",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
