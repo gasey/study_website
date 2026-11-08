@@ -1,0 +1,470 @@
+[
+  {
+    "canonical_id": "cq_7148f093d158cf53",
+    "appearance_id": "desc-91d0bb388a4ae07d3f67",
+    "source_fingerprint": "984cec2694acd4b66e91c2766134b682e297a302c3de917c893f941177eab60d",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/accountancy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses commerce and accountancy: Financial bookkeeping, trial balance, and asset accounting. Appropriately classified under commerce.",
+    "tested_skill": "Commerce and accountancy: Financial bookkeeping, trial balance, and asset accounting.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_59219bcc835f7f28",
+    "appearance_id": "desc-af68396196af6240e1d0",
+    "source_fingerprint": "4c270dd552f95958716cd0043531c443e5e1d2b7f6ea5e1dc435188d6fd69fdb",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8e824f5c759c6d7a",
+    "appearance_id": "desc-6eb05963113cfe5cab0d",
+    "source_fingerprint": "19093cfb3120aff123fec0a8717d1f6906f50181fa59f974d1a9b64736a410a4",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b3223ae05ca846f9",
+    "appearance_id": "desc-4ef8aaadb4cdf2c3959c",
+    "source_fingerprint": "91253329ace7d2d00548b77eb7841b49cb3ff47815d0634ea9363edc49cdcadf",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2fb5172ff4b344a",
+    "appearance_id": "desc-583120935a2649bc04b0",
+    "source_fingerprint": "e7ef753b5905f9d52ffe8f730571385023d04232015feb612dd3dcfe08eb67a3",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd8d0ece20243a29",
+    "appearance_id": "desc-e984d6455464c321c726",
+    "source_fingerprint": "16ef60e91e167507c205cc252254b22957f8e7fae9710c83abaf7d1ca1ac3b2e",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e725a88365b39db8",
+    "appearance_id": "desc-255be8f95d48be9508b2",
+    "source_fingerprint": "0860b6b8519395e50a84b0d69c56e58b5b461dc756adf87470dbb6785787b624",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a6985a9b8a6b9848",
+    "appearance_id": "desc-d19dae1b7aa8a5cd0ed6",
+    "source_fingerprint": "47fa3d4bf8d33ec62d96ef0e7eebfc72f58b403df9a0f7163089938dfe7fd9b8",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6ac391d59e60300",
+    "appearance_id": "desc-0c2483092a62774ae413",
+    "source_fingerprint": "7edaa58ec75083be4800dbc3e546c0503fedc93b74597cc92b33fb4f6d49c038",
+    "current_primary": {
+      "subject_id": "economics",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f7aa4ae64337b462",
+    "appearance_id": "desc-6094b01640fccc0f1a5b",
+    "source_fingerprint": "f3267465ffd692c60b4c176482d7bf95a63dcedcefcdd13d452593940dce4445",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f37757dd6dd3c9a8",
+    "appearance_id": "desc-72c7450c9697e3fd55c8",
+    "source_fingerprint": "6de43dac62a96c8aaa4a554076e4994d8880ac165d85b2929ede8e1d0315a52f",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/business-management",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses business management: Organizational behavior, management principles, and operational control. Appropriately classified under commerce.",
+    "tested_skill": "Business management: Organizational behavior, management principles, and operational control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_31f403f1cd47b0c9",
+    "appearance_id": "desc-991d95f32ab2128e0d1c",
+    "source_fingerprint": "a0b4206f2cf9409dd4b411e455f4d3690f892b2affd594806848a7888b00aa5d",
+    "current_primary": {
+      "subject_id": "commerce",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "commerce",
+      "topic_id": "commerce/accountancy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses commerce and accountancy: Financial bookkeeping, trial balance, and asset accounting. Appropriately classified under commerce.",
+    "tested_skill": "Commerce and accountancy: Financial bookkeeping, trial balance, and asset accounting.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_df1171e2381b6c0c3aec0149",
+      "sha256": "6122b6b4b06e1bde719c9c7dba0afed95d125dedf31f0861f82cac5bd22d7952",
+      "note": "Verified against registered booklet source for Commerce."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

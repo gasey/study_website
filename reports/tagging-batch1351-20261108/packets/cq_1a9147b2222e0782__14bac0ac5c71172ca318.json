@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_1a9147b2222e0782",
+  "appearance_id": "14bac0ac5c71172ca318",
+  "snapshot": {
+    "record": {
+      "id": "14bac0ac5c71172ca318",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "Consider the structure of the EMPLOYEES table:\nEMPLOYEE_ID NUMBER Primary Key\nFIRST_NAME VARCHAR2(25)\nLAST_NAME VARCHAR2(25)\nWhich of the statement insert row into the table EMPLOYEE?",
+      "options": [
+        "INSERT INTO employees VALUES ( NULL, 'John','Smith');",
+        "INSERT INTO employees( first_name, last_name) VALUES('John','Smith');",
+        "INSERT INTO employees VALUES ('1000','John',NULL);",
+        "INSERT INTO employees(first_name,last_name, employee_id) VALUES (1000, 'John','Smith');"
+      ],
+      "answerIndex": 2,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "56",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "9911497c8fb4211af9989fb07e0b256573cb86f29c120ea6edd104b4e97c796f",
+  "appearance": {
+    "id": "14bac0ac5c71172ca318",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "56",
+    "qnum_seq": 56,
+    "page": 6,
+    "question": "Consider the structure of the EMPLOYEES table:\nEMPLOYEE_ID NUMBER Primary Key\nFIRST_NAME VARCHAR2(25)\nLAST_NAME VARCHAR2(25)\nWhich of the statement insert row into the table EMPLOYEE?",
+    "options": [
+      "INSERT INTO employees VALUES ( NULL, 'John','Smith');",
+      "INSERT INTO employees( first_name, last_name) VALUES('John','Smith');",
+      "INSERT INTO employees VALUES ('1000','John',NULL);",
+      "INSERT INTO employees(first_name,last_name, employee_id) VALUES (1000, 'John','Smith');"
+    ],
+    "answer_index": 2,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'25':16,20 'consid':1 'employe':6,8,30 'first':13 'id':9 'insert':25 'key':12 'last':17 'name':14,18 'number':10 'primari':11 'row':26 'statement':24 'structur':3 'tabl':7,29 'varchar2':15,19",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_1a9147b2222e0782",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "INSERT INTO employees VALUES ('1000','John',NULL);",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

@@ -1,0 +1,784 @@
+[
+  {
+    "canonical_id": "cq_8d64a457625da6b6",
+    "appearance_id": "3f1edcaa2b9ee1a03418",
+    "source_fingerprint": "573076a3aa2205437ff48679e215121f8bcc2af9309476eb6c4ea36e8fa98357",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_317c84aad9fc7ca7",
+    "appearance_id": "55b4ffb994a8b8187305",
+    "source_fingerprint": "55bca109309ef132aa05d379e9a3f40b1697291ed9c80b373f9f65d29cabdd9e",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d57f2c9806fddfb",
+    "appearance_id": "5da56d22d3b226efd209",
+    "source_fingerprint": "ead75b034da8d5facf8c1ef5c6d9d9123c512934fa85a232a869183d0df9d657",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_911c4e76c2184ccd",
+    "appearance_id": "7dca69d961b826bc884f",
+    "source_fingerprint": "41c56d3494ac40813325fdd3f2f2f408f8846e7b189b05105eaa1cb2b850e6fa",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b9ba2dddc89a2ae",
+    "appearance_id": "7de2d2f4961e04c596ef",
+    "source_fingerprint": "15911350208a53e16b4ed83ece0c0a69d2de0f8f2ced9bc26e3c5dc8044ec110",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a28fcc3244024719",
+    "appearance_id": "7ebb6d6a2940e44b8576",
+    "source_fingerprint": "560147e6c8021d1bc0adc108f0d5c52a9306052390cadf5685d49c49e199a288",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9ed5a27cbf2fc9a8",
+    "appearance_id": "b23caea78a3a4ca0ad5c",
+    "source_fingerprint": "9d9cddbe2bec5bee54873d623acfd322bd537e1bcb0d4e2c5692c2acaccd43a3",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ebb251523ab8a208",
+    "appearance_id": "c7affb20264a74265c8a",
+    "source_fingerprint": "5f943a85357d2a4cc9bb0d4471cf5182fbee037b15c3f3e208bd0c7ae32ab1cf",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_693e573510a7f286",
+    "appearance_id": "ce438fe5e49964622156",
+    "source_fingerprint": "187b300eba33e321e5a65a42360a1c8c296d23b66cc77962efd22a8820ecb5c2",
+    "current_primary": {
+      "subject_id": "mechanical-engineering",
+      "topic_id": "mechanical-engineering/fluid-mechanics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dd73364bc9b5acf3",
+    "appearance_id": "df0333480f744ce52231",
+    "source_fingerprint": "d0a6b4c7e31aaeefdffc0cef98baac8bc2e62d50bceec5f373a7fb40b2f21539",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d63f187e57b93bcc",
+    "appearance_id": "desc-4dc33c1c82955981fa85",
+    "source_fingerprint": "6ae315ab8cb1c5fbe8300029a4ef3131875ac292185c078ec8397c16fb1609cf",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c90b508e394142be",
+    "appearance_id": "desc-28a2f705548a223d8673",
+    "source_fingerprint": "f2445e7cc9990b44a95a4e17582698b36d816e7a08a31e5fba42933587595c74",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e96a26338bac6c1a",
+    "appearance_id": "desc-35c4f886110ebff4e080",
+    "source_fingerprint": "d251c5381767be9cc5d0aa00f90172a2717481140a6c5d0f74868cba127d496d",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bd003e589f60cb84",
+    "appearance_id": "desc-681655e5f86545a31e93",
+    "source_fingerprint": "e7e23c983a0cf21dd64b8f4b41cee60870840d1ef4d6f79c198010452dde968f",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_66284bc94d4de7a2",
+    "appearance_id": "desc-c37ea728342efe8737d9",
+    "source_fingerprint": "af8b6360af324be78a4141eabb2737296510127347b4efdde16deaf995009660",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bb4d3dc753ceec93",
+    "appearance_id": "desc-eb512c680edc9a2d2bcd",
+    "source_fingerprint": "53cee2763d8863e233c187d3aa8584631ef2b251074df5bc623b2f50429b58c0",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses power systems: Generation, transmission network calculations, and protection switchgear. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power systems: Generation, transmission network calculations, and protection switchgear.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_23726191fddb98c7",
+    "appearance_id": "desc-5e69ad746d304d5874e5",
+    "source_fingerprint": "7fbaba81925a9c7b53a1795ecc043d383470c01ac44eff44cb6f85396f08d070",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8ae34d7274fccae9",
+    "appearance_id": "desc-bd8018b47d1e9101c84f",
+    "source_fingerprint": "a660f97d5a5323eccf3af94f77850e1b011dc1afc0fdfbe601c3d9570b81f96d",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2ddfc694b6114416",
+    "appearance_id": "desc-ece56ec44a7cf967a4ce",
+    "source_fingerprint": "a457541a1f3390fb3a28b300272c7a3ed845455e293ed9955841cd901b31e8d4",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses power electronics: Solid-state switching, converter topologies, and drive control. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power electronics: Solid-state switching, converter topologies, and drive control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_08b5fa97d4f864b9",
+    "appearance_id": "desc-c986f0ec51a6f5af6ea2",
+    "source_fingerprint": "003140ffdd312a7459f68edd74a379d5e947db1a95c48aad1c2b308a00722236",
+    "current_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/machines",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical machines: AC/DC motors, alternators, transformers, and rotational mechanics.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_0e16b9589fdba960c223fa71",
+      "sha256": "a97cf44fea62cc843d552207e899503583a832802e2f077a1869d1cc16845a60",
+      "note": "Verified against registered booklet source for AE/SDO (Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

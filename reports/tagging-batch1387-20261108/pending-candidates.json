@@ -1,0 +1,394 @@
+[
+  {
+    "canonical_id": "cq_621e7295aa920002",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_82d9953f2afd317c048780a5",
+    "source_fingerprint": "8139f7ddd1231da4f0af6339dd53c202faab2bdb068e65223c661b8249234c38",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/comprehension",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c45b84070b4fcdbc",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_174aee6464afc324ee479088",
+    "source_fingerprint": "9d49dd3d7760d3556485405896e4ae10b805b081c1261f7d520a628d30c7fb98",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/office-procedure",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses secretariat office procedure: File management, official communications, and administrative workflows. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Secretariat office procedure: File management, official communications, and administrative workflows.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_07060ddc62935eab",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_76ff5504bbecc9a47be6e6cb",
+    "source_fingerprint": "12258189fc4ece4d61520e60ca6c38800720e803cbfff3e596bcac262b7e4205",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_398aec2c5f64f24b",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_3f900293aa5f9cbeda5695b3",
+    "source_fingerprint": "8f2afea5d2f33fe924c2d4858e6bc89862a815b688eb15c7fb3fe5a38102b2a4",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/comprehension",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_32fa7c50eed1333e",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_f2ecb3d8193eb58abf520c7a",
+    "source_fingerprint": "02f739567c47b2339b703ece732a2ef04a8678df788c1feeb9d2a1f79c861dc3",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/sentence-correction",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/sentence-correction",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cad68b34225d0530",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_7a34bbc4a1b70276450bced8",
+    "source_fingerprint": "1b0ad9ff56165397a9ec5d9cfa4f7ea8b86c402e37ba2e00c917eb660197a35f",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/articles"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dad0aaf477d424b5",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_06d467472e93dd315708118c",
+    "source_fingerprint": "3bb4beb580536486b645bc13b629ec1c7fc0a178ade14d62dc2cbe232bead9b8",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/vocabulary",
+      "subtopic_id": "english/vocabulary/one-word-substitution"
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/office-applications",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses office applications: Desktop productivity tools, word processing, and spreadsheet modeling. Appropriately classified under computer-science.",
+    "tested_skill": "Office applications: Desktop productivity tools, word processing, and spreadsheet modeling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9b393c1de8a59157",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_14b2bb82bad1ede8359c308d",
+    "source_fingerprint": "b7e9c9da9b1d44ffa3d2ae4ef5029c3711648129ada0be7153b0097857e49b0a",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses assessment aligned with syllabus specifications under english. Appropriately classified under english.",
+    "tested_skill": "Assessment aligned with syllabus specifications under english.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ba34eef7bff94bd3",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_ee2c4c507e3957206c6e77b0",
+    "source_fingerprint": "90b2b54e4f49bd5bbde00a8a0b9095ad1daa1285ccb6b0b96f533dfbb1670430",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": "english/grammar/prepositions"
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses english grammar: Preposition selection in sentence completion and grammatical idioms. Appropriately classified under english.",
+    "tested_skill": "English grammar: Preposition selection in sentence completion and grammatical idioms.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_637e681b7ca64658",
+    "appearance_id": "paper_aee50a8035284354a114a1ddfe949379_draft_4546731ee3dcb8a96c4203ac",
+    "source_fingerprint": "221843a6c4adbfac1e56bba17c36fde95842b24c35b46d6d3cba998465153792",
+    "current_primary": {
+      "subject_id": "english",
+      "topic_id": "english/grammar",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_153373d05a2f3745c34bc5bc",
+      "sha256": "d09d216c989f2b36561a78f1295288cc78c7a4de190b3cfbf63e66536a06ef3a",
+      "note": "Verified against registered booklet source for Sub-Inspector and Inspector."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

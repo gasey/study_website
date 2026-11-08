@@ -1,0 +1,431 @@
+[
+  {
+    "canonical_id": "cq_454b631a7f8a321b",
+    "appearance_id": "desc-08a9f16660076d2f5b81",
+    "source_fingerprint": "41fc70d7722c7f1fa80bc73cdb938e891befe6762d266791ba106cc266c19a10",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d73829c10bd0f9b9",
+    "appearance_id": "desc-96763ec1a91e0e2606d8",
+    "source_fingerprint": "80c0268f16b65ffa1219c657a3fa7c61c5d7590a0e6655ece95ef2fad9710423",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6e9156291ff977a8",
+    "appearance_id": "desc-a829c7816e50e754c542",
+    "source_fingerprint": "170bc0a424b752293aac7b1949128409cab24d7184aea7db67a375fcf6451d6a",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6cecee69755b3901",
+    "appearance_id": "desc-17abbebd8dc87a109858",
+    "source_fingerprint": "c1262681423b3ab93c72dcdec0f6c2e3c9ab14561f06657b8a3fed0ed559e051",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses power electronics: Solid-state switching, converter topologies, and drive control. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power electronics: Solid-state switching, converter topologies, and drive control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c85b0e66cad63442",
+    "appearance_id": "desc-cd66d48ec3ec235aba71",
+    "source_fingerprint": "0e6d8b25c10c6b72d7d50fd1863deb8e519d37ce75d4dcd22113fa9c150594e4",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/treasury-and-budget",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Financial rules: GFR 2017, Treasury code, budgeting procedures, and financial sanctions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c5e1a849699786a8",
+    "appearance_id": "desc-f5e5e4b3f2353490046a",
+    "source_fingerprint": "5d7633d27b3d3a0d6f0e08c1f8d49f488ecdf49c784ebd5f777bb0caa8fd54bb",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0cc17545a7d73436",
+    "appearance_id": "desc-244a6a91c0e9b93ae3ea",
+    "source_fingerprint": "b11d45d8988f1fa3afc11326fdca11be0b190abe792e0b5ccbe93a3eb61f7f56",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/power-electronics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses power electronics: Solid-state switching, converter topologies, and drive control. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Power electronics: Solid-state switching, converter topologies, and drive control.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_805f517df1c70b78",
+    "appearance_id": "desc-d172c2f238d91be095a6",
+    "source_fingerprint": "1273a0fcd29c641a83ce8f1e23a74cddcc7a7d518a6d0217a486862f3343b2b9",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_127087e450bf7e3a",
+    "appearance_id": "desc-84001a6d85bbcbf3f3ef",
+    "source_fingerprint": "587fe652f729156b9858ff0c15eee5f5dd342c2c7a501bdc61f7fa1c4a0386d2",
+    "current_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a15ec8febd7f6788",
+    "appearance_id": "desc-15750484ea57cedb25df",
+    "source_fingerprint": "061a3a802cfd5ebfb721de8e0e33bd771dfed937d360f9839f70bdda8334f2b4",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question None assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_94966ffad281d168",
+    "appearance_id": "desc-738e6cd04a7f2dfb109b",
+    "source_fingerprint": "6433873e6b24402dd38d9b5bd3693289623642ead3b2dbb0430fe0ecf0aef26f",
+    "current_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "electrical-engineering",
+      "topic_id": "electrical-engineering/circuits",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question None assesses electrical circuits: Network theorems, AC/DC analysis, and passive components. Appropriately classified under electrical-engineering.",
+    "tested_skill": "Electrical circuits: Network theorems, AC/DC analysis, and passive components.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_7f9bfa6a3cb1f0ab3bd11ba2",
+      "sha256": "ca057d24c9dee8885bcd44b35d9fa8a9b67f4bde862a8c719b64fa6a588ea827",
+      "note": "Verified against registered booklet source for Junior Engineer (Civil & Electrical)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_f0763ed39cb10f59",
+  "appearance_id": "4a141e33a5d71b2d7fe2",
+  "snapshot": {
+    "record": {
+      "id": "4a141e33a5d71b2d7fe2",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "A direct method of deadlock prevention is to prevent the occurrence of …………...",
+      "options": [
+        "Mutual exclusion",
+        "Hold and wait",
+        "Circular waits",
+        "No preemption"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Direct deadlock prevention targets one of the four Coffman conditions head-on; the standard textbook direct method is to prevent circular wait by imposing a total ordering on resource requests. The other options are indirect methods or conditions that cannot be removed directly in the usual treatment.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "26",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "1799b505b5742451898224c4e35eb488a3fe6d4cb019812f8e39c71a69b71a39",
+  "appearance": {
+    "id": "4a141e33a5d71b2d7fe2",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "26",
+    "qnum_seq": 26,
+    "page": 3,
+    "question": "A direct method of deadlock prevention is to prevent the occurrence of …………...",
+    "options": [
+      "Mutual exclusion",
+      "Hold and wait",
+      "Circular waits",
+      "No preemption"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": "Direct deadlock prevention targets one of the four Coffman conditions head-on; the standard textbook direct method is to prevent circular wait by imposing a total ordering on resource requests. The other options are indirect methods or conditions that cannot be removed directly in the usual treatment.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'deadlock':5 'direct':2 'method':3 'occurr':11 'prevent':6,9",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_f0763ed39cb10f59",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Circular waits",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

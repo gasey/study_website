@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_5322e49bda514baf",
+  "appearance_id": "922fc6273caf2ba50266",
+  "snapshot": {
+    "record": {
+      "id": "922fc6273caf2ba50266",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "If an attribute of a composite key is dependent on an attribute of other composite key, then we say that a relation is in",
+      "options": [
+        "2NF",
+        "3NF",
+        "BCNF",
+        "1NF"
+      ],
+      "answerIndex": 0,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "A non-prime attribute depending on part of a composite key is a partial dependency, which violates 2NF. This matches the definition of 2NF in the question's terms.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 7,
+      "qnum": "63",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "5a650cac1bc38781989e189b7bcb48510ae694f38d93c8d80b26184bf57a9ad9",
+  "appearance": {
+    "id": "922fc6273caf2ba50266",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "63",
+    "qnum_seq": 63,
+    "page": 7,
+    "question": "If an attribute of a composite key is dependent on an attribute of other composite key, then we say that a relation is in",
+    "options": [
+      "2NF",
+      "3NF",
+      "BCNF",
+      "1NF"
+    ],
+    "answer_index": 0,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": "A non-prime attribute depending on part of a composite key is a partial dependency, which violates 2NF. This matches the definition of 2NF in the question's terms.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'attribut':3,12 'composit':6,15 'depend':9 'key':7,16 'relat':22 'say':19",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_5322e49bda514baf",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "2NF",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

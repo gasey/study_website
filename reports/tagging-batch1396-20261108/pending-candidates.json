@@ -1,0 +1,3912 @@
+[
+  {
+    "canonical_id": "cq_01c806e28d67d415",
+    "appearance_id": "4522a44aebac7d700421",
+    "source_fingerprint": "6b853b0de0a65fc32e183732d88cf5f285e2a60bcf649c6d5ad192fcb5867c1e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6a7dfab5d75f08c",
+    "appearance_id": "89dc05b9038857454513",
+    "source_fingerprint": "39cb2b41bb6705b66507a8266b25322e5af49ebb7f201e94ee165fc5c1b5e054",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mathematics",
+      "topic_id": "mathematics/arithmetic",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions. Appropriately classified under mathematics.",
+    "tested_skill": "Quantitative aptitude: Numerical operations, arithmetic problem solving, and proportions.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_52e6a0109c579076",
+    "appearance_id": "8d717f8797e1cbb9341c",
+    "source_fingerprint": "81e4683438ef90ffcdd9e85e777b60a4328676ad95cacc7bc00742867d2ab432",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c01f0061403c0f80",
+    "appearance_id": "c7a92569efb54fbd2136",
+    "source_fingerprint": "4217b8c2d72772505a7473681739ccf4e69da1c53e297bd137cd8edad6ce6395",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b55d91c315f0d22b",
+    "appearance_id": "aca38347549cbd0e5072",
+    "source_fingerprint": "ce20ed3618414e1fe6de16c3cd8aa8e8d2f9cbe40fbf938d20811b9cded7f800",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f0aadb71973842f2",
+    "appearance_id": "833d2a40bc992b001a0d",
+    "source_fingerprint": "1284fafc175a2dce91e956162b31679932f5f6ff1979567cf91b8fdef216b1be",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c3e651c915896b7f",
+    "appearance_id": "4518c0a05959973291c9",
+    "source_fingerprint": "cd250b7c0d153c7eb3d117e8d873a9b7b9ddf5480e7d2b6f37b4ff073e2ace4b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6507a86dee49dc37",
+    "appearance_id": "02161a418fe3c1e62a12",
+    "source_fingerprint": "94fef1135b88cc9bbd6dccd320171e0834124e7fef97d4e24a98bba1350548d7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_cfe53bc21fb1ba13",
+    "appearance_id": "1ade6bd618f9a985c4f8",
+    "source_fingerprint": "4491ab9a49665d058452ea1b60eca05fd235ed71d4e7c7ccef91ea6b02a28f05",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "service-rules-and-office-procedure",
+      "topic_id": "service-rules-and-office-procedure/office-procedure",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses secretariat office procedure: File management, official communications, and administrative workflows. Appropriately classified under service-rules-and-office-procedure.",
+    "tested_skill": "Secretariat office procedure: File management, official communications, and administrative workflows.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d24d94325e4e44f8",
+    "appearance_id": "f837c6f5e64624aee153",
+    "source_fingerprint": "4c5de69df9d9fe882c012976583c60e29fd91acd0dde4bd7b86fa6bb642b96e7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f9d65a75f1e4b231",
+    "appearance_id": "0a7fd34bc74a61d04248",
+    "source_fingerprint": "842e4175682421fe6439590afa6325fd38da87051394c2eeb143b5b3b5bcad01",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 11 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_77217b78a77e2ceb",
+    "appearance_id": "9bf6cb6d6a5236fd452a",
+    "source_fingerprint": "910250b3f35c6bf55cc2d26cbf8248c4937eb0fc52f014b8be3685e13c4d1582",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 12 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4bdb025b6b3f8c59",
+    "appearance_id": "9e6b559ac1f1c1db93dc",
+    "source_fingerprint": "eb288e1bb902e527268eb65ad5490ce05d8f8b94892d31b86f24bf911878eb42",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 13 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a0578062347b9e22",
+    "appearance_id": "3f31dd61aad7f03fcf98",
+    "source_fingerprint": "c8fd44e3bfb0c4cc0f0a7703810c3ff6396a2b37db637758173c25c2e3406be9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 14 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4439e79db987271a",
+    "appearance_id": "efd5913f6caa944d60ca",
+    "source_fingerprint": "2d4bda8ab3c155473e9c132854d5fc4e8c18551a5345f2759dcba8f0132a1db3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 15 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d0aa69acf5c0dcff",
+    "appearance_id": "773a43fa759fbdb261c7",
+    "source_fingerprint": "9c62cdca8d5250cb163c78d5322249f6e86ae6373f25d35c3474757b39168f16",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 16 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58fc6f970e54575a",
+    "appearance_id": "aeb4f3acc85e495fbf02",
+    "source_fingerprint": "f31cd540b39ad1743c69de8f1ad98831e77c1da59f0e23079d2db04c45f6a27c",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 17 assesses indian Economy: Macroeconomic aggregates, banking regulations, and public finance. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Economy: Macroeconomic aggregates, banking regulations, and public finance.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3fee5a47b784c0bd",
+    "appearance_id": "1ac8c6f3bc5bd02040dc",
+    "source_fingerprint": "25fd8c242876fc8ff237f9889a69d2163d0ec5462f4d3830f22240bfcf2296cb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 18 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_39eb138c98caba3b",
+    "appearance_id": "ef8884b0546e3d20ba77",
+    "source_fingerprint": "c09dcd20c44a965b242943d05b553353778048ae01555b316336197369660be1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 19 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4c3885a4dba0b743",
+    "appearance_id": "b73c00cc43d8ad95e4f4",
+    "source_fingerprint": "3840f9aaba954322a45a81f306d47e44a52a1a4bee5d007da4c0bd0b87d6fb9f",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 20 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2ba814802f2270c5",
+    "appearance_id": "a5a5317b994cccca352e",
+    "source_fingerprint": "2fa96ddee4fca4199820970a9d576586ec1cd11a9d55851e4817a94a797d21c5",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 21 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_49284482a7cc046a",
+    "appearance_id": "0625e6c03f8d19f1d7ed",
+    "source_fingerprint": "af57eb14eea0e015c14ed201f1c2ebe94c1cd0f4ce0332fbc302cc37d4d95790",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 22 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_319fe61a54c64200",
+    "appearance_id": "3950715778293fad78d1",
+    "source_fingerprint": "e211f30db6069da3fd15ed479a2152f7914baea14305c5770b5f8e2b8e081d91",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 23 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_d6c49b5d15727e14",
+    "appearance_id": "f5e2ec1eba99ffc7dda6",
+    "source_fingerprint": "90e1afa4ef0cda31a064cb0e7a96cda4ed0d6a84af9df1eabb97f28fc02ccb3b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/land-and-revenue",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 24 assesses mizoram land administration: Land Revenue Act, acquisition, eviction, and land records. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram land administration: Land Revenue Act, acquisition, eviction, and land records.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 3,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b99dc24acfa3c2c1",
+    "appearance_id": "c5cf12122e1cad6336ab",
+    "source_fingerprint": "58cad27641d64396d3104f8e6ce6cc3f179c71c1a16b06238574b19cf545ece3",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 25 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_91b5317342acac8f",
+    "appearance_id": "45f68db29dd397e72f24",
+    "source_fingerprint": "e88281a1f850258258c79be5e05c1d846482b49f31c7cb1edee140aa53d404f5",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 26 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_37f2d6fe4687a41d",
+    "appearance_id": "9367cd9a865dc706884f",
+    "source_fingerprint": "f795866d3099812e267305e4edfae8880cfda6e9cd6ca4548ae43ba4c38be3e8",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 27 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dfad2418d032ded9",
+    "appearance_id": "720e216096d1bc58cd3a",
+    "source_fingerprint": "6cbf9657a350f02d155d412fc95367e9bf0826376ef8164e6028df61ff4158c7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 28 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a61e3478e132605d",
+    "appearance_id": "569bb102a7c225d5ec8d",
+    "source_fingerprint": "39c26a634a8a4760e507f27b5b9bc65371f1d07d66df2f258391f78525e266b7",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 29 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f60e11bd758eeccb",
+    "appearance_id": "e73d0037e4167792e270",
+    "source_fingerprint": "c4d0891907176c5869524868fb9e0fc0610d7e09008c1a400be012b1f24f6539",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 30 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a75491dd02d5c632",
+    "appearance_id": "e626297a75cc0b50689e",
+    "source_fingerprint": "5d170a7d04a36e4ab73b8864d5a8e68655103b4438e628e16e459f61dda17b23",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-polity",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 31 assesses indian Polity: Constitutional principles, institutional governance, and statutory rights. Appropriately classified under general-studies.",
+    "tested_skill": "Indian Polity: Constitutional principles, institutional governance, and statutory rights.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c622da245a826007",
+    "appearance_id": "21062d368ba762f03069",
+    "source_fingerprint": "29b707b7a095c236e97316b2c0a61a7b181ca5750b0b1e42a2710bc92ffc2f3f",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 32 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 4,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_70f99dc2d557d11b",
+    "appearance_id": "54c8f8812b8df3d93763",
+    "source_fingerprint": "a30e273256350779108dd286efd9ebaa57444b3e3ace66334eb9eeadf415516b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 33 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1b9a2b25ceda084c",
+    "appearance_id": "dc86ccf5d7b5302b3679",
+    "source_fingerprint": "cf5889b072a68f491a50f04a53b565774fec26d843241d5338330342edb9705e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 34 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bfe2feca53928eb9",
+    "appearance_id": "f7a2612757f997ce9b77",
+    "source_fingerprint": "fd032fb8fa068260ed52e2be0af6f4c8c7474c49f80c25afb3976172699e426d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 35 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5dff997c93eb5d9c",
+    "appearance_id": "fd97062ac15c5f9d722d",
+    "source_fingerprint": "255c0f9b461c09d4345ce46fc81760cfc79cc541eef4d3a9c358b4b9c9e79790",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 36 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b2834fbb08a3ae7a",
+    "appearance_id": "be989d83caf75033550f",
+    "source_fingerprint": "e5dbd4106a905a9928c0d105f0254f3c9bdda6013dd238d9cf950f99a6be911f",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 37 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e9e406828e290a22",
+    "appearance_id": "d1579ba9a1df0a7339a0",
+    "source_fingerprint": "123a013210d9abaebdecb04202fa4a67d889099fea7a46a012f880a34cb1cb44",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 38 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2bd8d5f4288c5fe8",
+    "appearance_id": "b312ad04010b27209e82",
+    "source_fingerprint": "56eb81c8afa96b4d7403874d2c5bf643f18eb691c7873b89232dddd39dceaa28",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 39 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0089775131e6d60c",
+    "appearance_id": "d336e6d5d4a904b659fa",
+    "source_fingerprint": "246b18928ab4bc2e11782375b656b3f6e547facace042afba0e925d4880b4d84",
+    "current_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/literature",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizo",
+      "topic_id": "mizo/literature",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 40 assesses assessment aligned with syllabus specifications under mizo. Appropriately classified under mizo.",
+    "tested_skill": "Assessment aligned with syllabus specifications under mizo.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 5,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bfc6fa657e06d11b",
+    "appearance_id": "c9cd4536bd24ef34d143",
+    "source_fingerprint": "ee0197fafb0afb04f94c7a38eab1745b066b61f94d94c5a5ce002505e2d71d3d",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 41 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2404b9311875faba",
+    "appearance_id": "e22007c36704beddf142",
+    "source_fingerprint": "f33a43fff74e8405643dc5b9b23e42e941a54ebfe6d0a94d43761689726f4cb9",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 42 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_33cca0856b8d940c",
+    "appearance_id": "a995f694a476e8be56ff",
+    "source_fingerprint": "f3dfef194c897470bdfda0243c5c5536590bcaaf254163fdd84d9198dfd206d1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 43 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_497f8d0d8860d51b",
+    "appearance_id": "4daa67f60654ab662d17",
+    "source_fingerprint": "6ba893685d3a1a0ed4ea9715bc6a6b52431bbef0e2159408540b6eabe571f132",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 44 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "dated-event",
+      "reference_basis": "exam-date",
+      "reference_period": "2015"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a4d5e042bc3004e9",
+    "appearance_id": "83c4174f0a8f06370962",
+    "source_fingerprint": "0fa318e5e0bbe874991c62413222771a10f0ddbb92a3248504508baa7fcb5adf",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 45 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_534dd29190371ccb",
+    "appearance_id": "f216208abcea1f1bb47c",
+    "source_fingerprint": "aa2986427a142e6ba32df9c49f9f546373b11d51b6814363702266673f5ef9d0",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 46 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3a8298c702eeded1",
+    "appearance_id": "7234f27a116c666e4ab2",
+    "source_fingerprint": "1c055361bbbb832801e756af4a8da8cfdff3ba5d6494c2f15eb99f533418c947",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 47 assesses mizoram state acts: Statutory acts, rules, and departmental administrative regulations. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "Mizoram state acts: Statutory acts, rules, and departmental administrative regulations.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_0d6dda270aec89bc",
+    "appearance_id": "486fdc752f5d6afe829d",
+    "source_fingerprint": "8d2a248dcf239986f3ee1fca179f051cf0b3468a194dd94793ece1cb58d8d4ee",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/current-affairs",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 48 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 6,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dc6ea44e667e16a0",
+    "appearance_id": "0280caaf709ec04c30f7",
+    "source_fingerprint": "ba5be7c40d1ae399690f675ea36e4f59e5d7541e0996f04cb4736036c9e71770",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 49 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_9c12ac3b3007c728",
+    "appearance_id": "2564f70369c2a7275dff",
+    "source_fingerprint": "f74e192e6902d0efb2e8ccf875e91aa66e5db7d14616686d4a8cd51acc3199eb",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 50 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5c81f4e76d97e50a",
+    "appearance_id": "a697ee492e1ee23fcabb",
+    "source_fingerprint": "a81b48db185bead0cedba82c0284ab52420ae6e7182c35458229418161be17bc",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 51 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_c92c8b8e77b04032",
+    "appearance_id": "cfe1447e691030a66afe",
+    "source_fingerprint": "f46f959889588083bf7781281c0675ea582bf97df2361c4bf7886a9c137ef414",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 52 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_04a7bf9dea8033a8",
+    "appearance_id": "cad7c9839bf0ea842636",
+    "source_fingerprint": "207381db658779a74a3a32430fe7cd903146f43649e8b32f2fe89ad3bf1651d4",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 53 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_8fdf0f43ea258390",
+    "appearance_id": "d86b93f685116c705535",
+    "source_fingerprint": "f113b15fcd635bc8346e3a77f91ed295a588aaa5a6c69ec15dcd6299a9b5f22d",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 54 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f3e1dea9e2b15c5e",
+    "appearance_id": "be1eeff6ddfe04827795",
+    "source_fingerprint": "74268d52908ee172b84dc0a71e967adf8f279270f1c7e6c85458b9ee7d5a9101",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/sports",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 55 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_f811009d16a59672",
+    "appearance_id": "48c0893e5d438724feb9",
+    "source_fingerprint": "506e328853136575afc6b8d40d2883bf60101491963e3b101438ee53de667f33",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 56 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 7,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7efcad9438c0f089",
+    "appearance_id": "60b458f20f4cdbc75776",
+    "source_fingerprint": "5457436b05c11147912314ec9017262ca32ac813a9ec252325d30c11b5e2841f",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 57 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_df5f6b44cd445def",
+    "appearance_id": "50977590f4de95fa3a88",
+    "source_fingerprint": "a8947917a0cf74a329a86977ca4cfbaa50f5145473924534d85c58ba5a3e8981",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 58 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_4a2b052332fe7385",
+    "appearance_id": "74951248e959d8053866",
+    "source_fingerprint": "ca81f05586fa74f6f124c7e859e971e7573f578365de2c2fa453d030e5479bc1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 59 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_819e0ba9abd39515",
+    "appearance_id": "87d968abf14424e104c5",
+    "source_fingerprint": "3062d2d2febe3ad476e27d39d95ec86bb2265a1e0b692056ce178646a66f92b5",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 60 assesses education: Pedagogical principles, institutional administration, and educational policies. Appropriately classified under education.",
+    "tested_skill": "Education: Pedagogical principles, institutional administration, and educational policies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7320ea15df539a89",
+    "appearance_id": "e37d099b6e384ee029fb",
+    "source_fingerprint": "dfc2df8f8d544c8f4f41f4a44901e5c66ff44db2e58d4050d540314f2d134f1e",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 61 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_424fe5b137da80f7",
+    "appearance_id": "47b6b01ed172dfe1f690",
+    "source_fingerprint": "ab18afd3d2650707b30d28c70319ebbe228d12d6d355c2247d771e990779fe71",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/audit",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 62 assesses government audit: Audit mechanisms, CAG duties, and financial scrutiny. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Government audit: Audit mechanisms, CAG duties, and financial scrutiny.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_40dace8fb0dadc30",
+    "appearance_id": "90d26fa38c5fb618db5c",
+    "source_fingerprint": "739a89d08e7e6ee399ff93963be03fb870a3c1da0d339a166109205b93381208",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 63 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_558570ad5fb676f5",
+    "appearance_id": "023c95f126513a81671f",
+    "source_fingerprint": "405648a1fb7b1632f2f05dcc9b46a757f0199a748fa4fc3fb17ec6509122352b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 64 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 8,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_242530e6a3c0a100",
+    "appearance_id": "d6d88324590d2428bb1e",
+    "source_fingerprint": "f6cff3342421118da007af7f15c3da3384cf4ad3923d264f13d073ccdb9ed24b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 65 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5d6fd16e638d2561",
+    "appearance_id": "240deb509ba4529ef6ac",
+    "source_fingerprint": "e86faa03d9e07302aed278836527d31ed5748fa856f7971cbab3da72b3db1714",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 66 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ccaaad2658d8f6c5",
+    "appearance_id": "68aec466859c3001f23b",
+    "source_fingerprint": "458b57f288cff61b6d346be88991eb05ee76389531e58e8f41d0155c162a272e",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 67 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7f2d6e097d8c1ebb",
+    "appearance_id": "2584be3856faa8f2fab0",
+    "source_fingerprint": "9c7c56c2df7484671027e35da4dab18fd6897c1acccd980a74d31423e7e555ef",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 68 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_68171a7d8f04b2eb",
+    "appearance_id": "9dd152e8b70289757ee0",
+    "source_fingerprint": "7c03186c1ee56de4c560c6edef1cad02bb91a6d13592d161177275987ec58fba",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-history",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 69 assesses indian History: Ancient, medieval, and modern Indian freedom movement chronology. Appropriately classified under general-studies.",
+    "tested_skill": "Indian History: Ancient, medieval, and modern Indian freedom movement chronology.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_b556ec88ec473c1a",
+    "appearance_id": "ddef36fced568f4ca3af",
+    "source_fingerprint": "e0e7545f13a050dcf308f3ece0bedbb9a50eabf1145e753b18724b8a42a56021",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/art-and-culture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 70 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_16f411b017184cc6",
+    "appearance_id": "c17d1b556fd362e130fd",
+    "source_fingerprint": "a564dc28dd4c1b567b91717a84c4771183bcd4ca31a0a794757e8bf4954b1288",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 71 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_87ab3ce75da5b7e4",
+    "appearance_id": "8e893a4d32d3a89e70fd",
+    "source_fingerprint": "6494b268087d2f25f2f708dcfb0e70ff1e8ef5375aa0b47a1678fbd57f1ec0cc",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 72 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 9,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_efab664683ebe635",
+    "appearance_id": "bbb20dc79fa019282d8e",
+    "source_fingerprint": "22fd61e9e4788e83fcec9d4842dda52ac444c61f0f4749832f82b2c7b1637d10",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 73 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_45d1b8ea8b6e43b8",
+    "appearance_id": "15f3a486e46e113c5016",
+    "source_fingerprint": "38de1be363317df52ec4504e464c6c8cccdbd3eb1d167255c50270bde5fb37a8",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 74 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a04fca89181869ff",
+    "appearance_id": "04563a3377e4ed585844",
+    "source_fingerprint": "9c8e19ee416ffe9edaf526b5dad04e195ec1f1f7ced47ed574a26671931375b1",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 75 assesses public works accounts: CPWD works procedure, tenders, measurements, and contractor payments. Appropriately classified under financial-rules-and-accounts.",
+    "tested_skill": "Public works accounts: CPWD works procedure, tenders, measurements, and contractor payments.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_22ab3ff5aa0558d8",
+    "appearance_id": "88082ccc3636a8fbe91a",
+    "source_fingerprint": "a44442e3bb1693be1dbd226160801c3b48978ce3242b9e99aed05fa0d5edea15",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 76 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_26a61a59f7c77ab5",
+    "appearance_id": "d99a88052cf38ffcc5e0",
+    "source_fingerprint": "8b812a7ac4a418ca06ea33f0a2998b2df41a067b83b76398498f4fb418e1d6d2",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 77 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2f5f7f41d4d57cf4",
+    "appearance_id": "4fefd5253cbccd6fd477",
+    "source_fingerprint": "75aedc936db82d6ee306bd05c4f98fac20713152fcfc2c9fd4f4adbc1e86a322",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 78 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_709564c87d66c51f",
+    "appearance_id": "c212d0db4d473534de1d",
+    "source_fingerprint": "8a261383f4e35fce351ddc341a8883b0bec7be9f68804d195fd3a7d647d7468b",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "science",
+      "topic_id": "science/biology",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 79 assesses assessment aligned with syllabus specifications under science. Appropriately classified under science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_791eff5cf16a6703",
+    "appearance_id": "f2fc265308fdffc73415",
+    "source_fingerprint": "906d204320ee6539941056090d2a68e44ec5bd861aa53e645f34d68ae8192a5d",
+    "current_primary": {
+      "subject_id": "science",
+      "topic_id": "science/physics",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 80 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 10,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e6dc5d77846434f",
+    "appearance_id": "77f70254732559b527c3",
+    "source_fingerprint": "398f2e98d3a4a162cf7655780eeb4cf6663f6592e41de4b52391c370b5d62692",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/programming",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 81 assesses computer networks: OSI reference architecture, TCP/IP networking protocols, and routing. Appropriately classified under computer-science.",
+    "tested_skill": "Computer networks: OSI reference architecture, TCP/IP networking protocols, and routing.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_58879bd1ab45a9ad",
+    "appearance_id": "fcbc94204f050991bdc1",
+    "source_fingerprint": "113ea903ff9f562a22c3ec1d668a39b9f42738def488b88d918dba4bd1b9b5f4",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/operating-systems",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 82 assesses operating systems: Kernel architecture, memory management, and process scheduling. Appropriately classified under computer-science.",
+    "tested_skill": "Operating systems: Kernel architecture, memory management, and process scheduling.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a65a36375ec79478",
+    "appearance_id": "9700d8da81e676600450",
+    "source_fingerprint": "e5a6ccf0df18a2aea07a131d53825569cecef417efcd583ebbd482440d64b8e6",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 83 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_7cd761d7f4d247ce",
+    "appearance_id": "657bbf94f51c944d9ec9",
+    "source_fingerprint": "41e11c50528adfd41192285cafb17e2a8119087796e0082bdcebe59de4938974",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 84 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3de0db7c2b755396",
+    "appearance_id": "82843e08bff277302486",
+    "source_fingerprint": "adfeecf3685064146c8a7927850a90af803566b69e16cb1c66c3a5a86a41cbfa",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 85 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_5eaa5d6782525678",
+    "appearance_id": "bfb445060c8045182f1e",
+    "source_fingerprint": "e8b8d1ed510df28bda9b746388db1c63b61d0d0a1fd1d8e7fa1e9637f048e657",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 86 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6d08f7d078c645e6",
+    "appearance_id": "f4fab3ee23e88886c014",
+    "source_fingerprint": "f8697c64a87a9fcf0b01cbfdee9e1f7097d5fd51741c31be72e30748dd8dc6fe",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 87 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a1edecd5198ca0fc",
+    "appearance_id": "e3f279bd79efad991d5b",
+    "source_fingerprint": "a67ef27a786db71dbe462da1cd838eb3a66003c82274d01070569aea9042e0a5",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 88 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 11,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_04f843efaa61d3a9",
+    "appearance_id": "c75757114e4a198b6364",
+    "source_fingerprint": "95ebc016eb8063d7f5ce0ad9d7e3adf1db026f9d14da2b6f9a1e1d72f12ca705",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 89 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_36a52380ccd1a54f",
+    "appearance_id": "c33fd524f8f26b33b90e",
+    "source_fingerprint": "e5712b5bd55bf39247a5efa647723e8086c195c11c4e724f7c0db2aac2c30fce",
+    "current_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/networking",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 90 assesses assessment aligned with syllabus specifications under computer-science. Appropriately classified under computer-science.",
+    "tested_skill": "Assessment aligned with syllabus specifications under computer-science.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_bfbeed280605e0aa",
+    "appearance_id": "c2272724eea198a01868",
+    "source_fingerprint": "3f805182574bbc6c6d221a9159db268bd0ac487a8b3cae1072710e904275bb5b",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 91 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_72aa93c6bc7b8887",
+    "appearance_id": "437884337b11b7c2d6f1",
+    "source_fingerprint": "3f1b52d5dde5026e2ffdf86c8c19bde52617f6d3f1cc7580429013d780eda2f1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 92 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_1256e487a16e9ac1",
+    "appearance_id": "d2097943380fad4570b7",
+    "source_fingerprint": "cad840dfadf63662cbec9ce799f47fe080b98509f1b5bd69c49928d1186c6bbc",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 93 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_348e7aca7d7e150f",
+    "appearance_id": "5ed2468a77f51a2c014d",
+    "source_fingerprint": "a0d25a856e585f12ff66255dd0b3aed1ab20d4cf2ffa9ad18bdd3c72a52c7e87",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 94 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_abffe554b04556cc",
+    "appearance_id": "462430a3659e5498bdbf",
+    "source_fingerprint": "dca862faf27fda6180e33edbf45c38c4847c87c7526a042a912d7d65db268c5c",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/geography",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 95 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_138934a459c0f02b",
+    "appearance_id": "4b7ea5bf3dbcd11d1c78",
+    "source_fingerprint": "2820ce2c5be9714b8522bba7439751e361420e45da93f0dda208d6059a16782a",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 96 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 12,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_e4d22a9252efe97a",
+    "appearance_id": "16c9ebf12f04e4981f8b",
+    "source_fingerprint": "232b4246f2fb7f5fd588649b418d0651623a51a066e6540000a51c829e970d11",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 97 assesses assessment aligned with syllabus specifications under general-studies. Appropriately classified under general-studies.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-studies.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_6ecddd6b96066995",
+    "appearance_id": "1a52f9c3a260e5fd94be",
+    "source_fingerprint": "2fca7aa07b0de4669b14b76870cde1a4c822a316f9042cf75956a368e1e612c1",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 98 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_974a3a7881ffa2a8",
+    "appearance_id": "9234cf5b66d76c9f4f66",
+    "source_fingerprint": "7201fcb71dfe69403f6912443672e87bcdfdcf1d71527e64e9a57d0c4e0262e4",
+    "current_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "general-knowledge",
+      "topic_id": "general-knowledge/static-gk",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 99 assesses assessment aligned with syllabus specifications under general-knowledge. Appropriately classified under general-knowledge.",
+    "tested_skill": "Assessment aligned with syllabus specifications under general-knowledge.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_3e63317415085312",
+    "appearance_id": "e25cb84131703e0bf19b",
+    "source_fingerprint": "ce563c5c89373caff1fbc8f14a81584d518ed8b824945f42de9e00d8fd4c7a4d",
+    "current_primary": {
+      "subject_id": "general-studies",
+      "topic_id": "general-studies/indian-economy",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "computer-science",
+      "topic_id": "computer-science/computer-systems-and-architecture",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 100 assesses computer science: Digital system hardware, CPU architecture, and basic computing tools. Appropriately classified under computer-science.",
+    "tested_skill": "Computer science: Digital system hardware, CPU architecture, and basic computing tools.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 13,
+      "document_id": "doc_69c31d6e443a1e426d45cbbb",
+      "sha256": "9fa05ae00f1000160300adf005d5d23a3cc1bc180a0badc77549fe8888de0c15",
+      "note": "Verified against registered booklet source for General Studies."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]

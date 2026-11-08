@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_8345c252c0147084",
+  "appearance_id": "d7b7ff5157f875301702",
+  "snapshot": {
+    "record": {
+      "id": "d7b7ff5157f875301702",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "Which of the following is not a key piece of information, stored in single page table entry, assuming pure paging and virtual memory",
+      "options": [
+        "Frame number",
+        "A bit indicating whether the page is in physical memory or on the disk",
+        "A reference for the disk block that stores the page",
+        "None of these"
+      ],
+      "answerIndex": 2,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "A single-level page table entry holds the frame number and a valid/present bit (plus protection bits). A reference to the disk block holding the page is kept in separate backing-store metadata, not in the page table entry, so it is the item that is not stored there.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 3,
+      "qnum": "19",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "7843c0eb8f9dabb080794949f3e4cca8bc5a8081ea4c444d49b6b675064ed583",
+  "appearance": {
+    "id": "d7b7ff5157f875301702",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "19",
+    "qnum_seq": 19,
+    "page": 3,
+    "question": "Which of the following is not a key piece of information, stored in single page table entry, assuming pure paging and virtual memory",
+    "options": [
+      "Frame number",
+      "A bit indicating whether the page is in physical memory or on the disk",
+      "A reference for the disk block that stores the page",
+      "None of these"
+    ],
+    "answer_index": 2,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": "A single-level page table entry holds the frame number and a valid/present bit (plus protection bits). A reference to the disk block holding the page is kept in separate backing-store metadata, not in the page table entry, so it is the item that is not stored there.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'assum':18 'entri':17 'follow':4 'inform':11 'key':8 'memori':23 'page':15,20 'piec':9 'pure':19 'singl':14 'store':12 'tabl':16 'virtual':22",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_8345c252c0147084",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "A reference for the disk block that stores the page",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

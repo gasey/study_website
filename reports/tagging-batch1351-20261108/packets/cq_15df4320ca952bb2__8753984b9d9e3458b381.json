@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_15df4320ca952bb2",
+  "appearance_id": "8753984b9d9e3458b381",
+  "snapshot": {
+    "record": {
+      "id": "8753984b9d9e3458b381",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "If every transaction in the schedule reads only items that were written by committed transactions, then the schedule is said to be",
+      "options": [
+        "Cascadeless schedule",
+        "Partial order",
+        "Strict schedule",
+        "Unstrict schedule"
+      ],
+      "answerIndex": 0,
+      "answerSource": "inferred",
+      "answerKeyRef": null,
+      "explanation": null,
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 6,
+      "qnum": "53",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "03ca3b51b4285dc6de04cce38f7345ae85f33b53b15fea282ec1684eb2dee6f6",
+  "appearance": {
+    "id": "8753984b9d9e3458b381",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "53",
+    "qnum_seq": 53,
+    "page": 6,
+    "question": "If every transaction in the schedule reads only items that were written by committed transactions, then the schedule is said to be",
+    "options": [
+      "Cascadeless schedule",
+      "Partial order",
+      "Strict schedule",
+      "Unstrict schedule"
+    ],
+    "answer_index": 0,
+    "answer_source": "inferred",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": null,
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'commit':14 'everi':2 'item':9 'read':7 'said':20 'schedul':6,18 'transact':3,15 'written':12",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_15df4320ca952bb2",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "Cascadeless schedule",
+    "canonical_answer_source": "inferred",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}

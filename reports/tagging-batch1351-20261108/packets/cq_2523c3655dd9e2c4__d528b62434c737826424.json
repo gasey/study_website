@@ -1,0 +1,109 @@
+{
+  "canonical_id": "cq_2523c3655dd9e2c4",
+  "appearance_id": "d528b62434c737826424",
+  "snapshot": {
+    "record": {
+      "id": "d528b62434c737826424",
+      "paperId": "Old_Questions/Direct_2014-2018/4..pdf",
+      "type": "mcq",
+      "question": "The number of interchanges required to sort 5, 1, 6, 2, 4 in ascending order using Bubble Sort is",
+      "options": [
+        "6",
+        "5",
+        "7",
+        "8"
+      ],
+      "answerIndex": 1,
+      "answerSource": "derived",
+      "answerKeyRef": null,
+      "explanation": "Bubble sort on 5,1,6,2,4: pass 1 makes swaps (5,1), (6,2), (6,4) = 3; pass 2 makes swaps (5,2), (5,4) = 2; pass 3 makes none. Total 5 interchanges, which is the option 5.",
+      "direction": null,
+      "questionMarkup": null,
+      "optionsMarkup": null,
+      "passage": null,
+      "difficulty": "medium",
+      "page": 1,
+      "qnum": "1",
+      "hasDiagram": false,
+      "figureImage": null,
+      "classification": {
+        "subject_id": "computer-science",
+        "topic_id": null,
+        "subtopic_id": null
+      }
+    },
+    "metadata": {
+      "sourceDefect": null,
+      "disputeNote": null
+    },
+    "paper": {
+      "id": "Old_Questions/Direct_2014-2018/4..pdf",
+      "title": "TECHNICAL COMPETITIVE EXAMINATIONS FOR RECRUITMENT TO JUNIOR ENGINEER (JE) CONTRACT BASIS - COMPUTER SCIENCE ENGINEERING",
+      "year": 2016,
+      "series": null,
+      "source_pdf_url": "/papers/source/Old_Questions/Direct_2014-2018/4..pdf"
+    }
+  },
+  "source_fingerprint": "897a3ebce2b08f687377dde34561648ca2e2aa50387551334603e35c30d904f4",
+  "appearance": {
+    "id": "d528b62434c737826424",
+    "paper_id": "Old_Questions/Direct_2014-2018/4..pdf",
+    "type": "mcq",
+    "qnum": "1",
+    "qnum_seq": 1,
+    "page": 1,
+    "question": "The number of interchanges required to sort 5, 1, 6, 2, 4 in ascending order using Bubble Sort is",
+    "options": [
+      "6",
+      "5",
+      "7",
+      "8"
+    ],
+    "answer_index": 1,
+    "answer_source": "derived",
+    "answer_key_ref": null,
+    "subject": "gk",
+    "topic": "4.",
+    "difficulty": "medium",
+    "explanation": "Bubble sort on 5,1,6,2,4: pass 1 makes swaps (5,1), (6,2), (6,4) = 3; pass 2 makes swaps (5,2), (5,4) = 2; pass 3 makes none. Total 5 interchanges, which is the option 5.",
+    "marks": null,
+    "model_answer": null,
+    "has_diagram": false,
+    "used_vision": false,
+    "figure_group_id": null,
+    "figure_image": null,
+    "passage": null,
+    "passage_id": null,
+    "essay_kind": null,
+    "compensated": false,
+    "figure_based": false,
+    "key_disputed": false,
+    "dispute_note": null,
+    "source_defect": null,
+    "verified_by": null,
+    "stem_hash": null,
+    "search": "'1':9 '2':11 '4':12 '5':8 '6':10 'ascend':14 'bubbl':17 'interchang':4 'number':2 'order':15 'requir':5 'sort':7,18 'use':16",
+    "created_at": "2026-10-17 20:54:53.925258+00:00",
+    "canonical_id": "cq_2523c3655dd9e2c4",
+    "option_order": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "series": null,
+    "bbox": null,
+    "bbox_source": null,
+    "is_primary": true,
+    "direction": null,
+    "question_markup": null,
+    "options_markup": null,
+    "source_context_ref": null,
+    "context_revision": 0,
+    "canonical_status": "live",
+    "canonical_answer_text": "5",
+    "canonical_answer_source": "derived",
+    "canonical_source_defect": null,
+    "canonical_key_disputed": false
+  }
+}
