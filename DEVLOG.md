@@ -8356,3 +8356,20 @@ Defines four stream comfort presets (Humanities Comfort Mix, Science & Tech GK B
 - **Ledger Verification:**
   - Readback validation confirmed 86/86 source fingerprints match, 0 live database writes.
   - Cumulative review ledger: **9,139 saved records**, **9,060 unique appearances**, **8,659 deduplicated candidates**, **0 problems**. [Batch 122 report](reports/tagging-batch122-20261108/README.md).
+
+### Tagging Batch 123 — Assistant under MPSC 2019 Paper-I (2026-11-08)
+- **Scope & Targets:** Full source review of General Competitive Examinations for Recruitment to the Post of Assistant under Mizoram Public Service Commission, April 2019 — Paper - I (`Old_Questions/Direct_2019-2020/Asst. Grade under MPSC Paper-1.pdf`, `doc_3fa8f01b1fcbfa22144d1887`).
+- **Paper Structure:** 125 Marks total (Section A: 50 Conventional Marks [Essay 25 Marks, Précis 25 Marks] + Section B: 75 MCQs [75 Marks]; 100% paper completion).
+- **Actions:** 77 items reviewed (62 retags, 15 keeps, 0 holds, 0 live changes).
+- **Taxonomic Distribution:**
+  - `english/grammar/parts-of-speech` (30 items): Q1–Q10 (parts of speech identification: verb, conjunction, adjective, noun, adverb, pronoun, preposition), Q51–Q60 (connecting words / conjunctions: because, although, unless, but, if, so that), Q61–Q70 (adjective selection and qualities in context).
+  - `english/grammar/tenses` (20 items): Q21–Q30 (verb tenses identification), Q41–Q50 (verb forms and agreement).
+  - `english/grammar` (15 items): Q11–Q20 (sentence classification: declarative, interrogative, imperative, exclamatory, simple, compound, complex), Q71–Q75 (question tags mechanics).
+  - `english/grammar/prepositions` (10 items): Q31–Q40 (prepositions: at, on, in, by, with, for, into, of).
+  - `english/writing/essay` (1 item): W1 (conventional essay composition on technology enslavement / role of newspapers / festivals in Mizoram, 25 Marks).
+  - `english/writing/precis` (1 item): W2 (conventional précis writing on trees and noble character with title, 25 Marks).
+- **Defect Documentation:**
+  - Preserved Section A (2 conventional written questions, 50 marks: Essay 25 marks and Précis 25 marks) in `pending-written-intake.json`.
+- **Ledger Verification:**
+  - Readback validation confirmed 77/77 source fingerprints match, 0 live database writes.
+  - Cumulative review ledger: **9,216 saved records**, **9,137 unique appearances**, **8,736 deduplicated candidates**, **0 problems**. [Batch 123 report](reports/tagging-batch123-20261108/README.md).

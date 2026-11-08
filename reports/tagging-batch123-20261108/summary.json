@@ -1,0 +1,36 @@
+{
+  "batch": 123,
+  "papers": [
+    {
+      "paper_id": "Old_Questions/Direct_2019-2020/Asst. Grade under MPSC Paper-1.pdf",
+      "paper_title": "General Competitive Examinations for Recruitment to the Post of Assistant under Mizoram Public Service Commission, April 2019 — Paper - I",
+      "document_id": "doc_c4d86a7330c9074379a7c7f2",
+      "sha256": "c0002ca04d239d4ee992cdc7cc3d8943b29c07bdd8fd2e5c4843f3c408bcb0cb",
+      "targets": 77
+    }
+  ],
+  "targets": 77,
+  "completion": "100% paper completion achieved for Assistant under MPSC 2019 Paper-I (77 items reviewed: 75 MCQs + 2 conventional written items [125 marks total: Section A 50 marks, Section B 75 marks]: 30 Parts of Speech [Identification, Conjunctions & Adjectives], 20 Verb Tenses & Forms, 15 Grammar Core [Sentence Classification & Question Tags], 10 Prepositions, 1 Essay Writing, 1 Précis Writing)",
+  "actions": {
+    "retag": 62,
+    "keep": 15,
+    "hold": 0
+  },
+  "unextracted_items_preserved": 2,
+  "conventional_marks_preserved": 50,
+  "breakdown": {
+    "english/grammar/parts-of-speech": 30,
+    "english/grammar/tenses": 20,
+    "english/grammar": 15,
+    "english/grammar/prepositions": 10,
+    "english/writing/essay": 1,
+    "english/writing/precis": 1
+  },
+  "source_defects": [
+    "Realigned legacy generic classification into standard English curriculum taxonomy, including classifying Section A conventional items W1 and W2 into english/writing/essay and english/writing/precis.",
+    "Documented Section A (50 marks: Essay 25 marks and Précis 25 marks) in pending-written-intake.json.",
+    "Verified all 77 items against 8 rendered page images from source PDF."
+  ],
+  "all_pending": true,
+  "live_changes": 0
+}
