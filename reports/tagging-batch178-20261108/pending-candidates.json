@@ -1,0 +1,393 @@
+[
+  {
+    "canonical_id": "cq_5de40be89ab0c0d1",
+    "appearance_id": "3298596214e311190a13",
+    "source_fingerprint": "a530016a5767488a1dc110132f7e39bf1567a7598cf2ccceaa1aed4522cd2637",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "action": "keep",
+    "proposed_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 1 assesses state acts: Mizoram Prevention of Malpractices at Examination Act statutory framework. Appropriately classified under mizoram-administration-and-law.",
+    "tested_skill": "State acts: Mizoram Prevention of Malpractices at Examination Act statutory framework.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source",
+      "region": "IN-MZ"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_a30f1672bbc45463",
+    "appearance_id": "16dbd2e7d4dccec19070",
+    "source_fingerprint": "96670652bce17271114449e49da0995792d79a1c4c5822cb8a5475ab0d37e5a6",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 2 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_48eb55d03de69d8d",
+    "appearance_id": "3807dcda9b211064cfff",
+    "source_fingerprint": "036293ea51859a2facc24ddbcdba131ea31ccdb4b6cc83c3dba605a811c15530",
+    "current_primary": {
+      "subject_id": "mizoram-administration-and-law",
+      "topic_id": "mizoram-administration-and-law/state-acts-and-rules",
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 3 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_06ea0feea721385e",
+    "appearance_id": "d96b3b9d5c091cdc23d1",
+    "source_fingerprint": "207271acea65c55ea5dbecbd742ea0d02c9c65306c5ce29b310b64e0d955f0e7",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 4 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ec49083f969ac572",
+    "appearance_id": "0b0d77f89e532121933e",
+    "source_fingerprint": "d57a835fab9fd4735fe246300e0bab4e9957af905f16bb462fbfab91479afd54",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 5 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_37b452f194d10812",
+    "appearance_id": "6653a48efe7efa013575",
+    "source_fingerprint": "4aae183641b928a5842e148147d34e25611cf188292ada73ad8eefc676d8c9c2",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 6 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_93cd9eec12be6ac8",
+    "appearance_id": "d1cdfec26a24d18b9ee1",
+    "source_fingerprint": "8c690c1bd108414ab246b7e6e59a1b37ba984c2a1fe0d781748d0ab4fd947ebf",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 7 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_ca381a5c4a2b33e6",
+    "appearance_id": "a952d2d9ebe2007a5fac",
+    "source_fingerprint": "46209729ffa72d2cbba4a1835a8eab88d8104d2ddb41380d25b8d4cf82778873",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 8 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 1,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_2ca508431f1c9d49",
+    "appearance_id": "6afbd35caf6df77188c2",
+    "source_fingerprint": "f7d04fe61e2cb70caa6a00c5cf1fc9d6bf6e1aa9f5271a7ced55c758e0b41d77",
+    "current_primary": {
+      "subject_id": "law",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 9 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  },
+  {
+    "canonical_id": "cq_dbdffdabbab015e4",
+    "appearance_id": "87a48959ed6c611f89c2",
+    "source_fingerprint": "86ceb175e7d085c42beafcc688437a178e3b73ab3b48780d174fcb718391041b",
+    "current_primary": {
+      "subject_id": "education",
+      "topic_id": null,
+      "subtopic_id": null
+    },
+    "action": "retag",
+    "proposed_primary": {
+      "subject_id": "education",
+      "topic_id": "education/pedagogy",
+      "subtopic_id": null
+    },
+    "proposed_related": [],
+    "rationale": "Question 10 assesses educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks. Appropriately classified under education.",
+    "tested_skill": "Educational policy: National Education Commissions, Kothari Commission structure, and pedagogical frameworks.",
+    "source_evidence": {
+      "inspected": true,
+      "physical_page": 2,
+      "document_id": "doc_d522fc6f238ea7c4b636ffe1",
+      "sha256": "9bc22414e415ce61964cbb65bfa297b353d841d16fbd831342a61f77b74d0e34",
+      "note": "Verified against registered booklet source for High School Headmaster Paper-IV (Examination Act & Educational Policies)."
+    },
+    "context_candidate": {
+      "time_behavior": "static",
+      "reference_basis": "reviewed-source"
+    },
+    "source_issues": [],
+    "alternatives": [],
+    "taxonomy_gap": null,
+    "owner_question": null,
+    "context_reason": null,
+    "policy_version": "study-tagging-v1",
+    "review_status": "pending",
+    "reviewer_model": "gemini-2.5-pro",
+    "reviewer_tool": "study-tagging-v1"
+  }
+]
