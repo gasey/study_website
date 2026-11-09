@@ -29,12 +29,12 @@ def publication_mismatches(expected, record, canonical, primary, patch):
                     and expected[source] is None and value=='none'
                     and expected.get('answerIndex') is None and not expected.get('options')):
                 value=None
-            # Tag-only publications preserve legacy unanswered MCQs too. SQL
-            # stores their absent provenance as 'none'; this cannot certify an
-            # answer and does not relax answer/source correction verification.
+            # Tag-only publications preserve legacy unanswered MCQs and
+            # unprovenanced source MCQs too. SQL stores their absent
+            # provenance as 'none'; this cannot certify an answer and does not
+            # relax answer/source correction verification.
             if (source=='answerSource' and expected.get('type')=='mcq'
                     and expected[source] is None and value=='none'
-                    and expected.get('answerIndex') is None and canonical.get('answer_text') is None
                     and patch and not set(patch)-{'classification','relatedClassifications'}):
                 value=None
             if source=='explanation':
