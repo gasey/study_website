@@ -1,10 +1,31 @@
 #!/usr/bin/env python3
 """Trusted Oracle read adapter. JSON stdin; never exposes service credentials."""
-import asyncio,json,os,sys,subprocess
+import asyncio,ast,inspect,json,os,sys,subprocess,textwrap
 from pathlib import Path
 from urllib.parse import urlsplit
 sys.path.insert(0,'/srv/api')
 from app.services.review_policy import digest
+
+def allowance_policy(source):
+    """Read the installed writer's literal quota contract; unknown shapes fail closed.
+
+    This does not execute source or change enforcement. Reusing its count query
+    avoids keeping a second, silently stale definition of ordinary contributions.
+    """
+    tree=ast.parse(textwrap.dedent(source))
+    queries=[n.value for n in ast.walk(tree) if isinstance(n,ast.Constant) and isinstance(n.value,str)
+             and 'FROM bank_contributions c' in n.value and "interval '1 day'" in n.value and 'c.author_id=%s' in n.value]
+    limits=[n.value for n in ast.walk(tree) if isinstance(n,ast.Assign)
+            and any(isinstance(t,ast.Name) and t.id=='limit' for t in n.targets)]
+    if len(queries)!=1 or len(limits)!=1:raise ValueError('Unrecognized installed allowance contract')
+    limit=limits[0]
+    if not (isinstance(limit,ast.IfExp) and isinstance(limit.test,ast.Name) and limit.test.id=='admin_attestation'
+            and isinstance(limit.body,ast.Constant) and isinstance(limit.orelse,ast.Constant)):
+        raise ValueError('Unrecognized installed allowance limits')
+    staff,learner=limit.body.value,limit.orelse.value
+    if not ((staff is None or type(staff)is int and staff>0) and type(learner)is int and learner>0):
+        raise ValueError('Invalid installed allowance limits')
+    return queries[0],staff,learner
 
 async def run(data):
     from app.db import open_pool,close_pool,cursor
@@ -33,26 +54,20 @@ async def run(data):
                 for table in ('attempts','editorial_assignments','editorial_assignment_papers','editorial_checks','review_grants'):
                     await cur.execute('SELECT to_jsonb(t) AS row FROM '+table+' t ORDER BY to_jsonb(t)::text')
                     rows=await cur.fetchall();result[table]={'count':len(rows),'sha256':digest(rows)}
-                # Match bank_review.create's ordinary budget: a fully attributed,
-                # scoped operator taxonomy run has a separate recorded allowance.
-                await cur.execute("""SELECT count(*)::int AS total,
-                  count(*) FILTER (WHERE NOT (c.kind='taxonomy' AND EXISTS(
-                    SELECT 1 FROM contribution_events x JOIN contribution_events a
-                      ON a.contribution_id=x.contribution_id
-                    WHERE x.contribution_id=c.id AND x.actor_id='operator:owner-source-maintenance'
-                      AND x.action='owner_maintenance_quota_exemption'
-                      AND x.detail->>'owner_id'=c.author_id
-                      AND a.actor_id='operator:owner-source-maintenance'
-                      AND a.action='operator_taxonomy_authorization'
-                      AND a.detail->>'owner_id'=c.author_id
-                      AND a.detail->>'run_id'=x.detail->>'run_id')))::int AS ordinary
-                  FROM bank_contributions c WHERE c.created_at>now()-interval '1 day'
-                  AND c.author_id=(SELECT id FROM users WHERE lower(email)='hruaitluangasailo20@gmail.com')""")
-                usage=await cur.fetchone()
-                result['total_contributions_last24h']=usage['total']
-                result['ordinary_used']=usage['ordinary']
-                result['ordinary_staff_limit']=500
-                result['ordinary_staff_remaining']=max(0,500-usage['ordinary'])
+                # Report the installed enforcement policy, not a copied old cap.
+                query,staff_limit,learner_limit=allowance_policy(inspect.getsource(review.create))
+                await cur.execute("SELECT id FROM users WHERE lower(email)='hruaitluangasailo20@gmail.com'")
+                owner=(await cur.fetchone())['id']
+                await cur.execute(query,(owner,))
+                ordinary=(await cur.fetchone())['n']
+                await cur.execute("SELECT count(*)::int AS n FROM bank_contributions WHERE author_id=%s AND created_at>now()-interval '1 day'",(owner,))
+                result['total_contributions_last24h']=(await cur.fetchone())['n']
+                result['ordinary_used']=ordinary
+                result['ordinary_staff_limit']=staff_limit
+                result['ordinary_staff_remaining']=None if staff_limit is None else max(0,staff_limit-ordinary)
+                result['staff_maintenance_capped']=staff_limit is not None
+                result['learner_daily_limit']=learner_limit
+                result['allowance_policy_sha256']=digest({'count_sql':query,'staff_limit':staff_limit,'learner_limit':learner_limit})
                 await cur.execute("SELECT count(*) AS n FROM bank_publications WHERE state='exported'")
                 result['pending_exports']=(await cur.fetchone())['n']
                 return result

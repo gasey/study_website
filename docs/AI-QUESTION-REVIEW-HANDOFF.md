@@ -247,3 +247,29 @@ Latest checked packet: `docs/sources/mcs-publication-20261109.json`. Queue at
 no active packet. These counts supersede prior dated continuation counts; do not
 replay completed publications. Ordinary allowance after publication is 3/500,
 with zero exports waiting and Oracle timer active.
+
+
+## 10 November 2026 — audit follows the installed writer
+
+The live staff-maintenance policy changed after the 9 November checkpoint. The
+read adapter no longer copies a 500-item cap or a separate SQL definition of usage.
+It inspects the installed operator writer's literal count query and role-based
+limits, and fails if that contract is unrecognized. This reads policy; it does not
+change any limit, permission or exemption. It supports both the prior capped
+contract and the currently installed uncapped staff-maintenance contract.
+
+An audit with `staff_maintenance_capped=false`, `ordinary_staff_limit=null` and
+`ordinary_staff_remaining=null` means that the inspected staff path is uncapped;
+it does not mean zero remaining. `learner_daily_limit` remains explicit (30 at
+this checkpoint). `ordinary_used` follows the installed learner-contribution
+counter and excludes the maintenance records that writer excludes. Total
+contributions are reported separately. The policy digest identifies the count
+query and limits used for that audit. Do not infer exhaustion from old receipts
+or request a new quota exception because an obsolete report printed zero.
+
+Latest packet/checkpoint: `docs/sources/mcs-publication-20261110.json`. Queue at
+10 November IST: 47 published, five explanation-not-needed, 1,011 pending, three
+unresolved, no active packet. Three new publications are applied and read back;
+all historical output hashes are verified separately from later concurrent answer
+publications. The observed shared export queue was empty at verification; always
+check fresh state before submitting. Do not replay earlier packets.

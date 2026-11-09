@@ -121,27 +121,35 @@ def test_not_needed_cannot_abandon_checked_or_publishing_work(tmp_path):
  assert q.item('q',row['claim'])['status']=='checked'
 
 
-def test_remote_audit_uses_ordinary_allowance_not_total_contributions(client,actor,database):
- import ast
+def remote_adapter():
+ spec=importlib.util.spec_from_file_location('ai_remote_test',Path(__file__).resolve().parents[2]/'scripts/ai-review-remote.py')
+ module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module);return module
+
+
+@pytest.mark.parametrize('staff',[500,None])
+def test_audit_reads_installed_limit_instead_of_copying_it(staff):
+ source="async def create():\n await cur.execute(\"SELECT count(*)::int AS n FROM bank_contributions c WHERE c.author_id=%s AND c.created_at>now()-interval '1 day'\",(actor,))\n limit="+repr(staff)+" if admin_attestation else 30\n"
+ sql,actual,learner=remote_adapter().allowance_policy(source)
+ assert actual==staff and learner==30 and 'c.author_id=%s' in sql
+ with pytest.raises(ValueError):remote_adapter().allowance_policy(source.replace('if admin_attestation','if unknown_flag'))
+ with pytest.raises(ValueError):remote_adapter().allowance_policy(source.replace(repr(staff)+' if','dynamic_limit if'))
+
+
+def test_remote_audit_uses_exact_writer_counter(client,actor,database):
+ import inspect
  from uuid import uuid4
  from psycopg.types.json import Jsonb
  from test_learning_workflows import official
- source=Path(__file__).resolve().parents[2]/'scripts/ai-review-remote.py'
- tree=ast.parse(source.read_text())
- sql=next(node.value for node in ast.walk(tree) if isinstance(node,ast.Constant) and isinstance(node.value,str) and 'AS total,' in node.value)
- # Bind the disposable fixture account, never a production connection.
- sql=sql.replace("lower(email)='hruaitluangasailo20@gmail.com'", "id='owner'")
+ from app.services import bank_review
+ sql,staff,learner=remote_adapter().allowance_policy(inspect.getsource(bank_review.create))
  q,appearance,_=official(database);actor('owner');conn=database[1];prefix='audit_budget_'+uuid4().hex
- before=conn.execute(sql).fetchone()
+ before=conn.execute(sql,('owner',)).fetchone()[0]
  conn.execute("INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash) SELECT %s||n::text,'owner',%s,%s,'taxonomy','english','Synthetic audit budget',%s||n::text,%s FROM generate_series(0,2)n",(prefix,q,appearance,prefix,'a'*64))
  detail=Jsonb({'owner_id':'owner','run_id':prefix})
  try:
-  # An exemption event alone is insufficient; both trusted records must agree.
-  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) SELECT id,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',%s FROM bank_contributions WHERE id LIKE %s",(detail,prefix+'%'))
-  assert conn.execute(sql).fetchone()==(before[0]+3,before[1]+3)
+  assert conn.execute(sql,('owner',)).fetchone()[0]==before+3
   conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES (%s,'operator:owner-source-maintenance','operator_taxonomy_authorization',%s)",(prefix+'0',detail))
-  # Mismatched run authorization must still consume ordinary allowance.
-  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES (%s,'operator:owner-source-maintenance','operator_taxonomy_authorization',%s)",(prefix+'1',Jsonb({'owner_id':'owner','run_id':'wrong-run'})))
-  assert conn.execute(sql).fetchone()==(before[0]+3,before[1]+2)
+  conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) VALUES (%s,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',%s)",(prefix+'0',detail))
+  assert conn.execute(sql,('owner',)).fetchone()[0]==before+2
  finally:
   conn.execute("UPDATE bank_contributions SET created_at=now()-interval '2 days' WHERE id LIKE %s",(prefix+'%',))

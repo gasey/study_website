@@ -614,3 +614,15 @@ Delivery: [Solo-owner workflow](SOLO-OWNER-WORKFLOW-20261106.md).
 - [ ] Historical guarded source repairs remain; keep 2012/2013 booklet recovery deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261109.json`; queue has no active packet.
+
+
+## 10 November — MCS continuation
+
+- [x] Preserve work completed since the old checkpoint; publish and verify three useful explanations (2023 I A Q87, II C Q63/Q29) and record two source-bound not-needed outcomes.
+- [x] Inspect 2021 I Q46 original duplicate choices; retain the source defect and scoring restriction without inventing an option or answer review.
+- [x] Make the audit reflect the installed writer's role-based quota policy, with unknown contracts failing closed; no enforcement change.
+- [x] Verify immutable packet outputs separately from concurrent answer publications, plus source readbacks, 182 prior holds, 358 prior attempts and owner/reviewer access. 54 focused tests pass.
+- [ ] Continue 1,011 explanation candidates selectively; retain three unresolved cases. No active packet; next worker must refresh first.
+- [ ] Dedicated historical source repairs and exact-key source-notice reconciliation remain. Keep 2012/2013 deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.

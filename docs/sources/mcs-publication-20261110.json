@@ -1,0 +1,477 @@
+{
+  "checked_at": "2026-11-09T20:51:20.877785+00:00",
+  "status": "applied-and-live-verified",
+  "before_bank_sha256": "c2de7a32945edee49c9e49e94fc92a51e0e1369a953357ccd97c82e0eb16cea8",
+  "after_packet_bank_sha256": "4b0d90d2393687564517183efa05727bc2e7ace8961ef1ddd6a11bfb00fd6894",
+  "current_bank_sha256_observed": "50415125d94cc1d6e80fb29280f67bcb19b66b15c05d3bfd127b5a0864e47341",
+  "concurrent_bank_changes_observed": true,
+  "historical_packet_proof": {
+    "publications": [
+      {
+        "publication_id": "pub_bcc27308958e42e19b034e9bc653d02d",
+        "input_sha256": "c2de7a32945edee49c9e49e94fc92a51e0e1369a953357ccd97c82e0eb16cea8",
+        "output_sha256": "9eeae5f586ccedad952014eb06699275ded54deb1032bd2b81d248e3a4507f38",
+        "exact_historical_output_reconstructed": true,
+        "only_fields_changed": [
+          "explanation",
+          "reviewPublicationId"
+        ]
+      },
+      {
+        "publication_id": "pub_8df579c79873463e8b830758412bbf94",
+        "input_sha256": "9eeae5f586ccedad952014eb06699275ded54deb1032bd2b81d248e3a4507f38",
+        "output_sha256": "e5ccf8c6dc1340228c6f8db463ffc88a74c503ad244b34e72235d32d307e67bc",
+        "exact_historical_output_reconstructed": true,
+        "only_fields_changed": [
+          "explanation",
+          "reviewPublicationId"
+        ]
+      },
+      {
+        "publication_id": "pub_e3302a579cd84d72b281f60f9f26fbc8",
+        "input_sha256": "e5ccf8c6dc1340228c6f8db463ffc88a74c503ad244b34e72235d32d307e67bc",
+        "output_sha256": "4b0d90d2393687564517183efa05727bc2e7ace8961ef1ddd6a11bfb00fd6894",
+        "exact_historical_output_reconstructed": true,
+        "only_fields_changed": [
+          "explanation",
+          "reviewPublicationId"
+        ]
+      }
+    ],
+    "packet_output_sha256": "4b0d90d2393687564517183efa05727bc2e7ace8961ef1ddd6a11bfb00fd6894",
+    "unaffected_content_matches_before_packet": true
+  },
+  "unchanged_outside_explanations_and_publication_pointers_in_packet_output": true,
+  "publications": [
+    {
+      "canonical_id": "cq_1e5c4e7d8f627785",
+      "appearance_id": "01842be67d9b4572af3f",
+      "publication_id": "pub_bcc27308958e42e19b034e9bc653d02d",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+      "qnum": "87",
+      "page": 8,
+      "explanation": "Prolactin is the intended answer for milk production: it stimulates the milk-producing cells of the mammary glands. Distinguish production from release. Oxytocin also acts on the breast, causing the muscular contractions that move milk into the ducts during the let-down reflex. Thus, the broad wording “function of mammary glands” should not be read as saying that oxytocin has no role. Remember the distinction: prolactin helps make milk; oxytocin helps eject it. [U.S. Office on Women’s Health: making breastmilk](https://womenshealth.gov/breastfeeding/learning-breastfeed/making-breastmilk).",
+      "source_fingerprint_before": "b66d92393a210cf3d4d1c641ef01cb6287527894c3198d5290abe9b5110c383c",
+      "source_pdf_sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+      "state": "applied",
+      "full_snapshot_readback": true,
+      "public_question_readback": true,
+      "canonical_explanation_readback": true,
+      "no_answer_reveal_or_learner_attempt_created": true
+    },
+    {
+      "canonical_id": "cq_1e9f05db73a6be7e",
+      "appearance_id": "977c4897824e6aeac5b5",
+      "publication_id": "pub_8df579c79873463e8b830758412bbf94",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "qnum": "63",
+      "page": 9,
+      "explanation": "D is highest in the ordering described. Translate each comparison into a relation, with “>” meaning higher in the report: B > A, D > C, C > B and A > E. Joining them gives D > C > B > A > E. Therefore D is above every other child, including C, even though C is not among the answer choices. Compare the relationships given in the question rather than assuming that the letters themselves indicate rank.",
+      "source_fingerprint_before": "0b6870df0bae2d77c7a8954a743706e4b8c1d31da11c348ab0d06f412df7ec5d",
+      "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "state": "applied",
+      "full_snapshot_readback": true,
+      "public_question_readback": true,
+      "canonical_explanation_readback": true,
+      "no_answer_reveal_or_learner_attempt_created": true
+    },
+    {
+      "canonical_id": "cq_1ede444c8f2779ba",
+      "appearance_id": "aeec80a08b37c0c1cc8e",
+      "publication_id": "pub_e3302a579cd84d72b281f60f9f26fbc8",
+      "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+      "qnum": "29",
+      "page": 4,
+      "explanation": "“Abridged” means shortened, usually by editing out some material while retaining the main content. An abridged version of a classic is therefore a shorter edition than the original, fitting the comparison in the sentence. “Abandoned” means left or given up; “abated” describes something becoming less intense; and “classical” describes a style or tradition. Those words do not identify a shortened edition. The clue is the contrast between a version and the original text.",
+      "source_fingerprint_before": "3ab55ba5d78cf6422122901f56e00e461de85d7ac25df68f6e3541d1c2bd42dd",
+      "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+      "state": "applied",
+      "full_snapshot_readback": true,
+      "public_question_readback": true,
+      "canonical_explanation_readback": true,
+      "no_answer_reveal_or_learner_attempt_created": true
+    }
+  ],
+  "publication_receipts": [
+    {
+      "id": "pub_8df579c79873463e8b830758412bbf94",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0,
+      "receipt": {
+        "after": {
+          "id": "977c4897824e6aeac5b5",
+          "page": 9,
+          "qnum": "63",
+          "type": "mcq",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "passage": null,
+          "question": "Five children were administered psychological tests to know their intellectual levels. In the report,\n        psychologists pointed out that the child A is less intelligent than the child B. The child C is less intelligent\n        than the child D. The child B is less intelligent than the child C and child A is more intelligent than child E.\n        Which child is most intelligent?",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 2,
+          "explanation": "D is highest in the ordering described. Translate each comparison into a relation, with “>” meaning higher in the report: B > A, D > C, C > B and A > E. Joining them gives D > C > B > A > E. Therefore D is above every other child, including C, even though C is not among the answer choices. Compare the relationships given in the question rather than assuming that the letters themselves indicate rank.",
+          "figureImage": "images/page-renders/f2fe433e9ba15eb81bb339494a9be32149fc09bebfe48975b10fdcb82ad233b4.png",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "977c4897824e6aeac5b5",
+          "page": 9,
+          "qnum": "63",
+          "type": "mcq",
+          "options": [
+            "A",
+            "B",
+            "D",
+            "E"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "passage": null,
+          "question": "Five children were administered psychological tests to know their intellectual levels. In the report,\n        psychologists pointed out that the child A is less intelligent than the child B. The child C is less intelligent\n        than the child D. The child B is less intelligent than the child C and child A is more intelligent than child E.\n        Which child is most intelligent?",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 2,
+          "explanation": null,
+          "figureImage": "images/page-renders/f2fe433e9ba15eb81bb339494a9be32149fc09bebfe48975b10fdcb82ad233b4.png",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "9eeae5f586ccedad952014eb06699275ded54deb1032bd2b81d248e3a4507f38",
+        "appearance_id": "977c4897824e6aeac5b5",
+        "before_fields": {
+          "explanation": null
+        },
+        "manifest_hash": "149129dee80209c1b2da2c3f21285745bdbf59f59a1339ec1f1a4d70f9fe2cb9",
+        "output_sha256": "e5ccf8c6dc1340228c6f8db463ffc88a74c503ad244b34e72235d32d307e67bc",
+        "publication_id": "pub_8df579c79873463e8b830758412bbf94"
+      }
+    },
+    {
+      "id": "pub_bcc27308958e42e19b034e9bc653d02d",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0,
+      "receipt": {
+        "after": {
+          "id": "01842be67d9b4572af3f",
+          "page": 8,
+          "qnum": "87",
+          "type": "mcq",
+          "options": [
+            "Oxytocin",
+            "Prolactin",
+            "Thyroxine",
+            "Vasopressin"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "The function of mammary glands is regulated by a hormone known as",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": "Prolactin is the intended answer for milk production: it stimulates the milk-producing cells of the mammary glands. Distinguish production from release. Oxytocin also acts on the breast, causing the muscular contractions that move milk into the ducts during the let-down reflex. Thus, the broad wording “function of mammary glands” should not be read as saying that oxytocin has no role. Remember the distinction: prolactin helps make milk; oxytocin helps eject it. [U.S. Office on Women’s Health: making breastmilk](https://womenshealth.gov/breastfeeding/learning-breastfeed/making-breastmilk).",
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "science/biology",
+            "subject_id": "science",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "01842be67d9b4572af3f",
+          "page": 8,
+          "qnum": "87",
+          "type": "mcq",
+          "options": [
+            "Oxytocin",
+            "Prolactin",
+            "Thyroxine",
+            "Vasopressin"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+          "passage": null,
+          "question": "The function of mammary glands is regulated by a hormone known as",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "science/biology",
+            "subject_id": "science",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "c2de7a32945edee49c9e49e94fc92a51e0e1369a953357ccd97c82e0eb16cea8",
+        "appearance_id": "01842be67d9b4572af3f",
+        "before_fields": {
+          "explanation": ""
+        },
+        "manifest_hash": "187cf86df19428a82ab268d07732af625b7f5def243cda86325ceb36b0c2d0fd",
+        "output_sha256": "9eeae5f586ccedad952014eb06699275ded54deb1032bd2b81d248e3a4507f38",
+        "publication_id": "pub_bcc27308958e42e19b034e9bc653d02d"
+      }
+    },
+    {
+      "id": "pub_e3302a579cd84d72b281f60f9f26fbc8",
+      "state": "applied",
+      "contribution_state": "published",
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0,
+      "receipt": {
+        "after": {
+          "id": "aeec80a08b37c0c1cc8e",
+          "page": 4,
+          "qnum": "29",
+          "type": "mcq",
+          "options": [
+            "Abandoned",
+            "Abridged",
+            "Classical",
+            "Abated"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "passage": null,
+          "question": "__________ versions of classics are easier to read than the original versions.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 1,
+          "explanation": "“Abridged” means shortened, usually by editing out some material while retaining the main content. An abridged version of a classic is therefore a shorter edition than the original, fitting the comparison in the sentence. “Abandoned” means left or given up; “abated” describes something becoming less intense; and “classical” describes a style or tradition. Those words do not identify a shortened edition. The clue is the contrast between a version and the original text.",
+          "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "english/vocabulary",
+            "subject_id": "english",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "aeec80a08b37c0c1cc8e",
+          "page": 4,
+          "qnum": "29",
+          "type": "mcq",
+          "options": [
+            "Abandoned",
+            "Abridged",
+            "Classical",
+            "Abated"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+          "passage": null,
+          "question": "__________ versions of classics are easier to read than the original versions.",
+          "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+          "difficulty": null,
+          "hasDiagram": true,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+          "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "english/vocabulary",
+            "subject_id": "english",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "e5ccf8c6dc1340228c6f8db463ffc88a74c503ad244b34e72235d32d307e67bc",
+        "appearance_id": "aeec80a08b37c0c1cc8e",
+        "before_fields": {
+          "explanation": null
+        },
+        "manifest_hash": "c6659e7646e578fa452a76162c962b579d5b6d980aa35fd6c443be327c6d863e",
+        "output_sha256": "4b0d90d2393687564517183efa05727bc2e7ace8961ef1ddd6a11bfb00fd6894",
+        "publication_id": "pub_e3302a579cd84d72b281f60f9f26fbc8"
+      }
+    }
+  ],
+  "previous_holds_checked": 182,
+  "previous_holds_unchanged_at_readback": true,
+  "concurrent_hold_differences": [],
+  "workflow_preservation": {
+    "attempts": {
+      "previous_rows": 358,
+      "current_rows": 358,
+      "previous_rows_unchanged": true
+    },
+    "editorial_assignments": {
+      "previous_rows": 2,
+      "current_rows": 2,
+      "previous_rows_unchanged": true
+    },
+    "editorial_assignment_papers": {
+      "previous_rows": 78,
+      "current_rows": 78,
+      "previous_rows_unchanged": true
+    },
+    "editorial_checks": {
+      "previous_rows": 0,
+      "current_rows": 0,
+      "previous_rows_unchanged": true
+    },
+    "review_grants": {
+      "previous_rows": 3,
+      "current_rows": 3,
+      "previous_rows_unchanged": true
+    }
+  },
+  "owner_unlimited": true,
+  "ordinary_used": 0,
+  "ordinary_staff_remaining": null,
+  "ordinary_staff_limit": null,
+  "staff_maintenance_capped": false,
+  "learner_daily_limit": 30,
+  "pending_exports_global_observed": 0,
+  "pending_exports_this_packet": 0,
+  "queue": {
+    "at": "2026-11-09T20:51:20.877941+00:00",
+    "counts": {
+      "not-needed": 5,
+      "pending": 1011,
+      "published": 47,
+      "unresolved": 3
+    },
+    "active": []
+  },
+  "not_needed": [
+    {
+      "canonical_id": "cq_16149f52d935c37e",
+      "reason": "Inspected 2023 Paper I D physical page 8, Q92 and all four options. This is direct vocabulary/culture recall with an existing official-key answer. Repeating Chawm as a bad demon adds no explanatory working; do not invent classifications for the other spirits. No new answer verification is claimed.",
+      "source_fingerprint": "5d569e0d2cdd85e1598cbde4a9a2b41642f95efa3d4a63cd52caedd9840880db"
+    },
+    {
+      "canonical_id": "cq_18b8d0b772dbcd7d",
+      "reason": "Inspected 2023 Paper II B physical page 7, Q44 and all four options. This asks for a conventional one-word non-verbal communication association and already has an official-key answer. Repeating confidence adds no working; avoid turning the exam convention into a universal claim about personality or culture.",
+      "source_fingerprint": "c344235caa16ba342e634a4288b31b87f1a41bb11875b3e8be1d16c1b50842d1"
+    },
+    {
+      "canonical_id": "cq_1903f62e61f5f5b9",
+      "reason": "Nitrogen accounts for approximately 78% of dry atmospheric volume (oxygen ~21%, argon ~0.93%, carbon dioxide ~0.04%); this is a direct elementary science fact where the official answer is unambiguous and requires no additional technical derivation.",
+      "source_fingerprint": "5c89226afa959aa838fea5c1942cfb1be6e4c570e62e3ae958e6531b615aac95"
+    },
+    {
+      "canonical_id": "cq_1f682f7a59780b7e",
+      "reason": "Inspected 2023 I A physical page 2 Q17 and all four options. Direct count recall with a recorded official key; a learner explanation merely restating sixteen would add no method. Do not expand into unsupported dates, lists or a claim that every mahajanapada was a monarchy.",
+      "source_fingerprint": "5103060a2ee3521c3e1da22e83dbb5965aa776e43f846635effb890c6ccae695"
+    },
+    {
+      "canonical_id": "cq_1fae83c8c4b8bf0a",
+      "reason": "Inspected 2023 I B physical page 8 Q95 and all four choices. Direct culture/vocabulary recall with an existing official key. Repeating Fungki adds no learning method; do not invent etymology, alternative implement definitions or a translation without competent reference evidence.",
+      "source_fingerprint": "c85b67531d1442d327ad107544f0a8b7199fffcf3458125f553ae16f987f7a5f"
+    }
+  ],
+  "authority": "Oracle canonical workshop; local bank recovery snapshot is read-only",
+  "scope": "Three explanation-only ordinary owner publications. Two private source-bound explanation-not-needed outcomes. One original-source duplicate-option inspection with no content/scoring change.",
+  "attribution": "Codex manual drafting and separate same-agent source/reasoning check; no independent model, peer or human review asserted.",
+  "allowance_policy_sha256": "e86ace951f2126dd024aa02ca739c927f4a5b4c94592dfe3d71999143e59f072",
+  "validation": {
+    "focused_tests_passed": 54,
+    "bank_sync_protection": "78 papers / 6931 source questions; IN SYNC checked after packet",
+    "operator_read_adapter_deployed_sha256": "0b183da9caed77fc3213095ca968970958e84cef08656e6e57a9c0dbcda5d3de",
+    "oracle_publisher_timer": "active; never stopped in this turn",
+    "api_health": "ok; 82383 questions / 13899 scorable at observation, including other workflows",
+    "study_route_http": 200,
+    "authenticated_learner_reveal_ui_inspected": false,
+    "public_question_endpoint": "Answer-safe readback; no learner attempt or reveal created"
+  },
+  "source_defect_inspection": {
+    "canonical_id": "cq_573f40e39b509212",
+    "appearance_id": "e98473fd09e6a1d5efe6",
+    "paper_id": "Old_Questions/Direct_2021-2022/MCS Combined 2021 Preliminary Exam Paper I.pdf",
+    "registered_document_id": "doc_66ddcd185444d1dba0b21ea8",
+    "source_pdf_sha256": "961e20b13011579157b884e2daaff3a3b26a49efc8ebe1f83ae9414a193b8d56",
+    "physical_page": 5,
+    "printed_qnum": "46",
+    "source_inspected": true,
+    "checked_at": "2026-11-09T20:47:21.626109+00:00",
+    "finding": "Original printed choices A and D both read Article 344. The duplicate is present in the source, not an OCR substitution.",
+    "ordered_options": [
+      "Article 344",
+      "Article 356",
+      "Article 375",
+      "Article 344"
+    ],
+    "outcome": "Existing duplicate-options defect retained; no source, answer, provenance or scoring change. Do not invent a replacement option to clear this flag.",
+    "answer_review": "Not performed in this source-defect inspection; existing inferred answer is not promoted.",
+    "evidence_render": "reports/mcs-continue-20261110/2021-I-p5.png"
+  },
+  "recorded_scoring_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 35
+    },
+    {
+      "status": "live",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2961
+    }
+  ],
+  "current_affairs_outcome": "This packet tests static concepts/vocabulary/reasoning/cultural recall; no dated current-affairs update was applicable or published.",
+  "remaining": {
+    "explanation_candidates_pending": 1011,
+    "unresolved_explanations": 3,
+    "historical_source_repairs": "2016 I C duplicate printed identities Q4/Q86; missing 2014 II Q39 figure; held 2023 II B Q99 radical/options. Preserve holds and use dedicated guarded source/answer workflows.",
+    "source_notices": "Old generic provisional/pending-key source notices require exact key-mapping reconciliation before separate source proposals; this explanation-only packet retains them.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites not satisfied; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

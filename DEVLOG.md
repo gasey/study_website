@@ -9233,3 +9233,49 @@ II C Q65 retains its old generic pending-key source notice; reconcile actual map
 before a separate source correction. Durable receipt and next checkpoint:
 `docs/sources/mcs-publication-20261109.json`. Private evidence:
 `reports/mcs-continue-20261109/verified.json`.
+
+
+## 10 November 2026 — MCS explanations, printed option defect and live allowance audit
+
+Preserved nine explanation publications and one not-needed outcome completed since
+the previous checkpoint. Published three new explanation-only corrections: 2023
+I A Q87 (milk production versus ejection, with inspected HHS reference and a caveat
+for the broad printed wording), II C Q63 (complete DCBAE ranking, verified against
+all 120 permutations), and II C Q29 (abridged editions and vocabulary contrast).
+Two more direct recall items, I A Q17 and I B Q95, need no extra prose. These
+private outcomes do not create new answer reviews. No current-affairs update was
+applicable to this static packet. No external model/provider calls were needed.
+
+All three receipts applied; exact source snapshots, canonical explanation storage
+and answer-safe public question readbacks match. Each immutable bank output was
+reconstructed from its hash-checked input backup and matched its receipt. Packet
+output `4b0d90d2393687564517183efa05727bc2e7ace8961ef1ddd6a11bfb00fd6894`
+preserves every field outside the three explanations/publication pointers. Other
+authorized answer publications subsequently changed the live bank; their changes
+are distinct from this historical packet proof. At verification the observed bank
+was `50415125d94cc1d6e80fb29280f67bcb19b66b15c05d3bfd127b5a0864e47341`,
+with no remaining exports. Prior 182 holds, 358 learner attempts, reviewer scope
+and unlimited owner access were unchanged. No peer votes, credits, new quota
+exceptions, answer reveal or learner attempt were created by verification.
+
+Inspected registered 2021 I Q46, physical PDF p5: original choices A and D both
+print Article 344. The duplicate-options flag is real source content, not an OCR
+error; preserve it without inventing another option or promoting the inferred
+answer. Fresh MCS structural inventory: 35 held and five recorded source/option
+defects. These counts are observed workflow states, not a new full-bank inspection.
+
+The installed writer now has uncapped staff maintenance and a separate 30/day
+learner budget, but the old adapter falsely reported the retired 500-item cap.
+The read-only audit now derives its count SQL and literal role-based limits from
+the installed writer, fails on unknown contracts, and reports a policy digest.
+It supports old capped and current uncapped deployments without changing their
+enforcement. Deployed adapter hash matches locally. No API enforcement change
+or unrelated shared-checkout edits were included in this continuation.
+
+54 focused tests pass in the shared checkout; API/Study healthy, protected sync
+passes (78 papers / 6,931 source questions). Oracle publisher remains active;
+retired local timer untouched. Queue: 47 published, five not-needed, 1,011 pending,
+three unresolved, no active packet. Historical source repairs and exact stale-key
+notice reconciliation remain; keep 2012/2013 recovery deferred and original-paper
+simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.
+Private evidence: `reports/mcs-continue-20261110/verified.json`.

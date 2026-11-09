@@ -257,3 +257,26 @@ II C Q65 retains its old generic pending-key source notice; reconcile actual map
 before a separate source correction. Durable receipt and next checkpoint:
 `docs/sources/mcs-publication-20261109.json`. Private evidence:
 `reports/mcs-continue-20261109/verified.json`.
+
+
+## 10 November — checked explanations and source-defect follow-up
+
+Three new explanations are applied and read back: 2023 I A Q87 (prolactin versus
+oxytocin, preserving broad wording), II C Q63 (DCBAE ranking) and II C Q29
+(abridged editions). Two direct recall items need no filler. No changing-fact
+update applies to these static questions. Current queue: 47 published, five
+not-needed, 1,011 pending, three unresolved, no active packet.
+
+Original 2021 I p5 Q46 actually prints Article 344 twice; existing duplicate-options
+restriction remains, with no invented option or new answer certification. MCS
+inventory observed during this continuation: 35 held, five source/option defects.
+The historical packet output changes only three explanations and their pointers;
+later concurrent answer publications are separately scoped in the receipt. All
+182 prior holds, 358 prior attempts, reviewer scope and unlimited owner access
+passed preservation checks. 54 focused tests pass; protected sync and API healthy.
+The audit now reads the installed writer's actual quota policy instead of copying
+an obsolete cap; it does not alter enforcement.
+
+Resume from `docs/sources/mcs-publication-20261110.json` and the fresh queue.
+Historical source identity/figure/radical repairs and exact-key notice reconciliation
+remain separate; 2012/2013 recovery stays deferred and original simulation gated.
