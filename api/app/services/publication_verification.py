@@ -17,6 +17,9 @@ def publication_mismatches(expected, record, canonical, primary, patch):
     if not canonical:
         return differences+['canonical.unavailable']
     if primary:
+        index=expected.get('answerIndex')
+        options=expected.get('options') or []
+        answer=options[index] if isinstance(index,int) and 0<=index<len(options) else None
         for source, target in CANONICAL_FIELDS.items():
             if source not in expected:
                 continue
@@ -35,15 +38,13 @@ def publication_mismatches(expected, record, canonical, primary, patch):
             # relax answer/source correction verification.
             if (source=='answerSource' and expected.get('type')=='mcq'
                     and expected[source] is None and value=='none'
+                    and canonical.get('answer_text')==answer
                     and patch and not set(patch)-{'classification','relatedClassifications'}):
                 value=None
             if source=='explanation':
                 value=value or None
             if target not in canonical or value!=expected[source]:
                 differences.append('canonical.'+target)
-        index=expected.get('answerIndex')
-        options=expected.get('options') or []
-        answer=options[index] if isinstance(index,int) and 0<=index<len(options) else None
         if canonical.get('answer_text')!=answer:
             differences.append('canonical.answer_text')
         if canonical.get('difficulty') is not None:
