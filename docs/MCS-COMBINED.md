@@ -280,3 +280,25 @@ an obsolete cap; it does not alter enforcement.
 Resume from `docs/sources/mcs-publication-20261110.json` and the fresh queue.
 Historical source identity/figure/radical repairs and exact-key notice reconciliation
 remain separate; 2012/2013 recovery stays deferred and original simulation gated.
+
+
+## 11 November — dated explanations and passage repair
+
+Three checked explanations applied: 2023 II B Q10 cube, I B Q8 historical MZU
+Vice-Chancellor and I B Q6 Canada's conditional population-doubling statement.
+The latter includes an inspected 2026 Q2 primary-source snapshot, clearly separated
+from 2022 annual growth. MZU current pages were inaccessible, so no current-status
+claim was made. One direct recall item needs no extra explanation.
+
+A separate source publication restored the original common passage/directions on
+II B Q58 without changing its answer/options/provenance or printed wording. Its
+explanation reopened as a fresh candidate after source refresh; no sibling
+coverage or new answer review is implied. All four exact immutable outputs and
+live readbacks match. Prior 329 holds, 365 attempts, reviewer scope and unlimited
+access are preserved. 45 focused tests pass; protected sync and services healthy.
+
+Queue: 50 published, six not-needed, 1,007 pending, three unresolved, no active
+packet. No export remains for this packet; another workflow had 29 answer exports
+in the shared queue at observation. Historical source repairs, exact-key notice
+reconciliation and relevant dated-fact follow-ups remain separate. Keep 2012/2013
+deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261111.json`.

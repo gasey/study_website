@@ -273,3 +273,21 @@ unresolved, no active packet. Three new publications are applied and read back;
 all historical output hashes are verified separately from later concurrent answer
 publications. The observed shared export queue was empty at verification; always
 check fresh state before submitting. Do not replay earlier packets.
+
+
+## 11 November — continuation checkpoint
+
+Receipt: `docs/sources/mcs-publication-20261111.json`. Three new explanations and
+one separate source-passage repair are applied and exact-readback verified. Q58
+was initially deferred for missing context; after the source correction, refresh
+reopened its explanation as pending. Current queue: 50 published, six not-needed,
+1,007 pending, three unresolved, no active packet. Blank explanations are assessed
+selectively; these are not answer-review completion counts.
+
+Canada's dated 2026 Q2 snapshot is an explanation addition with a private recheck
+lead, not a new reusable dated-fact revision. MZU current source could not be
+inspected; no current/unchanged status claim was made. At final observation all
+four packet exports were applied, but 29 unrelated answer exports occupied the
+shared queue. Check fresh export state before any submission and do not replay
+other workflows. Source/answer restrictions, existing holds and historical
+numbering/recovery deferrals remain in force.

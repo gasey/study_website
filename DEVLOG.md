@@ -9279,3 +9279,50 @@ three unresolved, no active packet. Historical source repairs and exact stale-ke
 notice reconciliation remain; keep 2012/2013 recovery deferred and original-paper
 simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.
 Private evidence: `reports/mcs-continue-20261110/verified.json`.
+
+
+## 11 November 2026 — MCS dated explanations and missing passage restoration
+
+Published three source-checked explanations: 2023 II B Q10 (cube opposite face,
+cross opposite dot, checked against all 15 opposite-pair matchings), I B Q8
+(historical MZU Vice-Chancellor supported by the 16 June 2023 Governor report),
+and I B Q6 (Canada's conditional 26-year doubling illustration, with the original
+2022 annual growth period distinguished from a dated 2026 Q2 update). Current
+MZU pages were inaccessible; no current officeholder or unchanged assertion was
+invented. The Canada addition cites the 23 September 2026 primary release,
+identifies 1 July 2026's preliminary population estimate and quarterly rate, and
+does not change the historical key. No reusable dated-fact revision was created.
+One direct recall question, I A Q36, needs no extra prose.
+
+Q58 in 2023 II B lacked its printed common prayer passage and directions. Deferred
+its explanation, then restored those exact source fields on that one appearance
+through a separate guarded transcription publication. The unusual printed word
+“biscuitsness” was preserved. Original stem/options, answer/key provenance,
+classification, printed number/page and restrictions remain intact. This is not
+a new answer verification. A fresh queue refresh reopened Q58 as a candidate
+against the repaired source; sibling appearances were not claimed as repaired.
+
+Each of the four applied bank outputs was reconstructed from its hash-checked
+input backup and matched its receipt. The three explanation outputs form a
+contiguous chain changing only their target explanation/publication pointers;
+the source output changes only Q58 passage/direction/pointer. Final packet hash:
+`75e74b2284cc29055e6d8c4e226bbe32f45a2df81ed7e843eb18db769642f707`.
+Exact live snapshots, canonical explanation storage and answer-safe public source
+readbacks match. All 329 prior holds, 365 prior attempts, reviewer assignments
+and grants, and unlimited owner access passed preservation checks. No peer votes,
+credits, quota exceptions, synthetic learner attempts or reveals were created.
+
+45 focused explanation, historical numbering and source-formatting/publication
+tests pass. Protected bank/taxonomy IN SYNC; API/Study healthy, Oracle publisher
+active, retired local timer untouched. This packet has no pending exports; the
+shared queue had 29 answer exports from another workflow at final observation,
+which this continuation did not claim, withdraw or replay. No API/frontend/schema
+or quota-enforcement change, external model call or unrelated checkout edit.
+
+Queue after refresh: 50 published, six not-needed, 1,007 pending, three unresolved,
+no active packet. MCS structural inventory remains 35 held and five recorded
+source/option defects; the missing passage was found separately. Historical
+source identity/figure/radical repairs and exact-key notice reconciliation remain.
+Keep 2012/2013 recovery deferred and original simulation gated. Durable receipt:
+`docs/sources/mcs-publication-20261111.json`. Private proof and primary-source
+notes: `reports/mcs-continue-20261111/`.

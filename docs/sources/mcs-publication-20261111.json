@@ -1,0 +1,743 @@
+{
+  "checked_at": "2026-11-10T20:48:57.585781+00:00",
+  "status": "four-publications-applied-and-live-verified",
+  "authority": "Oracle canonical workshop; local recovery bank read-only",
+  "scope": "Three explanation-only publications, one separate transcription restoring missing passage/directions, one private explanation-not-needed disposition. No answers, key provenance, options, scoring holds, identities or access changed.",
+  "attribution": "Codex manual drafts and same-agent separate source/reasoning checking; no independent reviewer, model consensus or human sign-off asserted.",
+  "explanation_publications": {
+    "checked_at": "2026-11-10T20:47:35.305281+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "0802e41a7487e0724b0f4140d5a6d42928f8d24b7f6d42d7fe09e732106af027",
+    "after_packet_bank_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+    "current_bank_sha256_observed": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_8d248782fa6740438466e80ec3d38791",
+          "input_sha256": "0802e41a7487e0724b0f4140d5a6d42928f8d24b7f6d42d7fe09e732106af027",
+          "output_sha256": "d7148aae9ccfec66b40d6d7237699020c62cc8b915deff405a85116d02343c83",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_3da33fe80082419aa8db060c639b4101",
+          "input_sha256": "d7148aae9ccfec66b40d6d7237699020c62cc8b915deff405a85116d02343c83",
+          "output_sha256": "66f19d008848158fede76ace448ab6092249ce3b1c75afde45f9b93cf61daa18",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_082a401f1d1b43179f7159df4f1bebf5",
+          "input_sha256": "66f19d008848158fede76ace448ab6092249ce3b1c75afde45f9b93cf61daa18",
+          "output_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+      "receipts_contiguous": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_20eea999fbb10383",
+        "appearance_id": "695a631c12377e0b6953",
+        "publication_id": "pub_8d248782fa6740438466e80ec3d38791",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "qnum": "10",
+        "page": 2,
+        "explanation": "The cross is opposite the dot. In view Y, the cross touches the square and the triangle. In view Z, it touches the arrow and the circle. That accounts for all four faces adjacent to the cross. A cube face has four neighbours and one opposite face; the only remaining symbol is the dot. Therefore the cross and dot must be on opposite faces. This method uses adjacency across the views, so there is no need to guess a rotation from the direction of the arrow.",
+        "source_fingerprint_before": "6d9ea771ee3e30281233fab493348a348651cdb9910b0855e77c1360e29f31e9",
+        "source_pdf_sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_213c93363c7d32ef",
+        "appearance_id": "94f75c078e90336f529f",
+        "publication_id": "pub_3da33fe80082419aa8db060c639b4101",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "qnum": "8",
+        "page": 1,
+        "explanation": "Prof. Dibakar Chandra Deka is the answer for the 2023 paper. A Government of Mizoram report dated 16 June 2023 identifies him as Vice-Chancellor of Mizoram University when he and the Registrar met the Governor. Read “recently appointed” in the question’s 2023 setting; it is not a fresh appointment claim for today. [Government report, 16 June 2023](https://rajbhavan.mizoram.gov.in/vice-chancellor-and-registrar-of-mzu-apprise-governor-on-achievement-and-campus-initiatives/).",
+        "source_fingerprint_before": "149d5a8a03951fab9edd8104cc234c5cd2948a6b511b557869c17fb4ecad0384",
+        "source_pdf_sha256": "b48ee8b3b35f7b3f6f05ee7055fbc4249524eee007114f7175748dbd6eab8c01",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_21c47b021d693d3b",
+        "appearance_id": "87ef4fb48021138f22ea",
+        "publication_id": "pub_082a401f1d1b43179f7159df4f1bebf5",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "qnum": "6",
+        "page": 1,
+        "explanation": "Canada is the historical answer. Statistics Canada’s release of 22 March 2023 reported population growth of 2.7% during 2022, with international migration accounting for 95.9% of that growth. It said that keeping that growth rate constant would imply doubling in about 26 years. This was a conditional illustration, rather than a guarantee that Canada’s population would double on a fixed date. [Original release](https://www150.statcan.gc.ca/n1/daily-quotidien/230322/dq230322f-eng.htm).\n\nUpdate — checked 11 November 2026: a release dated 23 September 2026 estimates Canada’s population at 41,798,407 on 1 July 2026, up 0.2% during the second quarter. These preliminary figures may be revised. The quarterly rate describes a different period from the original annual rate and should not be substituted into the old question. [Dated 2026 estimates](https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm).",
+        "source_fingerprint_before": "ba767fcd2bd105230feea81ef042798473ac34fa85dc93cc8a15df9baf45175f",
+        "source_pdf_sha256": "b48ee8b3b35f7b3f6f05ee7055fbc4249524eee007114f7175748dbd6eab8c01",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_082a401f1d1b43179f7159df4f1bebf5",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "87ef4fb48021138f22ea",
+            "page": 1,
+            "qnum": "6",
+            "type": "mcq",
+            "options": [
+              "England",
+              "Canada",
+              "Italy",
+              "France"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "Which Country has forecasted in 2023 that its population will be doubled in the next 26 years mostly due to migration?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": "Canada is the historical answer. Statistics Canada’s release of 22 March 2023 reported population growth of 2.7% during 2022, with international migration accounting for 95.9% of that growth. It said that keeping that growth rate constant would imply doubling in about 26 years. This was a conditional illustration, rather than a guarantee that Canada’s population would double on a fixed date. [Original release](https://www150.statcan.gc.ca/n1/daily-quotidien/230322/dq230322f-eng.htm).\n\nUpdate — checked 11 November 2026: a release dated 23 September 2026 estimates Canada’s population at 41,798,407 on 1 July 2026, up 0.2% during the second quarter. These preliminary figures may be revised. The quarterly rate describes a different period from the original annual rate and should not be substituted into the old question. [Dated 2026 estimates](https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "87ef4fb48021138f22ea",
+            "page": 1,
+            "qnum": "6",
+            "type": "mcq",
+            "options": [
+              "England",
+              "Canada",
+              "Italy",
+              "France"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "Which Country has forecasted in 2023 that its population will be doubled in the next 26 years mostly due to migration?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "66f19d008848158fede76ace448ab6092249ce3b1c75afde45f9b93cf61daa18",
+          "appearance_id": "87ef4fb48021138f22ea",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "7b6d012de715d7cb88737cf77548dd85393b005ed768d6eab7db79f4bfa0903f",
+          "output_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+          "publication_id": "pub_082a401f1d1b43179f7159df4f1bebf5"
+        }
+      },
+      {
+        "id": "pub_3da33fe80082419aa8db060c639b4101",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "94f75c078e90336f529f",
+            "page": 1,
+            "qnum": "8",
+            "type": "mcq",
+            "options": [
+              "Prof. Samba Shiva Rao",
+              "Prof. Ghanashyam Deka",
+              "Prof. Dibakar Chandra Deka",
+              "Prof. Mukesh Kumar Yadav"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "Who has been recently appointed as the new Vice-Chancellor of Mizoram University?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": "Prof. Dibakar Chandra Deka is the answer for the 2023 paper. A Government of Mizoram report dated 16 June 2023 identifies him as Vice-Chancellor of Mizoram University when he and the Registrar met the Governor. Read “recently appointed” in the question’s 2023 setting; it is not a fresh appointment claim for today. [Government report, 16 June 2023](https://rajbhavan.mizoram.gov.in/vice-chancellor-and-registrar-of-mzu-apprise-governor-on-achievement-and-campus-initiatives/).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "94f75c078e90336f529f",
+            "page": 1,
+            "qnum": "8",
+            "type": "mcq",
+            "options": [
+              "Prof. Samba Shiva Rao",
+              "Prof. Ghanashyam Deka",
+              "Prof. Dibakar Chandra Deka",
+              "Prof. Mukesh Kumar Yadav"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "Who has been recently appointed as the new Vice-Chancellor of Mizoram University?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "d7148aae9ccfec66b40d6d7237699020c62cc8b915deff405a85116d02343c83",
+          "appearance_id": "94f75c078e90336f529f",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "f3b56ff7eb80d23c040ddcbaff41655083fe5eb8e44270742415c4439706799f",
+          "output_sha256": "66f19d008848158fede76ace448ab6092249ce3b1c75afde45f9b93cf61daa18",
+          "publication_id": "pub_3da33fe80082419aa8db060c639b4101"
+        }
+      },
+      {
+        "id": "pub_8d248782fa6740438466e80ec3d38791",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "695a631c12377e0b6953",
+            "page": 2,
+            "qnum": "10",
+            "type": "mcq",
+            "options": [
+              "Circle",
+              "Triangle",
+              "Arrow",
+              "Cross"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": null,
+            "question": "A cube has six different symbols drawn over its six faces. The symbols are dot, circle, triangle, square, cross and arrow. Three different positions of the cube are shown in figures X,Y, and Z. Which symbol is opposite the dot?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": "The cross is opposite the dot. In view Y, the cross touches the square and the triangle. In view Z, it touches the arrow and the circle. That accounts for all four faces adjacent to the cross. A cube face has four neighbours and one opposite face; the only remaining symbol is the dot. Therefore the cross and dot must be on opposite faces. This method uses adjacency across the views, so there is no need to guess a rotation from the direction of the arrow.",
+            "figureImage": "images/page-renders/43878087a0b337963442.png",
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "695a631c12377e0b6953",
+            "page": 2,
+            "qnum": "10",
+            "type": "mcq",
+            "options": [
+              "Circle",
+              "Triangle",
+              "Arrow",
+              "Cross"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": null,
+            "question": "A cube has six different symbols drawn over its six faces. The symbols are dot, circle, triangle, square, cross and arrow. Three different positions of the cube are shown in figures X,Y, and Z. Which symbol is opposite the dot?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": "images/page-renders/43878087a0b337963442.png",
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "0802e41a7487e0724b0f4140d5a6d42928f8d24b7f6d42d7fe09e732106af027",
+          "appearance_id": "695a631c12377e0b6953",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "43f0c9fa6d2897b531fb4de9c24429c74404dcdd7ed079cd6f2220134a226316",
+          "output_sha256": "d7148aae9ccfec66b40d6d7237699020c62cc8b915deff405a85116d02343c83",
+          "publication_id": "pub_8d248782fa6740438466e80ec3d38791"
+        }
+      }
+    ],
+    "previous_holds_checked": 329,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 365,
+        "current_rows": 365,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 1,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-10T20:47:35.305386+00:00",
+      "counts": {
+        "not-needed": 6,
+        "pending": 1006,
+        "published": 50,
+        "unresolved": 4
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_16149f52d935c37e",
+        "reason": "Inspected 2023 Paper I D physical page 8, Q92 and all four options. This is direct vocabulary/culture recall with an existing official-key answer. Repeating Chawm as a bad demon adds no explanatory working; do not invent classifications for the other spirits. No new answer verification is claimed.",
+        "source_fingerprint": "5d569e0d2cdd85e1598cbde4a9a2b41642f95efa3d4a63cd52caedd9840880db"
+      },
+      {
+        "canonical_id": "cq_18b8d0b772dbcd7d",
+        "reason": "Inspected 2023 Paper II B physical page 7, Q44 and all four options. This asks for a conventional one-word non-verbal communication association and already has an official-key answer. Repeating confidence adds no working; avoid turning the exam convention into a universal claim about personality or culture.",
+        "source_fingerprint": "c344235caa16ba342e634a4288b31b87f1a41bb11875b3e8be1d16c1b50842d1"
+      },
+      {
+        "canonical_id": "cq_1903f62e61f5f5b9",
+        "reason": "Nitrogen accounts for approximately 78% of dry atmospheric volume (oxygen ~21%, argon ~0.93%, carbon dioxide ~0.04%); this is a direct elementary science fact where the official answer is unambiguous and requires no additional technical derivation.",
+        "source_fingerprint": "5c89226afa959aa838fea5c1942cfb1be6e4c570e62e3ae958e6531b615aac95"
+      },
+      {
+        "canonical_id": "cq_1f682f7a59780b7e",
+        "reason": "Inspected 2023 I A physical page 2 Q17 and all four options. Direct count recall with a recorded official key; a learner explanation merely restating sixteen would add no method. Do not expand into unsupported dates, lists or a claim that every mahajanapada was a monarchy.",
+        "source_fingerprint": "5103060a2ee3521c3e1da22e83dbb5965aa776e43f846635effb890c6ccae695"
+      },
+      {
+        "canonical_id": "cq_1fae83c8c4b8bf0a",
+        "reason": "Inspected 2023 I B physical page 8 Q95 and all four choices. Direct culture/vocabulary recall with an existing official key. Repeating Fungki adds no learning method; do not invent etymology, alternative implement definitions or a translation without competent reference evidence.",
+        "source_fingerprint": "c85b67531d1442d327ad107544f0a8b7199fffcf3458125f553ae16f987f7a5f"
+      },
+      {
+        "canonical_id": "cq_225c56d2c8ed0aae",
+        "reason": "Inspected 2023 I A physical page 4 Q36 and its four mineral choices. Direct keyed geographic-resource recall; repeating Copper adds no explanatory method. No source-backed comparison of the distractors was established in this packet, so do not invent a geological derivation.",
+        "source_fingerprint": "740442344787e3d3da719885fa27c5154c43744468fe4366bd51fd17a2a7df4a"
+      }
+    ]
+  },
+  "source_publication": {
+    "checked_at": "2026-11-10T20:48:57.585781+00:00",
+    "status": "applied-and-live-verified",
+    "publication": {
+      "id": "pub_f963eaa2298548ebb70d2668f3a2a90e",
+      "state": "applied",
+      "error": null
+    },
+    "proposal": {
+      "kind": "transcription",
+      "canonical_id": "cq_1fdf8a5ba1262e16",
+      "appearance_id": "46e37f5797b62ac7804a",
+      "subject_id": "reasoning-and-aptitude",
+      "title": "Restore printed shared passage for MCS 2023 II B Q58",
+      "patch": {
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage."
+      },
+      "rationale": "Inspected the hash-matched original 2023 Paper II B physical page 8, printed common directions and full prayer passage for Q57–59, Q58 and its four ordered choices. Restore the missing passage and directions on this exact Q58 appearance so its conclusion can be read in context. Preserve the unusual printed word biscuitsness verbatim; do not silently rewrite the source or treat its psychological statements as independently verified science. Keep original stem/options, answerIndex, official-key provenance, page/qnum, classification, image data, scoring holds and learner/reviewer history. This is source transcription only, not a new official-key matching or answer acceptance.",
+      "evidence": [
+        {
+          "kind": "paper",
+          "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+          "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+          "page": 8,
+          "note": "Full printed common passage and Q57–59 direction visually inspected on original physical page 8. Only Q58 appearance targeted; printed unusual word biscuitsness preserved."
+        }
+      ]
+    },
+    "source_before": {
+      "record": {
+        "id": "46e37f5797b62ac7804a",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "question": "Subconsciousness plays no role in our lives.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "58",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "title": "Civil Service Examination Paper-II (B)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+      }
+    },
+    "source_after": {
+      "record": {
+        "id": "46e37f5797b62ac7804a",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "question": "Subconsciousness plays no role in our lives.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 3,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "explanation": null,
+        "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "58",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "title": "Civil Service Examination Paper-II (B)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+      }
+    },
+    "historical_proof": {
+      "input_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+      "output_sha256": "75e74b2284cc29055e6d8c4e226bbe32f45a2df81ed7e843eb18db769642f707",
+      "only_fields_changed": [
+        "passage",
+        "direction",
+        "reviewPublicationId"
+      ],
+      "exact_historical_output_reconstructed": true
+    },
+    "receipt": {
+      "after": {
+        "id": "46e37f5797b62ac7804a",
+        "page": 8,
+        "qnum": "58",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "question": "Subconsciousness plays no role in our lives.",
+        "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 3,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "before": {
+        "id": "46e37f5797b62ac7804a",
+        "page": 8,
+        "qnum": "58",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "passage": null,
+        "question": "Subconsciousness plays no role in our lives.",
+        "direction": null,
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 3,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "input_sha256": "353f21b7c5733ebd8921286bd1d4934ebb875b6c3432f47d445e7e0c2ee8cd56",
+      "appearance_id": "46e37f5797b62ac7804a",
+      "before_fields": {
+        "passage": null,
+        "direction": null
+      },
+      "manifest_hash": "a53f74a3fb5532fcf00500ce0d00962401ec640862379e71273bd183a4c7eef3",
+      "output_sha256": "75e74b2284cc29055e6d8c4e226bbe32f45a2df81ed7e843eb18db769642f707",
+      "publication_id": "pub_f963eaa2298548ebb70d2668f3a2a90e"
+    },
+    "public_passage_and_direction_match": true,
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 365,
+        "current_rows": 365,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "previous_holds_preserved": 329,
+    "owner_unlimited": true,
+    "flags": {
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    "current_bank_sha256_observed": "75e74b2284cc29055e6d8c4e226bbe32f45a2df81ed7e843eb18db769642f707",
+    "pending_exports_global_observed": 29,
+    "ordinary_staff_limit": null,
+    "learner_daily_limit": 30
+  },
+  "dated_context": {
+    "checked_on": "2026-11-11",
+    "canada": {
+      "historical_source_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/230322/dq230322f-eng.htm",
+      "historical_published_on": "2023-03-22",
+      "historical_reference_period": "2022 annual growth",
+      "historical_value": "2.7% annual growth; 95.9% international migration contribution; doubling about 26 years conditional on unchanged rate",
+      "new_source_url": "https://www150.statcan.gc.ca/n1/daily-quotidien/260923/dq260923b-eng.htm",
+      "new_published_on": "2026-09-23",
+      "new_reference_period": "2026-07-01 stock; 2026 Q2 change",
+      "new_value": "41,798,407 people; +0.2% quarter-to-quarter; preliminary subject to revision",
+      "recheck_due": "2026-12-23",
+      "recheck_basis": "Conservative follow-up lead around next quarterly release, not a verified release-calendar date",
+      "reusable_fact_lookup": "No existing entity matching Canada or Mizoram University by name in fresh live query. No reusable dated-fact revision published; this packet uses explanation-only correction.",
+      "outcome": "dated snapshot prepared in explanation; no historical answer change"
+    },
+    "mzu": {
+      "historical_source_url": "https://rajbhavan.mizoram.gov.in/vice-chancellor-and-registrar-of-mzu-apprise-governor-on-achievement-and-campus-initiatives/",
+      "historical_published_on": "2023-06-16",
+      "historical_value": "Identifies Prof Dibakar Chandra Deka as Vice Chancellor in June 2023. Does not establish exact appointment effective date.",
+      "current_update_outcome": "unavailable-with-current-evidence",
+      "current_source_access": "MZU VC and home pages timed out through web; Python failed TLS certificate verification. DIPR current article returned 403. Search snippets are leads only, not inspected current source evidence.",
+      "current_unchanged_claim": false,
+      "follow_up": "Retry current official VC page when accessible; do not infer that the officeholder is unchanged."
+    }
+  },
+  "queue_after_source_refresh": {
+    "at": "2026-11-10T20:50:35.564395+00:00",
+    "counts": {
+      "not-needed": 6,
+      "pending": 1007,
+      "published": 50,
+      "unresolved": 3
+    },
+    "active": []
+  },
+  "validation": {
+    "tests_passed": 45,
+    "bank_sync": "IN SYNC at protected check after four publications",
+    "source_protection": "78 papers / 6931 source questions preserved",
+    "api_health": "ok; 82383 questions / 13899 scorable at observation",
+    "study_route_http": 200,
+    "oracle_publisher_timer": "active; not stopped",
+    "retired_local_timer": "not enabled",
+    "this_packet_pending_exports": 0,
+    "other_exports_observed": 29,
+    "authenticated_learner_reveal_ui_inspected": false,
+    "no_synthetic_learner_attempt_or_reveal": true,
+    "provider_calls": 0,
+    "no_api_frontend_schema_or_quota_enforcement_change": true
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 35
+    },
+    {
+      "status": "live",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2961
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 1007,
+    "unresolved_explanations": 3,
+    "q58": "Source passage/directions restored; fresh queue reopened explanation candidate. No explanation or new answer acceptance published for Q58 in this packet. Other passage-dependent siblings were not inspected/published as part of this repair.",
+    "historical_source_repairs": "2016 I C printed identity duplicates Q4/Q86, missing 2014 II Q39, held 2023 II B Q99 radical/options; use separate guarded repair workflows and retain holds.",
+    "source_notices": "Exact-key reconciliation required before editing generic provisional/pending-key notices on other targets.",
+    "current_affairs": "MZU current source unavailable; no unchanged assertion. Canada dated update is an explanation addition; no reusable dated-fact revision or production recheck deadline was created. Private follow-up lead saved.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; stays gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

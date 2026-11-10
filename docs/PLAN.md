@@ -626,3 +626,14 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261109.json`; queue has no a
 - [ ] Dedicated historical source repairs and exact-key source-notice reconciliation remain. Keep 2012/2013 deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.
+
+
+## 11 November — MCS continuation
+
+- [x] Publish and exact-readback three useful explanations (2023 II B Q10, I B Q8/Q6), including Canada's separately dated 2026 Q2 update and honest MZU current-source limitation.
+- [x] Restore missing original passage/directions on II B Q58 through a separate source publication; preserve answer/provenance and reopen its explanation against the repaired source.
+- [x] Verify four exact historical outputs, live source/storage readbacks, 329 prior holds, 365 attempts, reviewer scope and unlimited access. 45 tests pass; protected sync healthy.
+- [ ] Continue 1,007 candidates selectively; preserve three unresolved cases. Queue has no active packet.
+- [ ] Historical identity/figure/radical repairs, exact-key source-notice checks and dated-fact follow-ups remain. Keep 2012/2013 deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261111.json`. This packet's exports are applied; other shared answer exports observed are a separate workflow.
