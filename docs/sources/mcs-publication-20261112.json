@@ -1,0 +1,643 @@
+{
+  "checked_at": "2026-11-11T20:46:31.915477+00:00",
+  "status": "three-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Two explanation-only publications, one separate source transcription restoring exact missing common passage/directions, two private explanation-not-needed dispositions. No answer/provenance, original options/numbering, scoring holds or account access changed.",
+  "attribution": "Codex manual drafts and separate same-agent source/reasoning checks. No second-model, independent human or peer review asserted.",
+  "explanation_publications": {
+    "checked_at": "2026-11-11T20:45:27.618233+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "dae34d523153dbac6136e1078ecd95778a792e3fd5efc57dfa8e186645465871",
+    "after_packet_bank_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+    "current_bank_sha256_observed": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_4b420a73762a41e190014efa542bc4f5",
+          "input_sha256": "dae34d523153dbac6136e1078ecd95778a792e3fd5efc57dfa8e186645465871",
+          "output_sha256": "f849cb19e2badc311556ef1a449c229e0f4831b2b1e30fc8109b52d232053e14",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_a32d818330874d0d9090a7402ac3b5cf",
+          "input_sha256": "f849cb19e2badc311556ef1a449c229e0f4831b2b1e30fc8109b52d232053e14",
+          "output_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+      "receipts_contiguous": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_1fdf8a5ba1262e16",
+        "appearance_id": "46e37f5797b62ac7804a",
+        "publication_id": "pub_4b420a73762a41e190014efa542bc4f5",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "qnum": "58",
+        "page": 8,
+        "explanation": "The conclusion is definitely false within the passage. The passage says that prayer purifies the subconsciousness and helps a person cope with life. Its argument therefore assigns the subconscious a role, contradicting the claim that it plays no role at all. Judge the statement against the supplied passage, as the directions require. You do not need to establish a general scientific or religious claim about prayer to answer this comprehension question.",
+        "source_fingerprint_before": "6248f96401f584f3c1e51c5ab4a5210d0bae0d533905f58a8dd3a517040e41db",
+        "source_pdf_sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_24415f7d87c3cb43",
+        "appearance_id": "0562d444849bfc5bb3e8",
+        "publication_id": "pub_a32d818330874d0d9090a7402ac3b5cf",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "qnum": "57",
+        "page": 6,
+        "explanation": "The intended choice is the number of maternal deaths per 100,000 live births in the same period. The formula is: maternal mortality ratio = (maternal deaths ÷ live births) × 100,000. This distinguishes the 100,000 denominator from the 10,000 distractor. The definition includes deaths related to or aggravated by pregnancy or its management during pregnancy or within 42 days after it ends; accidental or incidental causes are excluded.\n\nThe question calls this a “rate,” but the live-birth denominator defines a maternal mortality ratio. The technical maternal mortality rate uses women of reproductive age as its population at risk. [WHO definition](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/26) · [UN indicator guidance](https://millenniumindicators.un.org/wiki/spaces/SDGeHandbook/pages/35291223/Indicator%2B3.1.1).",
+        "source_fingerprint_before": "49bf8479cc4e6377d394e471323fc776e5ccc63cce903f7722dec987613e4b5f",
+        "source_pdf_sha256": "ea98579ba44d7695518b766693f34c461f587c59c24bb797cfa6b787d5e86e66",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_4b420a73762a41e190014efa542bc4f5",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "46e37f5797b62ac7804a",
+            "page": 8,
+            "qnum": "58",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Subconsciousness plays no role in our lives.",
+            "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": "The conclusion is definitely false within the passage. The passage says that prayer purifies the subconsciousness and helps a person cope with life. Its argument therefore assigns the subconscious a role, contradicting the claim that it plays no role at all. Judge the statement against the supplied passage, as the directions require. You do not need to establish a general scientific or religious claim about prayer to answer this comprehension question.",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "46e37f5797b62ac7804a",
+            "page": 8,
+            "qnum": "58",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Subconsciousness plays no role in our lives.",
+            "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "dae34d523153dbac6136e1078ecd95778a792e3fd5efc57dfa8e186645465871",
+          "appearance_id": "46e37f5797b62ac7804a",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "dec453c0022abd7f69747e26da1fe2cb849dd7a300320c2522ca9a41299ca70e",
+          "output_sha256": "f849cb19e2badc311556ef1a449c229e0f4831b2b1e30fc8109b52d232053e14",
+          "publication_id": "pub_4b420a73762a41e190014efa542bc4f5"
+        }
+      },
+      {
+        "id": "pub_a32d818330874d0d9090a7402ac3b5cf",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "0562d444849bfc5bb3e8",
+            "page": 6,
+            "qnum": "57",
+            "type": "mcq",
+            "options": [
+              "Female deaths that occurred before the 9th month of pregnancy",
+              "The annual number of female deaths per 100,000 live births due to pregnancy",
+              "The annual number of female deaths per 10,000 live births due to pregnancy",
+              "The death of females that occurred within 3 months of child delivery"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "Maternal Mortality rate is",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": "The intended choice is the number of maternal deaths per 100,000 live births in the same period. The formula is: maternal mortality ratio = (maternal deaths ÷ live births) × 100,000. This distinguishes the 100,000 denominator from the 10,000 distractor. The definition includes deaths related to or aggravated by pregnancy or its management during pregnancy or within 42 days after it ends; accidental or incidental causes are excluded.\n\nThe question calls this a “rate,” but the live-birth denominator defines a maternal mortality ratio. The technical maternal mortality rate uses women of reproductive age as its population at risk. [WHO definition](https://www.who.int/data/gho/indicator-metadata-registry/imr-details/26) · [UN indicator guidance](https://millenniumindicators.un.org/wiki/spaces/SDGeHandbook/pages/35291223/Indicator%2B3.1.1).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "public-health/epidemiology",
+              "subject_id": "public-health",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "0562d444849bfc5bb3e8",
+            "page": 6,
+            "qnum": "57",
+            "type": "mcq",
+            "options": [
+              "Female deaths that occurred before the 9th month of pregnancy",
+              "The annual number of female deaths per 100,000 live births due to pregnancy",
+              "The annual number of female deaths per 10,000 live births due to pregnancy",
+              "The death of females that occurred within 3 months of child delivery"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "Maternal Mortality rate is",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "public-health/epidemiology",
+              "subject_id": "public-health",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "f849cb19e2badc311556ef1a449c229e0f4831b2b1e30fc8109b52d232053e14",
+          "appearance_id": "0562d444849bfc5bb3e8",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "deadb311081629e7499481c2d8da1a65dd965cf1f0d25026edcaefa89874f497",
+          "output_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+          "publication_id": "pub_a32d818330874d0d9090a7402ac3b5cf"
+        }
+      }
+    ],
+    "previous_holds_checked": 451,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 380,
+        "current_rows": 380,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 0,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-11T20:45:27.618252+00:00",
+      "counts": {
+        "not-needed": 8,
+        "pending": 1002,
+        "published": 52,
+        "unresolved": 4
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_16149f52d935c37e",
+        "reason": "Inspected 2023 Paper I D physical page 8, Q92 and all four options. This is direct vocabulary/culture recall with an existing official-key answer. Repeating Chawm as a bad demon adds no explanatory working; do not invent classifications for the other spirits. No new answer verification is claimed.",
+        "source_fingerprint": "5d569e0d2cdd85e1598cbde4a9a2b41642f95efa3d4a63cd52caedd9840880db"
+      },
+      {
+        "canonical_id": "cq_18b8d0b772dbcd7d",
+        "reason": "Inspected 2023 Paper II B physical page 7, Q44 and all four options. This asks for a conventional one-word non-verbal communication association and already has an official-key answer. Repeating confidence adds no working; avoid turning the exam convention into a universal claim about personality or culture.",
+        "source_fingerprint": "c344235caa16ba342e634a4288b31b87f1a41bb11875b3e8be1d16c1b50842d1"
+      },
+      {
+        "canonical_id": "cq_1903f62e61f5f5b9",
+        "reason": "Nitrogen accounts for approximately 78% of dry atmospheric volume (oxygen ~21%, argon ~0.93%, carbon dioxide ~0.04%); this is a direct elementary science fact where the official answer is unambiguous and requires no additional technical derivation.",
+        "source_fingerprint": "5c89226afa959aa838fea5c1942cfb1be6e4c570e62e3ae958e6531b615aac95"
+      },
+      {
+        "canonical_id": "cq_1f682f7a59780b7e",
+        "reason": "Inspected 2023 I A physical page 2 Q17 and all four options. Direct count recall with a recorded official key; a learner explanation merely restating sixteen would add no method. Do not expand into unsupported dates, lists or a claim that every mahajanapada was a monarchy.",
+        "source_fingerprint": "5103060a2ee3521c3e1da22e83dbb5965aa776e43f846635effb890c6ccae695"
+      },
+      {
+        "canonical_id": "cq_1fae83c8c4b8bf0a",
+        "reason": "Inspected 2023 I B physical page 8 Q95 and all four choices. Direct culture/vocabulary recall with an existing official key. Repeating Fungki adds no learning method; do not invent etymology, alternative implement definitions or a translation without competent reference evidence.",
+        "source_fingerprint": "c85b67531d1442d327ad107544f0a8b7199fffcf3458125f553ae16f987f7a5f"
+      },
+      {
+        "canonical_id": "cq_225c56d2c8ed0aae",
+        "reason": "Inspected 2023 I A physical page 4 Q36 and its four mineral choices. Direct keyed geographic-resource recall; repeating Copper adds no explanatory method. No source-backed comparison of the distractors was established in this packet, so do not invent a geological derivation.",
+        "source_fingerprint": "740442344787e3d3da719885fa27c5154c43744468fe4366bd51fd17a2a7df4a"
+      },
+      {
+        "canonical_id": "cq_23ab36d6a7e87f7d",
+        "reason": "Inspected 2023 I C physical page 8 Q91 and all four choices. Direct cultural name recall with existing official-key support. An explanation merely repeating Khiangte zawng zim adds no working; this packet does not invent etymology or translations or transfer another booklet’s option letter.",
+        "source_fingerprint": "96d223cf0fd444a9b971bf3f143ca44f74e90e20b6dced11730b2d5889afc036"
+      },
+      {
+        "canonical_id": "cq_23f89cb407de20bf",
+        "reason": "Inspected 2023 I D physical page 3 Q33 and all four port choices. Direct source/key-supported place recall; repeating Kandla adds no useful derivation. No new source-backed port-renaming or present-day statistics claim is made; no extra explanation is required.",
+        "source_fingerprint": "29ab89160a93f95fb766959705c0a59cfdbbb35a12afe5cd9b11f040d799b1af"
+      }
+    ]
+  },
+  "source_publication": {
+    "checked_at": "2026-11-11T20:46:31.915477+00:00",
+    "status": "applied-and-live-verified",
+    "publication": {
+      "id": "pub_c911146c55354cdda4d2deb022c70616",
+      "state": "applied",
+      "error": null
+    },
+    "proposal": {
+      "kind": "transcription",
+      "canonical_id": "cq_247dff0401176563",
+      "appearance_id": "799a5abd1a1f180c217f",
+      "subject_id": "reasoning-and-aptitude",
+      "title": "Restore printed common passage for MCS 2023 II D Q62",
+      "patch": {
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "direction": "Directions for Questions No. 62 - 64: Read the following passage carefully. Questions in the form of conclusions are based on the passage."
+      },
+      "rationale": "Inspected exact hash-matched original 2023 Paper II D physical page 8, full common directions for printed Q62–64, complete prayer passage, Q62 and its four choices. Restore missing passage and directions on this exact Q62 appearance so its conclusion is read against the text. Preserve the unusual printed word biscuitsness. No normalization of the original claim, new universal religious claim, sibling repair, printed-number correction, answer/key acceptance or whole-paper certification is asserted. Preserve all question/options, official answer provenance, page/qnum, classification, scoring holds, access and learner/reviewer history.",
+      "evidence": [
+        {
+          "kind": "paper",
+          "document_id": "doc_a796b40cc9747c7b030f54a9",
+          "sha256": "de633f7b308d6ac98da641cb5164bc8a6e66ff8aba05e27677534d8471d2d09e",
+          "page": 8,
+          "note": "Original common passage/directions and Q62 visually inspected on exact D-series physical page 8. Only Q62 appearance targeted; printed anomalous word biscuitsness retained."
+        }
+      ]
+    },
+    "source_before": {
+      "record": {
+        "id": "799a5abd1a1f180c217f",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "type": "mcq",
+        "question": "Prayer is an important part of all religions.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "62",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "title": "CSP: 23 Paper-II (D)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27D%27.pdf"
+      }
+    },
+    "source_after": {
+      "record": {
+        "id": "799a5abd1a1f180c217f",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "type": "mcq",
+        "question": "Prayer is an important part of all religions.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+        "explanation": null,
+        "direction": "Directions for Questions No. 62 - 64: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "62",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "title": "CSP: 23 Paper-II (D)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27D%27.pdf"
+      }
+    },
+    "historical_proof": {
+      "input_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+      "output_sha256": "ed09f95c514bf6826fbf8538be83f49bfbcbe3bbac3b85252374731bf2fb8147",
+      "only_fields_changed": [
+        "passage",
+        "direction",
+        "reviewPublicationId"
+      ],
+      "exact_historical_output_reconstructed": true
+    },
+    "receipt": {
+      "after": {
+        "id": "799a5abd1a1f180c217f",
+        "page": 8,
+        "qnum": "62",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "question": "Prayer is an important part of all religions.",
+        "direction": "Directions for Questions No. 62 - 64: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 2,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "before": {
+        "id": "799a5abd1a1f180c217f",
+        "page": 8,
+        "qnum": "62",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "passage": null,
+        "question": "Prayer is an important part of all religions.",
+        "direction": null,
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 2,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "input_sha256": "9f1f001d15c1f57f5f3a651ae60843046c11b660a73abdd6dcb2d5c5b5a28902",
+      "appearance_id": "799a5abd1a1f180c217f",
+      "before_fields": {
+        "passage": null,
+        "direction": null
+      },
+      "manifest_hash": "a8ef7b064dbfab79b2b7870c5ac66eaa5354fb6f51159e1cd28edd9c939c2661",
+      "output_sha256": "ed09f95c514bf6826fbf8538be83f49bfbcbe3bbac3b85252374731bf2fb8147",
+      "publication_id": "pub_c911146c55354cdda4d2deb022c70616"
+    },
+    "public_passage_and_direction_match": true,
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 380,
+        "current_rows": 380,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "previous_holds_preserved": 451,
+    "owner_unlimited": true,
+    "flags": {
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    "current_bank_sha256_observed": "ed09f95c514bf6826fbf8538be83f49bfbcbe3bbac3b85252374731bf2fb8147",
+    "pending_exports_global_observed": 0,
+    "ordinary_staff_limit": null,
+    "learner_daily_limit": 30
+  },
+  "definition_evidence": {
+    "checked_on": "2026-11-12",
+    "question": "cq_24415f7d87c3cb43",
+    "outcome": "Static definition clarification; no changing numerical statistic or dated current-affairs update applies.",
+    "references": [
+      {
+        "url": "https://www.who.int/data/gho/indicator-metadata-registry/imr-details/26",
+        "title": "WHO: Maternal mortality ratio (per 100 000 live births)",
+        "inspected_definition": "Maternal deaths per 100000 live births in same period; pregnancy-related/aggravated causes, within 42 days, exclusion of accidental/incidental deaths.",
+        "source_publication_date": "No single page publication date established; current metadata inspected."
+      },
+      {
+        "url": "https://millenniumindicators.un.org/wiki/spaces/SDGeHandbook/pages/35291223/Indicator%2B3.1.1",
+        "title": "UN SDG Indicator 3.1.1 guidance",
+        "last_updated": "2018-09-12",
+        "inspected_definition": "Distinguishes maternal mortality ratio (live births) from rate (person-years of women of reproductive age)."
+      }
+    ],
+    "preservation": "The original question calls the measure a rate. Explanation clarifies the mismatch; original wording and keyed answer remain unchanged."
+  },
+  "current_affairs_outcome": "No time-sensitive numeric answer in this packet; static definition and reading comprehension did not require a dated statistical update. No reusable current-affairs fact revision created.",
+  "queue_after_source_refresh": {
+    "at": "2026-11-11T20:47:09.976323+00:00",
+    "counts": {
+      "not-needed": 8,
+      "pending": 1003,
+      "published": 52,
+      "unresolved": 3
+    },
+    "active": []
+  },
+  "validation": {
+    "tests_passed": 45,
+    "source_protection": "78 papers / 6931 source questions",
+    "bank_sync": "IN SYNC after final verification check",
+    "api_health": "ok; 82383 questions / 13899 scorable at observation",
+    "study_route_http": 200,
+    "oracle_publisher_timer": "active at final service check; not stopped by this continuation",
+    "retired_local_timer": "not enabled",
+    "this_packet_pending_exports": 0,
+    "other_exports_observed": 0,
+    "authenticated_learner_reveal_ui_inspected": false,
+    "synthetic_attempts_or_reveals_created": false,
+    "external_provider_calls": 0,
+    "api_frontend_schema_or_quota_enforcement_changes": false
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 35
+    },
+    {
+      "status": "live",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2961
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 1003,
+    "unresolved_explanations": 3,
+    "q62": "Original common passage/directions restored on this exact D-series Q62 appearance; fresh explanation candidate reopened. No sibling-coverage, answer certification or paper-completeness claim.",
+    "historical_source_repairs": "2016 I C Q4/Q86 source identity duplicates; missing 2014 II Q39 figure; held 2023 II B Q99 radical/options. Preserve holds and use dedicated guarded workflows.",
+    "source_notices": "Reconcile exact official key mappings before correcting generic stale pending-key notices on other targets.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

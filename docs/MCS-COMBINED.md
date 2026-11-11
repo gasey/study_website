@@ -302,3 +302,21 @@ packet. No export remains for this packet; another workflow had 29 answer export
 in the shared queue at observation. Historical source repairs, exact-key notice
 reconciliation and relevant dated-fact follow-ups remain separate. Keep 2012/2013
 deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261111.json`.
+
+
+## 12 November — source-based comprehension and mortality definition
+
+Two explanations applied: 2023 II B Q58 (using its restored passage) and I D Q57
+(maternal mortality ratio versus rate, with inspected WHO/UN definitions). Two
+direct recall items need no extra prose. A separate source publication restored
+the common passage/directions for 2023 II D Q62; its answer/options, original
+wording and identity remain intact, and its explanation reopened after refresh.
+No dated statistics or reusable current-affairs facts were published.
+
+All three immutable outputs and live readbacks match; 451 prior holds, 380 prior
+attempts, reviewer scope and unlimited owner access are preserved. 45 tests pass;
+protected sync and services healthy. Queue: 52 published, 8 not-needed,
+1003 pending, 3 unresolved, no active packet. Source/answer review counts are
+separate from explanation availability. Historical source identity/figure/radical
+repairs and exact-key source-notice reconciliation remain; 2012/2013 recovery stays
+deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261112.json`.

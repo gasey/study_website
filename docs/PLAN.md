@@ -637,3 +637,14 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.
 - [ ] Historical identity/figure/radical repairs, exact-key source-notice checks and dated-fact follow-ups remain. Keep 2012/2013 deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261111.json`. This packet's exports are applied; other shared answer exports observed are a separate workflow.
+
+
+## 12 November — MCS continuation
+
+- [x] Publish exact-readback explanations for 2023 II B Q58 and I D Q57, preserving passage-based reasoning and the concrete ratio/rate caveat.
+- [x] Restore missing original common passage/directions on II D Q62 through a separate source publication, without answer or identity changes.
+- [x] Preserve 451 prior holds, 380 attempts, reviewer scope and unlimited access; verify three immutable outputs and live readbacks. 45 focused tests pass.
+- [ ] Continue 1003 explanation candidates selectively, including repaired Q62; preserve 3 unresolved cases. No active packet.
+- [ ] Historical source repairs and exact-key notice reconciliation remain; keep 2012/2013 recovery deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261112.json`.

@@ -9326,3 +9326,45 @@ source identity/figure/radical repairs and exact-key notice reconciliation remai
 Keep 2012/2013 recovery deferred and original simulation gated. Durable receipt:
 `docs/sources/mcs-publication-20261111.json`. Private proof and primary-source
 notes: `reports/mcs-continue-20261111/`.
+
+
+## 12 November 2026 — MCS comprehension and indicator definitions
+
+Published two checked explanations: 2023 II B Q58 now uses the common passage
+restored in the prior continuation, and 2023 I D Q57 distinguishes maternal
+mortality ratio from the printed “rate” terminology. The latter cites inspected
+WHO/UN definition guidance, retains the original keyed choice, explains the
+100,000-live-birth denominator and 42-day definition, and introduces no changing
+statistic. Q58 is answered strictly within the supplied passage, without a general
+psychological or religious truth claim. Two direct recall targets, I C Q91 and
+I D Q33, need no extra explanation; their private dispositions certify no answers.
+
+The newly claimed 2023 II D Q62 also lacked its printed common prayer passage and
+directions. Deferred its explanation, then restored only those source fields on
+that exact appearance through a separate guarded transcription publication.
+Original unusual wording “biscuitsness” remains verbatim. No question/options,
+answer/key provenance, printed page/number, taxonomy or scoring restriction changed.
+Sibling coverage and whole-paper completeness are not asserted. Fresh queue
+refresh reopens its explanation against the repaired source.
+
+All three publications applied and exact source snapshots/canonical explanation
+storage/public source readbacks match. Each immutable bank output was independently
+reconstructed from its hash-checked input backup and matched its receipt, proving
+only target explanation/pointer or passage/direction/pointer changes. Preserved
+all 451 prior holds, 380 prior attempts, reviewer assignments/grants and unlimited owner
+access. No peer votes, credits, quota exceptions, learner attempts or answer
+reveals were created. No external model calls or API/frontend/schema deployment.
+
+45 focused queue, historical-numbering and source-formatting/publication tests
+pass. Protected bank/taxonomy sync is healthy (78 papers / 6,931 source questions);
+API/Study healthy, Oracle timer active, retired local timer untouched. Final source
+output: `ed09f95c514bf6826fbf8538be83f49bfbcbe3bbac3b85252374731bf2fb8147`.
+This packet has no pending exports; global exports observed at source verification:
+0 (other workflows are separate). MCS structural inventory remains 35 held and
+five recorded source/option defects; this is an inventory, not full inspection.
+
+Queue: 52 published, 8 not-needed, 1003 pending, 3 unresolved, no active packet.
+Historical source identity/figure/radical repairs and exact-key notice reconciliation
+remain. Keep 2012/2013 recovery deferred and original simulation gated. Durable
+receipt/checkpoint: `docs/sources/mcs-publication-20261112.json`; private proof:
+`reports/mcs-continue-20261112/`.

@@ -291,3 +291,18 @@ four packet exports were applied, but 29 unrelated answer exports occupied the
 shared queue. Check fresh export state before any submission and do not replay
 other workflows. Source/answer restrictions, existing holds and historical
 numbering/recovery deferrals remain in force.
+
+
+## 12 November — continuation checkpoint
+
+Receipt: `docs/sources/mcs-publication-20261112.json`. Two explanations and one
+separate source-passage restoration applied and passed exact output/readback
+verification. Q58's earlier repair now supports its explanation. II D Q62's newly
+restored passage/directions reopen its explanation against fresh source context;
+do not replay either source repair or imply sibling coverage. No source/answer
+certification is inferred from explanation publication.
+
+Queue after refresh: 52 published, 8 explanation-not-needed, 1003 pending,
+3 unresolved, no active packet. Always check fresh Oracle source/export state
+before claiming. Preserve historical identity/figure/radical blockers, deferred
+2012/2013 recovery, original-simulation prerequisites and all scoring holds.
