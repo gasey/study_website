@@ -9368,3 +9368,42 @@ Historical source identity/figure/radical repairs and exact-key notice reconcili
 remain. Keep 2012/2013 recovery deferred and original simulation gated. Durable
 receipt/checkpoint: `docs/sources/mcs-publication-20261112.json`; private proof:
 `reports/mcs-continue-20261112/`.
+
+
+## 13 November 2026 — MCS inference, communication and printed context
+
+Published checked explanations for 2023 II D Q62 and II A Q27. Q62 now explains
+why the restored passage cannot support a universal conclusion about all religions;
+it makes no external religious claim. Q27 explains interactive communication and
+feedback, with an inspected CBSE reference and an explicit one-way-model caveat.
+Two direct-recall items, I D Q39 and Q96, received private not-needed dispositions;
+no filler geology, invented folktale context or new answer certification.
+
+Separately restored the original common prayer passage and Q35–37 directions on
+2023 II C Q35. Visually inspected its own registered physical pages 4 (context) and
+5 (question/options); retained original printed “biscuitsness”. Replaced only the
+provisional direction and missing passage on that exact appearance. Source image,
+printed page/number, question/options, answer/key provenance and classification
+remain intact. No sibling coverage, historical renumbering or key acceptance is
+asserted. Fresh source refresh reopens Q35's explanation candidate.
+
+All three publications applied and live readbacks match. Each immutable output
+was reconstructed from its hash-checked input backup: only explanation/pointer or
+passage/direction/pointer changed. Preserved 780 prior global scoring holds,
+381 prior learner attempts, reviewer scope/grants and unlimited owner access.
+No peer votes, credits, quota exceptions, synthetic attempts or answer reveals.
+No external model call, API/frontend deployment, schema or quota change. No
+time-sensitive facts in this packet, so no unrelated current-affairs revision.
+
+45 focused tests pass. Protected bank/taxonomy sync is healthy (78 papers / 6,931
+source questions); API/Study healthy, Oracle publisher and wakeup active, retired
+local publisher untouched. Source output: `396ad550e9ec4c4b2dc4cea926171356fa2d9192b855fe045368f24794c880b5`.
+No exports remain for this packet; global exports at final observation:
+0. MCS structural inventory still records 35 held questions, one duplicate-options
+defect and four unresolved-source defects; these counts are not a full review.
+
+Queue: 54 published, 10 not-needed, 999 pending, 3 unresolved,
+no active packet. Historical identity/figure/radical repairs and exact-key notice
+reconciliation remain. Keep 2012/2013 deferred and original simulation gated.
+Receipt/checkpoint: `docs/sources/mcs-publication-20261113.json`; private proof:
+`reports/mcs-continue-20261113/`.

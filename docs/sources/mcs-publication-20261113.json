@@ -1,0 +1,620 @@
+{
+  "checked_at": "2026-11-12T20:49:10.928702+00:00",
+  "status": "three-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Two explanation-only publications; separate exact C-series Q35 source transcription restoring common passage/directions; two private explanation-not-needed dispositions. No answer/provenance, original options/numbering, scoring holds, source image or account access changes.",
+  "attribution": "Codex manual drafts with separate same-agent source/reasoning checks. No second model, independent reviewer, peer sign-off or external model call asserted.",
+  "explanation_publications": {
+    "checked_at": "2026-11-12T20:47:45.918292+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "d01c85a38654b9c8b98cfc0fc470b4c82d192bef0c887bb04d51996673ca592c",
+    "after_packet_bank_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+    "current_bank_sha256_observed": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_7ed8b4e3037041dda76e921363ca9f5f",
+          "input_sha256": "d01c85a38654b9c8b98cfc0fc470b4c82d192bef0c887bb04d51996673ca592c",
+          "output_sha256": "c76a8d92ad4456d357003fc4487b7dd51174d8b9354355b034aa4d387bb7f4b4",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_6d8324bf21494969982da63a6bc397f6",
+          "input_sha256": "c76a8d92ad4456d357003fc4487b7dd51174d8b9354355b034aa4d387bb7f4b4",
+          "output_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+      "receipts_contiguous": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_247dff0401176563",
+        "appearance_id": "799a5abd1a1f180c217f",
+        "publication_id": "pub_7ed8b4e3037041dda76e921363ca9f5f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+        "qnum": "62",
+        "page": 8,
+        "explanation": "The passage describes the benefits its author attributes to prayer, such as relief from tension and renewed hope. It gives no information about how prayer features in different religions. The statement extends the claim to all religions, which the passage neither establishes nor rules out. Therefore the data are inadequate: option C. In passage-based inference questions, distinguish an unsupported conclusion from one that the passage contradicts.",
+        "source_fingerprint_before": "d518faffcbed2af69dc896398656b1eae4e1c4dd8a65425d7aad691030ef1618",
+        "source_pdf_sha256": "de633f7b308d6ac98da641cb5164bc8a6e66ff8aba05e27677534d8471d2d09e",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_263a67a8f57b7778",
+        "appearance_id": "151d3b2309c9cc183898",
+        "publication_id": "pub_6d8324bf21494969982da63a6bc397f6",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "qnum": "27",
+        "page": 4,
+        "explanation": "In the interactive model intended here, a sender conveys a message and the receiver responds with feedback. Both participants help establish understanding, so the process is two-way and mutual. That makes D, both (b) and (c), the intended answer. The distinction is feedback: a one-way broadcast does not include a return response. Communication models can describe one-way transmission too, so do not treat this answer as a rule that every form of communication must be two-way.\n\nReference: [CBSE, Front Office Operations XI, Communication Models](https://cbseacademic.nic.in/web_material/Curriculum21/publication/srsec/FRONT_OFFICE_OPERATIONS_revised-NEW_XI.pdf).",
+        "source_fingerprint_before": "eedd0617ec1eef5a7a2fa1be143914bd87efd5224239466f83d12433eae94735",
+        "source_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_6d8324bf21494969982da63a6bc397f6",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "151d3b2309c9cc183898",
+            "page": 4,
+            "qnum": "27",
+            "type": "mcq",
+            "options": [
+              "One-way",
+              "Two-way",
+              "Mutual",
+              "Both (b) and (c)"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Communication is a __________ process",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": "In the interactive model intended here, a sender conveys a message and the receiver responds with feedback. Both participants help establish understanding, so the process is two-way and mutual. That makes D, both (b) and (c), the intended answer. The distinction is feedback: a one-way broadcast does not include a return response. Communication models can describe one-way transmission too, so do not treat this answer as a rule that every form of communication must be two-way.\n\nReference: [CBSE, Front Office Operations XI, Communication Models](https://cbseacademic.nic.in/web_material/Curriculum21/publication/srsec/FRONT_OFFICE_OPERATIONS_revised-NEW_XI.pdf).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "151d3b2309c9cc183898",
+            "page": 4,
+            "qnum": "27",
+            "type": "mcq",
+            "options": [
+              "One-way",
+              "Two-way",
+              "Mutual",
+              "Both (b) and (c)"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Communication is a __________ process",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "c76a8d92ad4456d357003fc4487b7dd51174d8b9354355b034aa4d387bb7f4b4",
+          "appearance_id": "151d3b2309c9cc183898",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "4854682157ee718c7aa9bbd75157f4638bfd73db4e62e65db0c706458f41e7b9",
+          "output_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+          "publication_id": "pub_6d8324bf21494969982da63a6bc397f6"
+        }
+      },
+      {
+        "id": "pub_7ed8b4e3037041dda76e921363ca9f5f",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "799a5abd1a1f180c217f",
+            "page": 8,
+            "qnum": "62",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Prayer is an important part of all religions.",
+            "direction": "Directions for Questions No. 62 - 64: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": "The passage describes the benefits its author attributes to prayer, such as relief from tension and renewed hope. It gives no information about how prayer features in different religions. The statement extends the claim to all religions, which the passage neither establishes nor rules out. Therefore the data are inadequate: option C. In passage-based inference questions, distinguish an unsupported conclusion from one that the passage contradicts.",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "799a5abd1a1f180c217f",
+            "page": 8,
+            "qnum": "62",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'D'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Prayer is an important part of all religions.",
+            "direction": "Directions for Questions No. 62 - 64: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "d01c85a38654b9c8b98cfc0fc470b4c82d192bef0c887bb04d51996673ca592c",
+          "appearance_id": "799a5abd1a1f180c217f",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "625cef0d095d609405f71f86160e15bae6bf58041eb4a08395ce4434a12301d5",
+          "output_sha256": "c76a8d92ad4456d357003fc4487b7dd51174d8b9354355b034aa4d387bb7f4b4",
+          "publication_id": "pub_7ed8b4e3037041dda76e921363ca9f5f"
+        }
+      }
+    ],
+    "previous_holds_checked": 780,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 381,
+        "current_rows": 381,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 1,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-12T20:47:45.918312+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 998,
+        "published": 54,
+        "unresolved": 4
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_26e0e369a5613031",
+        "reason": "Inspected original 2023 I D physical p4 Q39 and all four options. This is a direct place/mineral recall item with an existing official-key answer. Extra answer-restating prose adds little learning value; no new geological claim, key verification or sibling-series coverage is asserted.",
+        "source_fingerprint": "40899e0e4306d753b72f0605b737ec77e0ac34b6ce96f3904c50d392a4da45db"
+      },
+      {
+        "canonical_id": "cq_2837f73a4b7c6d5b",
+        "reason": "Inspected original 2023 I D physical p9 Q96 and all four folktale choices. This is direct character-to-folktale recall with an existing official-key answer. No supported literary passage is available to add useful context; do not invent a plot, etymology or Mizo cultural explanation. This private disposition does not independently verify the answer.",
+        "source_fingerprint": "a4e80c290fb3b05fdfc43d262617e1cc561b669a5e5dd5b3c4e6463af1b3da05"
+      }
+    ]
+  },
+  "source_publication": {
+    "checked_at": "2026-11-12T20:48:42.936822+00:00",
+    "status": "applied-and-live-verified",
+    "publication": {
+      "id": "pub_9beef424014d4a4cabf341c12470db7a",
+      "state": "applied",
+      "error": null
+    },
+    "proposal": {
+      "kind": "transcription",
+      "canonical_id": "cq_27f0c2860d7bc70a",
+      "appearance_id": "404e0b74394cf98b31be",
+      "subject_id": "reasoning-and-aptitude",
+      "title": "Restore printed common passage for MCS 2023 II C Q35",
+      "patch": {
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "direction": "Directions for Questions No. 35 - 37: Read the following passage carefully. Questions in the form of conclusions are based on the passage."
+      },
+      "rationale": "Visually inspected the exact hash-matched original 2023 Paper II C physical p4 with common directions Q35–37 and complete prayer passage, and p5 with Q35 and all four choices. Restore passage and replace provisional direction on this exact appearance. Preserve original printed biscuitsness, question/options, existing official answer/key provenance, printed qnum35/page5, classification, source image, scoring restrictions, account access and learner/reviewer history. This is source transcription only; no new key acceptance, sibling repair or paper completeness is asserted.",
+      "evidence": [
+        {
+          "kind": "paper",
+          "document_id": "doc_8ca4dbea2b4225a2a24b10e9",
+          "sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+          "page": 4,
+          "note": "Original C-series common passage and directions visually inspected on physical p4; retain printed unusual word biscuitsness."
+        },
+        {
+          "kind": "paper",
+          "document_id": "doc_8ca4dbea2b4225a2a24b10e9",
+          "sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+          "page": 5,
+          "note": "Original C-series Q35 and all four choices visually inspected; retain page5/qnum35 and source image unchanged."
+        }
+      ]
+    },
+    "source_before": {
+      "record": {
+        "id": "404e0b74394cf98b31be",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Prayer is an important part of all religions.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": null,
+        "page": 5,
+        "qnum": "35",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "title": "Paper-II (C)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27C%27.pdf"
+      }
+    },
+    "source_after": {
+      "record": {
+        "id": "404e0b74394cf98b31be",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "type": "mcq",
+        "question": "Prayer is an important part of all religions.",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "answerIndex": 2,
+        "answerSource": "official",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "explanation": null,
+        "direction": "Directions for Questions No. 35 - 37: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "difficulty": null,
+        "page": 5,
+        "qnum": "35",
+        "hasDiagram": true,
+        "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "title": "Paper-II (C)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27C%27.pdf"
+      }
+    },
+    "historical_proof": {
+      "input_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+      "output_sha256": "396ad550e9ec4c4b2dc4cea926171356fa2d9192b855fe045368f24794c880b5",
+      "only_fields_changed": [
+        "passage",
+        "direction",
+        "reviewPublicationId"
+      ],
+      "exact_historical_output_reconstructed": true
+    },
+    "receipt": {
+      "after": {
+        "id": "404e0b74394cf98b31be",
+        "page": 5,
+        "qnum": "35",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+        "question": "Prayer is an important part of all religions.",
+        "direction": "Directions for Questions No. 35 - 37: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+        "difficulty": null,
+        "hasDiagram": true,
+        "answerIndex": 2,
+        "explanation": null,
+        "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "before": {
+        "id": "404e0b74394cf98b31be",
+        "page": 5,
+        "qnum": "35",
+        "type": "mcq",
+        "options": [
+          "the conclusion is definitely true",
+          "the conclusion is probably true",
+          "the data are inadequate to answer",
+          "the conclusion is definitely false"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "passage": null,
+        "question": "Prayer is an important part of all religions.",
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+        "difficulty": null,
+        "hasDiagram": true,
+        "answerIndex": 2,
+        "explanation": null,
+        "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+        "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "input_sha256": "337e909cb668d48aa17173b2224b3ec1a16c4c614849b69a16a50e8e77edccbc",
+      "appearance_id": "404e0b74394cf98b31be",
+      "before_fields": {
+        "passage": null,
+        "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending."
+      },
+      "manifest_hash": "0416f56f6f82ddff7b56024814792df348878078e88cadc209c784c9d6604fdf",
+      "output_sha256": "396ad550e9ec4c4b2dc4cea926171356fa2d9192b855fe045368f24794c880b5",
+      "publication_id": "pub_9beef424014d4a4cabf341c12470db7a"
+    },
+    "public_passage_and_direction_match": true,
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 381,
+        "current_rows": 381,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "previous_holds_preserved": 780,
+    "owner_unlimited": true,
+    "flags": {
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    "current_bank_sha256_observed": "396ad550e9ec4c4b2dc4cea926171356fa2d9192b855fe045368f24794c880b5",
+    "pending_exports_global_observed": 0,
+    "ordinary_staff_limit": null,
+    "learner_daily_limit": 30
+  },
+  "reference_evidence": {
+    "communication": {
+      "url": "https://cbseacademic.nic.in/web_material/Curriculum21/publication/srsec/FRONT_OFFICE_OPERATIONS_revised-NEW_XI.pdf",
+      "publisher": "CBSE",
+      "inspected_sections": "Communication Models, physical pages 19–20; One Way and Two Way Communication, physical page 24",
+      "use": "Support interactive feedback/mutual understanding, preserving explicit one-way-model caveat. No universal exclusion of one-way communication."
+    }
+  },
+  "current_affairs_outcome": "No time-sensitive facts in this packet. No unrelated current-affairs update or reusable fact revision created. Reading inference is limited to the passage.",
+  "queue_after_source_refresh": {
+    "at": "2026-11-12T20:48:55.748772+00:00",
+    "counts": {
+      "not-needed": 10,
+      "pending": 999,
+      "published": 54,
+      "unresolved": 3
+    },
+    "active": []
+  },
+  "validation": {
+    "checked_at": "2026-11-12T20:49:10.928702+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : 396ad550e9ec…  82383 questions\nserver bank : 396ad550e9ec…  82383 questions  (last sync 2026-11-12 20:47)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "active",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13899
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-12T20:48:55.748772+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 999,
+        "published": 54,
+        "unresolved": 3
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 35
+    },
+    {
+      "status": "live",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2961
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 999,
+    "unresolved_explanations": 3,
+    "q35": "Exact C-series common passage/directions restored; explanation reopened against the new source fingerprint. Do not replay repair or imply sibling coverage/key acceptance.",
+    "historical_source_repairs": "2016 I C duplicate printed Q4/Q86 source identities; missing 2014 II Q39 figure; held 2023 II B Q99 radical/options. Preserve holds and use guarded workflows.",
+    "source_notices": "Inspect exact official-key mappings before reconciling pending-key notices.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

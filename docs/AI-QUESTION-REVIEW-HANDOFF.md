@@ -306,3 +306,24 @@ Queue after refresh: 52 published, 8 explanation-not-needed, 1003 pending,
 3 unresolved, no active packet. Always check fresh Oracle source/export state
 before claiming. Preserve historical identity/figure/radical blockers, deferred
 2012/2013 recovery, original-simulation prerequisites and all scoring holds.
+
+
+## 13 November — continuation checkpoint
+
+Two explanations applied (2023 II D Q62 and II A Q27), with passage-limited
+inference and a primary-reference communication-model caveat. Separately restored
+the original common passage/directions on II C Q35 from its own pages 4–5; retain
+printed wording, source image, answer provenance and original mapping. Q35's
+explanation reopened after source refresh. Two direct recall items need no prose.
+
+All three immutable outputs and live readbacks match. 780 prior global holds,
+381 attempts, reviewer scope and unlimited access are preserved. 45 focused
+tests pass; protected sync and services healthy. No time-sensitive fact update.
+
+Queue: 54 published, 10 not-needed, 999 pending, 3 unresolved,
+no active packet. Historical source/option repairs and exact-key notices remain;
+keep 2012/2013 deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261113.json`.
+
+Do not replay applied source repairs or infer sibling coverage/new answer review
+from explanation availability. Check fresh Oracle source fingerprints and shared
+export state before claiming the next packet.
