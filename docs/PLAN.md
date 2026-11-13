@@ -659,3 +659,14 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261112.json`.
 - [ ] Historical source/option repairs and exact-key notice checks remain; keep 2012/2013 deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261113.json`.
+
+
+## 14 November — MCS continuation
+
+- [x] Publish exact-readback explanations for 2023 II C Q35 and I C Q57, preserving passage boundaries and historical key with dated primary-source notes.
+- [x] Restore printed common context on II A Q47, II A Q39 and II B Q59 through separate source publications.
+- [x] Verify five immutable outputs/live readbacks, 1676 prior global holds, 381 attempts, reviewer scope and unlimited access; 45 focused tests pass.
+- [ ] Continue 997 candidates selectively, including the three repaired appearances; preserve 3 unresolved cases. No active packet.
+- [ ] Historical source/option repairs and exact-key notices remain; keep 2012/2013 deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261114.json`.

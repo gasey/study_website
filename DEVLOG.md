@@ -9407,3 +9407,44 @@ no active packet. Historical identity/figure/radical repairs and exact-key notic
 reconciliation remain. Keep 2012/2013 deferred and original simulation gated.
 Receipt/checkpoint: `docs/sources/mcs-publication-20261113.json`; private proof:
 `reports/mcs-continue-20261113/`.
+
+
+## 14 November 2026 — MCS source context and dated statistical institutions
+
+Published two checked explanations: 2023 II C Q35 now uses its previously restored
+common passage to distinguish unsupported inference from contradiction. I C Q57
+retains recorded official A (NSO), with primary-source context separating MoSPI
+household-consumption surveys from Planning Commission poverty-line estimates.
+A separately dated update cites MoSPI's order effective 14 October 2024 on NSO
+naming and the 30 January 2025 release of HCES 2023–24 data. Checked 14 November
+2026 IST; no latest-series claim, new poverty-rate statistic or new key acceptance.
+No reusable dated-fact revision was created.
+
+Three separate source publications restore missing printed context: II A Q47's
+common family information/directions, II A Q39's strong/weak-argument directions,
+and II B Q59's prayer passage/directions. Exact booklet pages, stems and ordered
+choices visually inspected. Retain original wording, including “biscuitsness”,
+question/options, answer provenance, page/number, source images and classification.
+No invented family tree, empirical criminal-justice claim, theological claim,
+sibling completeness or answer verification is asserted. Repaired explanation
+candidates reopen against fresh source fingerprints after queue refresh.
+
+All five publications applied and match exact live snapshots. Each immutable
+output reconstructed from its hash-checked input backup proves only explanation/
+pointer or target context/pointer changes. Concurrent authorised answer batches
+changed the shared bank separately; receipts distinguish their writes. Preserve
+1676 prior global holds, 381 prior attempts, reviewer assignments/grants and unlimited
+owner access. No peer votes, credits, quota exceptions or synthetic learner actions.
+Normal publisher was briefly occupied/paused by another active batch; this packet
+reconciled its exact rejected first intent, then resumed after that queue cleared.
+No publisher service was stopped/started by this continuation.
+
+45 focused tests pass. Protected bank/taxonomy sync, API and Study route healthy;
+Oracle timer/wakeup active at final observation. No API/frontend/schema deployment
+or quota changes. Packet pending exports: zero; global observed: 0.
+MCS structural inventory remains recorded separately; it is not full certification.
+
+Queue: 56 published, 10 not-needed, 997 pending, 3 unresolved,
+no active packet. Historical identity/figure/radical repairs and exact-key notices
+remain; keep 2012/2013 deferred and original simulation gated. Receipt/checkpoint:
+`docs/sources/mcs-publication-20261114.json`; private proof `reports/mcs-continue-20261114/`.

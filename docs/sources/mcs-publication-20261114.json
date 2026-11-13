@@ -1,0 +1,1103 @@
+{
+  "checked_at": "2026-11-13T20:58:23.450835+00:00",
+  "status": "five-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Two explanation-only publications; three separate source transcriptions restoring missing printed context. No answer/key provenance, original question/options/numbering, source image, classification, scoring hold or account access changes.",
+  "attribution": "Codex manual drafts and separate same-agent source/reasoning checks. No independent reviewer, second-model, peer sign-off or external model call asserted.",
+  "explanation_publications": {
+    "checked_at": "2026-11-13T20:47:31.484681+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "4a80ca45bd415cc87742aeadc2f2407a70df8016b599df332ceed7e5679bbdf4",
+    "after_packet_bank_sha256": "53a7c44c5e3fd4cb7e5e817ab3e10f44c6ec7e00bbd131c1b9f7bbe7eb360105",
+    "current_bank_sha256_observed": "53a7c44c5e3fd4cb7e5e817ab3e10f44c6ec7e00bbd131c1b9f7bbe7eb360105",
+    "concurrent_bank_changes_observed": true,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_190b23aed30a459a866d650e45b2ccb5",
+          "input_sha256": "9494db557fec41ab25132bbf9e50676a49cbe3a9c8565a893bfe948913e6c2c9",
+          "output_sha256": "544ff407009e20d7bb573189f35deeca9d286cb32241628e9f1c81768bbd3841",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_7a517a81cfd6487b92d8e370f67f5fcf",
+          "input_sha256": "544ff407009e20d7bb573189f35deeca9d286cb32241628e9f1c81768bbd3841",
+          "output_sha256": "53a7c44c5e3fd4cb7e5e817ab3e10f44c6ec7e00bbd131c1b9f7bbe7eb360105",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "53a7c44c5e3fd4cb7e5e817ab3e10f44c6ec7e00bbd131c1b9f7bbe7eb360105",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": false,
+      "unaffected_content_matches_before_packet": false
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_27f0c2860d7bc70a",
+        "appearance_id": "404e0b74394cf98b31be",
+        "publication_id": "pub_190b23aed30a459a866d650e45b2ccb5",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "35",
+        "page": 5,
+        "explanation": "The passage describes the benefits its author attributes to prayer, such as relief from tension and renewed hope. It gives no information about how prayer features in different religions. The statement extends the claim to all religions, which the passage neither establishes nor rules out. Therefore the data are inadequate: option C. In passage-based inference questions, distinguish an unsupported conclusion from one that the passage contradicts.",
+        "source_fingerprint_before": "a79147a0da94e2a0c142e357ef7fca0466b0dfb879cccb2f1b375877b0f92dcd",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_28cd3df0d73155bd",
+        "appearance_id": "8bda93503dad9e21ab3e",
+        "publication_id": "pub_7a517a81cfd6487b92d8e370f67f5fcf",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "qnum": "57",
+        "page": 6,
+        "explanation": "For this 2023 paper, the recorded official-key answer is A, National Statistical Office (NSO). The relevant distinction among the options is the statistical organisation within MoSPI: the 2019 restructuring brought CSO and NSSO together under NSO. [MoSPI's restructuring clarification](https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1572847&lang=2&reg=48).\n\nBe precise about the wording “compile Poverty Estimates”: collecting household-consumption data and estimating poverty are different tasks. A [24 July 2023 parliamentary reply](https://sansad.in/getFile/annex/260/AU471.pdf?source=pqars) attributes the 2011–12 poverty-line and poverty-ratio estimates to the Planning Commission, using NSSO survey data. Do not learn from this question that MoSPI alone determines every poverty measure.\n\nUpdate — checked 14 November 2026: MoSPI's [order effective 14 October 2024](https://mospi.gov.in/sites/default/files/iss-circular/Restructuring%20Order%2014-10-2024.pdf) directs its divisions to use National Statistics Office (NSO) in communications, replacing NSSO/CSO terms. Separately, [HCES 2023–24 results released on 30 January 2025](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2097601&lang=2&reg=48) provide consumption data used in poverty analysis; survey results are not themselves a single poverty-line estimate. These later developments supplement the historical answer.",
+        "source_fingerprint_before": "36f7a0e71e89f21be1c95a35f245f74488431592ba4b4d281e34106a8ab7f475",
+        "source_pdf_sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_190b23aed30a459a866d650e45b2ccb5",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "404e0b74394cf98b31be",
+            "page": 5,
+            "qnum": "35",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Prayer is an important part of all religions.",
+            "direction": "Directions for Questions No. 35 - 37: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": "The passage describes the benefits its author attributes to prayer, such as relief from tension and renewed hope. It gives no information about how prayer features in different religions. The statement extends the claim to all religions, which the passage neither establishes nor rules out. Therefore the data are inadequate: option C. In passage-based inference questions, distinguish an unsupported conclusion from one that the passage contradicts.",
+            "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "404e0b74394cf98b31be",
+            "page": 5,
+            "qnum": "35",
+            "type": "mcq",
+            "options": [
+              "the conclusion is definitely true",
+              "the conclusion is probably true",
+              "the data are inadequate to answer",
+              "the conclusion is definitely false"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+            "question": "Prayer is an important part of all religions.",
+            "direction": "Directions for Questions No. 35 - 37: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "9494db557fec41ab25132bbf9e50676a49cbe3a9c8565a893bfe948913e6c2c9",
+          "appearance_id": "404e0b74394cf98b31be",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "335cd8ead73a80d70c93930925ed28096b0f2a3cb69ec2cfe2b8bbd5b5970343",
+          "output_sha256": "544ff407009e20d7bb573189f35deeca9d286cb32241628e9f1c81768bbd3841",
+          "publication_id": "pub_190b23aed30a459a866d650e45b2ccb5"
+        }
+      },
+      {
+        "id": "pub_7a517a81cfd6487b92d8e370f67f5fcf",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "8bda93503dad9e21ab3e",
+            "page": 6,
+            "qnum": "57",
+            "type": "mcq",
+            "options": [
+              "National Statistical Office",
+              "National Sample Survey Office",
+              "Finance Ministry",
+              "Central Statistical Organization"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "At present, which of the following offices/organizations compile Poverty Estimates in India under the\n     Ministry of Statistics and Programme Implementation",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 0,
+            "explanation": "For this 2023 paper, the recorded official-key answer is A, National Statistical Office (NSO). The relevant distinction among the options is the statistical organisation within MoSPI: the 2019 restructuring brought CSO and NSSO together under NSO. [MoSPI's restructuring clarification](https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1572847&lang=2&reg=48).\n\nBe precise about the wording “compile Poverty Estimates”: collecting household-consumption data and estimating poverty are different tasks. A [24 July 2023 parliamentary reply](https://sansad.in/getFile/annex/260/AU471.pdf?source=pqars) attributes the 2011–12 poverty-line and poverty-ratio estimates to the Planning Commission, using NSSO survey data. Do not learn from this question that MoSPI alone determines every poverty measure.\n\nUpdate — checked 14 November 2026: MoSPI's [order effective 14 October 2024](https://mospi.gov.in/sites/default/files/iss-circular/Restructuring%20Order%2014-10-2024.pdf) directs its divisions to use National Statistics Office (NSO) in communications, replacing NSSO/CSO terms. Separately, [HCES 2023–24 results released on 30 January 2025](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2097601&lang=2&reg=48) provide consumption data used in poverty analysis; survey results are not themselves a single poverty-line estimate. These later developments supplement the historical answer.",
+            "figureImage": "images/page-renders/eefbe69caccabc76f8ceb4f36428b76b4c298ea1c9b7bda26f093e124d54cfc5.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-economy",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "8bda93503dad9e21ab3e",
+            "page": 6,
+            "qnum": "57",
+            "type": "mcq",
+            "options": [
+              "National Statistical Office",
+              "National Sample Survey Office",
+              "Finance Ministry",
+              "Central Statistical Organization"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "At present, which of the following offices/organizations compile Poverty Estimates in India under the\n     Ministry of Statistics and Programme Implementation",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 0,
+            "explanation": null,
+            "figureImage": "images/page-renders/eefbe69caccabc76f8ceb4f36428b76b4c298ea1c9b7bda26f093e124d54cfc5.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-economy",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "544ff407009e20d7bb573189f35deeca9d286cb32241628e9f1c81768bbd3841",
+          "appearance_id": "8bda93503dad9e21ab3e",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "1dc133acfe90ada6b697c70d1b557cb42a7843a25b0bbae6b67419bf4c99007f",
+          "output_sha256": "53a7c44c5e3fd4cb7e5e817ab3e10f44c6ec7e00bbd131c1b9f7bbe7eb360105",
+          "publication_id": "pub_7a517a81cfd6487b92d8e370f67f5fcf"
+        }
+      }
+    ],
+    "previous_holds_checked": 1676,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 381,
+        "current_rows": 381,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 38,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-13T20:47:31.484700+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 994,
+        "published": 56,
+        "unresolved": 6
+      },
+      "active": []
+    },
+    "not_needed": []
+  },
+  "source_publications": [
+    {
+      "checked_at": "2026-11-13T20:49:27.302599+00:00",
+      "status": "applied-and-live-verified",
+      "publication": {
+        "id": "pub_4ac493b9da3d49238e7d8eaf61d6b89b",
+        "state": "applied",
+        "error": null
+      },
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_29ec45cc65f61874",
+        "appearance_id": "1d938742ac0087b20d5f",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Restore printed context for MCS 2023 Q47",
+        "patch": {
+          "passage": "P, Q, R, S, T and X are members of a family. There are two married couples. Q is an engineer and the father of T. X is the grandfather of R and is a lawyer. S is the grandmother of T and is a housewife. There is one engineer, one lawyer, one teacher, one housewife and two students in the family.",
+          "direction": "Directions for Questions No. 47 & 48: Read the following information carefully and answer the questions given below it:"
+        },
+        "rationale": "Visually inspected this exact registered hash-matched original physical page 6, its complete common task context, target question 47 and all ordered choices. Restore only the missing printed context fields on this exact appearance. Retain original wording, including biscuitsness where printed; normalize line wraps only. Preserve question/options, original page/number, classification, images, existing official answer/key provenance, scoring holds, account access and learner/reviewer history. No solution, empirical criminal-justice claim, theological claim, family-tree assumption, answer/key acceptance or sibling completeness is asserted.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_1f45222ca9e6101529b723e7",
+            "sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+            "page": 6,
+            "note": "Exact booklet physical page visually inspected: shared directions and passage, target stem and all four ordered options. This appearance only; no answer re-review."
+          }
+        ]
+      },
+      "source_before": {
+        "record": {
+          "id": "1d938742ac0087b20d5f",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "Who is the husband of P?",
+          "options": [
+            "R",
+            "X",
+            "Q",
+            "S"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 6,
+          "qnum": "47",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "title": "Civil Service Preliminary Examination Paper II (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27A%27..pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "1d938742ac0087b20d5f",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "Who is the husband of P?",
+          "options": [
+            "R",
+            "X",
+            "Q",
+            "S"
+          ],
+          "answerIndex": 2,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": "Directions for Questions No. 47 & 48: Read the following information carefully and answer the questions given below it:",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": "P, Q, R, S, T and X are members of a family. There are two married couples. Q is an engineer and the father of T. X is the grandfather of R and is a lawyer. S is the grandmother of T and is a housewife. There is one engineer, one lawyer, one teacher, one housewife and two students in the family.",
+          "difficulty": "medium",
+          "page": 6,
+          "qnum": "47",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "title": "Civil Service Preliminary Examination Paper II (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27A%27..pdf"
+        }
+      },
+      "historical_proof": {
+        "input_sha256": "e157f581fa8b7e6ab54ef0048cddd79f04e0e4323da22007f382403f58289900",
+        "output_sha256": "bdaae5b640d0008c1a28f295f207d181a59c22a1bb1ca0f8101df5f0d69497bd",
+        "only_fields_changed": [
+          "passage",
+          "direction",
+          "reviewPublicationId"
+        ],
+        "exact_historical_output_reconstructed": true
+      },
+      "receipt": {
+        "after": {
+          "id": "1d938742ac0087b20d5f",
+          "page": 6,
+          "qnum": "47",
+          "type": "mcq",
+          "options": [
+            "R",
+            "X",
+            "Q",
+            "S"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "passage": "P, Q, R, S, T and X are members of a family. There are two married couples. Q is an engineer and the father of T. X is the grandfather of R and is a lawyer. S is the grandmother of T and is a housewife. There is one engineer, one lawyer, one teacher, one housewife and two students in the family.",
+          "question": "Who is the husband of P?",
+          "direction": "Directions for Questions No. 47 & 48: Read the following information carefully and answer the questions given below it:",
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 2,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "1d938742ac0087b20d5f",
+          "page": 6,
+          "qnum": "47",
+          "type": "mcq",
+          "options": [
+            "R",
+            "X",
+            "Q",
+            "S"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "passage": null,
+          "question": "Who is the husband of P?",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 2,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "e157f581fa8b7e6ab54ef0048cddd79f04e0e4323da22007f382403f58289900",
+        "appearance_id": "1d938742ac0087b20d5f",
+        "before_fields": {
+          "passage": null,
+          "direction": null
+        },
+        "manifest_hash": "2f00a434577710ebb9706bcc38376b0b21f7d42dc96a40be0a7e20aeb03e367b",
+        "output_sha256": "bdaae5b640d0008c1a28f295f207d181a59c22a1bb1ca0f8101df5f0d69497bd",
+        "publication_id": "pub_4ac493b9da3d49238e7d8eaf61d6b89b"
+      },
+      "public_patched_fields_match": true,
+      "workflow_preservation": {
+        "attempts": {
+          "previous_rows": 381,
+          "current_rows": 381,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignments": {
+          "previous_rows": 2,
+          "current_rows": 2,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignment_papers": {
+          "previous_rows": 78,
+          "current_rows": 78,
+          "previous_rows_unchanged": true
+        },
+        "editorial_checks": {
+          "previous_rows": 0,
+          "current_rows": 0,
+          "previous_rows_unchanged": true
+        },
+        "review_grants": {
+          "previous_rows": 3,
+          "current_rows": 3,
+          "previous_rows_unchanged": true
+        }
+      },
+      "previous_holds_preserved": 1676,
+      "owner_unlimited": true,
+      "flags": {
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0
+      },
+      "current_bank_sha256_observed": "bdaae5b640d0008c1a28f295f207d181a59c22a1bb1ca0f8101df5f0d69497bd",
+      "pending_exports_global_observed": 0,
+      "ordinary_staff_limit": null,
+      "learner_daily_limit": 30
+    },
+    {
+      "checked_at": "2026-11-13T20:56:20.674527+00:00",
+      "status": "applied-and-live-verified",
+      "publication": {
+        "id": "pub_309a6106a12043499930ae1c879e0669",
+        "state": "applied",
+        "error": null
+      },
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_29f4f34b70762ae7",
+        "appearance_id": "1c4c304a75d8b21afd38",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Restore printed context for MCS 2023 Q39",
+        "patch": {
+          "direction": "Directions for Questions No. 39 - 43: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer"
+        },
+        "rationale": "Visually inspected this exact registered hash-matched original physical page 5, its complete common task context, target question 39 and all ordered choices. Restore only the missing printed context fields on this exact appearance. Retain original wording, including biscuitsness where printed; normalize line wraps only. Preserve question/options, original page/number, classification, images, existing official answer/key provenance, scoring holds, account access and learner/reviewer history. No solution, empirical criminal-justice claim, theological claim, family-tree assumption, answer/key acceptance or sibling completeness is asserted.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_1f45222ca9e6101529b723e7",
+            "sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+            "page": 5,
+            "note": "Exact booklet physical page visually inspected: shared directions, target stem and all four ordered options. This appearance only; no answer re-review."
+          }
+        ]
+      },
+      "source_before": {
+        "record": {
+          "id": "1c4c304a75d8b21afd38",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 5,
+          "qnum": "39",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "title": "Civil Service Preliminary Examination Paper II (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27A%27..pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "1c4c304a75d8b21afd38",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "explanation": null,
+          "direction": "Directions for Questions No. 39 - 43: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 5,
+          "qnum": "39",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "title": "Civil Service Preliminary Examination Paper II (A)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27A%27..pdf"
+        }
+      },
+      "historical_proof": {
+        "input_sha256": "bdaae5b640d0008c1a28f295f207d181a59c22a1bb1ca0f8101df5f0d69497bd",
+        "output_sha256": "4fa8d54e5f91723f69dd4c4dacdac3a97e3fe33da70a67d068714a8732cfa57e",
+        "only_target_fields_changed": [
+          "direction",
+          "reviewPublicationId"
+        ],
+        "exact_historical_output_reconstructed": true,
+        "shared_batch_id": "review_batch_3ea9593e2ff69f162ca1a2636615e1a3",
+        "shared_batch_publications": 40,
+        "other_batch_members_not_attributed_to_this_packet": true
+      },
+      "receipt": {
+        "after": {
+          "id": "1c4c304a75d8b21afd38",
+          "page": 5,
+          "qnum": "39",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": "Directions for Questions No. 39 - 43: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "1c4c304a75d8b21afd38",
+          "page": 5,
+          "qnum": "39",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "batch_id": "review_batch_3ea9593e2ff69f162ca1a2636615e1a3",
+        "input_sha256": "bdaae5b640d0008c1a28f295f207d181a59c22a1bb1ca0f8101df5f0d69497bd",
+        "appearance_id": "1c4c304a75d8b21afd38",
+        "before_fields": {
+          "direction": null
+        },
+        "manifest_hash": "43b90d48a6d14e58a7c0320f02f2ad2608c5fec3ab585a48dd23076b8f4b9973",
+        "output_sha256": "4fa8d54e5f91723f69dd4c4dacdac3a97e3fe33da70a67d068714a8732cfa57e",
+        "publication_id": "pub_309a6106a12043499930ae1c879e0669"
+      },
+      "public_patched_fields_match": true,
+      "workflow_preservation": {
+        "attempts": {
+          "previous_rows": 381,
+          "current_rows": 381,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignments": {
+          "previous_rows": 2,
+          "current_rows": 2,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignment_papers": {
+          "previous_rows": 78,
+          "current_rows": 78,
+          "previous_rows_unchanged": true
+        },
+        "editorial_checks": {
+          "previous_rows": 0,
+          "current_rows": 0,
+          "previous_rows_unchanged": true
+        },
+        "review_grants": {
+          "previous_rows": 3,
+          "current_rows": 3,
+          "previous_rows_unchanged": true
+        }
+      },
+      "previous_holds_preserved": 1676,
+      "owner_unlimited": true,
+      "flags": {
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0
+      },
+      "current_bank_sha256_observed": "4fa8d54e5f91723f69dd4c4dacdac3a97e3fe33da70a67d068714a8732cfa57e",
+      "pending_exports_global_observed": 1,
+      "ordinary_staff_limit": null,
+      "learner_daily_limit": 30
+    },
+    {
+      "checked_at": "2026-11-13T20:58:23.450835+00:00",
+      "status": "applied-and-live-verified",
+      "publication": {
+        "id": "pub_7fd31d22bf414f1784d81e255f57c065",
+        "state": "applied",
+        "error": null
+      },
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_2b4150450dfc6802",
+        "appearance_id": "9695baa8445b03ad19b5",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Restore printed context for MCS 2023 Q59",
+        "patch": {
+          "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+          "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage."
+        },
+        "rationale": "Visually inspected this exact registered hash-matched original physical page 8, its complete common task context, target question 59 and all ordered choices. Restore only the missing printed context fields on this exact appearance. Retain original wording, including biscuitsness where printed; normalize line wraps only. Preserve question/options, original page/number, classification, images, existing official answer/key provenance, scoring holds, account access and learner/reviewer history. No solution, empirical criminal-justice claim, theological claim, family-tree assumption, answer/key acceptance or sibling completeness is asserted.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+            "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+            "page": 8,
+            "note": "Exact booklet physical page visually inspected: shared directions and passage, target stem and all four ordered options. This appearance only; no answer re-review."
+          }
+        ]
+      },
+      "source_before": {
+        "record": {
+          "id": "9695baa8445b03ad19b5",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Prayer, by direct miracles, removes hurdles and difficulties from our lives.",
+          "options": [
+            "the conclusion is definitely true",
+            "the conclusion is probably true",
+            "the data are inadequate to answer",
+            "the conclusion is definitely false"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 8,
+          "qnum": "59",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "9695baa8445b03ad19b5",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Prayer, by direct miracles, removes hurdles and difficulties from our lives.",
+          "options": [
+            "the conclusion is definitely true",
+            "the conclusion is probably true",
+            "the data are inadequate to answer",
+            "the conclusion is definitely false"
+          ],
+          "answerIndex": 3,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+          "difficulty": "medium",
+          "page": 8,
+          "qnum": "59",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "historical_proof": {
+        "input_sha256": "4fa8d54e5f91723f69dd4c4dacdac3a97e3fe33da70a67d068714a8732cfa57e",
+        "output_sha256": "016e46f03cf22c66d6891668dfb2814b0f894d6c08f68426336814f2b942e260",
+        "only_target_fields_changed": [
+          "passage",
+          "direction",
+          "reviewPublicationId"
+        ],
+        "exact_historical_output_reconstructed": true,
+        "shared_batch_id": null,
+        "shared_batch_publications": 1,
+        "other_batch_members_not_attributed_to_this_packet": false
+      },
+      "receipt": {
+        "after": {
+          "id": "9695baa8445b03ad19b5",
+          "page": 8,
+          "qnum": "59",
+          "type": "mcq",
+          "options": [
+            "the conclusion is definitely true",
+            "the conclusion is probably true",
+            "the data are inadequate to answer",
+            "the conclusion is definitely false"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": "The most empirical argument in favor of prayer is that it relieves the mind of tension, which is the natural concomitant of a life of hurry and worry. It neutralizes mental repressions and purifies the subconsciousness. It releases an extra amount of hope and energy and thus, enables a person to face life squarely. Life is not all biscuitsness, enjoyment and success; it is drudgery, pain and failure too.",
+          "question": "Prayer, by direct miracles, removes hurdles and difficulties from our lives.",
+          "direction": "Directions for Questions No. 57 - 59: Read the following passage carefully. Questions in the form of conclusions are based on the passage.",
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "9695baa8445b03ad19b5",
+          "page": 8,
+          "qnum": "59",
+          "type": "mcq",
+          "options": [
+            "the conclusion is definitely true",
+            "the conclusion is probably true",
+            "the data are inadequate to answer",
+            "the conclusion is definitely false"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "Prayer, by direct miracles, removes hurdles and difficulties from our lives.",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 3,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "4fa8d54e5f91723f69dd4c4dacdac3a97e3fe33da70a67d068714a8732cfa57e",
+        "appearance_id": "9695baa8445b03ad19b5",
+        "before_fields": {
+          "passage": null,
+          "direction": null
+        },
+        "manifest_hash": "c714b531d0df3c6b7b2adebba30e4766b208fe4572b0217d176a1efd939f7bec",
+        "output_sha256": "016e46f03cf22c66d6891668dfb2814b0f894d6c08f68426336814f2b942e260",
+        "publication_id": "pub_7fd31d22bf414f1784d81e255f57c065"
+      },
+      "public_patched_fields_match": true,
+      "workflow_preservation": {
+        "attempts": {
+          "previous_rows": 381,
+          "current_rows": 381,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignments": {
+          "previous_rows": 2,
+          "current_rows": 2,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignment_papers": {
+          "previous_rows": 78,
+          "current_rows": 78,
+          "previous_rows_unchanged": true
+        },
+        "editorial_checks": {
+          "previous_rows": 0,
+          "current_rows": 0,
+          "previous_rows_unchanged": true
+        },
+        "review_grants": {
+          "previous_rows": 3,
+          "current_rows": 3,
+          "previous_rows_unchanged": true
+        }
+      },
+      "previous_holds_preserved": 1676,
+      "owner_unlimited": true,
+      "flags": {
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0
+      },
+      "current_bank_sha256_observed": "016e46f03cf22c66d6891668dfb2814b0f894d6c08f68426336814f2b942e260",
+      "pending_exports_global_observed": 0,
+      "ordinary_staff_limit": null,
+      "learner_daily_limit": 30
+    }
+  ],
+  "reference_evidence": {
+    "cq_27f0c2860d7bc70a": [
+      {
+        "kind": "reasoning",
+        "note": "Exact C-series pages4–5 inspected, with common Q35–37 passage/directions restored by pub_9beef424014d4a4cabf341c12470db7a. Benefits of prayer do not establish or refute importance in all religions. Existing C follows within the passage only; no external theology asserted."
+      }
+    ],
+    "cq_28cd3df0d73155bd": [
+      {
+        "kind": "reference",
+        "url": "https://www.pib.gov.in/Pressreleaseshare.aspx?PRID=1572847&lang=2&reg=48",
+        "note": "Inspected MoSPI 30May2019 clarification on unified NSO and CSO/NSSO restructuring; supports organisational context, not blanket claim that NSO estimates every poverty measure."
+      },
+      {
+        "kind": "reference",
+        "url": "https://sansad.in/getFile/annex/260/AU471.pdf?source=pqars",
+        "note": "Inspected 24July2023 parliamentary reply, physical p1: Planning Commission estimated poverty using NSSO household-expenditure survey. Caveat preserved; do not manufacture a key conflict or silently change answer."
+      },
+      {
+        "kind": "reference",
+        "url": "https://mospi.gov.in/sites/default/files/iss-circular/Restructuring%20Order%2014-10-2024.pdf",
+        "note": "Inspected original order physical p1, clauses d/e, effective14October2024. Official communications use National Statistics Office and replace NSSO/CSO terms; separately dated from original exam."
+      },
+      {
+        "kind": "reference",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2097601&lang=2&reg=48",
+        "note": "Inspected MoSPI30January2025 release: HCES2023–24 detailed report/unit data release and consumption data use in poverty analysis. No latest-series claim, invented poverty number or changed historical option."
+      }
+    ]
+  },
+  "current_affairs_outcome": "2023 I C Q57 retains its recorded official answer A. Added a source-backed distinction between survey data and poverty estimates, plus separately dated notes on the order effective14October2024 and HCES2023–24 release30January2025. Checked14November2026 IST. No assertion these are the latest 2026 series; no poverty-rate statistic, new key certification or reusable dated-fact revision created.",
+  "queue_after_source_refresh": {
+    "at": "2026-11-13T20:58:04.780906+00:00",
+    "counts": {
+      "not-needed": 10,
+      "pending": 997,
+      "published": 56,
+      "unresolved": 3
+    },
+    "active": []
+  },
+  "validation": {
+    "checked_at": "2026-11-13T20:58:20.356714+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : 016e46f03cf2…  82383 questions\nserver bank : 016e46f03cf2…  82383 questions  (last sync 2026-11-13 20:56)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "active",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13899
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-13T20:58:04.780906+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 997,
+        "published": 56,
+        "unresolved": 3
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 35
+    },
+    {
+      "status": "live",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2961
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 997,
+    "unresolved_explanations": 3,
+    "repaired_candidates": "II A Q47 common family information, II A Q39 strong/weak-argument rubric, II B Q59 prayer passage/directions restored; explanations reopened against fresh fingerprints. Inspect assumptions and preserve keys; do not replay repairs or infer sibling coverage.",
+    "historical_source_repairs": "2016 I C duplicate printed Q4/Q86 identities; missing 2014 II Q39 figure; held 2023 II B Q99 radical/options. Dedicated guarded workflows remain necessary.",
+    "source_notices": "Inspect exact official-key mappings before reconciling pending-key notices.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

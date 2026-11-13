@@ -337,3 +337,23 @@ tests pass; protected sync and services healthy. No time-sensitive fact update.
 Queue: 54 published, 10 not-needed, 999 pending, 3 unresolved,
 no active packet. Historical source/option repairs and exact-key notices remain;
 keep 2012/2013 deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261113.json`.
+
+
+## 14 November — source context and statistical institutions
+
+Two explanations applied (2023 II C Q35 and I C Q57). Poverty-estimates prose
+preserves the historical key, distinguishes survey data from estimate authority,
+and adds separately dated 2024 naming / 2025 HCES-release notes from primary
+sources. No assertion of latest-series status or new poverty statistic.
+
+Three separate source publications restored printed common context on II A Q47,
+II A Q39 and II B Q59; original answers/options, page/number, source image and
+classification remain intact. These explanation candidates reopen after refresh;
+no sibling coverage or new answer review is implied.
+
+All five exact outputs and live readbacks match; 1676 prior global holds, 381
+attempts, reviewer scope and unlimited access preserved. 45 focused tests pass;
+protected sync and services healthy. Queue: 56 published, 10 not-needed,
+997 pending, 3 unresolved, no active packet. Historical source/option repairs
+and exact-key notices remain; keep 2012/2013 deferred and original simulation
+gated. Receipt: `docs/sources/mcs-publication-20261114.json`.

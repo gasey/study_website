@@ -327,3 +327,27 @@ keep 2012/2013 deferred and original simulation gated. Receipt: `docs/sources/mc
 Do not replay applied source repairs or infer sibling coverage/new answer review
 from explanation availability. Check fresh Oracle source fingerprints and shared
 export state before claiming the next packet.
+
+
+## 14 November — continuation checkpoint
+
+Two explanations applied (2023 II C Q35 and I C Q57). Poverty-estimates prose
+preserves the historical key, distinguishes survey data from estimate authority,
+and adds separately dated 2024 naming / 2025 HCES-release notes from primary
+sources. No assertion of latest-series status or new poverty statistic.
+
+Three separate source publications restored printed common context on II A Q47,
+II A Q39 and II B Q59; original answers/options, page/number, source image and
+classification remain intact. These explanation candidates reopen after refresh;
+no sibling coverage or new answer review is implied.
+
+All five exact outputs and live readbacks match; 1676 prior global holds, 381
+attempts, reviewer scope and unlimited access preserved. 45 focused tests pass;
+protected sync and services healthy. Queue: 56 published, 10 not-needed,
+997 pending, 3 unresolved, no active packet. Historical source/option repairs
+and exact-key notices remain; keep 2012/2013 deferred and original simulation
+gated. Receipt: `docs/sources/mcs-publication-20261114.json`.
+
+Check fresh Oracle fingerprints/export state before claiming. Reconcile exact
+intents after shared-queue conflicts; never replay applied source repairs or
+restart another worker’s paused publisher during its atomic batch.
