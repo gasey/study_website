@@ -357,3 +357,22 @@ protected sync and services healthy. Queue: 56 published, 10 not-needed,
 997 pending, 3 unresolved, no active packet. Historical source/option repairs
 and exact-key notices remain; keep 2012/2013 deferred and original simulation
 gated. Receipt: `docs/sources/mcs-publication-20261114.json`.
+
+
+## 15 November — conceptual explanations and limits
+
+Three explanation-only publications applied: 2023 II A Q39 (argument relevance),
+I C Q78 (microwave ionization with explicit UV ambiguity) and I C Q47 (ordinary
+local-government framework versus Sixth Schedule, preserving ADC autonomy caveat).
+Official keys, question/options, source mappings, classifications and scoring
+restrictions remain unchanged. No dated current-affairs revision was warranted.
+
+II A Q47 and II B Q59 remain explanation-unavailable with concrete assumption/
+inference limitations; no invented derivation or new answer acceptance. All three
+immutable outputs and live readbacks match. Preserve 2258 prior global holds,
+383 attempts, reviewer scope and unlimited access; 45 focused tests pass.
+Protected sync/API/Study healthy, Oracle timer active, no service changes.
+
+Queue: 59 published, 10 not-needed, 992 pending, 5 unresolved,
+no active packet. Historical source/option repairs and exact-key notices remain;
+keep 2012/2013 deferred and original simulation gated. Receipt: `docs/sources/mcs-publication-20261115.json`.

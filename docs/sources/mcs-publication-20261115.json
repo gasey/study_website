@@ -1,0 +1,502 @@
+{
+  "checked_at": "2026-11-14T20:50:13.225336+00:00",
+  "status": "three-explanation-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Three explanation-only publications. No new source, answer/key, scoring/hold, taxonomy, account, or original mapping changes. Two private unresolved explanation outcomes.",
+  "attribution": "Codex manual drafts and separate same-agent source/reasoning checks. No independent reviewer, second model or peer sign-off asserted.",
+  "explanation_publications": {
+    "checked_at": "2026-11-14T20:50:13.225336+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "15314554d8569693328e7a86c7a617d6d0850fcbe36487b418510d6d60ceb80d",
+    "after_packet_bank_sha256": "f71cbc21b21ef1ffa0e997da84a890cbc421537b6d06d3fa63ff8c1fe2618c6a",
+    "current_bank_sha256_observed": "f71cbc21b21ef1ffa0e997da84a890cbc421537b6d06d3fa63ff8c1fe2618c6a",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_6006d50bfd4e420d9d9f6be6ee399447",
+          "input_sha256": "15314554d8569693328e7a86c7a617d6d0850fcbe36487b418510d6d60ceb80d",
+          "output_sha256": "c735d5d2c7e5c39fd195d7e74a81e4cffc454ef98655c0df0f46d908881b12b9",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_a8ae846fadda41f1890937ec5e83c5c9",
+          "input_sha256": "c735d5d2c7e5c39fd195d7e74a81e4cffc454ef98655c0df0f46d908881b12b9",
+          "output_sha256": "03a95a646118c393e282641e0b71da556c70102c888381f3196820647b2e8c8a",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_662d428d1a964779ab46df17ca484449",
+          "input_sha256": "03a95a646118c393e282641e0b71da556c70102c888381f3196820647b2e8c8a",
+          "output_sha256": "f71cbc21b21ef1ffa0e997da84a890cbc421537b6d06d3fa63ff8c1fe2618c6a",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "f71cbc21b21ef1ffa0e997da84a890cbc421537b6d06d3fa63ff8c1fe2618c6a",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_29f4f34b70762ae7",
+        "appearance_id": "1c4c304a75d8b21afd38",
+        "publication_id": "pub_6006d50bfd4e420d9d9f6be6ee399447",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "qnum": "39",
+        "page": 5,
+        "explanation": "Apply the printed test: a strong argument must be important and directly relevant to the decision. Argument I claims that capital punishment is the only way to eliminate the crime, without supporting that absolute claim. Argument II raises a serious possible consequence for victims, which is directly relevant to evaluating the proposed punishment. This explains the paper's keyed choice B, only argument II is strong.\n\nHere “strong” is the exercise's relevance judgement. It does not establish that the predicted consequence will occur or prove an empirical claim about deterrence.",
+        "source_fingerprint_before": "0f21e90d000f4e683527cec5f9875a43a3e95c266bdb443f0ea87c64e81f0612",
+        "source_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_2bd6b8317470ab26",
+        "appearance_id": "20b6219535c4e9da1313",
+        "publication_id": "pub_a8ae846fadda41f1890937ec5e83c5c9",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "qnum": "78",
+        "page": 7,
+        "explanation": "The recorded official-key answer is A, microwave. Ionization means removing an electron from an atom or molecule. Microwave radiation has insufficient photon energy to do this; beta particles and gamma rays are ionizing forms of radiation. [EPA: Radiation Basics](https://www.epa.gov/radiation/radiation-basics).\n\nThe UV option needs a caveat: “UV rays” covers a range of energies. CDC places the ionizing/non-ionizing boundary within the ultraviolet region and identifies UV reaching Earth's surface as non-ionizing. The question therefore leaves the UV wavelength unspecified; do not learn that all UV is ionizing or infer that A is the only scientifically defensible non-ionizing choice from this wording alone. This clarification retains the historical key. [CDC: About Non-Ionizing Radiation](https://www.cdc.gov/radiation-health/about/non-ionizing-radiation.html).",
+        "source_fingerprint_before": "894324be2a0597f3580c7f66fb579f5a931890a89a300d8574c6219b451ab4c5",
+        "source_pdf_sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_2d5edde37e5740a3",
+        "appearance_id": "b0a8a849daf670af82e1",
+        "publication_id": "pub_662d428d1a964779ab46df17ca484449",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "qnum": "47",
+        "page": 5,
+        "explanation": "The paper's recorded official-key answer is D, Autonomous District Council. The distinction is between the Panchayat/Municipality framework and the separate Sixth Schedule arrangements. Part IX provides for Panchayats, while Part IXA provides for Municipalities, including Municipal Councils and Municipal Corporations. Sixth Schedule District Councils administer autonomous districts under a different constitutional framework.\n\nThe question's wording is broad: it should not be read as saying that Autonomous District Councils have no self-governing role. Their separate constitutional status explains the contrast intended by the keyed answer; they are not simply another type of Panchayat or Municipality. See Articles 243B and 243Q and Sixth Schedule paragraph 2(4) in the [Constitution of India](https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf).",
+        "source_fingerprint_before": "8c31849d3adde617d5b850e39dfabf13b9d563c2070c4f71e0c33239fd3275ce",
+        "source_pdf_sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_6006d50bfd4e420d9d9f6be6ee399447",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "1c4c304a75d8b21afd38",
+            "page": 5,
+            "qnum": "39",
+            "type": "mcq",
+            "options": [
+              "only argument I is strong",
+              "only argument II is strong",
+              "neither I nor II is strong",
+              "both I and II are strong"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+            "direction": "Directions for Questions No. 39 - 43: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": "Apply the printed test: a strong argument must be important and directly relevant to the decision. Argument I claims that capital punishment is the only way to eliminate the crime, without supporting that absolute claim. Argument II raises a serious possible consequence for victims, which is directly relevant to evaluating the proposed punishment. This explains the paper's keyed choice B, only argument II is strong.\n\nHere “strong” is the exercise's relevance judgement. It does not establish that the predicted consequence will occur or prove an empirical claim about deterrence.",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "1c4c304a75d8b21afd38",
+            "page": 5,
+            "qnum": "39",
+            "type": "mcq",
+            "options": [
+              "only argument I is strong",
+              "only argument II is strong",
+              "neither I nor II is strong",
+              "both I and II are strong"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+            "direction": "Directions for Questions No. 39 - 43: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "15314554d8569693328e7a86c7a617d6d0850fcbe36487b418510d6d60ceb80d",
+          "appearance_id": "1c4c304a75d8b21afd38",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "1c4caec5628ea7c729e45300ae0e410c0147a1c7c73095d7e2808eebe16d3340",
+          "output_sha256": "c735d5d2c7e5c39fd195d7e74a81e4cffc454ef98655c0df0f46d908881b12b9",
+          "publication_id": "pub_6006d50bfd4e420d9d9f6be6ee399447"
+        }
+      },
+      {
+        "id": "pub_662d428d1a964779ab46df17ca484449",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "b0a8a849daf670af82e1",
+            "page": 5,
+            "qnum": "47",
+            "type": "mcq",
+            "options": [
+              "Panchayati Raj Institution",
+              "Municipal Council",
+              "Municipal Corporation",
+              "Autonomous District Council"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "Which one is not a Local Self Government?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": "The paper's recorded official-key answer is D, Autonomous District Council. The distinction is between the Panchayat/Municipality framework and the separate Sixth Schedule arrangements. Part IX provides for Panchayats, while Part IXA provides for Municipalities, including Municipal Councils and Municipal Corporations. Sixth Schedule District Councils administer autonomous districts under a different constitutional framework.\n\nThe question's wording is broad: it should not be read as saying that Autonomous District Councils have no self-governing role. Their separate constitutional status explains the contrast intended by the keyed answer; they are not simply another type of Panchayat or Municipality. See Articles 243B and 243Q and Sixth Schedule paragraph 2(4) in the [Constitution of India](https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf).",
+            "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-polity",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "b0a8a849daf670af82e1",
+            "page": 5,
+            "qnum": "47",
+            "type": "mcq",
+            "options": [
+              "Panchayati Raj Institution",
+              "Municipal Council",
+              "Municipal Corporation",
+              "Autonomous District Council"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "Which one is not a Local Self Government?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": "images/page-renders/51f735557a27c1788da0b0542597357bcfaed8e09d013f47572741311fdcc473.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-polity",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "03a95a646118c393e282641e0b71da556c70102c888381f3196820647b2e8c8a",
+          "appearance_id": "b0a8a849daf670af82e1",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "ed5609c37de541c53ed3bed9919d611b301017c63a36737fbbaa0b7ad91b6fd4",
+          "output_sha256": "f71cbc21b21ef1ffa0e997da84a890cbc421537b6d06d3fa63ff8c1fe2618c6a",
+          "publication_id": "pub_662d428d1a964779ab46df17ca484449"
+        }
+      },
+      {
+        "id": "pub_a8ae846fadda41f1890937ec5e83c5c9",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "20b6219535c4e9da1313",
+            "page": 7,
+            "qnum": "78",
+            "type": "mcq",
+            "options": [
+              "Microwave",
+              "UV rays",
+              "Beta rays",
+              "Gamma rays"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "Which one of the following is not ionizing in nature?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 0,
+            "explanation": "The recorded official-key answer is A, microwave. Ionization means removing an electron from an atom or molecule. Microwave radiation has insufficient photon energy to do this; beta particles and gamma rays are ionizing forms of radiation. [EPA: Radiation Basics](https://www.epa.gov/radiation/radiation-basics).\n\nThe UV option needs a caveat: “UV rays” covers a range of energies. CDC places the ionizing/non-ionizing boundary within the ultraviolet region and identifies UV reaching Earth's surface as non-ionizing. The question therefore leaves the UV wavelength unspecified; do not learn that all UV is ionizing or infer that A is the only scientifically defensible non-ionizing choice from this wording alone. This clarification retains the historical key. [CDC: About Non-Ionizing Radiation](https://www.cdc.gov/radiation-health/about/non-ionizing-radiation.html).",
+            "figureImage": "images/page-renders/0b48f47a4f79f5030e3ab834d14771737818e429556c3324c5bf664a84b861cd.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "science/physics",
+              "subject_id": "science",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "20b6219535c4e9da1313",
+            "page": 7,
+            "qnum": "78",
+            "type": "mcq",
+            "options": [
+              "Microwave",
+              "UV rays",
+              "Beta rays",
+              "Gamma rays"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "Which one of the following is not ionizing in nature?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 0,
+            "explanation": null,
+            "figureImage": "images/page-renders/0b48f47a4f79f5030e3ab834d14771737818e429556c3324c5bf664a84b861cd.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "science/physics",
+              "subject_id": "science",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "c735d5d2c7e5c39fd195d7e74a81e4cffc454ef98655c0df0f46d908881b12b9",
+          "appearance_id": "20b6219535c4e9da1313",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "2d7df52f28424669cb7eb2a3ec8c0c7dbede0c9dde0aeebb54ca359fd83ea8ad",
+          "output_sha256": "03a95a646118c393e282641e0b71da556c70102c888381f3196820647b2e8c8a",
+          "publication_id": "pub_a8ae846fadda41f1890937ec5e83c5c9"
+        }
+      }
+    ],
+    "previous_holds_checked": 2258,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 383,
+        "current_rows": 383,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 0,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-14T20:50:13.225436+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 992,
+        "published": 59,
+        "unresolved": 5
+      },
+      "active": []
+    },
+    "not_needed": []
+  },
+  "reference_evidence": {
+    "cq_29f4f34b70762ae7": [
+      {
+        "kind": "reasoning",
+        "note": "Inspected exact A-series p5 Q39 with restored common strong/weak rubric. Reject I’s unsupported only-way claim; II offers a serious directly relevant possible adverse consequence. Explain exam relevance only, with no legal recommendation, deterrence statistic or asserted causal truth. Existing B unchanged."
+      }
+    ],
+    "cq_2bd6b8317470ab26": [
+      {
+        "kind": "reference",
+        "url": "https://www.epa.gov/radiation/radiation-basics",
+        "note": "Inspected EPA Radiation Basics: microwaves non-ionizing, beta particles/gamma ionizing. Supports physical distinction only; no exposure advice."
+      },
+      {
+        "kind": "reference",
+        "url": "https://www.cdc.gov/radiation-health/about/non-ionizing-radiation.html",
+        "note": "Inspected CDC updated15June2026: ionizing boundary in UV region; UV reaching Earth surface non-ionizing. Retain explicit ambiguity of wavelength-unspecified UV option and original A; no claim of uniquely scientifically valid choice or new answer acceptance."
+      }
+    ],
+    "cq_2d5edde37e5740a3": [
+      {
+        "kind": "reference",
+        "url": "https://www.legislative.gov.in/static/uploads/2025/07/359f70a69695affb9d72f8393102bd2e.pdf",
+        "note": "Inspected official English-Kannada Constitution as on11November2025, English text Articles243B,243Q and Sixth Schedule paragraph2(4); read relevant provisions. Distinguishes Panchayats/Municipalities from autonomous district administration. Broad local-self-government wording caveat explicit; retain D without asserting ADC lacks autonomy or new legal change."
+      }
+    ]
+  },
+  "current_affairs_outcome": "Static reasoning/physical and constitutional distinctions. Inspected current primary reference material but no newly effective event/fact relevant to the historical answers was established; no unrelated dated current-affairs revision or claim of unchanged law. The 2026 CDC/EPA and 2025 constitutional edition are reference snapshots, not asserted latest news.",
+  "unresolved_explanations_this_packet": [
+    {
+      "canonical_id": "cq_29ec45cc65f61874",
+      "source_fingerprint": "cf1c7201928eacef1d392d5a2a9f7e04147659f1bb2d30f27862b3daf3e22bb6",
+      "reason": "Re-inspected 2023 II A p6 Q47 after exact common family passage/directions restoration. Key C is preserved. The passage does not explicitly identify the married pairs or all parent links; deriving P as Q’s wife relies on a conventional three-generation family arrangement beyond the printed relationships. No unique deductive derivation established from current evidence. Keep explanation unavailable rather than inventing a family tree. Dedicated answer review may inspect the assumptions separately; no scoring restriction or answer changed here."
+    },
+    {
+      "canonical_id": "cq_2b4150450dfc6802",
+      "source_fingerprint": "6232bd108e8cdc9bc2c89abfa91ecc076d0e869f33154f6b65f900615b937282",
+      "reason": "Re-inspected 2023 II B p8 Q59 after exact prayer passage/directions restoration. Stored official D preserved. The passage attributes coping benefits to prayer without expressly discussing miracles; distinguishing definitely false from data inadequate needs additional reasoning evidence. Do not convert silence into contradiction or assert a theological fact to rationalize a key. Explanation unavailable with current evidence; source restoration complete, answer review separate."
+    }
+  ],
+  "queue_after_refresh": {
+    "at": "2026-11-14T20:49:30.348265+00:00",
+    "counts": {
+      "not-needed": 10,
+      "pending": 992,
+      "published": 59,
+      "unresolved": 5
+    },
+    "active": []
+  },
+  "validation": {
+    "checked_at": "2026-11-14T20:49:46.954708+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : f71cbc21b21e…  82383 questions\nserver bank : f71cbc21b21e…  82383 questions  (last sync 2026-11-14 20:48)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "inactive",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13899
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-14T20:49:30.348265+00:00",
+      "counts": {
+        "not-needed": 10,
+        "pending": 992,
+        "published": 59,
+        "unresolved": 5
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 52
+    },
+    {
+      "status": "live",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2944
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 992,
+    "unresolved_explanations": 5,
+    "specific_limits": "Family question still requires unstated relationship assumptions. Prayer/miracles conclusion needs evidence distinguishing definite falsity from inadequate data. Retain keys; no invented derivation or automatic answer/hold change. Radiation UV and broad local-self-government wording caveats now public; dedicated answer review remains separate.",
+    "historical_source_repairs": "2016 I C duplicate printed Q4/Q86 identities; missing 2014 II Q39 figure; held 2023 II B Q99 radical/options. Use guarded workflows.",
+    "source_notices": "Inspect exact official key mappings before reconciling pending-key notices.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

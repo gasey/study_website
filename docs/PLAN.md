@@ -670,3 +670,14 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261113.json`.
 - [ ] Historical source/option repairs and exact-key notices remain; keep 2012/2013 deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261114.json`.
+
+
+## 15 November — MCS continuation
+
+- [x] Publish exact-readback explanations for 2023 II A Q39, I C Q78 and I C Q47 with real task/UV/ADC caveats.
+- [x] Record II A Q47 and II B Q59 explanation limitations without inventing deductions or changing keys/holds.
+- [x] Verify three immutable outputs/live readbacks, 2258 prior global holds, 383 attempts, reviewer scope and unlimited access; 45 focused tests pass.
+- [ ] Continue 992 candidates selectively; preserve 5 unresolved explanations. No active packet.
+- [ ] Historical source/option repairs and exact-key notices remain; keep 2012/2013 deferred and original simulation gated.
+
+Receipt/checkpoint: `docs/sources/mcs-publication-20261115.json`.

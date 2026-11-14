@@ -9448,3 +9448,41 @@ Queue: 56 published, 10 not-needed, 997 pending, 3 unresolved,
 no active packet. Historical identity/figure/radical repairs and exact-key notices
 remain; keep 2012/2013 deferred and original simulation gated. Receipt/checkpoint:
 `docs/sources/mcs-publication-20261114.json`; private proof `reports/mcs-continue-20261114/`.
+
+
+## 15 November 2026 — MCS explanation limits and conceptual caveats
+
+Published three checked explanations: 2023 II A Q39 applies the restored
+strong/weak-argument relevance rubric without asserting an empirical deterrence
+claim; I C Q78 distinguishes non-ionizing microwaves from beta/gamma radiation
+while explicitly retaining the unspecified-UV ambiguity; I C Q47 explains the
+Panchayat/Municipality versus Sixth Schedule framework and does not deny ADC
+self-government. Primary EPA/CDC and official constitutional provisions inspected.
+Recorded official keys remain unchanged; none of these explanation publications
+is a new answer/key verification, scoring decision or source-notice correction.
+
+Two restored reasoning questions remain explanation-unavailable: II A Q47 does
+not explicitly state all marriage/parent links needed for a unique family-tree
+derivation; II B Q59's passage does not expressly settle miracles and therefore
+needs evidence to distinguish definitely false from inadequate data. Preserve
+their keys and record the concrete limitations privately, without invented
+family trees or theology. Dedicated answer review remains separate. No source
+repair, classification change, dated current-affairs revision or simulation enabled.
+
+All three publications applied and live snapshots/storage/public question
+readbacks match. Immutable outputs reconstructed from hash-checked input backups
+prove target explanation/pointer changes only. 2258 prior global scoring holds,
+383 learner attempts, reviewer assignments/grants and unlimited access preserved.
+No peer votes, credits, quota exceptions, synthetic attempts, answer reveals,
+external provider calls, API/frontend deployment or schema/enforcement changes.
+45 focused tests pass. Protected bank/taxonomy sync and API/Study healthy;
+normal Oracle publisher timer active. Wakeup service observed
+`inactive`; this continuation changed no service state.
+No exports remain for this packet; shared exports observed: 0.
+
+Queue: 59 published, 10 not-needed, 992 pending, 5 unresolved,
+no active packet. Structural MCS hold/defect counts are an inventory, not full
+review certification. Historical source identity/figure/radical repairs and
+exact-key notices remain. Keep 2012/2013 recovery deferred and original
+simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261115.json`;
+private proof `reports/mcs-continue-20261115/`.
