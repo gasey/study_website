@@ -1,0 +1,985 @@
+{
+  "checked_at": "2026-11-15T20:55:51.676718+00:00",
+  "status": "five-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Three explanation publications, one source-reference physical-page locator correction, one separate shared-direction transcription on the same exact B-series Q52 appearance, one private explanation-not-needed disposition. Answers/provenance, printed numbering/identities, options, classifications, scoring holds, accounts and learner history preserved.",
+  "attribution": "Codex manual drafts and separate same-agent source/reasoning checks. No independent reviewer, peer sign-off or second-model claimed.",
+  "explanation_publications": {
+    "checked_at": "2026-11-15T20:50:25.422353+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "4a038c41dc729008cae0b2dac4bed7e9c95c915d967a05b8dc2df2af4254c956",
+    "after_packet_bank_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+    "current_bank_sha256_observed": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_7c0e18f9501e4fe9bea8c3582a0eab03",
+          "input_sha256": "4a038c41dc729008cae0b2dac4bed7e9c95c915d967a05b8dc2df2af4254c956",
+          "output_sha256": "9ecfd79dbd5fac3fc12f2f188e69f47956d991f123537e4ba94cbee572416b13",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_550e61a131e2460ca49231dc017186cd",
+          "input_sha256": "9ecfd79dbd5fac3fc12f2f188e69f47956d991f123537e4ba94cbee572416b13",
+          "output_sha256": "a92599d30646b5e2d1af5e7d7aff39c7fa702296422f3f0359d2a160a0b2e819",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_3391ad6556bd41a3bd30a9253c848099",
+          "input_sha256": "a92599d30646b5e2d1af5e7d7aff39c7fa702296422f3f0359d2a160a0b2e819",
+          "output_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_3222ae05011abeb9",
+        "appearance_id": "d47226f0b4191a3d3b56",
+        "publication_id": "pub_7c0e18f9501e4fe9bea8c3582a0eab03",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "qnum": "32",
+        "page": 4,
+        "explanation": "C, non-verbal communication skills, is the intended answer. Gestures, eye contact, posture and personal distance can be interpreted differently across cultures, so a signal meant as respectful in one setting may be misunderstood in another. Attend to the person's context rather than assuming a gesture has one universal meaning. This does not mean culture is irrelevant to empathy, listening or persuasion; the question highlights the cultural interpretation of non-verbal signals. [CBSE, Non-verbal communication across cultures](https://cbseacademic.nic.in/web_material/Curriculum20/publication/srsec/employability-XI.pdf).",
+        "source_fingerprint_before": "55bd4e2b0cafef5013e1d88897d970fe5567cf71c4e0f64daff81f7666e1388c",
+        "source_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_34e520c475210759",
+        "appearance_id": "f0f0bb8162b476c4d1e0",
+        "publication_id": "pub_550e61a131e2460ca49231dc017186cd",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+        "qnum": "31",
+        "page": 3,
+        "explanation": "D, 6.5°C per 1,000 metres, is the standard tropospheric lapse rate intended here. Equivalently, temperature falls by about 0.65°C per 100 metres. For example, a 2 km height increase corresponds to a 13°C decrease in this model.\n\nThis is a standard-atmosphere approximation, not a fixed rule for every place, weather condition or atmospheric layer. Actual temperature profiles vary and can include inversions. It also differs from the dry adiabatic rate of about 9.8°C/km for an unsaturated rising air parcel. [FAA, Aviation Weather, Table 1-2](https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00-6B.pdf); [National Weather Service glossary](https://marine.weather.gov/glossary.php?word=lapse+rate).",
+        "source_fingerprint_before": "964844b04983c697b54fe08ef1e89cc83347ff569f70f608d9cb5e7667036839",
+        "source_pdf_sha256": "b48ee8b3b35f7b3f6f05ee7055fbc4249524eee007114f7175748dbd6eab8c01",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_35106f07bfbfc65f",
+        "appearance_id": "5362b08f57b919af4082",
+        "publication_id": "pub_3391ad6556bd41a3bd30a9253c848099",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "qnum": "67",
+        "page": 6,
+        "explanation": "B, biological treatment. Wastewater passes over a supporting medium coated with a film of microorganisms. These organisms break down organic matter, making a trickling filter an attached-growth biological process. The name “filter” can mislead: the principal treatment action is microbial degradation, rather than simply straining solids mechanically. Biological growth that detaches from the medium is subsequently removed in a clarifier. [EPA, Wastewater Technology Fact Sheet: Trickling Filters](https://www.epa.gov/system/files/documents/2022-10/trickling-filters-factsheet.pdf).",
+        "source_fingerprint_before": "b87288e4130781f35909f1d7e8b3239532cefee09c4a9b831f0a62e3760f64e2",
+        "source_pdf_sha256": "ea98579ba44d7695518b766693f34c461f587c59c24bb797cfa6b787d5e86e66",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_3391ad6556bd41a3bd30a9253c848099",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "5362b08f57b919af4082",
+            "page": 6,
+            "qnum": "67",
+            "type": "mcq",
+            "options": [
+              "Mechanical treatment",
+              "Biological treatment",
+              "Advanced treatment",
+              "All of the above"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "Trickling Filter is used in following process of wastewater treatment plant.",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": "B, biological treatment. Wastewater passes over a supporting medium coated with a film of microorganisms. These organisms break down organic matter, making a trickling filter an attached-growth biological process. The name “filter” can mislead: the principal treatment action is microbial degradation, rather than simply straining solids mechanically. Biological growth that detaches from the medium is subsequently removed in a clarifier. [EPA, Wastewater Technology Fact Sheet: Trickling Filters](https://www.epa.gov/system/files/documents/2022-10/trickling-filters-factsheet.pdf).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/environment",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "5362b08f57b919af4082",
+            "page": 6,
+            "qnum": "67",
+            "type": "mcq",
+            "options": [
+              "Mechanical treatment",
+              "Biological treatment",
+              "Advanced treatment",
+              "All of the above"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "Trickling Filter is used in following process of wastewater treatment plant.",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/environment",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "a92599d30646b5e2d1af5e7d7aff39c7fa702296422f3f0359d2a160a0b2e819",
+          "appearance_id": "5362b08f57b919af4082",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "b7abf2b288d75800456d556f5c3a02268532724dff051b67433d1d6943aa5c14",
+          "output_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+          "publication_id": "pub_3391ad6556bd41a3bd30a9253c848099"
+        }
+      },
+      {
+        "id": "pub_550e61a131e2460ca49231dc017186cd",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "f0f0bb8162b476c4d1e0",
+            "page": 3,
+            "qnum": "31",
+            "type": "mcq",
+            "options": [
+              "5°C per 1000 meters",
+              "5.5°C per 1000 meters",
+              "6°C per 1000 meters",
+              "6.5°C per 1000 meters"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "On an average the temperature decreases with altitude at the rate of:",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": "D, 6.5°C per 1,000 metres, is the standard tropospheric lapse rate intended here. Equivalently, temperature falls by about 0.65°C per 100 metres. For example, a 2 km height increase corresponds to a 13°C decrease in this model.\n\nThis is a standard-atmosphere approximation, not a fixed rule for every place, weather condition or atmospheric layer. Actual temperature profiles vary and can include inversions. It also differs from the dry adiabatic rate of about 9.8°C/km for an unsaturated rising air parcel. [FAA, Aviation Weather, Table 1-2](https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00-6B.pdf); [National Weather Service glossary](https://marine.weather.gov/glossary.php?word=lapse+rate).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/geography",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "f0f0bb8162b476c4d1e0",
+            "page": 3,
+            "qnum": "31",
+            "type": "mcq",
+            "options": [
+              "5°C per 1000 meters",
+              "5.5°C per 1000 meters",
+              "6°C per 1000 meters",
+              "6.5°C per 1000 meters"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'B'..pdf",
+            "passage": null,
+            "question": "On an average the temperature decreases with altitude at the rate of:",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/geography",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "9ecfd79dbd5fac3fc12f2f188e69f47956d991f123537e4ba94cbee572416b13",
+          "appearance_id": "f0f0bb8162b476c4d1e0",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "0a242eb23cfb90ce0a477edba1f6db562460b7d639d612f9a0a95b10bacd5a96",
+          "output_sha256": "a92599d30646b5e2d1af5e7d7aff39c7fa702296422f3f0359d2a160a0b2e819",
+          "publication_id": "pub_550e61a131e2460ca49231dc017186cd"
+        }
+      },
+      {
+        "id": "pub_7c0e18f9501e4fe9bea8c3582a0eab03",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "d47226f0b4191a3d3b56",
+            "page": 4,
+            "qnum": "32",
+            "type": "mcq",
+            "options": [
+              "Empathy",
+              "Active listening",
+              "Non-verbal communication skills",
+              "Persuasion"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Cultural implications should always be considered when using",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": "C, non-verbal communication skills, is the intended answer. Gestures, eye contact, posture and personal distance can be interpreted differently across cultures, so a signal meant as respectful in one setting may be misunderstood in another. Attend to the person's context rather than assuming a gesture has one universal meaning. This does not mean culture is irrelevant to empathy, listening or persuasion; the question highlights the cultural interpretation of non-verbal signals. [CBSE, Non-verbal communication across cultures](https://cbseacademic.nic.in/web_material/Curriculum20/publication/srsec/employability-XI.pdf).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "d47226f0b4191a3d3b56",
+            "page": 4,
+            "qnum": "32",
+            "type": "mcq",
+            "options": [
+              "Empathy",
+              "Active listening",
+              "Non-verbal communication skills",
+              "Persuasion"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "Cultural implications should always be considered when using",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "4a038c41dc729008cae0b2dac4bed7e9c95c915d967a05b8dc2df2af4254c956",
+          "appearance_id": "d47226f0b4191a3d3b56",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "e3da36d0f3d0538a4f49be1d5a543ef55925b3f7fcd655a2042256f3ceaa200b",
+          "output_sha256": "9ecfd79dbd5fac3fc12f2f188e69f47956d991f123537e4ba94cbee572416b13",
+          "publication_id": "pub_7c0e18f9501e4fe9bea8c3582a0eab03"
+        }
+      }
+    ],
+    "previous_holds_checked": 2335,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 387,
+        "current_rows": 387,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 1,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-15T20:50:25.422485+00:00",
+      "counts": {
+        "not-needed": 11,
+        "pending": 987,
+        "published": 62,
+        "unresolved": 6
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_2d8040d02265c921",
+        "reason": "Inspected exact 2023 I C p3 Q30 and all four mineral choices. Direct place/mineral recall with existing official answer; extra prose would repeat the answer rather than explain a method. No new geology assertion, key-document acceptance or sibling-series coverage claimed.",
+        "source_fingerprint": "37758946236f53f9455139557691dd102f7d68017a7236d9a8fdb664e81c10f8"
+      }
+    ]
+  },
+  "source_publications": [
+    {
+      "checked_at": "2026-11-15T20:52:17.803229+00:00",
+      "status": "applied-and-live-verified",
+      "publication": {
+        "id": "pub_4f4420e39ef540618a1fbaefd5ee1a4d",
+        "state": "applied",
+        "error": null
+      },
+      "proposal": {
+        "kind": "source_reference",
+        "canonical_id": "cq_2dcc37f84b2f4799",
+        "appearance_id": "e0a1c6ea95392ba2a279",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Correct MCS2023 II B Q52 locator",
+        "patch": {
+          "page": 7
+        },
+        "rationale": "Visually inspected exact registered B-series physical pages7 and8: Q52 with all choices and Q52–56 strong/weak rubric is printed onp7; p8 startsQ53. Correct the stored physical locator8 to7 only, without changing printedQ52 or question identity. Preserve original question/options, answer/key provenance, classification, images, scoring holds, access and learner/reviewer history. No new answer acceptance, empirical criminal-justice claim, sibling-coverage or whole-paper certification.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+            "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+            "page": 7,
+            "note": "Visually inspected exact B-series physicalp7: shared Q52–56 rubric plus Q52 and all choices. Source appearance retains printed Q52."
+          },
+          {
+            "kind": "paper",
+            "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+            "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+            "page": 8,
+            "note": "Visually inspected physicalp8 beginsQ53, confirming stored page8 is not Q52 location."
+          }
+        ]
+      },
+      "source_before": {
+        "record": {
+          "id": "e0a1c6ea95392ba2a279",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 8,
+          "qnum": "52",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "e0a1c6ea95392ba2a279",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 7,
+          "qnum": "52",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "historical_proof": {
+        "input_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+        "output_sha256": "74228cae9c05cc0fcad8481baba79143af763f942dfd9bd86e03425e2f8f140b",
+        "only_target_fields_changed": [
+          "page",
+          "reviewPublicationId"
+        ],
+        "exact_historical_output_reconstructed": true,
+        "shared_batch_id": null,
+        "shared_batch_publications": 1,
+        "other_batch_members_not_attributed_to_this_packet": false
+      },
+      "receipt": {
+        "after": {
+          "id": "e0a1c6ea95392ba2a279",
+          "page": 7,
+          "qnum": "52",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "e0a1c6ea95392ba2a279",
+          "page": 8,
+          "qnum": "52",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "5d46c1b38744c5037734d92df41f3964e5a565947b7ae62271debffb109a9af3",
+        "appearance_id": "e0a1c6ea95392ba2a279",
+        "before_fields": {
+          "page": 8
+        },
+        "manifest_hash": "e890575c4e03a8a1592f461177957748df8b54bae441b399711fa8d460c4fc9f",
+        "output_sha256": "74228cae9c05cc0fcad8481baba79143af763f942dfd9bd86e03425e2f8f140b",
+        "publication_id": "pub_4f4420e39ef540618a1fbaefd5ee1a4d"
+      },
+      "public_patched_fields_match": true,
+      "workflow_preservation": {
+        "attempts": {
+          "previous_rows": 387,
+          "current_rows": 387,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignments": {
+          "previous_rows": 2,
+          "current_rows": 2,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignment_papers": {
+          "previous_rows": 78,
+          "current_rows": 78,
+          "previous_rows_unchanged": true
+        },
+        "editorial_checks": {
+          "previous_rows": 0,
+          "current_rows": 0,
+          "previous_rows_unchanged": true
+        },
+        "review_grants": {
+          "previous_rows": 3,
+          "current_rows": 3,
+          "previous_rows_unchanged": true
+        }
+      },
+      "previous_holds_preserved": 2335,
+      "owner_unlimited": true,
+      "flags": {
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0
+      },
+      "current_bank_sha256_observed": "74228cae9c05cc0fcad8481baba79143af763f942dfd9bd86e03425e2f8f140b",
+      "pending_exports_global_observed": 0,
+      "ordinary_staff_limit": null,
+      "learner_daily_limit": 30
+    },
+    {
+      "checked_at": "2026-11-15T20:55:26.232572+00:00",
+      "status": "applied-and-live-verified",
+      "publication": {
+        "id": "pub_0216934f23f74d2b984e45dd9990ec67",
+        "state": "applied",
+        "error": null
+      },
+      "proposal": {
+        "kind": "transcription",
+        "canonical_id": "cq_2dcc37f84b2f4799",
+        "appearance_id": "e0a1c6ea95392ba2a279",
+        "subject_id": "reasoning-and-aptitude",
+        "title": "Correct MCS2023 II B Q52 direction",
+        "patch": {
+          "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer"
+        },
+        "rationale": "Visually inspected exact registered B-series physical pages7 and8: Q52 with all choices and Q52–56 strong/weak rubric is printed onp7; p8 startsQ53. Restore the exact shared rubric only, with line wraps normalized, against the already-corrected page7 source locator. Preserve original question/options, answer/key provenance, classification, images, scoring holds, access and learner/reviewer history. No new answer acceptance, empirical criminal-justice claim, sibling-coverage or whole-paper certification.",
+        "evidence": [
+          {
+            "kind": "paper",
+            "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+            "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+            "page": 7,
+            "note": "Visually inspected exact B-series physicalp7: shared Q52–56 rubric plus Q52 and all choices. Source appearance retains printed Q52."
+          },
+          {
+            "kind": "paper",
+            "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+            "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+            "page": 8,
+            "note": "Visually inspected physicalp8 beginsQ53, confirming stored page8 is not Q52 location."
+          }
+        ]
+      },
+      "source_before": {
+        "record": {
+          "id": "e0a1c6ea95392ba2a279",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": null,
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 7,
+          "qnum": "52",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "source_after": {
+        "record": {
+          "id": "e0a1c6ea95392ba2a279",
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "type": "mcq",
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "answerIndex": 1,
+          "answerSource": "official",
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "explanation": null,
+          "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+          "questionMarkup": null,
+          "optionsMarkup": null,
+          "passage": null,
+          "difficulty": "medium",
+          "page": 7,
+          "qnum": "52",
+          "hasDiagram": false,
+          "figureImage": null,
+          "classification": {
+            "subject_id": "reasoning-and-aptitude",
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subtopic_id": null
+          }
+        },
+        "metadata": {
+          "sourceDefect": null,
+          "disputeNote": null
+        },
+        "paper": {
+          "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "title": "Civil Service Examination Paper-II (B)",
+          "year": 2023,
+          "series": null,
+          "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+        }
+      },
+      "historical_proof": {
+        "input_sha256": "74228cae9c05cc0fcad8481baba79143af763f942dfd9bd86e03425e2f8f140b",
+        "output_sha256": "5a61f9abcd8bc7c22b53fd6efbe867420e1187b1cdca2205088f66bfcaa1970c",
+        "only_target_fields_changed": [
+          "direction",
+          "reviewPublicationId"
+        ],
+        "exact_historical_output_reconstructed": true,
+        "shared_batch_id": null,
+        "shared_batch_publications": 1,
+        "other_batch_members_not_attributed_to_this_packet": false
+      },
+      "receipt": {
+        "after": {
+          "id": "e0a1c6ea95392ba2a279",
+          "page": 7,
+          "qnum": "52",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "before": {
+          "id": "e0a1c6ea95392ba2a279",
+          "page": 7,
+          "qnum": "52",
+          "type": "mcq",
+          "options": [
+            "only argument I is strong",
+            "only argument II is strong",
+            "neither I nor II is strong",
+            "both I and II are strong"
+          ],
+          "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+          "passage": null,
+          "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+          "direction": null,
+          "difficulty": "medium",
+          "hasDiagram": false,
+          "answerIndex": 1,
+          "explanation": null,
+          "figureImage": null,
+          "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+          "answerSource": "official",
+          "optionsMarkup": null,
+          "classification": {
+            "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+            "subject_id": "reasoning-and-aptitude",
+            "subtopic_id": null
+          },
+          "questionMarkup": null
+        },
+        "input_sha256": "74228cae9c05cc0fcad8481baba79143af763f942dfd9bd86e03425e2f8f140b",
+        "appearance_id": "e0a1c6ea95392ba2a279",
+        "before_fields": {
+          "direction": null
+        },
+        "manifest_hash": "89557d5c7e81ed981bc13dd705e21e3cf733fc737c850038f9998ead05a5e40b",
+        "output_sha256": "5a61f9abcd8bc7c22b53fd6efbe867420e1187b1cdca2205088f66bfcaa1970c",
+        "publication_id": "pub_0216934f23f74d2b984e45dd9990ec67"
+      },
+      "public_patched_fields_match": true,
+      "workflow_preservation": {
+        "attempts": {
+          "previous_rows": 387,
+          "current_rows": 387,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignments": {
+          "previous_rows": 2,
+          "current_rows": 2,
+          "previous_rows_unchanged": true
+        },
+        "editorial_assignment_papers": {
+          "previous_rows": 78,
+          "current_rows": 78,
+          "previous_rows_unchanged": true
+        },
+        "editorial_checks": {
+          "previous_rows": 0,
+          "current_rows": 0,
+          "previous_rows_unchanged": true
+        },
+        "review_grants": {
+          "previous_rows": 3,
+          "current_rows": 3,
+          "previous_rows_unchanged": true
+        }
+      },
+      "previous_holds_preserved": 2335,
+      "owner_unlimited": true,
+      "flags": {
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0
+      },
+      "current_bank_sha256_observed": "5a61f9abcd8bc7c22b53fd6efbe867420e1187b1cdca2205088f66bfcaa1970c",
+      "pending_exports_global_observed": 0,
+      "ordinary_staff_limit": null,
+      "learner_daily_limit": 30
+    }
+  ],
+  "reference_evidence": {
+    "cq_3222ae05011abeb9": [
+      {
+        "kind": "reference",
+        "url": "https://cbseacademic.nic.in/web_material/Curriculum20/publication/srsec/employability-XI.pdf",
+        "note": "Inspected CBSE XI physicalp29 worksheet2, non-verbal communication across cultures, and physicalp26 elements. Supports cultural interpretation, without country stereotypes or suggesting other skills are culture-free."
+      }
+    ],
+    "cq_34e520c475210759": [
+      {
+        "kind": "reference",
+        "url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00-6B.pdf",
+        "note": "Downloaded official FAA2016 advisory, inspected extractedtext and rendered physicalp22 Table1-2: 6.5C/1000m in troposphere; model not every layer or local weather. 2km calculation13C checked."
+      },
+      {
+        "kind": "reference",
+        "url": "https://marine.weather.gov/glossary.php?word=lapse+rate",
+        "note": "Inspected NWS definitions: environmental profile versus dry adiabatic unsaturated-parcel rate9.8C/km. Distinction retained, no weather forecast or claim of current aviation standard."
+      }
+    ],
+    "cq_35106f07bfbfc65f": [
+      {
+        "kind": "reference",
+        "url": "https://www.epa.gov/system/files/documents/2022-10/trickling-filters-factsheet.pdf",
+        "note": "Inspected original EPA832-F-00-014 September2000 physicalp1: attached-growth microbial removal of organic matter and sloughed solids clarifier removal. Biological versus mechanical distinction supported; no invented treatment efficacy/design recommendation."
+      }
+    ]
+  },
+  "current_affairs_outcome": "Static concepts only. No new dated fact/event relevant to historical answers established; no unrelated current-affairs revision, latest-report claim or claim that nothing has changed. Older FAA advisory used as a reference for standard-atmosphere physics, not current operational aviation guidance.",
+  "queue_after_source_refresh": {
+    "at": "2026-11-15T20:55:35.556231+00:00",
+    "counts": {
+      "not-needed": 11,
+      "pending": 988,
+      "published": 62,
+      "unresolved": 5
+    },
+    "active": []
+  },
+  "validation": {
+    "checked_at": "2026-11-15T20:55:51.676718+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : 5a61f9abcd8b…  82383 questions\nserver bank : 5a61f9abcd8b…  82383 questions  (last sync 2026-11-15 20:54)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "inactive",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13413
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-15T20:55:35.556231+00:00",
+      "counts": {
+        "not-needed": 11,
+        "pending": 988,
+        "published": 62,
+        "unresolved": 5
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 54
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2942
+    }
+  ],
+  "remaining": {
+    "explanation_candidates_pending": 988,
+    "unresolved_explanations": 5,
+    "b52": "Physical locator8 corrected to7, exact printedQ52 retained; Q52–56 directions restored in separate guarded publication. Explanation candidate reopened after fresh source refresh. Do not replay repairs or infer sibling coverage/new key certification.",
+    "historical_source_repairs": "2016 I C duplicate printed Q4/Q86 source identities; missing2014 II Q39 figure; held2023 II B Q99 radical/options. Dedicated guarded workflows necessary.",
+    "source_notices": "Inspect exact official-key mappings before reconciling generic pending-key notices.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

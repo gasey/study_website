@@ -9486,3 +9486,41 @@ review certification. Historical source identity/figure/radical repairs and
 exact-key notices remain. Keep 2012/2013 recovery deferred and original
 simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261115.json`;
 private proof `reports/mcs-continue-20261115/`.
+
+
+## 16 November 2026 — MCS technical explanations and source locator
+
+Published three checked explanations: 2023 II A Q32 explains cultural interpretation
+of non-verbal signals without stereotypes or implying other skills lack cultural
+context; I B Q31 explains 6.5°C/km as the standard tropospheric rate, with
+0.65°C/100m and 2km/13°C working, actual-weather/inversion limits and the
+9.8°C/km dry-parcel distinction; I D Q67 explains attached-growth microbial
+treatment in a trickling filter versus physical straining. Inspected primary
+CBSE, FAA/NWS and EPA sources. One direct Atacama recall item needs no filler.
+No new dated event/fact was established; no unrelated current-affairs revision.
+
+Exact B-series Q52 source inspection found its stored physical locator8 points
+to the page beginningQ53. Q52 and its Q52–56 rubric are on physicalp7. Corrected
+only the locator8→7 through source_reference, then restored exact shared argument
+directions through a separate transcription publication using the refreshed
+source fingerprint. PrintedQ52, booklet/appearance identity, question/options,
+answer/key provenance, classification and scoring remain intact. No sibling
+coverage, key re-verification or empirical criminal-justice claim. Explanation
+candidate reopened after fresh source refresh; do not replay either repair.
+
+All five publications applied and exact live/public readbacks match. Immutable
+outputs reconstructed from hash-checked backups prove only target explanation/
+pointer, locator/pointer or direction/pointer changes. Preserve 2335 prior global
+scoring holds, 387 learner attempts, reviewer scope/grants and unlimited access.
+No peer votes, credits, quota exceptions, synthetic learner actions, external
+provider calls, API/frontend deployment or schema/enforcement changes.
+45 focused tests pass. Protected bank/taxonomy sync and API/Study healthy;
+Oracle timer active, wakeup observed `inactive`. This continuation
+changed no service state. No packet exports remain; shared observed exports:
+0. Structural MCS inventory is not complete source/answer certification.
+
+Queue: 62 published, 11 not-needed, 988 pending, 5 unresolved,
+no active packet. Preserve prior family/prayer inference limitations; historical
+source identity/figure/radical repairs and exact-key notices remain. Keep
+2012/2013 deferred and original simulation gated. Receipt/checkpoint:
+`docs/sources/mcs-publication-20261116.json`; private proof `reports/mcs-continue-20261116/`.

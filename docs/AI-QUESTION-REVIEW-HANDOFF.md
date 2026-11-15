@@ -374,3 +374,25 @@ keep 2012/2013 deferred and original simulation gated. Receipt: `docs/sources/mc
 Do not retry the family/prayer explanations without additional reasoning evidence.
 Preserve explicit scientific/institutional ambiguity in new prose. Check fresh
 Oracle fingerprints and publication state before selecting the next packet.
+
+
+## 16 November — continuation checkpoint
+
+Three checked explanations applied (2023 II A Q32, I B Q31, I D Q67): cultural
+interpretation, standard lapse rate with limits, and biological trickling filters.
+One direct recall target needs no prose. No dated current-affairs revision.
+
+Two separate source publications correct II B Q52's physical locator8→7 and
+restore its printed Q52–56 directions. Retain printed number, exact identity,
+question/options, provenance and scoring; its explanation reopened after refresh.
+All five immutable outputs/live readbacks match. Preserve 2335 prior global
+holds, 387 attempts, reviewer scope and unlimited access. 45 tests pass;
+protected sync/API/Study healthy, Oracle timer active, no service changes.
+
+Queue: 62 published, 11 not-needed, 988 pending, 5 unresolved,
+no active packet. Preserve prior unresolved reasoning evidence gaps. Historical
+source/option repairs and exact-key notices remain; keep 2012/2013 deferred and
+original simulation gated. Receipt: `docs/sources/mcs-publication-20261116.json`.
+
+Check fresh Oracle fingerprints/export state before claiming. Do not replay the
+Q52 source corrections or transfer option letters/identity between booklets.
