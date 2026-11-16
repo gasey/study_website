@@ -1,6 +1,14 @@
 # Instructions for agents
 
 Read `CLAUDE.md` and `docs/PLAN.md` before working in this repository.
+
+For the learning/points/community/admin build (the "Finnaplan" work), the
+design authority is `docs/FINNAPLAN.md` — owner-decided 15–16 November
+2026, zero open questions. Implement in its Part V order (start V.1/V.2;
+V.0 gates apply to every phase; V.8 is the never-list). Migration
+numbering starts at the actual next free number (0090+ at time of
+writing). §5.5 (admin grants, 0089) is already deployed — do not
+re-implement it. Nothing else in that document is built.
 For question review or solving, follow `docs/QUESTION-REVIEW-RULES.md`.
 Use `docs/BANK-COMPLETION-PROMPT.md` for reusable whole-bank continuation,
 including source-checked current-affairs updates alongside historical answers.

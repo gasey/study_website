@@ -5,7 +5,11 @@ Historical logs explain past work; they do not authorize new operations.
 
 ## Start here
 
-Read this file and `docs/PLAN.md`. For question review/solving read
+Read this file and `docs/PLAN.md`. For the learning-system / points /
+community / calendar / admin-console build, `docs/FINNAPLAN.md` is the
+design authority (owner-decided, 16 November 2026); implement in its
+Part V order and respect its V.0 gates and V.8 never-list.
+For question review/solving read
 `docs/QUESTION-REVIEW-RULES.md`. Use `docs/AI-QUESTION-REVIEW-HANDOFF.md` and its
 checkpoint only for the explanation-backfill queue.
 Read the relevant specialist runbook before operating that subsystem.
