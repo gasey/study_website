@@ -872,7 +872,8 @@ self-select a discount, owner + MFA + audit on every write.
 ### 5.6 Deliberately not building
 
 - The mobile redesign's invented four-balance economy, or any coin/gem second
-  currency.
+  currency. (Points-priced cosmetics are fine and designed in §12.8 — the
+  ban is on a *second* currency, not on cosmetic spending.)
 - Badges/achievement walls — levels, titles, leagues and mastery tiers are
   enough signal; revisit only with evidence of demand.
 - Difficulty-based pay multipliers — flat rates keep the economy auditable
@@ -1254,6 +1255,66 @@ already existing and merely gathered:
 
 Nothing here invents a subsystem; the section exists so these stop being
 scattered across settings pages. Builds in V.5 alongside the boards.
+
+### 12.8 Profile edit & the cosmetics system (owner request, 16 Nov 2026)
+
+Baseline, verified in `AVATAR-EDITOR.md` + migration 0041 (live since
+2026-10-23): the v3 avatar editor at `/avatar` — seven categories, 19
+free starters, 7 level-reward unlocks, durable ownership in
+`user_avatar_items` that survives XP reversals, append-only
+`avatar_events`, `avatar_catalog.json` as the single catalog authority,
+server-side catalog-only validation, and a deliberate launch cut: **no
+coin shop, no paid cosmetics**. This section designs that deferred layer.
+
+**A. Profile edit.** Handle: unique, renameable **once per 30 days**
+(impersonation-churn guard), rename recorded as an account event. Short
+bio: 140 chars, text-only, reportable, `needs_approval` honored like any
+post. Both edit from the §12.7 identity group; avatar editing stays in
+the existing editor.
+
+**B. The points shop.** Points are the **only** purchase currency —
+§5.6 bans a second cosmetic currency and §7.3 bans cash microtransactions,
+so the sanctioned path is: catalog items gain an optional `price_points`
+(bands: common 15–30, distinctive 50–75, showpiece frames 100–150). A
+purchase is one transaction: a namespaced ledger spend row
+(`cosmetic:{user}:{item}`, per-user lock, idempotent, own-once) +
+`user_avatar_items` insert + `avatar_events` append — **zero new
+tables**. Owned is owned forever: survives downgrades, XP reversals, and
+rank is never affected (existing rules extend). The free-month meter
+shows the real balance, so buying a hat visibly sets the meter back —
+an honest, voluntary tradeoff, and a healthy points sink (currency
+leaves circulation without costing access subsidy).
+
+**C. The acquisition map** (complete; a path not listed doesn't exist):
+free starters (live) · level unlocks (live) · points shop (B) ·
+**earned-only prestige** — mastery-tier, league and cup-season items
+that can *never* be purchased and have no purchasable lookalike, so an
+earned frame stays meaningful. Decided against: **Pro-exclusive
+cosmetics** — Pro buys capacity, never identity (§7.3); a payment-status
+skin on leaderboards is soft pay-to-signal.
+
+**D. Hard rules** (the lines that keep this clean): no loot boxes or
+randomized purchases, ever — gambling-adjacent mechanics have no place
+in front of students; no FOMO scarcity — seasonal items are earned
+in-season and return in later seasons; no trading or gifting (the
+no-transfers rule); no user-uploaded art (moderation surface — the
+curated catalog is the whole inventory); cosmetics never affect
+gameplay, ranking, visibility or trust signals (tier flair stays
+visually distinct from decoration).
+
+**E. The addition system** (how new cosmetics enter): admin-curated
+only, through an **Admin → Cosmetics** console following the
+reward-catalog pattern — list, add/retire item (category, asset
+reference, `price_points` or unlock rule, active flag), optimistic
+version + reason + audit + MFA. Honest coupling note: item *data* is
+instant (catalog JSON), but new *art* is SVG geometry in the renderer,
+so genuinely new shapes ship with a frontend release — the console
+validates that an asset reference exists before an item can activate.
+Existing catalog values stay compatible (the 0041 doc's standing rule).
+
+**F. Build**: display/profile-edit pieces with V.5; the shop needs V.4's
+economy live first (spending requires the cap/ledger rewrite to be
+settled). Admin console rides V.12 with the rest of Part VI.
 
 ## 13. Proposed improvements (assistant suggestions, 16 November 2026)
 
@@ -2290,7 +2351,9 @@ Leaderboard neighborhood view (§12.2), per-mode weekly game boards
 — all display-only, reusing the existing opt-in flag. Plus the Helper
 Calendar's owned layers (§14): `calendar_entries` +
 `calendar_feed_tokens` (the phase's one migration), personal-entry CRUD,
-progress-test slots, ICS feed. (The forecast/official/habit layers ship
+progress-test slots, ICS feed. Plus profile edit (handle rename rule,
+bio) and the cosmetics points shop (§12.8 — needs V.4's economy settled;
+zero new tables, ledger spend + existing `user_avatar_items`). (The forecast/official/habit layers ship
 earlier, free, with V.2 — they are pure reads.) **Tests**: opt-out
 invisibility, IST week boundaries, empty-board honesty; calendar: feed
 token revocation kills the URL, feed contains only the owner's layers,
