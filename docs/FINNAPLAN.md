@@ -274,6 +274,88 @@ edit, not a correction of this one. As cited:
 - Sign-up and upgrade are earned by demonstrated value, never demanded
   before value is shown (§0.1, §0.3).
 
+### 0.9.1 The authentication system (16 November 2026 — state + decisions)
+
+What exists, verified: password + Google identity (0071), TOTP MFA
+(0033), email-recovery schema (0057) **with no mail provider wired**,
+server-issued HttpOnly guest identities (0056) with guest→account
+progress adoption, session cookies with same-origin CSRF, mobile PKCE
+pairing with `MobileBoundary` (IV.3, IV.8). Decisions completing it:
+
+1. **Two sign-in methods, no third.** Password and Google. No phone OTP
+   (no SMS infra — the recorded scope cut), no magic links until the
+   mail provider exists, no new identity providers without an owner
+   decision.
+2. **Email verification becomes required for *new* accounts only after
+   the mail provider ships** (§13 #1); existing accounts are
+   grandfathered and nagged gently, never locked out of what they
+   already had.
+3. **MFA**: optional for learners (it exists; §12.7 surfaces it),
+   required for staff (existing policy with the one recorded exemption).
+4. **Login throttling** (§13.1 #15): per-account + per-IP backoff,
+   lockout recoverable via email — ships in V.2.
+5. **Sessions**: list + revoke in §12.7; sign-out-everywhere included.
+6. **An account is required for**: sync, rewards/wallet, community
+   voice, desks, calendar personal layers, mobile pairing. Never for
+   reading the library (§0.1).
+
+### 0.9.2 The paywall — fair, limited, and honest about what it sells
+
+Owner direction: a free tier that *gives the real idea of the app*, with
+the squeeze on what aspirants value most — **old-question practice
+volume and power filtering** — because that is what they'll pay for.
+Governing rule (§7.3): **capacity and convenience are paid; correctness
+and reading never are.**
+
+| Capability | Guest | Free account | Pro (₹100/50) |
+| --- | --- | --- | --- |
+| Read papers & questions (printed order, PDFs) | ✓ full, in chosen-exam taste | ✓ full within chosen exam | ✓ everything, cross-exam |
+| Answer reveals | 20/day (device) | ✓ unmetered in scope | ✓ |
+| Basic filters (exam, year, subject) | ✓ | ✓ | ✓ |
+| **Power filtering** — multi-dimension combos (topic × year-range × answer-status), saved filter sets, cross-exam subject browse | — | taste: 3 power-filter queries/day | ✓ unlimited |
+| Practice answers (scored) | device-local only | **50/day** (existing) | unlimited |
+| Mocks | — | **1/month** (existing) | unlimited |
+| Smart Review | — | 1 session/day (matches the award bound anyway) | unlimited sessions |
+| Mistakes depth | — | last **20/day** (existing) | full history |
+| Printable revision sheet | — | — | ✓ |
+| Community (read/post/vote) | read | ✓ full | ✓ (never gated — community is trust, not inventory) |
+| Daily Five, games | ✓ play | ✓ + earns | ✓ |
+| Desk rooms | — | join | create (existing 3/owner) |
+| Trial | — | **7-day no-card Pro trial** (existing) | — |
+
+Why this split is fair *and* sells: the free account is a complete
+studying life — a learner can browse their whole exam, practice 50
+questions a day, keep a streak, review mistakes, post doubts, and earn
+points toward a free month forever. What Pro adds is exactly what a
+serious aspirant hits naturally in week two: the 51st practice question,
+the second mock before the real exam, the topic×year×status filter
+sweep, the full mistake history, cross-exam breadth. The limits teach
+the value honestly instead of hiding it.
+
+Integrity rules (binding, restating §0.9 with teeth):
+
+1. **No mid-question rug-pulls**: a question already open never locks;
+   limits gate the *next* action, with the meter visible before it.
+2. **Honest meters everywhere**: "37/50 today", "1 mock available in
+   March", "2 of 3 power filters used" — real server numbers (§0.6),
+   shown *before* the wall, never as a surprise 402.
+3. **Downgrade-safe**: lapsing Pro loses capacity going forward, never
+   history — attempts, mastery, wallet, posts all remain.
+4. **The limits are generous on purpose**: 50/day ≈ a solid daily
+   session; the squeeze is on bingeing and power tooling, not on habit
+   formation — the free loop must stay good enough to build the habit
+   that makes Pro worth paying for.
+5. **Earned Pro is identical to paid Pro** (redemptions/grants read
+   through the same `account_has_pro()`); there is no second-class Pro.
+6. Checkout gates stand (§13.1): legal pages + email recovery before any
+   of this takes money.
+
+Power-filter metering is the one new mechanism (a daily counter row,
+same `rate_limits` helper Part II's throttles use); every other number
+in the table already exists in production config. Build: the free-tier
+numbers are live today; power-filter gating and the meter UI ride V.1's
+browse work (the filters are being built there anyway).
+
 ## 0.10 General bank design — MPSC today, any exam tomorrow (16 Nov 2026)
 
 Owner direction: the bank is currently MPSC questions; the design must be
