@@ -396,3 +396,42 @@ original simulation gated. Receipt: `docs/sources/mcs-publication-20261116.json`
 
 Check fresh Oracle fingerprints/export state before claiming. Do not replay the
 Q52 source corrections or transfer option letters/identity between booklets.
+
+
+## 17 November — continuation checkpoint
+
+Five explanations applied with exact source/live readbacks: 2023 II B Q52
+(strong/weak argument relevance, without empirical policy claims), I D Q8
+(44 subject entries in 2023 top100, with separate dated 2026 top50 update),
+I A Q11 (Deka's historical 1May2023 term start), II C Q28 (reward power versus
+authority/expertise/identification), and II C Q54 (intended visual-aids choice,
+acknowledging feedback can be constructive). Preserved original answers, ordered
+options, locators, printed identities and notices. C-series pending-key notices
+remain; explanations do not certify key-document mappings or clear scoring holds.
+
+Inspected registered original pages, Ministry2023 physicalp11, Ministry2026
+release and publisher textbook. University publicpage retrieved after TLS chain
+failure with verification disabled; limitation retained internally. No latest
+officeholder or newappointment claim. QS update explicitly distinguishes 2026
+top50 from 2023 top100; neither historical key nor score changes.
+
+Recorded separate classification lead: I A Q11 university appointment incorrectly
+stored under public works accounts. Supported historical Current Affairs route
+needs central re-review reservation, fresh active taxonomy/related-path baseline
+and its own guarded publication. No unreserved tag proposal or retag claimed.
+
+Five immutable output reconstructions prove target explanation/pointer changes
+only. Preserve 2572 prior global holds, 387 prior attempts, reviewer rows/grants
+and owner unlimited access. No peer credits, quota exemptions, provider calls,
+synthetic learner attempts, schema/frontend deployment or service-state changes.
+45 focused tests pass. Protected bank/taxonomy sync, API and Study route healthy;
+Oracle timer active, wakeup observed `inactive`.
+
+Queue: 67 published, 11 not-needed, 983 pending,
+5 unresolved, no active packet. These are explanation-queue counts,
+not whole-bank completion. Preserve unresolved inference limitations, source/option
+backlog and exact-key checks. Keep 2012/2013 deferred and simulation gated.
+Receipt: `docs/sources/mcs-publication-20261117.json`. Private proof: `reports/mcs-continue-20261117/`.
+
+Resume from fresh Oracle export/fingerprints; do not replay completed Q52 locator
+and direction repairs. Separate classification lead is not a reserved candidate.

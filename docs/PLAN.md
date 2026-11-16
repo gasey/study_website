@@ -692,3 +692,15 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261115.json`.
 - [ ] Historical source/option repairs and exact-key notices remain; keep 2012/2013 deferred and original simulation gated.
 
 Receipt/checkpoint: `docs/sources/mcs-publication-20261116.json`.
+
+
+## 17 November — MCS continuation
+
+- [x] Publish five exact-appearance explanations with useful option/concept contrasts; preserve key-mapping notices.
+- [x] Preserve 2023 current-affairs answers; add historical appointment date and clearly distinct dated2026QS top50 update.
+- [x] Verify immutable/live outputs, 2572 prior holds, 387 prior attempts, reviewer scope and unlimited access; 45 focused tests pass.
+- [ ] Reserve and review I A Q11 appointment-tag correction separately; saved lead is not publication.
+- [ ] Continue 983 explanation candidates selectively, preserving 5 unresolved items. No active packet.
+- [ ] Historical source/option/key-mapping work remains; 2012/2013 deferred and original simulation gated.
+
+Receipt: `docs/sources/mcs-publication-20261117.json`.

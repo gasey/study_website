@@ -1,0 +1,782 @@
+{
+  "checked_at": "2026-11-16T20:57:13.024739+00:00",
+  "status": "five-explanations-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Five exact-appearance explanations only, plus saved classification lead. No answer, key mapping, source locator/options/directions, taxonomy, access, learner history or scoring changes.",
+  "attribution": "Codex manual drafts with separate same-agent checking pass. Runtime model identifier unavailable; no independent reviewer or peer votes claimed.",
+  "explanation_publications": {
+    "checked_at": "2026-11-16T20:56:36.505608+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "b204e435b0678edff04ee4f008f97aedff8fc7692644e3a6b22b7b2de203d656",
+    "after_packet_bank_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+    "current_bank_sha256_observed": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_f8381041b8ab44d3b32a3360dac8abba",
+          "input_sha256": "b204e435b0678edff04ee4f008f97aedff8fc7692644e3a6b22b7b2de203d656",
+          "output_sha256": "491504c744d5b5c5557e7edab7123fbf786dc72c54c37e1c584a894d17bcc7e3",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_d599aff614544073a8baa88324c01bed",
+          "input_sha256": "491504c744d5b5c5557e7edab7123fbf786dc72c54c37e1c584a894d17bcc7e3",
+          "output_sha256": "4bca79a9552d7511ba0473821e7cb5eff5a7ac15ff3423103bdf6606a4500a33",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_7c1c9f1a5acb4890b817a5fa1b4896b6",
+          "input_sha256": "4bca79a9552d7511ba0473821e7cb5eff5a7ac15ff3423103bdf6606a4500a33",
+          "output_sha256": "7c6a2b515c8251353e8f4e8b290a1d9d51c4161d567c03a19495c09cc739d4c2",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_532fee9ab30b42d99364ea5384130955",
+          "input_sha256": "7c6a2b515c8251353e8f4e8b290a1d9d51c4161d567c03a19495c09cc739d4c2",
+          "output_sha256": "9070016ce0fd4671075089cfcaeddcfa7fefe8a156b275cb165c047bf4e42e15",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_d4b08fc10fbb4629921a5f5fe1d9bda1",
+          "input_sha256": "9070016ce0fd4671075089cfcaeddcfa7fefe8a156b275cb165c047bf4e42e15",
+          "output_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_2dcc37f84b2f4799",
+        "appearance_id": "e0a1c6ea95392ba2a279",
+        "publication_id": "pub_f8381041b8ab44d3b32a3360dac8abba",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "qnum": "52",
+        "page": 7,
+        "explanation": "B, only argument II is strong, under the printed test of importance and direct relevance. Argument I claims this is the only way to eliminate the offence, without supporting that absolute claim. Argument II identifies a serious possible consequence directly relevant to the proposed punishment. Here, “strong” means a relevant argument worth considering; it does not establish that the predicted consequence necessarily occurs. This is an argument-evaluation exercise, not evidence proving a criminal-justice policy's effects.",
+        "source_fingerprint_before": "8f93d8ac79ef895ce48ac8cdece0e015b0b6d199a876a25d3ebb5c0401cc4a17",
+        "source_pdf_sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_353c3e9bbb8ad7be",
+        "appearance_id": "e5003bdfc215140ea401",
+        "publication_id": "pub_d599aff614544073a8baa88324c01bed",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+        "qnum": "8",
+        "page": 1,
+        "explanation": "At the time of this exam: C, 44. The 2023 QS rankings by subject placed 44 Indian programmes in the global top 100 in their respective subjects. Count subject/programme entries, not 44 distinct universities or places in the overall university ranking. [Ministry of Education, 2023 summary, page 11](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jul/doc2023726228501.pdf).\n\nUpdate — checked 17 November 2026: For the rankings released on 25 March 2026, the Ministry reported 27 Indian entries in the top 50. This newer figure uses a different threshold; it does not replace the 2023 top-100 answer of 44. [Ministry of Education, 31 March 2026](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247945&lang=1&reg=3).",
+        "source_fingerprint_before": "c7cff85246a9847087e4ac2c729904eb9144915029b89679f54973f9a5b4a0d8",
+        "source_pdf_sha256": "ea98579ba44d7695518b766693f34c461f587c59c24bb797cfa6b787d5e86e66",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_357a2ba193431db8",
+        "appearance_id": "1db3eca689d87d649e13",
+        "publication_id": "pub_7c1c9f1a5acb4890b817a5fa1b4896b6",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "qnum": "11",
+        "page": 1,
+        "explanation": "At the time of this exam: C, Prof. Dibakar Chandra Deka. Mizoram University records his term as beginning on 1 May 2023. Read “recently appointed” against the 2023 paper, rather than against the day you practise this question. [Mizoram University, Vice-Chancellor](https://mzu.edu.in/vice-chancellor/).",
+        "source_fingerprint_before": "cf6a538a286b7105cd5206fd6de13c69f3d561afd427a86057fbcf984007553d",
+        "source_pdf_sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_35f82df8400b0ea8",
+        "appearance_id": "5a5f42890d86047dc771",
+        "publication_id": "pub_532fee9ab30b42d99364ea5384130955",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "28",
+        "page": 4,
+        "explanation": "C, reward power. Praise, recognition and attention can be valued non-monetary rewards, so offering them can influence behaviour. Legitimate power comes from recognised authority or a role; expert power from knowledge or skill; referent power from identification with or admiration for a person. The question focuses on what the person can give others, rather than on their office, expertise or personal appeal. [OpenStax, Organizational Behavior: Leader Emergence](https://openstax.org/books/organizational-behavior/pages/12-3-leader-emergence).",
+        "source_fingerprint_before": "b0138b6aa125ad30da4c2a2e3db42d9eaed8a6e09dffeafd551e38218e2d71fe",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_36019f41b79d75e8",
+        "appearance_id": "8d9b0fea86a9aa197f79",
+        "publication_id": "pub_d4b08fc10fbb4629921a5f5fe1d9bda1",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "54",
+        "page": 7,
+        "explanation": "D is the intended choice: use visual aids and props to stimulate interest. This changes the way the material is presented when the audience appears disengaged. B embarrasses listeners; C proposes speeding up, which may make the talk harder to follow. A can also be constructive in a real presentation, because feedback can reveal confusion or lack of interest. The exam's choice of D is a judgement among these alternatives, not a rule that visual aids are always better than audience feedback. Choose aids that clarify the message rather than merely adding decoration.",
+        "source_fingerprint_before": "725c95c95a7e6ce255381bfa31f1fa44e91b0a9974d07923471ddcf483e09a04",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_532fee9ab30b42d99364ea5384130955",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "5a5f42890d86047dc771",
+            "page": 4,
+            "qnum": "28",
+            "type": "mcq",
+            "options": [
+              "Legitimate power",
+              "Expert power",
+              "Reward power",
+              "Referent power"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "Praise, recognition and attention are part of which source of power:",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": "C, reward power. Praise, recognition and attention can be valued non-monetary rewards, so offering them can influence behaviour. Legitimate power comes from recognised authority or a role; expert power from knowledge or skill; referent power from identification with or admiration for a person. The question focuses on what the person can give others, rather than on their office, expertise or personal appeal. [OpenStax, Organizational Behavior: Leader Emergence](https://openstax.org/books/organizational-behavior/pages/12-3-leader-emergence).",
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "5a5f42890d86047dc771",
+            "page": 4,
+            "qnum": "28",
+            "type": "mcq",
+            "options": [
+              "Legitimate power",
+              "Expert power",
+              "Reward power",
+              "Referent power"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "Praise, recognition and attention are part of which source of power:",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "7c6a2b515c8251353e8f4e8b290a1d9d51c4161d567c03a19495c09cc739d4c2",
+          "appearance_id": "5a5f42890d86047dc771",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "8d33ee85752f483a809ef32add515ced039a70afa4001e02effd57346dcb177d",
+          "output_sha256": "9070016ce0fd4671075089cfcaeddcfa7fefe8a156b275cb165c047bf4e42e15",
+          "publication_id": "pub_532fee9ab30b42d99364ea5384130955"
+        }
+      },
+      {
+        "id": "pub_7c1c9f1a5acb4890b817a5fa1b4896b6",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "1db3eca689d87d649e13",
+            "page": 1,
+            "qnum": "11",
+            "type": "mcq",
+            "options": [
+              "Prof. Samba Shiva Rao",
+              "Prof. Ghanashyam Deka",
+              "Prof. Dibakar Chandra Deka",
+              "Prof. Mukesh Kumar Yadav"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+            "passage": null,
+            "question": "Who has been recently appointed as the new Vice-Chancellor of Mizoram University?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": "At the time of this exam: C, Prof. Dibakar Chandra Deka. Mizoram University records his term as beginning on 1 May 2023. Read “recently appointed” against the 2023 paper, rather than against the day you practise this question. [Mizoram University, Vice-Chancellor](https://mzu.edu.in/vice-chancellor/).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "financial-rules-and-accounts/public-works-accounts",
+              "subject_id": "financial-rules-and-accounts",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "1db3eca689d87d649e13",
+            "page": 1,
+            "qnum": "11",
+            "type": "mcq",
+            "options": [
+              "Prof. Samba Shiva Rao",
+              "Prof. Ghanashyam Deka",
+              "Prof. Dibakar Chandra Deka",
+              "Prof. Mukesh Kumar Yadav"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+            "passage": null,
+            "question": "Who has been recently appointed as the new Vice-Chancellor of Mizoram University?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "financial-rules-and-accounts/public-works-accounts",
+              "subject_id": "financial-rules-and-accounts",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "4bca79a9552d7511ba0473821e7cb5eff5a7ac15ff3423103bdf6606a4500a33",
+          "appearance_id": "1db3eca689d87d649e13",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "866dea974a64f893570c9f073ab6f4e95e3caaa8e50ace3334429497923d1b84",
+          "output_sha256": "7c6a2b515c8251353e8f4e8b290a1d9d51c4161d567c03a19495c09cc739d4c2",
+          "publication_id": "pub_7c1c9f1a5acb4890b817a5fa1b4896b6"
+        }
+      },
+      {
+        "id": "pub_d4b08fc10fbb4629921a5f5fe1d9bda1",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "8d9b0fea86a9aa197f79",
+            "page": 7,
+            "qnum": "54",
+            "type": "mcq",
+            "options": [
+              "Pause at an appropriate point and ask for audience feedback on what you have covered so far.",
+              "Look directly at them and ask ‘am I keeping you awake?’ in order to embarrass them and make\n              them pay more attention.",
+              "Speed up your pace of talking and vary your tone in order to re-engage your interest.",
+              "Make greater use of visual aids and props in order to stimulate their interest."
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "You are in the middle of speaking to an audience about some work that had a successful outcome and\n        that you are very proud of about ten minutes into your speech, you notice that a couple of the audience\n        members are yawning and looking at their watches. Choose the most effective answer.",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": "D is the intended choice: use visual aids and props to stimulate interest. This changes the way the material is presented when the audience appears disengaged. B embarrasses listeners; C proposes speeding up, which may make the talk harder to follow. A can also be constructive in a real presentation, because feedback can reveal confusion or lack of interest. The exam's choice of D is a judgement among these alternatives, not a rule that visual aids are always better than audience feedback. Choose aids that clarify the message rather than merely adding decoration.",
+            "figureImage": "images/page-renders/3bf8e31fd58e033f2e31ef9a524e42c919d64d3f34e9f20310a673d474326b9c.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": null,
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "8d9b0fea86a9aa197f79",
+            "page": 7,
+            "qnum": "54",
+            "type": "mcq",
+            "options": [
+              "Pause at an appropriate point and ask for audience feedback on what you have covered so far.",
+              "Look directly at them and ask ‘am I keeping you awake?’ in order to embarrass them and make\n              them pay more attention.",
+              "Speed up your pace of talking and vary your tone in order to re-engage your interest.",
+              "Make greater use of visual aids and props in order to stimulate their interest."
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "You are in the middle of speaking to an audience about some work that had a successful outcome and\n        that you are very proud of about ten minutes into your speech, you notice that a couple of the audience\n        members are yawning and looking at their watches. Choose the most effective answer.",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": "images/page-renders/3bf8e31fd58e033f2e31ef9a524e42c919d64d3f34e9f20310a673d474326b9c.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": null,
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "9070016ce0fd4671075089cfcaeddcfa7fefe8a156b275cb165c047bf4e42e15",
+          "appearance_id": "8d9b0fea86a9aa197f79",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "3014f543eb43a78684da92bd4481df039b35945477b80c66a7b01e98958e21c1",
+          "output_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+          "publication_id": "pub_d4b08fc10fbb4629921a5f5fe1d9bda1"
+        }
+      },
+      {
+        "id": "pub_d599aff614544073a8baa88324c01bed",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "e5003bdfc215140ea401",
+            "page": 1,
+            "qnum": "8",
+            "type": "mcq",
+            "options": [
+              "22",
+              "33",
+              "44",
+              "12"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "2023 QS World Universities Rankings have included how many Academic Programmes from India within Global Top 100?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": "At the time of this exam: C, 44. The 2023 QS rankings by subject placed 44 Indian programmes in the global top 100 in their respective subjects. Count subject/programme entries, not 44 distinct universities or places in the overall university ranking. [Ministry of Education, 2023 summary, page 11](https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jul/doc2023726228501.pdf).\n\nUpdate — checked 17 November 2026: For the rankings released on 25 March 2026, the Ministry reported 27 Indian entries in the top 50. This newer figure uses a different threshold; it does not replace the 2023 top-100 answer of 44. [Ministry of Education, 31 March 2026](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247945&lang=1&reg=3).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "e5003bdfc215140ea401",
+            "page": 1,
+            "qnum": "8",
+            "type": "mcq",
+            "options": [
+              "22",
+              "33",
+              "44",
+              "12"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'D'.pdf",
+            "passage": null,
+            "question": "2023 QS World Universities Rankings have included how many Academic Programmes from India within Global Top 100?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'D'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/current-affairs",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "491504c744d5b5c5557e7edab7123fbf786dc72c54c37e1c584a894d17bcc7e3",
+          "appearance_id": "e5003bdfc215140ea401",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "f3958010dc5ba3c54af3ecbe733d247fe693ff0ac3fb4f129716746fb4ff1b9a",
+          "output_sha256": "4bca79a9552d7511ba0473821e7cb5eff5a7ac15ff3423103bdf6606a4500a33",
+          "publication_id": "pub_d599aff614544073a8baa88324c01bed"
+        }
+      },
+      {
+        "id": "pub_f8381041b8ab44d3b32a3360dac8abba",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "e0a1c6ea95392ba2a279",
+            "page": 7,
+            "qnum": "52",
+            "type": "mcq",
+            "options": [
+              "only argument I is strong",
+              "only argument II is strong",
+              "neither I nor II is strong",
+              "both I and II are strong"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": null,
+            "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+            "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": "B, only argument II is strong, under the printed test of importance and direct relevance. Argument I claims this is the only way to eliminate the offence, without supporting that absolute claim. Argument II identifies a serious possible consequence directly relevant to the proposed punishment. Here, “strong” means a relevant argument worth considering; it does not establish that the predicted consequence necessarily occurs. This is an argument-evaluation exercise, not evidence proving a criminal-justice policy's effects.",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "e0a1c6ea95392ba2a279",
+            "page": 7,
+            "qnum": "52",
+            "type": "mcq",
+            "options": [
+              "only argument I is strong",
+              "only argument II is strong",
+              "neither I nor II is strong",
+              "both I and II are strong"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+            "passage": null,
+            "question": "Statement: Should there be capital punishment for those who are found guilty of rape charges? Arguments: I. Yes, this is the only way to eliminate such atrocities on women. II. No, this will lead to more violence as culprits may even kill the rape victims.",
+            "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 1,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "b204e435b0678edff04ee4f008f97aedff8fc7692644e3a6b22b7b2de203d656",
+          "appearance_id": "e0a1c6ea95392ba2a279",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "db0811b7f2d1388934fc42a85cd24723b6d4f3f64ef6e9da1d10ea90c6cc409d",
+          "output_sha256": "491504c744d5b5c5557e7edab7123fbf786dc72c54c37e1c584a894d17bcc7e3",
+          "publication_id": "pub_f8381041b8ab44d3b32a3360dac8abba"
+        }
+      }
+    ],
+    "previous_holds_checked": 2572,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 387,
+        "current_rows": 387,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 0,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-16T20:56:36.505692+00:00",
+      "counts": {
+        "not-needed": 11,
+        "pending": 983,
+        "published": 67,
+        "unresolved": 5
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_16149f52d935c37e",
+        "reason": "Inspected 2023 Paper I D physical page 8, Q92 and all four options. This is direct vocabulary/culture recall with an existing official-key answer. Repeating Chawm as a bad demon adds no explanatory working; do not invent classifications for the other spirits. No new answer verification is claimed.",
+        "source_fingerprint": "5d569e0d2cdd85e1598cbde4a9a2b41642f95efa3d4a63cd52caedd9840880db"
+      },
+      {
+        "canonical_id": "cq_18b8d0b772dbcd7d",
+        "reason": "Inspected 2023 Paper II B physical page 7, Q44 and all four options. This asks for a conventional one-word non-verbal communication association and already has an official-key answer. Repeating confidence adds no working; avoid turning the exam convention into a universal claim about personality or culture.",
+        "source_fingerprint": "c344235caa16ba342e634a4288b31b87f1a41bb11875b3e8be1d16c1b50842d1"
+      },
+      {
+        "canonical_id": "cq_1903f62e61f5f5b9",
+        "reason": "Nitrogen accounts for approximately 78% of dry atmospheric volume (oxygen ~21%, argon ~0.93%, carbon dioxide ~0.04%); this is a direct elementary science fact where the official answer is unambiguous and requires no additional technical derivation.",
+        "source_fingerprint": "5c89226afa959aa838fea5c1942cfb1be6e4c570e62e3ae958e6531b615aac95"
+      },
+      {
+        "canonical_id": "cq_1f682f7a59780b7e",
+        "reason": "Inspected 2023 I A physical page 2 Q17 and all four options. Direct count recall with a recorded official key; a learner explanation merely restating sixteen would add no method. Do not expand into unsupported dates, lists or a claim that every mahajanapada was a monarchy.",
+        "source_fingerprint": "5103060a2ee3521c3e1da22e83dbb5965aa776e43f846635effb890c6ccae695"
+      },
+      {
+        "canonical_id": "cq_1fae83c8c4b8bf0a",
+        "reason": "Inspected 2023 I B physical page 8 Q95 and all four choices. Direct culture/vocabulary recall with an existing official key. Repeating Fungki adds no learning method; do not invent etymology, alternative implement definitions or a translation without competent reference evidence.",
+        "source_fingerprint": "c85b67531d1442d327ad107544f0a8b7199fffcf3458125f553ae16f987f7a5f"
+      },
+      {
+        "canonical_id": "cq_225c56d2c8ed0aae",
+        "reason": "Inspected 2023 I A physical page 4 Q36 and its four mineral choices. Direct keyed geographic-resource recall; repeating Copper adds no explanatory method. No source-backed comparison of the distractors was established in this packet, so do not invent a geological derivation.",
+        "source_fingerprint": "740442344787e3d3da719885fa27c5154c43744468fe4366bd51fd17a2a7df4a"
+      },
+      {
+        "canonical_id": "cq_23ab36d6a7e87f7d",
+        "reason": "Inspected 2023 I C physical page 8 Q91 and all four choices. Direct cultural name recall with existing official-key support. An explanation merely repeating Khiangte zawng zim adds no working; this packet does not invent etymology or translations or transfer another booklet’s option letter.",
+        "source_fingerprint": "96d223cf0fd444a9b971bf3f143ca44f74e90e20b6dced11730b2d5889afc036"
+      },
+      {
+        "canonical_id": "cq_23f89cb407de20bf",
+        "reason": "Inspected 2023 I D physical page 3 Q33 and all four port choices. Direct source/key-supported place recall; repeating Kandla adds no useful derivation. No new source-backed port-renaming or present-day statistics claim is made; no extra explanation is required.",
+        "source_fingerprint": "29ab89160a93f95fb766959705c0a59cfdbbb35a12afe5cd9b11f040d799b1af"
+      },
+      {
+        "canonical_id": "cq_26e0e369a5613031",
+        "reason": "Inspected original 2023 I D physical p4 Q39 and all four options. This is a direct place/mineral recall item with an existing official-key answer. Extra answer-restating prose adds little learning value; no new geological claim, key verification or sibling-series coverage is asserted.",
+        "source_fingerprint": "40899e0e4306d753b72f0605b737ec77e0ac34b6ce96f3904c50d392a4da45db"
+      },
+      {
+        "canonical_id": "cq_2837f73a4b7c6d5b",
+        "reason": "Inspected original 2023 I D physical p9 Q96 and all four folktale choices. This is direct character-to-folktale recall with an existing official-key answer. No supported literary passage is available to add useful context; do not invent a plot, etymology or Mizo cultural explanation. This private disposition does not independently verify the answer.",
+        "source_fingerprint": "a4e80c290fb3b05fdfc43d262617e1cc561b669a5e5dd5b3c4e6463af1b3da05"
+      },
+      {
+        "canonical_id": "cq_2d8040d02265c921",
+        "reason": "Inspected exact 2023 I C p3 Q30 and all four mineral choices. Direct place/mineral recall with existing official answer; extra prose would repeat the answer rather than explain a method. No new geology assertion, key-document acceptance or sibling-series coverage claimed.",
+        "source_fingerprint": "37758946236f53f9455139557691dd102f7d68017a7236d9a8fdb664e81c10f8"
+      }
+    ]
+  },
+  "reference_evidence": {
+    "cq_2dcc37f84b2f4799": [
+      {
+        "kind": "reasoning",
+        "note": "Inspected exact B-series p7 Q52, printed Q52–56 rubric and all four choices. Relevance/importance test supports B; unsupported absolute in I versus directly relevant possible consequence in II. No empirical causation or legal advice asserted."
+      }
+    ],
+    "cq_353c3e9bbb8ad7be": [
+      {
+        "kind": "reference",
+        "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2023/jul/doc2023726228501.pdf",
+        "note": "Downloaded primary Ministry/PIB PDF, visually inspected physicalp11: 44 courses in respective subject categories among global top100 in 2023. Exact D-series p1 Q8 and ordered choices inspected."
+      },
+      {
+        "kind": "reference",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2247945&lang=1&reg=3",
+        "note": "Opened primary Ministry release31March2026: rankings released25March2026,27top50entries. Different threshold explicitly retained; no invented2026top100total or direct numerical comparison."
+      }
+    ],
+    "cq_357a2ba193431db8": [
+      {
+        "kind": "reference",
+        "url": "https://mzu.edu.in/vice-chancellor/",
+        "note": "Fetched and read university page listing Prof.Dibakar Chandra Deka w.e.f.1May2023; source page A-series physicalp1 Q11 and all names inspected. Normal TLS certificate verification failed; public read-only fetch used curl --insecure, saved HTML/text. Corroborated indexed university CV/formerVC list. Use only historical effective date; no latest appointment or unchanged-officeholder update claimed."
+      }
+    ],
+    "cq_35f82df8400b0ea8": [
+      {
+        "kind": "reference",
+        "url": "https://openstax.org/books/organizational-behavior/pages/12-3-leader-emergence",
+        "note": "Opened publisher textbook: five power bases, reward includes recognition, legitimate right/authority, expert knowledge, referent association/identification. Inspected exact C-series p4 Q28; no diagram needed for this stem. Existing generic pending-key notice preserved, no key-match certification."
+      }
+    ],
+    "cq_36019f41b79d75e8": [
+      {
+        "kind": "reasoning",
+        "note": "Inspected exact C-series physicalp7 Q54; Q52–53 train passage does not apply to Q54. All four options compared. ExistingD retained as intended choice;Afeedback acknowledged plausible in practice; no universal claim or new official-key mapping acceptance. Generic source/key notice and figure reference retained."
+      }
+    ]
+  },
+  "current_affairs_outcome": {
+    "QS2023": "Preserved44subject/programme entries in globaltop100; originalPDF and Ministry2023physicalp11 inspected.",
+    "QS2026": "Dated update checked17November2026IST: Ministry31March2026reports27top50entries for rankingsreleased25March2026. Different year/threshold explicit; no inventedtop100total or directdeclinecomparison.",
+    "MZU": "Historical1May2023termstart linked to university. Retrieved publicpagewithTLSverificationdisabledaftercertificatechainfailure, internallyrecorded; no current-officeholder or newappointment update claimed."
+  },
+  "classification_followup": {
+    "canonical_id": "cq_357a2ba193431db8",
+    "appearance_id": "1db3eca689d87d649e13",
+    "current_path": {
+      "subject_id": "financial-rules-and-accounts",
+      "topic_id": "financial-rules-and-accounts/public-works-accounts",
+      "subtopic_id": null
+    },
+    "supported_route_lead": "general-studies/current-affairs, historical2023 appointment, Mizoram context",
+    "status": "lead only; not a reserved tagging candidate or publication",
+    "reason": "Task is recall of university appointment, not public works accounting. Shared tagging status has no active reservations and no new unreviewed lane targets; followups already submitted. Obtain explicit central re-review reservation/fresh taxonomy and related-path baseline before correction; do not bypass coordinator or conflate explanation with retagging."
+  },
+  "validation": {
+    "checked_at": "2026-11-16T20:57:13.024739+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : 1378e1cd02f3…  82383 questions\nserver bank : 1378e1cd02f3…  82383 questions  (last sync 2026-11-16 20:54)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "inactive",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13417
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-16T20:56:56.683270+00:00",
+      "counts": {
+        "not-needed": 11,
+        "pending": 983,
+        "published": 67,
+        "unresolved": 5
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "queue_after_refresh": {
+    "at": "2026-11-16T20:56:56.683270+00:00",
+    "counts": {
+      "not-needed": 11,
+      "pending": 983,
+      "published": 67,
+      "unresolved": 5
+    },
+    "active": []
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 54
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2942
+    }
+  ],
+  "remaining": {
+    "pending_explanation_candidates": 983,
+    "unresolved_explanations": 5,
+    "source_key_notices": "C-series Q28/Q54 generic pending-key notices retained; explanations do not certify key-document mappings or clear scoring restrictions.",
+    "historical_source_repairs": "2016 I C duplicateprintedQ4/Q86 identity;2014IIQ39missingfigure;held2023IIBQ99radical/options. Dedicated guardedworkflows; do not retry without new evidence.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}
