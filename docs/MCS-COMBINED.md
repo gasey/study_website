@@ -431,3 +431,41 @@ Queue: 67 published, 11 not-needed, 983 pending,
 not whole-bank completion. Preserve unresolved inference limitations, source/option
 backlog and exact-key checks. Keep 2012/2013 deferred and simulation gated.
 Receipt: `docs/sources/mcs-publication-20261117.json`. Private proof: `reports/mcs-continue-20261117/`.
+
+
+## 18 November — concept contrasts and poverty-role limitation
+
+Published three checked explanations: 2023 II A Q33 distinguishes emotional
+self-awareness from self-management and neighbouring self-terms; II C Q32 explains
+short, focused closed questions and their possible uses while explicitly avoiding
+guaranteed savings/shyness claims and retaining open-question follow-ups; I A Q24
+distinguishes the 1924 Kanpur case (Dange, Muzaffar Ahmad, Nalini Gupta) from
+Ashfaqulla Khan's Kakori association. Inspected exact registered pages, CASEL,
+Open University/MacEwan teaching references, DIKSHA-hosted Tamil Nadu history
+physicalp68/printed64, and primary MHA historical corroboration. C-series generic
+pending-key notice remains; no key-mapping acceptance implied.
+
+A-series I Q93 folktale/name recall receives no filler or invented literary
+interpretation. D-series I Q54 poverty item is privately unresolved: primary
+Planning Commission23July2013 and MoSPI30July2025 sources distinguish poverty
+estimation from consumption-data/MPCE collection. Need exact2023 mandate and key
+mapping before a confident derivation. Preserve existingA, source/options and
+scoring; private explanation disposition creates no public hold. The newer
+HCES source describes2023–24, not2026 measurements. No public dated-update or
+unchanged-role claim was published. Do not retry without relevant new evidence.
+
+All three publications applied with full live/public readbacks and reconstructed
+immutable outputs proving target explanation/pointer changes only. Preserve 2570
+prior global holds, 387 prior learner attempts, reviewer scope/grants and owner
+unlimited access. No peer votes/credits, quota exceptions, external model calls,
+synthetic learner writes, API/frontend/schema deployment or service-state changes.
+45 focused tests pass. Protected bank/taxonomy sync, API and Study route healthy;
+Oracle timer active and wakeup observed `inactive`. Live subscription
+usage tool unavailable; ordinary staff quota independently audited, uncapped.
+
+Queue: 70 published, 12 not-needed, 978 pending,
+6 unresolved, no active packet. Explanation counters do not establish
+complete answer/source review. Earlier appointment-tag lead, historical source/
+option defects and exact-key notices remain. Keep2012/2013 deferred and original
+simulation gated. Receipt: `docs/sources/mcs-publication-20261118.json`.
+Private proof: `reports/mcs-continue-20261118/`.

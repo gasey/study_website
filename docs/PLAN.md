@@ -704,3 +704,14 @@ Receipt/checkpoint: `docs/sources/mcs-publication-20261116.json`.
 - [ ] Historical source/option/key-mapping work remains; 2012/2013 deferred and original simulation gated.
 
 Receipt: `docs/sources/mcs-publication-20261117.json`.
+
+
+## 18 November — MCS continuation
+
+- [x] Publish three source-checked explanations: 2023 II A Q33, II C Q32 and I A Q24; preserve exact identities/key notices.
+- [x] Leave direct folktale recall without unsupported prose; record I D Q54 poverty-role evidence gap privately, preserving its answer/scoring.
+- [x] Verify immutable/live outputs, 2570 prior holds, 387 prior attempts, reviewer scope and unlimited access; 45 focused tests pass.
+- [ ] Continue 978 explanation candidates selectively; preserve 6 unresolved items. No active packet.
+- [ ] Reserved appointment-tag re-review, historical source/option/key-mapping work remain;2012/2013 deferred and simulation gated.
+
+Receipt: `docs/sources/mcs-publication-20261118.json`.

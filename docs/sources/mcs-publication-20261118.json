@@ -1,0 +1,513 @@
+{
+  "checked_at": "2026-11-17T20:51:44.747449+00:00",
+  "status": "three-explanations-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Three exact-appearance explanations, one private optional-prose-not-needed disposition, one private explanation-unresolved disposition. No answer/key/source/tag/scoring/account/history changes.",
+  "attribution": "Codex manual drafts and separate same-agent checking passes; runtime model identifier unavailable. No independent reviewer or peer sign-off claimed.",
+  "explanation_publications": {
+    "checked_at": "2026-11-17T20:50:59.414029+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+    "after_packet_bank_sha256": "91ec9ed823b4342e888c7de7b23eabe226204e8fa04c933a26137563027981c6",
+    "current_bank_sha256_observed": "91ec9ed823b4342e888c7de7b23eabe226204e8fa04c933a26137563027981c6",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_c9127bf55ce44427ba42c998cc96fce8",
+          "input_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+          "output_sha256": "4264509654ea85cd9562913534b1b4fd9619dbcc5bae2c34b500c62583d0962d",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_4235d213aa4d4cf1921882ad6458f74a",
+          "input_sha256": "4264509654ea85cd9562913534b1b4fd9619dbcc5bae2c34b500c62583d0962d",
+          "output_sha256": "9a3006e93fadb9285818d0a6468ee87f055cd901ebd70dfe0d574d3a6a0e0b5d",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_5554685aa34643fea8a453a95390032a",
+          "input_sha256": "9a3006e93fadb9285818d0a6468ee87f055cd901ebd70dfe0d574d3a6a0e0b5d",
+          "output_sha256": "91ec9ed823b4342e888c7de7b23eabe226204e8fa04c933a26137563027981c6",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "91ec9ed823b4342e888c7de7b23eabe226204e8fa04c933a26137563027981c6",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_36a8df0bbd4f3eb5",
+        "appearance_id": "b3bbbcec7136d96028a7",
+        "publication_id": "pub_c9127bf55ce44427ba42c998cc96fce8",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+        "qnum": "33",
+        "page": 4,
+        "explanation": "A, self-awareness. The clue is noticing and understanding your own emotions as they arise and change. For example, recognising that you are becoming frustrated is self-awareness; deciding how to respond calmly involves self-management. Self-efficacy concerns belief in your ability to perform a task, self-concept is your broader view of yourself, and self-confidence concerns assurance in yourself. These ideas can overlap, but awareness of emotions is the specific skill asked here. [CASEL, Self-Awareness and Self-Management](https://casel.org/fundamentals-of-sel/what-is-the-casel-framework/).",
+        "source_fingerprint_before": "ff69a4082067fb320eb58b0a9617312588341e9aa2e2af9c84df0c26fea872f6",
+        "source_pdf_sha256": "abb3ede197e2ab5b06401eb79cd337c71aa0654810238e6aa6bdcab61650cd89",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_36e1f98bd1932f98",
+        "appearance_id": "302b4e54661493d8cb5e",
+        "publication_id": "pub_4235d213aa4d4cf1921882ad6458f74a",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "32",
+        "page": 4,
+        "explanation": "D, all of these, is the intended choice. Closed questions invite a short, specific response, such as yes/no or a selected option. They can help keep an interview focused and gather particular facts quickly. A simple question can also give a hesitant interviewee an easier starting point.\n\nThese are possible uses, not guaranteed results: closed questions do not automatically save money or make every shy person talk. Follow with open questions when you need a fuller account; a string of closed questions can restrict dialogue. [Open University, Asking questions](https://www.open.edu/openlearn/education-development/conducting-qualitative-interviews-introduction/content-section-5.1); [MacEwan University, Types of Interview Questions](https://openbooks.macewan.ca/professionalcommunication/chapter/6-8-types-of-interview-questions/).",
+        "source_fingerprint_before": "18d953d063e84faa04374d53cb8e7b03e71dc2ebfcf93f8a6b4c8855d2f60d40",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_37905abef5517868",
+        "appearance_id": "96c577fb6d7ac29be211",
+        "publication_id": "pub_5554685aa34643fea8a453a95390032a",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+        "qnum": "24",
+        "page": 3,
+        "explanation": "D, Ashfaqulla Khan. S. A. Dange, Muzaffar Ahmad and Nalini Gupta were associated with the Kanpur Conspiracy Case of 1924. Ashfaqulla Khan is associated with the Kakori Train Action instead. The question asks who was NOT associated with Kanpur, so distinguishing the two similarly named cases is the key. [Tamil Nadu Class XII History, section 5.1, printed page 64](https://obj.diksha.gov.in/ntp-content-production/content/assets/do_3129160254678712321263/b268_std_12_history_em.pdf); [Ministry of Home Affairs, Kakori tribute](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206414&lang=1&reg=3).",
+        "source_fingerprint_before": "29e91d686518017dcdc6fd57e568f186312caf56c2013e0afba3acc29a057dab",
+        "source_pdf_sha256": "c0e640c29c9633841f38843c72efc017b906b5023d1cb68bc867dd6d0f2f32a6",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_4235d213aa4d4cf1921882ad6458f74a",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "302b4e54661493d8cb5e",
+            "page": 4,
+            "qnum": "32",
+            "type": "mcq",
+            "options": [
+              "Maintain control over the interview situation",
+              "Save time, energy and money",
+              "Encourage a shy person to talk",
+              "All of these"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "While conducting an interview, use closed questions when you want to:",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": "D, all of these, is the intended choice. Closed questions invite a short, specific response, such as yes/no or a selected option. They can help keep an interview focused and gather particular facts quickly. A simple question can also give a hesitant interviewee an easier starting point.\n\nThese are possible uses, not guaranteed results: closed questions do not automatically save money or make every shy person talk. Follow with open questions when you need a fuller account; a string of closed questions can restrict dialogue. [Open University, Asking questions](https://www.open.edu/openlearn/education-development/conducting-qualitative-interviews-introduction/content-section-5.1); [MacEwan University, Types of Interview Questions](https://openbooks.macewan.ca/professionalcommunication/chapter/6-8-types-of-interview-questions/).",
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "302b4e54661493d8cb5e",
+            "page": 4,
+            "qnum": "32",
+            "type": "mcq",
+            "options": [
+              "Maintain control over the interview situation",
+              "Save time, energy and money",
+              "Encourage a shy person to talk",
+              "All of these"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "While conducting an interview, use closed questions when you want to:",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "4264509654ea85cd9562913534b1b4fd9619dbcc5bae2c34b500c62583d0962d",
+          "appearance_id": "302b4e54661493d8cb5e",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "0a11356767bad84e1da4bccfc6c39c6ff92d2a30adba7a2b187b558ab8a5f7c3",
+          "output_sha256": "9a3006e93fadb9285818d0a6468ee87f055cd901ebd70dfe0d574d3a6a0e0b5d",
+          "publication_id": "pub_4235d213aa4d4cf1921882ad6458f74a"
+        }
+      },
+      {
+        "id": "pub_5554685aa34643fea8a453a95390032a",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "96c577fb6d7ac29be211",
+            "page": 3,
+            "qnum": "24",
+            "type": "mcq",
+            "options": [
+              "S.A. Dange",
+              "Muzaffar Ahmed",
+              "Nalini Gupta",
+              "Ashfaqulla Khan"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+            "passage": null,
+            "question": "Which of the following is not associated with the Kanpur conspiracy case?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": "D, Ashfaqulla Khan. S. A. Dange, Muzaffar Ahmad and Nalini Gupta were associated with the Kanpur Conspiracy Case of 1924. Ashfaqulla Khan is associated with the Kakori Train Action instead. The question asks who was NOT associated with Kanpur, so distinguishing the two similarly named cases is the key. [Tamil Nadu Class XII History, section 5.1, printed page 64](https://obj.diksha.gov.in/ntp-content-production/content/assets/do_3129160254678712321263/b268_std_12_history_em.pdf); [Ministry of Home Affairs, Kakori tribute](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206414&lang=1&reg=3).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-history",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "96c577fb6d7ac29be211",
+            "page": 3,
+            "qnum": "24",
+            "type": "mcq",
+            "options": [
+              "S.A. Dange",
+              "Muzaffar Ahmed",
+              "Nalini Gupta",
+              "Ashfaqulla Khan"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'A'.pdf",
+            "passage": null,
+            "question": "Which of the following is not associated with the Kanpur conspiracy case?",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-I Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/indian-history",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "9a3006e93fadb9285818d0a6468ee87f055cd901ebd70dfe0d574d3a6a0e0b5d",
+          "appearance_id": "96c577fb6d7ac29be211",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "211a12eb71250da55c867d585bf7ec88399a3487bea821017c49949119802b6e",
+          "output_sha256": "91ec9ed823b4342e888c7de7b23eabe226204e8fa04c933a26137563027981c6",
+          "publication_id": "pub_5554685aa34643fea8a453a95390032a"
+        }
+      },
+      {
+        "id": "pub_c9127bf55ce44427ba42c998cc96fce8",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "b3bbbcec7136d96028a7",
+            "page": 4,
+            "qnum": "33",
+            "type": "mcq",
+            "options": [
+              "Self-Awareness",
+              "Self-Efficacy",
+              "Self-Concept",
+              "Self-Confidence"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "__________ is the skill of being aware of and understanding one's emotions as they occur and they evolve.",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 0,
+            "explanation": "A, self-awareness. The clue is noticing and understanding your own emotions as they arise and change. For example, recognising that you are becoming frustrated is self-awareness; deciding how to respond calmly involves self-management. Self-efficacy concerns belief in your ability to perform a task, self-concept is your broader view of yourself, and self-confidence concerns assurance in yourself. These ideas can overlap, but awareness of emotions is the specific skill asked here. [CASEL, Self-Awareness and Self-Management](https://casel.org/fundamentals-of-sel/what-is-the-casel-framework/).",
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "b3bbbcec7136d96028a7",
+            "page": 4,
+            "qnum": "33",
+            "type": "mcq",
+            "options": [
+              "Self-Awareness",
+              "Self-Efficacy",
+              "Self-Concept",
+              "Self-Confidence"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'A'..pdf",
+            "passage": null,
+            "question": "__________ is the skill of being aware of and understanding one's emotions as they occur and they evolve.",
+            "direction": null,
+            "difficulty": "medium",
+            "hasDiagram": false,
+            "answerIndex": 0,
+            "explanation": null,
+            "figureImage": null,
+            "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'A'..pdf",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "1378e1cd02f3b3a336cf7c19ce7f9ec7227029aae2951b9bcf9fac0cc1b3fcf2",
+          "appearance_id": "b3bbbcec7136d96028a7",
+          "before_fields": {
+            "explanation": ""
+          },
+          "manifest_hash": "e1f7fe5bdfcaf3a4e5d8ba6605b0586317592ee75733317b5c9d3f679857cb36",
+          "output_sha256": "4264509654ea85cd9562913534b1b4fd9619dbcc5bae2c34b500c62583d0962d",
+          "publication_id": "pub_c9127bf55ce44427ba42c998cc96fce8"
+        }
+      }
+    ],
+    "previous_holds_checked": 2570,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 387,
+        "current_rows": 387,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 0,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-17T20:50:59.414060+00:00",
+      "counts": {
+        "not-needed": 12,
+        "pending": 978,
+        "published": 70,
+        "unresolved": 6
+      },
+      "active": []
+    },
+    "not_needed": [
+      {
+        "canonical_id": "cq_36fc3360e501ef7c",
+        "reason": "Inspected exact A-series physicalp8 printedQ93 and all four folktale names. Direct name-to-story recall; extra explanation would merely repeat the stored official answer or invent unsupported Mizo literary interpretation. No competent literary-source validation, translation, key mapping re-verification or answer acceptance claimed. Existing key/identity remain unchanged.",
+        "source_fingerprint": "6fcda7d9ae4ee4f1424296e663073a2ddb9effdeb20e72de75c121ac25a19482"
+      }
+    ]
+  },
+  "reference_evidence": {
+    "cq_36a8df0bbd4f3eb5": [
+      {
+        "kind": "reference",
+        "url": "https://casel.org/fundamentals-of-sel/what-is-the-casel-framework/",
+        "note": "Opened CASEL framework, self-awareness recognises own emotions and self-management concerns managing emotions/behaviour. Inspected A-series p4 Q33 allfourchoices; distinctions explain specific testedskill, not mutuallyexclusivepersonalitycategories."
+      }
+    ],
+    "cq_36e1f98bd1932f98": [
+      {
+        "kind": "reference",
+        "url": "https://www.open.edu/openlearn/education-development/conducting-qualitative-interviews-introduction/content-section-5.1",
+        "note": "Opened OpenUniversity firstparty teaching page; closed questions invite short/specific responses, open questions longer accounts. No guaranteed financial savings or universal shy-person behaviour asserted."
+      },
+      {
+        "kind": "reference",
+        "url": "https://openbooks.macewan.ca/professionalcommunication/chapter/6-8-types-of-interview-questions/",
+        "note": "Opened universitypublished textbook; closed questions quickly gatherprecise information and canhelp people with verbalcommunicationdifficulty, openquestions encourageextendeddialogue. Hesitantstartingpoint is a qualified application, not equivalentdiagnosis or universal claim. C-series physicalp4Q32 allchoices inspected; generic pending-keynotice preserved."
+      }
+    ],
+    "cq_37905abef5517868": [
+      {
+        "kind": "reference",
+        "url": "https://obj.diksha.gov.in/ntp-content-production/content/assets/do_3129160254678712321263/b268_std_12_history_em.pdf",
+        "note": "Downloaded DIKSHAhosted TamilNadu schooltextbook; rendered and visually inspected physicalp68/printedp64 section5.1:1924Kanpur list includes Dange,MuzaffarAhmad,NaliniGupta. Exact exam A-seriesp3Q24 and NOT wording inspected."
+      },
+      {
+        "kind": "reference",
+        "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2206414&lang=1&reg=3",
+        "note": "Opened MinistryHomeAffairs primary19Dec2025 tribute linking AshfaqullaKhan to Kakori. Used as historical corroboration only, not new2026event or changing-factupdate."
+      }
+    ]
+  },
+  "current_affairs_followup": {
+    "canonical_id": "cq_37a6e6c19f4053e7",
+    "status": "unavailable-with-current-evidence",
+    "historical_source": "https://www.pib.gov.in/newsite/PrintRelease.aspx?lang=2&reg=48&relid=97365",
+    "newer_source": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2150168&lang=2&reg=48",
+    "newer_source_published": "2025-07-30",
+    "newer_reporting_period": "2023-24 HCES",
+    "checked_on": "2026-11-18",
+    "issue": "Distinguish poverty-estimator mandate from consumption-data collection; exact2023 mandate/official key mapping needed. No public explanation/update or answer/hold change.",
+    "codex_usage": "No live subscription-usage tool available in current tools; did not infer allowance from older sessions or invoke external provider. Publication quota independently audited."
+  },
+  "usage_check": "No live subscription-usage tool exposed; current balance unavailable, no inference from old usage snapshots. No external provider requests. Ordinary staff policy independently audited uncapped; learner limit30 unchanged.",
+  "validation": {
+    "checked_at": "2026-11-17T20:51:44.747449+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : 91ec9ed823b4…  82383 questions\nserver bank : 91ec9ed823b4…  82383 questions  (last sync 2026-11-17 20:49)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "inactive",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13417
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-17T20:51:28.379275+00:00",
+      "counts": {
+        "not-needed": 12,
+        "pending": 978,
+        "published": 70,
+        "unresolved": 6
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "queue_after_refresh": {
+    "at": "2026-11-17T20:51:28.379275+00:00",
+    "counts": {
+      "not-needed": 12,
+      "pending": 978,
+      "published": 70,
+      "unresolved": 6
+    },
+    "active": []
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 54
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2942
+    }
+  ],
+  "remaining": {
+    "pending_explanation_candidates": 978,
+    "unresolved_explanations": 6,
+    "poverty_question": "2023 I D Q54 wording: poverty-estimator versus household-consumption-statistics role. Exact2023 mandate/key mapping requires separate answer/source workflow, not explanation guesses. PreserveA and all current holds; no new hold created.",
+    "classification": "Prior I A Q11 appointment-tag correction still needs reserved central re-review; do not claim lead published.",
+    "historical_source_repairs": "2016 I C duplicateprintedQ4/Q86 identity;2014IIQ39missingfigure;held2023IIBQ99radical/options. Dedicated workflows and new evidence required.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}
