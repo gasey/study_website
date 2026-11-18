@@ -469,3 +469,40 @@ complete answer/source review. Earlier appointment-tag lead, historical source/
 option defects and exact-key notices remain. Keep2012/2013 deferred and original
 simulation gated. Receipt: `docs/sources/mcs-publication-20261118.json`.
 Private proof: `reports/mcs-continue-20261118/`.
+
+
+## 19 November — technical working and argument rubric
+
+Four explanations applied: 2023 I C Q66 explains HCFCs as transitional CFC
+replacements and ozone depletion, with dated Indian2025 phase-out schedule context
+(67.5% scheduled step, not measured achievement); II C Q26 explains emotional
+intelligence while acknowledging related competence terminology; II C Q83 works
+LIGHT/ENDURE substitution through 10|2|7|3|1|6|5 → RINGLET; II C Q40 distinguishes
+visible face/mouth structures from internal brain without falsely calling lips a
+separate sense organ. Inspected exact registered original pages and primary
+EPA/OzoneCell/publisher references. Generic pending-key notices remain; explanation
+publication does not certify key-document matching. Historical answers preserved.
+
+Separate guarded transcription restores II B Q53's missing shared Q52–56 rubric
+from physicalp7, applied to exactQ53 physicalp8. Reused priorQ52 rubric evidence
+only after matching registered document ID/hash and reinspecting both pages; no
+Q52repair replay or sibling coverage claimed. PrintedQ53/page8, question/options,
+answer/keyprovenance, classification and scoring unchanged. Its explanation
+candidate reopens after fresh source refresh; do not replay direction repair.
+
+All five immutable outputs and exact live/public readbacks verified. Preserve
+2549 prior global scoring holds, 387 prior attempts, reviewer scope/grants and owner
+unlimited access. No peer votes/credits, quota exceptions, reset consumption,
+external provider calls, synthetic learner writes, API/frontend/schema release
+or service-state changes. 45 focused tests pass. Protected bank/taxonomy sync,
+API and Study route healthy; Oracle timer active, wakeup `inactive`.
+Start usage26%primary/95%weeklyused; ordinary usage allowed. Publication policy
+independently audited uncapped for staff; learner30/day unchanged.
+
+Queue: 74 published, 12 not-needed, 974 pending,
+6 unresolved, no active packet. Counters describe explanation queue,
+not complete answer/source certification. Retain previous poverty/family/prayer/
+number-pattern evidence gaps, reserved appointment-tag follow-up, historical
+source/option defects and exact-key notices. Keep2012/2013 deferred and original
+simulation gated. Receipt: `docs/sources/mcs-publication-20261119.json`;
+private evidence `reports/mcs-continue-20261119/`.

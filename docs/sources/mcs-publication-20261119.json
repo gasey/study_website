@@ -1,0 +1,852 @@
+{
+  "checked_at": "2026-11-18T20:55:11.343419+00:00",
+  "status": "five-publications-applied-and-live-verified",
+  "authority": "Oracle canonical bank; local recovery snapshot remains read-only",
+  "scope": "Four exact-appearance explanation publications and one separate Q53shared-direction transcription. Answers/keymappings,options,printednumbers/pages,classification,scoring,accounts/history preserved.",
+  "attribution": "Codex manual drafts and separate same-agent checks. Runtime model identifier unavailable; no independent reviewer or peer sign-off claimed.",
+  "explanation_publications": {
+    "checked_at": "2026-11-18T20:51:27.612291+00:00",
+    "status": "applied-and-live-verified",
+    "before_bank_sha256": "575cdf9f13f763d09e78d7c29d7ae1ec55761f1af8889c4ac4371f10721808ae",
+    "after_packet_bank_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+    "current_bank_sha256_observed": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+    "concurrent_bank_changes_observed": false,
+    "historical_packet_proof": {
+      "publications": [
+        {
+          "publication_id": "pub_d782dda3afdd4f9695c522948a3b590f",
+          "input_sha256": "575cdf9f13f763d09e78d7c29d7ae1ec55761f1af8889c4ac4371f10721808ae",
+          "output_sha256": "248b2de124d7f9bb578f58df76ff65d176711aa936f3fe36c795a75df92768df",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_c509eaf84f8a4ae89cd8218b6e4a12ca",
+          "input_sha256": "248b2de124d7f9bb578f58df76ff65d176711aa936f3fe36c795a75df92768df",
+          "output_sha256": "f4249965252fee8c1d9677e532304cb624f269c3f3c31286b8c1206b32a5851b",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_d9e4d2a37f7d4825b42a6f4488a69a00",
+          "input_sha256": "f4249965252fee8c1d9677e532304cb624f269c3f3c31286b8c1206b32a5851b",
+          "output_sha256": "fb54c67eda75503abab7a26d000bca97900caa71a72ed5664d09dd92d1da62b3",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        },
+        {
+          "publication_id": "pub_35cae8745c9d40e98a46a5ecd66f9976",
+          "input_sha256": "fb54c67eda75503abab7a26d000bca97900caa71a72ed5664d09dd92d1da62b3",
+          "output_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+          "exact_historical_output_reconstructed": true,
+          "only_fields_changed": [
+            "explanation",
+            "reviewPublicationId"
+          ]
+        }
+      ],
+      "packet_output_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+      "receipts_contiguous": true,
+      "first_input_matches_baseline": true,
+      "unaffected_content_matches_before_packet": true
+    },
+    "each_publication_changes_only_target_explanation_and_pointer": true,
+    "publications": [
+      {
+        "canonical_id": "cq_386868bb22807508",
+        "appearance_id": "5713f89cc019f2292bb4",
+        "publication_id": "pub_d782dda3afdd4f9695c522948a3b590f",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+        "qnum": "66",
+        "page": 6,
+        "explanation": "C, CFCs. HCFCs were used as transitional replacements for chlorofluorocarbons in refrigeration. “Replacement” does not mean harmless: HCFCs also deplete ozone and are themselves being phased out. [EPA, Phaseout of Class II Ozone-Depleting Substances](https://www.epa.gov/ods-phaseout/phaseout-class-ii-ozone-depleting-substances).\n\nUpdate — checked 19 November 2026: India's Ozone Cell lists a 67.5% HCFC reduction step for 2025 in its phase-out schedule. This is a scheduled control step, not a claim here that a measured reduction of exactly 67.5% was achieved. Keep the historical answer CFCs; the question is not recommending HCFCs for a new appliance today. [Ozone Cell, HCFC Phase-out Management Plan](https://ozonecell.nic.in/home-page/montreal-protocol-implementation-in-india/ods-phaseout-in-the-country/page-hcfc-phaseout-management-plan/).",
+        "source_fingerprint_before": "619f5669f24b72fdec0fe50d278ee3b13a5fb78a215d61e314c6611258fbccd0",
+        "source_pdf_sha256": "8cf0d22a144c4174a49f6da6f07828296be4e4dff7fae0f81b4f2223c9e947ad",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_391c91e6a6f1d53e",
+        "appearance_id": "14029fd7244771fd631b",
+        "publication_id": "pub_c509eaf84f8a4ae89cd8218b6e4a12ca",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "26",
+        "page": 4,
+        "explanation": "C, emotional intelligence, is the intended term. It includes recognising and understanding emotional signals and managing emotions in oneself and in interactions with others. For example, noticing a colleague's frustration, understanding its context and responding constructively draws on these abilities. Self-evaluation is the narrower act of assessing oneself. “Emotional competence” is closely related, so do not treat B and C as completely unrelated concepts; C matches the definition used by this question. [OpenStax, Emotional Intelligence](https://openstax.org/books/principles-management/pages/2-2-how-the-brain-processes-information-to-make-decisions-reflective-and-reactive-systems).",
+        "source_fingerprint_before": "caa53c2aa11c9f4d675e6a812a9ba2164569bc6d1a3375b1e85f25b441849e01",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_396123722ae32bdf",
+        "appearance_id": "17735e5b3234b11a2914",
+        "publication_id": "pub_d9e4d2a37f7d4825b42a6f4488a69a00",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "83",
+        "page": 11,
+        "explanation": "D, RINGLET. Match each position in LIGHT with 1–5: L=1, I=2, G=3, H=4, T=5. ENDURE gives E=6, N=7, D=8, U=9, R=10, E=6. The repeated E confirms that 6 is reused.\n\nNow split 10273165 as 10 | 2 | 7 | 3 | 1 | 6 | 5. Substituting gives R | I | N | G | L | E | T. Here 10 is one code value, not the separate digits 1 and 0. This is the direct letter-to-number substitution specified in the printed directions.",
+        "source_fingerprint_before": "a2c2c26855deec69bd4f2eefd719110138966507142d4d130f3bc10195b11572",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      },
+      {
+        "canonical_id": "cq_396b9a77f1dc266e",
+        "appearance_id": "272f6d44624389bb6add",
+        "publication_id": "pub_35cae8745c9d40e98a46a5ecd66f9976",
+        "paper_id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+        "qnum": "40",
+        "page": 5,
+        "explanation": "C, brain, is the intended odd word. Tongue, lips and nose are externally visible structures of the face or mouth; the brain is an internal organ enclosed within the skull. Use that grouping, rather than claiming the other three are all sense organs: lips do not form a separate conventional sense organ, and the brain also participates in processing sensory information.",
+        "source_fingerprint_before": "87c11ea4f07fa9277099f073ea103aefa8d56885facdb0cafc094c88a8940fd1",
+        "source_pdf_sha256": "e166628d9d2f25e5edbb416bf93a45c0fa53669cc1ad15bc4537d9200dc7c801",
+        "state": "applied",
+        "full_snapshot_readback": true,
+        "public_question_readback": true,
+        "canonical_explanation_readback": true,
+        "no_answer_reveal_or_learner_attempt_created": true
+      }
+    ],
+    "publication_receipts": [
+      {
+        "id": "pub_35cae8745c9d40e98a46a5ecd66f9976",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "272f6d44624389bb6add",
+            "page": 5,
+            "qnum": "40",
+            "type": "mcq",
+            "options": [
+              "Tongue",
+              "Lips",
+              "Brain",
+              "Nose"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "Find the odd word",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": "C, brain, is the intended odd word. Tongue, lips and nose are externally visible structures of the face or mouth; the brain is an internal organ enclosed within the skull. Use that grouping, rather than claiming the other three are all sense organs: lips do not form a separate conventional sense organ, and the brain also participates in processing sensory information.",
+            "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "272f6d44624389bb6add",
+            "page": 5,
+            "qnum": "40",
+            "type": "mcq",
+            "options": [
+              "Tongue",
+              "Lips",
+              "Brain",
+              "Nose"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "Find the odd word",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": "images/page-renders/52fde7c1cca7dc1d170dfca92ab8c6976a27359540ed9bedca66587cd4533ae9.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "fb54c67eda75503abab7a26d000bca97900caa71a72ed5664d09dd92d1da62b3",
+          "appearance_id": "272f6d44624389bb6add",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "ffa77c0978250a1911f77c468b0f08afe0a27dba7d351262f4eb25199d6809e1",
+          "output_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+          "publication_id": "pub_35cae8745c9d40e98a46a5ecd66f9976"
+        }
+      },
+      {
+        "id": "pub_c509eaf84f8a4ae89cd8218b6e4a12ca",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "14029fd7244771fd631b",
+            "page": 4,
+            "qnum": "26",
+            "type": "mcq",
+            "options": [
+              "Self-evaluation",
+              "Emotional competence",
+              "Emotional Intelligence",
+              "None of these"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "The ability to diagnose understand and manage emotional cues refers to",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": "C, emotional intelligence, is the intended term. It includes recognising and understanding emotional signals and managing emotions in oneself and in interactions with others. For example, noticing a colleague's frustration, understanding its context and responding constructively draws on these abilities. Self-evaluation is the narrower act of assessing oneself. “Emotional competence” is closely related, so do not treat B and C as completely unrelated concepts; C matches the definition used by this question. [OpenStax, Emotional Intelligence](https://openstax.org/books/principles-management/pages/2-2-how-the-brain-processes-information-to-make-decisions-reflective-and-reactive-systems).",
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "14029fd7244771fd631b",
+            "page": 4,
+            "qnum": "26",
+            "type": "mcq",
+            "options": [
+              "Self-evaluation",
+              "Emotional competence",
+              "Emotional Intelligence",
+              "None of these"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "The ability to diagnose understand and manage emotional cues refers to",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": "images/page-renders/e6b94ec7fb4a7e41e0a95d2a0937272f03a945901b3cd186417854a726baf39e.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "248b2de124d7f9bb578f58df76ff65d176711aa936f3fe36c795a75df92768df",
+          "appearance_id": "14029fd7244771fd631b",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "b5cefb9de19f58f13c0345478dfaad09bb86474f97043c5a1505aeaf9b3110f1",
+          "output_sha256": "f4249965252fee8c1d9677e532304cb624f269c3f3c31286b8c1206b32a5851b",
+          "publication_id": "pub_c509eaf84f8a4ae89cd8218b6e4a12ca"
+        }
+      },
+      {
+        "id": "pub_d782dda3afdd4f9695c522948a3b590f",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "5713f89cc019f2292bb4",
+            "page": 6,
+            "qnum": "66",
+            "type": "mcq",
+            "options": [
+              "CO 2",
+              "Cl",
+              "CFCs",
+              "CO"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "HCFCs can be used as refrigerants instead of",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": "C, CFCs. HCFCs were used as transitional replacements for chlorofluorocarbons in refrigeration. “Replacement” does not mean harmless: HCFCs also deplete ozone and are themselves being phased out. [EPA, Phaseout of Class II Ozone-Depleting Substances](https://www.epa.gov/ods-phaseout/phaseout-class-ii-ozone-depleting-substances).\n\nUpdate — checked 19 November 2026: India's Ozone Cell lists a 67.5% HCFC reduction step for 2025 in its phase-out schedule. This is a scheduled control step, not a claim here that a measured reduction of exactly 67.5% was achieved. Keep the historical answer CFCs; the question is not recommending HCFCs for a new appliance today. [Ozone Cell, HCFC Phase-out Management Plan](https://ozonecell.nic.in/home-page/montreal-protocol-implementation-in-india/ods-phaseout-in-the-country/page-hcfc-phaseout-management-plan/).",
+            "figureImage": "images/page-renders/eefbe69caccabc76f8ceb4f36428b76b4c298ea1c9b7bda26f093e124d54cfc5.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/environment",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "5713f89cc019f2292bb4",
+            "page": 6,
+            "qnum": "66",
+            "type": "mcq",
+            "options": [
+              "CO 2",
+              "Cl",
+              "CFCs",
+              "CO"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-I Series 'C'..pdf",
+            "passage": null,
+            "question": "HCFCs can be used as refrigerants instead of",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 2,
+            "explanation": null,
+            "figureImage": "images/page-renders/eefbe69caccabc76f8ceb4f36428b76b4c298ea1c9b7bda26f093e124d54cfc5.png",
+            "answerKeyRef": "key_2a94d912058919022c49a517",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "general-studies/environment",
+              "subject_id": "general-studies",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "575cdf9f13f763d09e78d7c29d7ae1ec55761f1af8889c4ac4371f10721808ae",
+          "appearance_id": "5713f89cc019f2292bb4",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "1c263f7e7013dd1ec3d5f73dedec72f7a024f00a97983edcd973525441c505f9",
+          "output_sha256": "248b2de124d7f9bb578f58df76ff65d176711aa936f3fe36c795a75df92768df",
+          "publication_id": "pub_d782dda3afdd4f9695c522948a3b590f"
+        }
+      },
+      {
+        "id": "pub_d9e4d2a37f7d4825b42a6f4488a69a00",
+        "state": "applied",
+        "contribution_state": "published",
+        "peer_votes": 0,
+        "credits": 0,
+        "exemptions": 0,
+        "receipt": {
+          "after": {
+            "id": "17735e5b3234b11a2914",
+            "page": 11,
+            "qnum": "83",
+            "type": "mcq",
+            "options": [
+              "TWINKLE",
+              "MUSINGS",
+              "LETTERS",
+              "RINGLET"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "If 12345 means LIGHT and 6789106 means ENDURE, what would 10273165 indicate?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": "D, RINGLET. Match each position in LIGHT with 1–5: L=1, I=2, G=3, H=4, T=5. ENDURE gives E=6, N=7, D=8, U=9, R=10, E=6. The repeated E confirms that 6 is reused.\n\nNow split 10273165 as 10 | 2 | 7 | 3 | 1 | 6 | 5. Substituting gives R | I | N | G | L | E | T. Here 10 is one code value, not the separate digits 1 and 0. This is the direct letter-to-number substitution specified in the printed directions.",
+            "figureImage": "images/page-renders/27cf7269cf0f8107ddb20b189e2a5584d421307fdf930623a5a688d6642f3825.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "before": {
+            "id": "17735e5b3234b11a2914",
+            "page": 11,
+            "qnum": "83",
+            "type": "mcq",
+            "options": [
+              "TWINKLE",
+              "MUSINGS",
+              "LETTERS",
+              "RINGLET"
+            ],
+            "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'C'.pdf",
+            "passage": null,
+            "question": "If 12345 means LIGHT and 6789106 means ENDURE, what would 10273165 indicate?",
+            "direction": "Read the original printed question and any shared passages, tables and figures in the source image. Searchable transcription is provisional; answer-key matching is pending.",
+            "difficulty": null,
+            "hasDiagram": true,
+            "answerIndex": 3,
+            "explanation": null,
+            "figureImage": "images/page-renders/27cf7269cf0f8107ddb20b189e2a5584d421307fdf930623a5a688d6642f3825.png",
+            "answerKeyRef": "key_4ff8bee67d9977f6a3ad1e3a",
+            "answerSource": "official",
+            "optionsMarkup": null,
+            "classification": {
+              "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+              "subject_id": "reasoning-and-aptitude",
+              "subtopic_id": null
+            },
+            "questionMarkup": null
+          },
+          "input_sha256": "f4249965252fee8c1d9677e532304cb624f269c3f3c31286b8c1206b32a5851b",
+          "appearance_id": "17735e5b3234b11a2914",
+          "before_fields": {
+            "explanation": null
+          },
+          "manifest_hash": "7e831b08adee3013387b684ef3025f25e2630212227dd85842dc25ae92cbfd95",
+          "output_sha256": "fb54c67eda75503abab7a26d000bca97900caa71a72ed5664d09dd92d1da62b3",
+          "publication_id": "pub_d9e4d2a37f7d4825b42a6f4488a69a00"
+        }
+      }
+    ],
+    "previous_holds_checked": 2549,
+    "previous_holds_unchanged_at_readback": true,
+    "concurrent_hold_differences": [],
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 387,
+        "current_rows": 387,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "owner_unlimited": true,
+    "ordinary_used": 0,
+    "ordinary_staff_remaining": null,
+    "ordinary_staff_limit": null,
+    "staff_maintenance_capped": false,
+    "learner_daily_limit": 30,
+    "pending_exports_global_observed": 0,
+    "pending_exports_this_packet": 0,
+    "queue": {
+      "at": "2026-11-18T20:51:27.612336+00:00",
+      "counts": {
+        "not-needed": 12,
+        "pending": 973,
+        "published": 74,
+        "unresolved": 7
+      },
+      "active": []
+    },
+    "not_needed": []
+  },
+  "source_publication": {
+    "checked_at": "2026-11-18T20:54:14.508575+00:00",
+    "status": "applied-and-live-verified",
+    "publication": {
+      "id": "pub_641618c709b44832a3e693926427a6ec",
+      "state": "applied",
+      "error": null
+    },
+    "proposal": {
+      "kind": "transcription",
+      "canonical_id": "cq_39f2b758d81d5f61",
+      "appearance_id": "a682ef71d34a13f49552",
+      "subject_id": "reasoning-and-aptitude",
+      "title": "Restore MCS2023 II B Q53 shared argument directions",
+      "patch": {
+        "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer"
+      },
+      "rationale": "Visually inspected registered B-series physicalp7 shared Q52–56 strong/weakargument rubric, andp8 Q53 with allfourchoices. Q53 belongs to this range but direction is absent. Restore exact original shared directions only, linewrapsnormalized. Preserve printedQ53/page8, exactappearance, question/options, answer/keyprovenance, classifications, scoringholds, accountaccess and learner/reviewerhistory. PriorQ52repair reusedasevidence,notreplayed. No answeracceptance or empiricaleducation/fiscalpolicy claim.",
+      "evidence": [
+        {
+          "kind": "paper",
+          "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+          "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+          "page": 7,
+          "note": "Visually inspected precedingphysicalp7: exactQ52–56strong/weakrubric, importantanddirectlyrelatedtest."
+        },
+        {
+          "kind": "paper",
+          "document_id": "doc_9b9f5f6f90fa0a1602423ff2",
+          "sha256": "f9b59d443320e1882d04bd932a554737b69c021f5cc0f83017c8b73cd58f266f",
+          "page": 8,
+          "note": "Visually inspected exactphysicalp8 printedQ53schoolfeesstatement,twoarguments,fourorderedchoices; within shared52–56range."
+        }
+      ]
+    },
+    "source_before": {
+      "record": {
+        "id": "a682ef71d34a13f49552",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "question": "Statement: Should school education be made free in India? Arguments: I. Yes, this is the only way to improve the level of literacy. II. No, it will add to the already heavy burden on the exchequer.",
+        "options": [
+          "only argument I is strong",
+          "only argument II is strong",
+          "neither I nor II is strong",
+          "both I and II are strong"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "explanation": null,
+        "direction": null,
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "53",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "title": "Civil Service Examination Paper-II (B)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+      }
+    },
+    "source_after": {
+      "record": {
+        "id": "a682ef71d34a13f49552",
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "type": "mcq",
+        "question": "Statement: Should school education be made free in India? Arguments: I. Yes, this is the only way to improve the level of literacy. II. No, it will add to the already heavy burden on the exchequer.",
+        "options": [
+          "only argument I is strong",
+          "only argument II is strong",
+          "neither I nor II is strong",
+          "both I and II are strong"
+        ],
+        "answerIndex": 1,
+        "answerSource": "official",
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "explanation": null,
+        "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+        "questionMarkup": null,
+        "optionsMarkup": null,
+        "passage": null,
+        "difficulty": "medium",
+        "page": 8,
+        "qnum": "53",
+        "hasDiagram": false,
+        "figureImage": null,
+        "classification": {
+          "subject_id": "reasoning-and-aptitude",
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subtopic_id": null
+        }
+      },
+      "metadata": {
+        "sourceDefect": null,
+        "disputeNote": null
+      },
+      "paper": {
+        "id": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "title": "Civil Service Examination Paper-II (B)",
+        "year": 2023,
+        "series": null,
+        "source_pdf_url": "/papers/source/Old_Questions/Direct_2023-2025/MCS%20Combined%202023%20Preliminary%20Exam%20Paper-II%20Series%20%27B%27.pdf"
+      }
+    },
+    "historical_proof": {
+      "input_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+      "output_sha256": "adf6899108e19d2865c35a06f9e9d1a0dddd998463d9d80782017cf6a66287bb",
+      "only_target_fields_changed": [
+        "direction",
+        "reviewPublicationId"
+      ],
+      "exact_historical_output_reconstructed": true,
+      "shared_batch_id": null,
+      "shared_batch_publications": 1,
+      "other_batch_members_not_attributed_to_this_packet": false
+    },
+    "receipt": {
+      "after": {
+        "id": "a682ef71d34a13f49552",
+        "page": 8,
+        "qnum": "53",
+        "type": "mcq",
+        "options": [
+          "only argument I is strong",
+          "only argument II is strong",
+          "neither I nor II is strong",
+          "both I and II are strong"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "passage": null,
+        "question": "Statement: Should school education be made free in India? Arguments: I. Yes, this is the only way to improve the level of literacy. II. No, it will add to the already heavy burden on the exchequer.",
+        "direction": "Directions for Questions No. 52 - 56: In making decisions about important questions, it is desirable to distinguish between “strong” argument and “weak” argument. A “strong” argument must be both important and directly related to the question. A “weak” argument may not be directly related to the question and may be of minor importance or may be related to the trivial aspect of the question. Each question below is followed by two arguments, numbered I and II. You have to decide which of the arguments is “strong”. Give answer",
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 1,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "before": {
+        "id": "a682ef71d34a13f49552",
+        "page": 8,
+        "qnum": "53",
+        "type": "mcq",
+        "options": [
+          "only argument I is strong",
+          "only argument II is strong",
+          "neither I nor II is strong",
+          "both I and II are strong"
+        ],
+        "paperId": "Old_Questions/Direct_2023-2025/MCS Combined 2023 Preliminary Exam Paper-II Series 'B'.pdf",
+        "passage": null,
+        "question": "Statement: Should school education be made free in India? Arguments: I. Yes, this is the only way to improve the level of literacy. II. No, it will add to the already heavy burden on the exchequer.",
+        "direction": null,
+        "difficulty": "medium",
+        "hasDiagram": false,
+        "answerIndex": 1,
+        "explanation": null,
+        "figureImage": null,
+        "answerKeyRef": "MCS Combined 2023 Preliminary Exam Answer Key Paper-II Series 'B'..pdf",
+        "answerSource": "official",
+        "optionsMarkup": null,
+        "classification": {
+          "topic_id": "reasoning-and-aptitude/verbal-reasoning",
+          "subject_id": "reasoning-and-aptitude",
+          "subtopic_id": null
+        },
+        "questionMarkup": null
+      },
+      "input_sha256": "a8c85f0befe3318fce8a679fe786fccc5766caa68a64c3a91b8dd4eaf35b282e",
+      "appearance_id": "a682ef71d34a13f49552",
+      "before_fields": {
+        "direction": null
+      },
+      "manifest_hash": "32dfde3b31d97b6337a78526fdc9ec4e605e1973157abce399f5104360809ad4",
+      "output_sha256": "adf6899108e19d2865c35a06f9e9d1a0dddd998463d9d80782017cf6a66287bb",
+      "publication_id": "pub_641618c709b44832a3e693926427a6ec"
+    },
+    "public_patched_fields_match": true,
+    "workflow_preservation": {
+      "attempts": {
+        "previous_rows": 387,
+        "current_rows": 387,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignments": {
+        "previous_rows": 2,
+        "current_rows": 2,
+        "previous_rows_unchanged": true
+      },
+      "editorial_assignment_papers": {
+        "previous_rows": 78,
+        "current_rows": 78,
+        "previous_rows_unchanged": true
+      },
+      "editorial_checks": {
+        "previous_rows": 0,
+        "current_rows": 0,
+        "previous_rows_unchanged": true
+      },
+      "review_grants": {
+        "previous_rows": 3,
+        "current_rows": 3,
+        "previous_rows_unchanged": true
+      }
+    },
+    "previous_holds_preserved": 2549,
+    "owner_unlimited": true,
+    "flags": {
+      "peer_votes": 0,
+      "credits": 0,
+      "exemptions": 0
+    },
+    "current_bank_sha256_observed": "adf6899108e19d2865c35a06f9e9d1a0dddd998463d9d80782017cf6a66287bb",
+    "pending_exports_global_observed": 0,
+    "ordinary_staff_limit": null,
+    "learner_daily_limit": 30
+  },
+  "reference_evidence": {
+    "cq_386868bb22807508": [
+      {
+        "kind": "reference",
+        "url": "https://www.epa.gov/ods-phaseout/phaseout-class-ii-ozone-depleting-substances",
+        "note": "Opened EPAprimary ClassIIphaseout:HCFCtransitionalreplacementforClassIODS and phasedoutthemselves. Historicalreplacement concept only;USschedule not applied toIndia."
+      },
+      {
+        "kind": "reference",
+        "url": "https://ozonecell.nic.in/home-page/montreal-protocol-implementation-in-india/ods-phaseout-in-the-country/page-hcfc-phaseout-management-plan/",
+        "note": "Opened IndianOzoneCell schedule lists67.5%reductionin2025. Updatechecked19Nov2026IST explicitly scheduledstep,notmeasuredachievement orpermanentcurrentappliancerecommendation. Exact C-seriesp6Q66/sourcechoicesinspected; pendingkeynotice preserved."
+      }
+    ],
+    "cq_391c91e6a6f1d53e": [
+      {
+        "kind": "reference",
+        "url": "https://openstax.org/books/principles-management/pages/2-2-how-the-brain-processes-information-to-make-decisions-reflective-and-reactive-systems",
+        "note": "Opened originalpublisher textbookdefiningEIrecognition/understanding/management ownandothers emotions. Exact C-seriesp4Q26allchoicesinspected. Bcompetence acknowledgedcloselyrelated; no falsemutualexclusion or independentkeymappingcertification."
+      }
+    ],
+    "cq_396123722ae32bdf": [
+      {
+        "kind": "reasoning",
+        "note": "Inspected exact C-seriesp11 Q83 and samepageQ82–83 directletter/numberdirections. Independently reconstructed L1I2G3H4T5E6N7D8U9R10, repeatedE6consistent.10|2|7|3|1|6|5 yieldsRINGLET sevenletters; allchoicescompared,0notstandalonecode. ExistingD andgenericnotice preserved."
+      }
+    ],
+    "cq_396b9a77f1dc266e": [
+      {
+        "kind": "reasoning",
+        "note": "Inspected exact C-seriesp5Q40 afterfamilydirectionsapplyonly38–39; standaloneoddword. Visibleface/mouthstructuresversusinternalbrain grouping supportsC. Avoid false allthreearesenseorgans claim and do not inferbrainunrelatedtosensation. No keymappingcertification."
+      }
+    ]
+  },
+  "current_affairs_outcome": "HCFC note checked19November2026IST, IndianOzoneCell2025scheduled67.5%reductionstep explicitly not measuredachievement. HistoricalCFCanswer unchanged; EPAUSschedule notappliedtoIndia. No newappliance recommendation, no inventedlatestachievement or fullphaseoutclaim.",
+  "usage_check": {
+    "ordinary_usage_allowed": true,
+    "primary_used_percent": 26,
+    "weekly_used_percent": 95,
+    "reset_consumed": false,
+    "external_provider_calls": 0,
+    "note": "LiveCodexusagetoolreadatstart. Boundedpacket, ordinaryuncappedstaffpublicationpolicyindependentlyaudited. No newquotaexception."
+  },
+  "validation": {
+    "checked_at": "2026-11-18T20:55:11.343419+00:00",
+    "bank_sync_check": "Editorial protection OK: 78 papers / 6931 source questions\nlocal  bank : adf6899108e1…  82383 questions\nserver bank : adf6899108e1…  82383 questions  (last sync 2026-11-18 20:52)\nlocal taxonomy : 82383 rows (82383 approved · 0 pending · 0 rejected)\nserver taxonomy: 82383 rows (82383 approved · 0 pending · 0 rejected)\nstatus      : IN SYNC\n",
+    "oracle_publisher_timer": "active",
+    "publication_wakeup_service": "inactive",
+    "publisher_stopped_by_this_continuation": false,
+    "api_health": {
+      "status": "ok",
+      "questions": 82383,
+      "scorable": 13417
+    },
+    "study_route_http": 200,
+    "tests_passed": 45,
+    "external_provider_calls": 0,
+    "application_schema_or_quota_changes": false,
+    "queue": {
+      "at": "2026-11-18T20:54:46.967348+00:00",
+      "counts": {
+        "not-needed": 12,
+        "pending": 974,
+        "published": 74,
+        "unresolved": 6
+      },
+      "active": []
+    },
+    "global_pending_exports_observed": 0
+  },
+  "queue_after_source_refresh": {
+    "at": "2026-11-18T20:54:46.967348+00:00",
+    "counts": {
+      "not-needed": 12,
+      "pending": 974,
+      "published": 74,
+      "unresolved": 6
+    },
+    "active": []
+  },
+  "recorded_mcs_defect_inventory_observed": [
+    {
+      "status": "held",
+      "source_defect": "duplicate-options",
+      "key_disputed": false,
+      "unique_questions": 1
+    },
+    {
+      "status": "held",
+      "source_defect": "unresolved-source",
+      "key_disputed": false,
+      "unique_questions": 4
+    },
+    {
+      "status": "held",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 54
+    },
+    {
+      "status": "live",
+      "source_defect": null,
+      "key_disputed": false,
+      "unique_questions": 2942
+    }
+  ],
+  "remaining": {
+    "pending_explanation_candidates": 974,
+    "unresolved_explanations": 6,
+    "Q53": "Sharedrubricrestoredexactbookletonly; explanationreopenedafterfreshrefresh, do notreplayrepair.",
+    "prior_evidence_gaps": "Povertymandate,keymapping/family/prayer/numberpatternlimitations retained. No answer/holdchanges viaexplanationqueue.",
+    "classification": "Prior I A Q11 appointment-tag lead requires reservedre-review andfreshregistry, notclaimedpublished.",
+    "historical_source_repairs": "2016 I C duplicateprintedQ4/Q86identity;2014IIQ39missingfigure;held2023IIBQ99radical/options. Dedicatedworkflows/newevidence required.",
+    "deferred": "2012/2013 booklet recovery",
+    "original_paper_simulation": "Prerequisites unmet; remains gated.",
+    "resume": "python3 scripts/ai-question-review.py checkpoint; python3 scripts/ai-question-review.py refresh --collection combined-prelims; python3 scripts/ai-question-review.py claim --collection combined-prelims --size 5"
+  }
+}

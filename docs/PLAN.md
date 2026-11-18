@@ -1036,3 +1036,14 @@ Receipt: `docs/sources/mcs-publication-20261117.json`.
 - [ ] Reserved appointment-tag re-review, historical source/option/key-mapping work remain;2012/2013 deferred and simulation gated.
 
 Receipt: `docs/sources/mcs-publication-20261118.json`.
+
+
+## 19 November — MCS continuation
+
+- [x] Publish four source-checked explanations:2023 I C Q66, II C Q26/Q83/Q40, with qualified dated HCFC schedule context and useful working.
+- [x] Restore II B Q53 shared argument rubric through separate guarded transcription; printedidentity/answers/scoring preserved.
+- [x] Verify five immutable/live outputs, 2549 prior holds, 387 attempts, reviewer scope and unlimited access;45focusedtests pass.
+- [ ] Continue 974 explanation candidates, including repairedQ53, preserving 6 unresolved cases. No active packet.
+- [ ] Reserved appointment-tag review, historical source/option/keymapping work remain;2012/2013 deferred and simulation gated.
+
+Receipt:`docs/sources/mcs-publication-20261119.json`.
