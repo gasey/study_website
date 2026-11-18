@@ -3,11 +3,12 @@ import {ReadRequestCache,catalogTtl,questionQueryString} from './requestCache'
 import {scopedApiPath} from './examScope'
 import type {AvatarLook} from './avatar'
 import { deviceId } from './device'
+import {publicBrowseRead,powerFilterQuery} from './publicBrowse'
 
 /** Typed client for the FastAPI service. Same-origin in production (Caddy
  *  routes /api), proxied by Vite in dev — so no base URL either way. */
 
-export type AnswerSource = 'official' | 'key' | 'derived' | 'inferred' | 'none'
+export type AnswerSource = 'official' | 'key' | 'derived' | 'inferred' | 'none' | 'editorial'
 
 export interface Appearance {
   paper_id: string
@@ -24,6 +25,7 @@ export interface Appearance {
 }
 
 export interface Question {
+  curated?:{card_id:string;presentation_id:string;deck_id:string;deck_title:string;mode:string;source_changed?:boolean;revealed_result?:import('./vocabulary').CuratedResult|null;practice_enabled?:boolean}
   presentation_hash?: string | null
   taxonomy_paths?: {subject_id:string;subject_label:string;topic_id:string|null;topic_label:string|null;subtopic_id:string|null;subtopic_label:string|null;is_primary:boolean}[]
   id: string
@@ -68,7 +70,11 @@ export interface QuestionPage {
   total: number
   limit: number
   offset: number
+  browse_allowance?: BrowseAllowance|null
 }
+
+export interface BrowseAllowance {tier:'guest'|'account'|'pro';ist_date:string;used:number;limit:number|null;remaining:number|null;unlimited:boolean}
+export const getBrowseAllowance=()=>req<BrowseAllowance>('/me/browse-allowance')
 
 export interface QuestionPaperSummary {
   id: string
@@ -92,6 +98,7 @@ export interface QuestionPaperPage {
 }
 
 export interface AnswerResult {
+  curated?:boolean;card?:import('./materials').CuratedWordCard|null;next_due?:string|null;graduated?:boolean;outcome?:string
   reward?:{status:string;xp:number;points:number;receipt_id:number|null;rule_version:string}|null
   correct: boolean
   answer_index: number
@@ -146,23 +153,25 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
   if(method!=='GET')clearReadCaches()
   const epoch=accountGeneration()
   const load=async()=>{
-    const identity=await accountContext()
-    const csrf:Record<string,string>=method==='GET'?{}:{'x-review-csrf':identity.csrf||''}
+    const publicRead=publicBrowseRead(scoped,init)
+    const identity=publicRead?null:await accountContext()
+    const csrf:Record<string,string>=method==='GET'?{}:{'x-review-csrf':identity?.csrf||''}
     const controller=method==='GET'&&!init?.signal?new AbortController():null
     const timer=controller?window.setTimeout(()=>controller.abort(),15000):undefined
     try{
     const res = await fetch(`/api${scoped}`, {
-      ...init,credentials:'include',...(controller?{signal:controller.signal}:{}),
-      headers:{'content-type':'application/json','x-device-id':deviceId(),...csrf,...init?.headers},
+      ...init,credentials:publicRead?'omit':'include',...(controller?{signal:controller.signal}:{}),
+      headers:publicRead?init?.headers:{'content-type':'application/json','x-device-id':deviceId(),...csrf,...init?.headers},
     })
     if(!res.ok){
-      if(res.status===401)await checkSessionRejected(identity)
+      if(res.status===401&&identity)await checkSessionRejected(identity)
       let detail=res.statusText
       try{detail=(await res.json()).detail??detail}catch{/* keep status text */}
       throw new ApiError(res.status,detail)
     }
     const data=await res.json() as T
     if(epoch!==accountGeneration())throw new ApiError(409,'Your account changed. Please reload.')
+    if(path.startsWith('/questions?')&&(data as QuestionPage).browse_allowance)window.dispatchEvent(new Event('ism-browse-allowance-change'))
     return data
     }catch(error){
       if(controller?.signal.aborted)throw new ApiError(408,"This request took too long. Please try again.")
@@ -200,7 +209,7 @@ export interface ListParams {
   paper_id?: string
   essay_kind?: 'essay' | 'letter' | 'precis' | 'comprehension'
   section_path?: string
-  order?: 'repeated'|'mixed'
+  order?: 'repeated'|'mixed'|'paper'
   seed?: string
   study_status?: 'all' | 'unseen' | 'answered' | 'wrong' | 'ever_wrong'
   limit?: number
@@ -218,6 +227,8 @@ export function prefetchQuestionPage(p:ListParams){
   const connection=(navigator as Navigator&{connection?:{saveData?:boolean;effectiveType?:string}}).connection
   if(document.visibilityState!=='visible'||connection?.saveData||/^(slow-)?2g$/.test(connection?.effectiveType||'')||(p.study_status&&p.study_status!=='all'))return
   if((p.limit??25)>25)return
+  // Speculation never admits a new paid-capacity query.
+  if(powerFilterQuery({...Object.fromEntries(new URLSearchParams(scopedApiPath('/questions').split('?')[1]||'')),...p}))return
   void listQuestions(p).catch(()=>{/* Speculation never replaces the visible-page error state. */})
 }
 
@@ -258,6 +269,7 @@ export interface Progress {
   unique_questions: number
   accuracy: number
   current_streak: number
+  streak_basis?: string
   active_days_30: number
   last_active_at: string | null
   daily_activity: { day: string; answered: number; correct: number }[]
@@ -459,7 +471,7 @@ export interface HomeData {
 export const getHome = () => req<HomeData>('/home')
 
 export const getCommunityFeed = (tab: CommunityFeedResponse['tab'] = 'for-you', offset = 0, discussion: 'all' | 'doubts' | 'unanswered' = 'all', shelfId?:string) =>
-  req<CommunityFeedResponse>(`/community/feed?tab=${encodeURIComponent(tab)}&offset=${offset}&discussion=${discussion}${shelfId?`&shelf_id=${encodeURIComponent(shelfId)}`:''}`)
+  req<CommunityFeedResponse>(`/community/feed?content_version=2&tab=${encodeURIComponent(tab)}&offset=${offset}&discussion=${discussion}${shelfId?`&shelf_id=${encodeURIComponent(shelfId)}`:''}`)
 
 export interface ModerationSummary {
   open_reports: number
@@ -469,6 +481,9 @@ export interface ModerationSummary {
 }
 
 export interface ModerationItem {
+  content_version?:number
+  edit_history?:import('../components/PostEditing').PostRevision[]
+  material?:{label?:string;url?:string;unavailable?:boolean}|null
   id: string
   item_type: 'reported' | 'new_user' | 'appeal' | 'action'
   post_id: number | null
@@ -502,19 +517,26 @@ export type ModerationAction = 'approve' | 'reject' | 'hide' | 'dismiss' | 'gran
 const adminHeaders = (token: string) => ({ Authorization: `Bearer ${token}` })
 export const getModerationQueue = (token: string, tab: ModerationTab) =>
   req<ModerationQueue>(`/admin/moderation/queue?tab=${encodeURIComponent(tab)}`, { headers: adminHeaders(token) })
-export const reviewModerationPost = (token: string, postId: number, action: ModerationAction, note = '') =>
-  req<{ ok: boolean }>(`/admin/moderation/posts/${postId}/action`, { method: 'POST', headers: adminHeaders(token), body: JSON.stringify({ action, note }) })
+export const reviewModerationPost = (token: string, postId: number, action: ModerationAction, note = '', expectedVersion=0) =>
+  req<{ ok: boolean }>(`/admin/moderation/posts/${postId}/action`, { method: 'POST', headers: adminHeaders(token), body: JSON.stringify({ action, note, expected_version:expectedVersion }) })
 export const decideModerationAppeal = (token: string, appealId: number, action: ModerationAction, note = '') =>
   req<{ ok: boolean }>(`/admin/moderation/appeals/${appealId}/action`, { method: 'POST', headers: adminHeaders(token), body: JSON.stringify({ action, note }) })
 export const undoModerationAction = (token: string, actionId: number) =>
   req<{ ok: boolean }>(`/admin/moderation/actions/${actionId}/undo`, { method: 'POST', headers: adminHeaders(token) })
 
 export interface CommunityFeedItem {
+  author_tier?: 'Helper'|'Regular'|'Mentor'|'Guide'|null
+  author_profile_id?:string|null
+  content_version?:number
+  edited_at?:string|null
   avatar?:AvatarLook|null
   id: number
-  question_id: string
-  question: string
-  kind: 'explanation' | 'doubt'
+  question_id: string | null
+  question: string | null
+  kind: 'explanation' | 'doubt' | 'study' | 'material-share'
+  topic_label?:string|null
+  study_reference?:{kind:string;id:string}|null
+  material?:{kind:string;id:string;label:string;url:string;access:string;format:string}|null
   body: string
   author: string
   author_role: string
@@ -522,6 +544,7 @@ export interface CommunityFeedItem {
   helpful: number
   pinned: boolean
   accepted_answer: string | null
+  accepted_answer_edited_at?:string|null
   source_context: string | null
 }
 
@@ -558,7 +581,7 @@ export interface ExamProgressSummary {
   accuracy: number
 }
 export const getExamProgress = () => req<ExamProgressSummary[]>('/me/exam-progress')
-export const getExamBookmarks = () => req<{ collection_ids: string[] }>('/me/exam-bookmarks')
+export const getExamBookmarks = () => req<{ collection_ids: string[];primary_collection_id:string|null }>('/me/exam-bookmarks')
 export const saveExamBookmark = (id: string) => req<{ saved: boolean }>(`/me/exam-bookmarks/${encodeURIComponent(id)}`, { method: 'PUT' })
 export const removeExamBookmark = (id: string) => req<{ saved: boolean }>(`/me/exam-bookmarks/${encodeURIComponent(id)}`, { method: 'DELETE' })
 export const listPaperQuestions = (collectionId: string, paperId: string, offset = 0, limit = 50, signal?:AbortSignal) =>
@@ -620,6 +643,7 @@ export interface MockReviewRow {
 }
 
 export interface MockResult {
+  marks_correct?: number; marks_wrong?: number;
   learning_test_id?:string|null
   learning_test_version?:number|null
   learning_test_title?:string|null
@@ -728,15 +752,17 @@ export const loadPracticeStates=(items:{question_id:string;paper_id?:string|null
 export const getNextQuestion=(qid:string,paperId?:string|null)=>req<{question_id:string|null;paper_id:string}>(`/questions/${qid}/next${paperId?'?paper_id='+encodeURIComponent(paperId):''}`)
 
 export interface StudySetFilters {
+  year_from?: number; year_to?: number;
   order?: 'repeated'|'mixed'; seed?: string;
   subject_id?: string | null; topic_id?: string | null; subtopic_id?: string | null;
   paper_id?: string | null; section_path?: string | null; q?: string | null;
   study_status?: 'all'|'unseen'|'answered'|'wrong'|'ever_wrong'; pool?: 'practice'|'scorable';
   answer_status?: 'official'|'verified'|'needs-review'|null; offset?: number;
-  review_session_id?: string;
+  onboarding_version?:number;exam_title?:string;review_session_id?: string;has_curated?:boolean;deck_id?:string|null;
 }
-export interface StudySetSummary { correct:number;wrong:number;viewed:number;skipped:number;unofficial:number;total:number }
+export interface StudySetSummary { curated_checked?:number;correct:number;wrong:number;viewed:number;skipped:number;unofficial:number;total:number;reward?:{status:string;xp:number;points:number;receipt_id?:number} }
 export interface StudySetPreview {
+  collection_id: string|null; kind:'practice'|'review';
   id:string;requested_size:10|20;total:number;position:number;version:number;
   filters:StudySetFilters;created_at:string;updated_at:string;finished_at:string|null;summary:StudySetSummary|null;
 }
@@ -746,11 +772,40 @@ export interface StudySetState extends StudySetPreview {
 }
 export interface StudySet extends StudySetState { question_ids:string[];items:Question[] }
 export const listStudySets=()=>req<{items:StudySetPreview[]}>('/study-sessions')
-export const getStudySet=(id:string)=>req<StudySet>('/study-sessions/'+encodeURIComponent(id))
+const WORD_REVIEW_HEADERS={'x-finna-review-items':'curated-v1'}
+export const getStudySet=(id:string)=>req<StudySet>('/study-sessions/'+encodeURIComponent(id),{headers:WORD_REVIEW_HEADERS})
 export const startStudySet=(request_key:string,size:10|20,filters:StudySetFilters,review_session_id?:string)=>req<StudySet>('/study-sessions',{method:'POST',body:JSON.stringify({request_key,size,filters,review_session_id})})
-export const moveStudySet=(id:string,version:number,position:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/position',{method:'POST',body:JSON.stringify({version,position})})
-export const checkStudySet=(id:string,version:number,question_id:string,chosen_index:number,presentation_hash?:string|null)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/answer',{method:'POST',body:JSON.stringify({version,question_id,chosen_index,presentation_hash})})
-export const viewStudySet=(id:string,question_id:string)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/viewed',{method:'POST',body:JSON.stringify({question_id})})
-export const finishStudySet=(id:string,version:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/finish',{method:'POST',body:JSON.stringify({version})})
+export const moveStudySet=(id:string,version:number,position:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/position',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({version,position})})
+export const checkStudySet=(id:string,version:number,question_id:string,chosen_index:number,presentation_hash?:string|null)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/answer',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({version,question_id,chosen_index,presentation_hash})})
+export const viewStudySet=(id:string,question_id:string)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/viewed',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({question_id})})
+export const revealStudyWord=(id:string,version:number,question_id:string)=>req<StudySet>('/study-sessions/'+encodeURIComponent(id)+'/word-reveal',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({version,question_id})})
+export const finishStudySet=(id:string,version:number)=>req<StudySetState>('/study-sessions/'+encodeURIComponent(id)+'/finish',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({version})})
+
+export interface FocusSubjects {items:{subject_id:string;label:string}[];available?:{id:string;label:string;selected:boolean}[];limit:number}
+export interface TopicMastery {subject_id:string;subject_label:string;topic:string;topic_label:string;state:'exploring'|'practicing'|'proficient'|'mastered';distinct_attempted:number;distinct_correct_latest:number;accuracy:number;rusty:boolean;focused:boolean;in_primary_exam:boolean}
+export interface MasterySnapshot {items:TopicMastery[];basis:string;rule_version:string;exam:{id:string;title:string}|null}
+export interface ReviewQueue {curated_due_count?:number;curated_scheduled_count?:number;curated_writes_enabled?:boolean;vocabulary_due_count?:number;vocabulary_scheduled_count?:number;due_count:number;scheduled_count:number;has_more:boolean;items:{item_id:string;item_type?:'question'|'vocab';curated?:boolean;deck_id?:string|null;question:string;box:number;due_on:string;focused:boolean;subject_label:string;topic_label:string|null}[]}
+export interface WeeklyRecap {week_start:string;week_end:string;xp:number;reviews_cleared:number;active_days:number;streak_kept:boolean;focus_seconds:number;topics:{topic:string;topic_label:string;tier:string}[];more_topics:boolean;topic_basis:string;focus_basis:string}
+export interface TodayPlan {vocabulary?:{target:number;introduced:number;remaining:number;due:number;eligible:number;url:string}|null;exam_preparation?:{title:string;date:string;days_remaining:number;new_limit:number;phase:string;mock_url:string|null}|null;weekly_recap?:WeeklyRecap|null;account:boolean;ist_date:string;exam:{id:string;title:string;is_primary:boolean}|null;focus:FocusSubjects;due_count:number;scheduled_count:number;new_questions:{subject_label:string;topic_label:string;target:number;url:string;exam_title?:string;progress?:number;completed?:boolean}|null;plan_status?:{started:boolean;completed?:boolean;progress?:number;target?:number};daily_five:{status:string;url:string};quests:{key:string;title:string;progress:number;target:number;completed:boolean;claimed:boolean}[];empty_reason:string}
+export interface CalendarLayers {community:{id:string;day:string;title:string;starts_at:string;ends_at:string;url:string;kind:string}[];desk_schedule_available:boolean;registered:boolean;entries:import('./calendar').OwnedEntry[];occurrences:import('./calendar').OwnedOccurrence[];official:import('./calendar').CalendarEvent[];forecast:{day:string;count:number}[];habit:{day:string;count:number}[];forecast_basis:string}
+export const getToday=()=>req<TodayPlan>('/me/today',{headers:WORD_REVIEW_HEADERS})
+export const getMastery=()=>req<MasterySnapshot>('/me/mastery')
+export const getReviewQueue=(offset=0,deck_id?:string)=>req<ReviewQueue>('/me/review-queue?limit=100&offset='+offset+(deck_id?'&deck_id='+encodeURIComponent(deck_id):''),{headers:WORD_REVIEW_HEADERS})
+export const getFocusSubjects=()=>req<FocusSubjects>('/me/focus-subjects')
+export const saveFocusSubjects=(subject_ids:string[])=>req<FocusSubjects>('/me/focus-subjects',{method:'PATCH',body:JSON.stringify({subject_ids})})
+export const setPrimaryExam=(id:string)=>req<{primary_collection_id:string}>('/me/exam-bookmarks/'+encodeURIComponent(id)+'/primary',{method:'PUT'})
+export const startSmartReview=(request_key:string,focus_only=false,through?:string,item_type:'all'|'question'|'vocab'='all',deck_id?:string)=>req<StudySet>('/review-sessions',{method:'POST',headers:WORD_REVIEW_HEADERS,body:JSON.stringify({request_key,focus_only,through,item_type,deck_id})})
+export const getCalendarLayers=(start:string,end:string)=>req<CalendarLayers>('/me/calendar-layers?'+new URLSearchParams({start,end}))
 
 export const getPaperReadiness=(collection:string,paper:string)=>req<import('./bankOrganization').PaperReadiness>('/collections/'+encodeURIComponent(collection)+'/paper-readiness?paper_id='+encodeURIComponent(paper))
+
+
+export interface OnboardingStatus {exam:{id:string;title:string;live_version:number}|null;session:StudySetPreview|null;available:boolean;reason:string|null}
+export interface OnboardingSummary {finished:boolean;subjects:{subject_id:string;label:string;checked:number;correct:number}[];suggested_subject_ids:string[];basis?:string}
+async function onboardingRequest<T>(path:string,init?:RequestInit){const generation=accountGeneration(),identity=await req<{user_id:string}>('/review/session');if(generation!==accountGeneration())throw new Error('Your account changed. Please reload.');return req<T>(path,{...init,headers:{...init?.headers,'x-learning-user':identity.user_id||''}})}
+export const getOnboarding=()=>onboardingRequest<OnboardingStatus>('/me/onboarding')
+export const startOnboarding=(collection_id:string,request_key:string)=>onboardingRequest<StudySet>('/me/onboarding',{method:'POST',body:JSON.stringify({collection_id,request_key})})
+export const getOnboardingSummary=(sid:string)=>onboardingRequest<OnboardingSummary>('/me/onboarding/'+encodeURIComponent(sid)+'/summary')
+
+export const getGroupPrice=()=>onboardingRequest<{amount_paise:number;enabled:boolean}>('/billing/bulk/me')
+export const claimGroupPrice=(code:string,expected_amount_paise:number)=>onboardingRequest<{saved:boolean;already_redeemed:boolean;amount_paise:number}>('/billing/bulk/claim',{method:'POST',body:JSON.stringify({code,expected_amount_paise})})

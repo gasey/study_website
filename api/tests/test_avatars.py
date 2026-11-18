@@ -236,14 +236,9 @@ def test_existing_public_visibility_and_desk_block_boundaries(
         ).status_code
         == 200
     )
-    assert (
-        next(
-            r
-            for r in client.get("/api/rewards/leaderboard").json()["items"]
-            if r["handle"] == user
-        )["avatar"]
-        == look
-    )
+    # Weekly standings deliberately expose only handle, XP and rank.
+    row=next(r for r in client.get('/api/rewards/leaderboard').json()['items'] if r['handle']==user)
+    assert set(row)=={'handle','xp','rank'} and row['xp']==10
     did = "desk_" + uuid4().hex
     conn.execute(
         "INSERT INTO study_desks(id,owner_id,name) VALUES(%s,%s,'Synthetic avatar desk')",

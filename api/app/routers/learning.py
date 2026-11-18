@@ -104,8 +104,9 @@ async def candidates(cur,user,scope):
          WHERE ma.mock_id=l.mock_id AND x.value->>'question_id'=l.canonical_id ORDER BY ma.created_at DESC,ma.id DESC LIMIT 1) ma ON true
        WHERE COALESCE(aa.outcome,ma.outcome,CASE WHEN l.correct THEN 'correct' ELSE 'wrong' END)='wrong'),
       saved AS MATERIALIZED (SELECT jsonb_array_elements_text(COALESCE(document->'saved','[]'::jsonb)) AS id FROM personal_desks WHERE user_id=%(user)s),
-      due AS MATERIALIZED (SELECT vs.question_id AS id FROM vocabulary_state vs JOIN v_vocabulary_eligible e ON e.id=vs.question_id AND e.focus=%(scope)s
-       WHERE vs.user_id=%(user)s AND vs.seen>0 AND (vs.due_at<=now() OR vs.score_version<>e.score_version OR vs.appearance_version<>e.appearance_version OR vs.appearance_id IS DISTINCT FROM e.primary_appearance_id)),
+      due AS MATERIALIZED (SELECT r.canonical_id AS id FROM v_bank_review_items r
+       JOIN v_vocabulary_eligible e ON e.id=r.canonical_id AND e.focus=%(scope)s
+       WHERE r.user_id=%(user)s AND r.item_type='vocab' AND r.due_on<=(now() AT TIME ZONE 'Asia/Kolkata')::date),
       selected_ids AS MATERIALIZED (SELECT canonical_id AS id FROM mistakes UNION SELECT id FROM saved UNION SELECT id FROM due)
       SELECT q.id,q.question,qc.subject_label,
        EXISTS(SELECT 1 FROM mistakes m WHERE m.canonical_id=q.id) AS mistake,

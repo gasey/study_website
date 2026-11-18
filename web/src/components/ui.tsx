@@ -80,7 +80,7 @@ export function CountBadge({ children }: { children: ReactNode }) {
   )
 }
 
-/** 14px square checkbox, 3px radius, solid ink when on. (markup line 396) */
+/** Finna's 20px checkbox with a visible check, paired with aria-pressed. */
 export function Checkbox({
   on,
   label,
@@ -100,10 +100,11 @@ export function Checkbox({
       className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-[14px] transition-colors hover:text-ink disabled:text-muted"
     >
       <span
-        className={`h-[14px] w-[14px] shrink-0 rounded-[3px] border transition-colors ${
+        aria-hidden="true"
+        className={`grid h-5 w-5 shrink-0 place-items-center rounded-[7px] border text-xs font-black transition-colors ${
           disabled ? 'border-hairline2' : 'border-ink'
-        } ${on ? 'bg-ink' : 'bg-transparent'}`}
-      />
+        } ${on ? 'bg-ink text-paper' : 'bg-transparent'}`}
+      >{on?'✓':''}</span>
       <span>{label}</span>
     </button>
   )

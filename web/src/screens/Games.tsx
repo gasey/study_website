@@ -1,3 +1,4 @@
+import WeeklyStandings from '../components/WeeklyStandings'
 import {learnerExplanation} from '../lib/answerStatus'
 import GameSetup from "../components/GameSetup";
 import {useEffect,useRef,useState} from "react";
@@ -17,7 +18,6 @@ import {
   type GameSelection,
   type GamePreview,
   type JoinPreview,
-  type CompetitiveLeaderboardResponse,
 } from "../lib/games";
 import {
   SourceQuestionContext,
@@ -99,7 +99,7 @@ export default function Games() {
   const [params] = useSearchParams();
   const [data, setData] = useState<GamesData | null>(null);
   const [selection,setSelection]=useState<GameSelection|null>(null);
-  const [chosenMode,setChosenMode]=useState<GameMode|null>(null);
+  const [chosenMode,setChosenMode]=useState<GameMode|null>((["gauntlet","speed","duel","party","cup","daily"].includes(params.get("mode")||"")?params.get("mode") as GameMode:null));
   const [matchmaking,setMatchmaking]=useState(false);
   const [joinPreview,setJoinPreview]=useState<JoinPreview|null>(null);
   const joinEpoch=useRef(0);
@@ -192,11 +192,6 @@ export default function Games() {
     !!cup &&
     now >= Date.parse(cup.opens_at) &&
     now <= Date.parse(cup.closes_at) - 750000;
-  const featured = MODES[0];
-  const best =
-    data?.history
-      .filter((h) => h.mode === "gauntlet" && h.state === "finished")
-      .reduce((n, h) => Math.max(n, h.distance), 0) || 0;
   return (
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 sm:px-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
@@ -205,7 +200,7 @@ export default function Games() {
             Game time
           </div>
           <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)] leading-tight">
-            Games
+            Play
           </h1>
           <p className="mt-3 max-w-[640px] text-[17px] leading-relaxed text-secondary">
             Every game runs on official-key questions from the bank. Play solo,
@@ -234,7 +229,6 @@ export default function Games() {
           </button>
         </div>
       )}
-      <Link to="/trail" className="ism-card-surface group mt-5 block rounded-[16px] border border-correct bg-correct-soft/75 p-5 hover:border-correct"><h2 className="font-display text-[28px] text-correct-dark group-hover:underline">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
       {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-exams bg-exams-soft p-4"><div><h2 className="font-display text-[23px]">You have an unfinished mock</h2><p className="mt-1 text-[13px] text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' !bg-ink !text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
       {data?.active && (
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-practice bg-practice-soft p-4">
@@ -249,82 +243,15 @@ export default function Games() {
           </Link>
         </div>
       )}
-      {data?.setup&&<GameSetup data={data.setup}registered={data.registered}selection={selection}onChange={setSelection}mode={chosenMode}matchmaking={matchmaking}onMode={setChosenMode}onConfirm={p=>{if(chosenMode)void start(chosenMode,p,matchmaking)}}busy={busy}disabled={!!data.active||!!data.active_mock}/>}
-      <section className="mt-6 flex flex-wrap overflow-hidden rounded-[16px] border border-white/10 bg-[#141622] text-[#F5F0E6] shadow-[0_14px_34px_-6px_rgba(15,23,42,.3)]">
-        <div
-          className="relative flex min-h-[240px] min-w-0 flex-[1_1_360px] items-center justify-center overflow-hidden"
-          style={{
-            background:
-              "radial-gradient(circle at 75% 25%, rgba(216,163,58,0.18), transparent 55%), repeating-linear-gradient(135deg,#1D2030 0 12px,#25293C 12px 24px)",
-          }}
-        >
-          <svg
-            viewBox="0 0 420 240"
-            className="w-full max-w-[440px]"
-            role="img"
-            aria-label="Gauntlet track with three question gates"
-          >
-            <path
-              d="M45 200Q160 190 130 135T230 85T375 35"
-              fill="none"
-              stroke="#D8A33A"
-              strokeWidth="9"
-              strokeDasharray="12 8"
-            />
-            {[
-              [85, 165],
-              [175, 110],
-              [285, 45],
-            ].map(([x, y], i) => (
-              <g key={i} transform={`translate(${x},${y})`}>
-                <path
-                  d="M0 38V0H50V38"
-                  fill="none"
-                  stroke="#F4EFE4"
-                  strokeWidth="5"
-                />
-                <text
-                  x="25"
-                  y="24"
-                  fill="#F4EFE4"
-                  textAnchor="middle"
-                  fontSize="19"
-                >
-                  {i + 1}
-                </text>
-              </g>
-            ))}
-          </svg>
-          <span className="absolute bottom-4 left-5 font-mono text-[11px] text-[#D8A33A]">
-            QUESTION GATES · OFFICIAL KEYS
-          </span>
-        </div>
-        <div className="min-w-0 flex-[1_1_380px] px-6 py-7 sm:px-[30px]">
-          <span className="rounded-pill bg-[#D8A33A] px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide text-[#14130F]">
-            Featured
-          </span>
-          <h2 className="mt-4 font-display text-[40px] leading-tight text-white">
-            Gauntlet Run
-          </h2>
-          <p className="mt-3 text-[15px] leading-relaxed text-[#D9D0BF]">
-            {featured.body}
-          </p>
-          <p className="mt-4 text-[13px] text-[#E6DFD2]">
-            Best in your recent runs{" "}
-            <b className="font-mono text-[#FBBF24]">{best.toLocaleString("en-IN")} m</b>
-          </p>
-          <button
-            disabled={busy || !data || !!data.active || !!data.active_mock}
-            className={BTN + " mt-5 !border-0 !bg-[#D8A33A] !text-[#14130F] shadow-sm hover:brightness-105"}
-            onClick={() => requestStart("gauntlet")}
-          >
-            Choose area & play Gauntlet
-          </button>
-        </div>
-      </section>
       <div className="mt-5 flex flex-wrap items-start gap-8">
-        <section className="grid min-w-0 flex-[999_1_620px] gap-3 sm:grid-cols-2">
-          {MODES.slice(1).map((m) => (
+        <section aria-label="Play modes" className="grid min-w-0 flex-[999_1_620px] gap-3 sm:grid-cols-2">
+          <section aria-label="Daily Five" className="ism-card-surface flex flex-col items-start justify-between gap-4 rounded-[16px] border border-practice bg-practice-soft p-5">
+        <div><h2 className="font-display text-[28px]">Daily Five</h2><p className="mt-2 text-[14px] text-secondary">Five shared questions · GK/GS, English and everyday maths · 20 seconds each. One attempt per India calendar day.</p></div>
+        {data?.daily?.entry_room?<Link className={BTN} to={'/games/'+data.daily.entry_room}>Open my Daily Five →</Link>:<button className={BTN} disabled={busy||!data||!!data.active||!!data.active_mock||now>Date.parse(data.daily.closes_at)-100000} onClick={()=>requestStart('daily')}>Review Daily Five setup →</button>}
+      </section>
+          <Link to="/trail" className="ism-card-surface group block rounded-[16px] border border-correct bg-correct-soft/75 p-5 hover:border-correct"><h2 className="font-display text-[28px] text-correct-dark group-hover:underline">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
+
+          {MODES.map((m) => (
             <article
               key={m.id}
               className="ism-card-surface flex flex-col rounded-[14px] border border-hairline bg-card p-5"
@@ -380,7 +307,7 @@ export default function Games() {
                       ? "Create private duel"
                       : m.id === "party"
                         ? "Create multiplayer room"
-                        : "Play speed round"}
+                        : m.id === "gauntlet" ? "Play Gauntlet Run" : "Play speed round"}
                 </button>
               )}
               {m.id === "duel" && (
@@ -467,194 +394,22 @@ export default function Games() {
           </Link>
         </aside>
       </div>
+      {data?.setup&&<GameSetup data={data.setup}registered={data.registered}selection={selection}onChange={setSelection}mode={chosenMode}matchmaking={matchmaking}onMode={setChosenMode}onConfirm={p=>{if(chosenMode)void start(chosenMode,p,matchmaking)}}busy={busy}disabled={!!data.active||!!data.active_mock||(chosenMode==='daily'&&(!!data.daily?.entry_room||now>Date.parse(data.daily.closes_at)-100000))}/>}
+
       <CompetitiveLeaderboardSection />
     </main>
   );
 }
-const COHORT_LABELS: Record<string, string> = {
-  all: "All Streams",
-  "arts-comfort": "Arts & Humanities",
-  "science-bridge": "Science & Tech",
-  "commerce-core": "Commerce & Accounts",
-  "balanced-core": "Balanced Core",
-};
 function CompetitiveLeaderboardSection() {
-  const [track, setTrack] = useState<"league" | "gk_gs" | "everyday_math" | "english" | "cup">("league");
-  const [period, setPeriod] = useState<"week" | "month" | "all">("week");
-  const [cohort, setCohort] = useState<string>("all");
-  const [board, setBoard] = useState<CompetitiveLeaderboardResponse | null>(null);
-  const [error, setError] = useState("");
-  useEffect(() => {
-    let live = true;
-    const q = new URLSearchParams({ track, period, cohort });
-    gameRead<CompetitiveLeaderboardResponse>("/leaderboard?" + q.toString())
-      .then((r) => {
-        if (live) {
-          setBoard(r);
-          setError("");
-        }
-      })
-      .catch((e) => {
-        if (live) setError((e as Error).message);
-      });
-    return () => {
-      live = false;
-    };
-  }, [track, period, cohort]);
-  return (
-    <section
-      aria-label="Competitive leaderboards and stream leagues"
-      className="mt-8 rounded-[14px] border border-hairline bg-card p-5 sm:p-6"
-    >
-      <div className="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <div className="font-mono text-[11px] uppercase tracking-wider text-[#9A6410]">
-            4-Track Standings · Cross-Stream Fair Play
-          </div>
-          <h2 className="mt-1 font-display text-[28px]">
-            Competitive Leaderboards & Stream Cohorts
-          </h2>
-          <p className="mt-1 max-w-[680px] text-[13px] text-secondary">
-            Compare weekly XP leagues, pillar best runs (GK/GS, Everyday Maths, General English), or filter by your academic stream cohort.
-          </p>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <Link to="/rewards" className={BTN}>
-            Daily quests & streak shields →
-          </Link>
-          <Link to="/board" className={BTN}>
-            Full XP board →
-          </Link>
-        </div>
-      </div>
-      <div className="mt-4 flex flex-wrap gap-2" role="group" aria-label="Leaderboard track">
-        {(
-          [
-            ["league", "Weekly XP League"],
-            ["gk_gs", "GK & GS Best"],
-            ["everyday_math", "Everyday Maths Best"],
-            ["english", "General English Best"],
-            ["cup", "Sunday Cup"],
-          ] as const
-        ).map(([id, label]) => (
-          <button
-            key={id}
-            type="button"
-            aria-pressed={track === id}
-            onClick={() => setTrack(id)}
-            className={BTN + (track === id ? " bg-ink text-paper" : "")}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
-      <div className="mt-3 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-3">
-        <div className="flex flex-wrap items-center gap-1.5" role="group" aria-label="Stream cohort filter">
-          <span className="mr-1 font-mono text-[11px] uppercase text-muted">Cohort:</span>
-          {Object.entries(COHORT_LABELS).map(([id, label]) => (
-            <button
-              key={id}
-              type="button"
-              aria-pressed={cohort === id}
-              onClick={() => setCohort(id)}
-              className={
-                "min-h-9 rounded-pill border px-3 py-1 text-[12px] font-semibold " +
-                (cohort === id
-                  ? "border-[#9A6410] bg-[#F6E7C6] text-ink"
-                  : "border-hairline bg-paper text-secondary")
-              }
-            >
-              {label}
-            </button>
-          ))}
-        </div>
-        {["gk_gs", "everyday_math", "english"].includes(track) && (
-          <div className="flex gap-1.5" role="group" aria-label="Leaderboard period">
-            {(
-              [
-                ["week", "This week"],
-                ["month", "This month"],
-                ["all", "All time"],
-              ] as const
-            ).map(([id, label]) => (
-              <button
-                key={id}
-                type="button"
-                aria-pressed={period === id}
-                onClick={() => setPeriod(id)}
-                className={
-                  "min-h-9 rounded-pill border px-3 py-1 text-[12px] font-semibold " +
-                  (period === id ? "border-ink bg-ink text-paper" : "border-hairline bg-paper")
-                }
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        )}
-      </div>
-      {error && <p className="mt-3 text-[13px] text-mypick">{error}</p>}
-      <div className="mt-4 overflow-hidden rounded-[10px] border border-hairline bg-paper">
-        {board?.items.length ? (
-          board.items.map((item, idx) => (
-            <div
-              key={item.handle + "-" + idx}
-              className={
-                "flex flex-wrap items-center justify-between gap-3 border-b border-hairline px-4 py-3 last:border-b-0 " +
-                (item.is_you ? "bg-[#FBF4E6]" : "")
-              }
-            >
-              <div className="flex min-w-0 items-center gap-3">
-                <span className="w-8 font-display text-[22px] text-[#9A6410]">
-                  #{item.rank}
-                </span>
-                <UserAvatar look={item.avatar} initials={item.handle} />
-                <div className="min-w-0">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <b className="truncate text-[14px]">
-                      {item.handle}
-                      {item.is_you ? " · you" : ""}
-                    </b>
-                    {item.stream_cohort && COHORT_LABELS[item.stream_cohort] && (
-                      <span className="rounded-pill bg-ink/10 px-2 py-0.5 font-mono text-[10px] text-ink">
-                        {COHORT_LABELS[item.stream_cohort]}
-                      </span>
-                    )}
-                    {item.streak > 0 && (
-                      <span className="rounded-pill bg-[#F6DDD3] px-2 py-0.5 font-mono text-[10px] text-[#C0462C]">
-                        🔥 {item.streak}d
-                      </span>
-                    )}
-                    {item.league && (
-                      <span className="rounded-pill bg-[#F6E7C6] px-2 py-0.5 font-mono text-[10px] text-[#9A6410]">
-                        {item.league.name}
-                      </span>
-                    )}
-                  </div>
-                  {(item.pace_bonus || item.best_streak || item.courage_bonus) ? (
-                    <div className="mt-0.5 font-mono text-[11px] text-muted">
-                      {item.correct ?? 0} correct · Pace +{item.pace_bonus || 0} · Best streak 🔥{item.best_streak || 0}
-                      {item.courage_bonus ? ` · Courage ⚡+${item.courage_bonus}` : ""}
-                    </div>
-                  ) : null}
-                </div>
-              </div>
-              <div className="font-display text-[24px]">
-                {item.score.toLocaleString("en-IN")}{" "}
-                <span className="font-mono text-[11px] uppercase text-muted">
-                  {track === "league" ? "XP" : "pts"}
-                </span>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className="p-5 text-[13px] text-secondary">
-            No public standings on this track yet. Finish a game or join the public leaderboard from Rewards to appear here.
-          </p>
-        )}
-      </div>
-    </section>
-  );
+ const [track,setTrack]=useState<'gauntlet'|'speed'|'duel'|'daily'>('gauntlet')
+ const modes=[['gauntlet','Gauntlet best score','score'],['speed','Speed best score','score'],['duel','Duel wins','wins'],['daily','Daily Five streak','days']] as const
+ return <section aria-label="Weekly game boards" className="mt-8 rounded-[18px] border border-hairline bg-card p-5 sm:p-6">
+  <h2 className="font-display text-[28px]">Weekly game boards</h2>
+  <p className="mt-2 text-[13px] text-secondary">Finished games, one shared visibility choice. Daily Five ranks your longest run of completed days within this India week. Duel ties don’t count as wins.</p>
+  <div role="group" aria-label="Game board mode" className="mt-4 flex flex-wrap gap-2">{modes.map(([id,label])=><button key={id} type="button" aria-pressed={track===id} onClick={()=>setTrack(id)} className={BTN+(track===id?' !bg-ink !text-paper':'')}>{label}</button>)}</div>
+  <WeeklyStandings key={track} endpoint={'/games/leaderboard?contract=2&track='+track} unit={modes.find(m=>m[0]===track)![2]} empty="No public results for this mode this week yet."/>
+  <Link to="/board" className={BTN+' mt-5'}>Weekly XP league →</Link><Link to="/rewards" className={BTN+' ml-2 mt-5'}>My visibility →</Link>
+ </section>
 }
 function CupBoard({ cupId }: { cupId: string }) {
   const [items, setItems] = useState<
@@ -1222,7 +977,7 @@ export function GamePlayer() {
                       </div>
                       <div>
                         <div className="font-mono text-[10px] uppercase text-muted">
-                          Normalized Pace
+                          {room.mode==='daily'?'Seconds left bonus':'Normalized Pace'}
                         </div>
                         <div className="mt-1 font-display text-[22px] text-[#1F44A6]">
                           +{mine?.pace_bonus ?? 0} pts
@@ -1247,7 +1002,7 @@ export function GamePlayer() {
                     </div>
                   )}
                   <p className="mt-3 text-[13px] text-secondary">
-                    Game points use correct answers, task-normalized server timing, streak combos and cross-stream courage bonuses. Bank
+                    {room.mode==='daily'?'Daily Five scores 100 per correct answer plus 5 for each whole second left.':'Game points use correct answers, task-normalized server timing, streak combos and cross-stream courage bonuses.'} Bank
                     changes before finalization are excluded. Learning XP
                     follows the shared daily budget and first-question reward
                     rules.
@@ -1256,7 +1011,7 @@ export function GamePlayer() {
                     Date.parse(room.review_available_at) >
                       now + serverOffset && (
                       <p className="mt-4 rounded-[8px] bg-[#F6E7C6] p-3 text-[13px]">
-                        Cup answer review unlocks after{" "}
+                        {room.mode==='daily'?'Daily Five':'Cup'} answer review unlocks after{" "}
                         {readableTime(room.review_available_at)}.
                       </p>
                     )}
@@ -1294,7 +1049,7 @@ export function GamePlayer() {
               </p>
               <p className="mt-3 text-[13px] leading-relaxed text-secondary">
                 Correct answers and scores are revealed when the shared game
-                ends. Weekly cup answers stay hidden until the cup closes.
+                ends. Weekly cup and Daily Five answers stay hidden until their event closes.
                 External sources and previously known questions can’t be
                 prevented; these games are practice competitions.
               </p>

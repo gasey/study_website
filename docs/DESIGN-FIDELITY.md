@@ -1,5 +1,50 @@
 # Design fidelity — values extracted from the prototype
 
+## Current visual reference — 14 November 2026
+
+18 November account viewer: extracted Finna Admin prototype lines14–18,26–46,
+51–69 supply the existing navy/sidebar, semantic light/night palette, Figtree,
+18px cards,20px padding and12px nested receipts. Canonical /admin/users and phone
+selector remain in the existing shell. Search controls stack at320px; five real
+account sections, explicit missing/outage states and existing-tool links use44px
+controls. Synthetic1280/320px light/night QA fits without horizontal overflow
+(1280/1280and320/320); four final PNGs and real component/auth/navigation checks
+are in ../reports/finnaplan-v12-users-20261118/. No device certification.
+
+Final collector-time reader correction (18 November): actual collection result
+controls timer badges; checksum/peer-write latency is not a failed cycle. No
+markup/static/token change after the five worker-release screenshots.11focused
+backend regressions and real-role candidate/live reads verify the final state.
+
+18 November worker/collector continuation: existing Finna Admin prototype semantic
+palette,18px cards and16/20px padding stay. Probe cards now display measured GiB,
+actual backup creation time and collector time separately, with explicit stale /
+attention/unknown states. Successful checksum verification is visibly distinct
+from a restore rehearsal.1280/320px light/night synthetic QA passes without
+horizontal overflow (1265/1265,305/305); five PNGs and actual component/auth/error
+checks live in `../reports/finnaplan-v12-workers-20261118/`. Phone Questions retains
+its needs-review filter. No native/device or green-week certification is implied.
+
+18 November ops slice: extracted `Finna Admin.dc.html` lines14–18,26–46,
+51–69: navy sidebar, semantic light/dark palette, Figtree,18px card radius,
+16/20px card padding and12px nested cells. `/admin/ops` reuses the existing admin
+shell; the phone section selector reaches and leaves the canonical route.
+State badges include words and unknown collection is visible. Refresh and
+investigation controls have44px minimum height. Actual pool/economy/moderation/heartbeat queries replace prototype samples.
+Synthetic1280/320px paper/night QA passes without horizontal overflow (1265/1265,
+305/305px). Four PNGs, real component outage/auth-switch checks and navigation
+proof: `../reports/finnaplan-v12-ops-20261118/`. No native/device certification;
+collector readiness and a full healthy week are not implied by UI proof.
+
+The owner supplied a new `India Study Map Redesign (1).zip` for study.hawayu.in.
+Its Finna Web, Mobile and Admin markup supersedes the earlier visual values
+below. The original files are preserved in `design/finna-20261114/`; implementation
+mapping, live-data adaptations and verification are recorded in
+`FINNA-REDESIGN-20261114.md` and `../reports/finna-redesign-20261114/README.md`.
+Figtree, the exact navy/blue/yellow palette, light/dark semantic tokens, 1320px
+content width and larger card/action radii replace the former warm-paper system.
+Historical source, review, scoring and permission requirements still apply.
+
 Existing-original link (4 November): the workbench uses the existing paper/card
 tokens and44px controls to identify the exact registered PDF, show whether it is
 empty, and explicitly link or refresh it before saving. Read-only reviewers see
@@ -817,3 +862,261 @@ revision context and secondary study tools. Preserve reveal gates, assessment
 restrictions and visible material source/scoring warnings. Do not hide uncertainty
 or turn historical answers into current claims. Local before/after evidence and
 limitations: `reports/compact-cards-20261107/README.md`; deployment remains pending.
+
+### 12 November — Clearer Home quick start
+
+Functional refinement of the compact study entry above: retain warm paper,
+Newsreader headings, 14px cards and 44px controls. Quick start now has a small
+cream-tinted heading, four exam shortcuts, two labelled selects, a contextual
+instruction and one explicit action. Phone layouts use a two-by-two shortcut grid,
+stacked selects and a full-width action. MES uses its own branch/syllabus/paper
+choices; it is not advertised as a cross-paper mixed queue. No invented activity
+or progress is introduced. Resume cards and real weekly activity remain ahead of
+optional discovery, with retry states that distinguish failures from empty data.
+
+##17November2026 — V.5 weekly boards and Monday recap (local only)
+
+Followed the actual `docs/design/finna-20261114/Finna Web.dc.html` board row and
+Today-card markup: existing18px card surfaces, typography, hairlines and44px
+controls. Replaced the monthly/paged board and subject/stream board widgets with
+weekly top10and nearby ranks. On desktop these share two columns; on phones the
+nearby ranks lead. Public rows show handle/score/rank only. The private placement
+is labelled explicitly, with no avatar, streak, academic result or wallet badge.
+Error/loading/empty standings are distinct. Game tabs remount the read widget
+on selection to prevent old-mode results remaining visible.
+
+Monday recap sits inside the existing Today card and keeps first milestones in
+a closed disclosure. Its focus line says sessions ended last week; no estimated
+focus time or historical tier changes are presented as observations. Local normal
+sign-in against a disposable fixture verified the populated/private XP board,
+empty and populated game modes, and source-derived recap. Desktop and320px layouts
+were inspected; phone document305px within viewport320px, no inspected horizontal
+overflow. Screenshots: `reports/finnaplan-v5-boards-20261117/`. Viewport reset and
+owned tab/server/fixture cleaned up. This is local QA, not a production/native/
+physical-device visual certification; calendar/profile/cosmetics remain pending.
+
+##17November2026 — V.5 helper calendar (local only)
+
+Kept the current Finna card/type/control system and the existing calendar's month/
+list grid, official notices and follows. The actual20261114web prototype has no
+complete private-calendar editor, so this extends the existing surface using its
+card/hairline/type rules. The helper heading leads; one layer card controls official,
+review, habit, private notes, progress slots and exam targets. Account-only plain-text
+editor fields stack on phones; date/title/note/select controls remain44px minimum.
+Private occurrence details and target countdowns appear below the same grid.
+The subscription disclosure explains bearer-link access, revocation, retained copies
+and calendar-app refresh; the secret is shown once in memory, not a browser link.
+
+Normal disposable-fixture sign-in verified create/edit, fortnightly slot selection/
+save, month/list, a seven-day target countdown and feed create/revoke. Screenshots
+and limitations: reports/finnaplan-v5-calendar-20261117/. Inspected320px (document305)
+and1265px (document1250), no horizontal overflow. Viewport captures used when full-
+page capture under the viewport override failed. Restored viewport, closed owned
+browser tab, stopped local servers and removed fixture DB. This is local UI QA;
+week navigation and existing Cup/Desk schedule composition remain follow-ups.
+
+##17November2026 — V.5 identity and points cosmetics (local only)
+
+Extended the actual20261114Profile/Rewards identity-card controls and existing
+v3 avatar editor, keeping the current Finna card/type/hairline system. Profile's
+registered Edit profile now opens one versioned display-name/handle/bio editor.
+Cooldown date and pending/hidden bio state are explicit; fields stack at320px and
+avoid the old fixed260px identity minimum. Profile clears private state on account
+changes. Creator settings retain separate public consent and moderation status.
+
+Added Shop beside Customize/Inventory, with three curated previews (Plum25,
+Twilight50, Orbit125), one explicit review/confirm flow, live wallet balance,
+permanent Owned state and a Rewards meter link. New Orbit geometry is repo-native
+SVG; no raster asset, paid-status decoration or earned-frame lookalike. Existing
+starters/level items are intact. Buying doesn't auto-equip; saved looks use the
+same editor. Owner Creator reports now include versioned bio review controls;
+Rewards diagnostics adds3read-only cosmetic counters.
+
+Disposable normal sign-in verified saved name/handle/pending bio, disabled cooldown
+handle field, purchase200→175points, Owned, then wear/save in Customize. Inspected
+desktop shop at1265px and phone editor/shop at320px (document305px). Retained final
+screenshots are phone captures, explicitly named as such; full-page capture has
+fixed-navigation artifacts, with viewport captures for normal reading context.
+reports/finnaplan-v5-profile-20261117/. Viewport reset, owned tab closed, servers
+stopped and fixture DB removed. No native/physical-device or admin-console browser
+certification claimed. Catalog/renderer compatibility and full self-service
+consolidation remain release/follow-up work.
+
+
+##17November2026 — V.5 calendar integration and client transport (local only)
+
+Used the existing calendar grid and actual20261114web prototype card/type/token
+rules. Month/week/list share one grid and selected-day detail region. The week
+heading wraps at320px; seven small date columns retain complete accessible labels
+and full details below. Community & play is an account-only layer using actual
+Sunday Cup times. Desk's compact date list reads the same source and links into
+the selected day, keeping calendar editing in one surface. Today keeps full due
+reviews first, followed by a private countdown/taper card and optional normal mock.
+The current prototype has no complete owned calendar; no prototype fake dates,
+activity, marks or progress were introduced.
+
+Normal disposable-fixture sign-in verified desktop/320px calendar, previous/next
+week, the2026→2027 boundary/month switch, target deep links from Desk, final-week
+Today and the versioned web shop catalog. Phone document305px within320px viewport.
+Screenshots: reports/finnaplan-v5-integration-20261117/. Viewport reset and owned
+browser tab/servers/fixture removed. API tests cover legacy native catalog safety;
+no physical-native-device visual certification is claimed. Actual Desk scheduling
+awaits its later upgrade; existing Desk audit events are not calendar appointments.
+
+
+##17November2026 — V.5 account tools (local only)
+
+Read the actual20261114Profile/rewards markup (identity header, card groups,
+visibility controls and reward shortcut) and extended its card/type/token rules.
+Profile gathers Identity, Study setup, Privacy & security and Wallet with direct
+links to existing controls. Desktop uses two columns with a wide privacy panel;
+320px stacks cards and44px controls without horizontal scroll. Password editing
+moves to Account security. The optional deletion disclosure opens a centred,
+scrollable dialog explaining retention/access, exact typed confirmation and a
+prominent Keep my account action; its final button stays disabled until matched.
+No new prototype sample progress, activity or counts were introduced.
+
+Normal disposable-fixture sign-in verified primary exam save, parsed owned JSON
+download, password-settings destination and deletion-dialog gating/cancellation.
+No browser account deletion or password change was submitted; isolated backend
+tests verify destructive behavior. Phone document305px within320px viewport;
+desktop inspected. Screenshots: reports/finnaplan-v5-account-20261117/. Viewport
+reset, owned tab closed, local servers/fixture removed. Mail/MFA configuration
+availability remains honest in the local fixture; production/native parity is
+not certified by these browser checks.
+
+V.5 release (17November2026): the previously inspected boards, calendar,
+Profile/account tools and shop screens are now deployed in the frozen337-artifact
+web build, alongside28API artifacts and0097.1081backend tests and229-table
+preservation pass;36private read-only release checks and both-site health pass.
+Recovery uses prior static with the current privacy-safe API and paused new V.5
+writes; error responses use existing form error states. No additional screen or
+prototype sample activity was introduced in the recovery batch. Native physical
+visual certification remains open. Receipt:
+reports/finnaplan-v5-recovery-20261117/README.md.
+
+## 17 November 2026 — V.9 surface consolidation
+
+Read the current Finna Web reference markup's brand/search row: 1320px content,
+50px search housing, 16px radius, max720px width and semantic light/dark tokens.
+The housing now opens the one Quick find dialog. The same dialog owns phone,
+Ctrl/Cmd-K, slash and search-result editing; screen-local filters stay local.
+Revise groups the existing review/queue/mistake/vocabulary renderers; Chronicle
+groups the existing timeline/date/source views. The Play cards use existing
+card/action tokens in one grid. No stock activity or unavailable modes were added.
+
+Personal Desk removes its duplicate plan/progress/review panels and illustration
+hotspots, leaving saved questions, notes and focus. Shared-room illustration,
+member controls and disclosure rules remain. The five phone destinations remain
+Home/Exams/Library/Desk/Me. All renamed or retired destinations keep compatible
+redirects with source, saved-session, query and fragment state.
+
+Actual disposable-fixture browser checks cover 1440px desktop/dark and 320px
+phone/light/dark, Quick find focus and results, empty review/vocab/mistake states,
+private note save, date calendar bookmark and Play/Gauntlet setup. Phone document
+305px≤320px; search dialog286px with17px left margin. Screenshots and explicit
+limits: reports/finnaplan-v9-20261117/. Viewport/theme restored and preview stopped.
+Static release hashes and both-site health pass. Actual printing/PDF output,
+filled production activity and native physical-device parity are not certified.
+
+### 17 November 2026 — V.10 Following and duplicate-doubt deflection
+
+Read the actual Community composer/filter markup around lines215–223 in Finna
+Web.dc.html and the existing question discussion implementation. Retain the
+Community heading/pill tabs, paper/card surfaces, hairline borders, Newsreader
+23px subsection heading and 44px controls. Following's new chronological
+question cards reuse the existing discussion card; followed materials stay in a
+secondary disclosure. Deflection adds an inline community-tinted aside within the
+existing question composer, plain-text excerpts and wrapping join/continue
+controls. Joining focuses the existing reply textarea while preserving the draft;
+no new top-level surface or fabricated engagement was added. Synthetic desktop
+1440/phone320 screenshots and measurements are in
+reports/finnaplan-v10-following-20261117/. Document widths1425/305; no horizontal
+overflow. Final renderer checks additionally cover account and block refreshes.
+
+### 17 November 2026 — V.10 study-note composer and reader
+
+Consulted actual Finna Web Community composer/filter markup around215–223 and the
+existing question-discussion card. Notes reuse paper/card and community-tinted
+surfaces, hairlines, Newsreader27px heading,13–15px form/body text,6/8px interior
+corners and44px pill actions. Create adds one explicit Study note card; Community
+keeps its tabs and opens composer/reader inline. Optional subject and Finna-link
+fields keep uploads/URLs out of the note body. Pending visibility is explicit;
+feedback never implies a verified answer or points award. New content remains
+text rather than raw HTML. Synthetic desktop1440/phone320 and new note-panel night
+checks show1425/305px document width without overflow; saved pending note, source
+link, withdrawal and chronological Following were exercised. Screenshots:
+reports/finnaplan-v10-study-20261117/. Broader existing discovery-panel night
+contrast is not certified by this check. Preview/theme/viewport were cleaned up.
+
+
+###18November2026 — Reviewed word practice and mixed Smart Review
+
+Extended the existing20261114Revise/Content Studio paper/card tokens, semantic
+light/night palette, heading hierarchy and44px actions. Curated words use an
+explicit editorial card with authored choices, usage/gloss/source and reviewed
+deck links. Mixed sets retain the existing saved player and use Item labels;
+checked summaries distinguish editorial content from canonical source labels.
+Today and the existing deck selector lead into the same practice, with honest
+zero retained words and an unavailable/empty selected deck.
+
+Disposable normal sign-in inspected all4modes, actual reverse-language check /
+reload,4canonical+3word checks,7correct/noaward finish, checked summary, Today
+0due/4new and empty deck start disabled.1440/320document widths fit their actual
+viewports in light/night. Screenshots and explicit limitations are in
+reports/finnaplan-v10-curated-vocabulary-20261118/. Full-page fixed-navigation
+artifacts and two later failed full-page captures are documented; no invented
+production content/progress or physical-native certification. Preview cleaned up.
+The bounded342-artifact web +16API/data +0106 release passed both-site health.
+
+### 18 November 2026 — Public question/test sharing
+
+Question More reuses the existing44px inline action row and semantic link token
+for WhatsApp. Test sharing retains its existing card/actions. No new global
+navigation. Standalone public previews derive navy#0E1330, blue#1F4BE0,
+yellow#FFC83D, paper/card/hairline and OS-night semantic colors from the actual
+20261114Finna Web markup. Responsive24px card/14px action radii and explicit Open
+links fit320px. Shared1200×630brand PNG has editable SVG; local Noto Sans raster
+and standalone system-UI fallbacks are deliberate dependency-free adaptations,
+not exact Figtree raster parity. Question/exam/year is escaped OG text, not image
+raster content. No fake learner progress, awards or inferred provenance labels.
+Synthetic1280/320px/light/night control QA and clean light standalone previews pass;
+OS-dark standalone/actual WhatsApp rendering remains uncertified. Clipboard UI
+success is separate from the empty browser-session readback; exact payload/failure
+verified in actual-component checks. Full-page app fixed-nav capture artifacts are
+documented. Receipt: reports/finnaplan-v11-sharing-20261118/README.md. Preview and
+agent tab cleaned; viewport reset and Light restored.
+
+## 18 November — Optional primary-exam check-in
+
+The `/onboarding` screen extends the current Finna focused practice layout with
+existing Figtree, navy/blue/yellow semantic tokens, panel radii and 44px controls.
+Today/account entry is optional and uses the actual primary-exam title. The shared
+question player retains source badges, stored-feedback notices and normal answer
+states; finished summary separates correct/wrong/viewed/skipped, shows checked
+subject evidence and offers explicit focus checkboxes/Save. No forecast accuracy,
+readiness score, celebratory bonus or invented content is added. Suggestions keep
+existing selections and carry the small-sample qualification. Synthetic local
+browser QA covers1280/320px, light/night, resume and explicit focus save/reload;
+phone scrollWidth and clientWidth both305px. Eight screenshot receipts and capture
+limitations are in `reports/finnaplan-v11-onboarding-20261118/browser-proof.json`.
+`checkin-summary-desktop.png` is the clean viewport proof; full-page fixed headers
+appear at their viewport capture position. Preview tab/API/web/database cleaned,
+viewport and Light restored, original user tab retained. New endpoint/device-native
+capability is not certified; web-only guards remain explicit.
+
+## 18 November — Bulk group prices and claim receipts
+
+Rewards & accounts keeps its existing owner route and adds one semantic-token
+panel for100-email preview/apply batches, pending/applied state, explicit removal
+from future matching, and bounded group codes. Actual stored code usage/expiry /
+revocation and searchable retained entries replace invented member counts. The
+billing page gets an explicit claim form; opening a link does not redeem it.
+Buttons name future ₹50/month pricing, not Pro access. Existing mandates and
+access are described separately. The new receipt reader is on-demand, paginated,
+owner-only and omits private study/payment details; account changes clear it.
+Prototype Finna Figtree/navy/blue/panel tokens and44px controls are reused. Preview
+and search wrap at320px with305pxclient/scroll widths. Light/night desktop/phone
+synthetic screenshots and capture limitations live in
+`reports/finnaplan-v11-bulk-20261118/browser-proof.json`; source authority remains
+`Finna Admin.dc.html`/`Finna Web.dc.html`. This does not certify native/device use.

@@ -10,6 +10,7 @@ from ..deps import current_user, require_account
 from ..services.bank_review import protect_answer
 from ..services.review_identity import Actor, identity, require_role
 from ..services.review_policy import safe_url
+from ..services.community_policy import posting_guard, HELPFUL_COUNT, AUTHOR_TIER, AUTHOR_PROFILE
 from .materials import write_guard
 from .moderation import queue_items, moderate_post
 from ..schemas import ModerationActionRequest
@@ -36,6 +37,10 @@ class Post(Strict):
     body: str = Field(min_length=10,max_length=5000)
     parent_id: int | None = Field(default=None,gt=0)
     context: Context = Field(default_factory=Context)
+    sources: list[Source] = Field(default_factory=list,max_length=5)
+class Edit(Strict):
+    expected_version: int = Field(ge=0)
+    body: str = Field(min_length=10,max_length=5000)
     sources: list[Source] = Field(default_factory=list,max_length=5)
 class Toggle(Strict):
     enabled: bool
@@ -72,15 +77,16 @@ async def access(cur,qid,user,write=False):
 
 VISIBLE="""NOT p.hidden AND NOT p.before_fix AND (NOT p.needs_approval OR p.author_id=%s)
  AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=p.author_id) OR (b.user_id=p.author_id AND b.blocked_id=%s))"""
-SELECT="""SELECT u.avatar,p.id,p.canonical_id,p.kind,p.parent_id,p.body,p.pinned,p.accepted,p.needs_approval,
- p.source_context,p.source_links,p.created_at,p.author_id,p.author_id=%s AS is_author,
+SELECT=f"""SELECT u.avatar,p.id,p.canonical_id,p.kind,p.parent_id,p.body,p.pinned,p.accepted,p.needs_approval,
+ p.source_context,p.source_links,p.content_version,p.edited_at,p.edit_locked,p.created_at,p.author_id,p.author_id=%s AS is_author,
  CASE WHEN p.author_id='team' THEN 'India Study Map' ELSE COALESCE(u.handle,'Learner') END AS author,
- (SELECT count(*)::int FROM post_votes v WHERE v.post_id=p.id) AS helpful,
+ {AUTHOR_TIER} AS author_tier,{AUTHOR_PROFILE} AS author_profile_id,{HELPFUL_COUNT} AS helpful,
  EXISTS(SELECT 1 FROM post_votes v WHERE v.post_id=p.id AND v.user_id=%s) AS voted
  FROM posts p LEFT JOIN users u ON u.id=p.author_id """
 async def post_visible(cur,pid,user):
     await cur.execute(SELECT+' WHERE p.id=%s AND '+VISIBLE,(user,user,pid,user,user,user));p=await cur.fetchone()
     if not p:raise HTTPException(404,'Discussion post not found')
+    if p['kind'] in {'study','material-share'}:raise HTTPException(404,'Use the study-note reader for this post')
     a=await access(cur,p['canonical_id'],user)
     if not a['allowed']:raise HTTPException(403,'Check or show the answer before reading this discussion')
     if p['parent_id']:
@@ -143,9 +149,8 @@ async def create(qid:str,body:Post,request:Request,user:Account,idempotency_key:
             parent=await post_visible(cur,body.parent_id,user)
             if parent['canonical_id']!=qid or parent['parent_id'] or parent['needs_approval']:raise HTTPException(422,'Reply to a published top-level topic for this question')
             context=parent['source_context']
-        await cur.execute("SELECT count(*)::int AS n FROM posts WHERE author_id=%s AND created_at>now()-interval '1 day'",(user,))
-        if (await cur.fetchone())['n']>=30:raise HTTPException(429,'Daily discussion limit reached',headers={'Retry-After':'3600'})
-        await cur.execute('SELECT count(*)::int AS n FROM posts WHERE author_id=%s AND NOT needs_approval AND NOT hidden',(user,));pending=(await cur.fetchone())['n']<3
+        state=await posting_guard(cur,user,reply=body.parent_id is not None)
+        pending=state['needs_approval']
         await cur.execute('INSERT INTO posts(canonical_id,kind,parent_id,author_id,body,needs_approval,request_key,request_hash,source_context,source_links) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id',(qid,body.kind,body.parent_id,user,body.body,pending,idempotency_key,sha,Jsonb(context),Jsonb([s.model_dump() for s in body.sources])));pid=(await cur.fetchone())['id']
         await event(cur,qid,user,'created',pid,{'needs_approval':pending})
         if not pending:await notify_reply(cur,pid)
@@ -162,6 +167,37 @@ async def replies(pid:int,user:User,focus:int|None=Query(None,gt=0),offset:int=Q
             if focused['parent_id']!=pid:raise HTTPException(404,'Reply is not in this discussion topic')
     return {'items':rows[:limit],'has_more':len(rows)>limit,'focused':focused}
 
+async def acceptance_nudge_eligible(cur,pid,user):
+    await cur.execute("""SELECT 1 FROM posts p WHERE p.parent_id=%s
+          AND p.author_id<>%s AND NOT p.needs_approval AND """+VISIBLE+"""
+          AND NOT EXISTS(SELECT 1 FROM posts a WHERE a.parent_id=%s AND a.accepted)
+          AND NOT EXISTS(SELECT 1 FROM discussion_events e JOIN posts r ON r.id=e.post_id
+            WHERE r.parent_id=%s AND e.action='accepted') LIMIT 1""",(pid,user,user,user,user,pid,pid))
+    return bool(await cur.fetchone())
+
+@router.post('/posts/{pid}/acceptance-nudge',dependencies=[Depends(private)])
+async def acceptance_nudge(pid:int,request:Request,user:Account):
+    """Claim an optional inline prompt once; GET readers never mark it shown."""
+    await write_guard(request,user)
+    # Existing native discussion actions remain; this new prompt is web-only.
+    if getattr(request.state,'mobile_session',None):raise HTTPException(403,'Acceptance reminders are available on the website')
+    async with cursor() as cur:
+        p=await post_visible(cur,pid,user)
+        if not p['is_author']:raise HTTPException(403,'Only the doubt author can request this reminder')
+        if p['kind']!='doubt' or p['parent_id']:return {'prompt':False}
+        # Acceptance takes this same parent lock. Re-read publication/privacy
+        # after waiting so edits, withdrawal and acceptance cannot use stale state.
+        await cur.execute('SELECT id FROM posts WHERE id=%s FOR UPDATE',(pid,))
+        p=await post_visible(cur,pid,user)
+        await access(cur,p['canonical_id'],user,write=True)
+        if p['needs_approval']:return {'prompt':False}
+        if not await acceptance_nudge_eligible(cur,pid,user):return {'prompt':False}
+        await cur.execute("""INSERT INTO discussion_events(canonical_id,post_id,actor_id,action)
+          VALUES(%s,%s,%s,'acceptance_nudged')
+          ON CONFLICT(post_id) WHERE action='acceptance_nudged' DO NOTHING RETURNING id""",(p['canonical_id'],pid,user))
+        claimed=bool(await cur.fetchone())
+    return {'prompt':claimed}
+
 @router.post('/posts/{pid}/helpful')
 async def helpful(pid:int,body:Toggle,request:Request,user:Account):
     await write_guard(request,user)
@@ -172,7 +208,7 @@ async def helpful(pid:int,body:Toggle,request:Request,user:Account):
         if p['needs_approval']:raise HTTPException(409,'This post is awaiting moderation')
         if body.enabled:await cur.execute('INSERT INTO post_votes(post_id,user_id,weight) VALUES(%s,%s,1) ON CONFLICT DO NOTHING',(pid,user))
         else:await cur.execute('DELETE FROM post_votes WHERE post_id=%s AND user_id=%s',(pid,user))
-        await cur.execute('SELECT count(*)::int AS n FROM post_votes WHERE post_id=%s',(pid,));n=(await cur.fetchone())['n']
+        await cur.execute('SELECT '+HELPFUL_COUNT+' AS n FROM posts p WHERE p.id=%s',(pid,));n=(await cur.fetchone())['n']
         await cur.execute('UPDATE posts SET helpful=%s,helpful_w=%s WHERE id=%s',(n,n,pid))
     return {'helpful':n,'voted':body.enabled}
 
@@ -184,8 +220,10 @@ async def accept(pid:int,body:Toggle,request:Request,user:Account):
         if not p['parent_id'] or p['needs_approval']:raise HTTPException(422,'Only a published reply can be accepted')
         await cur.execute('SELECT author_id,kind FROM posts WHERE id=%s FOR UPDATE',(p['parent_id'],));parent=await cur.fetchone()
         if parent['author_id']!=user or parent['kind']!='doubt' or p['is_author']:raise HTTPException(403,'Only the doubt author can accept another person’s reply')
-        await cur.execute('SELECT accepted FROM posts WHERE id=%s',(pid,))
-        if (await cur.fetchone())['accepted']==body.enabled:return {'accepted':body.enabled}
+        await cur.execute('SELECT accepted,needs_approval,hidden,before_fix FROM posts WHERE id=%s FOR UPDATE',(pid,))
+        latest=await cur.fetchone()
+        if latest['needs_approval'] or latest['hidden'] or latest['before_fix']:raise HTTPException(409,'Reload this published reply before accepting it')
+        if latest['accepted']==body.enabled:return {'accepted':body.enabled}
         if body.enabled:
             await cur.execute('UPDATE posts SET accepted=false WHERE parent_id=%s AND accepted',(p['parent_id'],))
         await cur.execute('UPDATE posts SET accepted=%s WHERE id=%s',(body.enabled,pid))
@@ -207,7 +245,7 @@ async def report(pid:int,body:Report,request:Request,user:Account):
 async def withdraw(pid:int,request:Request,user:Account):
     await write_guard(request,user)
     async with cursor() as cur:
-        await cur.execute('SELECT * FROM posts WHERE id=%s AND author_id=%s FOR UPDATE',(pid,user));p=await cur.fetchone()
+        await cur.execute("SELECT * FROM posts WHERE id=%s AND author_id=%s AND kind NOT IN ('study','material-share') FOR UPDATE",(pid,user));p=await cur.fetchone()
         if not p:raise HTTPException(404,'Your post was not found')
         await protect_answer(cur,user,p['canonical_id'])
         if not p['hidden']:
@@ -235,9 +273,15 @@ async def queue(staff:Staff,tab:Literal['Reported','New users','My actions']='Ne
     async with cursor() as cur:
         await require_role(cur,staff.id,roles=('owner',))
         result=await queue_items(cur,staff.id,tab,40)
-        await cur.execute('SELECT unnest(question_ids) AS qid FROM mock_sessions WHERE user_id=%s AND submitted_at IS NULL',(staff.id,))
-        protected={r['qid'] for r in await cur.fetchall()}
-        result.items=[item for item in result.items if item.canonical_id not in protected]
+        visible=[]
+        for item in result.items:
+            try:
+                await protect_answer(cur,staff.id,item.canonical_id)
+            except HTTPException as error:
+                if error.status_code==409:continue
+                raise
+            visible.append(item)
+        result.items=visible
     return result
 
 @router.post('/admin/posts/{pid}/action')
@@ -255,3 +299,17 @@ async def lock(qid:str,body:Lock,staff:Staff):
         else:await cur.execute('DELETE FROM thread_locks WHERE canonical_id=%s',(qid,))
         await event(cur,qid,staff.id,'locked' if body.enabled else 'unlocked',detail={'reason':body.reason})
     return {'locked':body.enabled}
+
+
+@router.post('/posts/{pid}/edit',dependencies=[Depends(private)])
+async def edit_post(pid:int,body:Edit,request:Request,user:Account,idempotency_key:Annotated[str,Header(min_length=16,max_length=100)]):
+    await write_guard(request,user)
+    if getattr(request.state,'mobile_session',None):raise HTTPException(403,'Post edits are available on the website')
+    from ..services.post_edits import edit
+    async with cursor() as cur:return await edit(cur,pid,user,body,idempotency_key)
+
+@router.get('/posts/{pid}/revisions',dependencies=[Depends(private)])
+async def post_history(pid:int,request:Request,user:Account,before:int|None=Query(None,ge=0)):
+    if getattr(request.state,'mobile_session',None):raise HTTPException(403,'Post revision history is available on the website')
+    from ..services.post_edits import history
+    async with cursor() as cur:return await history(cur,pid,user,before)

@@ -20,7 +20,7 @@ class Strict(BaseModel):
 
 
 class Create(Strict):
-    mode: Literal["gauntlet", "speed", "duel", "party", "cup"]
+    mode: Literal["gauntlet", "speed", "duel", "party", "cup", "daily"]
     subject_id: str | None = Field(default=None, max_length=100)
     selection: setup.Selection | None = None
     preview_hash: str | None = Field(default=None,pattern=r"^[0-9a-f]{64}$")
@@ -30,7 +30,7 @@ class Create(Strict):
 
 
 class Preview(Strict):
-    mode:Literal["gauntlet","speed","duel","party","cup"]
+    mode:Literal["gauntlet","speed","duel","party","cup","daily"]
     selection:setup.Selection
 
 class Ready(Strict):
@@ -148,6 +148,9 @@ async def catalog(user: User, response: Response):
             "SELECT email IS NOT NULL AS registered FROM users WHERE id=%s", (user,)
         )
         registered = (await cur.fetchone())["registered"]
+        did,daily_opens,daily_closes=g.daily_window(now)
+        await cur.execute('SELECT room_id FROM game_daily_entries WHERE daily_id=%s AND user_id=%s',(did,user))
+        daily_entry=await cur.fetchone()
         selection_catalog=await setup.catalog(cur,user)
         return {
             "setup":selection_catalog,
@@ -165,6 +168,8 @@ async def catalog(user: User, response: Response):
                 "entry_room": entry["room_id"] if entry else None,
                 "entries": entries,
             },
+            "daily": {"id":did,"opens_at":daily_opens,"closes_at":daily_closes,
+                      "entry_room":daily_entry['room_id'] if daily_entry else None},
             "server_now": now,
         }
 
@@ -242,6 +247,10 @@ async def create(body: Create, request: Request, user: Account, response: Respon
             raise HTTPException(
                 422, "The weekly cup uses the same mixed verified-key set for everyone"
             )
+        if body.mode == "daily" and body.subject_id:
+            raise HTTPException(
+                422, "Daily Five uses the same non-technical set for everyone"
+            )
         if body.selection is None or not body.preview_hash:
             raise HTTPException(422,"Choose an area and confirm the game preview before starting")
         if body.subject_id:raise HTTPException(422,"Use the confirmed area instead of a separate subject filter")
@@ -249,6 +258,8 @@ async def create(body: Create, request: Request, user: Account, response: Respon
         if selected['context_hash']!=body.preview_hash:raise HTTPException(409,"This selection changed. Refresh the preview and confirm it again.")
         if not selected['can_start']:raise HTTPException(422,selected['message'])
         context=selected['context'];context_hash=selected['context_hash']
+        from ..services.learning_habit import capture_plan
+        await capture_plan(cur,user)
         if body.matchmaking:
             await cur.execute(
                 "SELECT pg_advisory_xact_lock(hashtextextended('creator-graph-v1',0))"
@@ -271,7 +282,26 @@ async def create(body: Create, request: Request, user: Account, response: Respon
                 return await g.view(cur, r, user, now)
         count, seconds, capacity = g.MODES[body.mode]
         cup_id = None
-        if body.mode == "cup":
+        daily_id = None
+        if body.mode == "daily":
+            d = await g.daily(cur, now)
+            if not (
+                d["opens_at"]
+                <= now
+                <= d["closes_at"] - timedelta(seconds=count * seconds)
+            ):
+                raise HTTPException(
+                    409, "Daily Five closes at midnight India time"
+                )
+            await cur.execute(
+                "SELECT room_id FROM game_daily_entries WHERE daily_id=%s AND user_id=%s",
+                (d["id"], user),
+            )
+            if await cur.fetchone():
+                raise HTTPException(409, "One Daily Five attempt per day")
+            questions = d["questions"]
+            daily_id = d["id"]
+        elif body.mode == "cup":
             c = await g.cup(cur, now)
             if (
                 not c["opens_at"]
@@ -295,7 +325,7 @@ async def create(body: Create, request: Request, user: Account, response: Respon
         rid = "game_" + uuid4().hex
         code = None if capacity == 1 else g.secrets.token_hex(6).upper()
         await cur.execute(
-            "INSERT INTO game_rooms(id,owner_id,mode,subject_id,capacity,join_code,matchmaking,cup_id,questions,round_seconds,request_key,request_hash,selection_context,context_hash) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
+            "INSERT INTO game_rooms(id,owner_id,mode,subject_id,capacity,join_code,matchmaking,cup_id,daily_id,questions,round_seconds,request_key,request_hash,selection_context,context_hash) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",
             (
                 rid,
                 user,
@@ -305,6 +335,7 @@ async def create(body: Create, request: Request, user: Account, response: Respon
                 code,
                 body.matchmaking,
                 cup_id,
+                daily_id,
                 Jsonb(questions),
                 seconds,
                 body.request_key,
@@ -322,7 +353,12 @@ async def create(body: Create, request: Request, user: Account, response: Respon
                 "INSERT INTO game_cup_entries(cup_id,user_id,room_id) VALUES(%s,%s,%s)",
                 (cup_id, user, rid),
             )
-        if body.mode!='cup':
+        if daily_id:
+            await cur.execute(
+                "INSERT INTO game_daily_entries(daily_id,user_id,room_id) VALUES(%s,%s,%s)",
+                (daily_id, user, rid),
+            )
+        if body.mode not in ('cup','daily'):
             await cur.execute("INSERT INTO game_preferences(user_id,selection)VALUES(%s,%s)ON CONFLICT(user_id)DO UPDATE SET selection=excluded.selection,updated_at=now()",(user,Jsonb(context['selector'])))
         if capacity == 1:
             r = await g.start(cur, r, now)
@@ -537,82 +573,24 @@ async def cup_visibility(
 async def competitive_leaderboard(
     user: User,
     response: Response,
-    track: Literal["league", "cup", "gk_gs", "everyday_math", "english"] = "league",
+    track: Literal["league", "cup", "gauntlet", "speed", "duel", "daily", "gk_gs", "everyday_math", "english"] = "league",
     period: Literal["week", "month", "all"] = "week",
     cohort: Literal["all", "arts-comfort", "science-bridge", "balanced-core", "commerce-core"] = "all",
     offset: int = Query(0, ge=0, le=10000),
+    contract: int = Query(1,ge=1,le=2),
 ):
-    from ..services.learning_rewards import level_bounds, league_division
+    from ..services.learning_rewards import level_bounds
+    from ..services import weekly_boards
     private(response)
+    if track!='cup' and (period!='week' or cohort!='all' or track in ('gk_gs','everyday_math','english')):
+        if contract==2:raise HTTPException(422,'Use a current weekly mode without cohort filters')
+        return weekly_boards.retired(period,cohort,track)
+    if track!='cup' and offset:return weekly_boards.retired(period,cohort,track)
     async with cursor() as cur:
-        if track == "league":
-            await cur.execute(
-                """WITH bounds AS (
-                    SELECT CASE WHEN %s='all' THEN NULL
-                           ELSE date_trunc(%s, now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata'
-                           END AS start_at
-                ),
-                totals AS (
-                    SELECT l.user_id, u.handle, u.avatar,
-                           COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
-                           COALESCE(p.current_streak_days, 0) AS streak,
-                           COALESCE(p.board_public, false) AS board_public,
-                           sum(l.xp)::int AS xp,
-                           (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=l.user_id) AS lifetime_xp
-                    FROM reward_ledger l
-                    JOIN users u ON u.id=l.user_id
-                    LEFT JOIN reward_profiles p ON p.user_id=l.user_id
-                    CROSS JOIN bounds b
-                    WHERE (b.start_at IS NULL OR l.created_at>=b.start_at)
-                      AND (COALESCE(p.board_public, false) OR l.user_id=%s)
-                      AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
-                      AND NOT EXISTS (
-                          SELECT 1 FROM creator_blocks cb
-                          WHERE (cb.user_id=%s AND cb.blocked_id=l.user_id)
-                             OR (cb.user_id=l.user_id AND cb.blocked_id=%s)
-                      )
-                    GROUP BY l.user_id, u.handle, u.avatar, p.stream_cohort, p.current_streak_days, p.board_public
-                    HAVING sum(l.xp)>0
-                ),
-                ranked AS (
-                    SELECT *, dense_rank() OVER (ORDER BY xp DESC)::int AS rank
-                    FROM totals
-                )
-                SELECT user_id, handle, avatar, stream_cohort, streak, xp AS score, lifetime_xp, rank, (user_id=%s) AS is_you
-                FROM ranked
-                ORDER BY rank, handle
-                LIMIT 21 OFFSET %s""",
-                (
-                    period,
-                    "week" if period == "week" else "month",
-                    user,
-                    cohort,
-                    cohort,
-                    user,
-                    user,
-                    user,
-                    offset,
-                ),
-            )
-            raw_rows = await cur.fetchall()
-            items = []
-            for r in raw_rows[:20]:
-                lvl = level_bounds(r["lifetime_xp"])
-                div = league_division(r["score"])
-                items.append({
-                    "handle": r["handle"],
-                    "avatar": r["avatar"],
-                    "rank": r["rank"],
-                    "score": r["score"],
-                    "level": lvl["level"],
-                    "title": lvl["title"],
-                    "league_division": div["name"],
-                    "stream_cohort": r["stream_cohort"],
-                    "streak": r["streak"],
-                    "is_you": r["is_you"],
-                })
-            return {"track": track, "period": period, "cohort": cohort, "items": items, "has_more": len(raw_rows) > 20}
-
+        if track=='league':
+            return (await weekly_boards.xp(cur,user))|{'track':track}
+        if track!='cup':
+            return (await weekly_boards.games(cur,user,track))|{'track':track}
         if track == "cup":
             now = await g.clock(cur)
             cid, _, _ = g.cup_window(now)
@@ -664,71 +642,3 @@ async def competitive_leaderboard(
                     "is_you": r["is_you"],
                 })
             return {"track": track, "period": period, "cohort": cohort, "cup_id": cid, "items": items, "has_more": len(raw_rows) > 20}
-
-        # Pillar High-Score Boards: gk_gs, everyday_math, english
-        preset_map = {
-            "gk_gs": ("gk-foundation", "arts-comfort", "science-bridge", "balanced-core"),
-            "everyday_math": ("math-foundation", "balanced-core", "commerce-core"),
-            "english": ("english-foundation", "arts-comfort", "balanced-core"),
-        }
-        allowed_presets = list(preset_map[track])
-        await cur.execute(
-            """WITH best_runs AS (
-                SELECT m.user_id, u.handle, u.avatar,
-                       max(m.score)::int AS score,
-                       max(m.correct)::int AS correct,
-                       min(m.elapsed_ms)::int AS elapsed_ms,
-                       max(m.pace_bonus)::int AS pace_bonus,
-                       max(m.best_streak)::int AS best_streak,
-                       COALESCE(p.stream_cohort, 'balanced-core') AS stream_cohort,
-                       COALESCE(p.current_streak_days, 0) AS streak,
-                       (SELECT COALESCE(sum(x.xp),0)::int FROM reward_ledger x WHERE x.user_id=m.user_id) AS lifetime_xp
-                FROM game_members m
-                JOIN game_rooms r ON r.id=m.room_id AND r.state='finished'
-                JOIN users u ON u.id=m.user_id
-                LEFT JOIN reward_profiles p ON p.user_id=m.user_id
-                WHERE m.left_at IS NULL AND m.score > 0
-                  AND (COALESCE(p.board_public, false) OR m.public_result OR m.user_id=%s)
-                  AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
-                  AND (
-                      (r.selection_context->'selector'->>'preset_id') = ANY(%s)
-                      OR r.selection_context IS NOT NULL
-                  )
-                  AND NOT EXISTS (
-                      SELECT 1 FROM creator_blocks cb
-                      WHERE (cb.user_id=%s AND cb.blocked_id=m.user_id)
-                         OR (cb.user_id=m.user_id AND cb.blocked_id=%s)
-                  )
-                GROUP BY m.user_id, u.handle, u.avatar, p.stream_cohort, p.current_streak_days
-            ),
-            ranked AS (
-                SELECT *, dense_rank() OVER (ORDER BY score DESC, elapsed_ms ASC)::int AS rank
-                FROM best_runs
-            )
-            SELECT user_id, handle, avatar, score, correct, elapsed_ms, pace_bonus, best_streak, stream_cohort, streak, lifetime_xp, rank, (user_id=%s) AS is_you
-            FROM ranked
-            ORDER BY rank, handle
-            LIMIT 21 OFFSET %s""",
-            (user, cohort, cohort, allowed_presets, user, user, user, offset),
-        )
-        raw_rows = await cur.fetchall()
-        items = []
-        for r in raw_rows[:20]:
-            lvl = level_bounds(r["lifetime_xp"])
-            items.append({
-                "handle": r["handle"],
-                "avatar": r["avatar"],
-                "rank": r["rank"],
-                "score": r["score"],
-                "correct": r["correct"],
-                "elapsed_ms": r["elapsed_ms"],
-                "pace_bonus": r["pace_bonus"],
-                "best_streak": r["best_streak"],
-                "level": lvl["level"],
-                "title": lvl["title"],
-                "stream_cohort": r["stream_cohort"],
-                "streak": r["streak"],
-                "is_you": r["is_you"],
-            })
-        return {"track": track, "period": period, "cohort": cohort, "items": items, "has_more": len(raw_rows) > 20}
-

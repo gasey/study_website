@@ -1,19 +1,26 @@
 """Typed structured content, independent of bank corrections and paid billing."""
 from typing import Literal
 from urllib.parse import urlparse
-from pydantic import BaseModel,ConfigDict,Field,model_validator,field_validator
+from pydantic import BaseModel,ConfigDict,Field,model_validator,field_validator,model_serializer
 from fastapi import HTTPException
 from psycopg.types.json import Jsonb
+from .curated_vocabulary import WordCard,validate_document
 class Strict(BaseModel):model_config=ConfigDict(extra='forbid')
 class Block(Strict):
     id:str=Field(min_length=1,max_length=80,pattern=r'^[a-zA-Z0-9_-]+$')
-    type:Literal['heading','paragraph','callout','quote','list','table','image','link','question']
+    type:Literal['heading','paragraph','callout','quote','list','table','image','link','question','vocabulary']
     text:str=Field(default='',max_length=12000)
     items:list[str]=Field(default_factory=list,max_length=50)
     rows:list[list[str]]=Field(default_factory=list,max_length=30)
     url:str=Field(default='',max_length=2000)
     alt:str=Field(default='',max_length=250)
     question_id:str|None=Field(default=None,max_length=150)
+    vocabulary:WordCard|None=None
+    @model_serializer(mode='wrap')
+    def legacy_shape(self,handler):
+        value=handler(self)
+        if self.vocabulary is None:value.pop('vocabulary',None)
+        return value
     @model_validator(mode='after')
     def bounded(self):
         if any(len(x)>1000 for x in self.items):raise ValueError('List item is too long')
@@ -26,7 +33,7 @@ class Document(Strict):
     title:str=Field(default='',max_length=180)
     summary:str=Field(default='',max_length=600)
     preview:str=Field(default='',max_length=5000)
-    kind:Literal['note','article','guide','lesson']='note'
+    kind:Literal['note','article','guide','lesson','vocabulary-deck']='note'
     access:Literal['free','pro','paid-preview']='free'
     price_paise:int=Field(default=0,ge=0,le=10000000)
     tags:list[str]=Field(default_factory=list,max_length=8)
@@ -43,8 +50,9 @@ class Document(Strict):
         if len({b.id for b in self.blocks})!=len(self.blocks):raise ValueError('Each block needs a unique ID')
         return self
 async def validate(cur,doc,publish=False):
+    validate_document(doc,publish)
     if doc.collection_id:
-        await cur.execute("SELECT 1 FROM collections WHERE id=%s AND visibility='public'",(doc.collection_id,))
+        await cur.execute("SELECT 1 FROM collections WHERE id=%s AND visibility='public' AND (%s<>'vocabulary-deck' OR kind='exam')",(doc.collection_id,doc.kind))
         if not await cur.fetchone():raise HTTPException(422,'Choose an existing public exam')
     if doc.subject_id:
         await cur.execute("SELECT 1 FROM review_taxonomy WHERE id=%s AND level='subject' AND active",(doc.subject_id,))

@@ -393,6 +393,7 @@ export default function Inbox() {
     }
   }
   const active = threads.find((t) => t.id === did);
+  const phoneView=did?'messages':params.get('view')==='messages'?'messages':params.get('view')==='settings'?'settings':'notifications';
   if (auth === "loading")
     return (
       <main className="mx-auto max-w-[1240px] px-6 py-10" aria-busy="true">
@@ -416,7 +417,7 @@ export default function Inbox() {
       </main>
     );
   return (
-    <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-9 sm:px-6">
+    <main className="finna-inbox mx-auto max-w-[1240px] px-4 pb-24 pt-9 sm:px-6" data-phone-view={phoneView} data-chat-open={!!did}>
       <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
         <div>
           <h1 className="font-display text-[clamp(36px,5vw,52px)] leading-tight tracking-[-.02em]">
@@ -437,6 +438,7 @@ export default function Inbox() {
           Refresh Inbox
         </button>
       </div>
+      <nav className="finna-inbox-mobile-tabs" aria-label="Inbox views">{[['notifications','Notifications'],['messages','Messages'],['settings','Settings']].map(([value,label])=><button key={value} aria-pressed={phoneView===value} onClick={()=>setParams(p=>{const next=new URLSearchParams(p);next.set('view',value);next.delete('desk');return next})}>{label}</button>)}</nav>
       {notice && (
         <p role="status" className="mb-4 text-[13px] text-link">
           {notice}
@@ -445,7 +447,7 @@ export default function Inbox() {
       <div className="flex flex-wrap items-start gap-6 lg:gap-10">
         <section
           aria-label="Notifications"
-          className="min-w-0 flex-[1_1_340px] rounded-[14px] border border-hairline bg-white px-[18px] pb-[18px] pt-2 shadow-sm"
+          className="finna-inbox-notifications min-w-0 flex-[1_1_340px] rounded-[14px] border border-hairline bg-white px-[18px] pb-[18px] pt-2 shadow-sm"
         >
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-hairline py-3">
             <h2 className="text-[14px] font-semibold">
@@ -584,6 +586,7 @@ export default function Inbox() {
               Load older notifications
             </button>
           )}
+          <div className="finna-inbox-settings">
           <h2 className="mt-5 border-b border-hairline py-3 text-[14px] font-semibold">
             Notification settings
           </h2>
@@ -624,13 +627,14 @@ export default function Inbox() {
             Email and push delivery are not configured. No external
             notifications are sent.
           </p>
+          </div>
         </section>
         <section
           aria-label="Private desk messages"
-          className="min-w-0 flex-[1.6_1_480px] overflow-hidden rounded-[14px] border border-hairline bg-white shadow-sm"
+          className="finna-inbox-messages min-w-0 flex-[1.6_1_480px] overflow-hidden rounded-[14px] border border-hairline bg-white shadow-sm"
         >
           <div className="border-b border-hairline px-4 py-3">
-            <h2 className="text-[14px] font-semibold">Messages</h2>
+            <h2 className="text-[14px] font-semibold">Desk conversations</h2>{did&&<button className="finna-chat-back" onClick={()=>filters("desk","")}>‹ All conversations</button>}
             <p className="mt-1 text-[12px] text-secondary">
               Only people in your accepted private study desks.{" "}
               <Link to="/desk" className="text-link underline">
@@ -641,7 +645,7 @@ export default function Inbox() {
           <div className="flex min-h-[480px] flex-wrap">
             <nav
               aria-label="Desk conversations"
-              className="min-w-0 flex-[1_1_180px] border-r border-hairline bg-paper"
+              className="finna-message-threads min-w-0 flex-[1_1_180px] border-r border-hairline bg-paper"
             >
               {threads.map((t) => (
                 <button
@@ -687,7 +691,7 @@ export default function Inbox() {
                 </p>
               )}
             </nav>
-            <div className="flex min-w-0 flex-[2_1_280px] flex-col">
+            <div className="finna-chat-room flex min-w-0 flex-[2_1_280px] flex-col">
               <div className="border-b border-[#F1EBDF] px-[18px] py-[14px] font-display text-[19px]">
                 {active?.name || "Choose a conversation"}
                 {active && (

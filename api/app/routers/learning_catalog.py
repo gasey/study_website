@@ -123,6 +123,42 @@ async def catalog(user:User,response:Response,kind:Literal['day','practice']='da
             result.append({**row,'next_date':next_date(p,today),'available':available})
         return {'items':result,'today':today}
 
+@router.get('/bank-dates')
+async def bank_dates(user:User,response:Response,month:int|None=Query(None,ge=1,le=12),day:int|None=Query(None,ge=1,le=31),
+    category:Literal['observance','history','event']|None=None,
+    origin:Literal['all','paper','community']='all',subject_id:str|None=Query(None,max_length=100),
+    q:str=Query('',max_length=120),evidence:Literal['all','dated','unresolved']='all',
+    order:Literal['calendar','title','year']='calendar',offset:int=Query(0,ge=0,le=100000),limit:int=Query(24,ge=1,le=60),
+    event_id:str|None=Query(None,pattern=r'^date_[0-9a-f]{20}$')):
+    from ..services import bank_dates as dates
+    response.headers['Cache-Control']='private, no-store'
+    # Check on every request, before accessing the shared public-data cache.
+    async with cursor() as cur:await no_assessment(cur,user)
+    if day and not month:raise HTTPException(422,'Choose a month before selecting a day')
+    entries=await dates.index()
+    rows=dates.filtered(entries,month=month,category=category,origin=origin,subject_id=subject_id,q=q,evidence=evidence)
+    # Calendar counts cover every filtered event, independent of list pagination or selected day.
+    calendar_days=[{'day':number,'events':sum(any(d.get('month')==month and d.get('day')==number for d in entry['dates']) for entry in rows)} for number in range(1,32)] if month else []
+    month_only_count=sum(any(d.get('month')==month and not d.get('day') for d in entry['dates']) for entry in rows) if month else 0
+    if day:rows=[entry for entry in rows if any(d.get('month')==month and d.get('day')==day for d in entry['dates'])]
+    today=datetime.now(ZoneInfo('Asia/Kolkata')).date()
+    subjects=sorted({(question['subject_id'],question['subject']) for entry in entries for question in entry['questions'] if question['subject_id'] and question['subject']},key=lambda item:item[1])
+    if event_id:
+        entry=next((entry for entry in rows if entry['id']==event_id),None)
+        if not entry:raise HTTPException(404,'This event is unavailable or outside the selected filters')
+        return {'entry':dates.summary(entry),'questions':entry['questions'][offset:offset+limit],'total':len(entry['questions']),'offset':offset,'limit':limit,'today':today,'subjects':[{'id':sid,'title':title} for sid,title in subjects]}
+    def sort_key(entry):
+        values=entry['dates'];first=values[0] if values else {}
+        if order=='title':return (entry['title'].casefold(),entry['id'])
+        if order=='year':return (first.get('year') is None, -(first.get('year') or 0) if first.get('era')=='BCE' else first.get('year') or 0,first.get('month') or 0,first.get('day') or 0,entry['title'].casefold())
+        return (not bool(values),first.get('month') or 13,first.get('day') or 32,first.get('year') or 0,entry['title'].casefold())
+    rows.sort(key=sort_key)
+    return {'items':[dates.summary(entry) for entry in rows[offset:offset+limit]],'total':len(rows),
+        'question_count':len({question['id'] for entry in rows for question in entry['questions']}),
+        'dated_count':sum(bool(entry['dates']) for entry in rows),'offset':offset,'limit':limit,'today':today,
+        'subjects':[{'id':sid,'title':title} for sid,title in subjects],
+        'calendar_days':calendar_days,'month_only_count':month_only_count}
+
 @router.get('/manage')
 async def manage(actor:Account,response:Response,timed:bool=False):
     response.headers['Cache-Control']='private, no-store'

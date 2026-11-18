@@ -34,7 +34,7 @@ async def search(
             (q, pattern, pattern, pattern, pattern, pattern, pattern, pattern),
         ),
         "people": (
-            "SELECT u.id,u.handle AS title,'Public creator'::text AS meta,p.bio AS snippet FROM users u JOIN creator_profiles p ON p.user_id=u.id AND p.public WHERE u.email IS NOT NULL AND (u.handle ILIKE %s OR p.bio ILIKE %s) AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%s))",
+            "SELECT u.id,u.handle AS title,'Public creator'::text AS meta,CASE WHEN NOT p.bio_needs_approval AND NOT p.bio_hidden THEN p.bio ELSE '' END AS snippet FROM users u JOIN creator_profiles p ON p.user_id=u.id AND p.public WHERE u.email IS NOT NULL AND (u.handle ILIKE %s OR (NOT p.bio_needs_approval AND NOT p.bio_hidden AND p.bio ILIKE %s)) AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%s))",
             (pattern, pattern, user, user),
         ),
         "desks": (

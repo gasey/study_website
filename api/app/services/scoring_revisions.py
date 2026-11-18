@@ -129,7 +129,7 @@ async def assess_mock(cur,mock_id,user=None):
     return {**row['payload'],'id':row['id'],'computed_at':row['created_at']}
 
 async def assess_attempt(cur,attempt_id):
-    await cur.execute('SELECT a.id AS attempt_id,a.scoring_snapshot,a.chosen_text,a.correct,'+CURRENT_COLUMNS+','+CONTEXT_SELECT+' FROM attempts a LEFT JOIN canonical_questions q ON q.id=a.canonical_id '+source_join("a.scoring_snapshot->>'appearance_id'")+' WHERE a.id=%s AND a.context=\'practice\'',(attempt_id,))
+    await cur.execute('SELECT a.id AS attempt_id,a.scoring_snapshot,a.chosen_text,a.correct,'+CURRENT_COLUMNS+','+CONTEXT_SELECT+' FROM attempts a LEFT JOIN canonical_questions q ON q.id=a.canonical_id '+source_join("a.scoring_snapshot->>'appearance_id'")+' WHERE a.id=%s AND a.context IN (\'practice\',\'review\',\'game\')',(attempt_id,))
     row=await cur.fetchone()
     if not row:return
     current=current_record(row)
@@ -147,7 +147,7 @@ async def process_job(cur,job=None):
       AND (%s::text IS NULL OR id>%s) ORDER BY id LIMIT 10''',(job['canonical_id'],job['mock_cursor'],job['mock_cursor']))
     mocks=await cur.fetchall()
     for mock in mocks:await assess_mock(cur,mock['id'])
-    await cur.execute("SELECT id FROM attempts WHERE canonical_id=%s AND context='practice' AND id>%s ORDER BY id LIMIT 100",(job['canonical_id'],job['attempt_cursor']))
+    await cur.execute("SELECT id FROM attempts WHERE canonical_id=%s AND context IN ('practice','review','game') AND id>%s ORDER BY id LIMIT 100",(job['canonical_id'],job['attempt_cursor']))
     attempts=await cur.fetchall()
     for attempt in attempts:await assess_attempt(cur,attempt['id'])
     await cur.execute('''UPDATE assessment_jobs SET mock_cursor=%s,attempt_cursor=%s,
@@ -174,7 +174,19 @@ async def process_new_jobs(cur):
     return len(jobs)
 
 
+async def assessment_health(cur):
+    from .worker_health import beat
+    await cur.execute('''SELECT
+      (SELECT count(*) FROM assessment_jobs WHERE finished_at IS NULL AND failures>0) +
+      (SELECT count(*) FROM new_score_jobs WHERE finished_at IS NULL AND failures>0) +
+      (SELECT count(*) FROM question_change_events WHERE finished_at IS NULL AND failures>0) AS failed''')
+    count = (await cur.fetchone())['failed']
+    await beat(cur, 'score-reassessment', count==0,
+               f'pending failed jobs={count}; inspect assessment queues' if count else 'Assessment cycle complete')
+
+
 async def worker():
+    from .worker_health import failed
     while True:
         await asyncio.sleep(15)
         try:
@@ -186,7 +198,9 @@ async def worker():
                 await process_new_jobs(cur)
                 await cur.execute('SELECT * FROM assessment_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY requested_at LIMIT 1 FOR UPDATE SKIP LOCKED')
                 job=await cur.fetchone()
-                if not job:continue
+                if not job:
+                    await assessment_health(cur)
+                    continue
                 try:
                     async with cur.connection.transaction():
                         await process_job(cur,job)
@@ -194,8 +208,10 @@ async def worker():
                     await cur.execute("UPDATE assessment_jobs SET failures=failures+1,last_error='Reassessment batch failed; operator investigation required' WHERE canonical_id=%s",(job['canonical_id'],))
                     await cur.execute("UPDATE review_worker_health SET status='batch failed' WHERE worker_id='score-reassessment'")
                     log.error('Score reassessment batch failed; persisted job retained')
+                await assessment_health(cur)
         except asyncio.CancelledError:raise
         except Exception:
+            await failed('score-reassessment')
             log.error('Score reassessment worker unavailable; jobs retained')
 
 

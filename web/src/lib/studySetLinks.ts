@@ -1,5 +1,17 @@
 import type { StudySetFilters } from './api'
 
+/** Short saved sets remain optional; ordinary practice reads the whole matching pool. */
+export function udcPracticeMode(params:URLSearchParams) {
+  return params.get('session') || params.get('practice_mode')==='sets' ? 'sets' : 'continuous'
+}
+export function udcPracticeLink(previous:URLSearchParams,mode:'continuous'|'sets') {
+  const next=new URLSearchParams(previous)
+  next.set('view','practice')
+  next.delete('session');next.delete('offset')
+  if(mode==='sets')next.set('practice_mode','sets');else next.delete('practice_mode')
+  return '/exams/udc?'+next+'#exam-question-browser'
+}
+
 export function studySetLink(id:string) {
   return '/exams/udc?'+new URLSearchParams({view:'practice',session:id})+'#exam-question-browser'
 }
@@ -18,7 +30,7 @@ export function studySetFilters(params:URLSearchParams):StudySetFilters {
   return f
 }
 export function nextStudySetLink(filters:StudySetFilters,total:number) {
-  const params=new URLSearchParams({view:'practice',order:filters.order||'repeated'})
+  const params=new URLSearchParams({view:'practice',practice_mode:'sets',order:filters.order||'repeated'})
   for(const [key,url] of [['subject_id','subject_id'],['topic_id','topic_id'],['subtopic_id','subtopic_id'],['paper_id','paper'],['section_path','section'],['q','q'],['study_status','status'],['pool','pool'],['answer_status','answer_status'],['order','order'],['seed','seed']] as const) {
     const value=filters[key];if(value)params.set(url,value)
   }

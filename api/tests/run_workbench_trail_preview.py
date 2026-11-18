@@ -6,7 +6,7 @@ import conftest
 from test_games_search import game_case
 from psycopg.types.json import Jsonb
 if __name__=='__main__':
- databases=conftest.database.__wrapped__();database=next(databases)
+ databases=conftest.fresh_database();database=next(databases)
  clients=conftest.client.__wrapped__(database);client=next(clients);select=conftest.actor.__wrapped__(client)
  games=game_case.__wrapped__(client,database);c,subject,users,headers,ids=next(games)
  topic=subject+'/vocabulary';c.execute("INSERT INTO review_taxonomy(id,label,parent_id,level,version) VALUES(%s,'Synthetic vocabulary',%s,'topic','test')",(topic,subject))

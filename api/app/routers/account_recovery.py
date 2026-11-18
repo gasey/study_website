@@ -9,7 +9,7 @@ from ..db import cursor
 from ..deps import require_account
 from ..services import mfa
 from ..services.account_identity import digest
-from ..services.account_mail import configured
+from ..services.account_mail import configured,accepting
 from .auth import _same_origin,_check_rate,_hash_password,SESSION_COOKIE,GUEST_COOKIE
 router=APIRouter(prefix='/api/auth',tags=['account recovery'])
 class EmailRequest(BaseModel):
@@ -28,7 +28,8 @@ async def enqueue(cur,user,purpose):
 
 @router.get('/recovery/status')
 async def status():
-    return {'available':configured()}
+    if not configured():return {'available':False}
+    async with cursor() as cur:return {'available':await accepting(cur)}
 
 @router.post('/recovery/request')
 async def request_reset(body:EmailRequest,request:Request):
@@ -38,6 +39,7 @@ async def request_reset(body:EmailRequest,request:Request):
     await _check_rate('reset:'+email,request.client.host if request.client else 'unknown')
     await mfa.limit('reset-account:'+digest(email))
     async with cursor() as cur:
+        if not await accepting(cur,lock=True):raise HTTPException(503,'Email delivery is temporarily at capacity. Try again later.',headers={'Retry-After':'300'})
         await cur.execute('SELECT id FROM users WHERE lower(email)=%s FOR UPDATE',(email,));row=await cur.fetchone()
         if row:await enqueue(cur,row['id'],'reset')
     return {'message':'If an account matches, a recovery email will arrive shortly.'}
@@ -48,6 +50,7 @@ async def request_verification(request:Request,user:Annotated[str,Depends(requir
     if not configured():raise HTTPException(503,'Email verification is not available yet.')
     await mfa.limit('verify-email:'+user)
     async with cursor() as cur:
+        if not await accepting(cur,lock=True):raise HTTPException(503,'Email delivery is temporarily at capacity. Try again later.',headers={'Retry-After':'300'})
         await cur.execute('SELECT email_verified_at FROM users WHERE id=%s FOR UPDATE',(user,));row=await cur.fetchone()
         if row['email_verified_at']:return {'message':'Your email is already verified.'}
         await enqueue(cur,user,'verify')
@@ -61,6 +64,8 @@ async def confirm_email(body:Token,request:Request):
         if not row:raise HTTPException(400,'This link has expired or was already used.')
         await cur.execute('UPDATE users SET email_verified_at=COALESCE(email_verified_at,now()) WHERE id=%s',(row['user_id'],))
         await cur.execute("INSERT INTO account_security_events(user_id,action) VALUES(%s,'email_verified')",(row['user_id'],))
+    from ..services.bulk_rates import after_identity_commit
+    await after_identity_commit(row['user_id'])
     return {'verified':True}
 
 @router.post('/recovery/complete')
@@ -83,6 +88,13 @@ async def complete_reset(body:Reset,request:Request,response:Response):
         await cur.execute("UPDATE account_email_tokens SET consumed_at=now() WHERE token_hash=%s AND purpose='reset' AND consumed_at IS NULL AND expires_at>now() RETURNING user_id",(digest(body.token),))
         if not await cur.fetchone():raise HTTPException(400,'This link has expired or was already used.')
         await cur.execute('UPDATE users SET password_hash=%s WHERE id=%s',(hashed,user))
+        from ..services.login_backoff import clear_account
+        await cur.execute('SELECT email FROM users WHERE id=%s',(user,))
+        email=(await cur.fetchone())['email'].strip().lower()
+        await clear_account(cur,email)
+        await cur.execute('DELETE FROM review_rate_buckets WHERE bucket=%s',('mfa:login:'+digest(email),))
+        ip=request.client.host if request.client else 'unknown'
+        await cur.execute('DELETE FROM auth_login_attempts WHERE identifier_hash=%s',(digest(email+'|'+ip),))
         await cur.execute('UPDATE auth_sessions SET revoked_at=now() WHERE user_id=%s AND revoked_at IS NULL',(user,))
         await cur.execute("UPDATE account_email_tokens SET consumed_at=now() WHERE user_id=%s AND purpose='reset' AND consumed_at IS NULL",(user,))
         await cur.execute("INSERT INTO account_security_events(user_id,action) VALUES(%s,'password_recovered')",(user,))

@@ -1,5 +1,6 @@
 import {Component,useLayoutEffect,type ReactNode} from 'react'
 import {useLocation,useNavigationType} from 'react-router-dom'
+import {scrollToResults} from '../lib/pagination'
 const positions=new Map<string,number>()
 let previousPath:string|null=null
 export function RouteNavigation(){
@@ -14,7 +15,7 @@ export function RouteNavigation(){
     const restore=()=>{
       if(hash){
         let id='';try{id=decodeURIComponent(hash.slice(1))}catch{/* malformed hash */}
-        const find=()=>{const target=document.getElementById(id);if(!target)return false;target.scrollIntoView();stop();save();return true}
+        const find=()=>{const target=document.getElementById(id);if(!target)return false;if(['exam-question-browser','exam-study-heading','past-paper-results','udc-test-options'].includes(id))scrollToResults(id);else target.scrollIntoView();stop();save();return true}
         if(id&&!find()){restoring=true;observer=new MutationObserver(find);observer.observe(document.body,{subtree:true,childList:true});timer=window.setTimeout(cancel,8000)}else restoring=false
       }else if(navigation==='POP'){
         const attempt=()=>{if(Math.max(0,document.documentElement.scrollHeight-window.innerHeight)<wanted)return;window.scrollTo(0,wanted);stop();save()}

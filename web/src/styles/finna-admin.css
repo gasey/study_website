@@ -1,0 +1,141 @@
+.finna-admin { --admin-soft:var(--bg-panel-elev); }
+.finna-admin-topbar { position:sticky; top:0; z-index:30; min-height:60px; padding:12px 28px; border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.finna-admin-topbar > div:first-child { display:flex; align-items:baseline; min-width:0; gap:16px; }
+.finna-admin-topbar strong { font-size:20px; font-weight:800; white-space:nowrap; }
+.finna-admin-topbar > div:first-child > span { font-size:13px; color:var(--text-secondary); max-width:50ch; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.finna-admin-content { padding:24px 28px 60px!important; }
+.finna-admin :is(input,select,textarea) { border-color:var(--line); background:var(--bg-panel); color:rgb(var(--ism-ink-rgb)); border-radius:10px; }
+.finna-admin-overview { display:grid; grid-template-columns:minmax(0,2fr) minmax(280px,1fr); gap:20px; align-items:start; }
+.finna-admin-overview-main { display:flex; flex-direction:column; gap:20px; min-width:0; }
+.finna-admin .finna-card { border-radius:18px; padding:16px 20px; }
+.finna-admin .finna-card h2 { font-size:16px; font-weight:800; }
+.finna-attention h2 { margin-bottom:12px; }
+.finna-attention .finna-section-top h2 { margin-bottom:0; }
+.finna-attention-refresh { min-height:44px; font-size:12px; font-weight:700; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-attention-row { display:flex; align-items:center; gap:16px; padding:12px 0; border-top:1px solid var(--line); }
+.finna-attention-row > strong { min-width:64px; font-size:24px; font-weight:900; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-attention-row > div { flex:1; min-width:0; }
+.finna-attention-row h3 { font-size:15px; font-weight:700; }
+.finna-attention-row p { font-size:13px; color:var(--text-secondary); margin-top:3px; }
+.finna-attention-row .finna-btn { min-height:36px; padding:0 14px; border-radius:10px; font-size:13px; }
+.finna-btn-ink { background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb)); border-color:transparent; }
+.finna-admin-note { font-size:12px; line-height:1.6; color:var(--text-secondary); margin:12px 0; }
+.finna-admin-totals { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; }
+.finna-admin-totals > div { border:1px solid var(--line); background:var(--bg-panel); border-radius:16px; padding:16px; }
+.finna-admin-totals strong { display:block; font-size:26px; font-weight:900; letter-spacing:-.02em; line-height:1; }
+.finna-admin-totals span { display:block; margin-top:6px; font-size:13px; color:var(--text-secondary); }
+.finna-admin-tools { display:grid; grid-template-columns:1fr 1fr; }
+.finna-admin-tools a { display:flex; align-items:center; justify-content:space-between; min-height:44px; border-top:1px solid var(--line); font-size:13px; font-weight:700; padding:8px 10px 8px 0; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-admin-warning { background:rgb(var(--ism-attention-soft-rgb)); }
+.finna-admin-warning button { min-height:44px; text-decoration:underline; }
+.finna-admin-coverage { grid-column:1/-1; min-width:0; border-top:1px solid var(--line); padding-top:12px; }
+.finna-admin-coverage > summary { cursor:pointer; min-height:44px; font-size:14px; font-weight:700; padding:12px 0; }
+.finna-pipeline-summary { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:6px; }
+.finna-pipeline-summary a { background:var(--admin-soft); color:var(--text-secondary); padding:12px; border-radius:12px; min-width:0; }
+.finna-pipeline-summary [data-stage="review"],.finna-pipeline-summary [data-stage="ready"] { background:rgb(var(--ism-practice-soft-rgb)); color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-pipeline-summary [data-stage="published"] { background:rgb(var(--ism-correct-soft-rgb)); color:rgb(var(--ism-correct-dark-rgb)); }
+.finna-pipeline-summary strong { display:block; font-size:22px; font-weight:900; line-height:1; }
+.finna-pipeline-summary span { display:block; font-size:12px; font-weight:700; margin-top:4px; overflow:hidden; text-overflow:ellipsis; }
+.finna-admin-recent { min-width:0; }
+.finna-audit-toolbar { display:flex; gap:16px; justify-content:space-between; flex-wrap:wrap; }
+.finna-audit-toolbar input { min-height:44px; padding:0 14px; min-width:0; flex:1; max-width:360px; border:1px solid var(--line); font-size:13px; }
+.finna-audit-scope { font-size:12px; color:var(--text-secondary); margin:12px 0; }
+.finna-audit > .finna-btn { margin-top:16px; }
+.finna-audit-event { display:grid; grid-template-columns:86px 10px minmax(0,1fr); gap:14px; padding-bottom:18px; position:relative; }
+.finna-audit-event > time { font-size:12px; color:var(--text-secondary); padding-top:2px; }
+.finna-audit-dot { position:relative; width:10px; height:10px; border-radius:50%; background:rgb(var(--ism-practice-rgb)); margin-top:5px; }
+.finna-audit-dot:after { content:""; position:absolute; width:2px; top:10px; bottom:-200px; background:var(--line); left:4px; }
+.finna-audit-event { overflow:hidden; }
+.finna-audit-event:last-child .finna-audit-dot:after { display:none; }
+.finna-audit-event[data-kind="Answers"] .finna-audit-dot { background:rgb(var(--ism-correct-rgb)); }
+.finna-audit-event[data-kind="Access"] .finna-audit-dot { background:rgb(var(--ism-wrong-rgb)); }
+.finna-audit-person { display:flex; align-items:center; flex-wrap:wrap; gap:8px; overflow-wrap:anywhere; }
+.finna-audit-person strong { font-size:14px; font-weight:800; }
+.finna-audit-person > span { background:var(--bg-panel-elev); border-radius:999px; padding:1px 8px; font-size:11px; font-weight:800; }
+.finna-audit-event p { margin-top:2px; font-size:14px; overflow-wrap:anywhere; }
+.finna-audit-event p.finna-audit-reason { font-size:13px; color:var(--text-secondary); }
+.finna-audit-event summary { min-height:36px; padding:8px 0; font-size:12px; color:rgb(var(--ism-practice-dark-rgb)); cursor:pointer; }
+.finna-audit-event pre { white-space:pre-wrap; overflow-wrap:anywhere; font-size:11px; background:var(--bg-panel-elev); border-radius:8px; padding:12px; }
+.finna-audit-events.is-compact .finna-audit-event { grid-template-columns:10px minmax(0,1fr); gap:12px; }
+.is-compact .finna-audit-event > time { grid-column:2; grid-row:2; margin-top:-14px; }
+.is-compact .finna-audit-dot { grid-column:1; grid-row:1/3; }
+.is-compact .finna-audit-event > div { grid-column:2; grid-row:1; padding-bottom:16px; }
+.is-compact .finna-audit-person { font-size:13px; }
+.finna-empty { padding:16px 0; color:var(--text-secondary); font-size:13px; }
+.finna-paper-pipeline { margin-top:0; }
+.finna-pipeline-board { display:flex; gap:14px; overflow:auto; align-items:start; padding:8px 0 18px; max-width:100%; }
+.finna-pipeline-column { flex:1 0 220px; min-width:0; background:var(--admin-soft); border-radius:16px; padding:12px; display:flex; flex-direction:column; gap:10px; }
+.finna-pipeline-column > header { display:flex; align-items:baseline; justify-content:space-between; gap:12px; padding:2px 4px; }
+.finna-pipeline-column h2 { font-size:14px; font-weight:800; }
+.finna-pipeline-column > header > span { font-size:12px; font-weight:800; color:var(--text-secondary); }
+.finna-pipeline-card { background:var(--bg-panel); border:1px solid var(--line); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:8px; overflow-wrap:anywhere; }
+.finna-pipeline-card h3 { font-size:14px; font-weight:800; }
+.finna-pipeline-card p { font-size:12px; color:var(--text-secondary); }
+.finna-pipeline-card p.finna-pipeline-alert { color:rgb(var(--ism-wrong-rgb)); }
+.finna-pipeline-card button { font-size:12px; font-weight:800; min-height:44px; text-align:right; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-pipeline-progress { height:5px; border-radius:999px; background:var(--bg-panel-elev); overflow:hidden; }
+.finna-pipeline-progress span { height:100%; display:block; border-radius:999px; background:rgb(var(--ism-practice-rgb)); }
+.finna-pipeline-empty { padding:12px 4px; font-size:12px; color:var(--text-secondary); }
+.finna-pipeline-empty button { display:block; min-height:44px; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-pipeline-open { min-height:44px; font-size:12px; font-weight:800; color:rgb(var(--ism-practice-dark-rgb)); padding:0 4px; text-align:left; }
+.finna-pipeline-editor { scroll-margin-top:90px; }
+.finna-pipeline-pagination { display:flex; align-items:center; justify-content:space-between; gap:12px; font-size:12px; }
+.finna-review-workspace { min-width:0; }
+.finna-review-filters { margin-bottom:12px; border:1px solid var(--line); border-radius:14px; background:var(--bg-panel); padding:0 16px; }
+.finna-review-filters > summary { min-height:44px; padding:12px 0; font-size:13px; font-weight:800; cursor:pointer; }
+.finna-review-filters > summary > span { margin-left:12px; font-weight:500; color:var(--text-secondary); }
+.finna-review-filters > div { padding:4px 0 16px; }
+.finna-review-workspace > header { border-radius:18px; }
+.finna-review-workspace > header > h2 { font-size:20px; font-weight:800; }
+.finna-review-panes { display:grid; gap:0; align-items:start; margin-top:16px; border:1px solid var(--line); border-radius:18px; background:var(--bg-panel); overflow:hidden; }
+.finna-review-queue { min-width:0; }
+.finna-review-queue > div { border:0; border-radius:0; }
+.finna-review-queue [aria-pressed="true"] { border-left:3px solid var(--finna-primary); background:rgb(var(--ism-practice-soft-rgb)); }
+.finna-review-queue button { overflow-wrap:anywhere; }
+.finna-review-queue nav { padding:10px; }
+.finna-review-source { padding:20px; min-width:0; }
+.finna-review-source h2 { font-size:13px; font-weight:800; }
+.finna-review-source .finna-section-top > span { font-size:12px; color:var(--text-secondary); }
+.finna-review-source-link { display:inline-flex; min-height:44px; align-items:center; font-size:12px; font-weight:700; color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-review-inspector { border:0; border-radius:0; padding:20px 24px; }
+.finna-review-inspector > div:first-child > h2 { font-size:18px; font-weight:800; }
+.finna-review-inspector h3 { font-family:Figtree,system-ui,sans-serif; font-size:18px; font-weight:600; line-height:1.4; }
+.finna-review-inspector ol > li { border-radius:12px; background:var(--bg-panel); border-color:var(--line); min-height:44px; }
+.finna-review-inspector ol > li:has(> span:last-child:nth-child(3)) { background:rgb(var(--ism-correct-soft-rgb)); border-color:rgb(var(--ism-correct-rgb)); }
+.finna-review-panel-tabs { display:none; }
+.finna-admin .bank-overview { color:rgb(var(--ism-ink-rgb)); --bo-line:var(--line); --bo-muted:var(--text-secondary); }
+.finna-admin .bank-overview :is(h2,strong) { font-family:Figtree,system-ui,sans-serif; font-weight:800; color:rgb(var(--ism-ink-rgb)); }
+.finna-admin .bank-overview :is(.bo-panel,.bo-totals) { background:var(--bg-panel); }
+.finna-admin .bank-overview :is(.bo-hero,.bo-next,.bo-exams thead th) { background:var(--bg-panel-elev); }
+.finna-admin .bank-overview a { color:rgb(var(--ism-practice-dark-rgb)); }
+.finna-admin .bo-gaps a { color:rgb(var(--ism-ink-rgb)); }
+@media(min-width:1200px) {
+ .finna-review-panes.has-selection { grid-template-columns:210px minmax(260px,1fr) minmax(320px,1fr); }
+ .finna-review-source { border-right:1px solid var(--line); border-left:1px solid var(--line); position:sticky; top:80px; }
+ .finna-review-queue > div { max-height:calc(100dvh - 100px); overflow:auto; }
+}
+@media(max-width:1199px) {
+ .finna-admin-overview { grid-template-columns:minmax(0,1fr); }
+ .finna-admin-recent { grid-row:auto; }
+ .finna-review-panel-tabs { display:flex; position:sticky; top:0; z-index:20; margin-top:16px; border:1px solid var(--line); border-radius:14px; background:var(--bg-panel); padding:4px; }
+ .finna-review-panel-tabs button { min-height:44px; border-radius:10px; flex:1; font-size:13px; font-weight:800; }
+ .finna-review-panel-tabs [aria-pressed="true"] { background:rgb(var(--ism-ink-rgb)); color:rgb(var(--ism-paper-rgb)); }
+ .finna-review-panel-tabs button:disabled { opacity:.4; }
+ .finna-review-workspace[data-mobile-panel="queue"] :is(.finna-review-source,.finna-review-inspector),.finna-review-workspace[data-mobile-panel="source"] :is(.finna-review-queue,.finna-review-inspector),.finna-review-workspace[data-mobile-panel="question"] :is(.finna-review-queue,.finna-review-source) { display:none; }
+ .finna-admin-topbar > div:first-child > span { display:none; }
+}
+@media(max-width:639px) {
+ .finna-admin-content { padding:20px 16px 40px!important; }
+ .finna-admin-topbar { position:static; padding:12px 16px; flex-wrap:wrap; }
+ .finna-admin-topbar > div:last-child { gap:12px; font-size:12px; }
+ .finna-admin .finna-card { padding:14px 16px; }
+ .finna-attention-row { gap:10px; }
+ .finna-attention-row > strong { min-width:44px; font-size:22px; }
+ .finna-attention-row p { font-size:12px; }
+ .finna-admin-totals { grid-template-columns:1fr 1fr; }
+ .finna-pipeline-summary { grid-template-columns:repeat(3,minmax(0,1fr)); }
+ .finna-audit-event { grid-template-columns:64px 8px minmax(0,1fr); gap:10px; }
+ .finna-audit-toolbar input { width:100%; max-width:none; }
+ .finna-pipeline-column { flex-basis:260px; }
+ .finna-review-source,.finna-review-inspector { padding:16px; }
+}

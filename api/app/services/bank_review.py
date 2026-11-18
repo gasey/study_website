@@ -212,8 +212,9 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         return prior
     require_current_patch(p)
     if admin_attestation:
-        # Direct staff maintenance is bounded separately from learner intake.
-        # A caller cannot gain this budget merely by setting a Python flag.
+        # Direct staff maintenance is role-gated and audited separately from
+        # learner intake. A caller cannot gain the maintenance path merely by
+        # setting a Python flag.
         await require_role(cur,actor,p.subject_id,('owner','publisher'))
     await cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))",('review-author:'+actor,))
     await protect_answer(cur,actor,p.canonical_id)
@@ -227,9 +228,9 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         # Retagging can change the subject, but review permissions follow the old subject until publication.
         if p.kind!='taxonomy': raise HTTPException(422,'Use the question’s current subject')
     await validate_evidence(cur,p,baseline,allow_noop=admin_attestation)
-    # An explicitly scoped operator taxonomy run has its own recorded allowance.
-    # Do not let that run consume the normal browser editing budget.
-    # Both trusted operator records are required; HTTP clients cannot create them.
+    # Explicit owner maintenance remains target-scoped and audited; these trusted
+    # records cannot be created by HTTP clients. Staff maintenance is uncapped and
+    # is counted separately from the ordinary daily contribution budget below.
     exemption=owner_maintenance_quota_run.get() if admin_attestation else None
     if exemption:
         await require_role(cur,actor,roles=('owner',))
@@ -239,17 +240,14 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
     if not (exemption and p.kind=='taxonomy'):
         await cur.execute("""SELECT count(*)::int AS n FROM bank_contributions c
       WHERE c.author_id=%s AND c.created_at>now()-interval '1 day'
-      AND NOT (c.kind='taxonomy' AND EXISTS(
-        SELECT 1 FROM contribution_events x JOIN contribution_events a
-          ON a.contribution_id=x.contribution_id
-        WHERE x.contribution_id=c.id AND x.actor_id='operator:owner-source-maintenance'
-          AND x.action='owner_maintenance_quota_exemption'
-          AND x.detail->>'owner_id'=c.author_id
-          AND a.actor_id='operator:owner-source-maintenance' AND a.action='operator_taxonomy_authorization'
-          AND a.detail->>'owner_id'=c.author_id AND a.detail->>'run_id'=x.detail->>'run_id'))""",(actor,))
+      AND NOT EXISTS(SELECT 1 FROM admin_answer_decisions d WHERE d.contribution_id=c.id)
+      AND NOT EXISTS(SELECT 1 FROM admin_bank_decisions d WHERE d.contribution_id=c.id)
+      AND NOT EXISTS(SELECT 1 FROM contribution_events x WHERE x.contribution_id=c.id
+        AND x.actor_id='operator:owner-source-maintenance'
+        AND x.action IN ('operator_answer_completed','operator_source_adjudication','operator_taxonomy_authorization'))""",(actor,))
         used=(await cur.fetchone())['n']
-    limit=500 if admin_attestation else 30
-    if used is not None and used>=limit and not exemption: raise HTTPException(429,'Daily staff maintenance limit reached' if admin_attestation else 'Daily contribution limit reached',headers={'Retry-After':'3600'})
+    limit=None if admin_attestation else 30
+    if used is not None and limit is not None and used>=limit: raise HTTPException(429,'Daily contribution limit reached',headers={'Retry-After':'3600'})
     cid=uid('con')
     await cur.execute('''INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash)
         VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *''',
@@ -262,5 +260,5 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         await event(cur,cid,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',
                     {'owner_id':actor,'run_id':exemption['run_id'],'authorization':exemption['authorization'],
                      'canonical_id':p.canonical_id,'ordinary_daily_limit':limit,'observed_last24h':used,
-                     'budget_basis':'explicit-bounded-taxonomy-scope' if p.kind=='taxonomy' else 'ordinary-count-with-authorized-scope'})
+                     'budget_basis':'explicit-bounded-maintenance-scope'})
     return c

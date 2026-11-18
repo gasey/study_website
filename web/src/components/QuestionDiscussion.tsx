@@ -1,3 +1,11 @@
+import {ContributorName,type ContributorTier} from './ContributorStanding'
+import PostEditing,{EditMarker,type EditablePost} from './PostEditing'
+import AcceptanceNudge from './AcceptanceNudge'
+import BlockAuthor,{CommunityFeedback} from './BlockAuthor'
+import CommunityText, {ComposerFormatting} from './CommunityText'
+import DraftNotice from './DraftNotice'
+import {useComposerDraft} from '../lib/useComposerDraft'
+import {hasComposerDraft} from '../lib/communityDrafts'
 import QuestionReport from './QuestionReport'
 import {useQuestionStaff} from '../lib/useQuestionStaff'
 import {scopeLink} from '../lib/examScope'
@@ -16,7 +24,8 @@ interface Source {
   url: string;
   note: string;
 }
-export interface DiscussionPost {
+export interface DiscussionPost extends EditablePost {
+  author_tier?:ContributorTier|null; author_profile_id?:string|null;
   id: number;
   canonical_id: string;
   parent_id: number | null;
@@ -57,7 +66,7 @@ interface Thread extends Page {
 const BTN =
   "inline-flex min-h-11 items-center rounded-pill border border-hairline px-3 py-2 text-[12px] font-semibold disabled:opacity-50";
 const INPUT =
-  "w-full rounded-[6px] border border-[#DCD3C2] bg-[#FFFDF8] p-3 text-[14px]";
+  "w-full rounded-[6px] border border-hairline bg-card p-3 text-[14px] text-ink";
 async function read<T>(path: string): Promise<T> {
   const r = await fetch("/api/community" + path, {
     credentials: "include",
@@ -102,14 +111,18 @@ export function QuestionActions({
   const [open, setOpen] = useState(initialOpen);
   const [copied, setCopied] = useState(false);
   const [manual, setManual] = useState(false);
-  const url = window.location.origin + scopeLink(questionLink(qid, context));
+  const params = new URLSearchParams();
+  if (context.paper_id) params.set('paper', context.paper_id);
+  const url = window.location.origin + scopeLink('/api/questions/' + encodeURIComponent(qid) + '/share' + (params.size ? '?' + params : ''));
+  const shareBinding = useRef(url);
+  shareBinding.current = url;
+  useEffect(() => { setCopied(false); setManual(false); }, [url]);
   async function share() {
     try {
       await navigator.clipboard.writeText(url);
-      setCopied(true);
-      setManual(false);
+      if (shareBinding.current === url) { setCopied(true); setManual(false); }
     } catch {
-      setManual(true);
+      if (shareBinding.current === url) setManual(true);
     }
   }
   return (
@@ -128,6 +141,7 @@ export function QuestionActions({
         <button type="button" className="min-h-11 py-2 text-[12px] text-secondary" onClick={() => void share()}>
           {copied ? "Link copied" : "Share"}
         </button>
+        <a className="inline-flex min-h-11 items-center py-2 text-[12px] text-link" href={'https://wa.me/?text='+encodeURIComponent('Practice this question on Finna:\n'+url)} target="_blank" rel="noreferrer">Share on WhatsApp ↗</a>
       <QuestionReport key={qid+String(context.paper_id)} qid={qid} paperId={context.paper_id}/>
         {staff && <Link className="inline-flex min-h-11 items-center text-[12px] text-link underline" to={'/admin/bank?'+new URLSearchParams({tab:'questions',question:qid,issue:'all'})}>Review / edit</Link>}
       </div>
@@ -160,24 +174,51 @@ function Composer({
   context,
   parent,
   onSaved,
+  onJoin,
+  threadVersion = 0,
 }: {
   qid: string;
   context: DiscussionContext;
   parent?: number;
   onSaved: () => void;
+  onJoin?: (post: DiscussionPost) => void;
+  threadVersion?: number;
 }) {
-  const [kind, setKind] = useState<"doubt" | "explanation">("doubt");
-  const [body, setBody] = useState("");
-  const [sources, setSources] = useState<Source[]>([]);
+  const scope = 'question:' + JSON.stringify([qid, parent || null, context.paper_id || null, context.collection_id || null]);
+  const draft = useComposerDraft(scope, true); // Mounted only after registered/unlocked access.
+  const {body} = draft.fields;
+  const {kind, sources} = draft.fields.discussion || {kind: 'doubt' as const, sources: []};
+  const setBody = (value: string) => draft.update({body: value});
+  const setKind = (value: 'doubt' | 'explanation') => draft.update({discussion: {kind: value, sources}});
+  const setSources = (update: (xs: Source[]) => Source[]) => draft.update({discussion: {kind, sources: update(sources)}});
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState("");
   const [notice, setNotice] = useState("");
-  const retry = useRef({ payload: "", key: crypto.randomUUID() });
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
+  const [suggestions, setSuggestions] = useState<Page | null>(null);
+  const form = useRef<HTMLFormElement>(null);
+  const generation = useRef(0);
+  useEffect(() => () => { ++generation.current; }, []);
+  useEffect(() => {
+    ++generation.current;
+    setSuggestions(null);
+    setBusy(false);
+  }, [threadVersion]);
+  async function submit(e?: React.FormEvent, reviewed = false) {
+    e?.preventDefault();
+    if (reviewed && !form.current?.reportValidity()) return;
+    const run = ++generation.current;
     setBusy(true);
     setError("");
     try {
+      if (!parent && kind === "doubt" && !reviewed) {
+        const existing = await read<Thread>("/questions/" + encodeURIComponent(qid) + "/discussion");
+        if (run !== generation.current) return;
+        if (!existing.allowed || !existing.registered || existing.locked)
+          throw new Error("Reload this discussion before posting. Its access or moderation state changed.");
+        const items = existing.items.filter((post) => !post.needs_approval);
+        setSuggestions({items, has_more: existing.has_more});
+        if (items.length) return;
+      }
       const payload = {
         kind: parent ? "reply" : kind,
         parent_id: parent || null,
@@ -186,15 +227,14 @@ function Composer({
         sources,
       };
       const serialized = JSON.stringify(payload);
-      if (retry.current.payload !== serialized)
-        retry.current = { payload: serialized, key: crypto.randomUUID() };
       const saved = await reviewRequest<{ needs_approval: boolean }>(
         "/community/questions/" + qid + "/discussion",
         payload,
-        retry.current.key,
+        draft.requestKey(serialized),
       );
-      setBody("");
-      setSources([]);
+      if (run !== generation.current) return;
+      draft.clear();
+      setSuggestions(null);
       setNotice(
         saved.needs_approval
           ? "Saved. Your post is awaiting moderation and is visible only to you."
@@ -202,13 +242,15 @@ function Composer({
       );
       onSaved();
     } catch (e) {
-      setError((e as Error).message);
+      if (run === generation.current) setError((e as Error).message);
     } finally {
-      setBusy(false);
+      if (run === generation.current) setBusy(false);
     }
   }
   return (
     <form
+      ref={form}
+      aria-busy={busy}
       onSubmit={(e) => void submit(e)}
       className="mt-4 rounded-[8px] border border-hairline bg-paper p-4"
     >
@@ -217,7 +259,8 @@ function Composer({
           Join the discussion
           <select
             value={kind}
-            onChange={(e) => setKind(e.target.value as typeof kind)}
+            onChange={(e) => {setKind(e.target.value as typeof kind);setSuggestions(null)}}
+            disabled={busy}
             className={INPUT + " mt-2"}
           >
             <option value="doubt">Ask a doubt</option>
@@ -237,15 +280,31 @@ function Composer({
           maxLength={5000}
           rows={3}
           value={body}
+          disabled={busy}
           onChange={(e) => setBody(e.target.value)}
           className={INPUT + " mt-2"}
           placeholder="Mention the relevant wording or option. Include a source when you can."
         />
       </label>
       <p className="mt-1 text-[11px] text-muted">
-        {body.length}/5000 · Plain text · Your first three approved posts
+        {body.length}/5000 · Bold, lists and inline code · Your first three approved posts
         require moderation.
       </p>
+      <ComposerFormatting body={body} sourceLinks />
+      <DraftNotice status={draft.status} hasDraft={hasComposerDraft(draft.fields)} onDiscard={() => {draft.clear();setSuggestions(null);setError('');setNotice('');}} />
+      {!parent && kind === "doubt" && !!suggestions?.items.length && (
+        <aside aria-label="Existing discussions" className="mt-3 rounded-[8px] border border-hairline bg-community-soft p-3">
+          <p role="status" className="text-[14px] font-semibold">Discussions already exist — does one cover your doubt?</p>
+          <p className="mt-1 text-[12px] text-secondary">Join a conversation to keep its answers together. Your draft stays here.{suggestions.has_more ? " Showing the most recent discussions; more are available above." : ""}</p>
+          <ul className="mt-2 space-y-2">
+            {suggestions.items.map(post => <li key={post.id} className="min-w-0 border-t border-hairline pt-2">
+              <p className="break-words text-[13px]">{post.body.length > 240 ? post.body.slice(0, 240) + "…" : post.body}</p>
+              <button type="button" disabled={busy} className={BTN + " mt-1 text-link"} onClick={() => onJoin?.(post)}>Join discussion by {post.author}</button>
+            </li>)}
+          </ul>
+          <button type="button" disabled={busy || body.trim().length < 10} className={BTN + " mt-3 bg-ink text-paper"} onClick={() => void submit(undefined, true)}>My doubt is different · post it</button>
+        </aside>
+      )}
       {sources.map((s, i) => (
         <div key={i} className="mt-3 grid gap-2">
           <label className="text-[12px]">
@@ -255,6 +314,7 @@ function Composer({
               type="url"
               pattern="https://.*"
               maxLength={2000}
+              disabled={busy}
               value={s.url}
               onChange={(e) =>
                 setSources((xs) =>
@@ -272,6 +332,7 @@ function Composer({
               required
               minLength={3}
               maxLength={1000}
+              disabled={busy}
               value={s.note}
               onChange={(e) =>
                 setSources((xs) =>
@@ -285,6 +346,7 @@ function Composer({
           </label>
           <button
             type="button"
+            disabled={busy}
             onClick={() => setSources((xs) => xs.filter((_, j) => j !== i))}
             className="min-h-11 text-left text-[12px] text-link"
           >
@@ -296,6 +358,7 @@ function Composer({
         {sources.length < 5 && (
           <button
             type="button"
+            disabled={busy}
             onClick={() => setSources((xs) => [...xs, { url: "", note: "" }])}
             className={BTN}
           >
@@ -329,6 +392,7 @@ function Topic({
   onChange,
   parentAuthor = false,
   focusPost,
+  joinRequested,
 }: {
   post: DiscussionPost;
   qid: string;
@@ -338,6 +402,7 @@ function Topic({
   onChange: () => void;
   parentAuthor?: boolean;
   focusPost?: number;
+  joinRequested?: number;
 }) {
   const staff = useQuestionStaff();
   const [expanded, setExpanded] = useState(false);
@@ -350,6 +415,13 @@ function Topic({
   const [note, setNote] = useState("");
   const [withdraw, setWithdraw] = useState(false);
   const pid = post.id;
+  const article = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!post.parent_id && joinRequested) void load();
+  }, [joinRequested, pid]);
+  useEffect(() => {
+    if (joinRequested && expanded && page) article.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus();
+  }, [joinRequested, expanded, page]);
   useEffect(() => {
     if (!post.parent_id && focusPost && focusPost !== pid) void load();
   }, [focusPost, pid]);
@@ -388,6 +460,7 @@ function Topic({
     setError("");
     try {
       await reviewRequest("/community/posts/" + pid + "/" + path, body);
+      if(path==='helpful')window.dispatchEvent(new Event('ism-community-standing-change'));
       onChange();
       return true;
     } catch (e) {
@@ -399,14 +472,15 @@ function Topic({
   }
   return (
     <article
+      ref={article}
       id={"discussion-post-" + pid}
       className={
         "min-w-0 rounded-[8px] border border-hairline p-4 " +
-        (post.accepted ? "bg-[#E3EEE0]" : "bg-card")
+        (post.accepted ? "bg-correct-soft" : "bg-card")
       }
     >
       <div className="flex flex-wrap items-center gap-2 text-[12px]">
-        <UserAvatar look={post.avatar} initials={post.author} size={30}/><b>{post.author}</b>
+        <UserAvatar look={post.avatar} initials={post.author} size={30}/><ContributorName {...post}/>
         <span className="rounded-pill bg-community-soft px-2 py-1 text-community-dark">
           {post.kind === "reply"
             ? "Reply"
@@ -435,9 +509,8 @@ function Topic({
           {post.source_context.qnum || "—"}
         </p>
       )}
-      <p className="mt-3 whitespace-pre-wrap break-words text-[14.5px] leading-[1.6]">
-        {post.body}
-      </p>
+      <EditMarker post={post}/><CommunityText body={post.body} className="mt-3 text-[14.5px] leading-[1.6]" />
+      {post.is_author&&registered&&!locked&&<PostEditing key={'edit:'+post.id+':'+(post.content_version||0)} post={post} canonical onSaved={onChange}/>}
       {post.source_links.map((s, i) => (
         <p key={i} className="mt-2 break-words text-[12px]">
           <a
@@ -502,9 +575,10 @@ function Topic({
         )}
         {registered && !post.is_author && (
           <button className={BTN} onClick={() => setReport(!report)}>
-            Report / block
+            Report post
           </button>
         )}
+        {registered && !post.is_author && <BlockAuthor authorId={post.author_id} disabled={busy}/>}
         {post.is_author && (
           <button className={BTN} onClick={() => setWithdraw(!withdraw)}>
             Withdraw
@@ -566,23 +640,7 @@ function Topic({
           <button disabled={busy} className={BTN}>
             Send conduct report
           </button>
-          <button
-            type="button"
-            disabled={busy}
-            className={BTN + " ml-2"}
-            onClick={async () => {
-              try {
-                await reviewRequest("/creators/" + post.author_id + "/block", {
-                  enabled: true,
-                });
-                onChange();
-              } catch (e) {
-                setError((e as Error).message);
-              }
-            }}
-          >
-            Block this author
-          </button>
+
         </form>
       )}
       {error && (
@@ -592,6 +650,9 @@ function Topic({
       )}
       {expanded && (
         <div className="mt-4 space-y-3 border-t border-hairline pt-4">
+          {registered && !locked && post.is_author && post.kind === 'doubt' && !post.needs_approval &&
+            page?.items.some(reply => !reply.is_author && !reply.needs_approval) && !page.items.some(reply => reply.accepted) &&
+            <AcceptanceNudge key={pid} postId={pid}/>}
           {page?.items.map((reply) => (
             <Topic
               key={reply.id}
@@ -617,6 +678,7 @@ function Topic({
           )}
           {registered && !locked && (
             <Composer
+              key={JSON.stringify([qid, context.paper_id, context.collection_id])}
               qid={qid}
               context={context}
               parent={pid}
@@ -642,10 +704,12 @@ export default function QuestionDiscussion({
   const [error, setError] = useState("");
   const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [joined, setJoined] = useState<{post: DiscussionPost; request: number} | null>(null);
   const generation = useRef(0);
   const focus = new URLSearchParams(window.location.search).get("post");
   async function load(next = offset) {
     const run = ++generation.current;
+    setJoined(null);
     setLoading(true);
     setError("");
     try {
@@ -669,6 +733,7 @@ export default function QuestionDiscussion({
     let active = true;
     const run = ++generation.current;
     setData(null);
+    setJoined(null);
     setError("");
     read<Thread>(
       "/questions/" +
@@ -684,27 +749,34 @@ export default function QuestionDiscussion({
       });
     const update = () => {
       setData(null);
+      setJoined(null);
       void load(0);
     };
     window.addEventListener("ism-auth-change", update);
+    window.addEventListener("ism-auth-expired", update);
+    window.addEventListener("ism-community-change", update);
     window.addEventListener("ism-answer-viewed", update);
     return () => {
       active = false;
       ++generation.current;
       window.removeEventListener("ism-auth-change", update);
+      window.removeEventListener("ism-auth-expired", update);
+      window.removeEventListener("ism-community-change", update);
       window.removeEventListener("ism-answer-viewed", update);
     };
   }, [qid, answeredSignal, focus]);
-  const posts =
+  const listed =
     data?.focused && !data.items.some((p) => p.id === data.focused?.id)
       ? [data.focused, ...data.items]
       : data?.items || [];
+  const posts = joined && !listed.some(post => post.id === joined.post.id) ? [joined.post, ...listed] : listed;
   return (
     <section
       id={"discussion-" + qid}
       aria-label="Question discussion"
       className="mt-4 border-t border-ink pt-4"
     >
+      <CommunityFeedback/>
       <h2 className="font-display text-[25px]">Question discussion</h2>
       <p className="mt-1 text-[13px] leading-relaxed text-secondary">
         Ask doubts, explain a method and compare sources. Accepted replies and
@@ -774,6 +846,7 @@ export default function QuestionDiscussion({
                 context={context}
                 registered={data.registered}
                 locked={data.locked}
+                joinRequested={joined?.post.id === p.id ? joined.request : undefined}
                 focusPost={
                   focus && p.id === data.focused?.id ? Number(focus) : undefined
                 }
@@ -810,9 +883,12 @@ export default function QuestionDiscussion({
           )}
           {data.registered && !data.locked ? (
             <Composer
+              key={JSON.stringify([qid, context.paper_id, context.collection_id])}
               qid={qid}
               context={context}
               onSaved={() => void load(0)}
+              onJoin={post => setJoined(previous => ({post, request: (previous?.request || 0) + 1}))}
+              threadVersion={generation.current}
             />
           ) : (
             !data.registered && (

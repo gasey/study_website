@@ -99,7 +99,7 @@ def test_practice_snapshot_and_worker_job(client,actor,database):
     async def run():
         async with cursor() as cur:return await process_job(cur)
     assert client.portal.call(run) is True
-    assessment=conn.execute('SELECT payload FROM attempt_assessments WHERE attempt_id=%s',(attempt[0],)).fetchone()[0]
+    assessment=conn.execute('SELECT payload FROM attempt_assessments WHERE attempt_id=%s ORDER BY id DESC LIMIT 1',(attempt[0],)).fetchone()[0]
     assert assessment['outcome']=='wrong' and assessment['original_correct'] is True
     assert conn.execute('SELECT correct FROM attempts WHERE id=%s',(attempt[0],)).fetchone()[0] is True
     assert conn.execute('SELECT count(*) FROM mock_assessments WHERE mock_id=%s',(mid,)).fetchone()[0]==1

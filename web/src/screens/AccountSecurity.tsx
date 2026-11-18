@@ -1,3 +1,4 @@
+import PasswordSettings from '../components/PasswordSettings'
 import GoogleSignIn from '../components/GoogleSignIn'
 import EmailVerification from '../components/EmailVerification'
 import AccountSessions from '../components/AccountSessions'
@@ -29,7 +30,7 @@ export default function AccountSecurity(){
  {status.enabled&&<details className="mt-5 border-t border-hairline pt-4"><summary className="cursor-pointer text-[13px] font-semibold">Recovery codes and authenticator removal</summary><label className="mt-4 block text-[13px]">Current password<input type="password" autoComplete="current-password" value={password} onChange={e=>setPassword(e.target.value)} className={INPUT}/></label><label className="mt-3 block text-[13px]">Authenticator or unused recovery code<input autoComplete="one-time-code" value={code} onChange={e=>setCode(e.target.value)} className={INPUT}/></label><div className="mt-3 flex flex-wrap gap-3"><button disabled={busy||!password||!code} onClick={()=>void action('recovery-codes')} className="min-h-12 rounded-pill border border-hairline2 px-4 text-[13px]">Generate new recovery codes</button>{!status.staff_required&&<button disabled={busy||!password||!code} onClick={()=>void action('disable')} className="min-h-12 px-4 text-[13px] text-mypick underline">Disable authenticator</button>}</div></details>}</>}
  </section>{recovery.length>0&&<section className="mt-5 rounded-[12px] border border-attention bg-attention-soft p-5"><h2 className="font-display text-[24px]">Save your recovery codes</h2><p className="mt-2 text-[13px]">Each code works once. These codes are shown only now and are not saved in this browser. Keep a copy in your password manager or print them.</p><ul className="mt-4 grid gap-2 font-mono text-[13px] sm:grid-cols-2">{recovery.map(c=><li key={c} className="rounded-[6px] bg-card px-3 py-2">{c}</li>)}</ul><button onClick={()=>setRecovery([])} className="mt-4 min-h-12 rounded-pill border border-ink px-4 text-[13px] font-semibold">I have saved these codes</button></section>}</>}
  <EmailVerification/>
- <AccountSessions/>
+ <PasswordSettings/><AccountSessions/>
  <Link to="/admin/bank" className="mt-6 inline-block text-[13px] font-semibold text-link underline">Return to admin console →</Link>
 </main>
 }

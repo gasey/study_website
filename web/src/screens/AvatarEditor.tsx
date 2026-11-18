@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import CosmeticShop from "../components/CosmeticShop";
 import AvatarArt, { UserAvatar } from "../components/AvatarArt";
 import {
   AVATAR_COLORS,
@@ -207,8 +208,8 @@ export default function AvatarEditor() {
               )}
             </div>
             <p className="text-[12px] leading-normal text-secondary">
-              Your saved avatar appears beside your profile, posts, leaderboard
-              entry and study desk membership. Your existing visibility settings
+              Your saved avatar appears beside your profile, posts, creator pages
+              and study desk membership. Your existing visibility settings
               still apply.
             </p>
             {notice && (
@@ -243,7 +244,7 @@ export default function AvatarEditor() {
               aria-label="Avatar workspace"
               className="flex gap-[22px] border-b border-ink"
             >
-              {["Customize", "Inventory"].map((t) => (
+              {["Customize", "Inventory", "Shop"].map((t) => (
                 <button
                   key={t}
                   aria-pressed={tab === t}
@@ -318,25 +319,24 @@ export default function AvatarEditor() {
                         </span>
                         <span className="font-mono text-[10.5px] text-secondary">
                           {!item.available
-                            ? "Unlocks at level " + item.level
+                            ? item.price_points?item.price_points+" points · available in Shop":"Unlocks at level " + item.level
                             : look[item.category] === item.value
                               ? "Selected"
                               : item.level === 1
                                 ? "Starter · tap to wear"
                                 : item.claimed
-                                  ? "Earned · tap to wear"
+                                  ? item.price_points?"Owned · tap to wear":"Earned · tap to wear"
                                   : "Level reward · save to claim"}
                         </span>
                       </button>
                     ))}
                 </div>
               </>
-            ) : (
+            ) : tab==='Shop' ? <CosmeticShop key={account.user_id} account={account} look={look} onPurchased={setAccount}/> : (
               <>
                 <p className="mt-4 text-[13.5px] text-secondary">
                   Starter items are free. Saving a look claims your eligible
-                  level rewards permanently. Cosmetics do not change XP, points
-                  or ranks.
+                  level rewards permanently. Purchases use points; cosmetics never change XP or ranks.
                 </p>
                 {CATEGORIES.map(([cat, label]) => {
                   const items = account.catalog.filter(
@@ -363,7 +363,7 @@ export default function AvatarEditor() {
                                 {item.label}
                               </b>
                               <span className="text-[11.5px] text-muted">
-                                {item.level === 1
+                                {item.price_points?'Points purchase · owned':item.level === 1
                                   ? "Starter"
                                   : "Level " +
                                     item.level +

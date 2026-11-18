@@ -1,0 +1,19 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),root=process.cwd(),wr=require('node:module').createRequire(root+'/web/package.json'),React=wr('react'),ts=wr('typescript');
+const reactPath=require.resolve('react',{paths:[process.argv[2]]});require.cache[reactPath]={id:reactPath,filename:reactPath,loaded:true,exports:React};
+const {create,act}=require(require.resolve('react-test-renderer',{paths:[process.argv[2]]})),Router=wr('react-router-dom');
+const listeners=new Map();global.window={addEventListener:(k,f)=>listeners.set(k,f),removeEventListener:k=>listeners.delete(k)};
+const item={id:'synthetic-source',title:'Synthetic RBI fixture release',source_url:'https://rbi.org.in/Synthetic.aspx',current_hash:'current-synthetic-hash',status:'source_ready',published_at:'2026-11-16T03:30:00Z'};
+let detail={item,evidence:{publication_raw:'16 Nov 2026 09:00',timezone_basis:'Publisher omitted timezone; Asia/Kolkata assumption recorded',fetched_at:'2026-11-16T04:00:00Z',cues:[{id:0,text:'Private synthetic source paragraph.'}]},drafts:[]};
+const overview={feeds:[{id:'rbi-press',title:'RBI press releases',url:'https://rbi.org.in/pressreleases_rss.xml',enabled:true}],items:[item],total:1,providers:{free_only:true,gemini_ready:false,supadata_ready:false,source_generation_enabled:false},supadata_reserved_credits_this_month:0};
+let calls=[],paused=false,resolveRead;
+const request=async(p,b)=>{calls.push({p,b});if(b)return {message:'Synthetic settings saved.'};if(paused)return new Promise(r=>{resolveRead=r});return p.includes('/items/')?detail:overview};
+const mod={exports:{}};new Function('module','exports','require',ts.transpileModule(fs.readFileSync(root+'/web/src/screens/OfficialCurrentAffairsSources.tsx','utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2020}}).outputText)(mod,mod.exports,id=>id==='../lib/review'?{reviewRequest:request}:id==='../lib/stats'?{statsDate:x=>x||'Not checked'}:wr(id));
+let tree;const text=()=>JSON.stringify(tree.toJSON()),button=label=>tree.root.findAllByType('button').find(b=>b.children.join('')===label);
+async function mount(){await act(async()=>{tree?.unmount();tree=create(React.createElement(Router.MemoryRouter,null,React.createElement(mod.exports.default)))});await act(async()=>tree.root.findAllByType('button').find(b=>b.props['aria-pressed']===false).props.onClick())}
+(async()=>{
+ await mount();assert.ok(text().includes('Awaiting private server key'));assert.ok(text().includes('Private synthetic source paragraph'));assert.ok(text().includes('assumption recorded'));assert.equal(button('Queue release draft').props.disabled,true);assert.ok(text().includes('No AI study draft yet'));
+ await act(async()=>button('Pause feed').props.onClick());assert.equal(calls.find(c=>c.b)?.p,'/current-affairs/automation/sources/rbi-press');assert.deepEqual(calls.find(c=>c.b)?.b,{enabled:false});
+ detail={...detail,drafts:[{id:'old',status:'pending',content_hash:'old-hash',model:'synthetic',payload:{summary:'Synthetic draft summary.',facts:[],mcqs:[],flashcards:[],warnings:[]}}]};await mount();await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'Synthetic source handoff note.'}}));assert.equal(button('Create private release notes').props.disabled,true);assert.ok(text().includes('older draft cannot be handed off'));
+ paused=true;await act(async()=>listeners.get('ism-auth-change')());assert.ok(!text().includes('Private synthetic source paragraph'),'Account switch clears private evidence while the new request is pending');await act(async()=>tree.unmount());
+ console.log('Official-source UI checks passed: key/setup states, source evidence/timezone, paused generation, feed control, stale-source handoff block and account isolation.');
+})().catch(e=>{console.error(e);process.exitCode=1});

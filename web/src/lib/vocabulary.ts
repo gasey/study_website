@@ -11,11 +11,19 @@ export interface VocabularyOverview {
   next_due: string | null;
   new_daily_target: number;
 }
+export interface VocabularyDecks {
+  curated_items?:CuratedDeck[];curated_known_total?:number;curated_practice_enabled?:boolean;
+  items: {id:string;label:string;source:'bank';eligible:number;started:number;attempted:number;correct_latest:number;due:number;state:string;rusty:boolean;last_activity:string|null}[];
+  basis:string;
+  curated_available:boolean;
+  curated_message:string;
+}
 export interface VocabularyCard {
   id: string;
   question_id: string;
   exam_scope: string;
   expires_at: string;
+  started?: boolean;
   stage: number;
   seen: number;
   question: {
@@ -36,7 +44,8 @@ export interface VocabularyResult {
   outcome: "correct" | "wrong" | "reveal" | "defer";
   answer_text: string | null;
   explanation: string | null;
-  next_due: string;
+  next_due: string | null;
+  graduated?: boolean;
   stage: number;
   message: string;
 }
@@ -70,3 +79,8 @@ export async function vocabularyRequest<T>(
   }
   return r.json();
 }
+
+export type CuratedMode='recognition'|'cloze'|'mizo-to-english'|'english-to-mizo'
+export interface CuratedDeck{id:string;label:string;source:'curated';eligible_cards:number;eligible_words:number;started:number;due:number;attempted:number;correct_latest:number;known:number;state:string;rusty:boolean;last_activity:string|null;modes:CuratedMode[];url:string}
+export interface CuratedCard{id:string;card_id:string;deck_id:string;deck_title:string;mode:CuratedMode;prompt:string;options:string[];expires_at:string;stage:number;seen:number;source:'reviewed-editorial'}
+export interface CuratedResult{answer_index?:number|null;correct:boolean|null;outcome:string;answer_text:string|null;card:import('./materials').CuratedWordCard|null;next_due:string|null;graduated:boolean;stage:number;source:'reviewed-editorial';xp:0;points:0}

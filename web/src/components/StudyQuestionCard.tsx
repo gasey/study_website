@@ -8,8 +8,10 @@ import type { Question, AnswerResult } from '../lib/api'
 
 const LETTERS = ['A','B','C','D','E','F','G','H','I','J']
 
-export default function StudyQuestionCard({q,collectionId,paperId='',sourceCollections,result,pick,viewed=false,busy=false,disabled=false,onPick,onViewed,onBusy,onRetry,onNext,nextLabel,showPanelNext=true}:{
+export default function StudyQuestionCard({q,collectionId,paperId='',sourceCollections,contextCollectionId,result,pick,viewed=false,busy=false,disabled=false,onPick,onViewed,onBusy,onRetry,onNext,nextLabel,showPanelNext=true}:{
   q:Question;collectionId:string;paperId?:string;sourceCollections?:Record<string,string>;
+  /** Source-only guides can use shared cards without claiming membership in a published collection. */
+  contextCollectionId?:string|null;
   result?:AnswerResult;pick?:number;viewed?:boolean;busy?:boolean;disabled?:boolean;
   onPick:(index:number)=>void;onViewed:(value:boolean)=>void;onBusy:(value:boolean)=>void;
   onRetry:()=>void;onNext:()=>void|Promise<void>;nextLabel?:string;showPanelNext?:boolean;
@@ -17,9 +19,9 @@ export default function StudyQuestionCard({q,collectionId,paperId='',sourceColle
   const combined=collectionId==='combined-prelims'
   const blocked=q.held||q.key_disputed||['duplicate-options','unresolved-source'].includes(q.source_defect||'')
   const sourceDetails=q.source_appearance&&<p className="mt-2 text-[12px] text-secondary">{q.source_appearance.exam||'Source paper'}{q.source_appearance.paper_label ? ' · '+q.source_appearance.paper_label : ''}{q.source_appearance.section_label ? ' · Section: '+q.source_appearance.section_label : ''} · Q{q.source_appearance.qnum||'?'}{q.source_appearance.page?' · p. '+q.source_appearance.page:''} {q.source_appearance.source_pdf_url&&<a href={q.source_appearance.source_pdf_url+(q.source_appearance.page?'#page='+q.source_appearance.page:'')} target="_blank" rel="noreferrer" className="text-link underline">Source PDF ↗</a>}</p>
-  const actions = <QuestionActions sourceDetails={sourceDetails} questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id,collection_id:q.source_appearance?.paper_id?(sourceCollections?.[q.source_appearance.paper_id]||(collectionId==='group-b'?null:collectionId)):null}} answeredSignal={result}/>
+  const actions = <QuestionActions sourceDetails={sourceDetails} questionType={q.type} qid={q.id} context={{paper_id:q.source_appearance?.paper_id,collection_id:q.source_appearance?.paper_id?(contextCollectionId!==undefined?contextCollectionId:sourceCollections?.[q.source_appearance.paper_id]||(collectionId==='group-b'?null:collectionId)):null}} answeredSignal={result}/>
   return <article id={'question-'+q.id} key={q.id} className={`${combined?'cp-question':'udc-question-card'} compact-question py-3`}>
-          <div className="flex flex-wrap gap-x-3 text-[11px] text-muted"><span>{q.source_appearance?.year ?? q.first_year ?? q.last_year ?? 'Year unknown'}</span><span>{q.type==='mcq'?'MCQ':'Written question'}</span><span>{questionTopicLabel(q,collectionId)}</span><AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.id}/></div>
+          <div className="flex flex-wrap gap-x-3 text-[11px] text-muted">{paperId&&q.source_appearance?.paper_id===paperId&&q.source_appearance.qnum&&<span className="font-semibold text-link">Q{q.source_appearance.qnum}</span>}<span>{q.source_appearance?.year ?? q.first_year ?? q.last_year ?? 'Year unknown'}</span><span>{q.type==='mcq'?'MCQ':'Written question'}</span><span>{questionTopicLabel(q,collectionId)}</span><AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.id}/></div>
           <SourceQuestionContext direction={q.direction} passage={q.passage}/><h3 className="mt-1 font-display text-[19px] leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup||q.question}/></h3>
           {blocked&&<p className="mt-3 rounded-[8px] bg-mypick-soft p-3 text-[13px] text-mypick">Excluded from scoring. See answer details below.</p>}
           {q.figure_image_url&&<img src={q.figure_image_url} loading="lazy" alt="Printed question figure" className="mt-3 max-h-[360px] max-w-full rounded-[8px] border border-hairline object-contain"/>}

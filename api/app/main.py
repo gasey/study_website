@@ -7,6 +7,7 @@ from .services.scoring_revisions import worker as assessment_worker
 from .services.desk_retention import worker as desk_retention_worker
 from .services.calendar_reminders import worker as calendar_worker
 from .services.games import worker as game_worker
+from .services.learning_rollups import worker as learning_worker
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -26,13 +27,20 @@ async def lifespan(_: FastAPI):
     await open_pool()
     task=asyncio.create_task(assessment_worker())
     retention_task=asyncio.create_task(desk_retention_worker())
+    from .services.account_retention import worker as account_retention_worker
+    account_retention_task=asyncio.create_task(account_retention_worker())
     calendar_task=asyncio.create_task(calendar_worker())
     game_task=asyncio.create_task(game_worker())
+    learning_task=asyncio.create_task(learning_worker())
     from .services.account_mail import worker as mail_worker
     mail_task=asyncio.create_task(mail_worker())
     try:
         yield
     finally:
+        account_retention_task.cancel()
+        with suppress(asyncio.CancelledError):await account_retention_task
+        learning_task.cancel()
+        with suppress(asyncio.CancelledError):await learning_task
         mail_task.cancel()
         with suppress(asyncio.CancelledError):await mail_task
         game_task.cancel()
@@ -46,7 +54,7 @@ async def lifespan(_: FastAPI):
         await close_pool()
 
 
-app = FastAPI(title="India Study Map API", version="0.1.0", lifespan=lifespan)
+app = FastAPI(title="Finna API", version="0.1.0", lifespan=lifespan)
 
 # Production is same-origin behind Caddy, so this only matters in dev.
 app.add_middleware(
@@ -58,13 +66,19 @@ app.add_middleware(
 
 from .services.account_boundary import AccountBoundary
 app.add_middleware(AccountBoundary)
+from .services.mobile_identity import MobileBoundary
+app.add_middleware(MobileBoundary)
 app.add_middleware(ReviewBodyLimit)
 app.add_middleware(InvalidatePublicCatalog)
+from .services.public_browse_cache import PublicBrowseCache
+app.add_middleware(PublicBrowseCache)
 app.include_router(bank_workspace.router)
 from .routers import mcq_solver_reviews
 app.include_router(mcq_solver_reviews.router)
 app.include_router(questions.router)
 app.include_router(study_sessions.router)
+from .routers import learning_loop
+app.include_router(learning_loop.router)
 app.include_router(editorial.router)
 app.include_router(home.router)
 app.include_router(community.router)
@@ -86,6 +100,12 @@ app.include_router(module_audits.router)
 app.include_router(me.router)
 app.include_router(collections.router)
 app.include_router(mocks.router)
+from .routers import ops
+app.include_router(ops.router)
+from .routers import account_viewer
+app.include_router(account_viewer.router)
+from .routers import site_notice
+app.include_router(site_notice.router)
 
 
 @app.get("/api/health")
@@ -172,3 +192,14 @@ app.include_router(bank_organization.public_router)
 
 from .routers import shareable_tests
 app.include_router(shareable_tests.router)
+
+from .routers import mobile
+app.include_router(mobile.router)
+
+from .routers import stats
+app.include_router(stats.router)
+app.add_middleware(stats.StatsBodyLimit)
+
+from .routers import youtube_current_affairs
+app.include_router(youtube_current_affairs.router)
+app.add_middleware(youtube_current_affairs.YouTubeBodyLimit)

@@ -134,7 +134,7 @@ export default function Scoring() {
       <p className="mt-3 max-w-[720px] text-[15px] leading-[1.6] text-secondary">
         A question is a mistake when your <em>latest</em> answer to it was wrong. Get it right
         anywhere — practice, another mock — and it leaves{' '}
-        <Link to="/mistakes" className="text-link underline">
+        <Link to="/revise?tab=queue" className="text-link underline">
           your mistakes list
         </Link>
         . Showing questions you have already learned would waste your time and make your

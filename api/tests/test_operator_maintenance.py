@@ -182,7 +182,7 @@ def test_staff_source_intake_keeps_learner_limit_and_requires_owner(client,actor
  finally:
   conn.execute('DELETE FROM bank_contributions WHERE id=ANY(%s)',(ids,))
 
-def test_staff_intake_budget_is_bounded_and_internal_flag_cannot_grant_access(client,database):
+def test_staff_maintenance_has_no_daily_cap_and_internal_flag_cannot_grant_access(client,database):
  conn=database[1];prefix='con_staff_cap_'+uuid4().hex;ids=[prefix+str(i)for i in range(500)]
  conn.execute("INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash) SELECT %s||n::text,'owner','cq_test','appearance-test','source_request','english','Synthetic staff budget fixture',%s||n::text,%s FROM generate_series(0,499)n",(prefix,prefix,'a'*64))
  p=Proposal(kind='answer',canonical_id='cq_test',appearance_id='appearance-test',subject_id='english',title='Synthetic bounded administrative answer',patch={'answerIndex':1,'answerSource':'derived','explanation':'Synthetic explanation for the isolated budget test only.'},rationale='Synthetic administrative review for the isolated budget test.',evidence=[{'kind':'reasoning','note':'Synthetic reasoning for a disposable database test only.'}])
@@ -190,8 +190,8 @@ def test_staff_intake_budget_is_bounded_and_internal_flag_cannot_grant_access(cl
   from app.db import cursor
   async with cursor()as cur:return await review.create(cur,user,p,uuid4().hex,admin_attestation=True)
  try:
-  with pytest.raises(HTTPException)as blocked:client.portal.call(create,'owner')
-  assert blocked.value.status_code==429 and 'staff maintenance'in blocked.value.detail
+  result=client.portal.call(create,'owner')
+  assert result['state']=='draft'
   with pytest.raises(HTTPException)as blocked:client.portal.call(create,'author')
   assert blocked.value.status_code==403
  finally:conn.execute('DELETE FROM bank_contributions WHERE id=ANY(%s)',(ids,))

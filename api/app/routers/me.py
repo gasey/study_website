@@ -7,9 +7,16 @@ from pydantic import BaseModel, Field
 
 from ..db import cursor
 from ..deps import current_user, require_account
-from ..schemas import Mistake, PrivateProfile, ProfileUpdate, Progress, DailyActivity, SubjectProgress, ScopeProgress, LearningProgressUpdate
+from ..schemas import BrowseAllowance, Mistake, PrivateProfile, ProfileUpdate, Progress, DailyActivity, SubjectProgress, ScopeProgress, LearningProgressUpdate
 
 router = APIRouter(prefix="/api/me", tags=["me"])
+
+
+@router.get('/browse-allowance', response_model=BrowseAllowance)
+async def browse_allowance(user_id: Annotated[str, Depends(current_user)]):
+    from ..services.browse_allowance import allowance
+    async with cursor() as cur:
+        return await allowance(cur, user_id)
 
 
 class EssayDraftUpdate(BaseModel):
@@ -114,25 +121,47 @@ class ExamProgressSummary(BaseModel):
 @router.get("/exam-bookmarks")
 async def exam_bookmarks(user_id: Annotated[str, Depends(current_user)]) -> dict:
     async with cursor() as cur:
-        await cur.execute("SELECT collection_id FROM user_exam_bookmarks WHERE user_id=%s ORDER BY created_at DESC", (user_id,))
+        await cur.execute("SELECT collection_id,is_primary FROM user_exam_bookmarks WHERE user_id=%s ORDER BY created_at DESC", (user_id,))
         rows = await cur.fetchall()
-    return {"collection_ids": [row["collection_id"] for row in rows]}
+    return {"collection_ids": [row["collection_id"] for row in rows],"primary_collection_id":next((r['collection_id'] for r in rows if r['is_primary']),None)}
+
+
+@router.put('/exam-bookmarks/{collection_id}/primary')
+async def primary_exam(collection_id:str,user_id:Annotated[str,Depends(require_account)]):
+    async with cursor() as cur:
+        await cur.execute('SELECT id FROM users WHERE id=%s FOR UPDATE',(user_id,))
+        await cur.execute("SELECT 1 FROM collections WHERE id=%s AND kind='exam' AND visibility='public'",(collection_id,))
+        if not await cur.fetchone():raise HTTPException(404,'Published exam not found')
+        await cur.execute('UPDATE user_exam_bookmarks SET is_primary=false WHERE user_id=%s AND is_primary',(user_id,))
+        await cur.execute('''INSERT INTO user_exam_bookmarks(user_id,collection_id,is_primary) VALUES(%s,%s,true)
+          ON CONFLICT(user_id,collection_id) DO UPDATE SET is_primary=true''',(user_id,collection_id))
+    return {'primary_collection_id':collection_id}
 
 
 @router.put("/exam-bookmarks/{collection_id}")
 async def save_exam_bookmark(collection_id: str, user_id: Annotated[str, Depends(current_user)]) -> dict:
     async with cursor() as cur:
-        await cur.execute("SELECT 1 FROM collections WHERE id=%s AND visibility='public'", (collection_id,))
-        if not await cur.fetchone():
+        await cur.execute('SELECT id FROM users WHERE id=%s FOR UPDATE',(user_id,))
+        await cur.execute("SELECT kind FROM collections WHERE id=%s AND visibility='public'", (collection_id,))
+        collection=await cur.fetchone()
+        if not collection:
             raise HTTPException(404, "exam collection not found")
-        await cur.execute("INSERT INTO user_exam_bookmarks(user_id,collection_id) VALUES (%s,%s) ON CONFLICT DO NOTHING", (user_id, collection_id))
+        await cur.execute('''INSERT INTO user_exam_bookmarks(user_id,collection_id,is_primary)
+          VALUES(%s,%s,%s AND NOT EXISTS(SELECT 1 FROM user_exam_bookmarks WHERE user_id=%s AND is_primary))
+          ON CONFLICT DO NOTHING''',(user_id,collection_id,collection['kind']=='exam',user_id))
     return {"saved": True, "collection_id": collection_id}
 
 
 @router.delete("/exam-bookmarks/{collection_id}")
 async def remove_exam_bookmark(collection_id: str, user_id: Annotated[str, Depends(current_user)]) -> dict:
     async with cursor() as cur:
-        await cur.execute("DELETE FROM user_exam_bookmarks WHERE user_id=%s AND collection_id=%s", (user_id, collection_id))
+        await cur.execute('SELECT id FROM users WHERE id=%s FOR UPDATE',(user_id,))
+        await cur.execute("DELETE FROM user_exam_bookmarks WHERE user_id=%s AND collection_id=%s RETURNING is_primary", (user_id, collection_id))
+        removed=await cur.fetchone()
+        if removed and removed['is_primary']:
+            await cur.execute('''UPDATE user_exam_bookmarks SET is_primary=true WHERE user_id=%s AND collection_id=(
+              SELECT b.collection_id FROM user_exam_bookmarks b JOIN collections c ON c.id=b.collection_id
+              WHERE b.user_id=%s AND c.visibility='public' AND c.kind='exam' ORDER BY b.created_at DESC,b.collection_id LIMIT 1)''',(user_id,user_id))
     return {"saved": False, "collection_id": collection_id}
 
 
@@ -162,8 +191,13 @@ async def my_progress(
     scope = (" AND collection_id=%s" if collection_id else "") + (" AND section_path=%s" if section_path else "")
     scoped_params = (user_id,) + ((collection_id,) if collection_id else ()) + ((section_path,) if section_path else ())
     async with cursor() as cur:
+        await cur.execute('SELECT email IS NOT NULL AS account FROM users WHERE id=%s',(user_id,))
+        identity=await cur.fetchone()
+        if identity and identity['account']:
+            from ..services.activity_progress import read
+            return await read(cur,user_id,detail,collection_id,section_path)
         await cur.execute(
-            f"""SELECT CURRENT_DATE AS today,
+            f"""SELECT (now() AT TIME ZONE 'Asia/Kolkata')::date AS today,
                       COUNT(*)::int AS answered,
                       COUNT(*) FILTER (WHERE correct)::int AS correct,
                       COUNT(DISTINCT canonical_id)::int AS unique_questions,
@@ -182,11 +216,11 @@ async def my_progress(
                 last_active_at=totals.get("last_active_at"),
             )
         await cur.execute(
-            f"""SELECT at::date AS day, COUNT(*)::int AS answered,
+            f"""SELECT (at AT TIME ZONE 'Asia/Kolkata')::date AS day, COUNT(*)::int AS answered,
                       COUNT(*) FILTER (WHERE correct)::int AS correct
                  FROM attempts
-                WHERE user_id=%s{scope} AND at >= CURRENT_DATE - INTERVAL '29 days'
-                GROUP BY at::date ORDER BY day""",
+                WHERE user_id=%s{scope} AND at >= (((now() AT TIME ZONE 'Asia/Kolkata')::date-29)::timestamp AT TIME ZONE 'Asia/Kolkata')
+                GROUP BY (at AT TIME ZONE 'Asia/Kolkata')::date ORDER BY day""",
             scoped_params,
         )
         daily_rows = await cur.fetchall()
@@ -265,7 +299,7 @@ async def my_progress(
 async def my_profile(user_id: Annotated[str, Depends(current_user)]) -> PrivateProfile:
     async with cursor() as cur:
         await cur.execute(
-            "SELECT avatar,avatar_version,name,handle,role,GREATEST(1,floor(sqrt(GREATEST(0,COALESCE((SELECT sum(xp) FROM reward_ledger WHERE user_id=users.id),0))/40.0)))::int AS level,created_at,email,CASE WHEN account_has_pro(id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=users.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN NOT account_has_pro(id) THEN 'free' ELSE plan_status END AS plan_status,trial_ends_at,plan_ends_at FROM users WHERE id=%s",
+            "SELECT avatar,avatar_version,name,handle,role,GREATEST(1,floor(sqrt(GREATEST(0,COALESCE((SELECT sum(xp) FROM reward_ledger WHERE user_id=users.id),0))/40.0)))::int AS level,created_at,email,CASE WHEN account_has_pro(id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=users.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN EXISTS(SELECT 1 FROM billing_access_grants bg WHERE bg.user_id=users.id AND bg.starts_at<=now() AND bg.ends_at>now()) THEN 'granted' WHEN NOT account_has_pro(id) THEN 'free' ELSE plan_status END AS plan_status,trial_ends_at,plan_ends_at FROM users WHERE id=%s",
             (user_id,),
         )
         user = await cur.fetchone()
@@ -285,7 +319,7 @@ async def update_profile(
         raise HTTPException(422, "name must not contain control characters")
     async with cursor() as cur:
         await cur.execute(
-            "UPDATE users SET name=%s WHERE id=%s RETURNING avatar,avatar_version,name,handle,role,GREATEST(1,floor(sqrt(GREATEST(0,COALESCE((SELECT sum(xp) FROM reward_ledger WHERE user_id=users.id),0))/40.0)))::int AS level,created_at,email,CASE WHEN account_has_pro(id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=users.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN NOT account_has_pro(id) THEN 'free' ELSE plan_status END AS plan_status,trial_ends_at,plan_ends_at",
+            "UPDATE users SET name=%s,identity_version=identity_version+1 WHERE id=%s RETURNING avatar,avatar_version,name,handle,role,GREATEST(1,floor(sqrt(GREATEST(0,COALESCE((SELECT sum(xp) FROM reward_ledger WHERE user_id=users.id),0))/40.0)))::int AS level,created_at,email,CASE WHEN account_has_pro(id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=users.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN EXISTS(SELECT 1 FROM billing_access_grants bg WHERE bg.user_id=users.id AND bg.starts_at<=now() AND bg.ends_at>now()) THEN 'granted' WHEN NOT account_has_pro(id) THEN 'free' ELSE plan_status END AS plan_status,trial_ends_at,plan_ends_at",
             (name, user_id),
         )
         user = await cur.fetchone()
@@ -360,3 +394,9 @@ async def score_summary(user_id:Annotated[str,Depends(current_user)]):
         await cur.execute('SELECT count(*)::int AS completed,COALESCE(sum(score),0)::float AS original_marks FROM mock_sessions WHERE user_id=%s AND submitted_at IS NOT NULL',(user_id,))
         mocks=await cur.fetchone()
     return {'practice_adjusted':practice,'mocks_original':mocks,'profile_basis':'Recorded original attempts and original mock scores. Adjusted assessments are shown separately; excluded questions are not marked wrong.'}
+
+from . import profile_identity
+router.include_router(profile_identity.router)
+
+from . import account_tools
+router.include_router(account_tools.router)

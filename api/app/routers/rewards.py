@@ -8,13 +8,15 @@ from ..db import cursor
 from ..deps import require_account,current_user
 from ..config import settings
 from ..services.review_identity import Actor,identity,require_role
-from ..services import bank_review
+from ..services import bank_review,reward_economy
 from ..services.learning_rewards import level_bounds,league_division,daily_quests_status,touch_daily_streak,DAILY_QUEST_DEFS,RULE_VERSION
 router=APIRouter(prefix='/api',tags=['learning rewards'])
 Account=Annotated[str,Depends(require_account)]
 Staff=Annotated[Actor,Depends(identity)]
 
 def csrf(request):
+    if getattr(request.state, "mobile_session", None):
+        return  # Set only by the credential-validating, route-allowlisting middleware.
     token=request.cookies.get('ism_session','')
     expected=hashlib.sha256(('bank-review:'+token).encode()).hexdigest()
     if not token or request.headers.get('origin')!=settings.public_origin or not hmac.compare_digest(request.headers.get('x-review-csrf',''),expected):raise HTTPException(403,'Refresh the page before saving')
@@ -47,6 +49,9 @@ async def wallet(user:Account):
         await cur.execute('SELECT * FROM reward_catalog ORDER BY points,id');catalog=await cur.fetchall()
         await cur.execute('SELECT id,catalog_id,points,starts_at,ends_at,created_at FROM reward_redemptions WHERE user_id=%s ORDER BY created_at DESC LIMIT 20',(user,));redemptions=await cur.fetchall()
         quests=await daily_quests_status(cur,user)
+        point_budget=await reward_economy.daily_budget(cur,user)
+        from ..services.learning_habit import streak
+        streak_profile=await streak(cur,user)
     async with cursor() as cur:
         await cur.execute("SELECT (date_trunc('day',now() AT TIME ZONE 'Asia/Kolkata')+interval '1 day') AT TIME ZONE 'Asia/Kolkata' AS resets_at");clock=await cur.fetchone()
         await cur.execute('SELECT kind,sum(xp)::int AS xp FROM reward_ledger WHERE user_id=%s GROUP BY kind',(user,));breakdown=await cur.fetchall()
@@ -58,6 +63,7 @@ async def wallet(user:Account):
         'league':league_division(week),
         'daily_xp':today,
         'daily_cap':300,
+        'point_budget':point_budget,
         **bounds,
         'rule_version':RULE_VERSION,
         'daily_remaining':max(0,300-today),
@@ -65,7 +71,7 @@ async def wallet(user:Account):
         'breakdown':breakdown,
         'public':bool(profile and profile['board_public']),
         'stream_cohort':(profile['stream_cohort'] if profile and profile.get('stream_cohort') else 'balanced-core'),
-        'current_streak_days':(profile['current_streak_days'] if profile else 0),
+        'current_streak_days':streak_profile['current_streak_days'],
         'longest_streak_days':(profile['longest_streak_days'] if profile else 0),
         'streak_shields':(profile['streak_shields'] if profile else 0),
         'last_active_ist_date':(str(profile['last_active_ist_date']) if profile and profile.get('last_active_ist_date') else None),
@@ -96,7 +102,7 @@ async def update_stream_cohort(body:StreamCohortUpdate,request:Request,user:Acco
     return {'stream_cohort':body.stream_cohort}
 
 @router.post('/rewards/daily-quests/{quest_key}/claim')
-async def claim_daily_quest(quest_key:Literal['warmup_circuit','cross_stream_triad','mastery_closure'],request:Request,user:Account):
+async def claim_daily_quest(quest_key:Literal['warmup_circuit','cross_stream_triad','mastery_closure','review_ring','plan_ring'],request:Request,user:Account):
     csrf(request)
     async with cursor() as cur:
         await cur.execute("SELECT pg_advisory_xact_lock(hashtext(%s))",('rewards:'+user,))
@@ -108,6 +114,12 @@ async def claim_daily_quest(quest_key:Literal['warmup_circuit','cross_stream_tri
         existing=await cur.fetchone()
         if existing:
             return {'claimed':True,'quest_key':quest_key,'xp_awarded':existing['xp_awarded'],'points_awarded':existing['points_awarded'],'ledger_id':existing['ledger_id']}
+        aliases={'cross_stream_triad':'review_ring','mastery_closure':'plan_ring'}
+        quest_key=aliases.get(quest_key,quest_key)
+        old={'review_ring':'cross_stream_triad','plan_ring':'mastery_closure'}.get(quest_key)
+        await cur.execute('SELECT * FROM daily_quest_claims WHERE user_id=%s AND ist_date=%s AND quest_key=ANY(%s)',(user,today,[quest_key,old]))
+        existing=await cur.fetchone()
+        if existing:return {'claimed':True,'quest_key':quest_key,'xp_awarded':existing['xp_awarded'],'points_awarded':existing['points_awarded'],'ledger_id':existing['ledger_id']}
         status=await daily_quests_status(cur,user)
         q_item=next((q for q in status['quests'] if q['key']==quest_key),None)
         if not q_item or not q_item['completed']:
@@ -120,15 +132,17 @@ async def claim_daily_quest(quest_key:Literal['warmup_circuit','cross_stream_tri
         await cur.execute('INSERT INTO reward_profiles(user_id) VALUES(%s) ON CONFLICT DO NOTHING',(user,))
         event_key=f"quest:{user}:{today.isoformat()}:{quest_key}"
         await cur.execute(
-            "INSERT INTO reward_ledger(user_id,event_key,kind,xp,points,note) VALUES(%s,%s,'game',%s,%s,%s) RETURNING id",
+            "INSERT INTO reward_ledger(user_id,event_key,kind,xp,points,note,rule_version) VALUES(%s,%s,'game',%s,%s,%s,'learning-v2') RETURNING id,xp,points",
             (user,event_key,xp_award,pts_award,f"Daily quest completed: {q_def['title']}"),
         )
-        ledger_id=(await cur.fetchone())['id']
+        receipt=await cur.fetchone();ledger_id=receipt['id']
+        xp_award=receipt['xp'];pts_award=receipt['points']
         await cur.execute(
             'INSERT INTO daily_quest_claims(user_id,ist_date,quest_key,xp_awarded,points_awarded,ledger_id) VALUES(%s,%s,%s,%s,%s,%s)',
             (user,today,quest_key,xp_award,pts_award,ledger_id),
         )
-        streak_info=await touch_daily_streak(cur,user)
+        from ..services.learning_habit import streak
+        streak_info=await streak(cur,user)
     return {'claimed':True,'quest_key':quest_key,'xp_awarded':xp_award,'points_awarded':pts_award,'ledger_id':ledger_id,'streak':streak_info}
 
 @router.post('/rewards/streak-shield')
@@ -155,30 +169,20 @@ async def purchase_streak_shield(request:Request,user:Account):
     return {'streak_shields':new_shields,'points_spent':25}
 
 @router.get('/rewards/leaderboard')
-async def board(request:Request,period:Literal['week','month','all']='month',cohort:Literal['all','arts-comfort','science-bridge','balanced-core','commerce-core']='all',offset:int=Query(0,ge=0,le=10000),limit:int=Query(20,ge=1,le=100)):
+async def board(request:Request,period:Literal['week','month','all']='week',
+                cohort:Literal['all','arts-comfort','science-bridge','balanced-core','commerce-core']='all',
+                offset:int=Query(0,ge=0,le=10000),contract:int=Query(1,ge=1,le=2)):
     from ..services.account_identity import account_session
-    account=await account_session(request)
+    from ..services.weekly_boards import xp,retired
+    if period!='week' or cohort!='all':
+        if contract==2:raise HTTPException(422,'Standings use the current India week without cohort filters')
+        return retired(period,cohort)
+    if offset:return retired(period,cohort)
+    mobile=getattr(request.state,'mobile_session',None)
+    account=mobile or await account_session(request)
     user=account['user_id'] if account else None
     async with cursor() as cur:
-        await cur.execute("""WITH bounds AS(SELECT now() AS as_of,
-          CASE WHEN %s='all' THEN NULL ELSE date_trunc(%s,now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata' END AS start_at,
-          CASE WHEN %s='all' THEN NULL ELSE (date_trunc(%s,now() AT TIME ZONE 'Asia/Kolkata')+CASE WHEN %s='week' THEN interval '1 week' ELSE interval '1 month' END) AT TIME ZONE 'Asia/Kolkata' END AS end_at),
-          totals AS(SELECT l.user_id,u.handle,u.avatar,COALESCE(p.stream_cohort,'balanced-core') AS stream_cohort,COALESCE(p.current_streak_days,0) AS streak,sum(l.xp)::int AS xp
-            FROM reward_ledger l JOIN users u ON u.id=l.user_id
-            JOIN reward_profiles p ON p.user_id=l.user_id AND p.board_public CROSS JOIN bounds b
-            WHERE (b.start_at IS NULL OR l.created_at>=b.start_at)
-              AND (%s='all' OR COALESCE(p.stream_cohort,'balanced-core')=%s)
-            GROUP BY l.user_id,u.handle,u.avatar,p.stream_cohort,p.current_streak_days HAVING sum(l.xp)>0),
-          ranked AS(SELECT *,dense_rank() OVER(ORDER BY xp DESC)::int AS rank FROM totals),
-          page AS(SELECT user_id,handle,avatar,stream_cohort,streak,xp,rank FROM ranked ORDER BY xp DESC,user_id LIMIT %s OFFSET %s)
-          SELECT b.*, (SELECT count(*)::int FROM ranked) AS total,
-            COALESCE((SELECT jsonb_agg(jsonb_build_object('handle',p.handle,'avatar',p.avatar,'stream_cohort',p.stream_cohort,'streak',p.streak,'xp',p.xp,'rank',p.rank) ORDER BY p.xp DESC,p.user_id) FROM page p),'[]'::jsonb) AS items,
-            (SELECT jsonb_build_object('rank',rank,'xp',xp,'stream_cohort',stream_cohort,'streak',streak) FROM ranked WHERE user_id=%s) AS placement
-          FROM bounds b""",(period,'week' if period=='week' else 'month',period,'week' if period=='week' else 'month',period,cohort,cohort,limit,offset,user))
-        row=await cur.fetchone()
-    return {'items':row['items'],'total':row['total'],'period':period,'cohort':cohort,'timezone':'Asia/Kolkata',
-            'period_start':row['start_at'],'period_end':row['end_at'],'as_of':row['as_of'],
-            'placement':row['placement'],'rule_version':RULE_VERSION}
+        return await xp(cur,user)
 
 @router.post('/rewards/redeem')
 async def redeem(body:Redeem,request:Request,user:Account,idempotency_key:Annotated[str,Header(min_length=16,max_length=100)]):
@@ -192,6 +196,7 @@ async def redeem(body:Redeem,request:Request,user:Account,idempotency_key:Annota
         await cur.execute('SELECT * FROM reward_catalog WHERE id=%s FOR SHARE',(body.catalog_id,));offer=await cur.fetchone()
         if not offer or not offer['enabled']:raise HTTPException(409,'This reward is not open for redemption yet')
         if offer['version']!=body.version:raise HTTPException(409,'The reward changed. Refresh before redeeming')
+        if not (await reward_economy.feature_gates(cur))['catalog_ready']:raise HTTPException(409,'Reward launch checklist is incomplete')
         await cur.execute("SELECT 1 FROM reward_redemptions WHERE user_id=%s AND created_at>now()-interval '30 days'",(user,))
         if await cur.fetchone():raise HTTPException(409,'One subscription reward may be redeemed every 30 days')
         await cur.execute('SELECT COALESCE(sum(points),0) AS balance FROM reward_ledger WHERE user_id=%s',(user,))
@@ -199,7 +204,7 @@ async def redeem(body:Redeem,request:Request,user:Account,idempotency_key:Annota
         await cur.execute("SELECT plan_code,plan_status,plan_ends_at,trial_ends_at,razorpay_subscription_id FROM users WHERE id=%s",(user,));plan=await cur.fetchone()
         if plan['razorpay_subscription_id'] and plan['plan_status'] in ('active','authenticated'):raise HTTPException(409,'Redeem after your paid subscription finishes, so rewards do not overlap a renewal')
         if plan['plan_code']=='pro' and plan['plan_status'] in ('active','authenticated') and not plan['plan_ends_at']:raise HTTPException(409,'Your paid subscription must have a known end date before redeeming')
-        await cur.execute("SELECT GREATEST(now(),COALESCE(max(ends_at),now()),%s::timestamptz,%s::timestamptz) AS starts FROM reward_redemptions WHERE user_id=%s",(plan['plan_ends_at'] if plan['plan_code']=='pro' else None,plan['trial_ends_at'] if plan['plan_status']=='trial' else None,user));starts=(await cur.fetchone())['starts']
+        await cur.execute("SELECT GREATEST(now(),COALESCE(max(ends_at),now()),%s::timestamptz,%s::timestamptz,(SELECT max(ends_at) FROM billing_access_grants WHERE user_id=%s)) AS starts FROM reward_redemptions WHERE user_id=%s",(plan['plan_ends_at'] if plan['plan_code']=='pro' else None,plan['trial_ends_at'] if plan['plan_status']=='trial' else None,user,user));starts=(await cur.fetchone())['starts']
         rid='red_'+secrets.token_hex(16)
         await cur.execute("INSERT INTO reward_redemptions(id,user_id,idempotency_key,catalog_id,catalog_version,points,starts_at,ends_at) VALUES(%s,%s,%s,%s,%s,%s,%s,%s+make_interval(days=>%s)) RETURNING *",(rid,user,idempotency_key,offer['id'],offer['version'],offer['points'],starts,starts,offer['pro_days']));result=await cur.fetchone()
         await cur.execute("INSERT INTO reward_ledger(user_id,event_key,kind,points,note) VALUES(%s,%s,'redemption',%s,%s)",(user,rid,-offer['points'],offer['title']))
@@ -211,10 +216,20 @@ async def admin_catalog(actor:Staff):
         await require_role(cur,actor.id,roles=('owner',))
         await cur.execute('SELECT * FROM reward_catalog ORDER BY id');return await cur.fetchall()
 
+@router.get('/admin/bank/reward-feature-gates')
+async def reward_feature_gates(actor:Staff):
+    async with cursor() as cur:
+        await require_role(cur,actor.id,roles=('owner',),lock=False)
+        return await reward_economy.feature_gates(cur)
+
 @router.post('/admin/bank/rewards/{catalog_id}')
 async def update_catalog(catalog_id:str,body:CatalogUpdate,actor:Staff):
     async with cursor() as cur:
         await require_role(cur,actor.id,roles=('owner',))
+        await cur.execute('SELECT version FROM reward_catalog WHERE id=%s FOR UPDATE',(catalog_id,))
+        current=await cur.fetchone()
+        if not current or current['version']!=body.version:raise HTTPException(409,'Offer changed. Reload before saving')
+        if body.enabled and not (await reward_economy.feature_gates(cur))['catalog_ready']:raise HTTPException(409,'Reward launch checklist is incomplete')
         await cur.execute('UPDATE reward_catalog SET points=%s,enabled=%s,version=version+1,updated_at=now() WHERE id=%s AND version=%s RETURNING *',(body.points,body.enabled,catalog_id,body.version));row=await cur.fetchone()
         if not row:raise HTTPException(409,'Offer changed. Reload before saving')
         await bank_review.event(cur,None,actor.id,'reward_catalog_changed',{'catalog_id':catalog_id,'points':body.points,'enabled':body.enabled,'reason':body.reason})
@@ -272,17 +287,8 @@ async def save_checkpoint(collection_id:str,body:ExamCheckpoint,request:Request,
 async def reward_diagnostics(actor:Staff,email:str|None=Query(None,max_length=254)):
     """Owner-only, read-only reconciliation. Never repairs or changes balances."""
     async with cursor() as cur:
-        await require_role(cur,actor.id,roles=('owner',))
-        await cur.execute("""SELECT
-          (SELECT count(*) FROM reward_question_claims c LEFT JOIN reward_ledger l ON l.event_key='question:'||c.user_id||':'||c.canonical_id WHERE l.id IS NULL)::int AS claims_without_receipts,
-          (SELECT count(*) FROM reward_ledger l WHERE l.event_key LIKE 'question:%' AND NOT EXISTS(SELECT 1 FROM reward_question_claims c WHERE c.user_id=l.user_id AND l.event_key='question:'||c.user_id||':'||c.canonical_id))::int AS receipts_without_claims,
-          (SELECT count(*) FROM (SELECT user_id FROM reward_ledger GROUP BY user_id HAVING sum(points)<0) d)::int AS wallets_in_debt,
-          (SELECT count(*) FROM (SELECT user_id,(created_at AT TIME ZONE 'Asia/Kolkata')::date AS day FROM reward_ledger WHERE kind IN ('study','game') GROUP BY user_id,day HAVING sum(xp)>300) d)::int AS over_cap_days,
-          (SELECT count(*) FROM reward_ledger WHERE rule_version='legacy-v1')::int AS legacy_receipts,
-          (SELECT count(*) FROM account_mail_outbox WHERE sent_at IS NULL AND attempts>=5)::int AS mail_failed,
-          (SELECT count(*) FROM account_mail_outbox WHERE sent_at IS NULL AND attempts<5 AND created_at>now()-interval '30 minutes')::int AS mail_pending,
-          (SELECT count(*) FROM account_mail_outbox WHERE sent_at IS NULL AND created_at<=now()-interval '30 minutes')::int AS mail_expired""")
-        result=await cur.fetchone()
+        await require_role(cur,actor.id,roles=('owner',),lock=False)
+        result=await reward_economy.diagnostics(cur)
         result['account']=None
         if email:
             await cur.execute('SELECT id,handle FROM users WHERE lower(email)=%s',(email.strip().lower(),));user=await cur.fetchone()

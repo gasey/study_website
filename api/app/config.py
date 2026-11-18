@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
+from pydantic import Field
 
 
 class Settings(BaseSettings):
@@ -33,6 +34,7 @@ class Settings(BaseSettings):
     google_client_id: str = ""
     google_client_secret: str = ""
     public_origin: str = "https://study.hawayu.in"
+    mobile_redirect_uris: list[str] = ["finna://auth/callback"]
     mfa_encryption_key: str = ""
     mfa_enforce_staff: bool = False
     # Operator-managed exceptions use immutable account IDs, never request emails.
@@ -44,6 +46,11 @@ class Settings(BaseSettings):
     smtp_from: str = ''
     smtp_username: str = ''
     smtp_password: str = ''
+    # Shared conservative attempt budget; defaults fit the selected free tier.
+    smtp_daily_limit: int = Field(default=100,ge=0,le=1000000)
+    smtp_monthly_limit: int = Field(default=3000,ge=0,le=30000000)
+    # Deliberately opt in only after test-mode acceptance. Credentials alone do not enable checkout.
+    razorpay_checkout_enabled: bool = False
     razorpay_key_id: str = ""
     razorpay_key_secret: str = ""
     razorpay_webhook_secret: str = ""

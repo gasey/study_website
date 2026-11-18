@@ -34,7 +34,7 @@ def main():
  output.mkdir(parents=True,mode=0o700)
  real_bank=canonical/'bank/mpsc_bank_v2.json'
  before_real=hashlib.sha256(real_bank.read_bytes()).hexdigest()
- dbs=conftest.database.__wrapped__();dbname,conn=next(dbs)
+ dbs=conftest.fresh_database();dbname,conn=next(dbs)
  clients=conftest.client.__wrapped__((dbname,conn));client=next(clients)
  patch=pytest.MonkeyPatch()
  try:

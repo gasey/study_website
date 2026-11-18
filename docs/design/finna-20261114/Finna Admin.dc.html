@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F3F5FA;--card:#FFFFFF;--ink:#0E1330;--muted:#4A5170;--line:#DDE3F3;--soft:#E9EDF9;--pri:#1F4BE0;--pri-soft:#DCE5FF;--pri-ink:#1A3FBF;--on-pri:#FFFFFF;--side:#0E1330;--ok:#0F7A57;--ok-bg:#D5F2E5;--bad:#C0301E;--bad-bg:#FBDDD7;--warn-bg:#FFF0BB;--warn:#745100;--shadow:0 1px 2px rgba(14,19,48,.04),0 10px 28px -16px rgba(14,19,48,.18)}
+html[data-theme=dark]{--paper:#0B0F24;--card:#151B3A;--ink:#F1F3FF;--muted:#A9B0D0;--line:#28315D;--soft:#1E2650;--pri:#6C8DFF;--pri-soft:#1D2A66;--pri-ink:#A9BCFF;--on-pri:#0B0F24;--side:#070A1A;--ok:#3CCB95;--ok-bg:#113A2C;--bad:#FF8674;--bad-bg:#441812;--warn-bg:#3C331A;--warn:#FFDA7D;--shadow:0 1px 2px rgba(0,0,0,.3)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Figtree,system-ui,sans-serif;font-size:14px;line-height:1.45;-webkit-font-smoothing:antialiased}
+a{color:var(--pri-ink);text-decoration:none}a:hover{text-decoration:underline}
+button{font:inherit;color:inherit;cursor:pointer;text-align:left}
+input{font:inherit;color:inherit}
+h1,h2,h3,p{margin:0}
+</style>
+</helmet>
+
+<div style="display:flex;min-height:100vh">
+  <aside data-screen-label="Admin sidebar" style="flex:0 0 244px;background:var(--side);color:#FFFFFF;position:sticky;top:0;height:100vh;overflow-y:auto;padding:18px 12px 24px;display:flex;flex-direction:column;gap:18px">
+    <div style="flex:none;display:flex;align-items:baseline;gap:8px;padding:0 10px"><a href="Finna Web.dc.html" style="color:#FFFFFF;font-size:22px;font-weight:900;letter-spacing:-.03em">Finna<span style="color:#FFC83D">.</span></a><span style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#A9B0D0">Admin</span></div>
+    <button onClick="{{ openPalette }}" style="flex:none;height:38px;border:1px solid rgba(255,255,255,.18);border-radius:10px;background:rgba(255,255,255,.06);color:#E0E7FF;padding:0 12px;display:flex;justify-content:space-between;align-items:center;font-size:13px"><span>Jump to…</span><span style="font-size:11px;font-weight:800;border:1px solid rgba(255,255,255,.3);border-radius:5px;padding:0 6px">⌘K</span></button>
+    <sc-for list="{{ groups }}" as="g" hint-placeholder-count="5">
+      <nav style="flex:none;display:flex;flex-direction:column;gap:1px">
+        <div style="font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#A9B0D0;padding:0 10px 6px">{{ g.title }}</div>
+        <sc-for list="{{ g.items }}" as="i" hint-placeholder-count="4">
+          <button onClick="{{ i.go }}" style="height:34px;border:0;border-radius:9px;padding:0 10px;display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:14px;font-weight:600;background:{{ i.bg }};color:{{ i.fg }}"><span>{{ i.label }}</span><span style="font-size:11px;font-weight:800;color:{{ i.badgeFg }}">{{ i.badge }}</span></button>
+        </sc-for>
+      </nav>
+    </sc-for>
+  </aside>
+
+  <div style="flex:1;min-width:0;display:flex;flex-direction:column">
+    <header style="position:sticky;top:0;z-index:10;background:var(--card);border-bottom:1px solid var(--line);height:60px;padding:0 28px;display:flex;align-items:center;gap:16px">
+      <h1 style="font-size:20px;font-weight:800;letter-spacing:-.01em">{{ title }}</h1>
+      <span style="font-size:13px;color:var(--muted);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ subtitle }}</span>
+      <div style="margin-left:auto;display:flex;align-items:center;gap:12px;white-space:nowrap">
+        <span style="font-size:12px;font-weight:700;color:var(--ok);background:var(--ok-bg);padding:3px 10px;border-radius:999px">Bank synced 09:42</span>
+        <button onClick="{{ toggleTheme }}" style="height:32px;padding:0 12px;border:1px solid var(--line);border-radius:999px;background:transparent;font-size:12px;font-weight:700">{{ themeLabel }}</button>
+        <span style="width:34px;height:34px;border-radius:11px;background:var(--pri);color:var(--on-pri);font-weight:900;font-size:12px;display:flex;align-items:center;justify-content:center">HS</span>
+      </div>
+    </header>
+
+    <sc-if value="{{ isOverview }}" hint-placeholder-val="{{ true }}">
+    <main data-screen-label="Admin overview" style="padding:24px 28px 60px;display:flex;flex-wrap:wrap;gap:20px;align-items:flex-start">
+      <div style="flex:2 1 480px;min-width:0;display:flex;flex-direction:column;gap:20px">
+        <section style="background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);overflow:hidden">
+          <h2 style="font-size:16px;font-weight:800;padding:16px 20px 12px">Needs attention</h2>
+          <sc-for list="{{ attention }}" as="a" hint-placeholder-count="5">
+            <div style="display:flex;align-items:center;gap:16px;padding:12px 20px;border-top:1px solid var(--line)"><span style="width:64px;font-size:24px;font-weight:900;letter-spacing:-.02em;color:{{ a.fg }}">{{ a.n }}</span><span style="flex:1;min-width:0"><span style="display:block;font-weight:700;font-size:15px">{{ a.label }}</span><span style="font-size:13px;color:var(--muted)">{{ a.note }}</span></span><button onClick="{{ a.go }}" style="height:36px;padding:0 14px;border:0;border-radius:10px;background:var(--ink);color:var(--paper);font-weight:800;font-size:13px">{{ a.action }}</button></div>
+          </sc-for>
+        </section>
+        <section style="background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px 20px 20px;display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline"><h2 style="font-size:16px;font-weight:800">Paper pipeline</h2><button onClick="{{ goPipeline }}" style="border:0;background:transparent;padding:0;font-size:13px;font-weight:800;color:var(--pri-ink)">Open board</button></div>
+          <div style="display:flex;gap:6px">
+            <sc-for list="{{ stageSummary }}" as="s" hint-placeholder-count="5"><div style="flex:{{ s.flex }};min-width:0;background:{{ s.bg }};color:{{ s.fg }};border-radius:12px;padding:12px"><div style="font-size:22px;font-weight:900;line-height:1">{{ s.n }}</div><div style="font-size:12px;font-weight:700;margin-top:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">{{ s.label }}</div></div></sc-for>
+          </div>
+        </section>
+        <section style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px">
+          <sc-for list="{{ totals }}" as="t" hint-placeholder-count="4"><div style="background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px"><div style="font-size:26px;font-weight:900;letter-spacing:-.02em;line-height:1">{{ t.v }}</div><div style="font-size:13px;color:var(--muted);margin-top:6px">{{ t.l }}</div></div></sc-for>
+        </section>
+      </div>
+      <section style="flex:1 1 320px;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:16px 20px">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding-bottom:10px"><h2 style="font-size:16px;font-weight:800">Recent activity</h2><button onClick="{{ goAudit }}" style="border:0;background:transparent;padding:0;font-size:13px;font-weight:800;color:var(--pri-ink)">Audit history</button></div>
+        <sc-for list="{{ recent }}" as="e" hint-placeholder-count="6">
+          <div style="display:flex;gap:12px"><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:999px;background:{{ e.dot }};margin-top:5px"></span><span style="flex:1;width:2px;background:var(--line)"></span></div><div style="padding-bottom:16px;min-width:0"><div style="font-size:14px"><span style="font-weight:800">{{ e.who }}</span> {{ e.what }}</div><div style="font-size:12px;color:var(--muted)">{{ e.when }}</div></div></div>
+        </sc-for>
+      </section>
+    </main>
+    </sc-if>
+
+    <sc-if value="{{ isQuestions }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Admin question review" style="flex:1;display:flex;flex-wrap:wrap;min-height:0">
+      <div style="flex:0 0 210px;border-right:1px solid var(--line);background:var(--card);display:flex;flex-direction:column">
+        <div style="padding:14px 16px;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)">{{ queueLabel }}</div>
+        <sc-for list="{{ queue }}" as="q" hint-placeholder-count="5">
+          <button onClick="{{ q.pick }}" style="border:0;border-top:1px solid var(--line);border-left:3px solid {{ q.bar }};background:{{ q.bg }};padding:11px 14px;display:flex;flex-direction:column;gap:3px"><span style="display:flex;justify-content:space-between;gap:8px"><span style="font-weight:800;font-size:13px">{{ q.ref }}</span><span style="font-size:11px;font-weight:800;color:{{ q.stFg }}">{{ q.st }}</span></span><span style="font-size:12px;color:var(--muted)">{{ q.issue }}</span></button>
+        </sc-for>
+      </div>
+      <div style="flex:1 1 300px;min-width:0;padding:20px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--line)">
+        <div style="display:flex;justify-content:space-between;font-size:13px"><span style="font-weight:800">Source</span><span style="color:var(--muted)">{{ cur.page }}</span></div>
+        <div style="flex:1;min-height:300px;border:1px dashed var(--line);border-radius:14px;background:repeating-linear-gradient(135deg,var(--soft) 0 12px,transparent 12px 24px);display:flex;align-items:center;justify-content:center;padding:20px"><span style="font-family:ui-monospace,Menlo,monospace;font-size:12px;color:var(--muted);background:var(--card);padding:6px 10px;border-radius:8px">Source PDF page, cropped to this question</span></div>
+      </div>
+      <div style="flex:1 1 340px;min-width:0;padding:20px 24px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap"><span style="font-weight:800;font-size:13px">{{ cur.ref }}</span><span style="background:var(--warn-bg);color:var(--warn);font-size:12px;font-weight:800;padding:2px 10px;border-radius:999px">{{ cur.issue }}</span></div>
+        <p style="font-size:18px;font-weight:600;line-height:1.4">{{ cur.text }}</p>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <sc-for list="{{ cur.opts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.pick }}" style="min-height:44px;padding:8px 12px;border-radius:12px;border:1.5px solid {{ o.bd }};background:{{ o.bg }};display:flex;align-items:center;gap:12px;font-size:14px"><span style="width:22px;height:22px;flex:none;border-radius:6px;border:1px solid var(--line);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;background:var(--card);color:var(--ink)">{{ o.n }}</span><span style="flex:1">{{ o.text }}</span><span style="font-size:11px;font-weight:800;color:var(--ok)">{{ o.tag }}</span></button></sc-for>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:13px"><span style="background:var(--soft);padding:3px 10px;border-radius:999px;font-weight:700">{{ cur.subject }}</span><span style="background:var(--soft);padding:3px 10px;border-radius:999px;font-weight:700">{{ cur.topic }}</span><button style="border:0;background:transparent;padding:3px 0;font-weight:800;color:var(--pri-ink)">Edit tags</button></div>
+        <div style="margin-top:auto;display:flex;gap:10px;flex-wrap:wrap;padding-top:14px;border-top:1px solid var(--line)">
+          <button onClick="{{ approve }}" style="height:44px;padding:0 18px;border:0;border-radius:12px;background:var(--pri);color:var(--on-pri);font-weight:800">Save decision <span style="opacity:.7">A</span></button>
+          <button onClick="{{ hold }}" style="height:44px;padding:0 18px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-weight:800">Hold from scoring <span style="opacity:.6">H</span></button>
+          <button onClick="{{ next }}" style="height:44px;padding:0 18px;border:1.5px solid var(--line);border-radius:12px;background:var(--card);font-weight:800">Next <span style="opacity:.6">J</span></button>
+        </div>
+        <div style="font-size:12px;color:var(--muted)">Keys: 1–4 set the answer · J / K move through the queue · A save · H hold</div>
+      </div>
+    </main>
+    </sc-if>
+
+    <sc-if value="{{ isPipeline }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Admin paper pipeline" style="padding:24px 28px 60px;display:flex;gap:14px;overflow-x:auto;align-items:flex-start">
+      <sc-for list="{{ columns }}" as="c" hint-placeholder-count="5">
+        <section style="flex:1 0 220px;background:var(--soft);border-radius:16px;padding:12px;display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;padding:2px 4px"><h2 style="font-size:14px;font-weight:800">{{ c.title }}</h2><span style="font-size:12px;font-weight:800;color:var(--muted)">{{ c.n }}</span></div>
+          <sc-for list="{{ c.cards }}" as="p" hint-placeholder-count="2">
+            <article style="background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:8px">
+              <div style="font-weight:800;font-size:14px">{{ p.title }}</div>
+              <div style="font-size:12px;color:var(--muted)">{{ p.meta }}</div>
+              <div style="height:5px;border-radius:999px;background:var(--soft)"><div style="width:{{ p.w }};height:100%;border-radius:999px;background:var(--pri)"></div></div>
+              <div style="display:flex;justify-content:space-between;align-items:center;font-size:12px"><span style="color:var(--muted)">{{ p.owner }}</span><button onClick="{{ p.advance }}" style="border:0;background:transparent;padding:0;font-weight:800;color:var(--pri-ink)">{{ p.next }}</button></div>
+            </article>
+          </sc-for>
+        </section>
+      </sc-for>
+    </main>
+    </sc-if>
+
+    <sc-if value="{{ isAudit }}" hint-placeholder-val="{{ false }}">
+    <main data-screen-label="Admin audit history" style="padding:24px 28px 60px;max-width:900px;display:flex;flex-direction:column;gap:16px">
+      <div style="display:flex;gap:6px;flex-wrap:wrap">
+        <sc-for list="{{ auditFilters }}" as="f" hint-placeholder-count="5"><button onClick="{{ f.pick }}" style="height:34px;padding:0 14px;border-radius:999px;border:1px solid var(--line);font-weight:700;font-size:13px;background:{{ f.bg }};color:{{ f.fg }}">{{ f.label }}</button></sc-for>
+      </div>
+      <section style="background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);padding:20px 22px 6px">
+        <sc-for list="{{ audit }}" as="e" hint-placeholder-count="7">
+          <div style="display:flex;gap:14px"><div style="flex:0 0 86px;font-size:12px;color:var(--muted);padding-top:2px">{{ e.when }}</div><div style="display:flex;flex-direction:column;align-items:center"><span style="width:10px;height:10px;border-radius:999px;background:{{ e.dot }};margin-top:5px"></span><span style="flex:1;width:2px;background:var(--line)"></span></div><div style="padding-bottom:18px;min-width:0;flex:1"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><span style="font-weight:800">{{ e.who }}</span><span style="font-size:11px;font-weight:800;background:var(--soft);padding:1px 8px;border-radius:999px">{{ e.kind }}</span></div><div style="font-size:14px;margin-top:2px">{{ e.what }}</div><div style="font-size:13px;color:var(--muted)">{{ e.reason }}</div></div></div>
+        </sc-for>
+      </section>
+    </main>
+    </sc-if>
+
+    <sc-if value="{{ isOther }}" hint-placeholder-val="{{ false }}">
+    <main style="padding:24px 28px 60px"><section style="background:var(--card);border:1px dashed var(--line);border-radius:18px;padding:28px;max-width:640px;color:var(--muted)">This section keeps its current tools and moves into the new sidebar and top bar. Not redrawn in this pass.</section></main>
+    </sc-if>
+  </div>
+</div>
+
+<sc-if value="{{ paletteOpen }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ closePalette }}" style="position:fixed;inset:0;z-index:80;background:rgba(14,19,48,.55);display:flex;justify-content:center;align-items:flex-start;padding:12vh 16px 0">
+  <div onClick="{{ stop }}" style="width:100%;max-width:560px;background:var(--card);border-radius:18px;box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:hidden">
+    <input ref="{{ paletteRef }}" value="{{ query }}" onChange="{{ setQuery }}" placeholder="Jump to a section, paper or question ID" style="width:100%;height:56px;border:0;border-bottom:1px solid var(--line);outline:0;background:transparent;padding:0 20px;font-size:16px">
+    <div style="max-height:340px;overflow-y:auto;padding:8px">
+      <sc-for list="{{ results }}" as="r" hint-placeholder-count="6"><button onClick="{{ r.go }}" style="width:100%;border:0;background:transparent;border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;gap:12px" style-hover="background:var(--soft)"><span style="font-weight:700">{{ r.label }}</span><span style="font-size:12px;color:var(--muted)">{{ r.group }}</span></button></sc-for>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = (() => {
+    let dark = false;
+    try { dark = !!JSON.parse(localStorage.getItem('finna-web') || '{}').dark; } catch (e) {}
+    return { view: 'overview', dark, palette: false, query: '', idx: 0, keys: {}, decided: {}, moved: {}, auditFilter: 'All' };
+  })();
+  paletteRef = React.createRef();
+  QUEUE = [
+    { id: 'a', ref: 'UDC 2023 · P1 · Q14', page: 'Booklet A · page 4', issue: 'No key recorded', subject: 'General Knowledge', topic: 'Polity · Schedules', text: 'Which Schedule of the Constitution of India provides for autonomous district councils in Mizoram?', options: ['Fifth Schedule', 'Sixth Schedule', 'Seventh Schedule', 'Tenth Schedule'], key: null },
+    { id: 'b', ref: 'LDC 2021 · P1 · Q62', page: 'Booklet B · page 11', issue: 'Key conflict: official C, bank B', subject: 'Arithmetic', topic: 'Simple interest', text: 'A sum of money doubles itself in 8 years at simple interest. The rate of interest per annum is:', options: ['8%', '10%', '12.5%', '16%'], key: 1 },
+    { id: 'c', ref: 'UDC 2022 · P1 · Q7', page: 'Booklet A · page 2', issue: 'Reported by 3 learners', subject: 'General Knowledge', topic: 'Mizoram · History', text: 'Mizoram attained full statehood in the year:', options: ['1972', '1986', '1987', '1989'], key: 2 },
+    { id: 'd', ref: 'UDC 2023 · P2 · Q31', page: 'Booklet A · page 7', issue: 'OCR text differs from scan', subject: 'General English', topic: 'Voice', text: 'Choose the passive form of: "They are building a bridge."', options: ['A bridge was built by them.', 'A bridge is being built by them.', 'A bridge has been built by them.', 'A bridge is built by them.'], key: 1 },
+    { id: 'e', ref: 'UDC 2021 · P1 · Q88', page: 'Booklet C · page 14', issue: 'No key recorded', subject: 'Reasoning', topic: 'Number series', text: 'Find the next term in the series: 3, 8, 15, 24, ?', options: ['33', '35', '36', '48'], key: null },
+  ];
+  componentDidMount() { this.sync(); this.onKey = e => this.key(e); window.addEventListener('keydown', this.onKey); }
+  componentWillUnmount() { window.removeEventListener('keydown', this.onKey); }
+  componentDidUpdate(_, prev) { this.sync(); if (this.state.palette && !prev.palette && this.paletteRef.current) this.paletteRef.current.focus(); }
+  sync() {
+    document.documentElement.dataset.theme = this.state.dark ? 'dark' : 'light';
+    try { const s = JSON.parse(localStorage.getItem('finna-web') || '{}'); s.dark = this.state.dark; localStorage.setItem('finna-web', JSON.stringify(s)); } catch (e) {}
+  }
+  move(d) { this.setState(s => ({ idx: Math.max(0, Math.min(this.QUEUE.length - 1, s.idx + d)) })); }
+  decide(kind) { const id = this.QUEUE[this.state.idx].id; this.setState(s => ({ decided: { ...s.decided, [id]: kind }, idx: Math.min(this.QUEUE.length - 1, s.idx + 1) })); }
+  setKey(i) { const id = this.QUEUE[this.state.idx].id; this.setState(s => ({ keys: { ...s.keys, [id]: i } })); }
+  key(e) {
+    if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); this.setState(s => ({ palette: !s.palette, query: '' })); return; }
+    if (e.key === 'Escape') { this.setState({ palette: false }); return; }
+    if (this.state.palette || this.state.view !== 'questions' || /input|textarea/i.test(e.target.tagName)) return;
+    const k = e.key.toLowerCase();
+    if (k === 'j') this.move(1); else if (k === 'k') this.move(-1); else if (k === 'a') this.decide('Saved'); else if (k === 'h') this.decide('Held');
+    else if ('1234'.includes(k)) this.setKey(Number(k) - 1);
+  }
+  renderVals() {
+    const S = this.state, go = v => () => this.setState({ view: v, palette: false });
+    const GROUPS = [
+      ['Daily', [['overview', 'Overview'], ['questions', 'Questions', '212'], ['pipeline', 'Paper pipeline', '9'], ['organization', 'Modules & schemes']]],
+      ['Papers & coverage', [['pdf-library', 'PDF Library'], ['intake', 'Add papers'], ['quality', 'Bank quality'], ['papers', 'Paper archive']]],
+      ['Review & publication', [['workflow', 'Review queue', '18'], ['retag', 'Learning tags'], ['review', 'Community corrections'], ['reports', 'Question reports', '7'], ['publications', 'Publication history'], ['current-affairs', 'Current affairs']]],
+      ['Content & community', [['content', 'Notes & lessons'], ['discussions', 'Discussion moderation'], ['desks', 'Study desk reports'], ['calendar', 'Calendar & notices']]],
+      ['Accounts & settings', [['rewards', 'Rewards & accounts'], ['people', 'People & permissions'], ['audit', 'Audit history']]],
+      ['References', [['modules', 'Module comparisons'], ['taxonomy', 'Taxonomy'], ['database', 'Database map']]],
+    ];
+    const SUB = { overview: 'What to fill or correct next', questions: 'Inspect the source and record a decision', pipeline: 'From source PDF to published paper', audit: 'Recorded admin actions and their reasons' };
+    const all = GROUPS.flatMap(([g, items]) => items.map(([id, label]) => ({ id, label, group: g })));
+    const curItem = all.find(i => i.id === S.view) || all[0];
+    const groups = GROUPS.map(([title, items]) => ({ title, items: items.map(([id, label, badge]) => ({ label, badge: badge || '', go: go(id), bg: S.view === id ? '#FFC83D' : 'transparent', fg: S.view === id ? '#0E1330' : '#E0E7FF', badgeFg: S.view === id ? '#0E1330' : '#FFC83D' })) }));
+    const q = this.QUEUE[S.idx], chosen = S.keys[q.id] !== undefined ? S.keys[q.id] : q.key;
+    const queue = this.QUEUE.map((x, i) => { const d = S.decided[x.id]; return { ref: x.ref, issue: x.issue, st: d || '', stFg: d === 'Held' ? 'var(--warn)' : 'var(--ok)', pick: () => this.setState({ idx: i }), bg: i === S.idx ? 'var(--pri-soft)' : 'transparent', bar: i === S.idx ? 'var(--pri)' : 'transparent' }; });
+    const STAGES = ['Discovered', 'Extracted', 'In review', 'Ready to publish', 'Published'];
+    const PAPERS = [['p1', 'JAO 2026 · Paper II', '100 questions · PDF only', 0, 0, 'Unassigned'], ['p2', 'MES 2024 · Civil', '120 questions · OCR done', 1, 20, 'Hruaia'], ['p3', 'LDC 2023 · Paper I', '100 questions · 14 flagged', 1, 35, 'Hruaia'], ['p4', 'UDC 2023 · Paper II', '100 questions · 62 reviewed', 2, 62, 'Sangzel'], ['p5', 'Combined Prelims 2023 · Paper I', '100 questions · 88 reviewed', 2, 88, 'Solomon'], ['p6', 'Group B Gazetted 2026', '150 questions · 6 unscored', 3, 96, 'Hruaia'], ['p7', 'UDC 2023 · Paper I', '100 questions', 4, 100, 'Sangzel'], ['p8', 'UDC 2022 · Paper I', '100 questions', 4, 100, 'Sangzel'], ['p9', 'LDC 2022 · Paper II', '100 questions', 4, 100, 'Hruaia']];
+    const placed = PAPERS.map(([id, title, meta, st, pct, owner]) => ({ id, title, meta, st: Math.min(4, st + (S.moved[id] || 0)), pct, owner }));
+    const columns = STAGES.map((title, i) => { const cards = placed.filter(p => p.st === i).map(p => ({ title: p.title, meta: p.meta, owner: p.owner, w: (i === 4 ? 100 : p.pct) + '%', next: i < 4 ? 'Advance →' : 'Published', advance: () => { if (i < 4) this.setState(s => ({ moved: { ...s.moved, [p.id]: (s.moved[p.id] || 0) + 1 } })); } })); return { title, n: String(cards.length), cards }; });
+    const AUDIT = [['Today 09:42', 'System', 'Publications', 'Bank sync finished', 'Checksum 1ff1a862…', 'var(--ok)'], ['Today 09:15', 'Sangzel', 'Answers', 'Recorded answer decision on UDC 2023 · P1 · Q52', 'Official key B confirmed against booklet A', 'var(--pri)'], ['Today 08:50', 'Hruaia', 'Publications', 'Published 14 corrections to LDC 2022 · Paper II', 'Owner publication', 'var(--ok)'], ['Yesterday 18:20', 'Solomon', 'Tags', 'Changed topic on 9 Prelims questions', 'Polity → Constitutional bodies', 'var(--pri)'], ['Yesterday 16:02', 'System', 'Publications', 'Publication failed for 2 corrections', 'Source changed since review', 'var(--bad)'], ['Yesterday 11:30', 'Hruaia', 'Permissions', 'Granted reviewer role for General English', 'Subject-scoped', 'var(--muted)'], ['12 Nov 14:05', 'Sangzel', 'Answers', 'Held 6 Group B Gazetted questions from scoring', 'Provisional key conflicts', 'var(--bad)']];
+    const audit = AUDIT.filter(a => S.auditFilter === 'All' || a[2] === S.auditFilter).map(([when, who, kind, what, reason, dot]) => ({ when, who, kind, what, reason, dot }));
+    const ql = S.query.trim().toLowerCase();
+    const results = all.filter(i => !ql || (i.label + ' ' + i.group).toLowerCase().includes(ql)).slice(0, 9).map(i => ({ label: i.label, group: i.group, go: go(i.id) }));
+    return {
+      groups, title: curItem.label, subtitle: SUB[S.view] || '',
+      toggleTheme: () => this.setState(s => ({ dark: !s.dark })), themeLabel: S.dark ? 'Light' : 'Dark',
+      isOverview: S.view === 'overview', isQuestions: S.view === 'questions', isPipeline: S.view === 'pipeline', isAudit: S.view === 'audit', isOther: !SUB[S.view],
+      goPipeline: go('pipeline'), goAudit: go('audit'),
+      attention: [['212', 'Unanswered MCQs', 'Across 9 papers', 'Review', 'questions', 'var(--ink)'], ['18', 'New corrections', 'Oldest submitted 3 days ago', 'Open queue', 'workflow', 'var(--ink)'], ['7', 'Question reports', '3 on the same question', 'Inspect', 'questions', 'var(--ink)'], ['2', 'Failed publications', 'Source changed since review', 'Retry', 'publications', 'var(--bad)'], ['1', 'Score reassessment failed', 'Worker last seen 09:40', 'Investigate', 'audit', 'var(--bad)']].map(([n, label, note, action, to, fg]) => ({ n, label, note, action, go: go(to), fg })),
+      stageSummary: columns.map((c, i) => ({ n: c.n, label: c.title, flex: Math.max(1, c.cards.length), bg: i === 4 ? 'var(--ok-bg)' : i === 3 ? '#FFC83D' : 'var(--soft)', fg: i === 4 ? 'var(--ok)' : i === 3 ? '#0E1330' : 'var(--ink)' })),
+      totals: [['88,434', 'Questions'], ['71,206', 'Official or transcribed keys'], ['634', 'Source defects'], ['382', 'Held from scoring']].map(([v, l]) => ({ v, l })),
+      recent: AUDIT.slice(0, 6).map(([when, who, , what, , dot]) => ({ when, who, what: what.charAt(0).toLowerCase() + what.slice(1), dot })),
+      queue, queueLabel: 'Queue · ' + (S.idx + 1) + ' of ' + this.QUEUE.length,
+      cur: { ...q, opts: q.options.map((text, i) => ({ n: String(i + 1), text, pick: () => this.setKey(i), bg: chosen === i ? 'var(--ok-bg)' : 'var(--card)', bd: chosen === i ? 'var(--ok)' : 'var(--line)', tag: chosen === i ? 'Answer' : '' })) },
+      approve: () => this.decide('Saved'), hold: () => this.decide('Held'), next: () => this.move(1),
+      columns, audit,
+      auditFilters: ['All', 'Publications', 'Answers', 'Tags', 'Permissions'].map(label => ({ label, pick: () => this.setState({ auditFilter: label }), bg: S.auditFilter === label ? 'var(--ink)' : 'var(--card)', fg: S.auditFilter === label ? 'var(--paper)' : 'var(--ink)' })),
+      paletteOpen: S.palette, openPalette: () => this.setState({ palette: true, query: '' }), closePalette: () => this.setState({ palette: false }), stop: e => e.stopPropagation(),
+      paletteRef: this.paletteRef, query: S.query, setQuery: e => this.setState({ query: e.target.value }), results,
+    };
+  }
+}
+</script>
+</body>
+</html>

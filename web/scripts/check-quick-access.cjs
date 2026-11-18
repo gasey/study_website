@@ -18,6 +18,7 @@ const cache=new Map();function load(file){file=path.resolve(file);if(cache.has(f
 const helpers=load(root+'/web/src/lib/quickAccess.ts'),QuickStudy=load(root+'/web/src/components/QuickStudy.tsx').default,QuickFind=load(root+'/web/src/components/QuickFind.tsx').default;
 const publicAccess={grants:[],assigned:false},owner={grants:[{role:'owner',subject_id:null}],assigned:false};
 let tree,modal=false;async function render(Component,props){await act(async()=>{tree?.unmount();tree=create(React.createElement(Component,props),{createNodeMock:element=>element.type==='dialog'?{showModal(){modal=true},close(){modal=false},querySelectorAll(){return []}}:element.type==='input'?{focus(){}}:null})})}
+const submitButton=()=>tree.root.findAllByType('button').find(b=>b.props.type==='submit');
 const button=label=>tree.root.findAllByType('button').find(b=>b.props['aria-label']===label||b.children.join('').includes(label));
 (async()=>{
  const publicItems=helpers.quickDestinations(rows,publicAccess);assert.ok(!publicItems.some(x=>x.to.startsWith('/admin')||x.to.startsWith('/editorial')));
@@ -28,17 +29,45 @@ const button=label=>tree.root.findAllByType('button').find(b=>b.props['aria-labe
  for(const id of ['udc','ldc','assistant'])for(const task of ['mixed','unseen','ever_wrong','papers']){
   const url=new URL(helpers.quickStudyHref(id,task),'https://study.hawayu.in');assert.equal(url.pathname,'/exams/'+id);assert.equal(url.searchParams.get('view'),task==='papers'?'papers':'browse');assert.equal(url.searchParams.get('status'),['unseen','ever_wrong'].includes(task)?task:null);assert.ok(!url.pathname.endsWith('/mock'));assert.equal(url.hash,task==='papers'?'#past-paper-results':'#exam-question-browser');
  }
- await render(QuickStudy);assert.ok(button('Open').props.disabled);assert.ok(!JSON.stringify(tree.toJSON()).includes('Later exam'));
+ assert.equal(helpers.quickExams(rows).filter(e=>e.id==='mes').length,1);
+ assert.equal(helpers.quickExams([...rows,{id:'mes',title:'Published MES'}]).filter(e=>e.id==='mes').length,1);
+ assert.ok(helpers.matchDestinations(publicItems,'MES').some(item=>item.to==='/exams/mes'));
+ assert.ok(helpers.matchDestinations(publicItems,'computer science').some(item=>item.to==='/exams/mes'));
+ for(const task of helpers.quickStudyTasks('mes')){
+  const url=new URL(helpers.quickStudyHref('mes',task.id),'https://study.hawayu.in');
+  assert.equal(url.pathname,'/exams/mes');assert.ok(!url.pathname.endsWith('/mock'));
+  assert.ok(['overview','topics','browse','practice','papers'].includes(url.searchParams.get('view')));
+  assert.equal(url.searchParams.get('order'),null,'MES never claims a mixed cross-paper queue');
+ }
+ await render(QuickStudy);assert.ok(submitButton().props.disabled);assert.ok(!JSON.stringify(tree.toJSON()).includes('Later exam'));
  await act(async()=>tree.root.findByProps({'aria-label':'Quick start exam'}).props.onChange({target:{value:'udc'}}));
  await act(async()=>tree.root.findByProps({'aria-label':'Quick start task'}).props.onChange({target:{value:'ever_wrong'}}));
  await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.equal(destination,helpers.quickStudyHref('udc','ever_wrong'));
- failed=true;await render(QuickStudy);assert.ok(button('Open').props.disabled);failed=false;await act(async()=>button('Try again').props.onClick());assert.ok(!JSON.stringify(tree.toJSON()).includes('couldn’t load'));
+ await act(async()=>button('Choose Mizoram Engineering Service (MES)').props.onClick());
+ assert.equal(tree.root.findByProps({'aria-label':'Quick start exam'}).props.value,'mes');
+ assert.equal(tree.root.findByProps({'aria-label':'Quick start task'}).props.value,'overview');
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.equal(destination,'/exams/mes?view=overview');
+ await act(async()=>tree.root.findByProps({'aria-label':'Quick start task'}).props.onChange({target:{value:'topics'}}));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.equal(destination,'/exams/mes?view=topics');
+ failed=true;await render(QuickStudy);assert.ok(submitButton().props.disabled);
+ await act(async()=>button('Choose Mizoram Engineering Service (MES)').props.onClick());
+ assert.ok(!submitButton().props.disabled,'The source-linked guide stays available during catalog failure');
+failed=false;await act(async()=>button('Try again').props.onClick());assert.ok(!JSON.stringify(tree.toJSON()).includes('couldn’t load'));
  await render(QuickFind,{access:owner});await act(async()=>button('Quick find').props.onClick());assert.equal(modal,true);assert.equal(document.body.style.overflow,'hidden');
  await act(async()=>tree.root.findByType('input').props.onChange({target:{value:'PDF'}}));assert.ok(tree.root.findAllByType('a').some(a=>a.props.to.includes('pdf-library')));
  await act(async()=>tree.update(React.createElement(QuickFind,{access:publicAccess})));assert.ok(!tree.root.findAllByType('a').some(a=>a.props.to.startsWith('/admin')));
  await act(async()=>tree.root.findByType('input').props.onChange({target:{value:'question text'}}));await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.equal(destination,'/search?q=question+text');assert.equal(modal,false);assert.equal(document.body.style.overflow,'');
  await act(async()=>listeners.get('keydown')({ctrlKey:true,key:'k',preventDefault(){}}));assert.equal(modal,true);
  await act(async()=>tree.root.findByType('dialog').props.onCancel());assert.equal(modal,false);
- await act(async()=>tree.unmount());assert.ok(!listeners.has('keydown'));
+ await act(async()=>listeners.get('keydown')({key:'/',target:{tagName:'INPUT'},preventDefault(){throw Error('Typing slash must stay in the input')}}));assert.equal(modal,false);
+ await act(async()=>listeners.get('keydown')({key:'/',target:{tagName:'DIV'},preventDefault(){}}));assert.equal(modal,true);
+ await act(async()=>tree.root.findByType('dialog').props.onCancel());
+ await act(async()=>listeners.get('finna-open-find')({detail:{query:'Existing search'}}));assert.equal(modal,true);assert.equal(tree.root.findByType('input').props.value,'Existing search');
+ await act(async()=>tree.root.findByType('dialog').props.onCancel());
+ await render(QuickFind,{access:publicAccess,trigger:false});assert.ok(!button('Quick find'),'The shell supplies the only visible trigger');
+ await act(async()=>listeners.get('finna-open-find')({detail:{query:''}}));assert.equal(modal,true);
+ await act(async()=>tree.root.findByType('dialog').props.onCancel());
+ await act(async()=>tree.unmount());assert.ok(!listeners.has('keydown'));assert.ok(!listeners.has('finna-open-find'));
+
  console.log('Quick access passed: staff/assignment boundaries, public catalog search, safe practice routes, selection/retry, sign-out isolation, modal cleanup, search handoff and keyboard shortcut.');
 })().catch(e=>{console.error(e);process.exit(1)});

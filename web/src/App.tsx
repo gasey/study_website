@@ -1,13 +1,16 @@
+import {mobileScreen} from './lib/navigation'
 import { lazy, Suspense, useEffect, useState } from 'react'
 const SharedTests=lazy(()=>import('./screens/SharedTests'))
 const TestMaker=lazy(()=>import('./screens/TestMaker'))
 const GoogleFinish=lazy(()=>import('./screens/GoogleFinish'))
+import ConsolidatedDestination from './components/ConsolidatedDestination'
 const LearningCatalog=lazy(()=>import('./screens/LearningCatalog'))
 const LearningCatalogAdmin=lazy(()=>import('./screens/LearningCatalogAdmin'))
 const DiscoveryAdmin=lazy(()=>import('./screens/DiscoveryAdmin'))
 const McqSolverReview=lazy(()=>import('./screens/McqSolverReview'))
 const EditorialReview=lazy(()=>import('./screens/EditorialReview'))
 import SessionNotice from './components/SessionNotice'
+import SiteNotice from './components/SiteNotice'
 import MaterialReadingPanel from './components/MaterialReadingPanel'
 import {routeModules,warmRoute} from './lib/routeModules'
 import {RouteNavigation,RouteErrorBoundary,WorkspaceLoading} from './components/RouteWorkspace'
@@ -21,18 +24,21 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import { Card } from './components/ui'
 const ResumedPractice=lazy(()=>import('./components/ResumedPractice'))
-const DailyRevision=lazy(()=>import('./screens/DailyRevision'))
 const Bank=lazy(routeModules.Bank)
 const ExamPage=lazy(()=>import('./screens/ExamPage'))
 const GroupBStudy=lazy(routeModules.GroupBStudy)
 const Exams=lazy(routeModules.Exams)
-const Mistakes=lazy(routeModules.Mistakes)
+const Papers=lazy(()=>import('./screens/Papers'))
+const Chronicle=lazy(()=>import('./screens/Chronicle'))
+const Stats=lazy(routeModules.Stats)
+const Mes=lazy(routeModules.Mes)
+const Onboarding=lazy(()=>import('./screens/Onboarding'))
+const Revise=lazy(()=>import('./screens/Revise'))
 const MockRunner=lazy(routeModules.MockRunner)
 const Results=lazy(routeModules.Results)
 const Scoring=lazy(routeModules.Scoring)
 const QuestionDetail=lazy(routeModules.QuestionDetail)
 const StudyDesk=lazy(()=>import('./screens/StudyDesk'))
-const Home=lazy(routeModules.Home)
 const Feed=lazy(routeModules.Feed)
 const StudyHome=lazy(routeModules.StudyHome)
 const CreateHub=lazy(routeModules.CreateHub)
@@ -48,6 +54,7 @@ const Essay=lazy(routeModules.Essay)
 const AccountRecovery=lazy(()=>import('./screens/AccountRecovery'))
 const PaperWorkbench=lazy(()=>import('./screens/PaperWorkbench'))
 const CurrentAffairsAdmin=lazy(()=>import('./screens/CurrentAffairsAdmin'))
+const CurrentAffairsAutomation=lazy(()=>import('./screens/CurrentAffairsAutomation'))
 const AccountSecurity=lazy(()=>import('./screens/AccountSecurity'))
 const BankAdmin = lazy(() => import('./screens/BankAdmin'))
 const Contribute = lazy(() => import('./screens/Contribute'))
@@ -56,7 +63,6 @@ const ContributionDetail = lazy(() => import('./screens/ContributionDetail'))
 const ContributorBoard = lazy(() => import('./screens/ContributorBoard'))
 const ReviewNotifications = lazy(() => import('./screens/Inbox'))
 const CommunityQuestions = lazy(() => import('./screens/CommunityQuestions'))
-const Vocabulary=lazy(routeModules.Vocabulary)
 const Profile=lazy(routeModules.Profile)
 const TopicTrail=lazy(()=>import('./screens/TopicTrail'))
 const TopicTrailAdmin=lazy(()=>import('./screens/TopicTrailAdmin'))
@@ -114,68 +120,76 @@ export default function App() {
   const [accountEpoch,setAccountEpoch]=useState(0)
   useEffect(()=>{const refresh=()=>setAccountEpoch(n=>n+1);window.addEventListener('ism-auth-change',refresh);return()=>window.removeEventListener('ism-auth-change',refresh)},[])
   useEffect(()=>{void hydrateDesk();const changed=()=>void hydrateDesk(true);window.addEventListener("ism-avatar-change",changed);return()=>window.removeEventListener("ism-avatar-change",changed)},[])
-  const { pathname,search } = useLocation()
+  const { pathname,search,hash } = useLocation()
   const examScope=useExamScope()
   useEffect(()=>syncExamScope(search),[search])
-  const scopedWorkspace= (pathname==='/' || /^\/(bank|group-b|library|exams|english|mizo|arithmetic|vocabulary|search|feed|essay|scoring)(\/|$)/.test(pathname))&&!pathname.includes('/mock')
-  const landing = pathname === '/'
-  const adminWorkspace = pathname === '/admin' || pathname.startsWith('/admin/bank')
+  const scopedWorkspace= (pathname==='/' || /^\/(bank|past-papers|group-b|library|exams|english|mizo|arithmetic|vocabulary|search|feed|essay|scoring)(\/|$)/.test(pathname))&&!pathname.includes('/mock')
+  const adminWorkspace = pathname === '/admin' || pathname === '/admin/ops' || pathname === '/admin/users' || pathname.startsWith('/admin/bank')
   return (
-    <div className="flex min-h-screen flex-col" onPointerOver={event=>{if(event.pointerType==='mouse'){const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}} onFocus={event=>{const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}>
-      {!landing && !adminWorkspace && <Header />}
+    <div className="finna-app flex min-h-screen flex-col" data-mobile-screen={mobileScreen(pathname)} onPointerOver={event=>{if(event.pointerType==='mouse'){const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}} onFocus={event=>{const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}>
+      <SiteNotice/>
+      {!adminWorkspace && <Header />}
       <SessionNotice/>
       <main id="main-content" tabIndex={-1} className="flex-1 scroll-mt-32">
         <RouteErrorBoundary key={pathname+examScope}><Suspense fallback={<WorkspaceLoading/>}>
-        <RouteNavigation/>{new URLSearchParams(search).has('resume_question')&&!adminWorkspace&&<ResumedPractice/>}<div key={`${accountEpoch}:${scopedWorkspace?examScope:'stable'}`} className={scopedWorkspace?'scope-workspace':undefined}><Routes>
-          <Route path="/" element={<Home />} />
+        <RouteNavigation/>{new URLSearchParams(search).has('resume_question')&&!adminWorkspace&&<ResumedPractice/>}<div key={`${accountEpoch}:${scopedWorkspace?examScope:'stable'}`} className={'finna-screen'+(scopedWorkspace?' scope-workspace':'')}><Routes>
+          <Route path="/" element={<Navigate to={{pathname:'/feed',search,hash}} replace />} />
           <Route path="/google/finish" element={<GoogleFinish/>}/><Route path="/account/recovery" element={<AccountRecovery/>}/>
           <Route path="/materials" element={<Materials/>}/><Route path="/materials/:id" element={<MaterialReader/>}/>
           <Route path="/studio" element={<CreatorHome/>}/><Route path="/studio/new" element={<ContentEditor/>}/><Route path="/studio/:id" element={<ContentEditor/>}/><Route path="/create" element={<CreateHub/>}/><Route path="/inbox" element={<ReviewNotifications/>}/>
-          <Route path="/trail" element={<TopicTrail/>}/><Route path="/trail/:id" element={<TopicTrail/>}/><Route path="/admin/topic-trail" element={<TopicTrailAdmin/>}/><Route path="/more" element={<More/>}/><Route path="/games" element={<Games/>}/><Route path="/games/:id" element={<GamePlayer/>}/><Route path="/duel" element={<Navigate to="/games" replace/>}/><Route path="/search" element={<GlobalSearch/>}/><Route path="/feed" element={<StudyHome />} /><Route path="/community" element={<Feed/>}/><Route path="/calendar" element={<ExamCalendar/>}/><Route path="/news" element={<ExamCalendar notices/>}/>
+          <Route path="/trail" element={<TopicTrail/>}/><Route path="/trail/:id" element={<TopicTrail/>}/><Route path="/admin/topic-trail" element={<TopicTrailAdmin/>}/><Route path="/more" element={<More/>}/><Route path="/games" element={<Games/>}/><Route path="/games/:id" element={<GamePlayer/>}/><Route path="/duel" element={<ConsolidatedDestination/>}/><Route path="/search" element={<GlobalSearch/>}/><Route path="/feed" element={<StudyHome />} /><Route path="/community" element={<Feed/>}/><Route path="/calendar" element={<ExamCalendar/>}/><Route path="/news" element={<ExamCalendar notices/>}/>
           <Route path="/editorial" element={<EditorialReview />} />
+          <Route path="/current-affairs/automation" element={<CurrentAffairsAutomation/>}/>
           <Route path="/admin/discovery" element={<DiscoveryAdmin/>}/><Route path="/current-affairs/manage" element={<CurrentAffairsAdmin/>}/>
           <Route path="/admin/mcq-solver" element={<McqSolverReview/>}/>
           <Route path="/paper-workbench" element={<PaperWorkbench/>}/>
           <Route path="/admin" element={<Navigate to="/admin/bank" replace />} />
           <Route path="/admin/bank" element={<BankAdmin />} />
+          <Route path="/admin/ops" element={<BankAdmin />} />
+          <Route path="/admin/users" element={<BankAdmin />} />
           <Route path="/review" element={<Navigate to="/admin/bank?tab=review" replace />} />
           <Route path="/contribute" element={<Contribute />} />
           <Route path="/contribute/new" element={<ContributionEditor />} />
-          <Route path="/contribute/notifications" element={<ReviewNotifications />} />
-          <Route path="/notifications" element={<ReviewNotifications/>}/>
+          <Route path="/contribute/notifications" element={<ConsolidatedDestination/>}/>
+          <Route path="/notifications" element={<ConsolidatedDestination/>}/>
           <Route path="/contributions/:id" element={<ContributionDetail />} />
           <Route path="/contributions/:id/edit" element={<ContributionEditor />} />
           <Route path="/community/contributors" element={<ContributorBoard />} />
           <Route path="/community/questions" element={<CommunityQuestions />} />
           <Route path="/website-bank" element={<CommunityQuestions />} />
-          <Route path="/important-days" element={<LearningCatalog kind="day"/>} />
+          <Route path="/important-days" element={<ConsolidatedDestination/>}/>
           <Route path="/practice-sets" element={<LearningCatalog kind="practice"/>} />
           <Route path="/learning/manage" element={<LearningCatalogAdmin/>} />
           <Route path="/admin/desks" element={<DeskAdmin />} />
           <Route path="/admin/discussions" element={<DiscussionAdmin />} />
           <Route path="/admin/moderation" element={<Moderation />} />
           <Route path="/bank" element={<Bank />} />
+          <Route path="/past-papers" element={<Papers />} />
           <Route path="/bank/:id" element={<QuestionDetail />} />
           <Route path="/library" element={<Library />} />
           <Route path="/atlas" element={<Atlas />} />
+          <Route path="/chronicle" element={<Chronicle />} />
+          <Route path="/stats/*" element={<Stats />} />
           <Route path="/library/topics/:shelfId" element={<LibraryShelf />} />
           <Route path="/library/subjects/:subjectId" element={<LibrarySubject />} />
           <Route path="/mizo" element={<Mizo />} />
           <Route path="/essay" element={<Essay />} />
           <Route path="/group-b" element={<GroupBStudy />} />
           <Route path="/exams" element={<Exams />} />
+          <Route path="/exams/mes" element={<Mes />} />
           <Route path="/exams/:id" element={<ExamPage />} />
           <Route path="/exams/:id/paper" element={<PaperViewer />} />
           <Route path="/exams/:id/mock" element={<MockRunner />} />
           <Route path="/tests" element={<SharedTests/>}/><Route path="/tests/make" element={<TestMaker/>}/><Route path="/tests/:testId" element={<SharedTests/>}/><Route path="/tests/:testId/take" element={<MockRunner/>}/>
           <Route path="/results/:mockId" element={<Results />} />
-          <Route path="/revision" element={<DailyRevision/>}/>
-          <Route path="/mistakes" element={<Mistakes />} />
+          <Route path="/revision" element={<ConsolidatedDestination/>}/>
+          <Route path="/revise" element={<Revise />} /><Route path="/onboarding" element={<Onboarding/>}/>
+          <Route path="/mistakes" element={<ConsolidatedDestination/>}/>
           <Route path="/desk" element={<StudyDesk />} />
           <Route path="/desk/:deskId" element={<StudyDesk />} />
           <Route path="/english" element={<English />} />
           <Route path="/arithmetic" element={<Arithmetic />} />
-          <Route path="/vocabulary" element={<Vocabulary />} />
+          <Route path="/vocabulary" element={<ConsolidatedDestination/>}/>
           <Route path="/account/security" element={<Suspense fallback={<p className="p-8">Loading security settings…</p>}><AccountSecurity/></Suspense>}/>
           <Route path="/rewards" element={<Rewards/>}/><Route path="/board" element={<LearningBoard/>}/>
           <Route path="/profile" element={<Profile />} /><Route path="/avatar" element={<AvatarEditor/>}/><Route path="/profile/avatar" element={<AvatarEditor/>}/>
@@ -196,8 +210,8 @@ export default function App() {
         </Suspense></RouteErrorBoundary>
       </main>
       {!adminWorkspace && <MaterialReadingPanel/>}
-      {!landing && !adminWorkspace && <Footer />}
-      {!landing && !adminWorkspace && <BottomBar />}
+      {!adminWorkspace && <Footer />}
+      {!adminWorkspace && <BottomBar />}
     </div>
   )
 }

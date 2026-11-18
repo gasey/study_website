@@ -1,9 +1,9 @@
-"""Bounded UDC study, using the ordinary question/answer engine and receipts."""
+"""Bounded exam study, using the ordinary question/answer engine and receipts."""
 import hashlib
 import json
 from typing import Annotated, Literal
 from uuid import uuid4
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Response, Request
 from pydantic import BaseModel, ConfigDict, Field
 from psycopg.types.json import Jsonb
 from ..db import cursor
@@ -26,6 +26,8 @@ class Filters(BaseModel):
     subtopic_id: str | None = Field(default=None, min_length=2, max_length=160)
     paper_id: str | None = Field(default=None, min_length=1, max_length=500)
     section_path: str | None = Field(default=None, min_length=2, max_length=160)
+    year_from: int | None = Field(default=None,ge=1900,le=2100)
+    year_to: int | None = Field(default=None,ge=1900,le=2100)
     q: str | None = Field(default=None, min_length=2, max_length=120)
     study_status: Literal['all','unseen','answered','wrong','ever_wrong'] = 'all'
     pool: Literal['practice','scorable'] = 'practice'
@@ -38,6 +40,7 @@ class Start(BaseModel):
     model_config = ConfigDict(extra='forbid')
     request_key: str = Field(min_length=16, max_length=100)
     size: Literal[10,20] = 10
+    collection_id: str = Field(default="udc", min_length=2, max_length=80)
     filters: Filters = Field(default_factory=Filters)
     review_session_id: str | None = Field(default=None, max_length=64)
 
@@ -70,6 +73,15 @@ async def owned(cur, sid, user, lock=False):
         raise HTTPException(404,'Study set not found for this account or browser')
     return row
 
+def review_write_guard(row,request):
+    from ..services.onboarding import native_guard as checkin_guard
+    checkin_guard(row,request)
+    from ..services.curated_sessions import native_guard
+    native_guard(row,request)
+    if row['kind']=='review':
+        from ..services.mobile_identity import require_capability
+        require_capability(request,'review_answers')
+
 async def receipts(cur, row):
     keys = [receipt_key(row['id'], qid) for qid in row['question_ids']]
     # Attempts can be explicitly adopted from a proven guest. Ownership follows
@@ -79,9 +91,9 @@ async def receipts(cur, row):
       FROM practice_request_receipts r JOIN attempts a ON a.id=r.attempt_id
       LEFT JOIN canonical_questions q ON q.id=a.canonical_id
       LEFT JOIN appearances src ON src.id=a.scoring_snapshot->>'appearance_id' AND src.canonical_id=a.canonical_id
-      WHERE a.user_id=%s AND r.request_key=ANY(%s) AND a.collection_id='udc'
-        AND a.context='practice' AND a.at>=%s AND (%s::timestamptz IS NULL OR a.at<=%s)''',
-      (row['user_id'],keys,row['created_at'],row['finished_at'],row['finished_at']))
+      WHERE a.user_id=%s AND r.request_key=ANY(%s) AND a.collection_id IS NOT DISTINCT FROM %s
+        AND a.context=%s AND a.at>=%s AND (%s::timestamptz IS NULL OR a.at<=%s)''',
+      (row['user_id'],keys,row['collection_id'],row['kind'],row['created_at'],row['finished_at'],row['finished_at']))
     result = {}
     for item in await cur.fetchall():
         qid = item['canonical_id']
@@ -96,6 +108,8 @@ async def receipts(cur, row):
         result[qid] = {'result':item['response'],'chosen_index':chosen,'snapshot':snapshot,
             'updated_fields':saved_feedback_changes(snapshot,item['response'],
                 (item['current_question']|{'reviewed_derived':item['current_reviewed']}) if item['current_question'] else None,item['current_appearance'])}
+    from ..services.curated_sessions import receipts as word_receipts
+    result.update(await word_receipts(cur,row))
     return result
 
 
@@ -104,12 +118,14 @@ def summary_for(row, checked):
     viewed = len(set(row['viewed_ids']) - set(checked))
     return {'correct':correct,'wrong':len(checked)-correct,'viewed':viewed,
             'skipped':len(row['question_ids'])-len(checked)-viewed,
-            'unofficial':sum(not item['result']['verified'] for item in checked.values()),
-            'total':len(row['question_ids'])}
+            'unofficial':sum(not item['result']['verified'] and not item['result'].get('curated') for item in checked.values()),
+            'total':len(row['question_ids']),
+            **({'curated_checked':sum(bool(item['result'].get('curated')) for item in checked.values())}
+               if (row.get('filters') or {}).get('has_curated') else {})}
 
 
 def preview(row):
-    return {key:row[key] for key in ('id','requested_size','filters','position','version','created_at','updated_at','finished_at','summary')} | {'total':len(row['question_ids'])}
+    return {key:row[key] for key in ('id','kind','collection_id','requested_size','filters','position','version','created_at','updated_at','finished_at','summary')} | {'total':len(row['question_ids'])}
 
 async def state(cur, row, include_items=False):
     checked = await receipts(cur,row)
@@ -130,11 +146,12 @@ async def state(cur, row, include_items=False):
             SELECT a.figure_image,a.has_diagram,a.paper_id,a.qnum,a.page,a.series,
               p.year,p.exam_name AS exam,p.paper_number AS paper,p.source_file,p.pdf_url
             FROM appearances a JOIN papers p ON p.id=a.paper_id
-            JOIN collection_papers cp ON cp.paper_id=p.id AND cp.collection_id='udc'
-            JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version AND c.visibility='public'
             WHERE a.canonical_id=v.id AND a.paper_id=chosen.selected_paper
+              AND (%(review)s OR EXISTS(SELECT 1 FROM collection_papers cp JOIN collections c
+                ON c.id=cp.collection_id AND c.live_version=cp.version AND c.visibility='public'
+                WHERE cp.paper_id=p.id AND cp.collection_id=%(collection)s))
             ORDER BY a.is_primary DESC,a.id LIMIT 1
-          ) src ON TRUE ORDER BY chosen.ord''',{'ids':row['question_ids'],'papers':row['paper_ids']})
+          ) src ON TRUE ORDER BY chosen.ord''',{'ids':row['question_ids'],'papers':row['paper_ids'],'collection':row['collection_id'],'review':row['kind']=='review'})
         items = await question_items(cur,await cur.fetchall())
         items = [item.model_copy(update={'presentation_hash':presentation_digest(item.model_dump(mode='json'))}) for item in items]
         by_id = {item.id:item for item in items}
@@ -153,6 +170,8 @@ async def state(cur, row, include_items=False):
             if 'has_diagram' in snap:
                 fields['has_diagram']=bool(snap['has_diagram'])
             by_id[qid] = item.model_copy(update=fields)
+        from ..services.curated_sessions import questions as word_questions
+        by_id.update({q['id']:q for q in await word_questions(cur,row)})
         result['question_ids'] = row['question_ids']
         result['items'] = [by_id[qid] for qid in row['question_ids'] if qid in by_id]
     return result
@@ -162,25 +181,41 @@ async def candidates(body, user):
     # are parameter declarations, not usable Python default arguments.
     f = body.filters
     return await list_questions(pool=f.pool,answer_status=f.answer_status,q=f.q,
-      year_from=None,year_to=None,source=None,subject_id=f.subject_id,topic_id=f.topic_id,
-      study_area=None,shelf_id=None,learning_entry=None,subtopic_id=f.subtopic_id,collection_id='udc',
+      year_from=f.year_from,year_to=f.year_to,source=None,subject_id=f.subject_id,topic_id=f.topic_id,
+      study_area=None,shelf_id=None,learning_entry=None,subtopic_id=f.subtopic_id,collection_id=body.collection_id,
       section_path=f.section_path,paper_id=f.paper_id,essay_kind=None,
       study_status=f.study_status,order=f.order,seed=f.seed,repeats_only=False,origin='paper',
       limit=body.size,offset=f.offset,user_id=user,exam_scope=DEFAULT_SCOPE)
 
 @router.post('')
-async def start(body:Start,user:User):
-    request_hash = hashlib.sha256(json.dumps(body.model_dump(),sort_keys=True).encode()).hexdigest()
+async def start(body:Start,user:User,request:Request):
+    async with cursor() as cur:
+        await cur.execute("SELECT 1 FROM collections WHERE id=%s AND visibility='public' AND exam_scope_id=%s",(body.collection_id,DEFAULT_SCOPE))
+        if not await cur.fetchone():
+            raise HTTPException(404,"Published exam not found")
+    # Keep legacy UDC request hashes stable for interrupted website requests.
+    request_data = body.model_dump()
+    if body.collection_id == "udc":
+        request_data.pop("collection_id")
+    for field in ("year_from","year_to"):
+        if request_data["filters"].get(field) is None:
+            request_data["filters"].pop(field,None)
+    request_hash = hashlib.sha256(json.dumps(request_data,sort_keys=True).encode()).hexdigest()
     filters = body.filters.model_dump()
     if body.review_session_id:
         async with cursor() as cur:
             parent = await owned(cur,body.review_session_id,user)
+            from ..services.onboarding import native_guard as checkin_guard
+            checkin_guard(parent,request)
+            if parent['collection_id'] != body.collection_id:
+                raise HTTPException(422,'Review set belongs to another exam')
             checked = await receipts(cur,parent)
             await cur.execute(f'SELECT id FROM {pool_view("practice",DEFAULT_SCOPE)} WHERE id=ANY(%s)',(parent['question_ids'],))
             eligible = {r['id'] for r in await cur.fetchall()}
         ids = [qid for qid in parent['question_ids'] if qid in eligible and qid in checked and not checked[qid]['result']['correct']][:body.size]
         papers = [parent['paper_ids'][parent['question_ids'].index(qid)] for qid in ids]
         filters = {**parent['filters'],'study_status':'all','offset':0,'review_session_id':parent['id']}
+        filters.pop('onboarding_version',None);filters.pop('exam_title',None)
     else:
         page = await candidates(body,user)
         items = [item for item in page.items if item.type=='mcq' and item.source_appearance]
@@ -198,52 +233,69 @@ async def start(body:Start,user:User):
             raise HTTPException(422,'No answerable questions match this set. Change the subject or filters, or start from the beginning.')
         sid = uuid4().hex
         await cur.execute('''INSERT INTO practice_study_sessions(id,user_id,collection_id,request_key,request_hash,
-          requested_size,question_ids,paper_ids,filters) VALUES(%s,%s,'udc',%s,%s,%s,%s,%s,%s) RETURNING *''',
-          (sid,user,body.request_key,request_hash,body.size,ids,papers,Jsonb(filters)))
+          requested_size,question_ids,paper_ids,filters) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING *''',
+          (sid,user,body.collection_id,body.request_key,request_hash,body.size,ids,papers,Jsonb(filters)))
         return await state(cur,await cur.fetchone(),True)
 
 @router.get('')
-async def recent(user:User):
+async def recent(user:User,collection_id:str="udc"):
     async with cursor() as cur:
-        await cur.execute("(SELECT * FROM practice_study_sessions WHERE user_id=%s AND collection_id='udc' AND finished_at IS NULL ORDER BY updated_at DESC LIMIT 3) UNION ALL (SELECT * FROM practice_study_sessions WHERE user_id=%s AND collection_id='udc' AND finished_at IS NOT NULL ORDER BY updated_at DESC LIMIT 5) ORDER BY updated_at DESC",(user,user))
+        await cur.execute("(SELECT * FROM practice_study_sessions WHERE user_id=%s AND collection_id=%s AND NOT filters @> '{\"onboarding_version\":1}'::jsonb AND finished_at IS NULL ORDER BY updated_at DESC LIMIT 3) UNION ALL (SELECT * FROM practice_study_sessions WHERE user_id=%s AND collection_id=%s AND NOT filters @> '{\"onboarding_version\":1}'::jsonb AND finished_at IS NOT NULL ORDER BY updated_at DESC LIMIT 5) ORDER BY updated_at DESC",(user,collection_id,user,collection_id))
         return {'items':[preview(row) for row in await cur.fetchall()]}
 
 @router.get('/{sid}')
-async def read(sid:str,user:User,response:Response):
+async def read(sid:str,user:User,response:Response,request:Request):
     response.headers['Cache-Control']='private, no-store'
     async with cursor() as cur:
-        return await state(cur,await owned(cur,sid,user),True)
+        row=await owned(cur,sid,user)
+        from ..services.onboarding import native_guard as checkin_guard
+        checkin_guard(row,request)
+        from ..services.curated_sessions import native_guard
+        native_guard(row,request)
+        return await state(cur,row,True)
 
 @router.post('/{sid}/position')
-async def move(sid:str,body:Move,user:User):
+async def move(sid:str,body:Move,user:User,request:Request):
     async with cursor() as cur:
         row = await owned(cur,sid,user,True)
+        review_write_guard(row,request)
         if row['finished_at'] or row['version']!=body.version:
             raise HTTPException(409,'This set changed in another tab. Reload its saved position.')
         if body.position>=len(row['question_ids']):
             raise HTTPException(422,'Choose a question in this set')
+        if row['kind']=='review':
+            from ..services.curated_sessions import position as word_position
+            await word_position(cur,sid,row['question_ids'][body.position])
+            await cur.execute('UPDATE review_session_items SET opened_at=clock_timestamp() WHERE session_id=%s AND canonical_id=%s AND attempt_id IS NULL',(sid,row['question_ids'][body.position]))
         await cur.execute('UPDATE practice_study_sessions SET position=%s,version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(body.position,sid))
         return await state(cur,await cur.fetchone())
 
 @router.post('/{sid}/viewed')
-async def viewed(sid:str,body:Viewed,user:User):
+async def viewed(sid:str,body:Viewed,user:User,request:Request):
     async with cursor() as cur:
         row = await owned(cur,sid,user,True)
+        review_write_guard(row,request)
         if body.question_id not in row['question_ids']:
             raise HTTPException(422,'Question is not in this study set')
         if not row['finished_at'] and body.question_id not in row['viewed_ids']:
-            await protect_answer(cur,user,body.question_id)
-            await cur.execute('SELECT 1 FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,body.question_id))
-            if not await cur.fetchone():
-                raise HTTPException(409,'Open the answer before marking it as viewed')
+            from ..services import curated_sessions
+            if await curated_sessions.is_card(cur,sid,body.question_id):
+                if not await curated_sessions.was_revealed(cur,row,body.question_id):raise HTTPException(409,'Open the word-card answer before marking it as viewed')
+            else:
+                await protect_answer(cur,user,body.question_id)
+                await cur.execute('SELECT 1 FROM answer_reveals WHERE user_id=%s AND canonical_id=%s',(user,body.question_id))
+                if not await cur.fetchone():raise HTTPException(409,'Open the answer before marking it as viewed')
             await cur.execute('UPDATE practice_study_sessions SET viewed_ids=array_append(viewed_ids,%s),version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(body.question_id,sid))
             row = await cur.fetchone()
         return await state(cur,row)
 
 @router.post('/{sid}/answer')
-async def check(sid:str,body:Check,user:User):
+async def check(sid:str,body:Check,user:User,request:Request):
     async with cursor() as cur:
         row = await owned(cur,sid,user,True)
+        review_write_guard(row,request)
+        if row['kind']=='review' and getattr(request.state,'mobile_session',None) and not body.presentation_hash:
+            raise HTTPException(422,'Reload this review question before sending its saved choice')
         if body.question_id not in row['question_ids']:
             raise HTTPException(422,'Question is not in this study set')
         prior = (await receipts(cur,row)).get(body.question_id)
@@ -253,6 +305,10 @@ async def check(sid:str,body:Check,user:User):
             return await state(cur,row)
         if row['finished_at'] or row['version']!=body.version or row['question_ids'][row['position']]!=body.question_id:
             raise HTTPException(409,'This set changed in another tab. Reload its saved position.')
+        from ..services import curated_sessions
+        if row['kind']=='review' and await curated_sessions.check(cur,row,body.question_id,body.chosen_index):
+            await cur.execute('UPDATE practice_study_sessions SET version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(sid,))
+            return await state(cur,await cur.fetchone())
         index = row['question_ids'].index(body.question_id)
         if body.presentation_hash:
             # Keep the displayed content stable through grading. Old clients
@@ -262,19 +318,39 @@ async def check(sid:str,body:Check,user:User):
               (body.question_id,row['paper_ids'][index]))
             await cur.fetchall()
             current=await state(cur,row,True)
-            question=next((q for q in current['items'] if q.id==body.question_id),None)
+            question=next((q for q in current['items'] if not isinstance(q,dict) and q.id==body.question_id),None)
             if question is None or question.presentation_hash!=body.presentation_hash:
                 raise HTTPException(409,'This question was edited after you opened it. Reload the set and choose again; no attempt was recorded.')
         await _answer_question(body.question_id,AnswerSubmission(chosen_index=body.chosen_index,
-          collection_id='udc',paper_id=row['paper_ids'][index],context='practice'),user,
-          idempotency_key=receipt_key(sid,body.question_id),exam_scope=DEFAULT_SCOPE,_cur=cur)
+          collection_id=row['collection_id'],paper_id=row['paper_ids'][index],context=row['kind']),user,
+          idempotency_key=receipt_key(sid,body.question_id),exam_scope='all' if row['kind']=='review' or (row.get('filters') or {}).get('onboarding_version')==1 else DEFAULT_SCOPE,_cur=cur)
+        if row['kind']=='review':
+            await cur.execute('''UPDATE review_session_items i SET attempt_id=r.attempt_id FROM practice_request_receipts r
+              WHERE i.session_id=%s AND i.canonical_id=%s AND r.user_id=%s AND r.request_key=%s''',
+              (sid,body.question_id,user,receipt_key(sid,body.question_id)))
         await cur.execute('UPDATE practice_study_sessions SET version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(sid,))
         return await state(cur,await cur.fetchone())
 
+class WordReveal(Version):
+    question_id:str=Field(min_length=1,max_length=150)
+
+@router.post('/{sid}/word-reveal')
+async def word_reveal(sid:str,body:WordReveal,user:User,request:Request):
+    from ..services import curated_sessions
+    async with cursor() as cur:
+        row=await owned(cur,sid,user,True);review_write_guard(row,request)
+        if row['kind']!='review' or row['finished_at'] or row['version']!=body.version or row['question_ids'][row['position']]!=body.question_id:
+            raise HTTPException(409,'This saved set changed. Reload its current card.')
+        await curated_sessions.reveal(cur,row,body.question_id)
+        await cur.execute('UPDATE practice_study_sessions SET viewed_ids=CASE WHEN %s=ANY(viewed_ids) THEN viewed_ids ELSE array_append(viewed_ids,%s) END,version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(body.question_id,body.question_id,sid))
+        return await state(cur,await cur.fetchone(),True)
+
+
 @router.post('/{sid}/finish')
-async def finish(sid:str,body:Version,user:User):
+async def finish(sid:str,body:Version,user:User,request:Request):
     async with cursor() as cur:
         row = await owned(cur,sid,user,True)
+        review_write_guard(row,request)
         if row['finished_at']:
             return await state(cur,row)
         if row['version']!=body.version:
@@ -284,5 +360,17 @@ async def finish(sid:str,body:Version,user:User):
         await cur.execute('SELECT canonical_id FROM answer_reveals WHERE user_id=%s AND canonical_id=ANY(%s) AND revealed_at>=%s',(user,row['question_ids'],row['created_at']))
         row['viewed_ids']=list(dict.fromkeys([*row['viewed_ids'],*(r['canonical_id'] for r in await cur.fetchall())]))
         summary = summary_for(row,await receipts(cur,row))
+        if row['kind']=='review':
+            from ..services.mastery import prepare
+            await prepare(cur,user,row['question_ids'])
         await cur.execute('UPDATE practice_study_sessions SET finished_at=clock_timestamp(),summary=%s,viewed_ids=%s,version=version+1,updated_at=clock_timestamp() WHERE id=%s RETURNING *',(Jsonb(summary),row['viewed_ids'],sid))
-        return await state(cur,await cur.fetchone())
+        row = await cur.fetchone()
+        if row['kind']=='review':
+            from ..services.learning_habit import review_finish
+            summary['reward']=await review_finish(cur,row)
+            await cur.execute('UPDATE practice_study_sessions SET summary=%s WHERE id=%s',(Jsonb(summary),sid))
+            row['summary']=summary
+            from ..services.mastery import refresh
+            await cur.execute('SELECT user_id FROM learning_rollup_jobs WHERE user_id=%s FOR UPDATE',(user,))
+            await refresh(cur,user,row['question_ids'],award_review_session=sid)
+        return await state(cur,row)

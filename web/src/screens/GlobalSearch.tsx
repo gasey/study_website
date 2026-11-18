@@ -40,13 +40,11 @@ export default function GlobalSearch() {
     Number.isInteger(rawOffset) && rawOffset >= 0 && rawOffset <= 10000
       ? rawOffset
       : 0;
-  const [input, setInput] = useState(q);
   const [groups, setGroups] = useState<Group[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [reload, setReload] = useState(0);
   const generation = useRef(0);
-  useEffect(() => setInput(q), [q]);
   useEffect(() => {
     const changed = () => {
       generation.current++;
@@ -99,28 +97,9 @@ export default function GlobalSearch() {
     });
   return (
     <main className="mx-auto max-w-shell px-4 pb-24 pt-8 sm:px-6">
-      <h1 className="font-display text-[36px]">Search India Study Map</h1>
-      <form
-        className="mt-5 flex gap-2"
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (input.trim().length >= 2)
-            setParams({ q: input.trim(), category });
-        }}
-      >
-        <input
-          type="search"
-          aria-label="Search questions, people, notes, desks and listings"
-          maxLength={120}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Search questions, people, notes, desks, listings"
-          className="h-14 min-w-0 flex-1 rounded-[8px] border border-ink bg-[#FBF8F1] px-4 font-display text-[20px]"
-        />
-        <button className="min-h-11 rounded-pill bg-ink px-4 font-semibold text-paper">
-          Search
-        </button>
-      </form>
+      <h1 className="font-display text-[36px]">Search results</h1>
+      <p className="mt-3 break-words text-secondary">{q?`Results for “${q}”`:'Find questions, exams and study resources with Quick find.'}</p>
+      <button type="button" aria-haspopup="dialog" className="finna-btn finna-btn-quiet mt-4" onClick={()=>window.dispatchEvent(new CustomEvent('finna-open-find',{detail:{query:q}}))}>Change search in Quick find</button>
       <div
         className="mt-[18px] flex gap-[22px] overflow-x-auto border-b border-ink"
         role="tablist"

@@ -9,8 +9,8 @@ const cache=new Map();function load(file){file=path.resolve(file);if(cache.has(f
  new Function('module','exports','require',js)(mod,mod.exports,id=>{
   if(id.endsWith('.css'))return {};
   if(id==='react-router-dom')return {Link:({children,...p})=>React.createElement('a',p,children),useLocation:()=>({pathname,search:''}),useNavigate:()=>()=>{}};
-  if(id==='../lib/api')return {getAccountSession:async()=>account};
-  if(id==='../lib/review')return {reviewSession:()=>sessionWait||Promise.resolve({user_id:'test',grants}),reviewRequest:async(url)=>url==='/editorial/assignments'?{items:assignments}:{unread:0}};
+  if(id==='../lib/api')return {getAccountSession:async()=>account,getProgressSummary:async()=>({current_streak:0}),listCollections:async()=>[],isLaterExamCollection:()=>false};
+  if(id==='../lib/review')return {reviewSession:()=>sessionWait||Promise.resolve({user_id:'test',grants}),reviewRequest:async(url)=>url==='/editorial/assignments'?{items:assignments}:url==='/admin/bank/quality'?{total:0,needs_review:0,missing:0,held:0}:url.startsWith('/admin/bank/questions?')?{task_counts:{all:0}}:{unread:0}};
   if(id==='../lib/examScope')return {useExamScope:()=> 'all',changeExamScope:()=>'/bank'};
   if(id==='./QuickFind')return {default:()=>null};
   if(id==='./ui')return {Avatar:()=>null};if(id==='./NavIcon')return {default:()=>null};
@@ -33,9 +33,9 @@ async function mount(Component,props={}){await act(async()=>{if(tree)tree.unmoun
 async function event(name){await act(async()=>{for(const fn of listeners.get(name)||[])fn()})}
 (async()=>{
  grants=owner;await mount(Header);assert.ok(links().includes('/editorial')&&links().includes('/admin/bank'));
- // Staff utility links do not enlarge the sticky header or the five-item primary nav.
+ // Finna puts the same permitted workspace shortcuts in its desktop utility strip.
  const workspace=tree.root.findByProps({'aria-label':'Workspaces'});assert.equal(workspace.findAllByType('a').length,2);
- assert.equal(tree.root.findByType('header').findAllByProps({'aria-label':'Workspaces'}).length,0);
+ assert.equal(tree.root.findByType('header').findAllByProps({'aria-label':'Workspaces'}).length,1);
  account={authenticated:false};await event('ism-auth-change');assert.ok(!links().includes('/editorial')&&!links().includes('/admin/bank'));
  account={authenticated:true};grants=[];assignments=[{state:'active'}];await mount(Header);assert.ok(links().includes('/editorial'));assert.ok(!links().includes('/admin/bank'));
  assignments=[];await mount(Header);assert.ok(!links().includes('/editorial'));
@@ -46,6 +46,6 @@ async function event(name){await act(async()=>{for(const fn of listeners.get(nam
  account={authenticated:true};grants=[];assignments=[{state:'pending'}];await mount(More);assert.ok(links().includes('/editorial'));assert.ok(!links().includes('/admin/bank'));
  await mount(AdminNavigation,{tab:'questions',grants:owner,onNavigate(){}});assert.ok(links().includes('/editorial')&&links().includes('/editorial?workspace=attention&queue=tags'));
  await mount(AdminNavigation,{tab:'overview',grants:[],onNavigate(){}});assert.ok(!links().includes('/editorial'));
- await mount(AdminHome,{health:{questions:0,missing_answers:0,keyed:0,defects:0,held:0,queue:[],sync:null},grants:owner,busy:false,onRetry(){}});assert.equal(links()[0],'/editorial');assert.ok(JSON.stringify(tree.toJSON()).includes('Across the bank'));
+ await mount(AdminHome,{health:{questions:0,missing_answers:0,keyed:0,defects:0,held:0,queue:[],sync:null},grants:owner,busy:false,onRetry(){}});assert.ok(links().includes('/editorial'));assert.ok(JSON.stringify(tree.toJSON()).includes('Needs attention'));
  await act(async()=>tree.unmount());console.log('Review navigation passed: owner/assigned/learner visibility, sign-out and stale-response isolation, focused sessions, admin entry points and module-scoped position preservation.');
 })().catch(e=>{console.error(e);process.exitCode=1});

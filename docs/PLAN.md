@@ -1,5 +1,326 @@
 # Current implementation and content work
 
+## Finnaplan implementation — 16 November
+
+- [x] Deploy V.12read-only account viewer at `/admin/users`: global-owner/MFA,
+  private aggregate snapshots, exact-email/handle search and existing-tool links.
+  44compatibility/10final/2separate recovery checks (overlap), build/components /
+  navigation/browser pass;248-table preservation,3real-role accounts/27learning
+  reads,ledger46→46,bothsites200.3API/348built/3086served hashes verified;68economy
+  sources and13collector/unit paths unchanged. No migration;0109immutable.
+  [Account viewer](../reports/finnaplan-v12-users-20261118/README.md).
+
+- [x] Finalize collector timing display: structured real success survives checksum /
+  peer-write latency; actual failure/stale/unknown states remain.11focused checks
+  and real-mpsc read-only candidate/live audit pass. All workers/host/bank-review
+  timer and disk/backup probes healthy; daily backup/stats outcomes await actual
+  schedule. Bothsites200,ledger46→46;units/static/schema/economy bindings unchanged.
+  [Reader correction](../reports/finnaplan-v12-collector-time-20261118/README.md).
+
+- [x] Deploy V.12 worker cycle receipts and timer/host collectors. Real failures
+  preserve last success; actual job outcomes require normal zero exit. Disk /
+  newest paired-backup verification and honest collection/backup age are visible.
+  1277full tests with exit0,118fresh calibration checks/68bindings,248-table
+  preservation,real-mpsc rolled-back probe,build/browser andbothsites200 pass.
+  Original jobs were not started for proof; first daily outcomes and the genuine
+  green-week gate need elapsed operation. No migration;0109immutable,next0110.
+  [Worker release](../reports/finnaplan-v12-workers-20261118/README.md).
+
+- [x] Deploy first V.12 read-only ops dashboard at `/admin/ops`: real worker
+  observations/pool/economy/moderation, explicit unknown collector state, owner /
+  native boundaries, runbook and responsive navigation.44compatibility checks +
+  7final ops/recovery checks (overlap), component/build/browser checks pass.
+  Fresh248-table exact preservation;4API/347built/2838served hashes;ledger46→46;
+  integrity0,bothsites200. No SQL/writer/economy evidence change;0109immutable.
+  [Ops release](../reports/finnaplan-v12-ops-20261118/README.md).
+
+- [x] Deploy V.11bulk ₹50 pricing: verified-email once-only batches, bounded group
+  codes/claims, retained revocation, owner search and claim audit.1,259full tests
+  with exit0 plus11final receipt-reader checks;104source-bound calibration /
+  compatibility checks, build/components and desktop/phone/light/night pass.
+  244-table preservation,0109apply35.566ms,11API/345built/2713served hashes,
+  3public+27private reads,integrity0,ledger46→46,bothsites200. No production list,
+  code, discount, payment or email issued.0109immutable; next0110.
+  [Bulk release](../reports/finnaplan-v11-bulk-20261118/README.md).
+- [ ] Next independent work: V.12retention/site
+  notice/checklists. Observe actual scheduled backup/stats outcomes and sustain
+  the real healthy-week gate. V.11email/digest/referrals retain
+  prerequisites. [Remaining work](FINNA-REMAINING.md).
+
+- [x] Release V.11 optional primary-exam check-in: ten normal-practice questions,
+  once/account/exam resume, exact checked-subject suggestions and explicit focus
+  save.1,247full backend/55targeted/46boundary/2recovery/91calibration checks,
+  build/components/browser QA pass.244-table exact preservation,0108apply5.177ms,
+  7API/345built/2591served hashes,3public+24private reads,integrity0,ledger46→46,
+  bothsites200.0108immutable; next0109. Mail disabled/unconfigured,0attempts.
+  [Check-in release](../reports/finnaplan-v11-onboarding-20261118/README.md).
+- [ ] Continue opt-in due-review digest after actual email/consent/unsubscribe
+  requirements; retain referral post-launch/attempt/cap gates. Bulk pricing is
+  deployed; V.12retention/site notice and later work remain; whole plan is open.
+
+- [x] Release V.11public question/test share previews and WhatsApp links.1,236full
+  backend/12targeted/1recovery/81calibration checks, build/components/browser QA;
+  244-table exact preservation,4API/344built/2469served hashes,3public+21private
+  reads,integrity0,ledger46→46,bothsites200. No SQL/messages/provider activation.
+  0107immutable; next0108. [Sharing release](../reports/finnaplan-v11-sharing-20261118/README.md).
+
+- [x] Release V.11 built-in encrypted mail durability, shared conservative free-tier
+  capacity, quota-aware admission, bounded stable-key retries, closure/token checks
+  and heartbeat.1,229backend/36focused/74calibration checks;243-table preservation,
+  0107apply15.84ms,7API/data and unchanged342built/2346served hashes,21private
+  learning +capacity reads,integrity0,ledger46→46,bothsites200. Actual mail remains
+  disabled/unconfigured; no provider contact or email.0107immutable; next0108.
+  [Mail release](../reports/finnaplan-v11-mail-20261118/README.md).
+- [ ] Activate email only after an actual verified sender/domain/private key and
+  delivered one-use recovery proof. Continue independent V.11onboarding work;
+  digest/referral activation retains dependency/consent/post-launch gates.
+
+- [x] Release V.10 curated/Mizo vocabulary practice, authored cloze, shared mixed/
+  word-only reviews and distinct-word progress. 1,217 backend,63 targeted,63 fresh
+  calibration/compatibility checks, build/components/browser QA;232-table exact
+  preservation,0106apply99.489ms,21+39private checks, integrity0, ledger46→46 and
+  bothsites200.16API/342built/2346served hashes verify.0106immutable; next0107.
+  No production word content authored; reviewed cards become eligible through CMS.
+  [Curated practice release](../reports/finnaplan-v10-curated-vocabulary-20261118/README.md).
+- [ ] Continue V.11 growth. Resend free tier selected; existing encrypted built-in
+  email queue needs actual provider account, verified domain/sender and private
+  credentials before delivery/recovery certification. Share cards are deployed; independent
+  onboarding can proceed. V.12 and later Desk/Atlas/Studio remain; ranking waits
+  for actual volume and launch/native/source gates remain.
+  [Email setup](FINNA-EMAIL-SETUP.md).
+
+- [x] Release structured English/Mizo–English vocabulary-deck authoring and
+  reviewed readers in Content Studio. Existing revision/review/access/blocks,
+  canonical content and publication policy remain. 1,202 backend tests, 13 final
+  targeted checks, final recovery, build/checklists and phone/desktop/night UI
+  pass. 2 API/341 built/2,223 served hashes, nine new private reads, integrity zero,
+  ledger 46→46 and both-site health pass. No SQL; 0106 remains free. Curated
+  practice/scoring/progress and shared session integration are next.
+  [Word-card authoring](../reports/finnaplan-v10-vocabulary-authoring-20261118/README.md).
+
+- [x] Release V.10 bank vocabulary shared scheduler, five-new-per-day Today entry
+  and mixed/vocabulary-only saved Smart Review sets. 1,197 backend tests, 20 final
+  targeted checks, 46 source bindings, build/components and desktop/320px/night UI
+  pass. All original rows in 232 tables are preserved. 0105 applied/immutable;
+  next 0106. 33 new + 64 independent private reads, integrity zero, ledger 46→46,
+  13 API/341 built/2,103 served hashes and both-site health pass. Recovery keeps
+  shared writers/0105 and quarantines recognition; never restore older queues.
+  [Shared vocabulary scheduler](../reports/finnaplan-v10-vocabulary-scheduler-20261118/README.md).
+
+- [x] Tighten vocabulary Mastered display to the existing14-day proficiency +
+  completed scored exact-review-receipt rule.24targeted tests,36new +84independent
+  private reads pass;1API helper, unchanged1983static hashes, integrity0 and both
+  sites200. NoSQL/award/history changes.
+  [Mastery proof](../reports/finnaplan-v10-vocabulary-proof-20261118/README.md).
+
+- [x] Release V.10 bank-derived vocabulary decks and private latest-answer progress
+  with actual approved taxonomy, canonical provenance and45-day decay. Empty-deck,
+  stale-account and assessment guards pass.1188full backend +14final targeted
+  checks,4frontend scripts, build and desktop/320px/night new-panel QA;36new +
+  9+39+36independent private reads, integrity0, ledger46→46, both sites200.
+  2API/341built/1983served hashes; noSQL,0105free.
+  [Vocabulary decks](../reports/finnaplan-v10-vocabulary-20261118/README.md).
+
+- [x] Release V.10 pre-submission source/rights/format/body-size checklists on all
+  four authoring screens. Transient draft/account-bound UX, unchanged API rules.
+  12frontend scripts,18targeted backend checks, unchanged1182-test API baseline,
+  build/recovery and desktop/320px/night QA pass.341built/1863served hashes,
+  262unchanged API/schema dependencies,24route shells,9+39+36private reads;
+  integrity0, ledger46→46, both sites200. Static only;0105free.
+  [Checklists](../reports/finnaplan-v10-checklists-20261118/README.md).
+
+- [x] Release V.10's existing-lifecycle submission tracker and current-access Create
+  panel: own drafts/states/return notes, same-thread links, dated queue position and
+  observed review median, with disclosure/assessment/block and stale-account guards.
+  1182backend tests, six final boundary/recovery tests, ten component/nav scripts,
+  local build and desktop/320px/night QA pass.2API/340built/1743served hashes,
+  260unchanged dependencies,6+3new and39+36independent private read checks pass;
+  integrity0, ledger46→46, both sites200. NoSQL;0104immutable,0105free.
+  [Submission tracker](../reports/finnaplan-v10-submissions-20261118/README.md).
+
+- [x] Release V.10 contributor tiers/profile statistics/weekly Guide strip (18 November):
+  immutable display-label history with current computed privileges, visible-only
+  raw counts, dual consent, moderation and assessment guards; no role/award grants.
+  1175backend tests, nine component/nav scripts, build and desktop/320px/night QA;
+  232-table preservation,0104apply8.815ms,9API/data +340built/1623served hashes,
+  39+36private reads, all integrity0, ledger46→46 and both sites200.0104immutable;
+  next0105. [Contributor standing](../reports/finnaplan-v10-tiers-20261117/README.md).
+
+- [x] Release V.10 direct block shortcuts for question posts/replies and study /
+  material-share conversations. Success/uncertain responses refresh privacy-bound
+  snapshots; late account/pagination responses cannot restore blocked content.
+  1154backend tests, eight component/nav checks, build and desktop/320px/night UI
+  pass.339built/1504served hashes,259unchanged API/schema/data dependencies,
+  20route shells and30+36private reads verify; integrity0, ledger46→46, both sites200.
+  Static-only;0103immutable, next0104. [Block shortcuts](../reports/finnaplan-v10-blocks-20261117/README.md).
+
+- [x] Release V.10 §7.1.6 once-only acceptance reminder: private author-only web
+  claim, append-only unique event, fresh visibility/disclosure/assessment/moderation
+  guards, dismissal and stale-response safety.1149backend tests/components/build /
+  phone/desktop/night checks pass;232-table dump preservation,0103apply5.316ms,
+  1API/338built/1386served hashes and30+36read-only checks pass; all integrity0,
+  ledger46→46, both sites200.0103 applied/immutable; next0104.
+  [Acceptance reminder release](../reports/finnaplan-v10-nudge-20261117/README.md).
+- [x] Complete V.10 curated/Mizo practice scoring, reviewed-card eligibility,
+  usage cloze and distinct-word progress/shared session integration (0106).
+  Ranking waits for real volume. Later V.11 growth, V.12 admin/maintenance and
+  Desk/Atlas/Studio remain. V.7 actual exam sources, native signed-device QA and
+  catalog/legal/checkout launch are still open dependencies.
+
+- [x] Start V.1 with scoped anonymous HTTP validators and identity-free public
+  question reads; keep credentials, history, answer reveals and errors private.
+- [x] Profile six browse reads on a fresh local production-dump clone; rewrite
+  paper membership and rehearse migration0090 covering indexes under the app role.
+  SQL medians: paper directory5589→278ms; collection totals1463→1267ms.
+- [x] Pass88 focused cache/order/scope/mobile/reward/account checks and web build;
+  record the unrelated existing leaderboard contract failure separately.
+- [x] Activate credential-free public catalog reads in the SPA while preserving
+  identity-dependent question lists; implement0.9.2 combined-filter allowances
+  and the live meter. Retry/pagination reuse one admitted search; Pro is unlimited.
+- [x] Complete V.1 release gates:963 backend tests, local web build, fresh dump
+  rehearsal, deployed API/static hashes, cache/304/private guards and both-site health.
+- [x] Implement the local V.2 mastery/review foundation in draft0092: verified
+  rollups, Leitner scheduler, durable/observable reconciliation, focus and private
+  APIs, frozen Smart Review sets and mobile read/write boundaries;973 tests pass.
+- [x] Implement local V.2 Today, progress-rollup reads, calendar read layers,
+  Smart Review/mastery/focus screens and login backoff.978 backend tests pass;
+  phone flow and full-dump preservation are verified.
+- [x] Audit the exact live API/static preimages and Daily Five dependencies;
+  deploy bounded V.2 with missing0083 then0092.978 tests, full-dump schema/worker
+  rehearsal, all19API/335static hash readbacks,16 read-only private route checks
+  and both-site health pass. Reconciler drained; ledger46→46, no award backfill.
+- [x] Complete/release V.3 habit: authoritative account streak, immutable daily
+  plan, Review/Plan rings, timed scheduled-review awards with replay/slot/XP caps.
+  985backend checks and local phone earning/reload/claim flow pass; full-dump
+  rehearsal preserves217tables,19private read-only live checks and diagnostics
+  pass,13API/335static hashes match; ledger46→46 at release, both sites healthy.
+- [x] Complete a local V.4 limits/catalog checkpoint in draft0094: ledger-boundary
+  point caps/counters, actual capped review/quest receipts, catalog1500/400,
+  owner launch checklist/API gates and free-month meter.998 backend tests, web
+  build and full-dump/read-only-role rehearsal pass. Not deployed; receipt:
+  [V.4 limits checkpoint](../reports/finnaplan-v4-limits-20261117/README.md).
+- [x] Implement local V.4 completion/milestone/contribution rules in draft0095–0096:
+  server-owned timed game/Daily/mock receipts, prospective once-ever mastery,
+  independently reviewed20/5or40/10 contribution awards (3/day) and exact reversals.
+  1030backend tests, web build, full-dump preservation and20read-only role checks
+  pass; zero new clone awards. [Award checkpoint](../reports/finnaplan-v4-awards-20261117/README.md).
+- [x] Finish and deploy V.4 through bounded `finnaplan-v4`:1035backend tests, seeded mixed-week rupee calibration,
+  SQL-policy/catalog and paired-file rollback,221-table full-dump preservation,
+  12API/335static hashes,20private route checks and both-site health pass.
+  All19live integrity checks0; ledger46→46;0094–0096 applied/immutable.
+  [V.4 release receipt](../reports/finnaplan-v4-20261117/README.md).
+- [x] Implement a local V.5 boards/recap checkpoint: weekly league neighborhoods,
+  private own placement, opt-in per-mode game boards, minimal public fields,
+  Monday-only source-derived growth card and explicit mobile read capabilities.
+  1044backend tests, web build, desktop/320px checks and real-mpsc read-only Oracle
+  queries pass; no deployment or migration. [V.5 checkpoint](../reports/finnaplan-v5-boards-20261117/README.md).
+- [x] Implement local V.5 private calendar entries, exam targets/countdowns, recurring
+  progress slots and revocable hash-at-rest ICS subscriptions in draft0097.
+  1052backend tests, web build, phone/desktop QA and fresh229-table preservation
+  pass; ledger46→46. Not deployed. [Calendar checkpoint](../reports/finnaplan-v5-calendar-20261117/README.md).
+- [x] Implement local V.5 identity editing (unique handle/30-day cooldown), moderated
+  140-character bios, owner bio decisions and the atomic own-once points shop.
+  Existing26avatar records unchanged;3new points items.1060tests, web build,
+  phone/desktop UI and229-table preservation pass; no deployment or backfill.
+  [Profile/shop checkpoint](../reports/finnaplan-v5-profile-20261117/README.md).
+- [x] Complete two local batches: explicit web board/catalog transport with safe
+  legacy reads, then calendar week/Cup/shared Desk reads and owned-target Today
+  taper.1065backend tests, build, desktop/320px QA and229-table preservation pass;
+  ledger46→46. [Integration checkpoint](../reports/finnaplan-v5-integration-20261117/README.md).
+  Actual Desk scheduling remains part of the later Desk upgrade; no such store
+  exists in the current schema. Native physical-device visual parity is not certified.
+- [x] Implement local §12.7 Profile groups, owned snapshot JSON export, sign out
+  everywhere and guarded anonymizing closure with durable credential/Pro guards.
+  1073backend tests, build, desktop/320px QA and229-table full-dump preservation
+  pass; ledger46→46. [Account-tools checkpoint](../reports/finnaplan-v5-account-20261117/README.md).
+- [x] Complete final source-bound V.5 economy/deployment/compatibility-recovery gates:
+  1081backend tests,229-table preservation,36private read checks,28API/337static
+  hashes,22integrity checks0 and ledger46→46.0097 is applied/immutable.
+  Recovery pairs prior static with quarantined current API and retains purchased
+  cosmetics, moderated bios and closed-account SQL guards. Both sites healthy.
+  [V.5 release receipt](../reports/finnaplan-v5-recovery-20261117/README.md).
+  Keep catalog activation dark pending actual legal/recovery/paid-checkout gates;
+  source-bound calibration and current diagnostics now determine economy readiness.
+- [x] V.6 review/focus API widening deployed: 1085 backend tests, 231-table
+  preservation, 36 private reads, 22 integrity checks 0, six API hashes and
+  unchanged 337 static artifacts; ledger 46→46. 0098 applied/immutable; next 0099.
+  Native Smart Review/focus with saved retries passes 29 domain/60 component
+  tests, lint/typecheck and all-platform export. [V.6 receipt](../reports/finnaplan-v6-20261117/README.md).
+- [ ] Link the owner's Expo project (EXPO_PROJECT_ID), deliver a signed native
+  build and complete authenticated physical-device QA; no binary/OTA was published.
+- [x] V.9 website layout/navigation consolidation deployed: Revise, Desk toolbox,
+  Chronicle date views, one Play grid, one Quick find and Inbox. Six frontend
+  scripts pass, including 10 redirect cases and 111 navigation destinations;
+  desktop/dark/320px UI checked. 336 built/453 served hashes and 153 unchanged
+  API/migration dependencies match; 36 read-only mpsc checks and all 22 integrity
+  counters pass. [V.9 receipt](../reports/finnaplan-v9-20261117/README.md).
+- [x] V.10 first bounded slice deployed: chronological Following discussions on
+  the existing consent/block graph, retained material discovery and fresh-thread
+  duplicate-doubt deflection with one-tap replies and preserved drafts. 1091 full
+  backend checks plus targeted boundary/recovery checks, final component privacy
+  regressions, local build and desktop/320px UI pass. One API reader changed;
+  249 API/schema artifacts unchanged, 336 built/568 served hashes match. Sixteen
+  live read-only community checks and 36 integrity/private checks pass; both
+  sites healthy. [V.10 first-slice receipt](../reports/finnaplan-v10-following-20261117/README.md).
+- [x] V.10 study-note slice deployed: text-only notes, guarded internal references,
+  moderation/report/Helpful/withdraw, shared5/30 or Regular10/60 IST-day budgets,
+  Helper maturity lift and native/versioned-feed boundaries. 1106 backend tests,
+  frontend/build and desktop/320px/new-panel night checks pass. Fresh dump clone
+  preserves231tables;0099 applied/immutable, next0100. Seven API files and337built /
+  684served static hashes verify;21new +36independent private reads,22zero integrity
+  counters and both-site health pass. Public tier presentation and the rest of
+  Part II remain pending. [Study-note receipt](../reports/finnaplan-v10-study-20261117/README.md).
+- [x] V.10 reviewed material shares deployed: immutable anchors, published metadata
+  cards, protected-content/publication/block guards, shared posting/moderation and
+  native isolation.1113 backend tests, components/build and desktop/320px/night QA
+  pass. Fresh231-table clone preserved;0100 applied/immutable, next0101. Six API /
+  337built/800served hashes,248unchanged dependencies,21+36private reads,
+  22zero integrity counters and both sites200 verify; ledger46→46. Recovery retains
+  applied schema/history/native isolation. [Material-share receipt](../reports/finnaplan-v10-materials-20261117/README.md).
+- [x] V.10 note/material replies deployed: inherited parent/reference/privacy
+  guards, moderation/Helpful/report/withdraw and shared30/60 reply caps.1121tests,
+  components/build and1440/320px/night QA pass. Fresh231-table clone preserved;
+  0101applied/immutable, next0102. Three API files,337built/916served hashes,
+  252unchanged dependencies,24+36private reads,22zero integrity counters and
+  both sites200 pass; ledger46→46. Recovery retains parent/reference readers
+  and all history. [Reply receipt](../reports/finnaplan-v10-replies-20261117/README.md).
+- [x] V.10 note/share/reply bold/list/code formatting, preview and device drafts
+  deployed: account/kind/parent isolation, retry keys survive reload, success /
+  discard cleanup and global auth/expiry/cross-tab purge.1122tests, components,
+  build and desktop/320px/night UI pass.337built/1033served hashes,696oldchunks,
+  256unchanged API/schema/data dependencies and15route shells verify.24+36private
+  reads,22zero integrity counters, ledger46→46 and both sites200. No API/SQL/service
+  change;0102 still free. Canonical question composers and remaining Part II work
+  pending. [Composer receipt](../reports/finnaplan-v10-composer-20261117/README.md).
+- [x] V.10 question doubt/explanation/reply formatting and drafts deployed: post
+  type + five citations, question/parent/paper-context isolation, same-key reload
+  retries and fresh duplicate checks. Accepted content stays immutable; expiry
+  clears private views. Input/accepted-card theme contrast corrected.1122full
+  backend +1new recovery test, components/build,10redirects/111links and1440/320px/
+  night checks pass.339built/1152served hashes,813oldchunks,256unchanged dependencies,
+  18route shells and both sites200;24+36private reads,22zero counters, ledger46→46.
+  No API/SQL/service change;0102free. Next: §7.1.5 honest edits/accepted locks, then
+  once-only acceptance nudge. [Question composer receipt](../reports/finnaplan-v10-discussion-composer-20261117/README.md).
+- [x] V.10 honest edits deployed: immutable original/revision snapshots, edited
+  markers, private history, shared limits and author-only re-moderation with exact
+  revision approval/undo guards. Accepted-once content locks permanently, including
+  after unaccept; stale/racing edits fail safely. Saved drafts/retries and web-only
+  edit/history routes pass.1136tests, components/build and1440/320px/night UI pass.
+  Clone preserves231tables;0102applied22.486ms/immutable, next0103. Seven API files,
+  338built/1269served hashes,250unchanged dependencies,27+36private reads,3zero edit +
+  22zero reward counters and both sites200; ledger46→46. Recovery retains current
+  guards/history and pauses edit-function EXECUTE. Next: §7.1.6 once-only nudge.
+  [Honest edits receipt](../reports/finnaplan-v10-edits-20261117/README.md).
+- [ ] Continue V.10 community/content in Part II rollout order, including the
+  later vocabulary scheduler/data unification. V.7 requires actual-source exam
+  onboarding; V.8 remains the standing never-list.
+
+Receipt and limitations: [first V.1 slice](../reports/finnaplan-v1-20261116/README.md).
+Deployed continuation: [V.1 release](../reports/finnaplan-v1-20261117/README.md).
+Local V.2 checkpoint: [mastery/review foundation](../reports/finnaplan-v2-20261117/README.md).
+V.2 continuation: [Today, progress and screens](../reports/finnaplan-v2-today-20261117/README.md).
+V.3 release: [habit and review awards](../reports/finnaplan-v3-20261117/README.md).
+
 ## Current-affairs revision policy — 8 November
 
 - [x] Require relevant, source-checked dated updates alongside historical explanations

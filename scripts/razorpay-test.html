@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Finna · Razorpay test checkout</title>
+<style>body{margin:0;background:#f3f5ff;color:#142044;font:17px/1.5 system-ui}main{max-width:640px;margin:50px auto;padding:28px;background:white;border-radius:20px}h1{margin:8px 0;font-size:32px}.badge{color:#704700;background:#fff0bd;padding:8px 14px;display:inline-block;border-radius:8px}button,select{padding:14px;font:inherit;border-radius:10px;border:1px solid #c7cee8}button{background:#2448db;color:white;cursor:pointer;margin:12px 8px 12px 0}button:disabled{opacity:.5}#status{white-space:pre-wrap;background:#f3f5ff;padding:18px;border-radius:10px}small{display:block;color:#52617d}</style>
+</head><body><main><div class="badge">TEST MODE · No real money</div><h1>Finna test checkout</h1>
+<p>This rehearsal uses a separate test account and database. It does not change your live Finna access.</p>
+<label for="period">Test plan</label> <select id="period"><option value="monthly">₹100 / month</option></select>
+<div><button id="start">Open test checkout</button><button id="refresh">Refresh status</button><button id="cancel">Cancel test renewal</button></div>
+<small>Use Razorpay's test payment details in the checkout. Keep real payment details out of this rehearsal.</small><p id="status" role="status">Loading test account…</p>
+<a href="https://razorpay.com/docs/payments/subscriptions/test/" target="_blank" rel="noreferrer">Razorpay test-payment instructions</a>
+</main><script src="https://checkout.razorpay.com/v1/checkout.js"></script><script>
+const csrf='__CSRF__',status=document.getElementById('status'),start=document.getElementById('start');
+async function request(path,body){const r=await fetch('/api/billing/'+path,{method:body===undefined?'GET':'POST',headers:{'Content-Type':'application/json','X-Review-CSRF':csrf},body:body===undefined?undefined:JSON.stringify(body)});const data=await r.json();if(!r.ok)throw Error(data.detail||'Request failed');return data}
+async function refresh(){try{const data=await request('me');status.textContent='Test account: '+data.plan_code+' · '+data.plan_status+(data.subscription?'\nSubscription: '+data.subscription.status:'\nNo test subscription yet');}catch(e){status.textContent=e.message}}
+document.getElementById('refresh').onclick=refresh;
+start.onclick=async()=>{start.disabled=true;try{const data=await request('checkout',{period:document.getElementById('period').value});if(!data.key_id.startsWith('rzp_test_'))throw Error('Test key required');const checkout=new Razorpay({key:data.key_id,subscription_id:data.subscription_id,name:'Finna TEST',description:'Simulated subscription · no real charge',prefill:{email:data.email},handler:async result=>{try{const verified=await request('verify',result);status.textContent='Test payment verified. Subscription: '+verified.status;await refresh()}catch(e){status.textContent=e.message}},modal:{ondismiss:()=>{status.textContent='Test checkout closed. No successful payment confirmed.'}}});checkout.on('payment.failed',()=>{status.textContent='Test payment failed. No success confirmed.'});checkout.open()}catch(e){status.textContent=e.message}finally{start.disabled=false}};
+document.getElementById('cancel').onclick=async()=>{try{await request('cancel',{});await refresh()}catch(e){status.textContent=e.message}};
+refresh();
+</script></body></html>

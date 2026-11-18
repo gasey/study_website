@@ -1,5 +1,10 @@
-import QuestionStudyControls from '../components/QuestionStudyControls'
-import {readStudyStatus,readQuestionOrder,newQuestionSeed,nextBrowseOffset} from '../lib/questionBrowse'
+import {useBrowsePosition} from '../hooks/useBrowsePosition'
+import {collectionBooklets} from '../lib/examOverview'
+import {sortArchivePapers} from '../lib/paperArchive'
+import {representativeBooklet} from '../lib/sourceBooklets'
+import {bookletLabel} from '../lib/mcsBooklets'
+import {paperIdentity} from '../lib/paperIdentity'
+import {readStudyStatus,readQuestionOrder,newQuestionSeed,nextBrowseOffset,studyStatusOptions} from '../lib/questionBrowse'
 import {learningSubjectTitle} from '../lib/groupBStudy'
 import StudyQuestionCard from '../components/StudyQuestionCard'
 import {questionQueryString} from '../lib/requestCache'
@@ -7,7 +12,7 @@ import {savePracticePosition} from '../lib/learning'
 import Pagination from '../components/Pagination'
 import {scrollToResults} from '../lib/pagination'
 import {AnswerLayoutControl} from '../components/AnswerLayout'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useSearchParams,Link } from 'react-router-dom'
 import {reviewRequest} from '../lib/review'
 import { getAccountSession,getExamStudyTopics,getMistakes, getProgress, listQuestions, prefetchQuestionPage, submitAnswer, type GroupBStudyArea, type AnswerResult, type CollectionPaper, type CollectionSection, type ExamStudyTopics, type Mistake, type Progress, type Question } from '../lib/api'
@@ -18,17 +23,15 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   const combined = collectionId === 'combined-prelims'
   const practice=urlParams.get('view')==='practice',PAGE_SIZE=practice?1:25
   const [reload,setReload]=useState(0),[loading,setLoading]=useState(true)
-  const [primaryFiltersOpen,setPrimaryFiltersOpen]=useState(false)
   const search=urlParams.get('q')||'',paperId=urlParams.get('paper')||'',sectionPath=urlParams.get('section')||initialSectionPath
   const subjectId=urlParams.get('subject_id')||'',topicId=urlParams.get('topic_id')||'',subtopicId=urlParams.get('subtopic_id')||''
   const pool:'all'|'scorable'|'practice'=['all','scorable','practice'].includes(urlParams.get('pool')||'')?urlParams.get('pool') as 'all'|'scorable'|'practice':initialPool
-  const studyStatus=readStudyStatus(urlParams.get('status')),order=readQuestionOrder(urlParams.get('order')),seed=urlParams.get('seed')||''
-  useEffect(()=>{if(order==='mixed'&&!seed)setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('seed',newQuestionSeed());return next},{replace:true})},[order,seed,setURLParams])
+  const studyStatus=readStudyStatus(urlParams.get('status')),order=paperId&&!practice?'paper':readQuestionOrder(urlParams.get('order')),seed=urlParams.get('seed')||''
   function shuffle(){setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('order','mixed');next.set('seed',newQuestionSeed());next.delete('offset');return next},{replace:true});setResults({});setPicks({})}
   const answerStatus=(['official','verified','needs-review','unsolved','written'].includes(urlParams.get('answer_status')||'')?urlParams.get('answer_status'):undefined) as 'official'|'verified'|'needs-review'|'unsolved'|'written'|undefined
   const offset=Math.floor(Math.max(0,Math.min(100000,Number(urlParams.get('offset'))||0)))
   function filter(key:string,value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set(key,value);else next.delete(key);if(key!=='offset')next.delete('offset');return next},{replace:key!=='offset'})}
-  const setSearch=(v:string)=>filter('q',v),setPaperId=(v:string)=>filter('paper',v),setSectionPath=(v:string)=>filter('section',v),setPool=(v:typeof pool)=>filter('pool',v),setStudyStatus=(v:typeof studyStatus)=>filter('status',v),setOffset=(v:number)=>filter('offset',String(v))
+  const setSearch=(v:string)=>filter('q',v),setPool=(v:typeof pool)=>filter('pool',v),setOffset=(v:number)=>filter('offset',String(v))
   const [taxonomy,setTaxonomy]=useState<ExamStudyTopics|null>(null)
   useEffect(()=>{let live=true;getExamStudyTopics(collectionId,studyArea).then(value=>{if(live)setTaxonomy(value)}).catch(()=>{});return()=>{live=false}},[collectionId,studyArea])
   const selectedSubject=taxonomy?.subjects.find(subject=>subject.id===subjectId)
@@ -53,12 +56,15 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   const [error, setError] = useState<string|null>(null)
   const [account,setAccount]=useState(false);const [checkpointError,setCheckpointError]=useState('');const saveQueue=useRef(Promise.resolve())
   useEffect(()=>{let live=true;const refresh=()=>{getAccountSession().then(s=>{if(live)setAccount(s.authenticated)}).catch(()=>{});setPage(null);setResults({});setPicks({});setViewed({});setReload(n=>n+1)};refresh();window.addEventListener('ism-auth-change',refresh);return()=>{live=false;window.removeEventListener('ism-auth-change',refresh)}},[])
-  useEffect(()=>{if(!account||!page||pending)return;const timer=window.setTimeout(()=>{saveQueue.current=saveQueue.current.then(async()=>{try{if(studyArea){if(page.items[0])await savePracticePosition(page.items[0].id)}else await reviewRequest('/me/exam-checkpoint/'+collectionId,{section:sectionPath,paper:paperId,q:search,pool,order,seed,status:studyStatus,subject_id:subjectId,topic_id:topicId,subtopic_id:subtopicId,offset});setCheckpointError('');window.dispatchEvent(new Event('ism-study-checkpoint'))}catch(e){setCheckpointError((e as Error).message)}})},700);return()=>window.clearTimeout(timer)},[account,page,pending,studyArea,collectionId,sectionPath,paperId,search,pool,order,seed,studyStatus,subjectId,topicId,subtopicId,offset])
+  useEffect(()=>{if(!account||!page||pending)return;const timer=window.setTimeout(()=>{saveQueue.current=saveQueue.current.then(async()=>{try{if(studyArea){if(page.items[0])await savePracticePosition(page.items[0].id)}else await reviewRequest('/me/exam-checkpoint/'+collectionId,{section:sectionPath,paper:paperId,q:search,pool,order:order==='paper'?'repeated':order,seed,status:studyStatus,subject_id:subjectId,topic_id:topicId,subtopic_id:subtopicId,offset});setCheckpointError('');window.dispatchEvent(new Event('ism-study-checkpoint'))}catch(e){setCheckpointError((e as Error).message)}})},700);return()=>window.clearTimeout(timer)},[account,page,pending,studyArea,collectionId,sectionPath,paperId,search,pool,order,seed,studyStatus,subjectId,topicId,subtopicId,offset])
+
+  const reading=useBrowsePosition(collectionId,!practice,pending,page?.items.map(q=>q.id)||[])
+  useEffect(()=>{if(!reading.initializing&&order==='mixed'&&!seed)setURLParams(previous=>{const next=new URLSearchParams(previous);next.set('seed',newQuestionSeed());return next},{replace:true})},[reading.initializing,order,seed,setURLParams])
 
   useEffect(() => {
     let cancelled = false
     setLoading(true)
-    if(order==='mixed'&&!seed)return
+    if(reading.initializing||order==='mixed'&&!seed)return
     let prefetchTimer:number|undefined
     const timer = window.setTimeout(() => {
       if(search.trim().length===1){setPage({items:[],total:0});setResolvedKey(requestKey);setError('Enter at least two characters to search.');setLoading(false);return}
@@ -74,7 +80,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
         .finally(()=>{if(!cancelled)setLoading(false)})
     }, search.trim() ? 250 : 0)
     return () => { cancelled = true; window.clearTimeout(timer);if(prefetchTimer!==undefined)window.clearTimeout(prefetchTimer) }
-  }, [studyArea,collectionId,sectionPath,paperId,subjectId,topicId,subtopicId,search,pool,order,seed,studyStatus,answerStatus,offset,PAGE_SIZE,reload])
+  }, [studyArea,collectionId,sectionPath,paperId,subjectId,topicId,subtopicId,search,pool,order,seed,studyStatus,answerStatus,offset,PAGE_SIZE,reload,reading.initializing])
 
   const currentPage=Math.floor(offset/PAGE_SIZE)+1,pages=Math.max(currentPage,currentPage+Math.ceil(Math.max(0,(page?.total||0)-offset-PAGE_SIZE)/PAGE_SIZE))
   function goPage(value:number){
@@ -102,33 +108,43 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     } finally {checking.current.delete(q.id);setAnswerBusy(old=>({...old,[q.id]:false}))}
   }
 
+  const selectedPaper=papers.find(p=>p.id===paperId)
+  const paperGroups=useMemo(()=>collectionBooklets(collectionId,sortArchivePapers(papers,'newest')),[collectionId,papers])
+  const paperPosition=paperGroups.findIndex(group=>group.papers.some(p=>p.id===paperId))
+  function chooseSection(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('section',value);else next.delete('section');next.delete('paper');next.delete('offset');next.delete('fresh');return next},{replace:true})}
+  function chooseStatus(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);next.delete('status');next.delete('answer_status');next.delete('offset');if(value.startsWith('study:'))next.set('status',value.slice(6));if(value.startsWith('answer:')){next.set('answer_status',value.slice(7));next.set('pool','all')}return next},{replace:true});setResults({});setPicks({})}
+  function choosePaper(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('paper',value);else next.delete('paper');if(combined&&value){const source=papers.find(p=>p.id===value);if(source?.section_path)next.set('section',source.section_path);else next.delete('section')}next.delete('offset');next.delete('seed');next.delete('fresh');return next},{replace:false});setResults({});setPicks({})}
+
   return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
     <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-[22px]">{practice?'Study practice':'Browse questions'}</h2><p className="text-[12px] text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}</p></div><button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-[12px] font-semibold">Reset filters</button></div>
-    <QuestionStudyControls status={studyStatus} order={order} onStatus={value=>update(setStudyStatus,value)} onOrder={value=>filter('order',value)} onShuffle={shuffle}/>
-    <button type="button" aria-expanded={primaryFiltersOpen} aria-controls="exam-primary-filters" onClick={()=>setPrimaryFiltersOpen(open=>!open)} className="mb-2 min-h-11 rounded-pill border border-hairline bg-card px-4 text-[12px] font-semibold sm:hidden">{primaryFiltersOpen?'Hide filters':'Subject, topic & search'}{[subjectId,topicId,search].filter(Boolean).length?` · ${[subjectId,topicId,search].filter(Boolean).length} active`:''}</button>
-    {(subjectId||topicId||search)&&<div aria-label="Selected question filters" className="mb-2 flex flex-wrap gap-2">
-      {subjectId&&<button type="button" onClick={()=>taxonomyFilter('subject_id','')} aria-label="Remove subject filter" className="min-h-11 max-w-full break-words rounded-lg border border-hairline bg-card px-3 text-left text-xs">{selectedSubject?learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):'Selected subject'} <span aria-hidden="true">×</span></button>}
-      {topicId&&<button type="button" onClick={()=>taxonomyFilter('topic_id','')} aria-label="Remove topic filter" className="min-h-11 max-w-full break-words rounded-lg border border-hairline bg-card px-3 text-left text-xs">{selectedTopic?.title||'Selected topic'} <span aria-hidden="true">×</span></button>}
-      {search&&<button type="button" onClick={()=>update(setSearch,'')} aria-label="Remove question search" className="min-h-11 max-w-full break-words rounded-lg border border-hairline bg-card px-3 text-left text-xs">Search: {search} <span aria-hidden="true">×</span></button>}
-    </div>}
-    <div id="exam-primary-filters" className={`${primaryFiltersOpen?'grid':'hidden sm:grid'} mb-3 gap-3 rounded-[14px] border border-hairline bg-card p-4 sm:grid-cols-3`}>
-      <label className="text-[12px] font-semibold">Subject<select value={subjectId} onChange={e=>taxonomyFilter('subject_id',e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="">All subjects</option>{subjectId&&!selectedSubject&&<option value={subjectId}>Selected subject</option>}{taxonomy?.subjects.map(subject=><option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id,subject.title,collectionId)} · {subject.questions}</option>)}</select></label>
-      <label className="text-[12px] font-semibold">Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)} disabled={!subjectId} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px] disabled:opacity-60"><option value="">All topics</option>{selectedSubject?.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
 
-      <label className="text-[12px] font-semibold">Search<input maxLength={120} value={search} onChange={(e)=>update(setSearch,e.target.value)} placeholder="Question or option text" className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]" /></label>
+    <div className="browse-filter-row" aria-label="Question filters" data-area={!!studyArea}>
+      {!studyArea&&<label>{combined?'Paper type':'Section'}<select aria-label={combined?'Paper type':'Section'} disabled={metadataLoading} value={sectionPath} onChange={e=>chooseSection(e.target.value)}><option value="">{combined?'Both papers':'All sections'}</option>{sections.map(s=><option key={s.path} value={s.path}>{combined?(s.path==='gs'?'Paper I only':s.path==='aptitude'?'Paper II only':s.title):s.title}</option>)}</select></label>}
+      <label>Specific paper<select aria-label="Specific paper" disabled={metadataLoading} value={paperId} onChange={e=>choosePaper(e.target.value)}><option value="">All matching papers</option>{paperGroups.filter(group=>!sectionPath||group.papers.some(p=>p.section_path===sectionPath)).map(group=>{const p=group.papers.find(p=>p.id===paperId)||representativeBooklet(group);return <option key={p.id} value={p.id}>{p.year?`${p.year} · `:''}{group.papers.length>1?group.title:paperIdentity(p).title}</option>})}{paperId&&paperPosition<0&&<option value={paperId}>Selected paper</option>}</select></label>
+      <label>Subject<select value={subjectId} onChange={e=>taxonomyFilter('subject_id',e.target.value)}><option value="">All subjects</option>{subjectId&&!selectedSubject&&<option value={subjectId}>Selected subject</option>}{taxonomy?.subjects.map(subject=><option key={subject.id} value={subject.id}>{learningSubjectTitle(subject.id,subject.title,collectionId)} · {subject.questions}</option>)}</select></label>
+      <label>Topic<select value={topicId} onChange={e=>taxonomyFilter('topic_id',e.target.value)} disabled={!subjectId}><option value="">All topics</option>{selectedTopic?.id&&!selectedSubject?.topics.some(t=>t.id===topicId)&&<option value={topicId}>Selected topic</option>}{selectedSubject?.topics.map(topic=><option key={topic.id} value={topic.id}>{topic.title} · {topic.questions}</option>)}</select></label>
+      <label>Status<select aria-label="Question status" value={answerStatus?'answer:'+answerStatus:studyStatus!=='all'?'study:'+studyStatus:''} onChange={e=>chooseStatus(e.target.value)}><option value="">All questions</option><optgroup label="Your study">{studyStatusOptions.filter(([v])=>v!=='all').map(([v,label])=><option key={v} value={'study:'+v}>{label}</option>)}</optgroup><optgroup label="Answer source">{[['official','Official keys'],['verified','Verified answers'],['needs-review','Needs review'],['unsolved','No answer yet'],['written','Written questions']].map(([v,label])=><option key={v} value={'answer:'+v}>{label}</option>)}</optgroup></select></label>
+      <label>Search<input maxLength={120} value={search} onChange={e=>update(setSearch,e.target.value)} placeholder="Question or option text"/></label>
     </div>
+    {paperId&&<nav aria-label="Paper navigation" className="browse-paper-navigation">
+      <button type="button" disabled={paperPosition<=0} onClick={()=>choosePaper(representativeBooklet(paperGroups[paperPosition-1]).id)} className="min-h-11 text-link disabled:opacity-40">← Previous paper</button>
+      <span className="min-w-0 flex-1 truncate text-center" title={selectedPaper?paperIdentity(selectedPaper).title:'Selected paper'}>{selectedPaper?paperIdentity(selectedPaper).title:'Selected paper'}</span>
+      <button type="button" disabled={paperPosition<0||paperPosition>=paperGroups.length-1} onClick={()=>choosePaper(representativeBooklet(paperGroups[paperPosition+1]).id)} className="min-h-11 text-link disabled:opacity-40">Next paper →</button>
+      <Link to={sourceCollections?'/group-b?'+new URLSearchParams({collection:collectionId,view:'papers'}):`/exams/${collectionId}?view=papers`} className="inline-flex min-h-11 items-center text-link">All papers</Link>
+      {selectedPaper?.source_pdf_url&&<a href={selectedPaper.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-link underline">PDF ↗</a>}
+    </nav>}
+    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-[12px] text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div>}
     {subjectId==='gk-gs'&&topicId==='gk-gs:science'&&selectedTopic&&<nav aria-label="Science branches" className="mb-3 flex flex-wrap items-center gap-2">
       <span className="mr-1 text-[12px] font-semibold text-secondary">Science:</span>
       {[{id:'',title:'All Science'},...selectedTopic.subtopics].map(branch=><button key={branch.id} type="button" aria-pressed={subtopicId===branch.id} onClick={()=>taxonomyFilter('subtopic_id',branch.id)} className={`min-h-11 rounded-pill border px-4 text-[12px] font-semibold ${subtopicId===branch.id?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>{branch.title}</button>)}
     </nav>}
     <details className="rounded-[12px] border border-hairline bg-card px-3 py-1">
       <summary className="min-h-11 cursor-pointer py-3 text-[13px] font-semibold">More filters &amp; answer layout{[paperId&&'paper',sectionPath&&'section',subtopicId&&'subtopic',answerStatus&&answerStatus,pool!==initialPool&&pool].filter(Boolean).length?` · ${[paperId&&'paper selected',sectionPath&&'section selected',subtopicId&&'subtopic selected',answerStatus,pool!==initialPool&&pool].filter(Boolean).join(' · ')}`:''}</summary>
-    <nav aria-label="Answer verification lists" className="mb-4 flex flex-wrap gap-2">{[['','All questions'],['needs-review','Needs review'],['verified','Verified answers'],['official','Official keys'],['unsolved','No answer yet']].map(([value,label])=><button type="button" key={value} aria-pressed={(answerStatus||'')===value} onClick={()=>setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('answer_status',value);else next.delete('answer_status');next.set('pool','all');next.delete('offset');return next},{replace:true})} className={'min-h-11 rounded-pill border px-4 text-[13px] '+((answerStatus||'')===value?'border-ink bg-ink text-paper':'border-hairline bg-card')}>{label}</button>)}</nav>
+    {order==='paper'?<p className="py-3 text-[13px] text-secondary">Questions follow the order printed in this paper.</p>:<div className="flex flex-wrap items-end gap-3 py-3"><label className="text-[12px] font-semibold">Question order<select aria-label="Question order" value={order} onChange={e=>filter('order',e.target.value)} className="ml-2 min-h-11 rounded-lg border border-hairline bg-card px-3 text-[13px]"><option value="mixed">Mixed order</option><option value="repeated">Most repeated first</option></select></label>{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 text-[13px] text-link">Shuffle again</button>}</div>}
     <AnswerLayoutControl/>
-    <div className={`${combined?'cp-filters':'grid gap-3 rounded-[14px] border border-hairline bg-card p-4 sm:grid-cols-2 lg:grid-cols-5'}`}>
+    {paperPosition>=0&&paperGroups[paperPosition].papers.length>1&&<details className="mt-2 text-[12px] text-secondary"><summary className="min-h-11 cursor-pointer py-3">Booklet originals · {selectedPaper?bookletLabel(selectedPaper):'selected source'}</summary><div className="flex flex-wrap gap-3">{paperGroups[paperPosition].papers.map(p=><button type="button" key={p.id} onClick={()=>choosePaper(p.id)} aria-pressed={paperId===p.id} className="min-h-11 rounded-lg border border-hairline px-3 text-link">{bookletLabel(p)}</button>)}</div></details>}
+    <div className="grid gap-3 py-3 sm:grid-cols-2 lg:grid-cols-3">
       <label className="text-[12px] font-semibold">Subtopic<select value={subtopicId} onChange={e=>taxonomyFilter('subtopic_id',e.target.value)} disabled={!topicId} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px] disabled:opacity-60"><option value="">All subtopics</option>{selectedTopic?.subtopics.map(subtopic=><option key={subtopic.id} value={subtopic.id}>{subtopic.title} · {subtopic.questions}</option>)}</select></label>
-      <label hidden={!!studyArea} className="text-[12px] font-semibold">Section<select disabled={metadataLoading} value={sectionPath} onChange={(e)=>update(setSectionPath,e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="">All sections</option>{sections.map((s)=><option key={s.path} value={s.path}>{s.title}</option>)}</select></label>
-      <label className="text-[12px] font-semibold">Paper<select disabled={metadataLoading} value={paperId} onChange={(e)=>update(setPaperId,e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="">All papers</option>{paperId&&!papers.some(p=>p.id===paperId)&&<option value={paperId}>Selected paper · loading details</option>}{papers.map((p)=><option key={p.id} value={p.id}>{p.year?`${p.year} · `:''}{p.id.split('/').pop()?.replace(/\.pdf$/i,'')||p.title}</option>)}</select></label>
       <label className="text-[12px] font-semibold">Answer pool<select value={pool} onChange={(e)=>update(setPool,e.target.value as typeof pool)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="all">All questions</option><option value="scorable">Verified keys only</option><option value="practice">Questions with an answer</option></select></label>
 
     </div>
@@ -198,7 +214,7 @@ export function ModuleProgressPanel({ collectionId, collectionTitle, totalScorab
     <div className="learning-summary-grid">{[
       ['Answer attempts', progress.answered.toLocaleString('en-IN'), `${progress.unique_questions.toLocaleString('en-IN')} distinct questions`, true],
       ['Accuracy', started ? `${progress.accuracy}%` : '—', started ? `${progress.correct.toLocaleString('en-IN')} correct answers` : 'Appears after your first answer', false],
-      ['Current streak', started ? `${progress.current_streak} days` : '—', started ? 'Consecutive days with practice' : 'Build a streak with regular practice', false],
+      [progress.streak_basis==='device activity'?'Device activity':'Current streak', started ? `${progress.current_streak} days` : '—', started ? progress.streak_basis==='device activity'?'Consecutive days on this device':'Your account learning streak across exams' : 'Build a streak with regular practice', false],
       ['Active days', `${progress.active_days_30} / 30`, 'Days with practice in the last month', false],
     ].map(([label, value, foot, primary]) => <article key={String(label)} className={`learning-summary-card ${primary ? 'learning-summary-primary' : ''}`}><span>{label}</span><strong>{value}</strong><div className="learning-summary-foot">{foot}</div></article>)}</div>
 

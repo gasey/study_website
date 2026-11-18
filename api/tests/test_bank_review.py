@@ -263,6 +263,8 @@ def test_complete_file_sync_receipt_credit_and_replay(client,actor,database,tmp_
     worker.acknowledge(pub,receipt) # lost response retry
     assert conn.execute('SELECT state FROM bank_contributions WHERE id=%s',(cid,)).fetchone()[0]=='published'
     assert conn.execute('SELECT sum(amount),count(*) FROM contribution_credit WHERE publication_id=%s',(pid,)).fetchone()==(10,1)
+    original_reward=conn.execute('SELECT l.id,l.xp,l.points FROM contribution_reward_claims c JOIN reward_ledger l ON l.id=c.ledger_id WHERE c.publication_id=%s',(pid,)).fetchone()
+    assert original_reward and original_reward[1:]==(40,10)
     assert conn.execute('SELECT count(*) FROM review_notifications WHERE event_key=%s',(pid+':notice',)).fetchone()[0]==1
     assert conn.execute("SELECT count(*) FROM contribution_events WHERE contribution_id=%s AND action='published'",(cid,)).fetchone()[0]==1
     # A later ordinary bank sync preserves the newly published correction.
@@ -296,6 +298,7 @@ def test_complete_file_sync_receipt_credit_and_replay(client,actor,database,tmp_
     assert conn.execute("SELECT answer_text FROM canonical_questions WHERE id='cq_test'").fetchone()[0]=='B'
     assert conn.execute('SELECT state FROM bank_contributions WHERE id=%s',(cid,)).fetchone()[0]=='reverted'
     assert conn.execute('SELECT sum(amount) FROM contribution_credit WHERE contribution_id=%s',(cid,)).fetchone()[0]==0
+    assert conn.execute('SELECT l.xp,l.points,l.reverses_id FROM contribution_reward_reversals r JOIN reward_ledger l ON l.id=r.ledger_id WHERE r.original_ledger_id=%s',(original_reward[0],)).fetchone()==(-40,-10,original_reward[0])
     assert client.get('/api/community/contributors').json()==[]
 
 
@@ -340,6 +343,7 @@ def test_original_mcq_publication_and_public_privacy(client,actor,database,tmp_p
     monkeypatch.setattr(worker,'remote',local)
     worker.verify_live(receipt,pub['manifest']);worker.acknowledge(pub,receipt);worker.acknowledge(pub,receipt)
     assert conn.execute('SELECT sum(amount),count(*) FROM contribution_credit WHERE publication_id=%s',(pid,)).fetchone()==(25,1)
+    assert conn.execute('SELECT l.xp,l.points FROM contribution_reward_claims c JOIN reward_ledger l ON l.id=c.ledger_id WHERE c.publication_id=%s',(pid,)).fetchone()==(20,5)
     row=conn.execute('SELECT canonical_id FROM appearances WHERE id=%s',(receipt['appearance_id'],)).fetchone();assert row
     assert conn.execute('SELECT count(*) FROM v_scorable WHERE id=%s',(row[0],)).fetchone()[0]==0
     h=actor('author')

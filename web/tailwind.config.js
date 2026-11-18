@@ -45,13 +45,13 @@ export default {
         link:     { DEFAULT: rgb('--ism-link-rgb') },                   // "View original ↗"
       },
       fontFamily: {
-        display: ['Newsreader', 'Georgia', 'serif'],
-        sans: ['"Public Sans"', 'system-ui', 'sans-serif'],
+        display: ['Figtree', 'system-ui', 'sans-serif'],
+        sans: ['Figtree', 'system-ui', 'sans-serif'],
         mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
         paperdoc: ['"Times New Roman"', 'Times', 'serif'], // original-paper rendering
       },
-      borderRadius: { card: '10px', panel: '8px', pill: '999px' },
-      maxWidth: { shell: '100%' },
+      borderRadius: { card: '20px', panel: '18px', pill: '999px' },
+      maxWidth: { shell: '1320px' },
     },
   },
   plugins: [],

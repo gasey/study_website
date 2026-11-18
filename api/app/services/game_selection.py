@@ -54,6 +54,10 @@ PILLAR_MATCH_IDS={
     ),
 }
 
+# Daily Five is the same five questions for everyone, so its mix is fixed here
+# rather than taken from a stream preset. Sums to MODES['daily'][0].
+DAILY_QUOTAS={'gk_gs':3,'english':1,'everyday_math':1}
+
 FOUNDATION_PRESETS={
     'arts-comfort':{
         'id':'arts-comfort',
@@ -160,6 +164,7 @@ async def resolve(cur,selection,mode):
         if not sel.get('preset_id') or sel['preset_id'] not in FOUNDATION_PRESETS or sel.get('area_id') or sel.get('collection_id') or sel.get('section'):
             raise HTTPException(422,'Choose one stream or foundation preset')
     if mode=='cup'and(sel['kind']!='mixed'or sel['excluded_areas']):raise HTTPException(422,'The weekly cup uses its fixed mixed set; personal exclusions do not apply')
+    if mode=='daily'and(sel['kind']!='mixed'or sel['excluded_areas']):raise HTTPException(422,'Daily Five uses the same non-technical set for everyone; personal exclusions do not apply')
     ctx={'schema':1,'source_scope':'mizoram-recruitment','source_label':'MPSC & Mizoram recruitment','selector':sel,'mode':mode,'rules':{'questions':g.MODES[mode][0],'round_seconds':g.MODES[mode][1],'total_seconds':60 if mode=='speed'else g.MODES[mode][0]*g.MODES[mode][1],'scoring':'official-key-v1'},'label':'Mixed subjects','match_ids':[],'excluded_match_ids':[],'excluded_labels':[],'paper_ids':None,'pins':[],'excludes':[],'section_subject':None,'section_topic':None}
     if sel['kind']=='foundation':
         preset=FOUNDATION_PRESETS[sel['preset_id']]
@@ -185,6 +190,14 @@ async def resolve(cur,selection,mode):
             'courage_pillar':preset['courage_pillar'],
             'quotas':quotas,
         }
+    if mode=='daily':
+        union=[]
+        for p_key in DAILY_QUOTAS:union.extend(PILLAR_MATCH_IDS[p_key])
+        ctx['match_ids']=sorted(set(union))
+        ctx['foundation_quotas']=dict(DAILY_QUOTAS)
+        ctx['label']='Daily Five · Non-Technical Core'
+        ctx['source_label']='MPSC Shared Non-Technical Core (GK/GS · English · Everyday Maths)'
+        ctx['rules']['scoring']='daily-five-v1'
     if sel['kind']=='exam':
         await cur.execute("SELECT id,title,live_version FROM collections WHERE id=%s AND kind='exam' AND visibility='public' AND exam_scope_id='mizoram-recruitment'",(sel['collection_id'],));exam=await cur.fetchone()
         if not exam:raise HTTPException(409,'This exam is not available for Mizoram games')

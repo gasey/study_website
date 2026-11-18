@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha384-cxOPjt7s7Iz04uaHJceBmS+qpjv2JkIHNVcuOrM+YHwZOmJGBXI00mdUXEq65HTH" crossorigin="anonymous"></script>
+<style>
+html,body{margin:0;height:100%;background:#F3F5FA;font-family:Figtree,system-ui,sans-serif}
+#map{height:100%}
+.leaflet-container{background:#CFE8EF}
+.leaflet-control-attribution{font-size:9px}
+.pin{display:flex;flex-direction:column;align-items:center;gap:2px;transform:translate(-50%,-100%)}
+.pin b{background:#0E7490;color:#fff;font-size:11px;font-weight:800;padding:2px 7px;border-radius:999px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.25)}
+.pin i{width:9px;height:9px;border-radius:999px;background:#0E7490;border:2px solid #fff}
+</style>
+</head>
+<body>
+<div id="map"></div>
+<script>
+const map = L.map('map', { zoomControl: false, attributionControl: true }).setView([23.3, 92.85], 7);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors', maxZoom: 17 }).addTo(map);
+const places = [
+  ['Phawngpui', 22.633, 93.03],
+  ['Tlawng', 23.72, 92.70],
+  ['Dampa', 23.60, 92.40],
+  ['Aizawl', 23.727, 92.717],
+];
+for (const [name, lat, lng] of places) {
+  L.marker([lat, lng], { icon: L.divIcon({ className: '', html: '<span class="pin"><b>' + name + '</b><i></i></span>' }) }).addTo(map);
+}
+const q = new URLSearchParams(location.search);
+if (q.get('zoom')) map.setZoom(Number(q.get('zoom')));
+</script>
+</body>
+</html>

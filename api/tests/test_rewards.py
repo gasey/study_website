@@ -27,7 +27,7 @@ def test_rewards_unique_question_cap_guest_and_provenance(client,learner,databas
     attempt(conn,user,source='derived');attempt(conn,user,correct=False)
     wallet=client.get('/api/rewards/me').json();assert wallet['points']==1 and wallet['lifetime_xp']==10
     for _ in range(35):attempt(conn,user)
-    wallet=client.get('/api/rewards/me').json();assert wallet['points']==30 and wallet['daily_xp']==300
+    wallet=client.get('/api/rewards/me').json();assert wallet['points']==12 and wallet['daily_xp']==300
     guest='dev_01234567-0123-0123-0123-012345678901'
     conn.execute("INSERT INTO users(id,handle) VALUES(%s,%s) ON CONFLICT DO NOTHING",(guest,guest))
     attempt(conn,guest)
@@ -42,9 +42,12 @@ def test_visibility_rank_and_no_client_award(client,learner,database):
     assert client.post('/api/rewards/award',headers=h,json={'points':99999}).status_code==404
     assert client.post('/api/rewards/visibility',headers=h,json={'public':False}).status_code==200
 
-def test_redemption_disabled_atomic_retry_expiry_and_paid_separation(client,learner,database):
+def test_redemption_disabled_atomic_retry_expiry_and_paid_separation(client,learner,database,monkeypatch):
+    from app.services import reward_economy
+    async def launched(cur):return {'catalog_ready':True}
+    monkeypatch.setattr(reward_economy,'feature_gates',launched)
     user,h=learner;conn=database[1];key=uuid4().hex;h={**h,'Idempotency-Key':key}
-    body={'catalog_id':'pro-week','version':1}
+    body={'catalog_id':'pro-week','version':2}
     assert client.post('/api/rewards/redeem',headers=h,json=body).status_code==409
     # Synthetic points only. Real API has no arbitrary award path.
     conn.execute("INSERT INTO reward_ledger(user_id,event_key,kind,points,xp,note) VALUES(%s,%s,'adjustment',2000,100,'Synthetic reward wallet')",(user,key))
@@ -54,24 +57,27 @@ def test_redemption_disabled_atomic_retry_expiry_and_paid_separation(client,lear
         with ThreadPoolExecutor(max_workers=2) as pool:res=list(pool.map(lambda _:client.post('/api/rewards/redeem',headers=h,json=body),range(2)))
         assert all(r.status_code==200 for r in res),[r.text for r in res]
         assert res[0].json()['id']==res[1].json()['id']
-        wallet=client.get('/api/rewards/me').json();assert wallet['points']==1000 and wallet['lifetime_xp']==100
+        wallet=client.get('/api/rewards/me').json();assert wallet['points']==1600 and wallet['lifetime_xp']==100
         assert conn.execute('SELECT account_has_pro(%s)',(user,)).fetchone()[0] is True
         assert client.get('/api/auth/session').json()['plan_code']=='pro'
         billing=client.get('/api/billing/me').json();assert billing['plan_code']=='pro' and billing['plan_status']=='rewarded' and len(billing['reward_access'])==1
         profile=client.get('/api/me/profile').json();assert profile['plan_code']=='pro' and profile['plan_status']=='rewarded'
         assert conn.execute('SELECT plan_code FROM users WHERE id=%s',(user,)).fetchone()[0]=='free'
         assert client.post('/api/rewards/redeem',headers={**h,'Idempotency-Key':uuid4().hex},json=body).status_code==409
-        assert client.post('/api/rewards/redeem',headers=h,json={**body,'version':2}).status_code==409
+        assert client.post('/api/rewards/redeem',headers=h,json={**body,'version':3}).status_code==409
     finally:conn.execute("UPDATE reward_catalog SET enabled=false WHERE id='pro-week'")
 
 def test_catalog_owner_only_and_stale_price(client,actor):
     h=actor('reviewer1');assert client.get('/api/admin/bank/rewards').status_code==403
-    h=actor('owner');row=client.get('/api/admin/bank/rewards').json()[0]
+    h=actor('owner');row=next(o for o in client.get('/api/admin/bank/rewards').json() if o['id']=='pro-week')
     response=client.post('/api/admin/bank/rewards/pro-week',headers=h,json={'version':row['version'],'points':1000,'enabled':False,'reason':'Synthetic policy review only'})
     assert response.status_code==200
     assert client.post('/api/admin/bank/rewards/pro-week',headers=h,json={'version':row['version'],'points':1000,'enabled':True,'reason':'Synthetic stale catalog change'}).status_code==409
 
-def test_distinct_redemptions_cannot_double_spend_and_expiry(client,learner,database):
+def test_distinct_redemptions_cannot_double_spend_and_expiry(client,learner,database,monkeypatch):
+    from app.services import reward_economy
+    async def launched(cur):return {'catalog_ready':True}
+    monkeypatch.setattr(reward_economy,'feature_gates',launched)
     from concurrent.futures import ThreadPoolExecutor
     user,h=learner;conn=database[1];offer='test-redeem-'+uuid4().hex
     conn.execute('INSERT INTO reward_catalog(id,title,points,pro_days,enabled) VALUES(%s,\'Synthetic reward\',1000,1,true)',(offer,))

@@ -87,7 +87,16 @@ def prepare(bank,publications,input_sha,root,registered_final_keys=None,*,comput
                         or len((p['patch']['explanation']or'').strip())<20):
                     raise ValueError('A source warning requires explicit answer withdrawal')
                 allowed=allowed|{'explanation'}
-            if set(p['patch'])-allowed or p['patch'].get('answerIndex')is not None:raise ValueError('Source batches may clear an untrusted index but cannot assign answers or provenance')
+            if set(p['patch'])-allowed:raise ValueError('Source batches cannot assign answers or provenance')
+            mapped_index=p['patch'].get('answerIndex')
+            if mapped_index is not None:
+                before=m['baseline']['record'];old_options=before.get('options',[])
+                new_options=p['patch'].get('options',old_options)
+                old_index=before.get('answerIndex')
+                if (type(mapped_index)is not int or type(old_index)is not int
+                        or not 0<=old_index<len(old_options) or not 0<=mapped_index<len(new_options)
+                        or new_options[mapped_index]!=old_options[old_index]):
+                    raise ValueError('Source batches may remap only to the same existing answer text; they cannot change the answer')
         elif p['kind']=='defect':
             opts=m['baseline']['record'].get('options',[])
             flag_unresolved=(p['patch'].get('sourceDefect')=='unresolved-source'
@@ -277,8 +286,11 @@ def publish(ids,dry_run=False,taxonomy_run=None):
             if journal and prepared!=journal:raise ValueError('Prepared output changed')
             journal=prepared
             if dry_run:print(json.dumps({'dry_run':True,**journal},indent=2));return
-            compressed=all(p['manifest']['payload']['kind']=='taxonomy' for p in pubs)
-            backup=w.BANK.parent/'review-backups'/(current+('.json.gz' if compressed else '.json'));backup.parent.mkdir(exist_ok=True)
+            # Keep every bank snapshot compressed. Answer batches can run for
+            # thousands of records too, and raw snapshots quickly exhaust the
+            # publisher host's disk. Readers accept both .json and .json.gz.
+            compressed=True
+            backup=w.BANK.parent/'review-backups'/(current+'.json.gz');backup.parent.mkdir(exist_ok=True)
             if not backup.exists():
                 fd=os.open(backup,os.O_CREAT|os.O_EXCL|os.O_WRONLY,0o600)
                 with os.fdopen(fd,'wb')as stream:

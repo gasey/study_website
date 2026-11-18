@@ -39,7 +39,8 @@ export default function AvatarArt({
         />
         <AvatarFace look={c} />
       </g>
-      {c.frame !== "None" && (
+      {c.frame === 'Orbit' && <g fill="none" stroke="#5262AD"><circle cx="60" cy="60" r="57" strokeWidth="2" strokeDasharray="7 5"/><ellipse cx="60" cy="60" rx="58" ry="48" strokeWidth="2" transform="rotate(-28 60 60)"/><circle cx="11" cy="36" r="4" fill="#5262AD" stroke="white"/></g>}
+      {c.frame !== "None" && c.frame !== 'Orbit' && (
         <circle
           cx="60"
           cy="60"

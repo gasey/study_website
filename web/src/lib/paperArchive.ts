@@ -3,6 +3,7 @@ export type PaperOrder='newest'|'oldest'|'exam-asc'|'exam-desc'
 export function paperOrder(value:string|null):PaperOrder {
  return value==='oldest'||value==='exam-asc'||value==='exam-desc'?value:'newest'
 }
+export function paperLayout(value:string|null){return value==='cards'?'cards':'list'}
 /** Sort before pagination; unknown years stay last in either date direction. */
 export function sortArchivePapers(papers:CollectionPaper[],order:PaperOrder){
  const name=(p:CollectionPaper)=>p.exam?.trim()||p.title

@@ -1,34 +1,72 @@
-import {useEffect,useState} from 'react'
+import {lazy,Suspense,useEffect,useState} from 'react'
 import {Link,Navigate,useSearchParams} from 'react-router-dom'
-import {currentMock,type MockSession} from '../lib/api'
+import {currentMock,listCollections,isLaterExamCollection,getExamProgress,getExamBookmarks,getProgress,setPrimaryExam,type MockSession,type Collection,type ExamProgressSummary,type Progress} from '../lib/api'
 import {reviewSession} from '../lib/review'
 import {learningRequest,type ResumePage,type ResumeItem} from '../lib/learning'
 import {accountContext} from '../lib/accountContext'
 import {useExamScope} from '../lib/examScope'
-import StudyDashboardPanels from '../components/StudyDashboardPanels'
-import QuestionDiscovery from '../components/QuestionDiscovery'
+import {choosePreferredExam,usePreferredExam} from '../lib/preferredExam'
+import {examPresentation} from '../lib/examPresentation'
 import QuickStudy from '../components/QuickStudy'
+import TodayCard from '../components/TodayCard'
+import {mockResumePath} from '../lib/sharedTests'
+const Feed=lazy(()=>import('./Feed'))
 
+type StudyData={exams:Collection[];examProgress:ExamProgressSummary[];saved:string[];progress:Progress|null;resume:ResumeItem|null;mock:MockSession|null;loading:boolean;error:boolean}
+const EMPTY:StudyData={exams:[],examProgress:[],saved:[],progress:null,resume:null,mock:null,loading:true,error:false}
 export default function StudyHome(){
- const [params]=useSearchParams(),scope=useExamScope()
- const [discoveryOpen,setDiscoveryOpen]=useState(false)
- const [resume,setResume]=useState<ResumeItem|null>(null),[mock,setMock]=useState<MockSession|null>(null),[loading,setLoading]=useState(true),[error,setError]=useState(false)
- useEffect(()=>{let live=true;setLoading(true);setError(false);setResume(null);setMock(null);Promise.allSettled([currentMock(),accountContext().then(a=>a.authenticated?reviewSession().then(s=>learningRequest<ResumePage>('/resume?exam_scope='+scope,s.user_id)):null)]).then(([m,r])=>{if(!live)return;if(m.status==='fulfilled')setMock(m.value);if(r.status==='fulfilled'&&r.value)setResume(r.value.items.find(i=>/^\/(bank|exams|group-b|english|mizo|arithmetic|essay|library|desk)([/?#]|$)/.test(i.url))||null);setError(m.status==='rejected'||r.status==='rejected');setLoading(false)});return()=>{live=false}},[scope])
- // Keep previously shared community links working after separating the two spaces.
- if(params.has('section')||params.has('tab')||params.has('discussion')){const next=new URLSearchParams(params);next.delete('section');return <Navigate replace to={'/community?'+next}/>}
- const mp=new URLSearchParams();if(mock?.paper_id)mp.set('paper',mock.paper_id);else if(mock?.section_path)mp.set('section',mock.section_path);if(mock?.answer_mode==='derived-practice')mp.set('mode','derived')
- const target=mock?`/exams/${mock.collection_id}/mock?${mp}`:resume?.url||'/exams'
- return <div className="mx-auto max-w-shell px-4 pb-12 pt-5 sm:px-6 sm:pt-7">
-  <div className="mb-5 flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-[10px] uppercase tracking-[.14em] text-practice-dark">Your learning space</p><h1 className="mt-1.5 font-display text-[30px] leading-tight sm:text-[38px]">Ready for your next step?</h1></div><Link to="/desk" className="ism-tactile-btn inline-flex min-h-11 items-center rounded-pill border border-hairline bg-card px-4 text-[13px] font-semibold text-link shadow-sm hover:border-practice">My study desk →</Link></div>
-  <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1fr)_310px]">
-   <div className="min-w-0">{loading&&<p role="status" className="mb-3 text-xs text-secondary">Checking your saved activity…</p>}{(mock||resume)&&<section aria-labelledby="next-step" className="relative overflow-hidden rounded-[16px] border border-white/10 bg-[#141622] p-5 text-[#F5F0E6] shadow-[0_12px_30px_-6px_rgba(15,23,42,.25)] sm:p-6" style={{backgroundImage:'radial-gradient(ellipse 65% 65% at 95% 10%, rgba(216, 163, 58, 0.22), transparent), radial-gradient(ellipse 50% 50% at 10% 100%, rgba(37, 87, 214, 0.2), transparent)'}}><p className="inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[.12em] text-[#FBBF24]"><span className="h-2 w-2 animate-pulse rounded-full bg-[#FBBF24]" aria-hidden="true"/>{mock?'Test in progress':resume?'Continue where you left off':'Start with your exam'}</p><h2 id="next-step" className="mt-2 max-w-xl font-display text-[25px] leading-tight text-white sm:text-[30px]">{loading?'Getting your study space ready…':mock?'Your next question is waiting.':resume?.title||'One focused step at a time.'}</h2><p className="mt-2 max-w-xl text-[13px] leading-relaxed text-[#D9D0BF]">{mock?`${mock.questions.length} questions · ${mock.seconds_remaining>0?Math.ceil(mock.seconds_remaining/60)+' minutes remaining':'time elapsed — open to finish'}`:resume?.detail||'Choose an exam to find its subjects, past papers and mock tests.'}</p><div className="mt-4 flex flex-wrap gap-3"><Link to={target} className="ism-tactile-btn inline-flex min-h-11 items-center rounded-pill bg-[#D8A33A] px-5 py-3 text-[14px] font-semibold text-[#14130F] shadow-sm hover:brightness-105">{mock?'Resume test':resume?'Continue studying':'Choose an exam'} →</Link><Link to="/library?library_view=practice" className="inline-flex min-h-11 items-center px-2 text-[13px] text-[#F5F0E6] underline underline-offset-4 hover:text-white">Explore questions</Link></div>{error&&<p role="status" className="mt-3 text-xs text-[#D9D0BF]">Some saved activity couldn’t load. Your exams and library are still available.</p>}</section>}
-    {!mock&&<div className={resume?"mt-4":""}><QuickStudy/></div>}
-    {error&&!mock&&!resume&&<p role="status" className="mt-2 text-xs text-secondary">Saved activity couldn’t load. You can still choose an exam or open your study desk.</p>}
-    <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">{[{to:'/revision',title:'Revise & remember',text:'Saved questions and mistakes.',label:'Open revision',accent:'bg-community'},{to:'/library',title:'Study a subject',text:'Topics, reading and practice.',label:'Open library',accent:'bg-practice'}].map(c=><Link key={c.to} to={c.to} className="ism-card-surface group min-w-0 rounded-[14px] border border-hairline bg-card p-5 hover:border-practice"><span className={`mb-3 block h-1.5 w-8 rounded-pill ${c.accent}`} aria-hidden="true"/><h2 className="font-display text-[23px] leading-tight group-hover:text-link">{c.title}</h2><p className="mt-2 text-[13px] leading-relaxed text-secondary">{c.text}</p><span className="mt-2 inline-flex min-h-11 items-center gap-1 text-[12px] font-semibold text-link">{c.label} <span aria-hidden="true" className="transition-transform duration-150 group-hover:translate-x-1">→</span></span></Link>)}</div>
-    <details className="ism-card-surface mt-4 rounded-[14px] border border-hairline bg-card px-5" onToggle={e=>setDiscoveryOpen(e.currentTarget.open)}><summary className="min-h-11 cursor-pointer py-3.5 text-[13px] font-semibold">Explore practice topics</summary>{discoveryOpen&&<QuestionDiscovery compact/>}</details>
-   </div>
-   <StudyDashboardPanels/>
+ const [params]=useSearchParams(),scope=useExamScope(),[retry,setRetry]=useState(0)
+ const [data,setData]=useState<StudyData>(EMPTY),[examError,setExamError]=useState(''),[savingExam,setSavingExam]=useState(false)
+ async function chooseExam(id:string){setSavingExam(true);setExamError('');try{if((await accountContext()).authenticated)await setPrimaryExam(id);choosePreferredExam(id)}catch(e){setExamError((e as Error).message)}finally{setSavingExam(false)}}
+ useEffect(()=>{let live=true;setData(EMPTY)
+  const patch=(values:Partial<StudyData>)=>{if(live)setData(previous=>({...previous,...values}))}
+  const requests=[
+   listCollections().then(rows=>patch({exams:rows.filter(c=>c.kind==='exam'&&!isLaterExamCollection(c))})),
+   getProgress().then(progress=>patch({progress})),
+   getExamProgress().then(examProgress=>patch({examProgress})),
+   getExamBookmarks().then(saved=>{if(live){patch({saved:saved.collection_ids});if(saved.primary_collection_id)choosePreferredExam(saved.primary_collection_id)}}),
+   currentMock().then(mock=>patch({mock})),
+   accountContext().then(a=>a.authenticated?reviewSession().then(s=>learningRequest<ResumePage>('/resume?exam_scope='+scope,s.user_id)).then(r=>patch({resume:r.items.find(i=>i.kind!=='desk'&&/^\/(bank|exams|group-b|english|mizo|arithmetic|essay|library|desk|tests)([/?#]|$)/.test(i.url))||null})):undefined),
+  ]
+  Promise.allSettled(requests).then(results=>patch({loading:false,error:results.some(r=>r.status==='rejected')}))
+  return()=>{live=false}
+ },[scope,retry])
+ useEffect(()=>{const refresh=()=>{setData(EMPTY);setRetry(n=>n+1)};window.addEventListener('ism-auth-change',refresh);return()=>window.removeEventListener('ism-auth-change',refresh)},[])
+ const exam=usePreferredExam(data.exams),examProgress=data.examProgress.find(p=>p.collection_id===exam?.id)
+ const coverage=exam&&examProgress&&exam.questions?Math.min(100,Math.round(examProgress.unique_questions/exam.questions*100)):0
+ const p=data.progress
+ const subjects=[...(p?.subjects||[])].sort((a,b)=>b.answered-a.answered).slice(0,6)
+ const examTitle=exam?exam.id==='udc'?'UDC':exam.id==='ldc'?'LDC':exam.id==='combined-prelims'?'Prelims':exam.title:'Choose your exam'
+ const next=data.mock?mockResumePath(data.mock):data.resume?.url
+ const today=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Kolkata'}).format(new Date())
+ const week=p?.daily_activity.filter(d=>d.day>=new Date(Date.parse(today+'T12:00:00Z')-6*86400000).toISOString().slice(0,10))||[]
+ const weekAnswers=week.reduce((n,d)=>n+d.answered,0),weekCorrect=week.reduce((n,d)=>n+d.correct,0)
+ // Previously shared community links retain their original destinations and filters.
+ if(params.has('section')||params.has('tab')||params.has('discussion')){const nextParams=new URLSearchParams(params);nextParams.delete('section');return <Navigate replace to={'/community?'+nextParams}/>}
+ return <div className="finna-page finna-home" data-screen="home">
+  <h1 className="sr-only">Your study home</h1>
+  <div className="finna-home-grid">
+   <aside className="finna-home-side" aria-label="Your exam and study plan">
+    <section className="finna-exam-hero" aria-labelledby="my-exam-title"><div className="finna-hero-head"><div className="min-w-0"><div className="finna-eyebrow">My exam</div><h2 id="my-exam-title" className="mt-1 text-[38px] font-black leading-none tracking-tight">{data.loading&&!exam?'Your exam':examTitle}</h2>{exam&&<p className="finna-exam-description">{exam.id==='udc'?'Upper Division Clerk':exam.id==='ldc'?'Lower Division Clerk':examPresentation(exam.id).category}</p>}</div>{data.exams.length>0?<label className="finna-hero-change relative">Change<select aria-label="Choose my exam" value={exam?.id||''} disabled={savingExam} onChange={e=>void chooseExam(e.target.value)} className="absolute inset-0 w-full cursor-pointer opacity-0">{data.exams.map(e=><option key={e.id} value={e.id}>{e.title}</option>)}</select></label>:<Link className="finna-hero-change" to="/exams">Find</Link>}</div>
+     <div className="finna-hero-stats"><div><strong>{exam?exam.questions.toLocaleString('en-IN'):'—'}</strong><small>questions in your exam bank</small></div><div><strong>{exam?coverage+'%':'—'}</strong><small>of bank answered</small></div></div><div className="finna-hero-actions"><Link to={exam?'/exams/'+exam.id+'?view=browse&pool=practice':'/exams'}>Continue</Link><Link to={exam?'/exams/'+exam.id+'?view=overview'+(exam.id==='udc'?'#udc-test-options':''):'/tests'}>Mock test</Link></div>
+    </section>
+    {examError&&<p role="alert" className="text-sm text-wrong">{examError}</p>}<TodayCard exams={data.exams}/>
+    <section className="finna-card finna-subject-card"><div className="finna-section-top"><h2>Subject progress</h2><Link to="/profile">All activity</Link></div>{subjects.length?subjects.map(s=><Link key={s.subject_id} to={'/bank?subject_id='+encodeURIComponent(s.subject_id)} className="finna-subject-row block"><div><span className="font-semibold">{s.subject}</span><span className="text-secondary">{s.answered?Math.round(s.correct/s.answered*100)+'%':'—'}</span></div><div className="finna-progress"><span style={{width:Math.min(100,s.answered?s.correct/s.answered*100:0)+'%'}}/></div></Link>):<p className="text-[13px] leading-relaxed text-secondary">{data.loading?'Loading your progress…':'Answer a few questions to see which subjects are getting stronger.'}</p>}</section>
+   </aside>
+   <section className="finna-home-stream" aria-label="Continue learning and community feed"><nav className="finna-home-phone-links" aria-label="Study and community"><Link to="/community">Community feed →</Link><Link to="/create">Create →</Link></nav>
+    <div className="finna-card finna-composer"><Link to="/community?tab=questions">Ask a doubt or share what you know</Link><Link to="/studio/new">Note</Link><Link to="/contribute/new?kind=new_question">MCQ</Link></div>
+    {next&&<section className="finna-card finna-resume"><div><span className="finna-eyebrow">{data.mock?'Test in progress':'Continue'}</span><h2 className="mt-1">{data.mock?'Your next question is waiting':data.resume?.title}</h2><p>{data.mock?`${data.mock.questions.length} questions · ${Math.max(0,Math.ceil(data.mock.seconds_remaining/60))} minutes remaining`:data.resume?.detail}</p></div><Link to={next} className="finna-btn">{data.mock?'Resume test':'Resume'}</Link></section>}
+    {!data.mock&&<QuickStudy compact initialExam={exam?.id}/>}
+    {data.error&&<p role="status" className="text-xs text-secondary">Some study information couldn’t load. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 font-semibold text-link underline">Try again</button></p>}
+    <Suspense fallback={<section className="finna-card" role="status">Loading your feed…</section>}><Feed embedded/></Suspense>
+   </section>
+   <aside className="finna-home-side finna-home-right" aria-label="Your activity and saved work">
+    <section className="finna-card"><div className="finna-section-top"><h2>This week</h2><Link to="/profile">Your progress</Link></div>{p?<><div className="finna-stat-row"><span>Questions answered</span><strong>{weekAnswers.toLocaleString('en-IN')}</strong></div><div className="finna-stat-row"><span>Accuracy</span><strong>{weekAnswers?Math.round(weekCorrect/weekAnswers*100)+'%':'—'}</strong></div><div className="finna-stat-row"><span>{p.streak_basis==='device activity'?'Device activity':'Current streak'}</span><strong>{p.current_streak} <span className="text-xs font-semibold">days</span></strong></div></>:<p className="text-[13px] text-secondary">{data.loading?'Loading your activity…':'Your activity is unavailable right now.'}</p>}</section>
+    <section className="finna-card"><div className="finna-section-top"><h2>Saved collections</h2><Link to="/library?library_view=saved">View all</Link></div>{data.saved.length?data.exams.filter(e=>data.saved.includes(e.id)).slice(0,4).map(e=><Link to={'/exams/'+e.id} key={e.id} className="finna-plan-item"><span className="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-learn-soft text-xs font-extrabold text-learn-dark">{examPresentation(e.id).short}</span><span className="text-[13px] font-semibold">{e.title}</span></Link>):<p className="text-[13px] leading-relaxed text-secondary">Save an exam or study material to find it here.</p>}<Link to="/revise" className="mt-3 inline-flex min-h-11 items-center text-[13px] font-bold text-link">Revise questions & mistakes →</Link></section>
+    <section className="finna-card"><h2>Make room for learning</h2><p className="mt-2 text-[13px] leading-relaxed text-secondary">One focused session. Your questions, notes and study companions in one place.</p><Link to="/desk" className="finna-btn finna-btn-quiet mt-4 w-full">Open study desk →</Link></section>
+    <section className="finna-card"><h2>Today's quests</h2><p className="mt-2 text-[13px] leading-relaxed text-secondary">See your daily learning goals and earned rewards.</p><Link to="/rewards" className="mt-3 inline-flex min-h-11 items-center text-[13px] font-bold text-rewards-dark">View your quests →</Link></section>
+    <div className="flex flex-wrap gap-3 px-1 text-xs font-semibold text-link"><Link to="/calendar">Exam calendar</Link><Link to="/chronicle?view=list">Chronicle</Link><Link to="/board">Leaderboard</Link></div>
+   </aside>
   </div>
-  <section className="mt-8 flex flex-wrap items-center justify-between gap-4 border-t border-hairline pt-6"><div><h2 className="font-display text-[25px]">Learn together.</h2><p className="mt-1 text-[13px] text-secondary">Discuss questions, read shared notes or contribute what you know.</p></div><div className="flex flex-wrap gap-3"><Link to="/community" className="ism-tactile-btn inline-flex min-h-11 items-center rounded-pill border border-hairline bg-card px-4 text-[13px] font-semibold hover:border-community">Visit community →</Link><Link to="/create" className="inline-flex min-h-11 items-center px-3 text-[13px] font-semibold text-link hover:underline">Create something</Link></div></section>
  </div>
 }

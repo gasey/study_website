@@ -4,7 +4,7 @@ import conftest
 from test_learning_workflows import official
 from test_learning_catalog import content
 if __name__=='__main__':
- databases=conftest.database.__wrapped__();database=next(databases)
+ databases=conftest.fresh_database();database=next(databases)
  clients=conftest.client.__wrapped__(database);client=next(clients)
  actor=conftest.actor.__wrapped__(client)
  q,a,p=official(database)

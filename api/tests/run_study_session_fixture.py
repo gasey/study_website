@@ -8,7 +8,7 @@ from psycopg.types.json import Jsonb
 from test_study_sessions import seed
 
 if __name__=='__main__':
-    databases=conftest.database.__wrapped__();database=next(databases)
+    databases=conftest.fresh_database();database=next(databases)
     clients=conftest.client.__wrapped__(database);next(clients);clients.close()
     from app.config import settings
     from app.main import app

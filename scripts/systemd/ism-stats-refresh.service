@@ -1,0 +1,17 @@
+[Unit]
+Description=Refresh Finna official statistical releases
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=www-data
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/srv/api/.venv/bin/python /srv/api/refresh-stats.py --include-hdi --watch-sources
+TimeoutStartSec=20min
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true

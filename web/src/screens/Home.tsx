@@ -12,7 +12,7 @@ const AREAS = [
 const COMMUNITY = [
   {color:'#B23A9A',softClass:'bg-community-soft',inkClass:'text-community-dark',title:'Questions & doubts',body:'Discuss the questions you are working through and learn from other explanations.',to:'/community?tab=questions'},
   {color:'#2D5BD0',softClass:'bg-practice-soft',inkClass:'text-practice-dark',title:'Website question bank',body:'Practise reviewed learner contributions, kept separate from the MPSC paper bank.',to:'/website-bank'},
-  {color:'#B26B00',softClass:'bg-exams-soft',inkClass:'text-exams-dark',title:'Important Days',body:'Connect verified dates and annual themes to relevant practice questions.',to:'/important-days'},
+  {color:'#B26B00',softClass:'bg-exams-soft',inkClass:'text-exams-dark',title:'Important dates & events',body:'Find observances, battles and milestones from the question bank.',to:'/important-days'},
   {color:'#7B45B8',softClass:'bg-learn-soft',inkClass:'text-learn-dark',title:'Notes & lessons',body:'Read shared study materials and save useful resources for later.',to:'/library?library_view=reading'},
 ]
 
@@ -50,7 +50,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-paper"><a href="#landing-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:rounded-lg focus:bg-paper focus:p-3 focus:text-ink">Skip to content</a>
+    <div className="finna-landing min-h-screen bg-paper"><a href="#landing-content" className="sr-only focus:not-sr-only focus:absolute focus:z-[80] focus:rounded-lg focus:bg-paper focus:p-3 focus:text-ink">Skip to content</a>
       <header
         className="relative overflow-hidden bg-[#12131A] text-[#F5F0E6]"
         style={{
@@ -61,7 +61,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-shell flex-wrap items-center justify-between gap-3 px-6 py-4">
           <Link to="/" className="group flex items-center gap-2.5 font-display text-[22px] font-semibold -tracking-[0.01em] text-white">
             <span className="grid grid-cols-3 gap-[2px] transition-transform duration-200 group-hover:scale-110" aria-hidden="true">{AREAS.map(([name, color]) => <span key={name} className="h-[7px] w-[7px] rounded-[2px]" style={{ backgroundColor: color }} />)}</span>
-            India Study Map
+            Finna<span className="text-[#FFC83D]">.</span>
           </Link>
           <nav aria-label="Main navigation" className="flex flex-wrap items-center gap-1 sm:gap-2">
             <button

@@ -1,0 +1,670 @@
+[
+  {
+    "id": "civil-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "civil",
+    "title": "Civil Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Building Materials and Constructions",
+        "description": "Engineering Materials: Physical properties of construction materials: stones, bricks, timber, sand, tiles, lime, surkhi, mortar, concrete, varnishes, plastics, rubber, damp-proofing materials, termite treatment materials, materials for low cost buildings, seasoning and preservation of timber. Building Construction: Building components and their functions : walls, floors, roofs, ceilings, staircase, doors and windows, ventilation, air-conditioning, lighting & acoustics etc. Finishing of buildings: plastering, pointing, painting, use of building codes. Functional Planning of building: Building orientation. circulation, grouping of areas, privacy concept and design of energy efficient building, provision of building codes and building regulations."
+      },
+      {
+        "id": "unit-2",
+        "title": "Design of Structures",
+        "description": "Design of RC Structures : Concept of mix design; Limit State and Working Stress method of design; Recommendations of I.S Codes of one way and two-way slabs, staircase, simple and continuous beams of rectangular T and L sections, compression members under direct load with or without eccentricity, isolated and combined footings, elevated and underground water tanks; Methods and systems of prestressing, anchorages, losses in prestress; design of prestress girder; Design of Cantilever and Counterford type retaining walls. Design of Steel Structures: Factors of safety and load factor; Riveted, bolted and welded connections. Design of tension and compression and flexural members, beams of built up section, riveted and welded plate girders, gantry girders, stanchions with battens and lacings, slab and gusseted column bases. Design of highway and railway bridges, warren girder,Pratt truss; Design of industrial roof and multi-storey buildings; water tanks; plastic design of continuous frames and portals."
+      },
+      {
+        "id": "unit-3",
+        "title": "Engineering Mechanics",
+        "description": "Static : Coplaner and multiplaner system; Varignon’s theorem, free body diagrams, conditions of equilibrium; second moment of plane figure; force and funicular polygon; principle of virtual work; suspension systems of catenary. Dynamic: Units and dimensions; Gravitational and absolute systems; MKS & S.I. Units; Vectors, concept of force, concept of particle and rigid body. Kinematics: Rectilinear and Curvilinear motion; relative motion; instantaneous centre. Kinetics: Mass moment of inertia; simple harmonic motion, momentum and impulse; equation of motion of rigid body rotating about a fixed axis."
+      },
+      {
+        "id": "unit-4",
+        "title": "Strength of Materials",
+        "description": "Simple Stress and strain; Elastic constants; tension and compression in one direction; riveted and welded joints. Shear force and bending moment; Theory of simple bending; shear stress distribution in cross section of beams; beams of uniform strength; Strain energy in direct stress, bending and shear. Deflection of beams; Maculay’s method, Mohr’s moment area method, conjugate beam method, unit load method. Torsion of shafts, transmission of power, close coiled helical springs. Theories of column and struts; Euler’s, Rankine’s and Secant formulae. Principal stress and strain; simple theories of failure; Mohr’s circle. Thin and thick cylinders; stresses due to internal and external pressure."
+      },
+      {
+        "id": "unit-5",
+        "title": "Structural Analysis",
+        "description": "Analysis of determinate structures - different methods including graphical methods; reciprocal theorem, unsymmetrical bending; moment of inertia. Analysis of indeterminate skeletal frames - moment distribution, slope-deflection, stiffness and force methods, energy methods, column analogy method and Kani’s method. Plastic analysis of indeterminate beams and simple frames - shape factor. Matrix methods of analysis. Moving loads-shearing force and bending moment diagrams; influence lines for simple and continuous beams and frames."
+      }
+    ]
+  },
+  {
+    "id": "civil-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "civil",
+    "title": "Civil Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Fluid Mechanics and Hydraulic Engineering",
+        "description": "Dynamics of fluid flow: Equation of continuity; energy and momentum Bernoulli’s theorem; cavitation, velocity potential and stream function; rotational and irrotational flow, free and forced vortices; flow net Dimentional analysis and its application to practical problems Viscous flow: Flow between static and moving parallel plates, flow through circular tubes; film lubrication; velocity distribution in laminar and turbulent flow;boundary layer. Incompressible flow through pipes: Laminar and turbulent flow, critical velocity; losses, stamton diagram; hydraulic and energy gradelines; siphon pipe network; forces on pipe bends Compressible flow: Adiabatic and isenthropic flow; subsonic and supersonic velocity; mach number, shock waves; water hammer. Open channel flow: Uniform and non-uniform flow; best hydraulic cross-section; specific energy and critical depth gradually varied flow, classification of surface profiles; control sections; standing wave flume; surges and waves; hydraulic jump."
+      },
+      {
+        "id": "unit-2",
+        "title": "Water Resources Engineering",
+        "description": "Hydrology: Hydrological cycle, precipitation evaporation; transpiration; depression storage; infiltration; overland flow; hrydograph; flood frequency analysis; flood estimation; flood routing through a reservoir; channel flow routing- Muskingam method. Ground water flow: Specific yield; storage coefficient; coefficient of permeability; confined and unconfined aquifers; radial flow into well under confined and unconfined conditions; tube wells; pumping land recuperation tests; ground water potential. Planning of water resources: Ground and surface water resources; surface flows; single and multipurpose projects; storage capacity; reservoir losses; reservoir silting; flood routing; benefit-cost ratio; general principles of optimization."
+      },
+      {
+        "id": "unit-3",
+        "title": "Sanitation and Water Supply (Environmental Engineering)",
+        "description": "Sanitation: Site and orientation of buildings; ventilation and damp proof course; house drainage; conservancy and water-borne systems of waste disposal; sanitary appliances; latrines and urinals. Disposal of sanitary sewage: Industrial waste; domestic waste; storm sewage-separate and combined systems; flow through sewers; design of sewers; sewer appurtenances-manholes, inlet junctions, siphon, ejections etc. Sewer treatment: Working principles; units, chambers; sedimentation tanks; trickling filters; oxidation ponds; activated sludge; recycling of waste water; septic tanks; soak pit; disposal of sludge. Environmental pollution and ecology: Sustainable development; radio-active waste and disposal; environtmental impact assessment for thermal power plants; mines, river valley projects; air pollution and pollution control acts. Water Supply : Estimation of water resources; ground water hydraulics; predicting demand of water; Impurities of water-physical, chemical and bacteriological analysis, water borne diseases. Intake of water: Pumping and gravity schemes; water treatment-principles of setting, coagulation, flocculation and sedimentation, slow, rapid and pressure filters, softening; removal of taste, odour and salinity. Water storage and distribution: Storage and balancing reservoirs, types, locations and capacity. Distribution system-layouts hydraulics of pipelines; pipe fittings; meters; analysis of distribution system; leak detection; maintenance of distribution system; pumping stations and their operations."
+      },
+      {
+        "id": "unit-4",
+        "title": "Hydraulic Machines and Hydropower",
+        "description": "Hydraulic pumps: Type, characteristics, net positive suction height (NPSH), specific speed; pumps in parallel Reciprocating pumps : Air vessels, hydraulic ram, efficiency parameters, rotary and positive displacement pumps, diaphragm and jet pumps. Hydraulic turbines : Type, classification, choice of turbines; Performance parameters, control, characteristics, specific speed. Principles of hydropower development : Types of dams, layouts and component works; Gates and valves; Intake structures, Tunnels, Penstocks; Surge tanks- types and choice. Flow duration curves and dependable flow. storage and pondage. Pumped storage plants. Layout of power stations. Specific features of mini, micro-hydel plants."
+      },
+      {
+        "id": "unit-5",
+        "title": "Irrigation Engineering",
+        "description": "Water requirement for crops: Quality of irrigation water; consumptive use of water ; water depth and frequency in irrigation; duty of water; irrigation methods and their efficiencies. Distribution system for canal irrigation: Determination of require canal capacity; canal losses; alignment of main and distributory canals Design of canals : Unlined canals in alluvium; the critical tractive stress; principles of sediment transport; regime theories, lined canals; hydraulic design and cost analysis; drainage behind lining. Canal structures: Design of regulation works; cross drainage and communication works-cross regulators, head regulators, canal aqueducts, metering flumes etc; canal outlets. Water logging; Its causes and control; design of drainage system; soil salinity Diversion headworks: Principle and design of weirs of permeable and impermeable foundations; Khola’s theory; energy dissipation; stilling basin; sediment excluders Storage works: Types of dams including earth dam and their characteristics; principles of design; criteria for stability; foundation treatment; joint and galleries; control of seepage. Spillways: Different types and their suitability; energy dissipation; spillway crest gates. River training: Objectives of river training; methods of river training"
+      }
+    ]
+  },
+  {
+    "id": "civil-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "civil",
+    "title": "Civil Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Soil Mechanics and Foundation Engineering (Geo-Technical Engineering)",
+        "description": "Soil Mechanics : Properties and Classification of soils; Atterburg limits; void ratio; moisture content; permeability-laboratory and field tests (Darcy’s Law); seepage and flow nets; flow under hydraulic structures; uplift and quick sand condition; unconfined and direct shear test; triaxial test; earth pressure theories (Rankine’s theory and Coulomb’s wedge theory); stability of slopes; theories of soil consolidation ( Terzaghi’s theory); compaction of soil; rate of settlement; total and effective stress analysis; pressure distribution of soils; Boussinesque and Waterguard theories; soil stabilization. Foundation Engineering : Sub-surface exploration; methods of boring; Bearing capacity of footings; Essential features of foundation; Types of foundation- shallow foundation and deep foundations; choice of foundations; design criteria; Foundation for bridges; ground improvement techniques."
+      },
+      {
+        "id": "unit-2",
+        "title": "Surveying, Estimation & Costing",
+        "description": "Surveying : General principles; surveying instruments and their adjustments; recording of survey observations; plotting of maps and sections; errors and their adjustments. Measurement of distances, direction and heights; correction to measured lengths and bearings; correction for local attraction; measurement of horizontal and vertical angles; leveling operations; refraction and curvature correction. Chain and compass survey; theodolite and techeometric traversing; traverse computation; plan table survey; solution of two and three points problems; contour surveying. Setting out directions and grades; types of curves; setting out of curves and excavation lines for building foundations. Field astronomy; concept of global positioning system; remote sensing concepts; map substitute. Estimating and costing : Estimating quantities of various items of civil works like roads, bridges, building, water supply structures, dams, irrigation canals, hydro-power structures, airports, railways etc. estimating the costs of various items of works on the basis of prevalent market rates, analysis of rates of civil works items."
+      },
+      {
+        "id": "unit-3",
+        "title": "Transportation Engineering",
+        "description": "Airports : Layout and orientation; runway and taxiway; design and drainage management; zoning laws; visual aids and air traffic control; helipads, hangers and service equipments. Harbours : Layout; shipping lanes; anchoring; location indentification, littoral transport with erosion and deposition; sounding methods; dry and wet docks; components and operational tidal data and analysis. Railways : Planning railway system; terminology; crossing and turnouts, setting out points; controls; transits; tractive power and track modernization; maintenance of tracks; superelevation; creep of rail; ruling gradient; station yards and machinery; station buildings; platform sidings; signals and interlocking. Roads : Classification of roads; planning of highway systems; alignment and geometric design; horizontal and vertical curves; grade separation. Road construction materials; types of pavements, design of pavements and pavement structures; construction methods; evaluation of pavement failure and strengthening. Maintenance of roads. Drainage system-surface and sub-surface drainages. Traffic engineering : Forcasting techniques, traffic survey- origin and destination survey; highway capacity; channelised and unchannelised intersections; traffic signs and road safety measures. Principles of highway financing. Tunnelling : Alignment; methods of construction; disposal of muck; drainage; lighting & ventilation; traffic control; emergency management."
+      },
+      {
+        "id": "unit-4",
+        "title": "Construction Planning & Management",
+        "description": "Earthwork equipments: Excavators; bulldozers; power shovels; trailers; dumpers; tractors; air-compressors & drills; rollers Concreting equipments: Weight batcher, mixer, vibrator, batching plant, concrete pump etc. Planning & Management: Construction activity; schedules; job layout; bar charts; organization of contracting firms; project control and supervision; cost reduction measures; roles of employer; engineer and contractor in a project. Network Analysis: Critical Path Method (CPM) and Programme Evaluation and Review Technique (PERT) analysis; float times; crashing of activities; contraction of network for cost optimization; time-cost study; cost analysis and resource allocation."
+      },
+      {
+        "id": "unit-5",
+        "title": "Design of Masonry Structures",
+        "description": "Material: Stone masonry and Brick masonry; Physical characteristics; General specifications. Types of structures: Load bearing wall; column; pier; pillar; buttress; foundations; arch; return walls; wing wall; retaining walls; breast walls; toe walls; revetment walls; walling for buildings etc. Types of stone masonry; terms of masonry structures; design of masonry structures; functions of masonry walls; Construction procedure; drainage in masonry structures."
+      }
+    ]
+  },
+  {
+    "id": "mechanical-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "mechanical",
+    "title": "Mechanical Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Thermodynamics",
+        "description": "Cycles and IC Engines, Basic concepts, Open and Closed systems. Heat and work. Zeroth, First and Second Law, Application to non-Flow and Flow processes. Entropy, Availability, Irreversibility and Tds relations. Claperyron and real gas equations, Properties of ideal gases and vapours. Standard vapour, Gas power and Refrigeration cycles. Two stage compressor. C-I and S.I. Engines. Pre- ignition, Detonation and Diesel-knock, Fuel injection and Carburation, Supercharging. Turbo-prop and Rocket engines, Engine Cooling, Emission & Control, Flue gas analysis, Measurement of Calorific values. Conventional and Nuclear fuels, Elements of Nuclear power production."
+      },
+      {
+        "id": "unit-2",
+        "title": "Heat Transfer, Refrigeration and Air-Conditioning",
+        "description": "Modes of heat transfer. One dimensional steady and unsteady conduction. Composite slab and Equivalent Resistance. Heat dissipation from extended surfaces, Heat exchangers, Overall heat transfer coefficient, Empirical correlations for heat transfer in laminar and turbulent flows and for free and forced Convection, Thermal boundary layer over a flat plate. Fundamentals of diffusive and connective mass transfer, Black body and basic concepts in Radiation, Enclosure theory, Shape factor, Net work analysis. Heat pump and Refrigeration cycles and systems, Refrigerants. Condensers, Evaporates and Expansion devices, Psychrometry, Charts and application to air conditioning, Sensible heating and cooling, Effective temperature, comfort indices, Load calculations, Solar refrigeration, controls, Duct design."
+      },
+      {
+        "id": "unit-3",
+        "title": "Fluid Mechanics",
+        "description": "Properties and classification of fluids, Manometry, forces on immersed surfaces, Center of pressure, Buoyancy, Elements of stability of floating bodies. Kinematics and Dynamics. Irrotational and incompressible. Inviscid flow. Velocity potential, Pressure field and Forces on immersed bodies. Bernoulli’s equation, Fully developed flow through pipes, Pressure drop calculations, Measurement of flow rate and Pressure drop. Elements of boundary layer theory, Integral approach, Laminar and tubulent flows, Separations. Flow over weirs and notches. Open channel flow, Hydraulic jump. Dimensionless numbers, Dimensional analysis, Similitude and modelling. One-dimensional isentropic flow, Normal shock wave, Flow through convergent - divergent ducts, Oblique shock- wave, Rayleigh and Fanno lines."
+      },
+      {
+        "id": "unit-4",
+        "title": "Fluid Machinery and Steam Generators",
+        "description": "Performance, Operation and control of hydraulic Pump and impulse and reaction Turbines, Specific speed, Classification. Energy transfer, Coupling, Power transmission, Steam generators Fire- tube and water-tube boilers. Flow of steam through Nozzles and Diffusers, Wetness and condensation. Various types of steam and gas Turbines, Velocity diagrams. Partial admission. Reciprocating, Centrifugal and axial flow Compressors, Multistage compression, role of Mach Number, Reheat, Regeneration, Efficiency, Governance. Design of Pump and Pipelines."
+      }
+    ]
+  },
+  {
+    "id": "mechanical-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "mechanical",
+    "title": "Mechanical Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Theory of Machines",
+        "description": "Kinematic and dynamic analysis of planer mechanisms. Cams. Gears and gear trains. Flywheels. Governors. Balancing of rigid rotors and field balancing. Balancing of single and multicylinder engines, Linear vibration analysis of mechanical systems. Critical speeds and whirling of shafts Automatic controls."
+      },
+      {
+        "id": "unit-2",
+        "title": "Machine Design",
+        "description": "Design of Joints: cotters, keys, splines, welded joints, threaded fasteners, joints formed by interference fits. Design of friction drives : couplings and clutches, belt and chain drives, power screws. Design of Power transmission systems: gears and gear drives shaft and axle, wire ropes. Design of bearings: hydrodynamics bearings and rolling element bearings."
+      },
+      {
+        "id": "unit-3",
+        "title": "Strength of Materials",
+        "description": "Stress and strain in two dimensions, Principal stresses and strains, Mohr’s construction, linear elastic materials, isotropy and anisotropy, stress-strain relations, uniaxial loading, thermal stresses. Beams : Bending moment and shear force diagram, bending stresses and deflection of beams. Shear stress distribution. Torsion of shafts, helical springs. Combined stresses, thick-and thin-walled pressure vessels. Struts and columns. Strain energy concepts and theories of failure."
+      }
+    ]
+  },
+  {
+    "id": "mechanical-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "mechanical",
+    "title": "Mechanical Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Engineering Materials",
+        "description": "Basic concepts on structure of solids. Crystalline maferials. Detects in crystalline materials. Alloys and binary phase diagrams. Structure and properties of common engineering materials. Heat treatment of steels. Plastics, Ceramics and composite materials. Common applications of various materials."
+      },
+      {
+        "id": "unit-2",
+        "title": "Production Engineering",
+        "description": "Metal Forming: Basic Principles of forging, drawing and extrusion; High energy rate forming; Powder metallurgy. Metal Casting: Die casting, investment casting, Shall Moulding, Centrifugal Casting, Gating & Riser design; melting furnaces. Fabrication Processes: Principles of Gas, Arc, Shielded arc Welding; Advanced Welding Processes, Weldability: Metallurgy of Welding. Metal Cutting: Turning, Methods of Screw Production, Drilling, Boring, Milling, Gear Manufacturing, Production of flat surfaces, Grinding & Finishing Processes. Computer Controlled Manufacturing Systems-CNC, DNC, FMS, Automation and Robotics. Cutting Tools Materials, Tool Geometry, Mechanism of Tool Wear, Tool Life & Machinability; Measurement of cutting forces. Economics of Machining. Unconventional Machining Processes. Jigs and Fixtures. Fits and tolerances, Measurement of surface texture, Comparators Alignment tests and reconditioning of Machine Tools."
+      },
+      {
+        "id": "unit-3",
+        "title": "Industrial Engineering",
+        "description": "Production Planning and Control: Forecasting - Moving average, exponential smoothing, Operations, scheduling; assembly line balancing, Product development, Break-even analysis, Capacity planning, PERT and CPM. Control Operations: Inventory control ABC analysis, EOQ model, Materials requirement planning. Job design, Job standards, Work measurement, Quality Management - Quality analysis and control. Operations Research : Linear Programming - Graphical and Simplex methods, Transportation and assignment models. Single server queueing model. Value Engineering: Value analysis for cost/value."
+      }
+    ]
+  },
+  {
+    "id": "electrical-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electrical",
+    "title": "Electrical Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "EM Theory",
+        "description": "Electric and magnetic fields, Gauss’s Law and Amperes Law, Fields in dielectrics, conductors and magnetic materials. Maxwell’s equations. Time varying fields. Plane – Wave propagating in dielectric and conducting media. Transmission lines."
+      },
+      {
+        "id": "unit-2",
+        "title": "Electrical Materials",
+        "description": "Band Theory, Conductors, Semi-conductors and Insulators, Super-conductivity, Insulators for electrical and electronic applications. Magnetic materials. Ferro and ferri magnetism, Ceramics, Properties and applications. Hall effect and its applications. Special semi conductors."
+      },
+      {
+        "id": "unit-3",
+        "title": "Electrical Circuits",
+        "description": "Circuits elements, Kirchoff‘s Laws, Mesh and nodal analysis. Network Theorems and applications, Natural response and forced response, Transient response and steady state response for arbitrary inputs, Properties of networks in terms of poles and zeros. Transfer function, Resonant circuits, Three phase circuits, Two-port networks, Elements of two-element network synthesis."
+      },
+      {
+        "id": "unit-4",
+        "title": "Measurements and Instrumentation",
+        "description": "Units and Standards, Error analysis, measurement of current, Voltage, power, Power-factor and energy. Indicating instruments, Measurement of resistance, inductance, Capacitance and frequency, Bridge measurements, Electronic measuring instruments. Digital Voltmeter and frequency counter. Transducers and their applications to the measurement of non-electrical quantities like temperature, pressure, flow-rate displacement, acceleration, noise level etc. Date acquisition systems, A/D and D/ A converters."
+      }
+    ]
+  },
+  {
+    "id": "electrical-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electrical",
+    "title": "Electrical Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Control Systems",
+        "description": "Mathematical modeling of physical systems, Block diagrams and signal flow graphs and their reduction. Time domain and frequency domain analysis of linear dynamical system, Errors for different type of inputs and stability criteria for feedback systems, Stability analysis using Routh-Hurwitz array, Nyquist plot and Bode plot. Root locus and Nicols chart and the estimation of gain and phase margin. Basic concepts of compensator design, State variable matrix design. Sampled data system and performance of such a system with the samples in the error channel. Stability of sampled data system. Elements of non-linear control analysis, Control system components, electromechanical, hydraulic, pneumatic components."
+      },
+      {
+        "id": "unit-2",
+        "title": "Electrical Machines and Power Transformers",
+        "description": "Magnetic Circuits – Analysis and Design of Power transformers, Construction and testing. Equivalent circuits, Losses and efficiency, Regulation, Auto-transformer, 3-phase transformer, Parallel operation. Basic concepts in rotating machines, EMF, torque, basic machine types. Construction and operation, leakage losses and efficiency. B.C. Machines, Construction, Excitation methods, Circuit models, Armature reaction and commutation, Characteristics and performance analysis, Generators and motors. Starting and speed control, Testing, Losses and efficiency. Synchronous Machines, Construction, Circuit model, Operating Characteristics and performance analysis. Synchronous reactance, Efficiency, Voltage regulation, Salient-pole machine, Parallel operation. Hunting, Short circuit transients. Induction Machines, Construction, Principle of operation, Rotating Fields, Characteristics and performance analysis, Determination of Circuit model, Circle diagram, Starting and speed control. Fractional KW motors. Single-phase synchronous and induction motors."
+      },
+      {
+        "id": "unit-3",
+        "title": "Power systems",
+        "description": "Types of Power Stations, Hydro, Thermal and Nuclear Stations, Pumped storage plants, Economics and operating factors. Power transmission lines, Modeling and performance characteristics, Voltage control, Load flow studies, Optimal power system operation, Load frequency control, Symmetrical short circuit analysis, Z-Bus formulation, Symmetrical Components, Per Unit representation, Fault analysis, Transient and steady-state stability of power systems. Equal area criterion. Power system Transients, Power system Protection Circuit breakers. Relays, HVDC transmission."
+      }
+    ]
+  },
+  {
+    "id": "electrical-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electrical",
+    "title": "Electrical Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Analog and Digital Electronics and circuits",
+        "description": "Semiconductor device physics, PN junctions and transistors, circuit models and parameters, FET, Zener, tunnel, Schottky, photo diodes and their applications, rectifier circuits, voltage regulators and multipliers, switching behavior of diodes and transistors. Small signal amplifiers, biasing circuits, frequency response and improvement, multistage amplifiers and feed-back amplifiers, D.C. amplifiers, coupling methods, push pull amplifiers, operational amplifiers, wave shaping circuits, Multivibrators and flip-flops and their applications. Digital logic gage families, universal gates combinational circuits for arithmetic and logic operational, sequential logic circuits. Counters, Registers, RAM and ROMs."
+      },
+      {
+        "id": "unit-2",
+        "title": "Microprocessors",
+        "description": "Microprocessor architecture Instruction set and simple assembly language programming. Interfacing for memory and I/O. Applications of Micro-processors in power system."
+      },
+      {
+        "id": "unit-3",
+        "title": "Communication Systems",
+        "description": "Types of modulation; AM, FM and PM. Demodulators, Noise and bandwidth considerations. Digital communication systems, Pulse code modulation and demodulation, Elements of sound and vision broadcasting, Carrier communication. Frequency division and time division multiplexing, Telemetry system in power engineering."
+      },
+      {
+        "id": "unit-4",
+        "title": "Power Electronics",
+        "description": "Power Semiconductor devices, Thyristor, Power transistor, GTOs and MOSFETs Characteristics and operation, AC to DC Converters; 1-phase and 3-phase DC to DC Converters. AC regulators. Thyristor controlled reactors; switched capacitor networks. Inverters; single-phase and 3-phase. Pulse width modulation. Sinusoidal modulation with uniform sampling, Switched mode power supplies."
+      }
+    ]
+  },
+  {
+    "id": "electronics-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electronics",
+    "title": "Electronics Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Materials and Components",
+        "description": "Structure and properties of Electrical Engineering materials; Conductors, Semiconductors and Insulators, magnetic, Ferroelectric, Piezoelectric, Ceramic, Optical and Super-conducting materials. Passive components and characteristics Resistors, Capacitors and Inductors; Ferrities, Quartz crystal Ceramic resonators, Electromagnetic an Electromechanical components."
+      },
+      {
+        "id": "unit-2",
+        "title": "Physical Electronics, Electron Devices and ICs",
+        "description": "Electrons and holes in semiconductors, Carrier Statistics, Mechanism of current flow in a semiconductor, Hall effect; Junction theory; Different types of diodes and their characteristics; Bipolar Junction transistor; Field effect transistors; Power switching devices like SCRs, CTOs, power MOSFETs; Basics of ICs – bipolar, MOS and CMOS types; basic to Opto Electronics."
+      },
+      {
+        "id": "unit-3",
+        "title": "Signals and Systems",
+        "description": "Classification of signals and systems: System modeling in terms of differential and difference equations; State variable representation; Fourier series; Fourier representation; Fourier series; Fourier transforms and their application to system analysis; Laplace transforms and their application to system analysis; Convolution and superposition integrals and their applications; Z-transforms and their Applications to the analysis and characterization of discrete time systems; Random signals and probability, Correlation functions; Spectral density; Response of linear system to random inputs."
+      },
+      {
+        "id": "unit-4",
+        "title": "Network theory",
+        "description": "Network analysis techniques; Network theorems, transient response, steady state sinusoidal response; Network graphs and their applications in network analysis; Tellegen‘s theorem. Two port networks; Z, Y h and transmission parameters. Combination of two ports, analysis of common two ports. Network functions: parts of network functions, obtaining a network function from a given part. Transmission criteria: delay and rise time, Elmore’s and other definitions effect of cascading. Elements of network synthesis."
+      }
+    ]
+  },
+  {
+    "id": "electronics-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electronics",
+    "title": "Electronics Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Electromagnetic Theory",
+        "description": "Analysis of electrostatic and magnetostatic fields: Laplace‘s and Piossons’s equations; Boundary value problems and their solutions; Maxwell’s equations; application to wave propagation in bounded and unbounded media; Transmission lines: basic theory, standing waves, matching applications, misconstrue lines.Basics of wave guides and resonators; Elements of antenna theory."
+      },
+      {
+        "id": "unit-2",
+        "title": "Analog Electronic Circuits",
+        "description": "Transistor biasing and stabilization. Small signal analysis. Power amplifiers. Frequency response. Wide banding techniques. Feedback amplifiers. Tuned amplifiers. Oscillators. Rectifiers and power supplies. Op Amp PLL, other linear integrated circuits and applications. Pulse shaping circuits and waveform generators."
+      },
+      {
+        "id": "unit-3",
+        "title": "Digital Electronic Circuits",
+        "description": "Transistor as a switching element; Boolean algebra, simplification of Boolean functions, Karnaguh map and applications; IC Logic gates and their characteristics; IC logic families: DTL, TTL, ECL, NMOS, PMOS and CMOS gates and their comparison; Combinational logic Circuits; Half adder, Full adder; Digital comparator; Multiplexer Demultiplexer; ROM and their applications. Flip flops. R-S, J.K, D and T flip-flops; Different types of counters and registers Waveform generators. A/D and D/A converters. Semiconductor memories."
+      },
+      {
+        "id": "unit-4",
+        "title": "Control Systems",
+        "description": "Transient and steady state response of control systems; Effect of feedback on stability and sensitivity; Root locus techniques; Frequency response analysis. Concepts of gain and phase margins: Constant-M and Constant-N Nichol’s Chart; Approximation of transient response from closed loop frequency response; Design of Control Systems, Compensators; Industrial controllers."
+      }
+    ]
+  },
+  {
+    "id": "electronics-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "electronics",
+    "title": "Electronics Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Communication Systems",
+        "description": "Basic information theory; Modulation and detection in analogue and digital systems; Sampling and data reconstructions; Quantization & coding; Time division and frequency division multiplexing; Equalization; Optical Communication: in free space & fiber optic; Propagation of signals oat HF, VHF, UHF and microwave frequency; Satellite Communication."
+      },
+      {
+        "id": "unit-2",
+        "title": "Microwave Engineering",
+        "description": "Microwave Tubes and solid state devices, Microwave generation and amplifiers, Waveguides and other Microwave Components and Circuits, Misconstrue circuits, Microwave Antennas, Microwave Measurements, Masers, lasers; Microwave propagation. Microwave Communication Systems terrestrial and Satellite based."
+      },
+      {
+        "id": "unit-3",
+        "title": "Computer Engineering",
+        "description": "Number Systems. Data representation; Programming; Elements of a high level programming language PASCAL/C; Use of basic data structures; Fundamentals of computer architecture; Processor design; Control unit design; Memory organization, I/O System Organisation. Microprocessors: Architecture and instruction set of Microprocessors 8085 and 8086, Assembly language Programming. Microprocessor Based system design: typical examples. Personal computers and their typical uses."
+      }
+    ]
+  },
+  {
+    "id": "computer-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "computer",
+    "title": "Computer Science Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Discrete Mathematics",
+        "description": "Set Theory foundation mapping (bijective, surjective, injective); Relations – equivalence; Poset; Lattice; Mathematical Induction; Proposional Logic; Logical Equivalence; Permutation and Combination; generation functions; Recurrence relation; Concept of Graph Theory (Sub-Graphs; Cyclic Graphs); Trees (Spanning Trees); Algorithms (Kruskal’s, Prim’s, Dijstra’s, Flyod’s, Warshall’s, DFS, BFS); Isomorphism; Homomorphism of Graphs; Finite Automata (Construction & Conversion of NFA, DFA, State minimization, Mealy machine, Moore machine); Definition of Grammars (Type 0,1,2,3); Fuzzy sets – Basic properties."
+      },
+      {
+        "id": "unit-2",
+        "title": "Digital Electronics Circuit",
+        "description": "Transistor as switching element; Boolean Algebra, simplification of Boolean functions, Karnaugh map and applications; IC Logic gates and their characteristics; IC logic families: DTL, TTL, ECL, NMOS, PMOS and CMOS gates and their comparison; Combinational logic circuits; Half adder, Full adder; Digital Comparator; Multiplexer, Demultiplexer; ROM and their applications; Flip flops; R-S, J-K, D and T flip flops; Different types of counters and registers Waveform generators; A/D and D/ A converters; Semiconductor memories."
+      },
+      {
+        "id": "unit-3",
+        "title": "Computer Architecture and Organisation",
+        "description": "Digital Computer - Introduction, General Organisation, Functional Units, Basic Computer Organisation and Design; Computer Registers, Register Transfer, Micro Operation, Bus System, Timing And control Signals, Generation of Control Signals, Instruction Cycle; Determination and Execution of different types of Instructions; Machine Language; Assembly Language; Assembler; Program Loops and Subroutines; Control Unit (Hardware and Microprogrammed Control); Elements of the Design of control unit from Control Flow Diagram; Signed Magnitude Representation; Floating Point Representation of numbers; BCD Representation; Addition; Subtraction; Multiplication and Division of numbers in different types of representation; General register Organisation, Stack Organisation; Instruction Formats; Addressing Modes; RISC; Input/Output; Peripheral Devices; Necessity of Interfacing; Asynchronous function of I/O and I/O bus; Modes of I/O transfer; Memory Hierarchy, Main Memory, Virtual Memory System; Pipeline and Vector Processing; Parallel processing; Arithmetic and instruction Pipelining; Vector Processing-array processor."
+      },
+      {
+        "id": "unit-4",
+        "title": "Data Structures and Algorithm",
+        "description": "Array and Strings; Packing; Space array; Algorithm development; complexity; simple example of Algorithm development; recursion; Sequential Search; Divide and conquer binary search; selection and insertion sort; merge sort; quick sort; complexity of sorting; Linear list; Stack; Stack use – postfix notation, recursion removal; operation on stack; Arithmetic Expression Evaluation; Recursion; Queue; Implementation of Queue in Computer memory; Queue as an Abstract data type; operation on queue; Application of Queue; dequeue; Priority Queue; Graphs and Representation Sets – UNION and FIND operations; Graph Algorithms; Optimisation and Greedy Method; minimum spanning tree; Shortest path; Trees; AVL Trees; threaded trees; heap sort; trees and B-trees; external search."
+      }
+    ]
+  },
+  {
+    "id": "computer-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "computer",
+    "title": "Computer Science Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Operating System",
+        "description": "Introduction of OS objective and function; The Evaluation of OS; Batch; interactive; time-sharing and real time system; Protection; OS Structure; System components; OS service; System Structure; Concurrent Processes; Process Concept; Principles of concurrency; The Producer/consumer problem; The critical section problem; Semaphore; Classical problems on concurrency; interprocess Communication; Process Generation; Process Scheduling; CPU Scheduling; Scheduling Concepts; Performance Criteria; Scheduling Algorithms; Algorithm evaluation; multiprocessor scheduling; Deadlocks; System model; Deadlock characterization; Prevention; avoidance and detection; Recovery from deadlock combined approach; Memory management; Base Machine; Resident Monitor; Multiprogramming with fixed partitions; Multiprogramming with variable partitions; Multiple Based Registers; Paging; segmentation; Virtual Memory concept; Demand paging; Performance; Page replacement algorithm; Allocation of frames; Thrashing; cache memory organization; impact performance; I/O Management and Disk Scheduling: I/O devices and the organisation of the I/O function; I/O buffering; Disk I/O; Operating System Design issues; File system; File concept- File Organisation and access mechanism; File directories"
+      },
+      {
+        "id": "unit-2",
+        "title": "Object Oriented Programming",
+        "description": "Introduction of OOP; application of OOP; process of OOP; Classes and Objects; Overview of Classes and Objects; Class definition; class specifiers; defining member functions; Memory allocation for objects; array of objects; constructor; destructor; Polymorphism; Function of Overloading; uses in program; operator overloading; defining operator overloading; limitations of operator overloading; overloading unary and binary operators; Inheritance and its types with examples; virtual functions; pointers to object; pure Virtual Functions and its implementation in program; managing I/O operations; I/O streams; File handling with OOP; Error handling in file operations; random file access; exception handling methods; throwing mechanism; catching mechanism; string characteristics and uses."
+      },
+      {
+        "id": "unit-3",
+        "title": "Computer Graphics",
+        "description": "Points, Lines, Planes, Vectors, Pixels, Frame Buffers, Vectors and character Generation; Graphic Primitives – Display device, Primitive Operations, Display Files Structure, Display Control Text; Polygons – Polygons Representation, entering polygons, Filling polygons; transformations – Metrics transformations, Transformation Routines, Display Procedures; Segments – Segments Table, Creating, Deleting and renaming a segment visibility, image transformation; Windowing and Clipping – Viewing transformation, Clipping, Generalised Clipping, multiple windowing; Interaction – Hardware input device handling algorithms, Event handling Echoing, interactive techniques; Three Dimensions – 3-D Geometry Primitives, Transformations, Projection, Clipping; Hidden line and Surfaces – Back-face Removal Algorithms, Hidden line Methoods, Rendering and Illumination, introduction to curve generation, Bezier, Hermite and B-spline algorithms and comparisons."
+      }
+    ]
+  },
+  {
+    "id": "computer-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "computer",
+    "title": "Computer Science Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Database Management Systems",
+        "description": "Introduction to Database System concepts and Architecture; data models; schemes and instances; data independence; Database language and interface; Data Modelling using the Entity-Relationship model; ER Model concepts; Notation for ER diagram; Extended ER Model; Relationship of Higher degree; Relationship data model and language; Relation Data concepts; constraints; relational algebra; Relational calculus; tuple and Domain calculus; SQL; Basic Query Statement; Database Design; Functional dependencies; Normal forms; First, second, third, fourth and BCNF; Inclusion dependencies; Query Processing and Optimisation; Algorithm for executing query Operations; Heuristics for query optimization; Transaction processing Concepts; transaction and system concepts; Schedules and Recoverability; serializability of schedules; Concurring Control Techniques; Locking techniques for concurrency control; Time Stamping and concurrency control."
+      },
+      {
+        "id": "unit-2",
+        "title": "Computer Networks",
+        "description": "Introduction to Networks and Layered Architecture – Protocol Hierarchies; Design issues for the layers, Data Communication Concepts; Serial and Parallel Communication; Simplex; Half duplex and Full duplex Communication; Multiplexing – TDM; FDM; Demand Multiplexing; Error detection and correction; Forward and Backward error correction; Checksum Automatic Repeat Request; Protocols; Relationship of Services to Protocols; NETBIOS; TCP/IP; SMTP; FTP; TELNET; IPX; SPX; NETBEUL; Transmission Media – Advantages and disadvantages of Transmission Media; Modem; Principles and Techniques; Amplitude; Frequency Shift Keying; Phase Shift Keying; Operating Speed; Network Topology; Star; Ring; Bus & Tree; Physical and logical topologies; Guidelines to select a topology; Access Methods and Topologies, Ethernet Concepts, Token Ring Media ground rules, LAN, HUBS, etc., FDDI; Network Operating System – Selection Criteria, Performance, fault Tolerence, Application compability, Security Manageability, memory requirement, client support, internetworking capabilities, OS support, Database Services, IBM’S LAN Server, Windows for Workgroup and Windows NT, Peer-to-Peer LAN; LAN Management – Simple Network Management Protocol, Remote Monitoring Performance management, Security Management Access control; LAN administrator Network reliability – Modelling, Standards, fault analysis and Rectification, Introduction to ISDN."
+      },
+      {
+        "id": "unit-3",
+        "title": "Software Engineering",
+        "description": "Introduction to Software Engineering; Software development life-cycle; Requirements analysis; Software design; coding; testing; maintenance; Software Requirements Specification; Waterfall Model; prototyping; interactive enhancement; spiral model, Role of management in software development; Role of Metrices and measurement; Problem analysis requirement specification, validation, metrics, monitoring and control; System design – Problem partitioning, abstraction, top-down and bottom-up design, Structured approached, Functional versus Object Oriented approach; design specification and verification metrices; monitoring and control; Coding - Top-down and bottom-up, structure programming, information hiding, programming style and internal documentation, verification, metrices, monitoring and control; Testing – Levels of testing, functional testing, structural testing, test plane, test cases specification reliability assessment; Software Project Management – Cost estimation, Project scheduling, Staffing, Software configuration management, Quality assurance, Project Monitoring, Risk Management."
+      }
+    ]
+  },
+  {
+    "id": "architecture-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "architecture",
+    "title": "Architecture Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Architectural Design",
+        "description": "Principles of Visual perception, the grammar of visual language, principles of composition and relationship between the human activities and anthropometrics; Understanding user circulation and space requirements; Taking up design of small spaces using the ideal-design methodology; Exploration of various methods of presentation; Volumetric study of built forms, various building materials & their application in architectural design; critical appraisal of both internal and external spaces, evaluation of contemporary architectural works; Analysis of form from the point of view of well known architectural principles and critical study of climatic elements and their influence on design development. Basic and standard dimensions for buildings-residential, commercial, public and official buildings. Solar architecture-passive and active solar architecture; sun angles and orientation. Design for handicapped- basic and standard dimensions and types of access required. National Building Code norms"
+      },
+      {
+        "id": "unit-2",
+        "title": "Planning",
+        "description": "Complex and Town and satellite planning, Transport and circulation analysis, hierarchy of access and pedestrian circulation, vehicular circulation and road systems regarding urban and town planning."
+      },
+      {
+        "id": "unit-3",
+        "title": "Landscape Design",
+        "description": "Components of landscape design – principles of landscape design – study of landscape design aspects such as site, orientation, plant materials – site analysis and site planning – hard and soft landscapes – water features in the landscape – various types of landscape design – landscape as a means to shape the outdoor; norms; plant materials, influence of landscape design on our physical, visual environment – as a tool to utilize the site resources – site analysis for larger developments. Introduction to urban landscape design – elements of urban landscape – park system – play ground – recreational spaces – water landscapes. Introduction to ecology and landscape design – means to mitigate the human impacts – way to rejuvenate our natural resources like water, air, and microclimate – method to protect us from natural forces such as erosion, flood, landslide and cyclone. Mughal gardens, Persian Gardens, English Garden– design principles and symbolisms."
+      },
+      {
+        "id": "unit-4",
+        "title": "History of Architecture",
+        "description": "The study of noted buildings such as temple, palaces, residences and civic buildings; Indus valley civilization; development of the city of Mohenjodaro, Harappa and various other river valler civilizations the world over; The advent of Gothic Architecture and the influences on its development; Birth of Renaissance Architecture and its characteristics; Bahaus movement; the rise of historic development of Mughal architecture in Delhi and tracing the evolution of style; Study on architectural proportion of noted monuments, fort planning principles; Study of palaces, garden development and civic planning."
+      }
+    ]
+  },
+  {
+    "id": "architecture-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "architecture",
+    "title": "Architecture Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Climatology",
+        "description": "Influence of various factors at regional and local scales – micro climate. Study of parameters that influence human thermal comfort, comfort scales; Understanding the thermal environment and design as a means of furthering thermal comfort. Passive and low energy approaches to the achievement of thermal comfort. The visual environment – study of day lighting as a means of providing light within built spaces; “Green” Architecture – its elements."
+      },
+      {
+        "id": "unit-2",
+        "title": "Modern Architecture",
+        "description": "Studies of various buildings belonging to the renaissance style; The Industrial revolution – Development of cities, evolution of bridges, railway stations, exhibition buildings, civic buildings; Development of skyscrapers – the Chicago school; Development of architectural theories – cubism, De Stijl, Ecole- beaux-des-Arts, brutalism, structuralism, futurism, constructivism, Art Noveau, Arts and Crafts expressionism. Works of Architects like Le-Corbusier, Mies van der Rohe, Frank Lloyd Wright, Alvar Alto; Works of other Architects of the same period."
+      },
+      {
+        "id": "unit-3",
+        "title": "Post Modern Architecture",
+        "description": "Development of vernacular architect in India in the last 150 years. Post independence Architecture- works of Le-corbuzier and Louis Kahn in India. The works of Modern Indian Masters like Charles Correa, J.A. Stien, B.V. Doshi, Ananth Raje, Kanvinde, etc. Works of other contemporary Architects in India."
+      },
+      {
+        "id": "unit-4",
+        "title": "Building Construction",
+        "description": "Building components and their pictorial representations; brick & stone masonry in walls, arches, brick masonry bonds – English, Flemish, decorative bonds, Rat trap bond; learning about stone masonry – coursed, random rubble, ashlar, etc brick and stone arches; construction methods – lintels, Simple foundations in masonry, plastering, pointing, Roofs, classification, pitched roof, types of pitched roofs, roof coverings for pitched roofs, ventilators in pitched roofs. Trusses in timber, AC sheet for roof covering; Type of steel trusses – tubular/angle iron truss with roof covering of AC/GI sheets; Roof finishes (over concrete slabs) with weather proofing details; Provision of skylights in timber and steel roof; Carpentry and joinery details for roofs, construction methods of timber, metal/RCC/masonry Doors and Windows: Technical terms, types of doors, types of windows, ventilators, doors and windows in timber fixtures; steel windows door detailing, PVC doors and windows; Pile foundation- types and methods of construction, concrete flooring, skirting, dadoing with various finishes; Concrete paving, form-work for RCC columns, beams, slabs, walls and stairs; Simple foundation (masonry), spread footing. Deep Foundation – Pile foundation – types – methods of construction and bearing – friction – sheet piles; Construction practices/detailing of RCC elements, light partition – wood, metal. Doors fully glazed sliding and sliding folding, collapsible shutters, rolling shutter, fire resistance steel doors. Materials of sound insulation, thermo insulation, weather proofing, damp proofing for basements and water retaining structures; curtain wall systems, their applications and fixing details; various types of wall claddings like stone veneers, cement concrete, tiles and mosaics and their respective construction details; specialized roofing systems like shell roof, folded plates, and space frames and their construction details. RCC Construction practices – detailing; Framed structures – characteristics – components – advantages study of column grid. Light partition – wood – metal – glass; Special doors – sliding – folding – collapsible – rolling shutters fire resistant steel doors. Stair – components, geometrical planning, Types Materials: Study of basic building materials like brick, stone, lime, cement, sand, tile and other products – their properties, manufacturing, various quality tests; specification of mortars including cement, lime, etc. glass as a building material-various types, properties and uses; Concrete: Introduction, classification, constituent materials, preparation, curing, compaction, water cement ratio, strength, workability, durability, defects, physical properties, proportioning, admixtures, reinforced cement concrete; Tar, bitumen, asphalt, gypsum; Paints, types, application, properties. Materials and methods for file proofing – thermal insulation, sound insulation – damp properties of basement and water retaining structure."
+      }
+    ]
+  },
+  {
+    "id": "architecture-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "architecture",
+    "title": "Architecture Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Structures",
+        "description": "Introduction to fundamentals of structures for Buildings; Classification; Natural structures; Building loads; Effects on Buildings; Forces Systems, Conditions for Equilibrium; Elementary Analysis of Structural Response; Study of Geometric Properties of Structural Sections, Study of stress and strain in building materials – structural behavior of beams, shear force, bending moment – theory of simple bending, elementary stress analysis for bending and shear, concept of flitched beam and analysis of deflections in beam. Design of axial loaded column and concentrated load beam sections."
+      },
+      {
+        "id": "unit-2",
+        "title": "Buildings Services",
+        "description": "Study of water supply and sanitation systems; Study of fire fighting services. Water supply: Domestic water supply systems, sump, overhead tank, pipe sizes, pipe fittings – their technical names; Cold water and hot water supply for multistoried buildings, types of taps, types of valves, etc. provision for fire fighting and code requirements. Sanitation: Importance, refuse, types of collection and disposal; Basic principles of sanitation and disposal of waste water from buildings, urban and rural drainage and sanitation, different collection and disposal fittings. Brief on sewage treatment, septic tanks, oxidation ponds, soak pits, manholes, inspection chambers, intercepting chambers, cast iron manholes, self-learning velocity, drains on sloping sites, sub-soil drainage, garbage drainage and lay-out of simple drainage systems and testing of drains. Sewers, materials, workmanship, laying and testing of sewers, clearing of sewers, surface drains, ventilation of sewers, storm water drainage system, recycling of water; Water treatment plant; Air-conditioning- Definition and classification, Vertical Transportation system-Concept, study of lifts and escalators."
+      },
+      {
+        "id": "unit-3",
+        "title": "Building Specifications",
+        "description": "Definition, types, importance of detailed specification in construction practice, method of writing specifications. Detailed specification writing for materials and works: Brick, stone, sand, lime, timber, cement, AC sheets, GI sheets, steel reinforcement, paints and varnishes, floor, glass, tiles, ceramic and terrazzo; materials for partition framing and cladding, plywood, hardboard, false ceiling, PVC sheeting, steel structures. Earth work in different soils, masonry work, flooring, roofing, concrete structures, water proofing works (basement, roofs), false ceiling, carpentry works, painting and finishing. Specification for works designed for special situation like non conventional use of conventional materials, etc."
+      },
+      {
+        "id": "unit-4",
+        "title": "Professional Practice",
+        "description": "Understanding the basic concepts and terminology in architectural practice. The difference between architectural profession and other professional discipline; A clear knowledge of code of conducts and ethics in profession. The knowledge of apex monitoring body to protect the interest of the profession; Role of an architect in conceptualizing, design proposal until the execution procedures; The relationship between the architect and other executive agencies; The legal dimension of professional practice, architect’s role as an arbitrator; Laws and regulations that affect architecture as well as building."
+      },
+      {
+        "id": "unit-5",
+        "title": "Energy And Environmental Concerns In Design",
+        "description": "Importance of environmental conservation, environmental impact assessment, Energy conservation techniques – non conventional energy sources like, solar power – wind power – etc."
+      }
+    ]
+  },
+  {
+    "id": "agricultural-1-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "agricultural",
+    "title": "Agricultural Paper I",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Irrigation and Drainage Engineering",
+        "description": "(a) Sources of water for irrigation. Techniques of measuring soil moisture - laboratory and in situ, Soil-water plant relationships. Water requirement of crops. Planning conjunctive use of surface and ground water. Measurement of irrigation water, measuring devices - orifices, weirs and flumes. Methods of irrigation – surface, sub surface and pressurized irrigation. Irrigation efficiencies and their estimation. Design and construction of canals, field channels, underground pipelines, head-gates, diversion boxes and structures for road crossing. Occurrence of ground water, hydraulics of wells, types of wells (tube wells and open wells) and their construction. Pump-types, selection and installation. (b) Causes of waterlogging and salt problem. Methods of drainage— drainage of irrigated and unirrigated lands, design of surface and sub-surface drainage systems. Improvement and utilization of poor quality water. Reclamation of saline and alkali soils. Economics of irrigation and drainage systems. Use of waste water for irrigation — standards of waste water for sustained irrigation, feasibility and economics."
+      },
+      {
+        "id": "unit-2",
+        "title": "Hydraulics and Fluid Mechanics",
+        "description": "Fluid Properties, Hydrostatic pressure on surface, buoyancy and floatation, kinematics of fluid flow, fundamental equation of fluid flow, orifice and mouthpieces, notch and weirs, flow through pipes, flow through open channel, Design of rigid boundary canals, Lacey’s and Tractive force concepts in canal design, lining of canals; Sediment transport in canals, Energy dissipators and tailwater rating; Design of head works, distribution works, falls, cross-drainage works, outlets."
+      },
+      {
+        "id": "unit-3",
+        "title": "Principle of Crop Production",
+        "description": "Cropping pattern in different agro-climatic zones of the country. Impact of high-yielding and short- duration varieties on shifts in cropping pattern. Concepts of multiple cropping, multistorey, relay and inter-cropping, and their importance in relation to food production, crops grown during Kharif and Rabi seasons in different regions of the country. Water-use efficiency in relation to crop production, criteria for scheduling irrigations, ways and means of reducing run-off losses of irrigation water. Agricultural extension, its importance and role, methods of evaluation of extension programmes, socio-economic survey and status of big, small, and marginal farmers and landless agricultural labourers; farm mechanization and its role in agricultural production and rural employment."
+      }
+    ]
+  },
+  {
+    "id": "agricultural-2-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "agricultural",
+    "title": "Agricultural Paper II",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Hydrology",
+        "description": "Hydrological cycle, precipitation – measurement, rain gauge network, preparation of data, presentation of rainfall data, mean precipitation over an area, frequency of point rainfall, PMP, unit and synthetic hydrographs; Evaporation and transpiration; Floods and their management, PMF; Streams and their gauging; River morphology; Principles of flood control-flood routing. Capacity of Reservoirs."
+      },
+      {
+        "id": "unit-2",
+        "title": "Surveying and Leveling",
+        "description": "Division of surveying, Classification of surveys, scales, Measurement of distances - direct and indirect methods, prismatic compass, leveling and land grading, contouring, remote sensing concepts."
+      },
+      {
+        "id": "unit-3",
+        "title": "Soil and Water Conservation Engineering",
+        "description": "Scope of soil and water conservation. Mechanics and types of erosion, their causes. Rainfall, runoff and sedimentation relationships and their measurement. Soil erosion control measures - biological and engineering including stream bank protection-vegetative barriers, contour bunds, contour trenches, contour stone walls, contour ditches, terraces, outlets and grassed waterways. Gully control structures - temporary and permanent - design of permanent soil conservation structures such as chute, drop and drop inlet spillways. Design of farm ponds and percolation ponds. Watershed Management - investigation, planning and implementation - selection of priority areas and water shed work plan, water harvesting and moisture conservation. Land development - leveling, estimation of earth volumes and costing."
+      }
+    ]
+  },
+  {
+    "id": "agricultural-3-2013",
+    "schemeId": "regulations-2013",
+    "branchId": "agricultural",
+    "title": "Agricultural Paper III",
+    "marks": 200,
+    "durationMinutes": 180,
+    "format": "100 marks objective + 100 marks short answers (up to 5 marks each)",
+    "sourceId": "regulations-2013",
+    "sourcePage": null,
+    "units": [
+      {
+        "id": "unit-1",
+        "title": "Post Harvest Technology",
+        "description": "Post harvest technology of crops and its scope. Engineering properties of agricultural produces and by-products. Unit operations – cleaning, grading, size reduction, densification, concentration, drying/ dehydration, evaporation, filtration, freezing and packaging of agricultural produces and by-products. Material handling equipment - belt and screw conveyors, bucket elevators, their capacity and power requirement. Waste and by-product utilization - rice husk, rice bran, plant residues and coir pith."
+      },
+      {
+        "id": "unit-2",
+        "title": "Farm Machinery and Power",
+        "description": "Agricultural mechanization and its scope. Sources of farm power - animal and electro-mechanical. Different types of tractors and power tillers. Power transmission, ground drive, power take off (p.t.o.) and control systems. Operation and maintenance of farm machinery for primary and secondary tillage. Traction theory. Sowing, transplanting and intercultural implements and tools. Plant protection equipment - spraying and dusting. Harvesting, threshing and combine equipment. Machinery for earth moving and land development - methods and cost estimation."
+      },
+      {
+        "id": "unit-3",
+        "title": "Strength of Materials and Farm Structures",
+        "description": "Working stress method of design of RCC structures, theory of singly and doubly reinforced beams and slabs. Design of water tanks, design of aquaduct, silo. Site selection, design and construction of farmstead - farm house, cattle shed, dairy bam, poultry shed, hog housing, machinery and implement shed, storage structures for food grains, feed and forage. Design and construction of fences and farm roads, Structures for plant environment - green houses, poly houses and shade houses. Engineering and Building materials: Stones, Bricks, Lime, Cement, Aggregates, Tiles, Mortars, Concrete, Timber."
+      }
+    ]
+  }
+]

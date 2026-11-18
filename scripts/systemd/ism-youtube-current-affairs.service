@@ -1,0 +1,25 @@
+[Unit]
+Description=Discover YouTube current-affairs videos and stage transcript-based drafts
+After=network-online.target postgresql.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=www-data
+WorkingDirectory=/srv/api
+EnvironmentFile=/etc/mpsc/db.env
+EnvironmentFile=-/etc/mpsc/youtube-current-affairs.env
+Environment=PYTHONUNBUFFERED=1
+Environment=XDG_CONFIG_HOME=/var/lib/finna-youtube-current-affairs/config
+Environment=XDG_DATA_HOME=/var/lib/finna-youtube-current-affairs/data
+Environment=XDG_CACHE_HOME=/var/lib/finna-youtube-current-affairs/cache
+Environment=XDG_STATE_HOME=/var/lib/finna-youtube-current-affairs/state
+StateDirectory=finna-youtube-current-affairs
+StateDirectoryMode=0700
+ExecStart=/srv/api/.venv/bin/python /srv/api/youtube-current-affairs.py --run --limit 3
+TimeoutStartSec=15min
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+MemoryMax=1G

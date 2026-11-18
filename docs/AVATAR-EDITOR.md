@@ -35,3 +35,26 @@ See `reports/avatar-editor/` for tests, build, clone rehearsal, screenshots and 
 No production synthetic avatar saves or account impersonation are used. Release operations take a private database dump before migration, apply the additive migration, deploy compatible API before web artifacts, verify catalog/API/static hashes and check both study and family sites. Keep the additive schema if rolling back the frontend/API; never edit an applied migration. Backups and documentation/evidence mirror live under `/home/ubuntu/ism-release-reports/2026-10-23-avatar-editor`.
 
 Limitations: unsaved previews are not an offline draft queue; Save look is explicit. Other already-open pages refresh their projections when reloaded/navigated rather than receiving a cross-device live push. No full account-erasure or avatar moderation service is introduced; user content remains limited to reviewed catalog choices.
+
+
+##17November2026 — V.5 points shop (deployed)
+
+The October launch notes above describe the historical baseline. V.5 now
+adds Shop beside Customize/Inventory, using existing reward points and
+same catalog: Plum top25, Twilight background50, Orbit frame125. The original
+19starters/7level rewards and durable ownership remain; none becomes purchasable.
+Purchase is an own-once, price/hash-bound wallet transaction plus existing ownership
+and immutable avatar audit. It advances avatar_version, writes XP0 and never
+changes ranking/gameplay/payment state. Buying does not equip; choose and save
+through the existing editor. New points items have level:null and explicit price
+metadata. Legacy readers retain26numeric-level items and cannot overwrite a saved
+newer look; explicit web catalog_version=2 opts into new items. Compatible recovery
+retains current validators/catalog and pauses new purchases; no native purchase
+allowlist entry is added. Physical native visual parity is not certified. The new Orbit geometry
+is catalog-curated vector art, distinct from earned frames. No uploads, trading,
+gifting, cash currency or randomized purchases. Owner diagnostics add3receipt/
+ownership counters. Evidence and exact limitations:
+reports/finnaplan-v5-profile-20261117/README.md. Release receipt:
+reports/finnaplan-v5-recovery-20261117/README.md.0097 is applied and immutable;
+1081backend tests,229-table preservation and28API/337static hashes pass.
+Cosmetics admin curation is V.12.

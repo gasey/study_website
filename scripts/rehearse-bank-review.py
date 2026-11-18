@@ -33,7 +33,7 @@ def main():
     script=(ROOT/'scripts/sync-bank.sh').read_text()
     setup=script.split("SQL=$(cat <<'EOSQL'\n",1)[1].split('\nEOSQL',1)[0].replace('/tmp/bank-csv',str(csv))
     sync=script.split("APPLY=$(cat <<'EOSQL'\n",1)[1].split('\nEOSQL',1)[0]
-    dbs=conftest.database.__wrapped__();dbname,conn=next(dbs)
+    dbs=conftest.fresh_database();dbname,conn=next(dbs)
     clients=conftest.client.__wrapped__((dbname,conn));client=next(clients)
     stages=[]
     try:

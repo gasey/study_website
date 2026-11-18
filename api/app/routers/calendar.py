@@ -352,3 +352,7 @@ async def history(eid: str, actor: Staff, response: Response):
             (eid,),
         )
         return {"items": await cur.fetchall()}
+
+# Owned scheduling shares this calendar surface and its existing router registration.
+from . import calendar_owned
+router.include_router(calendar_owned.router)

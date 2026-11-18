@@ -1,12 +1,16 @@
-"""Curated cosmetics only. No uploads, external URLs, currency or XP writes."""
+"""Curated cosmetics only. No uploads, external URLs or XP awards."""
 
 import json
+import hashlib
 from pathlib import Path
 from pydantic import BaseModel, ConfigDict, model_validator
 
 CATALOG = json.loads(
     (Path(__file__).resolve().parents[1] / "data/avatar_catalog.json").read_text()
 )
+CATALOG_SHA256 = hashlib.sha256((Path(__file__).resolve().parents[1] / 'data/avatar_catalog.json').read_bytes()).hexdigest()
+assert len({i['id'] for i in CATALOG})==len(CATALOG)
+assert all(i['level'] is None and 15<=i['price_points']<=150 for i in CATALOG if i.get('price_points'))
 DEFAULT = {
     "skin": "#D9A47C",
     "hair": "Bun",
@@ -53,8 +57,13 @@ async def inventory(cur, row):
     return [
         {
             **i,
-            "available": i["level"] <= row["level"] or i["id"] in owned,
+            "available": (i.get("price_points") is None and i["level"] is not None and i["level"] <= row["level"]) or i["id"] in owned,
             "claimed": i["level"] == 1 or i["id"] in owned,
+            "purchasable": bool(i.get("active",True) and i.get("price_points")),
         }
         for i in CATALOG
     ]
+
+
+def needs_current_renderer(look):
+    return bool(look and any(i.get('price_points') and look.get(i['category'])==i['value'] for i in CATALOG))

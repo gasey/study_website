@@ -30,22 +30,27 @@ async def run():
    await cur.execute('SELECT bank_checksum FROM sync_log WHERE finished_at IS NOT NULL ORDER BY id DESC LIMIT 1');current=(await cur.fetchone())['bank_checksum']
    if current!=data['bank_sha256']:raise ValueError('Bank changed again; re-inspect before withdrawing exports')
    await cur.execute("SELECT id FROM bank_publications WHERE state='exported'FOR UPDATE");waiting=await cur.fetchall()
-   if {p['id']for p in waiting}!=set(ids):raise ValueError('Explicit list must match all outstanding exports')
+   if not {p['id']for p in waiting}.issubset(set(ids)):raise ValueError('Explicit list must include every outstanding export')
    await cur.execute('SELECT * FROM bank_publications WHERE id=ANY(%s)',(ids,));pubs=await cur.fetchall();checked=[]
    for pub in pubs:
     m=pub['manifest']
-    if digest(m)!=pub['manifest_hash']or m['author_id']!=owner or m['bank_sha256']==current or m.get('admin_decision',{}).get('actor_id')!=owner:raise ValueError('Only stale existing owner answer exports qualify')
+    if (digest(m)!=pub['manifest_hash'] or m['author_id']!=owner or m['bank_sha256']==current
+        or m.get('admin_decision',{}).get('actor_id')!=owner or pub['state'] not in ('exported','failed')
+        or pub.get('receipt') is not None or (pub['state']=='failed' and pub.get('error')!='Bank snapshot changed since review export')):
+     raise ValueError('Only stale, unapplied owner answer exports with an unchanged bank baseline qualify')
     await cur.execute("SELECT 1 FROM contribution_events WHERE contribution_id=%s AND actor_id=%s AND action='operator_answer_completed'",(pub['contribution_id'],OPERATOR))
     if not await cur.fetchone():raise ValueError('Missing original owner delegation')
     c=await review.load(cur,pub['contribution_id'],owner,review=True)
-    if c['state']!='publishing' or c['author_id']!=owner or c['kind']!='answer' or c['revision']!=pub['revision']:raise ValueError('Contribution changed before withdrawal')
+    if c['state'] not in ('publishing','publication_failed') or c['author_id']!=owner or c['kind']!='answer' or c['revision']!=pub['revision']:raise ValueError('Contribution changed before withdrawal')
     snap=await review.snapshot(cur,c['canonical_id'],c['appearance_id'])
     if digest(snap)!=m['baseline_hash']:raise ValueError('Target source changed; withdrawal needs separate inspection')
     checked.append((pub,c))
    for pub,c in checked:
     detail={'owner_id':owner,'authorization':data['authorization'],'reason':data['reason'],'publication_id':pub['id'],'stale_bank_sha256':pub['manifest']['bank_sha256'],'current_bank_sha256':current,'source_baseline_unchanged':True,'not_published':True}
-    await cur.execute("UPDATE bank_publications SET state='failed',error=%s,finished_at=now() WHERE id=%s",('Unapplied stale export withdrawn for fresh owner review. '+data['reason'],pub['id']))
-    c=await review.update_state(cur,c,OPERATOR,'publication_failed',detail)
+    if pub['state']=='exported':
+     await cur.execute("UPDATE bank_publications SET state='failed',error=%s,finished_at=now() WHERE id=%s",('Unapplied stale export withdrawn for fresh owner review. '+data['reason'],pub['id']))
+    if c['state']=='publishing':
+     c=await review.update_state(cur,c,OPERATOR,'publication_failed',detail)
     c=await review.update_state(cur,c,OPERATOR,'changes_requested',detail)
     await review.update_state(cur,c,OPERATOR,'withdrawn',detail)
     await review.event(cur,c['id'],OPERATOR,'operator_unapplied_export_withdrawn',detail)

@@ -77,7 +77,7 @@ def game_case(client, database):
 
 
 def create(client, h, subject, mode="speed", key=None, **kw):
-    selection={'kind':'mixed','excluded_areas':[]} if mode=='cup' else {'kind':'area','area_id':'subject:'+subject,'excluded_areas':[]}
+    selection={'kind':'mixed','excluded_areas':[]} if mode in ('cup','daily') else {'kind':'area','area_id':'subject:'+subject,'excluded_areas':[]}
     preview=client.post('/api/games/preview',headers=h,json={'mode':mode,'selection':selection})
     if preview.status_code!=200:return preview
     return client.post(
@@ -647,8 +647,8 @@ def test_foundation_presets_competitive_scoring_quests_and_leaderboards(client, 
     assert w["current_streak_days"] >= 1
     quests = {q["key"]: q for q in w["daily_quests"]["quests"]}
     assert quests["warmup_circuit"]["completed"] is True
-    assert quests["cross_stream_triad"]["completed"] is True
-    assert quests["mastery_closure"]["completed"] is True
+    assert quests["review_ring"]["completed"] is False
+    assert quests["plan_ring"]["completed"] is False
 
     claim1 = client.post("/api/rewards/daily-quests/warmup_circuit/claim", headers=h[0])
     assert claim1.status_code == 200, claim1.text
@@ -662,12 +662,12 @@ def test_foundation_presets_competitive_scoring_quests_and_leaderboards(client, 
     assert client.post("/api/rewards/stream-cohort", headers=h[0], json={"stream_cohort": "arts-comfort"}).status_code == 200
     assert client.post("/api/rewards/visibility", headers=h[0], json={"public": True}).status_code == 200
 
-    # Verify multi-track competitive leaderboards & stream cohort filter
-    lb_league = client.get("/api/games/leaderboard", headers=h[0], params={"track": "league", "period": "week", "cohort": "arts-comfort"})
+    # Weekly league and server-owned mode scores expose only handle/score/rank
+    lb_league = client.get("/api/games/leaderboard", headers=h[0], params={"track": "league", "period": "week", "contract": 2})
     assert lb_league.status_code == 200, lb_league.text
-    assert any(item["handle"] == users[0] and item["stream_cohort"] == "arts-comfort" for item in lb_league.json()["items"])
+    assert any(item["handle"] == users[0]  for item in lb_league.json()["items"])
 
-    lb_pillar = client.get("/api/games/leaderboard", headers=h[0], params={"track": "gk_gs", "cohort": "arts-comfort"})
+    lb_pillar = client.get("/api/games/leaderboard", headers=h[0], params={"track": "speed"})
     assert lb_pillar.status_code == 200, lb_pillar.text
     assert any(item["handle"] == users[0] and item["score"] == me["score"] for item in lb_pillar.json()["items"])
 
@@ -690,3 +690,118 @@ def test_foundation_presets_competitive_scoring_quests_and_leaderboards(client, 
     assert diag["wallets_in_debt"] == 0
     assert diag["over_cap_days"] == 0
 
+
+
+@pytest.fixture
+def daily_case(client, database):
+    """Questions classified into the real non-technical pillars.
+
+    game_case classifies everything under one synthetic subject, which the
+    Daily Five pillar quotas can never satisfy.
+    """
+    _, conn = database
+    tag = uuid4().hex[:10]
+    for node, label, level in (
+        ("general-studies", "General Studies", "subject"),
+        ("english", "English", "subject"),
+        ("english/grammar", "Grammar", "topic"),
+        ("mathematics", "Mathematics", "subject"),
+        ("mathematics/arithmetic", "Arithmetic", "topic"),
+    ):
+        conn.execute(
+            "INSERT INTO review_taxonomy(id,label,level,version) VALUES(%s,%s,%s,'test') ON CONFLICT DO NOTHING",
+            (node, label, level),
+        )
+    users, headers = [], []
+    for n in range(2):
+        user = "daily_" + tag + "_" + str(n)
+        token = "session-" + user
+        users.append(user)
+        conn.execute("INSERT INTO users(id,handle,email) VALUES(%s,%s,%s)", (user, user, user + "@example.test"))
+        conn.execute(
+            "INSERT INTO auth_sessions(token_hash,user_id,expires_at) VALUES(%s,%s,now()+interval '1 day')",
+            (hashlib.sha256(token.encode()).hexdigest(), user),
+        )
+        headers.append({
+            "Cookie": "ism_session=" + token,
+            "Origin": "https://study.hawayu.in",
+            "X-Review-CSRF": hashlib.sha256(("bank-review:" + token).encode()).hexdigest(),
+        })
+    plan = [("general-studies", None)] * 8 + [("english", "english/grammar")] * 4 + [("mathematics", "mathematics/arithmetic")] * 4
+    for n, (subject_id, topic_id) in enumerate(plan):
+        qid = "cq_daily_" + tag + "_" + str(n)
+        text = "Synthetic daily " + tag + " question " + str(n)
+        conn.execute(
+            "INSERT INTO canonical_questions(id,type,question,options,answer_text,answer_source) VALUES(%s,'mcq',%s,%s,'B','official')",
+            (qid, text, Jsonb(["A", "B", "C", "D"])),
+        )
+        conn.execute(
+            "INSERT INTO appearances(id,paper_id,type,question,options,answer_index,answer_source,canonical_id,is_primary) VALUES(%s,'paper-test','mcq',%s,%s,1,'official',%s,true)",
+            ("a_" + qid, text, Jsonb(["A", "B", "C", "D"]), qid),
+        )
+        conn.execute(
+            "INSERT INTO question_classifications(question_id,subject_id,subject_label,topic_id,topic_label,taxonomy_version,source,review_status) VALUES(%s,%s,%s,%s,%s,'test','manual','approved')",
+            (qid, subject_id, subject_id, topic_id, topic_id),
+        )
+    client.cookies.clear()
+    yield conn, users, headers
+
+
+def test_daily_five_is_shared_once_a_day_and_scores_on_seconds_left(client, daily_case):
+    conn, users, h = daily_case
+
+    before=conn.execute('SELECT count(*) FROM game_dailies').fetchone()[0]
+    catalog=client.get('/api/games',headers=h[0])
+    assert catalog.status_code==200,catalog.text
+    assert catalog.headers['cache-control']=='private, no-store'
+    assert catalog.json()['daily']['entry_room'] is None
+    assert conn.execute('SELECT count(*) FROM game_dailies').fetchone()[0]==before
+    first = create(client, h[0], None, mode="daily")
+    assert first.status_code == 200, first.text
+    room = first.json()
+    assert room["state"] == "running" and room["total"] == 5
+    assert client.get('/api/games',headers=h[0]).json()['daily']['entry_room']==room['id']
+    # The real application role must read the missing migration's dependencies.
+    with conn.transaction():
+        conn.execute('SET LOCAL ROLE mpsc')
+        assert conn.execute('SELECT count(*) FROM game_daily_entries WHERE user_id=%s',(users[0],)).fetchone()[0]==1
+
+    # The whole point of Daily Five: everyone gets the same five questions.
+    second = create(client, h[1], None, mode="daily")
+    assert second.status_code == 200, second.text
+    served = conn.execute(
+        "SELECT r.owner_id,r.questions FROM game_rooms r WHERE r.owner_id=ANY(%s) AND r.mode='daily'",
+        (users,),
+    ).fetchall()
+    assert len(served) == 2
+    sets = {owner: [q["id"] for q in qs] for owner, qs in served}
+    assert sets[users[0]] == sets[users[1]]
+
+    # The quota is 3 GK/GS, 1 English, 1 everyday maths.
+    pillars = conn.execute(
+        "SELECT subject_id,count(*)::int FROM question_classifications WHERE question_id=ANY(%s) GROUP BY subject_id",
+        (sets[users[0]],),
+    ).fetchall()
+    assert dict(pillars) == {"general-studies": 3, "english": 1, "mathematics": 1}
+
+    done = finish(client, h[0], room, conn)
+    assert done["state"] == "finished"
+    assert done['review']==[] and done['review_available_at']
+    # Answered immediately, so nearly every second remains: 100 + 5*20 a question.
+    mine = [p for p in done["players"] if p["user_id"] == users[0]][0]
+    assert mine["correct"] == 5
+    assert mine["score"] > 900, mine["score"]
+
+    # One attempt per day, and the table guarantees it even if the check slips.
+    again = create(client, h[0], None, mode="daily")
+    assert again.status_code == 409, again.text
+    assert "per day" in again.json()["detail"]
+    assert conn.execute(
+        "SELECT count(*)::int FROM game_daily_entries WHERE user_id=%s", (users[0],)
+    ).fetchone()[0] == 1
+
+    # Shared answers stay hidden while today's event is open.
+    conn.execute("UPDATE game_dailies SET closes_at=now()-interval '1 second',opens_at=now()-interval '1 day' WHERE id=(SELECT daily_id FROM game_rooms WHERE id=%s)",(room['id'],))
+    opened=client.get('/api/games/rooms/'+room['id'],headers=h[0])
+    assert opened.status_code==200,opened.text
+    assert len(opened.json()['review'])==5

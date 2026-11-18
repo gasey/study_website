@@ -42,7 +42,11 @@ for f in "$DIR"/[0-9]*.sql; do
   sum=$(sha256sum "$f" | cut -c1-16)
   prev=$(grep -E "^$v " <<<"$applied" | awk '{print $2}' || true)
   if [ -z "$prev" ]; then pending+=("$v")
-  elif [ "$prev" != "$sum" ]; then drift+=("$v (recorded $prev, now $sum)")
+  # One early migration (0077) was recorded with a full sha256 before this
+  # script started truncating to 16 characters. Compare on the common prefix
+  # so a formatting change is not reported as edited content. The ledger is an
+  # applied-migration receipt and is never rewritten to suit the tool.
+  elif [ "${prev:0:16}" != "$sum" ]; then drift+=("$v (recorded $prev, now $sum)")
   fi
 done
 

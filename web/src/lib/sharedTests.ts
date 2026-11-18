@@ -6,7 +6,7 @@ export type TestQuestion={id:string;question:string;options:(string|null)[];answ
 export type TestStats={editions:{revision:number;starts:number;completions:number;late_completions:number}[];basis:string}
 export const getSharedTest=(id:string)=>reviewRequest<SharedTest>('/tests/'+encodeURIComponent(id))
 export const sharedTestUrl=(id:string,origin=window.location.origin)=>origin+'/api/tests/'+encodeURIComponent(id)+'/share'
-export const testInvitation=(id:string,title:string,origin=window.location.origin)=>title+'\nTake this mock test on India Study Map:\n'+sharedTestUrl(id,origin)
+export const testInvitation=(id:string,title:string,origin=window.location.origin)=>title+'\nTake this mock test on Finna:\n'+sharedTestUrl(id,origin)
 export const testWhatsAppUrl=(id:string,title:string,origin=window.location.origin)=>'https://wa.me/?text='+encodeURIComponent(testInvitation(id,title,origin))
 export function mockResumePath(m:Pick<MockSession,'collection_id'|'paper_id'|'section_path'|'answer_mode'|'paper_mode'|'learning_test_id'>){
  if(m.learning_test_id)return '/tests/'+encodeURIComponent(m.learning_test_id)+'/take'

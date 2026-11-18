@@ -2,7 +2,7 @@
 from datetime import timedelta
 from zoneinfo import ZoneInfo
 
-RULE_VERSION='learning-v1'
+from .reward_economy import RULE_VERSION
 
 SCHOLAR_TITLES=(
     (12,'MPSC Common Core Master'),
@@ -29,22 +29,8 @@ DAILY_QUEST_DEFS={
         'xp':20,
         'points':2,
     },
-    'cross_stream_triad':{
-        'key':'cross_stream_triad',
-        'title':'Ring 2 · Cross-Stream Triad',
-        'description':'Get 6 verified questions right across Foundation pillars today',
-        'target':6,
-        'xp':30,
-        'points':3,
-    },
-    'mastery_closure':{
-        'key':'mastery_closure',
-        'title':'Ring 3 · High-Score or Revision Closure',
-        'description':'Score 900+ pts in a game or complete 5 practice/revision checks today',
-        'target':5,
-        'xp':50,
-        'points':5,
-    },
+    'review_ring':{'key':'review_ring','title':'Ring 2 · Review','description':'Clear 8 scheduled due items in completed Smart Review sets','target':8,'xp':30,'points':3},
+    'plan_ring':{'key':'plan_ring','title':'Ring 3 · Today’s plan','description':'Finish your fixed daily review, new-question and Daily Five targets','target':1,'xp':50,'points':5},
 }
 
 def scholar_title(level:int)->str:
@@ -74,119 +60,45 @@ def level_bounds(xp):
     return {'level':level,'level_floor_xp':0 if level==1 else 40*level**2,'next_level_xp':40*(level+1)**2,'title':scholar_title(level)}
 
 async def touch_daily_streak(cur,user:str):
-    await cur.execute("SELECT email IS NOT NULL AS account FROM users WHERE id=%s",(user,))
-    row=await cur.fetchone()
-    if not row or not row['account']:return None
-    await cur.execute("SELECT (now() AT TIME ZONE 'Asia/Kolkata')::date AS today")
-    today=(await cur.fetchone())['today']
-    await cur.execute("INSERT INTO reward_profiles(user_id) VALUES(%s) ON CONFLICT DO NOTHING",(user,))
-    await cur.execute("SELECT current_streak_days,longest_streak_days,last_active_ist_date,streak_shields FROM reward_profiles WHERE user_id=%s FOR UPDATE",(user,))
-    prof=await cur.fetchone()
-    cur_streak=prof['current_streak_days'] or 0
-    longest=prof['longest_streak_days'] or 0
-    last_date=prof['last_active_ist_date']
-    shields=prof['streak_shields'] or 0
-    if last_date==today:
-        return {'current_streak_days':cur_streak,'longest_streak_days':longest,'streak_shields':shields,'last_active_ist_date':today}
-    if last_date is None:
-        cur_streak=1
-    else:
-        gap=(today-last_date).days
-        if gap==1:
-            cur_streak+=1
-        elif gap==2 and shields>0:
-            shields-=1
-            cur_streak+=1
-        else:
-            cur_streak=1
-    longest=max(longest,cur_streak)
-    await cur.execute(
-        "UPDATE reward_profiles SET current_streak_days=%s,longest_streak_days=%s,last_active_ist_date=%s,streak_shields=%s WHERE user_id=%s",
-        (cur_streak,longest,today,shields,user),
-    )
-    return {'current_streak_days':cur_streak,'longest_streak_days':longest,'streak_shields':shields,'last_active_ist_date':today}
+    # Legacy game callers cannot qualify a day with a view, claim or empty run.
+    from .learning_habit import QUALIFIED,clock,streak
+    day=await clock(cur)
+    await cur.execute('SELECT id FROM ('+QUALIFIED+" AND (a.at AT TIME ZONE 'Asia/Kolkata')::date=%(day)s AND a.at<=clock_timestamp()) e WHERE outcome IN ('correct','wrong') LIMIT 1",{'user':user,'day':day})
+    if await cur.fetchone():await cur.execute('SELECT touch_learning_streak(%s,%s)',(user,day))
+    return await streak(cur,user)
+
 
 async def daily_quests_status(cur,user:str)->dict:
-    await cur.execute("SELECT (now() AT TIME ZONE 'Asia/Kolkata')::date AS today, (date_trunc('day',now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata') AS day_start")
-    t_row=await cur.fetchone()
-    today=t_row['today']
-    day_start=t_row['day_start']
-
-    await cur.execute(
-        """SELECT
-          count(*)::int AS total_attempts,
-          count(*) FILTER (WHERE correct)::int AS correct_attempts,
-          count(*) FILTER (WHERE context IN ('practice','review'))::int AS practice_attempts
-        FROM attempts WHERE user_id=%s AND at>=%s""",
-        (user,day_start),
-    )
-    att=await cur.fetchone()
-
-    await cur.execute(
-        """SELECT
-          count(*)::int AS games_finished,
-          COALESCE(max(m.score),0)::int AS max_score
-        FROM game_members m JOIN game_rooms r ON r.id=m.room_id
-        WHERE m.user_id=%s AND m.left_at IS NULL AND r.state='finished' AND r.finished_at>=%s""",
-        (user,day_start),
-    )
-    gms=await cur.fetchone()
-
-    await cur.execute(
-        "SELECT quest_key,xp_awarded,points_awarded,claimed_at FROM daily_quest_claims WHERE user_id=%s AND ist_date=%s",
-        (user,today),
-    )
-    claimed_map={r['quest_key']:r for r in await cur.fetchall()}
-
-    warmup_prog=min(10,max(10 if gms['games_finished']>=1 else 0,att['total_attempts']))
-    triad_prog=min(6,att['correct_attempts'])
-    mastery_prog=5 if gms['max_score']>=900 else min(5,max(att['practice_attempts'],att['correct_attempts']//2))
-
-    progress_by_key={
-        'warmup_circuit':warmup_prog,
-        'cross_stream_triad':triad_prog,
-        'mastery_closure':mastery_prog,
-    }
-
+    from .learning_habit import QUALIFIED,clock,plan_status
+    today=await clock(cur)
+    await cur.execute('SELECT count(*)::int AS n FROM ('+QUALIFIED+" AND (a.at AT TIME ZONE 'Asia/Kolkata')::date=%(day)s AND a.at<=clock_timestamp()) e WHERE outcome IN ('correct','wrong')",{'user':user,'day':today})
+    attempts=(await cur.fetchone())['n']
+    await cur.execute('''SELECT count(*)::int AS n FROM game_members m JOIN game_rooms r ON r.id=m.room_id
+      WHERE m.user_id=%s AND m.left_at IS NULL AND r.state='finished' AND m.correct+m.wrong>0
+      AND (r.finished_at AT TIME ZONE 'Asia/Kolkata')::date=%s''',(user,today))
+    games=(await cur.fetchone())['n']
+    await cur.execute('SELECT count(*)::int AS n FROM review_item_completions WHERE user_id=%s AND completed_on=%s',(user,today))
+    cleared=(await cur.fetchone())['n']
+    plan=await plan_status(cur,user)
+    await cur.execute('SELECT quest_key,xp_awarded,points_awarded FROM daily_quest_claims WHERE user_id=%s AND ist_date=%s',(user,today))
+    claimed={r['quest_key']:r for r in await cur.fetchall()}
+    progress={'warmup_circuit':min(10,max(attempts,10 if games else 0)),'review_ring':min(8,cleared),'plan_ring':int(plan['completed'])}
     quests=[]
-    for q_key in ('warmup_circuit','cross_stream_triad','mastery_closure'):
-        d=DAILY_QUEST_DEFS[q_key]
-        prog=progress_by_key[q_key]
-        c_row=claimed_map.get(q_key)
-        quests.append({
-            'key':q_key,
-            'title':d['title'],
-            'description':d['description'],
-            'progress':prog,
-            'target':d['target'],
-            'completed':prog>=d['target'],
-            'claimed':c_row is not None,
-            'xp_reward':d['xp'],
-            'points_reward':d['points'],
-            'xp_awarded':c_row['xp_awarded'] if c_row else None,
-            'points_awarded':c_row['points_awarded'] if c_row else None,
-        })
-
-    # Build 7-day Mon..Sun IST activity strip for current week
+    # On cutover day an old ring receipt settles its replacement too. Old rows
+    # remain immutable and cannot be replayed into a second same-slot payment.
+    for key,old in [('warmup_circuit',None),('review_ring','cross_stream_triad'),('plan_ring','mastery_closure')]:
+        definition=DAILY_QUEST_DEFS[key];receipt=claimed.get(key) or claimed.get(old)
+        quests.append({'key':key,'title':definition['title'],'description':definition['description'],'subtitle':definition['description'],
+          'progress':progress[key],'target':definition['target'],'completed':progress[key]>=definition['target'],
+          'claimed':bool(receipt),'settled_by':receipt['quest_key'] if receipt else None,
+          'xp_reward':definition['xp'],'points_reward':definition['points'],
+          'xp_awarded':receipt['xp_awarded'] if receipt else None,'points_awarded':receipt['points_awarded'] if receipt else None})
     monday=today-timedelta(days=today.weekday())
-    await cur.execute(
-        """SELECT DISTINCT (at AT TIME ZONE 'Asia/Kolkata')::date AS d
-           FROM attempts WHERE user_id=%s AND at >= (%s::timestamp AT TIME ZONE 'Asia/Kolkata')""",
-        (user,monday.isoformat()),
-    )
-    active_days={r['d'] for r in await cur.fetchall()}
-    labels=['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-    week_strip=[]
-    for i in range(7):
-        d=monday+timedelta(days=i)
-        week_strip.append({
-            'day':labels[i],
-            'date':d.isoformat(),
-            'active':d in active_days or (d==today and (warmup_prog>0 or len(claimed_map)>0)),
-            'is_today':d==today,
-        })
-
-    return {'ist_date':today.isoformat(),'quests':quests,'week_strip':week_strip}
+    await cur.execute('SELECT day FROM user_learning_days WHERE user_id=%s AND day BETWEEN %s AND %s',(user,monday,today))
+    days={r['day'] for r in await cur.fetchall()}
+    strip=[{'day':label,'label':label,'date':(monday+timedelta(days=i)).isoformat(),
+      'active':monday+timedelta(days=i) in days,'is_today':monday+timedelta(days=i)==today} for i,label in enumerate(['Mon','Tue','Wed','Thu','Fri','Sat','Sun'])]
+    return {'ist_date':today.isoformat(),'quests':quests,'week_strip':strip,'plan':plan}
 
 async def attempt_reward(cur,user,question,attempt,correct,source,context):
     await cur.execute('SELECT email IS NOT NULL AS account FROM users WHERE id=%s',(user,))

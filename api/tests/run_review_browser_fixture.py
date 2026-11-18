@@ -8,8 +8,25 @@ import uvicorn
 from fastapi.responses import Response
 research_demo=None
 
-databases=conftest.database.__wrapped__();database=next(databases)
+databases=conftest.fresh_database();database=next(databases)
 clients=conftest.client.__wrapped__(database);fixture_client=next(clients)
+if os.environ.get('ISM_LEARNING_LOOP_DEMO')=='1':
+    from test_learning_loop import questions,attempt,run
+    from app.services import mastery,review_queue
+    conn=database[1]
+    paper,ids=questions(database,12)
+    conn.execute("INSERT INTO review_taxonomy(id,label,level,version,parent_id) VALUES('english/test','Sentence patterns','topic','test','english') ON CONFLICT DO NOTHING")
+    conn.execute("UPDATE question_classifications SET topic_label='Sentence patterns' WHERE question_id=ANY(%s)",(ids,))
+    for q in ids[:8 if os.environ.get('ISM_HABIT_DEMO')=='1' else 5]:
+        aid=attempt(conn,'author',q,False,'2026-11-14 12:00:00+00')
+        run(fixture_client,review_queue.apply_attempt,aid)
+    run(fixture_client,mastery.refresh,'author')
+    conn.execute("INSERT INTO user_exam_bookmarks(user_id,collection_id,is_primary) VALUES('author','udc',true)")
+    print('Synthetic learning-loop preview: http://127.0.0.1:5189/feed',flush=True)
+if os.environ.get('ISM_DAILY_FIVE_DEMO')=='1':
+    from test_games_search import daily_case
+    daily_demo=daily_case.__wrapped__(fixture_client,database)
+    next(daily_demo)
 if os.environ.get('ISM_REASSESSMENT_DEMO')=='1':
     from test_scoring_revisions import start_and_finish
     actor=conftest.actor.__wrapped__(fixture_client)

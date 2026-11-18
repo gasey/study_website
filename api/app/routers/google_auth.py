@@ -147,5 +147,7 @@ async def finish(body:Finish,request:Request,response:Response):
                 if not body.code or not await mfa.consume(cur,user,body.code):raise HTTPException(401,'Enter a valid authenticator or recovery code')
             await _new_session(user,response,mfa_verified=has_mfa,cur=cur);destination='/feed'
         await cur.execute('DELETE FROM google_auth_flows WHERE token_hash=%s',(p['token_hash'],))
+    from ..services.bulk_rates import after_identity_commit
+    await after_identity_commit(user)
     response.delete_cookie(PENDING_COOKIE,path='/api/auth/google')
     return {'next':destination}

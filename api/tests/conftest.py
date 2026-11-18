@@ -15,8 +15,7 @@ ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'api'))
 sys.path.insert(0,str(ROOT/'scripts'))
 
-@pytest.fixture(scope='session')
-def database():
+def fresh_database():
     name='ism_review_test_'+uuid4().hex[:12]
     admin=psycopg.connect('dbname=postgres',autocommit=True)
     if not admin.execute("SELECT 1 FROM pg_roles WHERE rolname='mpsc'").fetchone():admin.execute('CREATE ROLE mpsc NOLOGIN')
@@ -52,7 +51,34 @@ def database():
     finally:
         conn.close();admin.execute('DROP DATABASE '+name+' WITH (FORCE)');admin.close()
 
+
 @pytest.fixture(scope='session')
+def database_schema():
+    """Migrate once, then clone an idle schema instead of sharing mutable data."""
+    prepared=fresh_database()
+    name,conn=next(prepared)
+    conn.close()  # PostgreSQL templates must have no open connections.
+    try:
+        yield name
+    finally:
+        try:next(prepared)
+        except StopIteration:pass
+
+
+@pytest.fixture(scope='module')
+def database(database_schema):
+    template=database_schema
+    name='ism_review_test_'+uuid4().hex[:12]
+    admin=psycopg.connect('dbname=postgres',autocommit=True)
+    admin.execute('CREATE DATABASE '+name+' TEMPLATE '+template)
+    conn=psycopg.connect('dbname='+name,autocommit=True)
+    try:
+        yield name,conn
+    finally:
+        conn.close();admin.execute('DROP DATABASE '+name+' WITH (FORCE)');admin.close()
+
+
+@pytest.fixture(scope='module')
 def client(database):
     name,conn=database
     for user in ['author','reviewer1','reviewer2','owner','outsider']:
@@ -89,3 +115,4 @@ def actor(client):
 def isolate_write_rate_budget(database):
     """Each independent test owns a fresh budget; within-test limits stay real."""
     database[1].execute('DELETE FROM review_rate_buckets')
+    database[1].execute('DELETE FROM rate_limits')

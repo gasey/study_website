@@ -65,7 +65,11 @@ def _same_origin(request: Request) -> None:
 async def _new_session(user_id: str, response: Response, mfa_verified=False, cur=None) -> None:
     token=secrets.token_urlsafe(32)
     async def persist(c):
-        await c.execute("DELETE FROM auth_sessions WHERE expires_at<now() OR revoked_at IS NOT NULL")
+        await c.execute('SELECT email,closed_at FROM users WHERE id=%s FOR UPDATE',(user_id,))
+        owner=await c.fetchone()
+        if not owner or not owner['email'] or owner['closed_at']:raise HTTPException(401,'This account is no longer available')
+        # The bounded retention worker preserves the actual sign-in timestamp
+        # before expiring old credentials. Sign-in never sweeps other accounts.
         await c.execute("INSERT INTO auth_sessions(token_hash,user_id,expires_at,mfa_verified_at) VALUES (%s,%s,now()+interval '30 days',CASE WHEN %s THEN now() ELSE NULL END)",(hashlib.sha256(token.encode()).hexdigest(),user_id,mfa_verified))
     if cur is not None:await persist(cur)
     else:
@@ -92,6 +96,8 @@ async def register(body: Credentials, request: Request, response: Response,
             raise HTTPException(409, "An account with this email already exists") from exc
         raise
     await _new_session(user_id, response)
+    from ..services.bulk_rates import after_identity_commit
+    await after_identity_commit(user_id)
     return {"authenticated": True, "email": email, "plan_code": "pro", "plan_status": "trial", "trial_ends_at": (datetime.now(timezone.utc)+timedelta(days=7)).isoformat()}
 
 async def _check_rate(email: str, ip: str) -> None:
@@ -109,6 +115,9 @@ async def login(body: LoginCredentials, request: Request, response: Response,
                 x_device_id: Annotated[str | None, Header(alias="X-Device-Id")] = None):
     _same_origin(request)
     email = str(body.email).strip().lower()
+    from ..services import login_backoff
+    ip=request.client.host if request.client else 'unknown'
+    await login_backoff.check(email,ip)
     await _check_rate(email, request.client.host if request.client else "unknown")
     from ..services import mfa
     await mfa.limit('login:'+hashlib.sha256(email.encode()).hexdigest())
@@ -116,13 +125,20 @@ async def login(body: LoginCredentials, request: Request, response: Response,
         await cur.execute("SELECT id,password_hash,email,plan_code,plan_status,trial_ends_at FROM users WHERE lower(email)=%s FOR UPDATE",(email,))
         user=await cur.fetchone()
         valid=await run_in_threadpool(_check_password,body.password,user['password_hash'] if user else _DUMMY_HASH)
-        if not user or not valid:raise HTTPException(401,'Email or password is incorrect')
+        if not user or not valid:
+            await login_backoff.failed(email,ip)
+            raise HTTPException(401,'Email or password is incorrect')
         await cur.execute('SELECT enabled_at FROM account_mfa WHERE user_id=%s',(user['id'],));factor=await cur.fetchone()
         enabled=bool(factor and factor['enabled_at'])
         if enabled:
             if not body.code:raise HTTPException(401,'Authenticator code required')
-            if not await mfa.consume(cur,user['id'],body.code):raise HTTPException(401,'Authenticator or recovery code is incorrect or already used')
+            if not await mfa.consume(cur,user['id'],body.code):
+                await login_backoff.failed(email,ip)
+                raise HTTPException(401,'Authenticator or recovery code is incorrect or already used')
+        await login_backoff.clear_account(cur,email)
         await _new_session(user['id'],response,mfa_verified=enabled,cur=cur)
+    from ..services.bulk_rates import after_identity_commit
+    await after_identity_commit(user['id'])
     return {"authenticated": True, "email": user["email"], "plan_code": user["plan_code"], "plan_status": user["plan_status"], "trial_ends_at": user["trial_ends_at"]}
 
 @router.get("/session")
@@ -134,7 +150,7 @@ async def session(request: Request, response: Response):
         return {"authenticated": False,"state":"guest"}
     token_hash = hashlib.sha256(token.encode()).hexdigest()
     async with cursor() as cur:
-        await cur.execute("SELECT u.avatar,u.avatar_version,u.email,u.email_verified_at,CASE WHEN account_has_pro(u.id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=u.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN NOT account_has_pro(u.id) THEN 'free' ELSE u.plan_status END AS plan_status,u.trial_ends_at,u.plan_ends_at FROM auth_sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=%s AND s.revoked_at IS NULL AND s.expires_at>now()", (token_hash,))
+        await cur.execute("SELECT u.avatar,u.avatar_version,u.email,u.email_verified_at,CASE WHEN account_has_pro(u.id) THEN 'pro' ELSE 'free' END AS plan_code,CASE WHEN EXISTS(SELECT 1 FROM reward_redemptions rr WHERE rr.user_id=u.id AND rr.starts_at<=now() AND rr.ends_at>now()) THEN 'rewarded' WHEN EXISTS(SELECT 1 FROM billing_access_grants bg WHERE bg.user_id=u.id AND bg.starts_at<=now() AND bg.ends_at>now()) THEN 'granted' WHEN NOT account_has_pro(u.id) THEN 'free' ELSE u.plan_status END AS plan_status,u.trial_ends_at,u.plan_ends_at FROM auth_sessions s JOIN users u ON u.id=s.user_id WHERE s.token_hash=%s AND s.revoked_at IS NULL AND s.expires_at>now()", (token_hash,))
         row = await cur.fetchone()
     session_info = await account_session(request) if row else None
     return {"authenticated": bool(row), "state":"authenticated" if row else "expired",

@@ -16,4 +16,18 @@ assert.equal(next.searchParams.get('seed'),'stable');assert.equal(next.searchPar
 const resume=new URL(j.practiceJourneyLink('ldc',{checkpoint:{state:{order:'mixed',seed:'stable',offset:23,status:'ever_wrong'}}}),'https://study.hawayu.in');
 assert.equal(resume.searchParams.get('seed'),'stable');assert.equal(resume.searchParams.get('offset'),'23');
 assert.notEqual(cache.questionQueryString({seed:'first',order:'mixed'}),cache.questionQueryString({seed:'second',order:'mixed'}));
+assert.equal(s.udcPracticeMode(new URLSearchParams()),'continuous');
+assert.equal(s.udcPracticeMode(new URLSearchParams('practice_mode=sets')),'sets');
+assert.equal(s.udcPracticeMode(new URLSearchParams('session=existing')),'sets','Existing saved sets still resume');
+const fullPractice=new URL(s.udcPracticeLink(new URLSearchParams('subject_id=english&topic_id=grammar&session=existing&practice_mode=sets&offset=20&seed=stable'),'continuous'),'https://study.hawayu.in');
+assert.equal(fullPractice.searchParams.get('subject_id'),'english');
+assert.equal(fullPractice.searchParams.get('topic_id'),'grammar');
+assert.equal(fullPractice.searchParams.get('seed'),'stable');
+assert.equal(fullPractice.searchParams.has('session'),false);
+assert.equal(fullPractice.searchParams.has('offset'),false);
+assert.equal(s.udcPracticeMode(fullPractice.searchParams),'continuous');
+assert.equal(new URL(s.nextStudySetLink(filters,10),'https://study.hawayu.in').searchParams.get('practice_mode'),'sets','Choose another short set stays in saved-set mode');
+assert.equal(b.nextBrowseOffset(20,1,'all',[undefined]),21,'Continuous practice advances past question 20');
+for(const path of ['/collections/udc','/collections/combined-prelims/header','/collections/udc/study-topics?exam_scope=all'])assert.equal(cache.catalogTtl(path),30000,'Reusable exam metadata: '+path);
+for(const path of ['/collections/udc/progress','/collections/udc/checkpoint','/me/exam-bookmarks','/questions','/questions/id/answer','/collections/udc/study-topics/private'])assert.equal(cache.catalogTtl(path),0,'Personal/answer data stays outside the metadata cache: '+path);
 console.log('Question browsing passed: validated filters, stable seed/restore, distinct caches, and no skipped shrinking-queue questions.');

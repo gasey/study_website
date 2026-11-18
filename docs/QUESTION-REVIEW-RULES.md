@@ -1,6 +1,6 @@
 # Current question review and solving rules
 
-Policy `study-review-v1`, 8 November 2026. This is the current content-review policy
+Policy `study-review-v2`, 9 November 2026. This is the current content-review policy
 for Codex, Antigravity, OpenCode and manual owner work. It replaces conflicting old
 review/solver handoffs. Technical runbooks remain procedures, not extra content
 policies. [Tagging rules](QUESTION-TAGGING-RULES.md) remain the classification policy;
@@ -38,6 +38,34 @@ policies. [Tagging rules](QUESTION-TAGGING-RULES.md) remain the classification p
    decisions, sources, attempts, holds and receipts. Report unique outcomes, remaining
    blockers and the resume location. Do not overwrite answers, repair question content
    with SQL, reset protection baselines or use stale local bank snapshots as authority.
+
+## Existing answers and the `needs-review` status
+
+`needs-review` is a workflow state, not a finding that an answer is probably wrong.
+An answer can be correct and still carry that status because it was imported as
+`inferred`, saved as `derived` without an accepted reviewed publication, or is blocked
+by a hold, disputed key or source defect. An unreviewed derived answer is not promoted
+just because it looks plausible; equally, reviewers must not assume it is wrong or
+replace it without evidence. A valid examiner key can also remain in `needs-review`
+when the question is held or its choices cannot be scored safely.
+
+For each item, first test the existing answer against the exact printed stem, ordered
+choices and source marks, then check the underlying reasoning or fact. Preserve the
+existing option when those checks support it. Correct it only when evidence shows it
+is wrong, unmappable or ambiguous. Do not re-solve supported answers from scratch,
+make cosmetic answer changes, or interpret the backlog count as a count of known-wrong
+answers. Where the answer is supported, accept it through the guarded workflow as a
+**verified unofficial answer** (`derived` provenance); an examiner key is not required
+and must never be invented. Keep genuine ambiguity, source defects and unsupported
+answers on hold for targeted follow-up.
+
+Current model drafts may help propose an answer and rationale in bounded batches.
+Treat output from any model as a lead, not evidence: bind it to the registered source
+and check the answer and reasoning before acceptance. Prior model output and model
+agreement alone do not verify an answer. Record actual model or operator attribution
+privately in the audit trail; never expose it in learner-facing wording. Do not
+manufacture explanations to clear answer-status counts: simple facts may stand without
+prose, while concise supported working is useful for technical items.
 
 ## Official keys and disagreements
 

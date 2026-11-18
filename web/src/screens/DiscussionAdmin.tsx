@@ -1,7 +1,10 @@
+import {RevisionHistory,type PostRevision} from '../components/PostEditing'
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { reviewRequest, reviewSession } from "../lib/review";
 interface Item {
+  content_version?:number;
+  edit_history?:PostRevision[];
   source_links?: { url: string; note: string }[];
   id: string;
   post_id: number | null;
@@ -46,7 +49,7 @@ export default function DiscussionAdmin() {
     try {
       await reviewRequest(
         "/community/admin/posts/" + item.post_id + "/action",
-        { action, note: reason || null },
+        { action, note: reason || null, expected_version:item.content_version||0 },
       );
       await load();
     } catch (e) {
@@ -126,6 +129,7 @@ export default function DiscussionAdmin() {
             <p className="mt-3 whitespace-pre-wrap break-words text-[14px]">
               {item.body}
             </p>
+            {!!item.content_version&&<details className="mt-3 text-[13px]"><summary className="inline-flex min-h-11 cursor-pointer items-center font-semibold">Edited · revision {item.content_version} · inspect history</summary><RevisionHistory items={item.edit_history||[]}/></details>}
             {item.source_links?.map((s, i) => (
               <a
                 key={i}

@@ -1,0 +1,10 @@
+[Unit]
+Description=Sample Finna host evidence every five minutes
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=5min
+Unit=finna-ops-host.service
+
+[Install]
+WantedBy=timers.target

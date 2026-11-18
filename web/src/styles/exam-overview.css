@@ -1,0 +1,39 @@
+/* Reference: map.hawayu.in/mpsc-combined-prelims — 1,160px shell, 18px cards. */
+.exam-overview { max-width:1160px; margin:0 auto; padding:20px 24px 72px; }
+.exam-overview-heading { padding:18px 0 22px; border-bottom:1px solid rgb(var(--ism-hairline-rgb)); }
+.exam-overview .module-view-nav { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; padding:0; border:0; border-radius:0; background:transparent; }
+.exam-overview .module-view-nav > :is(a,button) { flex:0 0 auto; min-height:44px; padding:8px 14px; border:1px solid rgb(var(--ism-hairline-rgb)) !important; border-radius:8px; background:rgb(var(--ism-card-rgb)) !important; }
+.exam-overview .module-view-nav > [aria-current="page"] { border-color:var(--exam-deep) !important; background:var(--exam-deep) !important; color:#fff !important; box-shadow:none; }
+.exam-overview-stats { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:0 0 16px; }
+.exam-overview-stats > div { min-width:0; padding:16px 18px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:14px; background:rgb(var(--ism-card-rgb)); }
+.exam-overview-stats dd { margin:0; color:var(--exam-deep); font-size:28px; line-height:1.2; font-weight:700; }
+.exam-overview-stats dt { margin-top:5px; font-size:12px; color:rgb(var(--ism-secondary-rgb)); }
+.exam-overview-note { padding:12px 16px; border-left:3px solid var(--exam-line); border-radius:8px; background:rgb(var(--ism-canvas-rgb)); font-size:13px; line-height:1.6; color:rgb(var(--ism-secondary-rgb)); }
+.exam-overview-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; margin:18px 0 12px; }
+.exam-overview-papers { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; align-items:stretch; }
+.overview-paper-card { display:flex; flex-direction:column; min-width:0; min-height:244px; padding:18px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:14px; background:rgb(var(--ism-card-rgb)); }
+.overview-paper-card h3 { overflow-wrap:anywhere; }
+.overview-paper-exam { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; margin-top:8px; font-size:12px; line-height:1.6; color:rgb(var(--ism-secondary-rgb)); }
+.overview-paper-actions { display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:auto; padding-top:14px; }
+.overview-paper-browse { display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:8px 12px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:8px; font-size:12px; font-weight:600; }
+.overview-paper-link { display:inline-flex; align-items:center; min-height:44px; font-size:12px; color:rgb(var(--ism-link-rgb)); text-decoration:underline; }
+@media (max-width:959px) { .exam-overview-papers { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:639px) { .exam-overview { padding:12px 16px 80px; } .exam-overview-heading { padding-top:12px; } .exam-overview-stats { grid-template-columns:repeat(2,minmax(0,1fr)); } .exam-overview-papers { grid-template-columns:minmax(0,1fr); } .exam-overview .module-view-nav > :is(a,button) { flex:1 1 28%; padding:8px 10px; font-size:12px; } }
+[data-theme="night"] .exam-overview .module-view-nav > [aria-current="page"] { color:#17202d !important; }
+.overview-booklets { position:relative; margin-left:auto; }
+.overview-booklets summary { display:flex; align-items:center; min-height:44px; cursor:pointer; font-size:11px; color:rgb(var(--ism-secondary-rgb)); }
+.overview-booklets ul { position:absolute; top:100%; right:0; z-index:10; min-width:180px; max-width:280px; padding:8px 14px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:10px; background:rgb(var(--ism-card-rgb)); box-shadow:0 6px 18px #0002; }
+/* Keep the reference module's heading, width and navigation stable between tabs. */
+.exam-module-panel { min-height:55vh; animation:exam-panel-enter 140ms ease-out; }
+@keyframes exam-panel-enter { from { opacity:.65; transform:translateY(3px); } to { opacity:1; transform:none; } }
+@media (prefers-reduced-motion:reduce) { .exam-module-panel { animation:none; } }
+.exam-module-content { --cp-green:var(--exam-deep); --cp-line:rgb(var(--ism-hairline-rgb)); --cp-gold:var(--exam-line); }
+/* Match the original Prelims' aligned, labelled filter bar. */
+.browse-filter-row { display:grid; grid-template-columns:minmax(95px,.65fr) minmax(170px,1.5fr) minmax(120px,1fr) minmax(115px,.9fr) minmax(130px,1fr) minmax(150px,1.1fr); gap:10px; padding:13px; margin:12px 0; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:12px; background:rgb(var(--ism-card-rgb)); align-items:end; }
+.browse-filter-row[data-area="true"] { grid-template-columns:minmax(170px,1.5fr) repeat(3,minmax(120px,1fr)) minmax(150px,1.1fr); }
+.browse-filter-row > label { display:flex; flex-direction:column; min-width:0; gap:5px; font-size:11px; font-weight:700; text-transform:uppercase; color:rgb(var(--ism-secondary-rgb)); }
+.browse-filter-row :is(input,select) { width:100%; min-width:0; min-height:40px; margin:0; padding:8px 9px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:8px; background:rgb(var(--ism-card-rgb)); color:rgb(var(--ism-ink-rgb)); font-size:13px; font-weight:500; text-transform:none; }
+.browse-paper-navigation { display:flex; flex-wrap:wrap; align-items:center; gap:6px 16px; padding:0 2px; font-size:12px; color:rgb(var(--ism-secondary-rgb)); }
+@media (max-width:1050px) { .browse-filter-row,.browse-filter-row[data-area="true"] { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (max-width:639px) { .browse-filter-row,.browse-filter-row[data-area="true"] { grid-template-columns:repeat(2,minmax(0,1fr)); } .browse-filter-row :is(input,select) { min-height:44px; font-size:16px; } .browse-paper-navigation > span { flex-basis:100%; order:-1; text-align:left; } }
+@media (max-width:359px) { .browse-filter-row,.browse-filter-row[data-area="true"] { grid-template-columns:minmax(0,1fr); } }

@@ -123,7 +123,7 @@ def test_tagging_progress_is_source_bound_and_separate_from_editorial_checks(cli
     actor('outsider');assert client.get(url).status_code==403
 
 
-def test_taxonomy_budget_scope_does_not_change_http_or_normal_staff_limits(client,actor,database):
+def test_owner_maintenance_has_no_daily_staff_cap(client,actor,database):
     from app.services import bank_review as review
     from app.services.review_policy import Proposal
     from fastapi import HTTPException
@@ -139,13 +139,9 @@ def test_taxonomy_budget_scope_does_not_change_http_or_normal_staff_limits(clien
         finally:
             if scope is not None:review.owner_maintenance_quota_run.reset(scope)
     try:
-        with pytest.raises(HTTPException)as error:client.portal.call(create,False)
-        assert error.value.status_code==429
-        result=client.portal.call(create,True)
+        result=client.portal.call(create,False)
         assert conn.execute('SELECT count(*) FROM contribution_decisions WHERE contribution_id=%s',(result['id'],)).fetchone()[0]==0
-        detail=conn.execute("SELECT detail FROM contribution_events WHERE contribution_id=%s AND action='owner_maintenance_quota_exemption'",(result['id'],)).fetchone()[0]
-        assert detail['observed_last24h'] is None
-        assert detail['budget_basis']=='explicit-bounded-taxonomy-scope'
+        assert conn.execute("SELECT count(*) FROM contribution_events WHERE contribution_id=%s AND action='owner_maintenance_quota_exemption'",(result['id'],)).fetchone()[0]==0
     finally:conn.execute('DELETE FROM bank_contributions WHERE id LIKE %s',(prefix+'%',))
 
 
@@ -194,25 +190,19 @@ def test_taxonomy_preserves_legacy_unanswered_representation(tmp_path):
     assert journal['receipts'][0]['after']['answerIndex'] is None
 
 
-@pytest.mark.parametrize('fully_attributed',[False,True])
-def test_bulk_run_does_not_use_the_ordinary_edit_allowance(client,actor,database,fully_attributed):
+def test_bulk_owner_maintenance_has_no_daily_staff_cap(client,actor,database):
     from app.services import bank_review as review
     from app.services.review_policy import Proposal
     from fastapi import HTTPException
     q,a,_=official(database);actor('owner');conn=database[1];prefix='scope_budget_'+uuid4().hex
     conn.execute("INSERT INTO bank_contributions(id,author_id,canonical_id,appearance_id,kind,subject_id,title,idempotency_key,request_hash) SELECT %s||n::text,'owner',%s,%s,'taxonomy','english','Synthetic operator budget fixture',%s||n::text,%s FROM generate_series(0,499)n",(prefix,q,a,prefix,'a'*64))
     conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) SELECT id,'operator:owner-source-maintenance','owner_maintenance_quota_exemption',%s FROM bank_contributions WHERE id LIKE %s",(Jsonb({'owner_id':'owner','run_id':prefix}),prefix+'%'))
-    if fully_attributed:
-        conn.execute("INSERT INTO contribution_events(contribution_id,actor_id,action,detail) SELECT id,'operator:owner-source-maintenance','operator_taxonomy_authorization',%s FROM bank_contributions WHERE id LIKE %s",(Jsonb({'owner_id':'owner','run_id':prefix}),prefix+'%'))
     p=Proposal(kind='taxonomy',canonical_id=q,appearance_id=a,subject_id='english',title='Synthetic normal owner edit',patch={'classification':{'subject_id':'english'}},rationale='A normal edit after the explicitly scoped operator run.',evidence=[{'kind':'reasoning','note':'Synthetic taxonomy rationale for a disposable database.'}])
     async def create():
         from app.db import cursor
         async with cursor()as cur:return await review.create(cur,'owner',p,uuid4().hex,admin_attestation=True)
     try:
-        if fully_attributed:assert client.portal.call(create)['id']
-        else:
-            with pytest.raises(HTTPException)as error:client.portal.call(create)
-            assert error.value.status_code==429
+        assert client.portal.call(create)['id']
     finally:
         # Immutable operator events intentionally prevent deleting their parent
         # contribution. Age only these disposable quota fixtures out instead.

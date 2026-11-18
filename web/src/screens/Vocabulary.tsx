@@ -1,8 +1,10 @@
+import CuratedVocabulary from '../components/CuratedVocabulary'
 import {learnerExplanation} from '../lib/answerStatus'
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getAccountSession } from "../lib/api";
 import { reviewSession } from "../lib/review";
+import {legacyRevisionLink} from '../lib/consolidation';
 import { scopeLink } from "../lib/examScope";
 import {
   SourceQuestionContext,
@@ -12,11 +14,14 @@ import { AnswerOptions, AnswerLayoutControl } from "../components/AnswerLayout";
 import {
   vocabularyRequest,
   type VocabularyCard,
+  type VocabularyDecks,
   type VocabularyOverview,
   type VocabularyResult,
 } from "../lib/vocabulary";
 const stageLabel = (n: number) =>
-  n >= 5
+  n >= 6
+    ? "Graduated"
+    : n >= 5
     ? "Retaining"
     : n >= 3
       ? "Strengthening"
@@ -29,9 +34,12 @@ const dateLabel = (s: string) =>
     dateStyle: "medium",
     timeStyle: "short",
   }) + " IST";
-export default function Vocabulary() {
+export default function Vocabulary({embedded=false}:{embedded?:boolean}){const [params]=useSearchParams();return params.get('curated_deck')?<CuratedVocabulary embedded={embedded}/>:<BankVocabulary embedded={embedded}/>}
+function BankVocabulary({embedded = false}: {embedded?: boolean}) {
   const [params, setParams] = useSearchParams();
   const [restored, setRestored] = useState(false);
+  const deck = params.get('deck') || '';
+  const [decks,setDecks] = useState<VocabularyDecks|null>(null);
   const [user, setUser] = useState(""),
     [auth, setAuth] = useState<"loading" | "guest" | "ready">("loading"),
     [card, setCard] = useState<VocabularyCard | null>(null),
@@ -59,6 +67,7 @@ export default function Vocabulary() {
       setResult(null);
       setSelected(null);
       setOverview(null);
+      setDecks(null);
       setError("");
       setCompleted(0);
       setFinished(false);
@@ -84,11 +93,13 @@ export default function Vocabulary() {
     }
     void sync();
     window.addEventListener("ism-auth-change", sync);
+    window.addEventListener("ism-auth-expired", sync);
     return () => {
       active = false;
       ++epoch.current;
       ++generation.current;
       window.removeEventListener("ism-auth-change", sync);
+      window.removeEventListener("ism-auth-expired", sync);
     };
   }, []);
   async function load(resume = true) {
@@ -105,12 +116,14 @@ export default function Vocabulary() {
         card: VocabularyCard | null;
         result?: VocabularyResult;
         restored?: boolean;
-      }>("/card", user, { resume_id: resume ? params.get("review") : null, question_id:params.get("question_id") });
+      }>("/card", user, { resume_id: resume ? params.get("review") : null, question_id:params.get("question_id"),deck_id:deck||null });
       const summary = await vocabularyRequest<VocabularyOverview>(
-        "/overview",
+        "/overview" + (deck ? "?deck_id=" + encodeURIComponent(deck) : ""),
         user,
       );
+      const choices = await vocabularyRequest<VocabularyDecks>("/decks",user);
       if (run !== generation.current || owner !== epoch.current) return;
+      setDecks(choices);
       setOverview(summary);
       setCard(next.card);
       setResult(next.result || null);
@@ -137,7 +150,7 @@ export default function Vocabulary() {
     return () => {
       ++generation.current;
     };
-  }, [user]);
+  }, [user,deck]);
   async function answer(action: "answer" | "reveal" | "defer", choice=selected) {
     if (
       !card ||
@@ -147,6 +160,7 @@ export default function Vocabulary() {
       return;
     answering.current = true;
     const owner = epoch.current,
+      run = generation.current,
       cid = card.id;
     setBusy(true);
     setError("");
@@ -156,15 +170,16 @@ export default function Vocabulary() {
         user,
         { action, chosen_index: action === "answer" ? choice : null },
       );
-      if (owner !== epoch.current) return;
+      if (owner !== epoch.current || run !== generation.current) return;
       setResult(saved);
       setRestored(false);
       setCompleted((n) => n + 1);
-      void vocabularyRequest<VocabularyOverview>("/overview", user)
+      void vocabularyRequest<VocabularyOverview>("/overview" + (deck ? "?deck_id=" + encodeURIComponent(deck) : ""), user)
         .then((x) => {
-          if (owner === epoch.current) setOverview(x);
+          if (owner === epoch.current && run === generation.current) setOverview(x);
         })
         .catch(() => {});
+      void vocabularyRequest<VocabularyDecks>("/decks",user).then(x=>{if(owner===epoch.current && run===generation.current)setDecks(x)}).catch(()=>{});
       window.dispatchEvent(new Event("ism-progress-change"));
     } catch (e) {
       if (owner === epoch.current) setError((e as Error).message);
@@ -177,9 +192,9 @@ export default function Vocabulary() {
   }
   const revisionReturn=params.get('return_to');
   return (
-    <div className="mx-auto max-w-[900px] px-4 pb-24 pt-9 sm:px-6">
-      {revisionReturn&&/^rev_[a-f0-9]+$/.test(revisionReturn)&&<Link to={'/revision?session='+revisionReturn} className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] text-link">← Return to daily revision</Link>}
-      <Link to="/english" className="text-[13px] text-link">
+    <div className={embedded ? "mt-5" : "mx-auto max-w-[900px] px-4 pb-24 pt-9 sm:px-6"}>
+      {revisionReturn&&/^rev_[a-f0-9]+$/.test(revisionReturn)&&<Link to={legacyRevisionLink(revisionReturn)} className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] text-link">← Return to saved session</Link>}
+      {!embedded&&<><Link to="/english" className="text-[13px] text-link">
         ← English practice
       </Link>
       <div className="mt-5 font-mono text-[11px] uppercase tracking-[.1em] text-[#72509A]">
@@ -192,6 +207,7 @@ export default function Vocabulary() {
         Practise vocabulary from verified exam questions. Your checked answers
         set the review schedule automatically—no confidence ratings needed.
       </p>
+      </>}
       {auth === "loading" && (
         <p role="status" className="mt-7">
           Loading your account…
@@ -228,6 +244,24 @@ export default function Vocabulary() {
           </div>
         </section>
       )}
+      {auth === 'ready' && decks && <section aria-label="Vocabulary decks" className="mt-6 rounded-panel border border-hairline bg-card p-5">
+        <h2 className="font-display text-[27px]">Choose a vocabulary deck</h2>
+        <p className="mt-2 text-sm leading-relaxed text-secondary">Reviewed English questions grouped by their approved topics. Every card keeps its original question and source.</p>
+        <label className="mt-4 block text-sm font-semibold" htmlFor="vocabulary-deck">Practice deck</label>
+        <select id="vocabulary-deck" value={deck} disabled={busy || loading} className="mt-2 min-h-11 w-full max-w-full rounded-[12px] border border-hairline bg-paper px-3 text-sm" onChange={event=>{
+          ++generation.current; setCard(null);setResult(null);setSelected(null);setOverview(null);setError('');setCompleted(0);setFinished(false);
+          const value=event.target.value;setParams(old=>{const p=new URLSearchParams(old);for(const key of ['review','question_id','return_to'])p.delete(key);if(value.startsWith('curated:')){p.set('curated_deck',value.slice(8));p.delete('deck');p.delete('word_review');p.delete('word_card')}else if(value)p.set('deck',value);else p.delete('deck');return p},{replace:true,preventScrollReset:true});
+        }}><option value="">All vocabulary</option>{decks.items.map(item=><option key={item.id} value={item.id}>{item.label} · {item.eligible} {item.eligible===1?'question':'questions'}</option>)}{!!decks.curated_items?.length&&<optgroup label="Reviewed word decks">{decks.curated_items.map(item=><option key={item.id} value={'curated:'+item.id}>{item.label} · {item.eligible_words} words</option>)}</optgroup>}</select>
+        <div className="mt-4 grid gap-3 sm:grid-cols-2">{decks.items.filter(item=>!deck || item.id===deck).map(item=><article key={item.id} className="min-w-0 rounded-panel border border-hairline bg-paper p-4">
+          <h3 className="break-words text-sm font-bold">{item.label}</h3>
+          <p className="mt-2 text-sm text-secondary">{item.attempted} of {item.eligible} answered · {item.correct_latest} latest correct · {item.due} due</p>
+          <p className="mt-2 text-xs text-secondary">{item.attempted ? item.state[0].toUpperCase()+item.state.slice(1) : 'Not started'}{item.rusty ? ' · Time to revisit' : ''}</p>
+        </article>)}</div>
+        <p className="mt-4 text-xs leading-relaxed text-secondary">{decks.basis}</p>
+        {!!decks.curated_items?.length&&<p className="mt-2 text-xs text-secondary">{decks.curated_known_total||0} distinct English words retained in available reviewed word decks. Choose a reviewed deck above for word-card practice.</p>}
+        {!decks.curated_available && <p className="mt-2 text-xs leading-relaxed text-secondary">{decks.curated_message}</p>}
+      </section>}
+      {auth==='ready' && <Link to="/revise?item_type=vocab" className="mt-4 inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm font-bold text-link">Review due vocabulary in a saved session →</Link>}
       {overview && (
         <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {[
@@ -241,7 +275,7 @@ export default function Vocabulary() {
             ],
             [overview.retaining, "in longer review intervals"],
           ].map(([value, label]) => (
-            <div key={label} className="rounded-[10px] bg-[#F1EBF7] p-3">
+            <div key={label} className="rounded-panel border border-hairline bg-card p-3">
               <div className="font-display text-[25px]">{value}</div>
               <div className="text-[12px] text-secondary">{label}</div>
             </div>
@@ -277,7 +311,7 @@ export default function Vocabulary() {
         <section className="mt-5 rounded-[16px] border border-hairline bg-card p-5 shadow-sm sm:p-8">
           <div className="mb-5 flex flex-wrap justify-between gap-2 font-mono text-[11px] text-muted">
             <span>
-              {card.seen ? stageLabel(card.stage) : "New question"} ·{" "}
+              {(card.started ?? (card.seen>0)) ? stageLabel(card.stage) : 'New question'} ·{" "}
               {card.question.answer_source === "official"
                 ? "Official key"
                 : "Transcribed source key"}
@@ -375,13 +409,9 @@ export default function Vocabulary() {
                     <SourceQuestionText text={learnerExplanation(result.explanation)} />
                   </p>
                 )}
-                <p className="mt-3 text-[13px]">
-                  Next review:{" "}
-                  <time dateTime={result.next_due}>
-                    {dateLabel(result.next_due)}
-                  </time>{" "}
-                  · saved to your account.
-                </p>
+                <p className="mt-3 text-[13px]">{result.graduated || !result.next_due ? 'Graduated from your shared review queue. Your answer history is saved.' : <>
+                  Next review: <time dateTime={result.next_due}>{dateLabel(result.next_due)}</time> · in your shared review queue.
+                </>}</p>
               </div>
               <button
                 onClick={() => {
@@ -438,7 +468,7 @@ export default function Vocabulary() {
             {finished
               ? `${completed} reviews saved. Your next dates are already planned.`
               : overview?.eligible
-                ? "No more reviews are due in this focus, or your daily target of 10 new cards is complete."
+                ? "No more reviews are due in this focus, or your daily target of 5 new cards is complete."
                 : "No verified vocabulary questions are currently eligible in this focus."}
           </p>
           {overview?.next_due && (
@@ -459,9 +489,9 @@ export default function Vocabulary() {
         </section>
       )}
       <p className="mt-6 text-[12px] leading-relaxed text-muted">
-        This tracks recognition of exam questions, not proof that a word is
+        This uses the same 1, 3, 7, 16 and 35-day review queue as Smart Review. A correct Box 5 review graduates the question. This tracks recognition of exam questions, not proof that a word is
         mastered. Correct answers extend intervals when they are spaced apart;
-        misses get a short review. Skipping is not marked wrong, and speed does
+        misses restart at Box 1. Skipping is not marked wrong, and speed does
         not affect your schedule. Earlier browser-only confidence ratings are
         not imported as checked answers.
       </p>

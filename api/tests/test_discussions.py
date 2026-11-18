@@ -5,6 +5,18 @@ from uuid import uuid4
 import pytest
 from psycopg.types.json import Jsonb
 
+# Posting budgets are per account/day. Each test needs its own account history,
+# not a shared module's accumulated posts competing for the new five-post cap.
+from conftest import database as module_database, client as module_client
+
+@pytest.fixture
+def database(database_schema):
+    yield from module_database.__wrapped__(database_schema)
+
+@pytest.fixture
+def client(database):
+    yield from module_client.__wrapped__(database)
+
 @pytest.fixture
 def question(database):
     _,conn=database;qid='cq_disc_'+uuid4().hex[:12];aid='a_'+qid

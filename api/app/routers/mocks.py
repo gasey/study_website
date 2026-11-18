@@ -129,6 +129,8 @@ async def start_mock(
         if await cur.fetchone():
             raise HTTPException(409, "a mock is already open; resume or submit it first")
 
+        if body.selection and (body.paper_id or shared_test):
+            raise HTTPException(422,"Choose a filtered test or an original paper, not both")
         paper_items = None
         full_readiness=None
         if body.paper_mode=='full' and (not body.paper_id or body.answer_mode!='official'):
@@ -202,6 +204,28 @@ async def start_mock(
             chosen = [r["id"] for r in paper_items]
         else:
             ids = await _candidate_ids(cur, body.collection_id, body.section_path, body.answer_mode, exam_scope)
+            if body.selection:
+                f=body.selection
+                # Intersect approved collection candidates with the browsing filters.
+                from ..services.question_readiness import answer_status_sql
+                await cur.execute(f"""SELECT q.id FROM canonical_questions q WHERE q.id=ANY(%s)
+                  AND (%s::text IS NULL OR EXISTS(SELECT 1 FROM appearances a JOIN collection_papers cp ON cp.paper_id=a.paper_id JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version WHERE a.canonical_id=q.id AND a.paper_id=%s AND c.id=%s))
+                  AND (%s::text IS NULL OR EXISTS(SELECT 1 FROM v_question_paths p WHERE p.question_id=q.id AND p.review_status='approved' AND p.subject_id=%s))
+                  AND (%s::text IS NULL OR EXISTS(SELECT 1 FROM v_question_paths p WHERE p.question_id=q.id AND p.review_status='approved' AND p.topic_id=%s))
+                  AND (%s::text IS NULL OR q.question ILIKE %s)
+                  AND (%s::text IS NULL OR {answer_status_sql('q')}=%s)
+                  AND ((%s::int IS NULL AND %s::int IS NULL) OR EXISTS(
+                    SELECT 1 FROM appearances a JOIN papers p ON p.id=a.paper_id
+                    JOIN collection_papers cp ON cp.paper_id=p.id JOIN collections c ON c.id=cp.collection_id AND c.live_version=cp.version
+                    WHERE a.canonical_id=q.id AND c.id=%s AND (%s::int IS NULL OR p.year>=%s) AND (%s::int IS NULL OR p.year<=%s)))
+                  AND (%s='all' OR (%s='unseen' AND NOT EXISTS(SELECT 1 FROM attempts a WHERE a.user_id=%s AND a.canonical_id=q.id))
+                    OR (%s='answered' AND EXISTS(SELECT 1 FROM attempts a WHERE a.user_id=%s AND a.canonical_id=q.id))
+                    OR (%s='ever_wrong' AND EXISTS(SELECT 1 FROM attempts a WHERE a.user_id=%s AND a.canonical_id=q.id AND NOT a.correct))
+                    OR (%s='wrong' AND (SELECT NOT a.correct FROM attempts a WHERE a.user_id=%s AND a.canonical_id=q.id ORDER BY a.at DESC,a.id DESC LIMIT 1)))""",
+                    (ids,f.paper_id,f.paper_id,body.collection_id,f.subject_id,f.subject_id,f.topic_id,f.topic_id,f.q,'%'+(f.q or '')+'%',f.answer_status,f.answer_status,
+                     f.year_from,f.year_to,body.collection_id,f.year_from,f.year_from,f.year_to,f.year_to,
+                     f.study_status,f.study_status,user_id,f.study_status,user_id,f.study_status,user_id,f.study_status,user_id))
+                ids=[r['id'] for r in await cur.fetchall()]
             if len(ids) < body.count:
                 label = "reviewed-answer" if body.answer_mode == "derived-practice" else "verified-key"
                 raise HTTPException(422, f"only {len(ids)} {label} questions available; asked for {body.count}")
@@ -224,6 +248,8 @@ async def start_mock(
         if not captured or (excluded_presentations and (paper_items is None or body.paper_mode=='full')):
             raise HTTPException(422,'The presented source context or options cannot be safely scored. Browse the paper or request a correction.')
         chosen=[r['id'] for r in captured]
+        from ..services.learning_habit import capture_plan
+        await capture_plan(cur,user_id)
         mock_id = uuid.uuid4().hex
 
         await cur.execute(
@@ -349,12 +375,14 @@ async def save_mock_answer(
     """Persist a timed-paper answer, review flag, and current position."""
     async with cursor() as cur:
         await cur.execute(
-            "SELECT question_ids FROM mock_sessions WHERE id=%s AND user_id=%s AND submitted_at IS NULL FOR UPDATE",
+            "SELECT question_ids, now() >= started_at + duration_seconds * interval '1 second' AS expired FROM mock_sessions WHERE id=%s AND user_id=%s AND submitted_at IS NULL FOR UPDATE",
             (mock_id,user_id),
         )
         session = await cur.fetchone()
         if session is None:
             raise HTTPException(404,"no open mock for this device")
+        if session["expired"]:
+            raise HTTPException(409,"This test has ended. Submit your saved answers.")
         if body.question_id not in session["question_ids"]:
             raise HTTPException(422,"question is not part of this mock")
         await cur.execute(
@@ -390,7 +418,7 @@ async def submit_mock(
     async with cursor() as cur:
         await cur.execute(
             """SELECT question_ids, collection_id, section_path, paper_id, answer_mode, duration_seconds, marks_correct, marks_wrong,learning_test_id,learning_test_version,learning_test_title,
-                      submitted_at,
+                      submitted_at, now() >= started_at + duration_seconds * interval '1 second' AS deadline_passed,
                       EXTRACT(EPOCH FROM (now() - started_at))::int AS elapsed
                  FROM mock_sessions WHERE id = %s AND user_id = %s FOR UPDATE""",
             (mock_id, user_id),
@@ -428,8 +456,12 @@ async def submit_mock(
                 qs[frozen['canonical_id']].update(frozen['snapshot'])
         await cur.execute("SELECT question_id,chosen_index FROM mock_session_answers WHERE mock_id=%s",(mock_id,))
         given = {r["question_id"]:r["chosen_index"] for r in await cur.fetchall() if r["chosen_index"] is not None}
-        given.update({a.question_id:a.chosen_index for a in body.answers})
+        # After the deadline only answers acknowledged before expiry can count.
+        if not s["deadline_passed"]:
+            given.update({a.question_id:a.chosen_index for a in body.answers})
 
+        from ..services import mastery
+        await mastery.prepare(cur,user_id,ids)
         rows, n_ok, n_bad, n_skip = [], 0, 0, 0
         for pos, qid in enumerate(ids):
             q = qs.get(qid)
@@ -472,9 +504,14 @@ async def submit_mock(
             (elapsed, late, n_ok, n_bad, n_skip, score, mock_id),
         )
 
+        if not late and s['answer_mode']=='official':
+            await cur.execute("SELECT id FROM attempts WHERE mock_id=%s AND user_id=%s AND context='mock'",(mock_id,user_id))
+            award_attempts=[a['id'] for a in await cur.fetchall()]
+            await mastery.refresh(cur,user_id,ids,award_attempt_ids=award_attempts)
         await cur.execute("INSERT INTO new_score_jobs(mock_id) VALUES (%s) ON CONFLICT DO NOTHING",(mock_id,))
 
     return MockResult(
+        marks_correct=float(s['marks_correct']),marks_wrong=float(s['marks_wrong']),
         id=mock_id,learning_test_id=s["learning_test_id"],learning_test_version=s["learning_test_version"],learning_test_title=s["learning_test_title"], collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=n_ok, n_wrong=n_bad, n_skipped=n_skip, score=score,
         total=len(ids), elapsed_seconds=elapsed, late=late, review=rows,
         score_breakdown=scoring_revisions.original_breakdown(rows,s['marks_correct'],s['marks_wrong']),
@@ -549,6 +586,7 @@ async def get_mock_result(
         ]
 
     return MockResult(
+        marks_correct=float(s['marks_correct']),marks_wrong=float(s['marks_wrong']),
         id=mock_id,learning_test_id=s["learning_test_id"],learning_test_version=s["learning_test_version"],learning_test_title=s["learning_test_title"], collection_id=s["collection_id"],answer_mode=s["answer_mode"], n_correct=s["n_correct"], n_wrong=s["n_wrong"],
         n_skipped=s["n_skipped"], score=float(s["score"]),
         total=len(s["question_ids"]), elapsed_seconds=s["elapsed_seconds"],

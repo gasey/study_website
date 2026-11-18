@@ -45,6 +45,15 @@ async def identity(request: Request) -> Actor:
     return await _identity(request, require_staff_mfa=True)
 
 async def inbox_identity(request: Request) -> Actor:
+    mobile = getattr(request.state, 'mobile_session', None)
+    if mobile:
+        # This dependency is used only by the account-owned Inbox router.
+        # Middleware validates the credential and exact learner route first;
+        # privileged review identity continues to require its cookie and MFA.
+        if request.method not in {'GET','HEAD','OPTIONS'}:
+            from ..routers.materials import write_guard
+            await write_guard(request, mobile['user_id'])
+        return Actor(mobile['user_id'], '', False, False)
     # Reading one's own Inbox/preferences is not a privileged bank mutation.
     # Session, origin, CSRF, account binding and write limits still apply.
     return await _identity(request, require_staff_mfa=False)

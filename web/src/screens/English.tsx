@@ -81,8 +81,8 @@ export default function English() {
           <div className="mt-4 flex flex-wrap items-center gap-3"><Link to="/essay" className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 text-[13px] font-semibold text-paper">Open essay practice →</Link><a href={`${LEGACY}/essay`} target="_blank" rel="noreferrer" className="text-[12px] font-semibold text-link underline">See the original lesson</a></div>
         </article>
 
-        <Link to="/vocabulary" className="rounded-[14px] bg-[#F1EBF7] p-5 transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.1)]">
-          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#72509A]">04 · Recall · spaced review</div><h3 className="mt-2 font-display text-[25px] font-medium">Vocabulary helper</h3>
+        <Link to="/revise" className="rounded-[14px] bg-[#F1EBF7] p-5 transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.1)]">
+          <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-[#72509A]">04 · Recall · spaced review</div><h3 className="mt-2 font-display text-[25px] font-medium">Revise</h3>
           <p className="mt-2 text-[14px] leading-relaxed text-[#49385A]">Test yourself on verified vocabulary questions, track what is due, and revisit words over time.</p><div className="mt-4 text-[13px] font-semibold text-[#62418B]">Start a vocabulary review →</div>
         </Link>
       </div>

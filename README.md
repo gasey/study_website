@@ -1,4 +1,4 @@
-# India Study Map
+# Finna
 
 MPSC exam-prep platform — question bank, discussion, study materials, games,
 mocks. Deployed at https://study.hawayu.in
@@ -9,3 +9,6 @@ mocks. Deployed at https://study.hawayu.in
 - `CLAUDE.md` — read this first
 
 Design handoff and schema live in `../mpsc-question-bankv2/`.
+
+The local project directory is `finna/`; `india-study-map-app/` remains a
+compatibility symlink for existing tools. GitHub: https://github.com/gasey/study_website

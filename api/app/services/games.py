@@ -16,6 +16,7 @@ MODES = {
     "duel": (10, 20, 2),
     "party": (10, 25, 4),
     "cup": (25, 30, 1),
+    "daily": (5, 20, 1),
 }
 PUBLIC_FIELDS = (
     "id",
@@ -124,6 +125,34 @@ def cup_window(now):
     if local >= opens + timedelta(hours=1):
         opens += timedelta(days=7)
     return opens.date().isoformat(), opens, opens + timedelta(hours=1)
+
+
+def daily_window(now):
+    """The IST calendar day. Unlike the cup, Daily Five is open all day."""
+    local = now.astimezone(ZoneInfo("Asia/Kolkata"))
+    opens = datetime.combine(
+        local.date(), datetime.min.time(), ZoneInfo("Asia/Kolkata")
+    )
+    return local.date().isoformat(), opens, opens + timedelta(days=1)
+
+
+async def daily(cur, now):
+    did, opens, closes = daily_window(now)
+    await cur.execute(
+        "SELECT pg_advisory_xact_lock(hashtext(%s))", ("game-daily:" + did,)
+    )
+    await cur.execute("SELECT * FROM game_dailies WHERE id=%s", (did,))
+    row = await cur.fetchone()
+    if row:
+        return row
+    from . import game_selection as setup
+    context = await setup.resolve(cur, setup.Selection(kind='mixed'), 'daily')
+    questions = await setup.draw(cur, context)
+    await cur.execute(
+        "INSERT INTO game_dailies(id,opens_at,closes_at,questions) VALUES(%s,%s,%s,%s) RETURNING *",
+        (did, opens, closes, Jsonb(questions)),
+    )
+    return await cur.fetchone()
 
 
 async def cup(cur, now):
@@ -246,11 +275,18 @@ async def finish(cur, r, now):
         "SELECT * FROM game_members WHERE room_id=%s ORDER BY user_id", (r["id"],)
     )
     players = await cur.fetchall()
-    is_foundation_comp = (
-        (r.get("selection_context") or {}).get("rules", {}).get("scoring")
-        == "foundation-competitive-v1"
-    )
+    scoring_rule = (r.get("selection_context") or {}).get("rules", {}).get("scoring")
+    is_foundation_comp = scoring_rule == "foundation-competitive-v1"
+    is_daily = scoring_rule == "daily-five-v1"
+    from . import mastery
+    # Own every player's reward lock (players are sorted by user ID) before
+    # an attempt can capture another author's community tier. Account closure
+    # takes its reward lock before tier capture too; interleaving per-player
+    # preparation with inserts would invert those locks for later players.
     for p in players:
+        await mastery.prepare(cur,p['user_id'],[q['id'] for q in r['questions']])
+    for p in players:
+        award_attempts=[]
         await cur.execute(
             "SELECT * FROM game_answers WHERE room_id=%s AND user_id=%s ORDER BY position",
             (r["id"], p["user_id"]),
@@ -287,10 +323,15 @@ async def finish(cur, r, now):
                     score += 200 if a["position"] == r.get("trail_boost_position") else 100
                 else:
                     q_secs = question_round_seconds(r, a["position"])
-                    pace_pts = max(
-                        0,
-                        50 - int(a["elapsed_ms"] / max(1, q_secs * 1000) * 50),
-                    )
+                    if is_daily:
+                        # 100 plus 5 for every whole second left: 200 max on a
+                        # 20s round, 1000 for a perfect five.
+                        pace_pts = 5 * max(0, q_secs - int(a["elapsed_ms"] / 1000))
+                    else:
+                        pace_pts = max(
+                            0,
+                            50 - int(a["elapsed_ms"] / max(1, q_secs * 1000) * 50),
+                        )
                     streak_pts = 0
                     courage_pts = 0
                     if is_foundation_comp:
@@ -321,6 +362,7 @@ async def finish(cur, r, now):
                     (p["user_id"], q["id"], a["correct"], chosen, Jsonb(q)),
                 )
                 aid = (await cur.fetchone())["id"]
+                if not p["left_at"]:award_attempts.append(aid)
                 await cur.execute(
                     "UPDATE game_answers SET attempt_id=%s WHERE room_id=%s AND user_id=%s AND position=%s",
                     (aid, r["id"], p["user_id"], a["position"]),
@@ -347,6 +389,8 @@ async def finish(cur, r, now):
                 p["user_id"],
             ),
         )
+        if award_attempts:
+            await mastery.refresh(cur,p['user_id'],[q['id'] for q in r['questions']],award_attempt_ids=award_attempts)
     await release(cur, r, "finished", now)
 
 
@@ -437,6 +481,9 @@ async def view(cur, r, user, now):
     if r["cup_id"]:
         await cur.execute("SELECT closes_at FROM game_cups WHERE id=%s", (r["cup_id"],))
         review_at = (await cur.fetchone())["closes_at"]
+    if r.get('daily_id'):
+        await cur.execute('SELECT closes_at FROM game_dailies WHERE id=%s',(r['daily_id'],))
+        review_at=(await cur.fetchone())['closes_at']
     if r["state"] == "finished" and (not review_at or now >= review_at):
         await cur.execute(
             "SELECT position,chosen_index,correct,excluded FROM game_answers WHERE room_id=%s AND user_id=%s ORDER BY position",
@@ -506,6 +553,7 @@ async def view(cur, r, user, now):
 
 
 async def worker():
+    from .worker_health import beat, failed
     while True:
         try:
             async with cursor() as cur:
@@ -517,6 +565,8 @@ async def worker():
                 ids = [r["id"] for r in await cur.fetchall()]
                 for rid in ids:
                     await advance(cur, await room(cur, rid), now)
+                await beat(cur, 'game-lifecycle', True, f'rooms processed={len(ids)}')
         except Exception:
+            await failed('game-lifecycle')
             log.exception("Game clock sweep deferred")
         await asyncio.sleep(2)

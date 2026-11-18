@@ -85,11 +85,21 @@ class QuestionDetail(QuestionBase):
     appearances: list[Appearance] = Field(default_factory=list)
 
 
+class BrowseAllowance(BaseModel):
+    tier: Literal['guest', 'account', 'pro']
+    ist_date: str
+    used: int
+    limit: int | None
+    remaining: int | None
+    unlimited: bool
+
+
 class QuestionPage(BaseModel):
     items: list[QuestionListItem]
     total: int
     limit: int
     offset: int
+    browse_allowance: BrowseAllowance | None = None
 
 
 class QuestionPaperSummary(BaseModel):
@@ -174,6 +184,7 @@ class Progress(BaseModel):
     unique_questions: int
     accuracy: float = 0
     current_streak: int = 0
+    streak_basis: str = "device activity"
     active_days_30: int = 0
     last_active_at: datetime | None = None
     daily_activity: list[DailyActivity] = Field(default_factory=list)
@@ -318,7 +329,19 @@ class PaperQuestionPage(BaseModel):
     offset: int
 
 
+class MockSelection(BaseModel):
+    paper_id: str | None = Field(default=None,max_length=500)
+    subject_id: str | None = Field(default=None,max_length=100)
+    topic_id: str | None = Field(default=None,max_length=160)
+    year_from: int | None = Field(default=None,ge=1900,le=2100)
+    year_to: int | None = Field(default=None,ge=1900,le=2100)
+    q: str | None = Field(default=None,min_length=2,max_length=120)
+    study_status: Literal['all','unseen','answered','wrong','ever_wrong'] = 'all'
+    answer_status: Literal['official','verified','needs-review','unsolved','written'] | None = None
+
+
 class MockStart(BaseModel):
+    selection: MockSelection | None = None
     learning_test_id: str | None = Field(default=None,pattern=r"^learn_[0-9a-f]{32}$")
     learning_test_version: int | None = Field(default=None,ge=1)
     collection_id: str
@@ -404,6 +427,8 @@ class MockReviewRow(BaseModel):
 
 
 class MockResult(BaseModel):
+    marks_correct: float = 1
+    marks_wrong: float = 0
     learning_test_id: str | None = None
     learning_test_version: int | None = None
     learning_test_title: str | None = None
@@ -488,11 +513,18 @@ class HomeResponse(BaseModel):
 
 
 class CommunityFeedItem(BaseModel):
+    author_tier: Literal["Helper","Regular","Mentor","Guide"] | None = None
+    author_profile_id: str | None = None
+    content_version: int = 0
+    edited_at: datetime | None = None
     avatar: dict[str,str] | None = None
     id: int
-    question_id: str
-    question: str
-    kind: Literal["explanation", "doubt"]
+    question_id: str | None
+    question: str | None
+    kind: Literal["explanation", "doubt", "study", "material-share"]
+    topic_label: str | None = None
+    study_reference: dict | None = None
+    material: dict | None = None
     body: str
     author: str
     author_role: str
@@ -500,6 +532,7 @@ class CommunityFeedItem(BaseModel):
     helpful: int
     pinned: bool = False
     accepted_answer: str | None = None
+    accepted_answer_edited_at: datetime | None = None
     source_context: str | None = None
 
 
@@ -519,6 +552,9 @@ class ModerationSummary(BaseModel):
 
 
 class ModerationItem(BaseModel):
+    content_version: int = 0
+    edit_history: list[dict] = Field(default_factory=list)
+    material: dict | None = None
     source_links: list[dict] = Field(default_factory=list)
     id: str
     item_type: Literal["reported", "new_user", "appeal", "action"]
@@ -548,5 +584,6 @@ class ModerationQueueResponse(BaseModel):
 
 
 class ModerationActionRequest(BaseModel):
+    expected_version: int | None = Field(default=None,ge=0)
     action: Literal["approve", "reject", "hide", "dismiss", "grant_appeal", "deny_appeal", "restore"]
     note: str | None = Field(default=None, max_length=1000)

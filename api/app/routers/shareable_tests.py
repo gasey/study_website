@@ -1,9 +1,8 @@
 """User test builder discovery, answer-free landing pages and share previews."""
-from html import escape
 from typing import Annotated,Literal
 from fastapi import APIRouter,Depends,HTTPException,Query
 from fastapi.responses import HTMLResponse
-from ..config import settings
+from ..services.public_share import share_page
 from ..db import cursor
 from ..deps import require_account
 from ..services import shareable_tests as service
@@ -65,20 +64,10 @@ async def selection(user:User,ids:Annotated[list[str],Query(max_length=100)]):
 @router.get('/{eid}/share',response_class=HTMLResponse)
 async def share(eid:str):
     async with cursor() as cur:row=await service.published(cur,eid)
-    p=service.metadata(row);origin=settings.public_origin.rstrip('/')
-    target=escape(origin+p['path'],quote=True);url=escape(origin+p['share_path'],quote=True)
-    title=escape(p['title'],quote=True);description=escape(p['description'][:240],quote=True)
-    # A real HTML entry point lets crawlers read metadata without running React.
-    return HTMLResponse(f'''<!doctype html><html lang="en"><head><meta charset="utf-8">
-      <title>{title} · India Study Map</title><meta name="description" content="{description}">
-      <meta property="og:type" content="website"><meta property="og:title" content="{title}">
-      <meta property="og:description" content="{description}"><meta property="og:url" content="{url}">
-      <meta property="og:site_name" content="India Study Map">
-      <meta name="twitter:card" content="summary"><link rel="canonical" href="{target}">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-      <meta http-equiv="refresh" content="0;url={target}"></head>
-      <body><h1>{title}</h1><p>{description}</p><p>{p['question_count']} questions · {p['config']['duration_minutes']} minutes</p>
-      <p><a href="{target}">Open this mock test</a></p></body></html>''',headers={'Cache-Control':'no-store','Referrer-Policy':'no-referrer'})
+    p=service.metadata(row)
+    return share_page(title=p['title'], description=p['description'],
+        badge=f"{p['question_count']} questions · {p['config']['duration_minutes']} minutes",
+        target_path=p['path'], share_path=p['share_path'], action='Open this mock test')
 
 
 @router.get('/{eid}')

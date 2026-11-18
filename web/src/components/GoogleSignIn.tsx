@@ -1,3 +1,4 @@
+import {mobileReturn} from '../lib/mobileReturn'
 import {accountContext} from '../lib/accountContext'
 import {useEffect,useState} from 'react'
 export async function googleRequest<T>(path:string,body?:unknown):Promise<T>{
@@ -8,7 +9,7 @@ export async function googleRequest<T>(path:string,body?:unknown):Promise<T>{
 export default function GoogleSignIn({link=false}:{link?:boolean}){
  const [enabled,setEnabled]=useState(false);const [error,setError]=useState('');const [busy,setBusy]=useState(false)
  useEffect(()=>{let live=true;googleRequest<{enabled:boolean}>('config').then(x=>{if(live)setEnabled(x.enabled)}).catch(()=>{});return()=>{live=false}},[])
- async function start(){setBusy(true);setError('');try{const r=await googleRequest<{url:string}>('start',{action:link?'link':'login'});window.location.assign(r.url)}catch(e){setError((e as Error).message);setBusy(false)}}
+ async function start(){if(!link){const next=mobileReturn(new URLSearchParams(window.location.search).get('next'));if(next)sessionStorage.setItem('ism-mobile-return',next);else sessionStorage.removeItem('ism-mobile-return');}setBusy(true);setError('');try{const r=await googleRequest<{url:string}>('start',{action:link?'link':'login'});window.location.assign(r.url)}catch(e){setError((e as Error).message);setBusy(false)}}
  if(!enabled)return null
  return <div className="my-5"><button type="button" disabled={busy} onClick={()=>void start()} className="min-h-11 w-full rounded-pill border border-hairline bg-white px-5 py-3 text-sm font-semibold disabled:opacity-50">{busy?'Opening Google…':link?'Link Google to this account':'Continue with Google'}</button>{link&&<p className="mt-2 text-xs text-secondary">Requires a recent sign-in and your authenticator if enabled. Existing progress stays with this account.</p>}{error&&<p role="alert" className="mt-3 text-sm text-mypick">{error}</p>}</div>
 }

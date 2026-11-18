@@ -11,24 +11,17 @@ export const STUDY_THEMES: readonly {
 }[] = [
   {
     id: 'paper',
-    label: 'Warm Paper',
-    shortLabel: 'Paper',
+    label: 'Light',
+    shortLabel: 'Light',
     icon: '☀',
-    description: 'Warm editorial parchment for long reading comfort',
-  },
-  {
-    id: 'focus',
-    label: 'Crisp Focus',
-    shortLabel: 'Focus',
-    icon: '✦',
-    description: 'High-clarity daylight studio inspired by Brilliant & Quizlet',
+    description: 'Finna light theme',
   },
   {
     id: 'night',
-    label: 'Night Owl',
-    shortLabel: 'Night',
+    label: 'Dark',
+    shortLabel: 'Dark',
     icon: '☾',
-    description: 'Deep midnight slate for late-night exam prep without eye strain',
+    description: 'Finna dark theme',
   },
 ] as const
 
@@ -39,7 +32,8 @@ export function getStudyTheme(): StudyTheme {
   try {
     if (typeof window !== 'undefined' && window.localStorage) {
       const saved = window.localStorage.getItem(STORAGE_KEY)
-      if (saved === 'paper' || saved === 'focus' || saved === 'night') return saved
+      if (saved === 'focus') return 'paper'
+      if (saved === 'paper' || saved === 'night') return saved
     }
     if (typeof document !== 'undefined' && document.documentElement) {
       const attr = document.documentElement.getAttribute('data-theme')
@@ -54,7 +48,8 @@ export function getStudyTheme(): StudyTheme {
 export function applyStudyTheme(theme: StudyTheme): void {
   try {
     if (typeof document !== 'undefined' && document.documentElement) {
-      document.documentElement.setAttribute('data-theme', theme)
+      document.documentElement.setAttribute('data-design', 'finna')
+      document.documentElement.setAttribute('data-theme', theme === 'focus' ? 'paper' : theme)
       document.documentElement.classList.toggle('dark', theme === 'night')
     }
     if (typeof window !== 'undefined' && window.localStorage) {
@@ -70,7 +65,7 @@ export function applyStudyTheme(theme: StudyTheme): void {
 
 export function cycleStudyTheme(current?: StudyTheme): StudyTheme {
   const active = current ?? getStudyTheme()
-  const order: StudyTheme[] = ['paper', 'focus', 'night']
+  const order: StudyTheme[] = ['paper', 'night']
   const next = order[(order.indexOf(active) + 1) % order.length]
   applyStudyTheme(next)
   return next

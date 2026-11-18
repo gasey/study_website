@@ -1,7 +1,7 @@
 import { deviceId } from "./device";
 import { reviewRequest } from "./review";
 import type { AvatarLook } from "./avatar";
-export type GameMode = "gauntlet" | "speed" | "duel" | "party" | "cup" | "trail";
+export type GameMode = "gauntlet" | "speed" | "duel" | "party" | "cup" | "trail" | "daily";
 export interface GameQuestion {
   id: string;
   question: string;
@@ -104,6 +104,7 @@ export interface GamesData {
     entry_room: string | null;
     entries: number;
   };
+  daily: {id:string;opens_at:string;closes_at:string;entry_room:string|null};
   server_now: string;
 }
 export async function gameRead<T>(path: string): Promise<T> {
@@ -130,6 +131,7 @@ export const MODE_NAMES: Record<GameMode, string> = {
   duel: "Duel",
   party: "Multiplayer room",
   cup: "Weekly cup",
+  daily: "Daily Five",
 };
 
 export interface FoundationPreset {

@@ -13,7 +13,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, Header
 
 from ..db import cursor
-from ..deps import current_user
+from ..deps import browse_user, current_user
 from ..schemas import (
     AnswerResult,
     AnswerSubmission,
@@ -30,6 +30,8 @@ from ..services.bank_review import snapshot as review_snapshot
 from ..services.answer_comparison import published_comparison
 from ..services.answer_reveals import record_reveal, require_fresh_attempt
 from ..services.study_series import study_series_pool
+from ..services.public_share import question_preview, share_page
+from fastapi.responses import HTMLResponse
 
 router = APIRouter(prefix="/api/questions", tags=["questions"])
 
@@ -77,18 +79,20 @@ async def list_questions(
     paper_id: str | None = Query(None, min_length=1, max_length=500),
     essay_kind: Literal["essay", "letter", "precis", "comprehension"] | None = None,
     study_status: Literal["all", "unseen", "answered", "wrong", "ever_wrong"] = "all",
-    order: Literal["repeated", "mixed"] = "repeated",
+    order: Literal["repeated", "mixed", "paper"] = "repeated",
     seed: str = "",
     repeats_only: bool = False,
     origin: Literal["paper", "community", "all"] = "paper",
     limit: int = Query(20, ge=1, le=100),
     offset: int = Query(0, ge=0),
-    user_id: str = Depends(current_user),
+    user_id: str | None = Depends(browse_user),
     exam_scope: ExamScope = DEFAULT_SCOPE) -> QuestionPage:
     if len(seed)>64 or (seed and not all(c.isascii() and (c.isalnum() or c in "-_") for c in seed)):
         raise HTTPException(422, "Invalid question order seed")
     if order=="mixed" and not seed:
         raise HTTPException(422, "Mixed order needs a seed")
+    if order=="paper" and not paper_id:
+        raise HTTPException(422, "Paper order needs a specific paper")
     view = pool_view(pool, exam_scope)
     where: list[str] = []
     params: dict[str, object] = {}
@@ -310,7 +314,15 @@ async def list_questions(
     elif status_where:
         clause = f"WHERE {' AND '.join(where + status_where)}"
 
+    from ..services.browse_allowance import allowance, power_filter, query_key, FILTERS
+    arguments = locals().copy()
+    filters = {key: arguments.get(key) for key in FILTERS}
+    if source:
+        filters['source'] = params['source']
+    browse_allowance = None
     async with cursor() as cur:
+        if power_filter(filters):
+            browse_allowance = await allowance(cur, user_id, request_key=query_key(filters))
         if learning_entry:
             from .current_affairs import no_assessment
             await no_assessment(cur,user_id)
@@ -326,6 +338,17 @@ async def list_questions(
         # different booklet representative. No per-request random sort.
         sort_key = "v.times_asked"
         direction = "DESC"
+        # Use the source sequence before pagination, including numbering resets
+        # and written subquestions. Old sources without a sequence fall back to
+        # their numeric printed number rather than lexical 1, 10, 2 ordering.
+        paper_sequence = "COALESCE(a.qnum_seq, substring(a.qnum from '^[0-9]{1,9}')::integer)"
+        source_order = ""
+        if order == 'paper':
+            sort_key = f"""(SELECT ROW({paper_sequence},a.page,a.qnum,a.id)
+                FROM appearances a WHERE a.canonical_id=v.id AND a.paper_id=%(paper_id)s
+                ORDER BY {paper_sequence} NULLS LAST,a.page NULLS LAST,a.qnum,a.id LIMIT 1)"""
+            direction = "ASC"
+            source_order = f"{paper_sequence} NULLS LAST,a.page NULLS LAST,a.qnum,a.id,"
         if order == 'mixed':
             sort_key = "md5(" + ("v.study_series_key::text" if grouped else "v.id") + " || %(order_seed)s)"
             params['order_seed'] = seed
@@ -349,6 +372,7 @@ async def list_questions(
                       FROM appearances a JOIN papers p ON p.id=a.paper_id
                      WHERE a.canonical_id=v.id AND {scope_condition('p', exam_scope)} {source_area}
                      ORDER BY (a.paper_id=%(source_paper_id)s) DESC NULLS LAST,
+                              {source_order}
                               (p.year BETWEEN %(source_year_from)s AND %(source_year_to)s) DESC NULLS LAST,
                               (a.figure_image IS NOT NULL) DESC,p.year DESC NULLS LAST,
                               a.page NULLS LAST LIMIT 1
@@ -358,7 +382,8 @@ async def list_questions(
         )
         items = await question_items(cur, await cur.fetchall())
 
-    return QuestionPage(items=items, total=total, limit=limit, offset=offset)
+    return QuestionPage(items=items, total=total, limit=limit, offset=offset,
+                        browse_allowance=browse_allowance)
 
 
 async def question_items(cur, selected_rows):
@@ -428,20 +453,22 @@ async def list_question_papers(
     Counts are based on printed appearances, while scoring eligibility comes
     from the canonical official-key view.
     """
+    # Build matching paper IDs once. A correlated EXISTS under this OR made
+    # PostgreSQL rescan the approved subject pool for every source paper.
     where = ["""(
         COALESCE(p.exam_name, '') ILIKE '%%english%%'
         OR COALESCE(p.source_file, '') ILIKE '%%english%%'
         OR COALESCE(p.paper_subject, '') ILIKE '%%english%%'
-        OR EXISTS (
-            SELECT 1 FROM appearances ea
+        OR p.id IN (
+            SELECT ea.paper_id FROM appearances ea
             JOIN v_question_paths eqc ON eqc.question_id=ea.canonical_id
-            WHERE ea.paper_id=p.id AND eqc.review_status='approved'
+            WHERE eqc.review_status='approved'
               AND eqc.subject_id='english'
         )
-    )""" if not subject_id else """EXISTS (
-        SELECT 1 FROM appearances sa JOIN v_question_paths sqc
+    )""" if not subject_id else """p.id IN (
+        SELECT sa.paper_id FROM appearances sa JOIN v_question_paths sqc
           ON sqc.question_id=sa.canonical_id AND sqc.review_status='approved'
-        WHERE sa.paper_id=p.id AND sqc.subject_id=%(subject_id)s
+        WHERE sqc.subject_id=%(subject_id)s
     )"""]
     params: dict[str, object] = {"limit": limit, "offset": offset}
     if subject_id:
@@ -652,6 +679,14 @@ async def reveal_answer(question_id: str, response: Response,
         return {**viewed_payload(row),**(await cur.fetchone()),'retry_after_seconds':1800}
 
 
+@router.get("/{question_id}/share", response_class=HTMLResponse)
+async def share_question(question_id: str, paper: str | None = Query(None, min_length=1, max_length=500),
+                         exam_scope: ExamScope = DEFAULT_SCOPE):
+    async with cursor() as cur:
+        preview = await question_preview(cur, question_id, paper, exam_scope)
+    return share_page(**preview, action='Open this question')
+
+
 @router.get("/{question_id}", response_model=QuestionDetail)
 async def get_question(question_id: str, exam_scope: ExamScope = DEFAULT_SCOPE) -> QuestionDetail:
     async with cursor() as cur:
@@ -826,6 +861,14 @@ async def _answer_question(
             if prior:return prior
         await protect_answer(cur, user_id, question_id)
         await require_fresh_attempt(cur, user_id, question_id)
+        if body.context == 'review':
+            await cur.execute('SELECT 1 FROM v_scorable WHERE id=%s',(question_id,))
+            if not await cur.fetchone():
+                raise HTTPException(409,'This question is no longer eligible for verified review')
+        from ..services.learning_habit import capture_plan
+        await capture_plan(cur,user_id)
+        from ..services.mastery import prepare
+        await prepare(cur,user_id,question_id)
         # Free accounts receive 50 bank practice answers per calendar day.
         # A transaction lock keeps simultaneous tabs from spending the last
         # remaining answer twice; mock answers are handled by the mock runner.
@@ -846,6 +889,10 @@ async def _answer_question(
         )
 
         attempt=(await cur.fetchone())['id']
+        from ..services.scoring_revisions import assess_attempt
+        from ..services.learning_rollups import record
+        await assess_attempt(cur,attempt)
+        await record(cur,user_id,attempt)
         from ..services.learning_rewards import attempt_reward
         reward=await attempt_reward(cur,user_id,question_id,attempt,correct,row['answer_source'],body.context)
 

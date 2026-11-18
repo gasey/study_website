@@ -164,7 +164,11 @@ def test_udc_check_rejects_stale_display_before_grading(monkeypatch,stale):
     from unittest.mock import AsyncMock
     from fastapi import HTTPException
     from app.routers import study_sessions as route
-    row={'question_ids':['qid'],'paper_ids':['paper'],'position':0,'version':1,'finished_at':None}
+    # Real rows come from SELECT * on practice_study_sessions, which has carried
+    # collection_id since migration 0062; grading now reads it instead of
+    # assuming 'udc'.
+    row={'question_ids':['qid'],'paper_ids':['paper'],'position':0,'version':1,'finished_at':None,
+         'collection_id':'udc','kind':'practice'}
     class Cursor:
         def __init__(self):self.queries=[]
         async def execute(self,sql,params=None):self.queries.append(sql)
@@ -180,12 +184,14 @@ def test_udc_check_rejects_stale_display_before_grading(monkeypatch,stale):
     grader=AsyncMock();monkeypatch.setattr(route,'_answer_question',grader)
     body=route.Check(version=1,question_id='qid',chosen_index=0,presentation_hash=('a' if stale else 'b')*64)
     if stale:
-        with pytest.raises(HTTPException) as exc:asyncio.run(route.check('set',body,'learner'))
+        from starlette.requests import Request
+        with pytest.raises(HTTPException) as exc:asyncio.run(route.check('set',body,'learner',Request({'type':'http'})))
         assert exc.value.status_code==409 and 'no attempt was recorded' in exc.value.detail
         grader.assert_not_awaited()
         assert not any(sql.startswith('UPDATE') for sql in cur.queries)
     else:
-        asyncio.run(route.check('set',body,'learner'))
+        from starlette.requests import Request
+        asyncio.run(route.check('set',body,'learner',Request({'type':'http'})))
         grader.assert_awaited_once()
     assert any('FOR SHARE' in sql for sql in cur.queries)
 

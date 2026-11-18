@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { getHome, type HomeData } from "../lib/api";
+import CalendarLearningLayers,{type LearningLayersState} from '../components/CalendarLearningLayers'
 import {
   calendarRead,
   calendarPersonal,
@@ -14,6 +15,7 @@ import {
   type CalendarEvent,
   type CalendarPersonal,
   type EventKind,
+  ownedKindLabel,
 } from "../lib/calendar";
 const BTN =
   "inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-3 py-2 text-[13px] font-semibold disabled:opacity-40";
@@ -31,6 +33,7 @@ export default function ExamCalendar({
   notices?: boolean;
 }) {
   const [params, setParams] = useSearchParams();
+  const [learning,setLearning]=useState<LearningLayersState|null>(null)
   const today = indiaToday();
   const rawMonth = params.get("month");
   const month =
@@ -40,7 +43,7 @@ export default function ExamCalendar({
     rawMonth <= "2100-12"
       ? rawMonth
       : today.slice(0, 7);
-  const view = params.get("view") === "list" ? "list" : "month";
+  const view = params.get("view") === "list" ? "list" : params.get("view") === "week" ? "week" : "month";
   const kind = params.get("kind") || "";
   const exam = params.get("exam") || "";
   const onlyFollowing = params.get("following") === "1";
@@ -61,8 +64,13 @@ export default function ExamCalendar({
   const year = Number(month.slice(0, 4)),
     mi = Number(month.slice(5)) - 1;
   const days = new Date(Date.UTC(year, mi + 1, 0)).getUTCDate();
-  const start = month + "-01",
-    end = month + "-" + String(days).padStart(2, "0");
+  const addDays=(day:string,n:number)=>new Date(dayNumber(day)*86400000+n*86400000).toISOString().slice(0,10);
+  const rawWeek=params.get('week')||'';
+  const weekAnchor=/^\d{4}-\d{2}-\d{2}$/.test(rawWeek)&&rawWeek>='2000-01-01'&&rawWeek<='2100-12-31'&&Number.isFinite(Date.parse(rawWeek))&&new Date(rawWeek).toISOString().slice(0,10)===rawWeek?rawWeek:month===today.slice(0,7)?today:month+'-01';
+  const weekStart=addDays(weekAnchor,-((new Date(weekAnchor).getUTCDay()+6)%7));
+  const start=view==='week'?weekStart:month+'-01',
+    end=view==='week'?addDays(weekStart,6):month+'-'+String(days).padStart(2,'0');
+  const gridDays=Array.from({length:view==='week'?7:days},(_,i)=>addDays(start,i));
   const change = (patch: Record<string, string>) => {
     const next = new URLSearchParams(params);
     next.delete("event");
@@ -83,6 +91,7 @@ export default function ExamCalendar({
     const load = () => {
       const epoch = ++accountEpoch.current;
       setPersonal(null);
+      setLearning(null);
       return calendarPersonal()
         .then((p) => {
           if (live && epoch === accountEpoch.current) setPersonal(p);
@@ -161,8 +170,8 @@ export default function ExamCalendar({
     };
   }, [focus, reload]);
   useEffect(() => {
-    setSelected(month === today.slice(0, 7) ? today : start);
-  }, [month, start, today]);
+    setSelected(view==='week'?weekAnchor:today>=start&&today<=end?today:start);
+  }, [start, end, today, view, weekAnchor]);
   async function mutate(
     action: "reminders" | "follow" | "save",
     body: unknown,
@@ -190,13 +199,21 @@ export default function ExamCalendar({
         personal?.saved.includes(e.id) ||
         (!!e.collection_id && personal?.following.includes(e.collection_id))),
   );
+  const ownedVisible=(learning?.data?.occurrences||[]).filter(e=>e.kind==='personal'?learning?.personal:e.kind==='progress-test'?learning?.progress:learning?.targets)
+  const communityVisible=learning?.community?learning.data?.community||[]:[]
+  const officialVisible=learning?.official===false?[]:visible
   const upcoming = personal?.upcoming;
   const remaining = upcoming?.starts_on
     ? Math.max(0, dayNumber(upcoming.starts_on) - dayNumber(today))
     : null;
   const move = (delta: number) => {
-    const d = new Date(Date.UTC(year, mi + delta, 1));
-    change({ month: d.toISOString().slice(0, 7) });
+    if(view==='week'){
+      const next=addDays(weekAnchor,delta*7);
+      change({week:next,month:next.slice(0,7)});
+    }else{
+      const d = new Date(Date.UTC(year, mi + delta, 1));
+      change({ month: d.toISOString().slice(0, 7),week:'' });
+    }
   };
   function row(e: CalendarEvent) {
     const saved = personal?.saved.includes(e.id);
@@ -287,6 +304,7 @@ export default function ExamCalendar({
               >
                 Add to Google Calendar ↗
               </a>
+              {personal?.registered&&e.kind==='exam'&&!notices&&<button className="min-h-11 text-link" onClick={()=>window.dispatchEvent(new CustomEvent('ism-calendar-target',{detail:{date:e.starts_on,title:e.title,collection_id:e.collection_id}}))}>Use as my target</button>}
               <button
                 className="min-h-11 text-link"
                 onClick={() => exportCalendar([e])}
@@ -302,14 +320,13 @@ export default function ExamCalendar({
   return (
     <main className="mx-auto max-w-shell px-4 pb-24 pt-9 sm:px-6">
       <div className="font-mono text-[11px] uppercase tracking-[.1em] text-[#7E4A00]">
-        {notices ? "Official notices" : "Exam calendar"}
+        {notices ? "Official notices" : "Plan your study"}
       </div>
       <h1 className="mt-2 font-display text-[clamp(34px,5vw,50px)] font-medium leading-tight">
-        {notices ? "From the Commission" : "What's coming up"}
+        {notices ? "From the Commission" : "Your helper calendar"}
       </h1>
       <p className="mt-3 max-w-[720px] text-[17px] leading-relaxed text-secondary">
-        MPSC notifications, last dates, admit cards, exams, answer keys and
-        results. Follow an exam or save a notice to keep it on your calendar.
+        {notices?'MPSC notifications, last dates, admit cards, exams, answer keys and results.':'Official exam dates, your targets and private study plans in one place. Choose the layers you want to see.'}
       </p>
       <div className="mt-3 flex flex-wrap gap-4 text-[13px] font-semibold">
         <Link
@@ -327,6 +344,7 @@ export default function ExamCalendar({
           MPSC website ↗
         </a>
       </div>
+      {!notices&&<CalendarLearningLayers start={start} end={end} exams={exams} onLayers={setLearning}/>}
       <div className="mt-4 flex flex-wrap items-stretch gap-5">
         <section className="flex-[1_1_300px] rounded-[10px] bg-ink p-[22px] text-paper">
           <div className="font-mono text-[10px] uppercase tracking-wider text-[#D8A33A]">
@@ -478,14 +496,14 @@ export default function ExamCalendar({
         <>
           <div className="mt-6 flex flex-wrap items-center justify-between gap-3">
             <div className="flex gap-1" role="group" aria-label="Calendar view">
-              {(["month", "list"] as const).map((v) => (
+              {(["month", "week", "list"] as const).map((v) => (
                 <button
                   key={v}
                   className={BTN + (view === v ? " bg-ink text-paper" : "")}
                   aria-pressed={view === v}
-                  onClick={() => change({ view: v })}
+                  onClick={() => change({ view: v,week:v==='week'?selected:'',month:(view==='week'?weekAnchor:selected).slice(0,7) })}
                 >
-                  {v === "month" ? "Month" : "List"}
+                  {v === "month" ? "Month" : v === "week" ? "Week" : "List"}
                 </button>
               ))}
             </div>
@@ -494,21 +512,21 @@ export default function ExamCalendar({
               disabled={!visible.some((e) => e.starts_on)}
               onClick={() => exportCalendar(visible)}
             >
-              Export displayed dates (.ics)
+              Export official dates (.ics)
             </button>
           </div>
           <div className="mt-4 overflow-hidden rounded-[10px] border border-ink bg-[#FBF8F1]">
             <div className="flex items-center justify-between gap-2 border-b border-ink px-4 py-3">
               <button
                 className={BTN}
-                aria-label="Previous month"
-                disabled={month === "2000-01"}
+                aria-label={view==='week'?'Previous week':'Previous month'}
+                disabled={view==='week'?addDays(weekAnchor,-7)<'2000-01-01':month==='2000-01'}
                 onClick={() => move(-1)}
               >
                 ‹
               </button>
               <h2 className="font-display text-[24px]">
-                {new Date(Date.UTC(year, mi, 1)).toLocaleDateString("en-IN", {
+                {view==='week'?dateLabel(start)+' – '+dateLabel(end):new Date(Date.UTC(year, mi, 1)).toLocaleDateString("en-IN", {
                   month: "long",
                   year: "numeric",
                   timeZone: "UTC",
@@ -516,14 +534,14 @@ export default function ExamCalendar({
               </h2>
               <button
                 className={BTN}
-                aria-label="Next month"
-                disabled={month === "2100-12"}
+                aria-label={view==='week'?'Next week':'Next month'}
+                disabled={view==='week'?addDays(weekAnchor,7)>'2100-12-31':month==='2100-12'}
                 onClick={() => move(1)}
               >
                 ›
               </button>
             </div>
-            {view === "month" && (
+            {view !== "list" && (
               <>
                 <div className="grid grid-cols-7 border-b border-hairline">
                   {["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"].map(
@@ -541,7 +559,7 @@ export default function ExamCalendar({
                   {Array.from(
                     {
                       length:
-                        (new Date(Date.UTC(year, mi, 1)).getUTCDay() + 6) % 7,
+                        view==='week'?0:(new Date(Date.UTC(year, mi, 1)).getUTCDay() + 6) % 7,
                     },
                     (_, i) => (
                       <div
@@ -550,9 +568,10 @@ export default function ExamCalendar({
                       />
                     ),
                   )}
-                  {Array.from({ length: days }, (_, i) => {
-                    const d = month + "-" + String(i + 1).padStart(2, "0");
-                    const evs = visible.filter(
+                  {gridDays.map(d => {
+                    const own=ownedVisible.filter(e=>e.day===d);
+                    const play=communityVisible.filter(e=>e.day===d);
+                    const evs = officialVisible.filter(
                       (e) =>
                         !!e.starts_on &&
                         e.starts_on <= d &&
@@ -563,7 +582,7 @@ export default function ExamCalendar({
                         key={d}
                         type="button"
                         aria-label={
-                          dateLabel(d) + ", " + evs.length + " events"
+                          dateLabel(d) + ", " + (evs.length+own.length+play.length) + " events, "+(learning?.forecast?learning.data?.forecast.find(r=>r.day===d)?.count||0:0)+" projected reviews"
                         }
                         aria-pressed={selected === d}
                         onClick={() => setSelected(d)}
@@ -572,13 +591,15 @@ export default function ExamCalendar({
                           (selected === d ? "bg-[#E3E9F8]" : "")
                         }
                       >
+                        {learning?.forecast&&learning.data?.forecast.some(r=>r.day===d)&&<span className="text-[10px] font-bold text-link">↻ {learning.data.forecast.find(r=>r.day===d)?.count}</span>}
+                        {learning?.habit&&learning.data?.habit.some(r=>r.day===d)&&<span aria-label="Verified activity" className="text-[10px] text-learn-dark">●</span>}
                         <span
                           className={
                             "grid h-6 w-6 place-items-center rounded-full text-[12px] " +
                             (d === today ? "bg-ink text-paper" : "")
                           }
                         >
-                          {i + 1}
+                          {Number(d.slice(-2))}
                         </span>
                         {evs.slice(0, 2).map((e) => (
                           <span
@@ -591,9 +612,11 @@ export default function ExamCalendar({
                             {e.title}
                           </span>
                         ))}
-                        {evs.length > 2 && (
+                        {own.slice(0,2).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-learn-soft px-1 py-0.5 text-[10px] font-semibold text-learn-dark">{e.title}</span>)}
+                        {play.slice(0,1).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-play-soft px-1 py-0.5 text-[10px] font-semibold text-ink">Cup · 7 pm</span>)}
+                        {(evs.length>2||own.length>2) && (
                           <span className="text-[10px]">
-                            +{evs.length - 2} more
+                            +{Math.max(0,evs.length-2)+Math.max(0,own.length-2)} more
                           </span>
                         )}
                       </button>
@@ -618,19 +641,22 @@ export default function ExamCalendar({
                 ? "Dates this month"
                 : dateLabel(selected)}
           </h2>
+          {!notices&&learning?.forecast&&learning.data?.forecast.some(r=>r.day===selected)&&<Link to={'/revise?'+new URLSearchParams({through:selected,exam_scope:'all'})} className="my-3 inline-flex min-h-11 items-center rounded-xl bg-learn-soft px-4 text-sm font-bold text-link">{learning.data.forecast.find(r=>r.day===selected)?.count} projected reviews · Review this day →</Link>}
+          {!notices&&communityVisible.filter(e=>view==='list'||e.day===selected).map(e=><article key={e.id} className="border-b border-hairline py-4"><p className="text-xs font-semibold text-secondary">Community & play · {dateLabel(e.day)}</p><h3 className="mt-1 font-semibold">{e.title}</h3><Link className="mt-1 inline-flex min-h-11 items-center text-sm font-bold text-link" to={e.url}>Open games →</Link><p className="text-xs text-secondary">An optional scheduled event. Participation starts in Games.</p></article>)}
+          {!notices&&ownedVisible.filter(e=>view==='list'||e.day===selected).map(e=><article key={e.id+e.day} className="min-w-0 border-b border-hairline py-4"><p className="text-xs font-semibold text-learn-dark">{ownedKindLabel[e.kind]} · Private · {dateLabel(e.day)}</p><h3 className="mt-1 break-words font-semibold">{e.title}</h3>{e.kind==='exam-target'&&e.day>=today&&<p className="mt-1 text-sm text-secondary">{dayNumber(e.day)-dayNumber(today)} days to your target</p>}{e.note&&<p className="mt-2 whitespace-pre-wrap break-words text-sm text-secondary">{e.note}</p>}{e.kind==='progress-test'&&e.collection_id&&<Link className="mt-2 inline-flex min-h-11 items-center text-sm font-bold text-link" to={'/exams/'+encodeURIComponent(e.collection_id)+'/mock'}>Start normal mock →</Link>}</article>)}
           {(notices || view === "list"
-            ? visible
-            : visible.filter(
+            ? (notices?visible:officialVisible)
+            : officialVisible.filter(
                 (e) =>
                   !!e.starts_on &&
                   e.starts_on <= selected &&
                   (e.ends_on || e.starts_on) >= selected,
               )
           ).map(row)}
-          {!(
+          {(notices||learning?.official!==false)&&!(
             notices || view === "list"
-              ? visible
-              : visible.filter(
+              ? (notices?visible:officialVisible)
+              : officialVisible.filter(
                   (e) =>
                     !!e.starts_on &&
                     e.starts_on <= selected &&
@@ -671,8 +697,8 @@ export default function ExamCalendar({
         </nav>
       )}
       <p className="mt-5 text-[12px] leading-relaxed text-muted">
-        Dates are transcribed from official sources with staff verification
-        notes. All dates use India time; calendar exports are all-day entries.
+        Official dates are transcribed from official sources with staff verification
+        notes. All dates use India time; official-date exports are all-day entries.
         Confirm exact times, eligibility and any revisions in the official
         notice. Saved external calendar copies do not update automatically.
       </p>

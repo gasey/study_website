@@ -7,18 +7,28 @@ import type {ReviewAccess} from '../lib/reviewNavigation'
 import {useExamScope} from '../lib/examScope'
 import NavIcon from './NavIcon'
 
-export default function QuickFind({access,admin=false}:{access:ReviewAccess;admin?:boolean}){
+export default function QuickFind({access,admin=false,trigger=true}:{access:ReviewAccess;admin?:boolean;trigger?:boolean}){
  const dialog=useRef<HTMLDialogElement>(null),input=useRef<HTMLInputElement>(null)
  const [open,setOpen]=useState(false),[query,setQuery]=useState(''),[exams,setExams]=useState<Collection[]>([]),[loading,setLoading]=useState(false),[error,setError]=useState(false),[retry,setRetry]=useState(0)
  const location=useLocation(),navigate=useNavigate(),scope=useExamScope()
- useEffect(()=>{const key=(e:KeyboardEvent)=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'&&!e.repeat){e.preventDefault();setOpen(value=>!value)}};window.addEventListener('keydown',key);return()=>window.removeEventListener('keydown',key)},[])
+ useEffect(()=>{
+  const key=(e:KeyboardEvent)=>{
+   const target=e.target as HTMLElement|null
+   const typing=target&&(/INPUT|TEXTAREA|SELECT/.test(target.tagName)||target.isContentEditable)
+   if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'&&!e.repeat){e.preventDefault();setOpen(value=>!value)}
+   else if(e.key==='/'&&!typing&&!e.ctrlKey&&!e.metaKey&&!e.altKey&&!e.repeat){e.preventDefault();setOpen(true)}
+  }
+  const show=(event:Event)=>{const query=(event as CustomEvent<{query?:string}>).detail?.query;setQuery(typeof query==='string'?query.slice(0,120):'');setOpen(true)}
+  window.addEventListener('keydown',key);window.addEventListener('finna-open-find',show)
+  return()=>{window.removeEventListener('keydown',key);window.removeEventListener('finna-open-find',show)}
+ },[])
  useEffect(()=>{setOpen(false);setQuery('')},[location.key])
  useEffect(()=>{if(!open)return;let live=true;setLoading(true);setError(false);setExams([]);listCollections().then(rows=>{if(live)setExams(rows.filter(e=>e.kind==='exam'&&!isLaterExamCollection(e)))}).catch(()=>{if(live)setError(true)}).finally(()=>{if(live)setLoading(false)});return()=>{live=false}},[open,scope,retry])
  useEffect(()=>{if(!open){dialog.current?.close();return}dialog.current?.showModal();input.current?.focus();const previous=document.body.style.overflow;document.body.style.overflow='hidden';return()=>{document.body.style.overflow=previous}},[open])
  const results=matchDestinations(quickDestinations(exams,access),query)
  function close(){setOpen(false);setQuery('')}
  return <>
-  <button type="button" onClick={()=>setOpen(true)} aria-label="Quick find" aria-haspopup="dialog" className={'inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg px-2 text-[13px] '+(admin?'w-full bg-[#3A3631] text-white':'hover:bg-canvas')}><NavIcon name="search"/><span className={admin?undefined:"hidden min-[360px]:inline"}>Find</span><kbd className="hidden rounded border border-current/20 px-1 text-[10px] opacity-60 xl:inline">Ctrl K</kbd></button>
+  {trigger&&<button type="button" onClick={()=>setOpen(true)} aria-label="Quick find" aria-haspopup="dialog" className={'inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-lg px-2 text-[13px] '+(admin?'w-full bg-[#3A3631] text-white':'hover:bg-canvas')}><NavIcon name="search"/><span className={admin?undefined:"hidden min-[360px]:inline"}>Find</span><kbd className="hidden rounded border border-current/20 px-1 text-[10px] opacity-60 xl:inline">Ctrl K</kbd></button>}
   {createPortal(<dialog ref={dialog} aria-labelledby="quick-find-title" onCancel={close} onClose={close} onClick={e=>{if(e.target===dialog.current)close()}} className="quick-find-dialog rounded-[14px] border border-hairline bg-card p-0 text-ink shadow-xl">
    <div className="flex max-h-[min(640px,85dvh)] flex-col" onKeyDown={e=>{
     if(e.key!=='ArrowDown'&&e.key!=='ArrowUp')return

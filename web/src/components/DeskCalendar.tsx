@@ -1,0 +1,12 @@
+import {useEffect,useState} from 'react'
+import {Link} from 'react-router-dom'
+import {getCalendarLayers,type CalendarLayers} from '../lib/api'
+import {dateLabel,dayNumber,indiaToday} from '../lib/calendar'
+/** Reads the shared calendar projection. Editing stays in the calendar. */
+export default function DeskCalendar(){
+ const [data,setData]=useState<CalendarLayers|null>(null),[error,setError]=useState(''),[retry,setRetry]=useState(0)
+ const start=indiaToday(),end=new Date((dayNumber(start)+7)*86400000).toISOString().slice(0,10)
+ useEffect(()=>{let live=true;setData(null);setError('');getCalendarLayers(start,end).then(d=>{if(live)setData(d)}).catch(e=>{if(live)setError(e.message)});const refresh=()=>{live=false;setData(null);setRetry(n=>n+1)};window.addEventListener('ism-auth-change',refresh);window.addEventListener('ism-calendar-change',refresh);return()=>{live=false;window.removeEventListener('ism-auth-change',refresh);window.removeEventListener('ism-calendar-change',refresh)}},[start,end,retry])
+ const upcoming=data?[...data.occurrences.map(e=>({id:e.id+e.day,day:e.day,title:e.title,url:'/calendar?view=week&week='+e.day})),...data.community,...data.official.filter(e=>e.starts_on).map(e=>({id:'official:'+e.id,day:e.starts_on!<start?start:e.starts_on!,title:e.title,url:'/calendar?event='+e.id}))].sort((a,b)=>a.day.localeCompare(b.day)||a.id.localeCompare(b.id)):[]
+ return <section className="my-4 rounded-panel border border-hairline bg-card p-4" aria-label="Upcoming calendar"><div className="flex flex-wrap items-center justify-between gap-2"><h2 className="text-sm font-bold">On your calendar</h2><Link className="inline-flex min-h-11 items-center text-sm font-bold text-link" to="/calendar">Open calendar →</Link></div>{error?<p role="alert" className="text-sm">{error} <button className="min-h-11 underline" onClick={()=>setRetry(n=>n+1)}>Try again</button></p>:!data?<p role="status" className="text-sm text-secondary">Loading dates…</p>:!data.registered?<p className="text-sm text-secondary">Sign in to see your private plans here.</p>:upcoming.length?<ul>{upcoming.slice(0,4).map(e=><li key={e.id}><Link className="flex min-h-11 flex-wrap items-center gap-x-3 py-2 text-sm" to={e.url}><span className="text-secondary">{dateLabel(e.day)}</span><span className="min-w-0 break-words font-semibold text-link">{e.title}</span></Link></li>)}</ul>:<p className="text-sm text-secondary">No plans in the coming week. Add a goal or progress-test slot in your calendar.</p>}</section>
+}

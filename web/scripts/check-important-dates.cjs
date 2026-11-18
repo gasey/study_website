@@ -1,0 +1,72 @@
+// Regression checks for date filters, source navigation and account/request boundaries.
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path');
+const root=process.cwd(),wr=require('node:module').createRequire(root+'/web/package.json'),React=wr('react'),ts=wr('typescript');
+const rendererRoot=process.argv[2]||root+'/../india-study-map/web';
+const reactPath=require.resolve('react',{paths:[rendererRoot]});require.cache[reactPath]={id:reactPath,filename:reactPath,loaded:true,exports:React};
+const {act,create}=require(require.resolve('react-test-renderer',{paths:[rendererRoot]}));
+const listeners=new Map();global.window={addEventListener(n,fn){if(!listeners.has(n))listeners.set(n,new Set());listeners.get(n).add(fn)},removeEventListener(n,fn){listeners.get(n)?.delete(fn)}};
+let params=new URLSearchParams(),tree,reads=[],gate=null,failed=false,title='World Environment Day';
+const entry=()=>({id:'date_'+'a'.repeat(20),title,category:'observance',dates:[{year:null,month:6,day:5,precision:'date'}],question_count:2,evidence:['answer'],subjects:['Environment'],preview:'When is World Environment Day observed?',first_question_id:'source-q'});
+const page=(offset=0)=>({items:Array.from({length:Math.max(0,Math.min(24,50-offset))},(_,i)=>offset+i===0?entry():({...entry(),id:'date_'+String(offset+i).padStart(20,'0'),title:'Event '+(offset+i+1)})),total:50,question_count:65,dated_count:40,offset,limit:24,today:'2026-11-12',subjects:[{id:'environment',title:'Environment'}],calendar_days:[{day:5,events:30},{day:6,events:1}],month_only_count:2});
+const detail=()=>({entry:entry(),questions:[{id:'source-q',question:'When is World Environment Day observed?',evidence:'answer',origin:'paper',subject:'Environment',answer_source:'official'}],total:1,offset:0,limit:24,today:'2026-11-12',subjects:page().subjects});
+const cache=new Map();function load(file){file=path.resolve(file);if(cache.has(file))return cache.get(file);const mod={exports:{}};cache.set(file,mod.exports);const code=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,jsx:ts.JsxEmit.ReactJSX,target:ts.ScriptTarget.ES2020}}).outputText;
+new Function('module','exports','require',code)(mod,mod.exports,id=>{
+ if(id==='react-router-dom')return {Link:({children,...props})=>React.createElement('a',props,children),useSearchParams:()=>{const[,force]=React.useState(0);return[params,value=>{params=typeof value==='function'?value(params):new URLSearchParams(value);force(v=>v+1)}]}};
+ if(id.endsWith('/LearningCatalog'))return {default:({kind})=>React.createElement('legacy',{kind},'Reviewed collections')};
+ if(id.endsWith('/review'))return {reviewRequest:async url=>{reads.push(new URL(url,'https://test').searchParams);if(failed)throw Error('Offline');if(gate)return gate.promise;return url.includes('event_id=')?detail():page(Number(new URL(url,'https://test').searchParams.get('offset'))||0)}};
+ if(id.startsWith('.')){const base=path.resolve(path.dirname(file),id);return load(base+(fs.existsSync(base+'.tsx')?'.tsx':'.ts'))}return wr(id);
+});cache.set(file,mod.exports);return mod.exports;}
+const Screen=load(root+'/web/src/screens/ImportantDates.tsx').default,lib=load(root+'/web/src/lib/bankDates.ts');
+const observers=[];global.IntersectionObserver=class{constructor(callback){this.callback=callback;observers.push(this)}observe(node){this.node=node;this.live=true}disconnect(){this.live=false}};
+const intersect=()=>{const observer=observers.filter(o=>o.live&&o.node).at(-1);assert.ok(observer,'An observer watches the end of the loaded list');observer.callback([{isIntersecting:true}])};
+const rows=()=>tree.root.findAllByType('ol').find(o=>o.props['aria-label']==='Dates and events').findAllByType('li');
+const flush=()=>new Promise(r=>setTimeout(r,240));
+const json=()=>JSON.stringify(tree.toJSON());
+const content=node=>typeof node==='string'?node:node?.children?.map(content).join('')||'';
+const button=name=>tree.root.findAllByType('button').find(b=>content(b)===name);
+const select=label=>tree.root.findAllByType('label').find(l=>content(l).startsWith(label)).findByType('select');
+async function mount(query=''){params=new URLSearchParams(query);await act(async()=>{tree?.unmount();tree=create(React.createElement(Screen),{createNodeMock:element=>element.props['aria-label']==='More events'?{}:null});await flush()})}
+async function perform(fn){await act(async()=>{fn();await flush()})}
+(async()=>{
+ assert.equal(lib.formatBankDate({year:1757,month:null,day:null,precision:'year'}),'1757');
+ assert.equal(lib.formatBankDate({year:326,month:null,day:null,precision:'year',era:'BCE'}),'326 BCE');
+ await mount('q=environment&month=6&origin=paper&page=2');
+ assert.equal(reads.at(-1).get('offset'),'24');assert.equal(reads.at(-1).get('month'),'6');assert.ok(json().includes('5 June'));assert.equal(reads.at(-1).get('evidence'),'dated');assert.equal(tree.root.findAllByType('article').length,0,'Dates are rows, not cards');assert.ok(!json().includes('When is World Environment Day observed?'),'Original question prompts are hidden from the event list');
+ await perform(()=>select('Question source').props.onChange({target:{value:'community'}}));
+ assert.equal(params.get('origin'),'community');assert.equal(params.get('page'),null);assert.equal(reads.at(-1).get('offset'),'0');assert.equal(params.get('q'),'environment');
+ await perform(()=>tree.root.findAllByType('button').find(b=>b.props['aria-label']==='Sources for '+title).props.onClick());assert.equal(reads.at(-1).get('event_id'),entry().id);
+ assert.ok(tree.root.findAllByType('a').some(a=>a.props.to==='/bank/source-q'),'Original canonical source link is preserved');
+ await perform(()=>button('← Back to events').props.onClick());assert.equal(params.get('origin'),'community');assert.equal(params.get('event'),null);
+ await perform(()=>select('Month').props.onChange({target:{value:'7'}}));assert.equal(reads.at(-1).get('month'),'7');
+ await perform(()=>button('Chronology').props.onClick());assert.equal(reads.at(-1).get('order'),'year');assert.equal(params.get('page'),null);assert.ok(json().includes('Dates without a recorded year'));
+ await mount('view=calendar&month=6&page=2');assert.equal(reads.at(-1).get('offset'),'24');assert.ok(json().includes('Month & day · across all years'));
+ const dayButton=()=>tree.root.findAllByType('button').find(b=>b.props['aria-label']==='5 June: 30 events');assert.ok(dayButton(),'Calendar uses full-month counts beyond the paginated rows');
+ await perform(()=>dayButton().props.onClick());assert.equal(params.get('day'),'5');assert.equal(params.get('page'),null);assert.equal(reads.at(-1).get('day'),'5');
+ await perform(()=>button('All dates in June').props.onClick());assert.equal(params.get('day'),null);
+ await perform(()=>tree.root.findAllByType('button').find(b=>b.props['aria-label']==='Next month').props.onClick());assert.equal(params.get('month'),'7');assert.equal(params.get('day'),null);
+ const Calendar=load(root+'/web/src/components/ImportantDateViews.tsx').EventCalendar;
+ let calendar;await act(async()=>{calendar=create(React.createElement(Calendar,{month:2,day:'',counts:[],monthOnlyCount:0,onMonth:()=>{},onDay:()=>{}}))});
+ assert.ok(calendar.root.findAllByType('button').some(b=>b.props['aria-label']==='29 February: 0 events'),'All-year calendar retains leap-day dates');assert.ok(!calendar.root.findAllByType('button').some(b=>b.props['aria-label']==='30 February: 0 events'));await act(async()=>calendar.unmount());
+ await mount('category=observance');assert.equal(rows().length,24);const beforeMore=reads.length;
+ await perform(()=>{button('Load more events').props.onClick();button('Load more events').props.onClick()});
+ assert.equal(reads.length,beforeMore+1,'Repeated triggers must share one page request');assert.equal(reads.at(-1).get('offset'),'24');assert.equal(rows().length,48);assert.ok(json().includes('World Environment Day'),'Existing rows stay visible after append');assert.equal(params.get('category'),'observance');
+ await perform(()=>intersect());assert.equal(reads.at(-1).get('offset'),'48');assert.equal(rows().length,50);assert.ok(json().includes('End of results'));assert.equal(button('Load more events'),undefined);
+ await perform(()=>select('Month').props.onChange({target:{value:'6'}}));assert.equal(rows().length,24,'Changing a filter resets appended results');
+ await mount();const overlap=page(24);overlap.items[0]=entry();gate={promise:Promise.resolve(overlap)};await perform(()=>button('Load more events').props.onClick());assert.equal(rows().length,47,'Events repeated across moving pages are shown once');gate=null;
+ await mount('category=observance&page=6');await act(async()=>flush());assert.equal(params.get('page'),null);assert.equal(params.get('category'),'observance');assert.equal(rows().length,24,'Out-of-range old page links recover to the beginning with filters intact');
+ await mount('page=2');assert.ok(button('Start from first event'));await perform(()=>button('Start from first event').props.onClick());assert.equal(params.get('page'),null);assert.equal(reads.at(-1).get('offset'),'0');
+ await mount();failed=true;await perform(()=>button('Load more events').props.onClick());assert.equal(rows().length,24);assert.ok(button('Retry loading more'));const beforeErrorObserver=reads.length;assert.equal(observers.filter(o=>o.live).length,0,'Do not automatically loop on a failed next page');assert.equal(reads.length,beforeErrorObserver);
+ failed=false;await perform(()=>button('Retry loading more').props.onClick());assert.equal(rows().length,48);assert.equal(reads.at(-1).get('offset'),'24');
+ await mount();let appendResolve;gate={promise:new Promise(r=>appendResolve=r)};const staleAppend=page(24);staleAppend.items[0].title='Private old append';await perform(()=>button('Load more events').props.onClick());
+ gate=null;title='Refreshed account dates';await perform(()=>{for(const fn of listeners.get('ism-auth-change'))fn()});await act(async()=>appendResolve(staleAppend));assert.equal(rows().length,24);assert.ok(!json().includes('Private old append'),'Late next-page data cannot cross account changes');
+ title='World Environment Day';
+ failed=true;await mount();assert.ok(json().includes('Offline'));assert.ok(!json().includes('No events match'));
+ failed=false;await perform(()=>button('Try again').props.onClick());assert.ok(json().includes('World Environment Day'));
+ let resolve;gate={promise:new Promise(r=>resolve=r)};const old=page();old.items[0].title='Old account event';await mount('q=old');
+ gate=null;title='New account event';await perform(()=>{for(const fn of listeners.get('ism-auth-change'))fn()});assert.ok(json().includes('New account event'));
+ await act(async()=>resolve(old));assert.ok(!json().includes('Old account event'),'Late account response must not replace the current view');
+ await mount('entry=learn_'+'b'.repeat(32));assert.equal(tree.root.findByType('legacy').props.kind,'day');
+ await mount('view=collections');assert.ok(json().includes('Reviewed collections'));
+ await act(async()=>tree.unmount());assert.equal(listeners.get('ism-auth-change')?.size||0,0);
+ console.log('Important Dates passed: scroll append, single-flight loading, next-page retry, end-of-results, old page links, stale append isolation, list rows, direct dates, chronology, full-month calendar counts, day selection, month navigation, leap days, URL filters, source links, retry, stale account isolation and legacy collections.');
+})().catch(e=>{console.error(e);process.exitCode=1});

@@ -1,3 +1,5 @@
+import OnboardingSuggestions from './OnboardingSuggestions'
+import CuratedWordQuestion from './CuratedWordQuestion'
 import {answerFeedbackLabel} from '../lib/answerStatus'
 import QuestionStudyControls from './QuestionStudyControls'
 import {newQuestionSeed} from '../lib/questionBrowse'
@@ -9,27 +11,27 @@ import { scrollToResults } from '../lib/pagination'
 import { nextStudySetLink, studySetFilters, studySetLink } from '../lib/studySetLinks'
 import {
   getExamStudyTopics, getStudySet, listStudySets, startStudySet, moveStudySet,
-  checkStudySet, viewStudySet, finishStudySet,
+  checkStudySet, viewStudySet, finishStudySet, revealStudyWord,
   type CollectionPaper, type ExamStudyTopics, type StudySet, type StudySetPreview, type StudySetState,
 } from '../lib/api'
 
 const primary='inline-flex min-h-11 items-center justify-center rounded-pill bg-ink px-4 py-2 text-[13px] font-semibold text-paper disabled:opacity-40'
 const secondary='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-[13px] font-semibold disabled:opacity-40'
 
-function StoredFeedbackNotice({fields,qid,paper}:{fields?:string[];qid:string;paper?:string}) {
+function StoredFeedbackNotice({fields,qid,paper,collection='udc'}:{fields?:string[];qid:string;paper?:string;collection?:string|null}) {
   if(!fields?.length)return null
-  const query=new URLSearchParams({exam:'udc'});if(paper)query.set('paper',paper)
+  const query=new URLSearchParams();if(collection)query.set('exam',collection);if(paper)query.set('paper',paper)
   return <aside className="mt-3 rounded-lg border border-hairline bg-canvas p-3 text-[13px] text-secondary">
     <p>This question was updated after your check ({fields.join(', ')}). This set keeps your original feedback and totals. Source details may reflect the updated paper.</p>
     <Link to={'/bank/'+encodeURIComponent(qid)+'?'+query} className="inline-flex min-h-11 items-center font-semibold text-link underline">Review current question →</Link>
   </aside>
 }
 
-export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
+export default function UdcStudySessions({papers,review=false,onboarding=false}:{papers:CollectionPaper[];review?:boolean;onboarding?:boolean}) {
   const [params,setParams]=useSearchParams(),nav=useNavigate()
   const sid=params.get('session')||''
   const filters=studySetFilters(params)
-  useEffect(()=>{if(!sid&&filters.order==='mixed'&&!filters.seed)setParams(previous=>{const next=new URLSearchParams(previous);next.set('seed',newQuestionSeed());return next},{replace:true})},[sid,filters.order,filters.seed,setParams])
+  useEffect(()=>{if(!review&&!onboarding&&!sid&&filters.order==='mixed'&&!filters.seed)setParams(previous=>{const next=new URLSearchParams(previous);next.set('seed',newQuestionSeed());return next},{replace:true})},[sid,filters.order,filters.seed,setParams,review,onboarding])
   const [size,setSize]=useState<10|20>(10)
   const [taxonomy,setTaxonomy]=useState<ExamStudyTopics|null>(null)
   const [recent,setRecent]=useState<StudySetPreview[]>([])
@@ -42,29 +44,33 @@ export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
   useEffect(()=>{active.current=true;return()=>{active.current=false;generation.current++}},[])
   useEffect(()=>{
     let live=true
-    getExamStudyTopics('udc').then(value=>{if(live)setTaxonomy(value)}).catch(()=>{})
-    if(!sid)listStudySets().then(value=>{if(live)setRecent(value.items)}).catch(e=>{if(live)setError(e.message)})
+    if(!review&&!onboarding)getExamStudyTopics('udc').then(value=>{if(live)setTaxonomy(value)}).catch(()=>{})
+    if(!review&&!onboarding&&!sid)listStudySets().then(value=>{if(live)setRecent(value.items)}).catch(e=>{if(live)setError(e.message)})
     return()=>{live=false}
-  },[sid,retry])
+  },[sid,retry,review,onboarding])
   useEffect(()=>{
     let live=true
-    setSession(null);setPicks({});setViewed({});setPanelBusy(false);setError('');setLoading(!!sid)
+    inFlight.current=false;setBusy(false);setSession(null);setPicks({});setViewed({});setPanelBusy(false);setError('');setLoading(!!sid)
     const run=++generation.current
-    if(sid)getStudySet(sid).then(value=>{if(live&&run===generation.current)setSession(value)})
+    if(sid)getStudySet(sid).then(value=>{if(onboarding&&!value.filters.onboarding_version)throw new Error('This saved set is not an exam check-in.');if(!onboarding&&value.filters.onboarding_version)throw new Error('Open this check-in from your study setup.');if(review&&value.kind!=='review')throw new Error('Open this practice set from its exam.');if(live&&run===generation.current)setSession(value)})
       .catch(e=>{if(live&&run===generation.current)setError(e.message)})
       .finally(()=>{if(live&&run===generation.current)setLoading(false)})
-    const auth=()=>{setSession(null);setRecent([]);setPicks({});setViewed({});setRetry(n=>n+1)}
-    window.addEventListener('ism-auth-change',auth)
-    return()=>{live=false;generation.current++;window.removeEventListener('ism-auth-change',auth)}
-  },[sid,retry])
+    const auth=()=>{generation.current++;inFlight.current=false;setBusy(false);setPanelBusy(false);setSession(null);setRecent([]);setPicks({});setViewed({});setRetry(n=>n+1)}
+    const expired=()=>{generation.current++;inFlight.current=false;setBusy(false);setPanelBusy(false);setSession(null);setRecent([]);setPicks({});setViewed({});setLoading(false);setError('Your session expired. Sign in to continue this saved set.')}
+    window.addEventListener('ism-auth-change',auth);window.addEventListener('ism-auth-expired',expired);window.addEventListener('ism-community-change',auth)
+    return()=>{live=false;generation.current++;window.removeEventListener('ism-auth-change',auth);window.removeEventListener('ism-auth-expired',expired);window.removeEventListener('ism-community-change',auth)}
+  },[sid,retry,review,onboarding])
   useEffect(()=>{
     if(!session||loading)return
     const frame=requestAnimationFrame(()=>scrollToResults('exam-question-browser'))
     return()=>cancelAnimationFrame(frame)
   },[session?.id,session?.position,session?.finished_at,loading])
+  const checkinTitle=onboarding?session?.filters.exam_title||'Exam check-in':null
+  const exit=onboarding?'/onboarding':review?'/revise':'/exams/udc?view=practice&practice_mode=sets#exam-question-browser'
   const subject=taxonomy?.subjects.find(s=>s.id===filters.subject_id)
   const topic=subject?.topics.find(t=>t.id===filters.topic_id)
   const sessionSubject=taxonomy?.subjects.find(s=>s.id===session?.filters.subject_id)?.title
+  const itemLabel=session?.filters?.has_curated?'item':'question'
   const qid=session?.question_ids[session.position]
   const question=session?.items.find(q=>q.id===qid)
   const checked=qid?session?.results[qid]:undefined
@@ -79,7 +85,7 @@ export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
     startRequest.current=null;setError('')
   }
   async function start(reviewId?:string) {
-    if(inFlight.current||filters.order==='mixed'&&!filters.seed)return
+    if(review||onboarding||inFlight.current||filters.order==='mixed'&&!filters.seed)return
     const clean={...filters};delete clean.review_session_id
     const requestedSize=reviewId&&session?session.requested_size:size
     const signature=JSON.stringify({size:requestedSize,filters:clean,reviewId})
@@ -92,15 +98,16 @@ export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
     } catch(e) {if(active.current&&run===generation.current)setError((e as Error).message)}
     finally {inFlight.current=false;if(active.current)setBusy(false)}
   }
+  const renderGeneration=generation.current
   async function change(task:()=>Promise<StudySetState>) {
-    if(inFlight.current)return
+    if(inFlight.current||renderGeneration!==generation.current)return
     inFlight.current=true;setBusy(true);setError('')
     const run=generation.current
     try {
       const value=await task()
       if(active.current&&run===generation.current){setSession(old=>old?{...old,...value}:old);window.dispatchEvent(new Event('ism-study-checkpoint'))}
-    } catch(e) {if(active.current&&run===generation.current)setError((e as Error).message)}
-    finally {inFlight.current=false;if(active.current)setBusy(false)}
+    } catch(e) {if(active.current&&run===generation.current){if(session?.filters.has_curated)setSession(null);setError((e as Error).message)}}
+    finally {if(active.current&&run===generation.current){inFlight.current=false;setBusy(false)}}
   }
   async function next() {
     if(!session||locked)return
@@ -113,7 +120,7 @@ export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
     if(value&&!session.finished_at&&!session.viewed_ids.includes(qid)&&!checked)
       void change(()=>viewStudySet(session.id,qid))
   }
-  const feedback=<p className="mt-3 text-[12px] leading-relaxed text-secondary">Practice feedback uses each question’s labelled answer source and review status.</p>
+  const feedback=<p className="mt-3 text-[12px] leading-relaxed text-secondary">{session?.filters?.has_curated?'Word cards use reviewed editorial content. Bank questions keep their labelled answer source and review status.':'Practice feedback uses each question’s labelled answer source and review status.'}</p>
   const errorPanel=error&&<div role="alert" className="mt-4 rounded-xl border border-mypick bg-mypick-soft p-4 text-[13px] text-mypick"><p>{error}</p>{sid?<button type="button" className="mt-2 min-h-11 underline" disabled={busy} onClick={()=>setRetry(n=>n+1)}>Reload saved set</button>:<button type="button" className="mt-2 min-h-11 underline" disabled={busy} onClick={()=>filter('offset','')}>Start from the beginning</button>}</div>
 
   if(!sid)return <section id="exam-question-browser" tabIndex={-1} className="exam-reading-area mt-6 focus:outline-none">
@@ -142,41 +149,43 @@ export default function UdcStudySessions({papers}:{papers:CollectionPaper[]}) {
     <Link to="/exams/udc?view=browse#exam-question-browser" className="mt-5 inline-flex min-h-11 items-center text-[13px] font-semibold text-link">Browse the full UDC question bank →</Link>
   </section>
 
-  if(loading||!session)return <section id="exam-question-browser" tabIndex={-1} className="exam-reading-area mt-6 focus:outline-none">{loading?<p role="status">Restoring your saved UDC set…</p>:errorPanel}<Link to="/exams/udc?view=practice#exam-question-browser" className="mt-4 inline-flex min-h-11 items-center text-[13px] font-semibold text-link">Choose a UDC set →</Link></section>
+  if(loading||!session)return <section id="exam-question-browser" tabIndex={-1} className="exam-reading-area mt-6 focus:outline-none">{loading?<p role="status">Restoring your saved {onboarding?'exam check-in':review?'review':'UDC set'}…</p>:errorPanel}<Link to={exit} className="mt-4 inline-flex min-h-11 items-center text-[13px] font-semibold text-link">{onboarding?'Check-in overview':review?'Your review queue':'Choose a UDC set'} →</Link></section>
 
   if(session.finished_at)return <section id="exam-question-browser" tabIndex={-1} className="exam-reading-area mt-6 focus:outline-none">
     <div className="rounded-[14px] border border-hairline bg-card p-5">
-      <p className="font-mono text-[11px] uppercase tracking-widest text-exams-dark">Saved UDC practice</p>
+      <p className="font-mono text-[11px] uppercase tracking-widest text-exams-dark">Saved {onboarding?'Exam check-in':review?'Smart Review':'UDC practice'}</p>
       <h2 className="mt-2 font-display text-[30px]">Your set is finished</h2>
-      <p className="mt-2 text-[14px] text-secondary">{sessionSubject||'UDC'} · {session.total} questions · {new Date(session.finished_at).toLocaleString('en-IN')}</p>
+      <p className="mt-2 text-[14px] text-secondary">{checkinTitle||sessionSubject||(review?'Smart Review':'UDC')} · {session.total} {itemLabel}s · {new Date(session.finished_at).toLocaleString('en-IN')}</p>
       <div className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-4">{[['Correct',session.summary.correct],['Wrong',session.summary.wrong],['Viewed',session.summary.viewed],['Skipped',session.summary.skipped]].map(([label,value])=><div key={label} className="rounded-xl bg-canvas p-4"><strong className="block font-display text-[30px]">{value}</strong><span className="text-[12px] text-secondary">{label}</span></div>)}</div>
+      {review&&session.summary.reward&&<p role="status" className="mt-4 text-[13px] text-secondary">{session.summary.reward.status==='awarded'?`Review complete · +${session.summary.reward.xp} XP · +${session.summary.reward.points} points`:session.summary.reward.status==='daily_cap'?'Your two review awards for today are complete. Your learning still counts.':'Review saved. An award needs at least 8 due items, 60% correct and at least 3 seconds per checked item. Early reviews and viewed or skipped answers do not qualify.'}</p>}
       {feedback}
       {Object.values(session.results).some(answer=>answer.updated_fields?.length)&&<p className="mt-3 text-[13px] text-secondary">Some questions have changed since this set. Open the checked-question review below to see which ones.</p>}
       {session.summary.unofficial>0&&<p className="mt-2 text-[12px] text-secondary">{session.summary.unofficial} checked {session.summary.unofficial===1?'answer used an unofficial solution':'answers used unofficial solutions'}. See each question’s review label.</p>}
       <div className="mt-5 flex flex-wrap gap-2">
-        {session.summary.wrong>0&&<button type="button" disabled={busy} onClick={()=>void start(session.id)} className={primary}>{busy?'Preparing review…':'Practise mistakes →'}</button>}
-        <Link to={nextStudySetLink(session.filters,session.total)} className={secondary}>Choose another set →</Link>
-        <Link to="/exams/udc?view=progress" className={secondary}>UDC progress</Link>
+        {!review&&!onboarding&&session.summary.wrong>0&&<button type="button" disabled={busy} onClick={()=>void start(session.id)} className={primary}>{busy?'Preparing review…':'Practise mistakes →'}</button>}
+        <Link to={onboarding?'/onboarding':review?'/revise':nextStudySetLink(session.filters,session.total)} className={secondary}>{onboarding?'Check-in overview':review?'Back to your queue':'Choose another set'} →</Link>
+        <Link to={onboarding?'/profile':review?'/profile':'/exams/udc?view=progress'} className={secondary}>{onboarding||review?'Your mastery':'UDC progress'}</Link>
       </div>
     </div>
     {errorPanel}
-    <details className="mt-5 rounded-xl border border-hairline bg-card p-4"><summary className="min-h-11 cursor-pointer py-2 text-[14px] font-semibold">Review checked questions</summary>
-      <div className="divide-y divide-hairline">{session.question_ids.filter(id=>session.results[id]).map(id=>{const q=session.items.find(item=>item.id===id),answer=session.results[id];return q?<div key={id} className="py-4"><h3 className="text-[14px] font-semibold">{q.question}</h3><p className="mt-2 text-[13px] text-secondary">{answerFeedbackLabel(answer.result,{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status})} · Your answer: {q.options[answer.chosen_index??-1]||'Unavailable'} · Answer: {answer.result.answer_text}</p><StoredFeedbackNotice fields={answer.updated_fields} qid={id} paper={q.source_appearance?.paper_id}/></div>:null})}</div>
+    {onboarding&&<OnboardingSuggestions sid={session.id}/>}
+    <details className="mt-5 rounded-xl border border-hairline bg-card p-4"><summary className="min-h-11 cursor-pointer py-2 text-[14px] font-semibold">Review checked {itemLabel}s</summary>
+      <div className="divide-y divide-hairline">{session.question_ids.filter(id=>session.results[id]).map(id=>{const q=session.items.find(item=>item.id===id),answer=session.results[id];return q?<div key={id} className="py-4"><h3 className="text-[14px] font-semibold">{q.question}</h3><p className="mt-2 text-[13px] text-secondary">{q.curated?(answer.result.correct?'Correct':'Not quite'):answerFeedbackLabel(answer.result,{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status})} · Your answer: {q.options[answer.chosen_index??-1]||'Unavailable'} · Answer: {answer.result.answer_text}</p>{q.curated?<p className="mt-2 text-xs text-secondary">Reviewed editorial card. <Link to={'/materials/'+encodeURIComponent(q.curated.deck_id)} className="inline-flex min-h-11 items-center text-link underline">Read current deck →</Link>{answer.updated_fields?.length?' This saved grade uses an earlier reviewed version.':''}</p>:<StoredFeedbackNotice fields={answer.updated_fields} qid={id} paper={q.source_appearance?.paper_id} collection={onboarding?session.collection_id:undefined}/>}</div>:null})}</div>
       {Object.keys(session.results).length===0&&<p className="text-[13px] text-secondary">No answers were checked in this set.</p>}
     </details>
   </section>
 
   return <section id="exam-question-browser" tabIndex={-1} className="exam-reading-area mt-6 focus:outline-none" aria-busy={busy}>
     <div className="rounded-xl border border-hairline bg-card p-4">
-      <div className="flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-[24px]">UDC practice{sessionSubject?' · '+sessionSubject:''}</h2><p role="status" className="mt-1 text-[13px] text-secondary">Question {session.position+1} of {session.total} · Saved automatically</p></div><button type="button" disabled={locked} onClick={()=>void change(()=>finishStudySet(session.id,session.version))} className={secondary}>Finish set</button></div>
-      {session.total<session.requested_size&&<p className="mt-2 text-[12px] text-secondary">{session.total} {session.total===1?'question was':'questions were'} available for your {session.requested_size}-question choice.</p>}
+      <div className="flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-[24px]">{onboarding?'Exam check-in':review?'Smart Review':'UDC practice'}{checkinTitle?' · '+checkinTitle:sessionSubject?' · '+sessionSubject:''}</h2><p role="status" className="mt-1 text-[13px] text-secondary">{itemLabel==='item'?'Item':'Question'} {session.position+1} of {session.total} · Saved automatically</p></div><button type="button" disabled={locked} onClick={()=>void change(()=>finishStudySet(session.id,session.version))} className={secondary}>Finish set</button></div>
+      {session.total<session.requested_size&&<p className="mt-2 text-[12px] text-secondary">{session.total} {itemLabel}{session.total===1?' was':'s were'} available for your {session.requested_size}-{itemLabel} choice.</p>}
     </div>
     {errorPanel}
     <details className="mt-3 rounded-xl border border-hairline bg-card px-4"><summary className="min-h-11 cursor-pointer py-3 text-[12px] font-semibold">Answer layout &amp; set details</summary><AnswerLayoutControl/>{feedback}<p className="my-3 text-[12px] text-secondary">Viewed answers are reading only. They earn no attempt credit or rewards; the existing retry window applies.</p></details>
-    {qid&&<StoredFeedbackNotice fields={checked?.updated_fields} qid={qid} paper={question?.source_appearance?.paper_id}/>}
-    {question&&qid?<StudyQuestionCard key={qid} q={question} collectionId="udc" result={checked?.result} pick={pick} viewed={viewed[qid]} disabled={locked}
+    {qid&&!question?.curated&&<StoredFeedbackNotice fields={checked?.updated_fields} qid={qid} paper={question?.source_appearance?.paper_id} collection={onboarding?session.collection_id:undefined}/>}
+    {question&&qid?question.curated?<CuratedWordQuestion key={qid} prompt={question.question} options={question.options} meta={question.curated} result={checked?.result} pick={pick} disabled={locked} onPick={i=>{if(inFlight.current||locked)return;setPicks(old=>({...old,[qid]:i}));void change(()=>checkStudySet(session.id,session.version,qid,i))}} onReveal={()=>{if(!inFlight.current&&!locked)void change(()=>revealStudyWord(session.id,session.version,qid))}}/>:<StudyQuestionCard key={qid} q={question} collectionId={onboarding?session.collection_id||'':review?'':'udc'} contextCollectionId={review?null:undefined} result={checked?.result} pick={pick} viewed={viewed[qid]} disabled={locked}
       onPick={i=>{if(inFlight.current||locked)return;setPicks(old=>({...old,[qid]:i}));void change(()=>checkStudySet(session.id,session.version,qid,i,question.presentation_hash))}}
-      showPanelNext={false} onViewed={onViewed} onBusy={setPanelBusy} onRetry={()=>setViewed(old=>({...old,[qid]:false}))} onNext={next} nextLabel={session.position===session.total-1?'Finish set →':'Next question →'}/>:<p className="my-6 rounded-xl border border-hairline bg-card p-4 text-[14px]">This saved question is no longer available. Skip it to continue the set.</p>}
+      showPanelNext={false} onViewed={onViewed} onBusy={setPanelBusy} onRetry={()=>setViewed(old=>({...old,[qid]:false}))} onNext={next} nextLabel={session.position===session.total-1?'Finish set →':'Next question →'}/>:<p className="my-6 rounded-xl border border-hairline bg-card p-4 text-[14px]">This saved {itemLabel} is no longer available. Skip it to continue the set.</p>}
     <nav aria-label="Study set navigation" className="mt-4 flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-4">
       <button type="button" disabled={locked||session.position===0} onClick={()=>void change(()=>moveStudySet(session.id,session.version,session.position-1))} className={secondary}>← Previous</button>
       <span className="text-[12px] text-secondary">{session.summary.correct+session.summary.wrong} checked · {session.summary.viewed} viewed</span>

@@ -14,7 +14,7 @@ export class ReadRequestCache {
     return entry.promise as Promise<T>
   }
 }
-export const catalogTtl=(path:string)=>/^\/(?:questions\/taxonomy|collections|library\/shelves(?:\/[^/?]+)?)(?:\?|$)/.test(path)?30000:0
+export const catalogTtl=(path:string)=>/^\/(?:questions\/taxonomy|collections(?:\/[^/?]+(?:\/(?:header|study-topics))?)?|library\/shelves(?:\/[^/?]+)?)(?:\?|$)/.test(path)?30000:0
 
 /** Equivalent default filters must share visible/prefetch requests. */
 export function questionQueryString(params:Record<string,unknown>){

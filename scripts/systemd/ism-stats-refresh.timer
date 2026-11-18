@@ -1,0 +1,10 @@
+[Unit]
+Description=Check Finna statistical sources daily
+
+[Timer]
+OnCalendar=*-*-* 02:10:00 Asia/Kolkata
+RandomizedDelaySec=15min
+Persistent=true
+
+[Install]
+WantedBy=timers.target

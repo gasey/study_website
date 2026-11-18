@@ -3,6 +3,7 @@
 import asyncio
 import logging
 from ..db import cursor
+from .worker_health import beat, failed
 
 log = logging.getLogger(__name__)
 
@@ -38,6 +39,7 @@ async def sweep(cur):
         ELSE 'New or updated official notice: ' END||title||'. Open the notice and confirm the official source.'
       FROM deliveries d WHERE NOT EXISTS(SELECT 1 FROM review_notifications n WHERE n.event_key=d.key)
       ORDER BY id,user_id LIMIT 500 ON CONFLICT(event_key) DO NOTHING""")
+    count = cur.rowcount
     # Date reminders also run for recently updated rows, independently from
     # update receipts, so an update cannot suppress a due-day reminder.
     await cur.execute("""WITH audience AS (
@@ -57,13 +59,16 @@ async def sweep(cur):
       SELECT user_id,id,key,'Calendar reminder · '||CASE days WHEN 0 THEN 'today' WHEN 1 THEN 'tomorrow' ELSE 'in 7 days' END||': '||title||'. Confirm the latest official source.'
       FROM deliveries d WHERE NOT EXISTS(SELECT 1 FROM review_notifications n WHERE n.event_key=d.key)
       ORDER BY id,user_id LIMIT 500 ON CONFLICT(event_key) DO NOTHING""")
+    return count + cur.rowcount
 
 
 async def worker():
     while True:
         try:
             async with cursor() as cur:
-                await sweep(cur)
+                count = await sweep(cur)
+                await beat(cur, 'calendar-reminders', True, f'notifications inserted={count}')
         except Exception:
+            await failed('calendar-reminders')
             log.exception("Calendar reminder sweep deferred")
         await asyncio.sleep(60)

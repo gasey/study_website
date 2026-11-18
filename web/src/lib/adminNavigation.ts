@@ -9,7 +9,7 @@ export const ADMIN_SECTIONS=[
  ['workflow','Review queue','review','owner','Review submitted corrections, materials and reports in one queue.'],
  ['exams','Papers','daily','inventory','Manage exam coverage, source papers and printed paper identities.'],
  ['pdf-library','PDF Library','sources','inventory','Find source PDFs, continue imports and check what still needs attention.'],
- ['intake','Add papers','sources','inventory','Track a source paper from discovery through review and publication.'],
+ ['intake','Paper pipeline','sources','inventory','Track a source paper from discovery through review and publication.'],
  ['quality','Bank quality','sources','staff','Find coverage gaps and questions that need source or answer review.'],
  ['papers','Paper archive','sources','inventory','Browse the existing exam and paper inventory.'],
  ['review','Community corrections','review','staff','Review proposed bank changes in your permitted subjects.'],
@@ -19,7 +19,9 @@ export const ADMIN_SECTIONS=[
  ['discussions','Discussion moderation','community','owner','Review reported discussions and moderation decisions.'],
  ['desks','Study desk reports','community','owner','Investigate reports from private study desks.'],
  ['calendar','Calendar & notices','community','owner','Check source notices and publish dated exam updates.'],
- ['rewards','Rewards & accounts','system','owner','Inspect reward receipts, account events and earned-benefit settings.'],
+ ['ops','Operations','system','owner','Check worker receipts, service probes, economy and moderation health.'],
+ ['users','Account viewer','system','owner','Find account, access, study, economy and community summaries.'],
+ ['rewards','Rewards & accounts','system','owner','Manage monthly prices, extra Pro days, reward receipts and account events.'],
  ['people','People & permissions','system','owner','Manage explicitly granted staff roles and subject access.'],
  ['audit','Audit history','system','owner','Inspect recorded admin actions and their reasons.'],
  ['modules','Module comparisons','reference','owner','Use module comparisons as evidence for bank corrections.'],
@@ -30,6 +32,7 @@ export const ADMIN_GROUPS=[['sources','Papers & coverage'],['review','Review & p
 export function canOpenAdminTab(tab:string,grants:readonly AdminGrant[]){
  const entry=ADMIN_SECTIONS.find(s=>s[0]===tab)
  if(!entry||!grants.length)return false
+ if(tab==='users')return grants.some(g=>g.role==='owner'&&g.subject_id===null)
  if(entry[3]==='owner')return grants.some(g=>g.role==='owner')
  if(entry[3]==='inventory')return grants.some(g=>g.subject_id===null&&['owner','publisher','senior','reviewer'].includes(g.role))
  return true
@@ -40,4 +43,4 @@ export function adminNavigation(grants:readonly AdminGrant[]){
  const primary=entries.filter(s=>['overview','questions','exams','organization','publications'].includes(s[0])||(!owner&&s[0]==='review'))
  return {primary,more:entries.filter(s=>!primary.includes(s))}
 }
-export function adminTabHref(tab:string){return '/admin/bank?'+new URLSearchParams({tab,...tab==='questions'?{answer_status:'needs-review'}:{}})}
+export function adminTabHref(tab:string){if(tab==='ops'||tab==='users')return '/admin/'+tab;return '/admin/bank?'+new URLSearchParams({tab,...tab==='questions'?{answer_status:'needs-review'}:{}})}

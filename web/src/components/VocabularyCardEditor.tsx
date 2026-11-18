@@ -1,0 +1,14 @@
+import type {CuratedWordCard} from '../lib/materials'
+const I='mt-2 min-h-11 w-full rounded-lg border border-hairline bg-paper px-3 py-2 text-sm text-ink'
+export default function VocabularyCardEditor({card,onChange}:{card:CuratedWordCard;onChange:(card:CuratedWordCard)=>void}){
+ const update=<K extends keyof CuratedWordCard>(key:K,value:CuratedWordCard[K])=>onChange({...card,[key]:value})
+ return <fieldset className="mt-4 space-y-4"><legend className="font-semibold">Reviewed word card</legend>
+  <label className="block text-sm">Card language<select className={I} value={card.language} onChange={e=>update('language',e.target.value as CuratedWordCard['language'])}><option value="english">English word</option><option value="mizo-english">Mizo–English pair</option></select></label>
+  {([['word','English word',120],['meaning','Meaning',1200],['usage','Usage example',2000],['mizo_gloss','Mizo gloss',600],['source_note','Source or editorial note',1200]] as const).map(([key,label,max])=><label key={key} className="block text-sm">{label}<textarea rows={key==='word'?1:3} maxLength={max} className={I} value={card[key]} onChange={e=>update(key,e.target.value)}/></label>)}
+  <label className="block text-sm">Recognition choices · one per line<textarea aria-label="Recognition choices" rows={5} className={I} value={card.recognition_options.join('\n')} onChange={e=>update('recognition_options',e.target.value.split('\n'))}/><small className="mt-1 block text-muted">Two to six distinct meanings, including the exact Meaning above once.</small></label>
+  <label className="block text-sm">Cloze sentence<textarea aria-label="Cloze sentence" rows={3} maxLength={2000} className={I} value={card.cloze_sentence} onChange={e=>update('cloze_sentence',e.target.value)}/><small className="mt-1 block text-muted">Replace the word with one {'{{word}}'} gap.</small></label>
+  <label className="block text-sm">Cloze choices · one per line<textarea aria-label="Cloze choices" rows={5} className={I} value={card.cloze_options.join('\n')} onChange={e=>update('cloze_options',e.target.value.split('\n'))}/><small className="mt-1 block text-muted">Two to six distinct words, including the exact English word once.</small></label>
+  {card.language==='mizo-english'&&<label className="block text-sm">English → Mizo choices · optional<textarea aria-label="Mizo choices" rows={5} className={I} value={(card.mizo_options||[]).join('\n')} onChange={e=>update('mizo_options',e.target.value?e.target.value.split('\n'):[])}/><small className="mt-1 block text-muted">To enable this direction, add two to six distinct glosses, including the Mizo gloss above once.</small></label>}
+  <p className="text-xs leading-relaxed text-secondary">These editorial cards are reviewed with this material and earn no per-card points. Choose Vocabulary deck, a related exam and a subject before submission.</p>
+ </fieldset>
+}

@@ -17,7 +17,7 @@ RETIRE=importlib.util.module_from_spec(SPEC);SPEC.loader.exec_module(RETIRE)
 def exercise(change=None):
     baseline={'record':{'id':'appearance','question':'Synthetic unchanged source'}}
     manifest={'author_id':'owner','bank_sha256':'a'*64,'admin_decision':{'actor_id':'owner'},'baseline_hash':digest(baseline)}
-    pub={'id':'pub_test','manifest':manifest,'manifest_hash':digest(manifest),'contribution_id':'con_test','revision':1}
+    pub={'id':'pub_test','state':'exported','manifest':manifest,'manifest_hash':digest(manifest),'contribution_id':'con_test','revision':1}
     data={'publication_ids':['pub_test'],'owner_email':'owner@example.test','authorization':'Owner authorized this isolated recovery fixture.',
           'reason':'A single item advanced the bank before batch publication.','bank_sha256':'b'*64}
     state={'baseline':baseline,'pub':pub,'bank':'b'*64,'waiting':['pub_test'],'delegated':True,'updates':[],'transitions':[]}
@@ -61,7 +61,7 @@ def test_stale_export_with_unchanged_source_is_withdrawn_without_content_mutatio
 
 @pytest.mark.parametrize('change',[
     lambda s,d:s.update(bank='c'*64),
-    lambda s,d:s.update(waiting=[]),
+    lambda s,d:s.update(waiting=['pub_unlisted']),
     lambda s,d:s.update(baseline={'record':{'question':'Changed source'}}),
     lambda s,d:s.update(delegated=False),
     lambda s,d:s['pub'].update(manifest_hash='c'*64),

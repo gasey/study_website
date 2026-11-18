@@ -9280,6 +9280,315 @@ notice reconciliation remain; keep 2012/2013 recovery deferred and original-pape
 simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261110.json`.
 Private evidence: `reports/mcs-continue-20261110/verified.json`.
 
+## 2026-11-10 — Native mobile companion implementation (local, not deployed)
+
+Created the sibling `../india-study-map-mobile` Expo SDK 58/React Native/TypeScript
+project following the approved question-browsing-first plan. Five destinations
+cover Questions, Exams, Tests, Games and Me, with inline MCQs, filters, native
+question/source detail, bookmarks/reports, saved practice, timed mocks, game rooms,
+account settings and local reminders. Warm light/dark design tokens follow the
+shared Claude direction. The project includes product/flow/design/architecture,
+API and release documents, component/domain tests, a native smoke flow and CI.
+
+Added migration 0082 for hashed revocable mobile sessions, short-lived PKCE
+flows and account-owned bookmarks. Native authorization uses system-browser
+login/explicit account connection and a single-use code. Bearer credentials are
+limited to learner routes and depend on a valid parent browser session; cookie
+CSRF remains intact. Password/Google website sign-in preserves only the exact
+native authorization return URL. Native answers reuse existing transaction
+receipts while rejecting stale question/options/context before new grading.
+
+Generalized saved study sessions with explicit collection selection and year
+filters, preserving UDC defaults, old request hashes and saved sessions. Added
+optional mock selection filters, result marking rules, and strict server-deadline
+answer saving: post-deadline submission grades already saved answers only.
+Existing identities, entitlements, scoring and game reward logic are reused.
+
+Validation: 78 focused backend tests pass (mobile, study sessions, games/search,
+bank review, reports, answer reveals, rewards) with the complete migration chain
+in disposable local PostgreSQL. Mobile: 13 domain/component/storage tests, strict
+TypeScript, ESLint, Expo Doctor 20/20, and Android/iOS/web bundle exports pass.
+Website production build passes. Broader account-hardening run reproduced an
+existing leaderboard row-shape assertion failure; that leaderboard implementation
+matches HEAD unchanged. No unrelated assertion was weakened. Details and exact
+release gates are recorded in the mobile `docs/verification.md`.
+
+No production migration/deployment, canonical bank changes, signed builds, store
+submission or external monitoring enrollment was performed. Native E2E and
+physical-device accessibility/performance checks remain unexecuted; there are no
+attached devices/signing accounts. Browser automation blocked localhost visual
+inspection. Final store identity, public support/privacy/deletion arrangements
+and owner-configured crash monitoring remain pre-beta gates. Existing unrelated
+bank-review/operator/taxonomy changes in this shared checkout were preserved.
+
+Final mobile browsing review additionally bounded the initial render batch when
+returning to the beginning and renews practice start keys after successful
+creation, retaining them across failed retries and preventing concurrent taps.
+
+### Finna app identity — 10 November 2026
+
+The owner named the mobile app Finna and authorized Oracle VM use if needed.
+Updated the sibling mobile app display name, npm/Expo identity, native IDs,
+callback schemes, visible branding, sharing and documentation. The website and
+shared account identity remain India Study Map. Backend native consent now names
+Finna; its default production callback and mobile tests use finna://auth/callback.
+All 11 mobile API tests pass again on disposable local PostgreSQL; resolved
+Expo configurations confirm separate production, development and staging IDs.
+A read-only Oracle SSH check found API/Caddy active, 38 GB disk free and 19 GiB
+available memory. No remote files, services, database or Caddy settings changed.
+
+### Finna visual polish and source access — 10 November 2026
+
+Refined the sibling mobile app's branding, theme, question header/cards/options,
+subject colors, action icons and responsive navigation. Added clear source panels
+with full printed exam metadata and page-specific original PDF links, including
+clickable source appearances in question details. Local release-mode previews had
+resolved relative assets against the HTTP API proxy; a separate HTTPS asset origin
+now preserves PDF/figure links without weakening release URL validation.
+
+Mobile strict typecheck, ESLint and 17 tests pass. Browser inspection covered wide
+and 390 × 844 layouts in both themes, and opening the first source PDF at page 8
+confirmed Q77 on the original page. No API, bank data or Oracle deployment changes
+were made for this refinement. Native device QA remains pending.
+
+## 2026-11-10 — Simplified main website exam overview
+
+Replaced the exam Overview and Group B home panels with a direct reading stream:
+collection name and short introduction, one newest/oldest selector, original exam
+name/year, then the questions in printed paper order. Papers continue sequentially
+as readers scroll, in 25-question requests, with a manual continuation fallback.
+The next paper cannot skip a failed request. Unknown dates remain last in either
+order. Existing booklet families use their fullest representative source, retaining
+links to alternate original booklets. Other study tools are under one disclosure.
+
+Inline questions reuse the existing answer panel, source labels, printed option
+mapping, reveal/authentication boundaries and scoring exclusions. Written questions,
+source figures/passages and original PDF links remain readable; account changes
+clear answer state. Existing subject, paper-library, practice and progress routes
+remain available. No bank, historical key, API or account changes were part of this
+release. This intentionally simplifies the earlier multi-panel overview at the
+owner's request.
+
+Validation: focused reading-stream checks pass (date order, bounded sequential
+loading, canonical answer mapping, sort reset and retry); existing archive,
+booklet, public question card, answer panel and Group B regression checks pass.
+Production TypeScript/Vite builds pass. Browser inspection covered 390 × 844 and
+desktop layouts, live newest/oldest order, inline questions, full-paper continuation
+and the following paper. No production answers/reveals were submitted during QA.
+
+Deployed frontend only with scripts/deploy.sh web from an isolated temporary
+release. Its clean baseline produced the exact existing production index JS/CSS
+hashes; only the five overview implementation/check files were added. Unrelated
+shared-checkout native sign-in/backend work was excluded. Previous public assets
+were preserved at /tmp/ism-web-before-simple-overview-20261110.tar.gz on Oracle.
+Live Study/API are healthy; the shared Family site also responds normally. The
+live overview is https://study.hawayu.in/exams/ldc. No native-device QA was needed
+for this website presentation change.
+
+### 10 November — Restore study navigation and continuous UDC practice
+
+The owner clarified that the earlier subject, paper, question, practice and
+progress pages should remain easy to reach, and supplied
+https://map.hawayu.in/mpsc-combined-prelims as the navigation/practice reference.
+Restored the module tabs directly above the simplified Overview reading stream,
+with an explicit Browse by subject label. Restored Group B group switches and
+its study tabs, plus the original collection landing redirects. Other page
+contents remain in the existing views.
+
+UDC Practice now defaults to the existing continuous question browser over the
+entire matching answerable pool. Optional saved short sets remain available via
+an explicit mode link; existing saved-session URLs still resume. Mode switching
+preserves subject/topic/order filters and clears incompatible saved-session and
+offset state. Choose another set remains in saved-set mode. This removes the
+10/20-question restriction from ordinary practice without changing saved-set API
+limits, historical sessions, answer gates or scoring.
+
+Validation: reading-stream, question-browser, UDC study, Group B design, public
+question card and answer-panel checks pass, as do TypeScript/Vite builds. New
+route assertions cover continuous defaults, saved-session compatibility, filter
+preservation and advancing past question 20. Browser checks opened the original
+UDC subject page, practised the English pool (904 matching questions), advanced
+from question 21 to 22 without submitting an answer, and opened optional saved
+sets. Group B landing redirects and 390 × 844 navigation were also inspected.
+
+Released web only through scripts/deploy.sh from the isolated production-baseline
+copy; unrelated mobile sign-in/API work remains excluded. Previous assets are
+retained on Oracle at /tmp/ism-web-before-navigation-restore-20261110.tar.gz.
+Study/API and the shared Family site are healthy. No backend, bank, credential or
+learner-answer changes were made in this continuation.
+
+### 10 November — Reference-style paper Overview and default list archive
+
+The owner supplied map.hawayu.in/mpsc-combined-prelims again, explicitly requesting
+its Overview behaviour/layout/card size and list display by default for papers.
+Replaced the inline question stream with a compact paper-summary Overview that
+opens the existing paper-filtered Browse and Practice views, with PDF links and
+accessible alternate booklet originals. Kept subject, paper-library, question,
+continuous-practice and progress pages/navigation. Overview no longer fetches
+question batches or implements its own answering UI.
+
+Measured the reference in-browser: 1,160px content shell, three 361px-wide cards,
+18px card padding, 14px corners and 244px reference card height. The Prelims
+Overview now uses the same shell/grid/padding/radius; inspected cards measured
+361 × 248px with the existing source/scoring notices. Short source-family labels
+keep known Prelims papers compact without changing original identities. Four
+summary counts and compact navigation follow the reference structure. Two-column
+and single-column breakpoints preserve readable phone cards. Alternate booklet
+links use a native disclosure, and source/key issues remain visible and unscored.
+
+The Papers display now defaults to the existing exam/year list for all exam
+collections. The explicit card-display option remains. Date ordering keeps unknown
+years last; Prelims Paper I precedes Paper II within a year. Returning to Overview
+scrolls back to its heading. The earlier continuous UDC practice default and
+optional saved-set compatibility remain unchanged.
+
+Validation: new Overview checks cover chronological order, exact paper-specific
+Browse/Practice links, existing navigation, written/PDF-only availability, booklet
+originals and retry. Archive default-list/order, source booklet, question-browser,
+UDC study and Group B design checks pass. Production TypeScript/Vite builds pass.
+Browser QA compared the reference and implementation, followed a paper into its
+Browse view, confirmed the default list selection and original-paper rows, and
+inspected 390 × 844 layout. No learner answers or reveals were submitted.
+
+Released web only using scripts/deploy.sh from the isolated production-baseline
+copy, excluding unrelated mobile authentication/backend changes. Replaced the
+superseded reading-stream files/check with the Overview implementation/check.
+Previous assets remain on Oracle at
+/tmp/ism-web-before-paper-overview-20261110.tar.gz. Study/API and the shared Family
+site respond normally. No API, bank, scoring, account or Caddy changes were made.
+
+### 10 November — Smooth module switching using the original Prelims structure
+
+Read the owner-specified reference implementation in the sibling india-study-map
+repository: src/modules/mpsc-combined/CombinedPrelimsPage.tsx and its stylesheet.
+Its heading and navigation stay mounted while local tab content changes. Applied
+that structure to the website exam and Group B modules: one persistent header,
+consistent 1,160px shell and navigation, with only the selected content below it
+replaced. Existing paper, subject, continuous-practice, saved-set and progress
+components/routes remain. The existing exam bookmark action remains accessible.
+
+Removed competing per-screen auto-scroll/hash handlers and navigation-tab hashes.
+Regular tab changes now retain the viewport position. Source/deep links use one
+shared focus/scroll owner with the sticky-header inset and reduced-motion support.
+A 140ms content-only fade provides continuity without animating the heading or
+navigation. Subjects code now arrives with the module instead of suspending when
+its tab is first clicked. Exam detail/header/topic metadata can use the existing
+bounded, scoped 30-second read cache; auth/content/mutation invalidation remains.
+Personal progress, checkpoints, questions and answer data are excluded from this
+metadata cache.
+
+Validation: production TypeScript/Vite build passes. Overview checks now verify
+that changing content retains the same header DOM; cache assertions allow only
+exam metadata and reject personal/answer paths. Existing question-browser, Group
+B, UDC study and archive checks pass. Browser tab switches across Overview,
+Subjects, Papers and Practice preserved identical heading and navigation bounds
+(top 130/297.75px, width 1,112px at the inspected desktop viewport), without anchor
+jumps or workspace replacement. No answers/reveals were submitted. The current
+browser viewport override did not apply to the inspected tab, so no new phone
+geometry result is claimed for this continuation; reduced-motion CSS is present.
+
+Deployed frontend only from the isolated production-baseline copy via
+scripts/deploy.sh web; unfinished mobile authentication/backend work remains
+excluded. Oracle recovery assets:
+/tmp/ism-web-before-smooth-tabs-20261110.tar.gz. Study/API and the shared Family
+site are healthy. No API, canonical bank, scoring or Caddy changes were made.
+
+### 10 November — Browse navigation, reading-position memory and aligned filters
+
+Moved Questions immediately after Overview and renamed it Browse in exam modules;
+Group B now also has Browse as its second tab, followed by Subjects. Primary paper
+links in the Overview, card archive and list archive open the selected paper in
+the module's Browse view. Exact original-paper workspaces remain reachable through
+booklet/source links. Browse includes compact Previous/Next paper controls, an
+All papers link and source PDF; booklet variants are grouped so Next advances to
+another paper rather than an alternate series. Selecting the next Prelims paper
+updates the section filter to avoid an incompatible Paper I/Paper II selection.
+Group B exact-paper reading omits the common-area restriction while retaining the
+source collection, so technical/written originals remain available.
+
+Added device-local reading memory for signed-out and signed-in students. It saves
+the exam/focus/filter context, stable order seed, page offset, visible canonical
+question ID and its viewport offset. Refresh and a later Browse visit restore the
+matching page before restoring its question position. Memory is separated by
+account/guest device, exam and exam scope; up to 40 filter contexts are retained,
+with a 180-day expiry and defensive parsing. Storage being blocked or unavailable
+does not prevent browsing. No question/answer bodies, credentials or scores are
+stored here. The existing signed-in checkpoint mechanism remains in place; exact
+scroll restoration is on this browser/device, not a new cloud-sync promise.
+
+Start again resets the current reading position while retaining its paper/subject
+filters and all attempts/scores. Its reset marker is one-shot so subsequent visits
+can resume normally. Initialization waits for React Router to apply restored
+search parameters before the default-order seed effect runs; otherwise a second
+navigation could overwrite the restored context. Captures cover scrolling,
+visibility changes and page exit, and wait for the matching question response.
+
+The owner additionally supplied a reference screenshot for filter alignment.
+Consolidated the existing primary controls into one aligned desktop bar: paper
+type/section, specific paper, subject, topic, status and search. Six labels share
+the same baseline and 40px controls, with three-/two-column responsive wrapping
+and 44px phone controls. Answer-source and personal-study statuses share one
+selector; order, booklet originals, answer pool, subtopic and answer layout are
+under More filters. Removed the redundant Prelims paper-choice panel from Browse
+and Practice, since paper type and exact paper are directly selectable there.
+
+Validation: new reading-memory tests cover reload/re-entry, exact question anchor,
+stable seed, account/exam/focus isolation, guest saving, one-shot reset, unchanged
+scores and bounded/corrupt/unavailable storage. A runtime module test checks the
+six primary controls, same-module paper switching, compatible paper-type changes
+and status request semantics. Overview, Group B, archive, booklet, UDC browsing,
+answer-panel and public-card regressions pass; production TypeScript/Vite builds
+pass. Browser QA refreshed a second question page and later reopened Browse from
+Overview: both restored the same source, offset and question at the same viewport
+position. Start again returned to offset zero with source filters retained.
+Desktop live filter labels all measured at top 442.75px. No production answer or
+reveal was submitted. New phone wrapping is implemented but not separately
+verified with the browser's unreliable viewport override in this continuation.
+
+Deployed frontend only via scripts/deploy.sh web from the isolated release copy,
+excluding unfinished mobile sign-in/backend changes. Recovery assets on Oracle:
+/tmp/ism-web-before-browse-resume-20261110.tar.gz. Study/API and the shared Family
+site are healthy. No API, canonical bank, scoring, credential or Caddy changes.
+
+### 10 November — Paper → Browse follows source question order
+
+- Owner clarified that printed ordering is for opening a specific paper through Browse; general Browse/practice retain their existing mixed/repeated modes. Paper links explicitly request source order and old paper Browse URLs also receive it. Source question numbers are visible on the shared cards.
+- Added a bounded `order=paper` question-list mode requiring an exact paper. Source `qnum_seq` sorts the filtered results before pagination, with numeric printed-number fallback for older sources and deterministic ties; selected source metadata uses the same first appearance. Existing pool, source permissions, holds, answer gates and canonical identities remain unchanged. No bank, answer, scoring or membership writes.
+- Reading contexts normalize paper order so saved paper pages/anchors remain stable; existing server checkpoint format remains compatible (the paper identity determines printed Browse order). The signed-in checkpoint path was not exercised manually in this signed-out browser; its existing payload enum is retained.
+- Validation: seven isolated PostgreSQL order/filter/checkpoint tests passed, including sequence resets, 36 questions over three pages, refresh, personal-filter order and old numeric numbering. Module, reading-position, overview, public-card and general-Browse checks passed; TypeScript/Vite build and diff whitespace check passed.
+- Released only the reviewed question router using new preimage-guarded `deploy.sh question-order` target, then the frontend from the existing isolated release tree (excluding concurrent shared-checkout work). Router backup `/tmp/ism-question-order.RrgCuq/before.py`; web backup `/tmp/ism-web-before-paper-order-20261110.tar.gz`. Study API and family site health passed after release.
+- Live browser verified Papers → Browse Q1–Q25; page 2 Q26 onward, reload retaining page 2, and Next paper opening Paper II at Q1 in sequence. Desktop screenshot inspected with the existing aligned filters/header and numbered cards. Existing held Q37/Q96 in the tested 2025 Paper I stay excluded from generic Browse (98 available questions); source-paper endpoint still retains all 100 appearances. No attempts/reveals submitted. Phone visual inspection was not repeated for this ordering change.
+
+
+### 11 November — Frozen answer review: MES P&E Mechanical Paper-II
+
+- Reviewed the exact registered scan (SHA256 `bee375385ea5aea5a37b19bb02d03d3b447a4f6f5c45197fe59a015e6516c8e3`) for Q21–50. Its cover says July 2025 although the registered filename/document metadata says December 2025; recorded the mismatch without rewriting metadata.
+- Corrected Q23 from “Short and thick” to “Long and thin,” supported by fin effectiveness reasoning and qualified for geometry/material/convection assumptions. Published 28 supported answers and explanations with exact Oracle readbacks. Held Q26 for duplicate printed option labels and Q29 for two defensible choices.
+- Initial concurrent exports after the first bank sync became stale and were rejected; they did not apply to those targets. Re-adjudicated the rest against fresh snapshots and published each serially. Frozen scope now stands at 1,029 published, 135 held, 28,836 undecided (1,164 reviewed). Full evidence: `reports/answer-review-30000-20261110/mes-pne-mech-paper2-outcome.json`.
+
+
+### 11 November — Frozen answer review: MES Mechanical Paper-II
+
+- Reviewed the exact registered scan (SHA256 `5a047727e827a52845824b8d34ccd6b900e7d42f882709f4821e9a86f2d3ed59`) for Q21–50. The cover says July 2025 although the registry path says June 2025; recorded the discrepancy without rewriting paper metadata.
+- Published 27 supported answers and explanations through guarded batch `review_batch_adb4e5721f433c656b97638659364cd4`, then verified all exact live readbacks. Held Q30 (cantilever is not a generic synonym for all vertical centrifugal pumps), Q31 (engine model/manual required for the service interval), and Q42 (incorrect diameter claim in the stem). Oracle timer and wake-up service restored active/enabled.
+- Frozen scope now stands at 1,056 published, 138 held, 28,806 undecided (1,194 reviewed). Full evidence: `reports/answer-review-30000-20261110/next-mech-paper2-outcome.json`.
+
+
+### 11 November — Frozen answer review: MES PHED Engineering Paper-I (Common)
+
+- Reviewed all 30 frozen MCQs (Q21–50) against the registered MPSC scan, SHA256 `c4c52a396aac9bb7b4506ef3f600b1c3e67a88ba9771c61bbe01e8b43bccdd3f`, pages 3–5.
+- Published 25 answers with explanations and held Q24 (best-efficiency point omitted), Q28 (maximum-power condition undefined), Q31 (several activated-carbon removals are listed), Q42 (nitrate/nitrite overlap), and Q45 (both riser pipe and tank connector can distinguish Mark II/III).
+- Corrected Q37 to Superintending Engineer under Rule 3(2) of the 2023 Mizoram Water Supplies (Control) Rules, and Q38 to the liner’s primary role of protecting underlying soil and groundwater. PIB confirms the historical Jal Jeevan Mission launch date of 15 August 2019; the updated Mizoram rule was checked against the PHED-hosted Gazette copy on 11 November 2026.
+- One-at-a-time publisher applied Q21; 24 exports then became stale on the global bank checksum. Seventeen stale exports were withdrawn with zero canonical changes; seven had failed before changing content. Rechecked and re-adjudicated all 24 supported answers against the new baseline, then published them atomically in `review_batch_8871c3a6c9e03fa9b2d9243399f4da0e`. Fresh live readback matched all 25 answer/explanation pairs; all five holds remained unchanged. Export queue was empty and publisher timer/wakeup were restored active/enabled.
+- Frozen 30,000-scope checkpoint: **1,224 reviewed (1,081 published, 143 held), 28,776 undecided**. Report: `reports/answer-review-30000-20261110/phed-engineering-paper1-outcome.json`.
+
+
+### 11 November — Frozen answer review: Inspector Excise Paper-I
+
+- Reviewed Q21–50 in the registered December 2025 scan (SHA256 `24eb5910fd2bae1b6dcd79fb865e2f57ef9fa6424470bc32ff499b1f9e99c6d2`, pages 3–6). Published 26 supported answers in guarded batch `review_batch_23bba6e54e7c7350fb2fd79b3e7e9d39`; held Q22, Q36, Q43 and Q44 because the printed form is incomplete or the sentence classifications/options overlap.
+- Q29 has a repeated printed option label (c), but “epitaph” remains a unique answer by option text, so it was safely answered as option (a). All 26 live answer/explanation pairs matched readback; all four held answers remain unchanged. Publisher queue was empty before restoring timer and wake-up service.
+- Frozen 30,000-scope checkpoint: **1,254 reviewed (1,107 published, 147 held), 28,746 undecided**. Report: `reports/answer-review-30000-20261110/inspector-excise-paper1-outcome.json`.
+
 
 ## 11 November 2026 — MCS dated explanations and missing passage restoration
 
@@ -9328,6 +9637,206 @@ Keep 2012/2013 recovery deferred and original simulation gated. Durable receipt:
 notes: `reports/mcs-continue-20261111/`.
 
 
+### 11 November — Frozen answer review: Inspector Excise Paper-I (July 2025)
+
+- Reviewed Q21–50 against the registered scan (SHA256 `284e95b44c8a4242956e4787d0232b5ed710eb5bdfe90c98567433948c273f22`, pages 3–6). Published 29 supported answers in guarded batch `review_batch_ecaf897f0bc4ccdcd06e67e33b229d2a`; held Q45 because “affirmative” and “assertive” are both accurate classifications of the sentence.
+- All 29 live answer/explanation pairs matched fresh Oracle readback. No answer-key provenance was added. Frozen 30,000-scope checkpoint: **1,284 reviewed (1,136 published, 148 held), 28,716 undecided**. Report: `reports/answer-review-30000-20261110/inspector-excise-july25-outcome.json`.
+
+### 11 November — Frozen answer review: MFAS Departmental Paper-I (December 2025)
+
+- Reviewed Q21–50 against the registered MPSC scan (SHA256 `5d8e3773470006d97b805264eecda5410bc2b3b92aac87be53b54b4cf4c3bf53`, pages 4–7). Published 29 supported answers with concise rule references in guarded batch `review_batch_aeb9e66ad54a8db87ae50f7b21ceef87`; held Q47 pending confirmation of the controlling local-journey DA rule.
+- Corrected 12 stored answers, including leave rights/form/commutation, GPF subscription and withdrawal conditions, and the applicable Mizoram tour DA amounts. Exact registered scan and current official service/Finance Department rules were used; no official key was asserted.
+- All 29 publications are applied; fresh frozen-set reconciliation reports **1,344 reviewed (1,195 published, 149 held), 28,656 undecided**. Oracle timer and publication wake-up are active/enabled. Report: `reports/answer-review-30000-20261110/mfas-dept-paper1-dec25-outcome.json`.
+
+### 11 November — Frozen answer review: MFAS Departmental Paper-I (July 2025)
+
+- Reviewed the 29 remaining frozen questions against the registered MPSC scan (SHA256 `5b0f4f3bcb7f037b77fc4157e5b44bdd765b5216597110d859b38135c84d0ec8`, pages 3–4). Published 29 verified answers with concise explanations in guarded batch `review_batch_8247afc3b69001d6d8fa6bca9fa84259`; corrected Q21, Q26, Q30, Q37, Q39, Q41 and Q45.
+- Q36’s scan misstates GPF Rule 16’s balance fraction as two-thirds instead of one-half. The requested six-month-pay component is unambiguous; the source wording discrepancy is stated in the explanation and retained without altering the paper.
+- All 29 publications are applied and exact answer/explanation readback passed. Frozen 30,000-scope checkpoint: **1,373 reviewed (1,224 published, 149 held), 28,627 undecided**. Oracle timer and publication wake-up are active/enabled. Report: `reports/answer-review-30000-20261110/mfas-dept-paper1-july25-outcome.json`.
+
+---
+
+## 2026-11-11 — mobile companion released; study desk goes read-only on mobile
+
+**Shipped.** Migration `0082_mobile_companion` applied to `mpsc`, then
+`./scripts/deploy.sh api`. Production had been at **0081 with no mobile
+backend at all** — no `mobile.py`, no `mobile_identity.py`, no
+`MobileBoundary` in `main.py`. The Expo app could not have authenticated
+against `study.hawayu.in` before today. Four unrelated features were sitting
+uncommitted in the checkout and all went out together: the mobile companion,
+mock filtering + deadline enforcement, `order="paper"` question listing, and
+the bank-review quota change (staff maintenance `limit=500` → `None`,
+uncapped — owner-confirmed as intentional before deploying).
+
+**Mobile allowlist widened** in `app/services/mobile_identity.py`: desk
+**GET** routes, `/me/score-summary`, `/contributions/summary` and
+`PATCH /me/profile`. Study desk is therefore readable on mobile but not
+writable — sharing, chat, invitations, membership and reports stay on the
+website. Guarded by `test_study_desk_is_read_only_for_mobile` and
+`test_profile_reads_and_name_edit_only`.
+
+`POST /auth/password` was deliberately **not** allowlisted. It calls
+`_same_origin()` (native clients send no `Origin`, so it 403s regardless) and
+then revokes every `auth_session`; since `MobileBoundary` requires the parent
+`auth_session` to be unrevoked, a successful password change would sign the
+mobile session out of itself. Making it work means rewriting the endpoint,
+not widening a list.
+
+**Verified live** by exploiting the fact that `MobileBoundary` checks the path
+*before* validating the token, so a deliberately invalid `ism_mobile_` bearer
+separates the two outcomes: allowed paths return 401 "session has expired",
+blocked paths return 403 "learner operations only". All eight probes correct
+(`/desk/overview`, `/desk/rooms`, `/me/score-summary`,
+`/contributions/summary` → 401; `POST /desk/rooms`, `POST .../messages`,
+`/desk/admin/reports`, `POST /auth/password` → 403). Both hosts checked after:
+study 200 + health ok (82,383 questions), family 307 — unchanged from the
+pre-deploy baseline. All three drained workers resumed; no `ism-api` errors.
+
+*Trap:* `scripts/migrate.sh` refused to run at all, reporting `0077_pdf_library`
+as "edited after being applied". It was not. The ledger holds one legacy
+64-character checksum (80 of 81 rows are 16) from before the script started
+truncating, and `20d511e664a65600` is simply that hash's prefix. Fixed by
+comparing on the common prefix — the ledger is an applied-migration receipt
+and was not rewritten to suit the tool.
+
+*Trap:* `deploy.sh api` rsyncs the whole tree with `--delete`. Three files
+live only on the server: `promote-publication-queue.py` and
+`publication-wakeup.py` are reinstalled by the script itself, but
+`publish-owner-taxonomy-run.py` is **not** and would have been silently
+deleted. All three were backed up to `/tmp/srv-api-preserve-20261111/` first
+and the third restored by hand afterwards. Check this before any future
+`deploy.sh api`.
+
+*Trap:* `pytest --timeout=…` is not installed here. Passing it makes pytest
+exit on a usage error, and a trailing `| tail` turns that into a misleading
+exit 0 — it looks like a passing suite.
+
+**Measured, not fixed.** The API suite fails **36 tests on this checkout and
+47 on pristine HEAD** against the disposable test database; 23 are
+`test_current_affairs.py`. The uncommitted work *reduced* failures by 11 and
+added no new failing file, so none of this is new breakage — but the suite is
+not currently a usable release gate and nobody should read a green run into
+it. One genuine regression was found and fixed: `study_sessions.py` now reads
+`row['collection_id']` rather than assuming `'udc'`, which broke a hand-built
+fake row in `tests/test_publication_verification.py:167`; real rows are fine
+(`owned()` does `SELECT *`, column exists since 0062).
+
+**Next.** Investigate the 36 pre-existing failures, starting with
+`test_current_affairs.py`. The 16 API files shipped today are still
+uncommitted and untracked — a copy is at
+`tmp/uncommitted-api-backup-20261111/modified.tar`; get them into git.
+
+---
+
+## 2026-11-11 (later) — mobile Community: boundary widened, Daily Five scoped
+
+**What this session was.** Owner asked to "complete the community" on mobile,
+from the `final.zip` redesign handoff, and to "make parallel with the website".
+
+**The design invents three things that have no backend.** Verified, not assumed:
+
+- *Daily Five* — `grep -rniE 'daily.?five'` over `api/app/` and `web/src/` returns
+  **0 hits**. Nearest real things are the three daily quests (activity thresholds,
+  not a fixed question set) and the weekly Cup (Sunday 19:00 IST, one hour, 25 Qs).
+- *Mizoram district league* — `grep -rni district api/app/` returns **2 hits, both
+  inside MCQ content JSON**. No district column, no geographic cohort. The only
+  cohort axis is academic stream (`arts-comfort`/`science-bridge`/`balanced-core`/
+  `commerce-core`).
+- *Reward amounts* — the prototype prices a streak freeze at **150 points**. The
+  real streak **shield** costs **25** (`routers/rewards.py:152`, and
+  `'streak_shield_cost':25` in the rules blob at `rewards.py:77`). Owner decided
+  live amounts win; only genuinely new Daily Five events get added.
+
+**The find that saves the most work.** "Non-technical questions" — the owner's
+answer for the Daily Five pool — does not need an invented subject-exclusion list.
+`services/game_selection.py:17` already defines `PILLAR_MATCH_IDS` over `gk_gs` /
+`english` / `everyday_math`, labelled *"MPSC Shared Non-Technical Core"* at
+`game_selection.py:175`. Daily Five should be `MODES['daily']=(5,20,1)` drawn over
+those pillars, modelled on `services/games.py:cup()` — date-keyed id, advisory
+lock, lazy row creation. Note `game_selection.py:162` forbids `excluded_areas` for
+`mode=='cup'` because it is a shared set; a `daily` mode needs the same rule.
+
+**Changed: `services/mobile_identity.py`.** Owner chose full community parity
+including posting. Added READ for `/api/community/feed`,
+`/(?:contributors|contributions)`, `/questions/{qid}/discussion`,
+`/posts/{pid}/(?:replies|evidence)`, and widened `/api/rewards/me` to
+`/(?:me|history|leaderboard)`. Added POST for discussion create/open and
+`posts/{pid}/(?:helpful|accept|report|withdraw)`.
+
+*Trap worth remembering:* `routers/discussions.py` mounts `/admin/queue`,
+`/admin/posts/{pid}/action` and `/admin/questions/{qid}/lock` on the **same**
+`/api/community` prefix as the learner routes. A lazier pattern such as
+`/api/community/posts/.*` would have handed mobile credentials the moderation
+surface. Every pattern anchors a literal segment straight after
+`/api/community/`, so the admin paths cannot match.
+
+Reward *writes* (`redeem`, `streak-shield`, `daily-quests/{k}/claim`,
+`visibility`, `stream-cohort`) were deliberately left blocked — they spend
+currency or change what is public, and the owner's decision covered community
+posting only. `csrf()` at `routers/rewards.py:17` already has a mobile bypass, so
+enabling them later is an allowlist edit, nothing more.
+
+**Measured.** 27/27 cases pass in an ad-hoc `re.fullmatch` harness run against the
+patterns parsed out of the file by `ast`, including 12 must-stay-blocked paths.
+New `test_community_is_full_parity_but_never_moderation` in
+`api/tests/test_mobile_companion.py`; 4 passed with the other boundary tests.
+Nothing deployed — this is checkout-only so far.
+
+**Also found, not yet fixed.** `india-study-map-mobile/src/api/games-types.ts:165`
+has drifted from the backend despite its "generated by npm run contracts" header:
+it declares `league?: {id,name}` where `/api/games/leaderboard` returns a *string*
+`league_division` (`routers/games.py:609`), declares `courage_bonus` which that
+endpoint never returns, and omits `level`, `title`, `elapsed_ms`, `cup_id`.
+
+**Next.** Daily Five migration + endpoints; nullable district on `reward_profiles`
+(owner chose optional, set in Profile, non-district users still rank on the Players
+board); then the mobile tab. Deploy is unstarted — `ssh ubuntu@152.67.31.231` was
+blocked by the local permission classifier this session, so nothing has reached
+Oracle. The 36 pre-existing test failures from the previous entry are still
+unexamined.
+
+**Daily Five, built on the cup rather than beside it.** Migration
+`0083_daily_five.sql`: `game_dailies` mirrors `game_cups`, `game_daily_entries`
+mirrors `game_cup_entries` (its `PRIMARY KEY(daily_id,user_id)` is the real
+one-attempt-per-day guarantee; the router's 409 is only a friendly error), and
+`game_rooms` gains `daily_id` plus `'daily'` in the mode CHECK. That CHECK had to
+be rebuilt from **0067**, not 0043 — 0067 already replaced it to add `'trail'`,
+and rebuilding from the original would have silently dropped trail mode.
+
+Reusing the room lifecycle means the answer endpoint, scoring, review and the
+existing mobile `/game/[id]` screen all work unchanged.
+
+`MODES['daily']=(5,20,1)`. `daily_window()` is the IST calendar day (verified it
+rolls at 18:30 UTC). `DAILY_QUOTAS={'gk_gs':3,'english':1,'everyday_math':1}` sums
+to 5; `draw()` already honours `foundation_quotas` generically, so no new
+allocator. New scoring rule `daily-five-v1`: `100 + 5 * whole seconds left`,
+200 max a question, 1000 perfect — the existing pace formula caps at 150, so it
+needed its own branch rather than a tweak.
+
+*Trap for whoever writes the next game test:* `game_case` classifies all 40 of its
+questions under one synthetic subject, so a pillar-quota draw can never be
+satisfied by it — it 409s with "Not enough eligible questions". Daily Five needed
+its own `daily_case` fixture seeding real taxonomy nodes (`general-studies`,
+`english/grammar`, `mathematics/arithmetic`).
+
+**Measured.** New `test_daily_five_is_shared_once_a_day_and_scores_on_seconds_left`
+asserts both players are served the *identical* five question ids, the mix is
+exactly 3/1/1, a perfect instant run scores >900, the second attempt 409s, and
+`game_daily_entries` holds exactly one row. 33 passed across
+test_games_search / test_rewards / test_mobile_companion. The disposable test DB
+applies 0083 in sequence, so the migration is rehearsed by every run.
+
+**Still missing from Daily Five.** No district aggregation yet, no weekly rollup,
+no leaderboard endpoints for the three scopes, and no prize settlement (top-100 /
+district win need a weekly job that does not exist). `reward_profiles.district` is
+added and constrained to the 11 Mizoram districts but nothing reads or writes it.
+
+
+## 2026-11-11 — Faster answer-review batching test
+
+Processed 29 frozen Sub-Inspector under Excise Paper III targets from the exact registered scan and current Mizoram law. One free OpenCode Go Claude Haiku paper-level draft took about 30 seconds, but the packet-only model made unsupported guesses; every accepted answer was independently checked against the exact paper and official NDPS/MLP Act sources. Published 26 answers in one guarded Oracle batch and exact-readback verified them; held 3 malformed/context-dependent items. The frozen 30,000 review now has 3,293 verified, 250 held and 26,457 undecided. This reduces repeat publication overhead, but model-only drafting does not improve correctness or yet prove higher analysis throughput. Next speed test: reuse source bundles for a same-domain 60–100-item draft/review batch, one guarded sync, then compare verified items per active hour before revising the estimate. See `reports/answer-review-30000-20261110/README.md` and `excise-subinspector-paper3-jul25-*`.
+
+
 ## 12 November 2026 — MCS comprehension and indicator definitions
 
 Published two checked explanations: 2023 II B Q58 now uses the common passage
@@ -9368,6 +9877,409 @@ Historical source identity/figure/radical repairs and exact-key notice reconcili
 remain. Keep 2012/2013 recovery deferred and original simulation gated. Durable
 receipt/checkpoint: `docs/sources/mcs-publication-20261112.json`; private proof:
 `reports/mcs-continue-20261112/`.
+
+
+## 2026-11-12 — MES branch preparation and versioned study guides
+
+Added `/exams/mes` to **india-study-map-app**, linked from the Exams catalog,
+plus the matching native `/mes` guide. The initial web implementation was placed
+in the similarly named `india-study-map` checkout; the user corrected that target.
+Moved all new work to this repository and restored the other checkout's route and
+registry files exactly, retaining its pre-existing unrelated edits.
+
+The shared catalog covers seven branches, 21 technical syllabus papers/79 technical
+units, English/GS scope and 159 unique official past-paper URLs. It separates the
+2013 competitive regulations from the observed January 2012 P&E format (English I,
+English II and aptitude). Historical marks/totals and a replacement scheme are not
+invented. Post-2013 scheme grouping is visibly inferred from sitting year; actual
+backend scheme certification, pinned revisions, source review and mock readiness
+remain under the existing admin workflow.
+
+Web supports source-linked expandable syllabus checklists, branch/scheme selection,
+self-assessed recall, paper search/year/type filters and the existing lazy PDF.js
+reader for 144 exact matches in the source archive; 15 external-only originals
+retain official links. Native uses shared data with native controls and the official
+PDF links. Progress keys separate guide, scheme, branch, paper and unit, with the
+existing web Study Desk/native account identity for local account separation.
+
+Pinned source inputs and an offline reproducible builder live in `tools/mes-build/`.
+The native sync/check scripts now point to this app's `web/`. Both AGENTS files
+record the future-exam versioning/source policy. The guide catalog is presentation
+data, not a second bank or a published scoring scheme.
+
+Validation: web production build; native typecheck, Expo lint, 14 domain tests and
+Expo web export; deterministic catalog rebuild and byte-for-byte mobile sync.
+Browser checks cover the correct app, syllabus expansion, saved revision, Computer
+Science vs Electrical Wing grouping, legacy branch fallback, English I/II labels,
+original-booklet rendering and page navigation, and native recall/legacy papers.
+The 390px web pass found an intrinsic grid-width overflow, fixed with zero-minimum
+tracks and items (document width equals scroll width: 375px excluding scrollbar).
+
+Source traps: official October 2025 filenames can contain 2024; use the sitting
+label. The 2020 `Englsih` source belongs under English. The archive's `.pdff`
+Mechanical 2015 Paper II URL returns 404 and is excluded from available-paper counts.
+
+Limits: local implementation only, not deployed; no Android/iOS device run, new
+question extraction, scored mock, bank publication or production schema changes.
+
+## 2026-11-12 — MES matches the existing exam-module views
+
+Kept the scheme dropdown and engineering-branch rail requested by the user. MES now
+uses the LDC/Prelims `ExamOverview` shell and the same six views: Overview, Browse,
+Subjects, Papers, Practice and Progress. The overview leads with source-paper cards;
+marks and paper formats remain available in the regulations disclosure. Subjects
+contains the syllabus checklist; Practice offers source-paper MCQs and syllabus
+recall. The native app retains its scheme and branch controls with the six views
+in a wrapping two-row navigation.
+
+Browse/Practice reuse existing question cards and APIs, querying one exact source
+paper from the current branch/scheme. Unlinked originals remain PDF-only; missing
+transcriptions and unavailable practice pools have honest empty states. Answers
+retain the normal source/eligibility/reveal rules and omit an unpublished MES
+collection ID. Late responses cannot replace a newly selected source. Branch and
+scheme changes clear cross-paper query state. Old Syllabus/Past papers/Recall
+links still resolve. Progress remains an account-scoped, device-local syllabus
+checklist with independent scheme/branch keys, not invented exam scores.
+
+Validation: web production build and offline module regressions for six views,
+legacy links, stable header, account/branch isolation, source queries, PDF-only
+gates, answer context and stale responses; existing exam-overview regressions
+pass. Native typecheck, lint, all 16 domain tests and Expo web export pass. Catalog
+rebuild remains deterministic (159 papers, seven branches, two scheme records),
+and the native shared contract/catalog match the web source.
+
+Browser verification: Computer Science source questions load on web and native;
+web Practice reports its eligible MCQ count, Subjects and Progress show the
+selected branch's topics, legacy selection falls back to a supported branch, and
+the Papers view still opens the existing PDF reader. Web at a 390px viewport has
+375px document/scroll width, with six tabs wrapping into two rows. Mobile preview
+API reads require its configured localhost:8089 origin (127.0.0.1 is a distinct
+origin); no preview-server or production API changes were needed.
+
+Local implementation only; not deployed. Answer submission was tested with mocked
+APIs, without synthetic production attempts. Native visual checks used Expo's web
+preview, not an Android/iOS device. No bank or scoring-scheme publication.
+
+## 2026-11-12 — MES web deployment
+
+The user requested deployment of the completed MES module. Re-ran the MES module
+and shared exam-overview regressions and the deterministic catalog check, then
+used `bash scripts/deploy.sh web` to build locally and ship the web artifact.
+Deployment completed successfully. The previous frontend is retained on Oracle at
+`/srv/study/backups/web/pre-mes-20261112T141349Z.tar.gz` (SHA256
+`dac2ebc83bad7a5327ef454c7d7ccfb477f80d93b49ac4d7dd60ae8656085a7d`).
+
+Verified that the live `/exams/mes` entry and `assets/Mes-Bj8FH5TB.js` match the
+local release byte-for-byte, that the source-bound Computer Science question API
+returns 50 questions with the correct paper context, and that both API health and
+the shared family site return HTTP 200. Browser readback shows all seven branches,
+the regulations/legacy selector, and all six exam-module views.
+
+This was a web-only deployment; no API, database, bank, Caddy or systemd deployment
+was performed. Native source remains implemented and tested locally. It has no
+configured Expo project ID or production API build environment in this checkout,
+and the existing release checklist records EAS ownership/signing/device acceptance
+as incomplete; no mobile cloud build or store release was attempted.
+
+## 2026-11-12 — Oracle answer-review continuation
+
+Continued the owner-authorized frozen 30,000-answer review from the exact registered
+Oracle source for District Organiser General English (March 2019), Q21–80. The PDF
+hash `bc1610c7b7238f7f185cacaa2d1ada237a04f8361ba54f2f8529761dafc09786` matched on
+Oracle; visually checked pages 3–8 and re-read all 60 live question/option records.
+The ten empty choice placeholders in Q49–58 had already been removed in the separate
+source batch `review_batch_e0338801c37cba6056282faec5ecd906`.
+
+Published 56 supported derived answers through guarded batch
+`review_batch_a15b2ecfd0c572cf32a1f01e1143ea4a`; corrected Q31 from inferred adverb to
+preposition. Held Q26, Q46, Q47 and Q59 for absent antonym, two valid preposition
+constructions, printed “condoned off” defect, and overlapping negative/assertive
+classification. All 56 receipts are applied and exact live answers/explanations
+match. The four public holds return `held: true`, `answer_status: needs-review`, and
+`verified: false`; no answers are exposed. Zero exported publications remain.
+
+Frozen cohort: **7,010 verified, 444 needs-review, 22,546 undecided** (7,454/30,000
+reviewed). Oracle bank checksum:
+`5535ace76dd39a68209b2ad6ccf71d2cc35a5b9156505fcf2a3e3e442d022887`. Oracle review
+timer, wake-up, paper publisher and document worker were restored active; study API
+health is `ok`. No independent human sign-off or official key was asserted. Detailed
+evidence and the exact resume lane are in
+`reports/answer-review-30000-20261110/ge-do-march-60/README.md`.
+
+## 2026-11-12 — Put MES in the main Exams card grid
+
+The user could not find an MES card. Live inspection confirmed that MES was only
+a separate banner above the catalog, rather than an exam card alongside LDC and
+Prelims. Replaced the banner with the first card in the normal catalog grid,
+reusing the existing card/list styles, identity, Open exam and expandable study
+links. It displays source-paper and branch counts without inventing question or
+score totals. The guide entry participates in search, pagination and availability
+counts; Saved remains scoped to actual backend bookmarks, and a future real MES
+collection will not produce a duplicate guide card.
+
+Extended the MES offline UI regressions to cover first-page grid placement,
+exact module link, search, List view, expansion links, eight-card pagination and
+Saved/no-match behavior. Regressions and production build pass. Deployed through
+`scripts/deploy.sh web`, retaining the previous frontend at
+`/srv/study/backups/web/pre-mes-card-20261112T141910Z.tar.gz` (SHA256
+`39509af7c8ac0938e45e38c0c8935d5d88ac293c7d9ec3309faf6061f8b7b2fa`).
+The live `/exams` entry and `assets/Exams-yyovu2Qa.js` match the release exactly.
+Reloaded the user's live Exams tab and confirmed MES is the first card, with
+159 original papers, seven branches and the `/exams/mes` Open exam link. The
+shared family-site health check passes. No API or bank deployment was needed.
+
+## 2026-11-12 — Match MES Browse filters to UDC and Prelims
+
+Replaced the separate full-width source selector and search box with the standard
+exam Browse filter bar: paper type, specific paper, approved subject/topic labels,
+combined study/answer status and search. Added Reset filters, previous/next source
+navigation, All papers/PDF links, top and bottom pagination, and the existing More
+filters & answer layout control with year and answer-pool choices. The branch and
+regulations controls remain intact. Three filter columns fit beside the branch
+rail, reducing to two on phones.
+
+Every question request remains bound to the exact selected source paper; paper
+type/year only narrow the current branch/scheme catalog. Approved taxonomy labels
+come from the existing bank taxonomy endpoint without displaying global counts as
+paper counts. Subject changes clear child topics and offsets; source changes clear
+incompatible taxonomy filters, and opening a source card clears conflicting paper
+type/year filters. Reset retains branch/scheme. Practice stays in the eligible
+practice pool. Personal-queue forward navigation reuses nextBrowseOffset so answered
+items leaving an unseen/wrong queue are not skipped. No backend changes or tags.
+
+Also made ExamOverview import its shared exam identity stylesheet directly. A
+fresh MES URL previously lacked its accent variables until another exam route had
+loaded, leaving the selected tab without its background. The direct Browse page
+now has the expected amber active tab.
+
+Validation: extended offline MES regressions cover filter controls, exact-source
+API parameters, parent/child resets, type/year narrowing, reset scope and card-link
+compatibility. Existing module/catalog/account/source-race checks and shared
+exam-overview checks pass; production build and deterministic catalog check pass.
+Live subject/status filtering returns the expected scoped result count. A 390px
+live viewport has two filter columns and equal 375px document/scroll widths.
+
+Deployed with scripts/deploy.sh web. Live entry and Mes-DAuS9b6S.js match the local
+release byte-for-byte; API and shared family-site checks are healthy. Rollback copy:
+/srv/study/backups/web/pre-mes-browse-filters-20261112T143430Z.tar.gz, SHA256
+3be3f2064a1e89f4d5a17a3e24ddf14bf0309fef484a360686ae79a6410136a3.
+Restored the user's original Computer Science/2013/2025 English Browse URL after
+read-only browser checks. No synthetic production answers, native release, bank,
+database, Caddy or systemd changes.
+Desktop follow-up: the 1280px live check renders three filter columns, with equal
+1265px document/scroll widths. Restored the normal viewport after saving proof.
+
+## 2026-11-12 — Oracle answer-review continuation: AH & VETY Paper-II
+
+Reviewed the 68 frozen AH & VETY Paper-II targets (Q21–87 and Q100) against the
+registered Oracle scan `doc_d3907f0d619998c2c62c2252`, SHA-256
+`1d0d9ffb0bbae2f52860a44e67e5dcbb0dd5011c551568147d41733a2381fa98`. Visually
+checked pages 2–8 and refreshed all 68 exact Oracle appearances/options. Published
+56 supported derived answers in `review_batch_887e159889f510516d2abbdea96c8f38`;
+corrected ten stored mappings (Q32, Q41, Q46, Q54, Q56, Q59, Q63, Q68, Q69 and Q75).
+Held Q39, Q42, Q50, Q52, Q71, Q73, Q81, Q82, Q85, Q86, Q87 and Q100 with explicit
+ambiguity/defect reasons. Published one follow-up Q55 explanation batch
+`review_batch_ee8558b528bae4c6278d6444a18b312e`, retaining the answer index while
+adding a dated FDA-source update checked 12 Nov 2026.
+
+Final readback: all 68 exact records match the accepted decisions; 57 answer
+publication receipts are applied (56 questions plus the Q55 explanation follow-up),
+all 12 public holds suppress answers, and zero exports remain. Final Oracle checksum
+`c076daf21fe7bc5aba9232463327f6ccd65678696e17326586ba19ba95c2da52`. Frozen cohort:
+**7,066 verified, 456 needs-review, 22,478 undecided** (7,522/30,000 reviewed).
+Oracle review timer, wake-up, paper publisher and document worker were restored;
+study API health is `ok`. No official key or independent human sign-off was claimed.
+Detailed source, decisions, receipts and readback: `reports/answer-review-30000-20261110/ahvety-paper2/README.md`.
+
+## 2026-11-12 — Useful Home and quick-access improvements
+
+The user asked for general improvements and then asked to continue. Reviewed the
+live Home and chose focused study-entry improvements: UDC, LDC, Prelims and MES
+shortcuts; clearer task labels/descriptions and contextual action buttons; a Browse
+all exams link; MES-specific branch/scheme, syllabus, source-paper and MCQ choices.
+MES is now discoverable in Quick find, including searches by engineering subject.
+Small shared guide-launcher metadata avoids loading the full syllabus catalog on
+Home and keeps the Exams card counts/title consistent. Guides remain available if
+the backend exam catalog fails; no backend collection or score total is invented.
+
+Fixed test continuation by using the existing mockResumePath helper, preserving
+shared-test destinations and full-paper simulation mode. Saved shared-test resume
+links are now accepted by Home. Added retries for saved activity/weekly overview,
+clearer saved-exam loading/failure states, and account-change refresh guards on
+Home/dashboard requests so late responses from an earlier account cannot restore
+old continuation or weekly data. Existing active-test priority and staff navigation
+permissions remain intact.
+
+Validation: new offline Home tests cover shared/full-test resume, saved shared-test
+continuation, retry recovery, account refresh, late-response isolation and listener
+cleanup. Extended quick-access tests cover MES discovery, duplicate prevention,
+correct guide task destinations and guide availability during catalog failure.
+Quick-access, Home and MES module/catalog regression suites pass; production build
+passes. Real-browser local checks confirm the MES syllabus destination and Quick
+find result. At 390px the page has matching 375px document/scroll width, two-column
+shortcuts, stacked inputs and a full-width action button. No answer attempts were
+submitted. Native app and backend were not changed by this refinement.
+
+Deployment uses scripts/deploy.sh web with previous frontend retained at
+/srv/study/backups/web/pre-home-improvements-20261112T151231Z.tar.gz (SHA256
+ d1c2e43b2da617001eacb0ae17c09de36a69b65012e0190cf6179d6c1c3c52c8).
+Deployment completed successfully. The live /feed entry and
+assets/StudyHome-ByMo8bKZ.js match the built release byte-for-byte; API health and
+the deployment's shared family-site check pass. Live Home readback confirms all
+four shortcuts, MES in the exam select, contextual task actions and real weekly
+activity. Production test submission was not exercised; resume/account behavior
+was verified with offline mocked sessions instead.
+
+## 12 November 2026 — Important Dates from the question bank
+
+Replaced the Important Days landing page's manual-collection-only view with a
+read-only date-focused bank projection. The page now searches event/question text
+and extracted dates; filters by month, observance/history/other event, approved
+subject, question source and date availability; sorts by calendar, title or year;
+and paginates event groups and their original canonical question links. Known dates
+sort before unresolved events. Existing published collections and old learn_ entry
+links still open through the original catalog, and Practice sets remain unchanged.
+Updated learner discovery labels in Library, More, landing and the Home footer.
+
+The API adds only GET /api/learning-catalog/bank-dates and services/bank_dates.py.
+It reads current v_all_questions, approved classification labels and existing
+v_mock_practice answer readiness. It does not alter bank JSON, classifications,
+answers, scoring, schema or learning-collection publication. A date-only selected
+answer is usable only through existing answer eligibility. Other dates are labelled
+as question mentions, never independent verification. Distractors, explanations,
+unreviewed answers, negative/ambiguous statements, calculations and incomplete date
+questions cannot silently supply a fact. First observance and theme/reference years
+remain separate. Year-only and month/year precision is retained (Plassey remains
+1757); invalid full dates and ambiguous numeric dates are not guessed. A law's title
+year cannot fill its unknown commencement/passage date. A question mention is not
+an assertion that every statement in that question is true.
+
+This is conservative automatic extraction, not a reviewed or exhaustive event
+registry: English month names and date/event wording are currently recognized;
+unusual phrasing, some languages and numeric-only dates may be missed. Matching
+questions without a usable date remain visible as Date to check. No unsupported
+external dates, annual recurrence, new themes or currentness claims were added.
+The bank index uses the existing short-lived public catalog cache, with assessment
+restrictions checked on every request before cache access. Responses are private,
+no-store, with no options/raw answer payload. UI requests are isolated across filter
+and account changes, with retry and honest loading/error/empty states.
+
+Validation: 7 synthetic date unit/integration tests pass, plus existing catalog and
+learning workflow regressions (18 combined tests before the final ordering test).
+The new frontend regression script covers date precision, URL filter/pagination
+resets, canonical question links, retry, stale account isolation and old collection
+links. Production TypeScript/Vite build passes. A read-only live-bank rehearsal
+(transaction READ ONLY, no fixtures) built 1,827 grouped entries / 2,125 linked
+questions in 5.67 seconds before the final conservative date-gap guard; browser
+pagination uses 24 items, with shared cache reuse. Browser checks confirm June /
+Observances filters, separate 5 June and first-observance cards, original bank
+question/PDF navigation, Plassey year-only entries, and no horizontal overflow at
+390px (375px document width). No production answer attempts were submitted.
+
+Deployed with scripts/deploy.sh bank-dates (only the existing catalog router and
+new service, pinned preimages, byte checks, compilation, rollback and paired site
+health) then scripts/deploy.sh web. No unrelated dirty API files were shipped.
+Original API router backup: /tmp/ism-bank-dates-release.m1wy0r/router.before.py;
+final incremental release rollback: /tmp/ism-bank-dates-release.WSkPXy/router.before.py.
+Frontend backup: /srv/study/backups/web/pre-important-dates-20261112T153326Z.tar.gz,
+SHA256 72f0094aa7d20d915e07cbd2e28a3887ba05905a165455f2f05a71fb76ab2401.
+Live frontend asset: ImportantDates-rhuHNnWy.js. Final API/router hashes:
+7017bdbc596ed7186d7bfa135a98401100e3f54c8d0601dded1515c3930d7bad (router),
+8a98a496f81b639fbb18f39d7b1a95f56d36b67b230f950530ad4900f1356280 (service).
+Both study.hawayu.in API and family.hawayu.in are healthy after restart. Live
+Important Dates readback confirms the filtered Environment Day cards and source
+counts. Screenshot: ../artifacts/important-dates/important-dates-live.png.
+
+## 12 November 2026 — Important Dates on the Library landing page
+
+Added a prominent Important dates & events card directly below the Library tabs
+on the default Subjects view, above the subject shelves. It links to /important-days
+and describes the bank-based event filter. The existing Practice-tab entry remains
+available. The new card uses existing Library surfaces, typography, learning-area
+colour and a wrapping layout. No API or bank changes.
+
+Validation: diff whitespace check and production TypeScript/Vite build pass.
+Deployed with scripts/deploy.sh web; family-site health check passes. Live browser
+readback confirms the card on /library without switching tabs and its exact
+/important-days destination. Screenshot: ../artifacts/important-dates/library-dates-live.png.
+Frontend rollback: /srv/study/backups/web/pre-library-dates-20261112T154416Z.tar.gz,
+SHA256 69ecb055dd0a1185da298dce20911c4e5329eca72a9e99215617a1fae55ba07d.
+
+## 12 November 2026 — Date list, chronology and month calendar
+
+Changed Important Dates from event cards/question previews to a plain list with
+visible date and event columns. Source counts are secondary optional references;
+opening references uses unboxed rows and original bank links. The main flow has
+no quiz, options or answer-reveal action. Known dates are shown by default, with
+uncertain entries still available through the availability filter. The Library
+landing entry is now a simple separated row rather than a card. Explicit legacy
+published collection links retain their original separate catalog workflow.
+
+Added List, Chronology and Calendar views with URL-preserved filters. Chronology
+uses server-wide year ordering (BCE before CE) and labelled year groups, followed
+by dates without a recorded year. The calendar is a month/day index across all
+years, with previous/next month, full-month event counts, day selection/reset,
+month-only entry counts and a jump to the event list. It deliberately has no
+weekday labels or assumed annual recurrence; year-only events stay in List and
+Chronology. February includes leap-day entries across years. Existing extraction,
+answer eligibility, source evidence and conservative precision remain unchanged.
+
+The existing read-only bank-dates endpoint now accepts an optional day with month
+and returns calendar counts computed over all matching events before pagination
+and day selection. Filters and assessment checks apply to the counts too. No
+schema, canonical bank, classifications, scoring or question content changed.
+
+Validation: 13 date/catalog tests pass, including full-month counts beyond a
+single returned row, retained counts after day selection, source-filtered counts,
+month-only dates, day/month validation and BCE/CE ordering. Frontend regressions
+pass for list rows/direct dates, hidden question prompts, chronology, full-month
+calendar counts, day/month navigation, leap days, filter/page resets, optional
+source links, retry, account isolation and legacy collections. Production build
+passes. Live browser readback confirms direct Environment Day list rows, year
+chronology, June calendar count=2 and selected 5 June returning both source-bound
+events. No production answer attempts were made. A dedicated mobile viewport
+check was not confirmed: the browser override did not apply to the inspected tab;
+no mobile verification claim is made for this update. Temporary overrides reset.
+
+Deployed through the bounded bank-dates API target, then scripts/deploy.sh web.
+API rollback: /tmp/ism-bank-dates-release.MTAJQU/router.before.py. Frontend backup:
+/srv/study/backups/web/pre-date-list-calendar-20261112T155218Z.tar.gz, SHA256
+68ffad75d04fbf93e6687c7eb54958d839bd29cfb5bb905b246a04c2a9b9dd39.
+Both site health checks pass; the live ImportantDates bundle matches the local
+build byte-for-byte. Proof: ../artifacts/important-dates/date-list-live.png and
+../artifacts/important-dates/calendar-live.png (desktop captures).
+
+## 12 November 2026 — Scroll loading for the Important Dates list
+
+Replaced numbered event-list pages with progressive scroll loading in List,
+Chronology and Calendar results. Approaching the end fetches the next 24 records
+and appends them without replacing existing rows. A Load more events button works
+without IntersectionObserver, with separate loading/retry/end states and a loaded
+count. Failed requests preserve the list and stop automatic retries. Single-flight
+loading prevents concurrent duplicate reads; repeated event IDs are deduplicated.
+The footer disables scroll anchoring so appending does not drag the reader down.
+
+Filter/account changes unmount the old stream and ignore late next-page results.
+Existing valid page links retain their starting offset and offer Start from first
+event; out-of-range links recover to the first batch with filters preserved. This
+covers the owner's /important-days?category=observance&page=6 example. Optional
+source-reference pagination is unchanged. No API, schema or bank content changes.
+
+Validation: expanded frontend regressions pass for manual and observer-driven
+append, concurrent trigger protection, end detection, filter resets, duplicate
+suppression, page-link recovery, retry without losing rows and stale next-page
+account isolation, alongside existing dates/chronology/calendar/source checks.
+Production TypeScript/Vite build passes. Local browser scrolling appended 24 → 48
+observance entries without page navigation or runaway loading. Live readback
+confirms old page=6 recovery with category intact and automatic append to 48 rows.
+No answer attempts were made. Mobile-specific browser QA was not rerun.
+
+Deployed using scripts/deploy.sh web; family-site health check passes. Live
+ImportantDates-Dw2zPCnh.js matches the built asset byte-for-byte. Rollback:
+/srv/study/backups/web/pre-date-scroll-20261112T160237Z.tar.gz, SHA256
+acbb41e7984d18d909701f4fdb9755a6ce375e3e0dfdbdeee031fbb2dd139b37.
+Final live check reached 60 loaded / 60 matching observances and End of results,
+with no numbered event pagination. Screenshot: ../artifacts/important-dates/scroll-list-live.png.
 
 
 ## 13 November 2026 — MCS inference, communication and printed context
@@ -9450,6 +10362,111 @@ remain; keep 2012/2013 deferred and original simulation gated. Receipt/checkpoin
 `docs/sources/mcs-publication-20261114.json`; private proof `reports/mcs-continue-20261114/`.
 
 
+## 2026-11-14 — Finna redesign implementation for study.hawayu.in
+
+**What changed.** Preserved the owner's new Web/Mobile/Admin design ZIP under
+`docs/design/finna-20261114/`. Replaced the warm-paper visual foundation with its
+Figtree type, exact light/dark palettes, desktop container and card/action sizes.
+Implemented the three-row desktop header and fixed five-item phone bar; rebuilt
+Home, Library and exam catalog surfaces, including real exam comparison. Added
+`/past-papers` over registered collection papers and `/chronicle` with source-linked
+Canvas/Reading. Atlas has a desktop chapter sidebar and phone selection; admin
+navigation uses the reference's grouped navy sidebar with existing permission gates.
+Existing mocks, source labels, original booklets, scheme/branch navigation and
+saved-progress paths remain in their existing implementations.
+
+**Validation and traps.** Build and ten focused regression scripts passed (see
+`reports/finna-redesign-20261114/README.md`). Local desktop screens and light/dark
+styles were inspected with the real production API proxy, without answering or
+submitting tests. Atlas toggles and live exam comparison were exercised. Phone
+Home/Library/Exams/Atlas were visually inspected in 390/320px frames without page
+overflow; iframe click automation was unavailable. The similarly named older
+`india-study-map` checkout was initially inspected, then left unchanged after the
+owner identified the actual domain. `/papers` is a proxy/hosting PDF namespace,
+so the new page uses `/past-papers`. The old question-paper directory is
+English-specific and too broad/slow for this page; use collection metadata instead.
+MES keeps its established first-page card after the existing regression caught
+its unintended move to page two.
+
+**Open.** No commit, push, deployment, migration, API change or bank edit. Existing
+unrelated working-tree changes were retained; the combined frontend candidate
+needs review before an Oracle deployment. Signed-in staff/profile/inbox/desk
+states still need visual QA with an actual account. Prototype sample countdowns,
+cutoffs, people, rankings and audit records were not invented; Chronicle categories
+and dates retain their bank/source context rather than claiming curated era or
+Polity coverage. This is not a pixel-perfect claim for every authenticated state.
+
+## 2026-11-14 — Authorized Finna frontend deployment
+
+**Deployment.** The owner explicitly requested deployment. Saved the prior Oracle
+frontend to `/srv/study/backups/web-before-finna-20261114T161851Z.tar.gz`, verified
+tar integrity and recorded its SHA-256. Ran `bash scripts/deploy.sh web`: local
+TypeScript/Vite production build passed, then shipped only frontend artifacts to
+`/srv/study/public`. The combined checkout's existing frontend work is included;
+unrelated API changes were excluded. No Git commit/push, migration, bank write,
+service restart or Caddy change was made by this deployment.
+
+**Verification.** At 16:19:55 UTC, live route HTML and main JS/CSS plus Home,
+Library, Exams, Past papers and Chronicle screen chunks matched local build bytes.
+API health: `ok`, 82,383 questions, 13,899 scorable. The shared family site returned
+HTTP 200. The live Home rendered successfully in the browser with no logged errors;
+saved `reports/finna-redesign-20261114/home-live.jpg` and the exact deployment
+receipt in that directory. The production tab was opened for the owner. Existing
+authenticated/phone visual QA limits remain as recorded in the redesign report.
+
+## 2026-11-14 — Finna completeness audit
+
+The owner's completeness question prompted an explicit source-coverage audit of
+18 Web, 37 Mobile and five Admin labels. The release is a partial redesign:
+several inbox/creator/profile/reward/game/assessment/detail layouts still inherit
+only the shared theme, Desk has visual overrides, and the admin content panels
+retain their existing compositions. The supplied Mobile bar is Home / Exams /
+Library / Desk / Me; the deployed Home / Library / Create / Exams / More bar is an
+unresolved mismatch. These are implementation gaps in addition to outstanding
+signed-in and phone interaction checks. Recorded per-screen coverage in
+`docs/FINNA-REDESIGN-GAPS-20261114.md` and clarified the implementation/review
+documents. No frontend code or production changes were made in this audit.
+
+
+## 2026-11-14 — Admin and mobile follow-up deployed and checked signed in
+
+**Scope.** Owner requested admin overview/review/pipeline/audit layouts, Mobile
+layout/navigation correction, and signed-in/phone checks. Added reference-shaped
+attention/activity overview, queue / original PDF / inspector panes with compact
+filters and sticky phone tabs, six real intake stage previews and preserved full
+stage/evidence editing, and audit timeline/filter/details. Preserved source IDs,
+original PDF pages, answer/evidence/hold/publication rules, role gates and MFA.
+
+**Phone.** Corrected Home / Exams / Library / Desk / Me and active yellow pills;
+added route-aware headers and Create/More/Inbox/Search access, narrow page/card/
+control presentation, separate Inbox phone views/conversation layout, Me shortcuts,
+Desk tabs, Chronicle timeline and responsive module/exam/mock/account treatment.
+A real large unread count exposed an overcrowded badge; display now caps at 99+
+while retaining the actual count in its accessible name. Real pipeline data also
+prompted independent stage previews, rather than grouping one mixed page.
+
+**Checks.** Production build and 11 focused frontend checks passed. Important
+Dates failed once under parallel scheduling and passed alone; recorded in report.
+New test checks all six independent preview requests, stage-list navigation and
+read-only evidence inspection without writes. Real signed-in browser checks covered
+overview, audit filtering, pipeline, original question PDF on desktop and phone,
+Inbox tabs/settings, profile editor/security, Desk notes and mock builder. Actual
+390/320px frames had 375/305px content after scrollbars and no page overflow in
+checked states. Desktop dark mode was checked and restored. Live error logs were
+empty. No real test attempt, answer, message, invitation, hold, permission or admin
+publication was created for QA; mutation logic used isolated fixtures/regressions.
+
+**Deployment.** Frontend only via scripts/deploy.sh web; prior frontend backup:
+/srv/study/backups/web-before-admin-mobile-20261114T175629Z.tar.gz. Exact backup and
+live asset hashes, API/family health and screenshots are in
+reports/finna-admin-mobile-20261114/. No API/schema/bank/Caddy/service changes,
+Git commit/push, or unrelated checkout resets. The temporary live same-origin
+phone page and local phone harness were removed after QA; fixture servers stopped.
+The live Home/admin tabs remain available. Every possible state in all 37 mobile
+reference scenes, particularly active games/mocks/shared-room variants, is not
+individually certified. Unselected desktop redesign gaps remain documented.
+
+
 ## 15 November 2026 — MCS explanation limits and conceptual caveats
 
 Published three checked explanations: 2023 II A Q39 applies the restored
@@ -9486,6 +10503,509 @@ review certification. Historical source identity/figure/radical repairs and
 exact-key notices remain. Keep 2012/2013 recovery deferred and original
 simulation gated. Receipt/checkpoint: `docs/sources/mcs-publication-20261115.json`;
 private proof `reports/mcs-continue-20261115/`.
+
+## 15 November 2026 — Learning & point system v2 design proposal
+
+Wrote `docs/LEARNING-SYSTEM-V2-DESIGN.md`: a proposal extending award policy
+v1 with a topic mastery model (enabled by the 8 November taxonomy
+publication), a Leitner review scheduler feeding a Smart Review session, a
+server-composed daily plan for the Finna Home plan column, review-session and
+mastery-milestone awards inside the existing 300 XP/day cap, quest-ring
+rewiring, and streak unification on reward_profiles. All v1 invariants
+carried forward: XP/points/marks separation, verified-key-only rewards,
+once-per-canonical claims, immutable ledger, retired difficulty labels,
+guest exclusion. Document only — no code, schema, migration, award amounts
+or catalog state were changed; every rate and threshold is marked as an open
+owner decision (§10). Baseline inventory came from reading migrations
+0001–0083, learning_rewards.py, rewards/me/questions/study_sessions routers,
+LEARNING-REWARDS.md, DECISIONS.md and the finna-20261114 references; counts
+cited are from those documents, not fresh production queries.
+
+
+## 15 November 2026 — Correct redesigned admin review counts
+
+The owner reported that the new admin did not accurately show work needing
+review. The redesign had omitted unconfirmed answers from Needs attention and
+used historical failed-contribution totals as a current-work indicator. Added
+AdminReviewAttention using the existing scoped quality and question-task APIs:
+separate unconfirmed/missing answers, holds, source/scoring tasks, publishing and
+current failed tasks, each linked to its exact question filter. Historical failed
+correction records remain available in detailed coverage with explicit wording.
+Added refresh/retry, focus/content refresh and unavailable-count placeholders.
+No bank verification state or question content was changed to alter a count.
+
+The isolated admin-count regression and existing review-navigation check pass;
+TypeScript/Vite builds and diff whitespace checks pass. Deployed frontend only
+with scripts/deploy.sh web, retaining a rollback archive. Signed-in production
+checks matched 10,538 unconfirmed answers, 2,020 missing MCQ answers and 55 current
+failed question tasks to their linked list totals. These are observed snapshots;
+other authorized publishers can change them. Refresh counts was exercised.
+HTML/index JS/CSS/BankAdmin bytes match local dist; API health ok, 82,383 questions,
+13,899 scorable; family HTTP 200. Evidence, receipt, backup checksum and limits:
+reports/finna-admin-review-counts-20261115/README.md.
+
+This finding was in this redesign's overview and does not establish a defect in
+Antigravity/Gemini's separate work. No API/schema deployment, production review,
+answer/hold change, new attempt, service/permission change or Git commit/push.
+Unrelated shared-checkout work was preserved.
+
+## 15 November 2026 — v2 design calibrated to owner economy decisions
+
+Updated `docs/LEARNING-SYSTEM-V2-DESIGN.md` with the owner's decisions from
+this session: paid plan ₹100/month; pro-month redemption 1500 points,
+calibrated so ~2 months of daily use or ~3 months of average use earns one
+month of Pro (requires a new 25-point daily cap — XP cap and leaderboards
+unchanged); pro-week repriced from the provisional 1000 to 400 points. Added
+the owner-requested earning spread across pillars (practice discovery 12
+pts/day sub-cap, review sessions, submitted mocks, quiz games, Daily Five,
+quests, mastery milestones), explicit contribution awards (20 XP + 5 pts,
+high-impact 40 XP + 10 pts, reviewer-gated and exempt from the daily cap),
+an admin access-grant tool spec (grant N Pro days + 7-day reward preset,
+immutable dated entitlements, access only — never currency), and a
+ten-item new-feature slate (§9). Document only; no code, migration, catalog,
+billing or Razorpay change was made. The ₹100 price itself is billing
+configuration outside this repo's schema and remains unimplemented.
+
+## 15 November 2026 — Desk, vocabulary and community companion design
+
+Wrote `docs/DESK-VOCAB-COMMUNITY-V2-DESIGN.md` at the owner's request, with
+delegated decisions recorded as defaults: Desk v4 (learning-loop Today card
+and mastery strip on the personal desk, party-mode desk sessions, display-only
+shared weekly goals, review circle, pomodoro focus presets, PDF note export,
+desk calendar; rooms stay private/six-seat/flag-gated); vocabulary learner v2
+(bank-derived + Content-Studio-curated decks, recall and cloze modes, unified
+Leitner scheduling through review_items; curated cards deliberately pay no
+per-card points); feed/post v2 extending the existing posts/post_votes/
+disclosure-gate substrate with free-standing study posts, material shares,
+follows, new-account throttles and rate limits, internal-links-only; and a
+helpful-vote model (no downvotes, attempt-weighted votes 1.0/0.25, votes
+never mint currency) with a transparent HN-style For-you ranking
+(gravity 1.5, +6h offset, accepted-answer and capped-reply terms, bounded
+topic-affinity boost, author damp, disclosure gate applied before ranking,
+chronological tabs always available). Cross-referenced from
+LEARNING-SYSTEM-V2-DESIGN.md §9. Documents only — no code, schema or
+moderation-surface changes; baseline feed/discussion behavior was verified by
+reading api/app/routers/community.py and discussions.py, not by live testing.
+
+## 15 November 2026 — Finnaplan consolidation and upvote-benefit design
+
+At the owner's request the two same-day design proposals
+(LEARNING-SYSTEM-V2-DESIGN.md and DESK-VOCAB-COMMUNITY-V2-DESIGN.md) were
+consolidated verbatim into a single `docs/FINNAPLAN.md` as Parts I and II;
+the original files were removed and cross-references repointed. Earlier
+devlog entries naming the old filenames remain historically accurate.
+Added Part II §4.2 answering the owner's question on what upvotes earn:
+never currency (votes are the one socially manufacturable signal, and
+currency would break the calibrated point targets); instead reach in the
+For-you ranking, public reputation counts, and a lifetime-weighted-helpful
+trust ladder — Helper 10 (throttle lifted), Regular 25 (higher rate limits,
+flair), Mentor 50 (reviewer/editorial invitation eligibility, bridging into
+the points-paying contribution pipeline), Guide 150 (weekly most-helpful
+strip, opt-out honored). Tiers compute at read time; moderation overrides
+privileges; thresholds are owner-tunable. Document only — no code or schema
+changes.
+
+## 15 November 2026 — Finnaplan Part 0 (whole-site thesis) and Part III (Atlas v2)
+
+Extended docs/FINNAPLAN.md per the owner's direction that browsing old
+questions is the product and points are deliberately secondary. Part 0
+records the priority order (Browse > Learn > Community/Games > Economy) with
+the binding rule that no browse surface is ever gated behind account, points
+or Pro; the question-card contract (printed fidelity, provenance-labeled
+reveal, source line, optional inline answering, gated discussion); the
+browse-to-learning gradient; community anchored to question threads; games
+as optional on-ramps; points confined to toast/wallet/catalog; a scaling
+plan on two axes (content S1 deepen-MPSC verified pool → S2 adjacent Mizoram
+exams → S3 beyond; infra T1 slow-query fixes + rollups + anonymous-read
+caching → T2 CDN/object storage/pooling → T3 replica/search only on measured
+demand); a sequencing table putting browse excellence first; and honest
+success metrics. Part III designs Atlas v2 around a two-way
+chapter↔taxonomy binding table: asked-from-this-map question panels,
+View-on-Atlas links from question cards, no-economy map drills (activity
+only, outside attempts), map-context practice for bound verified questions,
+chapters migrating from bundled TS to reviewed database content (26 existing
+chapters as seeds), Chronicle cross-links, display-only explored state,
+Mizoram district chapters and exam-scope ordering. Documents only; no code,
+schema or deployment changes.
+
+## 15 November 2026 — Atlas Studio authoring system added to Finnaplan
+
+At the owner's request, Finnaplan Part III gained §III.3: a comprehensive
+admin authoring system (/admin/atlas) designed for fully manual chapter
+creation without code, JSON or typed coordinates — click-to-place pins,
+vertex-drawn lines and areas, palette styling, layer duplication/copy,
+optional GeoJSON import, capture-view timeline events, per-pin drill
+toggles with tolerance radii, and a binding editor backed by the live
+approved taxonomy that shows tagged-question counts before publish. The
+preview is the learner Atlas component rendering the draft (single
+rendering path, DESIGN-FIDELITY lesson), with autosaved drafts, undo/redo,
+inline validation, and a draft→publish lifecycle of immutable attributed
+versions with rollback under existing staff/MFA rules; a one-time converter
+seeds the 26 TS chapters as version 1s. Data sketch extended with
+atlas_chapter_versions and atlas_drafts; rollout reordered so the Studio
+lands at step 2. Document only — no code or schema changes.
+
+## 15 November 2026 — Finnaplan Part IV: complete backend architecture
+
+Appended Part IV to docs/FINNAPLAN.md: a comprehensive backend design for
+web and mobile, grounded in a same-day code inventory (main.py middleware
+order and lifespan workers, db.py pool with jit=off, public_catalog_cache
+generation invalidation, the PKCE-style mobile-auth flow, ~45 routers / ~55
+services). Sections: topology; application conventions (thin routers,
+explicit exam scope, no shared caching of learner data, awards only in SQL
+functions); the five-tier identity model; eight data domains with their
+binding invariants; the cross-cutting integrity layer; API conventions
+including a planned shared rate-limit helper; background-processing rules
+and the second-process growth path; the mobile design (allowlist-as-
+contract with companion tests, capability negotiation instead of API
+versioning, offline as cached browse + idempotent replay, opt-in push
+later); a nine-row build map pairing each Finnaplan feature with its
+migrations (0084+), services, routers and tests; performance/caching tiers
+against the measured ~5.4k tps baseline; the security threat model; a
+five-step release gate (explicitly more than the test suite); and testing
+rules per promise. Document only — no code, schema or deployment changes.
+
+## 15 November — native Chronicle mobile access
+
+Added only the existing `/api/learning-catalog/bank-dates` projection to the
+mobile credential GET/HEAD allowlist for the companion app's native Chronicle.
+Catalog management and all writes remain outside this addition. The endpoint's
+live no-assessment check, private cache headers and source/date projection stay
+unchanged. No bank/schema/content change or production deployment was performed.
+
+Validation: 25 disposable PostgreSQL tests pass across mobile companion and bank
+dates, including exact method/path scope and denial during an active mock even
+when the date index is warm. Native implementation/QA records are in the sibling
+mobile project's `docs/verification.md`.
+
+## 15 November 2026 — Question detail ported to the Finna reference
+
+Ported `web/src/screens/QuestionDetail.tsx` to the Direction A reference at
+`docs/design/finna-20261114/Finna Web.dc.html` lines 772-805. The coverage audit
+listed this screen as "existing layout inherits theme; detailed reference layout
+not ported"; that row is now implemented.
+
+Layout moved from a single `max-w-3xl` column to the reference's two-column frame:
+1160px cap, `28px 24px 80px` padding, main `flex:3 1 520px` and rail
+`flex:1 1 280px` at 24px gap. Question card is 22px radius / 26px padding / 16px
+gap; stem 24px/700/1.35/-.01em; options 54px minimum height, 14px radius, 1.5px
+border, 16px text. New `.finna-qd-*` block appended to `web/src/styles/finna.css`.
+The option override is scoped `html[data-design="finna"] .finna-qd .answer-options
+.answer-option` deliberately — the existing 12px rule at line 142 has specificity
+(0,3,1) and a plain `.finna-qd` descendant selector loses to it.
+
+Appearances moved from a full-width list under the question into the reference's
+"Appeared in" rail card, and a "Topic" card now carries the taxonomy breadcrumb,
+the existing save-for-revision toggle and the source PDF link. The discussion is
+wrapped in the reference's card with its heading and the locked copy ("Answer the
+question to open the discussion."). The inline thread and reply composer in the
+reference were **not** built: `QuestionActions` is a collapsed "More" actions row,
+not a thread, and no thread/composer API is wired to this screen. Writing one
+would have meant inventing a surface the backend does not serve.
+
+Two hard-coded amber banners (`#D8B56D`/`#FFF4DF`/`#684919` on disputed keys and
+source defects, `#D9B76B`/`#FFF4D9`/`#705015` on held questions) bypassed the token
+layer and stayed warm in dark mode. Both now use `border-exams bg-attention-soft
+text-exams-dark`. Option state indicators changed from the bare symbols `✓`/`×` to
+the words "Answer" and "Your pick", matching the reference's `o.tag` and keeping
+the rule that a state never relies on colour alone.
+
+Preserved unchanged: the reveal gate (`held`, `answer_source==='none'`,
+`duplicate-options`/`unresolved-source` defects, in-flight guard), `AnswerProvenance`,
+`RepeatBadge`, `PracticeAnswerPanel`, `SourceQuestionContext`/`SourceQuestionText`,
+figure rendering, the `question-<id>` and `#discussion` anchors, and desk save state.
+No API, schema, bank or answer change.
+
+Verification: `npx tsc --noEmit` clean; `npm run build` succeeded in 5.27s. Measured
+in the running app against a real question (`cq_00008aeb900e2744`): max-width 1160px,
+gap 24px, card radius 22px / padding 26px, columns 734/351, option radius 14px /
+min-height 54px / 16px, h1 24px — all matching the reference.
+
+Limits, stated rather than implied. The 36 `web/scripts/check-*.cjs` scripts could
+**not** be run: `react-test-renderer` is not installed in `web/node_modules` nor in
+any sibling checkout, and every script resolves it from `process.argv[2]`. This is a
+missing dev dependency, not a regression — but it means no behavioural regression
+check ran for this change. The answered states (correct / wrong-pick / dimmed) were
+not visually exercised, because submitting an answer through the dev proxy writes a
+real attempt to the production bank and the standing QA rule forbids creating
+synthetic attempts; their styling is asserted only by the CSS. Browser-pane
+`getComputedStyle` again proved stale after an attribute change — toggling
+`data-theme` left `body` reporting the light background while `--bg-app` had already
+flipped. Re-checked by setting `ism-study-theme` before first paint: body `#0B0F24`,
+card `#151B3A`, hairline `#28315D`, accents correct. Trust first-paint reads only.
+
+Noted in passing, not acted on: `cq_00008aeb900e2744` asks about epidemic threshold
+but is classified `Computer Science → Computer Systems and Architecture`. A taxonomy
+defect for the normal review path, not a presentation bug.
+
+## 15 November 2026 — Question bank ported to the Finna reference frame
+
+Ported `web/src/screens/Bank.tsx` to the Direction A reference at
+`docs/design/finna-20261114/Finna Web.dc.html` lines 662-768. New `.finna-bank-*`
+block in `web/src/styles/finna.css`. Owner decisions taken before building, both
+recorded here because they are deliberate deviations.
+
+**Inline answering kept.** The reference's list row is compact — checkbox, question
+text, meta chips — and its text opens the detail page; in the Finna IA inline
+answering lives on Exam browse/practice instead. The owner chose to keep
+`QuestionCard` and its inline answering on `/bank`. So the frame, header, three
+columns, pool/sort groups, selection bar, coverage rail and pagination match the
+reference, and the row does not. The reference's Table view is therefore not built
+either — it presumes the compact row.
+
+Implemented: 1320px frame, `28px 24px 80px`, 18px gap, `data-sec="practice"`;
+eyebrow + 38px/900 heading reading `{collection} · {subject}` from real
+`listCollections()` and taxonomy lookups; 48px/14px search; a Questions/Papers mode
+group where Papers links to the existing `/past-papers`; up to five exam pills from
+`listCollections()`; three columns at the reference's flex ratios (rail / `4 1 520px`
+results / `1 1 250px`); pool tabs; a sort group; and the range label.
+
+**Sort is real, not decorative.** It writes the API's existing
+`order=repeated|mixed|paper` (`ListParams.order`), verified in the running app as
+`/api/questions?limit=25&order=mixed&exam_scope=mizoram-recruitment`.
+
+**Selection and "Make a test" are wired.** Selection is screen state, not URL state
+— it is a scratch list, and sharing a bank link should not share someone's picks.
+The dark bar carries the count, a gold "Make a test" and "Clear". "Make a test"
+hands `/tests/make?ids=…` to `screens/TestMaker.tsx`, which now seeds a **new**
+draft's `question_ids` from `params.getAll('ids')` (de-duplicated, capped at 200).
+Existing drafts keep their saved questions untouched. The reference's "Save to
+collection" button was **not** built: no collection-write API exists for this, and a
+visible button that does nothing is worse than its absence.
+
+**Coverage by year is real data.** The bank has no year-facet endpoint, so the rail
+issues one `limit:1` count query per year for the last six years using the active
+filter base, and reads `total`. The shared page cache de-duplicates them. Confirmed
+filter-aware in the app: unfiltered 2026/2025/2024 = 12,084 / 10,500 / 2,546;
+with `pool=scorable&source=official` the same bars read 5,288 / 3,826 / 82 and 2021
+falls to 0. Bars are scaled to the largest year in view, not to a fixed maximum.
+
+**"Saved filters" was dropped, not faked.** The reference's second rail card needs a
+saved-views API and none exists — no `savedView`/`saved_view` anywhere in `web/src/lib`.
+Logged in the coverage audit rather than shipped as a stub.
+
+Trap worth recording: `npx tsc --noEmit` passed while `npm run build` failed. The
+build runs `tsc -b` over the project references and caught `TaxonomyFacet` being
+addressed as `{id,label}` when it is actually `{subject_id,subject}`. **Do not treat
+`tsc --noEmit` as the gate on this repo — run the build.**
+
+Verification in the running app: frame 1320px / `28px 24px 80px` / 18px gap, h1 38px,
+search 48px, columns 636 + 279 beside the filter rail, 5 exam pills, 3 pool buttons,
+3 sort buttons, 25 row checkboxes, 6 coverage rows, range "Showing 1–25 of 80,048".
+Selection bar reached "2 selected" with
+`/tests/make?ids=cq_00008aeb900e2744&ids=cq_00031872a80f34bb` and the gold `#FFC83D`
+action; Clear emptied it; `aria-pressed`/`aria-label` both track state. Heading
+resolved to "Question bank · Agricultural Engineering · 37 questions" under
+`?subject_id=agricultural-engineering`. Checked in dark; the selection bar inverts
+correctly (`--ism-ink` is light in dark mode). `npm run build` green.
+
+Limits. The 36 `web/scripts/check-*.cjs` scripts still cannot run here —
+`react-test-renderer` is installed in neither `web/node_modules` nor any sibling
+checkout — so again no behavioural regression check ran. The `/tests/make?ids=`
+hand-off was verified only as far as the generated URL: `/tests/make` requires an
+authenticated session and no test account was used, so the seeded draft was not
+observed. Answer submission was not exercised, for the same reason as the previous
+entry: the dev proxy writes to the production bank.
+
+## 2026-11-15 — Native Finna remaining-scene API access
+
+Extended mobile_identity.py with exact learner reads/writes for public materials
+and creators, owned material drafts/submission, account-owned Inbox, private desk
+room actions/focus, daily quest claims and versioned reward redemption. Existing
+CSRF helper already recognizes credential-validated native requests; existing
+ownership, moderation, rate, assessment, entitlement, version and idempotency
+guards remain authoritative. Inbox's self-service identity dependency now accepts
+only middleware-validated mobile sessions and keeps account-binding headers/write
+limits; privileged review identity and staff MFA are unchanged. No admin review,
+publication, moderation, bank/schema or production changes.
+
+Validation: 65 API tests pass across mobile companion, Inbox, private desks,
+content studio, creator profiles, rewards and bank dates, including new connected
+native credential tests for private draft ownership/version conflicts, Inbox
+binding, cookie CSRF retention, chat replay, membership termination and bilateral
+blocking. All test data belongs to the ephemeral PostgreSQL test database. No
+real account was connected and no live message/invitation/reward was submitted.
+No API deployment was performed; signed-in device use needs this bounded patch.
+
+## 2026-11-15 — Native authoring and deferred Razorpay release
+
+Added a separate learner-only mobile authoring adapter for original MCQ drafts,
+source-bound learning days/practice collections, shared timed tests and owned
+submission/history. It reuses normal evidence, version, source/readiness and
+review rules. Mobile owners receive no staff review/publication authority.
+Expanded exact native permissions for curated avatars, published tests and Topic
+Trail; added owned app/browser session listing and revocation with security events.
+Password/authenticator and actual payment collection remain protected browser flows.
+
+Razorpay is prepared for later activation: an explicit default-off checkout flag
+in addition to server-only credentials, raw-body HMAC checks, fresh provider state,
+per-subscription serialization and transactional webhook deduplication/effects.
+Authenticated mandates alone do not grant an active paid period, and an older
+subscription cannot overwrite a newer account linkage. Failed processing can be
+retried without losing its receipt. No merchant account, credentials, subscription,
+charge, cancellation or Dashboard webhook was created during implementation.
+Test-first activation instructions: `docs/RAZORPAY-LATER.md`.
+
+Deployed exactly six API files via `scripts/deploy.sh mobile-companion`, with
+checked preimages, rollback copies and verified installed hashes. No schema,
+bank, publisher, Caddy or unrelated website changes shipped. Migration 0082's
+mobile tables were already present; this release applied no migration. Both sites
+are healthy and live billing config returns `enabled:false`. Deployment receipt:
+`reports/mobile-release-20261115/receipt.json`; rollback directory on Oracle:
+`/tmp/finna-mobile-release-20261115-214825/backup`.
+
+Validation: 95 relevant mobile/Inbox/desks/studio/creators/rewards/dates/games/
+shared-tests/avatar/deferred-billing tests plus six Topic Trail tests pass against
+synthetic disposable PostgreSQL databases. One existing Starlette deprecation
+warning remains. The companion's 29 domain and 48 component tests also pass
+(178 total). No real account or production content/payment write was used for QA.
+Signed builds remain blocked on Expo ownership/login; ADB sees no device. These
+are release blockers, not source or bundle-export completion claims.
+
+Follow-up before handoff: found the Points hook still called the old cookie-only
+contribution summary, which could expire a valid native session. Added an owned
+summary adapter, switched the hook and extended the owner-token regression to
+read credit and then recheck its session. All 25 mobile tests, 48 components,
+typecheck/lint and platform/preview exports pass after the fix. Deployed only the
+adapter update through `mobile-credit` with a fresh exact preimage, separate
+`credit-followup.json` receipt and rollback directory
+`/tmp/finna-mobile-release-20261115-220506/backup`. The initial receipt is preserved.
+Both sites are healthy and checkout remains disabled.
+
+## 15 November 2026 — proposed Finna Stats system
+
+Added `docs/FINNA-STATS-DESIGN.md` for the requested India/global rankings,
+health/passport indices, state comparisons and Economic Survey section. Defines
+native Library placement, four views, detail/compare behavior, dated source
+labels, versioned data contracts, proposed API routes and phased delivery.
+Checked official World Bank, UNDP, WHO, Henley, NITI, Ministry of Finance and
+MoSPI/PIB documentation. Distinguishes automated approved series from reviewed
+report imports, publisher ranks from derived comparisons, data years from check
+times, and revised statistics from historical Survey/quiz editions. WHO Athena
+is retired; the proposal uses documented OData instead. Direct World Bank API
+probe returned HTTP 502; no numeric data or successful connector was claimed.
+Documentation only: no app/API runtime, database, production deployment,
+provider subscription or scheduled job changes. Implementation remains pending.
+
+## 15 November 2026 — native Stats implementation and deployed update pipeline
+
+Implemented `stats` API/router, strict release contracts, versioned immutable
+statistical releases/import runs, owner review decisions and public source-linked
+read projections. New additive 0084 was rehearsed against a fresh production dump
+clone (bank identity fingerprint unchanged), then applied independently of the
+unrelated pending 0083. Public mobile reads are explicitly allowlisted; staff
+publication remains cookie/CSRF/MFA/owner protected. No bank/assessment writes.
+
+Native Library now opens India, Rankings, States and Economic Survey. Includes
+same-period country comparisons, release/period selection, charts/exact values,
+publisher-vs-derived ranks, null-safe display, paged/searchable rankings, valid
+state groups and public offline snapshots. The Survey uses 17 chapter/part links,
+107 searchable official table links and two source-checked advance estimates.
+Initial seven WDI series, HDR2025 HDI and NITI Round IV state scores published.
+The report bootstrap is attributed agent source inspection, not human sign-off.
+
+Targeted API releases and source rollback/resume have exact frozen receipts in
+`reports/stats-release-20261115`. First installation exposed a libpq-vs-default
+DATABASE_URL mismatch in the new job; source rolled back automatically. Corrected
+standard PGDATABASE handling, checked retained 0084 checksum/rehearsal and resumed.
+Government source checks rejected the custom User-Agent, so ordinary requests are
+used. Smaller-page complete retries recover intermittent World Bank CDN failures.
+The subsequent real full oneshot service run passed, all sources unchanged, with
+no duplicate releases. Daily 02:10 India timer enabled. Both sites healthy and
+Razorpay checkout still disabled. No Caddy, publisher or whole-checkout sync.
+
+49 API tests (24 Stats + 25 mobile companion), 52 component checks + three cache
+checks, 29 domain checks, mobile lint/typecheck and Android/iOS/web exports passed.
+Phone browser QA exercised India/China common-year comparison, HDI ties and India
+pin, separate NITI groups, Survey catalogue search and estimate labels. Source
+checks and live readback saved. No signed binary or physical-device QA claimed.
+
+See `docs/FINNA-STATS-OPERATIONS.md`: passport publisher access remains unavailable;
+WHO/MoSPI direct connectors, further indices, full chapter briefs, saved revision
+cards/practice and a dedicated owner-review frontend remain future extensions.
+Catalogues detect changed links/labels; same-URL document replacement still needs
+source-byte reinspection at review. This is the working first Stats release, not
+an assertion that every proposed future phase/content item is finished.
+
+
+### 15 November 2026 — Stats website and automation-status clarification
+
+Added public website Stats using the existing production backend: India cards,
+same-year comparisons of up to four places, historical charts/exact tables,
+release selection, paged/searchable world and state rankings, Survey 2025–26
+chapter links/two cited figures/107 searchable official tables, and source/update
+explanations. Added Library/Subjects/More/Quick Find entries and Library phone-nav
+selection, preserving the supplied Finna light/dark tokens and existing shell.
+Rankings pin the exact loaded release; historical publisher ranks stay null;
+changed Survey catalogues pause all document links. Public reads omit credentials
+and use bounded dated offline snapshots only for transient failures, with route
+cleanup and stale-response isolation.
+
+Validated TypeScript/Vite production build; new Stats UI/helper/cache/failure/race
+checks; existing Quick Access and Review Navigation checks. Browser QA used live
+API data on desktop and phone widths, checking HDI India/China + 2022 selection,
+Survey appendix search, dark/light themes and page overflow. Built locally and
+deployed with `scripts/deploy.sh web` after retaining the production web preimage
+at /srv/study/backups/stats-web-20261115/public. HTTP readback matched the local
+index and Stats asset bytes; Stats routes/API and the shared family site returned
+200. Evidence: reports/stats-web-20261115/. No API deployment, migration, bank
+change or Caddy rewrite; unrelated dirty checkout work was preserved.
+
+Read the live systemd status and public freshness responses when asked whether
+updates are fully automated. The last full run succeeded 15 November at 17:21 UTC
+(22:51 IST), after bounded upstream retries. Daily timer is active; first scheduled
+trigger was still upcoming. WDI approved series can publish after validation;
+HDI changes/report imports need review; NITI/Survey catalogue watches do not fully
+inspect PDF bytes at stable URLs; Passport data access remains outstanding. No
+claim that every imported report is the latest available or that all figures are
+current-year measurements. Content/review frontend future phases remain open.
+
+### 15–16 November 2026 — YouTube transcript current-affairs preparation and OpenCode
+
+Located the two local current-affairs automation/quiz guides in Downloads and
+adapted their RSS/transcript idea to the existing Finna API/Postgres/content-studio
+workflow. Exact Claude Fable handoff provenance remains unidentified; historical
+news/static-answer/autopublish examples were not treated as instructions to
+publish unreviewed content. Current Finna tokens supply the owner workspace.
+
+Added migration 0085's isolated channel/video/transcript/draft/run/attempt/audit
+records; immutable caption identities; bounded public-feed/caption collection;
+strict source-linked JSON generation validation; rolling attempt budget, backoff,
+private owner inspection, channel management/retry and idempotent CMS notes-draft
+handoff. Proposed MCQs/cards remain private candidates. Owner/MFA/CSRF, active
+assessment answer restrictions, account clearing and mobile endpoint boundaries
+are preserved. No bank, historical answer, scoring or learner-publication writes.
+
+Integrated OpenCode 2.0.32 with explicit free-model allowlisting, isolated XDG
+state, fresh standalone tool-denied process, bounded repair/timeout and no paid
+fallback. Optional Gemini configuration requires an explicitly supplied server
+key/model; none was configured. Current initial model is
+opencode/deepseek-v4.1-flash-free, with six generation attempts per rolling day.
+
+The user-supplied public weekly recap (-cSCedPpqsM) yielded 473 automatic Hindi
+caption cues locally. Oracle YouTube caption requests were denied; genuine local
+captions were imported privately with their actual provenance. Both local and
+production OpenCode requests returned provider.quota HTTP 429, Free usage limit
+reached. Channel feed discovery succeeded (15 videos); production has one quota
+wait, two caption-pending records and zero generated drafts. Do not describe this
+as fully unattended operation or a completed model quality test. The six-hour
+systemd timer is enabled; failures are visible in the owner screen and service.
+A subsequent exact worker-only follow-up prioritizes recent videos and stops the
+batch after a provider-wide quota refusal.
+
+59 synthetic backend regression tests and focused owner UI checks passed;
+TypeScript/Vite build passed. Migration rehearsed on a disposable production dump
+clone, including immutable runtime grants. Bounded API release checked exact live
+preimages, retained unrelated source/unapplied 0083, installed the official npm
+integrity-verified ARM CLI, and preserved question/text/options/answer/provenance
+fingerprints. Frontend built locally and deployed with scripts/deploy.sh web;
+actual owner browser QA confirmed quota/source status and saved caption count.
+Study/Stats/family health and anonymous 401 checked; live index matches build.
+No shared Caddy/publisher rewrite, secret exposure, fake source inspection, account
+billing, generated-content publication or unrelated working-tree reset/commit.
+
+Evidence: reports/youtube-current-affairs-20261115/. Operations, free-tier caveats,
+remaining external blockers and recovery: docs/FINNA-YOUTUBE-CURRENT-AFFAIRS.md.
 
 
 ## 16 November 2026 — MCS technical explanations and source locator
@@ -9525,6 +11045,322 @@ source identity/figure/radical repairs and exact-key notices remain. Keep
 2012/2013 deferred and original simulation gated. Receipt/checkpoint:
 `docs/sources/mcs-publication-20261116.json`; private proof `reports/mcs-continue-20261116/`.
 
+### 16 November 2026 — Free-only current-affairs API exploration
+
+Owner clarified that OpenCode must never require a future paid subscription.
+Recorded this constraint in the operations guide. Researched official free-tier
+limits and API docs for Gemini (including direct public YouTube video input),
+Groq, OpenRouter, Cloudflare Workers AI, local Ollama and Supadata transcripts.
+Supadata's 100 monthly free credits need native-only mode: generated transcription
+costs two credits per video minute. Gemini's currently free 3.8 Flash and public
+YouTube preview are candidates requiring a free-project/key and actual quality
+validation; no new key or model/provider switch was made.
+
+Performed read-only public HTTP probes locally and from Oracle. RBI press and
+notification RSS returned ten items each; PIB's advertised feed redirected and
+returned zero items; Mizoram DIPR HTML was accessible without an advertised feed;
+GDELT search and Akashvani homepage timed out. Kept API discovery distinct from a
+working current feed. NewsAPI Developer excludes production; Guardian free is
+non-commercial; NewsData public-app licensing remains unresolved from its current
+pricing/terms despite broader blog claims, so none is presented as an established
+free public-production solution. No subscription, account creation, paid fallback,
+service installation, database/bank change, or publication. Research evidence and
+probes: reports/current-affairs-api-research-20261116/. Recommendations and phased
+integration: docs/FINNA-CURRENT-AFFAIRS-FREE-APIS.md.
+
+
+## 16 November 2026 — source-checked answer review
+
+Inspected two registered originals and published verified unofficial answers through
+Oracle's guarded owner workflow. PHED Electrical Q28's omitted earth-ground glyph
+was restored inline from the exact page before verifying Earth. JE Agriculture
+Technical Paper II Q71's visually inspected option boxes carried no distinct content;
+clearing its stale missing-figure flag allowed verification that IV is the odd item.
+Both applied answer receipts and complete live snapshots match, and the protected
+bank/taxonomy sync check is `IN SYNC` for 82,383 records.
+
+Current Oracle `needs-review` total: 2,917 (2,883 held/source-defective, four
+official-key option/source issues, and 30 unverified derived answers). All 30
+remaining derived candidates still have missing figure assets and need exact source
+inspection/repair before answer publication. Do not treat the global count as known
+wrong answers. Detailed source hashes, publication IDs, live counts and exact resume
+notes: `reports/mpsc-answer-review-20261116/README.md`.
+
+### 16 November 2026 — Current-affairs free-provider integrations deployed
+
+Owner chose to finish integrations and configure keys later. Added RBI press and
+notification collection to the existing six-hour worker, private source revisions,
+owner release/evidence inspection, stale-source guarded CMS draft handoff and
+shared AI/caption request budgets. Integrated Gemini text and stateless public-video
+analysis plus Supadata native-only captions, with explicit free-provider guards.
+Both new providers remain unconfigured and generation disabled. No subscription,
+paid fallback, learner publication or bank modification was enabled.
+
+Deployed bounded API/worker files and the built owner website. Real RBI collection
+captured 20 releases / 1,322 paragraphs and repeated without duplicate revisions.
+The supplied video's 473-cue transcript remains intact. Worker run 6 confirms RBI
+success under restricted runtime grants, with overall partial status from Oracle's
+YouTube RSS HTTP failure and missing Supadata key. Timer remains active; zero live
+Gemini generations or Supadata transcript requests. Actual AI quality awaits keys.
+
+Final production checking caught broad default ACLs missed by the initial 0086
+clone rehearsal's no-privileges restore. Added immutable migration 0087, rehearsed
+with production ACLs preserved, and verified append-only runtime access on evidence
+and audit tables after applying. Added a regression for inherited broad grants.
+All 78 backend tests, both UI checks and TypeScript/Vite build passed. Authenticated
+browser inspected the live release queue and evidence controls. Both sites and
+Stats overview are healthy; feature source hashes match and the release bank
+fingerprint is unchanged. PIB/DIPR/GDELT and semantic multi-source daily digests
+remain later extensions, not claimed automated. Receipts and screenshots:
+`reports/current-affairs-free-release-20261116/`; private-key steps and recovery:
+`docs/FINNA-CURRENT-AFFAIRS-SETUP.md`.
+
+
+### 16 November 2026 — continuation of source-checked answer review
+
+Continued the owner-authorized review. Tourist Officer Technical Paper III Q95 was visually checked against the exact registered page 9 (SHA256 `eebe7b81665c419adc83987d8aeb1974ce2329935f634fb5960bafdc6d0d6028`). Its page-level figure flag belonged to neighboring Q96; cleared only that unrelated flag, then published C as a verified unofficial answer with a concise height-order explanation. Both guarded publications are applied, exact live readback is verified, and `sync-bank.sh --check` remains `IN SYNC` with 78 protected papers / 6,931 questions.
+
+Fresh Oracle counts: 2,916 `needs-review` questions (2,887 source-lane and 29 answer-lane). The 29 answer-lane candidates have unrepresented figures. Four other live official-answer items have missing/blank option entries; their exact pages were inspected, but source correction remains guarded on registering the matching official-key evidence. The 173 failed publication records were reconciled to stale/withdrawn exports or one intentionally stopped incorrect answer and were not blindly retried. Detailed evidence and exact receipts: `reports/mpsc-answer-review-20261116/README.md`.
+
+
+### 16 November 2026 — continuation and final readback of answer review
+
+Continued the owner-authorized Oracle review through the guarded source/answer workflow. Restored hash-matched page assets and verified answers for Technical Paper-II Q74 (5), mason-tool Q71 (D), MCS Combined 2014 Q86 ((0, −3)), Mechanical Engineering IoF Q48 (C), Library-Lunglei Q16 (4), Surveyor-I dice Q71 (6), and MCS Combined 2021 Q80 (4). All source and answer publications were read back as applied. The final MCS Q80 publication is `pub_c6ecccaaa33e40f88f1a874b7661e755`.
+
+MES Electrical Paper-III Q36 remains unverified: the printed J=Q̅, K=1 setup over six pulses produces 101010, which is absent from the options. Do not certify the stored D unless the source/key is clarified. Current Oracle totals are 3,221 `needs-review` (3,220 held/source-defect and one answer ambiguity), 13,417 official, 221 unsolved, 57,348 verified and 8,176 written. The needs-review total increased by 329 versus an earlier read during this run; the source/answer repairs do not explain that movement, so it is recorded as an unresolved count change rather than claimed as progress.
+
+Final `sync-bank.sh --check` is `IN SYNC` for 82,383 questions and 82,383 approved taxonomy rows; 78 papers / 6,931 questions remain under editorial protection. The publisher timer is active and its service is idle. The publication table shows 124,843 applied and 175 failed; two failed Q74 exports record the initial missing-asset path and are superseded by applied corrected publications. Full current inventory and receipts: `reports/mpsc-answer-review-20261116/README.md`.
+
+### 16 November 2026 — 3,000-question review continuation
+
+Corrected the previous mason Q71 error: the actual plumb-bob diagram is on physical page 12. Restored its page and figure with applied publications `pub_0aeda13b07954f70bb85cc9212be307a` and `pub_38a7363c4dcb4717b4017440f550bc1e`; answer publication `pub_dcb80861fcac4df795d8301a9ff33a09` is applied. The prior false assertion that this question had no diagram is superseded.
+
+Reviewed and released eight mistaken option-count audit holds, with exact source-page inspections, supporting references, source snapshots and applied original answer publications recorded in `reports/mpsc-answer-review-20261116/README.md`. These eight live verified outcomes reuse existing applied answer publications; do not count them as eight new exports. Current counts: 3,213 needs-review and 57,356 verified; timer active, service idle, no outstanding export. Some nearby answers appear incorrect or have missing task context and remain held; see the report before continuing. The 3,000-question goal remains in progress.
+
+
+### 16 November 2026 — Current-affairs plan completion: official pages and briefs
+
+Owner requested finishing the remaining plan while keeping private provider keys
+for later. Implemented fixed, bounded PIB and Mizoram DIPR page collectors; both
+captured eight full-text releases from Oracle. Added migration 0088, rehearsed on
+an ACL-preserving production clone, with immutable brief evidence and protected
+generated-payload grants. Shipped only the exact feature API/service/worker files
+and built/deployed the owner website through the normal web deployment target.
+
+Daily and rolling seven-day source packets now collect under the six-hour timer,
+using Asia/Kolkata publication windows, visible keyword triage, complete-source
+input caps, context-preserving exact passage deduplication and immutable source
+citations. Free-provider generation can propose semantic grouping, contradictions
+and supported notes/quiz/cards; daily/weekly work shares attempt/time limits with
+individual drafts and uses fair scheduling. Owner inspection/retry/reject/private
+CMS handoff rechecks every underlying source hash, with existing owner/MFA/CSRF,
+assessment and mobile credential boundaries. No automatic learner publication.
+
+Final production run 9 collected all four official feeds and refreshed both
+packets: 40 retained source items, daily eight sources/406 passages, weekly eight
+sources/479 passages. YouTube RSS discovery succeeded in runs 8 and 9 after earlier
+transient HTTP failures. Overall runs remain partial because captions await the
+Supadata key. Gemini/Supadata keys remain absent, generation disabled, zero native
+caption requests or source/brief AI drafts. Original supplied transcript preserved.
+
+Browser inspection caught stale source-status copy and two packet refinements:
+keep short repeated table values separate and retain DIPR identity for Mizoram
+triage. Corrected, regression tested and deployed with separate receipts. All 96
+backend tests, three UI checks and local TypeScript/Vite builds pass; authenticated
+production browser shows actual packets, source links and paused AI controls.
+Installed hashes match, restricted grants pass, study/Stats/family health is good
+and this release's bank fingerprint is unchanged. Key setup and actual generation
+quality checks are explicitly deferred, not claimed complete. Evidence:
+`reports/current-affairs-plan-completion-20261116/`; current checklist:
+`docs/FINNA-CURRENT-AFFAIRS-PLAN.md`.
+
+
+## 16 November 2026 — Finna project name
+
+Renamed the local checkout to `finna/`, retaining `india-study-map-app/` as a
+relative compatibility symlink for existing chats, virtual environments and
+operator scripts. Updated the README, npm package/lock metadata, browser title,
+brand accessibility label and API title to Finna. Confirmed the existing public
+GitHub repository `gasey/study_website` using the connected GitHub service; the
+origin remote remains attached. This is a local rename, with no deployment.
+
+Validation: both directory paths resolve to the same checkout; package and lock
+metadata agree, and the Git origin URL is preserved.
+
+
+## 16 November 2026 — open Finna Home directly
+
+Removed the standalone introductory page from the root route. `/` now uses a
+replace redirect to `/feed`, preserving query parameters and fragments. Removed
+the legacy Home lazy loader and made root-link preloading warm StudyHome instead.
+The shared shell no longer has a separate landing-page exception. The unused
+Home source and its existing edits are preserved.
+
+Validation: production TypeScript/Vite build and the existing Study Home
+continuation/account-isolation checks passed. Browser preview confirmed
+`/?exam_scope=all#main-content` becomes `/feed?exam_scope=all#main-content`.
+Deployed the web-only artifacts with `scripts/deploy.sh web`; live browser checks
+confirmed both the clean root and the parameterized root open the redesigned
+Home. API health remains OK; family root responds with its existing HTTP307.
+Rollback copy: Oracle `/tmp/finna-home-before.lbF9lG/public`. Screenshot:
+`reports/finna-home-entry-20261116/live-home.jpg`. No API deployment or bank changes.
+
+
+## 16 November 2026 — Razorpay test configuration
+
+Generated Test API keys with explicit owner confirmation and stored them outside
+Git with private permissions. Verified the Subscriptions Plans API. Added the
+Hostinger finna-test A record and an isolated billing-only API/database, exposing
+only its signed webhook using a separate Caddy snippet. Registered 12 test events;
+Dashboard shows Enabled. Invalid signatures are rejected; the test API is private
+and production checkout remains disabled. Four existing deferred-billing tests
+pass. A monthly checkout opens, but the simulated bank redirect stalled; no paid
+success/webhook-delivery acceptance is claimed. Pending owner confirmation to
+cancel the simulated attempt and retry. Full state, paths and remaining tests:
+`docs/RAZORPAY-SETUP-20261116.md`. No production payment keys, entitlement changes
+or bank publication. Payment display labels now use Finna Pro locally and in the
+isolated test service; this API label change is not deployed to production.
+
+
+### Razorpay test payment acceptance — 16 November
+
+The stalled first attempt timed out automatically, making the pending cancellation
+confirmation obsolete. Retried with the official subscription test card and the
+documented synthetic OTP flow. Provider checkout reported Payment Successful;
+server verification and the isolated account show pro/active with a current paid
+period. Exactly one captured INR9900 receipt and one subscription are saved. Five
+provider webhook events arrived: failed, captured, authenticated, activated and
+charged. Sent the stage cancel-at-cycle-end request; current access remains active,
+and the future terminal event is not yet verified. Source receipt and screenshot
+are in `reports/razorpay-setup-20261116/`. Production checkout remains disabled.
+The earlier pending-cancellation note above is superseded by this acceptance.
+
+## 2026-11-16 — Razorpay launch preparation
+
+Fixed abandoned-checkout reuse, serialized simultaneous checkout, allowed a new
+purchase after provider-confirmed terminal states, and bounded annual cycles to
+Razorpay's 100-year limit. All13 billing integration tests pass on a disposable DB.
+Deployed only to the isolated test service. Actual Test API cancellation and its
+provider webhook passed; repurchase and repeated checkout reuse also passed.
+Production checkout remains disabled; study health and family HTTP200 verified.
+Live API-key generation requires browser action-time confirmation and is pending.
+See docs/RAZORPAY-SETUP-20261116.md for evidence and remaining provider-time limits.
+
+## 2026-11-16 — Razorpay live configuration prepared, checkout off
+
+Saved the owner-generated live API pair privately from its one-time Dashboard
+modal; authenticated live API access passed. Installed the tested router and
+live secrets through a bounded preimage/rollback installer, with checkout false.
+Registered the live webhook (Enabled,12 events), created and fetched back all
+three live plans at unchanged prices, and verified zero production subscriptions,
+payments or webhook receipts. Both sites passed health checks. No charge made.
+Credentials remain root0600 on server/outside Git locally; temporary uploads removed.
+Owner launch choice is pending under docs/RAZORPAY-LATER.md. Receipt and rollback
+location are recorded in docs/RAZORPAY-SETUP-20261116.md.
+
+## 2026-11-16 — Owner-selected ₹50 monthly price and extra Pro days
+
+Owner corrected the standard price to ₹100/month, specified ₹50/month for selected
+people, and requested manual extra days. Implemented monthly-only new checkout,
+immutable provider price versions, account-bound discounts and owner admin controls.
+Extra days are separately audited, immutable and idempotent, stack with trials /
+paid / rewarded access, survive provider cancellation and expire through the shared
+entitlement function. Existing mandate prices and renewal dates are unchanged.
+
+All27 billing/access/rewards tests and frontend build passed. Full production-dump
+migration rehearsal preserved existing access and bank counts. Applied only0089,
+deployed four exact API routers plus web, and verified both sites. Actual isolated
+Test API exercised both prices, grant/retry and checkout reuse. Live provider plans
+for100/50 were fetched and verified; no customer discount/grant or payment created.
+Paired rollback: /root/finna-owner-billing-suy2t3ca. Checkout remains disabled pending
+owner launch choice. See docs/RAZORPAY-SETUP-20261116.md for limitations and evidence.
+Live browser readback also verified the signed-in owner panel and account lookup;
+no live account mutation was made. Public /plans shows only ₹100/month with paid
+checkout disabled. Screenshots and receipt: reports/finna-owner-billing-20261116/.
+
+## 2026-11-16 — Current Affairs feed + YouTube MCQ pipeline design
+
+Wrote docs/Currentaffairs.md: design for a new Current Affairs section (RSS news
+feed + MCQs auto-drafted from the owner-chosen YouTube channel "Current Affairs
+Updated", channel UCI3bSml8bhxAsNHh-eQqJEQ) — separate subsystem from the existing
+current_affairs editorial tables, same review discipline, AI drafts never enter
+the bank. Verified against the real channel: Hindi original with good auto-English
+captions (~3,200 words / 20-min daily video); caption fetch works from the home
+machine and is expected to be IP-blocked from Oracle, so detection runs on Oracle
+and transcript+generation on the home box. Measured limitation: qwen3.5:9b via
+Ollama on the home box is too slow on CPU (>9 min/chunk, unusable); qwen3.5:4b is
+the candidate but its per-chunk time is UNMEASURED — the proof-of-concept run was
+stopped before completing. Nothing implemented or deployed; no schema changes.
+
+## 2026-11-16 — Finnaplan V.1 first implementation slice (local)
+
+Read FINNAPLAN plus repository instructions and began the first bounded Part V
+slice. Added explicit anonymous browse HTTP validators (URL/body/generation ETags,
+304, credential Vary, mandatory revalidation), with any cookie/token/device header,
+personal history, errors, Set-Cookie, over-limit body or in-flight invalidation
+failing private. Ordinary no-credential question reads no longer create guest
+identities; private actions/history preserve existing account boundaries. Mobile
+allowlists, answer gates and rewards are unchanged.
+
+Fresh Oracle full dump restored locally, workers not started. The two slowest of
+six measured public reads were the paper directory and collection totals. Replaced
+per-paper correlated taxonomy scans with a one-time matching-paper set and added
+0090_public_browse_indexes.sql (canonical/paper covering index; approved
+subject/topic/question partial index). Three EXPLAIN ANALYZE/BUFFERS runs under
+mpsc: median paper SQL5588.733→278.012ms; section totals1462.653→1266.593ms.
+Migration applied in268.915ms on the clone only. Scope/pool result parity and full
+row fingerprints preserve questions, appearances, classifications, attempts,
+reward ledger and review grants. Clone grants restored only for read profiling.
+
+88 focused tests pass/one known baseline deselected; local TypeScript/Vite build
+passes. Existing test_board_total_survives_empty_page_and_private_placement fails
+because the shared checkout's board returns stream_cohort/streak beyond its old
+four-field assertion; reproduced with the new middleware bypassed. No full-suite
+success or production release claimed. The SPA currently creates a guest cookie
+before its API reads and always sends X-Device-Id, so activating anonymous browse
+there requires the next deliberate client/identity slice. Power-filter metering
+also remains pending. V.2 not started;0091 is now next free locally. No production
+migration/deployment, content publication, bank write or economy change. Sanitized
+receipts: reports/finnaplan-v1-20261116; private dump/clone/raw plans cleaned up.
+
+## 2026-11-17 — Finnaplan V.1 deployed: browse performance and filter allowance
+
+Completed the first phase after the16November local slice. Stateless catalog
+reads now deliberately omit credentials and skip the account lookup; question
+lists retain their existing guest/account booklet history. Any credential-bearing
+server request remains private. Added0091_daily_feature_limits after0090 indexes:
+three distinct combined-filter queries per free account per IST day, registered
+account gate, replay/pagination receipts, concurrent cap, existing billing truth
+for unlimited Pro and a visible responsive meter. Speculative prefetch/year probes
+never admit a new metered query. Added private mobile allowance GET/capability
+only. Public XP board rows again contain only handle/avatar/rank/XP.
+
+963backend tests pass in117.62s, one upstream warning; transport/browse Node checks
+and TypeScript/Vite build pass. The broader42failures reproduced with the new
+behavior bypassed: session-wide DB fixtures leaked active mocks/account/content
+state across modules. Modules now clone a once-migrated idle schema; standalone
+rehearsals keep their independent fresh_database helper. Corrected stale fixture
+expectations for daily/weekly generation selection and explicit exported/unlisted
+publication guards. No tests deselected and no production guard weakened.
+
+Fresh full dump clone rehearsed0090/0091 in273.988/38.960ms, preserving full row
+fingerprints for content, attempts, ledger, grants, sessions and access grants;
+new counter rows zero. Original perf proof: paper SQL5588.733→278.012ms, section
+totals1462.653→1266.593ms (local clone medians). Local320px free-account meter
+0/3→1/3 and replay1/3 verified; live390px actual Pro Unlimited state, loaded bank
+and no overflow/console errors checked. No live answers/reviews/fake activity.
+
+Released via scripts/deploy.sh finnaplan-v1 with live preimage checks, paired
+API/web/full-database rollback snapshot /root/finna-v1-backup-_hq4_gqi, migration
+ledger checksums and10API/330static artifact readbacks. Final web-only Desk-meter
+visibility follow-up also matches330hashes. Anonymous200/ETag→304 and Cookie
+private/no-store/no-ETag checks pass; study and family healthy. No Caddy/workshop
+change, bank publication, new rewards, paid checkout or catalog enablement.
+Applied0090/0091 are immutable. Private local dump/clone and temporary UI fixtures
+cleaned; server rollback retained. Receipt: reports/finnaplan-v1-20261117.
+Continue V.2 mastery/review/Today/focus/heartbeats at actual next-free0092+; the
+remaining Finnaplan phases are not built and the overall goal remains active.
+
 
 ## 17 November 2026 — MCS explanation contrasts and dated context
 
@@ -9560,6 +11396,1427 @@ Queue: 67 published, 11 not-needed, 983 pending,
 not whole-bank completion. Preserve unresolved inference limitations, source/option
 backlog and exact-key checks. Keep 2012/2013 deferred and simulation gated.
 Receipt: `docs/sources/mcs-publication-20261117.json`. Private proof: `reports/mcs-continue-20261117/`.
+
+## 17 November 2026 — Finnaplan V.2 local mastery/review foundation
+
+Implemented a bounded V.8 slice of V.2 in draft migration0092, not deployed.
+V.1 remains live. Added verified-key topic mastery, distinct latest-question
+accuracy using immutable attempt/mock assessments, delayed completed-review
+mastered gating, correction demotion and the45-day rusty display overlay.
+Mock snapshots remain in their existing served-item table; original attempts and
+scores are never rewritten. Practice/review/game reassessments enqueue learning
+updates; guest-history adoption and approved classification changes do too.
+
+Added the typed review queue and1/3/7/16/35-day IST Leitner schedule, replay-safe
+promotion, graduation, wrong-answer reset and latest-mistake seed without reward
+backfill. Durable versioned per-account jobs reconcile other writers and nightly
+drift; the new worker is born with worker_heartbeats and persisted failure state.
+New private account endpoints expose mastery, queue and focus; up to5 focus
+subjects require active registry IDs. Due totals never shrink when focus changes.
+Server-composed Smart Review freezes at most20 oldest-due IDs/sources and reuses
+study-session routes with context review. Assessment/reveal/current eligibility
+guards remain. Mobile explicitly gains reads/capabilities and rejects both new
+writes and inherited study writes against web-created review sets.
+
+Full isolated PostgreSQL suite:973 passed in112.78s, one upstream Starlette/AnyIO
+deprecation warning. Real mpsc execution covers rollups, seed, scheduling, worker
+beats and queue visibility. Tests prove original/unverified provenance exclusion,
+mock/latest reassessment semantics, corrected games, adoption, guest/account
+boundaries, focus honesty, delayed mastery, replay and zero new review awards.
+Existing unit request fixtures now include session kind/request; reassessment
+assertions select latest history after immediate answer assessments. Web build
+passes; this slice adds no web screens and claims no new UI/browser verification.
+
+Rehearsed exact draft0092 on a fresh full production-dump clone on Oracle:
+49.061ms apply; all original columns/rows of207tables preserved. Two account
+learning jobs enqueued, zero mastery/review seed rows in the migration, no award
+backfill. No workers or synthetic activity ran on the clone. The full local dump
+transfer was stopped because of slow transport and its private partial file was
+removed; the completed rehearsal kept its dump/clone server-local and removed both.
+Both study.hawayu.in and family.hawayu.in returned200 after cleanup. No production
+schema application, API/web deployment, bank edit or learner mutation occurred.
+
+Continue V.2 in draft0092 before allocating0093: activity/progress rollup reads,
+composed Today, calendar read layers, Home/revise/mastery/focus UI and login
+backoff, then complete-phase paired release checks. Later phases remain pending.
+Checkpoint and sanitized evidence: `reports/finnaplan-v2-20261117/README.md`.
+
+## 17 November 2026 — Finnaplan V.2 Today/progress/UI continuation, local only
+
+Implemented account progress rollups in the same unapplied draft0092: sparse
+day/subject/scope counters and distinct-question membership update transactionally
+on attempt insert/adoption. `/me/progress` reads these for accounts; guests keep
+device history. Original all-activity totals remain distinct from verified-key
+mastery. Reconciliation repairs classification/adoption drift without rewards.
+
+Added one composed Today GET (complete due count, saved-exam/focus weak-topic
+unseen target, existing Daily Five and quest state); primary flags extend saved
+exam bookmarks with serialized selection/removal and fallback. Home's two exam
+selectors share the account choice. Reads never create sets, attempts or awards.
+Added calendar forecast/verified-activity reads over the existing month grid and
+early-review composition; intervals use actual answer dates. Guests get only
+official data. Existing publication, current eligibility and assessment guards
+remain. Mobile deliberately gains Today/calendar reads/capabilities; focus,
+primary and Smart Review writes stay web-only, including inherited study routes.
+
+Added Home Today/focus sheet, `/revise` with paginated queue browsing and the
+existing saved player, Profile/exam mastery with phone accordions and retained
+outside-exam topics. `/mistakes` redirects here. Active review sessions use the
+focused phone shell. Fixed Home's use of summary-only progress for detailed
+subject/week cards and a narrow Profile activity grid exposed by320px checks.
+V.9/V.10 vocabulary/saved-revision consolidation and weekly growth recap are not
+claimed complete by this bounded slice.
+
+Added independent persisted account/IP sign-in failure backoff and an IP burst
+budget, retaining original origin/MFA controls. Failed credential transactions
+cannot undo throttling. Existing purpose-bound single-use password recovery
+clears account/related legacy login locks without clearing the IP guard.
+
+Validation:978 backend tests pass in114.27s (one upstream Starlette/AnyIO warning);
+final39 focused learning/mobile checks also pass. Real mpsc role exercises rollup
+repair/reads and composed Today. Local TypeScript/Vite build, public/question
+browse checks and review-navigation renderer pass. Renderer installed only into
+an owned disposable /tmp path; no repository package/lockfile changed.
+Synthetic browser flow proves5due→compose→one correct→reload preserves feedback→
+finish1correct/4skipped→mastery5distinct/20% and forecast4today/1three days later.
+Focus save preserved full due count.390px Home document375px, CTA bottom432px;
+320px review/mastery/calendar document305px, no horizontal overflow. Preview API
+was restarted once after a local process exit; the completed flow passed after
+restart. Screenshots retain synthetic local data only. Tab closed, viewport reset,
+preview servers stopped and their disposable fixture databases cleaned.
+The interrupted preview left one orphan, identified by its exact synthetic
+Sentence-patterns marker and13question/5attempt/1focus counts; it was removed
+explicitly after the completed preview cleaned its own database.
+
+Fresh production-schema inspection revealed missing0083_daily_five despite0082
+and0084–0091 being present. Fresh-schema tests had hidden this live dependency.
+The final full-dump rehearsal explicitly applies immutable0083 before draft0092:
+25.841ms and91.679ms respectively; all original columns/rows across207tables
+preserved, two account jobs enqueued, no mastery/review seed rows or awards.
+No worker/app pointed at the clone. Earlier failed clone rehearsals and final
+clone/dump were removed; both study/family returned200 afterward. Exact0092 SHA
+f044482618afb4c0a85eb805d9e047c9565e4d4e944c0b9239e89ffd9f072968.
+
+V.1 stays live. No production schema/API/web deployment, bank edit, source review,
+pricing change or real learner mutation occurred. Next audit live preimages and
+Daily Five code dependencies, then prepare the bounded paired release including
+missing0083 and0092 with checksums/rollback/readback. Check remaining V.2 recap
+requirements before marking the phase complete; do not start V.3 awards yet.
+Checkpoint: `reports/finnaplan-v2-today-20261117/README.md`.
+
+
+## 17 November 2026 — Finnaplan V.2 bounded release
+
+Completed the live preimage audit:19candidate API files (12existing/7new), with
+116other Python sources identical to local. All330live static files matched the
+V.1 follow-up receipt. Froze exact API/schema/static hashes in
+reports/finnaplan-v2-today-20261117/release-scope.json; shipped335built web files.
+The remaining dirty checkout was not used as an API deployment list.
+
+Connected Today's previously dead Daily Five destination to its fixed non-technical
+preview, shared player and saved-entry link. Catalog reads/previews never create a
+daily set. Shared answer review now waits until the IST event closes, with an
+unlock test; existing game reward rules/caps remain intact, with no daily-completion
+award. Phone320px preview had305px document width; start, reload and saved entry
+were observed on a disposable fixture. Its tab/viewport/servers/database were
+cleaned. No production learner answered a test question.
+
+Final isolated suite978passed in92.10s (one upstream Starlette/AnyIO warning),
+TypeScript/Vite build and public-browse/question-browse/review-navigation checks
+passed. Expanded full-dump rehearsal preserved live ACLs and all original rows/
+columns of207tables.0083applied22.351ms,0092applied88.802ms. One clone-only cycle
+seeded30mastery/32review rows without changing any old-table fingerprint or ledger.
+16private read-only route/preview checks passed as mpsc across two account histories.
+A first expanded run stopped before seed on an inaccessible SSH working directory;
+it cleaned up, then the corrected fresh run passed. No production mutation resulted
+from the failed rehearsal. All disposable remote clone/candidate/dump data removed.
+
+Deployed via scripts/deploy.sh finnaplan-v2 with preimage checks before/after paired
+backup, immutable migration checksum ledger, and automatic paired API/web rollback.
+0083and0092are now applied and must not be edited.19API/335static hashes read back;
+reconciler heartbeat successful, pending jobs0. Live16read-only ASGI route checks
+passed with account progress equal to attempt ground truth, full due counts intact
+and Daily Five preview reads valid. Separate verifier process used an internal
+identity override and enforced read-only connections; it created no login session
+or learner activity and did not change live authentication. Ledger46→46: no award
+backfill. Public taxonomy200/304 and Cookie-private guards passed; both study and
+family200. Root-only paired rollback retained at /root/finna-v2-backup-x22kunp4;
+remote staging removed. No Caddy, unit files, dependencies, bank or workshop change.
+
+Receipt: reports/finnaplan-v2-today-20261117/release.json and README.md. V.2 is live;
+continue V.3 habit at actual next-free0093+. Monday recap is explicitly V.5, not a
+V.2 blocker. Unified streak/new quests/review-session awards and later phases are
+still pending; the overall Finnaplan goal remains unfinished.
+
+Independent post-release SQL confirms0083/0092checksums,30mastery/32review rows,
+0pending/failed jobs, recent heartbeat and46ledger rows (post-release.json).
+Temporary local source/static preimage audit copy removed; frozen manifests kept.
+
+
+## 17 November 2026 — Finnaplan V.3 habit release
+
+Implemented/released one account streak from reward_profiles, across progress
+(summary/detail/exam lens) and Rewards. Eligible wrong responses qualify; original
+official/key provenance/current strict eligibility and submitted non-late mock
+proof required. Views/claims/guests/inferred proof/future or historical inserts
+cannot manufacture an account day. Shields preserved, stale projections consistent;
+guest activity remains IST device activity with explicit UI labels.
+
+Immutable daily plans capture full due membership, weak-topic unseen pool/target,
+exam and Daily Five at first learning write. GET remains pure; changing focus/exam
+cannot shrink the started plan. Server-owned review item metadata freezes due date,
+opening time and exact answer receipt. Completion of8due checks with60%accuracy and
+3s/item can pay20XP+2points, two slots/day; saved finish receipt replays once. Early,
+rushed, skipped/viewed or duplicate scheduled occurrences cannot re-award. Review
+items pay nothing individually. Shared300XP clamps review/quest/fractional discovery
+awards. No historical or worker award backfill.
+
+Review and fixed-plan rings replace old cross-stream/high-score keys. Old routes
+alias, and immutable cutover-day old receipts settle their replacement. Claims do
+not qualify a streak. Diagnostics audit review receipts/slots/orphans and duplicate
+old/new ring slots; owner read permission check no longer takes an unnecessary row
+lock. Mobile advertises learning_habit; existing reads/quest claims only, review/
+focus writes remain V.6.
+
+A full-suite concurrency guard caught a real mock-admission lock inversion. Moving
+plan capture after canonical SHARE locks/eligibility recheck resolved it; the
+existing concurrency test plus7habit tests passed (8targeted). Final full suite
+985passed in143.64s, one upstream warning. TypeScript/Vite and three transport/
+navigation checks pass.320px local browser:8due→8correct→20XP+2points→reload receipt,
+Profile/Rewards both1day, Review ring8/8→claim30XP+3points; wallet50XP/5points. Loaded
+review and wallet widths305px; screenshots saved. Synthetic local account only;
+preview tab/viewport/servers/database cleaned, no real production test activity.
+
+Fresh full-dump rehearsal applied0093in45.272ms, preserving every old row/column of
+217tables and restored ACLs. New habit tables stayed empty.19private read-only
+route/preview/diagnostic checks passed as mpsc, including actual owner diagnostics
+with all8integrity counters0. No workers or synthetic activity on the clone; clone,
+private dump and candidate removed. Both sites200. The later mock lock move affects
+no rehearsal read path and is covered by the final passing full suite.
+
+Bounded scripts/deploy.sh finnaplan-v3 released13API/335static files, guarding123
+unchanged API Python sources and335live static preimages from the V.2receipt.
+Full paired API/web/database rollback retained privately at /root/finna-v3-backup-fl5svc1r.
+0093is applied/immutable, checksumfffbd30e10ad7ddff9da43322f19a22185d2d909fa457d327116df81fd888b75.
+All deployed hashes matched;19read-only live checks and diagnostics passed, worker
+healthy/pending0, catalog200/304/Cookie-private guards pass, study/family200. The
+separate ASGI verifier selects actual existing identities internally with read-only
+connections, creates no credential/session/MFA claim and changes no live auth. Ledger
+46→46 at release: no backfill. Remote staging removed; local audit copies removed
+once manifests saved. No bank, Caddy, unit, dependency, billing/provider or catalog
+activation changes. Receipt: reports/finnaplan-v3-20261117/release.json.
+
+Next V.4 economy at actual next-free0094+; activation gate stays dark until actual
+paid checkout and diagnostics satisfy the plan. Mobile writes remain separateV.6;
+recapV.5/consolidationV.9/vocabV.10 pending. Whole Finnaplan goal remains unfinished.
+
+Additional isolated application-role write check passed after the985-test suite:
+review_finish executed as mpsc and wrote exactly20XP/2points with the expected
+session receipt (role-award-test.txt). No runtime changes followed that suite.
+Final temporary source/static audit tree and owned helper scratch file removed.
+
+Independent post-release SQL readback (`reports/finnaplan-v3-20261117/post-release.json`) confirms the applied0093checksum,0pending/failed jobs, recent worker heartbeat,0new habit event/plan/receipt rows and46ledger rows.
+
+## 2026-11-17 — Finnaplan V.4 limits/catalog local checkpoint (not deployed)
+
+Draft0094 centralizes new study/game ledger budgets: learning-v2,300XP/day,
+25points/day and pillar point sub-caps12/4/3/4/1/10 (milestones inside25).
+Counters initialize lazily from actual same-IST-day receipts; no backfill or
+historical mutation. Rewards advisory lock plus AFTER INSERT consumption makes
+concurrent writes/retries safe. Contribution/content budgets remain separate.
+Review summaries and quest claims persist actual RETURNING clipped amounts,
+including partial/zero points, so receipts and UI agree.
+
+Catalog data repriced disabled: pro-week400/7days+version increment, new
+pro-month1500/30days. Owner launch checklist shows legal pages, working recovery,
+paid checkout and full-v2 seeded-week requirements; API blocks both activation
+and new redemptions until all green. Legal/full-v2 evidence remain explicitly
+pending, checkout configuration stays operator-managed. Rewards adds the free-month
+meter and study point limits; diagnostics adds4 counter/cap integrity checks.
+No arbitrary award API, historical award mint or new mobile write scope.
+
+28 focused tests pass. Initial full suite996passed/2failed: metadata expectedv1,
+and an entitlement fixture enabled redemption without modeling the new launch gate.
+Corrected those test contracts; final998passed136.44s, one upstream warning.
+Real mpsc concurrency/limit writes, every pillar, point/XP interaction, cutover,
+IST midnight, replay, partial review/quest receipts, contribution exemption and
+blocked activation/redemption are covered. SQL diagnostics initially treated NULL
+(no milestone sub-cap) as zero via PostgreSQL GREATEST; added explicit non-NULL
+pillar-cap guard. Web TypeScript/Vite build passes.
+
+Fresh full-dump clone on Oracle with live ACLs applied0094 in43.989ms. All221
+non-catalog tables' original rows/columns preserved; only allowed catalog fields/
+new month changed.20 read-only private route/preview/owner-checklist/diagnostic
+checks as mpsc across2 existing accounts passed;12 integrity counters0. No workers,
+new counters or synthetic activity. Both sites200. Clone/private dump/candidate
+removed. Separate verifier overrides identities internally, never live auth/MFA.
+
+Synthetic local browser verified Rewards meter,25point budget,400/1500 dark offers
+and owner checklist/both disabled enable controls. Owner320px document305px, no
+horizontal overflow. Screenshots saved; owned tab/viewport/servers/databases cleaned.
+Source/build hashes and evidence: reports/finnaplan-v4-limits-20261117/README.md.
+
+Not deployed; production remains0093/V.3. V.4 split at a reviewable boundary perV.8.
+Next: game/Daily/mock completion, prospective once-ever mastery, contribution quorum/
+amount/reversal/3-day cap and seeded mixed-week reconciliation. Before release,
+prepare fresh exact-file manifests and test trigger/catalog rollback alongside the
+paired API/static backup; retaining this behavioral migration on an old API can
+make uncapped claim metadata disagree with clipped ledger values. Never reuse the
+frozen V.3 installer unchanged. Catalog gate stays dark. Whole Finnaplan unfinished.
+
+## 2026-11-17 — Finnaplan V.4 award-rules checkpoint (not deployed)
+
+Local0095 adds prospective server-owned game/Daily Five/full-mock completion
+receipts. Games require60%of the frozen eligible set correct and≥3s per answered
+item; lost duels qualify. Daily entry completion has no accuracy threshold but
+needs real timed scoring. Full mock means the whole frozen verified test answered,
+non-late,≥3s/question average server elapsed; includes custom verified tests.
+Completion XP continues after pillar point caps under shared300XP/25point budget.
+
+Mastery prepares/latches the pre-write baseline under job→rewards→learning locks,
+then settles fresh verified tier crossings after actual activity. Historical and
+worker/correction-only tiers get unpaid immutable latches.0095 seeds existing tiers
+without ledger awards. Proficient30/3 and mastered60/5 pay once/topic-tier, even
+across demotion/deletion/reclassification; delayed review proof binds exact receipt,
+context/paper and server latency. No threshold or14day-gap change. Integration added
+question/review, game and mock admission/finalization hooks; default worker refresh
+never receives award evidence.
+
+Local0096 rewrites contribution-credit rewards to20XP/5points,40/10 answer/source
+fix after two qualifying reviews,≤3paid/day, outside study budget. Checks exact
+revision/manifest/receipt and latest sync, policy activation time, independent
+non-author/non-editor reviewers, permission scopes, quorum/senior requirement;
+admin/solo-owner/operator maintenance excluded. No publisher or bank edits. Reversal
+negates actual original ledger amounts, including v1 tariffs, once; existing v1
+negative receipts block a second v2 reversal. Reversals do not refund daily slots.
+Content Studio unchanged. Owner diagnostics adds7 integrity checks; Rewards copy
+and all6 pillar chips reflect the new rules. Catalog gate remains false.
+
+The real existing API→review→manifest→disposable-file→sync→live-verify→ack integration
+now asserts40/10 and-40/-10; original MCQ publication asserts20/5. Concurrent app-role
+credits cap at3. Game finalization, mock completion, mastery settlement and positive/
+negative contribution triggers execute as real mpsc in isolated tests. Missing JSON
+receipt test caught JSON null vs SQL NULL; require an object. Review-clipping test
+needed its topic count isolated after legitimate proficiency consumed the final
+point; separate milestone/cap interaction covers that. Final review added explicit
+already-reversed-v1 cutover protection, then reran full suite and dump rehearsal.
+
+Final1030passed103.45s (one upstream AnyIO warning). TypeScript/Vite build passes;
+64earlier focused checks passed, final full suite includes the added legacy case.
+No browser interaction this slice; prior checkpoint has layout screenshots.
+Fresh full-dump rehearsal on Oracle:0094 11.721ms,0095 28.057ms,0096 26.958ms;
+221non-catalog tables' old rows/columns preserved, only planned catalog changes.
+One existing mastery baseline latched unpaid;0new award/counter rows. Exact11-file
+candidate overlay:20private read-only checks across2actual accounts as mpsc,
+19integrity counters0. Separate verifier process only, no live auth/MFA/session
+changes. No workers/synthetic activity on clone. Both sites200. Private dump/clone/
+candidate removed. Final0096hash f56ae5aa380ffbb7b467423e7049b2fbdf0b832bd1ecef71e5214e5481b37527.
+
+Production remains0093/V.3. Current evidence/source/build hashes:
+reports/finnaplan-v4-awards-20261117/README.md. Next finish seeded mixed-week rupee
+calibration and fault-tested trigger/catalog+paired API/static rollback, then fresh
+bounded release/readback. Catalog stays dark pending actual checkout/legal/recovery/
+reconciliation gates. No commits, activation, bank/Caddy/unit/provider-price change
+or production migration occurred. Whole Finnaplan remains unfinished.
+
+## 2026-11-17 — Finnaplan V.4 economy released, catalog remains dark
+
+Completed and deployed V.4 via the new bounded `scripts/deploy.sh finnaplan-v4`
+target.0094–0096 are now applied/immutable; next free0097. This completes the
+limits/counters, game/Daily/mock completion, prospective mastery and independently
+reviewed contribution awards from the prior local checkpoints. Catalog is still
+400/week and1500/month, disabled. No paid checkout or provider/configuration change.
+
+The isolated real-mpsc seven-day settlement fixture reconciles all19integrity
+checks to0: heavy2100XP/175study points→60days per Pro month; average1170XP/117points
+(16.714/day)→89.744days. Contribution supply15points less exact10reversal stays
+5net outside study caps. These are explicit synthetic source settlement fixtures,
+with controller eligibility/publication/sync tested separately, not human sign-offs
+or claimed production activity. Added explicit Daily Five SELECT/INSERT grants
+in draft0095 and past-editor exclusion through the published revision in0096.
+
+The launch check now reads a packaged evidence artifact bound to exact11API+
+3migration hashes and checks active policy/current diagnostics. Missing/stale
+sources, suspended triggers and live drift are tested. Moved the original diagnostic
+queries into the shared read-only service so owner diagnostics and gating use the
+same integrity checks. Legal pages remain pending; actual checkout is disabled.
+No new endpoint for learner awards, mobile permission, cache, bank or history backfill.
+
+Recovery tests restore the actual prior contribution function/catalog, disable all
+4new behavior triggers, preserve immutable awards/redemption access, mint old-policy
+receipts during suspension and rebuild counters before v2 resumes. An injected
+file-install failure restores API/static together and preserves unrelated files.
+The same SQL helper passed against the complete restored production clone. The
+installer drains publishers and stops the API before DDL, catches migration/install/
+readback failures, saves exact policy state and restores previously active services.
+Additive schema/immutable receipts remain on rollback; no destructive DB restore.
+
+1035backend tests pass in124.94s (one upstream AnyIO warning). Local web build passes;
+all335files match the earlier reviewed award checkpoint, with no new frontend edit
+or browser session this slice. Fresh full-dump Oracle rehearsal:0094 12.392ms,
+0095 30.122ms,0096 26.713ms;221non-catalog tables' old rows/columns preserved,
+intended catalog changes only, one unpaid baseline and0new awards/counters.
+20read-only checks across2actual users as mpsc pass; all19integrity counters0.
+Identity overrides are confined to a separate verifier, with no live auth/MFA
+change. Its external-service settings are defaults; actual checkout-disabled state
+is independently checked through the live public billing configuration.
+
+Release hashes all match:12API artifacts (11Python+bound evidence JSON),335static,
+3migrations;127other Python sources guarded unchanged. Live diagnostics all0;
+independent SQL confirms5policy/contribution triggers enabled, proper grants,
+0pending/failed jobs, recent heartbeat, both offers disabled. Ledger46→46;
+0v2awards/receipts/counters, one unpaid baseline. Both study/family200. Private
+paired rollback backup `/root/finna-v4-backup-b28tns21`, directory0700/dump0600,
+verified dump SHA256 in the receipt. Prior active workers restored; no bank,
+workshop, Caddy/unit/dependency/provider change or commit. Temporary remote stage
+and rehearsal data removed. See `reports/finnaplan-v4-20261117/README.md` for exact
+scope, calibration, tests, rehearsal, release and independent post-release evidence.
+
+Continue V.5 at0097. Catalog activation remains a later owner-gated launch action;
+whole Finnaplan, consolidation/vocabulary and mobile widening are not complete.
+
+##2026-11-17 — Finnaplan V.5 boards/recap local checkpoint (not deployed)
+
+Implemented the first bounded V.5 slice. Production remains the verified V.4
+release/0094–0096;0097 is still free. No production code/static install, schema,
+award, catalog, provider, bank/workshop, Caddy or unit-file change this turn.
+
+Added one shared weekly-standings query service: viewer's current league,
+top10plus ranksN−2…N+2, capped25nearby/35combined, dense ties and a truthful
+truncation notice. Opt-out own rank is hypothetical/private and cannot change
+anybody else's public rank. Both directions of creator blocking are applied
+before ranking/counts. Public rows contain handle/XP(or game score)/rank only.
+Removed monthly/subject/stream controls from the global UI. Games exposes weekly
+Gauntlet/Speed best scores, strict Duel wins and longest consecutive Daily Five
+entry days inside the IST week. Results require finished server-owned scored
+non-departed entries; individual result visibility cannot override global opt-in.
+Seasonal Cup paths/consent remain separate and were not reimplemented.
+
+Added Monday's private recap to Today: prior IST week's net ledger XP, immutable
+review completions, recorded eligible days, recorded first topic-tier milestones,
+and actual focus from ended sessions. It creates no jobs, summaries or awards.
+No historical/regained tiers are inferred; the UI says first recorded milestones.
+Guests/other days receive null; focus dates are labelled honestly. Existing mobile
+GET boundaries remain, with weekly_boards/weekly_recap capabilities, real bearer
+placement and explicit tests that visibility/review writes remain blocked.
+
+Final1044passed134.46s, one upstream AnyIO warning. Focused59and compatibility22
+pass. Initial full run found3old-contract assertions (monthly start, avatar in
+board rows, no opt-out placement); updated those to the decided weekly/minimal/
+private contract and reran the entire suite successfully. Local TypeScript/Vite
+build passes. Normal local sign-in and desktop/320px browser checks verify#25/
+173XPprivate placement, top10/neighbors, mode switching/empty and populated results,
+and a synthetic Monday42XP/3day/10minute card. Checked phone document305inside320,
+no horizontal overflow on inspected surfaces. Screenshots saved; viewport reset,
+tab closed and disposable fixture/database/server cleaned up. No production auth,
+MFA, human review or activity was fabricated.
+
+Read-only Oracle rehearsal overlays exactly6candidate API files onto fresh live
+dependencies in a private temporary directory.10board queries across2actual users
+as mpsc, transaction_read_only=on, pass bounded/minimal row assertions; actual
+Tuesday recap is absent. Ledger46→46; no workers, auth overrides or live install;
+private candidate removed. This is not a migration/full-dump or release receipt.
+
+Next: V.5 owned calendar/ICS/progress cadence in0097, profile policy/cosmetic
+spending, native compatibility for retired period/subject-track requests, then
+source-bound evidence refresh and full bounded release/rollback/readback. Changing
+the local Rewards router invalidates its V.4 evidence hash by design; do not deploy
+it with stale evidence or edit applied migrations. The deployed V.4 artifact is
+untouched and catalog remains dark. Whole Finnaplan and V.5 are not complete.
+Receipt: reports/finnaplan-v5-boards-20261117/README.md. No commit made.
+
+##17November2026 — V.5 owned calendar / ICS checkpoint (local, not deployed)
+
+Continued §14 with draft0097 private calendar_entries and calendar_feed_tokens,
+explicit mpsc grants and no award/schedule worker. Added owned CRUD with UUIDs,
+version conflicts, account/CSRF/rate boundaries and locked500-entry/20-slot quotas.
+Progress tests choose a first-date weekday and7/14-day cadence; projections silently
+omit missed dates and use explicit normal exam-scoped mock links. Added separate
+exam-target kind in the same table for §14's My exams layer, manual dates, prefilled
+published-notice targets and countdowns. Private notes stay plain text and owner-only.
+
+The existing month/list calendar and private mobile GET now compose owned layers;
+guests get Official only. Native entry writes/feed management remain denied. Existing
+forecast/activity eligibility moved into one shared read helper, also used by ICS.
+Subscriptions return a32-byte random secret once, persist only its SHA256, use
+owner-locked expected versions for rotation/revoke, and kill old URLs immediately.
+Cookie-independent feed reads never create guests and export only owner's entries/
+targets/upcoming slots plus aggregate eligible reviews/activity; no other learners,
+questions/answers, official/community schedules or financial/profile data. RFC5545
+CRLF/escaping/75-octet UTF8folding/stable UIDs/exclusive all-day ends are tested.
+Responses private/no-store/nosniff/no-referrer; Uvicorn bearer paths are redacted.
+Read-only Caddy scan found no access-log directives; no Caddy/systemd edits made.
+
+Final full backend:1052passed132.59s, one upstream AnyIO deprecation warning;8new
+focused cases cover actual mpsc CRUD, IDOR/guest/CSRF, caps/conflicts, cadence with no
+mock/reward writes, hash/rotate/revoke/anonymous access, ICS injection/Unicode,
+native denies, eligible aggregate scope and access-log redaction. Local TS/Vite passes.
+Fresh full Oracle dump clone rehearses exact0097 in21.568ms;229existing tables'
+rows/columns preserved. mpsc CRUD/token permission probes rolled back; new tables
+empty.2real-account private projections/exports read-only≈52.5/10.7ms, ledger46→46.
+Both sites200. Private clone/dump/candidate removed, live named preimages unchanged.
+An earlier pre-redaction receipt is retained separately; final hashes match sources.
+
+Disposable local normal sign-in verified private create/edit, fortnightly slot save,
+month/list, target countdown and feed create/revoke.320/1265px layouts inspected with
+no horizontal overflow. Viewport reset/tab closed/API+Vite stopped/fixture DB removed.
+No production installation, synthetic study activity, bank change, token creation,
+award backfill or commit. Evidence: reports/finnaplan-v5-calendar-20261117/README.md.
+
+Next within V.5: profile/bio/handle policy, cosmetics spending, retired-board client
+compatibility, refreshed exact-source economy evidence and bounded paired rollback/
+release. Wider calendar week navigation, existing Cup/Desk schedule composition and
+Today target-date taper remain explicit follow-ups.0097 is draft/reserved;0001–0096
+stay immutable. Keep catalog dark; do not deploy entire dirty checkout. Whole V.5
+and Finnaplan remain incomplete.
+
+##17November2026 — V.5 identity / cosmetics checkpoint (local, not deployed)
+
+Added private versioned identity GET/POST: display name, case-insensitive unique
+handle,30-day rename cooldown and immutable account rename events. Reserved system
+handles and plain-text limits apply to new edits; stable user IDs and existing
+handles remain. Legacy name PATCH advances identity_version. Profile resets private
+reads/state on account changes. Zero live casefold-handle collisions found by a
+read-only preflight; draft0097 adds the casefold index and identity metadata.
+
+Reused creator_profiles.bio with140-char new edits and additive version/pending/
+hidden flags; existing text preserved. New-account bios follow the3published-post
+trust threshold. Pending/hidden text is withheld by creator direct/directory reads
+and search matching/snippets. Existing visibility and blocks still apply. Legacy
+settings use the same helper and can't unhide same text; new web settings add the
+optional legacy-compatible expected_bio_version. Owner/MFA bio approve/hide controls
+sit with Creator reports, require exact bio version/reason and append creator_events.
+
+Points-only shop uses existing catalog/ownership/ledger/avatar_events: preserved
+all26original catalog records exactly, added Plum25/Twilight50/Orbit125. New Orbit
+SVG differs from earned frames. Shared rewards lock + user lock + catalog SHA/
+server-price/balance guard makes spend/ownership/purchased audit one transaction.
+Namespaced cosmetic:user:item key ensures own-once replay; avatar_version advances.
+XP0, no billing/access mutation, native purchase remains denied. Existing earned
+items cannot be bought, nor shop items claimed through XP. Shop review shows the
+same wallet balance used by Rewards; wear/save remains explicit. Added3owner-only
+read-only ledger/audit/duplicate-purchase diagnostics API/UI, with orphan detection.
+
+Final backend1060passed139.67s, one upstream AnyIO deprecation warning.8new focused
+real-mpsc cases exercise cooldown/uniqueness/concurrency/CSRF/guest/owner/version,
+bio pending/search/block/report/moderation/legacy paths, price/catalog/native/
+earned-only guards, durable purchase/replay/equip, concurrent shared-wallet spending,
+audit-failure rollback, and read-only orphan diagnostics. TS/Vite build passes.
+Final fresh full-dump Oracle rehearsal binds the exact14API/catalog artifacts and
+combined0097;229existing tables' original rows/columns preserved. Actual mpsc identity
+edit/spend/replay/3zero diagnostics probes all rolled back on the clone, then2actual
+accounts' identity/inventory/calendar/ICS projections run read-only. Ledger46→46;
+no live installation, workers, auth overrides, synthetic activity, bank change or
+backfill. Private clone/dump/candidate removed; both sites200. Earlier pre-diagnostics
+rehearsal retained separately; final source hashes match the current candidate.
+
+Normal disposable local sign-in verified identity/cooldown/pending bio, a25point
+purchase200→175, owned state, then wearing/saving Plum. Desktop/320px phone inspected;
+phone document305px. Retained screenshots are phone captures (full-page capture has
+fixed navigation artifacts). Viewport reset, owned tab closed, API/Vite stopped,
+fixture DB removed. No production bios, purchases or account impersonation.
+
+Evidence: reports/finnaplan-v5-profile-20261117/README.md.0097 is still an unapplied
+draft extended for this checkpoint; earlier calendar receipt describes its older
+draft, retained historically. Applied0001–0096 unchanged. No commit or deployment.
+V.5 still needs full self-service grouping/export/closure, calendar follow-ups,
+old leaderboard/native cosmetic protocol+renderer compatibility and final source-
+bound economy/release gates. Rollback must keep compatible purchased-item validators/
+readers and moderation-aware bio filters; restoring old catalog/search code could
+mishandle owned looks or expose pending bios. Keep catalog dark and preserve the
+shared dirty checkout. Whole V.5/Finnaplan remain incomplete.
+
+
+##17November2026 — Two more Finnaplan batches: compatibility + calendar integration
+
+Completed the requested two local batches without a handoff between them. Web now
+opts into contract=2 weekly boards and catalog_version=2 avatar reads/saves. Old
+board selectors return an explicitly retired empty page rather than422 or falsely
+labelled weekly scores; public row privacy is unchanged. Default avatar inventory
+keeps all26 original numeric-level items; tests verify a legacy mobile editor
+cannot overwrite/reset a saved newer cosmetic look. Purchase writes remain web-only.
+Inspected the sibling native types/picker/renderer; its safe rendering fallbacks
+can approximate newer cosmetics, so no physical-device parity is claimed.
+
+Calendar now shares a Monday-first month/week/list grid, real Cup schedule reads,
+and a compact upcoming reader in the private Desk. Deep links select their day;
+week/month/year navigation was inspected. No current Desk event schedule exists;
+audit rows were not converted into appointments. Actual Desk scheduling remains
+with its later upgrade. The owned-target Today taper was pulled forward as
+composition only: new targets10/5/3/0 across >28/15–28/8–14/0–7 remaining days,
+actual availability bounded; every due review stays visible. Optional normal mocks
+reuse their existing entry flow. Started daily plans preserve their snapshot;
+read requests do not create activity, plans or awards.
+
+1065backend tests passed in124.89s; TS/Vite build5.51s. Focused integration checks
+cover old/native transport, scope/privacy, IST schedule and taper boundaries,
+full due counts and plan freezing. Two old board assertions were updated for the
+intentional retired-filter behavior. Normal local sign-in on disposable data
+verified desktop/320px calendar, year crossing, Desk links, Today and the web shop.
+Phone document305px; viewport reset, owned tab closed, API/Vite stopped, fixture DB
+removed. Fresh Oracle full-dump rehearsal preserved229 existing tables' original
+columns/rows. Actual-mpsc read-only projections for2real accounts pass; permission,
+identity and shop probes roll back. Ledger46→46; no backfill, live source preimages
+unchanged, both sites200. All20 rehearsed API/catalog hashes plus draft0097 match.
+
+Receipt: reports/finnaplan-v5-integration-20261117/README.md. No commits or deploy;
+production remains V.4,0097 unchanged from the prior profile/shop draft and unapplied.
+V.5 still needs full self-service grouping/export/closure and bounded release,
+including refreshed exact-source economy evidence and compatible rollback.
+Catalog activation remains dark. Later phases and new Desk scheduling stay pending.
+
+
+##17November2026 — Finnaplan §12.7 account self-service (local only)
+
+Implemented the remaining Profile account tools in four groups using existing
+identity/avatar/visibility/exam/focus/security/session/blocks/desk/wallet flows.
+Moved password editing into Account security and clear transient credentials on
+auth changes. Added sign out everywhere for current/other web and mobile sessions.
+Owned JSON export uses one read-only repeatable snapshot and explicit fields,
+streaming200-row cursor batches without truncation. Credentials, answer keys,
+scoring snapshots, moderation/audit details, other owners' content and held
+assessment question records are excluded. Browser downloads bind the account and
+abort/discard on auth changes; attachment/no-store/nosniff headers apply.
+
+Added versioned, same-origin/CSRF, recent-sign-in and enrolled-MFA-gated account
+closure with typed confirmation. Staff access, owned open desks and unconfirmed
+recurring billing block closure with existing-control links. No provider calls or
+paid-plan field mutations. Closure atomically revokes credentials/feed links,
+removes private calendar/personal desk plans and direct identity/MFA/Google/pending
+mail data, clears bio/avatar, opts out of boards/follows/sharing and preserves the
+anonymous user ID for immutable history. Extended still-unapplied0097 with closed_at,
+identity/credential tombstone guards and a closure-aware account_has_pro function;
+closed accounts stay ineligible after later billing-state updates. Applied0001–0096
+unchanged; immutable posts/audits/ledger are not rewritten or deleted.
+
+1073backend tests passed in143.69s;8new real-mpsc checks cover export batches,
+ownership/assessment/secret boundaries, guards/revocation, closure concurrency,
+credential race, provider-update entitlement denial and global sign-out. Web build
+8.68s. Normal synthetic sign-in verified desktop/320px groups, primary save, actual
+parsed JSON download, password destination and deletion confirmation/cancel only.
+No browser deletion/password change was submitted. Phone document305px. Viewport
+reset, owned tab closed; download removed. An interrupted local preview was resumed
+on its identified disposable database for final inspection; servers and that exact
+fixture were then removed, preserving unrelated preexisting test databases.
+
+Fresh Oracle full-dump receipt preserves229 tables' original columns/rows; real-mpsc
+permission/identity/shop/synthetic-closure probes roll back. Two real account exports
+and Today/board/calendar reads run read-only; ledger46→46. No backfill or live code
+changes; clone/dump/candidate removed, both sites200. All23API/catalog hashes and
+new0097 hash match. Rehearsal wrote its completed receipt before its outer terminal
+session reported143; the report does not claim a zero exit for that wrapper.
+Evidence: reports/finnaplan-v5-account-20261117/README.md. No deployment or commit.
+
+V.5 implementation still needs bounded release/economy source binding and paired
+recovery proof; native physical-device visual certification remains open. Recovery
+must retain tombstone credential/entitlement rules as well as moderated-bio and
+purchased-cosmetic compatibility. Catalog activation remains dark. Production V.4
+is untouched; later Finnaplan phases are still pending.
+
+## 2026-11-17 — V.5 bounded release and compatibility recovery
+
+Completed and deployed V.5 through `scripts/deploy.sh finnaplan-v5`:28explicit API
+artifacts,337locally built static files and0097. It is now applied/immutable;
+next free0098. No commit, blanket dirty-checkout API deploy, bank/workshop write,
+provider call, paid-plan mutation, dependency install or unit/Caddy edit.
+
+Recovery keeps the current purchased-cosmetic validators/catalog, moderated-bio
+readers and closed-account SQL guards, pauses new V.5 writes and restores paired
+prior static. Missing/malformed release state fails closed. Export/sign-out,
+calendar deletion/feed revocation and owner moderation remain available. Review
+also found that a pre-authenticated desk request could race closure;0097 now
+serializes desk ownership/membership creation and prevents restoring closed-user
+sharing. All17active-account/tombstone triggers are enabled in production.
+
+Fresh calibration binds39runtime artifacts. Cosmetic spend/audit/ownership checks
+now participate in the actual launch gate, rather than only its admin report;
+an orphan spend blocks readiness. All22named integrity checks0. The seven-day
+heavy175/average117point fixture still yields60/~90days to1500points, alongside
+regenerated V.4 SQL-policy recovery and V.5 privacy/ownership recovery proof.
+
+1081backend tests pass in195.85s;12focused proofs in7.16s; web build8.95s. Fresh
+full Oracle dump rehearsal preserves229tables' original rows/columns;0097 applies
+in41.346ms.36private read-only mpsc checks pass across2real accounts, including
+Profile tools, both catalog versions, boards/calendar and owned export. Verifier
+identity overrides exist only in its separate process; no live authentication
+change, worker, session, synthetic production activity or learner write. Clone/
+dump/candidate removed. Frozen preflight and final28API/337static hash readbacks
+pass. Ledger46→46, no award backfill. Both sites200 and API active; zero pending
+learning jobs,0097checksum matches, catalog/checkout still dark.
+
+Private paired backup /root/finna-v5-backup-olyz_k9b retains prior API/static and
+full database dump, frozen recovery/verifier/scope and an independently hash-checked
+released snapshot (152API/dependency artifacts,4migration sources,337static files).
+Recovery was tested on disposable fixtures, not invoked in production. Never
+restore V.4 readers/validators or the old dump over newer learner history; rehearse
+a new bounded forward repair. Frozen V.1–V.5 installers must not be replayed.
+
+Traps: initial proof tests used the wrong calendar-delete method, a connection
+before initialization and an INSERT grant absent in the disposable auth schema;
+corrected to the actual API and real-role credential UPDATE. A source-extraction
+helper failed on its own delimiter; replaced with explicit read-only --guards
+mode. Logs remain. The first full run was deliberately interrupted after572passes
+to add desk guards, then the final full suite passed. Final rehearsal additionally
+executes the exact release verifier and binds its hash. Receipt:
+reports/finnaplan-v5-recovery-20261117/README.md.
+
+Continue V.6's explicit native review/answer/focus write decisions. Physical native
+visual certification remains open; safe legacy transport is not a parity claim.
+Desk scheduling needs its later actual store. Legal, delivered recovery and live
+paid-checkout/catalog launch prerequisites remain incomplete; later phases pending.
+
+## 2026-11-17 — V.6 native review/focus and bounded API release
+
+Deployed the explicit native review composition and focus PATCH permissions,
+three capabilities derived from the complete allowlist, and per-write capability
+headers. Review mutations still require owned frozen sessions; native answers
+also require the exact presentation receipt. Existing server clocks, versions,
+retry receipts, scoring and reward limits remain authoritative. Browser callers
+keep their existing contract. No new community/admin/commerce permission.
+
+The sibling Expo client now has gated Smart Review, full due counts, up to five
+registry-backed focus subjects, persisted composition keys and exact saved-answer
+retry. Account changes remount state and discard late network results. Older or
+unknown server capabilities hide entry and block review mutation. The client
+reports actual server awards and states its online navigation/finish requirement.
+
+1085 backend tests pass in 144.13s; 33 companion tests include actual-mpsc-role
+focus/compose/receipt/cross-account/revocation/timing/daily-cap checks. Fresh
+calibration/recovery proof passes 45 tests and binds 41 runtime artifacts.
+All 22 integrity counters are 0. Fresh full-dump rehearsal preserves all original
+rows/columns across 231 tables; 0098 applies in 1.744ms. It grants SELECT on the
+existing v_all_questions view, missing in clean restores under the actual role.
+36 private read-only route checks across two real accounts pass without live
+identity changes, workers, sessions or learner writes. Temporary clone/dump removed.
+
+Frozen remote preflight and bounded finnaplan-v6 release pass. Six API artifacts
+changed; all 337 static artifacts remain identical. 0098 is applied/immutable;
+next free 0099. Ledger 46→46, zero pending learning jobs, both sites 200. Independent
+readback verifies checksum, view grant, dependencies, released snapshot and all
+V.5 SQL guards; invalid-token/method HTTP probes return the expected 401/403.
+Private backup /root/finna-v6-backup-twlrhihp contains prior/released scoped API,
+prior static, full database dump and frozen scope/rollback/guard inspector.
+Disposable paired-file recovery passes; production recovery was not invoked.
+Recovery restores V.5 API/static while retaining the additive grant, current
+privacy/catalog/tombstone guards and learner history. Never replay frozen V.1–V.6
+installers over newer sources or restore an old dump over newer activity.
+
+Native Node22 typecheck/lint, 29 domain tests, 18 component suites/60 tests and
+Android/iOS/web export pass. Five focused cases cover capability fallback, focus,
+lost-start retry, account changes and exact pending-answer replay. Source/bundle
+hashes are recorded. Beta preflight reports missing EXPO_PROJECT_ID and zero
+attached Android devices: no signed binary/OTA, authenticated device QA or native
+visual parity claim. Linking the owner's Expo project remains necessary.
+
+Traps: actual-role tests exposed the view grant; RNTL14 requires awaited renders/
+events, and Jest mock hoisting rejects a TypeScript constructor shorthand. Node20
+was below the Expo58 engine requirement; final checks use Node22. Router types
+were regenerated through Expo. Independent post-readback needed a root wrapper
+to read the private backup while SQL runs as postgres in read-only transactions;
+permissions stayed intact. No commit, blanket deployment, bank/workshop write,
+provider call, paid-plan write, dependency install or unit/Caddy change.
+Catalog/checkout stay dark. Receipt: reports/finnaplan-v6-20261117/README.md.
+Continue V.9 website layout/navigation consolidation; V.7 needs actual exam
+onboarding sources and V.8 is the standing never-list. Part II precedes any
+additional community mobile widening.
+
+## 2026-11-17 — V.9 website consolidation released
+
+Deployed the §0.12 one-place map as a static-only release. Revise now owns Smart
+Review, scheduled questions, latest mistakes, embedded vocabulary and a print
+button for loaded questions. Retired bookmarks retain source/filter/fragment
+parameters; old daily sessions resume without exposing their old composer.
+Vocabulary's existing server engine is retained; Part II scheduler unification
+is still V.10 work. Latest mistakes ignore late previous-account responses.
+
+Personal Desk now has Saved questions, Notes and Focus timer. Removed its copied
+continuation/revision card, self-reported plan/weekly target, duplicate bookmark
+tab, private progress/mistake/practice panels and room illustration hotspots.
+Shared rooms retain their existing private tools and disclosure rules. Calendar
+is still a view of the existing store. Old focus/bookmark tab links keep working;
+old personal progress/mistake tabs route to their owning surface. Stored desk data
+remains exportable. Home ignores retired desk-task continuation entries.
+
+Chronicle hosts the existing timeline/list/chronology/month/source views; old date
+URLs redirect intact. Play has all seven currently available entries in one grid,
+with existing setup and scoring. Fixed a setup display error found during QA: raw
+quota counts 5/3/2 now render 50%/30%/20%, without changing selection. Header, phone,
+keyboard and search-results edit all open one Quick find dialog. Inbox is the
+notification surface; contribution unread counters and old notification aliases
+are retired. Canonical links are updated across the existing navigation/screens;
+five phone tabs and Finna reference tokens remain.
+
+Six frontend scripts pass: 10 actual-router redirect cases, 111 resolving nav
+destinations, query/session/source/fragment preservation, delayed-account mistakes,
+Home/header permissions and stale requests, date paging/retry/filter/calendar and
+private/public transport guards. The older Home harness needed mocks for already
+shipped getProgress/isLaterExamCollection and separate Today/Mastery components.
+Build passes TypeScript/Vite (5.97s). 31 source files are changed/added/deleted,
+mostly removing duplicate UI; initial preimages and a phase-only diff are saved.
+
+Browser QA uses a normal synthetic-author sign-in on a disposable local database:
+empty queue/mistake/vocab states, Quick find→results/focus return, private note
+save, old June 5 calendar bookmark, all Play entries and Gauntlet setup. Inspected
+1440px dark desktop and 320px light/dark phone; document width 305≤320 and search
+dialog 286px with 17px left margin. Viewport/theme restored; preview tab closed.
+Owned API exited cleanly and Vite stopped. No production learner activity, actual
+printer/PDF rendering or physical-native-device certification is claimed.
+
+Frozen preflight and bounded finnaplan-v9 release pass: 336 built artifacts merge
+into 453 served files, retaining 117 old chunks for open tabs. Assets install
+before atomic index replacement; every served hash matches and all 153 API/
+migration compatibility files stay exact. Private backup:
+/root/finna-v9-backup-075wq8ox. Disposable static recovery restores prior files,
+removes new chunks and refuses newer operator edits. Production recovery was not
+invoked. Independent readback passes 36 private read-only mpsc checks across two
+real accounts; all 22 integrity counters are 0, economy readiness remains true,
+catalog remains blocked and both hosted sites return 200. Old retained chunk HTTP
+hash matches. No commit, API/SQL/service/dependency/provider/workshop/Caddy change.
+0098 remains the latest applied migration; 0099 remains free. Never replay any
+frozen installer over this newer inventory. Receipt:
+reports/finnaplan-v9-20261117/README.md. Continue V.10 in Part II rollout order;
+actual-source onboarding, catalog/checkout prerequisites and Expo/device delivery
+remain separate outstanding work.
+
+## 17 November 2026 — V.10 Following and duplicate-doubt deflection deployed
+
+First bounded Part II slice: Following now composes published question discussions
+from the existing public creator graph chronologically, while retaining material
+discovery. Both-direction blocks, profile consent, moderation, question disclosure
+and active assessment protections remain. Deliberate reveals and exceptional/held
+question disclosures now agree with the question-thread reader. New doubts refresh
+existing threads before publishing, offer one-tap inline replies and retain the
+draft. Pending conversations are excluded; stale account/privacy responses cannot
+repopulate joined/suggested snapshots. Successful writes reset their retry key.
+
+1091 isolated backend checks, local web build, component deflection/account/privacy
+regressions and 10 redirects/111 resolving navigation links pass. Eight focused
+checks include the two added boundary/recovery cases and actual read-only mpsc
+execution. Synthetic 1440/320px UI fits at document widths1425/305; preview closed.
+The candidate and released readers each pass16 read-only Oracle queries. Real
+visible rows remain0; populated screens are explicitly synthetic local fixtures.
+Independent36 private mpsc checks pass; all22 integrity counters0, ledger46→46,
+economy reconciled and catalog/checkout dark. One API reader changed,249API/schema
+artifacts unchanged;336built/568served static hashes match,232old chunks retained.
+Both sites200. Private paired backup:/root/finna-v10-following-backup-olmh87jd.
+Disposable recovery checks pass; no production rollback was run. API restarted;
+noSQL/migration/unit-file/workshop/dependency/provider/billing/currency changes.
+0099 remains free. No commit or blanket dirty-checkout deployment.
+
+Receipt:reports/finnaplan-v10-following-20261117/README.md. V.10 remains partial:
+study posts/material shares and guards/tiers, composer formatting/autosave/edits,
+submission tracker/checklist and vocabulary unification remain. Ranking waits for
+real volume. Existing legacy mobile question-discussion writes predate this plan
+and remain in the allowlist; no new route/capability or native write was added by
+this slice. Future V.10 study/material mutations stay web-only. Do not replay any
+frozen installer over this newer API/static inventory.
+
+## 17 November 2026 — V.10 study notes and shared posting guards deployed
+
+Community/Create now has a text-only study-note composer and reader, optional
+approved taxonomy/internal entity reference, owner-only pending state, Helpful,
+conduct reporting and author withdrawal. Existing moderation owns publication.
+Mixed feed version2 includes notes; original clients retain question-only reads,
+new native note paths/version2 are denied and legacy question writes are unchanged.
+Both-direction blocks, referenced-material publication/blocks and linked-question
+unlock/reveal/mock/game/Cup gates apply before learner note reads. Moderator
+previews also retain active-assessment protections.
+No note/vote award or billing path was introduced.
+
+New versioned posting policy derives vote influence from real scored attempts
+(0.25/1), opens notes at3days+50attempts or Helper10, and gives Regular25 daily
+10posts/60replies instead of5/30. Canonical threads and notes share atomic IST-day
+budgets; pending/repeated reports/sanctions remove extra privileges. Withdrawn
+pending notes do not leave permanent quarantine. Creation retries remain
+idempotent at cap; new writes take a user-row lock against account closure.
+
+1106 backend tests, real-component account/retry/privacy checks, existing community
+regressions,10router redirects/111links and local build pass. Final full-dump clone
+preserves all231tables' rows/fingerprints;0099 applies in10.612ms. Rolled-back mpsc
+write probe and21read-only real-role checks pass; clone/dump removed. Synthetic
+1440/320px and new-panel night checks fit1425/305px. Preview processes/tab stopped,
+theme/viewport restored. Existing discovery-panel night contrast remains outside
+this new-panel certification.
+
+Bounded release verifies7API files,0099,337built/684served static files and246
+unchanged dependencies;347oldchunks retained. Both sites200. Live21note/feed/policy
+reads plus36independent private mpsc checks pass; all22integrity counters0,
+ledger46→46, economy reconciled, catalog/checkout dark. No synthetic production
+posts/reviews, award backfill, commit, workshop/provider/dependency/Caddy/unit or
+billing change. API restarted.0099 is applied/immutable; nextfree0100.
+Private paired API/static/full dump backup:/root/finna-v10-study-backup-19b2t23i.
+Disposable recovery restores prior artifacts while retaining0099/all history and
+refuses newer drift; production recovery was not run. Receipt:
+reports/finnaplan-v10-study-20261117/README.md. Never replay frozen installers.
+
+V.10 remains partial: material-share cards, note replies/block shortcuts, remaining
+composer work, monotonic public tier/flair/profile/Guide views, submissions/checklist
+and fuller tier-aware hub, vocabulary scheduler/decks and later Desk work remain.
+Current status exposes computed privilege tiers, not completed public ladder UI.
+Ranking awaits real volume; signed app/device delivery remains separate.
+
+
+## 17 November 2026 — V.10 reviewed material shares deployed
+
+V.10 reviewed material shares are now deployed (17 November): immutable
+material anchors, current published-revision title/format/access cards, shared
+maturity/limits/moderation/Helpful/report/withdraw and explicit native isolation.
+Protected bodies and unreviewed edits stay out of share responses; publication
+and both post/material author block pairs are rechecked. Moderator queues show
+reviewed references and approval rechecks availability.1113tests/build/component
+and desktop/320px/new-panel night checks pass. Fresh clone preserves231tables;
+0100 applied/immutable, next0101. Six API files,337built/800served hashes and248
+unchanged dependencies verify;463priorchunks retained.21+36private reads,
+22zero integrity counters, ledger46→46 and both-site health pass. Economy
+reconciles; catalog/checkout dark. Receipt:reports/finnaplan-v10-materials-20261117/README.md.
+Private backup:/root/finna-v10-materials-backup-uiukv5l9. Recovery retains0100,
+all history and the new native isolation guard; never replay frozen installers.
+Remaining V.10 includes note replies/block shortcuts, remaining composer,
+public tier/profile/Guide, submissions/checklists/full Create hub, vocabulary
+scheduler/decks and later Desk work. Ranking still waits for real volume.
+
+Create and Community now offer a reviewed-material share composer. The existing
+study router accepts an explicit material-share kind, validates a publication
+anchor, preserves prior note request hashes, and reuses existing shared budgets
+and moderation.0100 adds the immutable FK/reference identity check;0099 and every
+older applied migration stay byte-identical. Cards read current published metadata
+without protected blocks; unavailable or blocked references disappear. Moderators
+receive guarded material context and cannot approve an unavailable reference.
+Old/native question routes cannot mutate shares; old feed contracts remain narrow.
+
+Full1113tests pass, including6share cases and recovery. Real-component retries,
+account-change/privacy guards, community regressions,10redirects/111links and build
+pass. Fresh dump preserves231tables;0100 takes9.434ms. Rolled-back application-role
+share/anchor/audit probe plus21private reads pass. Browser fixture covers create,
+pending/withdraw, Following,1440/320px and the new panel in night mode; no overflow
+at1425/305px. Theme/viewport restored, tabs and fixture processes closed, DB dropped.
+The existing discovery-panel night contrast is outside this certification.
+
+Bounded deployment changes6API files, applies0100 and verifies337built/800served
+static hashes with248unchanged dependencies and463priorchunks retained. Private
+paired backup includes exact prior/released files and a full DB dump. Recovery
+restores prior authoring/readers/static while retaining0100/all history and the
+native isolation guard; disposable recovery and newer-drift refusal pass. No
+production recovery, synthetic learner activity, award backfill, commit, blanket
+dirty-checkout deployment, dependency/provider/workshop/Caddy/unit/billing change.
+All22integrity counters remain0; ledger46→46, economy reconciled and launch dark.
+
+
+## 17 November 2026 — V.10 note/material reply conversations deployed
+
+V.10 note/material reply conversations are now deployed (17 November):
+on-demand chronological replies, shared30/60 IST-day limits, moderation,
+Helpful/report/withdraw and parent/reference visibility guards. New accounts may
+reply; parent/child author blocks, linked publication/disclosure/active assessment
+checks hold. No nested replies, currency or community reply notifications added.
+1121tests/build/components and desktop/320px/night QA pass. Fresh231-table clone
+preserves all history;0101 applied/immutable, next0102. Three API files,
+337built/916served hashes,252unchanged dependencies and579priorchunks verify.
+24+36private mpsc reads,22zero integrity counters, ledger46→46 and both sites200;
+economy reconciled, catalog/checkout dark. Receipt:
+reports/finnaplan-v10-replies-20261117/README.md. Private paired backup:
+/root/finna-v10-replies-backup-bo2iz0ht. Recovery restores prior router/static while
+retaining0101/all history and parent/reference privacy readers; do not replay
+frozen installers. Block shortcuts, remaining composer, public tier/profile/Guide,
+submissions/checklists/full Create hub, vocabulary scheduler/decks and later Desk
+work remain. Ranking waits for real volume; signed native/device QA stays open.
+
+Show replies loads chronological note/material conversations on demand. Plain-text
+replies reuse study rows with a parent, shared IST-day budgets and moderation;
+new accounts may reply.0101 adjusts the parent check and adds an insert-time guard
+requiring a top-level study/material parent with identical reference/topic. Prior
+content immutability stays intact. Readers recheck both parent and reply authors,
+parent approval/hidden state and linked content, including disclosure/active mocks/
+games/Cups. Direct reply IDs cannot bypass the parent. Creation serializes against
+parent withdrawal; hidden replies still count toward the daily cap. No fake
+question-discussion notification is emitted for free-standing replies. Moderator
+material references and approval checks now also follow inherited references.
+
+Full1121backend tests, seven focused reply cases, recovery and real-component
+account/retry/privacy/pagination tests pass; study/share/community/consolidation
+regressions and local build pass. Fresh full-dump clone preserves231tables;
+0101takes4.171ms. Application-role root/reply/event insert/withdraw probe rolls back;
+21private read checks, all22integrity counters0 and ledger46→46. Candidate hashes
+match all3releasedAPI files. Clone/dump removed. Synthetic UI verifies note and
+material replies, pending create/withdraw and desktop/phone/night panels with
+1425/305px widths and no overflow; theme/viewport restored, owned tab and preview
+processes closed and disposable DB dropped.
+
+Bounded release includes0101,3API files and337built/916served hashes, with252other
+dependencies exact and579oldchunks retained.24live private read-only route checks
+plus36independent mpsc checks pass; both sites200, ledger46→46, economy reconciled,
+catalog/checkout dark. Recovery retains0101/all history and services/study_posts.py
+plus routers/moderation.py privacy guards while restoring the prior router/static.
+Disposable recovery and newer-drift refusal pass; production recovery was not run.
+No commit/blanket deploy, award backfill, synthetic production posts, workshop,
+dependency/provider/billing/Caddy/unit change. The API restarted. No signed mobile
+release or actual-device certification. The broader discovery-panel night contrast
+is outside this new-reply-panel check. Remaining V.10 work is listed in the receipt.
+
+
+## 17 November 2026 — V.10 note/share/reply formatting and drafts deployed
+
+V.10 note/share/reply formatting and device drafts are now deployed
+(17 November). Safe React bold/list/code readers and preview; private account +
+composer/parent draft isolation, reload/uncertain-write retry continuity,
+discard/success cleanup and global sign-out/expiry/cross-tab purge. Drafts contain
+own input only, expire7days and cap32records; blocked storage stays in memory with
+an honest notice.1122backend tests, renderer/hook/real-component regressions,
+10redirects/111links, local build and1440/320px/night UI pass. Static-only release
+verifies337built/1033served hashes,696oldchunks and256unchanged API/schema/data
+files;15route shells and both sites200.24+36private read checks,22zero integrity
+counters, ledger46→46 and economy reconciled; catalog/checkout dark. No API/SQL/
+service changes;0101 remains applied/immutable and0102 free. Receipt:
+reports/finnaplan-v10-composer-20261117/README.md. Private static backup:
+/root/finna-v10-composer-backup-sn_jdlkz. Guarded recovery restores prior static
+without history changes; never replay frozen installers. Canonical question
+composer formatting/autosave, honest edits/accepted locks/nudges, block shortcuts,
+public tier/profile/Guide, submissions/full Create, vocabulary scheduler/decks
+and later Desk remain. Ranking waits for volume; V.7 requires actual exam sources.
+
+A small semantic React renderer displays bold, lists and inline code without
+raw HTML, image/link parsing, dependencies or fetched-content storage. Preview,
+feed cards, note/share readers and their reply readers agree. Existing API
+validation/visibility/moderation remain unchanged. Canonical question discussions
+keep their existing composer and raw body presentation in this bounded slice.
+
+Draft ownership comes from the existing private review-session identity, scoped
+by account and note/share kind or reply parent. Only own composer fields and retry
+payload/key persist. Version/shape/age checks and32-record bounds apply. Drafts
+restore across reload, preserve uncertain-write replay keys and clear on success /
+discard. The global account context purges drafts on auth/expiry/cross-tab changes
+even when composers have unmounted; active hooks cancel delayed identities and
+clear memory. Storage failures preserve editable text in memory with a notice.
+
+Real renderer/storage/hook tests cover HTML/URL safety, ownership, stale/malformed /
+expired records, bounds, delayed identity/input races, auth/expiry/cross-tab purge,
+unavailable storage and retry continuity. Real note/share/reply components verify
+uncertain write → remount → same-key retry and successful-post storage removal.
+1122backend checks and static recovery/exact-inventory drift guards pass. No new
+SQL, so no migration/dump-clone apply is needed. Full live API/schema/data inventory
+stays byte-identical. Browser fixture verifies note/subject and reply restoration,
+formatting preview/readers, real synthetic pending post, success clearing and
+Profile sign-out after composer unmount.1440/320px widths1425/305 show no overflow;
+new panels work in night mode. Theme/viewport restored; owned tab closed, fixture
+API/Vite stopped and disposable DB dropped. Existing discovery-panel night contrast
+and signed native/device certification are outside this batch.
+
+Bounded static release verifies337built/1033served hashes,256unchanged runtime /
+schema/data files,696priorchunks,15route shells and both sites200. Static recovery
+and drift refusal pass in disposable files; production recovery not invoked. No
+API restart, database changes, award backfill, production learner activity,
+workshop/provider/billing/dependency/Caddy/unit modification, commit or blanket
+dirty-checkout deployment.24newer-reader private checks plus36independent mpsc
+checks pass; all22integrity counters0, ledger46→46, economy reconciled, launch dark.
+
+
+## 17 November 2026 — V.10 question composer formatting/drafts deployed
+
+V.10 canonical question composer formatting and device drafts are now deployed
+(17 November): safe thread/feed/accepted-text rendering, preview, restored post type
+and five source pairs, account/question/parent/paper-context isolation and durable
+retry keys. Fresh duplicate deflection, citation actions and immutable accepted
+replies stay intact; expiry discards private views. Shared theme colors fix input /
+accepted-card night contrast.1122 full backend tests plus1 new recovery test,
+components/build,10redirects/111links and1440/320px/night browser checks pass.
+Static-only release verifies339built/1152served hashes,813oldchunks,256unchanged
+API/schema/data and18route shells; both sites200.24+36private read checks,
+22zero integrity counters, ledger46→46, economy reconciled and launch dark.
+No API/SQL/service change;0101immutable,0102free. Receipt:
+reports/finnaplan-v10-discussion-composer-20261117/README.md. Private backup:
+/root/finna-v10-discussion-composer-backup-z21hdaln. Guarded static recovery passes
+in disposable files; production recovery not invoked. Never replay frozen targets.
+Continue §7.1.5 edits with visible history and accepted-reply locks integrated into
+that workflow, then once-only acceptance nudges; existing accepted content stays
+immutable. Block shortcuts, public tiers/profile/Guide, submissions/full Create,
+vocabulary scheduler/decks and later Desk remain. Ranking needs real volume;
+V.7 requires actual onboarding sources. Signed native/device QA remains open.
+
+Extended the existing validated device-draft fields with optional canonical post
+kind and bounded source URL/note pairs; existing records remain compatible. Retry
+payload validation accommodates maximum-length escaped text/citations. Canonical
+composers use the shared hook, renderer/preview/notice and retain doubt deflection,
+separate source actions and parent/context isolation. Source controls disable during
+submission. No content-edit API was added; existing immutable content/accepted
+protections remain. Auth expiry also removes the private discussion view.
+
+Real component tests exercise citation/type restoration, separate question/context/
+parent records, failed-write reload replay, success/discard cleanup, safe formatted
+thread/feed/accepted text and stale account/expiry guards. Full backend1122 plus the
+new static recovery test pass. Synthetic browser confirms restoration and a real
+pending explanation with cleanup, accepted reply rendering,320px no overflow and
+Profile sign-out after unmount followed by same-account empty draft fields. Night QA
+caught fixed light input/accepted backgrounds; semantic colors fix them. Final light
+and night screenshots inspected. Tab/viewport/theme and disposable API/Vite/DB cleaned
+up; no production learner activity. Local build and release/proof hashes match.
+
+Source/preimage-bound static-only target retains813old chunks, publishes the new
+index atomically and verifies339built/1152served files,256unchanged API/schema/data,
+18shells and both-site health. Before/after real-role private checks remain read-only:
+24+36checks, all22counters0, ledger46→46, economy reconciled and launch dark. Guarded
+recovery refuses newer files and restores prior static on disposable files; no live
+recovery. No migration/dump apply needed, API restart, bank/workshop/provider/billing/
+dependency/Caddy/unit change, award backfill, commit or broad checkout deployment.
+
+
+## 17 November 2026 — V.10 honest post edits deployed
+
+V.10 honest edits are now deployed (17 November): own doubt/explanation/reply,
+study/share/reply edits with immutable original/revision snapshots, visible edited
+markers and private paginated history. Every edit uses the shared daily budget and
+returns to author-only moderation; exact-version decisions and undo guards prevent
+stale approval. Accepted-once replies permanently lock, including after unaccept;
+SQL/edit/accept races and existing citation/reference/privacy gates hold. Web-only
+new edit/history routes, saved edit drafts/retry keys and community refresh pass.
+1136backend tests, components/build,10redirects/111links and1440/320px/night browser
+checks pass. Fresh clone preserves231tables,0102apply22.486ms;0102now applied /
+immutable, next0103. Seven API files,338built/1269served hashes,931oldchunks and
+250unchanged dependencies verify.27+36private read checks,3zero edit +22zero reward
+integrity counters, ledger46→46, economy reconciled and both sites200. Receipt:
+reports/finnaplan-v10-edits-20261117/README.md. Private paired backup:
+/root/finna-v10-edits-backup-u8o2ye8s. Recovery pauses edit-function EXECUTE and retains
+current revision/moderation/privacy guards,0102and all history; prior static only.
+Do not replay frozen targets. No workshop/bank/provider/billing/Caddy/unit/dependency
+change, synthetic production activity, award backfill or commit. Next §7.1.6:
+once-only acceptance nudge. Block shortcuts, public tiers/profile/Guide,
+submissions/full Create, vocabulary scheduler/decks and later Desk remain. Ranking
+needs real volume; V.7 requires actual sources. Native/device certification open.
+
+Migration0102 adds content version/date/permanent accepted locks and append-only
+post_revisions. A SECURITY DEFINER function with fixed search_path owns snapshot
+inserts/current replacement; application cannot forge revision rows. Anchors and
+original request identity stay immutable. API checks own visible target, current
+sanctions/disclosure/reference/assessment, open reports, exact version and payload
+retry binding; changes consume existing shared post/reply slots. Every edit is held
+for moderation. Moderator queues include latest five snapshots; expected versions
+and newer-revision undo rejection prevent stale publication. Accepted-once lock
+backfills from real acceptance audit events; later unaccept never unlocks content.
+
+Shared editor/marker/history covers canonical, note/share and study replies. Own
+version-scoped drafts/retries restore after reload; original fetched text does not
+autosave just by viewing. Auth/expiry generation guards discard late history reads.
+Community refresh removes stale post/feed snapshots after edit requests. Browser
+caught duplicate editor React keys colliding with reply-panel keys; prefixed keys
+and owned-component regression fix it. Accepted excerpt edit dates retain the same
+blocked-author filter. Moderation source snapshots display as safe text.
+
+Full1136backend tests, real UI regressions and local build pass; fresh full dump
+clone preserves231existing tables by original-column fingerprints,22.486ms apply,
+rolled-back real-role edit/snapshot permission checks and21private reads. Final
+candidate/migration hashes match. Production build browser verified reload/edit /
+moderation/marker/private original history, accepted lock and320px no overflow;
+light/night screenshots inspected. Synthetic fixture/tab/theme/viewport cleaned.
+
+Bounded source/preimage release ships7API files and0102, backs database/prior/released
+artifacts privately, restarts API and publishes verified static retaining931oldchunks.
+338built/1269served hashes,250unchanged dependencies and both-site health pass.
+27new private reads,3edit integrity counters0 plus36independent private/integrity
+checks and22reward counters0 pass; ledger46→46, economy reconciled, launch dark.
+Recovery test refuses newer runtime/static, retains revisions/moderation/privacy /
+SQL/history and pauses function EXECUTE;503 pause tested under mpsc. Production
+recovery not invoked. No live learner content/awards, workshop/bank/provider/billing/
+Caddy/unit/dependency change, commit or blanket dirty-checkout deploy.
+
+
+## 2026-11-17 — V.10 once-only acceptance reminder, deployed
+
+V.10 once-only acceptance reminders are now deployed (17 November): the doubt
+asker's open, published conversation can show “Did one of these solve it?” once.
+Only another visible author's published reply qualifies; previously solved doubts,
+blocks, pending/withdrawn/before-fix content, disclosure/assessment locks and sanctions
+suppress it. A private web-only POST claims an append-only event under the same
+parent lock as acceptance; a unique index makes concurrent/device claims once-only.
+GET reads never consume prompts. Dismissal/reload does not repeat; uncertain network
+responses may omit this optional prompt, never retry into a nag. No automatic
+acceptance, Inbox/email notification, posting-budget slot or award is added.
+1149backend tests, real components/build,10redirects/111links and1440/320px/night
+browser checks pass. Fresh clone preserves232tables,0103apply5.316ms;0103now applied /
+immutable, next0104. One API file,338built/1386served hashes,1048oldchunks and257unchanged
+dependencies verify.30+36private read checks, valid nudge index/0invalid events,
+3zero edit +22zero reward counters, ledger46→46, economy reconciled and both sites200.
+Receipt:reports/finnaplan-v10-nudge-20261117/README.md. Private paired backup:
+/root/finna-v10-nudge-backup-03bn068o. Recovery restores only the prior router/static while retaining
+0103/all prompt and learner history, plus every existing edit/privacy guard. Drift
+recovery tests pass in disposable files; production recovery was not invoked.
+Do not replay this or any older frozen target over newer releases. No workshop/bank/
+provider/billing/Caddy/unit/dependency change, synthetic production activity, award
+backfill or commit. Next: block shortcuts, then public tiers/profile/Guide,
+submissions/checklists/full Create, vocabulary scheduler/decks; ranking needs real
+volume. Later V.11growth,V.12admin/maintenance and Desk/Atlas/Studio remain; V.7needs
+actual exam sources, signed native/device QA and catalog/legal/checkout launch open.
+
+Implementation uses the existing append-only discussion_events store, not another
+status table or read-side mutation.0103 adds one partial unique index; eligible
+claims serialize with acceptance on the parent, re-read visibility after waiting
+and never consume post/reply limits. Previously accepted-then-unaccepted doubts
+also stay quiet. The client mounts only for an open own published doubt with a
+visible qualifying reply; in-flight claim reuse tolerates React effect replay,
+and cleanup discards late account/unmount responses. No autoaccept action exists.
+
+The full isolated PostgreSQL suite passes1149tests. Focused guards exercise
+concurrent claims under mpsc, SQL uniqueness, native tokens, CSRF, authorship,
+pending/self/empty/previously-solved/hidden/before-fix replies, both block directions,
+withdrawn and edited roots, disclosure, active assessments, locks and sanctions.
+Real React checks cover actual thread eligibility, collapse/dismiss/reload refusal,
+failed claims, no automatic acceptance and late unmount/account responses. Build
+and existing composer/editor/note/reply/navigation checks pass. Production-build
+browser preview uses a disposable fixture: reminder visible, Not now then reload /
+reopen gives no reminder, explicit Accept reply shows Accepted by asker.1440/320px
+client widths match scroll widths1425/305; light/night images inspected. A first
+phone screenshot had its heading behind the sticky header; scrolled up to capture
+the full reminder. Theme/viewport reset, tab closed, previews stopped and DB dropped.
+
+Fresh private dump preserved232tables by full original-column fingerprints;
+5.316ms migration, rolled-back real-role unique-claim probe and24private read checks
+pass. Live release retained1048oldchunks for open tabs. The verifier performs only
+reads and never claims a real user's prompt. Prior frozen installers unchanged;
+paired backup has full DB/prior+released API/static/migration/operator scope. No
+production recovery or broad dirty-checkout deployment was used.
+
+
+## 2026-11-17 — V.10 direct block shortcuts, deployed
+
+V.10 block shortcuts are now deployed (17 November): question posts/replies,
+study notes, material shares and their replies expose a direct Block this author
+control, separate from reporting. It reuses the existing account block for private
+and public-profile authors; own/guest controls are absent. Success and uncertain
+responses clear/refetch all mounted community snapshots, discard late pagination /
+account outcomes and retain feedback plus a Blocked users/unblock link. Reply and
+feed readers now also clear on auth expiry/community changes. Existing server
+visibility, graph/follow/block, disclosure/assessment and moderation guards remain.
+1154full backend tests, eight real component/navigation checks (10actual redirects /
+111links), build and1440/320px/light/night browser QA pass. Static-only bounded
+release verifies339built/1504served hashes,1165retained oldchunks,259unchanged API /
+schema/data dependencies and20route shells.30+36private read checks,3zero edit /
+22zero reward counters, valid nudge index/0invalid events, ledger46→46, economy
+reconciled and both sites200. No API/SQL/migration/service/workshop/bank/provider /
+billing/dependency change, production learner writes, award backfill or commit.
+Receipt:reports/finnaplan-v10-blocks-20261117/README.md. Private static backup:
+/root/finna-v10-blocks-backup-2zb4mj4f. Guarded static recovery preserves all API/learner/block
+history and refuses drift; disposable recovery test passes.0103 remains applied /
+immutable; nextfree0104. Do not replay this or older frozen installers over newer
+releases. Next: public monotonic tiers/profile/Guide; submissions/checklists/full
+Create; vocabulary scheduler/decks. Ranking needs real volume. V.11growth,
+V.12admin/maintenance and later Desk/Atlas/Studio remain; V.7actual sources,
+signed native/device QA and catalog/legal/paid-checkout launch remain open.
+
+The existing block endpoint already handles both graph directions, private-profile
+users, follow removal, invitation cancellation and audit. No new block model or
+learner endpoint was added. BlockAuthor shares the existing44px/pill controls,
+URL-encodes account IDs, cancels old-account/unmounted completions and emits the
+existing community-change event on either success or uncertain failure. A lost
+response can have committed, so failed actions must also invalidate fetched posts.
+Feedback sits outside fetched post trees and survives their clearing; auth changes
+and expiry clear feedback. Question posts no longer bury Block inside a conduct
+report form; reporting remains its own action.
+
+New API integration tests exercise actual account blocks of private-profile
+study/material-share authors, own-root reply filtering before pagination, canonical
+roots with the viewer's own accepted reply, retry idempotence, unblock, no report,
+no award and unchanged posting limits. All1154tests pass. Real component regression
+covers controls, escaped IDs, own/guest exclusions, uncertain outcome feedback,
+actual note/reply/feed refresh and stale pagination/auth/unmount rejection. Existing
+composer/edit/nudge/reply and actual-router regressions pass. Build passes.
+
+Production-build browser fixture verified reply block clearing the shared feed
+while own note survives, settings unblock/revisit, blocking a private-profile note
+and removing a canonical thread. No conduct report was submitted.320px controls
+wrap with document width305==scroll305; desktop1425==1425. New control/feedback
+light/night screenshots inspected. Existing discovery-card night contrast remains
+outside this check. Theme/viewport reset; owned tab closed; previews and disposable
+DB cleaned. No synthetic production activity. Batch-only patch/preimages isolate
+this release from the existing dirty checkout; prior frozen operators unchanged.
+Static paired recovery tested in disposable files, not invoked in production.
+
+
+## 2026-11-18 — V.10 contributor standing, deployed
+
+V.10 contributor tiers, profile reputation and the dated weekly Guide strip are
+now deployed (18 November). Current weighted votes still compute privileges;
+only the highest earned display label is recorded in immutable creator_events.
+Regular+ post flair and consented public-profile links appear on question/note /
+share/reply authors. Public raw Helpful/accepted counts retain parent/reference,
+block, disclosure and mock/game/Cup guards. Guides require current eligibility,
+visible weekly Helpful activity, public creator consent and weekly-board opt-in;
+moderation overrides privileges, and Mentor eligibility never grants a role.
+1175backend tests, nine component/nav scripts, build and1440/320px/light/night UI
+checks pass. Fresh232-table dump rehearsal preserves every existing row;0104apply
+8.815ms, zero initial labels. Nine API/data artifacts,340built/1623served hashes,
+1283oldchunks and251unchanged dependencies verify.39+36private read-only checks,
+3zero edit/22zero reward counters, valid audit guards, ledger46→46, reconciled
+economy and both sites200.0104 is now applied/immutable; nextfree0105. Receipt:
+reports/finnaplan-v10-tiers-20261117/README.md. Private paired backup:
+/root/finna-v10-tiers-backup-yslok8te. Recovery pauses all10tier capture triggers
+before restoring prior API, matching prior economy evidence and static; it retains
+0104/every earned label and all existing privacy/history guards. If pause fails,
+keep/restart the complete candidate API (including games lock ordering and matching
+evidence); do not install the old multi-player writer with capture active. Never
+replay this or older frozen targets over newer releases. Multi-user attempt writers
+must acquire every affected reward lock in sorted user order before tier capture;
+normal aa_habit_attempt_lock precedes tier capture. No synthetic production activity,
+learner-content/economy writes, bank/workshop/provider/billing/unit/dependency change,
+award backfill or commit. Catalog/legal/email-recovery/paid-checkout launch remain
+closed. Next: submissions/checklists/tier-aware Create, then vocabulary decks /
+scheduler unification. Ranking needs real volume; V.11growth, V.12admin/maintenance
+and later Desk/Atlas/Studio remain. V.7needs actual exam sources; signed native /
+physical-device certification remains open. New standing/Guide endpoints stay
+web-only; additive legacy author metadata is not native renderer certification.
+
+The display-history requirement cannot survive unvotes, withdrawal, voter closure
+or loss of voter maturity using current joins alone.0104 records only threshold
+labels in the existing append-only audit, initialized from actual current votes;
+it stores no vote balance and claims no unknown historical peak. Server-owned
+SECURITY DEFINER capture is revoked from the app role, fixes search_path and uses
+sorted author advisory locks. The app's older creator_events INSERT permission
+cannot forge labels: a separate owner-bound guard checks the execution role.
+Before-loss/after-gain hooks cover votes, visibility, blocks, registration and the
+49/50 scored-attempt boundary. Read-only GETs never consume or create history.
+
+A real SQL lock probe exposed the multiplayer finish loop's per-player reward-lock
+ordering. The finish path now prepares all sorted players before inserting any
+attempt; scoring and awards are unchanged. The two-player/20-attempt probe fails
+on the prior writer and passes on the candidate. The existing normal answer
+BEFORE trigger already acquires its reward lock first. Calibration was regenerated
+against41 exact sources because both games and creators are bound release inputs;
+48 calibration/recovery/mobile tests pass, with unchanged175heavy/117average weekly
+points (60/approximately90days). Stale evidence was rejected on the initial clone
+rehearsal, then refreshed rather than weakening the reconciliation gate.
+
+Boundary tests cover unvote/hide/pending/before-fix/block/voter closure/maturity,
+concurrent votes, immutable audit authorization, parent visibility, canonical and
+linked-question disclosure, mocks/games/Cups, material publication/author blocks,
+current eligibility vs retained flair and native denial. Early Cup fixture errors
+(active membership reuse and attempting to delete append-only Cup history) were
+corrected in the fixture; the final full suite passes1175. Initial red logs remain
+historical evidence, superseded by backend-full.txt and cup-visibility.txt.
+
+Real UI checks used only a disposable local database and explicitly synthetic
+accounts/votes: dated Guide card, public integer counts, private thresholds/caps,
+invitation boundary, immediate weekly-board opt-out, public-profile opt-out removing
+both card and author link, restoration, desktop and320px light/night views. Phone
+document width305 equals scroll width305. Screenshots inspected; pre-existing
+mobile-header treatment is unchanged. No native/device certification is claimed.
+Preview processes/tabs ended; the later browser inventory contains no preview tab.
+
+The bounded installer froze33 source changes from the shared dirty checkout,
+paired prior/released API and static plus a private DB dump, and verified all exact
+readbacks. Recovery's disposable-file test covers newer-source/static drift,
+pause failure restarting untouched candidate and restoring old evidence/removing
+the new helper only after capture stops. The clone also exercised actual role
+permissions and transactional trigger pause. Production recovery was not invoked.
+
+
+## 2026-11-18 — V.10 submission tracker and Create access panel, deployed
+
+V.10's read-only submission tracker and current-access Create panel are deployed
+(18 November). /create composes own questions/corrections, materials and learning
+collections/mock tests from existing lifecycle tables: actual states, revision-bound
+latest return notes, original draft links, dated queue positions and real30-day
+median decision times (honest empty history, no SLA/progress fiction). Collection
+links select the same existing draft. No new status store or review/award path.
+Titles/notes are redacted until linked-question attempt/reveal/valid exceptional
+disclosure, with active mock/game/Cup guards taking precedence. Reviewer block pairs
+hide notes; queue/time aggregates exclude blocked accounts. Current caps/moderation
+and invitation-only Mentor eligibility are explicit; no roles auto-granted.
+1182full backend tests, six final targeted boundary/recovery tests, ten component /
+navigation scripts, build and desktop/320px/light/night browser QA pass. Candidate
+reads ran as mpsc in read-only transactions before deployment; six live tracker
+reads plus three private handler checks verify40owned rows. Independent39+36private
+checks pass;3edit/22reward counters0, ledger46→46, economy reconciled and both sites200.
+Two API readers,340built/1743served hashes,1403retained chunks,260unchanged API/schema /
+data dependencies and8route shells verify. No SQL/migration, learner writes,
+synthetic production activity, currency/rate/provider/billing/bank/workshop/unit /
+dependency change or commit.0104 remains applied/immutable,0105 remains free.
+Receipt:reports/finnaplan-v10-submissions-20261118/README.md. Paired private API/static
+backup:/root/finna-v10-submissions-backup-02i4ys3u. Drift-guarded recovery stops API,
+restores prior router/static and removes the new helper; all tier capture, schema,
+economy evidence, privacy guards and learner/review history remain. Disposable
+recovery passes; production recovery was not invoked. Do not replay this or older
+frozen installers. Next: §II.7.2 pre-submission source/rights/body-limit checklist,
+then vocabulary decks/scheduler unification. Ranking still needs actual volume.
+V.7 is pending actual new-exam-body sources (no invented registry/papers); V.8 is
+the permanent never-list, not an incomplete feature. V.11growth, V.12ops/admin /
+retention, later Desk/Atlas/Studio, signed native/device QA and catalog/legal/email /
+checkout launch remain open. The new tracker route is explicitly web-only.
+
+The tracker uses existing bank_contributions/contribution_decisions/events,
+materials/material_events and learning_catalog/history. Pagination precedes per-row
+feedback and assessment checks; no draft payload/baseline, reviewer identity or
+other account's title is selected for the response. Return notes preserve original
+revision numbers even after resaving. Queue counts use actual latest submit events
+with documented same-subject/type scope and blocked-account exclusions; they do
+not claim FIFO processing. Medians pair recorded independent decisions with a
+preceding real submission in the last30days; missing pairs remain unknown, never
+zero. The material workflow has no claimed in-review state, so the tracker does
+not invent one. No schema change or migration rehearsal was necessary.
+
+The new GET enforces registered-account and native-denial boundaries and private,
+no-store responses. Linked question-bearing metadata is hidden before attempt /
+reveal/valid exceptional-disclosure consent and throughout an active mock, game
+or still-open Cup. A focused test caught and fixed exceptional-disclosure support;
+the same consent ceases to unlock ordinary scoreable questions. The API uses the
+same block pairs and semantic moderation/cap policy as current community writers.
+Source-bound economy evidence and all41bound runtime artifacts remain unchanged.
+
+The actual React tracker rejects stale identity, pagination, content-change,
+block, auth-expiry and unmounted results; error and honest-empty states differ.
+Return notes render as literal text, never HTML. Query/ID links are escaped.
+An entry query on Learning collections selects the existing owned draft; browser
+verification observed that exact draft title in the existing editor. No synthetic
+submission was sent to production. All preview records were explicitly synthetic
+and private in a disposable database, cleaned when the preview process ended.
+Desktop1425/1425 and phone305/305 document/scroll widths match. New panels and
+return-note contrast pass light/night checks. A scroll margin keeps the new anchor
+heading visible below the sticky header. Theme/viewport reset, owned tab closed,
+preview/API stopped. Physical native-device rendering remains uncertified.
+
+The candidate was staged in a disposable Oracle directory and executed as mpsc /
+default_transaction_read_only, jit off and15s statement timeout:40owned rows across
+six page reads, final pre-release batches7–139ms. The staged directory was removed
+and live API/services/SQL remained unchanged during rehearsal. Deployment checks
+exact prior inventory, backs up both API/static versions and ships only2API files
+plus the local static build. Live batches8–176ms; private-handler checks confirm
+no-store. Independent frozen verifiers retain prior privacy/edit/tier/economy
+coverage. Recovery refuses newer API or static drift and preserves all histories;
+it was tested in disposable files and never invoked in production. No older
+installer or applied migration was modified. Next checkpoint is the actual
+pre-submission checklist, then Part II vocabulary decks/scheduler.
+
+
+## 18 November 2026 — V.10 pre-submission checklists
+
+V.10 pre-submission checklists are deployed (18 November). Question proposals,
+Content Studio materials, learning collections and timed tests now ask authors to
+check sources, sharing rights and format/body size before review starts. The
+transient confirmations bind to the current draft/account, clear permanently on
+edit/revert and never restore an earlier account's proof. Materials/collections
+require the current draft saved first; owner test publication retains its existing
+preview confirmation. These are client readiness checks, not persisted legal
+attestations or new API enforcement; authoritative source/format/ownership/review
+rules remain unchanged. All four real screens pass component checks; 12 frontend
+regression scripts,18targeted backend checks, existing1182-test unchanged-API
+baseline, build, disposable recovery and desktop/320px/light/night browser QA
+pass. Synthetic local material reached Submitted in the existing queue; it was
+never reviewed/published and its disposable DB was removed.341built/1863served
+hashes,1522retained chunks,262unchanged API/schema/data dependencies and24route
+shells verify.6+3tracker and39+36independent private read checks pass;3edit and
+22reward counters0, ledger46→46, economy reconciled, both sites200. Static only:
+no API/SQL/unit/workshop/learner/reward/provider/billing/dependency changes or
+commit.0104 remains applied/immutable;0105 remains free. Receipt:
+reports/finnaplan-v10-checklists-20261118/README.md. Private static backup:
+/root/finna-v10-checklists-backup-dtsxjt2x. Recovery restores prior static only and
+refuses API/schema or newer-static drift. Never replay this or older frozen
+installers. Next: vocabulary decks/scheduler unification. Ranking waits for actual
+volume. V.7needs actual new-exam sources; V.8 remains the permanent never-list;
+V.11growth,V.12ops,later Desk/Atlas/Studio and signed native/device QA remain.
+Catalog/legal/email-recovery/paid-checkout launch stays closed.
+
+Browser proof: reports/finnaplan-v10-checklists-20261118/checklist-desktop.png,
+checklist-phone.png, checklist-phone-dark.png, submitted-desktop.png and
+submission-tracker.png. Browser covered the actual material flow; renderer
+checks cover all four actual authoring screens. No production authorship or
+review was simulated. Source edits and new files are bounded by the report
+preimages, source-changes patch and frozen release scope.
 
 
 ## 18 November 2026 — MCS concept contrasts and poverty-role limitation
@@ -9598,3 +12855,552 @@ complete answer/source review. Earlier appointment-tag lead, historical source/
 option defects and exact-key notices remain. Keep2012/2013 deferred and original
 simulation gated. Receipt: `docs/sources/mcs-publication-20261118.json`.
 Private proof: `reports/mcs-continue-20261118/`.
+
+
+## 18 November 2026 — V.10 bank vocabulary decks
+
+V.10 bank-derived vocabulary decks/progress are deployed (18 November).
+Revise's Vocabulary view groups canonical questions by the four actual approved
+active subtopics (synonyms, antonyms, idioms/phrases, one-word substitution), with
+an honest Other vocabulary fallback. No inferred retagging, rewritten questions,
+new content or provenance changes. Selection binds new/resumed cards and overview
+to the chosen deck; an empty deck never silently serves another. Progress uses
+latest verified-key canonical outcomes and shared mastery thresholds/45-day decay;
+repeat drills do not inflate counts and recent excluded assessments do not erase
+decay. Recognition is explicitly not a unique-words-mastered claim. Private reads
+exclude active mock/game/Cup items; account expiry/change and stale deck responses
+are cleared. Existing answer receipts, source links and the recognition scheduler
+remain; full scheduler unification,5words/Today,curated/Mizo cards and cloze are
+still pending.1188full backend tests plus14final targeted checks, four frontend
+scripts, build and desktop/320px/light/night new-panel QA pass. Synthetic local
+empty-deck, scoring and reload receipts verified; preview DBs/processes removed.
+Real-mpsc read-only candidate/live6catalog+30deck-overview checks pass, plus
+9tracker and39+36independent private checks. All3edit/22reward counters0; ledger
+46→46, economy reconciled.2API artifacts,341built/1983served hashes,1642oldchunks,
+261unchanged dependencies and8route shells verify; both sites200. No SQL,
+migration, bank/workshop, learner/reward/provider/billing/unit/dependency changes
+or commit. API restarted for the bounded pair.0104remains applied/immutable;
+0105remains free. Receipt:reports/finnaplan-v10-vocabulary-20261118/README.md.
+Paired backup:/root/finna-v10-vocabulary-backup-23qlbm10. Drift-guarded recovery
+restores prior router/static and removes the new helper, retaining every schema,
+learner/review/tier/economy artifact. Never replay this or older frozen targets.
+New vocab routes remain web-only. Next: bank vocabulary shared scheduler, then
+curated decks/modes/session integration. Ranking still needs actual volume;
+V.7actual sources,V.11growth,V.12ops,later Desk/Atlas/Studio and signed native/device
+QA remain. Catalog/legal/email-recovery/paid-checkout launch stays closed.
+
+Final frontend checks cover deck selection, source cards, true zero progress and
+auth-expiry/stale responses; the existing checklist, consolidation and review
+navigation checks also pass. Full1188-test run preceded the final excluded-activity
+max-date fix and test; all14targeted final tests pass against the released source.
+New panels and stats use semantic paper/card/hairline tokens,44px controls and
+wrapping phone content. Legacy source-instruction banner night contrast was not
+certified or changed. Five synthetic screenshots and browser-qa.json preserve the
+precise scope. No new native renderer or device parity certification.
+
+
+## 18 November 2026 — Vocabulary Mastered review-proof correction
+
+V.10 bank vocabulary mastery proof is corrected/deployed (18 November).
+The deck's Mastered display now requires an existing topic proficiency timestamp
+and a finished, scored, exact server-issued Smart Review receipt touching that
+deck at least14days later. A completion alone cannot supply the label; unfinished,
+early, excluded, wrong-context/paper or mismatched receipts do not qualify. The
+previous read used any review completion; no stored tier, award or history was
+changed.24targeted vocabulary/mastery/recovery tests pass, including actual early
+vs delayed and unfinished vs finished API flows. The unchanged web's1188-test
+baseline/build/browser evidence remains linked; no new full-suite/browser run is
+claimed for this reader-only correction. Real-mpsc candidate/live6catalog+30deck
+overview checks and9+39+36independent private reads pass;3edit/22reward counters0,
+ledger46→46, economy reconciled.1API helper,262unchanged dependencies, unchanged
+341built/1983served static hashes and8route shells verify; both sites200. No SQL,
+learner/reward/bank/workshop/provider/billing/unit/dependency changes or commit.
+0104applied/immutable;0105stillfree. Receipt:
+reports/finnaplan-v10-vocabulary-proof-20261118/README.md. Paired backup:
+/root/finna-v10-vocabulary-proof-backup-xk1hk1ha. Recovery restores the prior
+reader/static only after exact API/schema/static drift guards; no history/schema
+changes. Do not replay this or older frozen targets. Next: vocabulary shared
+scheduler/5words/Today, then curated/Mizo cards, cloze and session integration.
+
+This supersedes the preceding deck reader's too-broad any-review proof. The deck
+uses the existing approved English/vocabulary topic proficiency clock; this is
+a read projection and does not establish a separate stored deck achievement.
+Candidate/released source/proof/preimage hashes and drift-refusing disposable
+recovery are in the new report; previous frozen reports/installers were retained.
+
+
+## 18November2026 — V.10 bank vocabulary shared scheduler
+
+V.10 bank vocabulary shared scheduling is deployed (18November). Recognition,
+Bank/game answers and mixed/vocabulary-only frozen Smart Review sets use one typed
+canonical Leitner queue with1/3/7/16/35days,24h promotion guard, source reset and
+Box5 graduation. Old question projections are retained but deduplicated. Today
+limits new recognition to5/day; due reviews remain available. Queue/decks/Today/
+calendar agree; loading a card creates no earning plan. Existing saved-set reward
+receipts/caps remain; no new rates/awards or unique-word mastery claim.1197backend
+tests,20final targeted checks,46source-bound economy evidence, build/components
+and1440/320px/light/night synthetic browser QA pass. Fresh232-table clone preserves
+all existing rows;0105apply15.054ms, rolled-back real-role probe passes.13API/data,
+341built/2103served hashes,1762oldchunks,253unchanged dependencies and8route shells
+verify.33new live private reads, ledger46→46,22integrity counters0, reconciled
+economy and bothsites200. No production fixtures/bank/workshop/provider/billing/
+unit/dependency changes or commit.0105 is applied/immutable; next0106. Receipt:
+reports/finnaplan-v10-vocabulary-scheduler-20261118/README.md. Private backup:
+/root/finna-v10-vocabulary-scheduler-backup-qcwydt2m. Recovery keeps0105/current
+shared API/economy writers, pauses new recognition and restores prior static;
+receipts/Bank/Smart Review/history remain. NEVER restore older queue writers over
+0105. Disposable recovery passes; production recovery not invoked. Never replay
+this or older frozen targets. New recognition routes remain web-only. Next:
+reviewed curated/Mizo cards, usage cloze and distinct-word/session integration.
+Ranking needs real volume; V.7actual sources,V.11growth,V.12ops,later Desk/Atlas/
+Studio and native/device QA remain. Catalog/legal/email/checkout launch stays dark.
+
+All details and limitations: reports/finnaplan-v10-vocabulary-scheduler-20261118/README.md.
+
+
+## 18 November 2026 — Reviewed vocabulary-card authoring
+
+V.10 curated vocabulary authoring is deployed (18 November). Content Studio
+supports reviewed English/Mizo–English word cards, meanings, usage, glosses,
+source/editorial notes, recognition choices and authored cloze prompts. Existing
+immutable material revisions, exact owner review, Pro/body redaction and blocks
+remain. Incomplete drafts save; submission/publication require valid distinct
+choices, a single gap, bilingual gloss and actual exam/active-subject tags. Legacy
+block serialization/retry shapes are unchanged. No production cards were authored
+or published, no canonical content changed and no per-card award path was added.
+This is authoring/reading, not curated learner practice or a words-known counter.
+1,202 full backend tests,13final workflow/recovery checks plus1final recovery,
+build, real-screen checklists and desktop/320px/light/night synthetic browser QA
+pass. Candidate/live normalization checks preserve the1existing material revision;
+9private learning reads, ledger46→46,22integrity counters0 and economy reconciled.
+2API,341built/2223served hashes,1882oldchunks,266unchanged dependencies and8shells
+verify; bothsites200. No SQL/provider/billing/bank/workshop/unit/dependency changes
+or commit.0105 remains applied/immutable; next0106. Receipt:
+reports/finnaplan-v10-vocabulary-authoring-20261118/README.md. Backup:
+/root/finna-v10-vocabulary-authoring-backup-b9v_d6_p. Guarded recovery restores
+prior parser/static, retains0105/current queue/economy and every authored revision;
+new-format drafts require the compatible parser to edit/publish after recovery.
+Disposable recovery passes; production recovery not invoked. Never replay frozen
+targets or restore older queue writers over0105. No mobile endpoint widening;
+new block native rendering is not certified. Next: curated scoring, current-review
+eligibility, shared sessions/queue and distinct-word progress. Later V.11/V.12/
+Desk/Atlas/Studio, real-volume ranking, V.7actual sources and native/device QA
+remain; catalog/legal/email/checkout launch stays closed.
+
+Full receipt: reports/finnaplan-v10-vocabulary-authoring-20261118/README.md.
+
+
+##18November2026 — V.10curated word practice and shared review release
+
+V.10 curated vocabulary practice and mixed Smart Review are deployed (18November).
+Published Content Studio revisions supply reviewed English/Mizo word cards with
+server-scored meaning, usage cloze and both translation directions (reverse mode
+requires authored gloss choices). Current publication/Pro/block/source eligibility,
+immutable feedback and typed shared Leitner dates remain. Five new cards/day is
+shared with Bank vocabulary; due reviews remain available. Distinct-word progress,
+retained words, decay and exact14-day finished-review mastery proof are separate
+from awards. Curated cards never mint per-card XP/points or canonical attempts;
+actual sourced grades feed the existing session/quest receipts and original caps.
+New web format negotiation keeps old web/native queues compatible and rejects
+mixed saved-set replays without the updated reader; no native allowlist widening.
+1,217full backend tests,63final targeted,63source-bound calibration/compatibility
+checks (53runtime bindings/25diagnostics), build/components and synthetic desktop/
+320px/light/night browser QA pass.232-table dump preserves every old row;0106apply
+99.489ms, rolled-back real-role probe passes.16API/data,342built/2346served hashes,
+2004retained chunks,256unchanged dependencies and8shells verify.21new single-
+snapshot private reads plus39independent tier checks,25reward/3edit counters0,
+10tier triggers, ledger46→46, reconciled economy and bothsites200. No real cards
+published, synthetic production activity, bank/workshop/provider/billing/unit/
+dependency changes or commit.0106 is applied/immutable; next0107. Receipt:
+reports/finnaplan-v10-curated-vocabulary-20261118/README.md. Private backup:
+/root/finna-v10-curated-vocabulary-backup-_zbs4kcm. Recovery keeps0106/full compatible
+CMS/shared API/economy, pauses curated writes and restores prior static; every
+revision/grade/session remains. Disposable recovery passes; production recovery
+not invoked. Never replay frozen targets or restore older writers over0106.
+Next: V.11growth (Resend free-tier target; built-in queue, actual sender/domain/
+credentials still needed), then V.12ops/users/retention and later Desk/Atlas/Studio.
+Ranking needs real volume; V.7actual sources, native/device QA and catalog/legal/
+email/checkout activation remain gates. This is not completion of the whole plan.
+
+The full regression gate caught a legacy summary shape change and incomplete
+stale-display test doubles. Fixed runtime boundaries: word checks only on review
+sets, conditional curated summary fields and safe missing-filter handling. An
+earlier rehearsal passed its actual DB checks but its report serializer failed
+because a probe reused a count variable for dated rows; renamed that variable and
+reran the fresh dump. Final code and evidence were rehearsed again after the
+compatibility fix. Older frozen scripts/reports were preserved. The old scheduler
+component harness cannot load the added component; the fresh curated harness
+retains its legacy flow assertions with the real loader and adds new word checks.
+Browser mixed set had7due items, so its7correct finish honestly paid no session
+award. Timed8item awards/caps are isolated backend proofs. Two later full-page
+captures failed; retained screenshots/DOM, limitations and preview cleanup are
+recorded. Built-in email outbox exists but real SMTP configuration is absent.
+Owner requested a free tier; selected Resend and wrote private setup instructions
+without account creation, credentials, DNS changes, activation or actual mail.
+
+
+##18November2026 — Built-in account mail automation and free-tier boundary
+
+V.11 built-in account-mail durability/free-tier controls are deployed (18November).
+Finna owns the encrypted verification/reset queue and background worker. Durable
+capacity commits precede SMTP; concurrent processes share100reservations/UTCday
+and a conservative3,000/rolling31days. Pending live links count at admission;
+known/unknown reset requests get the same temporary-capacity response. Bounded
+stable-key retries, uncertain lease recovery, closure/token rechecks and actual
+worker heartbeats retain queue/privacy/history. Pauses preserve pending ciphertext;
+completed account links retain their original one-use/MFA guards. No native
+allowlist widening, new endpoint, frontend, dependency or unit-file changes.
+1,229full backend tests,36account-focused checks,74fresh calibration/compatibility
+checks (58runtime bindings/25reward diagnostics) and guarded recovery pass. A fresh
+243-table dump preserves every old row;0107apply15.84ms and a fully rolled-back fake
+SMTP probe pass.7API/data hashes,unchanged342built/2346served hashes,268unchanged
+dependencies and8shells verify.21private learning reads +mail-capacity reads,
+25reward/3edit counters0,10tier triggers,ledger46→46,reconciled economy and both
+sites200. Runtime environment and public recovery availability confirm delivery
+still disabled/unconfigured;0mail attempts, no SMTP contact, provider account,
+sender/DNS/credential/billing/checkout activation, production fixture, bank/workshop
+change or commit.0107 is applied/immutable; next0108. Receipt:
+reports/finnaplan-v11-mail-20261118/README.md. Private backup:
+/root/finna-v11-mail-backup-e2iq_wio. Recovery retains0107/full compatible API /
+economy and every capacity/history record, pauses new mail and keeps ciphertext;
+never restore older mail/review writers. Production recovery not invoked. Never
+replay frozen targets. Resend is the target within the owner's free-tier preference;
+actual account/verified domain/sender/private key and delivered one-use recovery
+proof remain required. Setup:docs/FINNA-EMAIL-SETUP.md. Next independent V.11work:
+share cards, onboarding, opt-in digest, post-launch referral gates and bulk rates;
+exam taper already exists. V.12ops/users/retention and later Desk/Atlas/Studio,
+real-volume ranking,V.7actual sources,native/device QA and catalog/legal/email /
+checkout activation remain. This is not completion of the entire plan.
+
+Early automation tests shared module-global mail rows/cipher keys, so each new
+case now owns its provider-wide capacity fixture. The actual closure service is
+exercised between reservation and delivery. Reserved/failed/uncertain/cancelled
+attempt capacity survives closure and process loss; no per-user details enter
+the new table. A pre-SMTP user/outbox recheck follows closure/reset lock order.
+The first regression/rehearsal passes were interrupted/repeated after reviewing
+post-lock timestamps and the provider quota docs. Final code uses statement-time
+UTC day boundaries and a conservative31day window rather than assuming a billing
+reset date. Final source/evidence hashes match; intermediate logs remain.
+No SMTP was contacted outside fake disposable sinks; actual sender/key/domain
+setup and delivered recovery proof remain external work. Web bytes stayed frozen
+from the preceding inspected curated-word release; no new visual QA is claimed.
+
+
+## 2026-11-18 — V.11 public sharing and built-in mail clarification
+
+Confirmed the actual account-mail heartbeat is healthy but disabled/unconfigured:
+Finna owns its encrypted queue, scheduling, retries/capacity and receipts; SMTP is
+transport and Google sign-in is authentication. Actual sender/domain/private key
+and delivered recovery proof remain external requirements. No real mail sent.
+
+Implemented/deployed public question/test HTML share previews, OG/Twitter/image /
+canonical metadata, truthful source badge, explicit Open links and safe typography.
+Question More offers WhatsApp and copies only canonical/source/scope URL. Existing
+published tests retain immutable metadata authority and private answer snapshots;
+private drafts/withdrawals remain unavailable. New question route is web-only;
+live/held/withdrawn/merged/missing/wrong-paper/scope guards, no-store/CSP/escaping,
+manual fallback/native cancel/failure and late item outcomes are covered. Shared
+brand PNG is rasterized from editable SVG locally; no renderer/runtime dependency.
+No per-question image text or actual WhatsApp cache/render certification is claimed.
+
+1,236full backend tests,12targeted,1separate recovery,81fresh calibration/compatibility
+checks (58runtime bindings/25diagnostics), local web build and4component/navigation
+scripts pass. Initial synthetic fixtures violated existing key-option/merge /
+withdrawal/scope constraints; corrected them without changing constraints. Initial
+failed log retained. Browser synthetic preview→exact bank source and published test,
+copy success feedback/WhatsApp href,1280/320px/light/night controls and no horizontal
+overflow pass. Browser-session clipboard readback was empty despite visible copy
+success; exact payload/failure covered by real component adapter sinks. Standalone
+preview light verified; OS-dark only has CSS, not browser certification. Full-page
+app fixed-nav capture artifacts documented. Tab/processes/disposable DB cleaned,
+viewport reset and Light restored; original user OpenAI-help tab retained.
+
+Fresh private244-table production-dump clone preserves all rows; candidate/live
+actual-mpsc single RR/read-only checks cover3public previews+21private learning
+reads/mail capacity,25reward/3edit counters0,10tier triggers,ledger46→46,reconciled
+economy.0production published shared tests; synthetic reviewed test remains local.
+Bounded4API/data +344built/2469served hashes verify, retaining2125priorchunks and
+273unchanged dependencies.8route shells, actual public HTTPpreview/PNGhash and both
+sites200. Mail scope still disabled/unconfigured,0attempts, no SMTP/provider/billing
+activation. No SQL, bank/workshop, learner/reward, Caddy/unit/dependency change or
+commit.0107immutable,next0108. Recovery test restores prior share readers/evidence /
+static and removes helper, retaining current mail/review/CMS/history; production
+recovery not invoked. Receipt:reports/finnaplan-v11-sharing-20261118/README.md;
+private backup:/root/finna-v11-sharing-backup-2__tbumw. Never replay frozen releases.
+
+Next independent V.11: primary-exam diagnostic. Digest requires actual email and
+consent/unsubscribe; referrals stay post-launch/attempt/cap gated; bulk pricing,
+V.12and later Desk/Atlas/Studio remain. Ranking needs real volume; V.7actual
+sources, native physical QA and catalog/legal/email/checkout gates remain open.
+
+
+## 18 November 2026 — V.11 primary-exam check-in deployed
+
+Implemented the optional ten-question onboarding check-in through normal saved
+practice. Actual explicit primary exam/public live pool, reviewed repeat dedup,
+approved active subject/topic eligibility and exactly-ten availability remain
+required.0108 unique index makes one set/account/exam across retries/devices.
+No activity/earning plan on status reads or bonus award; ordinary presentation,
+receipt/source/assessment/privacy/mastery and discovery-cap guards remain.
+Finished summary suggestions use exact checked receipts/current eligible latest
+outcomes, never viewed/skipped/excluded evidence. Existing focus selection stays;
+the learner explicitly chooses/saves changes. New routes remain web-only, including
+inherited saved-set/mistake paths; old UDC recent lists hide check-in sets.
+
+1,247full backend tests,55targeted/46boundary checks,2recovery checks,91fresh
+calibration/compatibility checks (61runtime bindings/25diagnostics), local build,
+actual components and10redirects/111links pass. An older fixture lacked optional
+filters; reader compatibility fixed without weakening the fixture. Recovery's
+availability flag initially invalidated the economy source binding; removed only
+that operator flag from the binding and proved pause retains reconciliation while
+changed writers still fail. All runtime changes revalidated before freeze.
+Synthetic browser starts/resumes/finishes5correct/3wrong/1viewed/1skipped, suggests
+only Mizo1/4 versus English4/4, and retains explicit saved focus after reload.
+1280/320px light/night and no horizontal overflow pass; clean viewport screenshot
+checkin-summary-desktop.png. Full-page fixed-header artifacts and rapid CUA control
+timing documented. Preview tab/API/web/DB cleaned, viewport/Light restored, original
+user help tab retained. No native/physical-device certification claimed.
+
+Fresh244-table production-dump clone preserves every existing row;0108apply5.177ms
+and fully rolled-back real-mpsc ten-check/dedup/summary/assessment probe pass.
+Earlier failed rehearsal logs retain missing-stage/cwd/interrupted-SSH evidence;
+final source-bound rehearsal passes. Live3public+24private RR/read-only checks,
+25reward/3edit counters0,10tier capture triggers,ledger46→46 and economy reconciled.
+Bounded7API/data,345built/2591served hashes,2246oldchunks,273unchanged dependencies,
+8shells and bothsites200.0onboarding sets at apply; no production learner fixture,
+award/bank/workshop/provider/billing/unit/Caddy/dependency changes or commit.
+Mail stays disabled/unconfigured with0attempts.0108applied/immutable, next0109;
+checksum56ec597259eba3566b216fa8e132e6f6e0a743ba6a0039c94e91829040cc6a5c.
+Receipt:reports/finnaplan-v11-onboarding-20261118/README.md. Private backup:
+/root/finna-v11-onboarding-backup-eoupr387. Recovery keeps0108/current compatible
+onboarding/mail/CMS/shared writers/history, pauses only new starts and restores
+prior static. Production recovery not invoked. Never replay frozen targets.
+
+Next V.11work: opt-in due-review digest requires actual email transport and consent /
+unsubscribe; referral retains post-launch/attempt/cap gates, bulk pricing remains.
+V.12ops/users/retention, later Desk/Atlas/Studio, real-volume ranking, V.7actual exam
+sources, native/device QA and catalog/legal/email/checkout activation remain open.
+Whole plan is not complete; existing usage-limited goal was not resumed/reset.
+
+
+## 18 November2026 — V.11bulk pricing deployed
+
+Implemented/deployed previewed owner email batches, once-only verified-ownership
+matching after signup/verification/login, retained removal history, server-fixed
+₹50 group codes with100uses/30days defaults and bounded expiry/cap/revocation,
+immutable account receipts, stale-price guards and actual-price replay. Existing
+checkout lock/rate authority is reused. Optional matching runs after identity
+commit and failure defers without blocking sign-in. No GET applies a price.
+New owner search reaches older email/code/note records. An on-demand50-row cursor
+reader shows actual redeemers through the API, retaining revoked/expired and
+anonymous closed history without private study/payment fields. Own-data exports
+include own price and group receipts. Web-only/owner/MFA/CSRF/origin/account/
+version/audit boundaries remain; no existing mandate, trial, Pro or reward change.
+
+1,259full backend tests pass with explicit returncode0; the subsequent final
+read-only receipt reader has11focused API checks and current104-test calibration/
+compatibility evidence bound to67runtime sources/25reward diagnostics. Earlier
+68targeted/28boundary/2recovery checks pass. No writer changed after the full-suite
+run. Initial runner reported1258passing but exited143, so it was not accepted as
+process-success proof; a subsequent run was explicitly interrupted to finish
+owner search, followed by the clean1259run. Initial fixture/session/expiry and
+renderer-event invocation failures remain separately. Final build, actual React
+components,10redirects/111links and1280/320 light/night synthetic browser QA pass.
+Owner batch2→1verified/1pending, explicit member claim retains Free access,
+reload/replay/current price,1/2counter/revoke and email/code/note search pass.
+Final receipt reader shows an actual synthetic API claim in all four width/theme
+combinations.17PNGs,305/305px/no overflow; full-page fixed-header limits recorded.
+Tabs10–12/preview APIs/web/disposable DBs cleaned, viewport/Light restored and
+original user help tab retained. No native/device certification claimed.
+
+Fresh244-table private dump preserves every prior row;0109apply35.566ms and
+actual-mpsc once/retry/cap/revoke/owner-receipt probe fully rolls back. Candidate /
+live3public+27private RR/read-only checks,25reward/3edit/2bulk counters0,10tier+5bulk
+history triggers,ledger46→46,economy reconciled.11API/data,345built/2713served
+hashes,2368oldchunks,274unchanged dependencies,8shells,bothsites200.0redemptions
+at apply; no agent production list/code/discount/activity, canonical/workshop,
+provider/email/billing/Caddy/unit/dependency change or commit. Mail disabled /
+unconfigured,0attempts; checkout/catalog remain closed.0109applied/immutable,
+next0110;checksum2347465c1fc868533585f2a31624d660217c248dcf216d61dccab684aaa6d754.
+Receipt:reports/finnaplan-v11-bulk-20261118/README.md. Private backup:
+/root/finna-v11-bulk-backup-0wysk7wv. Recovery keeps current compatible pricing /
+auth/export/mail/onboarding/CMS/shared API,0109 and every price/history; pauses
+only bulk assignment and restores prior static. Disposable guards/economy-under-
+pause tests pass. Production recovery not invoked; never replay frozen targets.
+
+Remaining index:docs/FINNA-REMAINING.md. V.11actual email/digest/referrals remain
+dependency/consent/post-launch gated. Next independent work is V.12ops/timer
+collectors, account viewer, retention/site notice/checklists and true green-week
+proof. Later Desk/Atlas/Studio, real-volume ranking, V.7actual sources, native /
+device QA and catalog/legal/checkout gates remain. Whole plan is open; existing
+usage-limited goal was not reset or resumed.
+
+## 18 November 2026 — V.12 read-only operations dashboard
+
+Deployed `/admin/ops` via the bounded `finnaplan-v12-ops` target. Owner-only,
+web-only snapshot covers actual existing heartbeat observations, separate legacy
+assessment health, per-process pool, completed-IST-day economy totals/cap streaks /
+new-account review cues and five moderation queues with age/48h counts. Unknown
+collection stays unknown; outage stays an error. Runbook links, phone section
+navigation, refresh and stale-account-response privacy pass.
+
+44focused compatibility checks and7final ops/recovery checks pass (overlap), plus
+real React component/navigation/build and1280/320px light/night synthetic browser
+QA. Initial test-only nonexistent audit-table and missing-CSRF POST expectation
+failures are retained; corrected tests exercise the actual schema and boundary.
+No new full suite is claimed. Fresh248-table dump clone preserved all existing
+rows; read-only real-mpsc verification repeats3public+27private learning checks,
+25reward/3edit/2bulk integrity counters0,10tier+5bulk triggers,ledger46→46,
+reconciled economy and0mail attempts.4API/347built/2838served hashes,2491retained
+chunks,284unchanged dependencies,8shells,anonymous401/runbookhash andbothsites200.
+
+Backup:`/root/finna-v12-ops-backup-52_pa_zk`. Guarded exact-source recovery is
+file-fixture-tested; production recovery not invoked. No SQL, bank/workshop,
+writer/economy evidence, provider, unit/dependency change, production synthetic
+activity or commit.0109remains immutable;next0110. Preview tab13/API/web/DB removed,
+Light/viewport restored, original user tab retained. Worker cycle instrumentation
+and timer/backup/disk collectors remain next; account viewer, retention/site notice /
+monthly restore/checklist and genuine healthy-week evidence remain. V.11actual
+email/digest/referral and wider launch/product gates remain. Report:
+`reports/finnaplan-v12-ops-20261118/README.md`. Whole plan open; goal usage-limited.
+
+## 18 November 2026 — V.12 worker cycles and actual host evidence
+
+V.12 worker cycles and host collectors are deployed (18 November). Assessment,
+desk retention, calendar and game cycles now write transaction-bound success /
+bounded post-rollback failure receipts. Mastery failure labels are explicit;
+last success survives failure. Desk notes show aggregate purge counts. Existing
+mail/nightly receipts remain; worker health does not certify email delivery.
+Exact additive outcome hooks on bank-review, paired-backup and stats jobs require
+actual SERVICE_RESULT plus normal zero exit; original jobs/schedules are preserved
+and none is manually started for proof. A new five-minute host collector measures
+disk and verifies the newest backup pair's archive/dump digests plus dump index.
+Root-only metadata/identity cache invalidates changed files; newest incomplete /
+corrupt evidence fails visibly with no older fallback. Backup creation/collection
+times are distinct;15minute collection/48hour backup staleness and10GiB disk warning
+render. This is not a restore rehearsal or a green-week claim. First daily job
+outcomes remain unknown until actual runs; none is backfilled. Mobile Questions
+navigation preserves needs-review.
+1277full backend tests pass with explicit process exit0.45targeted,14collector,
+24final focused and2operator-recovery checks (overlap),118fresh calibration /
+compatibility checks with68runtime bindings/25diagnostics, local build/components /
+navigation and1280/320px light/night browser QA pass. Fresh248-table dump clone
+preserves every row; actual-mpsc synthetic heartbeat/collector writes fully roll
+back. Live3public+27private learning reads,25reward/3edit/2bulk counters0,
+10tier+5bulk triggers,ledger46→46,economy reconciled,0mail attempts.9API/data,
+347built/2961served hashes,2614retained chunks,280unchanged dependencies,
+6collector/unit files,8shells,anonymous401/runbook hash andbothsites200 verify.
+No migration, bank/workshop/Caddy/provider/dependency change, synthetic production
+activity, success backfill or commit. Only real operational heartbeat rows are
+added by collection.0109immutable;next0110. Mail/checkout remain disabled.
+Receipt:reports/finnaplan-v12-workers-20261118/README.md.
+Backup:/root/finna-v12-workers-backup-9r_rlztk. Recovery validates API/schema/static/base-unit/drop-in/collector
+hashes, disables only the new host timer and restores the exact prior compatible
+API/economy evidence/static pair. All history/heartbeat rows and original units /
+schedules stay; disposable drift/recovery checks pass,production recovery not
+invoked. Never replay frozen targets. Final browser reconnect changed IAB2→4;
+preview tab/API/web/DB cleaned,Light/viewport restored,user help tab retained.
+Next independent implementation: read-only account viewer, then retention/site
+notice/monthly checklist and actual restore/healthy-week evidence. Observe first
+natural backup/stats outcomes. V.11actual email/digest/referral, later product /
+real-volume ranking,V.7actual sources,native/device andlaunchgates remain.
+Whole plan open; do not resume/reset the usage-limited goal automatically.
+
+Live initial states: score-reassessment:healthy, desk-retention:healthy, calendar-reminders:healthy, game-lifecycle:healthy, account-mail:healthy, mastery-reconciler:healthy, mastery-nightly:healthy. Timer states: timer:ism-oracle-bank-review:unknown, timer:ism-workshop-backup:unknown, timer:ism-stats-refresh:unknown, timer:finna-ops-host:attention.
+Backup probe: healthy; disk probe:
+healthy. These are actual release-time observations,
+not sustained health or a historical daily-job attestation. Original jobs were
+not started by the operator. Root-only preflight verified existing backup files;
+source changes and all frozen proof checks still match after documentation edits.
+
+## 18 November 2026 — collector outcome timestamp read correction
+
+V.12 cycle/collector release and final timer-time display correction are deployed
+(18 November). Assessment/desk/calendar/game cycles, explicit mastery failures,
+real additive bank/backup/stats outcome hooks and the five-minute host collector
+now feed /admin/ops. Disk and newest paired-backup digest/index verification are
+healthy; all seven worker observations are healthy. Natural bank-review execution
+has a healthy receipt; backup/stats outcome hooks await their next scheduled runs,
+with no historical successes backfilled. Mail worker health does not mean email
+delivery: mail and checkout remain disabled. No green-week/restore claim.
+The final read-only classifier uses a structured collector outcome instead of the
+in-process100ms timestamp tolerance: collection/hash/peer-write latency cannot
+create false attention. A normal-zero-exit requirement still guards timer success;
+failed/stale/future/malformed receipts keep their own states. This correction
+changes only ops.py; static2961files,collector/units,schema and68economy-bound
+sources remain unchanged. No new full suite is claimed for the reader repair:
+1,277full tests with exit0 precede only this read-only change;11focused regressions
+and actual-mpsc production read-only candidate/live checks cover it. Worker release
+also has118fresh calibration checks/68bindings,248-table exact preservation and
+rolled-back real-role probes, build/components/navigation and1280/320px light/night
+QA. Full release9API/347built/2961served/2614retained chunks/280unchanged dependencies
+and6collector/unit hashes verify. Final live3public+27private learning reads,
+25reward/3edit/2bulk counters0,10tier+5bulk triggers,ledger46→46,economy reconciled,
+0mail attempts,anonymousops401 andbothsites200. No migration, bank/workshop/Caddy /
+provider/dependency change, synthetic production activity or commit.0109immutable;
+next0110. Only real operational heartbeat rows are added by collection.
+Receipts:reports/finnaplan-v12-workers-20261118/README.md and
+reports/finnaplan-v12-collector-time-20261118/README.md.
+Worker backup:/root/finna-v12-workers-backup-9r_rlztk.
+Final reader backup:/root/finna-v12-collector-time-backup-5atf23ce. Latest reader recovery restores only its exact
+prior classifier after API/schema/static/unit/collector drift checks; current
+writers,installed collectors and history stay. Do not invoke the older whole-worker
+recovery over this reader update; its hash guard refuses. No production recovery
+invoked. Initial preflight staging-cleanup permissions were fixed before release;
+private temporary stages removed. Preview API/web/tab/DB marker cleaned,Light /
+viewport restored,user help tab retained (IAB surface2→4). Five synthetic PNGs.
+Next independent implementation: read-only /admin/users account viewer, then
+retention/site notice/monthly checklist and actual restore/healthy-week evidence.
+Observe first natural backup/stats outcomes. V.11actual email/digest/referral,
+later product/real-volume ranking,V.7actual sources,native/device andlaunchgates
+remain. Whole plan open; do not resume/reset usage-limited goal automatically.
+
+The initial host timer appeared attention despite healthy disk/backup evidence:
+its captured event time preceded DB commit by more than100ms. The structured
+outcome now determines success while age and explicit failure still apply.11real
+regressions include10-second peer-write delay and explicit failure; real-mpsc
+candidate/live reads pass. This is a reader-only follow-up after the full suite,
+with no further award/worker/collector/unit mutation. Old initial states remain
+in the first release receipt rather than being rewritten. The original preflight
+also left root-owned temporary inspection files; sudo cleanup and bytecode-free
+inspection were fixed before successful final preflight/deploy. No live release
+was applied by either failed-cleanup check. Temporary stages removed.
+
+
+## 18 November 2026 — V.12 account viewer released
+
+V.12 read-only account viewer is deployed at /admin/users (18 November).
+Exact-email/literal-handle search and per-account account/access/study/economy /
+community summaries use a repeatable-read/read-only snapshot,5s statement limit,
+global-owner permission and the existing staff MFA/exact-ID exemption policy.
+Native bearers and scoped owners are denied. No viewer mutations, answer history,
+private desks, credential/device material, ledger item notes/keys or block identities.
+Entitlement uses account_has_pro(); scoring and community rules reuse live helpers.
+Search/results/selection clear across auth transitions; late responses are discarded.
+44targeted compatibility checks,10final account/recovery and2separate recovery
+checks (overlap), build, real component/navigation and1280/320px light/night QA pass.
+Phone search controls stack; no overflow (1280/1280desktop,320/320phone). No new full
+suite claimed for this read-only slice; preceding1277full/exit0 remains historical.
+Final fresh248-table production-dump clone preserves every row. Live real-mpsc
+read-only snapshots cover3accounts (12–29ms each),3public+27private learning reads,
+25reward/3edit/2bulk counters0,10tier+5bulk triggers,ledger46→46,economy reconciled,
+0mail attempts.3API/348built/3086served hashes,2738retained chunks and288unchanged
+API/schema dependencies verify;13collector/unit paths stay fixed.9route shells,
+anonymoususers401,runbook hash andbothsites200 pass. All7workers,bank-review/host
+timer anddisk/backup probes healthy; first natural backup/stats outcomes unknown.
+No migration, bank/workshop/Caddy/provider/dependency change, synthetic production
+activity or commit.0109immutable; next0110. Mail/checkout remain disabled.
+Receipt:reports/finnaplan-v12-users-20261118/README.md.
+Backup:/root/finna-v12-users-backup-8eqzsmv9. Exact-source recovery guards installed
+API/schema/static/collector/unit hashes and restores prior reader/static pair;
+all history/writers/collectors stay.2disposable recovery checks pass; production
+recovery not invoked. Never replay older frozen targets over this release.
+Preview API/web/tab and exact final/interrupted disposable DBs removed; marker
+cleaned,Light/viewport restored,user help tab retained. Four final synthetic PNGs.
+Next independent work: V.12retention, site notice andmonthly checklist/actual
+restore receipt; genuine healthy-week gate needs elapsed operation. V.11actual
+email/digest/referral prerequisites,later Desk/Atlas/Studio work,V.7actual sources,
+native/device andlaunchgates remain. Whole plan stays open. The user has explicitly
+started a new unbounded active goal,finish without interruption; continue it and
+never reset it or mark it complete for a single slice. Older usage-limited goal
+notes below are historical and do not describe the current active goal.

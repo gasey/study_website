@@ -63,15 +63,16 @@ def test_sessions_are_private_and_revocation_is_account_bound(client,actor,datab
     assert client.get('/api/auth/session').json()['authenticated']
 
 
-def test_board_total_survives_empty_page_and_private_placement(client,actor,database):
+def test_board_bounded_projection_and_private_fields(client,actor,database):
     conn=database[1];u='board_'+uuid4().hex
     conn.execute('INSERT INTO users(id,handle,email) VALUES(%s,%s,%s)',(u,u,u+'@example.test'))
     conn.execute('INSERT INTO reward_profiles(user_id,board_public) VALUES(%s,true)',(u,))
     conn.execute("INSERT INTO reward_ledger(user_id,event_key,kind,xp,note) VALUES(%s,%s,'adjustment',100,'Synthetic board')",(u,u))
-    actor('owner');a=client.get('/api/rewards/leaderboard?period=month').json();b=client.get('/api/rewards/leaderboard?period=month&offset=10000').json()
-    assert a['total']==b['total'] and a['total']>0 and b['items']==[]
+    actor('owner');a=client.get('/api/rewards/leaderboard').json();b=client.get('/api/rewards/leaderboard?offset=10000').json()
+    assert a['total']>0 and len(a['items'])<=35
+    assert b['items']==[] and b['retired'] and not b['has_more']
     assert a['period_start'] and a['period_end'] and a['as_of']
-    assert all(set(x)=={'handle','avatar','rank','xp'} for x in a['items'])
+    assert all(set(x)=={'handle','rank','xp'} for x in a['items'])
 
 
 def test_level_boundaries():
@@ -96,7 +97,7 @@ def test_simultaneous_awards_share_cap_and_metadata(client,database):
     with ThreadPoolExecutor(max_workers=10) as pool:list(pool.map(write,ids))
     assert conn.execute('SELECT sum(xp) FROM reward_ledger WHERE user_id=%s',(user,)).fetchone()[0]==300
     rows=conn.execute('SELECT source_attempt_id,rule_version FROM reward_ledger WHERE user_id=%s AND source_attempt_id IS NOT NULL',(user,)).fetchall()
-    assert len(rows)==1 and rows[0][1]=='learning-v1'
+    assert len(rows)==1 and rows[0][1]=='learning-v2'
     assert conn.execute('SELECT count(*) FROM reward_question_claims WHERE user_id=%s',(user,)).fetchone()[0]==1
 
 
@@ -216,10 +217,11 @@ def test_board_ties_own_placement_opt_out_and_india_boundary(client,database):
     tied=[x for x in r['items']if x['handle']in users];assert len(tied)==2 and tied[0]['rank']==tied[1]['rank']
     assert r['placement']['rank']==tied[0]['rank'] and r['placement']['xp']==50000
     start=datetime.fromisoformat(r['period_start']).astimezone(ZoneInfo('Asia/Kolkata'))
-    assert start.day==1 and start.hour==0 and start.minute==0
+    assert start.weekday()==0 and start.hour==0 and start.minute==0
     assert client.post('/api/rewards/visibility',headers=headers(client),json={'public':False}).status_code==200
     out=client.get('/api/rewards/leaderboard?limit=100').json()
-    assert out['placement']is None and users[0]not in [x['handle']for x in out['items']]
+    assert out['placement']['rank']==r['placement']['rank'] and not out['placement']['public']
+    assert users[0]not in [x['handle']for x in out['items']]
 
 
 def test_password_change_rotates_cookie_and_keeps_new_session_usable(client,database):

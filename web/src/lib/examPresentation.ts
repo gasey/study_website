@@ -8,6 +8,7 @@ export function examPresentation(id:string){
   'group-b-gazetted':{tone:'violet',short:'GB',category:'Gazetted preparation'},
   'group-b-non-gazetted':{tone:'teal',short:'GB',category:'Non-Gazetted preparation'},
   'iti-instructor-2026':{tone:'amber',short:'ITI',category:'Technical preparation'},
+  mes:{tone:'amber',short:'MES',category:'Engineering Service preparation'},
  }
  return identities[id]||{tone:'indigo',short:'EX',category:'Exam preparation'}
 }

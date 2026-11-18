@@ -4,6 +4,41 @@ from test_study_sessions import seed, start
 from test_learning_workflows import learner
 
 
+def test_paper_sequence_precedes_pagination_and_retains_filtered_order(client, actor, database):
+    user,h=learner(database,actor);p,ids=seed(database,36)
+    conn=database[1]
+    expected=list(reversed(ids))
+    for sequence,qid in enumerate(expected,1):
+        # Printed numbers restart; qnum_seq is the authoritative source order.
+        conn.execute('UPDATE appearances SET qnum_seq=%s,qnum=%s,page=%s WHERE paper_id=%s AND canonical_id=%s',
+                     (sequence,str((sequence-1)%12+1),(sequence-1)//12+1,p,qid))
+    query={'collection_id':'udc','paper_id':p,'order':'paper','limit':12}
+    def page(**extra):
+        response=client.get('/api/questions',headers=h,params={**query,**extra})
+        assert response.status_code==200,response.text
+        return response.json()
+    first=page();second=page(offset=12);third=page(offset=24)
+    assert [q['id'] for result in [first,second,third] for q in result['items']]==expected
+    assert page()==first,'Refreshing preserves source order'
+    assert all(q['source_appearance']['paper_id']==p for q in first['items'])
+    assert [q['source_appearance']['qnum'] for q in first['items']]==list(map(str,range(1,13)))
+    assert all('answer_text' not in q for q in first['items'])
+    for qid in expected[::3]:
+        conn.execute("INSERT INTO attempts(user_id,canonical_id,paper_id,collection_id,context,chosen_text,correct) VALUES(%s,%s,%s,'udc','practice','A',false)",(user,qid,p))
+    remaining=[qid for qid in expected if qid not in expected[::3]]
+    unseen=page(study_status='unseen');next_unseen=page(study_status='unseen',offset=12)
+    assert unseen['total']==24
+    assert [q['id'] for result in [unseen,next_unseen] for q in result['items']]==remaining
+    assert client.get('/api/questions',headers=h,params={'order':'paper'}).status_code==422
+
+
+def test_paper_order_falls_back_to_numeric_printed_numbers(client,actor,database):
+    _,h=learner(database,actor);p,ids=seed(database,12)
+    response=client.get('/api/questions',headers=h,params={'collection_id':'udc','paper_id':p,'order':'paper','limit':100})
+    assert response.status_code==200,response.text
+    assert [q['id'] for q in response.json()['items']]==ids
+
+
 def test_seeded_pages_cover_filtered_pool_and_refresh_stays_stable(client, actor, database):
     _,h=learner(database,actor);p,ids=seed(database,36)
     query={'collection_id':'udc','paper_id':p,'order':'mixed','seed':'first-mix','limit':12}

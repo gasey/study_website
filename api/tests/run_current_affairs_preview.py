@@ -6,7 +6,7 @@ import conftest
 from test_current_affairs import sources,proposal,publish,measured_proposal
 from psycopg.types.json import Jsonb
 if __name__=='__main__':
- databases=conftest.database.__wrapped__();database=next(databases)
+ databases=conftest.fresh_database();database=next(databases)
  clients=conftest.client.__wrapped__(database);client=next(clients)
  select=conftest.actor.__wrapped__(client)
  rows=sources.__wrapped__(database,client)

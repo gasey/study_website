@@ -9,6 +9,15 @@ from .config import settings
 _pool: AsyncConnectionPool | None = None
 
 
+def pool_status() -> dict:
+    """Current process only; no DSN, credentials or cumulative request counters."""
+    if _pool is None or _pool.closed:
+        raise RuntimeError("connection pool not open")
+    stats = _pool.get_stats()
+    return {"size": stats["pool_size"], "available": stats["pool_available"],
+            "waiting": stats["requests_waiting"], "max": stats["pool_max"]}
+
+
 async def open_pool() -> None:
     global _pool
     _pool = AsyncConnectionPool(

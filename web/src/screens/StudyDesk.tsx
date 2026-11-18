@@ -1,7 +1,7 @@
-import LearningOverview from '../components/LearningOverview'
+import DeskCalendar from '../components/DeskCalendar'
 import {UserAvatar} from '../components/AvatarArt'
 import {AVATAR_COLORS} from '../lib/avatar'
-import { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import {
   Link,
   useNavigate,
@@ -12,13 +12,9 @@ import DeskScene, { type SceneMember } from "../components/DeskScene";
 import DeskFocus from "../components/DeskFocus";
 import { DeskQuestion } from "../components/DeskPractice";
 import {
-  currentMock,
   getQuestion,
   listQuestions,
-  listTaxonomy,
-  type MockSession,
   type Question,
-  type TaxonomyFacet,
 } from "../lib/api";
 import {
   deskRead,
@@ -26,14 +22,11 @@ import {
   getDesk,
   getDeskSync,
   importGuestDesk,
-  localDate,
   reloadAccountDesk,
   saveDesk,
   subscribeDesk,
-  weekDates,
   type DeskData,
   type DeskNote,
-  type DeskTask,
 } from "../lib/desk";
 import {
   deskWrite,
@@ -82,7 +75,6 @@ type Panel =
   | "share"
   | "note"
   | "settings"
-  | "plan"
   | "report"
   | "message"
   | null;
@@ -137,8 +129,11 @@ export default function StudyDesk() {
   const { deskId } = useParams();
   const roomId = deskId?.startsWith("desk_") ? deskId : undefined;
   const [params, setParams] = useSearchParams();
-  const raw = params.get("tab") || "shared";
-  const tab = TABS.some((t) => t[0] === raw) ? raw : "shared";
+  const requested = params.get("tab") || "shared";
+  const raw = requested === "focus" ? "session" : !roomId && requested === "bookmarks" ? "shared" : requested;
+  const tabs = roomId ? TABS : TABS.filter(t => !["progress", "mistakes", "practice", "bookmarks"].includes(t[0])).map(t => [t[0], t[0] === "shared" ? "Saved questions" : t[0] === "notes" ? "Notes" : t[0] === "session" ? "Focus timer" : t[1], t[2], t[3]]);
+  const tab = tabs.some((t) => t[0] === raw) ? raw : "shared";
+  useEffect(() => {if (!roomId && ["progress", "mistakes", "practice"].includes(raw)) nav(raw === "progress" ? "/profile#mastery" : "/revise" + (raw === "mistakes" ? "?tab=queue" : ""), {replace: true})}, [roomId, raw, nav]);
   const [desk, setDesk] = useState(getDesk);
   const [sync, setSync] = useState(getDeskSync);
   const [overview, setOverview] = useState<DeskOverview>(emptyOverview);
@@ -147,8 +142,6 @@ export default function StudyDesk() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [busy, setBusy] = useState(false);
-  const [facets, setFacets] = useState<TaxonomyFacet[]>([]);
-  const [mock, setMock] = useState<MockSession | null>(null);
   const [items, setItems] = useState<SharedItem[]>([]);
   const [cursor, setCursor] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -185,8 +178,6 @@ export default function StudyDesk() {
     text: string;
     run: () => Promise<void>;
   } | null>(null);
-  const [taskDraft, setTaskDraft] = useState("");
-  const [weekTask, setWeekTask] = useState(false);
   const [notice, setNotice] = useState("");
   const createKey = useRef(uid());
   const shareKey = useRef({ payload: "", key: uid() });
@@ -199,17 +190,6 @@ export default function StudyDesk() {
       }),
     [],
   );
-  useEffect(() => {
-    let active = true;
-    listTaxonomy("all")
-      .then((x) => {
-        if (active) setFacets(x);
-      })
-      .catch(() => {});
-    return () => {
-      active = false;
-    };
-  }, []);
   async function refresh() {
     try {
       const result = await getOverview();
@@ -235,14 +215,12 @@ export default function StudyDesk() {
     setLoading(true);
     Promise.all([
       getOverview(),
-      currentMock(),
       sync.registered ? getRooms() : Promise.resolve(null),
       sync.registered && roomId ? getRoom(roomId) : Promise.resolve(null),
     ])
-      .then(([o, m, l, r]) => {
+      .then(([o, l, r]) => {
         if (!active) return;
         setOverview(o);
-        setMock(m);
         setList(l);
         setRoom(r);
       })
@@ -399,8 +377,6 @@ export default function StudyDesk() {
       clearTimeout(timer);
     };
   }, [panel, search]);
-  const dates = useMemo(() => weekDates(), []);
-  const today = localDate();
   const myId = sync.userId;
   const owner = !!room && room.owner_id === myId;
   const registered = sync.registered;
@@ -440,6 +416,7 @@ export default function StudyDesk() {
     },
   );
   function setTab(value: string) {
+    if (!roomId && ["progress", "mistakes", "practice"].includes(value)) { nav(value === "progress" ? "/profile#mastery" : "/revise" + (value === "mistakes" ? "?tab=queue" : "")); return; }
     setParams((previous) => {
       const p = new URLSearchParams(previous);
       p.set("tab", value);
@@ -493,18 +470,6 @@ export default function StudyDesk() {
   }
   function update(next: DeskData) {
     saveDesk(next);
-  }
-  function addTask(e: React.FormEvent) {
-    e.preventDefault();
-    if (!taskDraft.trim()) return;
-    const task: DeskTask = {
-      id: today + "-" + uid(),
-      text: taskDraft.trim(),
-      done: false,
-      week: weekTask,
-    };
-    update({ ...desk, tasks: [...desk.tasks, task] });
-    setTaskDraft("");
   }
   async function savePanel(e: React.FormEvent) {
     e.preventDefault();
@@ -646,163 +611,6 @@ export default function StudyDesk() {
     a.click();
     URL.revokeObjectURL(url);
   }
-  const plan = (
-    <div className="space-y-4">
-      <label className="block text-[13px] font-semibold">
-        Today’s main goal
-        <input
-          value={desk.goal}
-          onChange={(e) => update({ ...desk, goal: e.target.value })}
-          maxLength={140}
-          className={I + " mt-2"}
-          placeholder="Revise polity and practise 20 questions"
-        />
-      </label>
-      <label className="block text-[13px] font-semibold">
-        Focus subject
-        <select
-          className={I + " mt-2"}
-          value={desk.goalSubject}
-          onChange={(e) => update({ ...desk, goalSubject: e.target.value })}
-        >
-          <option value="">All subjects</option>
-          {[
-            ...new Map(facets.map((f) => [f.subject_id, f.subject])).entries(),
-          ].map(([id, label]) => (
-            <option key={id} value={id}>
-              {label}
-            </option>
-          ))}
-        </select>
-      </label>
-      <button
-        className={
-          B +
-          (desk.completedDays.includes(today)
-            ? " border-correct bg-correct-soft text-correct-dark"
-            : "")
-        }
-        aria-pressed={desk.completedDays.includes(today)}
-        onClick={() =>
-          update({
-            ...desk,
-            completedDays: desk.completedDays.includes(today)
-              ? desk.completedDays.filter((d) => d !== today)
-              : [...desk.completedDays, today],
-          })
-        }
-      >
-        {desk.completedDays.includes(today)
-          ? "✓ Daily goal complete"
-          : "Mark daily goal complete"}
-      </button>
-      <div className="grid grid-cols-7 gap-1">
-        {dates.map((d) => (
-          <div
-            key={d}
-            className={
-              "rounded-[6px] p-2 text-center " +
-              (desk.completedDays.includes(d)
-                ? "bg-correct-soft"
-                : "bg-[#EFE8DA]")
-            }
-          >
-            <span className="font-mono text-[10px]">
-              {new Date(d + "T12:00:00").toLocaleDateString("en-IN", {
-                weekday: "short",
-              })}
-            </span>
-            <div className="text-[13px]">{d.slice(-2)}</div>
-            <span>{desk.completedDays.includes(d) ? "✓" : "·"}</span>
-          </div>
-        ))}
-      </div>
-      <label className="block text-[13px]">
-        Weekly question goal
-        <input
-          type="number"
-          min={1}
-          max={10000}
-          value={desk.weeklyTarget}
-          className={I + " mt-1"}
-          onChange={(e) =>
-            update({
-              ...desk,
-              weeklyTarget: Math.max(
-                1,
-                Math.min(10000, Number(e.target.value) || 1),
-              ),
-            })
-          }
-        />
-      </label>
-      <div className="space-y-1">
-        {desk.tasks
-          .filter((t) =>
-            t.week ? dates.includes(t.id.slice(0, 10)) : t.id.startsWith(today),
-          )
-          .map((t) => (
-            <div
-              key={t.id}
-              className="flex items-center gap-2 border-b border-hairline py-2"
-            >
-              <label className="flex min-h-11 min-w-0 flex-1 items-center gap-3 text-[14px]">
-                <input
-                  type="checkbox"
-                  checked={t.done}
-                  onChange={() =>
-                    update({
-                      ...desk,
-                      tasks: desk.tasks.map((x) =>
-                        x.id === t.id ? { ...x, done: !x.done } : x,
-                      ),
-                    })
-                  }
-                />
-                <span className={t.done ? "line-through text-muted" : ""}>
-                  {t.text}
-                  <small className="ml-2 text-muted">
-                    {t.week ? "This week" : "Today"}
-                  </small>
-                </span>
-              </label>
-              <button
-                className={B}
-                onClick={() =>
-                  update({
-                    ...desk,
-                    tasks: desk.tasks.filter((x) => x.id !== t.id),
-                  })
-                }
-              >
-                Remove
-              </button>
-            </div>
-          ))}
-      </div>
-      <form onSubmit={addTask} className="space-y-2">
-        <label className="block text-[13px]">
-          New checklist step
-          <input
-            required
-            maxLength={140}
-            value={taskDraft}
-            onChange={(e) => setTaskDraft(e.target.value)}
-            className={I + " mt-1"}
-          />
-        </label>
-        <label className="flex min-h-11 items-center gap-2 text-[13px]">
-          <input
-            type="checkbox"
-            checked={weekTask}
-            onChange={(e) => setWeekTask(e.target.checked)}
-          />
-          Plan for this week
-        </label>
-        <button className={B + " bg-ink text-paper"}>Add step</button>
-      </form>
-    </div>
-  );
   if (sync.loading)
     return (
       <div role="status" className="desk-v3">
@@ -812,7 +620,7 @@ export default function StudyDesk() {
     );
   if (roomId && !room && !loading && error)
     return (
-      <main className="desk-v3">
+      <main className="desk-v3" data-desk-room={!!room}>
         <h1 className="desk-v3-heading">This desk is unavailable</h1>
         <p role="alert" className="mt-3 text-[14px] text-secondary">
           {error}
@@ -823,8 +631,8 @@ export default function StudyDesk() {
       </main>
     );
   return (
-    <main className="desk-v3">
-      {!room&&<LearningOverview/>}
+    <main className="desk-v3" data-desk-room={!!room}>
+      {!room&&<p className="mb-4 text-sm text-secondary"><Link to="/feed" className="inline-flex min-h-11 items-center font-semibold text-link">Your daily plan is on Home →</Link> · <Link to="/profile#mastery" className="inline-flex min-h-11 items-center font-semibold text-link">View mastery</Link></p>}
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div className="min-w-0">
           <div className="desk-v3-label !text-[#86226F]">Study desk</div>
@@ -834,7 +642,7 @@ export default function StudyDesk() {
           <p className="mt-2.5 text-[16px] text-secondary">
             {room
               ? `You and ${Math.max(0, room.members.length - 1)} ${room.members.length === 2 ? "partner" : "partners"} · up to 5 · invite only`
-              : "A quiet place for your goals, questions and revision"}
+              : "Your private notes, saved questions and focus timer"}
           </p>
           <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[12px] text-secondary">
             <span className="mr-1">Who can see this desk</span>
@@ -948,13 +756,13 @@ export default function StudyDesk() {
                 )
               }
             >
-              Import browser plan
+              Import browser desk
             </button>
             <button
               className="min-h-9 text-link underline"
               onClick={exportPersonal}
             >
-              Export my plan
+              Export my desk
             </button>
           </>
         ) : (
@@ -989,7 +797,7 @@ export default function StudyDesk() {
               onClick={() =>
                 confirm(
                   "Keep this browser’s version?",
-                  "This replaces the latest account plan with the local edits shown here. Your notes and saved questions on another device may differ.",
+                  "This replaces the latest account desk with the local edits shown here. Your notes and saved questions on another device may differ.",
                   () => reloadAccountDesk(true),
                 )
               }
@@ -1129,6 +937,7 @@ export default function StudyDesk() {
           Invite · {Math.max(0, 6 - members.length)} seats open
         </button>
       </div>
+      {room && <>
       <div className="desk-v3-scene">
         <div className="desk-v3-scene-canvas">
           <DeskScene
@@ -1162,6 +971,7 @@ export default function StudyDesk() {
           </span>
         </div>
       </div>
+      </>}
       {loading && (
         <p role="status" className="mt-4 text-[13px] text-muted">
           Loading your study activity…
@@ -1174,7 +984,7 @@ export default function StudyDesk() {
             role="group"
             aria-label="Desk content sections"
           >
-            {TABS.map(([id, label, color, tint]) => (
+            {tabs.map(([id, label, color, tint]) => (
               <button
                 key={id}
                 type="button"
@@ -1229,33 +1039,6 @@ export default function StudyDesk() {
                     : "Private to your account"}
                 </span>
               </div>
-              <div className="mt-4 rounded-[8px] bg-[#E3EEE0] p-5">
-                <div className="desk-v3-label !text-[#3F8350]">
-                  Your weekly goal
-                </div>
-                <p className="mt-2 font-display text-[30px]">
-                  {overview.stats.week_answers.toLocaleString("en-IN")} /{" "}
-                  {desk.weeklyTarget} questions
-                </p>
-                <div className="mt-2 h-2 overflow-hidden rounded-full bg-card">
-                  <div
-                    className="h-full bg-[#3F8350]"
-                    style={{
-                      width:
-                        Math.min(
-                          100,
-                          (overview.stats.week_answers / desk.weeklyTarget) *
-                            100,
-                        ) + "%",
-                    }}
-                  />
-                </div>
-                <p className="mt-2 text-[12px] text-secondary">
-                  Recorded answers this week ·{" "}
-                  {dates.filter((d) => desk.completedDays.includes(d)).length}{" "}
-                  daily goals completed
-                </p>
-              </div>
               {room && (
                 <div className="mt-5 grid gap-2">
                   {members.map((m) => (
@@ -1301,12 +1084,7 @@ export default function StudyDesk() {
                   Subject progress appears as you practise classified questions.
                 </Empty>
               )}
-              <section className="mt-7">
-                <h3 className="mb-4 font-display text-[25px]">
-                  Your private plan
-                </h3>
-                {plan}
-              </section>
+
             </>
           )}
           {(tab === "shared" ||
@@ -1319,7 +1097,7 @@ export default function StudyDesk() {
                   {tab === "shared"
                     ? room
                       ? "Shared from the bank"
-                      : "Your revision desk"
+                      : "Saved questions"
                     : tab === "notes"
                       ? room
                         ? "Shared notes"
@@ -1341,43 +1119,6 @@ export default function StudyDesk() {
                       : "+ Save a question"}
                 </button>
               </div>
-              {!roomId && tab === "shared" && (
-                <div className="mt-4 rounded-[8px] border border-[#B23A9A] bg-[#EEDDEC] p-[18px]">
-                  <div className="desk-v3-label !text-[#86226F]">
-                    Today’s goal
-                  </div>
-                  <h3 className="mt-2 font-display text-[24px]">
-                    {desk.goal || "Start with one small step."}
-                  </h3>
-                  <p className="mt-2 text-[13px] text-secondary">
-                    {
-                      desk.tasks.filter((t) => t.id.startsWith(today) && t.done)
-                        .length
-                    }{" "}
-                    checklist steps completed · {overview.stats.week_answers}{" "}
-                    answers this week
-                  </p>
-                  <div className="mt-3 flex flex-wrap gap-2">
-                    <button
-                      className={B + " bg-ink text-paper"}
-                      onClick={() => open("plan")}
-                    >
-                      Plan today
-                    </button>
-                    <button className={B} onClick={() => setTab("practice")}>
-                      Start a desk set
-                    </button>
-                  </div>
-                  {mock && (
-                    <Link
-                      to={"/exams/" + mock.collection_id + "/mock"}
-                      className="mt-3 inline-block text-[13px] font-semibold text-link underline"
-                    >
-                      Resume your unfinished mock →
-                    </Link>
-                  )}
-                </div>
-              )}
               {roomId ? (
                 <>
                   <div className="mt-3">
@@ -1543,7 +1284,7 @@ export default function StudyDesk() {
                           onClick={() =>
                             confirm(
                               "Delete this private note?",
-                              "Export your plan first if you need a copy.",
+                              "Export your desk first if you need a copy.",
                               async () =>
                                 update({
                                   ...desk,
@@ -1704,6 +1445,8 @@ export default function StudyDesk() {
           )}
         </section>
         <aside className="desk-v3-rail">
+          {!room && <DeskCalendar/>}
+          {room && <>
           <article className="border border-ink bg-card p-[18px] shadow-[inset_0_4px_0_#B23A9A]">
             <div className="flex items-center gap-3">
               <UserAvatar look={focused?.avatar} initials={focused?.is_you?'You':focused?.handle||'S'} size={52}/>
@@ -1771,26 +1514,22 @@ export default function StudyDesk() {
               </div>
             )}
           </article>
+          </>}
           <section className="rounded-[8px] bg-[#EEDDEC] p-[18px]">
             <div className="desk-v3-label !text-[#B23A9A]">
-              {room ? "Private desk" : "Your next step"}
+              {room ? "Private desk" : "Your toolbox"}
             </div>
             <h3 className="mt-2 font-display text-[20px]">
               {room
                 ? "Study together, keep your own history"
-                : desk.goal || "Make room for a little progress."}
+                : "Keep your study things together"}
             </h3>
             <p className="mt-2 text-[13px] leading-relaxed text-[#3E2F3D]">
               {room
                 ? "Questions and notes shared here are visible to members. Individual attempts, points and private notes stay in their own accounts."
-                : "Set one goal, save questions you want to revisit, and start a focused session."}
+                : "Save a question, write a private note or use the focus timer. Your daily plan stays on Home."}
             </p>
-            <button
-              className={B + " mt-3 border-[#B23A9A] bg-[#B23A9A] text-white"}
-              onClick={() => open("plan")}
-            >
-              Open your private plan
-            </button>
+            <Link to="/feed" className={B + " mt-3"}>Open Today on Home →</Link>
             {!room && (
               <p className="mt-3 text-[12px] text-[#4E3A4D]">
                 Shared desks are created with Pro. Invited members join free.
@@ -2080,17 +1819,13 @@ export default function StudyDesk() {
                       : "Your private note"
                     : panel === "settings"
                       ? "Desk settings & members"
-                      : panel === "plan"
-                        ? "Your private study plan"
-                        : panel === "message"
+                      : panel === "message"
                           ? "Edit your desk message"
                           : "Report desk content"
           }
           onClose={() => setPanel(null)}
         >
-          {panel === "plan" ? (
-            plan
-          ) : !registered && panel !== "note" && panel !== "share" ? (
+          {!registered && panel !== "note" && panel !== "share" ? (
             <p className="text-[14px] leading-relaxed">
               Sign in to create or join a shared desk and save your progress
               across devices.

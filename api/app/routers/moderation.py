@@ -41,7 +41,7 @@ async def queue_items(cur, actor: str, tab: str, limit: int):
         await cur.execute(
             """SELECT 'report:' || p.id::text AS id, 'reported' AS item_type,
                       p.id AS post_id, NULL::bigint AS appeal_id, NULL::bigint AS action_id,
-                      p.canonical_id, q.question, p.body,p.source_links,
+                      COALESCE(p.canonical_id,CASE WHEN p.source_context->'study_reference'->>'kind'='question' THEN p.source_context->'study_reference'->>'id' END) AS canonical_id, q.question, p.body,p.source_links,COALESCE(p.material_id,CASE WHEN p.source_context->'study_reference'->>'kind'='material' THEN p.source_context->'study_reference'->>'id' END) AS material_id,
                       COALESCE(NULLIF(u.name,''), u.handle, 'MPSC learner') AS author,
                       COALESCE(u.role, 'learner') AS author_role, p.created_at,
                       array_agg(DISTINCT ar.reason ORDER BY ar.reason) AS reasons,
@@ -52,7 +52,7 @@ async def queue_items(cur, actor: str, tab: str, limit: int):
                       false AS undone, NULL::jsonb AS before_state
                  FROM abuse_reports ar
                  JOIN posts p ON p.id=ar.post_id
-                 JOIN canonical_questions q ON q.id=p.canonical_id
+                 LEFT JOIN canonical_questions q ON q.id=COALESCE(p.canonical_id,CASE WHEN p.source_context->'study_reference'->>'kind'='question' THEN p.source_context->'study_reference'->>'id' END)
                  LEFT JOIN users u ON u.id=p.author_id
                 WHERE ar.status='open'
                 GROUP BY p.id, q.id, u.id
@@ -64,7 +64,7 @@ async def queue_items(cur, actor: str, tab: str, limit: int):
         await cur.execute(
             """SELECT 'post:' || p.id::text AS id, 'new_user' AS item_type,
                       p.id AS post_id, NULL::bigint AS appeal_id, NULL::bigint AS action_id,
-                      p.canonical_id, q.question, p.body,p.source_links,
+                      COALESCE(p.canonical_id,CASE WHEN p.source_context->'study_reference'->>'kind'='question' THEN p.source_context->'study_reference'->>'id' END) AS canonical_id, q.question, p.body,p.source_links,COALESCE(p.material_id,CASE WHEN p.source_context->'study_reference'->>'kind'='material' THEN p.source_context->'study_reference'->>'id' END) AS material_id,
                       COALESCE(NULLIF(u.name,''), u.handle, 'MPSC learner') AS author,
                       COALESCE(u.role, 'learner') AS author_role, p.created_at,
                       ARRAY['first_post']::text[] AS reasons, 0::int AS report_count,
@@ -74,7 +74,7 @@ async def queue_items(cur, actor: str, tab: str, limit: int):
                       NULL::text AS note, NULL::text AS action,
                       false AS undone, NULL::jsonb AS before_state
                  FROM posts p
-                 JOIN canonical_questions q ON q.id=p.canonical_id
+                 LEFT JOIN canonical_questions q ON q.id=COALESCE(p.canonical_id,CASE WHEN p.source_context->'study_reference'->>'kind'='question' THEN p.source_context->'study_reference'->>'id' END)
                  LEFT JOIN users u ON u.id=p.author_id
                 WHERE p.needs_approval
                 ORDER BY p.created_at, p.id
@@ -125,13 +125,26 @@ async def queue_items(cur, actor: str, tab: str, limit: int):
                 LIMIT %s""",
             (actor, limit),
         )
-    items = [ModerationItem(**row) for row in await cur.fetchall()]
+    rows=await cur.fetchall()
+    from ..services.study_posts import reference
+    for row in rows:
+        if row.get('post_id'):
+            await cur.execute('SELECT content_version FROM posts WHERE id=%s',(row['post_id'],));meta=await cur.fetchone()
+            row['content_version']=meta['content_version'] if meta else 0
+            if row['content_version']:
+                await cur.execute('SELECT version,body,source_links,created_at FROM post_revisions WHERE post_id=%s ORDER BY version DESC LIMIT 5',(row['post_id'],))
+                row['edit_history']=[{**r,'created_at':str(r['created_at'])} for r in await cur.fetchall()]
+        mid=row.pop('material_id',None)
+        if mid:
+            try:row['material']=await reference(cur,{'kind':'material','id':mid},actor)
+            except HTTPException:row['material']={'unavailable':True}
+    items = [ModerationItem(**row) for row in rows]
     return ModerationQueueResponse(tab=tab, counts=counts, items=items)
 
 
 async def _post_state(cur, post_id: int) -> dict:
     await cur.execute(
-        """SELECT id, hidden, needs_approval, hidden_by, hidden_reason
+        """SELECT id, hidden, needs_approval, hidden_by, hidden_reason, content_version
              FROM posts WHERE id=%s FOR UPDATE""",
         (post_id,),
     )
@@ -173,17 +186,25 @@ async def moderate_post(post_id: int, body: ModerationActionRequest, actor: str,
             from ..services.review_identity import require_role
             from ..services.bank_review import protect_answer
             await require_role(cur, actor, roles=('owner',))
-            await cur.execute('SELECT author_id,canonical_id FROM posts WHERE id=%s FOR UPDATE', (post_id,))
+            await cur.execute('SELECT author_id,canonical_id,source_context FROM posts WHERE id=%s FOR UPDATE', (post_id,))
             target=await cur.fetchone()
             if not target: raise HTTPException(404, 'Post not found')
             if target['author_id']==actor: raise HTTPException(403, 'Another moderator must review your post')
-            await protect_answer(cur, actor, target['canonical_id'])
+            link=target['source_context'].get('study_reference') or {}
+            await protect_answer(cur, actor, target['canonical_id'] or (link.get('id') if link.get('kind')=='question' else None))
         before = await _post_state(cur, post_id)
-        await cur.execute("SELECT canonical_id, author_id, needs_approval FROM posts WHERE id=%s", (post_id,))
+        await cur.execute("SELECT canonical_id, author_id, needs_approval, COALESCE(material_id,CASE WHEN source_context->'study_reference'->>'kind'='material' THEN source_context->'study_reference'->>'id' END) AS material_id FROM posts WHERE id=%s", (post_id,))
         post = await cur.fetchone()
+        if before['content_version'] and body.expected_version!=before['content_version']:
+            raise HTTPException(409,'The post revision changed. Reload the moderation queue')
+        if before['content_version'] and post['author_id']==actor:
+            raise HTTPException(403,'Another moderator must review your edit')
         if body.action in {"approve", "reject"} and not post["needs_approval"]:
             raise HTTPException(409, "post is no longer awaiting approval")
         if body.action == "approve":
+            if post['material_id']:
+                from ..services.study_posts import reference
+                await reference(cur,{'kind':'material','id':post['material_id']},actor)
             await cur.execute("SELECT COUNT(*)::int AS n FROM abuse_reports WHERE post_id=%s AND status='open'", (post_id,))
             if (await cur.fetchone())["n"]:
                 raise HTTPException(409, "resolve open conduct reports before publishing this post")
@@ -194,7 +215,7 @@ async def moderate_post(post_id: int, body: ModerationActionRequest, actor: str,
         if body.action == "approve":
             await cur.execute("UPDATE posts SET needs_approval=false WHERE id=%s AND needs_approval", (post_id,))
             from .discussions import notify_reply
-            await notify_reply(cur, post_id)
+            if post['canonical_id'] is not None:await notify_reply(cur, post_id)
         elif body.action == "reject":
             await cur.execute(
                 """UPDATE posts SET needs_approval=false, hidden=true, hidden_by='admin',
@@ -271,7 +292,9 @@ async def undo_action(action_id: int, actor: Admin) -> dict:
             raise HTTPException(409, "action has already been undone")
         state = original["before_state"]
         if original["post_id"] is not None:
-            await _post_state(cur, original["post_id"])
+            current=await _post_state(cur, original["post_id"])
+            if current['content_version']!=state.get('content_version',0):
+                raise HTTPException(409,'A newer post revision exists; this moderation action cannot be undone')
             await cur.execute(
                 """UPDATE posts SET hidden=%s, needs_approval=%s, hidden_by=%s, hidden_reason=%s
                     WHERE id=%s""",

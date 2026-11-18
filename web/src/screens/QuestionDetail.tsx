@@ -93,26 +93,28 @@ export default function QuestionDetail() {
       ? 'Diagram note · the figure artwork is in the original PDF below. Open the source paper before answering.'
       : null
 
+  const answered = !!result || viewed
+  const crumb = [q.taxonomy_subject, q.taxonomy_topic, q.taxonomy_subtopic].filter(Boolean).join(' → ')
+  const sourcePdf = q.appearances.find((a) => a.source_pdf_url)
+
   return (
-    <div className="mx-auto max-w-3xl px-6 py-10">
-      <Link to="/bank" className="label underline">
-        ← Bank
+    <div className="finna-qd">
+      <div className="finna-qd-main">
+      <Link to="/bank" className="finna-qd-back">
+        ← Question bank
       </Link>
 
       <QuestionUpdate questionId={id}/>
-      <div id={'question-'+id} className="mt-4 rounded-card border border-hairline bg-card p-6">
-        <div className="mb-4 flex flex-wrap items-center gap-2">
-          <span className="label text-practice-dark">
-            {q.last_year ?? q.first_year ?? '—'}
+      <article id={'question-'+id} className="finna-qd-card">
+        <div className="finna-qd-meta">
+          {q.taxonomy_subject && <span className="finna-qd-chip">{q.taxonomy_subject}</span>}
+          <span className="finna-qd-chip-ink">
+            {q.last_year ?? q.first_year ?? '—'} · {q.type === 'mcq' ? 'MCQ' : 'Descriptive'}
           </span>
-          <span className="text-hairline2">·</span>
-          <span className="label">{q.type === 'mcq' ? 'MCQ' : 'Descriptive'}</span>
-          <span className="grow" />
           <RepeatBadge times={q.times_asked} />
-          <AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.type==='mcq'?q.id:undefined} />
-          <button type="button" onClick={toggleSaved} disabled={deskLoading} aria-pressed={saved} className={`min-h-11 rounded-pill border px-3 py-2 text-[12px] font-semibold ${saved ? 'border-learn-dark bg-learn-soft text-learn-dark' : 'border-hairline text-secondary'}`}>
-            {deskLoading ? 'Loading saved questions…' : saved ? '★ Saved' : '☆ Save for revision'}
-          </button>
+          <span className="finna-qd-source">
+            <AnswerProvenance source={q.answer_source} reviewed={q.reviewed_derived} disputed={q.key_disputed} defect={q.source_defect} questionType={q.type} statusOverride={q.answer_status} questionId={q.type==='mcq'?q.id:undefined} />
+          </span>
         </div>
 
         <SourceQuestionContext direction={q.direction} passage={q.passage} />
@@ -120,9 +122,9 @@ export default function QuestionDetail() {
 
         {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
-        {q.key_disputed && <p className="mt-4 rounded-panel border border-[#D8B56D] bg-[#FFF4DF] p-4 text-[13px] leading-relaxed text-[#684919]">Answer disputed · the worked solution differs from the official key. This question is excluded from official-key test scores.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
+        {q.key_disputed && <p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">Answer disputed · the worked solution differs from the official key. This question is excluded from official-key test scores.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
 
-        {sourceNote && <p className="mt-4 rounded-panel border border-[#D8B56D] bg-[#FFF4DF] p-4 text-[13px] leading-relaxed text-[#684919]">{sourceNote}</p>}
+        {sourceNote && <p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">{sourceNote}</p>}
 
         {q.options.length > 0 && (
           <> <AnswerLayoutControl/><AnswerOptions as="ol" className="mt-3">
@@ -151,9 +153,9 @@ export default function QuestionDetail() {
                   >
                     <span className="label mt-[2px] shrink-0">{LETTERS[i]}</span>
                     <span className="grow">{o === null ? 'Option text unavailable' : <SourceQuestionText text={q.options_markup?.[i] ?? o} />}</span>
-                    {/* States always carry a symbol, never colour alone. */}
-                    {result && isAnswer && <span className="text-correct-dark">✓</span>}
-                    {wrongPick && <span className="text-wrong-dark">×</span>}
+                    {/* States always carry a word, never colour alone. */}
+                    {result && isAnswer && <span className="finna-qd-tag text-correct-dark">Answer</span>}
+                    {wrongPick && <span className="finna-qd-tag text-wrong-dark">Your pick</span>}
                   </button>
                 </li>
               )
@@ -162,45 +164,61 @@ export default function QuestionDetail() {
         )}
 
         {answerError&&<p role="alert" className="mt-3 text-[13px] text-mypick">{answerError}</p>}
-        {q.held&&<p className="mt-4 rounded-panel border border-[#D9B76B] bg-[#FFF4D9] p-3 text-[13px] text-[#705015]">This question is held for review and cannot be checked or scored. Compare the official key and reviewed evidence below.</p>}
+        {q.held&&<p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">This question is held for review and cannot be checked or scored. Compare the official key and reviewed evidence below.</p>}
         {q.answer_source==='none'&&<p className="mt-4 text-[13px] text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
         {q.type==='mcq'&&<PracticeAnswerPanel options={q.options} key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
 
+      </article>
+
+      <section id="discussion" className="finna-qd-card finna-qd-discussion">
+        <h2>Discussion</h2>
+        {!answered && <p className="finna-qd-locked">Answer the question to open the discussion.</p>}
+        <QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={!!params.get('post')||window.location.hash==='#discussion'}/>
+      </section>
       </div>
 
-      <div id="discussion"><QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={!!params.get('post')||window.location.hash==='#discussion'}/></div>
-      <section className="mt-6">
-        <h2 className="label text-exams-dark">
-          Appeared in {q.appearances.length} paper{q.appearances.length === 1 ? '' : 's'}
-        </h2>
-        <ul className="mt-2 grid gap-2">
+      <aside className="finna-qd-side">
+        <section className="finna-qd-aside-card">
+          <h2>Appeared in {q.appearances.length} paper{q.appearances.length === 1 ? '' : 's'}</h2>
           {q.appearances.map((a, i) => (
-            <li
-              key={i}
-              className="rounded-panel border border-hairline bg-card px-4 py-3 text-[14px]"
-            >
-              <div className="flex flex-wrap items-baseline gap-2">
-                <span className="label text-exams-dark">{a.year ?? '—'}</span>
-                <span className="text-secondary">{a.exam ?? a.paper_id}</span>
-                {(a.paper_label || a.paper) && <span className="label">{a.paper_label || `Paper ${a.paper}`}</span>}
-                {a.section_label && <span className="label">Section: {a.section_label}</span>}
-                {a.qnum && <span className="label">Q{a.qnum}</span>}
-                {a.page && <span className="label">p.{a.page}</span>}
-                {a.source_pdf_url && (
-                  <a
-                    href={`${a.source_pdf_url}${a.page ? `#page=${a.page}` : ''}`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="ml-auto font-semibold text-exams-dark underline underline-offset-2"
-                  >
-                    View source PDF ↗
-                  </a>
-                )}
-              </div>
-            </li>
+            <div key={i} className="finna-qd-appearance">
+              <strong>{a.exam ?? a.paper_id}</strong>
+              <span>
+                {[a.year ?? null, a.paper_label || (a.paper ? `Paper ${a.paper}` : null), a.section_label ? `Section ${a.section_label}` : null, a.qnum ? `Q${a.qnum}` : null, a.page ? `p.${a.page}` : null].filter(Boolean).join(' · ')}
+              </span>
+              {a.source_pdf_url && (
+                <a
+                  href={`${a.source_pdf_url}${a.page ? `#page=${a.page}` : ''}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline underline-offset-2"
+                >
+                  View source PDF ↗
+                </a>
+              )}
+            </div>
           ))}
-        </ul>
-      </section>
+        </section>
+
+        <section className="finna-qd-aside-card finna-qd-topic">
+          <h2>Topic</h2>
+          <div className="finna-qd-crumb">{crumb || 'Not classified yet'}</div>
+          <div className="finna-qd-actions">
+            <button type="button" onClick={toggleSaved} disabled={deskLoading} aria-pressed={saved}>
+              {deskLoading ? 'Loading saved questions…' : saved ? '★ Saved' : '☆ Save for revision'}
+            </button>
+            {sourcePdf?.source_pdf_url && (
+              <a
+                href={`${sourcePdf.source_pdf_url}${sourcePdf.page ? `#page=${sourcePdf.page}` : ''}`}
+                target="_blank"
+                rel="noreferrer"
+              >
+                View source PDF ↗
+              </a>
+            )}
+          </div>
+        </section>
+      </aside>
     </div>
   )
 }

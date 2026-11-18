@@ -15,6 +15,8 @@ DeviceId = Annotated[str | None, Header(alias="X-Device-Id")]
 
 
 async def current_user(request: Request, response: Response, x_device_id: DeviceId = None) -> str:
+    if getattr(request.state, "mobile_session", None):
+        return request.state.mobile_session["user_id"]
     from .services.account_identity import account_session, guest_identity
     session = await account_session(request)
     if session:
@@ -31,6 +33,14 @@ async def require_account(user_id: Annotated[str, Depends(current_user)]) -> str
     if not row or not row.get("email"):
         raise HTTPException(401, "Sign in to continue")
     return user_id
+
+
+async def browse_user(request: Request, response: Response, x_device_id: DeviceId = None) -> str | None:
+    """Public catalog reads need no credential; personal actions still create one."""
+    from .services.public_browse_cache import anonymous_browse
+    if anonymous_browse(request.scope):
+        return None
+    return await current_user(request, response, x_device_id)
 
 
 async def admin_actor(authorization: Annotated[str | None, Header()] = None) -> str:

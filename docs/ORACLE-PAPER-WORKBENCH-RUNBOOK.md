@@ -55,6 +55,11 @@ sudo journalctl -u ism-paper-documents -u ism-paper-publisher -u ism-oracle-bank
 
 Deploy from this checkout with `./scripts/deploy.sh api`, `web`, or `all`. Build only locally. Applied migrations 0066–0068 are immutable. Rehearse future migrations on a dump clone, then apply. After systemd/Postgres changes, check both study.hawayu.in and family.hawayu.in.
 
+The 10 November paper-order change uses `./scripts/deploy.sh question-order`
+for the question-list router only, followed by `web`. It checks the reviewed
+router preimage, retains a rollback copy, and restores it if health checks fail.
+It does not ship unrelated API or workshop changes or modify bank records.
+
 For the empty-source import extension, `./scripts/deploy.sh paper-source-import`
 ships only the paper-workbench router, target resolver, publication bridge and
 guarded paper writer. It drains/restarts the previously active paper workers and
@@ -230,3 +235,169 @@ back to the timer. No schema changes or credentials in files are added.
 backs up files, installs the listener/unit and API changes, verifies notification
 wake-up and both sites, and restores the timer. The UI uses a cheap scoped progress
 pulse at3-second intervals while pending; it reloads the bank list only on changes.
+
+## Mobile learner companion — 15 November 2026
+
+The bounded `scripts/deploy.sh mobile-companion` target released six exact API
+files with preimage checks and rollback copies. It changes learner native access,
+owned authoring/session tools and deferred Razorpay setup only; no bank, migration,
+Caddy or publisher operation is performed. The frozen successful receipt is in
+`reports/mobile-release-20261115/receipt.json`. Its preimages intentionally stop
+an accidental repeat over a newer deployment; do not replace them to silence a
+mismatch. A future release needs fresh reviewed preimages and a new receipt.
+
+Live checkout remains disabled. Later payment activation follows
+`docs/RAZORPAY-LATER.md`, with test credentials and a separate staging database
+first. Password/MFA/reviewer decisions remain in their existing protected flows.
+
+A separate one-file `mobile-credit` follow-up fixes the native Points summary
+without delegating cookie/staff identity. Its frozen preimage and separate
+`credit-followup.json` receipt preserve the initial release evidence.
+
+## Stats — 15 November 2026
+
+Stats uses independent 0084 tables and a daily `ism-stats-refresh.timer`; source
+imports never mutate the bank. See `FINNA-STATS-OPERATIONS.md` and the frozen
+`../reports/stats-release-20261115/` receipts. The migration passed a production
+clone rehearsal. The bounded resume corrected the job's libpq database selection
+and preserved applied-migration checksums. Future deployments need new preimages;
+do not replay frozen targets or apply unrelated pending 0083 to update Stats.
+
+## Owner billing controls — 16 November 2026
+
+The bounded `scripts/deploy-owner-billing.py` release installed billing, auth, me
+and rewards router changes plus migration0089 after a full-dump clone rehearsal.
+It checks exact source preimages, records the migration checksum and saves paired
+API/web/database rollback data under `/root/finna-owner-billing-suy2t3ca`.
+Frontend deploy used the standard web target. No bank files, Caddy or systemd unit
+files changed. Old provider price references remain historical. Do not replay the
+fixed-preimage installer over newer code; create a fresh bounded release instead.
+The server checkout flag remains false. See ACCOUNTS-BILLING.md for owner controls.
+
+## Finnaplan V.5 release and recovery — 17 November 2026
+
+V.5 is deployed through the bounded `scripts/deploy.sh finnaplan-v5` target;
+0097 is applied/immutable, next free0098. Evidence and exact frozen hashes are in
+`reports/finnaplan-v5-recovery-20261117/README.md`. Do not replay frozen installers
+over later releases or deploy the whole dirty API checkout.
+
+Private paired recovery data: `/root/finna-v5-backup-olyz_k9b`, including prior
+API/static/database plus the released API/dependency/static snapshots. Ordinary
+recovery must preserve new purchases, moderation-aware bio reads and closed-account
+identity/credential/entitlement guards. Use the frozen `recover.py` in that backup
+with the backup directory as its sole argument, as root. It validates artifact and
+SQL-guard preimages, drains publishers, pauses new V.5 writes and pairs the current
+safe API with prior static. It retains additive schema/history and verifies both
+sites. Data export, sign-out, calendar deletion/feed revocation and owner moderation
+remain available. Rehearse a bounded forward repair before resuming writes.
+Never restore V.4 validators/readers or a full database dump over subsequent
+learner history as routine rollback. Catalog and paid checkout remain disabled.
+
+## V.12 operations dashboard — 18 November 2026
+
+The owner reads `/admin/ops`; `/api/admin/ops` requires a current owner cookie,
+uses read-only RR SQL and sends private/no-store. Native credentials are excluded.
+`/ops-runbook.html` is a public, generic investigation guide; it contains no live
+telemetry or credentials. The detailed release is
+`../reports/finnaplan-v12-ops-20261118/README.md`.
+
+This slice changes four API readers/helpers/registration files and static assets.
+It does not install heartbeat writers or systemd collectors. Mail/mastery use
+existing receipts; assessment’s legacy health is separate. Missing assessment /
+desk/calendar/game cycle receipts and timer/backup/disk collection show unknown.
+Use existing systemd status/journals and verified paired-backup receipts through
+approved server access. Do not infer backup restoration from a timer result.
+
+Future collection must use real per-cycle outcomes, preserve last success after
+failure, and report host disk/verified backup independently. Attach timer outcome
+collection to each actual job; do not fabricate backfilled successful executions.
+Modifying game/mastery/mail reward-bound sources requires new economy evidence;
+never rewrite old proof artifacts to accept new writer hashes. Implement retention
+and genuine monthly restore receipts separately. The seven-day-green gate remains.
+
+Private release backup: `/root/finna-v12-ops-backup-52_pa_zk`. Its `deploy.py
+--restore <backup>` validates every installed API/schema/static hash before
+restoring prior read helpers, registration and static. Existing writers,0109and
+history remain. Disposable recovery passes; no production recovery was invoked.
+Never replay this or an older frozen target after another release. Both sites
+returned200 after deploy. Current source/proof hashes and exact readbacks are in
+`release-scope.json` / `release.json`; no database migration was needed.
+
+## V.12 worker cycles and host collectors — 18 November 2026
+
+Supersedes the earlier dashboard-only collection-pending note. Actual assessment,
+desk/calendar/game cycles and mastery failures use the existing shared heartbeat
+table. Success commits with work; post-rollback failures preserve prior last_ok.
+Disk and paired-backup probes are written by root-owned `/srv/api/ops-collector.py`
+through local peer PostgreSQL access. No credentials or public endpoint is added.
+
+`finna-ops-host.timer` runs the oneshot every five minutes. Read status/journal for
+this service if disk/backup collection is stale (>15minutes) or fails. Available
+disk below10GiB needs attention. The newest real paired backup must have no
+INCOMPLETE marker, matching archive/dump digests and a readable dump index. Changed
+file identities/metadata invalidate the private `/run/finna-ops/backup-verified.json`
+cache. Corrupt/newer incomplete backups do not fall back silently. Backup last_ok
+is the actual backup creation time; older than48hours is stale. This verification
+does not prove a successful monthly restore or offsite continuity.
+
+Only `finna-ops.conf` is added to the bank-review, workshop-backup and stats service
+drop-in folders. ExecStopPost reads actual result and normal-zero-exit evidence;
+collector failure is ignored by the original job but becomes stale dashboard data.
+Base units, existing drop-ins, schedules and authorities are untouched. No original
+job is started by deploy; first natural daily results can remain unknown. Check
+real unit journals rather than inventing successful historical receipts.
+
+Guarded release:`scripts/deploy.sh finnaplan-v12-workers`. Full evidence is in
+`../reports/finnaplan-v12-workers-20261118/README.md`; private backup:`/root/finna-v12-workers-backup-9r_rlztk`.
+Its exact-source restore refuses later API/static/unit/collector drift, disables
+only the new host timer, removes this collector/drop-ins and restores matching
+prior API/economy evidence/static. Existing base units, schema/history and
+heartbeat rows remain. Disposable recovery passes; production recovery not invoked.
+Both sites200 after release. Never replay a frozen target over later work.
+
+Installed server systemd behavior is tested with isolated transient success/failure
+services. No new real publication/backup/stats run or false timer receipt is used.
+Next account viewer/retention/site notice and monthly restore/checklist work are
+separate; the genuine healthy-week gate still needs elapsed operation.
+
+### Final collector timing classification — 18 November 2026
+
+Host verification/peer persistence can take longer than100ms. Timer outcome state
+comes from the collector's structured result, with freshness/future-time checks;
+it does not use the in-process stamp tolerance to reject a real successful job.
+This read-only follow-up changes only ops.py. Current worker/host/bank-review
+observations and disk/backup probes are healthy; first backup/stats hook outcomes
+wait for their real next runs. A natural bank review outcome already verifies its
+post-command flow. No original job was manually run for proof.
+
+Latest guarded reader target:`finnaplan-v12-collector-time`;backup:`/root/finna-v12-collector-time-backup-5atf23ce`.
+It preserves all installed units,collector,economy-bound sources,schema and static.
+Its exact-source restore only restores the prior classifier. The older worker
+operator refuses the newer API hash; never replay it over this update. Read the
+correction report before recovery. Bothsites200;ledger46→46;no production restore.
+
+
+## V.12 read-only account support — 18 November 2026
+
+Global owners use `/admin/users` to search an exact email or literal handle prefix
+(minimum3characters). Existing staff MFA policy applies to these private reads,
+including the already configured exact immutable-account exception. Scoped owners
+and native bearer credentials do not gain access. Select one of the first20matches;
+narrow the handle when more exist. Refresh replaces the snapshot and an outage
+stays an error. Active/scheduled access receipts cap at50each; ledger shows latest20.
+Cap days cover30ISTdates including today. Last activity comes from actual sign-in,
+security and attempt receipts, never a generic last_login field. Routine browsing
+is not monitored. No answer/desk content, credentials, device IDs, ledger item
+notes or block identities are exposed. Use linked existing billing/moderation
+consoles for changes; their ordinary MFA/CSRF/audit controls remain authoritative.
+
+Release: `reports/finnaplan-v12-users-20261118/`. Bounded target
+`scripts/deploy.sh finnaplan-v12-users` is frozen and installed; never replay it.
+Backup `/root/finna-v12-users-backup-8eqzsmv9` contains exact prior reader/static
+recovery. Its `deploy.py --restore <backup>` refuses newer API/schema/static or
+collector/unit drift, then restores the prior pair while preserving all history,
+writers and installed collectors. Disposable recovery passes; production recovery
+was not invoked. Final248-table clone and actual-mpsc reads pass;ledger46→46,
+bothsites200. No SQL migration;0109immutable,next0110.68economy-bound sources
+and13collector/unit paths unchanged. Mail/checkout stay off. Retention/site notice,
+monthly restore receipt and the actual seven-day-green gate remain separate work.

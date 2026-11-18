@@ -114,6 +114,50 @@ deploy_editorial_api() {
 }
 
 case "$WHAT" in
+  finnaplan-v12-maintenance) python3 "$ROOT/scripts/deploy-finnaplan-v12-maintenance.py" "${@:2}" ;;
+  finnaplan-v12-users) python3 "$ROOT/scripts/deploy-finnaplan-v12-users.py" "${@:2}" ;;
+  finnaplan-v12-collector-time) python3 "$ROOT/scripts/deploy-finnaplan-v12-collector-time.py" "${@:2}" ;;
+  finnaplan-v12-workers) python3 "$ROOT/scripts/deploy-finnaplan-v12-workers.py" "${@:2}" ;;
+  finnaplan-v12-ops) python3 "$ROOT/scripts/deploy-finnaplan-v12-ops.py" ;;
+  finnaplan-v11-bulk) python3 "$ROOT/scripts/deploy-finnaplan-v11-bulk.py" "${@:2}" ;;
+  finnaplan-v11-onboarding) python3 "$ROOT/scripts/deploy-finnaplan-v11-onboarding.py" "${@:2}" ;;
+  finnaplan-v11-sharing) python3 "$ROOT/scripts/deploy-finnaplan-v11-sharing.py" "${@:2}" ;;
+  finnaplan-v11-mail) python3 "$ROOT/scripts/deploy-finnaplan-v11-mail.py" "${@:2}" ;;
+  finnaplan-v10-vocabulary-authoring) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary-authoring.py" "${@:2}" ;;
+  finnaplan-v10-curated-vocabulary) python3 "$ROOT/scripts/deploy-finnaplan-v10-curated-vocabulary.py" "${@:2}" ;;
+  finnaplan-v10-vocabulary-scheduler) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary-scheduler.py" "${@:2}" ;;
+  finnaplan-v10-vocabulary-proof) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary-proof.py" "${@:2}" ;;
+  finnaplan-v10-vocabulary) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary.py" "${@:2}" ;;
+  finnaplan-v10-checklists) python3 "$ROOT/scripts/deploy-finnaplan-v10-checklists.py" ;;
+  finnaplan-v10-submissions) python3 "$ROOT/scripts/deploy-finnaplan-v10-submissions.py" ;;
+  current-affairs-briefs) bash "$ROOT/scripts/deploy-current-affairs-briefs.sh" ;;
+  current-affairs-free) bash "$ROOT/scripts/deploy-current-affairs-free.sh" ;;
+  youtube-current-affairs) bash "$ROOT/scripts/deploy-youtube-current-affairs.sh" ;;
+  stats-retry) bash "$ROOT/scripts/deploy-stats-catalogue.sh" retry ;;
+  stats-read) bash "$ROOT/scripts/deploy-stats-catalogue.sh" read ;;
+  stats-catalogue) bash "$ROOT/scripts/deploy-stats-catalogue.sh" ;;
+  stats) bash "$ROOT/scripts/deploy-stats.sh" "${2:-initial}" ;;
+  mobile-companion) bash "$ROOT/scripts/deploy-mobile-companion.sh" ;;
+  mobile-credit) bash "$ROOT/scripts/deploy-mobile-companion.sh" credit ;;
+  bank-dates) bash "$ROOT/scripts/deploy-bank-dates.sh" ;;
+  question-order) bash "$ROOT/scripts/deploy-question-order.sh" ;;
+  finnaplan-v1) python3 "$ROOT/scripts/deploy-finnaplan-v1.py" ;;
+  finnaplan-v2) python3 "$ROOT/scripts/deploy-finnaplan-v2.py" ;;
+  finnaplan-v3) python3 "$ROOT/scripts/deploy-finnaplan-v3.py" ;;
+  finnaplan-v4) python3 "$ROOT/scripts/deploy-finnaplan-v4.py" ;;
+  finnaplan-v5) python3 "$ROOT/scripts/deploy-finnaplan-v5.py" "${@:2}" ;;
+  finnaplan-v6) python3 "$ROOT/scripts/deploy-finnaplan-v6.py" "${@:2}" ;;
+  finnaplan-v9) python3 "$ROOT/scripts/deploy-finnaplan-v9.py" "${@:2}" ;;
+  finnaplan-v10-composer) python3 "$ROOT/scripts/deploy-finnaplan-v10-composer.py" "${@:2}" ;;
+  finnaplan-v10-discussion-composer) python3 "$ROOT/scripts/deploy-finnaplan-v10-discussion-composer.py" "${@:2}" ;;
+  finnaplan-v10-replies) python3 "$ROOT/scripts/deploy-finnaplan-v10-replies.py" "${@:2}" ;;
+  finnaplan-v10-tiers) python3 "$ROOT/scripts/deploy-finnaplan-v10-tiers.py" ;;
+  finnaplan-v10-blocks) python3 "$ROOT/scripts/deploy-finnaplan-v10-blocks.py" ;;
+  finnaplan-v10-nudge) python3 "$ROOT/scripts/deploy-finnaplan-v10-nudge.py" ;;
+  finnaplan-v10-edits) python3 "$ROOT/scripts/deploy-finnaplan-v10-edits.py" "${@:2}" ;;
+  finnaplan-v10-materials) python3 "$ROOT/scripts/deploy-finnaplan-v10-materials.py" "${@:2}" ;;
+  finnaplan-v10-study) python3 "$ROOT/scripts/deploy-finnaplan-v10-study.py" "${@:2}" ;;
+  finnaplan-v10-following) python3 "$ROOT/scripts/deploy-finnaplan-v10-following.py" "${@:2}" ;;
   publication-live) bash "$ROOT/scripts/deploy-publication-live.sh" ;;
   backend-followup) bash "$ROOT/scripts/deploy-backend-followup.sh" ;;
   backend-audit) bash "$ROOT/scripts/deploy-backend-audit.sh" ;;
@@ -135,7 +179,7 @@ case "$WHAT" in
   web) deploy_web ;;
   api) deploy_api ;;
   all) deploy_api; deploy_web ;;
-  *) echo "usage: $0 [web|api|solo-owner|shareable-tests|bank-organization|pdf-library|gazetted-review|paper-source-import|source-review-tools|editorial-api|editorial-simplification|shared-editorial|learning-api|all]" >&2; exit 2 ;;
+  *) echo "usage: $0 [web|api|finnaplan-v1|finnaplan-v2|finnaplan-v3|finnaplan-v4|question-order|solo-owner|shareable-tests|bank-organization|pdf-library|gazetted-review|paper-source-import|source-review-tools|editorial-api|editorial-simplification|shared-editorial|learning-api|all]" >&2; exit 2 ;;
 esac
 curl -fsS --max-time 15 -o /dev/null https://family.hawayu.in
 echo "==> done: https://study.hawayu.in; shared family site healthy"

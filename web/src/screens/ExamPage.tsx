@@ -1,10 +1,12 @@
 import '../styles/exam-experience.css'
-import {examPresentation} from '../lib/examPresentation'
+import ExamOverview from '../components/ExamOverview'
+import MasteryMap from '../components/MasteryMap'
+import {udcPracticeMode,udcPracticeLink} from '../lib/studySetLinks'
 import {readQuestionOrder} from '../lib/questionBrowse'
 import ReviewModuleLink from '../components/ReviewModuleLink'
 import QuestionDiscovery from '../components/QuestionDiscovery'
 import ExamPaperList from '../components/ExamPaperList'
-import {paperOrder,sortArchivePapers} from '../lib/paperArchive'
+import {paperOrder,paperLayout,sortArchivePapers} from '../lib/paperArchive'
 import {groupBOverviewDestination} from '../lib/groupBStudy'
 import ExamPaperCard from '../components/ExamPaperCard'
 import {groupSourceBooklets,representativeBooklet} from '../lib/sourceBooklets'
@@ -13,7 +15,7 @@ import { groupMcsBooklets } from '../lib/mcsBooklets'
 import { groupUdcBooklets } from '../lib/udcBooklets'
 import UdcSubjects from '../components/UdcSubjects'
 import Pagination from '../components/Pagination'
-import {pageNumber,scrollToResults,focusWhenAvailable} from '../lib/pagination'
+import {pageNumber,scrollToResults} from '../lib/pagination'
 import '../styles/legacy-udc-ldc.css'
 import '../styles/legacy-combined-prelims.css'
 import '../styles/legacy-learning-dashboard.css'
@@ -24,7 +26,7 @@ import { Link, Navigate, useParams, useSearchParams, useLocation } from 'react-r
 import { getCollection, getCollectionHeader, getProgress, getExamBookmarks, isLaterExamCollection, prefetchQuestionPage, removeExamBookmark, saveExamBookmark, type CollectionDetail, type CollectionHeader, type ListParams } from '../lib/api'
 const ExamJourney=lazy(()=>import('../components/ExamJourney'))
 const UdcStudySessions=lazy(()=>import('../components/UdcStudySessions'))
-const ExamStudyTopics=lazy(()=>import('../components/ExamStudyTopics'))
+import ExamStudyTopics from '../components/ExamStudyTopics'
 import { ModuleProgressPanel, ModuleQuestionBrowser } from './ModuleStudy'
 
 /** One exam's landing page — the prototype's `module` screen, line 1700.
@@ -49,10 +51,7 @@ export default function ExamPage() {
   const rawView = searchParams.get('view')
   const view: 'overview' | 'topics' | 'papers' | 'browse' | 'practice' | 'progress' = rawView === 'topics' || rawView === 'papers' || rawView === 'browse' || rawView === 'practice' || rawView === 'progress' ? rawView : 'overview'
 
-  useEffect(()=>{
-    const target=location.hash.slice(1)
-    if(['exam-question-browser','exam-study-heading','past-paper-results','udc-test-options'].includes(target))return focusWhenAvailable(target)
-  },[id,view,location.hash])
+
 
   useEffect(() => {
     setC(previous=>previous?.id===id?previous:null)
@@ -125,15 +124,15 @@ export default function ExamPage() {
   const general = c.section_list.filter((s) => s.path.startsWith('general/'))
   const technical = c.section_list.filter((s) => s.path.startsWith('technical/'))
   const subjects = c.section_list.filter((s) => s.path.startsWith('subject/'))
-  const papers = (c.id==='combined-prelims'?groupMcsBooklets(c.paper_list):c.id==='udc'?groupUdcBooklets(c.paper_list):groupSourceBooklets(c.paper_list)).length
   const paperQuery=searchParams.get('paper_q')||''
   const paperYear=searchParams.get('paper_year')||''
   const archiveOrder=paperOrder(searchParams.get('paper_sort'))
-  const archiveList=searchParams.get('paper_layout')==='list'||(!searchParams.has('paper_layout')&&c.id.startsWith('group-b-')&&view==='papers')
+  const archiveList=paperLayout(searchParams.get('paper_layout'))==='list'
   const tokens=paperQuery.toLowerCase().trim().split(/\s+/).filter(Boolean)
   const mcsSection=c.id==='combined-prelims'?searchParams.get('section'):null
   const filteredPapers=sortArchivePapers(c.paper_list.filter(p=>(!mcsSection||!['gs','aptitude'].includes(mcsSection)||p.section_path===mcsSection)&&(!paperYear||String(p.year)===paperYear)&&tokens.every(token=>`${p.paper_label||''} ${p.title} ${p.exam||''} ${p.subject||''} ${p.paper_number||''} ${p.year||''} ${p.id.split('/').pop()}`.toLowerCase().includes(token))),archiveOrder)
   const focusedUdc = c.id === 'udc'
+  const savedPractice = focusedUdc && udcPracticeMode(searchParams)==='sets'
   const groupedPapers = !archiveList
   const udcPreview = focusedUdc && view === 'overview' && !paperQuery && !paperYear && !searchParams.has('paper_page') && !searchParams.has('paper_sort') && !searchParams.has('paper_layout')
   const pageSize=udcPreview?3:archiveList?25:9
@@ -148,8 +147,8 @@ export default function ExamPage() {
   const combined = c.id === 'combined-prelims'
   const viewNavigation = <>
       <nav aria-label={`${c.title} module views`} className="module-view-nav">
-        {([['overview','Overview'],['topics','Subjects'],['papers','Papers'],['browse','Questions'],['practice','Practice'],['progress','Progress']] as const).map(([key,label]) =>
-          <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);return '?'+next.toString()})(),hash:key==='topics'?'#exam-study-heading':key==='papers'?'#past-paper-results':key==='browse'||key==='practice'?'#exam-question-browser':''}} aria-current={view===key?'page':undefined}
+        {([['overview','Overview'],['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress']] as const).map(([key,label]) =>
+          <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);if(key!==view)next.delete('offset');next.delete('session');next.delete('practice_mode');return '?'+next.toString()})(),hash:''}} aria-current={view===key?'page':undefined}
             className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-[13px] font-semibold`}>{label}</Link>)
         }
 
@@ -158,40 +157,9 @@ export default function ExamPage() {
 
   </>
 
-  return (
-    <div className={`exam-experience ${combined ? 'cp-page' : 'udc-ldc-page'} min-h-[70vh]`} data-exam-tone={examPresentation(c.id).tone}>
-      <div className="mx-auto max-w-shell px-4 pt-3"><ReviewModuleLink collection={id}/></div>
-    <div className={`${combined ? 'cp-content' : 'udc-ldc-content mx-auto max-w-shell'} px-6 pb-24 pt-8`}>
-      <Link to="/exams" className="text-[13px] text-secondary">← Exams</Link>
-
-      {/* Tinted header block, markup line 1702. Exams area colour. */}
-      <div className={`${combined ? 'cp-hero' : 'udc-hero'} mt-3 flex flex-wrap items-end justify-between gap-4 rounded-xl ${view==='overview'?'p-6':'p-4'}`}>
-        <div className="min-w-0">
-          <div className={combined ? 'cp-eyebrow' : 'font-mono text-[11px] uppercase tracking-[0.1em] text-white/85'}>
-            {focusedUdc?'UDC preparation':`${c.kind} · Exam collection`}
-          </div>
-          <h1 className={`mt-2 font-display ${view==='overview'?'text-[clamp(30px,4.6vw,44px)]':'text-[28px]'} font-medium -tracking-[0.02em]`}>
-            {c.title}
-          </h1>
-          {view==='overview'&&<p className="mt-1 text-[14px] text-white/85">{focusedUdc?'Prepare for UDC with subject practice, past papers and your own review list.':'Choose a subject, practise questions or open an original paper.'}</p>}
-          <div className="mt-2 flex min-h-5 flex-wrap gap-x-4 gap-y-1 text-[12px] text-white/90">
-            {ready?<><span>{papers} listed papers</span><span>{c.questions.toLocaleString('en-IN')} source questions</span><span>{(focusedUdc?c.answerable_count:c.scorable).toLocaleString('en-IN')} {focusedUdc?'with answers for study':'official-key questions'}</span></>:<span role="status">Loading paper coverage…</span>}
-          </div>
-        </div>
-        <div className="flex flex-wrap gap-2">
-          <button type="button" onClick={() => void toggleBookmark()} disabled={bookmarkBusy} aria-pressed={bookmarked}
-            className={`whitespace-nowrap rounded-pill border px-[17px] py-[9px] text-[14px] font-semibold text-ink disabled:opacity-60 ${bookmarked ? 'border-[#E9C46A] bg-[#FFF6DD] text-[#79570A]' : 'border-ink bg-card hover:bg-canvas'}`}>
-            {bookmarked ? '★ Saved' : '☆ Save exam'}
-          </button>
-          {!focusedUdc&&view==='overview'&&<Link to={`/exams/${c.id}?view=practice${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill bg-ink px-4 py-2 text-[13px] font-semibold text-paper">Start practice →</Link>}
-          {!focusedUdc&&view==='overview'&&<Link to={`/exams/${c.id}?view=topics${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-study-heading`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Subjects &amp; topics</Link>}
-          {!focusedUdc&&view==='overview'&&<Link to={`/exams/${c.id}?view=papers${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#past-paper-results`} className="exam-hero-light-action inline-flex min-h-11 items-center rounded-pill border border-ink bg-card px-4 py-2 text-[13px] font-semibold">Past papers</Link>}
-        </div>
-      </div>
-
-      {viewNavigation}
-
-      {combined&&<section className="mt-4 rounded-xl border border-hairline bg-card p-4" aria-label="MCS preliminary papers">
+  const existingViews = (
+    <div className="exam-module-content">
+      {combined&&view!=='browse'&&view!=='practice'&&<section className="mt-4 rounded-xl border border-hairline bg-card p-4" aria-label="MCS preliminary papers">
         <h2 className="font-display text-[23px]">Choose your preliminary paper</h2>
         <p className="mt-1 text-[13px] text-secondary">Study General Studies and Aptitude separately. Historical papers keep their own source, booklet and answer status.</p>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">{[['gs','Paper I · General Studies','History, polity, geography, economy, environment, science and Mizoram'],['aptitude','Paper II · Aptitude Tests','Comprehension, reasoning, numeracy and data interpretation']].map(([role,title,description])=><Link key={role} to={{search:'?'+new URLSearchParams({view:view==='overview'?'papers':view,section:role})}} aria-current={mcsSection===role?'page':undefined} className={'rounded-lg border p-4 '+(mcsSection===role?'border-exams bg-exams-soft':'border-hairline')}><strong className="text-[15px]">{title}</strong><p className="mt-1 text-[12px] text-secondary">{description}</p></Link>)}</div>
@@ -226,9 +194,16 @@ export default function ExamPage() {
 
       {error&&<p role="alert" className="mt-3 rounded-[10px] border border-hairline bg-card p-3 text-[13px]">Paper details could not load. Available questions can still be studied. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry details</button></p>}
       {view==='topics'&&<Suspense fallback={<p className="mt-5 text-[13px] text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id}/></Suspense>}
-      {focusedUdc&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-[13px] text-muted">Loading UDC practice…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
-      {(view === 'browse' || view === 'practice'&&!focusedUdc) && <ModuleQuestionBrowser key={`${c.id}:${view}`} metadataLoading={!ready} collectionTitle={c.title} collectionId={c.id} papers={c.paper_list} sections={c.section_list} initialSectionPath={searchParams.get('section') || ''} initialPool={view==='practice'?'practice':'all'} />}
-      {ready&&view === 'progress' && <ModuleProgressPanel collectionId={c.id} collectionTitle={c.title} totalScorable={c.scorable} totalQuestions={c.questions} />}
+      {focusedUdc&&view==='practice'&&<div className="mt-5">
+        <nav aria-label="UDC practice mode" className="flex flex-wrap gap-4 text-[13px]">
+          <Link to={udcPracticeLink(searchParams,'continuous')} aria-current={!savedPractice?'page':undefined} className="inline-flex min-h-11 items-center font-semibold text-link underline">Continuous practice</Link>
+          <Link to={udcPracticeLink(searchParams,'sets')} aria-current={savedPractice?'page':undefined} className="inline-flex min-h-11 items-center text-link underline">Saved short sets</Link>
+        </nav>
+        {!savedPractice&&<p className="mt-1 text-[13px] text-secondary">Keep going through all matching questions, with no 20-question set limit.</p>}
+      </div>}
+      {savedPractice&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-[13px] text-muted">Loading UDC practice…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
+      {(view === 'browse' || view === 'practice'&&!savedPractice) && <ModuleQuestionBrowser key={`${c.id}:${view}`} metadataLoading={!ready} collectionTitle={c.title} collectionId={c.id} papers={c.paper_list} sections={c.section_list} initialSectionPath={searchParams.get('section') || ''} initialPool={view==='practice'?'practice':'all'} />}
+      {ready&&view === 'progress' && <><ModuleProgressPanel collectionId={c.id} collectionTitle={c.title} totalScorable={c.scorable} totalQuestions={c.questions} /><MasteryMap/></>}
 
       {ready&&view === 'overview'&&!focusedUdc && <><div className="mt-6 flex flex-wrap items-start gap-7">
         {/* "Question coverage" — share of scorable questions per section. The
@@ -304,8 +279,8 @@ export default function ExamPage() {
       </>}
       {focusedUdc&&view==='overview'&&<aside className="mt-8 border-t border-hairline pt-4 text-[13px] text-secondary"><p>Want broader practice?</p><Link to="/exams/group-b-non-gazetted" className="inline-flex min-h-11 items-center font-semibold text-link">Explore Group B Non-Gazetted →</Link></aside>}
     </div>
-    </div>
   )
+  return <ExamOverview title={c.title} collections={ready?[ready]:[]} loading={!ready&&!error} error={error} onRetry={()=>setRetry(n=>n+1)} viewKey={view} headerAction={<div><button type="button" title={bookmarked?'Unsave exam':'Save exam'} aria-label={bookmarked?'Unsave exam':'Save exam'} onClick={()=>void toggleBookmark()} disabled={bookmarkBusy} aria-pressed={bookmarked} className="min-h-11 min-w-11 rounded-lg border border-hairline text-[20px] disabled:opacity-60">{bookmarked?'★':'☆'}</button>{bookmarkError&&<p role="alert" className="max-w-xs text-[12px] text-mypick">{bookmarkError}</p>}</div>} navigation={<>{viewNavigation}<ReviewModuleLink collection={id}/></>}>{view!=='overview'?existingViews:undefined}</ExamOverview>
 }
 
 function Group({

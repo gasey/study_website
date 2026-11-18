@@ -1,3 +1,4 @@
+import {paperBrowseLink} from '../lib/browsePosition'
 import {withoutBooklet} from '../lib/sourceBooklets'
 import {paperIdentity} from '../lib/paperIdentity'
 import { Link } from 'react-router-dom'
@@ -39,7 +40,7 @@ export default function ExamPaperCard({ paper: p, examId, hideSeriesInTitle=fals
       </div>
       {p.questions===0&&<p className="mt-3 text-[12px] text-secondary">{p.source_pdf_url?'Original PDF available · questions not yet extracted.':'Questions not yet extracted; no original PDF is linked.'}</p>}
       <div className="exam-paper-actions mt-auto flex shrink-0 flex-wrap items-center gap-2">
-        {p.questions > 0 && <Link to={`${base}/paper?paper=${paper}`} className={`${button} border-ink bg-ink text-paper`}>Browse paper</Link>}
+        {p.questions > 0 && <Link to={paperBrowseLink(examId,p.id)} className={`${button} border-ink bg-ink text-paper`}>Browse questions →</Link>}
         {p.allow_practice && p.answerable_count > 0 && <Link to={`${base}?view=practice&paper=${paper}#exam-question-browser`} className={`${button} border-hairline`}>Practise · {count(p.answerable_count)}</Link>}
       </div>
     </div>
