@@ -1047,3 +1047,14 @@ Receipt: `docs/sources/mcs-publication-20261118.json`.
 - [ ] Reserved appointment-tag review, historical source/option/keymapping work remain;2012/2013 deferred and simulation gated.
 
 Receipt:`docs/sources/mcs-publication-20261119.json`.
+
+
+## 21 November — MCS continuation
+
+- [x] Publish three source-checked explanations:2023 II B Q53, I B Q66 and I A Q16 with a qualified dated UNFCCC notice.
+- [x] Restore II C Q51 shared Q47–51 rubric through separate guarded transcription; identity, answers and scoring preserved.
+- [x] Verify four immutable/live outputs, 3095 prior holds, 404 attempts, reviewer scope and unlimited access; 45 focused tests pass.
+- [ ] Continue 970 explanation candidates, including repaired C51; preserve 7 unresolved cases. No active packet.
+- [ ] Reserved appointment-tag review and historical source/option/key mapping work remain; 2012/2013 deferred, simulation gated.
+
+Receipt:`docs/sources/mcs-publication-20261121.json`.

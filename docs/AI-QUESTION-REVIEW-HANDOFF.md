@@ -517,3 +517,47 @@ private evidence `reports/mcs-continue-20261119/`.
 Check fresh Oracle fingerprints, queue and usage before claiming. Preserve all
 completed rubric repairs and exact booklet identities. Q53explanation remains next
 work, not a new answer/key decision.
+
+
+## 21 November — continuation checkpoint
+
+Three explanations applied: 2023 II B Q53 evaluates the two arguments using
+the restored importance and relevance test without deciding education policy.
+I B Q66 explains Kyoto's market mechanisms and retains the historical answer,
+with a dated UNFCCC notice about the scheduled 31 March 2026 ITL closure. This
+does not claim an independently observed shutdown or the end of all carbon
+markets. I A Q16 explains the Great Bath's proposed ritual use while retaining
+archaeological uncertainty. Exact original pages, UNFCCC sources and NCERT
+physical/printed page 8 were inspected. NCERT's certificate chain failed normal
+verification; the public download used disabled verification, recorded privately.
+
+A separate guarded transcription restores II C Q51's missing Q47–51 rubric
+from the same physical page 6, bound to its own registered C-series PDF. Prior
+B-series text served only as a draft template; the C-series heading and body
+were visually checked. Printed Q51/page 6, options, key A, classification and
+scoring are unchanged. Its explanation reopens after a fresh source refresh;
+do not replay the source repair or infer coverage of other appearances.
+I C Q98's weaving explanation remains unavailable: a reliable craft or language
+reference is needed. No translations or sequence derivation were invented; its
+existing answer and pending-key notice remain. No public hold was created.
+
+All four immutable outputs and exact live/public readbacks verified. Preserve
+3095 prior global scoring holds, 404 attempts, reviewer scope and grants, and
+owner unlimited access. No peer votes, credits, quota exceptions, reset use,
+external model calls, synthetic learner writes, application/schema release or
+service-state changes. All 45 focused tests pass. Protected bank/taxonomy sync,
+API and Study route are healthy. Oracle timer active; wakeup observed
+`inactive`. Start usage: 3% primary and 83% weekly used; ordinary
+usage allowed. Staff maintenance is uncapped; learner allowance stays 30/day.
+The prior checkpoint `ad265164d` was confirmed on GitHub before new work.
+
+Queue: 77 published, 12 not-needed, 970 pending,
+7 unresolved; no active packet. These are explanation-queue counts,
+not whole-bank answer/source certification. Prior poverty, family, prayer and
+number-pattern evidence gaps, the reserved appointment-tag follow-up, historical
+source/option defects and exact-key checks remain. Keep 2012/2013 deferred and
+original simulation gated. Receipt: `docs/sources/mcs-publication-20261121.json`.
+Private proof: `reports/mcs-continue-20261121/`.
+
+Check fresh Oracle fingerprints, exports and usage before claiming. C51 explanation
+remains next work; weaving needs specific craft/language evidence. Preserve source repairs.
