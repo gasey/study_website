@@ -30,6 +30,13 @@ async def open_pool() -> None:
         open=False,
     )
     await _pool.open(wait=True, timeout=10)
+    try:
+        from .services.audience_database import validate_policy
+        async with _pool.connection() as conn, conn.cursor() as cur:
+            await validate_policy(cur)
+    except BaseException:
+        await _pool.close()
+        raise
 
 
 async def close_pool() -> None:
@@ -46,3 +53,5 @@ async def cursor() -> AsyncIterator:
         raise RuntimeError("connection pool not open")
     async with _pool.connection() as conn, conn.cursor() as cur:
         yield cur
+        from .services.audience import check_before_commit
+        await check_before_commit(cur)

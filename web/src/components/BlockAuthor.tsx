@@ -2,7 +2,7 @@ import {useEffect,useRef,useState} from 'react'
 import {Link} from 'react-router-dom'
 import {reviewRequest} from '../lib/review'
 
-const BUTTON='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-4 py-2 text-[13px] font-semibold disabled:opacity-50'
+const BUTTON='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-4 py-2 text-sm font-semibold disabled:opacity-50'
 const UNCERTAIN='Blocking was not confirmed. Community content is being refreshed; check Blocked users before retrying.'
 
 /** Use the existing account block; never require a conduct report to block. */
@@ -23,7 +23,7 @@ export default function BlockAuthor({authorId,disabled=false}:{authorId:string;d
  }
  return <span className="inline-flex min-w-0 flex-col items-start gap-2">
   <button type="button" disabled={busy||disabled} className={BUTTON} onClick={()=>void block()}>{busy?'Blocking…':'Block this author'}</button>
-  {error&&<span role="alert" className="max-w-md break-words text-[13px] text-mypick">{error}</span>}
+  {error&&<span role="alert" className="max-w-md break-words text-sm text-mypick">{error}</span>}
  </span>
 }
 
@@ -37,5 +37,5 @@ export function CommunityFeedback(){
   return()=>{window.removeEventListener('ism-community-change',change);window.removeEventListener('ism-auth-change',clear);window.removeEventListener('ism-auth-expired',clear)}
  },[])
  if(!message)return null
- return <p role="status" className="my-3 rounded-[8px] border border-hairline bg-paper p-3 text-[13px] text-secondary">{message} <Link className="inline-flex min-h-11 items-center font-semibold text-link" to="/creators/settings#blocked-users">Blocked users →</Link></p>
+ return <p role="status" className="my-3 rounded-[8px] border border-hairline bg-paper p-3 text-sm text-secondary">{message} <Link className="inline-flex min-h-11 items-center font-semibold text-link" to="/creators/settings#blocked-users">Blocked users →</Link></p>
 }

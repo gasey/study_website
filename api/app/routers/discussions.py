@@ -6,11 +6,12 @@ from fastapi import APIRouter, Depends, Header, HTTPException, Query, Request, R
 from pydantic import BaseModel, ConfigDict, Field, field_validator
 from psycopg.types.json import Jsonb
 from ..db import cursor
+from ..services import audience,community_audience
 from ..deps import current_user, require_account
 from ..services.bank_review import protect_answer
 from ..services.review_identity import Actor, identity, require_role
 from ..services.review_policy import safe_url
-from ..services.community_policy import posting_guard, HELPFUL_COUNT, AUTHOR_TIER, AUTHOR_PROFILE
+from ..services.community_policy import posting_guard, helpful_count, AUTHOR_TIER, AUTHOR_PROFILE
 from .materials import write_guard
 from .moderation import queue_items, moderate_post
 from ..schemas import ModerationActionRequest
@@ -77,20 +78,26 @@ async def access(cur,qid,user,write=False):
 
 VISIBLE="""NOT p.hidden AND NOT p.before_fix AND (NOT p.needs_approval OR p.author_id=%s)
  AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=p.author_id) OR (b.user_id=p.author_id AND b.blocked_id=%s))"""
+def visible_sql():
+    return VISIBLE+' AND '+audience.subject_sql('p.author_id',team=True)
+
 SELECT=f"""SELECT u.avatar,p.id,p.canonical_id,p.kind,p.parent_id,p.body,p.pinned,p.accepted,p.needs_approval,
  p.source_context,p.source_links,p.content_version,p.edited_at,p.edit_locked,p.created_at,p.author_id,p.author_id=%s AS is_author,
  CASE WHEN p.author_id='team' THEN 'India Study Map' ELSE COALESCE(u.handle,'Learner') END AS author,
- {AUTHOR_TIER} AS author_tier,{AUTHOR_PROFILE} AS author_profile_id,{HELPFUL_COUNT} AS helpful,
+ {AUTHOR_TIER} AS author_tier,{AUTHOR_PROFILE} AS author_profile_id,__HELPFUL_COUNT__ AS helpful,
  EXISTS(SELECT 1 FROM post_votes v WHERE v.post_id=p.id AND v.user_id=%s) AS voted
  FROM posts p LEFT JOIN users u ON u.id=p.author_id """
+def select_sql():
+    return SELECT.replace('__HELPFUL_COUNT__',helpful_count())
+
 async def post_visible(cur,pid,user):
-    await cur.execute(SELECT+' WHERE p.id=%s AND '+VISIBLE,(user,user,pid,user,user,user));p=await cur.fetchone()
+    await cur.execute(select_sql()+' WHERE p.id=%s AND '+visible_sql(),(user,user,pid,user,user,user));p=await cur.fetchone()
     if not p:raise HTTPException(404,'Discussion post not found')
     if p['kind'] in {'study','material-share'}:raise HTTPException(404,'Use the study-note reader for this post')
     a=await access(cur,p['canonical_id'],user)
     if not a['allowed']:raise HTTPException(403,'Check or show the answer before reading this discussion')
     if p['parent_id']:
-        await cur.execute('SELECT 1 FROM posts p WHERE p.id=%s AND '+VISIBLE,(p['parent_id'],user,user,user))
+        await cur.execute('SELECT 1 FROM posts p WHERE p.id=%s AND '+visible_sql(),(p['parent_id'],user,user,user))
         if not await cur.fetchone():raise HTTPException(404,'Discussion is unavailable')
     return p
 
@@ -100,7 +107,7 @@ async def thread(qid:str,user:User,focus:int|None=Query(None,gt=0),offset:int=Qu
         state=await access(cur,qid,user)
         await cur.execute('SELECT email IS NOT NULL AS registered FROM users WHERE id=%s',(user,));state['registered']=(await cur.fetchone())['registered']
         if not state['allowed']:return {**state,'items':[],'has_more':False}
-        await cur.execute(SELECT+' WHERE p.canonical_id=%s AND p.parent_id IS NULL AND '+VISIBLE+' ORDER BY p.pinned DESC,p.created_at DESC,p.id DESC LIMIT %s OFFSET %s',(user,user,qid,user,user,user,limit+1,offset));rows=await cur.fetchall()
+        await cur.execute(select_sql()+' WHERE p.canonical_id=%s AND p.parent_id IS NULL AND '+visible_sql()+' ORDER BY p.pinned DESC,p.created_at DESC,p.id DESC LIMIT %s OFFSET %s',(user,user,qid,user,user,user,limit+1,offset));rows=await cur.fetchall()
         focused=None
         if focus:
             post=await post_visible(cur,focus,user)
@@ -160,7 +167,7 @@ async def create(qid:str,body:Post,request:Request,user:Account,idempotency_key:
 async def replies(pid:int,user:User,focus:int|None=Query(None,gt=0),offset:int=Query(0,ge=0,le=100000),limit:int=Query(20,ge=1,le=50)):
     async with cursor() as cur:
         await post_visible(cur,pid,user)
-        await cur.execute(SELECT+' WHERE p.parent_id=%s AND '+VISIBLE+' ORDER BY p.accepted DESC,p.created_at,p.id LIMIT %s OFFSET %s',(user,user,pid,user,user,user,limit+1,offset));rows=await cur.fetchall()
+        await cur.execute(select_sql()+' WHERE p.parent_id=%s AND '+visible_sql()+' ORDER BY p.accepted DESC,p.created_at,p.id LIMIT %s OFFSET %s',(user,user,pid,user,user,user,limit+1,offset));rows=await cur.fetchall()
         focused=None
         if focus:
             focused=await post_visible(cur,focus,user)
@@ -169,7 +176,7 @@ async def replies(pid:int,user:User,focus:int|None=Query(None,gt=0),offset:int=Q
 
 async def acceptance_nudge_eligible(cur,pid,user):
     await cur.execute("""SELECT 1 FROM posts p WHERE p.parent_id=%s
-          AND p.author_id<>%s AND NOT p.needs_approval AND """+VISIBLE+"""
+          AND p.author_id<>%s AND NOT p.needs_approval AND """+visible_sql()+"""
           AND NOT EXISTS(SELECT 1 FROM posts a WHERE a.parent_id=%s AND a.accepted)
           AND NOT EXISTS(SELECT 1 FROM discussion_events e JOIN posts r ON r.id=e.post_id
             WHERE r.parent_id=%s AND e.action='accepted') LIMIT 1""",(pid,user,user,user,user,pid,pid))
@@ -208,7 +215,7 @@ async def helpful(pid:int,body:Toggle,request:Request,user:Account):
         if p['needs_approval']:raise HTTPException(409,'This post is awaiting moderation')
         if body.enabled:await cur.execute('INSERT INTO post_votes(post_id,user_id,weight) VALUES(%s,%s,1) ON CONFLICT DO NOTHING',(pid,user))
         else:await cur.execute('DELETE FROM post_votes WHERE post_id=%s AND user_id=%s',(pid,user))
-        await cur.execute('SELECT '+HELPFUL_COUNT+' AS n FROM posts p WHERE p.id=%s',(pid,));n=(await cur.fetchone())['n']
+        await cur.execute('SELECT '+helpful_count()+' AS n FROM posts p WHERE p.id=%s',(pid,));n=(await cur.fetchone())['n']
         await cur.execute('UPDATE posts SET helpful=%s,helpful_w=%s WHERE id=%s',(n,n,pid))
     return {'helpful':n,'voted':body.enabled}
 
@@ -228,7 +235,7 @@ async def accept(pid:int,body:Toggle,request:Request,user:Account):
             await cur.execute('UPDATE posts SET accepted=false WHERE parent_id=%s AND accepted',(p['parent_id'],))
         await cur.execute('UPDATE posts SET accepted=%s WHERE id=%s',(body.enabled,pid))
         if body.enabled:
-            await cur.execute("INSERT INTO review_notifications(user_id,event_key,message,discussion_post_id,discussion_question_id) VALUES(%s,%s,'Your reply was accepted by the person who asked the doubt',%s,%s) ON CONFLICT DO NOTHING",(p['author_id'],'discussion-accepted:'+str(pid),pid,p['canonical_id']))
+            await community_audience.notify(cur,p['author_id'],"INSERT INTO review_notifications(user_id,event_key,message,discussion_post_id,discussion_question_id) VALUES(%s,%s,'Your reply was accepted by the person who asked the doubt',%s,%s) ON CONFLICT DO NOTHING",(p['author_id'],'discussion-accepted:'+str(pid),pid,p['canonical_id']))
         await event(cur,p['canonical_id'],user,'accepted' if body.enabled else 'unaccepted',pid)
     return {'accepted':body.enabled}
 
@@ -266,7 +273,7 @@ async def notify_reply(cur,pid):
       AND r.author_id<>p.author_id AND NOT EXISTS(SELECT 1 FROM creator_blocks b
       WHERE (b.user_id=r.author_id AND b.blocked_id=p.author_id) OR (b.user_id=p.author_id AND b.blocked_id=r.author_id))""",(pid,))
     row=await cur.fetchone()
-    if row:await cur.execute("INSERT INTO review_notifications(user_id,event_key,message,discussion_post_id,discussion_question_id) VALUES(%s,%s,'Someone replied to your question discussion',%s,%s) ON CONFLICT DO NOTHING",(row['author_id'],'discussion-reply:'+str(pid),pid,row['canonical_id']))
+    if row:await community_audience.notify(cur,row['author_id'],"INSERT INTO review_notifications(user_id,event_key,message,discussion_post_id,discussion_question_id) VALUES(%s,%s,'Someone replied to your question discussion',%s,%s) ON CONFLICT DO NOTHING",(row['author_id'],'discussion-reply:'+str(pid),pid,row['canonical_id']))
 
 @router.get('/admin/queue',dependencies=[Depends(private)])
 async def queue(staff:Staff,tab:Literal['Reported','New users','My actions']='New users'):

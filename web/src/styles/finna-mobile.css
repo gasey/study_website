@@ -84,7 +84,7 @@
  .finna-app[data-mobile-screen="exam-detail"] :is(.exam-module-nav,.exam-tabs,.udc-tabs,.cp-tabs) { overflow-x:auto; flex-wrap:nowrap; gap:6px; }
  .finna-app[data-mobile-screen="exam-detail"] :is(.exam-module-nav,.exam-tabs,.udc-tabs,.cp-tabs) a { flex:none; white-space:nowrap; min-height:44px; }
  .finna-app[data-mobile-screen="module"] .finna-screen > :first-child { padding-top:8px; }
- .finna-app[data-mobile-screen="module"] :is(h1,h2) { font-family:Figtree,system-ui,sans-serif; font-weight:900; letter-spacing:-.02em; }
+ .finna-app[data-mobile-screen="module"] :is(h1,h2) {  font-weight:900; letter-spacing:-.02em; }
  .finna-app[data-mobile-screen="module"] h1 { font-size:30px; line-height:1.1; }
  .finna-app[data-mobile-screen="module"] :is(.module-layout,.module-study-layout,.lesson-layout) { display:flex; flex-direction:column; gap:12px; }
  .finna-app[data-mobile-screen="module"] :is(.module-sidebar,.lesson-sidebar) { width:100%; max-height:none; position:static; }
@@ -106,7 +106,7 @@
  .finna-event-node:before { content:""; width:10px; height:10px; border-radius:50%; background:rgb(var(--ism-exams-rgb)); position:absolute; left:-25px; top:18px; }
  .finna-event-node strong { font-size:13px; }
  .finna-event-node > span { font-size:15px; }
- .finna-event-detail { position:fixed; z-index:60; left:8px; right:8px; bottom:calc(80px + env(safe-area-inset-bottom)); max-height:60dvh; overflow:auto; box-shadow:0 12px 60px #0e133044; border-radius:18px; }
+ .finna-event-detail { position:fixed; z-index:60; left:8px; right:8px; bottom:calc(80px + env(safe-area-inset-bottom)); max-height:60dvh; overflow:auto; box-shadow: var(--ism-card-shadow); border-radius:18px; }
  .finna-inbox { padding-top:8px; }
  .finna-inbox > div:first-child > div > h1 { font-size:30px; font-weight:900; }
  .finna-inbox > div:first-child > div > p { font-size:13px; }
@@ -182,7 +182,7 @@
  .finna-app[data-mobile-screen="saved"] h1,.finna-app[data-mobile-screen="settings"] h1,.finna-app[data-mobile-screen="more"] h1 { font-size:30px; font-weight:900; }
  .finna-app[data-mobile-screen="settings"] section,.finna-app[data-mobile-screen="more"] section { border-radius:18px; padding:14px; }
  .finna-account-page { padding-top:8px; }
- .finna-account-page > div > div:first-child { font-family:Figtree,system-ui,sans-serif; text-transform:none; font-size:26px; font-weight:900; letter-spacing:-.02em; color:rgb(var(--ism-ink-rgb)); margin:16px 0 20px; }
+ .finna-account-page > div > div:first-child {  text-transform:none; font-size:26px; font-weight:900; letter-spacing:-.02em; color:rgb(var(--ism-ink-rgb)); margin:16px 0 20px; }
  .finna-account-page > div > section { border-radius:20px; padding:20px 16px; }
  .finna-account-page h1 { font-size:30px; font-weight:900; }
  .finna-account-page form input { height:48px; border-radius:12px; background:var(--bg-panel); }

@@ -403,7 +403,7 @@ export default function Inbox() {
   if (auth === "guest")
     return (
       <main className="mx-auto max-w-[1240px] px-6 py-10">
-        <h1 className="font-display text-[44px]">Inbox</h1>
+        <h1 className="font-display text-3xl">Inbox</h1>
         <p className="mt-3 text-secondary">
           Sign in to see your private notifications and study desk messages.
         </p>
@@ -423,7 +423,7 @@ export default function Inbox() {
           <h1 className="font-display text-[clamp(36px,5vw,52px)] leading-tight tracking-[-.02em]">
             Inbox
           </h1>
-          <p className="mt-2 text-[14px] text-secondary">
+          <p className="mt-2 text-sm text-secondary">
             Your study updates and private desk conversations.
           </p>
         </div>
@@ -433,14 +433,14 @@ export default function Inbox() {
             void loadThreads();
             void loadChat();
           }}
-          className="min-h-[44px] rounded-pill border border-hairline px-4 text-[13px]"
+          className="min-h-[44px] rounded-pill border border-hairline px-4 text-sm"
         >
           Refresh Inbox
         </button>
       </div>
       <nav className="finna-inbox-mobile-tabs" aria-label="Inbox views">{[['notifications','Notifications'],['messages','Messages'],['settings','Settings']].map(([value,label])=><button key={value} aria-pressed={phoneView===value} onClick={()=>setParams(p=>{const next=new URLSearchParams(p);next.set('view',value);next.delete('desk');return next})}>{label}</button>)}</nav>
       {notice && (
-        <p role="status" className="mb-4 text-[13px] text-link">
+        <p role="status" className="mb-4 text-sm text-link">
           {notice}
         </p>
       )}
@@ -450,10 +450,10 @@ export default function Inbox() {
           className="finna-inbox-notifications min-w-0 flex-[1_1_340px] rounded-[14px] border border-hairline bg-white px-[18px] pb-[18px] pt-2 shadow-sm"
         >
           <div className="flex flex-wrap items-center justify-between gap-2 border-b border-hairline py-3">
-            <h2 className="text-[14px] font-semibold">
+            <h2 className="text-sm font-semibold">
               Notifications{" "}
               {page && (
-                <span className="ml-1 rounded-pill bg-mypick px-2 py-1 font-mono text-[11px] text-white">
+                <span className="ml-1 rounded-pill bg-mypick px-2 py-1 font-mono text-xs text-white">
                   {page.unread} unread
                 </span>
               )}
@@ -466,7 +466,7 @@ export default function Inbox() {
                   ? page?.unread
                   : page?.unread_by_category[category])
               }
-              className="min-h-[44px] text-[12px] underline disabled:opacity-40"
+              className="min-h-[44px] text-xs underline disabled:opacity-40"
             >
               {category === "all" ? "Mark all read" : "Mark category read"}
             </button>
@@ -481,7 +481,7 @@ export default function Inbox() {
                   e.target.value === "all" ? "" : e.target.value,
                 )
               }
-              className="min-h-[44px] min-w-0 rounded-md border border-hairline bg-paper px-2 text-[13px]"
+              className="min-h-[44px] min-w-0 rounded-md border border-hairline bg-paper px-2 text-sm"
             >
               <option value="all">All notifications</option>
               {categories.map((c) => (
@@ -493,7 +493,7 @@ export default function Inbox() {
                 </option>
               ))}
             </select>
-            <label className="flex min-h-[44px] items-center gap-2 text-[13px]">
+            <label className="flex min-h-[44px] items-center gap-2 text-sm">
               <input
                 type="checkbox"
                 checked={unread}
@@ -503,7 +503,7 @@ export default function Inbox() {
             </label>
           </div>
           {error && (
-            <p role="alert" className="my-3 text-[13px] text-mypick">
+            <p role="alert" className="my-3 text-sm text-mypick">
               {error}{" "}
               <button onClick={() => void loadNotices()} className="underline">
                 Retry
@@ -532,10 +532,10 @@ export default function Inbox() {
                     }
                   />
                   <div className="min-w-0 flex-1">
-                    <p className="break-words text-[14px] leading-[1.5]">
+                    <p className="break-words text-sm leading-[1.5]">
                       {n.message}
                     </p>
-                    <p className="mt-1 font-mono text-[10px] text-muted">
+                    <p className="mt-1 font-mono text-xs text-muted">
                       {categoryLabels[n.category]} ·{" "}
                       <time dateTime={n.created_at}>{stamp(n.created_at)}</time>
                       {n.silent ? " · Quiet" : ""}
@@ -547,7 +547,7 @@ export default function Inbox() {
                           onClick={() => {
                             if (!n.read_at) void read(n, true);
                           }}
-                          className="inline-flex min-h-[36px] items-center rounded-pill border border-ink px-3 text-[12px] font-semibold"
+                          className="inline-flex min-h-[36px] items-center rounded-pill border border-ink px-3 text-xs font-semibold"
                         >
                           {action.label}
                         </Link>
@@ -555,7 +555,7 @@ export default function Inbox() {
                       <button
                         disabled={busy}
                         onClick={() => void read(n, !n.read_at)}
-                        className="min-h-[36px] text-[12px] text-link underline"
+                        className="min-h-[36px] text-xs text-link underline"
                       >
                         {n.read_at ? "Mark unread" : "Mark read"}
                       </button>
@@ -566,14 +566,14 @@ export default function Inbox() {
             })}
           </div>
           {!loading && !error && !items.length && (
-            <p className="py-8 text-[14px] text-secondary">
+            <p className="py-8 text-sm text-secondary">
               {unread
                 ? "You’re all caught up."
                 : "No notifications here yet. Study updates will appear as you use the site."}
             </p>
           )}
           {loading && (
-            <p role="status" className="py-3 text-[13px]">
+            <p role="status" className="py-3 text-sm">
               Loading notifications…
             </p>
           )}
@@ -581,27 +581,27 @@ export default function Inbox() {
             <button
               disabled={loading}
               onClick={() => void loadNotices(true)}
-              className="mt-3 min-h-[44px] rounded-pill border border-hairline px-4 text-[13px]"
+              className="mt-3 min-h-[44px] rounded-pill border border-hairline px-4 text-sm"
             >
               Load older notifications
             </button>
           )}
           <div className="finna-inbox-settings">
-          <h2 className="mt-5 border-b border-hairline py-3 text-[14px] font-semibold">
+          <h2 className="mt-5 border-b border-hairline py-3 text-sm font-semibold">
             Notification settings
           </h2>
-          <p className="py-3 text-[12px] leading-relaxed text-secondary">
+          <p className="py-3 text-xs leading-relaxed text-secondary">
             Choose which new updates count as unread. Quiet updates remain in
             All notifications. Existing updates keep their state.
           </p>
-          <div className="grid grid-cols-[minmax(0,1fr)_64px] border-b border-hairline py-2 font-mono text-[10px] uppercase text-muted">
+          <div className="grid grid-cols-[minmax(0,1fr)_64px] border-b border-hairline py-2 font-mono text-xs uppercase text-muted">
             <span>Category</span>
             <span className="text-center">In app</span>
           </div>
           {categories.map((c) => (
             <label
               key={c}
-              className="grid min-h-[44px] grid-cols-[minmax(0,1fr)_64px] items-center border-b border-[#F1EBDF] text-[13px]"
+              className="grid min-h-[44px] grid-cols-[minmax(0,1fr)_64px] items-center border-b border-[#F1EBDF] text-sm"
             >
               <span>{categoryLabels[c]}</span>
               <input
@@ -619,11 +619,11 @@ export default function Inbox() {
           <button
             disabled={prefsBusy}
             onClick={() => void savePrefs()}
-            className="mt-4 min-h-[44px] rounded-pill border border-ink px-4 text-[13px] font-semibold"
+            className="mt-4 min-h-[44px] rounded-pill border border-ink px-4 text-sm font-semibold"
           >
             {prefsBusy ? "Saving…" : "Save preferences"}
           </button>
-          <p className="mt-3 text-[12px] text-muted">
+          <p className="mt-3 text-xs text-muted">
             Email and push delivery are not configured. No external
             notifications are sent.
           </p>
@@ -634,8 +634,8 @@ export default function Inbox() {
           className="finna-inbox-messages min-w-0 flex-[1.6_1_480px] overflow-hidden rounded-[14px] border border-hairline bg-white shadow-sm"
         >
           <div className="border-b border-hairline px-4 py-3">
-            <h2 className="text-[14px] font-semibold">Desk conversations</h2>{did&&<button className="finna-chat-back" onClick={()=>filters("desk","")}>‹ All conversations</button>}
-            <p className="mt-1 text-[12px] text-secondary">
+            <h2 className="text-sm font-semibold">Desk conversations</h2>{did&&<button className="finna-chat-back" onClick={()=>filters("desk","")}>‹ All conversations</button>}
+            <p className="mt-1 text-xs text-secondary">
               Only people in your accepted private study desks.{" "}
               <Link to="/desk" className="text-link underline">
                 Manage desks & invitations
@@ -657,18 +657,18 @@ export default function Inbox() {
                     (did === t.id ? "bg-[#EFE5D4]" : "hover:bg-[#F3EDE0]")
                   }
                 >
-                  <span className="flex justify-between gap-2 text-[14px] font-semibold">
+                  <span className="flex justify-between gap-2 text-sm font-semibold">
                     <span className="break-words">{t.name}</span>
                     {t.unread > 0 && (
                       <span
                         aria-label={t.unread + " unread messages"}
-                        className="rounded-pill bg-mypick px-2 text-[11px] text-white"
+                        className="rounded-pill bg-mypick px-2 text-xs text-white"
                       >
                         {t.unread}
                       </span>
                     )}
                   </span>
-                  <span className="mt-1 block truncate text-[13px] text-secondary">
+                  <span className="mt-1 block truncate text-sm text-secondary">
                     {t.last_message
                       ? (t.author || "Learner") + ": " + t.last_message
                       : "No messages yet"}
@@ -678,13 +678,13 @@ export default function Inbox() {
               {threadOffset !== null && (
                 <button
                   onClick={() => void loadThreads(true)}
-                  className="min-h-[44px] w-full p-3 text-[12px] text-link underline"
+                  className="min-h-[44px] w-full p-3 text-xs text-link underline"
                 >
                   Load more conversations
                 </button>
               )}
               {!threads.length && (
-                <p className="p-4 text-[13px] text-secondary">
+                <p className="p-4 text-sm text-secondary">
                   {getDeskSync().privateEnabled
                     ? "Your joined desk conversations will appear here."
                     : "Private study desks are currently unavailable."}
@@ -692,19 +692,19 @@ export default function Inbox() {
               )}
             </nav>
             <div className="finna-chat-room flex min-w-0 flex-[2_1_280px] flex-col">
-              <div className="border-b border-[#F1EBDF] px-[18px] py-[14px] font-display text-[19px]">
+              <div className="border-b border-[#F1EBDF] px-[18px] py-[14px] font-display text-md">
                 {active?.name || "Choose a conversation"}
                 {active && (
                   <Link
                     to={"/desk/" + active.id}
-                    className="ml-3 font-sans text-[12px] text-link underline"
+                    className="ml-3 font-sans text-xs text-link underline"
                   >
                     Open desk
                   </Link>
                 )}
               </div>
               {threadError && (
-                <p role="alert" className="p-4 text-[13px] text-mypick">
+                <p role="alert" className="p-4 text-sm text-mypick">
                   {threadError}{" "}
                   <button
                     onClick={() => {
@@ -727,7 +727,7 @@ export default function Inbox() {
                   <button
                     disabled={chatLoading}
                     onClick={() => void loadChat(true)}
-                    className="min-h-[44px] text-[12px] text-link underline"
+                    className="min-h-[44px] text-xs text-link underline"
                   >
                     Load older messages
                   </button>
@@ -736,13 +736,13 @@ export default function Inbox() {
                   <article
                     key={m.id}
                     className={
-                      "max-w-[88%] rounded-[10px] px-[14px] py-[10px] text-[14px] leading-[1.5] " +
+                      "max-w-[88%] rounded-[10px] px-[14px] py-[10px] text-sm leading-[1.5] " +
                       (m.author_id === user
                         ? "self-end bg-[#86226F] text-white"
                         : "self-start bg-[#F3EDE0] text-ink")
                     }
                   >
-                    <div className="mb-1 text-[11px] opacity-75">
+                    <div className="mb-1 text-xs opacity-75">
                       {m.author_id === user ? "You" : m.author || "Learner"} ·{" "}
                       <time dateTime={m.created_at}>{stamp(m.created_at)}</time>
                     </div>
@@ -750,14 +750,14 @@ export default function Inbox() {
                   </article>
                 ))}
                 {!messages.length && !chatLoading && (
-                  <p className="text-[13px] text-secondary">
+                  <p className="text-sm text-secondary">
                     {active
                       ? "Start a conversation with your desk."
                       : "Choose a desk to read its private conversation."}
                   </p>
                 )}
                 {chatLoading && (
-                  <p role="status" className="text-[13px] text-muted">
+                  <p role="status" className="text-sm text-muted">
                     Loading messages…
                   </p>
                 )}
@@ -780,9 +780,9 @@ export default function Inbox() {
                       rows={2}
                       disabled={sending || !active || !!threadError}
                       placeholder="Write a message"
-                      className="min-h-[44px] w-full resize-y rounded-[16px] border border-hairline bg-[#F7F3EA] px-3 py-2 text-[14px]"
+                      className="min-h-[44px] w-full resize-y rounded-[16px] border border-hairline bg-[#F7F3EA] px-3 py-2 text-sm"
                     />
-                    <span className="text-[10px] text-muted">
+                    <span className="text-xs text-muted">
                       {draft.length}/2000 · Visible to this desk’s members
                     </span>
                   </label>
@@ -790,13 +790,13 @@ export default function Inbox() {
                     disabled={
                       sending || !draft.trim() || !active || !!threadError
                     }
-                    className="mb-5 min-h-[44px] rounded-pill bg-[#B23A9A] px-4 text-[14px] font-semibold text-white disabled:opacity-40"
+                    className="mb-5 min-h-[44px] rounded-pill bg-[#B23A9A] px-4 text-sm font-semibold text-white disabled:opacity-40"
                   >
                     {sending ? "Sending…" : "Send"}
                   </button>
                 </form>
               )}
-              <p className="border-t border-[#F1EBDF] px-4 py-3 text-[11px] text-muted">
+              <p className="border-t border-[#F1EBDF] px-4 py-3 text-xs text-muted">
                 Manage blocking, reports and your membership in the desk. No
                 public messaging directory.
               </p>

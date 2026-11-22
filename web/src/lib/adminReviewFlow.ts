@@ -9,4 +9,4 @@ export function nextReviewTarget<T extends {id:string}>(items:T[],total:number,o
 export function adminReadCanCoalesce(path:string){
  return path.startsWith('/admin/bank/')||path==='/review/taxonomy'||path==='/review/session'
 }
-export const ADMIN_TAXONOMY_TABS=['questions','retag','review','people','taxonomy']
+export const ADMIN_TAXONOMY_TABS=['edit','questions','retag','review','people','taxonomy']

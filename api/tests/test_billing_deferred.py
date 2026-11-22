@@ -28,6 +28,11 @@ def seed(database):
     database[1].execute("INSERT INTO billing_subscriptions(user_id,plan_code,billing_period,amount_paise,razorpay_plan_id,razorpay_subscription_id,status) VALUES(%s,'pro','monthly',10000,'plan_synthetic',%s,'created')",(user,sid))
     return user,sid
 
+def seed_payment(database,user,sid):
+    payment_id='pay_'+uuid4().hex
+    database[1].execute("INSERT INTO billing_payments(razorpay_payment_id,razorpay_subscription_id,user_id,amount_paise,currency,status,paid_at) VALUES(%s,%s,%s,10000,'INR','captured',now())",(payment_id,sid,user))
+    return payment_id
+
 def test_deferred_checkout_requires_opt_in_even_with_credentials(client,actor,provider):
     assert client.get('/api/billing/config').json()['enabled'] is False
     r=client.post('/api/billing/checkout',headers=actor('author'),json={'period':'monthly'})
@@ -72,6 +77,82 @@ def test_failed_webhook_transaction_remains_retryable(client,provider,database,m
     monkeypatch.setattr(billing,'_apply_subscription',original)
     assert signed(client,payload,eid).status_code==200
     assert database[1].execute('SELECT plan_code FROM users WHERE id=%s',(user,)).fetchone()[0]=='pro'
+
+@pytest.mark.parametrize(('refund_state','refunded_total','aggregate_state'),[
+    ('pending',2500,'partial'),('processed',2500,'partial'),('failed',0,None),
+    ('processed',10000,'full'),
+])
+def test_refund_webhook_reconciles_current_state_and_preserves_unrelated_grants(
+        client,provider,database,monkeypatch,refund_state,refunded_total,aggregate_state):
+    user,sid=seed(database);payment_id=seed_payment(database,user,sid)
+    database[1].execute("UPDATE users SET plan_code='pro',plan_status='active',plan_ends_at=now()+interval '30 days' WHERE id=%s",(user,))
+    database[1].execute("INSERT INTO billing_access_grants(user_id,granted_by,idempotency_key,days,starts_at,ends_at) VALUES(%s,%s,%s,7,now(),now()+interval '7 days')",(user,user,'refund-test-'+uuid4().hex))
+    refund_id='rfnd_'+uuid4().hex
+    created=int(datetime.now(timezone.utc).timestamp())
+    current_refund={'id':refund_id,'payment_id':payment_id,'amount':2500,'currency':'INR','status':refund_state,'created_at':created}
+    current_payment={'id':payment_id,'status':'captured' if aggregate_state!='full' else 'refunded',
+        'captured':True,'amount':10000,'amount_refunded':refunded_total,'currency':'INR','refund_status':aggregate_state}
+    calls=[]
+    async def fetch(method,path,payload=None):
+        calls.append((method,path))
+        if '/refunds?' in path:
+            return {'count':2,'items':[current_refund,{**current_refund,'id':'rfnd_'+uuid4().hex,'amount':7500}]}
+        return current_refund if path==f'/refunds/{refund_id}' else current_payment
+    monkeypatch.setattr(billing,'_razorpay_async',fetch)
+    event={'event':'refund.created','payload':{
+        'refund':{'entity':{'id':refund_id,'payment_id':payment_id}},
+        'payment':{'entity':{'id':payment_id,'subscription_id':sid}}}}
+    event_id=uuid4().hex
+    response=signed(client,event,event_id)
+    assert response.status_code==200,response.text
+    expected_calls=[('GET',f'/refunds/{refund_id}'),('GET',f'/payments/{payment_id}')]
+    if aggregate_state=='full':expected_calls.append(('GET',f'/payments/{payment_id}/refunds?count=100&skip=0'))
+    assert calls==expected_calls
+    assert database[1].execute('SELECT amount_refunded_paise,refund_status FROM billing_payments WHERE razorpay_payment_id=%s',(payment_id,)).fetchone()==(refunded_total,aggregate_state)
+    assert database[1].execute('SELECT amount_paise,currency,status FROM billing_refunds WHERE razorpay_refund_id=%s',(refund_id,)).fetchone()==(2500,'INR',refund_state)
+    ended=refund_state=='processed' and refunded_total==10000
+    assert database[1].execute('SELECT plan_code,plan_status FROM users WHERE id=%s',(user,)).fetchone()==(('free','refunded') if ended else ('pro','active'))
+    subscription_access=database[1].execute('SELECT access_ended_at,access_end_reason FROM billing_subscriptions WHERE razorpay_subscription_id=%s',(sid,)).fetchone()
+    assert (subscription_access[0] is not None and subscription_access[1]=='full_refund') if ended else subscription_access==(None,None)
+    # The full refund ends only subscription-derived access; the separate grant stays live.
+    assert database[1].execute('SELECT account_has_pro(%s)',(user,)).fetchone()[0] is True
+    # Replays of the same provider event do not repeat provider reads or mutate records.
+    assert signed(client,event,event_id).json()['duplicate'] is True
+    assert calls==expected_calls
+    if ended:
+        async def activated(*args):return {'id':sid,'status':'active','current_end':int((datetime.now(timezone.utc)+timedelta(days=30)).timestamp())}
+        monkeypatch.setattr(billing,'_razorpay_async',activated)
+        later={'event':'subscription.activated','payload':{'subscription':{'entity':{'id':sid}}}}
+        assert signed(client,later).status_code==200
+        assert database[1].execute('SELECT plan_code,plan_status FROM users WHERE id=%s',(user,)).fetchone()==('free','refunded')
+        assert database[1].execute('SELECT account_has_pro(%s)',(user,)).fetchone()[0] is True
+
+def test_refund_webhook_for_unknown_payment_stays_retryable_without_provider_lookup(client,provider,database,monkeypatch):
+    calls=[]
+    async def fetch(*args):calls.append(args);raise AssertionError('Unknown payments must not cause provider lookups')
+    monkeypatch.setattr(billing,'_razorpay_async',fetch)
+    event={'event':'refund.processed','payload':{'refund':{'entity':{
+        'id':'rfnd_unknown_'+uuid4().hex,'payment_id':'pay_unknown_'+uuid4().hex}}}}
+    event_id=uuid4().hex
+    response=signed(client,event,event_id)
+    assert response.status_code==503,response.text
+    assert not database[1].execute('SELECT 1 FROM billing_webhook_events WHERE event_key=%s',(event_id,)).fetchone()
+    assert calls==[]
+
+def test_refund_provider_mismatch_keeps_event_retryable(client,provider,database,monkeypatch):
+    user,sid=seed(database);payment_id=seed_payment(database,user,sid)
+    refund_id='rfnd_'+uuid4().hex;event_id=uuid4().hex
+    refund={'id':refund_id,'payment_id':'pay_wrong','amount':1000,'currency':'INR','status':'processed','created_at':int(datetime.now(timezone.utc).timestamp())}
+    payment={'id':payment_id,'status':'captured','captured':True,'amount':10000,'amount_refunded':1000,'currency':'INR','refund_status':'partial'}
+    async def fetch(method,path,payload=None):return refund if path.startswith('/refunds/') else payment
+    monkeypatch.setattr(billing,'_razorpay_async',fetch)
+    event={'event':'refund.processed','payload':{'refund':{'entity':{'id':refund_id,'payment_id':payment_id}}}}
+    assert signed(client,event,event_id).status_code==502
+    assert not database[1].execute('SELECT 1 FROM billing_webhook_events WHERE event_key=%s',(event_id,)).fetchone()
+    assert not database[1].execute('SELECT 1 FROM billing_refunds WHERE razorpay_refund_id=%s',(refund_id,)).fetchone()
+    refund['payment_id']=payment_id
+    assert signed(client,event,event_id).status_code==200
+    assert database[1].execute('SELECT event_key FROM billing_webhook_events WHERE event_key=%s',(event_id,)).fetchone()
 
 @pytest.fixture
 def checkout_account(client,provider,database,monkeypatch):

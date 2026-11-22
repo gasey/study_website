@@ -19,7 +19,7 @@ export default function AcceptanceNudge({ postId }: { postId: number }) {
     return () => { active = false; };
   }, [postId]);
   if (!shown) return null;
-  return <aside aria-label="Acceptance reminder" className="rounded-[8px] border border-hairline bg-community-soft p-3 text-[13px] text-primary">
+  return <aside aria-label="Acceptance reminder" className="rounded-[8px] border border-hairline bg-community-soft p-3 text-sm text-primary">
     <p className="font-semibold">Did one of these solve it?</p>
     <p className="mt-1">You can mark a reply with “Accept reply” to help others find the answer.</p>
     <button type="button" onClick={() => setShown(false)} className="mt-2 min-h-[44px] rounded-button border border-hairline bg-card px-3 font-semibold">Not now</button>

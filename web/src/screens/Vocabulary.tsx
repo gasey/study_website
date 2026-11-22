@@ -193,17 +193,17 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
   const revisionReturn=params.get('return_to');
   return (
     <div className={embedded ? "mt-5" : "mx-auto max-w-[900px] px-4 pb-24 pt-9 sm:px-6"}>
-      {revisionReturn&&/^rev_[a-f0-9]+$/.test(revisionReturn)&&<Link to={legacyRevisionLink(revisionReturn)} className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] text-link">← Return to saved session</Link>}
-      {!embedded&&<><Link to="/english" className="text-[13px] text-link">
+      {revisionReturn&&/^rev_[a-f0-9]+$/.test(revisionReturn)&&<Link to={legacyRevisionLink(revisionReturn)} className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm text-link">← Return to saved session</Link>}
+      {!embedded&&<><Link to="/library" className="text-sm text-link">
         ← English practice
       </Link>
-      <div className="mt-5 font-mono text-[11px] uppercase tracking-[.1em] text-[#72509A]">
+      <div className="mt-5 font-mono text-xs uppercase tracking-[.1em] text-[#72509A]">
         Vocabulary · automatic spaced review
       </div>
       <h1 className="mt-2 font-display text-[clamp(34px,5vw,48px)] leading-tight tracking-[-.02em]">
         Answer. We’ll plan the next review.
       </h1>
-      <p className="mt-3 max-w-[700px] text-[15px] leading-relaxed text-secondary">
+      <p className="mt-3 max-w-[700px] text-base leading-relaxed text-secondary">
         Practise vocabulary from verified exam questions. Your checked answers
         set the review schedule automatically—no confidence ratings needed.
       </p>
@@ -215,29 +215,29 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
       )}
       {auth === "guest" && (
         <section className="mt-6 rounded-[14px] border border-hairline bg-card p-6">
-          <h2 className="font-display text-[26px]">
+          <h2 className="font-display text-xl">
             A review plan that follows you
           </h2>
-          <p className="mt-2 text-[14px] text-secondary">
+          <p className="mt-2 text-sm text-secondary">
             Sign in free to save your answers and review schedule across
             devices.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
               to="/login"
-              className="min-h-[44px] rounded-pill bg-ink px-5 py-3 text-[13px] font-semibold text-paper"
+              className="min-h-[44px] rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-paper"
             >
               Log in
             </Link>
             <Link
               to="/join"
-              className="rounded-pill border border-hairline px-5 py-3 text-[13px]"
+              className="rounded-pill border border-hairline px-5 py-3 text-sm"
             >
               Create free account
             </Link>
             <Link
-              to="/english?view=practice"
-              className="px-3 py-3 text-[13px] text-link underline"
+              to="/library?view=practice"
+              className="px-3 py-3 text-sm text-link underline"
             >
               Browse English practice
             </Link>
@@ -245,7 +245,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
         </section>
       )}
       {auth === 'ready' && decks && <section aria-label="Vocabulary decks" className="mt-6 rounded-panel border border-hairline bg-card p-5">
-        <h2 className="font-display text-[27px]">Choose a vocabulary deck</h2>
+        <h2 className="font-display text-xl">Choose a vocabulary deck</h2>
         <p className="mt-2 text-sm leading-relaxed text-secondary">Reviewed English questions grouped by their approved topics. Every card keeps its original question and source.</p>
         <label className="mt-4 block text-sm font-semibold" htmlFor="vocabulary-deck">Practice deck</label>
         <select id="vocabulary-deck" value={deck} disabled={busy || loading} className="mt-2 min-h-11 w-full max-w-full rounded-[12px] border border-hairline bg-paper px-3 text-sm" onChange={event=>{
@@ -276,8 +276,8 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
             [overview.retaining, "in longer review intervals"],
           ].map(([value, label]) => (
             <div key={label} className="rounded-panel border border-hairline bg-card p-3">
-              <div className="font-display text-[25px]">{value}</div>
-              <div className="text-[12px] text-secondary">{label}</div>
+              <div className="font-display text-xl">{value}</div>
+              <div className="text-xs text-secondary">{label}</div>
             </div>
           ))}
         </div>
@@ -285,7 +285,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
       {error && (
         <p
           role="alert"
-          className="mt-5 rounded-[10px] bg-mypick-soft p-4 text-[13px] text-mypick"
+          className="mt-5 rounded-[10px] bg-mypick-soft p-4 text-sm text-mypick"
         >
           {error}
           {user && (
@@ -309,7 +309,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
       )}
       {card && !loading && !finished && (
         <section className="mt-5 rounded-[16px] border border-hairline bg-card p-5 shadow-sm sm:p-8">
-          <div className="mb-5 flex flex-wrap justify-between gap-2 font-mono text-[11px] text-muted">
+          <div className="mb-5 flex flex-wrap justify-between gap-2 font-mono text-xs text-muted">
             <span>
               {(card.started ?? (card.seen>0)) ? stageLabel(card.stage) : 'New question'} ·{" "}
               {card.question.answer_source === "official"
@@ -326,7 +326,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
             direction={card.question.direction}
             passage={card.question.passage}
           />
-          <h2 className="text-[18px] leading-relaxed">
+          <h2 className="text-md leading-relaxed">
             <SourceQuestionText
               text={card.question.question_markup || card.question.question}
             />
@@ -347,7 +347,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
                 disabled={busy || !!result}
                 onClick={() => {if(answering.current)return;setSelected(i);void answer("answer",i)}}
                 className={
-                  "flex min-h-[48px] items-start gap-3 rounded-[9px] border p-4 text-left text-[14px] " +
+                  "flex min-h-[48px] items-start gap-3 rounded-[9px] border p-4 text-left text-sm " +
                   (result?.answer_text === option
                     ? "border-correct bg-correct-soft"
                     : selected === i
@@ -355,7 +355,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
                       : "border-hairline bg-paper")
                 }
               >
-                <span className="font-mono text-[12px] text-muted">
+                <span className="font-mono text-xs text-muted">
                   {String.fromCharCode(65 + i)}
                 </span>
                 <SourceQuestionText
@@ -369,14 +369,14 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
               <button
                 disabled={busy}
                 onClick={() => void answer("reveal")}
-                className="min-h-[44px] rounded-pill border border-hairline px-4 text-[13px]"
+                className="min-h-[44px] rounded-pill border border-hairline px-4 text-sm"
               >
                 I don’t know · show answer
               </button>
               <button
                 disabled={busy}
                 onClick={() => void answer("defer")}
-                className="min-h-[44px] px-3 text-[13px] text-muted underline"
+                className="min-h-[44px] px-3 text-sm text-muted underline"
               >
                 Skip for now
               </button>
@@ -386,7 +386,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
               <div
                 role="status"
                 className={
-                  "rounded-[10px] p-4 text-[14px] " +
+                  "rounded-[10px] p-4 text-sm " +
                   (result.correct ? "bg-correct-soft" : "bg-[#F7EAD0]")
                 }
               >
@@ -409,7 +409,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
                     <SourceQuestionText text={learnerExplanation(result.explanation)} />
                   </p>
                 )}
-                <p className="mt-3 text-[13px]">{result.graduated || !result.next_due ? 'Graduated from your shared review queue. Your answer history is saved.' : <>
+                <p className="mt-3 text-sm">{result.graduated || !result.next_due ? 'Graduated from your shared review queue. Your answer history is saved.' : <>
                   Next review: <time dateTime={result.next_due}>{dateLabel(result.next_due)}</time> · in your shared review queue.
                 </>}</p>
               </div>
@@ -418,13 +418,13 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
                   if (completed >= 10) setFinished(true);
                   else void load(false);
                 }}
-                className="mt-4 min-h-[44px] rounded-pill bg-ink px-5 text-[14px] font-semibold text-paper"
+                className="mt-4 min-h-[44px] rounded-pill bg-ink px-5 text-sm font-semibold text-paper"
               >
                 {completed >= 10 ? "Finish session" : "Next review →"}
               </button>
             </div>
           )}
-          <div className="mt-6 flex flex-wrap gap-4 border-t border-hairline pt-4 text-[12px]">
+          <div className="mt-6 flex flex-wrap gap-4 border-t border-hairline pt-4 text-xs">
             <Link
               to={scopeLink("/bank/" + card.question_id)}
               className="text-link underline"
@@ -454,17 +454,17 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
               Flag a source or answer issue
             </Link>
           </div>
-          <p className="mt-3 text-[11px] text-muted">
+          <p className="mt-3 text-xs text-muted">
             Original option order is preserved, including letter references.
           </p>
         </section>
       )}
       {auth === "ready" && !loading && !error && (!card || finished) && (
         <section className="mt-6 rounded-[14px] border border-hairline bg-card p-7">
-          <h2 className="font-display text-[27px]">
+          <h2 className="font-display text-xl">
             {finished ? "Session complete" : "You’re clear for now"}
           </h2>
-          <p className="mt-2 text-[14px] text-secondary">
+          <p className="mt-2 text-sm text-secondary">
             {finished
               ? `${completed} reviews saved. Your next dates are already planned.`
               : overview?.eligible
@@ -472,7 +472,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
                 : "No verified vocabulary questions are currently eligible in this focus."}
           </p>
           {overview?.next_due && (
-            <p className="mt-3 text-[13px]">
+            <p className="mt-3 text-sm">
               Next scheduled review: {dateLabel(overview.next_due)}
             </p>
           )}
@@ -482,13 +482,13 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
               setFinished(false);
               void load(false);
             }}
-            className="mt-4 min-h-[44px] rounded-pill border border-hairline px-4 text-[13px]"
+            className="mt-4 min-h-[44px] rounded-pill border border-hairline px-4 text-sm"
           >
             {finished ? "Continue due reviews" : "Refresh review plan"}
           </button>
         </section>
       )}
-      <p className="mt-6 text-[12px] leading-relaxed text-muted">
+      <p className="mt-6 text-xs leading-relaxed text-muted">
         This uses the same 1, 3, 7, 16 and 35-day review queue as Smart Review. A correct Box 5 review graduates the question. This tracks recognition of exam questions, not proof that a word is
         mastered. Correct answers extend intervals when they are spaced apart;
         misses restart at Box 1. Skipping is not marked wrong, and speed does

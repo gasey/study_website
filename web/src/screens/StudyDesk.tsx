@@ -1,4 +1,6 @@
 import DeskCalendar from '../components/DeskCalendar'
+import DeskWeeklyGoal from '../components/DeskWeeklyGoal'
+import DeskDiscussionButton from '../components/DeskDiscussionButton'
 import {UserAvatar} from '../components/AvatarArt'
 import {AVATAR_COLORS} from '../lib/avatar'
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
@@ -10,6 +12,7 @@ import {
 } from "react-router-dom";
 import DeskScene, { type SceneMember } from "../components/DeskScene";
 import DeskFocus from "../components/DeskFocus";
+import { DeskEmpty as Empty, DeskModal as Modal } from "../components/DeskParts";
 import { DeskQuestion } from "../components/DeskPractice";
 import {
   getQuestion,
@@ -40,6 +43,8 @@ import {
   type SharedItem,
 } from "../lib/studyDesks";
 import { reviewRequest } from "../lib/review";
+const DeskLinkedNote = lazy(() => import("../components/DeskLinkedNote"));
+const DeskPracticeSessions = lazy(() => import("../components/DeskPracticeSessions"));
 const DeskPractice = lazy(() => import("../components/DeskPractice"));
 const TABS = [
   ["shared", "Shared Qs", "#C0462C", "#F6DDD3"],
@@ -78,51 +83,6 @@ type Panel =
   | "report"
   | "message"
   | null;
-function Modal({
-  title,
-  onClose,
-  children,
-}: {
-  title: string;
-  onClose: () => void;
-  children: React.ReactNode;
-}) {
-  const ref = useRef<HTMLDialogElement>(null);
-  useEffect(() => {
-    ref.current?.showModal();
-    return () => ref.current?.close();
-  }, []);
-  return (
-    <dialog
-      ref={ref}
-      onCancel={(e) => {
-        e.preventDefault();
-        onClose();
-      }}
-      onClick={(e) => {
-        if (e.target === e.currentTarget) onClose();
-      }}
-      aria-label={title}
-      className="max-h-[90vh] w-[min(680px,calc(100%-32px))] overflow-y-auto rounded-[14px] border border-hairline bg-paper p-6 text-ink shadow-xl backdrop:bg-ink/50"
-    >
-      <div className="mb-4 flex items-start justify-between gap-3">
-        <h2 className="font-display text-[29px]">{title}</h2>
-        <button
-          type="button"
-          onClick={onClose}
-          aria-label="Close dialog"
-          className={B}
-        >
-          Close
-        </button>
-      </div>
-      {children}
-    </dialog>
-  );
-}
-function Empty({ children }: { children: React.ReactNode }) {
-  return <div className="desk-v3-empty">{children}</div>;
-}
 
 export default function StudyDesk() {
   const nav = useNavigate();
@@ -133,7 +93,7 @@ export default function StudyDesk() {
   const raw = requested === "focus" ? "session" : !roomId && requested === "bookmarks" ? "shared" : requested;
   const tabs = roomId ? TABS : TABS.filter(t => !["progress", "mistakes", "practice", "bookmarks"].includes(t[0])).map(t => [t[0], t[0] === "shared" ? "Saved questions" : t[0] === "notes" ? "Notes" : t[0] === "session" ? "Focus timer" : t[1], t[2], t[3]]);
   const tab = tabs.some((t) => t[0] === raw) ? raw : "shared";
-  useEffect(() => {if (!roomId && ["progress", "mistakes", "practice"].includes(raw)) nav(raw === "progress" ? "/profile#mastery" : "/revise" + (raw === "mistakes" ? "?tab=queue" : ""), {replace: true})}, [roomId, raw, nav]);
+  useEffect(() => {if (!roomId && ["progress", "mistakes", "practice"].includes(raw)) nav(raw === "progress" ? "/profile#mastery" : raw === "practice" ? "/practice" : "/revise?tab=queue", {replace: true})}, [roomId, raw, nav]);
   const [desk, setDesk] = useState(getDesk);
   const [sync, setSync] = useState(getDeskSync);
   const [overview, setOverview] = useState<DeskOverview>(emptyOverview);
@@ -143,10 +103,21 @@ export default function StudyDesk() {
   const [loading, setLoading] = useState(false);
   const [busy, setBusy] = useState(false);
   const [items, setItems] = useState<SharedItem[]>([]);
+  const [discussionFilter, setDiscussionFilter] = useState<"all" | "needed" | "resolved">("all");
+  useEffect(() => { if (!sync.privateEnabled) setDiscussionFilter("all"); }, [sync.privateEnabled]);
+  const itemSequence = useRef(0);
+  const itemKind = tab === "shared" && discussionFilter !== "all" ? "all" :
+    tab === "shared" || tab === "practice" ? "question" :
+    tab === "notes" ? "note" : tab === "bookmarks" ? "bookmark" :
+    tab === "mistakes" ? "mistake" : "update";
+  const itemQuery = "/items?kind=" + itemKind + "&discussion=" +
+    (tab === "shared" ? discussionFilter : "all") + "&limit=" + (["shared", "practice"].includes(tab) ? 5 : 20);
   const [cursor, setCursor] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [chatCursor, setChatCursor] = useState<number | null>(null);
   const [chat, setChat] = useState("");
+  const [chatNote, setChatNote] = useState<{id:string;title:string} | null>(null);
+  useEffect(() => setChatNote(null), [roomId, sync.userId]);
   const [messageEdit, setMessageEdit] = useState<ChatMessage | null>(null);
   const [messageBody, setMessageBody] = useState("");
   const [activeMember, setActiveMember] = useState("");
@@ -245,10 +216,16 @@ export default function StudyDesk() {
           items: ChatMessage[];
           next_cursor: number | null;
         }>("/rooms/" + roomId + "/messages");
+        if (!alive) return;
+        const itemRun = ++itemSequence.current;
+        const shared = await deskRead<{ items: SharedItem[]; next_cursor: string | null }>("/rooms/" + roomId + itemQuery);
         if (alive) {
           setRoom(nextRoom);
           setMessages(chat.items);
           setChatCursor(chat.next_cursor);
+          if (itemRun === itemSequence.current) {
+            setItems(shared.items); setCursor(shared.next_cursor);
+          }
         }
       } catch (e) {
         if (alive) {
@@ -263,31 +240,17 @@ export default function StudyDesk() {
       alive = false;
       clearInterval(timer);
     };
-  }, [roomId, room?.id, sync.userId]);
-  const itemKind =
-    tab === "shared" || tab === "practice"
-      ? "question"
-      : tab === "notes"
-        ? "note"
-        : tab === "bookmarks"
-          ? "bookmark"
-          : tab === "mistakes"
-            ? "mistake"
-            : "update";
+  }, [roomId, room?.id, sync.userId, itemQuery]);
   async function loadItems(next?: string) {
     if (!roomId) return;
+    const run = ++itemSequence.current;
     const result = await deskRead<{
       items: SharedItem[];
       next_cursor: string | null;
     }>(
-      "/rooms/" +
-        roomId +
-        "/items?kind=" +
-        itemKind +
-        "&limit=" +
-        (itemKind === "question" ? 5 : 20) +
-        (next ? "&before=" + next : ""),
+      "/rooms/" + roomId + itemQuery + (next ? "&before=" + next : ""),
     );
+    if (run !== itemSequence.current) return;
     setItems((old) => (next ? [...old, ...result.items] : result.items));
     setCursor(result.next_cursor);
   }
@@ -302,21 +265,17 @@ export default function StudyDesk() {
   }
   useEffect(() => {
     let active = true;
+    const run = ++itemSequence.current;
     setItems([]);
     setMessages([]);
     setCursor(null);
     setChatCursor(null);
     if (!room || !roomId) return;
     deskRead<{ items: SharedItem[]; next_cursor: string | null }>(
-      "/rooms/" +
-        roomId +
-        "/items?kind=" +
-        itemKind +
-        "&limit=" +
-        (itemKind === "question" ? 5 : 20),
+      "/rooms/" + roomId + itemQuery,
     )
       .then((r) => {
-        if (active) {
+        if (active && run === itemSequence.current) {
           setItems(r.items);
           setCursor(r.next_cursor);
         }
@@ -339,7 +298,7 @@ export default function StudyDesk() {
     return () => {
       active = false;
     };
-  }, [roomId, room?.id, tab, sync.userId]);
+  }, [roomId, room?.id, itemQuery, sync.userId]);
   useEffect(() => {
     let active = true;
     const ids = desk.saved.slice(savedPage * 20, savedPage * 20 + 20);
@@ -416,7 +375,7 @@ export default function StudyDesk() {
     },
   );
   function setTab(value: string) {
-    if (!roomId && ["progress", "mistakes", "practice"].includes(value)) { nav(value === "progress" ? "/profile#mastery" : "/revise" + (value === "mistakes" ? "?tab=queue" : "")); return; }
+    if (!roomId && ["progress", "mistakes", "practice"].includes(value)) { nav(value === "progress" ? "/profile#mastery" : value === "practice" ? "/practice" : "/revise?tab=queue"); return; }
     setParams((previous) => {
       const p = new URLSearchParams(previous);
       p.set("tab", value);
@@ -505,13 +464,14 @@ export default function StudyDesk() {
             await deskWrite("/rooms/" + roomId + "/items/" + editItem.id, {
               title: note.title,
               body: note.body,
+              question_id: note.question_id || null,
               expected_version: editItem.version,
               delete: false,
             });
           else
             await deskWrite(
               "/rooms/" + roomId + "/items",
-              { kind: "note", title: note.title, body: note.body },
+              { kind: "note", title: note.title, body: note.body, question_id: note.question_id || null },
               createKey.current,
             );
           await loadItems();
@@ -576,14 +536,15 @@ export default function StudyDesk() {
     e.preventDefault();
     if (!roomId || !chat.trim()) return;
     await execute(async () => {
-      if (chatKey.current.payload !== chat)
-        chatKey.current = { payload: chat, key: uid() };
+      const serialized = JSON.stringify([chat,chatNote?.id || null]);
+      if (chatKey.current.payload !== serialized)
+        chatKey.current = { payload: serialized, key: uid() };
       await deskWrite(
         "/rooms/" + roomId + "/messages",
-        { body: chat },
+        { body: chat, ...(chatNote ? {note_id:chatNote.id} : {}) },
         chatKey.current.key,
       );
-      setChat("");
+      setChat(""); setChatNote(null);
       await loadChat();
     });
   }
@@ -601,15 +562,7 @@ export default function StudyDesk() {
     });
   }
   function exportPersonal() {
-    const blob = new Blob([JSON.stringify(desk, null, 2)], {
-      type: "application/json",
-    });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "my-study-desk.json";
-    a.click();
-    URL.revokeObjectURL(url);
+    window.open('/api/me/data-export?'+new URLSearchParams({user_id:sync.userId}), '_blank', 'noopener,noreferrer');
   }
   if (sync.loading)
     return (
@@ -622,7 +575,7 @@ export default function StudyDesk() {
     return (
       <main className="desk-v3" data-desk-room={!!room}>
         <h1 className="desk-v3-heading">This desk is unavailable</h1>
-        <p role="alert" className="mt-3 text-[14px] text-secondary">
+        <p role="alert" className="mt-3 text-sm text-secondary">
           {error}
         </p>
         <Link to="/desk" className={B + " mt-4"}>
@@ -632,19 +585,19 @@ export default function StudyDesk() {
     );
   return (
     <main className="desk-v3" data-desk-room={!!room}>
-      {!room&&<p className="mb-4 text-sm text-secondary"><Link to="/feed" className="inline-flex min-h-11 items-center font-semibold text-link">Your daily plan is on Home →</Link> · <Link to="/profile#mastery" className="inline-flex min-h-11 items-center font-semibold text-link">View mastery</Link></p>}
+      {!room&&<p className="mb-4 text-sm text-secondary"><Link to="/home" className="inline-flex min-h-11 items-center font-semibold text-link">Today’s plan on Home →</Link> · <Link to="/practice" className="inline-flex min-h-11 items-center font-semibold text-link">Practice &amp; timed runs →</Link> · <Link to="/profile#mastery" className="inline-flex min-h-11 items-center font-semibold text-link">Mastery</Link></p>}
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div className="min-w-0">
           <div className="desk-v3-label !text-[#86226F]">Study desk</div>
           <h1 className="desk-v3-heading mt-2">
             {room?.name || "Your study desk"}
           </h1>
-          <p className="mt-2.5 text-[16px] text-secondary">
+          <p className="mt-2.5 text-base text-secondary">
             {room
               ? `You and ${Math.max(0, room.members.length - 1)} ${room.members.length === 2 ? "partner" : "partners"} · up to 5 · invite only`
               : "Your private notes, saved questions and focus timer"}
           </p>
-          <div className="mt-3 flex flex-wrap items-center gap-1.5 text-[12px] text-secondary">
+          <div className="mt-3 flex flex-wrap items-center gap-1.5 text-xs text-secondary">
             <span className="mr-1">Who can see this desk</span>
             {["Public", "Partners only", "Private"].map((x) => (
               <button
@@ -696,7 +649,7 @@ export default function StudyDesk() {
         >
           Study desk · up to 6
         </span>
-        <span className="text-[12px] text-muted">
+        <span className="text-xs text-muted">
           Class desks and public discovery are off.
         </span>
         <select
@@ -722,7 +675,7 @@ export default function StudyDesk() {
       </div>
       <div
         role="status"
-        className="mt-3 flex flex-wrap items-center gap-3 text-[12px] text-muted"
+        className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted"
       >
         <button
           className="min-h-9 text-link underline"
@@ -762,8 +715,11 @@ export default function StudyDesk() {
               className="min-h-9 text-link underline"
               onClick={exportPersonal}
             >
-              Export my desk
+              Export my data (JSON)
             </button>
+            <a className="min-h-11 py-2 text-link underline" target="_blank" rel="noreferrer"
+              href={'/api/me/desk-notes-print?'+new URLSearchParams({user_id:sync.userId,...(roomId ? {desk_id:roomId} : {})})}>{roomId ? 'Print / save my room notes as PDF' : 'Print / save notes as PDF'}</a>
+            <span className="text-xs text-secondary">Exports use saved account notes. Assessment-linked notes may be omitted.</span>
           </>
         ) : (
           <Link to="/login" className="min-h-9 py-2 text-link underline">
@@ -782,7 +738,7 @@ export default function StudyDesk() {
       {sync.error && (
         <div
           role="alert"
-          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-4 text-[13px]"
+          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-4 text-sm"
         >
           <p>{sync.error} Your local edits are retained in this browser.</p>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -813,7 +769,7 @@ export default function StudyDesk() {
       {error && (
         <p
           role="alert"
-          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick"
+          className="mt-3 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick"
         >
           {error}
           <button className={B + " ml-2"} onClick={() => void refresh()}>
@@ -822,19 +778,19 @@ export default function StudyDesk() {
         </p>
       )}
       {notice && (
-        <p role="status" className="mt-3 text-[13px] text-correct-dark">
+        <p role="status" className="mt-3 text-sm text-correct-dark">
           {notice}
         </p>
       )}
       {list?.invitations.length ? (
         <section className="mt-5 rounded-[8px] border border-[#B23A9A] bg-[#EEDDEC] p-4">
-          <h2 className="font-display text-[22px]">Your desk invitations</h2>
+          <h2 className="font-display text-lg">Your desk invitations</h2>
           {list.invitations.map((i) => (
             <div key={i.id} className="mt-3 border-t border-[#D7BFD5] pt-3">
-              <p className="text-[14px]">
+              <p className="text-sm">
                 <b>@{i.sender}</b> invited you to <b>{i.name}</b>
               </p>
-              <p className="mt-1 text-[12px]">
+              <p className="mt-1 text-xs">
                 Current shared resources become visible on joining. Chat starts
                 from the time you join. Personal scores and mistakes stay
                 private until you choose otherwise. Expires{" "}
@@ -949,7 +905,7 @@ export default function StudyDesk() {
             invite={() => open(room ? "invite" : "create")}
           />
         </div>
-        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink bg-card px-[18px] py-3 text-[13px]">
+        <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-t border-ink bg-card px-[18px] py-3 text-sm">
           {members.map((m, i) => (
             <span key={m.user_id} className="flex items-center gap-2">
               <span
@@ -966,14 +922,14 @@ export default function StudyDesk() {
               </span>
             </span>
           ))}
-          <span className="ml-auto font-mono text-[11px] text-muted">
+          <span className="ml-auto font-mono text-xs text-muted">
             Tap a person or anything on the desk
           </span>
         </div>
       </div>
       </>}
       {loading && (
-        <p role="status" className="mt-4 text-[13px] text-muted">
+        <p role="status" className="mt-4 text-sm text-muted">
           Loading your study activity…
         </p>
       )}
@@ -1005,22 +961,35 @@ export default function StudyDesk() {
               </button>
             ))}
           </div>
+          {roomId && params.get('note') && <Suspense fallback={<Empty>Opening shared note…</Empty>}>
+            <DeskLinkedNote key={sync.userId+":"+roomId+":"+params.get('note')} deskId={roomId} noteId={params.get('note')!} />
+          </Suspense>}
           {tab === "practice" && (
-            <Suspense fallback={<Empty>Loading desk practice…</Empty>}>
-              <DeskPractice
-                questions={
-                  room
-                    ? items
-                        .filter((i) => i.question_id)
-                        .map((i) => i.question_id!)
-                    : undefined
-                }
-                subject={desk.goalSubject}
-                onAnswered={() => void refresh()}
-              />
+            <Suspense fallback={<Empty>Loading room practice…</Empty>}>
+              {room ? (
+                <>
+                  {sync.privateEnabled && <DeskPracticeSessions key={sync.userId + ":" + room.id} deskId={room.id} />}
+                  <DeskPractice
+                    questions={items.filter((i) => i.question_id).map((i) => i.question_id!)}
+                    subject={desk.goalSubject}
+                    onAnswered={() => void refresh()}
+                  />
+                </>
+              ) : (
+                <section className="rounded-xl border border-hairline bg-card p-5">
+                  <h2 className="text-lg font-bold text-ink">Solo practice lives in Practice</h2>
+                  <p className="mt-2 text-sm text-secondary">
+                    Use your personal Desk for notes, bookmarks and Pomodoro focus sessions. Open Practice for untimed runs or timed mocks.
+                  </p>
+                  <Link to="/practice" className={B + " mt-4 bg-ink text-paper"}>
+                    Open Practice →
+                  </Link>
+                </section>
+              )}
             </Suspense>
           )}
           {tab === "session" && (
+            <>
             <DeskFocus
               sessions={overview.sessions}
               serverTime={overview.server_time}
@@ -1028,12 +997,25 @@ export default function StudyDesk() {
               deskId={roomId}
               onChange={() => void refresh()}
             />
+            {room && sync.privateEnabled && <section aria-label="Room focus board" className="my-4 rounded-panel border border-hairline bg-card p-4 sm:p-5">
+              <h2 className="text-base font-bold">Focusing together</h2>
+              <p className="mt-2 text-sm text-secondary">Members who choose to share their current server-timed focus session. This board earns no XP or points.</p>
+              {members.some(m => m.focusing && !m.blocked) ? <ul className="mt-3 flex flex-wrap gap-3">
+                {members.filter(m => m.focusing && !m.blocked).map(m => <li key={m.user_id} className="flex min-h-11 min-w-0 max-w-full items-center gap-2 text-sm">
+                  <UserAvatar look={m.avatar} initials={m.is_you ? "You" : m.handle} size={28} />
+                  <span className="min-w-0 break-words"><b>{m.is_you ? "You" : m.handle}</b> · focusing now</span>
+                </li>)}
+              </ul> : <p className="mt-3 text-sm">No current focus sessions are shared with you.</p>}
+              {!room.sharing.times && <p className="mt-2 text-sm text-secondary">Your focus session stays private. Use “My desk focus session” in What you share to opt in.</p>}
+            </section>}
+            </>
           )}
           {tab === "progress" && (
             <>
+              {room && sync.privateEnabled && <DeskWeeklyGoal key={sync.userId + ":" + room.id} deskId={room.id} />}
               <div className="desk-v3-subhead">
                 <h2>{room ? "Desk progress" : "Your progress"}</h2>
-                <span className="text-[13px] text-secondary">
+                <span className="text-sm text-secondary">
                   {room
                     ? "Only members who choose to share"
                     : "Private to your account"}
@@ -1044,7 +1026,7 @@ export default function StudyDesk() {
                   {members.map((m) => (
                     <div
                       key={m.user_id}
-                      className="flex justify-between gap-3 border-b border-hairline py-3 text-[14px]"
+                      className="flex justify-between gap-3 border-b border-hairline py-3 text-sm"
                     >
                       <span>{m.is_you ? "You" : m.handle}</span>
                       <span>
@@ -1056,14 +1038,14 @@ export default function StudyDesk() {
                   ))}
                 </div>
               )}
-              <h3 className="mt-6 border-b border-hairline pb-2 font-display text-[22px]">
+              <h3 className="mt-6 border-b border-hairline pb-2 font-display text-lg">
                 Your subjects
               </h3>
               {overview.subjects.map((s) => (
                 <div key={s.subject} className="border-b border-hairline2 py-3">
-                  <div className="flex justify-between text-[14px]">
+                  <div className="flex justify-between text-sm">
                     <span>{s.subject}</span>
-                    <span className="font-mono text-[12px]">
+                    <span className="font-mono text-xs">
                       {acc(s.answered, s.correct)}
                     </span>
                   </div>
@@ -1107,7 +1089,7 @@ export default function StudyDesk() {
                         : "Mistakes wall"}
                 </h2>
                 <button
-                  className="min-h-11 text-[13px] font-semibold"
+                  className="min-h-11 text-sm font-semibold"
                   onClick={() =>
                     tab === "notes" ? open("note") : open("share")
                   }
@@ -1121,6 +1103,14 @@ export default function StudyDesk() {
               </div>
               {roomId ? (
                 <>
+                  {tab === "shared" && sync.privateEnabled && <label className="mt-3 block text-sm font-semibold">Review circle
+                    <select className="desk-v3-input mt-2" value={discussionFilter}
+                      onChange={e => setDiscussionFilter(e.target.value as typeof discussionFilter)}>
+                      <option value="all">All shared questions</option>
+                      <option value="needed">Needs discussion</option>
+                      <option value="resolved">Resolved discussions</option>
+                    </select>
+                  </label>}
                   <div className="mt-3">
                     {items.map((item) => (
                       <article
@@ -1130,10 +1120,11 @@ export default function StudyDesk() {
                           (tab === "mistakes" ? "desk-v3-mistake mt-4" : "")
                         }
                       >
-                        <div className="flex flex-wrap items-center gap-2 text-[12px] text-secondary">
-                          <span className="rounded-pill bg-community-soft px-2 py-1 text-[10px] uppercase text-community-dark">
+                        <div className="flex flex-wrap items-center gap-2 text-xs text-secondary">
+                          <span className="rounded-pill bg-community-soft px-2 py-1 text-xs uppercase text-community-dark">
                             {item.kind}
                           </span>
+                          {sync.privateEnabled && item.discussion_state && item.discussion_state !== "none" && <span className="font-semibold">{item.discussion_state === "needed" ? "Needs discussion" : "Discussion resolved"}</span>}
                           <span>
                             Shared by{" "}
                             <b>
@@ -1146,16 +1137,19 @@ export default function StudyDesk() {
                           </span>
                         </div>
                         {item.body && (
-                          <p className="mt-3 whitespace-pre-wrap break-words text-[14px] leading-relaxed text-secondary">
+                          <p className="mt-3 whitespace-pre-wrap break-words text-sm leading-relaxed text-secondary">
                             {item.body}
                           </p>
                         )}
                         {(!item.question_id || tab !== "shared") && (
-                          <h3 className="mt-3 font-display text-[21px] leading-snug">
-                            {item.question || item.title}
+                          <h3 className="mt-3 font-display text-lg leading-snug">
+                            {item.kind === 'note' ? item.title || 'Shared note' : item.question || item.title}
                           </h3>
                         )}
                         <div className="mt-3 flex flex-wrap gap-2">
+                          {sync.privateEnabled && item.question_id && ["question", "mistake"].includes(item.kind) &&
+                            <DeskDiscussionButton key={myId + ":" + roomId + ":" + item.id + ":" + tab + ":" + discussionFilter}
+                              deskId={roomId} item={item} onChange={() => loadItems()} />}
                           {item.question_id && tab !== "shared" && (
                             <button
                               className={B}
@@ -1168,6 +1162,10 @@ export default function StudyDesk() {
                                 : "Practise this question"}
                             </button>
                           )}
+                          {item.kind === "note" && <button className={B} onClick={() => {
+                            setChatNote({id:item.id,title:item.title || 'Shared note'});
+                            setNotice('Shared note attached to your next chat message.');
+                          }}>Link in chat</button>}
                           {item.author_id === myId && item.kind === "note" && (
                             <button
                               className={B}
@@ -1178,6 +1176,7 @@ export default function StudyDesk() {
                                   title: item.title,
                                   body: item.body,
                                   subject: "",
+                                  question_id: item.question_id,
                                 });
                                 setPanel("note");
                               }}
@@ -1235,7 +1234,9 @@ export default function StudyDesk() {
                   </div>
                   {!items.length && (
                     <Empty>
-                      {tab === "shared"
+                      {tab === "shared" && discussionFilter !== "all"
+                        ? "No visible questions match this discussion filter."
+                        : tab === "shared"
                         ? "Questions shared with a note about why they matter will appear here."
                         : tab === "notes"
                           ? "Add a note for the people on this desk."
@@ -1261,11 +1262,12 @@ export default function StudyDesk() {
                       className="flex flex-wrap justify-between gap-3 border-b border-hairline2 py-4"
                     >
                       <div className="min-w-0 flex-1">
-                        <h3 className="font-display text-[22px]">{n.title}</h3>
-                        <p className="mt-1 whitespace-pre-wrap break-words text-[14px] leading-relaxed text-secondary">
+                        <h3 className="font-display text-lg">{n.title}</h3>
+                        <p className="mt-1 whitespace-pre-wrap break-words text-sm leading-relaxed text-secondary">
                           {n.body}
                         </p>
-                        <span className="mt-2 inline-block font-mono text-[10px] uppercase text-muted">
+                        {n.question_id && <Link className="mt-2 block min-h-11 break-all text-sm text-link underline" to={'/bank/'+encodeURIComponent(n.question_id)}>Question: {n.question_id}</Link>}
+                        <span className="mt-2 inline-block font-mono text-xs uppercase text-muted">
                           {n.subject || "Private note"}
                         </span>
                       </div>
@@ -1318,7 +1320,7 @@ export default function StudyDesk() {
                         <div className="desk-v3-label !text-[#9E2A1F]">
                           Your revision · missed {m.times_wrong} times
                         </div>
-                        <h3 className="mt-2 font-display text-[18px] leading-snug">
+                        <h3 className="mt-2 font-display text-md leading-snug">
                           {m.question}
                         </h3>
                         <button
@@ -1364,7 +1366,7 @@ export default function StudyDesk() {
                         key={q.id}
                         className="border-b border-hairline2 py-4"
                       >
-                        <div className="flex flex-wrap gap-2 font-mono text-[10px] uppercase text-muted">
+                        <div className="flex flex-wrap gap-2 font-mono text-xs uppercase text-muted">
                           <span>{q.subject || "Question bank"}</span>
                           <span>
                             {q.type === "descriptive"
@@ -1374,7 +1376,7 @@ export default function StudyDesk() {
                                 : q.answer_source + " answer"}
                           </span>
                         </div>
-                        <h3 className="mt-2 font-display text-[20px] leading-snug">
+                        <h3 className="mt-2 font-display text-lg leading-snug">
                           {q.question}
                         </h3>
                         <div className="mt-3 flex flex-wrap gap-2">
@@ -1427,7 +1429,7 @@ export default function StudyDesk() {
                       >
                         Previous
                       </button>
-                      <span className="self-center text-[12px] text-muted">
+                      <span className="self-center text-xs text-muted">
                         {savedPage + 1} / {Math.ceil(desk.saved.length / 20)}
                       </span>
                       <button
@@ -1445,16 +1447,16 @@ export default function StudyDesk() {
           )}
         </section>
         <aside className="desk-v3-rail">
-          {!room && <DeskCalendar/>}
+          <DeskCalendar key={sync.userId+':'+(roomId||'personal')} deskId={roomId || undefined}/>
           {room && <>
           <article className="border border-ink bg-card p-[18px] shadow-[inset_0_4px_0_#B23A9A]">
             <div className="flex items-center gap-3">
               <UserAvatar look={focused?.avatar} initials={focused?.is_you?'You':focused?.handle||'S'} size={52}/>
               <div className="min-w-0">
-                <h2 className="break-words font-display text-[20px]">
+                <h2 className="break-words font-display text-lg">
                   {focused?.is_you ? "Your desk profile" : focused?.handle}
                 </h2>
-                <p className="text-[12px] text-secondary">
+                <p className="text-xs text-secondary">
                   {focused?.is_you
                     ? "Personal study stays private"
                     : focused?.blocked
@@ -1478,8 +1480,8 @@ export default function StudyDesk() {
                 [focused?.is_you ? desk.saved.length : "—", "Saved"],
               ].map(([value, label]) => (
                 <div key={String(label)}>
-                  <p className="font-display text-[22px]">{value}</p>
-                  <p className="text-[11px] text-secondary">{label}</p>
+                  <p className="font-display text-lg">{value}</p>
+                  <p className="text-xs text-secondary">{label}</p>
                 </div>
               ))}
             </div>
@@ -1515,23 +1517,23 @@ export default function StudyDesk() {
             )}
           </article>
           </>}
-          <section className="rounded-[8px] bg-[#EEDDEC] p-[18px]">
-            <div className="desk-v3-label !text-[#B23A9A]">
+          <section className="rounded-[8px] bg-community-soft p-[18px]">
+            <div className="desk-v3-label !text-community-dark">
               {room ? "Private desk" : "Your toolbox"}
             </div>
-            <h3 className="mt-2 font-display text-[20px]">
+            <h3 className="mt-2 font-display text-lg">
               {room
                 ? "Study together, keep your own history"
                 : "Keep your study things together"}
             </h3>
-            <p className="mt-2 text-[13px] leading-relaxed text-[#3E2F3D]">
+            <p className="mt-2 text-sm leading-relaxed text-secondary">
               {room
                 ? "Questions and notes shared here are visible to members. Individual attempts, points and private notes stay in their own accounts."
                 : "Save a question, write a private note or use the focus timer. Your daily plan stays on Home."}
             </p>
-            <Link to="/feed" className={B + " mt-3"}>Open Today on Home →</Link>
+            <Link to="/home" className={B + " mt-3"}>Open Today on Home →</Link>
             {!room && (
-              <p className="mt-3 text-[12px] text-[#4E3A4D]">
+              <p className="mt-3 text-xs text-secondary">
                 Shared desks are created with Pro. Invited members join free.
               </p>
             )}
@@ -1563,7 +1565,7 @@ export default function StudyDesk() {
                       await loadItems();
                     })
                   }
-                  className="flex min-h-11 w-full items-center justify-between gap-3 border-b border-hairline2 py-2.5 text-left text-[14px]"
+                  className="flex min-h-11 w-full items-center justify-between gap-3 border-b border-hairline2 py-2.5 text-left text-sm"
                 >
                   <span>{label}</span>
                   <span
@@ -1581,7 +1583,7 @@ export default function StudyDesk() {
                   </span>
                 </button>
               ))}
-              <p className="mt-2 text-[11px] leading-relaxed text-muted">
+              <p className="mt-2 text-xs leading-relaxed text-muted">
                 Sharing starts off. Turning it off hides earlier shared mistakes
                 or updates. It never posts an answer automatically.
               </p>
@@ -1602,20 +1604,21 @@ export default function StudyDesk() {
                         (m.author_id === myId ? "self-end" : "self-start")
                       }
                     >
-                      <div className="mb-1 text-[11px] font-semibold text-[#86226F]">
+                      <div className="mb-1 text-xs font-semibold text-[#86226F]">
                         {m.author_id === myId ? "You" : m.author}
                       </div>
                       <p
                         className={
-                          "whitespace-pre-wrap rounded-[10px] px-3 py-2 text-[13px] leading-relaxed " +
+                          "whitespace-pre-wrap rounded-[10px] px-3 py-2 text-sm leading-relaxed " +
                           (m.author_id === myId
                             ? "bg-[#B23A9A] text-white"
                             : "bg-[#EEDDEC]")
                         }
                       >
                         {m.body}
+                        {m.note_id && <Link className="mt-2 block min-h-11 break-words underline" to={'/desk/'+roomId+'?'+new URLSearchParams({tab:'notes',note:m.note_id})}>Open note: {m.note_title || 'Shared note'}</Link>}
                       </p>
-                      <div className="mt-1 flex gap-3 text-[10px] text-muted">
+                      <div className="mt-1 flex gap-3 text-xs text-muted">
                         {m.author_id === myId && (
                           <button
                             className="min-h-9"
@@ -1669,14 +1672,14 @@ export default function StudyDesk() {
                     </div>
                   ))}
                   {!messages.length && (
-                    <p className="py-4 text-[13px] text-muted">
+                    <p className="py-4 text-sm text-muted">
                       No messages since you joined this desk.
                     </p>
                   )}
                 </div>
                 <div className="mt-2 flex flex-wrap gap-2">
                   <button
-                    className="min-h-9 text-[12px] text-link underline"
+                    className="min-h-9 text-xs text-link underline"
                     aria-pressed={room.sharing.muted}
                     onClick={() =>
                       void execute(async () => {
@@ -1693,20 +1696,23 @@ export default function StudyDesk() {
                       : "Mute desk notifications"}
                   </button>
                   <button
-                    className="min-h-9 text-[12px] text-link underline"
+                    className="min-h-9 text-xs text-link underline"
                     onClick={() => void execute(() => loadChat())}
                   >
                     Refresh chat
                   </button>
                   {chatCursor && (
                     <button
-                      className="min-h-9 text-[12px] text-link underline"
+                      className="min-h-9 text-xs text-link underline"
                       onClick={() => void execute(() => loadChat(chatCursor))}
                     >
                       Earlier messages
                     </button>
                   )}
                 </div>
+                {chatNote && <div className="mt-3 rounded-panel border border-hairline bg-card p-3 text-sm break-words">
+                  Shared note: {chatNote.title}<button className={B+' mt-2'} onClick={() => setChatNote(null)}>Remove note link</button>
+                </div>}
                 <form onSubmit={send} className="mt-3 flex gap-1.5">
                   <input
                     required
@@ -1719,14 +1725,14 @@ export default function StudyDesk() {
                   />
                   <button
                     disabled={busy || !chat.trim()}
-                    className="rounded-[6px] bg-[#B23A9A] px-[14px] text-[13px] font-semibold text-white disabled:opacity-50"
+                    className="rounded-[6px] bg-[#B23A9A] px-[14px] text-sm font-semibold text-white disabled:opacity-50"
                   >
                     Send
                   </button>
                 </form>
               </>
             ) : (
-              <div className="py-4 text-[13px] leading-relaxed text-secondary">
+              <div className="py-4 text-sm leading-relaxed text-secondary">
                 A shared desk opens chat for its accepted members. Your private
                 study notes are yours alone.
                 <button onClick={() => open("create")} className={B + " mt-3"}>
@@ -1748,7 +1754,7 @@ export default function StudyDesk() {
                   <Link
                     key={q.id}
                     to={"/bank/" + q.id}
-                    className="block border-b border-hairline2 py-3 font-display text-[17px] leading-snug"
+                    className="block border-b border-hairline2 py-3 font-display text-md leading-snug"
                   >
                     {q.question}
                   </Link>
@@ -1760,7 +1766,7 @@ export default function StudyDesk() {
       <section className="mt-12 border-t border-hairline pt-6">
         <div className="desk-v3-subhead">
           <h2>Your private desks</h2>
-          <span className="text-[13px] text-secondary">
+          <span className="text-sm text-secondary">
             Invitations only · no public listing
           </span>
         </div>
@@ -1774,12 +1780,12 @@ export default function StudyDesk() {
               <span className="desk-v3-label !text-[#86226F]">
                 {r.members} of 6 seats
               </span>
-              <h3 className="mt-2 font-display text-[23px]">{r.name}</h3>
-              <p className="mt-2 text-[13px] text-secondary">
+              <h3 className="mt-2 font-display text-lg">{r.name}</h3>
+              <p className="mt-2 text-sm text-secondary">
                 {r.goal || "A small private study space."}
               </p>
               <span
-                className="mt-3 inline-block text-[12px] font-semibold"
+                className="mt-3 inline-block text-xs font-semibold"
                 style={{ color: COLORS[i % 6] }}
               >
                 Open desk →
@@ -1788,10 +1794,10 @@ export default function StudyDesk() {
           ))}
           {!list?.items.length && (
             <div className="desk-v3-card">
-              <h3 className="font-display text-[23px]">
+              <h3 className="font-display text-lg">
                 A seat for someone you know
               </h3>
-              <p className="mt-2 text-[13px] leading-relaxed text-secondary">
+              <p className="mt-2 text-sm leading-relaxed text-secondary">
                 Create a private desk or accept an invitation. No one can
                 discover or join your desk automatically.
               </p>
@@ -1826,7 +1832,7 @@ export default function StudyDesk() {
           onClose={() => setPanel(null)}
         >
           {!registered && panel !== "note" && panel !== "share" ? (
-            <p className="text-[14px] leading-relaxed">
+            <p className="text-sm leading-relaxed">
               Sign in to create or join a shared desk and save your progress
               across devices.
               <Link to="/login" className={B + " mt-4 bg-ink text-paper"}>
@@ -1837,7 +1843,7 @@ export default function StudyDesk() {
             <form onSubmit={savePanel} className="space-y-4">
               {(panel === "create" || panel === "settings") && (
                 <>
-                  <label className="block text-[13px] font-semibold">
+                  <label className="block text-sm font-semibold">
                     Desk name
                     <input
                       required
@@ -1849,7 +1855,7 @@ export default function StudyDesk() {
                       className={I + " mt-2"}
                     />
                   </label>
-                  <label className="block text-[13px] font-semibold">
+                  <label className="block text-sm font-semibold">
                     Shared goal
                     <textarea
                       rows={3}
@@ -1861,7 +1867,7 @@ export default function StudyDesk() {
                     />
                   </label>
                   {panel === "create" && (
-                    <p className="text-[13px] leading-relaxed text-secondary">
+                    <p className="text-sm leading-relaxed text-secondary">
                       Up to six members. Pro creates the desk; invitations are
                       free to accept. Current shared resources become visible on
                       joining; chat begins at the joining time. Public discovery
@@ -1875,13 +1881,13 @@ export default function StudyDesk() {
                   )}
                   {panel === "settings" && room && (
                     <>
-                      <h3 className="font-display text-[22px]">Members</h3>
+                      <h3 className="font-display text-lg">Members</h3>
                       {room.members.map((m) => (
                         <div
                           key={m.user_id}
                           className="border-b border-hairline py-3"
                         >
-                          <div className="flex flex-wrap items-center justify-between gap-2 text-[13px]">
+                          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
                             <span>
                               @{m.handle}
                               {m.user_id === room.owner_id ? " · owner" : ""}
@@ -1935,7 +1941,7 @@ export default function StudyDesk() {
                       {room.invitations.map((i) => (
                         <div
                           key={i.id}
-                          className="flex flex-wrap items-center justify-between gap-2 py-2 text-[13px]"
+                          className="flex flex-wrap items-center justify-between gap-2 py-2 text-sm"
                         >
                           <span>Pending: @{i.handle}</span>
                           <button
@@ -2017,12 +2023,12 @@ export default function StudyDesk() {
                   <p>Only the desk owner can invite another member.</p>
                 ) : (
                   <>
-                    <p className="text-[13px] leading-relaxed text-secondary">
+                    <p className="text-sm leading-relaxed text-secondary">
                       Use the exact registered handle your friend gives you. The
                       invitation expires in seven days and must be accepted.
                       Email addresses are never searched or displayed.
                     </p>
-                    <label className="block text-[13px] font-semibold">
+                    <label className="block text-sm font-semibold">
                       Exact account handle
                       <input
                         required
@@ -2041,7 +2047,7 @@ export default function StudyDesk() {
                 ))}
               {panel === "note" && (
                 <>
-                  <label className="block text-[13px] font-semibold">
+                  <label className="block text-sm font-semibold">
                     Note title
                     <input
                       required
@@ -2053,7 +2059,7 @@ export default function StudyDesk() {
                       className={I + " mt-2"}
                     />
                   </label>
-                  <label className="block text-[13px] font-semibold">
+                  <label className="block text-sm font-semibold">
                     Your note
                     <textarea
                       required
@@ -2066,8 +2072,13 @@ export default function StudyDesk() {
                       className={I + " mt-2"}
                     />
                   </label>
+                  <label className="block text-sm font-semibold">Canonical question ID (optional)
+                    <input className={I+' mt-2'} maxLength={100} value={note.question_id || ''}
+                      onChange={e => setNote({...note,question_id:e.target.value.trim() || null})}
+                      placeholder="Copy the question ID from its bank link" />
+                  </label>
                   {!room && (
-                    <label className="block text-[13px]">
+                    <label className="block text-sm">
                       Subject (optional)
                       <input
                         maxLength={100}
@@ -2079,7 +2090,7 @@ export default function StudyDesk() {
                       />
                     </label>
                   )}
-                  <p className="text-[12px] text-muted">
+                  <p className="text-xs text-muted">
                     {room
                       ? "Visible to accepted members of this desk. A reported version may be retained for moderation."
                       : "Private to your account. It is never shared automatically."}
@@ -2089,7 +2100,7 @@ export default function StudyDesk() {
               {panel === "share" && (
                 <>
                   {room && (
-                    <label className="block text-[13px]">
+                    <label className="block text-sm">
                       Share as
                       <select
                         value={shareKind}
@@ -2109,7 +2120,7 @@ export default function StudyDesk() {
                   )}
                   {shareKind !== "update" && (
                     <>
-                      <label className="block text-[13px] font-semibold">
+                      <label className="block text-sm font-semibold">
                         Find a question
                         <input
                           type="search"
@@ -2128,7 +2139,7 @@ export default function StudyDesk() {
                             aria-pressed={selected?.id === q.id}
                             onClick={() => setSelected(q)}
                             className={
-                              "w-full rounded-[8px] border p-3 text-left text-[13px] " +
+                              "w-full rounded-[8px] border p-3 text-left text-sm " +
                               (selected?.id === q.id
                                 ? "border-community bg-community-soft"
                                 : "border-hairline bg-card")
@@ -2143,7 +2154,7 @@ export default function StudyDesk() {
                         ))}
                       </div>
                       {selected && (
-                        <p className="rounded-[8px] bg-community-soft p-3 text-[13px]">
+                        <p className="rounded-[8px] bg-community-soft p-3 text-sm">
                           Selected: {selected.question}
                         </p>
                       )}
@@ -2151,7 +2162,7 @@ export default function StudyDesk() {
                   )}
                   {room && (
                     <>
-                      <label className="block text-[13px] font-semibold">
+                      <label className="block text-sm font-semibold">
                         {shareKind === "update"
                           ? "The update you choose to share"
                           : "Why are you sharing this?"}
@@ -2165,7 +2176,7 @@ export default function StudyDesk() {
                           className={I + " mt-2"}
                         />
                       </label>
-                      <p className="text-[12px] text-secondary">
+                      <p className="text-xs text-secondary">
                         Audience: members of {room.name}. Your actual answer,
                         score and private notes are not copied.{" "}
                         {shareKind === "mistake"
@@ -2179,7 +2190,7 @@ export default function StudyDesk() {
                 </>
               )}
               {panel === "message" && (
-                <label className="block text-[13px] font-semibold">
+                <label className="block text-sm font-semibold">
                   Your message
                   <textarea
                     required
@@ -2194,12 +2205,12 @@ export default function StudyDesk() {
               )}
               {panel === "report" && (
                 <>
-                  <p className="text-[13px] leading-relaxed text-secondary">
+                  <p className="text-sm leading-relaxed text-secondary">
                     The site owner receives the selected content and your
                     explanation. They do not receive access to browse your
                     private desk.
                   </p>
-                  <label className="block text-[13px] font-semibold">
+                  <label className="block text-sm font-semibold">
                     What happened?
                     <textarea
                       required
@@ -2240,12 +2251,12 @@ export default function StudyDesk() {
                 </button>
               )}
               {error && (
-                <p role="alert" className="text-[13px] text-mypick">
+                <p role="alert" className="text-sm text-mypick">
                   {error}
                 </p>
               )}
               {notice && (
-                <p role="status" className="text-[13px] text-correct-dark">
+                <p role="status" className="text-sm text-correct-dark">
                   {notice}
                 </p>
               )}
@@ -2255,7 +2266,7 @@ export default function StudyDesk() {
       )}
       {confirmation && (
         <Modal title={confirmation.title} onClose={() => setConfirmation(null)}>
-          <p className="text-[14px] leading-relaxed text-secondary">
+          <p className="text-sm leading-relaxed text-secondary">
             {confirmation.text}
           </p>
           <div className="mt-5 flex gap-2">
@@ -2276,7 +2287,7 @@ export default function StudyDesk() {
             </button>
           </div>
           {error && (
-            <p role="alert" className="mt-3 text-[13px] text-mypick">
+            <p role="alert" className="mt-3 text-sm text-mypick">
               {error}
             </p>
           )}

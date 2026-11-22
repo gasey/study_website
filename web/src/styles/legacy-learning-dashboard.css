@@ -53,7 +53,7 @@
 .learning-storage strong { font-size: 12px; }
 .learning-storage small { margin-top: 3px; color: var(--learning-muted); font-size: 11px; line-height: 1.4; }
 .learning-summary-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; margin-bottom: 13px; }
-.learning-summary-card { min-width: 0; padding: 16px 17px 14px; border: 1px solid var(--learning-line); border-radius: 12px; background: var(--learning-panel); box-shadow: 0 5px 16px -16px color-mix(in srgb, var(--learning-green) 55%, transparent); }
+.learning-summary-card { min-width: 0; padding: 16px 17px 14px; border: 1px solid var(--learning-line); border-radius: 12px; background: var(--learning-panel); box-shadow: var(--ism-card-shadow); }
 .learning-summary-card > span { display: block; color: var(--learning-muted); font-size: 11px; font-weight: 650; }
 .learning-summary-card > strong { display: block; margin-top: 7px; font-size: 27px; font-weight: 780; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
 .learning-summary-card > strong small { color: var(--learning-muted); font-size: 14px; font-weight: 550; letter-spacing: 0; }

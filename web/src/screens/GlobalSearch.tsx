@@ -97,7 +97,7 @@ export default function GlobalSearch() {
     });
   return (
     <main className="mx-auto max-w-shell px-4 pb-24 pt-8 sm:px-6">
-      <h1 className="font-display text-[36px]">Search results</h1>
+      <h1 className="font-display text-3xl">Search results</h1>
       <p className="mt-3 break-words text-secondary">{q?`Results for “${q}”`:'Find questions, exams and study resources with Quick find.'}</p>
       <button type="button" aria-haspopup="dialog" className="finna-btn finna-btn-quiet mt-4" onClick={()=>window.dispatchEvent(new CustomEvent('finna-open-find',{detail:{query:q}}))}>Change search in Quick find</button>
       <div
@@ -113,7 +113,7 @@ export default function GlobalSearch() {
             aria-selected={category === key}
             onClick={() => change(key as Category)}
             className={
-              "min-h-11 shrink-0 border-b-2 py-2 text-[14px] font-semibold " +
+              "min-h-11 shrink-0 border-b-2 py-2 text-sm font-semibold " +
               (category === key
                 ? "border-ink text-ink"
                 : "border-transparent text-secondary")
@@ -121,14 +121,14 @@ export default function GlobalSearch() {
           >
             {label}
             {key !== "all" && groups.find((g) => g.category === key) && (
-              <span className="ml-2 font-mono text-[11px] font-normal">
+              <span className="ml-2 font-mono text-xs font-normal">
                 {groups.find((g) => g.category === key)!.total}
               </span>
             )}
           </button>
         ))}
       </div>
-      <p className="mt-3 text-[12px] text-muted">
+      <p className="mt-3 text-xs text-muted">
         People appear through public creator profiles. Private notes and desks
         are visible only to their account or members. Listings currently contain
         published paid-content previews.
@@ -169,13 +169,13 @@ export default function GlobalSearch() {
           .map((g) => (
             <section key={g.category} className="mt-[26px]">
               <div className="flex items-baseline justify-between gap-3">
-                <h2 className="font-mono text-[11px] uppercase tracking-wider text-link">
+                <h2 className="font-mono text-xs uppercase tracking-wider text-link">
                   {TABS[g.category]} · {g.total.toLocaleString("en-IN")}
                 </h2>
                 {category === "all" && g.total > g.items.length && (
                   <button
                     type="button"
-                    className="min-h-11 text-[13px] font-semibold text-link"
+                    className="min-h-11 text-sm font-semibold text-link"
                     onClick={() => change(g.category)}
                   >
                     See all →
@@ -190,12 +190,12 @@ export default function GlobalSearch() {
                   preventScrollReset={item.url.startsWith('/materials/')}
                   className="block border-b border-hairline py-[13px] hover:bg-[#EFE8DA]"
                 >
-                  <h3 className="font-display text-[20px] leading-snug">
+                  <h3 className="font-display text-lg leading-snug">
                     {item.title}
                   </h3>
-                  <p className="mt-1 text-[12px] text-muted">{item.meta}</p>
+                  <p className="mt-1 text-xs text-muted">{item.meta}</p>
                   {item.snippet && (
-                    <p className="mt-1 line-clamp-2 text-[13px] leading-relaxed text-secondary">
+                    <p className="mt-1 line-clamp-2 text-sm leading-relaxed text-secondary">
                       {item.snippet}
                     </p>
                   )}
@@ -217,7 +217,7 @@ export default function GlobalSearch() {
             >
               Previous
             </button>
-            <span className="text-[12px]">
+            <span className="text-xs">
               Page {Math.floor(offset / 20) + 1}
             </span>
             <button

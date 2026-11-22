@@ -2,6 +2,7 @@ import type {Collection} from './api'
 import {EXAM_GUIDES} from './examGuideCatalog'
 import {ADMIN_SECTIONS,adminTabHref,canOpenAdminTab} from './adminNavigation'
 import {reviewDestinations,type ReviewAccess} from './reviewNavigation'
+import {destinationsForSurface} from './siteMap'
 
 export type QuickDestination={to:string;label:string;detail:string;group:string;keywords?:string}
 export type QuickTask='mixed'|'unseen'|'ever_wrong'|'papers'|'overview'|'topics'|'practice'
@@ -29,21 +30,16 @@ export function quickStudyHref(id:string,task:QuickTask){
   const view=task==='papers'?'papers':task==='topics'?'topics':task==='practice'?'practice':task==='mixed'?'browse':'overview'
   return `/exams/${encodeURIComponent(id)}?view=${view}${view==='practice'||view==='browse'?'#exam-question-browser':''}`
  }
- const params=new URLSearchParams(task==='papers'?{view:'papers'}:{view:'browse',pool:'practice',order:'mixed',...(task==='unseen'||task==='ever_wrong'?{status:task}:{})})
- return `/exams/${encodeURIComponent(id)}?${params}#${task==='papers'?'past-paper-results':'exam-question-browser'}`
+ if(task==='papers')return `/exams/${encodeURIComponent(id)}?view=papers#past-paper-results`
+ const params=new URLSearchParams({exam:id,autostart:'1',...(task==='unseen'||task==='ever_wrong'?{status:task}:{})})
+ return `/practice?${params}`
 }
+const SECTION_GROUP:Record<string,string>={study:'Study',practice:'Practice',guides:'Guides',community:'Community',you:'You'}
 export function quickDestinations(exams:Pick<Collection,'id'|'title'>[],access:ReviewAccess):QuickDestination[]{
- const study=[
-  ['/feed','Study home','Continue your learning'],['/exams','Exams','UDC, LDC, Assistant and more'],
-  ['/revise','Revise','Scheduled questions, mistakes and vocabulary'],
-  ['/desk','Study desk','Your saved work'],['/library','Subject library','Topics, reading and questions'],
-  ['/stats','Stats','India, global rankings and the Economic Survey'],
-  ['/games','Play','All learning games, Daily Five and Topic Trail'],['/calendar','Exam calendar','Dates and notices'],
-  ['/community','Community','Discussions and shared notes'],['/more','All tools','Learning, account and community'],
- ].map(([to,label,detail])=>({to,label,detail,group:'Study'}))
+ const manifest=destinationsForSurface('quickfind').map(d=>({to:d.path,label:d.label,detail:d.blurb,group:SECTION_GROUP[d.section]||'Study',keywords:d.keywords}))
  const work=reviewDestinations(access).map(x=>({...x,detail:x.description,group:'Your workspaces'}))
  const admin=ADMIN_SECTIONS.filter(s=>canOpenAdminTab(s[0],access.grants)).map(s=>({to:adminTabHref(s[0]),label:s[1],detail:s[4],group:'Admin tools'}))
- return [...study,...quickExams(exams).map(e=>({to:'/exams/'+encodeURIComponent(e.id),label:e.title,detail:EXAM_GUIDES.some(guide=>guide.id===e.id)?'Choose a branch · syllabus, questions and original papers':e.id+' · subjects, questions and original papers',keywords:EXAM_GUIDES.find(guide=>guide.id===e.id)?.search,group:'Exams'})),...work,...admin]
+ return [...manifest,...quickExams(exams).map(e=>({to:'/exams/'+encodeURIComponent(e.id),label:e.title,detail:EXAM_GUIDES.some(guide=>guide.id===e.id)?'Choose a branch · syllabus, questions and original papers':e.id+' · subjects, questions and original papers',keywords:EXAM_GUIDES.find(guide=>guide.id===e.id)?.search,group:'Exams'})),...work,...admin]
 }
 export function matchDestinations(items:QuickDestination[],query:string){
  const words=query.toLowerCase().trim().split(/\s+/).filter(Boolean)

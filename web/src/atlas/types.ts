@@ -11,6 +11,7 @@ export type SubjectId = 'geography' | 'history' | 'polity';
 /** A single togglable layer within a chapter's map view. */
 export type Layer =
   | {
+      source_ids?:string[];
       id: string;
       name: string;
       description?: string;
@@ -40,6 +41,7 @@ export type Layer =
       labelKey?: string;
     }
   | {
+      source_ids?:string[];
       id: string;
       name: string;
       description?: string;
@@ -82,6 +84,9 @@ export type QuizItem =
 /** A point on the chapter's timeline.
  *  Used for history chapters; optional otherwise. */
 export interface TimelineEvent {
+  chronicle_entry_id?:string;
+  chronicle_question_id?:string;
+  chronicle_source_sha256?:string;
   id: string;
   /** ISO date or year string — sortable. e.g. "1756-06-20" or "1757". */
   date: string;
@@ -107,7 +112,12 @@ export interface ChapterTheme {
   tileUrl?: string;
 }
 
+export interface MapDrill {id:string;layerId:string;featureId:string;prompt:string;toleranceKm:number}
+export interface AtlasSource {id:string;title:string;url:string;checked_on:string;attribution:string;note:string;reuse:"reference"|"licensed";license?:string;license_url?:string;download_path?:string}
 export interface Chapter {
+  district?:string;
+  sources?:AtlasSource[];
+  drills?:MapDrill[];
   id: string;
   subject: SubjectId;
   title: string;

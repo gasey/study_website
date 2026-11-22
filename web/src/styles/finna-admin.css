@@ -99,12 +99,12 @@
 .finna-review-source-link { display:inline-flex; min-height:44px; align-items:center; font-size:12px; font-weight:700; color:rgb(var(--ism-practice-dark-rgb)); }
 .finna-review-inspector { border:0; border-radius:0; padding:20px 24px; }
 .finna-review-inspector > div:first-child > h2 { font-size:18px; font-weight:800; }
-.finna-review-inspector h3 { font-family:Figtree,system-ui,sans-serif; font-size:18px; font-weight:600; line-height:1.4; }
+.finna-review-inspector h3 {  font-size:18px; font-weight:600; line-height:1.4; }
 .finna-review-inspector ol > li { border-radius:12px; background:var(--bg-panel); border-color:var(--line); min-height:44px; }
 .finna-review-inspector ol > li:has(> span:last-child:nth-child(3)) { background:rgb(var(--ism-correct-soft-rgb)); border-color:rgb(var(--ism-correct-rgb)); }
 .finna-review-panel-tabs { display:none; }
 .finna-admin .bank-overview { color:rgb(var(--ism-ink-rgb)); --bo-line:var(--line); --bo-muted:var(--text-secondary); }
-.finna-admin .bank-overview :is(h2,strong) { font-family:Figtree,system-ui,sans-serif; font-weight:800; color:rgb(var(--ism-ink-rgb)); }
+.finna-admin .bank-overview :is(h2,strong) {  font-weight:800; color:rgb(var(--ism-ink-rgb)); }
 .finna-admin .bank-overview :is(.bo-panel,.bo-totals) { background:var(--bg-panel); }
 .finna-admin .bank-overview :is(.bo-hero,.bo-next,.bo-exams thead th) { background:var(--bg-panel-elev); }
 .finna-admin .bank-overview a { color:rgb(var(--ism-practice-dark-rgb)); }

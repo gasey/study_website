@@ -1,0 +1,1096 @@
+{
+  "version": 1,
+  "attribution": "Existing site chapter identities; no new content or topic review.",
+  "source_sha256": {
+    "web/src/atlas/data/chapters/battle-of-plassey.ts": "20648954304911844f3b7910e64fd8142fdec89d67b7a0358d87e9883e169d1d",
+    "web/src/atlas/data/chapters/buddhism-jainism.ts": "3cc8e34b84fd5faf0bb87002343d9d0578f8a23f59ed228d152443607227fc91",
+    "web/src/atlas/data/chapters/climate-monsoon.ts": "e1eb84dd0d6f40d5a6205f26b1297079960952ed6e733014805b35e97edb77bd",
+    "web/src/atlas/data/chapters/delhi-sultanate.ts": "a205a2b86f419df19877ddb5d007f1d07ed291d18106dbe81113aded9243ff8b",
+    "web/src/atlas/data/chapters/european-conquest.ts": "49f6e647234e361e9fa9acdfca38ea59371e8d127f90be18ab29c18ac4a1d0d3",
+    "web/src/atlas/data/chapters/forests.ts": "127747a0dadccd818cca552459645a20d83e8e3bd18c9e3cb15321429612515a",
+    "web/src/atlas/data/chapters/freedom-struggle-map.ts": "ca307db8a61d388717452d8ba1a77229f3f69f43ad88cb741523aca09596afd1",
+    "web/src/atlas/data/chapters/indus-valley.ts": "9dfbed8e03a7265f75ed3c12ffe887ea0f744a7e0c77ac5c7e4947e4152faeb9",
+    "web/src/atlas/data/chapters/mahajanapadas-mauryas.ts": "47d0c625724d0ffcb47259935a4fcc2c54620d0168bb5af6e09cc473ba62851c",
+    "web/src/atlas/data/chapters/medieval-gateway-battles.ts": "88a4d4fa798ea681bfdfc6cb6fc1b591c8382f3a286025661a3aa15c9bc44116",
+    "web/src/atlas/data/chapters/medieval-south.ts": "47967555a5a47f3571830faf4a845502737a240a6eae54395d7f97211c2ac324",
+    "web/src/atlas/data/chapters/mizoram-geography.ts": "d233f9c21077a93b519ee9f8f0e90cd18efbd29f03cf6dfc6a1846bfdca31855",
+    "web/src/atlas/data/chapters/mountains.ts": "772f0340cfb73005de6ddcce153e6ccdc1074c02df52483265d6c9edc05adc8a",
+    "web/src/atlas/data/chapters/physiographic-divisions.ts": "115b2264ac68cfc9ffd1d07164ddec4380fbe48d9fb1706deec3dec45f94f32d",
+    "web/src/atlas/data/chapters/polity-judiciary.ts": "1cd32eddabfc88f127fec3c36d77a92364f64ce4df57d90e1562a4efd3e13c3c",
+    "web/src/atlas/data/chapters/polity-making-of-constitution.ts": "2e0ae31a22cbd0fe540c6fb74db435fff9d7e1c06338a12f83c17462c1e85a51",
+    "web/src/atlas/data/chapters/polity-parliament.ts": "5e9d89b4400e16898f5d7d3fd7822456168d5e186d01d25c5a1cef335908144c",
+    "web/src/atlas/data/chapters/polity-sixth-schedule.ts": "7a9c26235843d8b9260e296df91fb50aa1e40017ac9c464d523a546f96f85cd2",
+    "web/src/atlas/data/chapters/polity-states-reorganisation.ts": "046bdd54a3d5e59c4a3d6c429ff750c19a8abdb1e8348754f716394b8e91fa5d",
+    "web/src/atlas/data/chapters/rivers.ts": "af53da7a2c69d0ca3431daa06a710363f14ccf387a72e21b5330f73beeb783a8",
+    "web/src/atlas/data/chapters/soils.ts": "cb006df69245d5501dd50e86af1cccb4371c93b79dfcc86b259e632f25a02e44",
+    "web/src/atlas/data/chapters/vedic-age.ts": "2b7202547bcd206dce4546ad770dba54f7c939058b48491b5bce3de8d0a1b5eb",
+    "web/src/atlas/data/chapters/world-atmosphere-heat.ts": "1d4e133e03d40a1d11b1e26cd3ab1610dafdece9333df0210ba423a6b23b8c44",
+    "web/src/atlas/data/chapters/world-resources-industries.ts": "c062e761a7bf240c46cc1e25fec725ac5bb7e25d437cef9e5586c325bd06e204",
+    "web/src/atlas/data/chapters/world-restless-earth.ts": "8a7c6b5abfb938629325c68f410bd3d3358c0cd7f06d19dc429cee6d906bbb6e",
+    "web/src/atlas/data/chapters/world-winds-currents.ts": "635f0ea9dcf33a38fd37e75e38bb61e450da767d8918742351056f0d0fbc2610",
+    "web/src/atlas/data/index.ts": "bbd16306511fcbf569597e108cc3c3e25e8026a4ebd8e56d80fc1d3d5f642673"
+  },
+  "chapters": [
+    {
+      "id": "physiographic-divisions",
+      "title": "Physiographic Divisions of India",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "northern-mountains",
+          "name": "1. Northern & NE Mountains"
+        },
+        {
+          "id": "northern-plains",
+          "name": "2. Northern Plains"
+        },
+        {
+          "id": "peninsular-plateau",
+          "name": "3. Peninsular Plateau"
+        },
+        {
+          "id": "indian-desert",
+          "name": "4. Indian Desert (Thar)"
+        },
+        {
+          "id": "coastal-plains",
+          "name": "5. Coastal Plains"
+        },
+        {
+          "id": "islands",
+          "name": "6. Islands"
+        },
+        {
+          "id": "himalayan-ranges",
+          "name": "Himalayan Ranges (3 parallel)"
+        },
+        {
+          "id": "plains-subdivisions",
+          "name": "Plains Subdivisions"
+        },
+        {
+          "id": "key-peaks",
+          "name": "Key Peaks & Landmarks"
+        }
+      ],
+      "events": [],
+      "source_sha256": "5a0b2022f3320215dbd7266a09d748e293b14b50a207218715216e1004458562"
+    },
+    {
+      "id": "mountains-and-passes",
+      "title": "Mountains & Passes of India",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "himalayan-ranges",
+          "name": "Himalayan Ranges (4 parallel zones)"
+        },
+        {
+          "id": "peninsular-ranges",
+          "name": "Peninsular Ranges"
+        },
+        {
+          "id": "key-peaks",
+          "name": "Key Peaks (memorize these)"
+        },
+        {
+          "id": "himalayan-passes",
+          "name": "Himalayan Passes"
+        },
+        {
+          "id": "ghat-passes",
+          "name": "Western/Eastern Ghats Passes"
+        }
+      ],
+      "events": [],
+      "source_sha256": "787b780401b22bfa1e202380bbd060ea3d6e0882b7c13d03dc7e7ce430b27255"
+    },
+    {
+      "id": "rivers-of-india",
+      "title": "Rivers of India",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "indus-system",
+          "name": "Indus System (5 tributaries)"
+        },
+        {
+          "id": "ganga-system",
+          "name": "Ganga System"
+        },
+        {
+          "id": "brahmaputra-system",
+          "name": "Brahmaputra System"
+        },
+        {
+          "id": "east-peninsular",
+          "name": "East-flowing Peninsular Rivers"
+        },
+        {
+          "id": "west-peninsular",
+          "name": "West-flowing Peninsular Rivers"
+        },
+        {
+          "id": "mizoram-rivers",
+          "name": "Mizoram Rivers"
+        },
+        {
+          "id": "origins",
+          "name": "Origins & Key Confluences"
+        }
+      ],
+      "events": [],
+      "source_sha256": "2f325b1e5986aacff64998e7594fa9fa80b660f2ca986bc6ee74c32f76cadf23"
+    },
+    {
+      "id": "climate-monsoon",
+      "title": "Climate & Monsoon",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "climate-zones",
+          "name": "Climate Zones (Köppen)"
+        },
+        {
+          "id": "sw-monsoon",
+          "name": "Southwest Monsoon"
+        },
+        {
+          "id": "ne-monsoon",
+          "name": "Northeast Monsoon"
+        },
+        {
+          "id": "cities",
+          "name": "Reference Cities"
+        }
+      ],
+      "events": [],
+      "source_sha256": "182cc8f90ededd8aa87055b200a518d16c214ab8ba7b8dbd49a2c325795998c2"
+    },
+    {
+      "id": "soils-of-india",
+      "title": "Soils of India",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "alluvial",
+          "name": "Alluvial Soil (~43% of India)"
+        },
+        {
+          "id": "black",
+          "name": "Black (Regur) Soil"
+        },
+        {
+          "id": "red",
+          "name": "Red & Yellow Soil"
+        },
+        {
+          "id": "laterite",
+          "name": "Laterite Soil"
+        },
+        {
+          "id": "arid",
+          "name": "Arid / Desert Soil"
+        },
+        {
+          "id": "mountain",
+          "name": "Mountain / Forest Soil"
+        },
+        {
+          "id": "peaty",
+          "name": "Peaty / Marshy Soil"
+        },
+        {
+          "id": "saline",
+          "name": "Saline / Alkaline Soil"
+        }
+      ],
+      "events": [],
+      "source_sha256": "8a56e1b4f87adb0000a291a11bc5b80e868b49a0e9b12433906ad7f1b1abdb8b"
+    },
+    {
+      "id": "forests-protected-areas",
+      "title": "Forests & Protected Areas",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "hotspots",
+          "name": "Biodiversity Hotspots in India"
+        },
+        {
+          "id": "biosphere-reserves",
+          "name": "Biosphere Reserves (12 UNESCO MAB)"
+        },
+        {
+          "id": "national-parks",
+          "name": "Key National Parks"
+        },
+        {
+          "id": "tiger-reserves",
+          "name": "Tiger Reserves (58)"
+        },
+        {
+          "id": "high-forest-states",
+          "name": "States with >75% Forest Cover"
+        }
+      ],
+      "events": [],
+      "source_sha256": "47d1d723e3bd4e00d3a5937553a669e8e632af2e2145e02c8b1fdebdbfb850e4"
+    },
+    {
+      "id": "mizoram-geography",
+      "title": "Geography of Mizoram",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "ranges",
+          "name": "Mountain ranges"
+        },
+        {
+          "id": "north-rivers",
+          "name": "North-flowing (→ Barak)"
+        },
+        {
+          "id": "south-rivers",
+          "name": "South-flowing (→ Kaladan/Myanmar)"
+        },
+        {
+          "id": "west-rivers",
+          "name": "West-flowing (→ Bangladesh)"
+        },
+        {
+          "id": "lakes-plains",
+          "name": "Lakes & plains"
+        }
+      ],
+      "events": [],
+      "source_sha256": "5dce683af23d307d0e65d0686f5a115c3356f284ce7c5ce76151acdaebe132c8"
+    },
+    {
+      "id": "world-restless-earth",
+      "title": "World: The Restless Earth",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "ring-of-fire",
+          "name": "Pacific Ring of Fire"
+        },
+        {
+          "id": "alpide-belt",
+          "name": "Alpine–Himalayan belt"
+        },
+        {
+          "id": "mid-atlantic",
+          "name": "Mid-Atlantic Ridge"
+        },
+        {
+          "id": "fold-mountains",
+          "name": "Fold mountains"
+        },
+        {
+          "id": "block-mountains",
+          "name": "Block mountains (horsts)"
+        }
+      ],
+      "events": [],
+      "source_sha256": "e569ffbdbe2c3e84ba8a181ad9a16abbb1f095eb3371182bcfaa41727f5aee2e"
+    },
+    {
+      "id": "world-winds-currents",
+      "title": "World: Winds, Belts & Currents",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "low-belts",
+          "name": "Low-pressure belts"
+        },
+        {
+          "id": "high-belts",
+          "name": "High-pressure belts"
+        },
+        {
+          "id": "winds",
+          "name": "Planetary winds"
+        },
+        {
+          "id": "warm-currents",
+          "name": "Warm currents"
+        },
+        {
+          "id": "cold-currents",
+          "name": "Cold currents"
+        },
+        {
+          "id": "el-nino",
+          "name": "El Niño stage"
+        }
+      ],
+      "events": [],
+      "source_sha256": "851245f2bc7e5c5322bc2cdb5eab93a89b067fa99ac9962fcaba389a6f7ed135"
+    },
+    {
+      "id": "world-resources-industries",
+      "title": "World: Resources & Industry",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "industrial-regions",
+          "name": "Industrial regions"
+        },
+        {
+          "id": "iron-belts",
+          "name": "Iron-ore belts"
+        },
+        {
+          "id": "coal-fields",
+          "name": "Coalfields"
+        },
+        {
+          "id": "other-minerals",
+          "name": "Copper & petroleum"
+        }
+      ],
+      "events": [],
+      "source_sha256": "561350893c08d1972819065c791fe78c659155bb3ee88819ebb495fcbe4a5255"
+    },
+    {
+      "id": "world-atmosphere-heat",
+      "title": "World: Atmosphere & Heat Zones",
+      "subject": "geography",
+      "layers": [
+        {
+          "id": "heat-zones",
+          "name": "Three heat zones"
+        },
+        {
+          "id": "key-latitudes",
+          "name": "Key latitudes"
+        }
+      ],
+      "events": [],
+      "source_sha256": "8d10b14a31e7d2ecfc48b3e24a476c13db25d3439bebae85a7acefb47682aacd"
+    },
+    {
+      "id": "indus-valley",
+      "title": "Indus Valley Civilization",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "ivc-extent",
+          "name": "Civilization extent"
+        },
+        {
+          "id": "ivc-sites",
+          "name": "Major sites"
+        },
+        {
+          "id": "ivc-extremes",
+          "name": "Extreme points (N/S/E/W)"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Masson"
+        },
+        {
+          "id": "e2",
+          "label": "Harappa dug"
+        },
+        {
+          "id": "e3",
+          "label": "Mohenjodaro dug"
+        },
+        {
+          "id": "e4",
+          "label": "Named IVC"
+        }
+      ],
+      "source_sha256": "a34d8c158ac63c206d3b08d38d44f84e9806dc96a3ddbfff530ed7af8ddec9aa"
+    },
+    {
+      "id": "vedic-age",
+      "title": "The Vedic Age",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "sapta-sindhu",
+          "name": "Sapta Sindhu rivers"
+        },
+        {
+          "id": "eastward-shift",
+          "name": "Eastward shift (Later Vedic)"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Arrival"
+        },
+        {
+          "id": "e2",
+          "label": "Ten Kings"
+        },
+        {
+          "id": "e3",
+          "label": "Iron & the move east"
+        },
+        {
+          "id": "e4",
+          "label": "Threshold"
+        }
+      ],
+      "source_sha256": "2d3b6c458a275f0c818f7f25eaa16e29bfd9ad01c1f2395e637d3fa2e81b5f2b"
+    },
+    {
+      "id": "mahajanapadas-mauryas",
+      "title": "Mahajanapadas → Mauryas",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "mahajanapadas",
+          "name": "16 Mahajanapadas (capitals)"
+        },
+        {
+          "id": "maurya-extent",
+          "name": "Mauryan Empire (Ashoka)"
+        },
+        {
+          "id": "key-sites",
+          "name": "Capitals & Kalinga"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "16 states"
+        },
+        {
+          "id": "e2",
+          "label": "Haryanka rise"
+        },
+        {
+          "id": "e3",
+          "label": "Chandragupta"
+        },
+        {
+          "id": "e4",
+          "label": "Kalinga War"
+        },
+        {
+          "id": "e5",
+          "label": "Dynasty ends"
+        }
+      ],
+      "source_sha256": "3676e4ac666719d070fe56b96ddc4ee329cb4cce09f6c28b07384c7ab8d7f0a1"
+    },
+    {
+      "id": "buddhism-jainism",
+      "title": "Buddhism & Jainism",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "buddha-sites",
+          "name": "Buddha’s life sites"
+        },
+        {
+          "id": "councils",
+          "name": "Four Buddhist councils"
+        },
+        {
+          "id": "jain-sites",
+          "name": "Jain sites"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Buddha born"
+        },
+        {
+          "id": "e2",
+          "label": "Mahavira born"
+        },
+        {
+          "id": "e3",
+          "label": "Enlightenment"
+        },
+        {
+          "id": "e4",
+          "label": "Mahaparinirvana"
+        },
+        {
+          "id": "e5",
+          "label": "4th Council"
+        }
+      ],
+      "source_sha256": "bffa072a53a9d018a0d8c35236ab37f68a4a7b213b75266da67687ca64032278"
+    },
+    {
+      "id": "medieval-gateway-battles",
+      "title": "Medieval India: Gateway Battles",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "corridor",
+          "name": "NW invasion corridor"
+        },
+        {
+          "id": "battles",
+          "name": "Battle sites"
+        },
+        {
+          "id": "power-centres",
+          "name": "Power centres"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Sindh falls"
+        },
+        {
+          "id": "e2",
+          "label": "Somnath sacked"
+        },
+        {
+          "id": "e3",
+          "label": "Second Tarain"
+        },
+        {
+          "id": "e4",
+          "label": "First Panipat"
+        },
+        {
+          "id": "e5",
+          "label": "Khanwa"
+        },
+        {
+          "id": "e6",
+          "label": "Sur Empire"
+        },
+        {
+          "id": "e7",
+          "label": "Second Panipat"
+        },
+        {
+          "id": "e8",
+          "label": "Haldighati"
+        }
+      ],
+      "source_sha256": "cfd10dcaddb03487bde7140e4843f80650f66d44a03b21f12217eb12eb937c40"
+    },
+    {
+      "id": "delhi-sultanate",
+      "title": "Delhi Sultanate: Five Dynasties",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "sultanate-sites",
+          "name": "Capitals & key cities"
+        },
+        {
+          "id": "capital-shift",
+          "name": "MBT’s capital shift (1327)"
+        },
+        {
+          "id": "timur-path",
+          "name": "Timur’s invasion (1398)"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Aibak"
+        },
+        {
+          "id": "e2",
+          "label": "Razia"
+        },
+        {
+          "id": "e3",
+          "label": "Khalji zenith"
+        },
+        {
+          "id": "e4",
+          "label": "Capital shift"
+        },
+        {
+          "id": "e5",
+          "label": "Timur sacks Delhi"
+        },
+        {
+          "id": "e6",
+          "label": "Panipat: the end"
+        }
+      ],
+      "source_sha256": "9a5c942df22a8c3bace39032ca4b3aa1dc49013e38b9911f0751848aa60c95ce"
+    },
+    {
+      "id": "medieval-south",
+      "title": "Medieval South: Cholas to Talikota",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "south-sites",
+          "name": "Capitals & battle sites"
+        },
+        {
+          "id": "south-rivers",
+          "name": "The three rivers of power"
+        },
+        {
+          "id": "chola-navy",
+          "name": "Rajendra’s expeditions"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Brihadesvara"
+        },
+        {
+          "id": "e2",
+          "label": "Ganga campaign"
+        },
+        {
+          "id": "e3",
+          "label": "Srivijaya raid"
+        },
+        {
+          "id": "e4",
+          "label": "Vijayanagara founded"
+        },
+        {
+          "id": "e5",
+          "label": "Raichur"
+        },
+        {
+          "id": "e6",
+          "label": "Talikota"
+        }
+      ],
+      "source_sha256": "b1e6377624d29b23841eb1bb1d3df55373d79893b291ab545c2319e1512fd35b"
+    },
+    {
+      "id": "european-conquest",
+      "title": "Europeans: Ports to Power",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "portuguese",
+          "name": "Portuguese (1498–)"
+        },
+        {
+          "id": "dutch-danish",
+          "name": "Dutch & Danes"
+        },
+        {
+          "id": "english",
+          "name": "English presidencies"
+        },
+        {
+          "id": "french",
+          "name": "French (1664–)"
+        },
+        {
+          "id": "war-sites",
+          "name": "Wars of conquest"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Vasco da Gama"
+        },
+        {
+          "id": "e2",
+          "label": "Goa taken"
+        },
+        {
+          "id": "e3",
+          "label": "Surat factory"
+        },
+        {
+          "id": "e4",
+          "label": "Pondicherry"
+        },
+        {
+          "id": "e5",
+          "label": "Fort William"
+        },
+        {
+          "id": "e6",
+          "label": "Wandiwash"
+        },
+        {
+          "id": "e7",
+          "label": "Tipu falls"
+        },
+        {
+          "id": "e8",
+          "label": "Paramountcy"
+        }
+      ],
+      "source_sha256": "934d6d0b9471efce45dd5100dd4a1850ca37ff64a6317e674f5d2dac64ea6b37"
+    },
+    {
+      "id": "battle-of-plassey",
+      "title": "Battle of Plassey, 1757",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "bengal-territory",
+          "name": "Bengal Subah, 1757"
+        },
+        {
+          "id": "trading-posts",
+          "name": "European Trading Posts"
+        },
+        {
+          "id": "key-locations",
+          "name": "Murshidabad & Plassey"
+        },
+        {
+          "id": "clive-march",
+          "name": "Clive’s March"
+        },
+        {
+          "id": "battlefield",
+          "name": "Troop Positions, dawn June 23"
+        },
+        {
+          "id": "aftermath",
+          "name": "EIC Territory by 1765"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Calcutta falls"
+        },
+        {
+          "id": "e2",
+          "label": "Clive retakes Calcutta"
+        },
+        {
+          "id": "e3",
+          "label": "Chandernagore taken"
+        },
+        {
+          "id": "e4",
+          "label": "March begins"
+        },
+        {
+          "id": "e5",
+          "label": "Battle of Plassey"
+        },
+        {
+          "id": "e6",
+          "label": "Diwani granted"
+        }
+      ],
+      "source_sha256": "c9a5741b67a2b060fea4329eaf9181162d251858abd2590348fc8555bb5e1503"
+    },
+    {
+      "id": "freedom-struggle-map",
+      "title": "Freedom Struggle on the Map",
+      "subject": "history",
+      "layers": [
+        {
+          "id": "revolt-1857",
+          "name": "1857 revolt centres"
+        },
+        {
+          "id": "gandhi-sites",
+          "name": "Gandhian movement sites"
+        },
+        {
+          "id": "dandi-march",
+          "name": "Dandi March route (1930)"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "Mangal Pandey"
+        },
+        {
+          "id": "e2",
+          "label": "Meerut rises"
+        },
+        {
+          "id": "e3",
+          "label": "Crown rule"
+        },
+        {
+          "id": "e4",
+          "label": "Champaran"
+        },
+        {
+          "id": "e5",
+          "label": "Jallianwala Bagh"
+        },
+        {
+          "id": "e6",
+          "label": "Chauri Chaura"
+        },
+        {
+          "id": "e7",
+          "label": "Dandi March"
+        },
+        {
+          "id": "e8",
+          "label": "Quit India"
+        }
+      ],
+      "source_sha256": "60f4675c344ba7a4eafb10365cf4ceb93b80116181a7548154fee01c2b985afc"
+    },
+    {
+      "id": "polity-making-of-constitution",
+      "title": "Making of the Constitution",
+      "subject": "polity",
+      "layers": [
+        {
+          "id": "diwani",
+          "name": "Diwani grant 1765"
+        },
+        {
+          "id": "dawn",
+          "name": "Buxar & Allahabad"
+        },
+        {
+          "id": "seats",
+          "name": "Seats of power"
+        },
+        {
+          "id": "capital-shift",
+          "name": "Capital shift 1911"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "1600 — EIC arrives"
+        },
+        {
+          "id": "e2",
+          "label": "1765 — Diwani"
+        },
+        {
+          "id": "e3",
+          "label": "1773 — Regulating Act"
+        },
+        {
+          "id": "e4",
+          "label": "1858 — Crown Rule"
+        },
+        {
+          "id": "e5",
+          "label": "1911 — Capital to Delhi"
+        },
+        {
+          "id": "e6",
+          "label": "1919 — Montford Reforms"
+        },
+        {
+          "id": "e7",
+          "label": "1935 — GoI Act"
+        },
+        {
+          "id": "e8",
+          "label": "1946 — CA first sits"
+        },
+        {
+          "id": "e9",
+          "label": "1949 — Adopted"
+        },
+        {
+          "id": "e10",
+          "label": "1950 — In force"
+        }
+      ],
+      "source_sha256": "1c9805c1a606029fc7eaa0ad9f54f71889885c5a2f5c18f596cb17eedc5aed00"
+    },
+    {
+      "id": "polity-states-reorganisation",
+      "title": "Union & States Reorganisation",
+      "subject": "polity",
+      "layers": [
+        {
+          "id": "andhra-spark",
+          "name": "The linguistic spark"
+        },
+        {
+          "id": "bifurcations",
+          "name": "Bifurcation waves"
+        },
+        {
+          "id": "ne-wave",
+          "name": "North-East statehood wave"
+        },
+        {
+          "id": "acquired",
+          "name": "Acquired territories"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "1953 — Andhra"
+        },
+        {
+          "id": "e2",
+          "label": "1956 — SRA"
+        },
+        {
+          "id": "e3",
+          "label": "1960 — Bombay split"
+        },
+        {
+          "id": "e4",
+          "label": "1963 — Nagaland"
+        },
+        {
+          "id": "e5",
+          "label": "1971–72 — NE reorganised"
+        },
+        {
+          "id": "e6",
+          "label": "1975 — Sikkim"
+        },
+        {
+          "id": "e7",
+          "label": "1987 — Mizoram, Arunachal, Goa"
+        },
+        {
+          "id": "e8",
+          "label": "2000 — Three new states"
+        },
+        {
+          "id": "e9",
+          "label": "2014 — Telangana"
+        }
+      ],
+      "source_sha256": "7cc13efffb4b1fd3c0841820ce65b5647cfafdf027583c0bad359679ac3860b8"
+    },
+    {
+      "id": "polity-sixth-schedule-local-govt",
+      "title": "Sixth Schedule & Local Government",
+      "subject": "polity",
+      "layers": [
+        {
+          "id": "sixth-states",
+          "name": "Sixth Schedule states"
+        },
+        {
+          "id": "adc-seats",
+          "name": "ADC headquarters"
+        },
+        {
+          "id": "panchayat-launch",
+          "name": "Panchayati Raj origins"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "1949 — Sixth Schedule adopted"
+        },
+        {
+          "id": "e2",
+          "label": "1952 — Lushai Hills DC"
+        },
+        {
+          "id": "e3",
+          "label": "1959 — Panchayati Raj"
+        },
+        {
+          "id": "e4",
+          "label": "1971 — NEAR Act"
+        },
+        {
+          "id": "e5",
+          "label": "1972 — Mizo District ADCs"
+        },
+        {
+          "id": "e6",
+          "label": "1992 — 73rd & 74th"
+        }
+      ],
+      "source_sha256": "a839ca1f04fc7693a3153974490ca69841850507c6290f869dcb5bac1c37544c"
+    },
+    {
+      "id": "polity-parliament",
+      "title": "Parliament (Art 79–108)",
+      "subject": "polity",
+      "layers": [
+        {
+          "id": "sansad",
+          "name": "Seat of Parliament"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "1965 — UT Direct Election Act"
+        },
+        {
+          "id": "e2",
+          "label": "2020 — Anglo-Indian seats end"
+        },
+        {
+          "id": "e3",
+          "label": "Budget Session (Feb–May)"
+        },
+        {
+          "id": "e4",
+          "label": "Monsoon Session (Jul–Sep)"
+        },
+        {
+          "id": "e5",
+          "label": "Winter Session (Nov–Dec)"
+        }
+      ],
+      "source_sha256": "84fbc50b3da87801d9317e25c20be8535ce98531b485998b0a5c7cc8a86da935"
+    },
+    {
+      "id": "polity-judiciary",
+      "title": "Judiciary, Writs & PIL",
+      "subject": "polity",
+      "layers": [
+        {
+          "id": "apex",
+          "name": "The apex"
+        },
+        {
+          "id": "gauhati",
+          "name": "Joint HC: Gauhati system"
+        },
+        {
+          "id": "gauhati-spokes",
+          "name": "Bench spokes"
+        },
+        {
+          "id": "pil",
+          "name": "Birth of PIL"
+        }
+      ],
+      "events": [
+        {
+          "id": "e1",
+          "label": "1950 — SC inaugurated"
+        },
+        {
+          "id": "e2",
+          "label": "1979 — Hussainara Khatoon"
+        },
+        {
+          "id": "e3",
+          "label": "Joint HC in action"
+        }
+      ],
+      "source_sha256": "7e473f3223c7250e4cfa74639b73a55c5562ffa5dac70c529c10e67da9348b29"
+    }
+  ]
+}

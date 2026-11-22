@@ -72,7 +72,7 @@ def taper(target,preparation):
     return {**target,'target':limit} if limit else None
 
 
-async def compose(cur,user,include_curated=True):
+async def compose(cur,user,include_curated=True,include_atlas=True):
     registered=await mastery.account(cur,user)
     await cur.execute("SELECT (now() AT TIME ZONE 'Asia/Kolkata')::date AS today")
     day=(await cur.fetchone())['today']
@@ -93,7 +93,9 @@ async def compose(cur,user,include_curated=True):
     weekly_recap=await recap(cur,user) if registered else None
     from .vocabulary_scheduler import today as vocabulary_today
     vocabulary=await vocabulary_today(cur,user,include_curated=include_curated) if registered else None
-    return {'vocabulary':vocabulary,'exam_preparation':preparation,'weekly_recap':weekly_recap,'ist_date':day.isoformat(),'account':registered,'exam':exam,'focus':focus,
+    from .atlas_drills import suggestions as atlas_suggestions
+    atlas=await atlas_suggestions(cur,user,exam) if registered and include_atlas else []
+    return {'atlas_suggestions':atlas,'vocabulary':vocabulary,'exam_preparation':preparation,'weekly_recap':weekly_recap,'ist_date':day.isoformat(),'account':registered,'exam':exam,'focus':focus,
       'due_count':reviews['due_count'],'scheduled_count':reviews['scheduled_count'],
       'new_questions':target,
       'plan_status':fixed,

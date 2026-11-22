@@ -24,7 +24,7 @@ DAILY_QUEST_DEFS={
     'warmup_circuit':{
         'key':'warmup_circuit',
         'title':'Ring 1 · Daily Warm-Up Circuit',
-        'description':'Complete 1 game run or answer 10 verified questions today',
+        'description':'Warm up with a game, 10 verified questions or map activities. Reward chests require scored questions or a game.',
         'target':10,
         'xp':20,
         'points':2,
@@ -79,19 +79,26 @@ async def daily_quests_status(cur,user:str)->dict:
     games=(await cur.fetchone())['n']
     await cur.execute('SELECT count(*)::int AS n FROM review_item_completions WHERE user_id=%s AND completed_on=%s',(user,today))
     cleared=(await cur.fetchone())['n']
+    await cur.execute("SELECT count(DISTINCT (chapter_id,body_hash,drill_id))::int AS n FROM atlas_drill_results WHERE user_id=%s AND (at AT TIME ZONE 'Asia/Kolkata')::date=%s AND at<=clock_timestamp()",(user,today))
+    map_activity=min(10,(await cur.fetchone())['n'])
+    scored_warmup=min(10,max(attempts,10 if games else 0))
     plan=await plan_status(cur,user)
     await cur.execute('SELECT quest_key,xp_awarded,points_awarded FROM daily_quest_claims WHERE user_id=%s AND ist_date=%s',(user,today))
     claimed={r['quest_key']:r for r in await cur.fetchall()}
-    progress={'warmup_circuit':min(10,max(attempts,10 if games else 0)),'review_ring':min(8,cleared),'plan_ring':int(plan['completed'])}
+    progress={'warmup_circuit':min(10,scored_warmup+map_activity),'review_ring':min(8,cleared),'plan_ring':int(plan['completed'])}
     quests=[]
     # On cutover day an old ring receipt settles its replacement too. Old rows
     # remain immutable and cannot be replayed into a second same-slot payment.
     for key,old in [('warmup_circuit',None),('review_ring','cross_stream_triad'),('plan_ring','mastery_closure')]:
         definition=DAILY_QUEST_DEFS[key];receipt=claimed.get(key) or claimed.get(old)
+        activity_only=key=='warmup_circuit' and map_activity+scored_warmup>=10 and scored_warmup<10
         quests.append({'key':key,'title':definition['title'],'description':definition['description'],'subtitle':definition['description'],
           'progress':progress[key],'target':definition['target'],'completed':progress[key]>=definition['target'],
           'claimed':bool(receipt),'settled_by':receipt['quest_key'] if receipt else None,
-          'xp_reward':definition['xp'],'points_reward':definition['points'],
+          'xp_reward':0 if activity_only else definition['xp'],'points_reward':0 if activity_only else definition['points'],
+          'reward_eligible':key!='warmup_circuit' or scored_warmup>=10,
+          'activity_only':activity_only,
+          'map_activity':map_activity if key=='warmup_circuit' else 0,
           'xp_awarded':receipt['xp_awarded'] if receipt else None,'points_awarded':receipt['points_awarded'] if receipt else None})
     monday=today-timedelta(days=today.weekday())
     await cur.execute('SELECT day FROM user_learning_days WHERE user_id=%s AND day BETWEEN %s AND %s',(user,monday,today))

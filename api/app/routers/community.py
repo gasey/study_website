@@ -5,9 +5,9 @@ from ..exam_scope import ExamScope,DEFAULT_SCOPE,question_scope
 from ..db import cursor
 from ..deps import current_user,require_account
 from ..schemas import CommunityFeedItem,CommunityFeedResponse
-from ..services.community_policy import HELPFUL_COUNT,AUTHOR_TIER,AUTHOR_PROFILE
-from ..services.study_posts import REFERENCE_VISIBLE
-from ..services import community_people
+from ..services.community_policy import helpful_count,AUTHOR_TIER,AUTHOR_PROFILE
+from ..services.study_posts import reference_visible
+from ..services import community_people,audience
 from .study_posts import router as study_router
 router=APIRouter(prefix='/api/community',tags=['community'])
 router.include_router(study_router)
@@ -35,12 +35,12 @@ async def community_feed(user_id:Annotated[str,Depends(current_user)],response:R
           CASE WHEN p.kind='material-share' THEN jsonb_build_object('kind','material','id',m.id,'label',mr.payload->>'title',
             'url','/materials/'||m.id,'access',mr.payload->>'access','format',mr.payload->>'kind') END AS material,
           CASE WHEN p.author_id='team' THEN 'India Study Map' ELSE COALESCE(u.handle,'Learner') END AS author,
-          'Learner'::text AS author_role,{AUTHOR_TIER} AS author_tier,{AUTHOR_PROFILE} AS author_profile_id,p.created_at,p.pinned,{HELPFUL_COUNT} AS helpful,
+          'Learner'::text AS author_role,{AUTHOR_TIER} AS author_tier,{AUTHOR_PROFILE} AS author_profile_id,p.created_at,p.pinned,{helpful_count()} AS helpful,
           (SELECT r.body FROM posts r WHERE r.parent_id=p.id AND r.accepted AND NOT r.hidden
-           AND NOT r.needs_approval AND NOT r.before_fix
+           AND NOT r.needs_approval AND NOT r.before_fix AND {audience.subject_sql('r.author_id',team=True)}
            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%(user)s AND b.blocked_id=r.author_id) OR (b.user_id=r.author_id AND b.blocked_id=%(user)s)) LIMIT 1) AS accepted_answer,
           (SELECT r.edited_at FROM posts r WHERE r.parent_id=p.id AND r.accepted AND NOT r.hidden
-           AND NOT r.needs_approval AND NOT r.before_fix
+           AND NOT r.needs_approval AND NOT r.before_fix AND {audience.subject_sql('r.author_id',team=True)}
            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%(user)s AND b.blocked_id=r.author_id) OR (b.user_id=r.author_id AND b.blocked_id=%(user)s)) LIMIT 1) AS accepted_answer_edited_at,
           COALESCE(p.source_context->>'exam_name',(SELECT pp.exam_name FROM appearances a JOIN papers pp ON pp.id=a.paper_id WHERE a.canonical_id=q.id ORDER BY a.is_primary DESC,pp.year DESC NULLS LAST,a.id LIMIT 1)) AS source_context
           FROM posts p LEFT JOIN canonical_questions q ON q.id=CASE WHEN p.kind IN ('study','material-share')
@@ -52,14 +52,14 @@ async def community_feed(user_id:Annotated[str,Depends(current_user)],response:R
           WHERE p.parent_id IS NULL AND (p.kind IN ('doubt','explanation') OR (%(study)s AND p.kind IN ('study','material-share')))
           AND ((q.id IS NOT NULL AND {question_scope('q',exam_scope)}) OR (p.kind IN ('study','material-share') AND COALESCE(p.source_context->'study_reference'->>'kind','')<>'question'))
           AND (%(discussion)s NOT IN ('doubts','unanswered') OR p.kind='doubt')
-          AND (p.kind<>'material-share' OR mr.material_id IS NOT NULL)
-          AND (p.kind NOT IN ('study','material-share') OR {REFERENCE_VISIBLE})
+          AND (p.kind<>'material-share' OR (mr.material_id IS NOT NULL AND {audience.subject_sql('m.author_id',team=True)}))
+          AND (p.kind NOT IN ('study','material-share') OR {reference_visible()})
           AND (NOT %(following)s OR EXISTS(SELECT 1 FROM creator_follows f JOIN creator_profiles cp ON cp.user_id=f.creator_id AND cp.public
             WHERE f.follower_id=%(user)s AND f.creator_id=p.author_id))
           AND (%(discussion)s<>'unanswered' OR NOT EXISTS(SELECT 1 FROM posts r WHERE r.parent_id=p.id
-            AND NOT r.hidden AND NOT r.needs_approval AND NOT r.before_fix
+            AND NOT r.hidden AND NOT r.needs_approval AND NOT r.before_fix AND {audience.subject_sql('r.author_id',team=True)}
             AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%(user)s AND b.blocked_id=r.author_id) OR (b.user_id=r.author_id AND b.blocked_id=%(user)s))))
-          AND NOT p.hidden AND NOT p.needs_approval AND NOT p.before_fix
+          AND {audience.subject_sql('p.author_id',team=True)} AND NOT p.hidden AND NOT p.needs_approval AND NOT p.before_fix
           AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%(user)s AND b.blocked_id=p.author_id) OR (b.user_id=p.author_id AND b.blocked_id=%(user)s))
           AND (q.id IS NULL OR (
             NOT EXISTS(SELECT 1 FROM mock_sessions m WHERE m.user_id=%(user)s AND m.submitted_at IS NULL AND q.id=ANY(m.question_ids))

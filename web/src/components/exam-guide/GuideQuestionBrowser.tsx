@@ -72,7 +72,7 @@ export function GuideQuestionBrowser({ papers, guideId, practice = false }: { pa
   const archive = new URLSearchParams(params);
   FILTER_KEYS.forEach((key) => archive.delete(key)); archive.delete('tab'); archive.set('view', 'papers');
   return <section id="exam-question-browser" className="exam-module-content" tabIndex={-1}>
-    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-[22px]">{practice ? 'Study practice' : 'Browse questions'}</h2><p className="text-[12px] text-secondary">Filters apply within your selected branch and source paper.</p></div><button type="button" onClick={reset} className="min-h-11 rounded-pill border border-hairline px-4 text-[12px] font-semibold">Reset filters</button></div>
+    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-lg">{practice ? 'Study practice' : 'Browse questions'}</h2><p className="text-xs text-secondary">Filters apply within your selected branch and source paper.</p></div><button type="button" onClick={reset} className="min-h-11 rounded-pill border border-hairline px-4 text-xs font-semibold">Reset filters</button></div>
     <div className="browse-filter-row eg-browse-filters" aria-label="Question filters">
       <label>Paper type<select aria-label="Paper type" value={type} onChange={(e) => change('paper_type', e.target.value)}><option value="">All paper types</option>{types.map((id) => <option key={id} value={id}>{id === 'branch' ? 'Branch papers' : id.slice(7)}</option>)}</select></label>
       <label>Specific paper<select aria-label="Specific paper" value={selected.id} onChange={(e) => change('paper', e.target.value)}>{available.map((p) => <option key={p.id} value={p.id}>{p.year} · {p.subject}{p.paperNumber ? ` · ${p.paperNumber}` : ''} · {p.sitting}{!sourcePaperId(p) ? ' · PDF only' : ''}</option>)}</select></label>
@@ -89,15 +89,15 @@ export function GuideQuestionBrowser({ papers, guideId, practice = false }: { pa
       <Link className="inline-flex min-h-11 items-center text-link" to={`?${archive}`}>All papers</Link><a className="inline-flex min-h-11 items-center text-link underline" href={selected.url} target="_blank" rel="noreferrer">PDF ↗</a>
     </nav>
     <details className="rounded-[12px] border border-hairline bg-card px-3 py-1">
-      <summary className="min-h-11 cursor-pointer py-3 text-[13px] font-semibold">More filters &amp; answer layout</summary>
-      <p className="py-3 text-[13px] text-secondary">Questions follow the order printed in this paper.</p>
+      <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">More filters &amp; answer layout</summary>
+      <p className="py-3 text-sm text-secondary">Questions follow the order printed in this paper.</p>
       <AnswerLayoutControl />
       <div className="grid gap-3 py-3 sm:grid-cols-2">
-        <label className="text-[12px] font-semibold">Year<select aria-label="Paper year" value={year} onChange={(e) => change('paper_year', e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="">All years</option>{years.map((y) => <option key={y} value={y}>{y}</option>)}</select></label>
-        <label className="text-[12px] font-semibold">Answer pool<select aria-label="Answer pool" value={pool} disabled={practice || !hasSource} onChange={(e) => change('pool', e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="all">All questions</option><option value="scorable">Official answer keys</option><option value="practice">Questions with an answer</option></select></label>
+        <label className="text-xs font-semibold">Year<select aria-label="Paper year" value={year} onChange={(e) => change('paper_year', e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm"><option value="">All years</option>{years.map((y) => <option key={y} value={y}>{y}</option>)}</select></label>
+        <label className="text-xs font-semibold">Answer pool<select aria-label="Answer pool" value={pool} disabled={practice || !hasSource} onChange={(e) => change('pool', e.target.value)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm"><option value="all">All questions</option><option value="scorable">Official answer keys</option><option value="practice">Questions with an answer</option></select></label>
       </div>
     </details>
-    <p className="mt-2 text-[11px] text-muted">{selected.schemeBasis === 'inferred' ? 'Scheme inferred from sitting year; check the recruitment notification.' : 'Legacy sitting.'}</p>
+    <p className="mt-2 text-xs text-muted">{selected.schemeBasis === 'inferred' ? 'Scheme inferred from sitting year; check the recruitment notification.' : 'Legacy sitting.'}</p>
     {hasSource ? <SourceQuestions key={`${selected.id}:${practice}`} paper={selected} guideId={guideId} practice={practice} /> : <p className="eg-empty">This paper is available as an original PDF. Its questions are not linked to the question bank here yet. Open the source above to read it.</p>}
   </section>;
 }
@@ -156,7 +156,7 @@ function SourceQuestions({ paper, guideId, practice }: { paper: ArchivedExamPape
     {error && <p role="alert" className="eg-notice">{error} <button type="button" onClick={() => setRetry((n) => n + 1)}>Retry questions</button></p>}
     {!page && !error && <p role="status" className="eg-muted">Loading source questions…</p>}
     {page && <>
-      <div className="mt-4 flex justify-between gap-3 text-[13px] text-secondary"><span role="status">{page.total} {practice ? 'practice-ready MCQs' : 'questions'}{search || subjectId || topicId || answerStatus || studyStatus !== 'all' ? ' match these filters' : ' in this paper'}.</span><span>{page.total ? offset + 1 : 0}–{Math.min(offset + page.items.length, page.total)} of {page.total}</span></div>
+      <div className="mt-4 flex justify-between gap-3 text-sm text-secondary"><span role="status">{page.total} {practice ? 'practice-ready MCQs' : 'questions'}{search || subjectId || topicId || answerStatus || studyStatus !== 'all' ? ' match these filters' : ' in this paper'}.</span><span>{page.total ? offset + 1 : 0}–{Math.min(offset + page.items.length, page.total)} of {page.total}</span></div>
       {practice && <p className="eg-muted">Untimed practice; this is not a full exam simulation.</p>}
       {pagination}
       {!page.items.length && <p className="eg-empty">{practice ? 'No eligible MCQs match. Use Browse for written or unanswered questions, or change your filters.' : 'No questions match these filters. Reset the filters, read the original PDF or choose another source paper.'}{offset > 0 && <button onClick={() => goPage(1)}>Return to the first page</button>}</p>}

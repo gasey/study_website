@@ -1,4 +1,4 @@
-"""Hourly, bounded transient cleanup. Durable progress and replay receipts stay."""
+"""Hourly bounded cleanup; closed-account study-history deletion is separately gated."""
 import asyncio
 import logging
 from ..db import cursor
@@ -43,6 +43,10 @@ async def sweep(cur):
       SELECT user_id,action,ist_date FROM rate_limits WHERE ist_date<(now() AT TIME ZONE 'Asia/Kolkata')::date-30
       AND updated_at<now()-interval '30 days' ORDER BY ist_date,user_id,action LIMIT 500 FOR UPDATE SKIP LOCKED)''')
     counts['daily_requests']=cur.rowcount
+    await cur.execute('''DELETE FROM account_closure_recovery WHERE user_id IN(
+      SELECT user_id FROM account_closure_recovery WHERE expires_at<=clock_timestamp()
+      ORDER BY expires_at,user_id LIMIT 500 FOR UPDATE SKIP LOCKED)''')
+    counts['closure_recovery_expired']=cur.rowcount
     for table,key,expired in (
         ('review_rate_buckets','bucket',"expires_at<now()-interval '1 day'"),
         ('auth_login_attempts','ctid',"attempted_at<now()-interval '30 days'"),
@@ -56,6 +60,31 @@ async def sweep(cur):
         counts[{'review_rate_buckets':'budgets','auth_login_attempts':'login_attempts','google_auth_flows':'google_flows','mobile_auth_flows':'mobile_flows'}[table]]=cur.rowcount
     await cur.execute('SELECT * FROM sweep_empty_guests(true)');guests=await cur.fetchone()
     counts.update(guests=guests['removed'],guests_scanned=guests['scanned'])
+    from ..config import settings
+    if settings.study_history_retention_enabled:
+        await cur.execute('SELECT sweep_expired_study_history(5,200) AS result')
+        study=await cur.fetchone()
+        counts.update(study_history=study['result'])
+        if settings.private_study_retention_enabled:
+            await cur.execute('SELECT sweep_expired_private_study(5,200) AS result')
+            private=await cur.fetchone()
+            counts['private_study']=private['result']
+            if settings.private_preferences_retention_enabled:
+                await cur.execute('SELECT sweep_expired_private_preferences(5,200) AS result')
+                prefs=await cur.fetchone()
+                counts['private_preferences']=prefs['result']
+            else:
+                counts['private_preferences']='disabled'
+        else:
+            counts['private_study']='disabled'
+            counts['private_preferences']='disabled'
+    else:
+        counts['study_history']='disabled'
+        counts['private_study']='disabled'
+        counts['private_preferences']='disabled'
+    if settings.audience_gate_enabled:
+        await cur.execute('DELETE FROM audience_browser_flows WHERE token_hash IN(SELECT token_hash FROM audience_browser_flows WHERE expires_at<now() ORDER BY expires_at LIMIT 500)')
+        counts['audience_flows']=cur.rowcount
     return counts
 
 

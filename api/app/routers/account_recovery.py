@@ -1,14 +1,16 @@
 """Purpose-bound, single-use recovery; sending remains gated by configuration."""
 import re,secrets,hashlib
+import json
 from typing import Annotated
 from fastapi import APIRouter,Depends,HTTPException,Request,Response
 from pydantic import BaseModel,Field
+from psycopg.types.json import Jsonb
 from starlette.concurrency import run_in_threadpool
 from ..config import settings
 from ..db import cursor
 from ..deps import require_account
 from ..services import mfa
-from ..services.account_identity import digest
+from ..services.account_identity import digest,closure_email_hash
 from ..services.account_mail import configured,accepting
 from .auth import _same_origin,_check_rate,_hash_password,SESSION_COOKIE,GUEST_COOKIE
 router=APIRouter(prefix='/api/auth',tags=['account recovery'])
@@ -26,6 +28,12 @@ async def enqueue(cur,user,purpose):
     await cur.execute("INSERT INTO account_email_tokens(token_hash,user_id,purpose,expires_at) VALUES(%s,%s,%s,now()+interval '30 minutes')",(digest(raw),user,purpose))
     await cur.execute('INSERT INTO account_mail_outbox(user_id,purpose,token_cipher) VALUES(%s,%s,%s)',(user,purpose,mfa.encrypt(user,raw)))
 
+async def enqueue_reopen(cur,user,email_hash):
+    raw=secrets.token_urlsafe(32)
+    await cur.execute('SELECT queue_account_reopen_link(%s,%s,%s,%s) AS queued',
+      (user,email_hash,digest(raw),mfa.encrypt(user,raw)))
+    return bool((await cur.fetchone())['queued'])
+
 @router.get('/recovery/status')
 async def status():
     if not configured():return {'available':False}
@@ -42,6 +50,14 @@ async def request_reset(body:EmailRequest,request:Request):
         if not await accepting(cur,lock=True):raise HTTPException(503,'Email delivery is temporarily at capacity. Try again later.',headers={'Retry-After':'300'})
         await cur.execute('SELECT id FROM users WHERE lower(email)=%s FOR UPDATE',(email,));row=await cur.fetchone()
         if row:await enqueue(cur,row['id'],'reset')
+        else:
+            email_hash=closure_email_hash(email)
+            if email_hash:
+                # The SECDEF queue function locks user -> escrow, matching
+                # closure/reopen order and avoiding a recovery-row/user cycle.
+                await cur.execute('SELECT user_id FROM account_closure_recovery WHERE email_hash=%s AND expires_at>statement_timestamp()',(email_hash,))
+                closed=await cur.fetchone()
+                if closed:await enqueue_reopen(cur,closed['user_id'],email_hash)
     return {'message':'If an account matches, a recovery email will arrive shortly.'}
 
 @router.post('/email/request')
@@ -100,3 +116,43 @@ async def complete_reset(body:Reset,request:Request,response:Response):
         await cur.execute("INSERT INTO account_security_events(user_id,action) VALUES(%s,'password_recovered')",(user,))
     for cookie in (SESSION_COOKIE,GUEST_COOKIE):response.delete_cookie(cookie,path='/',httponly=True,secure=settings.public_origin.startswith('https://'),samesite='lax')
     return {'changed':True,'message':'Password saved. Sign in again to continue.'}
+
+
+@router.post('/reopen/complete')
+async def complete_reopen(body:Reset,request:Request,response:Response):
+    _same_origin(request)
+    if not re.search(r'[A-Za-z]',body.password) or not re.search(r'\d',body.password):raise HTTPException(422,'Password must include letters and numbers')
+    await _check_rate('reopen-token:'+digest(body.token),request.client.host if request.client else 'unknown')
+    await mfa.limit('reopen-token:'+digest(body.token))
+    hashed=await run_in_threadpool(_hash_password,body.password)
+    async with cursor() as cur:
+        # The user row is the serialization point shared with closure. The link
+        # is read first without a lock solely to discover that owner.
+        await cur.execute("SELECT user_id FROM account_email_tokens WHERE token_hash=%s AND purpose='reopen' AND consumed_at IS NULL AND expires_at>statement_timestamp()",(digest(body.token),));token=await cur.fetchone()
+        if not token:raise HTTPException(400,'This link has expired or was already used.')
+        user=token['user_id']
+        await cur.execute('SELECT closed_at FROM users WHERE id=%s FOR UPDATE',(user,));owner=await cur.fetchone()
+        await cur.execute('SELECT email_hash,identity_cipher,expires_at>statement_timestamp() AS active FROM account_closure_recovery WHERE user_id=%s FOR UPDATE',(user,));escrow=await cur.fetchone()
+        if not owner or not owner['closed_at'] or not escrow or not escrow['active']:
+            raise HTTPException(400,'This link has expired or was already used.')
+        try:identity=json.loads(mfa.decrypt(user,escrow['identity_cipher']))
+        except (TypeError,ValueError,KeyError,json.JSONDecodeError):raise HTTPException(503,'Account reopening is temporarily unavailable.') from None
+        email=identity.get('email')
+        email_hash=closure_email_hash(email or '')
+        if not email_hash or email_hash!=escrow['email_hash']:raise HTTPException(503,'Account reopening is temporarily unavailable.')
+        avatar=Jsonb(identity['avatar']) if identity.get('avatar') is not None else None
+        try:
+            await cur.execute('SELECT reopen_closed_account(%s,%s,%s,%s,%s,%s,%s) AS user_id',
+              (digest(body.token),email,email_hash,hashed,identity.get('name'),avatar,identity.get('handle')))
+            reopened=await cur.fetchone()
+        except Exception as error:
+            message=str(error)
+            if 'email address is already in use' in message:raise HTTPException(409,'That email address is now in use. Contact site support to review account recovery.') from error
+            if 'expired' in message.lower() or 'invalid' in message.lower():raise HTTPException(400,'This link has expired or was already used.') from error
+            raise
+        from ..services.login_backoff import clear_account
+        await clear_account(cur,email.strip().lower())
+        await cur.execute('DELETE FROM review_rate_buckets WHERE bucket=%s',('mfa:login:'+digest(email.strip().lower()),))
+        await cur.execute("INSERT INTO account_security_events(user_id,action) VALUES(%s,'account_reopen_link_used')",(reopened['user_id'],))
+    for cookie in (SESSION_COOKIE,GUEST_COOKIE):response.delete_cookie(cookie,path='/',httponly=True,secure=settings.public_origin.startswith('https://'),samesite='lax')
+    return {'changed':True,'message':'Account reopened. Sign in with your new password; reconnect Google and set up MFA again if you use them.'}

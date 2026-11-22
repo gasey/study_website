@@ -223,6 +223,8 @@ def clauses(ctx):
         sql.append('v.id IN(SELECT question_id FROM v_question_paths) AND v.id NOT IN(SELECT m.question_id FROM v_question_paths m WHERE m.subject_id=ANY(%s)OR m.topic_id=ANY(%s)OR m.subtopic_id=ANY(%s))');args += [ctx['excluded_match_ids']]*3
     if ctx.get('section_subject')or ctx.get('section_topic'):
         sql.append('(v.id=ANY(%s)OR EXISTS(SELECT 1 FROM v_question_paths m WHERE m.question_id=v.id AND(%s::text IS NULL OR m.subject_id=%s)AND(%s::text IS NULL OR m.topic_id=%s)))');args += [ctx['pins'],ctx['section_subject'],ctx['section_subject'],ctx['section_topic'],ctx['section_topic']]
+    if ctx.get('desk_question_ids') is not None:
+        sql.append('v.id=ANY(%s)');args.append(ctx['desk_question_ids'])
     if ctx.get('trail_ids') is not None:
         sql.append('v.id=ANY(%s)');args.append(ctx['trail_ids'])
     if ctx.get('trail_short'):

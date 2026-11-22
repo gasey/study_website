@@ -11,7 +11,7 @@ export default function ProvenanceTag({source}:{source:AnswerSource}) {
 export function RepeatBadge({ times }: { times: number }) {
   if (times < 2) return null
   return (
-    <span className="inline-flex shrink-0 items-center rounded-pill bg-exams-soft px-2 py-[2px] font-mono text-[9.5px] uppercase tracking-[0.06em] text-exams-dark">
+    <span className="inline-flex shrink-0 items-center rounded-pill bg-exams-soft px-2 py-[2px] font-mono text-xs uppercase tracking-[0.06em] text-exams-dark">
       Asked {times}×
     </span>
   )

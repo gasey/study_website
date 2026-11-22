@@ -86,7 +86,7 @@ export default function DeskFocus({
           :{(remaining % 60).toString().padStart(2, "0")}
         </div>
         {!active && (
-          <label className="mx-auto mb-4 block max-w-[180px] text-[13px]">
+          <label className="mx-auto mb-4 block max-w-[180px] text-sm">
             Duration
             <select
               className="desk-v3-input mt-1"
@@ -148,17 +148,17 @@ export default function DeskFocus({
             </Link>
           )}
         </div>
-        <p className="mt-4 text-[13px] leading-relaxed text-[#4E3A4D]">
+        <p className="mt-4 text-sm leading-relaxed text-[#4E3A4D]">
           Your timer resumes across devices. Early endings retain actual time.
           Focus time earns no points.
         </p>
         {error && (
-          <p role="alert" className="mt-3 text-[13px] text-mypick">
+          <p role="alert" className="mt-3 text-sm text-mypick">
             {error}
           </p>
         )}
       </div>
-      <h3 className="mt-[26px] border-b border-hairline pb-2 font-display text-[22px]">
+      <h3 className="mt-[26px] border-b border-hairline pb-2 font-display text-lg">
         Recent sessions
       </h3>
       {sessions
@@ -166,7 +166,7 @@ export default function DeskFocus({
         .map((s) => (
           <div
             key={s.id}
-            className="flex justify-between gap-3 border-b border-hairline2 py-3 text-[13px]"
+            className="flex justify-between gap-3 border-b border-hairline2 py-3 text-sm"
           >
             <span>
               {new Date(s.created_at).toLocaleString("en-IN", {

@@ -35,26 +35,26 @@ export default function CalendarCountdown() {
       to={event ? "/calendar?event=" + event.id : "/calendar"}
       className="block rounded-panel bg-ink p-4 text-paper"
     >
-      <span className="text-[12px] font-semibold text-[#D8A33A]">
+      <span className="text-xs font-semibold text-[#D8A33A]">
         Your exam calendar
       </span>
       {event?.starts_on ? (
         <>
-          <span className="mt-2 block font-display text-[35px] leading-tight">
+          <span className="mt-2 block font-display text-2xl leading-tight">
             {Math.max(0, dayNumber(event.starts_on) - dayNumber(indiaToday()))}{" "}
             days
           </span>
-          <span className="mt-2 block text-[14px]">{event.title}</span>
-          <span className="mt-2 block text-[12px] text-[#D9D0BF]">
+          <span className="mt-2 block text-sm">{event.title}</span>
+          <span className="mt-2 block text-xs text-[#D9D0BF]">
             Confirm the official notice →
           </span>
         </>
       ) : (
         <>
-          <span className="mt-2 block font-display text-[23px]">
+          <span className="mt-2 block font-display text-lg">
             What’s coming up
           </span>
-          <span className="mt-2 block text-[13px] text-[#D9D0BF]">
+          <span className="mt-2 block text-sm text-[#D9D0BF]">
             Follow exams, save dates and choose inbox reminders →
           </span>
         </>

@@ -1,6 +1,7 @@
 """Bounded exam study, using the ordinary question/answer engine and receipts."""
 import hashlib
 import json
+from time import perf_counter
 from typing import Annotated, Literal
 from uuid import uuid4
 from fastapi import APIRouter, Depends, HTTPException, Response, Request
@@ -290,7 +291,14 @@ async def viewed(sid:str,body:Viewed,user:User,request:Request):
         return await state(cur,row)
 
 @router.post('/{sid}/answer')
-async def check(sid:str,body:Check,user:User,request:Request):
+async def check(sid:str,body:Check,user:User,request:Request,response:Response):
+    started=perf_counter()
+    try:
+        return await _check_answer(sid,body,user,request)
+    finally:
+        response.headers['Server-Timing']=f"answer;dur={(perf_counter()-started)*1000:.1f}"
+
+async def _check_answer(sid:str,body:Check,user:User,request:Request):
     async with cursor() as cur:
         row = await owned(cur,sid,user,True)
         review_write_guard(row,request)

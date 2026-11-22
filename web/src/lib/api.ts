@@ -25,6 +25,7 @@ export interface Appearance {
 }
 
 export interface Question {
+  atlas_links?: import('./atlas').AtlasLink[]
   curated?:{card_id:string;presentation_id:string;deck_id:string;deck_title:string;mode:string;source_changed?:boolean;revealed_result?:import('./vocabulary').CuratedResult|null;practice_enabled?:boolean}
   presentation_hash?: string | null
   taxonomy_paths?: {subject_id:string;subject_label:string;topic_id:string|null;topic_label:string|null;subtopic_id:string|null;subtopic_label:string|null;is_primary:boolean}[]
@@ -189,6 +190,8 @@ async function req<T>(path: string, init?: RequestInit): Promise<T> {
 
 export type GroupBStudyArea = 'common'|'english'|'gk-gs'|'technical'
 export interface ListParams {
+  atlas_chapter?: string
+  atlas_layer?: string
   learning_entry?: string
   exam_scope?: "all" | "mizoram-recruitment"
   study_area?: GroupBStudyArea
@@ -343,7 +346,7 @@ export const updateProfile = (name: string) => req<PrivateProfile>('/me/profile'
 
 export interface AccountSession { avatar?:AvatarLook|null; avatar_version?:number; authenticated: boolean; email?: string; plan_code?: string; plan_status?: string; trial_ends_at?: string | null; plan_ends_at?: string | null }
 export const getAccountSession = () => req<AccountSession>('/auth/session')
-export const registerAccount = (email: string, password: string) => req<AccountSession>('/auth/register', { method:'POST', body:JSON.stringify({email,password}) })
+export const registerAccount = (email: string, password: string, referralCode?:string) => req<AccountSession>('/auth/register', { method:'POST', body:JSON.stringify({email,password,...(referralCode?{referral_code:referralCode}:{})}) })
 export const loginAccount = (email: string, password: string,code?:string) => req<AccountSession>('/auth/login', { method:'POST', body:JSON.stringify({email,password,code:code||undefined}) })
 export const logoutAccount = () => req<AccountSession>('/auth/logout', { method:'POST', body:'{}' })
 export const changePassword = (current_password:string,new_password:string) => req<{changed:boolean}>('/auth/password',{method:'POST',body:JSON.stringify({current_password,new_password})})
@@ -786,7 +789,7 @@ export interface TopicMastery {subject_id:string;subject_label:string;topic:stri
 export interface MasterySnapshot {items:TopicMastery[];basis:string;rule_version:string;exam:{id:string;title:string}|null}
 export interface ReviewQueue {curated_due_count?:number;curated_scheduled_count?:number;curated_writes_enabled?:boolean;vocabulary_due_count?:number;vocabulary_scheduled_count?:number;due_count:number;scheduled_count:number;has_more:boolean;items:{item_id:string;item_type?:'question'|'vocab';curated?:boolean;deck_id?:string|null;question:string;box:number;due_on:string;focused:boolean;subject_label:string;topic_label:string|null}[]}
 export interface WeeklyRecap {week_start:string;week_end:string;xp:number;reviews_cleared:number;active_days:number;streak_kept:boolean;focus_seconds:number;topics:{topic:string;topic_label:string;tier:string}[];more_topics:boolean;topic_basis:string;focus_basis:string}
-export interface TodayPlan {vocabulary?:{target:number;introduced:number;remaining:number;due:number;eligible:number;url:string}|null;exam_preparation?:{title:string;date:string;days_remaining:number;new_limit:number;phase:string;mock_url:string|null}|null;weekly_recap?:WeeklyRecap|null;account:boolean;ist_date:string;exam:{id:string;title:string;is_primary:boolean}|null;focus:FocusSubjects;due_count:number;scheduled_count:number;new_questions:{subject_label:string;topic_label:string;target:number;url:string;exam_title?:string;progress?:number;completed?:boolean}|null;plan_status?:{started:boolean;completed?:boolean;progress?:number;target?:number};daily_five:{status:string;url:string};quests:{key:string;title:string;progress:number;target:number;completed:boolean;claimed:boolean}[];empty_reason:string}
+export interface TodayPlan {atlas_suggestions?:{chapter_id:string;title:string;url:string;practice_url:string}[];vocabulary?:{target:number;introduced:number;remaining:number;due:number;eligible:number;url:string}|null;exam_preparation?:{title:string;date:string;days_remaining:number;new_limit:number;phase:string;mock_url:string|null}|null;weekly_recap?:WeeklyRecap|null;account:boolean;ist_date:string;exam:{id:string;title:string;is_primary:boolean}|null;focus:FocusSubjects;due_count:number;scheduled_count:number;new_questions:{subject_label:string;topic_label:string;target:number;url:string;exam_title?:string;progress?:number;completed?:boolean}|null;plan_status?:{started:boolean;completed?:boolean;progress?:number;target?:number};daily_five:{status:string;url:string};quests:{key:string;title:string;progress:number;target:number;completed:boolean;claimed:boolean}[];empty_reason:string}
 export interface CalendarLayers {community:{id:string;day:string;title:string;starts_at:string;ends_at:string;url:string;kind:string}[];desk_schedule_available:boolean;registered:boolean;entries:import('./calendar').OwnedEntry[];occurrences:import('./calendar').OwnedOccurrence[];official:import('./calendar').CalendarEvent[];forecast:{day:string;count:number}[];habit:{day:string;count:number}[];forecast_basis:string}
 export const getToday=()=>req<TodayPlan>('/me/today',{headers:WORD_REVIEW_HEADERS})
 export const getMastery=()=>req<MasterySnapshot>('/me/mastery')

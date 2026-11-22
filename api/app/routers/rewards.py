@@ -122,7 +122,7 @@ async def claim_daily_quest(quest_key:Literal['warmup_circuit','cross_stream_tri
         if existing:return {'claimed':True,'quest_key':quest_key,'xp_awarded':existing['xp_awarded'],'points_awarded':existing['points_awarded'],'ledger_id':existing['ledger_id']}
         status=await daily_quests_status(cur,user)
         q_item=next((q for q in status['quests'] if q['key']==quest_key),None)
-        if not q_item or not q_item['completed']:
+        if not q_item or not q_item['completed'] or not q_item.get('reward_eligible',True):
             raise HTTPException(409,'Complete this daily quest target before claiming its chest')
         await cur.execute("SELECT COALESCE(sum(xp),0)::int AS xp FROM reward_ledger WHERE user_id=%s AND kind IN ('study','game') AND created_at>=%s",(user,day_start))
         today_xp=(await cur.fetchone())['xp']

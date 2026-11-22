@@ -25,10 +25,11 @@ async function adminReply(value,error=false){await act(async()=>{const item=requ
  await act(async()=>tree=create(React.createElement(router.MemoryRouter,null,React.createElement(Admin))));assert.equal(requests[0].args[0],'/admin/ops/notice');
  const setting={message:'',expires_at:null,version:2,updated_at:'2026-11-18T00:00:00Z'};await adminReply(setting);
  await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'Maintenance tonight'}}));
- await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.deepEqual(requests[0].args[1],{message:'Maintenance tonight',expires_at:null,expected_version:2});
- await adminReply({...setting,message:'Maintenance tonight',version:3});assert.ok(json().includes('Site notice saved.'));assert.ok(button('Clear notice'));
+ await act(async()=>tree.root.findByType('input').props.onInput({currentTarget:{value:'2030-01-01T02:00'}}));
+ await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));assert.deepEqual(requests[0].args[1],{message:'Maintenance tonight',expires_at:'2029-12-31T20:30:00.000Z',expected_version:2});
+ await adminReply({...setting,message:'Maintenance tonight',expires_at:'2029-12-31T20:30:00.000Z',version:3});assert.ok(json().includes('Site notice saved.'));assert.ok(button('Clear notice'));
  await act(async()=>button('Clear notice').props.onClick());assert.deepEqual(requests[0].args[1],{message:'',expires_at:null,expected_version:3});await adminReply({...setting,version:4});assert.ok(json().includes('Site notice cleared.'));
- await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'PRIVATE_UNSAVED_OWNER_DRAFT'}}));
+ await act(async()=>tree.root.findByType('textarea').props.onChange({target:{value:'PRIVATE_UNSAVED_OWNER_DRAFT'}}));assert.ok(!json().includes('Site notice cleared.'),'Editing clears a prior saved confirmation');
  await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));const before=announcements;epoch++;await act(async()=>window.dispatchEvent(new Event('ism-auth-change')));assert.ok(!json().includes('PRIVATE_UNSAVED_OWNER_DRAFT'));
  await adminReply({...setting,message:'PRIVATE_UNSAVED_OWNER_DRAFT',version:5});assert.ok(!json().includes('PRIVATE_UNSAVED_OWNER_DRAFT'));assert.equal(announcements,before,'Old authenticated save response cannot emit a refresh');await adminReply('Permission required',true);assert.ok(json().includes('Permission required'));
  await act(async()=>button('Reload notice setting').props.onClick());await adminReply({...setting,version:8});await act(async()=>tree.root.findByType('form').props.onSubmit({preventDefault(){}}));await adminReply('Site notice changed. Reload before saving',true);assert.ok(json().includes('Reload before saving'));assert.ok(!json().includes('Site notice saved.'));

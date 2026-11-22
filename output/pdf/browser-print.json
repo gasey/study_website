@@ -1,0 +1,48 @@
+{
+  "browser": "156.0.8078.4",
+  "engine": "Chromium PDF printing",
+  "headersAndFooters": false,
+  "cssPageSize": true,
+  "cases": [
+    {
+      "case": "personal-multipage",
+      "file": "desk-notes-personal-multipage.pdf",
+      "sha256": "33d9a26fdbc874281f91e0a4e6f96a8e38832c1186c3973e85fdaae697edb897",
+      "scripts": 0,
+      "images": 0,
+      "printInstructionsHidden": true,
+      "articles": 8,
+      "remoteRequests": 0
+    },
+    {
+      "case": "empty",
+      "file": "desk-notes-empty.pdf",
+      "sha256": "379c342c7f639de9abe53c10d1750a711c2ae929685d96b8cb1d5d62d8b29b93",
+      "scripts": 0,
+      "images": 0,
+      "printInstructionsHidden": true,
+      "articles": 0,
+      "remoteRequests": 0
+    },
+    {
+      "case": "assessment-filtered",
+      "file": "desk-notes-assessment-filtered.pdf",
+      "sha256": "cdc5aa7479df5ac3e70713cbda9b5cc80166921f6315adfa8f1345cc1488187d",
+      "scripts": 0,
+      "images": 0,
+      "printInstructionsHidden": true,
+      "articles": 1,
+      "remoteRequests": 0
+    },
+    {
+      "case": "room-owned",
+      "file": "desk-notes-room-owned.pdf",
+      "sha256": "66c23d462fb8951a31d9ba3827913a46145c91a78f09fff32409ce1091be4bb0",
+      "scripts": 0,
+      "images": 0,
+      "printInstructionsHidden": true,
+      "articles": 4,
+      "remoteRequests": 0
+    }
+  ]
+}

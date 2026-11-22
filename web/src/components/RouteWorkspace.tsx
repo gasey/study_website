@@ -32,9 +32,9 @@ export function RouteNavigation(){
   return null
 }
 
-export function WorkspaceLoading(){return <div role="status" aria-live="polite" className="mx-auto min-h-[60vh] max-w-shell px-6 py-10"><p className="text-[14px] text-secondary">Opening workspace…</p><div aria-hidden="true" className="mt-5 space-y-4 motion-safe:animate-pulse"><div className="h-8 max-w-sm rounded bg-paper"/><div className="h-4 max-w-xl rounded bg-paper"/><div className="h-44 rounded-[14px] border border-hairline bg-card"/></div></div>}
+export function WorkspaceLoading(){return <div role="status" aria-live="polite" className="mx-auto min-h-[60vh] max-w-shell px-6 py-10"><p className="text-sm text-secondary">Opening workspace…</p><div aria-hidden="true" className="mt-5 space-y-4 motion-safe:animate-pulse"><div className="h-8 max-w-sm rounded bg-paper"/><div className="h-4 max-w-xl rounded bg-paper"/><div className="h-44 rounded-[14px] border border-hairline bg-card"/></div></div>}
 export class RouteErrorBoundary extends Component<{children:ReactNode},{failed:boolean}>{
   state={failed:false}
   static getDerivedStateFromError(){return {failed:true}}
-  render(){return this.state.failed?<section role="alert" className="mx-auto min-h-[50vh] max-w-shell p-8"><h1 className="font-display text-[30px]">This workspace couldn’t open</h1><p className="mt-3 text-secondary">Check your connection, then reload this page. Previously saved progress is kept.</p><button className="mt-5 min-h-[44px] rounded-pill bg-ink px-5 text-paper" onClick={()=>window.location.reload()}>Reload this page</button><a className="ml-4 text-link underline" href="/">Home</a></section>:this.props.children}
+  render(){return this.state.failed?<section role="alert" className="mx-auto min-h-[50vh] max-w-shell p-8"><h1 className="font-display text-2xl">This workspace couldn’t open</h1><p className="mt-3 text-secondary">Check your connection, then reload this page. Previously saved progress is kept.</p><button className="mt-5 min-h-[44px] rounded-pill bg-ink px-5 text-paper" onClick={()=>window.location.reload()}>Reload this page</button><a className="ml-4 text-link underline" href="/">Home</a></section>:this.props.children}
 }

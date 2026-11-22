@@ -12,12 +12,24 @@ from ..deps import current_user, require_account
 from ..config import settings
 from ..services.review_identity import Actor, identity, require_role
 from ..services.bank_review import protect_answer
+from ..services import desk_notes,audience,community_audience
 from .materials import write_guard as content_write_guard
 
 router = APIRouter(prefix="/api/desk", tags=["study desk"])
 User = Annotated[str, Depends(current_user)]
 Account = Annotated[str, Depends(require_account)]
 Staff = Annotated[Actor, Depends(identity)]
+
+
+@router.get('/rooms/{did}/calendar')
+async def room_calendar(did: str, start: date, end: date, user: Account, response: Response):
+    from ..services import desk_calendar
+    if end<start or (end-start).days>93:
+        raise HTTPException(422,'Choose at most 93 days for the room calendar')
+    response.headers['Cache-Control']='private, no-store'
+    async with cursor() as cur:
+        await cur.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        return await desk_calendar.view(cur,did,user,start,end)
 
 
 class Strict(BaseModel):
@@ -32,6 +44,7 @@ class Task(Strict):
 
 
 class Note(Strict):
+    question_id: str | None = Field(default=None, min_length=1, max_length=100)
     id: str = Field(min_length=1, max_length=100)
     title: str = Field(min_length=1, max_length=140)
     body: str = Field(default="", max_length=4000)
@@ -78,6 +91,12 @@ class UpdateRoom(Room, Version):
     pass
 
 
+class WeeklyGoal(Strict):
+    week_start: date
+    expected_version: int = Field(ge=0)
+    target: int = Field(ge=1, le=10000, strict=True)
+
+
 class Invite(Strict):
     handle: str = Field(min_length=2, max_length=100)
 
@@ -101,12 +120,18 @@ class Item(Strict):
 
 
 class EditItem(Version):
+    question_id: str | None = Field(default=None, min_length=1, max_length=100)
     title: str = Field(default="", max_length=140)
     body: str = Field(default="", max_length=4000)
     delete: bool = False
 
 
+class DiscussionState(Version):
+    state: Literal['needed', 'resolved']
+
+
 class Message(Strict):
+    note_id: str | None = Field(default=None, min_length=1, max_length=100)
     body: str = Field(min_length=1, max_length=2000)
 
 
@@ -163,9 +188,10 @@ def enabled():
         )
 
 
-async def member(cur, did, user, owner=False, lock=False):
+async def member(cur, did, user, owner=False, lock=False, include_restricted_owner=False):
     await cur.execute(
         "SELECT d.*,m.joined_at,m.sharing,m.muted FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL WHERE d.id=%s AND d.closed_at IS NULL"
+        + ' AND '+('TRUE' if include_restricted_owner else audience.subject_sql('d.owner_id'))+' AND '+audience.subject_sql('m.user_id')
         + (" FOR UPDATE OF d" if lock else ""),
         (user, did),
     )
@@ -205,7 +231,7 @@ async def notify(cur, user, key, text, did, invite=None):
         prefs = await cur.fetchone()
         if prefs and prefs["muted"]:
             return
-    await cur.execute(
+    await community_audience.notify(cur,user,
         "INSERT INTO review_notifications(user_id,event_key,message,study_desk_id,study_invite_id) VALUES(%s,%s,%s,%s,%s) ON CONFLICT DO NOTHING",
         (user, key, text, did, invite),
     )
@@ -218,6 +244,7 @@ def fingerprint(value):
 @router.get("/personal", dependencies=[Depends(private)])
 async def personal(user: User):
     async with cursor() as cur:
+        await cur.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
         await cur.execute(
             "SELECT avatar,handle,email IS NOT NULL AS registered FROM users WHERE id=%s",
             (user,),
@@ -227,12 +254,13 @@ async def personal(user: User):
             "SELECT document,version FROM personal_desks WHERE user_id=%s", (user,)
         )
         row = await cur.fetchone()
+        data = Document.model_validate(row["document"] if row else {}).model_dump(mode="json")
+        visible = await desk_notes.document(cur,user,data)
     return {
         "user_id": user,
         **who,
-        "data": Document.model_validate(row["document"] if row else {}).model_dump(
-            mode="json"
-        ),
+        "data": visible,
+        "hidden_notes": len(data['notes'])-len(visible['notes']),
         "version": row["version"] if row else 0,
         "private_desks_enabled": settings.study_desks_private_enabled,
     }
@@ -248,7 +276,7 @@ async def save_personal(body: Save, request: Request, user: Account):
             "SELECT pg_advisory_xact_lock(hashtext(%s))", ("personal-desk:" + user,)
         )
         await cur.execute(
-            "SELECT version FROM personal_desks WHERE user_id=%s FOR UPDATE", (user,)
+            "SELECT version,document FROM personal_desks WHERE user_id=%s FOR UPDATE", (user,)
         )
         old = await cur.fetchone()
         if (old["version"] if old else 0) != body.expected_version:
@@ -256,7 +284,7 @@ async def save_personal(body: Save, request: Request, user: Account):
                 409,
                 "Your desk changed on another device. Reload the account version or explicitly keep your local edits.",
             )
-        qids = set(body.data.saved + body.data.recent)
+        qids = set(body.data.saved + body.data.recent + [n.question_id for n in body.data.notes if n.question_id])
         if qids:
             await cur.execute(
                 "SELECT id FROM canonical_questions WHERE id=ANY(%s)", (list(qids),)
@@ -274,13 +302,20 @@ async def save_personal(body: Save, request: Request, user: Account):
             )
             if not await cur.fetchone():
                 raise HTTPException(422, "Choose a current subject")
-        doc = body.data.model_dump(mode="json")
+        previous = Document.model_validate(old['document'] if old else {}).model_dump(mode='json')
+        incoming = body.data.model_dump(mode='json')
+        doc = await desk_notes.preserve_locked(cur,user,previous,incoming)
+        old_notes = {n['id']:n for n in previous['notes']}
+        for n in incoming['notes']:
+            if n.get('question_id') and n != old_notes.get(n['id']):
+                await protect_answer(cur,user,n['question_id'])
         await cur.execute(
             "INSERT INTO personal_desks(user_id,document) VALUES(%s,%s) ON CONFLICT(user_id) DO UPDATE SET document=EXCLUDED.document,version=personal_desks.version+1,updated_at=now() RETURNING version",
             (user, Jsonb(doc)),
         )
         version = (await cur.fetchone())["version"]
-    return {"data": doc, "version": version}
+        visible = await desk_notes.document(cur,user,doc)
+    return {"data": visible, "version": version}
 
 
 @router.get("/overview", dependencies=[Depends(private)])
@@ -346,12 +381,12 @@ async def question_previews(
 async def rooms(user: Account):
     async with cursor() as cur:
         await cur.execute(
-            "SELECT d.id,d.name,d.goal,d.owner_id,d.version,count(mm.user_id)::int AS members FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL LEFT JOIN study_desk_members mm ON mm.desk_id=d.id AND mm.left_at IS NULL WHERE d.closed_at IS NULL GROUP BY d.id ORDER BY d.created_at",
+            "SELECT d.id,d.name,d.goal,d.owner_id,d.version,count(mm.user_id)::int AS members FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL LEFT JOIN study_desk_members mm ON mm.desk_id=d.id AND mm.left_at IS NULL AND "+audience.subject_sql('mm.user_id')+" WHERE d.closed_at IS NULL AND "+audience.subject_sql('d.owner_id')+" GROUP BY d.id ORDER BY d.created_at",
             (user,),
         )
         rows = await cur.fetchall()
         await cur.execute(
-            "SELECT i.id,i.desk_id,i.sender_id,d.name,u.handle AS sender,i.expires_at FROM study_desk_invites i JOIN study_desks d ON d.id=i.desk_id AND d.closed_at IS NULL JOIN users u ON u.id=i.sender_id WHERE i.recipient_id=%s AND i.state='pending' AND i.expires_at>now() AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=i.sender_id) OR (b.user_id=i.sender_id AND b.blocked_id=%s)) ORDER BY i.created_at DESC LIMIT 30",
+            "SELECT i.id,i.desk_id,i.sender_id,d.name,u.handle AS sender,i.expires_at FROM study_desk_invites i JOIN study_desks d ON d.id=i.desk_id AND d.closed_at IS NULL JOIN users u ON u.id=i.sender_id WHERE "+audience.subject_sql('i.sender_id')+" AND "+audience.subject_sql('d.owner_id')+" AND i.recipient_id=%s AND i.state='pending' AND i.expires_at>now() AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=i.sender_id) OR (b.user_id=i.sender_id AND b.blocked_id=%s)) ORDER BY i.created_at DESC LIMIT 30",
             (user, user, user),
         )
         invites = await cur.fetchall()
@@ -436,7 +471,7 @@ async def invite(did: str, body: Invite, request: Request, user: Account):
         await unrestricted(cur, user)
         await member(cur, did, user, owner=True, lock=True)
         await cur.execute(
-            "SELECT id FROM users WHERE handle=%s AND email IS NOT NULL", (body.handle,)
+            "SELECT u.id FROM users u WHERE u.handle=%s AND u.email IS NOT NULL AND "+audience.subject_sql('u.id'), (body.handle,)
         )
         target = await cur.fetchone()
         if not target or target["id"] == user:
@@ -511,7 +546,7 @@ async def decide_invite(iid: str, body: Decision, request: Request, user: Accoun
         if body.decision != "cancel" and user != i["recipient_id"]:
             raise HTTPException(403, "Only the recipient may decide")
         await cur.execute(
-            "SELECT * FROM study_desks WHERE id=%s AND closed_at IS NULL FOR UPDATE",
+            "SELECT d.* FROM study_desks d WHERE d.id=%s AND d.closed_at IS NULL AND "+(audience.subject_sql('d.owner_id') if body.decision=='accept' else 'TRUE')+" FOR UPDATE",
             (i["desk_id"],),
         )
         room = await cur.fetchone()
@@ -566,7 +601,7 @@ async def read_room(did: str, user: Account):
     async with cursor() as cur:
         r = await member(cur, did, user)
         await cur.execute(
-            "SELECT m.user_id,u.handle,u.avatar,m.sharing,m.user_id=%s AS is_you FROM study_desk_members m JOIN users u ON u.id=m.user_id WHERE m.desk_id=%s AND m.left_at IS NULL ORDER BY m.joined_at,m.user_id",
+            "SELECT m.user_id,u.handle,u.avatar,m.sharing,m.user_id=%s AS is_you FROM study_desk_members m JOIN users u ON u.id=m.user_id WHERE m.desk_id=%s AND m.left_at IS NULL AND "+audience.subject_sql('m.user_id')+" ORDER BY m.joined_at,m.user_id",
             (user, did),
         )
         members = await cur.fetchall()
@@ -592,7 +627,7 @@ async def read_room(did: str, user: Account):
                 )
                 m["focusing"] = bool(await cur.fetchone())
         await cur.execute(
-            "SELECT i.id,i.recipient_id,u.handle,i.expires_at FROM study_desk_invites i JOIN users u ON u.id=i.recipient_id WHERE i.desk_id=%s AND i.state='pending' AND i.expires_at>now() AND %s=%s",
+            "SELECT i.id,i.recipient_id,u.handle,i.expires_at FROM study_desk_invites i JOIN users u ON u.id=i.recipient_id WHERE i.desk_id=%s AND i.state='pending' AND i.expires_at>now() AND "+audience.subject_sql('i.recipient_id')+" AND %s=%s",
             (did, user, r["owner_id"]),
         )
         invites = await cur.fetchall()
@@ -607,6 +642,44 @@ async def read_room(did: str, user: Account):
         "invitations": invites,
         "joined_at": r["joined_at"],
     }
+
+
+@router.get("/rooms/{did}/weekly-goal", dependencies=[Depends(private)])
+async def weekly_goal(did: str, user: Account):
+    enabled()
+    from ..services import desk_goals
+    async with cursor() as cur:
+        # Consent and counts must describe the same snapshot, including blocks.
+        await cur.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
+        r = await member(cur, did, user)
+        result = await desk_goals.summary(cur, did, user, await desk_goals.clock(cur))
+    return result | {"can_edit": r["owner_id"] == user}
+
+
+@router.post("/rooms/{did}/weekly-goal")
+async def save_weekly_goal(did: str, body: WeeklyGoal, request: Request, user: Account):
+    enabled()
+    await write_guard(request, user)
+    from ..services import desk_goals
+    async with cursor() as cur:
+        await unrestricted(cur, user)
+        await member(cur, did, user, owner=True, lock=True)
+        period = await desk_goals.clock(cur)
+        if body.week_start != period['week_start']:
+            raise HTTPException(409, "The IST week changed; refresh before setting a goal")
+        await cur.execute("SELECT version FROM study_desk_weekly_goals WHERE desk_id=%s AND week_start=%s FOR UPDATE", (did, body.week_start))
+        old = await cur.fetchone()
+        if (old['version'] if old else 0) != body.expected_version:
+            raise HTTPException(409, "The weekly goal changed; refresh before saving")
+        await cur.execute('''INSERT INTO study_desk_weekly_goals(desk_id,week_start,target,updated_by)
+          VALUES(%s,%s,%s,%s) ON CONFLICT(desk_id,week_start) DO UPDATE SET
+          target=EXCLUDED.target,updated_by=EXCLUDED.updated_by,version=study_desk_weekly_goals.version+1,
+          updated_at=clock_timestamp() RETURNING version''', (did, body.week_start, body.target, user))
+        version = (await cur.fetchone())['version']
+        await event(cur, user, "weekly_goal_set", did, {
+            "week_start": body.week_start.isoformat(), "target": body.target, "version": version,
+        })
+    return {"saved": True, "version": version}
 
 
 @router.post("/rooms/{did}/sharing")
@@ -629,6 +702,14 @@ async def sharing(did: str, body: Sharing, request: Request, user: Account):
 
 
 VISIBLE = "NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=x.author_id) OR (b.user_id=x.author_id AND b.blocked_id=%s))"
+def visible_sql():
+    return VISIBLE+' AND '+audience.subject_sql('x.author_id')
+
+
+GAME_VISIBLE = """NOT EXISTS(SELECT 1 FROM game_members gm JOIN game_rooms gr ON gr.id=gm.room_id
+ LEFT JOIN game_cups cup ON cup.id=gr.cup_id WHERE gm.user_id=%s
+ AND ((gm.released_at IS NULL AND gr.state IN ('waiting','running')) OR cup.closes_at>now())
+ AND gr.questions @> jsonb_build_array(jsonb_build_object('id',x.question_id)))"""
 
 
 @router.get("/rooms/{did}/items", dependencies=[Depends(private)])
@@ -636,16 +717,17 @@ async def items(
     did: str,
     user: Account,
     kind: Literal["all", "question", "note", "bookmark", "mistake", "update"] = "all",
+    discussion: Literal['all', 'needed', 'resolved'] = 'all',
     before: str | None = Query(None, max_length=100),
     limit: int = Query(20, ge=1, le=50),
 ):
     async with cursor() as cur:
         await member(cur, did, user)
         await cur.execute(
-            "SELECT x.id,x.author_id,u.handle AS author,x.kind,x.title,x.body,x.question_id,q.question,q.answer_source,x.version,x.created_at FROM study_desk_items x JOIN users u ON u.id=x.author_id LEFT JOIN canonical_questions q ON q.id=x.question_id WHERE x.desk_id=%s AND x.deleted_at IS NULL AND (%s='all' OR x.kind=%s) AND (%s::text IS NULL OR x.id<%s) AND "
-            + VISIBLE
-            + " AND (x.kind<>'mistake' OR x.author_id=%s OR EXISTS(SELECT 1 FROM study_desk_members m WHERE m.desk_id=x.desk_id AND m.user_id=x.author_id AND m.left_at IS NULL AND (m.sharing->>'mistakes')::boolean)) AND (x.kind<>'update' OR x.author_id=%s OR EXISTS(SELECT 1 FROM study_desk_members m WHERE m.desk_id=x.desk_id AND m.user_id=x.author_id AND m.left_at IS NULL AND (m.sharing->>'progress')::boolean)) AND (x.question_id IS NULL OR NOT EXISTS(SELECT 1 FROM mock_sessions s WHERE s.user_id=%s AND s.submitted_at IS NULL AND x.question_id=ANY(s.question_ids))) ORDER BY x.id DESC LIMIT %s",
-            (did, kind, kind, before, before, user, user, user, user, user, limit + 1),
+            "SELECT x.id,x.author_id,u.handle AS author,x.kind,x.title,x.body,x.question_id,q.question,q.answer_source,x.version,x.discussion_state,x.created_at FROM study_desk_items x JOIN users u ON u.id=x.author_id LEFT JOIN canonical_questions q ON q.id=x.question_id WHERE x.desk_id=%s AND x.deleted_at IS NULL AND (%s='all' OR x.kind=%s) AND (%s::text IS NULL OR x.id<%s) AND (%s='all' OR x.discussion_state=%s) AND "
+            + visible_sql()
+            + " AND (x.kind<>'note' OR EXISTS(SELECT 1 FROM study_desk_members nm JOIN users nu ON nu.id=nm.user_id AND nu.closed_at IS NULL WHERE nm.desk_id=x.desk_id AND nm.user_id=x.author_id AND nm.left_at IS NULL AND nm.joined_at<=x.created_at)) AND (x.kind<>'mistake' OR x.author_id=%s OR EXISTS(SELECT 1 FROM study_desk_members m WHERE m.desk_id=x.desk_id AND m.user_id=x.author_id AND m.left_at IS NULL AND (m.sharing->>'mistakes')::boolean)) AND (x.kind<>'update' OR x.author_id=%s OR EXISTS(SELECT 1 FROM study_desk_members m WHERE m.desk_id=x.desk_id AND m.user_id=x.author_id AND m.left_at IS NULL AND (m.sharing->>'progress')::boolean)) AND (x.question_id IS NULL OR (NOT EXISTS(SELECT 1 FROM mock_sessions s WHERE s.user_id=%s AND s.submitted_at IS NULL AND x.question_id=ANY(s.question_ids)) AND " + GAME_VISIBLE + ")) ORDER BY x.id DESC LIMIT %s",
+            (did, kind, kind, before, before, discussion, discussion, user, user, user, user, user, user, limit + 1),
         )
         rows = await cur.fetchall()
     return {
@@ -749,11 +831,21 @@ async def edit_item(
             )
         if item["version"] != body.expected_version:
             raise HTTPException(409, "Shared item changed; refresh before editing")
+        qid = body.question_id if 'question_id' in body.model_fields_set else item['question_id']
+        if 'question_id' in body.model_fields_set and item['kind']!='note':
+            raise HTTPException(422,'Only notes may change their question attachment')
+        if not body.delete:
+            await protect_answer(cur,user,item['question_id'])
+            await protect_answer(cur,user,qid)
+            if qid:
+                await cur.execute("SELECT 1 FROM canonical_questions WHERE id=%s AND status IN ('live','held')",(qid,))
+                if not await cur.fetchone():raise HTTPException(404,'Question not found')
         await cur.execute(
-            "UPDATE study_desk_items SET title=%s,body=%s,deleted_at=CASE WHEN %s THEN now() END,version=version+1,updated_at=now() WHERE id=%s",
+            "UPDATE study_desk_items SET title=%s,body=%s,question_id=%s,deleted_at=CASE WHEN %s THEN now() END,version=version+1,updated_at=now() WHERE id=%s",
             (
                 "" if body.delete else body.title,
                 "" if body.delete else body.body,
+                qid,
                 body.delete,
                 iid,
             ),
@@ -768,6 +860,36 @@ async def edit_item(
     return {"saved": True}
 
 
+@router.post('/rooms/{did}/items/{iid}/discussion')
+async def discussion_state(did: str, iid: str, body: DiscussionState, request: Request, user: Account):
+    enabled()
+    await write_guard(request, user)
+    async with cursor() as cur:
+        await unrestricted(cur, user)
+        await member(cur, did, user, lock=True)
+        await cur.execute('''SELECT x.* FROM study_desk_items x WHERE x.id=%s AND x.desk_id=%s
+          AND x.deleted_at IS NULL AND x.kind IN ('question','mistake') AND x.question_id IS NOT NULL
+          AND ''' + visible_sql() + ''' AND (x.kind<>'mistake' OR x.author_id=%s OR EXISTS(
+            SELECT 1 FROM study_desk_members m WHERE m.desk_id=x.desk_id AND m.user_id=x.author_id
+            AND m.left_at IS NULL AND m.sharing->>'mistakes'='true')) FOR UPDATE OF x''',
+          (iid,did,user,user,user))
+        item = await cur.fetchone()
+        if not item:
+            raise HTTPException(404, 'Shared question not found')
+        await protect_answer(cur, user, item['question_id'])
+        if item['version'] != body.expected_version:
+            raise HTTPException(409, 'Shared question changed; refresh before updating discussion')
+        if item['discussion_state'] == 'none' and body.state == 'resolved':
+            raise HTTPException(409, 'Flag the question for discussion first')
+        if item['discussion_state'] == body.state:
+            return {'saved': True, 'version': item['version']}
+        await cur.execute('''UPDATE study_desk_items SET discussion_state=%s,version=version+1,
+          updated_at=clock_timestamp() WHERE id=%s RETURNING version''', (body.state,iid))
+        version = (await cur.fetchone())['version']
+        await event(cur, user, 'discussion_'+body.state, did, {'item_id':iid,'version':version})
+    return {'saved':True,'version':version}
+
+
 @router.get("/rooms/{did}/messages", dependencies=[Depends(private)])
 async def messages(
     did: str,
@@ -776,14 +898,23 @@ async def messages(
     limit: int = Query(30, ge=1, le=50),
 ):
     async with cursor() as cur:
+        await cur.execute("SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY")
         r = await member(cur, did, user)
         await cur.execute(
-            "SELECT x.id,x.author_id,u.handle AS author,x.body,x.version,x.created_at FROM study_desk_messages x JOIN users u ON u.id=x.author_id WHERE x.desk_id=%s AND x.deleted_at IS NULL AND x.created_at>=%s AND (%s::bigint IS NULL OR x.id<%s) AND "
-            + VISIBLE
+            "SELECT x.id,x.author_id,u.handle AS author,x.body,x.note_id,x.version,x.created_at FROM study_desk_messages x JOIN users u ON u.id=x.author_id WHERE x.desk_id=%s AND x.deleted_at IS NULL AND x.created_at>=%s AND (%s::bigint IS NULL OR x.id<%s) AND "
+            + visible_sql()
             + " ORDER BY x.id DESC LIMIT %s",
             (did, r["joined_at"], before, before, user, user, limit + 1),
         )
         rows = await cur.fetchall()
+        for row in rows:
+            if row.get('note_id'):
+                try:
+                    linked = await desk_notes.shared(cur,did,row['note_id'],user)
+                    row['note_title'] = linked['title'] or 'Shared note'
+                except HTTPException:
+                    row['body'] = 'Linked note is unavailable or assessment-locked.'
+                    row['note_id'] = None
     return {
         "items": rows[:limit],
         "next_cursor": rows[limit - 1]["id"] if len(rows) > limit else None,
@@ -800,7 +931,9 @@ async def send_message(
 ):
     enabled()
     await write_guard(request, user)
-    sha = fingerprint([did, body.body])
+    if body.note_id and getattr(request.state,'mobile_session',None):
+        raise HTTPException(403,'Shared-note links are available on the website')
+    sha = fingerprint([did, body.body] + ([body.note_id] if body.note_id else []))
     async with cursor() as cur:
         await cur.execute(
             "SELECT pg_advisory_xact_lock(hashtext(%s))", ("desk-messages:" + user,)
@@ -816,9 +949,10 @@ async def send_message(
             if old["request_hash"] != sha:
                 raise HTTPException(409, "Request key belongs to another message")
             return {"id": old["id"]}
+        if body.note_id:await desk_notes.shared(cur,did,body.note_id,user)
         await cur.execute(
-            "INSERT INTO study_desk_messages(desk_id,author_id,body,request_key,request_hash) VALUES(%s,%s,%s,%s,%s) RETURNING id",
-            (did, user, body.body, idempotency_key, sha),
+            "INSERT INTO study_desk_messages(desk_id,author_id,body,note_id,request_key,request_hash) VALUES(%s,%s,%s,%s,%s,%s) RETURNING id",
+            (did, user, body.body, body.note_id, idempotency_key, sha),
         )
         mid = (await cur.fetchone())["id"]
         await event(cur, user, "message_sent", did, {"message_id": mid})
@@ -868,6 +1002,11 @@ async def edit_message(
             )
         if m["version"] != body.expected_version:
             raise HTTPException(409, "Message changed; refresh first")
+        if body.note_id is not None and body.note_id!=m.get('note_id'):
+            raise HTTPException(422,'A message keeps its original note link')
+        if m.get('note_id') and not body.delete:
+            if getattr(request.state,'mobile_session',None):raise HTTPException(403,'Use the website for shared-note links')
+            await desk_notes.shared(cur,did,m['note_id'],user)
         await cur.execute(
             "UPDATE study_desk_messages SET body=%s,deleted_at=CASE WHEN %s THEN now() END,version=version+1,updated_at=now() WHERE id=%s",
             ("" if body.delete else body.body, body.delete, mid),
@@ -886,7 +1025,7 @@ async def edit_message(
 async def leave(did: str, request: Request, user: Account):
     await write_guard(request, user)
     async with cursor() as cur:
-        r = await member(cur, did, user, lock=True)
+        r = await member(cur, did, user, lock=True, include_restricted_owner=True)
         if r["owner_id"] == user:
             raise HTTPException(
                 409, "Transfer ownership or close the desk before leaving"
@@ -1186,3 +1325,130 @@ async def report_invite(iid: str, body: Resolve, request: Request, user: Account
             cur, user, "reported", r["desk_id"], {"kind": "invite", "target_id": iid}
         )
     return {"reported": True}
+
+
+class PracticeStart(Strict):
+    preview_hash: str = Field(pattern='^[0-9a-f]{64}$')
+    request_key: str = Field(min_length=16, max_length=100)
+
+
+class PracticeJoin(Strict):
+    context_hash: str = Field(pattern='^[0-9a-f]{64}$')
+
+
+@router.get('/rooms/{did}/practice', dependencies=[Depends(private)])
+async def practice_sessions(did: str, user: Account):
+    enabled()
+    from ..services import desk_games, games as g
+    async with cursor() as cur:
+        await cur.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        await member(cur,did,user)
+        preview = desk_games.public_preview(await desk_games.preview(cur,did,user))
+        await cur.execute('''SELECT r.*,m.joined_at AS player_joined_at,m.left_at AS player_left_at,
+          (SELECT count(*)::int FROM game_members p WHERE p.room_id=r.id AND p.left_at IS NULL) AS players
+          FROM game_rooms r LEFT JOIN game_members m ON m.room_id=r.id AND m.user_id=%s
+          WHERE r.desk_id=%s AND r.state IN ('waiting','running')
+          AND r.created_at>now()-interval '10 minutes' ORDER BY r.created_at DESC LIMIT 10''',(user,did))
+        sessions = []
+        for r in await cur.fetchall():
+            try:
+                await desk_games.access(cur,r,user,r['player_joined_at'])
+            except HTTPException:
+                continue
+            joined = r['player_joined_at'] is not None and r['player_left_at'] is None
+            sessions.append({'id':r['id'],'state':r['state'],'players':r['players'],
+              'capacity':r['capacity'],'context_hash':r['context_hash'],'joined':joined,
+              'can_join':not joined and r['state']=='waiting' and r['players']<r['capacity'],
+              'questions':len(r['questions']),'round_seconds':r['round_seconds']})
+        await cur.execute('''SELECT r.id,r.mode,r.state FROM game_members m JOIN game_rooms r ON r.id=m.room_id
+          WHERE m.user_id=%s AND m.released_at IS NULL''',(user,))
+        active = await cur.fetchone()
+    return {'preview':preview,'sessions':sessions,'active_game':active}
+
+
+@router.post('/rooms/{did}/practice', dependencies=[Depends(private)])
+async def start_practice(did: str, body: PracticeStart, request: Request, user: Account):
+    enabled()
+    await write_guard(request,user)
+    from ..services import desk_games, games as g, game_selection as setup
+    from .games import activity_lock, availability, add_member
+    from ..services.learning_habit import capture_plan
+    async with cursor() as cur:
+        await activity_lock(cur,user)
+        await cur.execute("SELECT pg_advisory_xact_lock(hashtextextended('creator-graph-v1',0))")
+        await member(cur,did,user,lock=True)
+        await unrestricted(cur,user)
+        h = g.digest({'desk_id':did,**body.model_dump()})
+        await cur.execute('SELECT room_id,request_hash FROM game_start_requests WHERE user_id=%s AND request_key=%s',(user,body.request_key))
+        old = await cur.fetchone()
+        if old:
+            if old['request_hash']!=h:raise HTTPException(409,'Start request belongs to a different session')
+            r = await g.room(cur,old['room_id'])
+            await g.member(cur,r,user)
+            r = await g.advance(cur,r,await g.clock(cur))
+            return await g.view(cur,r,user,await g.clock(cur))
+        await g.permitted(cur,user)
+        await availability(cur,user)
+        selected = await desk_games.preview(cur,did,user)
+        if selected['context_hash']!=body.preview_hash:
+            raise HTTPException(409,'The shared set changed. Refresh the preview and confirm it again.')
+        if not selected['can_start']:raise HTTPException(422,selected['message'])
+        ctx = selected['context']; questions = await setup.draw(cur,ctx)
+        ids = {q['id'] for q in questions}
+        ctx['desk_sources'] = [s for s in ctx['desk_sources'] if s['question_id'] in ids]
+        # A new game must also respect a completed cup's embargo, not only an
+        # active reservation. The preview excludes these for this host already.
+        for q in questions:await protect_answer(cur,user,q['id'])
+        await capture_plan(cur,user)
+        rid = 'game_'+uuid4().hex
+        _,seconds,capacity = g.MODES['party']
+        await cur.execute('''INSERT INTO game_rooms(id,owner_id,mode,capacity,questions,round_seconds,
+          request_key,request_hash,selection_context,context_hash,desk_id)
+          VALUES(%s,%s,'party',%s,%s,%s,%s,%s,%s,%s,%s)''',
+          (rid,user,capacity,Jsonb(questions),seconds,body.request_key,h,Jsonb(ctx),g.digest(ctx),did))
+        r = await g.room(cur,rid)
+        await desk_games.access(cur,r,user)
+        await add_member(cur,r,user)
+        await cur.execute('INSERT INTO game_start_requests(user_id,request_key,room_id,request_hash) VALUES(%s,%s,%s,%s)',(user,body.request_key,rid,h))
+        await event(cur,user,'practice_created',did,{'game_id':rid})
+        return await g.view(cur,await g.room(cur,rid),user,await g.clock(cur))
+
+
+@router.post('/rooms/{did}/practice/{rid}/join', dependencies=[Depends(private)])
+async def join_practice(did: str, rid: str, body: PracticeJoin, request: Request, user: Account):
+    enabled()
+    await write_guard(request,user)
+    from ..services import desk_games, games as g
+    from .games import activity_lock, availability, add_member
+    async with cursor() as cur:
+        await activity_lock(cur,user)
+        await cur.execute("SELECT pg_advisory_xact_lock(hashtextextended('creator-graph-v1',0))")
+        r = await g.room(cur,rid)
+        if r.get('desk_id')!=did:raise HTTPException(404,'Desk practice not found')
+        await desk_games.access(cur,r,user)
+        await unrestricted(cur,user)
+        await g.permitted(cur,user)
+        r = await g.advance(cur,r,await g.clock(cur))
+        await cur.execute('SELECT * FROM game_members WHERE room_id=%s AND user_id=%s',(rid,user))
+        old = await cur.fetchone()
+        if old and old['left_at'] is None:
+            await desk_games.access(cur,r,user,old['joined_at'])
+            return await g.view(cur,r,user,await g.clock(cur))
+        # A departed Desk epoch cannot resurrect an old frozen seat by rejoining.
+        if old:raise HTTPException(409,'You left this session. Start or join a new one.')
+        await availability(cur,user)
+        if r['state']!='waiting':raise HTTPException(409,'This practice session has started or expired')
+        if body.context_hash!=r['context_hash']:raise HTTPException(409,'Refresh and confirm this shared set before joining')
+        for q in r['questions']:await protect_answer(cur,user,q['id'])
+        await add_member(cur,r,user)
+        await event(cur,user,'practice_joined',did,{'game_id':rid})
+        return await g.view(cur,await g.room(cur,rid),user,await g.clock(cur))
+
+
+@router.get('/rooms/{did}/notes/{iid}', dependencies=[Depends(private)])
+async def read_shared_note(did: str, iid: str, user: Account):
+    enabled()
+    async with cursor() as cur:
+        await cur.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        await member(cur,did,user)
+        return await desk_notes.shared(cur,did,iid,user)

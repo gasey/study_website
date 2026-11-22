@@ -27,7 +27,7 @@ import { AnswerOptions } from "../components/AnswerLayout";
 import { UserAvatar } from "../components/AvatarArt";
 import type { AvatarLook } from "../lib/avatar";
 const BTN =
-  "ism-tactile-btn inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-[13px] font-semibold disabled:opacity-40 hover:border-hairline2";
+  "ism-tactile-btn inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline bg-card px-4 py-2 text-sm font-semibold disabled:opacity-40 hover:border-hairline2";
 const MODES: {
   id: GameMode;
   body: string;
@@ -196,21 +196,21 @@ export default function Games() {
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-8 sm:px-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <div className="font-mono text-[11px] uppercase tracking-[.1em] text-practice-dark">
+          <div className="font-mono text-xs uppercase tracking-[.1em] text-practice-dark">
             Game time
           </div>
           <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)] leading-tight">
             Play
           </h1>
-          <p className="mt-3 max-w-[640px] text-[17px] leading-relaxed text-secondary">
+          <p className="mt-3 max-w-[640px] text-md leading-relaxed text-secondary">
             Every game runs on official-key questions from the bank. Play solo,
             challenge a friend or meet in a private multiplayer room.
           </p>
         </div>
-        <div className="ism-card-surface rounded-[12px] border border-exams bg-exams-soft px-4 py-3 text-[13px]">
+        <div className="ism-card-surface rounded-[12px] border border-exams bg-exams-soft px-4 py-3 text-sm">
           Games XP today{" "}
           <b className="ml-2 font-mono text-exams-dark">{data?.game_xp_today ?? "—"}</b>
-          <div className="mt-1 text-[11px] text-secondary">
+          <div className="mt-1 text-xs text-secondary">
             Shares the 300 XP daily study/game budget
           </div>
         </div>
@@ -218,7 +218,7 @@ export default function Games() {
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick"
+          className="mt-4 rounded-[8px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick"
         >
           {error}
           <button
@@ -229,10 +229,10 @@ export default function Games() {
           </button>
         </div>
       )}
-      {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-exams bg-exams-soft p-4"><div><h2 className="font-display text-[23px]">You have an unfinished mock</h2><p className="mt-1 text-[13px] text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' !bg-ink !text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
+      {data?.active_mock && <section aria-label="Unfinished mock" className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-exams bg-exams-soft p-4"><div><h2 className="font-display text-lg">You have an unfinished mock</h2><p className="mt-1 text-sm text-secondary">{data.active_mock.collection_title || 'Timed mock'} · {data.active_mock.seconds_remaining>0?'Continue or submit this mock to unlock games.':'Time has ended. Open the mock to complete submission and unlock games.'}</p></div><Link className={BTN+' !bg-ink !text-paper'} to={data.active_mock.resume_url}>Resume unfinished mock →</Link></section>}
       {data?.active && (
         <div className="mt-5 flex flex-wrap items-center justify-between gap-3 rounded-[12px] border border-practice bg-practice-soft p-4">
-          <p className="text-[14px]">
+          <p className="text-sm">
             You have an unfinished {MODE_NAMES[data.active.mode]}.
           </p>
           <Link
@@ -246,10 +246,10 @@ export default function Games() {
       <div className="mt-5 flex flex-wrap items-start gap-8">
         <section aria-label="Play modes" className="grid min-w-0 flex-[999_1_620px] gap-3 sm:grid-cols-2">
           <section aria-label="Daily Five" className="ism-card-surface flex flex-col items-start justify-between gap-4 rounded-[16px] border border-practice bg-practice-soft p-5">
-        <div><h2 className="font-display text-[28px]">Daily Five</h2><p className="mt-2 text-[14px] text-secondary">Five shared questions · GK/GS, English and everyday maths · 20 seconds each. One attempt per India calendar day.</p></div>
+        <div><h2 className="font-display text-xl">Daily Five</h2><p className="mt-2 text-sm text-secondary">Five shared questions · GK/GS, English and everyday maths · 20 seconds each. One attempt per India calendar day.</p></div>
         {data?.daily?.entry_room?<Link className={BTN} to={'/games/'+data.daily.entry_room}>Open my Daily Five →</Link>:<button className={BTN} disabled={busy||!data||!!data.active||!!data.active_mock||now>Date.parse(data.daily.closes_at)-100000} onClick={()=>requestStart('daily')}>Review Daily Five setup →</button>}
       </section>
-          <Link to="/trail" className="ism-card-surface group block rounded-[16px] border border-correct bg-correct-soft/75 p-5 hover:border-correct"><h2 className="font-display text-[28px] text-correct-dark group-hover:underline">Topic Trail ↗</h2><p className="mt-2 text-[14px] text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
+          <Link to="/games?mode=trail" className="ism-card-surface group block rounded-[16px] border border-correct bg-correct-soft/75 p-5 hover:border-correct"><h2 className="font-display text-xl text-correct-dark group-hover:underline">Topic Trail ↗</h2><p className="mt-2 text-sm text-secondary">Ten stepping stones, one topic, a little hill to climb. Pause between questions and choose one Double next.</p></Link>
 
           {MODES.map((m) => (
             <article
@@ -258,22 +258,22 @@ export default function Games() {
               style={{ boxShadow: `inset 0 4px 0 ${m.hue}` }}
             >
               <span
-                className="mb-3 grid h-12 w-12 place-items-center rounded-[10px] text-[26px]"
+                className="mb-3 grid h-12 w-12 place-items-center rounded-[10px] text-xl"
                 style={{ background: m.tint, color: m.hue }}
               >
                 {m.icon}
               </span>
-              <h2 className="font-display text-[24px]">{MODE_NAMES[m.id]}</h2>
-              <p className="mt-2 flex-1 text-[14px] leading-relaxed text-secondary">
+              <h2 className="font-display text-xl">{MODE_NAMES[m.id]}</h2>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-secondary">
                 {m.body}
               </p>
-              <p className="mt-3 font-mono text-[11px] text-muted">{m.meta}</p>
+              <p className="mt-3 font-mono text-xs text-muted">{m.meta}</p>
               {m.id === "cup" && cup && (
                 <>
-                  <p className="mt-2 text-[12px]">
+                  <p className="mt-2 text-xs">
                     {readableTime(cup.opens_at)} · {cup.entries} entries
                   </p>
-                  <label className="mt-3 flex items-start gap-2 text-[12px]">
+                  <label className="mt-3 flex items-start gap-2 text-xs">
                     <input
                       type="checkbox"
                       checked={publicCup}
@@ -324,8 +324,8 @@ export default function Games() {
         </section>
         <aside className="grid min-w-0 flex-[1_1_280px] gap-6 lg:max-w-[330px]">
           <section className="rounded-[10px] border border-hairline bg-card p-4">
-            <h2 className="font-display text-[23px]">Join friends</h2>
-            <p className="mt-2 text-[13px] leading-relaxed text-secondary">
+            <h2 className="font-display text-lg">Join friends</h2>
+            <p className="mt-2 text-sm leading-relaxed text-secondary">
               The room’s players can see your handle and avatar. Share codes
               only with people you want to play with. No chat or public room
               directory.
@@ -339,16 +339,16 @@ export default function Games() {
                 value={code}
                 onChange={(e) => {setCode(e.target.value);setJoinPreview(null);joinEpoch.current++}}
                 placeholder="12-character room code"
-                className="min-h-11 min-w-0 rounded-[6px] border border-hairline bg-paper px-3 font-mono text-[13px]"
+                className="min-h-11 min-w-0 rounded-[6px] border border-hairline bg-paper px-3 font-mono text-sm"
               />
               <button disabled={busy || !!data?.active_mock} className={BTN}>
                 Preview room
               </button>
             </form>
-            {joinPreview&&<section aria-label="Accept room rules"className="mt-3 rounded-[8px] bg-[#F6F2E9] p-3 text-[13px]"><h3 className="font-semibold">{joinPreview.label}</h3><p className="mt-1">{joinPreview.source_label}</p><p className="mt-1">{joinPreview.questions} questions · {joinPreview.round_seconds} seconds each · same questions for every player</p>{joinPreview.excluded_labels.length>0&&<p>Left out: {joinPreview.excluded_labels.join(', ')}</p>}<p className="mt-2">{joinPreview.players}/{joinPreview.capacity} players. You will confirm Ready in the lobby.</p><button className={BTN+' mt-3 bg-ink text-paper'}disabled={busy}onClick={()=>void acceptJoin()}>Accept area & join</button></section>}
+            {joinPreview&&<section aria-label="Accept room rules"className="mt-3 rounded-[8px] bg-[#F6F2E9] p-3 text-sm"><h3 className="font-semibold">{joinPreview.label}</h3><p className="mt-1">{joinPreview.source_label}</p><p className="mt-1">{joinPreview.questions} questions · {joinPreview.round_seconds} seconds each · same questions for every player</p>{joinPreview.excluded_labels.length>0&&<p>Left out: {joinPreview.excluded_labels.join(', ')}</p>}<p className="mt-2">{joinPreview.players}/{joinPreview.capacity} players. You will confirm Ready in the lobby.</p><button className={BTN+' mt-3 bg-ink text-paper'}disabled={busy}onClick={()=>void acceptJoin()}>Accept area & join</button></section>}
           </section>
           <section>
-            <h2 className="border-b border-ink pb-2 font-mono text-[11px] uppercase tracking-wider">
+            <h2 className="border-b border-ink pb-2 font-mono text-xs uppercase tracking-wider">
               Recent games
             </h2>
             {data?.history.map((h) => (
@@ -357,37 +357,37 @@ export default function Games() {
                 to={(h.mode==='trail'?'/trail/':'/games/') + h.id}
                 className="flex items-center justify-between gap-3 border-b border-hairline py-3"
               >
-                <span className="text-[13px]">
+                <span className="text-sm">
                   {MODE_NAMES[h.mode]}
-                  <span className="mt-1 block text-[11px] text-muted">
+                  <span className="mt-1 block text-xs text-muted">
                     {h.state} ·{" "}
                     {new Date(h.finished_at).toLocaleDateString("en-IN")}
                   </span>
                   {!!(h.pace_bonus || h.streak_bonus || h.courage_bonus || h.best_streak) && (
-                    <span className="mt-0.5 block font-mono text-[10px] text-[#9A6410]">
+                    <span className="mt-0.5 block font-mono text-xs text-[#9A6410]">
                       Pace +{h.pace_bonus || 0} · Streak +{h.streak_bonus || 0} (🔥{h.best_streak || 0})
                       {h.courage_bonus ? ` · ⚡+${h.courage_bonus}` : ""}
                     </span>
                   )}
                 </span>
-                <b className="font-display text-[23px]">{h.score}</b>
+                <b className="font-display text-lg">{h.score}</b>
               </Link>
             ))}
             {!data?.history.length && (
-              <p className="mt-3 text-[13px] text-muted">
+              <p className="mt-3 text-sm text-muted">
                 Your completed games will appear here.
               </p>
             )}
           </section>
           {cup && <CupBoard cupId={cup.id} />}
-          <p className="text-[12px] leading-relaxed text-secondary">
+          <p className="text-xs leading-relaxed text-secondary">
             New correct official-key answers can earn 10 XP and 1 reward point
             under the shared daily limits. Repeating a question earns no extra
             credit. Run scores are separate from your wallet. Cup results carry
             no cash or coin prizes.
           </p>
           <Link
-            className="text-[12px] font-semibold text-link underline"
+            className="text-xs font-semibold text-link underline"
             to={data?.registered ? "/profile" : "/login"}
           >
             {data?.registered ? "Your profile →" : "Sign in to play →"}
@@ -404,11 +404,11 @@ function CompetitiveLeaderboardSection() {
  const [track,setTrack]=useState<'gauntlet'|'speed'|'duel'|'daily'>('gauntlet')
  const modes=[['gauntlet','Gauntlet best score','score'],['speed','Speed best score','score'],['duel','Duel wins','wins'],['daily','Daily Five streak','days']] as const
  return <section aria-label="Weekly game boards" className="mt-8 rounded-[18px] border border-hairline bg-card p-5 sm:p-6">
-  <h2 className="font-display text-[28px]">Weekly game boards</h2>
-  <p className="mt-2 text-[13px] text-secondary">Finished games, one shared visibility choice. Daily Five ranks your longest run of completed days within this India week. Duel ties don’t count as wins.</p>
+  <h2 className="font-display text-xl">Weekly game boards</h2>
+  <p className="mt-2 text-sm text-secondary">Finished games, one shared visibility choice. Daily Five ranks your longest run of completed days within this India week. Duel ties don’t count as wins.</p>
   <div role="group" aria-label="Game board mode" className="mt-4 flex flex-wrap gap-2">{modes.map(([id,label])=><button key={id} type="button" aria-pressed={track===id} onClick={()=>setTrack(id)} className={BTN+(track===id?' !bg-ink !text-paper':'')}>{label}</button>)}</div>
   <WeeklyStandings key={track} endpoint={'/games/leaderboard?contract=2&track='+track} unit={modes.find(m=>m[0]===track)![2]} empty="No public results for this mode this week yet."/>
-  <Link to="/board" className={BTN+' mt-5'}>Weekly XP league →</Link><Link to="/rewards" className={BTN+' ml-2 mt-5'}>My visibility →</Link>
+  <Link to="/profile/rewards" className={BTN+' mt-5'}>Weekly XP league →</Link><Link to="/profile/rewards" className={BTN+' ml-2 mt-5'}>My visibility →</Link>
  </section>
 }
 function CupBoard({ cupId }: { cupId: string }) {
@@ -459,27 +459,27 @@ function CupBoard({ cupId }: { cupId: string }) {
   }, [cupId, offset, reload]);
   return (
     <section>
-      <h2 className="border-b border-ink pb-2 font-mono text-[11px] uppercase tracking-wider">
+      <h2 className="border-b border-ink pb-2 font-mono text-xs uppercase tracking-wider">
         Weekly cup standings
       </h2>
       {error ? (
-        <p className="mt-3 text-[12px] text-mypick">{error}</p>
+        <p className="mt-3 text-xs text-mypick">{error}</p>
       ) : items.length ? (
         items.map((p) => (
           <div
             key={p.handle}
             className="flex items-center gap-2 border-b border-hairline py-3"
           >
-            <span className="font-mono text-[11px]">{p.rank}</span>
+            <span className="font-mono text-xs">{p.rank}</span>
             <UserAvatar look={p.avatar} initials={p.handle} />
-            <span className="flex-1 text-[13px]">
+            <span className="flex-1 text-sm">
               {p.handle}
               {p.is_you ? " · you" : ""}
             </span>
             <b>{p.score}</b>
             {p.is_you && (
               <button
-                className="min-h-11 text-[11px] text-link underline"
+                className="min-h-11 text-xs text-link underline"
                 disabled={busy}
                 onClick={() => void visibility(!p.public_result)}
               >
@@ -489,7 +489,7 @@ function CupBoard({ cupId }: { cupId: string }) {
           </div>
         ))
       ) : (
-        <p className="mt-3 text-[13px] text-muted">
+        <p className="mt-3 text-sm text-muted">
           No published results yet. Your own result appears here even if you
           keep it private.
         </p>
@@ -537,7 +537,7 @@ export function GamePlayer() {
         window.dispatchEvent(new Event("ism-progress-change"));
       }
       lastVersion.current = r.version;
-      if(r.mode==='trail'){navigate('/trail/'+r.id,{replace:true});return}
+      if(r.mode==='trail'){navigate('/games/'+r.id+'?mode=trail',{replace:true});return}
       setRoom(r);
       setServerOffset(Date.parse(r.server_now) - Date.now());
       setError("");
@@ -633,10 +633,10 @@ export function GamePlayer() {
   const mine = room?.players.find((p) => p.user_id === room.viewer_id);
   return (
     <main className="mx-auto max-w-[1240px] px-4 pb-24 pt-9 sm:px-6">
-      <Link to="/games" className="min-h-11 py-3 text-[13px] text-link">
+      <Link to="/games" className="min-h-11 py-3 text-sm text-link">
         ← Games
       </Link>
-      <div className="mt-4 font-mono text-[11px] uppercase tracking-wider text-link">
+      <div className="mt-4 font-mono text-xs uppercase tracking-wider text-link">
         Game time
       </div>
       <h1 className="mt-2 font-display text-[clamp(36px,5vw,52px)]">
@@ -645,7 +645,7 @@ export function GamePlayer() {
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-[8px] border border-mypick p-3 text-[13px] text-mypick"
+          className="mt-4 rounded-[8px] border border-mypick p-3 text-sm text-mypick"
         >
           {error}
           <button
@@ -672,9 +672,10 @@ export function GamePlayer() {
         </p>
       ) : (
         <>
-          <p className="mt-4 rounded-[8px] border border-hairline bg-card p-3 text-[13px]">{room.selection?`${room.selection.label} · ${room.selection.source_label}`:`Legacy game · ${room.subject_id||'Mixed subjects'} · MPSC & Mizoram recruitment`}</p>
+          {room.desk_id && <p className="mt-3 text-sm"><Link className="text-link underline" to={`/desk/${room.desk_id}`}>Back to private Desk</Link> · Members join from the Desk’s Practice tab.</p>}
+          <p className="mt-4 rounded-[8px] border border-hairline bg-card p-3 text-sm">{room.selection?`${room.selection.label} · ${room.selection.source_label}`:`Legacy game · ${room.subject_id||'Mixed subjects'} · MPSC & Mizoram recruitment`}</p>
           <div className="mt-5 flex flex-wrap items-start gap-7">
-            <section className="min-w-0 flex-[999_1_560px] overflow-hidden border border-ink bg-[#FBF8F1]">
+            <section className="min-w-0 flex-[999_1_560px] overflow-hidden border border-ink bg-card">
               <header className="flex flex-wrap items-center gap-4 border-b border-ink px-5 py-[18px]">
                 {room.players.map((p) => (
                   <div
@@ -683,10 +684,10 @@ export function GamePlayer() {
                   >
                     <UserAvatar look={p.avatar} initials={p.handle} />
                     <div className="min-w-0">
-                      <b className="block truncate text-[14px]">
+                      <b className="block truncate text-sm">
                         {p.user_id === room.viewer_id ? "You" : p.handle}
                       </b>
-                      <span className="block text-[12px] text-muted">
+                      <span className="block text-xs text-muted">
                         {p.left_at
                           ? "Left / forfeited"
                           : room.state === "finished"
@@ -697,7 +698,7 @@ export function GamePlayer() {
                       </span>
                     </div>
                     {room.state === "finished" && (
-                      <b className="ml-auto font-display text-[28px]">
+                      <b className="ml-auto font-display text-xl">
                         {p.left_at ? "—" : p.score}
                       </b>
                     )}
@@ -706,26 +707,26 @@ export function GamePlayer() {
               </header>
               {room.state === "waiting" && (
                 <div className="p-6">
-                  <h2 className="font-display text-[27px]">
+                  <h2 className="font-display text-xl">
                     Waiting for players
                   </h2>
-                  <p className="mt-3 text-[14px] text-secondary">
+                  <p className="mt-3 text-sm text-secondary">
                     {room.mode === "duel"
                       ? room.selection?"Both players must accept this area and press Ready. Random queues match the exact confirmed choices.":"This legacy duel starts when a second player joins."
-                      : "Share the code, confirm Ready, then the host starts with two to four ready players. Players cannot join after the start."}{" "}
+                      : room.desk_id ? "Desk members join from its Practice tab and confirm Ready. The host starts with two to four ready players. Players cannot join after the start." : "Share the code, confirm Ready, then the host starts with two to four ready players. Players cannot join after the start."}{" "}
                     Empty lobbies expire after ten minutes.
                   </p>
-                  <p
-                    className="mt-5 font-mono text-[26px] tracking-widest"
+                  {!room.desk_id && <p
+                    className="mt-5 font-mono text-xl tracking-widest"
                     aria-label="Private room code"
                   >
                     {room.join_code}
-                  </p>
-                  <p className="mt-2 text-[12px] text-muted">
+                  </p>}
+                  <p className="mt-2 text-xs text-muted">
                     {room.players.filter((p) => !p.left_at).length} /{" "}
                     {room.capacity} players
                   </p>
-                  {room.selection&&<div className="mt-4 rounded-[8px] border border-hairline bg-card p-4"><h3 className="font-semibold">{room.selection.label}</h3><p className="mt-1 text-[13px]">{room.selection.source_label}</p><p className="mt-1 text-[13px]">{room.total} identical questions · {room.round_seconds} seconds each · official-key scoring</p>{room.selection.excluded_labels.length>0&&<p className="mt-1 text-[12px]">Left out: {room.selection.excluded_labels.join(', ')}</p>}<button className={BTN+' mt-3 bg-ink text-paper'}disabled={busy}onClick={()=>void action('ready',{ready:!room.players.find(p=>p.user_id===room.viewer_id)?.ready})}>{room.players.find(p=>p.user_id===room.viewer_id)?.ready?'Not ready / change my mind':'I accept this area · Ready'}</button></div>}
+                  {room.selection&&<div className="mt-4 rounded-[8px] border border-hairline bg-card p-4"><h3 className="font-semibold">{room.selection.label}</h3><p className="mt-1 text-sm">{room.selection.source_label}</p><p className="mt-1 text-sm">{room.total} identical questions · {room.round_seconds} seconds each · official-key scoring</p>{room.selection.excluded_labels.length>0&&<p className="mt-1 text-xs">Left out: {room.selection.excluded_labels.join(', ')}</p>}<button className={BTN+' mt-3 bg-ink text-paper'}disabled={busy}onClick={()=>void action('ready',{ready:!room.players.find(p=>p.user_id===room.viewer_id)?.ready})}>{room.players.find(p=>p.user_id===room.viewer_id)?.ready?'Not ready / change my mind':'I accept this area · Ready'}</button></div>}
                   {room.owner_id === room.viewer_id && (
                     <button
                       className={BTN + " mt-5 bg-ink text-paper"}
@@ -742,23 +743,23 @@ export function GamePlayer() {
               )}
               {room.state === "running" && room.question && (
                 <div className="p-5 sm:p-[22px]">
-                  <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-[12px] text-muted">
+                  <div className="flex flex-wrap items-center justify-between gap-2 font-mono text-xs text-muted">
                     <div className="flex flex-wrap items-center gap-2">
                       <span>
                         Question {room.position + 1} of {room.total}
                       </span>
                       {room.question.pillar_label && (
-                        <span className="rounded-pill bg-ink/10 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-ink">
+                        <span className="rounded-pill bg-ink/10 px-2.5 py-0.5 text-xs font-semibold uppercase tracking-wider text-ink">
                           {room.question.pillar_label}
                         </span>
                       )}
                       {room.question.pillar === "everyday_math" && (
-                        <span className="rounded-pill bg-[#F6DDD3] px-2.5 py-0.5 text-[10px] font-semibold text-[#C0462C]">
+                        <span className="rounded-pill bg-[#F6DDD3] px-2.5 py-0.5 text-xs font-semibold text-[#C0462C]">
                           ⏱ {room.question.round_seconds || 40}s Extended Math Clock
                         </span>
                       )}
                       {room.question.courage_eligible && (
-                        <span className="rounded-pill bg-[#F6E7C6] px-2.5 py-0.5 text-[10px] font-semibold text-[#9A6410]">
+                        <span className="rounded-pill bg-[#F6E7C6] px-2.5 py-0.5 text-xs font-semibold text-[#9A6410]">
                           ⚡ +25 Cross-Stream Courage
                         </span>
                       )}
@@ -768,20 +769,20 @@ export function GamePlayer() {
                   {room.question.pillar === "everyday_math" && (
                     <div className="mt-3 rounded-[10px] border border-[#D8A33A]/50 bg-[#FBF4E6] p-3">
                       <div className="flex flex-wrap items-center justify-between gap-2">
-                        <span className="font-mono text-[11px] font-semibold text-[#9A6410]">
+                        <span className="font-mono text-xs font-semibold text-[#9A6410]">
                           Everyday Class-10 Math Tools · Pace bonus normalized to {room.question.round_seconds || 40}s
                         </span>
                         <button
                           type="button"
                           onClick={() => setScratchOpen((v) => !v)}
-                          className="min-h-8 rounded-pill border border-ink/20 bg-paper px-3 py-1 font-mono text-[11px] font-semibold text-ink"
+                          className="min-h-8 rounded-pill border border-ink/20 bg-paper px-3 py-1 font-mono text-xs font-semibold text-ink"
                         >
                           {scratchOpen ? "Hide Scratchpad" : "✎ Open Quick Math Scratchpad"}
                         </button>
                       </div>
                       {scratchOpen && (
                         <div className="mt-2.5 space-y-2">
-                          <div className="flex flex-wrap gap-1.5 font-mono text-[10px] text-secondary">
+                          <div className="flex flex-wrap gap-1.5 font-mono text-xs text-secondary">
                             <span className="rounded bg-paper px-2 py-0.5">HCF × LCM = A × B</span>
                             <span className="rounded bg-paper px-2 py-0.5">SI = (P × R × T) / 100</span>
                             <span className="rounded bg-paper px-2 py-0.5">Speed = Distance / Time</span>
@@ -792,14 +793,14 @@ export function GamePlayer() {
                             value={scratchText}
                             onChange={(e) => setScratchText(e.target.value)}
                             placeholder="Jot down quick ratios, percentages or steps here…"
-                            className="w-full rounded-[6px] border border-hairline bg-paper p-2 font-mono text-[12px]"
+                            className="w-full rounded-[6px] border border-hairline bg-paper p-2 font-mono text-xs"
                           />
                         </div>
                       )}
                     </div>
                   )}
                   {room.mode === "speed" && room.deadline && (
-                    <p className="mt-2 text-[12px] text-muted">
+                    <p className="mt-2 text-xs text-muted">
                       {Math.max(
                         0,
                         Math.ceil(
@@ -812,7 +813,7 @@ export function GamePlayer() {
                   )}
                   {room.mode === "gauntlet" && (
                     <div className="mt-4 rounded-[10px] bg-ink p-4 text-paper">
-                      <div className="flex justify-between gap-3 text-[13px]">
+                      <div className="flex justify-between gap-3 text-sm">
                         <span>
                           {mine?.lives ?? 3} lives ·{" "}
                           {"♥".repeat(mine?.lives ?? 3)}
@@ -831,7 +832,7 @@ export function GamePlayer() {
                             initials={mine?.handle || "You"}
                           />
                         </div>
-                        <span className="absolute bottom-1 right-0 font-mono text-[12px]">
+                        <span className="absolute bottom-1 right-0 font-mono text-xs">
                           GATE {room.position + 1}
                         </span>
                       </div>
@@ -842,7 +843,7 @@ export function GamePlayer() {
                       direction={room.question.direction}
                       passage={room.question.passage}
                     />
-                    <h2 className="font-display text-[24px] leading-[1.35]">
+                    <h2 className="font-display text-xl leading-[1.35]">
                       <SourceQuestionText
                         text={
                           room.question.question_markup ||
@@ -863,7 +864,7 @@ export function GamePlayer() {
                       <button
                         key={i}
                         className={
-                          "answer-option flex min-h-12 items-center gap-3 rounded-[6px] border p-3 text-left text-[15px] " +
+                          "answer-option flex min-h-12 items-center gap-3 rounded-[6px] border p-3 text-left text-base " +
                           (room.answered && room.chosen_index === i
                             ? "border-link bg-[#E3E9F8]"
                             : "border-hairline bg-card")
@@ -882,7 +883,7 @@ export function GamePlayer() {
                           })
                         }
                       >
-                        <span className="font-mono text-[12px]">
+                        <span className="font-mono text-xs">
                           {String.fromCharCode(65 + i)}
                         </span>
                         <SourceQuestionText
@@ -892,7 +893,7 @@ export function GamePlayer() {
                     ))}
                   </AnswerOptions>
                   <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
-                    <p className="text-[13px] text-secondary">
+                    <p className="text-sm text-secondary">
                       {room.answered
                         ? "Answer saved · waiting for the next round"
                         : remaining === 0
@@ -912,7 +913,7 @@ export function GamePlayer() {
                       Skip
                     </button>
                   </div>
-                  <p className="mt-4 border-t border-hairline pt-3 text-[12px] text-muted">
+                  <p className="mt-4 border-t border-hairline pt-3 text-xs text-muted">
                     {room.question.exam_name || "MPSC paper"}
                     {room.question.year ? " · " + room.question.year : ""}
                     {room.question.qnum
@@ -941,10 +942,10 @@ export function GamePlayer() {
               )}
               {room.state === "finished" && (
                 <div className="p-6">
-                  <h2 className="font-display text-[30px]">
+                  <h2 className="font-display text-2xl">
                     {mine?.left_at ? "Game forfeited" : "Game complete"}
                   </h2>
-                  <div className="mt-4 flex flex-wrap gap-5 text-[14px]">
+                  <div className="mt-4 flex flex-wrap gap-5 text-sm">
                     <span>
                       <b>{mine?.correct ?? 0}</b> correct
                     </span>
@@ -961,10 +962,10 @@ export function GamePlayer() {
                   {!mine?.left_at && (
                     <div className="mt-4 grid gap-2.5 rounded-[12px] border border-[#D8A33A] bg-[#FBF4E6] p-4 sm:grid-cols-4">
                       <div>
-                        <div className="font-mono text-[10px] uppercase text-muted">
+                        <div className="font-mono text-xs uppercase text-muted">
                           Base Accuracy
                         </div>
-                        <div className="mt-1 font-display text-[22px]">
+                        <div className="mt-1 font-display text-lg">
                           {Math.max(
                             0,
                             (mine?.score ?? 0) -
@@ -976,32 +977,32 @@ export function GamePlayer() {
                         </div>
                       </div>
                       <div>
-                        <div className="font-mono text-[10px] uppercase text-muted">
+                        <div className="font-mono text-xs uppercase text-muted">
                           {room.mode==='daily'?'Seconds left bonus':'Normalized Pace'}
                         </div>
-                        <div className="mt-1 font-display text-[22px] text-[#1F44A6]">
+                        <div className="mt-1 font-display text-lg text-[#1F44A6]">
                           +{mine?.pace_bonus ?? 0} pts
                         </div>
                       </div>
                       <div>
-                        <div className="font-mono text-[10px] uppercase text-muted">
+                        <div className="font-mono text-xs uppercase text-muted">
                           Streak Combo (🔥{mine?.best_streak ?? 0})
                         </div>
-                        <div className="mt-1 font-display text-[22px] text-[#C0462C]">
+                        <div className="mt-1 font-display text-lg text-[#C0462C]">
                           +{mine?.streak_bonus ?? 0} pts
                         </div>
                       </div>
                       <div>
-                        <div className="font-mono text-[10px] uppercase text-muted">
+                        <div className="font-mono text-xs uppercase text-muted">
                           Cross-Stream ⚡
                         </div>
-                        <div className="mt-1 font-display text-[22px] text-[#9A6410]">
+                        <div className="mt-1 font-display text-lg text-[#9A6410]">
                           +{mine?.courage_bonus ?? 0} pts
                         </div>
                       </div>
                     </div>
                   )}
-                  <p className="mt-3 text-[13px] text-secondary">
+                  <p className="mt-3 text-sm text-secondary">
                     {room.mode==='daily'?'Daily Five scores 100 per correct answer plus 5 for each whole second left.':'Game points use correct answers, task-normalized server timing, streak combos and cross-stream courage bonuses.'} Bank
                     changes before finalization are excluded. Learning XP
                     follows the shared daily budget and first-question reward
@@ -1010,7 +1011,7 @@ export function GamePlayer() {
                   {room.review_available_at &&
                     Date.parse(room.review_available_at) >
                       now + serverOffset && (
-                      <p className="mt-4 rounded-[8px] bg-[#F6E7C6] p-3 text-[13px]">
+                      <p className="mt-4 rounded-[8px] bg-[#F6E7C6] p-3 text-sm">
                         {room.mode==='daily'?'Daily Five':'Cup'} answer review unlocks after{" "}
                         {readableTime(room.review_available_at)}.
                       </p>
@@ -1019,7 +1020,7 @@ export function GamePlayer() {
                     <Link className={BTN + " bg-ink text-paper"} to="/games">
                       Choose another game →
                     </Link>
-                    <Link className={BTN} to="/rewards">
+                    <Link className={BTN} to="/profile/rewards">
                       Daily quests & streak chests →
                     </Link>
                   </div>
@@ -1027,8 +1028,8 @@ export function GamePlayer() {
               )}
               {room.state === "cancelled" && (
                 <div className="p-6">
-                  <h2 className="font-display text-[28px]">Lobby closed</h2>
-                  <p className="mt-3 text-[14px] text-secondary">
+                  <h2 className="font-display text-xl">Lobby closed</h2>
+                  <p className="mt-3 text-sm text-secondary">
                     The host left or the lobby expired. No game rewards were
                     awarded.
                   </p>
@@ -1039,15 +1040,15 @@ export function GamePlayer() {
               )}
             </section>
             <aside className="min-w-0 flex-[1_1_260px] lg:max-w-[330px]">
-              <h2 className="border-b border-ink pb-3 font-display text-[25px]">
+              <h2 className="border-b border-ink pb-3 font-display text-xl">
                 How this works
               </h2>
-              <p className="mt-3 text-[14px] leading-relaxed text-secondary">
+              <p className="mt-3 text-sm leading-relaxed text-secondary">
                 Your game is saved on the server. Refresh or reconnect to
                 continue; the clock keeps running while you are away. Every
                 player sees the same question order in shared rooms.
               </p>
-              <p className="mt-3 text-[13px] leading-relaxed text-secondary">
+              <p className="mt-3 text-sm leading-relaxed text-secondary">
                 Correct answers and scores are revealed when the shared game
                 ends. Weekly cup and Daily Five answers stay hidden until their event closes.
                 External sources and previously known questions can’t be
@@ -1055,7 +1056,7 @@ export function GamePlayer() {
               </p>
               {["running", "waiting"].includes(room.state) && (
                 <>
-                  <p className="mt-4 text-[12px] text-muted">
+                  <p className="mt-4 text-xs text-muted">
                     Leaving an active game forfeits its rewards. You can start
                     another game immediately.
                   </p>
@@ -1069,8 +1070,8 @@ export function GamePlayer() {
                 </>
               )}
               <Link
-                className="mt-5 block min-h-11 py-3 text-[13px] text-link underline"
-                to="/rewards"
+                className="mt-5 block min-h-11 py-3 text-sm text-link underline"
+                to="/profile/rewards"
               >
                 XP & reward points →
               </Link>
@@ -1078,7 +1079,7 @@ export function GamePlayer() {
           </div>
           {!!room.review.length && (
             <section className="mt-8">
-              <h2 className="font-display text-[29px]">
+              <h2 className="font-display text-2xl">
                 Review your played questions
               </h2>
               {room.review.map((q) => (
@@ -1086,7 +1087,7 @@ export function GamePlayer() {
                   key={q.position}
                   className="mt-3 rounded-[10px] border border-hairline bg-card p-4"
                 >
-                  <summary className="min-h-11 cursor-pointer text-[14px] font-semibold">
+                  <summary className="min-h-11 cursor-pointer text-sm font-semibold">
                     Question {q.position + 1} ·{" "}
                     {q.excluded
                       ? "Excluded · source changed"
@@ -1100,36 +1101,36 @@ export function GamePlayer() {
                     direction={q.direction}
                     passage={q.passage}
                   />
-                  <div className="mt-3 font-display text-[22px]">
+                  <div className="mt-3 font-display text-lg">
                     <SourceQuestionText
                       text={q.question_markup || q.question}
                     />
                   </div>
-                  <p className="mt-3 text-[14px]">
+                  <p className="mt-3 text-sm">
                     Original game key:{" "}
                     {String.fromCharCode(65 + q.answer_index)}.{" "}
                     {q.options[q.answer_index]}
                   </p>
                   {q.chosen_index !== null && (
-                    <p className="mt-2 text-[13px] text-secondary">
+                    <p className="mt-2 text-sm text-secondary">
                       Your choice: {String.fromCharCode(65 + q.chosen_index)}.{" "}
                       {q.options[q.chosen_index]}
                     </p>
                   )}
                   {q.excluded ? (
-                    <p className="mt-2 text-[13px] text-mypick">
+                    <p className="mt-2 text-sm text-mypick">
                       This source changed before finalization; the original game
                       key is not a current answer verification.
                     </p>
                   ) : (
                     q.explanation && (
-                      <p className="mt-2 text-[14px] text-secondary">
+                      <p className="mt-2 text-sm text-secondary">
                         {learnerExplanation(q.explanation)}
                       </p>
                     )
                   )}
                   <Link
-                    className="mt-3 inline-flex min-h-11 items-center text-[13px] text-link underline"
+                    className="mt-3 inline-flex min-h-11 items-center text-sm text-link underline"
                     to={"/bank/" + q.id}
                   >
                     Open question & discussion →

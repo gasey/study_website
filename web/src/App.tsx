@@ -1,215 +1,297 @@
-import {mobileScreen} from './lib/navigation'
+import { mobileScreen } from './lib/navigation'
 import { lazy, Suspense, useEffect, useState } from 'react'
-const SharedTests=lazy(()=>import('./screens/SharedTests'))
-const TestMaker=lazy(()=>import('./screens/TestMaker'))
-const GoogleFinish=lazy(()=>import('./screens/GoogleFinish'))
-import ConsolidatedDestination from './components/ConsolidatedDestination'
-const LearningCatalog=lazy(()=>import('./screens/LearningCatalog'))
-const LearningCatalogAdmin=lazy(()=>import('./screens/LearningCatalogAdmin'))
-const DiscoveryAdmin=lazy(()=>import('./screens/DiscoveryAdmin'))
-const McqSolverReview=lazy(()=>import('./screens/McqSolverReview'))
-const EditorialReview=lazy(()=>import('./screens/EditorialReview'))
+import { Navigate, Route, Routes, useLocation, useParams } from 'react-router-dom'
 import SessionNotice from './components/SessionNotice'
 import SiteNotice from './components/SiteNotice'
+import { AudienceNotice } from './components/AgeCategoryCheck'
 import MaterialReadingPanel from './components/MaterialReadingPanel'
-import {routeModules,warmRoute} from './lib/routeModules'
-import {RouteNavigation,RouteErrorBoundary,WorkspaceLoading} from './components/RouteWorkspace'
-import {useExamScope,syncExamScope} from './lib/examScope'
-import {hydrateDesk} from './lib/desk'
-const DeskAdmin=lazy(()=>import('./screens/DeskAdmin'))
-const DiscussionAdmin=lazy(()=>import('./screens/DiscussionAdmin'))
-import { Navigate, Route, Routes, useLocation } from 'react-router-dom'
+import SelectionTray from './components/SelectionTray'
+import { routeModules, warmRoute } from './lib/routeModules'
+import { RouteNavigation, RouteErrorBoundary, WorkspaceLoading } from './components/RouteWorkspace'
+import { useExamScope, syncExamScope } from './lib/examScope'
+import { hydrateDesk } from './lib/desk'
 import BottomBar from './components/BottomBar'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import { Card } from './components/ui'
-const ResumedPractice=lazy(()=>import('./components/ResumedPractice'))
-const Bank=lazy(routeModules.Bank)
-const ExamPage=lazy(()=>import('./screens/ExamPage'))
-const GroupBStudy=lazy(routeModules.GroupBStudy)
-const Exams=lazy(routeModules.Exams)
-const Papers=lazy(()=>import('./screens/Papers'))
-const Chronicle=lazy(()=>import('./screens/Chronicle'))
-const Stats=lazy(routeModules.Stats)
-const Mes=lazy(routeModules.Mes)
-const Onboarding=lazy(()=>import('./screens/Onboarding'))
-const Revise=lazy(()=>import('./screens/Revise'))
-const MockRunner=lazy(routeModules.MockRunner)
-const Results=lazy(routeModules.Results)
-const Scoring=lazy(routeModules.Scoring)
-const QuestionDetail=lazy(routeModules.QuestionDetail)
-const StudyDesk=lazy(()=>import('./screens/StudyDesk'))
-const Feed=lazy(routeModules.Feed)
-const StudyHome=lazy(routeModules.StudyHome)
-const CreateHub=lazy(routeModules.CreateHub)
-const Moderation=lazy(routeModules.Moderation)
-const English=lazy(routeModules.English)
-const Arithmetic=lazy(routeModules.Arithmetic)
-const Library=lazy(routeModules.Library)
-const LibrarySubject=lazy(routeModules.LibrarySubject)
-const Atlas=lazy(()=>import('./screens/Atlas'))
-const LibraryShelf=lazy(()=>import('./screens/LibraryShelf'))
-const Mizo=lazy(routeModules.Mizo)
-const Essay=lazy(routeModules.Essay)
-const AccountRecovery=lazy(()=>import('./screens/AccountRecovery'))
-const PaperWorkbench=lazy(()=>import('./screens/PaperWorkbench'))
-const CurrentAffairsAdmin=lazy(()=>import('./screens/CurrentAffairsAdmin'))
-const CurrentAffairsAutomation=lazy(()=>import('./screens/CurrentAffairsAutomation'))
-const AccountSecurity=lazy(()=>import('./screens/AccountSecurity'))
+
+const ResumedPractice = lazy(() => import('./components/ResumedPractice'))
+const SiteIndex = lazy(() => import('./screens/SiteIndex'))
+const Guides = lazy(() => import('./screens/Guides'))
+const Practice = lazy(() => import('./screens/Practice'))
+const SharedTests = lazy(() => import('./screens/SharedTests'))
+const TestMaker = lazy(() => import('./screens/TestMaker'))
+const GoogleFinish = lazy(() => import('./screens/GoogleFinish'))
+const AccountHub = lazy(() => import('./screens/AccountHub'))
+const PolicyPages = lazy(() => import('./screens/PolicyPages'))
+const Bank = lazy(routeModules.Bank)
+const ExamPage = lazy(() => import('./screens/ExamPage'))
+const Exams = lazy(routeModules.Exams)
+const Papers = lazy(() => import('./screens/Papers'))
+const Chronicle = lazy(() => import('./screens/Chronicle'))
+const Onboarding = lazy(() => import('./screens/Onboarding'))
+const Revise = lazy(() => import('./screens/Revise'))
+const MockRunner = lazy(routeModules.MockRunner)
+const Results = lazy(routeModules.Results)
+const QuestionDetail = lazy(routeModules.QuestionDetail)
+const StudyDesk = lazy(() => import('./screens/StudyDesk'))
+const Feed = lazy(routeModules.Feed)
+const StudyHome = lazy(routeModules.StudyHome)
+const CreateHub = lazy(routeModules.CreateHub)
+const Library = lazy(routeModules.Library)
+const LibrarySubject = lazy(routeModules.LibrarySubject)
+const LibraryShelf = lazy(() => import('./screens/LibraryShelf'))
+const Atlas = lazy(() => import('./screens/Atlas'))
 const BankAdmin = lazy(() => import('./screens/BankAdmin'))
-const Contribute = lazy(() => import('./screens/Contribute'))
 const ContributionEditor = lazy(() => import('./screens/ContributionEditor'))
 const ContributionDetail = lazy(() => import('./screens/ContributionDetail'))
-const ContributorBoard = lazy(() => import('./screens/ContributorBoard'))
-const ReviewNotifications = lazy(() => import('./screens/Inbox'))
+const Contribute = lazy(() => import('./screens/Contribute'))
+const Inbox = lazy(() => import('./screens/Inbox'))
 const CommunityQuestions = lazy(() => import('./screens/CommunityQuestions'))
-const Profile=lazy(routeModules.Profile)
-const TopicTrail=lazy(()=>import('./screens/TopicTrail'))
-const TopicTrailAdmin=lazy(()=>import('./screens/TopicTrailAdmin'))
-const More=lazy(()=>import('./screens/More'))
-const Games=lazy(()=>import('./screens/Games'))
-const GamePlayer=lazy(()=>import('./screens/Games').then(m=>({default:m.GamePlayer})))
-const GlobalSearch=lazy(()=>import('./screens/GlobalSearch'))
-const ExamCalendar=lazy(()=>import('./screens/ExamCalendar'))
-const AvatarEditor=lazy(()=>import('./screens/AvatarEditor'))
-const PaperViewer=lazy(routeModules.PaperViewer)
-const AccountForm=lazy(routeModules.AccountForm)
-const Billing=lazy(routeModules.Billing)
-const Plans=lazy(routeModules.Plans)
+const Profile = lazy(routeModules.Profile)
+const Games = lazy(() => import('./screens/Games'))
+const GamePlayer = lazy(() => import('./screens/Games').then((m) => ({ default: m.GamePlayer })))
+const TopicTrail = lazy(() => import('./screens/TopicTrail'))
+const Stats = lazy(() => import('./screens/Stats'))
+const GlobalSearch = lazy(() => import('./screens/GlobalSearch'))
+const ExamCalendar = lazy(() => import('./screens/ExamCalendar'))
+const AvatarEditor = lazy(() => import('./screens/AvatarEditor'))
+const PaperViewer = lazy(routeModules.PaperViewer)
+const AccountForm = lazy(routeModules.AccountForm)
+const Billing = lazy(routeModules.Billing)
+const Plans = lazy(routeModules.Plans)
+const Rewards = lazy(() => import('./screens/Rewards'))
+const CreatorProfile = lazy(() => import('./screens/Creators'))
+const CreatorDirectory = lazy(() => import('./screens/Creators').then((m) => ({ default: m.CreatorDirectory })))
+const Materials = lazy(() => import('./screens/Materials'))
+const MaterialReader = lazy(() => import('./screens/Materials').then((m) => ({ default: m.MaterialReader })))
+const ContentEditor = lazy(() => import('./screens/ContentStudio'))
+const CreatorHome = lazy(() => import('./screens/ContentStudio').then((m) => ({ default: m.CreatorHome })))
 
-/** Routes the shell links to but that are not built yet. Named explicitly
- *  rather than caught by `*`, so the page can say which phase owns it
- *  instead of pretending to be a 404. docs/PLAN.md has the order. */
-const Rewards = lazy(()=>import('./screens/Rewards'))
-const LearningBoard = lazy(()=>import('./screens/Rewards').then(m=>({default:m.LearningBoard})))
-
-const CreatorProfile=lazy(()=>import('./screens/Creators'))
-const CreatorDirectory=lazy(()=>import('./screens/Creators').then(m=>({default:m.CreatorDirectory})))
-const CreatorSettings=lazy(()=>import('./screens/Creators').then(m=>({default:m.CreatorSettings})))
-const Materials=lazy(()=>import('./screens/Materials'))
-const MaterialReader=lazy(()=>import('./screens/Materials').then(m=>({default:m.MaterialReader})))
-const CreatorHome=lazy(()=>import('./screens/ContentStudio').then(m=>({default:m.CreatorHome})))
-const ContentEditor=lazy(()=>import('./screens/ContentStudio'))
-
-const PLANNED: Record<string, { title: string; phase: string }> = {
-}
-
-function Planned() {
-  const { pathname } = useLocation()
-  const p = PLANNED[pathname]
+function NotFound() {
   return (
-    <div className="mx-auto max-w-shell px-6 py-16">
+    <div className="mx-auto max-w-[850px] px-6 py-16">
       <Card className="max-w-xl p-8">
-        <div className="font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
-          {p ? p.phase : 'Not found'}
-        </div>
-        <h1 className="mt-2 font-display text-[28px] font-semibold">
-          {p ? p.title : 'No such page'}
-        </h1>
-        <p className="mt-2 text-[15px] leading-relaxed text-secondary">
-          {p
-            ? 'Designed, not built yet. The build order is in docs/PLAN.md.'
-            : 'That route does not exist.'}
+        <div className="font-mono text-xs uppercase tracking-[0.1em] text-muted">404 · Not found</div>
+        <h1 className="mt-2 text-xl font-bold text-ink">Page not found</h1>
+        <p className="mt-2 text-base leading-relaxed text-secondary">
+          That route does not exist. Open the Finna Index to see every active page.
         </p>
       </Card>
     </div>
   )
 }
 
+function PracticeRoute() {
+  const { mode } = useParams()
+  if (mode === 'build') return <TestMaker />
+  if (!mode) return <Practice />
+  return <NotFound />
+}
+
+function BankRoute() {
+  const { id } = useParams()
+  return id ? <QuestionDetail /> : <Bank />
+}
+
+function MaterialsRoute() {
+  const { id } = useParams()
+  return id ? <MaterialReader /> : <Materials />
+}
+
+/** Topic Trail folded into the one Play hub (§0.12). It was routed at
+ *  `/trail/:id` until Phase V.14 removed that route without retargeting the
+ *  links, which broke trail creation. It reads the same `id` param. */
+function GamesRoute() {
+  const { id } = useParams()
+  const { search } = useLocation()
+  if (!id) return <Games />
+  return new URLSearchParams(search).get('mode') === 'trail' ? <TopicTrail /> : <GamePlayer />
+}
+
+function CreatorsRoute() {
+  const { id } = useParams()
+  return id ? <CreatorProfile /> : <CreatorDirectory />
+}
+
+function StudioRoute() {
+  const { id } = useParams()
+  return id ? <ContentEditor /> : <CreatorHome />
+}
+
+function CommunityRoute() {
+  const { sub } = useParams()
+  if (!sub) return <Feed />
+  if (sub === 'questions') return <CommunityQuestions />
+  return <NotFound />
+}
+
+function ProfileRoute() {
+  const { section } = useParams()
+  if (!section) return <Profile />
+  if (section === 'avatar') return <AvatarEditor />
+  if (section === 'rewards') return <Rewards />
+  return <NotFound />
+}
+
+function CreateRoute() {
+  const { section } = useParams()
+  if (!section) return <CreateHub />
+  if (section === 'new') return <ContributionEditor />
+  if (section === 'submissions') return <Contribute />
+  return <NotFound />
+}
+
+function AuthRoute() {
+  const { pathname } = useLocation()
+  if (pathname === '/join') return <AccountForm mode="join" />
+  if (pathname === '/google/finish') return <GoogleFinish />
+  return <AccountForm mode="login" />
+}
+
+function BillingRoute() {
+  const { pathname } = useLocation()
+  return pathname === '/billing' ? <Billing /> : <Plans />
+}
+
+function AdminRoute() {
+  const { section } = useParams()
+  if (section === 'bank' || section === 'ops' || section === 'users') return <BankAdmin />
+  return <NotFound />
+}
+
+function ContributionRoute() {
+  const { id, action } = useParams()
+  if (action === 'edit') return <ContributionEditor />
+  if (!action && id) return <ContributionDetail />
+  return <NotFound />
+}
+
+function LibraryScopeRoute() {
+  const { kind } = useParams()
+  if (kind === 'topics') return <LibraryShelf />
+  if (kind === 'subjects') return <LibrarySubject />
+  return <NotFound />
+}
+
+function ExamSubRoute() {
+  const { sub } = useParams()
+  if (sub === 'paper') return <PaperViewer />
+  if (sub === 'mock') return <MockRunner />
+  if (!sub) return <ExamPage />
+  return <NotFound />
+}
+
+function TestsRoute() {
+  const { testId, action } = useParams()
+  if (testId === 'make') return <NotFound />
+  if (action === 'take') return <MockRunner />
+  if (!action) return <SharedTests />
+  return <NotFound />
+}
+
 export default function App() {
-  const [accountEpoch,setAccountEpoch]=useState(0)
-  useEffect(()=>{const refresh=()=>setAccountEpoch(n=>n+1);window.addEventListener('ism-auth-change',refresh);return()=>window.removeEventListener('ism-auth-change',refresh)},[])
-  useEffect(()=>{void hydrateDesk();const changed=()=>void hydrateDesk(true);window.addEventListener("ism-avatar-change",changed);return()=>window.removeEventListener("ism-avatar-change",changed)},[])
-  const { pathname,search,hash } = useLocation()
-  const examScope=useExamScope()
-  useEffect(()=>syncExamScope(search),[search])
-  const scopedWorkspace= (pathname==='/' || /^\/(bank|past-papers|group-b|library|exams|english|mizo|arithmetic|vocabulary|search|feed|essay|scoring)(\/|$)/.test(pathname))&&!pathname.includes('/mock')
-  const adminWorkspace = pathname === '/admin' || pathname === '/admin/ops' || pathname === '/admin/users' || pathname.startsWith('/admin/bank')
+  const [accountEpoch, setAccountEpoch] = useState(0)
+  useEffect(() => {
+    const refresh = () => setAccountEpoch((n) => n + 1)
+    window.addEventListener('ism-auth-change', refresh)
+    return () => window.removeEventListener('ism-auth-change', refresh)
+  }, [])
+  useEffect(() => {
+    void hydrateDesk()
+    const changed = () => void hydrateDesk(true)
+    window.addEventListener('ism-avatar-change', changed)
+    return () => window.removeEventListener('ism-avatar-change', changed)
+  }, [])
+  const { pathname, search, hash } = useLocation()
+  const examScope = useExamScope()
+  useEffect(() => syncExamScope(search), [search])
+  const scopedWorkspace =
+    (pathname === '/' || /^\/(home|bank|past-papers|library|exams|practice|guides|search)(\/|$)/.test(pathname)) &&
+    !pathname.includes('/mock')
+  const adminWorkspace =
+    pathname === '/admin/ops' || pathname === '/admin/users' || pathname.startsWith('/admin/bank')
+
   return (
-    <div className="finna-app flex min-h-screen flex-col" data-mobile-screen={mobileScreen(pathname)} onPointerOver={event=>{if(event.pointerType==='mouse'){const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}} onFocus={event=>{const link=(event.target as Element).closest('a[href]');if(link)warmRoute((link as HTMLAnchorElement).href)}}>
-      <SiteNotice/>
+    <div
+      className="finna-app flex min-h-screen flex-col"
+      data-mobile-screen={mobileScreen(pathname)}
+      onPointerOver={(event) => {
+        if (event.pointerType === 'mouse') {
+          const link = (event.target as Element).closest('a[href]')
+          if (link) warmRoute((link as HTMLAnchorElement).href)
+        }
+      }}
+      onFocus={(event) => {
+        const link = (event.target as Element).closest('a[href]')
+        if (link) warmRoute((link as HTMLAnchorElement).href)
+      }}
+    >
+      <SiteNotice />
       {!adminWorkspace && <Header />}
-      <SessionNotice/>
+      <SessionNotice />
+      <AudienceNotice />
       <main id="main-content" tabIndex={-1} className="flex-1 scroll-mt-32">
-        <RouteErrorBoundary key={pathname+examScope}><Suspense fallback={<WorkspaceLoading/>}>
-        <RouteNavigation/>{new URLSearchParams(search).has('resume_question')&&!adminWorkspace&&<ResumedPractice/>}<div key={`${accountEpoch}:${scopedWorkspace?examScope:'stable'}`} className={'finna-screen'+(scopedWorkspace?' scope-workspace':'')}><Routes>
-          <Route path="/" element={<Navigate to={{pathname:'/feed',search,hash}} replace />} />
-          <Route path="/google/finish" element={<GoogleFinish/>}/><Route path="/account/recovery" element={<AccountRecovery/>}/>
-          <Route path="/materials" element={<Materials/>}/><Route path="/materials/:id" element={<MaterialReader/>}/>
-          <Route path="/studio" element={<CreatorHome/>}/><Route path="/studio/new" element={<ContentEditor/>}/><Route path="/studio/:id" element={<ContentEditor/>}/><Route path="/create" element={<CreateHub/>}/><Route path="/inbox" element={<ReviewNotifications/>}/>
-          <Route path="/trail" element={<TopicTrail/>}/><Route path="/trail/:id" element={<TopicTrail/>}/><Route path="/admin/topic-trail" element={<TopicTrailAdmin/>}/><Route path="/more" element={<More/>}/><Route path="/games" element={<Games/>}/><Route path="/games/:id" element={<GamePlayer/>}/><Route path="/duel" element={<ConsolidatedDestination/>}/><Route path="/search" element={<GlobalSearch/>}/><Route path="/feed" element={<StudyHome />} /><Route path="/community" element={<Feed/>}/><Route path="/calendar" element={<ExamCalendar/>}/><Route path="/news" element={<ExamCalendar notices/>}/>
-          <Route path="/editorial" element={<EditorialReview />} />
-          <Route path="/current-affairs/automation" element={<CurrentAffairsAutomation/>}/>
-          <Route path="/admin/discovery" element={<DiscoveryAdmin/>}/><Route path="/current-affairs/manage" element={<CurrentAffairsAdmin/>}/>
-          <Route path="/admin/mcq-solver" element={<McqSolverReview/>}/>
-          <Route path="/paper-workbench" element={<PaperWorkbench/>}/>
-          <Route path="/admin" element={<Navigate to="/admin/bank" replace />} />
-          <Route path="/admin/bank" element={<BankAdmin />} />
-          <Route path="/admin/ops" element={<BankAdmin />} />
-          <Route path="/admin/users" element={<BankAdmin />} />
-          <Route path="/review" element={<Navigate to="/admin/bank?tab=review" replace />} />
-          <Route path="/contribute" element={<Contribute />} />
-          <Route path="/contribute/new" element={<ContributionEditor />} />
-          <Route path="/contribute/notifications" element={<ConsolidatedDestination/>}/>
-          <Route path="/notifications" element={<ConsolidatedDestination/>}/>
-          <Route path="/contributions/:id" element={<ContributionDetail />} />
-          <Route path="/contributions/:id/edit" element={<ContributionEditor />} />
-          <Route path="/community/contributors" element={<ContributorBoard />} />
-          <Route path="/community/questions" element={<CommunityQuestions />} />
-          <Route path="/website-bank" element={<CommunityQuestions />} />
-          <Route path="/important-days" element={<ConsolidatedDestination/>}/>
-          <Route path="/practice-sets" element={<LearningCatalog kind="practice"/>} />
-          <Route path="/learning/manage" element={<LearningCatalogAdmin/>} />
-          <Route path="/admin/desks" element={<DeskAdmin />} />
-          <Route path="/admin/discussions" element={<DiscussionAdmin />} />
-          <Route path="/admin/moderation" element={<Moderation />} />
-          <Route path="/bank" element={<Bank />} />
-          <Route path="/past-papers" element={<Papers />} />
-          <Route path="/bank/:id" element={<QuestionDetail />} />
-          <Route path="/library" element={<Library />} />
-          <Route path="/atlas" element={<Atlas />} />
-          <Route path="/chronicle" element={<Chronicle />} />
-          <Route path="/stats/*" element={<Stats />} />
-          <Route path="/library/topics/:shelfId" element={<LibraryShelf />} />
-          <Route path="/library/subjects/:subjectId" element={<LibrarySubject />} />
-          <Route path="/mizo" element={<Mizo />} />
-          <Route path="/essay" element={<Essay />} />
-          <Route path="/group-b" element={<GroupBStudy />} />
-          <Route path="/exams" element={<Exams />} />
-          <Route path="/exams/mes" element={<Mes />} />
-          <Route path="/exams/:id" element={<ExamPage />} />
-          <Route path="/exams/:id/paper" element={<PaperViewer />} />
-          <Route path="/exams/:id/mock" element={<MockRunner />} />
-          <Route path="/tests" element={<SharedTests/>}/><Route path="/tests/make" element={<TestMaker/>}/><Route path="/tests/:testId" element={<SharedTests/>}/><Route path="/tests/:testId/take" element={<MockRunner/>}/>
-          <Route path="/results/:mockId" element={<Results />} />
-          <Route path="/revision" element={<ConsolidatedDestination/>}/>
-          <Route path="/revise" element={<Revise />} /><Route path="/onboarding" element={<Onboarding/>}/>
-          <Route path="/mistakes" element={<ConsolidatedDestination/>}/>
-          <Route path="/desk" element={<StudyDesk />} />
-          <Route path="/desk/:deskId" element={<StudyDesk />} />
-          <Route path="/english" element={<English />} />
-          <Route path="/arithmetic" element={<Arithmetic />} />
-          <Route path="/vocabulary" element={<ConsolidatedDestination/>}/>
-          <Route path="/account/security" element={<Suspense fallback={<p className="p-8">Loading security settings…</p>}><AccountSecurity/></Suspense>}/>
-          <Route path="/rewards" element={<Rewards/>}/><Route path="/board" element={<LearningBoard/>}/>
-          <Route path="/profile" element={<Profile />} /><Route path="/avatar" element={<AvatarEditor/>}/><Route path="/profile/avatar" element={<AvatarEditor/>}/>
-          <Route path="/creators" element={<CreatorDirectory/>}/>
-          <Route path="/creators/settings" element={<CreatorSettings/>}/>
-          <Route path="/creators/:id" element={<CreatorProfile/>}/>
-          <Route path="/login" element={<AccountForm mode="login" />} />
-          <Route path="/join" element={<AccountForm mode="join" />} />
-          <Route path="/plans" element={<Plans />} />
-          <Route path="/billing" element={<Billing />} />
-          <Route path="/scoring" element={<Scoring />} />
-          <Route path="/exams/:id/*" element={<Planned />} />
-          {Object.keys(PLANNED).map((path) => (
-            <Route key={path} path={path} element={<Planned />} />
-          ))}
-          <Route path="*" element={<Planned />} />
-        </Routes></div>
-        </Suspense></RouteErrorBoundary>
+        <RouteErrorBoundary key={pathname + examScope}>
+          <Suspense fallback={<WorkspaceLoading />}>
+            <RouteNavigation />
+            {new URLSearchParams(search).has('resume_question') && !adminWorkspace && <ResumedPractice />}
+            <div
+              key={`${accountEpoch}:${scopedWorkspace ? examScope : 'stable'}`}
+              className={'finna-screen' + (scopedWorkspace ? ' scope-workspace' : '')}
+            >
+              {/* Consolidated route table (37 routes, <= 40 target, §VII.14 / Phase V.14). */}
+              <Routes>
+                <Route path="/" element={<Navigate to={{ pathname: '/home', search, hash }} replace />} />
+                <Route path="/home" element={<StudyHome />} />
+                <Route path="/index" element={<SiteIndex />} />
+                <Route path="/guides/:slug?" element={<Guides />} />
+                <Route path="/practice/:mode?" element={<PracticeRoute />} />
+                <Route path="/bank/:id?" element={<BankRoute />} />
+                <Route path="/past-papers" element={<Papers />} />
+                <Route path="/exams" element={<Exams />} />
+                <Route path="/exams/:id/:sub?" element={<ExamSubRoute />} />
+                <Route path="/tests/:testId?/:action?" element={<TestsRoute />} />
+                <Route path="/results/:mockId" element={<Results />} />
+                <Route path="/library" element={<Library />} />
+                <Route path="/library/:kind/:shelfId" element={<LibraryScopeRoute />} />
+                <Route path="/revise" element={<Revise />} />
+                <Route path="/atlas" element={<Atlas />} />
+                <Route path="/chronicle" element={<Chronicle />} />
+                {/* Stats routes its own sub-pages. §VII.14 proposed demoting it
+                    to a Home view; V.14 removed the route without doing that,
+                    leaving a live API and a shipping mobile section unreachable
+                    from the web. Restored until the demotion is actually built. */}
+                <Route path="/stats/*" element={<Stats />} />
+                <Route path="/calendar" element={<ExamCalendar />} />
+                <Route path="/desk/:deskId?" element={<StudyDesk />} />
+                <Route path="/games/:id?" element={<GamesRoute />} />
+                <Route path="/search" element={<GlobalSearch />} />
+                <Route path="/community/:sub?" element={<CommunityRoute />} />
+                <Route path="/materials/:id?" element={<MaterialsRoute />} />
+                <Route path="/studio/:id?" element={<StudioRoute />} />
+                <Route path="/create/:section?" element={<CreateRoute />} />
+                <Route path="/contributions/:id/:action?" element={<ContributionRoute />} />
+                <Route path="/creators/:id?" element={<CreatorsRoute />} />
+                <Route path="/inbox" element={<Inbox />} />
+                <Route path="/profile/:section?" element={<ProfileRoute />} />
+                <Route path="/account/:section?" element={<AccountHub />} />
+                <Route path="/onboarding" element={<Onboarding />} />
+                <Route path="/login" element={<AuthRoute />} />
+                <Route path="/join" element={<AuthRoute />} />
+                <Route path="/google/finish" element={<AuthRoute />} />
+                <Route path="/plans" element={<BillingRoute />} />
+                <Route path="/billing" element={<BillingRoute />} />
+                <Route path="/policies/:page" element={<PolicyPages />} />
+                <Route path="/admin/:section" element={<AdminRoute />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </div>
+          </Suspense>
+        </RouteErrorBoundary>
       </main>
-      {!adminWorkspace && <MaterialReadingPanel/>}
+      {!adminWorkspace && <SelectionTray />}
+      {!adminWorkspace && <MaterialReadingPanel />}
       {!adminWorkspace && <Footer />}
       {!adminWorkspace && <BottomBar />}
     </div>

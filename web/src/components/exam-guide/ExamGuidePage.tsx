@@ -107,7 +107,7 @@ function GuideContent({ guide, storageKey }: { guide: ExamGuide; storageKey: str
   function paperCard(p: ArchivedExamPaper) {
     return <article className="overview-paper-card" key={p.id}>
       <span className="eg-year">{p.year} · {p.branchId ? 'Branch paper' : 'Common paper'}</span>
-      <h3 className="mt-2 font-display text-[18px] leading-snug">{p.subject}{p.paperNumber ? ` · Paper ${p.paperNumber}` : ''}</h3>
+      <h3 className="mt-2 font-display text-md leading-snug">{p.subject}{p.paperNumber ? ` · Paper ${p.paperNumber}` : ''}</h3>
       <p className="overview-paper-exam" title={p.sitting}>{p.sitting}</p>
       <p className="eg-muted">{p.schemeBasis === 'source' ? 'Legacy sitting verified' : 'Scheme inferred from year'}</p>
       <div className="overview-paper-actions">
@@ -134,7 +134,7 @@ function GuideContent({ guide, storageKey }: { guide: ExamGuide; storageKey: str
           <dl className="exam-overview-stats">{[[papers.length, 'source papers'], [papers.filter((p) => p.branchId).length, 'branch papers'], [cards.length, 'syllabus topics'], [completed, 'topics revised']].map(([value, label]) => <div key={label}><dd>{value}</dd><dt>{label}</dt></div>)}</dl>
           <details className="eg-card eg-format"><summary>{scheme.title} · {written === null ? 'Full marking scheme unverified' : `${written} written marks · ${scheme.interviewMarks ?? '—'} interview marks`}</summary><p>{scheme.description}</p><div className="eg-actions">{scheme.sourceIds.map((id) => <SourceLink key={id} guide={guide} id={id} />)}</div><div className="eg-paper-plans">{plans.map((p) => <div key={p.id}><h3>{p.title}</h3><p>{p.marks ?? '—'} marks · {p.durationMinutes ? `${p.durationMinutes / 60} hours` : 'See original'}<br />{p.format}</p></div>)}</div></details>
           <div className="exam-overview-note">Browse a source paper, study its syllabus under Subjects, or practise available MCQs. Syllabus recall is under Practice. Common papers are included for your branch.</div>
-          <div className="exam-overview-toolbar"><h2 className="font-display text-[23px]">Past papers</h2><Link to={viewUrl('papers')}>View all {papers.length} papers →</Link></div>
+          <div className="exam-overview-toolbar"><h2 className="font-display text-lg">Past papers</h2><Link to={viewUrl('papers')}>View all {papers.length} papers →</Link></div>
           <div className="exam-overview-papers" aria-label="Past paper summaries">{papers.slice(0, 6).map(paperCard)}</div>
         </>}
         {view === 'browse' && <GuideQuestionBrowser key={`${schemeId}:${branchId}`} papers={papers} guideId={guide.id} />}
@@ -155,7 +155,7 @@ function GuideContent({ guide, storageKey }: { guide: ExamGuide; storageKey: str
           {recall ? <Recall key={`${schemeId}:${branchId}`} cards={cards} isDone={isDone} record={record} /> : <GuideQuestionBrowser key={`${schemeId}:${branchId}`} papers={papers} guideId={guide.id} practice />}
         </>}
         {view === 'progress' && <>
-          <h2 className="font-display text-[25px]">Your revision progress</h2>
+          <h2 className="font-display text-xl">Your revision progress</h2>
           <p className="eg-muted">Self-assessed syllabus revision, saved on this device for this account, branch and scheme.</p>
           <article className="eg-card"><h3>{completed} / {cards.length} topics revised</h3>{cards.length ? <progress max={cards.length} value={completed} aria-label="Revision progress" /> : <p>No verified topic checklist is available for this legacy scheme.</p>}</article>
           {plans.filter((p) => p.units.length).map((p) => { const done = p.units.filter((u) => isDone(p.id, u.id)).length; return <article className="eg-card" key={p.id}><div className="eg-line"><h3>{p.title}</h3><span className="eg-muted">{done} / {p.units.length} revised</span></div><progress max={p.units.length} value={done} aria-label={`${p.title} revision progress`} /></article>; })}

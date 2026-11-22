@@ -74,6 +74,7 @@ class QuestionBase(BaseModel):
 
 
 class QuestionListItem(QuestionBase):
+    atlas_links: list[dict] = Field(default_factory=list)
     presentation_hash: str | None = None
     taxonomy_paths: list[dict] = Field(default_factory=list)
     # One representative printing, or the requested paper's printing. The

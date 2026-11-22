@@ -18,7 +18,7 @@ _access_logger = logging.getLogger('uvicorn.access')
 if not any(isinstance(f,RedactFeedAccess) for f in _access_logger.filters):
     _access_logger.addFilter(RedactFeedAccess())
 
-FIELDS = 'id,date,title,note,kind,recurrence,collection_id,version,created_at,updated_at'
+FIELDS = 'id,date,title,note,kind,recurrence,collection_id,desk_id,version,created_at,updated_at'
 
 
 def india_today():

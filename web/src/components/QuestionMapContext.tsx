@@ -1,0 +1,14 @@
+import {useEffect,useRef,useState} from 'react'
+import {atlasRead} from '../lib/atlas'
+import {useExamScope} from '../lib/examScope'
+import {accountGeneration} from '../lib/accountContext'
+import type {Chapter,Layer} from '../atlas/types'
+import AtlasMap from '../atlas/AtlasMap'
+type Item={body:Chapter;layer_id:string|null;event_id:string|null}
+export default function QuestionMapContext({qid}:{qid:string}){
+ const [open,setOpen]=useState(false),[items,setItems]=useState<Item[]|null>(null),[error,setError]=useState(''),[index,setIndex]=useState(0);const scope=useExamScope(),epoch=useRef(accountGeneration())
+ useEffect(()=>{epoch.current=accountGeneration();let live=true;setItems(null);setError('');if(open)atlasRead<{items:Item[]}>('/atlas/questions/'+encodeURIComponent(qid)+'/context?exam_scope='+scope).then(r=>{if(live&&epoch.current===accountGeneration()){setItems(r.items);setIndex(0)}}).catch(e=>{if(live)setError(e.message)});const clear=()=>{live=false;setItems(null);setOpen(false)};window.addEventListener('ism-auth-change',clear);window.addEventListener('ism-auth-expired',clear);return()=>{live=false;window.removeEventListener('ism-auth-change',clear);window.removeEventListener('ism-auth-expired',clear)}},[qid,scope,open])
+ const selected=items?.[index],chapter=selected?.body,event=chapter?.events?.find(e=>e.id===selected?.event_id)
+ let layers:Layer[]=[];if(chapter){const ids=new Set(chapter.layers.filter(l=>l.defaultOn).map(l=>l.id));if(event){for(const e of chapter.events||[]){e.showLayers?.forEach(id=>ids.add(id));e.hideLayers?.forEach(id=>ids.delete(id));if(e.id===event.id)break}}if(selected?.layer_id)ids.add(selected.layer_id);layers=chapter.layers.filter(l=>ids.has(l.id))}
+ return <section className="my-3 min-w-0"><button className="min-h-11 rounded-pill border border-hairline px-4 text-sm font-semibold" aria-expanded={open} onClick={()=>setOpen(v=>!v)}>{open?'Hide map context':'Show map context'}</button>{open&&<div className="mt-3 min-w-0 rounded-xl border border-hairline bg-card p-3"><p className="mb-3 text-xs text-secondary">Optional map context. Answer this same question using its normal options; scoring and discovery rules stay the same.</p>{error?<p role="alert">{error}</p>:!items?<p role="status">Loading current map…</p>:!items.length?<p>No eligible map context is currently available.</p>:chapter&&<>{items.length>1&&<label>Related map<select className="my-2 min-h-11 w-full rounded-lg border border-hairline bg-card p-2" value={index} onChange={e=>setIndex(Number(e.target.value))}>{items.map((x,i)=><option key={i} value={i}>{x.body.title}</option>)}</select></label>}<h3 className="mb-2 font-display text-xl">{chapter.title}</h3><AtlasMap key={chapter.id+':'+index} chapter={chapter} layers={layers} view={event?.view||chapter.view} focus={null} reset={0} onFeature={()=>{}}/></>}</div>}</section>
+}

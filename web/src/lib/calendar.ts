@@ -158,7 +158,7 @@ export function googleCalendar(e: CalendarEvent) {
 }
 
 export type OwnedKind = 'personal'|'progress-test'|'exam-target';
-export interface OwnedEntry {id:string;date:string;title:string;note:string;kind:OwnedKind;recurrence:7|14|null;collection_id:string|null;version:number}
+export interface OwnedEntry {id:string;date:string;title:string;note:string;kind:OwnedKind;recurrence:7|14|null;collection_id:string|null;desk_id?:string|null;version:number}
 export interface OwnedOccurrence {id:string;day:string;title:string;note:string;kind:OwnedKind;collection_id:string|null;version:number}
 export interface CalendarFeed {version:number;active:boolean;url?:string}
 export const ownedKindLabel:Record<OwnedKind,string>={'personal':'Personal','progress-test':'Progress test','exam-target':'My exam target'};

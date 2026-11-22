@@ -358,12 +358,13 @@ def test_original_mcq_publication_and_public_privacy(client,actor,database,tmp_p
 
 
 def test_mock_freezes_content_key_and_duplicate_submission(client,actor,database):
+    from test_study_sessions import seed
     conn=database[1]
+    paper,ids=seed(database,1);qid=ids[0]
     conn.execute("INSERT INTO collections(id,title,kind,live_version) VALUES ('snapshot-test','Synthetic mock snapshot','exam',1)")
-    conn.execute("INSERT INTO collection_sections(collection_id,version,path,title,position,query) VALUES ('snapshot-test',1,'english','English',0,'{\"paper_ids\":[\"paper-test\"]}')")
-    # Other modules add two-option questions to paper-test in this session.
-    # This snapshot test changes the key to D, so pin its four-option fixture.
-    conn.execute("UPDATE collection_sections SET query='{}',pins=ARRAY['cq_test'] WHERE collection_id='snapshot-test'")
+    # Own a four-option, scoring-eligible fixture. The shared cq_test is an
+    # unreviewed derived answer and cannot independently enter a timed mock.
+    conn.execute("INSERT INTO collection_sections(collection_id,version,path,title,position,query,pins) VALUES ('snapshot-test',1,'english','English',0,'{}',%s)",(ids,))
     actor('outsider')
     response=client.post('/api/mocks', headers=account_headers(client),json={'collection_id':'snapshot-test','section_path':'english','count':1,'duration_minutes':20,'answer_mode':'derived-practice'})
     assert response.status_code==200,response.text
@@ -387,7 +388,7 @@ def test_mock_freezes_content_key_and_duplicate_submission(client,actor,database
         assert later['review'][0]['question']==original['question'] and later['review'][0]['answer_text']=='B'
         assert conn.execute('SELECT count(*) FROM attempts WHERE mock_id=%s',(mid,)).fetchone()[0]==1
     finally:
-        conn.execute("UPDATE canonical_questions SET question=%s,answer_text='B' WHERE id=%s",(original['question'],original['id']))
+        conn.execute("UPDATE canonical_questions SET question=%s,answer_text='B' WHERE id=%s",(original['question'],qid))
 
 
 def test_registry_bootstrap_uses_repository_taxonomy_version(tmp_path,monkeypatch):

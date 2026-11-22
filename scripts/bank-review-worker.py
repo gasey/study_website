@@ -108,7 +108,9 @@ def acknowledge(pub,receipt,sql_only=False):
           AND NOT EXISTS(SELECT 1 FROM contribution_events e WHERE e.contribution_id=bank_contributions.id AND e.actor_id='operator:owner-source-maintenance' AND e.action='operator_source_adjudication')
        ON CONFLICT(event_key) DO NOTHING;
       INSERT INTO review_notifications(user_id,contribution_id,event_key,message)
-       SELECT author_id,id,'''+pid+'''||':notice','Your contribution is published' FROM bank_contributions WHERE id='''+cid+''' ON CONFLICT DO NOTHING;
+       SELECT c.author_id,c.id,'''+pid+'''||':notice','Your contribution is published' FROM bank_contributions c WHERE c.id='''+cid+'''
+       AND NOT EXISTS(SELECT 1 FROM contribution_events e WHERE e.contribution_id=c.id AND e.action='published'
+         AND e.detail->>'publication_id'='''+pid+''') ON CONFLICT DO NOTHING;
       INSERT INTO contribution_events(contribution_id,actor_id,action,detail)
        SELECT '''+cid+''','operator:publication','published','''+r+'''::jsonb
        WHERE NOT EXISTS(SELECT 1 FROM contribution_events WHERE contribution_id='''+cid+''' AND action='published' AND detail->>'publication_id'='''+pid+''');

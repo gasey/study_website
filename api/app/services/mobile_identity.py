@@ -90,7 +90,20 @@ WRITE = {
 def allowed(method, path):
     return any(re.fullmatch(p, path) for p in (READ if method in {'GET','HEAD'} else WRITE.get(method, ())))
 
+# Desk sessions deliberately have no native capability: their new paths stay
+# closed, and existing general game writes reject a Desk-bound room at runtime.
 FEATURES = (
+    ('referrals',(('GET','/api/referrals/me'),('POST','/api/referrals/code'))),
+    ('review_digest',(('GET','/api/review-digest/preferences'),('POST','/api/review-digest/preferences'))),
+    ('atlas',(('GET','/api/atlas/me/index'),('GET','/api/atlas/chronicle/date_example/links'),('GET','/api/atlas/chapters/rivers-of-india/chronicle'),('POST','/api/admin/atlas/district-proposals/example/draft'),('GET','/api/atlas/me/progress'),('POST','/api/atlas/drills/example/answer'),('GET','/api/atlas/chapters'),('GET','/api/atlas/chapters/rivers-of-india'),('POST','/api/admin/atlas/chapters/example/draft'),('GET','/api/atlas/chapters/rivers-of-india/bindings'),('GET','/api/atlas/questions/example/links'))),
+    ('desk_calendar',(('GET','/api/desk/rooms/example/calendar'),)),
+    # Notes/PDF and chat-link writes stay web-only pending an explicit contract.
+    ('desk_notes',(('GET','/api/me/desk-notes-print'),
+                   ('GET','/api/desk/rooms/example/notes/item'))),
+    # Kept unadvertised until every Desk practice path is deliberately allowed.
+    ('desk_practice',(('GET','/api/desk/rooms/example/practice'),
+                      ('POST','/api/desk/rooms/example/practice'),
+                      ('POST','/api/desk/rooms/example/practice/game/join'))),
     ('browse_allowance',(('GET','/api/me/browse-allowance'),)),
     ('mastery',(('GET','/api/me/mastery'),)),
     ('review_queue',(('GET','/api/me/review-queue'),)),

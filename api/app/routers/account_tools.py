@@ -1,7 +1,7 @@
 """Cookie-owned account self-service. Native destructive operations stay closed."""
 from typing import Annotated,Literal
 from fastapi import APIRouter,Depends,HTTPException,Request,Response
-from starlette.responses import StreamingResponse
+from starlette.responses import StreamingResponse, HTMLResponse
 from pydantic import BaseModel,ConfigDict,Field
 from ..db import cursor
 from ..deps import require_account
@@ -15,7 +15,7 @@ Account=Annotated[str,Depends(require_account)]
 async def status(request:Request,user:Account):
     session=await account_session(request)
     async with cursor() as cur:
-        await cur.execute('SELECT id AS user_id,identity_version FROM users WHERE id=%s',(user,));row=await cur.fetchone()
+        await cur.execute('SELECT id AS user_id,identity_version,email_verified_at IS NOT NULL AS email_verified FROM users WHERE id=%s',(user,));row=await cur.fetchone()
         await cur.execute('SELECT enabled_at IS NOT NULL AS enabled FROM account_mfa WHERE user_id=%s',(user,));factor=await cur.fetchone()
         await cur.execute('SELECT EXISTS(SELECT 1 FROM creator_profiles WHERE user_id=%s AND public) AS public',(user,));creator=await cur.fetchone()
         await cur.execute('SELECT COALESCE(sum(points),0)::int AS points,COALESCE((SELECT board_public FROM reward_profiles WHERE user_id=%s),false) AS public FROM reward_ledger WHERE user_id=%s',(user,user));wallet=await cur.fetchone()
@@ -74,3 +74,30 @@ async def signout(body:Owner,request:Request,response:Response,user:Account):
     from ..config import settings
     for cookie in (SESSION_COOKIE,GUEST_COOKIE):response.delete_cookie(cookie,path='/',httponly=True,secure=settings.public_origin.startswith('https://'),samesite='lax')
     return {'signed_out':True}
+
+
+@router.get('/desk-notes-print')
+async def print_desk_notes(user_id: str, user: Account, desk_id: str | None = None):
+    if user_id!=user:raise HTTPException(409,'Your account changed. Reload before exporting.')
+    await mfa.limit('data-export:'+user)
+    from ..services import desk_notes
+    async with cursor() as cur:
+        await cur.execute('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ READ ONLY')
+        if desk_id:
+            from .study_desks import member,enabled
+            enabled()
+            await member(cur,desk_id,user)
+            await cur.execute("SELECT id,title,body,question_id FROM study_desk_items WHERE desk_id=%s AND author_id=%s AND kind='note' AND deleted_at IS NULL ORDER BY id LIMIT 501",(desk_id,user))
+            notes=await cur.fetchall()
+            data=await desk_notes.document(cur,user,{'notes':notes[:500]})
+            scope='Your own shared notes in this room. Includes at most the first 500 saved notes.'
+        else:
+            await cur.execute('SELECT document FROM personal_desks WHERE user_id=%s',(user,))
+            row=await cur.fetchone()
+            data=await desk_notes.document(cur,user,row['document'] if row else {})
+            scope='Your private saved notes.'
+        await cur.execute('SELECT clock_timestamp() AS stamp')
+        stamp=(await cur.fetchone())['stamp'].isoformat()
+    return HTMLResponse(desk_notes.printable(data.get('notes',[]),stamp,scope),headers={
+      'Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer',
+      'Content-Security-Policy':"default-src 'none'; style-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'"})

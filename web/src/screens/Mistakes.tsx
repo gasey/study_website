@@ -25,14 +25,14 @@ export default function Mistakes() {
 
   return (
     <section className="mt-5 rounded-panel border border-hairline bg-card p-4" aria-label="Latest mistakes">
-      <h2 className="font-display text-[24px] font-semibold">Latest mistakes</h2>
-      <p className="mt-2 max-w-2xl text-[14px] text-secondary">
+      <h2 className="font-display text-xl font-semibold">Latest mistakes</h2>
+      <p className="mt-2 max-w-2xl text-sm text-secondary">
         Questions your latest answer got wrong. Answer one correctly anywhere in the app and it
         leaves this list.
       </p>
 
       <div className="mt-4">
-        <h2 className="border-b border-hairline pb-2 font-display text-[22px] font-medium">
+        <h2 className="border-b border-hairline pb-2 font-display text-lg font-medium">
           {items ? `${items.length} to review` : 'Loading…'}
         </h2>
 
@@ -55,7 +55,7 @@ export default function Mistakes() {
               key={m.id}
               className="rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)]"
             >
-              <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] uppercase tracking-[0.06em]">
+              <div className="flex flex-wrap items-center gap-2 font-mono text-xs uppercase tracking-[0.06em]">
                 <span className="rounded-pill bg-mypick-soft px-2 py-[2px] text-mypick">
                   Wrong {m.times_wrong}×
                 </span>
@@ -70,13 +70,13 @@ export default function Mistakes() {
                   Try again ↗
                 </Link>
               </div>
-              <p className="mt-2 font-display text-[19px] leading-snug">{m.question}</p>
-              <div className="mt-2 grid gap-1 text-[14px]">
+              <p className="mt-2 font-display text-md leading-snug">{m.question}</p>
+              <div className="mt-2 grid gap-1 text-sm">
                 <span className="text-mypick">You chose: {m.chosen_text}</span>
                 <span className="text-keyed">Answer: {m.answer_text}</span>
               </div>
               {m.explanation && (
-                <p className="mt-2 text-[14px] leading-[1.6] text-secondary">{learnerExplanation(m.explanation)}</p>
+                <p className="mt-2 text-sm leading-[1.6] text-secondary">{learnerExplanation(m.explanation)}</p>
               )}
             </div>
           ))}

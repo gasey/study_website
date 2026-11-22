@@ -85,7 +85,7 @@ async def snapshot(cur, pool):
     await cur.execute("SELECT statement_timestamp() AS now, (now() AT TIME ZONE 'Asia/Kolkata')::date-1 AS yesterday")
     clock = await cur.fetchone()
     now, day = clock['now'], clock['yesterday']
-    keys = [w[0] for w in WORKERS] + ['timer:' + t[0] for t in TIMERS] + ['probe:disk','probe:backup','restore-rehearsal']
+    keys = [w[0] for w in WORKERS] + ['timer:' + t[0] for t in TIMERS] + ['probe:disk','probe:backup','restore-rehearsal','answer-conflicts-refresh']
     await cur.execute('SELECT worker,last_beat,last_ok,note FROM worker_heartbeats WHERE worker=ANY(%s)', (keys,))
     rows = {r['worker']: r for r in await cur.fetchall()}
     workers = [heartbeat(k, label, seconds, rows.get(k), now) for k, label, seconds in WORKERS]
@@ -156,6 +156,33 @@ async def snapshot(cur, pool):
               'disk': collected(rows.get('probe:disk'),now,'disk'),
               'backup': collected(rows.get('probe:backup'),now,'backup'),
               'webhooks': {'state':'not_collected' if checkout_enabled() else 'disabled', 'count_24h':None}}
+    conflicts = {'available': False, 'shape_b': None, 'shape_a': None, 'total': None, 'clustered_papers': 0, 'refreshed_at': None}
+    await cur.execute("SELECT to_regclass('public.v_answer_conflicts') IS NOT NULL AS present")
+    if (await cur.fetchone())['present']:
+        await cur.execute(
+            """SELECT count(*) FILTER (WHERE shape = 'key-won')::int AS shape_b,
+                      count(*) FILTER (WHERE shape = 'solution-won')::int AS shape_a,
+                      count(*)::int AS total
+                 FROM v_answer_conflicts"""
+        )
+        c_row = await cur.fetchone()
+        await cur.execute(
+            """SELECT count(*)::int AS n FROM (
+                 SELECT paper_id FROM v_answer_conflicts
+                  WHERE shape = 'key-won'
+                  GROUP BY paper_id HAVING count(*) > 5
+               ) cp"""
+        )
+        cp_row = await cur.fetchone()
+        hb = rows.get('answer-conflicts-refresh')
+        conflicts = {
+            'available': True,
+            'shape_b': c_row['shape_b'],
+            'shape_a': c_row['shape_a'],
+            'total': c_row['total'],
+            'clustered_papers': cp_row['n'],
+            'refreshed_at': hb['last_ok'] if hb else None,
+        }
     return {'observed_at':now, 'workers':workers, 'timers':timers, 'probes':probes,
-            'economy':economy, 'moderation':moderation, 'read_only':True,
+            'economy':economy, 'moderation':moderation, 'conflicts':conflicts, 'read_only':True,
             'restore_rehearsal':restore_observation(rows.get('restore-rehearsal'),now)}

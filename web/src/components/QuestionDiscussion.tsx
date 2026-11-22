@@ -64,9 +64,9 @@ interface Thread extends Page {
   lock_reason: string | null;
 }
 const BTN =
-  "inline-flex min-h-11 items-center rounded-pill border border-hairline px-3 py-2 text-[12px] font-semibold disabled:opacity-50";
+  "inline-flex min-h-11 items-center rounded-pill border border-hairline px-3 py-2 text-xs font-semibold disabled:opacity-50";
 const INPUT =
-  "w-full rounded-[6px] border border-hairline bg-card p-3 text-[14px] text-ink";
+  "w-full rounded-[6px] border border-hairline bg-card p-3 text-sm text-ink";
 async function read<T>(path: string): Promise<T> {
   const r = await fetch("/api/community" + path, {
     credentials: "include",
@@ -126,28 +126,28 @@ export function QuestionActions({
     }
   }
   return (
-    <details key={qid+String(context.paper_id)} open={initialOpen||undefined} className="mt-0 text-[12px] text-secondary open:basis-full">
+    <details key={qid+String(context.paper_id)} open={initialOpen||undefined} className="mt-0 text-xs text-secondary open:basis-full">
       <summary className="min-h-11 cursor-pointer py-3 font-semibold">More</summary>
       <div className="flex flex-wrap gap-x-3 gap-y-1">
-        {sourceDetails&&<details className="text-[12px] text-secondary open:basis-full"><summary className="min-h-11 cursor-pointer py-3">Source</summary>{sourceDetails}</details>}
+        {sourceDetails&&<details className="text-xs text-secondary open:basis-full"><summary className="min-h-11 cursor-pointer py-3">Source</summary>{sourceDetails}</details>}
         <button
           type="button"
-          className="min-h-11 py-2 text-[12px] text-secondary"
+          className="min-h-11 py-2 text-xs text-secondary"
           aria-expanded={open}
           onClick={() => setOpen(!open)}
         >
           {open ? "Hide discussion" : "Discussion"}
         </button>
-        <button type="button" className="min-h-11 py-2 text-[12px] text-secondary" onClick={() => void share()}>
+        <button type="button" className="min-h-11 py-2 text-xs text-secondary" onClick={() => void share()}>
           {copied ? "Link copied" : "Share"}
         </button>
-        <a className="inline-flex min-h-11 items-center py-2 text-[12px] text-link" href={'https://wa.me/?text='+encodeURIComponent('Practice this question on Finna:\n'+url)} target="_blank" rel="noreferrer">Share on WhatsApp ↗</a>
+        <a className="inline-flex min-h-11 items-center py-2 text-xs text-link" href={'https://wa.me/?text='+encodeURIComponent('Practice this question on Finna:\n'+url)} target="_blank" rel="noreferrer">Share on WhatsApp ↗</a>
       <QuestionReport key={qid+String(context.paper_id)} qid={qid} paperId={context.paper_id}/>
-        {staff && <Link className="inline-flex min-h-11 items-center text-[12px] text-link underline" to={'/admin/bank?'+new URLSearchParams({tab:'questions',question:qid,issue:'all'})}>Review / edit</Link>}
+        {staff && <Link className="inline-flex min-h-11 items-center text-xs text-link underline" to={'/admin/bank?'+new URLSearchParams({tab:'questions',question:qid,issue:'all'})}>Review / edit</Link>}
       </div>
-      {open && <p className="mt-2 text-[12px] text-secondary">This conversation stays with the question across papers and practice. <Link to="/feed?tab=questions" className="font-semibold text-link underline">Explore Questions & Doubts →</Link></p>}
+      {open && <p className="mt-2 text-xs text-secondary">This conversation stays with the question across papers and practice. <Link to="/community/questions" className="font-semibold text-link underline">Explore Questions & Doubts →</Link></p>}
       {manual && (
-        <label className="mt-2 block text-[12px]">
+        <label className="mt-2 block text-xs">
           Copy this question link
           <input
             readOnly
@@ -255,7 +255,7 @@ function Composer({
       className="mt-4 rounded-[8px] border border-hairline bg-paper p-4"
     >
       {!parent && (
-        <label className="block text-[13px] font-semibold">
+        <label className="block text-sm font-semibold">
           Join the discussion
           <select
             value={kind}
@@ -268,7 +268,7 @@ function Composer({
           </select>
         </label>
       )}
-      <label className="mt-3 block text-[13px] font-semibold">
+      <label className="mt-3 block text-sm font-semibold">
         {parent
           ? "Your reply"
           : kind === "doubt"
@@ -286,7 +286,7 @@ function Composer({
           placeholder="Mention the relevant wording or option. Include a source when you can."
         />
       </label>
-      <p className="mt-1 text-[11px] text-muted">
+      <p className="mt-1 text-xs text-muted">
         {body.length}/5000 · Bold, lists and inline code · Your first three approved posts
         require moderation.
       </p>
@@ -294,11 +294,11 @@ function Composer({
       <DraftNotice status={draft.status} hasDraft={hasComposerDraft(draft.fields)} onDiscard={() => {draft.clear();setSuggestions(null);setError('');setNotice('');}} />
       {!parent && kind === "doubt" && !!suggestions?.items.length && (
         <aside aria-label="Existing discussions" className="mt-3 rounded-[8px] border border-hairline bg-community-soft p-3">
-          <p role="status" className="text-[14px] font-semibold">Discussions already exist — does one cover your doubt?</p>
-          <p className="mt-1 text-[12px] text-secondary">Join a conversation to keep its answers together. Your draft stays here.{suggestions.has_more ? " Showing the most recent discussions; more are available above." : ""}</p>
+          <p role="status" className="text-sm font-semibold">Discussions already exist — does one cover your doubt?</p>
+          <p className="mt-1 text-xs text-secondary">Join a conversation to keep its answers together. Your draft stays here.{suggestions.has_more ? " Showing the most recent discussions; more are available above." : ""}</p>
           <ul className="mt-2 space-y-2">
             {suggestions.items.map(post => <li key={post.id} className="min-w-0 border-t border-hairline pt-2">
-              <p className="break-words text-[13px]">{post.body.length > 240 ? post.body.slice(0, 240) + "…" : post.body}</p>
+              <p className="break-words text-sm">{post.body.length > 240 ? post.body.slice(0, 240) + "…" : post.body}</p>
               <button type="button" disabled={busy} className={BTN + " mt-1 text-link"} onClick={() => onJoin?.(post)}>Join discussion by {post.author}</button>
             </li>)}
           </ul>
@@ -307,7 +307,7 @@ function Composer({
       )}
       {sources.map((s, i) => (
         <div key={i} className="mt-3 grid gap-2">
-          <label className="text-[12px]">
+          <label className="text-xs">
             Source {i + 1} URL
             <input
               required
@@ -326,7 +326,7 @@ function Composer({
               className={INPUT}
             />
           </label>
-          <label className="text-[12px]">
+          <label className="text-xs">
             What does this source support?
             <input
               required
@@ -348,7 +348,7 @@ function Composer({
             type="button"
             disabled={busy}
             onClick={() => setSources((xs) => xs.filter((_, j) => j !== i))}
-            className="min-h-11 text-left text-[12px] text-link"
+            className="min-h-11 text-left text-xs text-link"
           >
             Remove source
           </button>
@@ -370,12 +370,12 @@ function Composer({
         </button>
       </div>
       {error && (
-        <p role="alert" className="mt-2 text-[13px] text-mypick">
+        <p role="alert" className="mt-2 text-sm text-mypick">
           {error}
         </p>
       )}
       {notice && (
-        <p role="status" className="mt-2 text-[13px] text-correct-dark">
+        <p role="status" className="mt-2 text-sm text-correct-dark">
           {notice}
         </p>
       )}
@@ -479,7 +479,7 @@ function Topic({
         (post.accepted ? "bg-correct-soft" : "bg-card")
       }
     >
-      <div className="flex flex-wrap items-center gap-2 text-[12px]">
+      <div className="flex flex-wrap items-center gap-2 text-xs">
         <UserAvatar look={post.avatar} initials={post.author} size={30}/><ContributorName {...post}/>
         <span className="rounded-pill bg-community-soft px-2 py-1 text-community-dark">
           {post.kind === "reply"
@@ -504,15 +504,15 @@ function Topic({
         </span>
       </div>
       {post.source_context.exam_name && (
-        <p className="mt-2 text-[12px] text-muted">
+        <p className="mt-2 text-xs text-muted">
           {post.source_context.exam_name} · {post.source_context.year} · Q
           {post.source_context.qnum || "—"}
         </p>
       )}
-      <EditMarker post={post}/><CommunityText body={post.body} className="mt-3 text-[14.5px] leading-[1.6]" />
+      <EditMarker post={post}/><CommunityText body={post.body} className="mt-3 text-sm leading-[1.6]" />
       {post.is_author&&registered&&!locked&&<PostEditing key={'edit:'+post.id+':'+(post.content_version||0)} post={post} canonical onSaved={onChange}/>}
       {post.source_links.map((s, i) => (
-        <p key={i} className="mt-2 break-words text-[12px]">
+        <p key={i} className="mt-2 break-words text-xs">
           <a
             href={s.url}
             target="_blank"
@@ -535,7 +535,7 @@ function Topic({
           </button>
         )}
         {(!registered || post.is_author || locked) && (
-          <span className="self-center text-[12px] text-muted">
+          <span className="self-center text-xs text-muted">
             {post.helpful} helpful
           </span>
         )}
@@ -586,7 +586,7 @@ function Topic({
         )}
       </div>
       {withdraw && (
-        <div className="mt-3 text-[13px]">
+        <div className="mt-3 text-sm">
           <p>Withdraw this post? It will leave the public discussion.</p>
           <button
             disabled={busy}
@@ -607,7 +607,7 @@ function Topic({
             });
           }}
         >
-          <label className="block text-[12px]">
+          <label className="block text-xs">
             Conduct issue
             <select
               className={INPUT}
@@ -623,7 +623,7 @@ function Topic({
               )}
             </select>
           </label>
-          <label className="block text-[12px]">
+          <label className="block text-xs">
             Details
             <textarea
               required
@@ -634,7 +634,7 @@ function Topic({
               className={INPUT}
             />
           </label>
-          <p className="text-[12px] text-secondary">
+          <p className="text-xs text-secondary">
             For an incorrect answer or typo, use Report an issue.
           </p>
           <button disabled={busy} className={BTN}>
@@ -644,7 +644,7 @@ function Topic({
         </form>
       )}
       {error && (
-        <p role="alert" className="mt-2 text-[13px] text-mypick">
+        <p role="alert" className="mt-2 text-sm text-mypick">
           {error}
         </p>
       )}
@@ -669,7 +669,7 @@ function Topic({
             />
           ))}
           {!page?.items.length && (
-            <p className="text-[13px] text-muted">No published replies yet.</p>
+            <p className="text-sm text-muted">No published replies yet.</p>
           )}
           {page?.has_more && (
             <button className={BTN} onClick={() => void load(offset + 20)}>
@@ -777,14 +777,14 @@ export default function QuestionDiscussion({
       className="mt-4 border-t border-ink pt-4"
     >
       <CommunityFeedback/>
-      <h2 className="font-display text-[25px]">Question discussion</h2>
-      <p className="mt-1 text-[13px] leading-relaxed text-secondary">
+      <h2 className="font-display text-xl">Question discussion</h2>
+      <p className="mt-1 text-sm leading-relaxed text-secondary">
         Ask doubts, explain a method and compare sources. Accepted replies and
         helpful votes reflect community feedback. Bank corrections require
         separate review.
       </p>
       {error && (
-        <div role="alert" className="mt-3 text-[13px] text-mypick">
+        <div role="alert" className="mt-3 text-sm text-mypick">
           {error}
           <button className={BTN + " ml-2"} onClick={() => void load()}>
             Retry
@@ -792,11 +792,11 @@ export default function QuestionDiscussion({
         </div>
       )}
       {!data && !error && (
-        <p className="mt-3 text-[13px] text-muted">Loading discussion…</p>
+        <p className="mt-3 text-sm text-muted">Loading discussion…</p>
       )}
       {data && !data.allowed && (
         <div className="mt-4 rounded-[8px] border border-hairline bg-paper p-4">
-          <p className="text-[14px]">
+          <p className="text-sm">
             {data.can_disclose
               ? "This question is unscored or has no checkable MCQ answer. Discussion may contain suggested answers."
               : "Check or show the answer to unlock its discussion."}
@@ -828,12 +828,12 @@ export default function QuestionDiscussion({
       )}
       {data?.allowed && (
         <>
-          <p className="mt-2 text-[12px] text-muted">
+          <p className="mt-2 text-xs text-muted">
             First three approved posts are moderated. Community feedback earns
             no points.
           </p>
           {data.locked && (
-            <p className="mt-3 text-[13px] text-attention-dark">
+            <p className="mt-3 text-sm text-attention-dark">
               Discussion locked · {data.lock_reason}
             </p>
           )}
@@ -854,7 +854,7 @@ export default function QuestionDiscussion({
               />
             ))}
             {!posts.length && (
-              <p className="rounded-[8px] bg-paper p-4 text-[14px] text-secondary">
+              <p className="rounded-[8px] bg-paper p-4 text-sm text-secondary">
                 No discussions yet. Ask the first doubt or share a worked
                 explanation.
               </p>

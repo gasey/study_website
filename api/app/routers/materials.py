@@ -4,6 +4,7 @@ from fastapi import APIRouter,Depends,HTTPException,Query,Request,Header,Respons
 from pydantic import Field
 from psycopg.types.json import Jsonb
 from ..db import cursor
+from ..services import audience
 from ..deps import current_user,require_account
 from ..services import content_studio as cms
 from ..services.review_identity import identity,Actor,require_role
@@ -42,7 +43,7 @@ SELECT_PUBLIC="""SELECT u.avatar,m.id,m.author_id,m.published_revision,m.publish
  FROM materials m JOIN material_revisions r ON r.material_id=m.id AND r.revision=m.published_revision
  LEFT JOIN users u ON u.id=m.author_id LEFT JOIN creator_profiles cp ON cp.user_id=m.author_id """
 async def published(cur,mid,user):
-    await cur.execute(SELECT_PUBLIC+" WHERE m.id=%s AND m.status='published' AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=m.author_id) OR (b.user_id=m.author_id AND b.blocked_id=%s))",(mid,user,user));row=await cur.fetchone()
+    await cur.execute(SELECT_PUBLIC+" WHERE "+audience.subject_sql('m.author_id',team=True)+" AND m.id=%s AND m.status='published' AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=m.author_id) OR (b.user_id=m.author_id AND b.blocked_id=%s))",(mid,user,user));row=await cur.fetchone()
     if not row:raise HTTPException(404,'Published material not found')
     return row
 
@@ -61,6 +62,7 @@ async def catalog(user:User,q:str=Query('',max_length=160),tag:str=Query('',max_
           AND (NOT %s OR EXISTS(SELECT 1 FROM creator_follows f JOIN creator_profiles p ON p.user_id=f.creator_id AND p.public WHERE f.follower_id=%s AND f.creator_id=m.author_id))"""
         where+=""" AND (%s::text IS NULL OR EXISTS(SELECT 1 FROM library_shelves s WHERE s.id=%s AND s.active AND
           (r.payload->>'subject_id'=ANY(s.match_ids) OR EXISTS(SELECT 1 FROM jsonb_array_elements_text(COALESCE(r.payload->'tags','[]')) tag WHERE lower(tag)=lower(s.title) OR tag=s.id OR tag=ANY(s.match_ids)))))"""
+        where+=' AND '+audience.subject_sql('m.author_id',team=True)
         args=(q,'%'+q+'%','%'+q+'%',tag,tag,access,access,collection_id,collection_id,subject_id,subject_id,subject_id,saved,user,user,user,creator_id,creator_id,user,following,user,shelf_id,shelf_id)
         await cur.execute('SELECT count(*)::int AS n FROM materials m JOIN material_revisions r ON r.material_id=m.id AND r.revision=m.published_revision WHERE '+where,args);total=(await cur.fetchone())['n']
         ordering='helpful DESC,m.published_at DESC,m.id' if sort=='helpful' else 'm.published_at DESC,m.id'

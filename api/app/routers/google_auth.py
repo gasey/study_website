@@ -39,6 +39,7 @@ async def link_session(request,user_id,session_hash):
 
 class Start(BaseModel):
     action:Literal['login','link']='login'
+    referral_code:str|None=Field(default=None,pattern=r'^[A-Za-z0-9_-]{24}$')
 class Finish(BaseModel):
     code:str=Field(default='',max_length=64)
 
@@ -50,6 +51,9 @@ async def config(response:Response):
 async def start(body:Start,request:Request,response:Response):
     private(response);_same_origin(request)
     if not enabled():raise HTTPException(503,'Google sign-in is not configured')
+    if body.action=='login':
+        from ..services.audience import require_browser
+        await require_browser(request)
     await _check_rate('google-start',request.client.host if request.client else 'unknown')
     row=await account_session(request)
     user=None;session_hash=None
@@ -61,7 +65,7 @@ async def start(body:Start,request:Request,response:Response):
     token=secrets.token_urlsafe(32);verifier=secrets.token_urlsafe(48);nonce=secrets.token_urlsafe(32)
     async with cursor() as cur:
         await cur.execute('DELETE FROM google_auth_flows WHERE expires_at<now()')
-        await cur.execute("INSERT INTO google_auth_flows(token_hash,stage,verifier,nonce,link_user_id,session_hash) VALUES(%s,'authorize',%s,%s,%s,%s)",(hashed(token),verifier,nonce,user,session_hash))
+        await cur.execute("INSERT INTO google_auth_flows(token_hash,stage,verifier,nonce,link_user_id,session_hash,referral_code) VALUES(%s,'authorize',%s,%s,%s,%s,%s)",(hashed(token),verifier,nonce,user,session_hash,body.referral_code if body.action=='login' else None))
     cookie(response,STATE_COOKIE,token)
     challenge=base64.urlsafe_b64encode(hashlib.sha256(verifier.encode()).digest()).decode().rstrip('=')
     return {'url':'https://accounts.google.com/o/oauth2/v2/auth?'+urlencode(dict(client_id=settings.google_client_id,redirect_uri=callback_url(),response_type='code',scope='openid email',state=token,nonce=nonce,code_challenge=challenge,code_challenge_method='S256',prompt='select_account'))}
@@ -99,7 +103,7 @@ async def callback(request:Request,state:str='',code:str='',error:str=''):
     if flow['link_user_id']:await link_session(request,flow['link_user_id'],flow['session_hash'])
     token=secrets.token_urlsafe(32)
     async with cursor() as cur:
-        await cur.execute("INSERT INTO google_auth_flows(token_hash,stage,subject,email,link_user_id,session_hash) VALUES(%s,'complete',%s,%s,%s,%s)",(hashed(token),claims['sub'],claims['email'].lower(),flow['link_user_id'],flow['session_hash']))
+        await cur.execute("INSERT INTO google_auth_flows(token_hash,stage,subject,email,link_user_id,session_hash,referral_code) VALUES(%s,'complete',%s,%s,%s,%s,%s)",(hashed(token),claims['sub'],claims['email'].lower(),flow['link_user_id'],flow['session_hash'],flow['referral_code']))
     response=RedirectResponse('/google/finish',status_code=303);private(response);cookie(response,PENDING_COOKIE,token);response.delete_cookie(STATE_COOKIE,path='/api/auth/google');return response
 
 async def pending(cur,request,lock=False):
@@ -133,14 +137,25 @@ async def finish(body:Finish,request:Request,response:Response):
             destination='/account/security'
         else:
             if await account_session(request):raise HTTPException(409,'Your account changed during Google sign-in. Start again.')
+            from ..services.audience import require_browser, bind_adult
+            await require_browser(request)
             if linked:user=linked['user_id']
             else:
+                from ..services.account_identity import closure_email_hash,lock_email_ownership
+                await lock_email_ownership(cur,p['email'])
                 await cur.execute('SELECT pg_advisory_xact_lock(hashtextextended(%s,0))',('google-email:'+p['email'],))
                 await cur.execute('SELECT id FROM users WHERE lower(email)=%s',(p['email'],))
                 if await cur.fetchone():raise HTTPException(409,'An account already uses this email. Sign in with your existing method, then link Google in Account security.')
+                held_hash=closure_email_hash(p['email'])
+                if held_hash:
+                    await cur.execute('SELECT 1 FROM account_closure_recovery WHERE email_hash=%s AND expires_at>statement_timestamp()',(held_hash,))
+                    if await cur.fetchone():raise HTTPException(409,'This email is reserved during its account-reopen period. Reopen the account through email recovery first.')
                 user='usr_'+secrets.token_urlsafe(18)
                 await cur.execute("INSERT INTO users(id,handle,email,email_verified_at,role,plan_code,plan_status,trial_ends_at) VALUES(%s,%s,%s,now(),'learner','pro','trial',now()+interval '7 days')",(user,'learner-'+secrets.token_hex(4),p['email']))
                 await cur.execute('INSERT INTO google_identities(subject,user_id) VALUES(%s,%s)',(p['subject'],user))
+                from ..services.referrals import attach_signup
+                await attach_signup(cur,user,p['referral_code'])
+            if settings.audience_gate_enabled:await bind_adult(cur,user)
             await cur.execute('SELECT enabled_at FROM account_mfa WHERE user_id=%s',(user,));factor=await cur.fetchone();has_mfa=bool(factor and factor['enabled_at'])
             if has_mfa:
                 await mfa.limit(user)

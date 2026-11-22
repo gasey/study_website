@@ -29,7 +29,7 @@ export function PillButton({
     <button
       onClick={onClick}
       disabled={disabled}
-      className={`ism-tactile-btn min-h-[44px] whitespace-nowrap rounded-pill px-4 py-[9px] text-[14px] font-semibold disabled:opacity-40 ${tones[tone]}`}
+      className={`ism-tactile-btn min-h-[44px] whitespace-nowrap rounded-pill px-4 py-[9px] text-sm font-semibold disabled:opacity-40 ${tones[tone]}`}
     >
       {children}
     </button>
@@ -47,7 +47,7 @@ export function OutlinePill({
 }) {
   return (
     <span
-      className={`shrink-0 rounded-pill border px-2 py-[2px] font-mono text-[10px] uppercase tracking-[0.06em] ${colorClass}`}
+      className={`shrink-0 rounded-pill border px-2 py-[2px] font-mono text-xs uppercase tracking-[0.06em] ${colorClass}`}
     >
       {children}
     </span>
@@ -64,7 +64,7 @@ export function Chip({
 }) {
   return (
     <span
-      className={`shrink-0 rounded-pill px-[9px] py-[3px] font-mono text-[10px] uppercase tracking-[0.06em] ${className}`}
+      className={`shrink-0 rounded-pill px-[9px] py-[3px] font-mono text-xs uppercase tracking-[0.06em] ${className}`}
     >
       {children}
     </span>
@@ -74,7 +74,7 @@ export function Chip({
 /** Small count badge, e.g. unread inbox. mono 11px on #B0412A. (line 48) */
 export function CountBadge({ children }: { children: ReactNode }) {
   return (
-    <span className="rounded-pill bg-mypick px-1.5 py-px font-mono text-[11px] text-[#FBF8F1]">
+    <span className="rounded-pill bg-mypick px-1.5 py-px font-mono text-xs text-[#FBF8F1]">
       {children}
     </span>
   )
@@ -97,11 +97,11 @@ export function Checkbox({
       onClick={onClick}
       disabled={disabled}
       aria-pressed={on}
-      className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-[14px] transition-colors hover:text-ink disabled:text-muted"
+      className="flex min-h-[44px] w-full items-center gap-2.5 py-1.5 text-left text-sm transition-colors hover:text-ink disabled:text-muted"
     >
       <span
         aria-hidden="true"
-        className={`grid h-5 w-5 shrink-0 place-items-center rounded-[7px] border text-xs font-black transition-colors ${
+        className={`grid h-5 w-5 shrink-0 place-items-center rounded-[7px] border text-xs font-bold transition-colors ${
           disabled ? 'border-hairline2' : 'border-ink'
         } ${on ? 'bg-ink text-paper' : 'bg-transparent'}`}
       >{on?'✓':''}</span>
@@ -114,7 +114,7 @@ export function Checkbox({
  *  underlined with 1px ink. (markup lines 393 and 58) */
 export function GroupTitle({ children }: { children: ReactNode }) {
   return (
-    <div className="mb-1.5 border-b border-ink pb-1.5 font-mono text-[11px] uppercase tracking-[0.1em] text-muted">
+    <div className="mb-1.5 border-b border-ink pb-1.5 font-mono text-xs uppercase tracking-[0.1em] text-muted">
       {children}
     </div>
   )
@@ -143,14 +143,14 @@ export function Card({
 
 /** Shown wherever today's data cannot honestly support a control. */
 export function NotYet({ children }: { children: ReactNode }) {
-  return <p className="py-1.5 text-[13px] leading-snug text-muted">{children}</p>
+  return <p className="py-1.5 text-sm leading-snug text-muted">{children}</p>
 }
 
 /** 36px avatar circle with initials. (markup line 50) */
 export function Avatar({ initials,look }: { initials: string;look?:AvatarLook|null }) {
   if(look)return <AvatarArt look={look}/>
   return (
-    <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-ink bg-community-soft font-mono text-[12px] font-medium text-ink">
+    <span className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full border border-ink bg-community-soft font-mono text-xs font-medium text-ink">
       {initials}
     </span>
   )

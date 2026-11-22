@@ -20,7 +20,7 @@ const CATEGORIES: [keyof AvatarLook, string][] = [
   ["frame", "Frame"],
 ];
 const B =
-  "inline-flex min-h-11 items-center justify-center rounded-pill border border-ink px-4 py-2 text-[13px] font-semibold disabled:opacity-50";
+  "inline-flex min-h-11 items-center justify-center rounded-pill border border-ink px-4 py-2 text-sm font-semibold disabled:opacity-50";
 export default function AvatarEditor() {
   const [account, setAccount] = useState<AvatarAccount | null>(null),
     [look, setLook] = useState<AvatarLook | null>(null),
@@ -127,11 +127,11 @@ export default function AvatarEditor() {
     <main className="mx-auto max-w-[1240px] px-6 pb-24 pt-8">
       <Link
         to="/profile"
-        className="inline-flex min-h-11 items-center text-[13px] text-link"
+        className="inline-flex min-h-11 items-center text-sm text-link"
       >
         ← Your profile
       </Link>
-      <div className="font-mono text-[11px] uppercase tracking-[.1em] text-[#9A6410]">
+      <div className="font-mono text-xs uppercase tracking-[.1em] text-[#9A6410]">
         Profile
       </div>
       <h1 className="mt-2 font-display text-[clamp(34px,5vw,50px)] font-medium -tracking-[.02em]">
@@ -145,7 +145,7 @@ export default function AvatarEditor() {
       {error && (
         <div
           role="alert"
-          className="mt-5 rounded-[10px] border border-wrong bg-wrong-soft p-4 text-[14px]"
+          className="mt-5 rounded-[10px] border border-wrong bg-wrong-soft p-4 text-sm"
         >
           {error}{" "}
           <button
@@ -174,13 +174,13 @@ export default function AvatarEditor() {
                     label="Your avatar preview"
                   />
                 )}
-                <div className="mt-2 max-w-full break-words text-center font-display text-[24px]">
+                <div className="mt-2 max-w-full break-words text-center font-display text-xl">
                   {account.name || account.handle}
                 </div>
-                <p className="text-[13px] text-secondary">
+                <p className="text-sm text-secondary">
                   Level {account.level} · @{account.handle}
                 </p>
-                <span className="mt-3 rounded-pill bg-rewards-soft px-3 py-1 text-[11px]">
+                <span className="mt-3 rounded-pill bg-rewards-soft px-3 py-1 text-xs">
                   {dirty ? "Preview · save your look" : "Your saved look"}
                 </span>
               </div>
@@ -207,13 +207,13 @@ export default function AvatarEditor() {
                 </Link>
               )}
             </div>
-            <p className="text-[12px] leading-normal text-secondary">
+            <p className="text-xs leading-normal text-secondary">
               Your saved avatar appears beside your profile, posts, creator pages
               and study desk membership. Your existing visibility settings
               still apply.
             </p>
             {notice && (
-              <p role="status" className="text-[13px] text-correct-dark">
+              <p role="status" className="text-sm text-correct-dark">
                 {notice}
               </p>
             )}
@@ -250,7 +250,7 @@ export default function AvatarEditor() {
                   aria-pressed={tab === t}
                   onClick={() => setTab(t)}
                   className={
-                    "min-h-11 border-b-2 py-[11px] text-[14px] font-semibold " +
+                    "min-h-11 border-b-2 py-[11px] text-sm font-semibold " +
                     (tab === t ? "border-ink" : "border-transparent text-muted")
                   }
                 >
@@ -314,10 +314,10 @@ export default function AvatarEditor() {
                             />
                           )}
                         </span>
-                        <span className="text-[13px] font-semibold">
+                        <span className="text-sm font-semibold">
                           {item.label}
                         </span>
-                        <span className="font-mono text-[10.5px] text-secondary">
+                        <span className="font-mono text-xs text-secondary">
                           {!item.available
                             ? item.price_points?item.price_points+" points · available in Shop":"Unlocks at level " + item.level
                             : look[item.category] === item.value
@@ -334,7 +334,7 @@ export default function AvatarEditor() {
               </>
             ) : tab==='Shop' ? <CosmeticShop key={account.user_id} account={account} look={look} onPurchased={setAccount}/> : (
               <>
-                <p className="mt-4 text-[13.5px] text-secondary">
+                <p className="mt-4 text-sm text-secondary">
                   Starter items are free. Saving a look claims your eligible
                   level rewards permanently. Purchases use points; cosmetics never change XP or ranks.
                 </p>
@@ -344,7 +344,7 @@ export default function AvatarEditor() {
                   );
                   return (
                     <section key={cat} className="mt-[18px]">
-                      <h2 className="border-b border-ink pb-2 font-mono text-[11px] uppercase tracking-[.1em] text-muted">
+                      <h2 className="border-b border-ink pb-2 font-mono text-xs uppercase tracking-[.1em] text-muted">
                         {label} · {items.length}
                       </h2>
                       <div className="grid grid-cols-[repeat(auto-fill,minmax(200px,1fr))] gap-x-5">
@@ -359,10 +359,10 @@ export default function AvatarEditor() {
                               label={item.label + " preview"}
                             />
                             <span className="min-w-0 flex-1">
-                              <b className="block text-[13.5px]">
+                              <b className="block text-sm">
                                 {item.label}
                               </b>
-                              <span className="text-[11.5px] text-muted">
+                              <span className="text-xs text-muted">
                                 {item.price_points?'Points purchase · owned':item.level === 1
                                   ? "Starter"
                                   : "Level " +
@@ -374,7 +374,7 @@ export default function AvatarEditor() {
                             </span>
                             <button
                               disabled={busy}
-                              className={B + " !px-3 !text-[12px]"}
+                              className={B + " !px-3 !text-xs"}
                               onClick={() => equip(item)}
                             >
                               {look[item.category] === item.value
@@ -389,7 +389,7 @@ export default function AvatarEditor() {
                 })}
               </>
             )}
-            <p className="mt-5 text-[12px] text-secondary">
+            <p className="mt-5 text-xs text-secondary">
               Shuffle keeps your chosen skin tone. Save look applies every
               selected category.{" "}
               {account.registered

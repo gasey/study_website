@@ -1,5 +1,8 @@
+import AtlasQuestionLinks from '../components/AtlasQuestionLinks'
 import PracticeAnswerPanel from '../components/PracticeAnswerPanel'
+import WrittenDraftBox from '../components/WrittenDraftBox'
 import QuestionUpdate from '../components/QuestionUpdate'
+import { useSelectionTray } from '../lib/selectionTray'
 import {savePracticePosition} from '../lib/learning'
 import {QuestionActions} from '../components/QuestionDiscussion'
 import {AnswerOptions,AnswerLayoutControl} from '../components/AnswerLayout'
@@ -28,8 +31,10 @@ export default function QuestionDetail() {
   const [viewed,setViewed]=useState(false)
   const [result, setResult] = useState<AnswerResult | null>(null)
   const [submitting, setSubmitting] = useState(false)
+  const [checkingAnswer,setCheckingAnswer]=useState(false)
   const [deskLoading, setDeskLoading] = useState(() => getDeskSync().loading)
   const [saved, setSaved] = useState(() => getDesk().saved.includes(id))
+  const tray = useSelectionTray()
 
   useEffect(() => {
     setQ(null)
@@ -37,6 +42,7 @@ export default function QuestionDetail() {
     setResult(null)
     setViewed(false)
     setAnswerError('')
+    setCheckingAnswer(false)
     setError(null)
     setSaved(getDesk().saved.includes(id))
     getQuestion(id)
@@ -59,6 +65,7 @@ export default function QuestionDetail() {
     if (!q || q.held || q.answer_source==='none' || ['duplicate-options','unresolved-source'].includes(q.source_defect||'') || result || viewed || submitting || sending.current) return
     sending.current=true;setPicked(index)
     setSubmitting(true)
+    setCheckingAnswer(true)
     setAnswerError('')
     try {
       // The client does not know the answer until this returns — the server
@@ -67,7 +74,7 @@ export default function QuestionDetail() {
     } catch (e) {
       setAnswerError((e as Error).message)
     } finally {
-      sending.current=false;setSubmitting(false)
+      sending.current=false;setSubmitting(false);setCheckingAnswer(false)
     }
   }
 
@@ -75,7 +82,7 @@ export default function QuestionDetail() {
     return (
       <div className="mx-auto max-w-3xl px-6 py-10">
         <div className="rounded-card border border-wrong bg-wrong-soft p-5 text-wrong-dark">
-          <span className="font-mono text-[11px] uppercase tracking-[0.06em]">× Error</span>
+          <span className="font-mono text-xs uppercase tracking-[0.06em]">× Error</span>
           <p className="mt-1">{error}</p>
         </div>
         <Link to="/bank" className="label mt-4 inline-block underline">
@@ -105,6 +112,7 @@ export default function QuestionDetail() {
       </Link>
 
       <QuestionUpdate questionId={id}/>
+      <AtlasQuestionLinks key={id} qid={id} context={q.type==='mcq'&&['official','verified'].includes(q.answer_status||'')}/>
       <article id={'question-'+id} className="finna-qd-card">
         <div className="finna-qd-meta">
           {q.taxonomy_subject && <span className="finna-qd-chip">{q.taxonomy_subject}</span>}
@@ -118,11 +126,11 @@ export default function QuestionDetail() {
         </div>
 
         <SourceQuestionContext direction={q.direction} passage={q.passage} />
-        <h1 className="font-display text-[24px] font-medium leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
+        <h1 className="font-display text-xl font-medium leading-snug"><SourceQuestionText formatEnumerations instruction={[q.direction,q.question].filter(Boolean).join(' ')} text={q.question_markup ?? q.question} /></h1>
 
-        {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-[10px] uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
+        {q.appearances.some((a) => a.figure_image_url) && <div className="mt-4 grid gap-3">{q.appearances.filter((a) => a.figure_image_url).map((a) => <figure key={`${a.paper_id}-${a.page}`} className="max-w-2xl overflow-hidden rounded-[9px] border border-hairline bg-paper"><a href={a.figure_image_url!} target="_blank" rel="noreferrer"><img src={a.figure_image_url!} loading="lazy" decoding="async" alt="Original scanned figure or chart from the source paper" className="max-h-[360px] w-full object-contain" /></a><figcaption className="border-t border-hairline px-3 py-2 font-mono text-xs uppercase tracking-wide text-muted">Original source figure · {a.exam ?? 'MPSC paper'} · p. {a.page ?? '—'}</figcaption></figure>)}</div>}
 
-        {q.key_disputed && <p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">Answer disputed · the worked solution differs from the official key. This question is excluded from official-key test scores.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
+        {q.key_disputed && <p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">Answer disputed · the worked solution differs from the official key.{q.dispute_note ? ` ${q.dispute_note}` : ''}</p>}
 
         {sourceNote && <p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">{sourceNote}</p>}
 
@@ -149,7 +157,7 @@ export default function QuestionDetail() {
                     onClick={() => o !== null && void reveal(i)}
                     aria-pressed={isPicked}
                     data-answer-state={isAnswer?'correct':wrongPick?'wrong':isPicked?'selected':'neutral'}
-                    className={`answer-option flex w-full items-start gap-3 rounded-panel border p-3 text-left text-[15px] transition-colors ${cls}`}
+                    className={`answer-option flex w-full items-start gap-3 rounded-panel border p-3 text-left text-base transition-colors ${cls}`}
                   >
                     <span className="label mt-[2px] shrink-0">{LETTERS[i]}</span>
                     <span className="grow">{o === null ? 'Option text unavailable' : <SourceQuestionText text={q.options_markup?.[i] ?? o} />}</span>
@@ -163,10 +171,12 @@ export default function QuestionDetail() {
           </AnswerOptions></>
         )}
 
-        {answerError&&<p role="alert" className="mt-3 text-[13px] text-mypick">{answerError}</p>}
-        {q.held&&<p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">This question is held for review and cannot be checked or scored. Compare the official key and reviewed evidence below.</p>}
-        {q.answer_source==='none'&&<p className="mt-4 text-[13px] text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
+        {checkingAnswer&&<p role="status" aria-live="polite" aria-atomic="true" className="mt-2 text-xs font-medium text-secondary">Checking your answer…</p>}
+        {answerError&&<p role="alert" className="mt-3 text-sm text-mypick">{answerError}</p>}
+        {q.held&&<p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">This question is under review. Compare the official key and reviewed evidence below.</p>}
+        {q.answer_source==='none'&&<p className="mt-4 text-sm text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
         {q.type==='mcq'&&<PracticeAnswerPanel options={q.options} key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
+        {q.type!=='mcq'&&<WrittenDraftBox questionId={q.id}/>}
 
       </article>
 
@@ -207,6 +217,9 @@ export default function QuestionDetail() {
             <button type="button" onClick={toggleSaved} disabled={deskLoading} aria-pressed={saved}>
               {deskLoading ? 'Loading saved questions…' : saved ? '★ Saved' : '☆ Save for revision'}
             </button>
+            {q.type==='mcq'&&<button type="button" onClick={() => tray.toggle(id)} aria-pressed={tray.has(id)}>
+              {tray.has(id) ? '✓ In test tray' : '+ Add to test tray'}
+            </button>}
             {sourcePdf?.source_pdf_url && (
               <a
                 href={`${sourcePdf.source_pdf_url}${sourcePdf.page ? `#page=${sourcePdf.page}` : ''}`}

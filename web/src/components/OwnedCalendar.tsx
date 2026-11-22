@@ -2,10 +2,13 @@ import {useEffect,useState} from 'react'
 import {reviewRequest} from '../lib/review'
 import {calendarRead,indiaToday,type CalendarFeed,type OwnedEntry,type OwnedKind,ownedKindLabel} from '../lib/calendar'
 import type {HomeData} from '../lib/api'
-const B='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-4 py-2 text-[13px] font-semibold disabled:opacity-40'
+import {getRooms,type RoomSummary} from '../lib/studyDesks'
+const B='inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-4 py-2 text-sm font-semibold disabled:opacity-40'
 const I='mt-1 min-h-11 w-full min-w-0 rounded-lg border border-hairline bg-paper px-3 py-2 text-base'
 const blank=():OwnedEntry=>({id:crypto.randomUUID(),date:indiaToday(),title:'',note:'',kind:'personal',recurrence:null,collection_id:null,version:0})
 export default function OwnedCalendar({entries,exams}:{entries:OwnedEntry[];exams:HomeData['collections']}){
+ const [rooms,setRooms]=useState<RoomSummary[]>([]),[roomsError,setRoomsError]=useState('')
+ useEffect(()=>{let live=true;getRooms().then(r=>{if(live)setRooms(r.items)}).catch(()=>{if(live)setRoomsError('Shared desks are unavailable. You can keep or make this entry private.')});return()=>{live=false}},[])
  const [form,setForm]=useState<OwnedEntry>(blank),[open,setOpen]=useState(false),[busy,setBusy]=useState(false),[error,setError]=useState(''),[notice,setNotice]=useState(''),[feed,setFeed]=useState<CalendarFeed|null>(null),[url,setUrl]=useState(''),[retry,setRetry]=useState(0)
  useEffect(()=>{let live=true;calendarRead<CalendarFeed>('/me/calendar/feed').then(r=>{if(live)setFeed(r)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[retry])
  useEffect(()=>{const target=(event:Event)=>{const e=(event as CustomEvent<{date:string;title:string;collection_id:string|null}>).detail;setForm({...blank(),...e,kind:'exam-target'});setOpen(true);setError('');document.getElementById('private-calendar')?.scrollIntoView({behavior:'smooth',block:'start'})};window.addEventListener('ism-calendar-target',target);return()=>window.removeEventListener('ism-calendar-target',target)},[])
@@ -15,8 +18,8 @@ export default function OwnedCalendar({entries,exams}:{entries:OwnedEntry[];exam
   setBusy(true);setError('');setNotice('')
   try{
    if(action==='save'){
-    const {id,version,date,title,note,kind,recurrence,collection_id}=form
-    const body={date,title,note,kind,recurrence:kind==='progress-test'?recurrence:null,collection_id:kind==='personal'?null:collection_id}
+    const {id,version,date,title,note,kind,recurrence,collection_id,desk_id}=form
+    const body={date,title,note,kind,recurrence:kind==='progress-test'?recurrence:null,collection_id:kind==='personal'?null:collection_id,desk_id:desk_id||null}
     await reviewRequest('/me/calendar/entries/'+id,{...body,expected_version:version})
     setOpen(false);setForm(blank());setNotice('Entry saved.')
    }else if(action==='delete'){
@@ -33,7 +36,7 @@ export default function OwnedCalendar({entries,exams}:{entries:OwnedEntry[];exam
  return <div id="private-calendar" className="mt-4 border-t border-hairline pt-4">
   <div className="flex flex-wrap gap-2"><button className={B} onClick={()=>{setForm(blank());setOpen(true);setError('')}}>Add private entry</button><label className="min-w-0 flex-1 text-sm">Edit an entry<select aria-label="Edit calendar entry" className={I} value={open&&form.version?form.id:''} onChange={e=>{const r=entries.find(r=>r.id===e.target.value);if(r){setForm(r);setOpen(true);setError('')}}}><option value="">Choose an entry…</option>{entries.map(e=><option key={e.id} value={e.id}>{e.title} · {e.date}</option>)}</select></label></div>
   {open&&<form className="mt-4 min-w-0 rounded-xl border border-hairline bg-card p-3 sm:p-4" onSubmit={e=>{e.preventDefault();void mutate('save')}}>
-   <h3 className="font-display text-xl">{form.version?'Edit private entry':'New private entry'}</h3>
+   <h3 className="font-display text-xl">{form.version?'Edit calendar entry':'New calendar entry'}</h3>
    <fieldset disabled={busy} className="mt-3 grid min-w-0 gap-3 sm:grid-cols-2">
     <label className="text-sm">Layer<select className={I} value={form.kind} onChange={e=>{const kind=e.target.value as OwnedKind;setForm(f=>({...f,kind,recurrence:kind==='progress-test'?7:null}))}}>{Object.entries(ownedKindLabel).map(([v,l])=><option key={v} value={v}>{l}</option>)}</select></label>
     <label className="text-sm">{form.kind==='progress-test'?'First slot · repeats on this weekday':'Date'}<input className={I} type="date" min="2000-01-01" max="2100-12-31" required value={form.date} onChange={e=>update('date',e.target.value)}/></label>
@@ -41,6 +44,7 @@ export default function OwnedCalendar({entries,exams}:{entries:OwnedEntry[];exam
     {form.kind!=='personal'&&<label className="text-sm">Exam{form.kind==='progress-test'?' (required)':' (optional)'}<select className={I} required={form.kind==='progress-test'} value={form.collection_id||''} onChange={e=>update('collection_id',e.target.value||null)}><option value="">Choose exam…</option>{exams.map(e=><option key={e.id} value={e.id}>{e.title}</option>)}</select></label>}
     {form.kind==='progress-test'&&<label className="text-sm">Repeat<select className={I} value={form.recurrence||7} onChange={e=>update('recurrence',Number(e.target.value) as 7|14)}><option value={7}>Weekly</option><option value={14}>Fortnightly</option></select></label>}
     <label className="text-sm sm:col-span-2">Note or goal · plain text<textarea className={I} rows={3} maxLength={3000} value={form.note} onChange={e=>update('note',e.target.value)}/></label>
+    <label className="text-sm sm:col-span-2">Share this entry<select className={I} value={form.desk_id||''} onChange={e=>update('desk_id',e.target.value||null)}><option value="">Private · only me</option>{rooms.map(r=><option key={r.id} value={r.id}>{r.name} · accepted members</option>)}{form.desk_id&&!rooms.some(r=>r.id===form.desk_id)&&<option value={form.desk_id}>Previously selected room · unavailable</option>}</select><span className="mt-2 block text-xs text-secondary">Sharing includes this entry's title, note, date, exam and recurring slots. Room members see it while you remain a member. Choose Private to withdraw it. Other entries stay private.</span>{roomsError&&<span className="mt-2 block text-xs text-secondary">{roomsError}</span>}</label>
    </fieldset>
    {form.kind==='progress-test'&&<p className="mt-2 text-xs text-secondary">Choose the first date for your weekday. Upcoming slots open normal 20-minute mocks for this exam. Missed slots simply move on; no calendar rewards or penalties.</p>}
    <div className="mt-3 flex flex-wrap gap-2"><button disabled={busy} className={B+' bg-ink text-paper'} type="submit">Save entry</button><button type="button" disabled={busy} className={B} onClick={()=>setOpen(false)}>Cancel</button>{form.version>0&&<button type="button" disabled={busy} className={B} onClick={()=>void mutate('delete')}>Delete entry</button>}</div>

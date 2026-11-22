@@ -41,7 +41,9 @@ async def save_essay_draft(question_id: str, body: EssayDraftUpdate,
     async with cursor() as cur:
         await cur.execute(
             """SELECT 1 FROM canonical_questions q JOIN appearances a ON a.canonical_id=q.id
-                WHERE q.id=%s AND q.type='descriptive' AND a.essay_kind='essay' LIMIT 1""",
+                WHERE q.id=%s AND q.type='descriptive'
+                  AND (a.essay_kind IN ('essay','letter','precis','comprehension') OR a.essay_kind IS NULL)
+                LIMIT 1""",
             (question_id,),
         )
         if not await cur.fetchone():

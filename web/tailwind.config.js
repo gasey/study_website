@@ -9,6 +9,16 @@ export default {
   content: ['./index.html', './src/**/*.{ts,tsx}'],
   darkMode: 'class',
   theme: {
+    fontSize: {
+      xs: ['12px', { lineHeight: '1.4' }],
+      sm: ['14px', { lineHeight: '1.5' }],
+      base: ['16px', { lineHeight: '1.6' }],
+      md: ['18px', { lineHeight: '1.65' }],
+      lg: ['21px', { lineHeight: '1.35' }],
+      xl: ['26px', { lineHeight: '1.25', letterSpacing: '-0.01em' }],
+      '2xl': ['32px', { lineHeight: '1.15', letterSpacing: '-0.01em' }],
+      '3xl': ['40px', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+    },
     extend: {
       colors: {
         paper: rgb('--ism-paper-rgb'),          // page background
@@ -45,10 +55,11 @@ export default {
         link:     { DEFAULT: rgb('--ism-link-rgb') },                   // "View original ↗"
       },
       fontFamily: {
-        display: ['Figtree', 'system-ui', 'sans-serif'],
-        sans: ['Figtree', 'system-ui', 'sans-serif'],
-        mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace'],
-        paperdoc: ['"Times New Roman"', 'Times', 'serif'], // original-paper rendering
+        display: ['var(--font-ui)', 'Figtree', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-ui)', 'Figtree', 'system-ui', 'sans-serif'],
+        reading: ['var(--font-reading)', 'Newsreader', 'Georgia', 'serif'],
+        mono: ['var(--font-mono)', '"IBM Plex Mono"', 'ui-monospace', 'monospace'],
+        paperdoc: ['var(--font-reading)', 'Newsreader', 'Georgia', 'serif'], // original-paper rendering
       },
       borderRadius: { card: '20px', panel: '18px', pill: '999px' },
       maxWidth: { shell: '1320px' },

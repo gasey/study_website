@@ -54,9 +54,25 @@ export interface SharedItem {
   question: string | null;
   answer_source: string | null;
   version: number;
+  discussion_state: "none" | "needed" | "resolved";
   created_at: string;
 }
+export interface DeskWeeklyGoal {
+  week_start: string;
+  week_end: string;
+  resets_at: string;
+  as_of: string;
+  timezone: "Asia/Kolkata";
+  target: number | null;
+  version: number;
+  scored_attempts: number;
+  sharing_members: number;
+  completed: boolean;
+  can_edit: boolean;
+}
 export interface ChatMessage {
+  note_id?: string | null;
+  note_title?: string;
   id: number;
   author_id: string;
   author: string;

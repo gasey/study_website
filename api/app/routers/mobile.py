@@ -4,6 +4,7 @@ import hashlib
 import hmac
 import json
 import secrets
+from time import perf_counter
 from html import escape
 from typing import Annotated
 from urllib.parse import urlencode
@@ -82,6 +83,8 @@ async def authorize(body:Authorize,request:Request,response:Response):
     private(response);_same_origin(request)
     session=await account_session(request)
     if not session:raise HTTPException(401,'Sign in to connect your account')
+    from ..services.audience import require_learner
+    await require_learner(session['user_id'])
     code=secrets.token_urlsafe(32)
     async with cursor() as cur:
         await cur.execute('''UPDATE mobile_auth_flows SET code_hash=%s,parent_session_hash=%s,authorized_at=now(),expires_at=LEAST(expires_at,now()+interval '90 seconds')
@@ -103,6 +106,8 @@ async def exchange(body:Exchange,request:Request,response:Response):
         flow=await cur.fetchone()
         if not flow or flow['redirect_uri']!=body.redirect_uri or not hmac.compare_digest(flow['challenge'],challenge_for(body.verifier)):
             raise HTTPException(400,'Invalid or expired authorization code')
+        from ..services.audience import require_learner
+        await require_learner(flow['user_id'])
         await cur.execute('UPDATE mobile_auth_flows SET consumed_at=now() WHERE id=%s',(body.flow,))
         await cur.execute('''INSERT INTO mobile_sessions(token_hash,public_id,user_id,parent_session_hash,expires_at)
           VALUES(%s,%s,%s,%s,LEAST(%s,now()+interval '30 days')) RETURNING expires_at''',
@@ -177,7 +182,8 @@ class MobileAnswer(Strict):
     paper_id:str|None=Field(default=None,max_length=500)
 
 @router.post('/mobile/questions/{qid}/answer')
-async def answer(qid:str,body:MobileAnswer,user:Account):
+async def answer(qid:str,body:MobileAnswer,user:Account,response:Response):
+    started=perf_counter()
     from .questions import _answer_question
     from ..schemas import AnswerSubmission
     submission=AnswerSubmission(chosen_index=body.chosen_index,collection_id=body.collection_id,paper_id=body.paper_id)
@@ -201,4 +207,6 @@ async def answer(qid:str,body:MobileAnswer,user:Account):
                 sources=await cur.fetchall()
                 if not any(bool(source['has_diagram'])==expected['has_diagram'] and figure_image_url(source['figure_image'])==expected['figure_image_url'] for source in sources):
                     raise HTTPException(409,'The source figure changed. Refresh before answering; no answer was recorded.')
-        return await _answer_question(qid,submission,user,idempotency_key=body.request_key,_cur=cur)
+        result=await _answer_question(qid,submission,user,idempotency_key=body.request_key,_cur=cur,_replay_checked=not replay)
+    response.headers['Server-Timing']=f"answer;dur={(perf_counter()-started)*1000:.1f}"
+    return result

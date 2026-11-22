@@ -5,9 +5,10 @@ from fastapi import APIRouter,Depends,Header,HTTPException,Query,Request,Respons
 from pydantic import BaseModel,ConfigDict,Field,field_validator,model_validator
 from psycopg.types.json import Jsonb
 from ..db import cursor
+from ..services import audience
 from ..deps import current_user,require_account
 from ..services import study_posts as notes
-from ..services.community_policy import policy,posting_guard,account_lock,HELPFUL_COUNT
+from ..services.community_policy import policy,posting_guard,account_lock,helpful_count
 from .materials import write_guard
 from .discussions import Report,Toggle,event
 
@@ -94,7 +95,7 @@ async def helpful(pid:int,body:Toggle,request:Request,user:Account):
         if latest['needs_approval'] or latest['hidden']:raise HTTPException(409,'This post is unavailable for voting')
         if body.enabled:await cur.execute('INSERT INTO post_votes(post_id,user_id,weight) VALUES(%s,%s,1) ON CONFLICT DO NOTHING',(pid,user))
         else:await cur.execute('DELETE FROM post_votes WHERE post_id=%s AND user_id=%s',(pid,user))
-        await cur.execute('SELECT '+HELPFUL_COUNT+' AS n FROM posts p WHERE p.id=%s',(pid,))
+        await cur.execute('SELECT '+helpful_count()+' AS n FROM posts p WHERE p.id=%s',(pid,))
         count=(await cur.fetchone())['n']
     return {'helpful':count,'voted':body.enabled}
 
@@ -130,7 +131,7 @@ async def replies(pid:int,user:User,offset:int=Query(0,ge=0,le=100000),limit:int
           AND NOT p.hidden AND NOT p.before_fix AND (NOT p.needs_approval OR p.author_id=%s)
           AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=p.author_id)
             OR (b.user_id=p.author_id AND b.blocked_id=%s))
-          ORDER BY p.created_at,p.id LIMIT %s OFFSET %s''',(pid,user,user,user,limit+1,offset))
+          AND '''+audience.subject_sql('p.author_id',team=True)+''' ORDER BY p.created_at,p.id LIMIT %s OFFSET %s''',(pid,user,user,user,limit+1,offset))
         ids=await cur.fetchall()
         items=[await notes.visible(cur,row['id'],user) for row in ids[:limit]]
         state=await policy(cur,user)

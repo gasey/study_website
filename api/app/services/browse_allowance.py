@@ -9,7 +9,7 @@ from fastapi import HTTPException
 
 LIMIT = 3
 ACTION = 'power-filter-v1'
-FILTERS = ('pool', 'answer_status', 'q', 'year_from', 'year_to', 'source',
+FILTERS = ('atlas_chapter','atlas_layer','pool', 'answer_status', 'q', 'year_from', 'year_to', 'source',
            'subject_id', 'topic_id', 'subtopic_id', 'study_area', 'shelf_id',
            'learning_entry', 'collection_id', 'section_path', 'paper_id',
            'essay_kind', 'repeats_only', 'origin', 'exam_scope')
@@ -22,12 +22,12 @@ def power_filter(query):
         return value if isinstance(value, list) else [value]
     def present(key):
         return any(v is not None and v != '' for v in values(key))
-    topic = present('topic_id') or present('subtopic_id')
+    topic = present('topic_id') or present('subtopic_id') or present('atlas_chapter')
     year = present('year_from') or present('year_to')
     answer = (present('answer_status') or present('source')
               or any(v and v != 'all' for v in values('pool')))
     cross_exam = 'all' in values('exam_scope') and any(present(k) for k in
-        ('subject_id', 'topic_id', 'subtopic_id', 'shelf_id'))
+        ('subject_id', 'topic_id', 'subtopic_id', 'shelf_id','atlas_chapter'))
     return cross_exam or sum((topic, year, answer)) >= 2
 
 

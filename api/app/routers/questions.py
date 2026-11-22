@@ -1,4 +1,5 @@
 import hashlib,json
+from time import perf_counter
 from contextlib import asynccontextmanager
 from ..services.question_readiness import answer_status_sql, reviewed_answer_sql
 from ..services.learning_taxonomy import CLERICAL_EXAMS, path_projection, topic_expression
@@ -10,7 +11,7 @@ from psycopg.types.json import Jsonb
 from typing import Annotated, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
-from fastapi import APIRouter, Depends, HTTPException, Query, Response, Header
+from fastapi import APIRouter, Depends, HTTPException, Query, Response, Header, Request
 
 from ..db import cursor
 from ..deps import browse_user, current_user
@@ -62,6 +63,7 @@ _COLS = f"""
 
 @router.get("", response_model=QuestionPage)
 async def list_questions(
+    request: Request = None,
     pool: Literal["all", "scorable", "practice"] = "all",
     answer_status: Literal["official", "verified", "needs-review", "unsolved", "written"] | None = None,
     q: str | None = Query(None, min_length=2, max_length=120),
@@ -72,6 +74,8 @@ async def list_questions(
     topic_id: str | None = Query(None, min_length=2, max_length=160),
     study_area: StudyArea | None = None,
     shelf_id: str | None = Query(None, min_length=2, max_length=100),
+    atlas_chapter: Annotated[str | None, Query(min_length=1,max_length=100)] = None,
+    atlas_layer: Annotated[str | None, Query(min_length=1,max_length=100)] = None,
     learning_entry: str | None = Query(None, pattern=r"^learn_[0-9a-f]{32}$"),
     subtopic_id: str | None = Query(None, min_length=2, max_length=160),
     collection_id: str | None = Query(None, min_length=2, max_length=80),
@@ -102,6 +106,16 @@ async def list_questions(
         view = pool_view(pool, 'all')
         where.append("""EXISTS (SELECT 1 FROM appearances qa JOIN papers qp ON qp.id=qa.paper_id
             WHERE qa.canonical_id=v.id AND qp.exam_scope_id='mizoram-recruitment' OFFSET 0)""")
+
+    if atlas_layer and not atlas_chapter:
+        raise HTTPException(422,'Choose an Atlas chapter before a layer')
+    if atlas_chapter:
+        if request is not None and getattr(request.state,'mobile_session',None):
+            raise HTTPException(403,'Use the website for Atlas question lenses')
+        from ..services import atlas_bindings as atlas
+        from .learning import not_assessed
+        where.extend([atlas.membership(),not_assessed('v')])
+        params.update(atlas_chapter=atlas_chapter,atlas_layer=atlas_layer,atlas_hashes=atlas.HASHES,user=user_id)
 
     if origin != "all":
         where.append("EXISTS (SELECT 1 FROM appearances oa JOIN papers op ON op.id=oa.paper_id WHERE oa.canonical_id=v.id AND oa.is_primary AND ((op.exam_type='Community')=%(community)s)" + (" OFFSET 0" if collection_id or paper_id else "") + ")")
@@ -321,6 +335,8 @@ async def list_questions(
         filters['source'] = params['source']
     browse_allowance = None
     async with cursor() as cur:
+        if atlas_chapter:
+            await atlas.current_chapter(cur,atlas_chapter,atlas_layer)
         if power_filter(filters):
             browse_allowance = await allowance(cur, user_id, request_key=query_key(filters))
         if learning_entry:
@@ -328,10 +344,6 @@ async def list_questions(
             await no_assessment(cur,user_id)
         if study_area:
             await cur.execute("SET LOCAL jit=off")
-        source_sql = f"FROM {view} v"
-        await cur.execute(f"SELECT COUNT(*) AS n {source_sql} {clause}", params)
-        row = await cur.fetchone()
-        total = row["n"] if row else 0
 
         # A seeded hash mixes the filtered pool once; pagination/reload retain
         # the same order. Group identities stay stable after an attempt picks a
@@ -353,13 +365,18 @@ async def list_questions(
             sort_key = "md5(" + ("v.study_series_key::text" if grouped else "v.id") + " || %(order_seed)s)"
             params['order_seed'] = seed
             direction = "ASC"
+        # Compute total count and the paginated slice in one pass over the
+        # filtered pool instead of executing the view/CTE twice per request.
         await cur.execute(
-            f"""WITH selected AS MATERIALIZED (
+            f"""WITH pool AS MATERIALIZED (
                     SELECT v.id,{sort_key} AS sort_key FROM {view} v {clause}
-                    ORDER BY sort_key {direction},v.id
+                ), selected AS MATERIALIZED (
+                    SELECT id,sort_key,(SELECT COUNT(*) FROM pool) AS _total_count
+                    FROM pool
+                    ORDER BY sort_key {direction},id
                     LIMIT %(limit)s OFFSET %(offset)s
                 )
-                SELECT {_COLS},src.figure_image,COALESCE(src.has_diagram,false) AS has_diagram,
+                SELECT {_COLS},selected._total_count,src.figure_image,COALESCE(src.has_diagram,false) AS has_diagram,
                        src.paper_id AS source_paper_id,src.year AS source_year,
                        src.exam AS source_exam,src.paper AS source_paper,
                        src.qnum AS source_qnum,src.page AS source_page,
@@ -380,21 +397,37 @@ async def list_questions(
                 ORDER BY selected.sort_key {direction}, selected.id""",
             {**params, "source_paper_id": paper_id, "source_year_from": (year_from or 1900) if shelf_id and (year_from is not None or year_to is not None) else None, "source_year_to": (year_to or 2100) if shelf_id and (year_from is not None or year_to is not None) else None, "limit": limit, "offset": offset},
         )
-        items = await question_items(cur, await cur.fetchall())
+        rows = await cur.fetchall()
+        if rows:
+            total = rows[0].pop("_total_count")
+            for r in rows[1:]:
+                r.pop("_total_count", None)
+        elif offset > 0:
+            await cur.execute(f"SELECT COUNT(*) AS n FROM {view} v {clause}", params)
+            row = await cur.fetchone()
+            total = row["n"] if row else 0
+        else:
+            total = 0
+        items = await question_items(cur, rows, user_id)
 
     return QuestionPage(items=items, total=total, limit=limit, offset=offset,
                         browse_allowance=browse_allowance)
 
 
-async def question_items(cur, selected_rows):
+async def question_items(cur, selected_rows, atlas_user=None):
     """Shared answer-free serializer for catalog pages and saved study sets."""
+    if not selected_rows:
+        return []
     items = []
     await cur.execute("SELECT * FROM v_question_paths WHERE question_id=ANY(%s) ORDER BY is_primary DESC,subject_label,topic_label",([r['id'] for r in selected_rows],))
     paths={}
     for path in await cur.fetchall():paths.setdefault(path['question_id'],[]).append(path)
+    from ..services.atlas_bindings import reverse
+    atlas_links = await reverse(cur,[r['id'] for r in selected_rows],atlas_user)
     source_identities = await identities_for(cur, [r["source_paper_id"] for r in selected_rows if r.get("source_paper_id")])
     for row in selected_rows:
         row['taxonomy_paths']=paths.get(row['id'],[])
+        row['atlas_links']=atlas_links.get(row['id'],[])
         source = None
         if row.get("source_paper_id"):
             source = Appearance(
@@ -698,9 +731,9 @@ async def get_question(question_id: str, exam_scope: ExamScope = DEFAULT_SCOPE) 
                        qc.subtopic_id AS taxonomy_subtopic_id,qc.subtopic_label AS taxonomy_subtopic,
                        qc.review_status AS classification_status,
                        q.answer_source,(q.status='held') AS held,(q.answer_source IN ('official','key')) AS verified,
-                       (q.answer_source='derived' AND EXISTS(SELECT 1 FROM v_reviewed_answer_publications rp WHERE rp.canonical_id=q.id)) AS reviewed_derived,
+                       (q.answer_source='derived' AND {reviewed_answer_sql('q')}) AS reviewed_derived,
                        q.source_defect,q.key_disputed,q.dispute_note,
-                       (SELECT bs.answer_status FROM v_bank_answer_status bs WHERE bs.id=q.id) AS answer_status,
+                       {answer_status_sql('q')} AS answer_status,
                        q.times_asked,q.first_year,q.last_year
                   FROM canonical_questions q
                   LEFT JOIN question_classifications qc
@@ -745,7 +778,7 @@ async def _answer_question(
     body: AnswerSubmission,
     user_id: Annotated[str, Depends(current_user)],
     idempotency_key:Annotated[str|None,Header(min_length=16,max_length=100)]=None,
-    exam_scope: ExamScope = DEFAULT_SCOPE, _cur=None) -> AnswerResult:
+    exam_scope: ExamScope = DEFAULT_SCOPE, _cur=None, _replay_checked: bool = False) -> AnswerResult:
     """Grade an answer, record the attempt, and reveal the key.
 
     Grading compares option TEXT, not index: the canonical row stores the
@@ -761,7 +794,7 @@ async def _answer_question(
         if prior:
             if prior['request_hash']!=request_hash:raise HTTPException(409,'This answer request was already used for a different answer')
             return AnswerResult(**prior['response'])
-    if idempotency_key:
+    if idempotency_key and not _replay_checked:
         async with _answer_cursor(_cur) as cur:
             prior=await replay(cur)
             if prior:return prior
@@ -855,11 +888,12 @@ async def _answer_question(
     # corrected, attempts can be re-scored against the new answer; an index
     # would be meaningless if the options were ever re-ordered.
     async with _answer_cursor(_cur) as cur:
-        if idempotency_key:
+        if idempotency_key and not (_cur is not None and _replay_checked):
             await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('answer-request:'+user_id+':'+idempotency_key,))
             prior=await replay(cur)
             if prior:return prior
-        await protect_answer(cur, user_id, question_id)
+        if _cur is None:
+            await protect_answer(cur, user_id, question_id)
         await require_fresh_attempt(cur, user_id, question_id)
         if body.context == 'review':
             await cur.execute('SELECT 1 FROM v_scorable WHERE id=%s',(question_id,))
@@ -907,7 +941,11 @@ async def _answer_question(
 
 @router.post("/{question_id}/answer", response_model=AnswerResult)
 async def answer_question(question_id:str,body:AnswerSubmission,
+    response:Response,
     user_id:Annotated[str,Depends(current_user)],
     idempotency_key:Annotated[str|None,Header(min_length=16,max_length=100)]=None,
     exam_scope:ExamScope=DEFAULT_SCOPE) -> AnswerResult:
-    return await _answer_question(question_id,body,user_id,idempotency_key,exam_scope)
+    started=perf_counter()
+    result=await _answer_question(question_id,body,user_id,idempotency_key,exam_scope)
+    response.headers['Server-Timing']=f"answer;dur={(perf_counter()-started)*1000:.1f}"
+    return result

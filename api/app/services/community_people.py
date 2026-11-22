@@ -1,16 +1,17 @@
 """Public standing is consented; exact post counts retain viewer disclosure gates."""
-from .community_policy import VALID_VOTE,TIERS,policy
-from .study_posts import REFERENCE_VISIBLE
+from .community_policy import valid_vote,TIERS,policy
+from .study_posts import reference_visible
+from . import audience
 
 VISIBLE_STATS="""
  WITH candidates AS (
    SELECT child.id,child.author_id,child.accepted,child.kind,child.canonical_id,
      COALESCE(parent.source_context,child.source_context) AS source_context
    FROM posts child LEFT JOIN posts parent ON parent.id=child.parent_id
-   WHERE child.author_id=ANY(%(authors)s) AND NOT child.hidden AND NOT child.needs_approval AND NOT child.before_fix
+   WHERE child.author_id=ANY(%(authors)s) AND __AUTHOR_VISIBLE__ AND NOT child.hidden AND NOT child.needs_approval AND NOT child.before_fix
    AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE
      (b.user_id=%(user)s AND b.blocked_id=child.author_id) OR (b.user_id=child.author_id AND b.blocked_id=%(user)s))
-   AND (child.parent_id IS NULL OR (parent.id IS NOT NULL AND NOT parent.hidden AND NOT parent.needs_approval
+   AND (child.parent_id IS NULL OR (parent.id IS NOT NULL AND __PARENT_VISIBLE__ AND NOT parent.hidden AND NOT parent.needs_approval
      AND NOT parent.before_fix AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE
        (b.user_id=%(user)s AND b.blocked_id=parent.author_id) OR (b.user_id=parent.author_id AND b.blocked_id=%(user)s))))
  ), visible AS (
@@ -27,7 +28,7 @@ VISIBLE_STATS="""
        OR ((q.status='held' OR q.source_defect IN ('duplicate-options','unresolved-source') OR q.type<>'mcq' OR q.answer_text IS NULL
          OR (SELECT count(*) FROM jsonb_array_elements_text(COALESCE(q.options,'[]'::jsonb)) opt WHERE opt=q.answer_text)<>1)
          AND EXISTS(SELECT 1 FROM discussion_disclosures d WHERE d.user_id=%(user)s AND d.canonical_id=q.id)))))
-   AND """+REFERENCE_VISIBLE+"""
+   AND __REFERENCE_VISIBLE__
    AND (COALESCE(p.source_context->'study_reference'->>'kind','')<>'material' OR EXISTS(
      SELECT 1 FROM materials m JOIN material_revisions r ON r.material_id=m.id AND r.revision=m.published_revision
      WHERE m.id=p.source_context->'study_reference'->>'id' AND m.status='published'))
@@ -42,13 +43,16 @@ VISIBLE_STATS="""
      COALESCE(sum(CASE WHEN (SELECT count(*) FROM (SELECT 1 FROM attempts a WHERE a.user_id=v.user_id
        AND a.correct IS NOT NULL AND a.canonical_id IS NOT NULL LIMIT 50) scored)=50 THEN 1.0 ELSE 0.25 END)
        FILTER(WHERE v.created_at>=date_trunc('week',now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata'),0) AS weekly_weighted
-   FROM post_votes v WHERE v.post_id=p.id AND v.created_at<=now() AND """+VALID_VOTE+"""
+   FROM post_votes v WHERE v.post_id=p.id AND v.created_at<=now() AND __VALID_VOTE__
  ) v ON true GROUP BY p.author_id
 """
 
 async def visible_stats(cur,authors,viewer):
     if not authors:return {}
-    await cur.execute(VISIBLE_STATS,{'authors':authors,'user':viewer,'scope':'all'})
+    query=(VISIBLE_STATS.replace('__VALID_VOTE__',valid_vote()).replace('__REFERENCE_VISIBLE__',reference_visible())
+      .replace('__AUTHOR_VISIBLE__',audience.subject_sql('child.author_id',team=True))
+      .replace('__PARENT_VISIBLE__',audience.subject_sql('parent.author_id',team=True)))
+    await cur.execute(query,{'authors':authors,'user':viewer,'scope':'all'})
     return {row['author_id']:row for row in await cur.fetchall()}
 
 def counts(stats):
@@ -74,7 +78,7 @@ async def guides(cur,viewer):
       JOIN reward_profiles rp ON rp.user_id=u.id AND rp.board_public
       WHERE u.email IS NOT NULL AND community_weighted_helpful(u.id)>=150
       AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%s))
-      ORDER BY u.id''',(viewer,viewer));candidates=await cur.fetchall()
+      AND '''+audience.subject_sql('u.id')+''' ORDER BY u.id''',(viewer,viewer));candidates=await cur.fetchall()
     eligible=[]
     for author in candidates:
         state=await policy(cur,author['id'])

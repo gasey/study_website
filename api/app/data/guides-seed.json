@@ -1,0 +1,437 @@
+[
+  {
+    "slug": "using-finna",
+    "title": "Using Finna",
+    "subject_id": null,
+    "subject_label": "Guide",
+    "exam_scope": [
+      "udc",
+      "ldc",
+      "combined-prelims"
+    ],
+    "summary": "How past papers, answer labels, the practice timer, scoring and the free allowance work.",
+    "reading_minutes": 4,
+    "status": "published",
+    "chapters": [
+      {
+        "ord": 1,
+        "anchor": "browse-and-practice",
+        "heading": "1. Browse and make a test",
+        "body_markdown": "Every past paper and every question in the Finna bank is free to browse without signing in. Use **Papers** to read original booklets by year, or open the **Question bank** to search across exams and subjects.\n\nWhen you are ready to test yourself, open **Practice**. Choose what you want to cover, choose how many questions, and toggle the timer on or off. Timer off checks each answer as you go; timer on runs a server-timed paper and scores at the end.",
+        "practice_query": "/practice"
+      },
+      {
+        "ord": 2,
+        "anchor": "answer-labels",
+        "heading": "2. What the answer labels mean",
+        "body_markdown": "Trusted answers (an uncontested official key or a reviewed worked solution) render cleanly without badge noise. The source line under every question always names the exam, year, paper and question number.\n\n- **Not verified** (amber): answer awaiting verification, unsolved, or a provisional key before the final key publishes.\n\n- **Answer disputed** (inline): the official key and our reviewed working disagree. Both sources are shown inline while we check it.",
+        "practice_query": "/bank"
+      },
+      {
+        "ord": 3,
+        "anchor": "written-questions",
+        "heading": "3. Written, essay and LDE papers",
+        "body_markdown": "Descriptive questions — essays, letters, précis, comprehension and LDE papers — are reading surfaces. Finna lists them clearly with printed directions, passages and marks, without auto-marking. Signed-in learners can save private practice drafts on any descriptive prompt.",
+        "practice_query": "/bank?mode=written"
+      },
+      {
+        "ord": 4,
+        "anchor": "free-tier",
+        "heading": "4. Free allowance and scoring",
+        "body_markdown": "Browsing past papers, reading guides and checking question sources are always free. Under the unified Practice surface, the free tier provides **1 timed run per month** and **50 untimed answers per day**, with timed runs saved as snapshots so your past results stay auditable.",
+        "practice_query": "/plans"
+      }
+    ]
+  },
+  {
+    "slug": "polity-codex",
+    "title": "Indian Polity Codex",
+    "subject_id": "polity",
+    "subject_label": "Indian Polity",
+    "exam_scope": [
+      "combined-prelims",
+      "udc",
+      "ldc"
+    ],
+    "summary": "Comprehensive 21-chapter constitutional reference covering the making of the Constitution, Fundamental Rights, Parliament, Federalism, Mizoram Sixth Schedule and local bodies.",
+    "reading_minutes": 35,
+    "status": "published",
+    "chapters": [
+      {
+        "ord": 1,
+        "anchor": "hist",
+        "heading": "1. hist",
+        "body_markdown": "- East India Company came to India in 1600 as traders under a charter from Queen Elizabeth I; British rule ran as Company Rule (1773–1858) then Crown Rule (1858–1947).\n- Battle of Buxar (1764) → Treaty of Allahabad (1765, between Shah Alam II and Robert Clive) gave the Company Diwani (revenue) rights over Bengal, Bihar and Orissa.\n- Regulating Act 1773: designated Governor of Bengal as 'Governor-General of Bengal' (first: Warren Hastings); made Madras & Bombay subordinate; set up Supreme Court at Calcutta (1774).\n- GoI Act 1919 (Montagu–Chelmsford Reforms; Montagu = Secretary of State, Chelmsford = Viceroy): introduced dyarchy in the provinces (transferred + reserved subjects), bicameralism and direct elections for the first time; created office of High Commissioner for India in London.\n- GoI Act 1935: 321 Sections, 10 Schedules — the longest British act. Proposed an All-India Federation (never came into being); divided powers into Federal (59), Provincial (54) and Concurrent (36) Lists; residuary powers with the Viceroy.\n- GoI Act 1935 abolished dyarchy in provinces (→ provincial autonomy) but proposed dyarchy at the Centre; provided for RBI and a Federal Court (set up 1937); abolished the Council of India (1858).\n- The 1950 Constitution drew heavily on the GoI Act 1935, itself based on the Simon Commission report, Third Round Table Conference, White Paper 1933 and Joint Select Committee reports.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 2,
+        "anchor": "ca",
+        "heading": "2. ca",
+        "body_markdown": "- Idea of a Constituent Assembly first proposed by M.N. Roy (1934); taken up as an official Congress demand in 1935; accepted by the British in the August Offer 1940; the Assembly was set up under the Cabinet Mission Plan 1946.\n- Members were indirectly elected by the Provincial Legislative Assemblies (limited franchise, not full adult franchise).\n- Original total membership 389 (292 from provinces + 93 princely states + 4 chief commissioner's provinces). After Partition it fell to 299 (229 from British provinces + 70 from princely states).\n- First sitting: 9 December 1946. Dr. Sachchidananda Sinha = first (temporary) Chairman; Dr. Rajendra Prasad = permanent Chairman/President; H.C. Mookerjee = Vice-President; B.N. Rau = constitutional advisor.\n- Drafting Committee formed 29 August 1947 with 7 members, chaired by Dr. B.R. Ambedkar; the draft took under six months (the committee sat 141 days).\n- Constitution adopted 26 November 1949 (then: Preamble + 395 Articles + 8 Schedules); came into force 26 January 1950. Objectives Resolution (basis of the Preamble) moved by Nehru on 22 January 1947.\n- 26 November is celebrated as Constitution Day (from 2015, 125th birth anniversary of Ambedkar). Today the Constitution has ~470 Articles in 25 Parts and 12 Schedules.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 3,
+        "anchor": "preamble",
+        "heading": "3. preamble",
+        "body_markdown": "- The Preamble is based on the Objectives Resolution (Nehru). It is a part of the Constitution but is NON-JUSTICIABLE (not enforceable in court).\n- Its wording begins 'WE, THE PEOPLE OF INDIA … SOVEREIGN SOCIALIST SECULAR DEMOCRATIC REPUBLIC …' and secures JUSTICE, LIBERTY, EQUALITY and FRATERNITY.\n- The 42nd Amendment (1976) added three words: SOCIALIST, SECULAR and INTEGRITY.\n- Sovereign = fully independent, neither dependency nor dominion. Socialist = democratic socialism (mixed economy, blend of Marxism + Gandhism). Secular = no state religion; all religions get equal support.\n- Justice has three forms (social, political, economic); Liberty covers thought, expression, belief, faith, worship; Equality covers status and opportunity; Fraternity assures the dignity of the individual and the unity & integrity of the nation.\n- Democratic = representative parliamentary (indirect) democracy; Republic = head of state (President) is elected, not hereditary, and all offices are open to all.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 4,
+        "anchor": "union",
+        "heading": "4. union",
+        "body_markdown": "- Article 1: 'India, that is Bharat, shall be a Union of States.' States have no right to secede. Territory of India = States + UTs + acquired territories (First Schedule lists names & extents).\n- Article 2: Parliament may admit or establish new states. Article 3: Parliament may form new states, alter areas, boundaries or names of existing states — by SIMPLE majority.\n- Article 3 procedure: a Bill needs the President's prior recommendation; the President refers it to the concerned state legislature for its views, but that opinion is NOT binding.\n- State reorganisation: Dhar Commission (S.K. Dhar, 1948) and the JVP Committee (Nehru, Patel, Pattabhi Sitaramayya, 1948) both rejected language as the sole basis. Andhra Pradesh was carved out of Madras on linguistic lines (1953).\n- Fazl Ali Commission (1953; members K.M. Panikkar & H.N. Kunzru) rejected 'one language one state' and named 4 factors; led to the States Reorganisation Act 1956 (via 7th Amendment) — 14 states + 6 UTs at first.\n- India can acquire foreign territory (cession, occupation, conquest, purchase, gift, lease, plebiscite) — e.g. Goa, Daman & Diu, Sikkim. As of Jan 2025: 28 states and 8 UTs.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 5,
+        "anchor": "citizen",
+        "heading": "5. citizen",
+        "body_markdown": "- Articles 5–11 (Part II) deal with citizenship at commencement; Article 11 lets Parliament regulate acquisition/termination — done via the Citizenship Act 1955.\n- Article 5: citizens are those domiciled in India who were born here, or a parent born here, or ordinarily resident for 5+ years. Article 7: migrants to Pakistan after 1 March 1947 are not citizens. Article 9: voluntarily acquiring foreign citizenship ends Indian citizenship.\n- Citizenship Act 1955 — five modes of ACQUISITION: birth, descent, registration, naturalisation, and incorporation of territory. THREE modes of LOSS: renunciation, termination, deprivation.\n- Cannot be a citizen by birth if parents are foreign diplomats or enemy aliens. Naturalisation needs the Third Schedule qualifications; distinguished service in science/art/peace can waive some conditions.\n- Assam Accord 1985: persons of Indian origin from Bangladesh entering Assam before 1 Jan 1966 are deemed citizens; those entering 1 Jan 1966–24 Mar 1971 register and are deemed citizens after 10 years.\n- CAA 2019: eases naturalisation (11→5 years) for Hindus, Sikhs, Buddhists, Jains, Parsis, Christians from Pakistan, Afghanistan, Bangladesh who entered on/before 31 Dec 2014. Came into effect 11 March 2024. Does not apply to Sixth Schedule tribal areas or Inner Line Permit areas. Critics cite Article 14 and secularism, and conflict with the Assam Accord.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 6,
+        "anchor": "fr",
+        "heading": "6. fr",
+        "body_markdown": "- Part III has 6 Fundamental Rights (Articles 12–35). Right to Property (old Art 31) was removed by the 44th Amendment (1978) and is now only a LEGAL right under Article 300A (Part XII).\n- Article 12 defines 'the State'; Article 13 voids laws inconsistent with Part III (judicial review). FRs are not absolute (reasonable restrictions), not permanent (amendable), justiciable, and directly guaranteed by the Supreme Court.\n- Right to Equality (14–18): Art 14 equality before law + equal protection; Art 15 no discrimination on religion/race/caste/sex/place of birth; Art 16 equal opportunity in public employment; Art 17 abolition of untouchability; Art 18 abolition of titles (military/academic exempt).\n- Right to Freedom (19–22): Art 19 gives six freedoms (originally 7; property deleted by 44th Amdt) with reasonable restrictions; Art 20 protection in conviction; Art 21 life & personal liberty; Art 21A right to education (6–14, 86th Amdt); Art 22 protection against arrest & preventive detention (max 3 months without advisory board).\n- Rights against Exploitation (23–24): Art 23 bans human trafficking & forced labour; Art 24 bans child labour under 14 in factories/mines/hazardous work. Freedom of Religion (25–28). Cultural & Educational Rights (29–30) — Art 30 protects minorities only.\n- Right to Constitutional Remedies (Art 32): 'the heart and soul' of the Constitution (Ambedkar); SC can issue five writs — Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo-Warranto. HCs issue writs under Art 226 (for FRs AND other purposes).\n- Articles 20 & 21 can NEVER be suspended, even during National Emergency. Article 19 can be suspended only on grounds of external emergency (war/external aggression).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 7,
+        "anchor": "dpsp",
+        "heading": "7. dpsp",
+        "body_markdown": "- DPSP (Articles 36–51) are NON-justiciable (Art 37) but 'fundamental in the governance of the country'; they aim at social & economic democracy (a welfare state). Borrowed from Ireland.\n- Three classifications: Socialistic (e.g. Art 38, 39, 39A, 41, 42, 43, 43A), Gandhian (e.g. Art 40 village panchayats, 43, 47, 48), and Liberal-Intellectual (e.g. Art 44 UCC, 45, 48, 48A, 49, 50, 51).\n- Art 39: adequate livelihood, equal pay for equal work, no concentration of wealth. Art 39A: free legal aid. Art 40: organise village panchayats. Art 44: Uniform Civil Code. Art 48A: protect environment & wildlife (added 42nd Amdt). Art 50: separate judiciary from executive. Art 51: promote international peace.\n- FR vs DPSP: FRs are negative (limit the state) & justiciable and establish political democracy; DPSP are positive (require the state to act) & non-justiciable and establish social/economic democracy.\n- Case law: State of Madras v. Champakam Dorairajan (1951) held DPSP subordinate to FRs; Minerva Mills (1980) added the balance between FRs and DPSP to the basic structure.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 8,
+        "anchor": "fd",
+        "heading": "8. fd",
+        "body_markdown": "- Fundamental Duties (Part IVA, Article 51A) were inspired by the Constitution of the erstwhile USSR and added by the 42nd Amendment (1976) on the recommendation of the Swaran Singh Committee — originally 10 duties.\n- An 11th duty (parent/guardian to provide education to a child aged 6–14) was added by the 86th Amendment (2002).\n- Like DPSP, Fundamental Duties are NON-justiciable — no direct legal enforcement — but Parliament may enforce them by suitable legislation.\n- FDs are confined to citizens only (unlike some FRs available to non-citizens). They include respecting the Constitution/flag/anthem, protecting sovereignty, defending the country, promoting harmony, protecting the environment, developing scientific temper, and striving for excellence.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 9,
+        "anchor": "amend",
+        "heading": "9. amend",
+        "body_markdown": "- Three amendment routes: (1) Simple majority — e.g. new states, citizenship, delimitation; (2) Special majority (2/3 of members present & voting) — e.g. FRs, DPSP; (3) Special majority + ratification by half the states — federal features (President's election, SC/HCs, distribution of powers, GST Council).\n- An amendment Bill can be introduced in either House but not in state assemblies; it needs special majority even at introduction; the President MUST assent (44th Amdt) and cannot return or withhold it.\n- 1st Amendment (1951): added the Ninth Schedule to shield land-reform laws from judicial review. 7th (1956): States Reorganisation. 42nd (1976, the 'Mini-Constitution'): added Socialist/Secular/Integrity, Fundamental Duties, extended terms to 6 years, curbed judicial review.\n- 44th Amendment (1978): reversed many 42nd Amdt changes; removed Right to Property from FRs; replaced 'internal disturbance' with 'armed rebellion' for national emergency; restored HC writ powers.\n- Key milestones: 61st (1988) voting age 21→18; 73rd & 74th (1992) local government; 86th (2002) Art 21A; 101st (2016) GST; 103rd (2019) 10% EWS; 104th (2020) ended Anglo-Indian nomination; 106th (2023) one-third women's reservation.\n- Basic Structure Doctrine: Shankari Prasad (1951) & Sajjan Singh (1965) — Parliament can amend any part; Golak Nath (1967) — cannot amend Part III; Kesavananda Bharati (1973) — can amend anything but not the 'basic structure'; Minerva Mills (1980) — added judicial review & FR-DPSP balance; Indira Sawhney (1992) — 27% OBC reservation, creamy layer, rule of law.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 10,
+        "anchor": "parl",
+        "heading": "10. parl",
+        "body_markdown": "- Article 79: Parliament = President + Rajya Sabha (Council of States) + Lok Sabha (House of the People). The President is part of Parliament though not a member of either House.\n- Rajya Sabha (Art 80): max 250 = 238 elected (states/UTs by proportional representation, single transferable vote) + 12 nominated by the President (literature, science, art, social service). It is a permanent house — 1/3 retire every 2 years (member term 6 years).\n- Lok Sabha (Art 81): max 550 (530 states + 20 UTs); currently 543. Term 5 years, extendable by 1 year at a time during emergency. Anglo-Indian nomination removed by 104th Amendment (from Jan 2020).\n- Speaker: decides if a Bill is a Money Bill (final), decides defection cases under the 10th Schedule, presides over joint sittings (Art 108), votes only in a tie. Speaker Pro Tem (usually senior-most member) administers oath to new members.\n- Sessions: max gap between two sessions = 6 months; usually three sessions (Budget, Monsoon, Winter). Quorum = 1/10 of the House. Zero Hour is not in the Rules of Procedure. Question Hour has starred (oral), unstarred (written) and short-notice questions.\n- Money Bill: introduced only in Lok Sabha on the President's recommendation; Rajya Sabha cannot reject/amend it and must return within 14 days. Rajya Sabha's special powers: Art 249 (law on State List in national interest, 2/3 majority), Art 312 (create All-India Services), and it alone can initiate removal of the Vice-President.\n- MPs cannot be arrested 40 days before/after a session (civil cases only). Council of Ministers is collectively responsible only to the Lok Sabha (Art 75(3)).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 11,
+        "anchor": "exec",
+        "heading": "11. exec",
+        "body_markdown": "- President (Art 52–62): head of state; real executive power rests with the Council of Ministers. Elected indirectly by proportional representation with single transferable vote (secret ballot). Qualifications: citizen, 35+, eligible for Lok Sabha. Term 5 years; removed by impeachment (Art 61, 2/3 of total members, 14 days' notice; either House can initiate).\n- President's ordinance power (Art 123): an ordinance has the same force as an Act but must be laid before Parliament and lapses 6 weeks after Parliament reassembles.\n- Emergency powers: National (Art 352 — war/external aggression/armed rebellion), President's Rule (Art 356 — failure of constitutional machinery), Financial (Art 360).\n- Vice-President (Art 63–71): ex-officio Chairman of Rajya Sabha; second-highest office; borrowed from the US VP. Elected by an electoral college of BOTH Houses (elected + nominated members). Removed by a Rajya Sabha resolution (effective majority) agreed to by the Lok Sabha; 14 days' notice; no formal impeachment.\n- Prime Minister (Art 75): appointed by the President (leader of the majority party). May be a member of either House; a non-member can be PM for 6 months. Principal channel between President and CoM.\n- Council of Ministers (Art 74–75): President acts on its advice; may return advice once, then it is binding (44th Amdt). Total ministers incl. PM ≤ 15% of Lok Sabha strength (91st Amdt). A member disqualified for defection is barred from being a minister. Cabinet works on collective responsibility to the Lok Sabha.\n- Finance: Consolidated Fund of India (Art 266) — no withdrawal without Parliament's sanction; Contingency Fund of India (Art 267) — kept with the President for unforeseen expenditure; no tax without legislative sanction (Art 265/256).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 12,
+        "anchor": "judi",
+        "heading": "12. judi",
+        "body_markdown": "- Single integrated judiciary: Supreme Court at the apex, High Courts below, then subordinate courts. Articles 124–147 govern the SC; 214–231 the HCs. Judges appointed by the President in consultation with the judiciary (collegium).\n- Supreme Court jurisdiction: original (Art 131 — Centre–state and inter-state disputes; exclusive), writ (Art 32 — only for FRs), appellate, and advisory (Art 143 — President may seek its opinion). SC judges' salaries are charged on the Consolidated Fund.\n- SC is the guardian and final interpreter of the Constitution and guardian of Fundamental Rights. Judicial review cannot be curtailed even by amendment; in 2015 the SC struck down the 99th Amendment and the NJAC Act 2015.\n- PIL (Public Interest Litigation): originated in the USA (as Social Action Litigation); locus standi is relaxed; power derives from judicial review; only SC and HCs can entertain it. First landmark: Hussainara Khatoon v. State of Bihar (1979) — right to speedy trial.\n- Lok Adalat: 'People's Court'; statutory status under the Legal Services Authorities Act; deals mainly with civil/compromise cases (plus cheque-bounce); no court fee (refundable); lawyers not allowed to represent parties.\n- Fast Track Courts: first set up April 2011 by state governments; outside the ADR system; handle petty criminal/under-trial cases; no adjournment; criticised as 'justice hurried is justice buried'.\n- Tribunals: 42nd Amendment (1976) added Part XIV-A — Art 323A (administrative tribunals) and Art 323B (tribunals for other matters); Administrative Tribunals Act 1985. Free legal aid under Art 39A (NALSA).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 13,
+        "anchor": "fed",
+        "heading": "13. fed",
+        "body_markdown": "- Indian federalism is 'quasi-federal' / 'federation sui generis' with a strong Centre (Canadian model). 'Federation' comes from Latin foedus (treaty). Art 1 calls India a 'Union of States'.\n- Federal features: dual polity, written & rigid constitution, division of powers (Seventh Schedule), supremacy of the constitution, independent judiciary, bicameralism.\n- Unitary features: strong Centre, indestructible union with destructible units, single constitution & citizenship, no equal state representation in RS, emergency provisions, all-India services, Governors appointed by the Centre, integrated judiciary & election machinery, Centre's veto over state bills.\n- Seventh Schedule lists: Union List (100 subjects — defence, banking, foreign affairs, currency, atomic energy), State List (59; originally 66 — police, public health, agriculture, local government), Concurrent List (52 — criminal law, marriage, education, forests). In a conflict on the Concurrent List, Union law prevails.\n- 42nd Amendment moved 5 subjects from State to Concurrent List: education, forests, weights & measures, protection of wild animals & birds, and administration of justice. 101st Amendment (2016) added GST (Art 246A).\n- Centre–state relations: Legislative (Art 245–255), Administrative (Art 256–263, incl. Inter-State Council under Art 263), Financial (Art 268–293). Finance Commission corrects fiscal imbalance.\n- SC on Governors (8 April 2025, Tamil Nadu case): under Art 200 Governors must act on state Bills in a time-bound manner on the aid & advice of the Council of Ministers, without independent discretion; withholding indefinitely is unconstitutional.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 14,
+        "anchor": "emerg",
+        "heading": "14. emerg",
+        "body_markdown": "- Three emergencies: National (Art 352 — war/external aggression/armed rebellion), President's Rule (Art 356 — failure of constitutional machinery), Financial (Art 360). Contained in Articles 352–360.\n- National Emergency declared thrice: 1962 (China war), 1971 (Pakistan war), 1975 (internal — 'internal disturbance', later replaced by 'armed rebellion' by the 44th Amendment).\n- 'External Emergency' = war/external aggression; 'Internal Emergency' = armed rebellion. Art 352 proclamation must be approved by Parliament within 1 month, then every 6 months, with no maximum duration.\n- Art 356 (President's Rule): approved within 2 months, then every 6 months, maximum 3 years. Can also be invoked under Art 365 (state failing to comply with Centre's directions). Imposed 125+ times since 1950; Mizoram thrice (1977, 1978, 1988).\n- Effect on FRs: during National Emergency, Art 19 may be suspended (external grounds), but Articles 20 & 21 are NEVER suspended (Art 359). Under Art 250 Parliament can legislate on State List; laws lapse 6 months after revocation.\n- 38th Amendment (1975) made the President's satisfaction 'final and conclusive'; the 44th Amendment (1978) removed that, restoring judicial review. Art 355 imposes a duty on the Centre to protect states.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 15,
+        "anchor": "cbody",
+        "heading": "15. cbody",
+        "body_markdown": "- Election Commission (Art 324): permanent, independent; a 3-member body (Chief Election Commissioner + 2 ECs) with equal powers/salary (like SC judges). CEC term: 6 years or 65, whichever earlier; an EC can be removed only on the CEC's recommendation.\n- ECI functions: prepare electoral rolls, recognise parties & allot symbols, notify schedules, enforce the Model Code of Conduct, advise on disqualification. Initiatives: EVMs (2003), VVPAT, SVEEP (2009), NOTA, Braille EVMs (2019).\n- UPSC (Art 315–323, Part XIV): central recruiting agency; chairman & members appointed by the President; term 6 years or 65; not eligible for reappointment. Half the members must have 10+ years' government service. Its recommendations are ADVISORY (not binding); it recruits Group A & B (a 'watchdog of the merit system'). DoPT is the central personnel agency.\n- SPSC: state parallel of UPSC (Art 315–323); chairman/members appointed by the Governor but removed only by the President (on SC enquiry, for misbehaviour).\n- Finance Commission (Art 280): quasi-judicial body constituted by the President every 5th year; chairman + 4 members; recommends distribution of central tax revenue between Centre and states.\n- CAG (Art 148–151): appointed by the President; removed like a SC judge; not eligible for further office after retirement; salary charged on the Consolidated Fund; audits and reports on Union & state accounts (guardian of the public purse). Two financial committees: Public Accounts Committee and Estimates Committee.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 16,
+        "anchor": "rpa",
+        "heading": "16. rpa",
+        "body_markdown": "- Articles 324–329 (Part XV) govern elections. Parliament enacted the Representation of the People Act 1950 (rolls, seat allotment) and the RPA 1951 (conduct of elections, qualifications/disqualifications).\n- RPA 1951 was passed under Article 327; originally 13 parts and 171 sections. Part II deals with qualifications & disqualifications; Part IVA with registration of parties; Part XIII-A with the Chief Electoral Officer.\n- Section 8 (disqualification on conviction): imprisonment of 2+ years disqualifies a person from the date of conviction and for a further 6 years after release. Section 33(7): a candidate may contest from up to two constituencies (must vacate one if they win both).\n- Election offences under RPA 1951 include booth capturing, promoting enmity/hatred, bribery, selling liquor within 48 hours before poll close, and holding public meetings within 48 hours before voting.\n- Party recognition (by the ECI): National party — 6% of valid votes in 4+ states plus 4 Lok Sabha seats, OR 2% of Lok Sabha seats from 3 states, OR recognised in 4 states. As of Aug 2025: 6 National parties (BJP, INC, CPI(M), BSP, NPP, AAP), 67 state parties, 2857 registered unrecognised parties.\n- Election machinery: ECI → Chief Electoral Officer (state/UT) → District Election Officer → Electoral Registration Officer, plus observers. Election petitions are tried in the High Court.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 17,
+        "anchor": "adl",
+        "heading": "17. adl",
+        "body_markdown": "- Anti-Defection Law: added by the 52nd Amendment (1985) as the Tenth Schedule; amended Articles 101, 102, 190, 191. A member is disqualified for voluntarily giving up party membership or voting against the party whip.\n- Independent members are disqualified if they join any party after election; nominated members if they join a party after 6 months of taking their seat. The presiding officer (Speaker/Chairman) decides defection cases.\n- Exceptions: merger of a party with another where 2/3 of members agree (the 'split' exception was DELETED by the 91st Amendment 2003); and a presiding officer who gives up membership and rejoins after office.\n- 91st Amendment (2003): capped the Council of Ministers at 15% of the House (state minimum 12); barred defectors from being ministers; removed the one-third 'split' protection. Based on NCRWC (2002) recommendations.\n- Party system features: one-party dominance ('the Congress System' — Rajni Kothari / Morris Jones); multi-party system since 1967; weak opposition; leader-centric parties; rise of regional parties; BJP dominance since 2014.\n- Reform ideas: decide defection via the President/Governor on ECI advice (NCRWC); apply the law only to confidence/money votes (Hamid Ansari); an independent tribunal headed by a retired judge (SC); intra-party democracy (170th Law Commission).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 18,
+        "anchor": "local",
+        "heading": "18. local",
+        "body_markdown": "- 73rd Amendment (1992): constitutionalised Panchayati Raj (rural); added Part IX and the Eleventh Schedule (29 subjects). 74th Amendment (1992): urban local bodies (municipalities); added Part IXA and the Twelfth Schedule (18 subjects).\n- Three-tier Panchayati Raj: village, intermediate and district levels. Reservation of seats for SCs/STs in proportion to population, and one-third reservation for women.\n- Fixed 5-year term for panchayats/municipalities; elections conducted by the State Election Commission; a State Finance Commission is constituted every 5 years to review local finances.\n- Municipalities are of three types: Nagar Panchayat (transitional area), Municipal Council (smaller urban), Municipal Corporation (larger urban).\n- Challenges for urban local bodies: limited devolution of taxes/functions, delayed elections, politicisation, poor cost recovery, weak accounts, and revenue lost to GST (octroi, entry tax). The 74th Amendment does not apply in Nagaland, Meghalaya, Mizoram, and Darjeeling (Gorkha Hill Council).",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 19,
+        "anchor": "sixth",
+        "heading": "19. sixth",
+        "body_markdown": "- The Sixth Schedule (Art 244(2) & 275(1)) provides for the administration of tribal areas in Assam, Meghalaya, Tripura and Mizoram through Autonomous District Councils (ADCs). (The Fifth Schedule covers scheduled areas in other states.)\n- Origin: the Bordoloi Sub-Committee (Gopinath Bordoloi, then CM of Assam) recommended District & Regional Councils; Saprawnga and Khawtinkhuma were co-opted to represent the Mizos.\n- Each ADC has up to 30 members — up to 4 nominated by the Governor, the rest elected by universal adult suffrage; term 5 years (extendable by 1 year). Members must be Indian citizens, 25+, and registered voters.\n- The Lushai Hills District Council came into being in 1952 (renamed Mizo Hills District Council in 1954). The Sixth Schedule was split into Parts I, II, IIA and III by the North-Eastern Areas Reorganisation Act 1971; Part III covers Mizoram's councils.\n- Mizoram's three ADCs: Lai (Lawngtlai), Mara (Siaha) and Chakma (Chawngte), governed under the Mizoram Autonomous District Council Rules 1974. The Governor of Mizoram is the executive head; laws passed by a DC need the Governor's approval.\n- Each ADC has an Executive Committee (like a cabinet): one Chief Executive Member (elected) + 2 Executive Members (appointed by the Governor on the CEM's recommendation). ADCs have legislative, executive, judicial (Village/District Council courts) and financial (taxation) powers. Anti-defection law does not apply, contributing to instability.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 20,
+        "anchor": "pg",
+        "heading": "20. pg",
+        "body_markdown": "- The term 'pressure group' originated in the USA. Pressure groups seek to influence public policy but, unlike political parties, do not contest elections. Methods: lobbying, electioneering, propaganda, demonstrations, mass media, and sometimes bribery.\n- Business groups (most powerful): FICCI, ASSOCHAM, FAIFDA (food-grain dealers), AIMO (medium industry).\n- Trade unions (party-affiliated): AITUC (CPI), INTUC (Congress — first union, 1920, Lala Lajpat Rai), HMS (Socialist), CITU (CPI-M), BMS (BJP).\n- Student wings: ABVP (BJP), AISF (CPI), NSUI (Congress), SFI (CPI-M). Agrarian: Bharatiya Kisan Union, All India Kisan Sabha (oldest/largest).\n- Other categories: professional (IMA, Bar Council), religious (RSS, VHP), caste, tribal (NSCN, ULFA), linguistic, ideology-based (Narmada Bachao Andolan, Chipko), and 'anomic' groups (spontaneous, e.g. riots/agitations).\n- In India, traditional identities (caste, religion, region) dominate; most associational groups have party affiliations ('parties behind the parties'), though major business groups tend to stay non-affiliated.",
+        "practice_query": "/practice?subject=polity&q="
+      },
+      {
+        "ord": 21,
+        "anchor": "comp",
+        "heading": "21. comp",
+        "body_markdown": "- UK: parliamentary government, cabinet system, bicameralism, rule of law (Art 14), single citizenship, writs, and the office of Speaker.\n- USA: Fundamental Rights, judicial review, independence of the judiciary, impeachment of the President, removal of judges, the office of Vice-President, and the preamble idea.\n- Ireland: Directive Principles of State Policy, the method of the President's election, and nomination of members to the Rajya Sabha.\n- Canada: a strong Centre (quasi-federal 'union'), residuary powers with the Centre, appointment of Governors by the Centre, and the SC's advisory jurisdiction.\n- Australia: the Concurrent List, joint sitting of the two Houses (Art 108), and freedom of trade and commerce. USSR: Fundamental Duties and the ideals of justice in the Preamble.\n- France: the ideals of Liberty, Equality, Fraternity and the concept of a 'Republic'. Germany: suspension of Fundamental Rights during emergency. South Africa: procedure for amending the Constitution and election of Rajya Sabha members. GoI Act 1935: the federal scheme, judiciary, public service commissions, and much administrative detail.",
+        "practice_query": "/practice?subject=polity&q="
+      }
+    ]
+  },
+  {
+    "slug": "quick-revision",
+    "title": "MPSC Quick Revision",
+    "subject_id": "general-knowledge",
+    "subject_label": "General Knowledge & Revision",
+    "exam_scope": [
+      "udc",
+      "ldc",
+      "combined-prelims"
+    ],
+    "summary": "High-yield rapid revision summaries extracted from 15 core MPSC papers and recurring exam themes.",
+    "reading_minutes": 25,
+    "status": "published",
+    "chapters": [
+      {
+        "ord": 1,
+        "anchor": "udc-asst-2024-p2",
+        "heading": "1. Assistant Grade & UDC — Paper-II",
+        "body_markdown": "Computer · Arithmetic · Reasoning · April 2024\n\n> The only clerical sitting MPSC published an answer key for (Provisional Answer Key, No.ASST/1/2019-MPSC, 5 April 2024) — so every answer here is the Commission's, not ours.\n\n- **Which of the following are physical devices of a computer?**\n\n- **Which of the following is designed to control the operations of a computer?**\n\n- **Which of the following devices provides the communication between a computer and the outer world?**\n\n- **Each pixel on a computer screen is composed of how many colour dots?**\n\n- **The temporary storage that can be used to compensate for a difference in data rate and data flow between devices**\n\n- **The latest major release of Microsoft’s Windows NT operating system by Microsoft**\n\n- **In MS words, a tools to quickly apply the same formatting, such as color, font style and size, or border style, to multiple pieces of text or graphics**\n\n- **Whitespace used to place text or images in the left margin of a manual, next to the main body of the text in MS words**\n\n- **A-set of toolbars at the top of the window in MS word designed to help you quickly find the commands that you need to complete a task is called**\n\n- **_2- A feature that enables users to send a similar letter or document to multiple recipients**\n\n- **A tools which are used to mark a specific location within a document, allowing you to quickly navigate to that location later**\n\n- **Which of the following is not cloud service?**",
+        "practice_query": "/practice?q=Assistant"
+      },
+      {
+        "ord": 2,
+        "anchor": "sas1-eng",
+        "heading": "2. SAS-I — General English",
+        "body_markdown": "Paper-I · August 2026\n\n> Part-B MCQs only — Part-A is descriptive (essay, letter, précis) and has no marked answer.\n\n- **They hammered out an agreement after hours of discussion.**\n\n- **There is little hope of success now.**\n\n- **Many were invited, but only a few attended.**\n\n- **His return from abroad surprised everyone.**\n\n- **The suspect was taken inside.**\n\n- **In which sentence does the word \"fast\" function as an adverb?**\n\n- **In which sentence is the word 'light' used as a verb?**\n\n- **The word 'running' functions as a noun in:**\n\n- **Identify the part of speech of the word 'despite' in the following sentence:\n\nDespite the heavy rain, the match continued.**\n\n- **In the sentence, \"That is the exact same variety of apple we saw at the plantation,\" the word 'same' acts as a/an:**\n\n- **By the end of this financial year, the government ________ (implement) all the recommendations of the commission.**\n\n- **When the inspection finally began, the workers ________ (wait) outside the factory for nearly four hours.**",
+        "practice_query": "/practice?q=SAS-I"
+      },
+      {
+        "ord": 3,
+        "anchor": "sas1-gk",
+        "heading": "3. SAS-I — General Knowledge",
+        "body_markdown": "Paper-II · August 2026\n\n- **In the Union Budget presented for the fiscal year 2026–27, the primary target area for the expanded “PLI” (Production Linked Incentive) scheme is:**\n\n- **The primary objective of the “PM-PRANAM” scheme, which has seen accelerated nationwide rollout recently, is to:**\n\n- **With reference to the Conference of the Parties (COP) under the United Nations Framework Convention on Climate Change, consider the following statements: 1. It is held annually. 2. Representatives from governments negotiate measures to address climate change. 3. Only member countries of the Group of Twenty can participate in COP meetings. Which of the statements given above are correct?**\n\n- **Which Indian state recently became the first to fully institutionalize a Uniform Civil Code (UCC) through its state assembly legislative process?**\n\n- **With reference to India’s recent space missions, consider the following statements: 1. Indian Space Research Organisation launched the SPADEX mission to demonstrate spacecraft docking technology. 2. The SPADEX mission aims to develop capabilities required for future space station and human spaceflight missions. 3. India has already established a permanently inhabited space station in Earth orbit. Which of the statements given above are correct?**\n\n- **The specialized climate action platform “Green Rising,” launched in collaboration with UNICEF at recent international meets, focuses primarily on:**\n\n- **The dynamic system of local self-government, characterized by autonomous village assemblies (Ur and Sabha), was a hallmark of which southern Indian dynasty?**\n\n- **The system of dual government (Diarchy) in Bengal was officially abolished in 1772 by which Governor- General?**\n\n- **With reference to the Revolt of 1857, consider the following statements: 1. It began as a mutiny of sepoys in the Bengal Army. 2. Bahadur Shah Zafar was proclaimed the Emperor of India by the rebels. 3. The Madras and Bombay Armies joined the revolt on a large scale. Which of the statements given above are correct?**\n\n- **With reference to the Swadeshi Movement, consider the following statements: 1. It originated in response to the Partition of Bengal in 1905. 2. It encouraged the boycott of foreign goods. 3. It demanded complete independence from British rule from its inception. Which of the statements given above are correct?**\n\n- **Who among the following nationalist leaders founded the ‘Ghadar Party’ in San Francisco in 1913?**\n\n- **Who was the British Prime Minister when the historic ‘Quit India Movement’ was launched in India in 1942?**",
+        "practice_query": "/practice?q=SAS-I"
+      },
+      {
+        "ord": 4,
+        "anchor": "nurse-eng",
+        "heading": "4. Staff Nurse — General English",
+        "body_markdown": "Paper-I · Series A · August 2026\n\n> Part-B MCQs only — Part-A is descriptive (essay, letter, précis) and has no marked answer.\n\n- **She was the only child of her parents.**\n\n- **He went home after the meeting.**\n\n- **Alas! We lost the match.**\n\n- **Identify the Abstract Noun in the following sentence: 'Wisdom is better than strength.'**\n\n- **He is but a child.**\n\n- **Identify the Intransitive Verb in the following sentences:**\n\n- **Neither of the boys has won. The word Neither is a/an:**\n\n- **The flowers smell sweet.**\n\n- **Either you or your brother has to go.**\n\n- **The brave deserve the fair.**\n\n- **Wait till I return.**\n\n- **Each of the students was given a book.**",
+        "practice_query": "/practice?q=Staff"
+      },
+      {
+        "ord": 5,
+        "anchor": "nurse-gk",
+        "heading": "5. Staff Nurse — General Knowledge",
+        "body_markdown": "Paper-II · Series A · August 2026\n\n- **Who became the Chief Minister of Manipur after the revocation of President’s Rule in 2026?**\n\n- **India’s first approved dengue vaccine is:**\n\n- **The theme of the 11th Governing Council Meeting of NITI Aayog held in 2026 was:**\n\n- **The Government of Mizoram recently constituted its first State Human Rights Commission, who became the first chairperson of the Mizoram State Human Rights Commission?**\n\n- **Who were the Chief Guests at India’s 77th Republic Day celebrations in 2026?**\n\n- **Who resigned as the Union Education Minister of India in July 2026 amid controversy related to the NEET-UG examination irregularities?**\n\n- **Gautama Buddha was born at:**\n\n- **The Lion Capital adopted as the National Emblem of India is located at:**\n\n- **Which Greek ambassador visited the court of Chandragupta Maurya?**\n\n- **The Ghadar Party was founded in 1913 at:**\n\n- **Mahatma Gandhi’s first Satyagraha in India was launched at:**\n\n- **The plan that provided the immediate basis for the partition of British India was the:**",
+        "practice_query": "/practice?q=Staff"
+      },
+      {
+        "ord": 6,
+        "anchor": "co-eng",
+        "heading": "6. Circle Officer — General English",
+        "body_markdown": "Paper-I · April 2026\n\n> Descriptive prompts (essay, letter, précis) from this paper aren't included here — only the MCQs are.\n\n- **In the sentence: \"The constant exposure to curated and idealized representations of life often leads to unhealthy comparisions…\" Choose the word closest in meaning to curated in this context:**\n\n- **In the sentence: \"It is important to acknowledge that social media is not inherently detrimental…\" Choose the word most opposite in meaning to inherently in the context of the passage:**\n\n- **Still waters run deep.**\n\n- **He knows better than to quarrel.**\n\n- **What most annoys me is his obstinacy.**\n\n- **Right the wrong.**\n\n- **Since you say so, I believe it.**\n\n- **The near side of the moon is better known.**\n\n- **He is but a child.**\n\n- **He kept a fast for a week.**\n\n- **The heavens declare the glory of God.**\n\n- **There is no excuse for such a behaviour.**",
+        "practice_query": "/practice?q=Circle"
+      },
+      {
+        "ord": 7,
+        "anchor": "co-gk",
+        "heading": "7. Circle Officer — General Knowledge, Arithmetic & Reasoning",
+        "body_markdown": "Paper-II · April 2026\n\n- **Who, the first Indian astronaut to visit the ISS in 2025 and, was awarded the Ashoka Chakra in 2026?**\n\n- **The PANKHUDI portal was launched on January 8, 2026 by which ministry?**\n\n- **Which country has introduced the world's first comprehensive Artificial Intelligence (AI) law called the AI Basic Act on January 22, 2026?**\n\n- **The Strait of Hormuz, a crucial global oil transit chokepoint, is best governed under which maritime legal regime?**\n\n- **Kavach 5.0, introduced by Indian Railways, is primarily aimed at enhancing safety by preventing:**\n\n- **Which Ward in Aizawl Municipal Corporation is recognized as the ward that has never had a woman corporator/councillor in all three rounds of seat reservation rotations and elections conducted since inception of the municipality?**\n\n- **By which one of the following Acts did the Governor General of Bengal became the Governor General of India?**\n\n- **Gandhiji raised the slogan \"Do or Die\" during the time of which of the following movement?**\n\n- **Jammu and Kashmir became an integral part of India on –**\n\n- **The Balkan Plan for fragmentation of India was the brain child of:**\n\n- **Which of the following policies of Muhammad bin Tughlaq was intended to improve administrative control over the Deccan?**\n\n- **Which of the following statements is/are correct regarding Koh-i-Noor?\n1. It was once part of the Peacock Throne\n2. It was taken by Nadir Shah during his invasion of India\n3. It is currently kept in the Tower of London\n\nChoose the correct answer from the options given below:**",
+        "practice_query": "/practice?q=Circle"
+      },
+      {
+        "ord": 8,
+        "anchor": "jao-eng",
+        "heading": "8. Junior Administrative Officer — General English",
+        "body_markdown": "Paper-I · July 2026\n\n> Descriptive prompts (essay, letter, précis) from this paper aren't included here — only the MCQs are.\n\n- **What was the weather like in the hill station?**\n\n- **Where was Grandfather Hari sitting?**\n\n- **Why was Binya late?**\n\n- **What did Grandfather Hari say about the forest?**\n\n- **Who became friends of Binya's grandfather when he was a boy?**\n\n- **The famous gym in that area is hers. In the sentence, “hers” is a:**\n\n- **Which of the following is a pronoun?**\n\n- **A word that modifies a verb, an adjective, or another adverb is called:**\n\n- **Choose the sentence where “watch” is used as a noun.**\n\n- **Which of the following words functions as a determiner in the sentence 'Several students participated in the competition'?**\n\n- **Which part of speech describes a noun?**\n\n- **Which of the following is a common noun?**",
+        "practice_query": "/practice?q=Junior"
+      },
+      {
+        "ord": 9,
+        "anchor": "jao-gk",
+        "heading": "9. Junior Administrative Officer — General Knowledge, Arithmetic & Reasoning",
+        "body_markdown": "Paper-II · July 2026\n\n- **Recently, INTERPOL has published its first ever Silver Notice, it is associated with:**\n\n- **The ‘Project Waterworth’, sometimes mentioned in the news, is related to:**\n\n- **The TALASH programme, recently launched by the Government of India in collaboration with UNICEF, aims to:**\n\n- **The “Yala Glacier”, recently declared as “dead”, is located in which one of the following countries?**\n\n- **Consider the following statements with reference to Subsidiary Alliance:\n1. Under the Alliance, a British Resident was posted in the court of Indian rulers.\n2. It was introduced by the Governor- General Warren Hastings.\nWhich of the statements given above is/are correct?**\n\n- **In the Gupta administration, the empire was divided into provinces, each under a governor, and further into districts under local heads. Which of the following terms correctly refer to the provincial governors and the district heads, respectively?**\n\n- **With reference to the Anglo–Maratha Wars, consider the following statements:\n1. The First Anglo–Maratha War ended with the Treaty of Salbai.\n2. The Second Anglo–Maratha War took place during the tenure of Lord Wellesley.\nWhich of the statements given above is/are correct?**\n\n- **Consider the following statements:\n1. Convectional rainfall occurs primarily in polar regions.\n2. Orographic rainfall is caused by mountains forcing moist air to rise.\nWhich of the above statements is/are correct?**\n\n- **In the context of Earth’s climate system, what does the term “Heat Budget” refer to?**\n\n- **Which of the following statements is not correct regarding the Inter Tropical Convergence Zone (ITCZ)?\n1. It is a high-pressure zone located at the equator where trade winds converge.\n2. The seasonal migration of the ITCZ is one of the major factors responsible for the onset and withdrawal of the Indian monsoon.\nSelect the correct answer using the code given below.**\n\n- **With reference to Fundamental Duties under the Constitution of India, consider the following statements:\n1. These were not present in the original Constitution adopted on 26th January 1950.\n2. They are applicable to all persons residing in the territory of India.\n3. Parliament can enforce the Fundamental Duties by enacting a law.\nWhich of the statements given above is/are correct?**\n\n- **Who among the following was not a member of the Drafting Committee of the Constituent Assembly?**",
+        "practice_query": "/practice?q=Junior"
+      },
+      {
+        "ord": 10,
+        "anchor": "leso-eng",
+        "heading": "10. Assistant LESO — General English",
+        "body_markdown": "Précis, Letter, Comprehension & Grammar · April 2026\n\n> Descriptive prompts (essay, letter, précis) from this paper aren't included here — only the MCQs are.\n\n- **The Bible is the holy book of the Christians.**\n\n- **None of my lost books was found.**\n\n- **It was a beautiful sunset.**\n\n- **He completed his work quickly.**\n\n- **I really wanted to go, but it started raining.**\n\n- **He was a man fertile in resource.**\n\n- **He who is merciful shall meet mercy.**\n\n- **I did not expect to pass, and see, I was among the top five.**\n\n- **Of two evils choose the less.**\n\n- **What happened next?**\n\n- **I am not interested about anything that happened ___ the very remote past.**\n\n- **She made a point ____ coming late so that everyone would look at her.**",
+        "practice_query": "/practice?q=Assistant"
+      },
+      {
+        "ord": 11,
+        "anchor": "leso-gs",
+        "heading": "11. Assistant LESO — General Studies",
+        "body_markdown": "Current Affairs, GK & Mizoram · April 2026\n\n- **Which of the following States will go to the polls in April, 2026?**\n\n- **Indian cricket team won the ICC Men’s T20 World Cup, 2026 by defeating:**\n\n- **The theme of Chapchar Kut, 2026 is**\n\n- **How many seats are reserved for women in General Election to the Aizawl Municipal Corporation, 2026?**\n\n- **Vanglaini Mizo Award 2025 was given to:**\n\n- **Which two disasters has the 16th Finance Commission recommended for inclusion as nationally notified disasters?**\n\n- **Which country is the largest buyer of Iranian crude oil?**\n\n- **The capital of Mauryan Empire under Ashoka was:**\n\n- **The Ajanta Caves are primarily associated with which religious tradition?**\n\n- **Which Chinese traveler visited India during the reign of Harshavardhana?**\n\n- **The Chalukya Dynasties were in power of Indian medieval history from the reign of 600 to 1200 AD in the state of:**\n\n- **Who is known as the “father of the Maratha nation’?**",
+        "practice_query": "/practice?q=Assistant"
+      },
+      {
+        "ord": 12,
+        "anchor": "ri-eng",
+        "heading": "12. Research Investigator — General English",
+        "body_markdown": "Paper-I · May 2026\n\n> Descriptive prompts (essay, letter, précis) from this paper aren't included here — only the MCQs are.\n\n- **India is a country with diverse cultures and languages.**\n\n- **Honesty is the best policy.**\n\n- **Mizoram is a beautiful state.**\n\n- **Do not be such a coward.**\n\n- **Sanga is well mannered because he has a good upbringing.**\n\n- **I hurt myself during the match.**\n\n- **Oranges from Mizoram are sweeter than those from the plains.**\n\n- **The milkman delivers milk daily.**\n\n- **They are fully prepared for the conference.**\n\n- **Our home is humble, but it is filled with love.**\n\n- **The teacher praised the brilliant student.**\n\n- **The book is on the table.**",
+        "practice_query": "/practice?q=Research"
+      },
+      {
+        "ord": 13,
+        "anchor": "ri-gk",
+        "heading": "13. Research Investigator — General Knowledge, Aptitude & Reasoning",
+        "body_markdown": "Paper-II · May 2026\n\n- **Which country given below is not a member of BRICS grouping?**\n\n- **The ‘Schengen Zone’, recently seen in the news, is a zone related to:**\n\n- **With reference to the e-Rupee issued by the Reserve Bank of India, consider: 1.It is a sovereign digital currency and legal tender. 2.It eliminates the need for commercial banks in the financial system. 3.It can be used for both wholesale and retail transactions.**\n\n- **The name of the spacecraft used by NASA for their recent lunar program is:**\n\n- **How many teams will participate in the 2026 FIFA World Cup ?**\n\n- **Government of Mizoram recently signed Memorandum of Settlement (MoS) with:**\n\n- **Gandhiji attended which of the following Round Table Conference (RTC)? 1.First RTC 2.Second RTC 3.Third RTC Select the correct answer using the code given below.**\n\n- **The Battle of Chinsurah was one of the decisive battles in the struggle among European powers in India. It was fought between which of the following countries?**\n\n- **The Poona Pact of 1932 was related to which of the following?**\n\n- **Kalidasa was a poet of ?**\n\n- **Who among the following Sikh Gurus laid the foundation of the Khalsa Panth ?**\n\n- **“Jai Hind” slogan was adopted by?**",
+        "practice_query": "/practice?q=Research"
+      },
+      {
+        "ord": 14,
+        "anchor": "sistats-eng",
+        "heading": "14. SI Statistics — General English",
+        "body_markdown": "Paper-I · January 2026\n\n> Descriptive prompts (essay, letter, précis) from this paper aren't included here — only the MCQs are.\n\n- **I’m sorry I can’t hear what you are saying because everybody ________(talk) so loudly.**\n\n- **When Damien called last night, I ________(watch) the Titanic Movie.**\n\n- **By this time next year, you ________(complete) your studies and found a job.**\n\n- **Last week, I ran into an old friend of mine. We________(see, not) each other in years and both of us had changed a great deal.**\n\n- **Rama was reading a novel while his wife________(sleep).**\n\n- **By the end of this year, she________(work) in this department for twenty-five years.**\n\n- **When I reached the station, the train ________(leave).**\n\n- **He said that by the time we arrived, they________(finish) everything.**\n\n- **By next December, he________ (serve) as the principal for fifteen years.**\n\n- **I didn’t recognize her at first because she ________ (change) so much.**\n\n- **The man was acquitted ________all charges.**\n\n- **He hinted ________some loss of treasure.**",
+        "practice_query": "/practice?q=SI"
+      },
+      {
+        "ord": 15,
+        "anchor": "sistats-gk",
+        "heading": "15. SI Statistics — General Mathematics & General Knowledge",
+        "body_markdown": "Paper-II · January 2026\n\n- **The sum for 2 years gives a compound interest of ₹ 3225 at the rate of 15% per annum. The sum is:**\n\n- **A car goes 120 km at 60 km/hr and returns 120 km at 40 km/hr. Average speed is:**\n\n- **A boy goes 7 m north and then 24 m east. Find his distance from the starting point.**\n\n- **The acute angle between the hour hand and the minute hand at 3:00 is:**\n\n- **Out of 80 people, 35 like tea, 40 like coffee and 20 like both. How many like only tea, only coffee, and neither?**\n\n- **The distance from the centre of a circle with radius 10 cm to a chord is 6 cm. The length of the chord is:**\n\n- **You get a salary increase of 6% plus an extra ₹ 800 per month. Your present salary is ₹ 30,000 per month. What will your new salary be?**\n\n- **If tanθ = 3/4, then secθ =**\n\n- **The angle of elevation of the top of a tower from a point on the ground is 45°. If the point is 20 m away from the base of the tower, find the height of the tower.**\n\n- **The perimeter of a semicircular plate is 108 cm including its diameter. Find its radius.**\n\n- **The area of a quadrant of radius 14 cm is:**\n\n- **The mean of 20 observations is 30. Later it was found that one value 20 was wrongly taken instead of 40. Find the correct mean.**",
+        "practice_query": "/practice?q=SI"
+      }
+    ]
+  },
+  {
+    "slug": "tenses-and-voice",
+    "title": "English Tenses & Voice",
+    "subject_id": "english",
+    "subject_label": "English Grammar",
+    "exam_scope": [
+      "udc",
+      "ldc",
+      "combined-prelims"
+    ],
+    "summary": "All twelve English tenses with structures, signal words and worked examples, plus the complete Active-to-Passive voice conversion table.",
+    "reading_minutes": 18,
+    "status": "published",
+    "chapters": [
+      {
+        "ord": 1,
+        "anchor": "present-simple",
+        "heading": "1. Present Simple",
+        "body_markdown": "**Time & Aspect:** Present · Simple\n\n**Structure:** `subject + base verb (+s/es)`\n\nHabits, routines, permanent facts, timetables, and general truths.\n\n**Signal words:** always, usually, every day, often, never, on Mondays\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"The sun rises in the east.\"}\n\n- {\"l\":\"–\",\"t\":\"She does not work on Sundays.\"}\n\n- {\"l\":\"?\",\"t\":\"Do they live here?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 2,
+        "anchor": "present-continuous",
+        "heading": "2. Present Continuous",
+        "body_markdown": "**Time & Aspect:** Present · Continuous\n\n**Structure:** `am / is / are + verb-ing`\n\nActions happening now, temporary situations, and fixed future arrangements.\n\n**Signal words:** now, at the moment, currently, these days, look!, listen!\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"They are watching a film.\"}\n\n- {\"l\":\"–\",\"t\":\"He is not sleeping.\"}\n\n- {\"l\":\"?\",\"t\":\"Are you coming tonight?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 3,
+        "anchor": "present-perfect",
+        "heading": "3. Present Perfect",
+        "body_markdown": "**Time & Aspect:** Present · Perfect\n\n**Structure:** `have / has + past participle`\n\nPast actions with a present result, experiences, and unfinished time periods.\n\n**Signal words:** just, already, yet, ever, never, since, for, recently\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"I have finished my work.\"}\n\n- {\"l\":\"–\",\"t\":\"She has not arrived yet.\"}\n\n- {\"l\":\"?\",\"t\":\"Have you ever been to Delhi?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 4,
+        "anchor": "present-perfect-continuous",
+        "heading": "4. Present Perfect Continuous",
+        "body_markdown": "**Time & Aspect:** Present · Perfect Continuous\n\n**Structure:** `have / has been + verb-ing`\n\nAn action that began in the past and is still going on, stressing duration.\n\n**Signal words:** since, for, all day, how long, lately\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"They have been waiting for an hour.\"}\n\n- {\"l\":\"–\",\"t\":\"It has not been raining long.\"}\n\n- {\"l\":\"?\",\"t\":\"How long have you been learning English?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 5,
+        "anchor": "past-simple",
+        "heading": "5. Past Simple",
+        "body_markdown": "**Time & Aspect:** Past · Simple\n\n**Structure:** `verb + -ed  /  irregular form`\n\nCompleted actions at a definite past time, and a sequence of past events.\n\n**Signal words:** yesterday, ago, last week, in 2010, then, when\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"We visited Imphal last year.\"}\n\n- {\"l\":\"–\",\"t\":\"He did not call me.\"}\n\n- {\"l\":\"?\",\"t\":\"Did she pass the exam?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 6,
+        "anchor": "past-continuous",
+        "heading": "6. Past Continuous",
+        "body_markdown": "**Time & Aspect:** Past · Continuous\n\n**Structure:** `was / were + verb-ing`\n\nAn action in progress at a past moment, often interrupted by a shorter action.\n\n**Signal words:** while, when, as, at 8 pm yesterday, all morning\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"I was reading when she called.\"}\n\n- {\"l\":\"–\",\"t\":\"They were not listening.\"}\n\n- {\"l\":\"?\",\"t\":\"Were you sleeping at midnight?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 7,
+        "anchor": "past-perfect",
+        "heading": "7. Past Perfect",
+        "body_markdown": "**Time & Aspect:** Past · Perfect\n\n**Structure:** `had + past participle`\n\nThe earlier of two past actions — the 'past before the past'.\n\n**Signal words:** before, after, by the time, already, until then\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"The train had left before we arrived.\"}\n\n- {\"l\":\"–\",\"t\":\"She had not eaten anything.\"}\n\n- {\"l\":\"?\",\"t\":\"Had they finished by noon?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 8,
+        "anchor": "past-perfect-continuous",
+        "heading": "8. Past Perfect Continuous",
+        "body_markdown": "**Time & Aspect:** Past · Perfect Continuous\n\n**Structure:** `had been + verb-ing`\n\nDuration of an action that continued up to a point in the past.\n\n**Signal words:** for, since, before, how long\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"He had been working for hours before he rested.\"}\n\n- {\"l\":\"–\",\"t\":\"We had not been waiting long.\"}\n\n- {\"l\":\"?\",\"t\":\"How long had she been studying?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 9,
+        "anchor": "future-simple",
+        "heading": "9. Future Simple",
+        "body_markdown": "**Time & Aspect:** Future · Simple\n\n**Structure:** `will + base verb`\n\nPredictions, instant decisions, promises, and offers.\n\n**Signal words:** tomorrow, soon, next week, in the future, probably, I think\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"I will help you.\"}\n\n- {\"l\":\"–\",\"t\":\"They will not come.\"}\n\n- {\"l\":\"?\",\"t\":\"Will you join us?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 10,
+        "anchor": "future-continuous",
+        "heading": "10. Future Continuous",
+        "body_markdown": "**Time & Aspect:** Future · Continuous\n\n**Structure:** `will be + verb-ing`\n\nAn action that will be in progress at a specific future moment.\n\n**Signal words:** this time tomorrow, at 9 pm tonight, still\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"This time tomorrow I will be flying home.\"}\n\n- {\"l\":\"–\",\"t\":\"He will not be working on Sunday.\"}\n\n- {\"l\":\"?\",\"t\":\"Will you be using the car?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 11,
+        "anchor": "future-perfect",
+        "heading": "11. Future Perfect",
+        "body_markdown": "**Time & Aspect:** Future · Perfect\n\n**Structure:** `will have + past participle`\n\nAn action that will be completed before a point in the future.\n\n**Signal words:** by, by then, before, by the time, in two years\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"By 2030 I will have graduated.\"}\n\n- {\"l\":\"–\",\"t\":\"She will not have finished by five.\"}\n\n- {\"l\":\"?\",\"t\":\"Will they have left by noon?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 12,
+        "anchor": "future-perfect-continuous",
+        "heading": "12. Future Perfect Continuous",
+        "body_markdown": "**Time & Aspect:** Future · Perfect Continuous\n\n**Structure:** `will have been + verb-ing`\n\nDuration of an action up to a point in the future.\n\n**Signal words:** by, for, by the time, by then\n\n**Examples:**\n\n- {\"l\":\"+\",\"t\":\"By June I will have been teaching for ten years.\"}\n\n- {\"l\":\"–\",\"t\":\"He will not have been living here long.\"}\n\n- {\"l\":\"?\",\"t\":\"How long will you have been working?\"}",
+        "practice_query": "/practice?subject=english&q=tense"
+      },
+      {
+        "ord": 13,
+        "anchor": "active-and-passive-voice",
+        "heading": "13. Active and Passive Voice Conversion Table",
+        "body_markdown": "Every tense transforms systematically between Active and Passive voice by inserting the matching form of *be* + past participle (V3):\n\n- **Present Simple**: Active: `She writes a letter.` → Passive: `A letter is written by her.`\n\n- **Present Continuous**: Active: `She is writing a letter.` → Passive: `A letter is being written by her.`\n\n- **Present Perfect**: Active: `She has written a letter.` → Passive: `A letter has been written by her.`\n\n- **Past Simple**: Active: `She wrote a letter.` → Passive: `A letter was written by her.`\n\n- **Past Continuous**: Active: `She was writing a letter.` → Passive: `A letter was being written by her.`\n\n- **Past Perfect**: Active: `She had written a letter.` → Passive: `A letter had been written by her.`\n\n- **Future Simple**: Active: `She will write a letter.` → Passive: `A letter will be written by her.`\n\n- **Future Perfect**: Active: `She will have written a letter.` → Passive: `A letter will have been written by her.`\n\n- **Modal (must)**: Active: `She must write a letter.` → Passive: `A letter must be written by her.`\n\n- **Infinitive**: Active: `She wants to write a letter.` → Passive: `She wants a letter to be written.`",
+        "practice_query": "/practice?subject=english&q=voice"
+      }
+    ]
+  }
+]

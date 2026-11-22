@@ -1,5 +1,6 @@
 """Posting privileges are derived from real activity, never points or stored vote weights."""
 from fastapi import HTTPException
+from . import audience
 
 VERSION='community-v2.2'
 TIERS=(None,'Helper','Regular','Mentor','Guide')
@@ -9,6 +10,15 @@ DAY_START="(date_trunc('day',now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'As
 VALID_VOTE="""v.user_id<>p.author_id AND EXISTS(SELECT 1 FROM users voter WHERE voter.id=v.user_id AND voter.email IS NOT NULL)
  AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=v.user_id AND b.blocked_id=p.author_id) OR (b.user_id=p.author_id AND b.blocked_id=v.user_id))"""
 HELPFUL_COUNT='(SELECT count(*)::int FROM post_votes v WHERE v.post_id=p.id AND '+VALID_VOTE+')'
+
+def valid_vote():
+    # Resolve the flag per query, including callers whose SELECT is a template.
+    # Public vote counts need the same active-adult subject filter as authors.
+    return VALID_VOTE+' AND '+audience.subject_sql('v.user_id')
+
+def helpful_count():
+    return HELPFUL_COUNT.replace(VALID_VOTE,valid_vote())
+
 
 async def account_lock(cur,user):
     # Serialize new writes against closure's user-row update. Closure can then

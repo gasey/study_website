@@ -4,6 +4,7 @@ from fastapi import APIRouter,Depends,HTTPException,Query,Request
 from pydantic import Field,field_validator
 from psycopg.types.json import Jsonb
 from ..db import cursor
+from ..services import audience
 from ..deps import current_user,require_account
 from ..services.content_studio import Strict
 from ..services.community_people import profile_standing
@@ -38,7 +39,7 @@ async def graph_lock(cur):
 async def event(cur,actor,action,target=None,detail=None):
     await cur.execute('INSERT INTO creator_events(actor_id,action,target_id,detail) VALUES(%s,%s,%s,%s)',(actor,action,target,Jsonb(detail or {})))
 async def target(cur,uid,viewer,public=True):
-    await cur.execute('SELECT u.id,u.handle,u.avatar,COALESCE(cp.public,false) AS public,'+PUBLIC_BIO+' AS bio FROM users u LEFT JOIN creator_profiles cp ON cp.user_id=u.id WHERE u.id=%s AND u.email IS NOT NULL AND NOT '+BLOCKED,(uid,viewer,viewer))
+    await cur.execute('SELECT u.id,u.handle,u.avatar,COALESCE(cp.public,false) AS public,'+PUBLIC_BIO+' AS bio FROM users u LEFT JOIN creator_profiles cp ON cp.user_id=u.id WHERE u.id=%s AND u.email IS NOT NULL AND NOT '+BLOCKED+' AND '+audience.subject_sql('u.id'),(uid,viewer,viewer))
     row=await cur.fetchone()
     if not row or public and not row['public'] and uid!=viewer:raise HTTPException(404,'Creator profile not available')
     return row
@@ -67,7 +68,7 @@ async def save_settings(body:Settings,request:Request,user:Account):
 @router.get('/creators')
 async def directory(user:User,q:str=Query('',max_length=100),offset:int=Query(0,ge=0,le=100000),limit:int=Query(12,ge=1,le=50)):
     async with cursor() as cur:
-        where='cp.public AND u.email IS NOT NULL AND NOT '+BLOCKED+' AND (%s=\'\' OR u.handle ILIKE %s)'
+        where='cp.public AND u.email IS NOT NULL AND NOT '+BLOCKED+' AND (%s=\'\' OR u.handle ILIKE %s) AND '+audience.subject_sql('u.id')
         args=(user,user,q,'%'+q+'%')
         await cur.execute('SELECT count(*)::int AS n FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE '+where,args);total=(await cur.fetchone())['n']
         await cur.execute("SELECT u.id,u.handle,u.avatar,"+PUBLIC_BIO+" AS bio,(SELECT count(*)::int FROM materials m WHERE m.author_id=u.id AND m.status='published' AND m.published_revision IS NOT NULL) AS materials FROM creator_profiles cp JOIN users u ON u.id=cp.user_id WHERE "+where+' ORDER BY u.handle,u.id LIMIT %s OFFSET %s',(*args,limit,offset));rows=await cur.fetchall()
@@ -76,7 +77,7 @@ async def directory(user:User,q:str=Query('',max_length=100),offset:int=Query(0,
 async def profile(uid:str,user:User,offset:int=Query(0,ge=0,le=100000)):
     async with cursor() as cur:
         row=await target(cur,uid,user)
-        await cur.execute('SELECT EXISTS(SELECT 1 FROM creator_follows WHERE follower_id=%s AND creator_id=%s) AS following,(SELECT count(*)::int FROM creator_follows f WHERE f.creator_id=%s) AS followers',(user,uid,uid));row.update(await cur.fetchone())
+        await cur.execute('SELECT EXISTS(SELECT 1 FROM creator_follows WHERE follower_id=%s AND creator_id=%s) AS following,(SELECT count(*)::int FROM creator_follows f WHERE f.creator_id=%s AND '+audience.subject_sql('f.follower_id')+') AS followers',(user,uid,uid));row.update(await cur.fetchone())
         await cur.execute("SELECT count(*)::int AS n FROM materials WHERE author_id=%s AND status='published' AND published_revision IS NOT NULL",(uid,));row['materials']=(await cur.fetchone())['n']
         row['community']=await profile_standing(cur,uid,user)
         # Honor the existing contribution attribution consent independently.

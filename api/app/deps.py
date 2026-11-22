@@ -23,7 +23,11 @@ async def current_user(request: Request, response: Response, x_device_id: Device
         return session['user_id']
     if request.cookies.get('ism_session') and request.method not in {'GET','HEAD','OPTIONS'}:
         raise HTTPException(401, 'Your session has expired. Sign in again before saving.')
-    return await guest_identity(request, response)
+    guest=await guest_identity(request, response)
+    if request.method not in {'GET','HEAD','OPTIONS'} and not getattr(request.state,'audience_safe',False):
+        from .services.audience import mutation_actor
+        mutation_actor.set(guest)
+    return guest
 
 
 async def require_account(user_id: Annotated[str, Depends(current_user)]) -> str:

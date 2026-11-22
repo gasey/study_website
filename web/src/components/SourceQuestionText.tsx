@@ -95,7 +95,7 @@ export function SourceQuestionText({ text, className = '', instruction, formatEn
 
 export function SourceQuestionContext({ direction, passage, collapsed = false }: { direction?: string | null; passage?: string | null; collapsed?: boolean }) {
   if (!direction && !passage) return null
-  return <div className="mb-4 rounded-[8px] border-l-[3px] border-[#B9A579] bg-[#F6F2E9] px-4 py-3 text-[13px] leading-relaxed text-secondary">
+  return <div className="mb-4 rounded-[8px] border-l-[3px] border-[#B9A579] bg-[#F6F2E9] px-4 py-3 text-sm leading-relaxed text-secondary">
     {direction && <p><strong className="mr-1 font-semibold text-ink">Instructions. </strong><SourceQuestionText text={direction} /></p>}
     {passage && <details open={!collapsed} className={direction ? 'mt-2 border-t border-[#E4DDCE] pt-2' : ''}>
       <summary className="cursor-pointer font-semibold text-ink">Read the shared passage</summary>

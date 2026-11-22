@@ -114,6 +114,13 @@ deploy_editorial_api() {
 }
 
 case "$WHAT" in
+  empty-pins) python3 "$ROOT/scripts/deploy-empty-pins.py" "${@:2}" ;;
+  subject-count-order) python3 "$ROOT/scripts/deploy-subject-count-order.py" "${@:2}" ;;
+  collection-adaptive) python3 "$ROOT/scripts/deploy-collection-adaptive.py" "${@:2}" ;;
+  finnaplan-v12-query-performance) python3 "$ROOT/scripts/deploy-finnaplan-v12-query-performance.py" "${@:2}" ;;
+  finnaplan-v12-build-dependencies) python3 "$ROOT/scripts/deploy-finnaplan-v12-build-dependencies.py" "${@:2}" ;;
+  finnaplan-v12-query-logging) python3 "$ROOT/scripts/deploy-finnaplan-v12-query-logging.py" "${@:2}" ;;
+  finnaplan-v12-dependencies) python3 "$ROOT/scripts/deploy-finnaplan-v12-dependencies.py" "${@:2}" ;;
   finnaplan-v12-maintenance) python3 "$ROOT/scripts/deploy-finnaplan-v12-maintenance.py" "${@:2}" ;;
   finnaplan-v12-users) python3 "$ROOT/scripts/deploy-finnaplan-v12-users.py" "${@:2}" ;;
   finnaplan-v12-collector-time) python3 "$ROOT/scripts/deploy-finnaplan-v12-collector-time.py" "${@:2}" ;;
@@ -123,6 +130,8 @@ case "$WHAT" in
   finnaplan-v11-onboarding) python3 "$ROOT/scripts/deploy-finnaplan-v11-onboarding.py" "${@:2}" ;;
   finnaplan-v11-sharing) python3 "$ROOT/scripts/deploy-finnaplan-v11-sharing.py" "${@:2}" ;;
   finnaplan-v11-mail) python3 "$ROOT/scripts/deploy-finnaplan-v11-mail.py" "${@:2}" ;;
+  review-digest) python3 "$ROOT/scripts/deploy-review-digest.py" "${@:2}" ;;
+  review-digest-withdrawal) python3 "$ROOT/scripts/deploy-review-digest-withdrawal.py" ;;
   finnaplan-v10-vocabulary-authoring) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary-authoring.py" "${@:2}" ;;
   finnaplan-v10-curated-vocabulary) python3 "$ROOT/scripts/deploy-finnaplan-v10-curated-vocabulary.py" "${@:2}" ;;
   finnaplan-v10-vocabulary-scheduler) python3 "$ROOT/scripts/deploy-finnaplan-v10-vocabulary-scheduler.py" "${@:2}" ;;

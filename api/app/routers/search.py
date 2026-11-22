@@ -5,6 +5,7 @@ from typing import Annotated, Literal
 from urllib.parse import quote
 from fastapi import APIRouter, Depends, HTTPException, Query, Response
 from ..db import cursor
+from ..services import audience
 from ..deps import current_user
 
 router = APIRouter(prefix="/api", tags=["global search"])
@@ -34,11 +35,11 @@ async def search(
             (q, pattern, pattern, pattern, pattern, pattern, pattern, pattern),
         ),
         "people": (
-            "SELECT u.id,u.handle AS title,'Public creator'::text AS meta,CASE WHEN NOT p.bio_needs_approval AND NOT p.bio_hidden THEN p.bio ELSE '' END AS snippet FROM users u JOIN creator_profiles p ON p.user_id=u.id AND p.public WHERE u.email IS NOT NULL AND (u.handle ILIKE %s OR (NOT p.bio_needs_approval AND NOT p.bio_hidden AND p.bio ILIKE %s)) AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%s))",
+            "SELECT u.id,u.handle AS title,'Public creator'::text AS meta,CASE WHEN NOT p.bio_needs_approval AND NOT p.bio_hidden THEN p.bio ELSE '' END AS snippet FROM users u JOIN creator_profiles p ON p.user_id=u.id AND p.public WHERE u.email IS NOT NULL AND (u.handle ILIKE %s OR (NOT p.bio_needs_approval AND NOT p.bio_hidden AND p.bio ILIKE %s)) AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%s)) AND "+audience.subject_sql('u.id'),
             (pattern, pattern, user, user),
         ),
         "desks": (
-            "SELECT d.id,d.name AS title,'Your private desk'::text AS meta,d.goal AS snippet FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL WHERE d.closed_at IS NULL AND (d.name ILIKE %s OR d.goal ILIKE %s)",
+            "SELECT d.id,d.name AS title,'Your private desk'::text AS meta,d.goal AS snippet FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL WHERE d.closed_at IS NULL AND (d.name ILIKE %s OR d.goal ILIKE %s) AND "+audience.subject_sql('d.owner_id'),
             (user, pattern, pattern),
         ),
         "exams": (
@@ -50,6 +51,7 @@ async def search(
       FROM materials m JOIN material_revisions r ON r.material_id=m.id AND r.revision=m.published_revision
       WHERE m.status='published' AND (r.payload->>'title' ILIKE %s OR r.payload->>'summary' ILIKE %s OR r.payload->'tags' ? %s)
       AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=m.author_id) OR (b.user_id=m.author_id AND b.blocked_id=%s))"""
+    material+=' AND '+audience.subject_sql('m.author_id',team=True)
     args = (pattern, pattern, q, user, user)
     queries["listings"] = (material + " AND r.payload->>'access'='paid-preview'", args)
     queries["notes"] = (

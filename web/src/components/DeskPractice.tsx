@@ -30,13 +30,13 @@ export function DeskQuestion({
     };
   }, [qid]);
   return error ? (
-    <p role="alert" className="mt-3 text-[13px] text-mypick">
+    <p role="alert" className="mt-3 text-sm text-mypick">
       {error}
     </p>
   ) : q ? (
     <QuestionCard q={q} onAnswered={onAnswered} />
   ) : (
-    <p className="mt-3 text-[13px] text-muted">Loading the bank question…</p>
+    <p className="mt-3 text-sm text-muted">Loading the bank question…</p>
   );
 }
 export default function DeskPractice({
@@ -88,16 +88,16 @@ export default function DeskPractice({
   }, [subject, offset, shared, questionKey]);
   return (
     <>
-      <div className="rounded-[8px] border border-[#2D5BD0] bg-[#DAE3F1] p-5">
-        <div className="desk-v3-label !text-[#2D5BD0]">
+      <div className="rounded-[8px] border border-hairline bg-practice-soft p-5">
+        <div className="desk-v3-label !text-practice-dark">
           {shared
-            ? "Shared desk set · practice"
+            ? "Shared desk set · individual practice"
             : "Your desk set · practice questions"}
         </div>
-        <h3 className="mt-2 font-display text-[24px]">
+        <h3 className="mt-2 font-display text-xl">
           Five questions, one focused step.
         </h3>
-        <p className="mt-2 text-[13px] text-secondary">
+        <p className="mt-2 text-sm text-secondary">
           {shared
             ? "Work through the questions your members shared. Your answers and progress stay in your own account."
             : "Questions come from the shared bank engine. Answers are recorded in your account; use the focus subject in your plan to narrow this set."}
@@ -105,7 +105,7 @@ export default function DeskPractice({
       </div>
       <AnswerLayoutControl />
       {error && (
-        <p role="alert" className="mt-3 text-[13px] text-mypick">
+        <p role="alert" className="mt-3 text-sm text-mypick">
           {error}
         </p>
       )}
@@ -119,7 +119,7 @@ export default function DeskPractice({
         {page && !page.items.length && (
           <p className="desk-v3-empty">
             {shared
-              ? "No questions have been shared for this desk set yet. Use Share from the bank."
+              ? "No shared questions are available for individual practice right now. Questions in an active assessment stay hidden until it ends."
               : "No questions with usable answers are available for this subject yet. Choose another subject."}
           </p>
         )}
@@ -136,7 +136,7 @@ export default function DeskPractice({
           >
             Previous set
           </button>
-          <span className="self-center text-[12px] text-muted">
+          <span className="self-center text-xs text-muted">
             {offset + 1}–{Math.min(offset + 5, page.total)} of{" "}
             {page.total.toLocaleString("en-IN")}
           </span>

@@ -41,6 +41,15 @@ class Settings(BaseSettings):
     staff_mfa_exempt_user_ids: str = ""
     study_desks_private_enabled: bool = False
     account_mail_enabled: bool = False
+    review_digest_enabled: bool = False
+    referral_rewards_enabled: bool = False
+    # Selected locally but disabled until the retention policy/release gates are approved.
+    study_history_retention_enabled: bool = False
+    private_study_retention_enabled: bool = False
+    private_preferences_retention_enabled: bool = False
+    # Launch preparation only. Minor enrollment has no configured verifier and
+    # remains unavailable; this flag enables an adult declaration boundary.
+    audience_gate_enabled: bool = False
     smtp_host: str = ''
     smtp_port: int = 587
     smtp_from: str = ''

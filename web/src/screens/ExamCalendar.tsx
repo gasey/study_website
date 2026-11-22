@@ -18,7 +18,7 @@ import {
   ownedKindLabel,
 } from "../lib/calendar";
 const BTN =
-  "inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-3 py-2 text-[13px] font-semibold disabled:opacity-40";
+  "inline-flex min-h-11 items-center justify-center rounded-pill border border-hairline px-3 py-2 text-sm font-semibold disabled:opacity-40";
 const COLORS: Record<EventKind, string> = {
   notification: "bg-[#EEE6F7] text-[#5E2F98]",
   deadline: "bg-[#F8DEDA] text-[#9E2A1F]",
@@ -226,7 +226,7 @@ export default function ExamCalendar({
         <div className="flex flex-wrap items-start gap-3">
           <span
             className={
-              "rounded-pill px-2.5 py-1 font-mono text-[10px] uppercase tracking-wide " +
+              "rounded-pill px-2.5 py-1 font-mono text-xs uppercase tracking-wide " +
               COLORS[e.kind]
             }
           >
@@ -239,7 +239,7 @@ export default function ExamCalendar({
                 <span className="ml-2 text-mypick">Withdrawn</span>
               )}
             </h3>
-            <p className="mt-1 text-[13px] text-secondary">
+            <p className="mt-1 text-sm text-secondary">
               {e.starts_on
                 ? dateLabel(e.starts_on) +
                   (e.ends_on && e.ends_on !== e.starts_on
@@ -270,14 +270,14 @@ export default function ExamCalendar({
               </Link>
             ))}
         </div>
-        <p className="mt-3 whitespace-pre-wrap text-[14px] leading-relaxed text-secondary">
+        <p className="mt-3 whitespace-pre-wrap text-sm leading-relaxed text-secondary">
           {e.summary}
         </p>
-        <p className="mt-2 text-[12px] text-muted">
+        <p className="mt-2 text-xs text-muted">
           {e.source_reference} · Verified {dateLabel(e.verified_on)} ·{" "}
           {e.verification_note}
         </p>
-        <div className="mt-2 flex flex-wrap gap-3 text-[12px] font-semibold">
+        <div className="mt-2 flex flex-wrap gap-3 text-xs font-semibold">
           <a
             className="inline-flex min-h-11 items-center text-link underline"
             href={e.source_url}
@@ -319,16 +319,16 @@ export default function ExamCalendar({
   }
   return (
     <main className="mx-auto max-w-shell px-4 pb-24 pt-9 sm:px-6">
-      <div className="font-mono text-[11px] uppercase tracking-[.1em] text-[#7E4A00]">
+      <div className="font-mono text-xs uppercase tracking-[.1em] text-[#7E4A00]">
         {notices ? "Official notices" : "Plan your study"}
       </div>
       <h1 className="mt-2 font-display text-[clamp(34px,5vw,50px)] font-medium leading-tight">
         {notices ? "From the Commission" : "Your helper calendar"}
       </h1>
-      <p className="mt-3 max-w-[720px] text-[17px] leading-relaxed text-secondary">
+      <p className="mt-3 max-w-[720px] text-md leading-relaxed text-secondary">
         {notices?'MPSC notifications, last dates, admit cards, exams, answer keys and results.':'Official exam dates, your targets and private study plans in one place. Choose the layers you want to see.'}
       </p>
-      <div className="mt-3 flex flex-wrap gap-4 text-[13px] font-semibold">
+      <div className="mt-3 flex flex-wrap gap-4 text-sm font-semibold">
         <Link
           className="min-h-11 py-3 text-link underline"
           to={notices ? "/calendar" : "/news"}
@@ -347,16 +347,16 @@ export default function ExamCalendar({
       {!notices&&<CalendarLearningLayers start={start} end={end} exams={exams} onLayers={setLearning}/>}
       <div className="mt-4 flex flex-wrap items-stretch gap-5">
         <section className="flex-[1_1_300px] rounded-[10px] bg-ink p-[22px] text-paper">
-          <div className="font-mono text-[10px] uppercase tracking-wider text-[#D8A33A]">
+          <div className="font-mono text-xs uppercase tracking-wider text-[#D8A33A]">
             Following
           </div>
-          <h2 className="mt-2 font-display text-[26px]">
+          <h2 className="mt-2 font-display text-xl">
             {upcoming?.title || "Your next exam date"}
           </h2>
           {upcoming && remaining !== null ? (
             <>
               <div className="mt-2 flex items-baseline gap-2">
-                <span className="font-display text-[64px] leading-none">
+                <span className="font-display text-3xl leading-none">
                   {remaining}
                 </span>
                 <span>
@@ -365,14 +365,14 @@ export default function ExamCalendar({
                 </span>
               </div>
               <Link
-                className="mt-3 inline-flex min-h-11 items-center text-[13px] underline"
+                className="mt-3 inline-flex min-h-11 items-center text-sm underline"
                 to={"/calendar?event=" + upcoming.id}
               >
                 Read notice →
               </Link>
             </>
           ) : (
-            <p className="mt-3 text-[14px] text-[#D9D0BF]">
+            <p className="mt-3 text-sm text-[#D9D0BF]">
               {personal?.following.length || personal?.saved.length
                 ? "No upcoming verified date for your followed exams or saved notices."
                 : "Follow an exam or save a dated notice to see your countdown here."}
@@ -380,7 +380,7 @@ export default function ExamCalendar({
           )}
         </section>
         <section className="flex-[2_1_420px]">
-          <label className="block text-[13px] font-semibold">
+          <label className="block text-sm font-semibold">
             Exam
             <select
               aria-label="Calendar exam"
@@ -462,7 +462,7 @@ export default function ExamCalendar({
               Sign in for follows & reminders
             </Link>
           )}
-          <p className="mt-2 text-[12px] text-muted">
+          <p className="mt-2 text-xs text-muted">
             Optional inbox alerts for updates and 7 days, 1 day and the day of a
             date. No email or push delivery. Existing exam bookmarks are your
             follows.
@@ -472,7 +472,7 @@ export default function ExamCalendar({
       {error && (
         <div
           role="alert"
-          className="mt-4 rounded-panel border border-mypick p-3 text-[13px] text-mypick"
+          className="mt-4 rounded-panel border border-mypick p-3 text-sm text-mypick"
         >
           {error}
           <button
@@ -488,7 +488,7 @@ export default function ExamCalendar({
           className="mt-6 rounded-[10px] border border-ink bg-card p-5"
           aria-label="Selected official notice"
         >
-          <h2 className="font-display text-[24px]">Official notice</h2>
+          <h2 className="font-display text-xl">Official notice</h2>
           {row(focused)}
         </section>
       )}
@@ -525,7 +525,7 @@ export default function ExamCalendar({
               >
                 ‹
               </button>
-              <h2 className="font-display text-[24px]">
+              <h2 className="font-display text-xl">
                 {view==='week'?dateLabel(start)+' – '+dateLabel(end):new Date(Date.UTC(year, mi, 1)).toLocaleDateString("en-IN", {
                   month: "long",
                   year: "numeric",
@@ -548,7 +548,7 @@ export default function ExamCalendar({
                     (d) => (
                       <div
                         key={d}
-                        className="py-2 text-center font-mono text-[10px] uppercase text-muted"
+                        className="py-2 text-center font-mono text-xs uppercase text-muted"
                       >
                         {d}
                       </div>
@@ -591,11 +591,11 @@ export default function ExamCalendar({
                           (selected === d ? "bg-[#E3E9F8]" : "")
                         }
                       >
-                        {learning?.forecast&&learning.data?.forecast.some(r=>r.day===d)&&<span className="text-[10px] font-bold text-link">↻ {learning.data.forecast.find(r=>r.day===d)?.count}</span>}
-                        {learning?.habit&&learning.data?.habit.some(r=>r.day===d)&&<span aria-label="Verified activity" className="text-[10px] text-learn-dark">●</span>}
+                        {learning?.forecast&&learning.data?.forecast.some(r=>r.day===d)&&<span className="text-xs font-bold text-link">↻ {learning.data.forecast.find(r=>r.day===d)?.count}</span>}
+                        {learning?.habit&&learning.data?.habit.some(r=>r.day===d)&&<span aria-label="Verified activity" className="text-xs text-learn-dark">●</span>}
                         <span
                           className={
-                            "grid h-6 w-6 place-items-center rounded-full text-[12px] " +
+                            "grid h-6 w-6 place-items-center rounded-full text-xs " +
                             (d === today ? "bg-ink text-paper" : "")
                           }
                         >
@@ -605,17 +605,17 @@ export default function ExamCalendar({
                           <span
                             key={e.id}
                             className={
-                              "mt-1 block w-full truncate rounded-[4px] px-1 py-0.5 text-[10px] font-semibold " +
+                              "mt-1 block w-full truncate rounded-[4px] px-1 py-0.5 text-xs font-semibold " +
                               COLORS[e.kind]
                             }
                           >
                             {e.title}
                           </span>
                         ))}
-                        {own.slice(0,2).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-learn-soft px-1 py-0.5 text-[10px] font-semibold text-learn-dark">{e.title}</span>)}
-                        {play.slice(0,1).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-play-soft px-1 py-0.5 text-[10px] font-semibold text-ink">Cup · 7 pm</span>)}
+                        {own.slice(0,2).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-learn-soft px-1 py-0.5 text-xs font-semibold text-learn-dark">{e.title}</span>)}
+                        {play.slice(0,1).map(e=><span key={e.id} className="mt-1 block w-full truncate rounded bg-play-soft px-1 py-0.5 text-xs font-semibold text-ink">Cup · 7 pm</span>)}
                         {(evs.length>2||own.length>2) && (
-                          <span className="text-[10px]">
+                          <span className="text-xs">
                             +{Math.max(0,evs.length-2)+Math.max(0,own.length-2)} more
                           </span>
                         )}
@@ -629,12 +629,12 @@ export default function ExamCalendar({
         </>
       )}
       {loading ? (
-        <p role="status" className="mt-5 text-[14px] text-muted">
+        <p role="status" className="mt-5 text-sm text-muted">
           Loading official entries…
         </p>
       ) : (
         <section className="mt-5 border-t border-ink pt-3">
-          <h2 className="font-display text-[24px]">
+          <h2 className="font-display text-xl">
             {notices
               ? "Latest verified notices"
               : view === "list"
@@ -663,7 +663,7 @@ export default function ExamCalendar({
                     (e.ends_on || e.starts_on) >= selected,
                 )
           ).length && (
-            <p className="py-5 text-[14px] text-secondary">
+            <p className="py-5 text-sm text-secondary">
               {onlyFollowing
                 ? "No entries match your follows and filters."
                 : notices
@@ -684,7 +684,7 @@ export default function ExamCalendar({
           >
             Previous
           </button>
-          <span className="self-center text-[12px]">
+          <span className="self-center text-xs">
             Page {Math.floor(offset / (notices ? 20 : 100)) + 1}
           </span>
           <button
@@ -696,7 +696,7 @@ export default function ExamCalendar({
           </button>
         </nav>
       )}
-      <p className="mt-5 text-[12px] leading-relaxed text-muted">
+      <p className="mt-5 text-xs leading-relaxed text-muted">
         Official dates are transcribed from official sources with staff verification
         notes. All dates use India time; official-date exports are all-day entries.
         Confirm exact times, eligibility and any revisions in the official

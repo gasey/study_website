@@ -42,6 +42,7 @@ export interface Player {
   elapsed_ms?: number;
 }
 export interface GameRoom {
+  desk_id?: string | null;
   id: string;
   owner_id: string;
   mode: GameMode;

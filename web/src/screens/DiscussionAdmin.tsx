@@ -18,7 +18,7 @@ interface Item {
   item_type: string;
 }
 const B =
-  "min-h-11 rounded-pill border border-hairline px-4 text-[13px] font-semibold disabled:opacity-50";
+  "min-h-11 rounded-pill border border-hairline px-4 text-sm font-semibold disabled:opacity-50";
 export default function DiscussionAdmin() {
   const [tab, setTab] = useState("New users");
   const [items, setItems] = useState<Item[]>([]);
@@ -74,18 +74,18 @@ export default function DiscussionAdmin() {
   }
   return (
     <main className="mx-auto max-w-[1000px] px-6 pb-24 pt-9">
-      <Link to="/admin/bank?tab=workflow" className="text-[13px] text-link">
+      <Link to="/admin/bank?tab=workflow" className="text-sm text-link">
         ← Publishing dashboard
       </Link>
-      <h1 className="mt-3 font-display text-[36px]">
+      <h1 className="mt-3 font-display text-3xl">
         Question discussion moderation
       </h1>
-      <p className="mt-2 text-[14px] text-secondary">
+      <p className="mt-2 text-sm text-secondary">
         Review conduct and first posts. Answer correctness follows the
         correction-review workflow. Owner permission and staff authenticator
         verification are required for changes.
       </p>
-      <div className="mt-3 flex flex-wrap gap-4 text-[13px]">
+      <div className="mt-3 flex flex-wrap gap-4 text-sm">
         <span>{counts.pending_posts || 0} awaiting moderation</span>
         <span>{counts.open_reports || 0} reported posts</span>
       </div>
@@ -101,7 +101,7 @@ export default function DiscussionAdmin() {
           </button>
         ))}
       </div>
-      <label className="mt-4 block text-[13px] font-semibold">
+      <label className="mt-4 block text-sm font-semibold">
         Moderation reason (required for rejection, hiding and thread locks)
         <textarea
           value={reason}
@@ -121,28 +121,28 @@ export default function DiscussionAdmin() {
             key={item.id}
             className="rounded-[8px] border border-hairline bg-card p-5"
           >
-            <p className="text-[12px] text-muted">
+            <p className="text-xs text-muted">
               {item.author} · {item.reasons.join(", ")} · {item.report_count}{" "}
               reports
             </p>
-            <h2 className="mt-2 font-display text-[23px]">{item.question}</h2>
-            <p className="mt-3 whitespace-pre-wrap break-words text-[14px]">
+            <h2 className="mt-2 font-display text-lg">{item.question}</h2>
+            <p className="mt-3 whitespace-pre-wrap break-words text-sm">
               {item.body}
             </p>
-            {!!item.content_version&&<details className="mt-3 text-[13px]"><summary className="inline-flex min-h-11 cursor-pointer items-center font-semibold">Edited · revision {item.content_version} · inspect history</summary><RevisionHistory items={item.edit_history||[]}/></details>}
+            {!!item.content_version&&<details className="mt-3 text-sm"><summary className="inline-flex min-h-11 cursor-pointer items-center font-semibold">Edited · revision {item.content_version} · inspect history</summary><RevisionHistory items={item.edit_history||[]}/></details>}
             {item.source_links?.map((s, i) => (
               <a
                 key={i}
                 href={s.url}
                 target="_blank"
                 rel="noreferrer nofollow ugc"
-                className="mt-2 block break-words text-[13px] text-link underline"
+                className="mt-2 block break-words text-sm text-link underline"
               >
                 {s.note} ↗
               </a>
             ))}
             {item.note && (
-              <p className="mt-2 text-[13px] text-secondary">{item.note}</p>
+              <p className="mt-2 text-sm text-secondary">{item.note}</p>
             )}
             <div className="mt-4 flex flex-wrap gap-2">
               {tab === "New users" && (

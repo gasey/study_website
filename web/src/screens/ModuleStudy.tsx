@@ -49,6 +49,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   }
   const [page, setPage] = useState<{items: Question[];total: number}|null>(null)
   const [picks, setPicks] = useState<Record<string,number>>({})
+  const [checkingAnswers,setCheckingAnswers]=useState<Record<string,boolean>>({})
   const [viewed,setViewed]=useState<Record<string,boolean>>({})
   const [answerBusy,setAnswerBusy]=useState<Record<string,boolean>>({})
   const checking=useRef(new Set<string>())
@@ -96,7 +97,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   // One option tap submits through the guarded attempt path.
   async function answer(q: Question, index: number) {
     if (pending || q.held || results[q.id] || viewed[q.id] || answerBusy[q.id] || checking.current.has(q.id) || q.answer_source === 'none' || q.key_disputed || ['duplicate-options','unresolved-source'].includes(q.source_defect||'')) return
-    setPicks(old=>({...old,[q.id]:index}));checking.current.add(q.id);setAnswerBusy(old=>({...old,[q.id]:true}))
+    setPicks(old=>({...old,[q.id]:index}));checking.current.add(q.id);setCheckingAnswers(old=>({...old,[q.id]:true}));setAnswerBusy(old=>({...old,[q.id]:true}))
     try {
       const actualPaper=paperId||((studyArea||['udc','ldc','assistant'].includes(collectionId))?q.source_appearance?.paper_id:undefined)
       const actualCollection=sourceCollections?.[actualPaper||'']||collectionId
@@ -105,7 +106,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
     } catch (e) {
       setPicks((old) => { const next={...old}; delete next[q.id]; return next })
       setError((e as Error).message)
-    } finally {checking.current.delete(q.id);setAnswerBusy(old=>({...old,[q.id]:false}))}
+    } finally {checking.current.delete(q.id);setCheckingAnswers(old=>({...old,[q.id]:false}));setAnswerBusy(old=>({...old,[q.id]:false}))}
   }
 
   const selectedPaper=papers.find(p=>p.id===paperId)
@@ -116,7 +117,7 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
   function choosePaper(value:string){setURLParams(previous=>{const next=new URLSearchParams(previous);if(value)next.set('paper',value);else next.delete('paper');if(combined&&value){const source=papers.find(p=>p.id===value);if(source?.section_path)next.set('section',source.section_path);else next.delete('section')}next.delete('offset');next.delete('seed');next.delete('fresh');return next},{replace:false});setResults({});setPicks({})}
 
   return <section id="exam-question-browser" tabIndex={-1} aria-busy={pending} className="mt-6 scroll-mt-28 focus:outline-none">
-    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-[22px]">{practice?'Study practice':'Browse questions'}</h2><p className="text-[12px] text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}</p></div><button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-[12px] font-semibold">Reset filters</button></div>
+    <div className="mb-3 flex flex-wrap items-center justify-between gap-2"><div><h2 className="font-display text-lg">{practice?'Study practice':'Browse questions'}</h2><p className="text-xs text-secondary">{collectionTitle||'This exam'}{selectedSubject?' · '+learningSubjectTitle(selectedSubject.id,selectedSubject.title,collectionId):''}{selectedTopic?' · '+selectedTopic.title:''}</p></div><button type="button" onClick={resetFilters} className="min-h-11 rounded-pill border border-hairline px-4 text-xs font-semibold">Reset filters</button></div>
 
     <div className="browse-filter-row" aria-label="Question filters" data-area={!!studyArea}>
       {!studyArea&&<label>{combined?'Paper type':'Section'}<select aria-label={combined?'Paper type':'Section'} disabled={metadataLoading} value={sectionPath} onChange={e=>chooseSection(e.target.value)}><option value="">{combined?'Both papers':'All sections'}</option>{sections.map(s=><option key={s.path} value={s.path}>{combined?(s.path==='gs'?'Paper I only':s.path==='aptitude'?'Paper II only':s.title):s.title}</option>)}</select></label>}
@@ -133,41 +134,41 @@ export function ModuleQuestionBrowser({ collectionId, papers, sections, initialS
       <Link to={sourceCollections?'/group-b?'+new URLSearchParams({collection:collectionId,view:'papers'}):`/exams/${collectionId}?view=papers`} className="inline-flex min-h-11 items-center text-link">All papers</Link>
       {selectedPaper?.source_pdf_url&&<a href={selectedPaper.source_pdf_url} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center text-link underline">PDF ↗</a>}
     </nav>}
-    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-[12px] text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div>}
+    {!practice&&<div className="my-2 flex flex-wrap items-center justify-between gap-x-4 gap-y-1 px-1 text-xs text-secondary"><p role="status">{reading.initializing?'Restoring reading position…':reading.message||'Your place is saved automatically on this device.'}</p><button type="button" onClick={reading.startAgain} title="Reset this reading position; your answers and scores are kept." className="min-h-11 font-semibold text-link underline">Start again</button></div>}
     {subjectId==='gk-gs'&&topicId==='gk-gs:science'&&selectedTopic&&<nav aria-label="Science branches" className="mb-3 flex flex-wrap items-center gap-2">
-      <span className="mr-1 text-[12px] font-semibold text-secondary">Science:</span>
-      {[{id:'',title:'All Science'},...selectedTopic.subtopics].map(branch=><button key={branch.id} type="button" aria-pressed={subtopicId===branch.id} onClick={()=>taxonomyFilter('subtopic_id',branch.id)} className={`min-h-11 rounded-pill border px-4 text-[12px] font-semibold ${subtopicId===branch.id?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>{branch.title}</button>)}
+      <span className="mr-1 text-xs font-semibold text-secondary">Science:</span>
+      {[{id:'',title:'All Science'},...selectedTopic.subtopics].map(branch=><button key={branch.id} type="button" aria-pressed={subtopicId===branch.id} onClick={()=>taxonomyFilter('subtopic_id',branch.id)} className={`min-h-11 rounded-pill border px-4 text-xs font-semibold ${subtopicId===branch.id?'border-ink bg-ink text-paper':'border-hairline bg-card'}`}>{branch.title}</button>)}
     </nav>}
     <details className="rounded-[12px] border border-hairline bg-card px-3 py-1">
-      <summary className="min-h-11 cursor-pointer py-3 text-[13px] font-semibold">More filters &amp; answer layout{[paperId&&'paper',sectionPath&&'section',subtopicId&&'subtopic',answerStatus&&answerStatus,pool!==initialPool&&pool].filter(Boolean).length?` · ${[paperId&&'paper selected',sectionPath&&'section selected',subtopicId&&'subtopic selected',answerStatus,pool!==initialPool&&pool].filter(Boolean).join(' · ')}`:''}</summary>
-    {order==='paper'?<p className="py-3 text-[13px] text-secondary">Questions follow the order printed in this paper.</p>:<div className="flex flex-wrap items-end gap-3 py-3"><label className="text-[12px] font-semibold">Question order<select aria-label="Question order" value={order} onChange={e=>filter('order',e.target.value)} className="ml-2 min-h-11 rounded-lg border border-hairline bg-card px-3 text-[13px]"><option value="mixed">Mixed order</option><option value="repeated">Most repeated first</option></select></label>{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 text-[13px] text-link">Shuffle again</button>}</div>}
+      <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">More filters &amp; answer layout{[paperId&&'paper',sectionPath&&'section',subtopicId&&'subtopic',answerStatus&&answerStatus,pool!==initialPool&&pool].filter(Boolean).length?` · ${[paperId&&'paper selected',sectionPath&&'section selected',subtopicId&&'subtopic selected',answerStatus,pool!==initialPool&&pool].filter(Boolean).join(' · ')}`:''}</summary>
+    {order==='paper'?<p className="py-3 text-sm text-secondary">Questions follow the order printed in this paper.</p>:<div className="flex flex-wrap items-end gap-3 py-3"><label className="text-xs font-semibold">Question order<select aria-label="Question order" value={order} onChange={e=>filter('order',e.target.value)} className="ml-2 min-h-11 rounded-lg border border-hairline bg-card px-3 text-sm"><option value="mixed">Mixed order</option><option value="repeated">Most repeated first</option></select></label>{order==='mixed'&&<button type="button" onClick={shuffle} className="min-h-11 text-sm text-link">Shuffle again</button>}</div>}
     <AnswerLayoutControl/>
-    {paperPosition>=0&&paperGroups[paperPosition].papers.length>1&&<details className="mt-2 text-[12px] text-secondary"><summary className="min-h-11 cursor-pointer py-3">Booklet originals · {selectedPaper?bookletLabel(selectedPaper):'selected source'}</summary><div className="flex flex-wrap gap-3">{paperGroups[paperPosition].papers.map(p=><button type="button" key={p.id} onClick={()=>choosePaper(p.id)} aria-pressed={paperId===p.id} className="min-h-11 rounded-lg border border-hairline px-3 text-link">{bookletLabel(p)}</button>)}</div></details>}
+    {paperPosition>=0&&paperGroups[paperPosition].papers.length>1&&<details className="mt-2 text-xs text-secondary"><summary className="min-h-11 cursor-pointer py-3">Booklet originals · {selectedPaper?bookletLabel(selectedPaper):'selected source'}</summary><div className="flex flex-wrap gap-3">{paperGroups[paperPosition].papers.map(p=><button type="button" key={p.id} onClick={()=>choosePaper(p.id)} aria-pressed={paperId===p.id} className="min-h-11 rounded-lg border border-hairline px-3 text-link">{bookletLabel(p)}</button>)}</div></details>}
     <div className="grid gap-3 py-3 sm:grid-cols-2 lg:grid-cols-3">
-      <label className="text-[12px] font-semibold">Subtopic<select value={subtopicId} onChange={e=>taxonomyFilter('subtopic_id',e.target.value)} disabled={!topicId} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px] disabled:opacity-60"><option value="">All subtopics</option>{selectedTopic?.subtopics.map(subtopic=><option key={subtopic.id} value={subtopic.id}>{subtopic.title} · {subtopic.questions}</option>)}</select></label>
-      <label className="text-[12px] font-semibold">Answer pool<select value={pool} onChange={(e)=>update(setPool,e.target.value as typeof pool)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-[13px]"><option value="all">All questions</option><option value="scorable">Verified keys only</option><option value="practice">Questions with an answer</option></select></label>
+      <label className="text-xs font-semibold">Subtopic<select value={subtopicId} onChange={e=>taxonomyFilter('subtopic_id',e.target.value)} disabled={!topicId} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm disabled:opacity-60"><option value="">All subtopics</option>{selectedTopic?.subtopics.map(subtopic=><option key={subtopic.id} value={subtopic.id}>{subtopic.title} · {subtopic.questions}</option>)}</select></label>
+      <label className="text-xs font-semibold">Answer pool<select value={pool} onChange={(e)=>update(setPool,e.target.value as typeof pool)} className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas p-2 text-sm"><option value="all">All questions</option><option value="scorable">Verified keys only</option><option value="practice">Questions with an answer</option></select></label>
 
     </div>
     </details>
-    <div className="mt-4 flex justify-between text-[13px] text-secondary"><span>{!pending&&page ? `${page.total.toLocaleString('en-IN')} ${page.total===1?'question':'questions'}` : page?'Updating questions…':'Loading questions…'}</span>{!pending&&page && <span>{page.total ? offset+1 : 0}–{Math.min(offset+page.items.length,page.total)} of {page.total}</span>}</div>
-    {error && <p role="alert" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-[13px] text-mypick">{error} <button type="button" onClick={()=>setReload(n=>n+1)} className="underline">Retry</button></p>}
-    {(combined||collectionId==='udc')&&!paperId&&<p className="mt-2 text-[12px] text-secondary">Identical text copies from booklet series are grouped. Figures and source differences stay separate.</p>}
-    {metadataLoading&&<p role="status" className="mt-2 text-[12px] text-muted">Paper details are loading. You can start with the available questions.</p>}
-    {checkpointError&&<p role="status" className="mt-2 text-[12px] text-mypick">Could not save your place: {checkpointError}</p>}
-    {practice&&<p className="mt-3 text-[12px] text-secondary">Tap an option to submit your answer. Show answer opens reading mode.</p>}
+    <div className="mt-4 flex justify-between text-sm text-secondary"><span>{!pending&&page ? `${page.total.toLocaleString('en-IN')} ${page.total===1?'question':'questions'}` : page?'Updating questions…':'Loading questions…'}</span>{!pending&&page && <span>{page.total ? offset+1 : 0}–{Math.min(offset+page.items.length,page.total)} of {page.total}</span>}</div>
+    {error && <p role="alert" className="mt-3 rounded-[10px] border border-mypick bg-mypick-soft p-3 text-sm text-mypick">{error} <button type="button" onClick={()=>setReload(n=>n+1)} className="underline">Retry</button></p>}
+    {(combined||collectionId==='udc')&&!paperId&&<p className="mt-2 text-xs text-secondary">Identical text copies from booklet series are grouped. Figures and source differences stay separate.</p>}
+    {metadataLoading&&<p role="status" className="mt-2 text-xs text-muted">Paper details are loading. You can start with the available questions.</p>}
+    {checkpointError&&<p role="status" className="mt-2 text-xs text-mypick">Could not save your place: {checkpointError}</p>}
+    {practice&&<p className="mt-3 text-xs text-secondary">Tap an option to submit your answer. Show answer opens reading mode.</p>}
     {page&&<Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice?'Practice question navigator':'Exam question pages'}/>}
     {pending&&!page&&!error&&<p role="status" className="min-h-[320px] py-10 text-center text-secondary">Loading questions…</p>}
     <div className={`exam-reading-area mt-2 divide-y divide-hairline ${pending&&page?'opacity-50':''}`} data-results-current={!pending}>
       {page?.items.map((q,index)=>{
         const result=results[q.id]
         return <StudyQuestionCard showPanelNext={false} key={q.id} q={q} collectionId={collectionId} paperId={paperId} sourceCollections={sourceCollections}
-          result={result} pick={picks[q.id]} viewed={viewed[q.id]} busy={answerBusy[q.id]} disabled={pending}
+          result={result} pick={picks[q.id]} viewed={viewed[q.id]} busy={answerBusy[q.id]} checking={checkingAnswers[q.id]} disabled={pending}
           onPick={i=>void answer(q,i)}
           onViewed={value=>setViewed(old=>({...old,[q.id]:value}))} onBusy={v=>setAnswerBusy(old=>({...old,[q.id]:v}))}
           onRetry={()=>{setPicks(old=>{const next={...old};delete next[q.id];return next});setResults(old=>{const next={...old};delete next[q.id];return next})}}
           onNext={()=>{const next=page.items[index+1];if(next)document.getElementById('question-'+next.id)?.scrollIntoView({block:'start',behavior:'smooth'});else if(currentPage<pages)goPage(currentPage+1);else setError('You reached the end of these results. Change filters to continue.')}}/>
       })}
-      {!pending&&page && !page.items.length && <div className="py-10 text-center text-[14px] text-secondary">No questions match these filters. <button type="button" onClick={resetFilters} className="min-h-11 underline">Reset filters</button></div>}
+      {!pending&&page && !page.items.length && <div className="py-10 text-center text-sm text-secondary">No questions match these filters. <button type="button" onClick={resetFilters} className="min-h-11 underline">Reset filters</button></div>}
     </div>
     {page&&<Pagination page={currentPage} pages={pages} disabled={pending} onPageChange={goPage} label={practice?'Practice question navigator':'Exam question pages'}/>}
   </section>
@@ -233,7 +234,7 @@ export function ModuleProgressPanel({ collectionId, collectionTitle, totalScorab
         <section className="learning-panel"><div className="learning-panel-heading"><div><p className="learning-eyebrow">Last 28 days</p><h3>Practice activity</h3></div><span className="learning-status is-developing">{progress.active_days_30} active</span></div><div className="learning-activity-grid" aria-label="Daily answers over the last 28 days">{activity.map((item) => <div key={item.day} title={`${item.day}: ${item.count} answers`} aria-label={`${item.day}, ${item.count} answers`} className={`learning-activity-day ${item.count ? 'has-activity' : ''}`}><span>{item.count || ''}</span></div>)}</div><div className="learning-activity-legend"><span>Less</span>{[0, 1, 3, 6].map((level) => <i key={level} className={level ? 'has-activity' : ''} style={level ? { opacity: .25 + level * .1 } : undefined} />)}<span>More</span></div><p className="learning-panel-note">{started ? `${progress.answered.toLocaleString('en-IN')} answers recorded in this exam.` : 'Your daily activity will appear here after your first practice.'}</p></section>
 
         <section className="learning-panel"><div className="learning-panel-heading compact"><div><p className="learning-eyebrow">Review queue</p><h3>Questions to revisit</h3></div><span className={`learning-status ${mistakes.length ? 'is-weak' : 'is-developing'}`}>{mistakes.length} due</span></div>
-          {collectionId==='udc'&&mistakes.length>0&&<Link to="/exams/udc?view=practice&status=wrong#exam-question-browser" className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Practise UDC mistakes →</Link>}
+          {collectionId==='udc'&&mistakes.length>0&&<Link to="/exams/udc?view=practice&status=wrong#exam-question-browser" className="mb-3 inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-sm font-semibold">Practise UDC mistakes →</Link>}
           {mistakes.length ? <div className="learning-queue-list">{mistakes.slice(0, 8).map((m) => <Link className="learning-queue-row" key={m.id} to={`/bank/${m.id}`}><span><strong>{m.question}</strong><small>Missed {m.times_wrong} times · Review question</small></span><b>{m.times_wrong}</b><span className="learning-queue-arrow">›</span></Link>)}</div> : <div className="learning-queue-empty"><span aria-hidden="true">✓</span><p>{started ? 'Nothing is waiting for review right now.' : 'Missed questions will be collected here so you can revisit them later.'}</p>{!started&&practiceAvailable && <Link to={practiceLink}>Start a practice set →</Link>}</div>}
         </section>
       </div>

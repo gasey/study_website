@@ -8,6 +8,7 @@ export interface DeskTask {
   week: boolean;
 }
 export interface DeskNote {
+  question_id?: string | null;
   id: string;
   title: string;
   body: string;

@@ -107,13 +107,13 @@ html.dark .udc-ldc-page {
   border-left: 3px solid var(--udc-gold);
   border-radius: 5px;
   background: color-mix(in srgb, var(--udc-gold) 8%, var(--bg-panel, #fff));
-  font-family: Georgia, 'Times New Roman', serif;
+  
   font-size: 1.04em;
   letter-spacing: .01em;
 }
 .udc-math-option {
   display: block;
-  font-family: Georgia, 'Times New Roman', serif;
+  
   font-variant-numeric: tabular-nums;
   line-height: 1.5;
   letter-spacing: .01em;
@@ -184,8 +184,7 @@ html.dark .udc-ldc-page {
   border-radius: 12px !important;
   padding: 16px 17px !important;
   margin: 12px 0 !important;
-  box-shadow: 0 1px 2px color-mix(in srgb, var(--udc-primary) 8%, transparent),
-    0 8px 20px -16px color-mix(in srgb, var(--udc-primary) 30%, transparent);
+  box-shadow: var(--ism-card-shadow);
 }
 .udc-question-card:first-child { margin-top: 4px !important; }
 .udc-question-card:last-child { margin-bottom: 4px !important; }
@@ -202,7 +201,7 @@ html.dark .udc-ldc-page {
   border: 1px solid var(--udc-border);
   border-radius: 14px;
   background: var(--bg-panel, #fff);
-  box-shadow: 0 8px 28px color-mix(in srgb, var(--udc-primary) 22%, transparent);
+  box-shadow: var(--ism-card-shadow);
 }
 .udc-practice-next {
   display: block;

@@ -1,5 +1,59 @@
 # Accounts and billing
 
+21 November owner update: invoice/contact address is **A/77, Chanmari, Aizawl,
+Mizoram, India**, for Hruaitluanga, an individual trading as Finna. The private
+legal drafts and local About/Contact/Privacy previews include it. Invoice/tax
+review, policy publication/effective date and actual provider acceptance remain
+separate; checkout remains disabled.
+
+## Privacy and launch preparation — 20 November 2026
+
+The owner confirmed **Hruaitluanga, an individual trading as Finna**, with support
+at hruaitluangasailo20@gmail.com. Refund eligibility is any reason within seven
+days of the relevant charge; the owner selected no fixed refund-support response
+deadline. This does not waive applicable mandatory deadlines or initiate refunds.
+
+Local `/account/privacy` provides owned request receipts/withdrawal and an owner
+queue at `/admin/privacy`, linked from Operations. Request status changes do not
+execute erasure, payments or identity verification. `/policies/about` and its
+linked pages are working launch previews without an effective publication date.
+
+Migration0122 and the default-off `AUDIENCE_GATE_ENABLED` foundation are local only.
+The flag blocks study access until adult declaration; minor enrollment remains
+unavailable because no real guardian verifier or child-processing launch decision
+exists. Existing ages are not inferred. Retention/backup schedules, real guardian
+verification, invoice/tax details, scoped deployment/public policy publication and
+actual payment/refund/reconciliation checks remain. Checkout stays disabled.
+
+## Local refund-status reconciliation draft — 21 November 2026
+
+Integrity follow-up: the combined billing/privacy/recovery regression now passes
+125 tests, including actual `mpsc` role execution. The draft checks the fetched
+payment's charged amount/currency/capture state, prevents changes to established
+refund identity/history, and keeps a refund retryable when its charge has not
+arrived yet. Event receipts are reserved before effects so concurrent deliveries
+with the same event ID apply at most once. Ending subscription access also requires
+a bounded paginated refund list whose processed amounts equal the entire charge;
+pending/failed portions cannot end access. [Follow-up receipt](../reports/finna-refund-integrity-followup-20261121/README.md).
+
+Unapplied migration 0132 adds per-payment refund aggregates and a refund-reference
+ledger. Signed refund webhooks for known payments fetch the current Razorpay refund
+and payment state before recording pending, processed or failed status; partial
+and full aggregate states are retained. The owner-only billing account endpoint
+returns the latest payment/refund references without provider notes or card data.
+No refund-creation API is called by Finna. Only a processed full refund confirmed against
+the current payment ends that subscription's access; separate grants remain. The
+draft does not cancel provider renewals, and no Razorpay webhook subscription is
+configured. Verify the refund/cancellation workflow in provider test mode before
+launch. Synthetic
+tests: `api/tests/test_billing_deferred.py` and
+`api/tests/test_owner_billing_access.py`; receipt:
+`reports/finna-billing-refund-reconciliation-20261121/`. The broader local
+billing/account-retention/export/restore regression passes 98 tests.
+
+See [guardian plan](FINNA-GUARDIAN-PLAN.md), [policy drafts](FINNA-LEGAL-DRAFTS.md)
+and reports/finna-privacy-implementation-20261120/.
+
 The Claude v3 account flow is implemented with email and password sign-in,
 HTTP-only server sessions, guest-progress adoption, a seven-day no-card Pro
 trial, Pro subscriptions, billing management, and free-plan mock/practice
@@ -37,13 +91,17 @@ subscriptions and unexpired trial accounts bypass those limits. Plan perks
 beyond the current practice, mock, and mistakes entitlements should be added
 only when the corresponding product feature ships.
 
-## Current limitation
+## Current delivery and launch status — 19 November 2026
 
-There is no configured email delivery service. Account signup and login work,
-and signed-in users can change their password, but email ownership verification
-and self-service password recovery are not available yet. Configure a mail
-provider before advertising recovery or verified-email features. Until then,
-users who lose their password need a support-assisted recovery.
+Resend is configured for `study.hawayu.in`. Account email, verification and
+self-service password recovery are enabled. The owner completed a delivered
+recovery link, password reset and new-password sign-in. Opt-in evening review
+email is also deployed; each verified account must subscribe explicitly.
+See [email setup and delivery evidence](FINNA-EMAIL-SETUP.md).
+
+Paid checkout remains disabled. Legal pages and actual provider launch checks
+must be completed before activation. Referral access is being staged locally
+behind `REFERRAL_REWARDS_ENABLED=false`; it does not enable paid checkout.
 
 ## Manual access and extension availability — 28 October 2026
 

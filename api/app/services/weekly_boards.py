@@ -1,5 +1,6 @@
 """Bounded opt-in standings. Public rows contain identity, score and rank only."""
 from .learning_rewards import league_division
+from . import audience
 
 
 async def window(cur,as_of=None):
@@ -46,7 +47,7 @@ async def xp(cur,user,*,as_of=None):
       FROM reward_ledger l JOIN users u ON u.id=l.user_id AND u.email IS NOT NULL
       LEFT JOIN reward_profiles p ON p.user_id=u.id
       WHERE (p.board_public OR u.id=%(viewer)s) AND l.created_at>=%(start)s AND l.created_at<%(end)s AND l.created_at<=%(as_of)s
-      AND '''+BLOCKS+''' GROUP BY l.user_id,u.handle,p.board_public
+      AND '''+BLOCKS+''' AND '''+audience.eligible_sql('u.id')+''' GROUP BY l.user_id,u.handle,p.board_public
       HAVING sum(l.xp)>0 AND sum(l.xp)>=%(floor)s AND (%(ceiling)s::int IS NULL OR sum(l.xp)<%(ceiling)s)'''
     result=await project(cur,scores,params,user,clock)
     # Preserve the established XP field name for existing board readers.
@@ -70,7 +71,7 @@ async def games(cur,user,mode,*,as_of=None):
           JOIN users u ON u.id=m.user_id AND u.email IS NOT NULL LEFT JOIN reward_profiles p ON p.user_id=u.id
           WHERE r.state='finished' AND r.finished_at>=%(start)s AND r.finished_at<%(end)s AND r.finished_at<=%(as_of)s
             AND e.daily_id=(r.finished_at AT TIME ZONE 'Asia/Kolkata')::date::text
-            AND m.correct+m.wrong>0 AND (p.board_public OR u.id=%(viewer)s) AND '''+BLOCKS+'''
+            AND m.correct+m.wrong>0 AND (p.board_public OR u.id=%(viewer)s) AND '''+BLOCKS+''' AND '''+audience.eligible_sql('u.id')+'''
         ), runs AS (SELECT *,day-(row_number() OVER(PARTITION BY user_id ORDER BY day))::int AS island FROM days),
         lengths AS (SELECT user_id,handle,public,count(*)::int AS score FROM runs GROUP BY user_id,handle,public,island)
         SELECT user_id,handle,public,max(score)::int AS score FROM lengths GROUP BY user_id,handle,public'''
@@ -84,7 +85,7 @@ async def games(cur,user,mode,*,as_of=None):
           FROM game_members m JOIN game_rooms r ON r.id=m.room_id
           JOIN users u ON u.id=m.user_id AND u.email IS NOT NULL LEFT JOIN reward_profiles p ON p.user_id=u.id
           WHERE r.mode=%(mode)s AND r.state='finished' AND r.finished_at>=%(start)s AND r.finished_at<%(end)s AND r.finished_at<=%(as_of)s
-            AND m.left_at IS NULL AND m.correct+m.wrong>0 AND (p.board_public OR u.id=%(viewer)s) AND '''+BLOCKS+'''
+            AND m.left_at IS NULL AND m.correct+m.wrong>0 AND (p.board_public OR u.id=%(viewer)s) AND '''+BLOCKS+''' AND '''+audience.eligible_sql('u.id')+'''
           GROUP BY m.user_id,u.handle,p.board_public'''
     return await project(cur,scores,params,user,clock)
 

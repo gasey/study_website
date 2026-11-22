@@ -14,7 +14,8 @@ from ..db import cursor
 from ..deps import current_user
 from ..services.review_identity import Actor, identity, grants, require_role
 from ..services.review_policy import Proposal, digest, validate_target, quorum
-from ..services import bank_review as service
+from ..services import bank_review as service, audience
+from ..services.account_identity import account_session
 from ..services.editorial_access import assigned, source_version, require_version
 
 router=APIRouter(tags=['bank workspace'])
@@ -433,37 +434,58 @@ async def read_notice(nid:int,actor:Account):
     return {'read':True}
 
 @router.get('/api/community/contributors')
-async def leaderboard(period:Literal['week','month','all']='month',subject_id:str|None=None,limit:int=Query(30,ge=1,le=100)):
+async def leaderboard(request:Request,response:Response,period:Literal['week','month','all']='month',subject_id:str|None=None,limit:int=Query(30,ge=1,le=100)):
+    response.headers['Cache-Control']='private, no-store'
+    # Anonymous discovery must not create a guest account. A proved account
+    # supplies viewer-specific blocks; a device preference never supplies it.
+    session=await account_session(request)
+    viewer=session['user_id'] if session else None
     async with cursor() as cur:
         await cur.execute('''WITH net AS (
             SELECT user_id,contribution_id,sum(amount)::int AS amount FROM contribution_credit l
-            WHERE (%s='all' OR l.created_at >= (date_trunc(%s,now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata'))
-            AND (%s::text IS NULL OR l.subject_id=%s) GROUP BY user_id,contribution_id
+            WHERE (%(period)s='all' OR l.created_at >= (date_trunc(%(unit)s,now() AT TIME ZONE 'Asia/Kolkata') AT TIME ZONE 'Asia/Kolkata'))
+            AND (%(subject)s::text IS NULL OR l.subject_id=%(subject)s) GROUP BY user_id,contribution_id
         ) SELECT u.id,u.handle,u.avatar,sum(net.amount)::int AS credit,
             count(*) FILTER(WHERE net.amount>0)::int AS contributions,
             dense_rank() OVER(ORDER BY sum(net.amount) DESC,count(DISTINCT COALESCE(c.canonical_id,c.id)) FILTER(WHERE net.amount>0) DESC)::int AS rank
             FROM net JOIN users u ON u.id=net.user_id JOIN bank_contributions c ON c.id=net.contribution_id
-            WHERE u.contribution_public GROUP BY u.id,u.handle HAVING sum(net.amount)>0
-            ORDER BY credit DESC,contributions DESC,u.handle LIMIT %s''',(period,'week' if period=='week' else 'month',subject_id,subject_id,limit))
+            WHERE u.contribution_public AND '''+audience.subject_sql('u.id')+'''
+            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE
+              (b.user_id=%(viewer)s AND b.blocked_id=u.id) OR (b.user_id=u.id AND b.blocked_id=%(viewer)s))
+            GROUP BY u.id,u.handle HAVING sum(net.amount)>0
+            ORDER BY credit DESC,contributions DESC,u.handle LIMIT %(limit)s''',
+            {'period':period,'unit':'week' if period=='week' else 'month','subject':subject_id,'viewer':viewer,'limit':limit})
         return await cur.fetchall()
 
 @router.get('/api/community/contributions')
-async def published(user:Annotated[str,Depends(current_user)],before:str|None=None,limit:int=Query(20,ge=1,le=100)):
+async def published(response:Response,user:Annotated[str,Depends(current_user)],before:str|None=None,limit:int=Query(20,ge=1,le=100)):
+    response.headers['Cache-Control']='private, no-store'
     async with cursor() as cur:
         await cur.execute('''SELECT c.id,c.title,c.kind,c.subject_id,c.canonical_id,c.updated_at,CASE WHEN u.contribution_public THEN u.handle ELSE 'Anonymous contributor' END AS author,
-            (SELECT count(*)::int FROM contribution_votes v WHERE v.contribution_id=c.id) AS helpful,
+            (SELECT count(*)::int FROM contribution_votes v WHERE v.contribution_id=c.id
+              AND '''+audience.subject_sql('v.user_id')+'''
+              AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE
+                (b.user_id=v.user_id AND b.blocked_id=c.author_id) OR (b.user_id=c.author_id AND b.blocked_id=v.user_id))) AS helpful,
             EXISTS(SELECT 1 FROM contribution_votes v WHERE v.contribution_id=c.id AND v.user_id=%s) AS voted
             FROM bank_contributions c JOIN users u ON u.id=c.author_id WHERE c.state='published'
+            AND '''+audience.subject_sql('c.author_id')+'''
+            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=c.author_id) OR (b.user_id=c.author_id AND b.blocked_id=%s))
             AND NOT EXISTS(SELECT 1 FROM mock_sessions m WHERE m.user_id=%s AND m.submitted_at IS NULL AND c.canonical_id=ANY(m.question_ids))
+            AND NOT EXISTS(SELECT 1 FROM game_members gm JOIN game_rooms gr ON gr.id=gm.room_id
+              LEFT JOIN game_cups cup ON cup.id=gr.cup_id WHERE gm.user_id=%s
+              AND ((gm.released_at IS NULL AND gr.state IN ('waiting','running')) OR cup.closes_at>now())
+              AND gr.questions @> jsonb_build_array(jsonb_build_object('id',c.canonical_id)))
             AND (%s::text IS NULL OR (c.updated_at,c.id)<(SELECT updated_at,id FROM bank_contributions WHERE id=%s))
-            ORDER BY c.updated_at DESC,c.id DESC LIMIT %s''',(user,user,before,before,limit+1))
+            ORDER BY c.updated_at DESC,c.id DESC LIMIT %s''',(user,user,user,user,user,before,before,limit+1))
         rows=await cur.fetchall()
     return {'items':rows[:limit],'next_cursor':rows[limit-1]['id'] if len(rows)>limit else None}
 
 @router.post('/api/contributions/{cid}/vote')
 async def vote(cid:str,actor:Account):
     async with cursor() as cur:
-        await cur.execute("SELECT author_id,canonical_id FROM bank_contributions WHERE id=%s AND state='published'",(cid,))
+        await cur.execute("""SELECT c.author_id,c.canonical_id FROM bank_contributions c WHERE c.id=%s AND c.state='published'
+          AND """+audience.subject_sql('c.author_id')+""" AND NOT EXISTS(SELECT 1 FROM creator_blocks b
+            WHERE (b.user_id=%s AND b.blocked_id=c.author_id) OR (b.user_id=c.author_id AND b.blocked_id=%s))""",(cid,actor.id,actor.id))
         row=await cur.fetchone()
         if not row: raise HTTPException(404,'Published contribution not found')
         if row['author_id']==actor.id: raise HTTPException(403,'You cannot vote on your own work')

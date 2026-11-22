@@ -20,12 +20,17 @@ CREATE FUNCTION sweep_empty_guests(apply_changes boolean DEFAULT false)
  RETURNS TABLE(scanned integer,eligible integer,removed integer)
  LANGUAGE plpgsql SECURITY DEFINER SET search_path=pg_catalog,pg_temp AS $$
 DECLARE candidate record;ref record;item jsonb;linked boolean;keep boolean;
- guards text:='';refs jsonb:='[]';base text;
+ protected_queries text:='';refs jsonb:='[]';base text;chosen text;
 BEGIN
  scanned:=0;eligible:=0;removed:=0;
- base:='SELECT u.id FROM public.users u JOIN public.guest_credentials g ON g.user_id=u.id
+ base:='SELECT u.* FROM public.users u JOIN public.guest_credentials g ON g.user_id=u.id
    WHERE u.id ~ ''^guest_[0-9a-f]{32}$'' AND u.email IS NULL AND u.closed_at IS NULL
-    AND u.role=''learner'' AND u.created_at<now()-interval ''12 months''
+    AND u.role=''learner'' AND u.level=1 AND u.name IS NULL AND u.avatar IS NULL
+    AND u.avatar_version=0 AND u.identity_version=0
+    AND u.password_hash IS NULL AND u.email_verified_at IS NULL
+    AND u.plan_code=''free'' AND u.plan_status=''free'' AND u.trial_ends_at IS NULL
+    AND u.plan_ends_at IS NULL AND u.razorpay_subscription_id IS NULL
+    AND u.created_at<now()-interval ''12 months''
     AND g.adopted_by IS NULL AND g.created_at<now()-interval ''12 months''
     AND g.expires_at<now()-interval ''12 months''';
  -- Avoid catalog/planner work on an ordinary empty cycle.
@@ -37,7 +42,8 @@ BEGIN
    JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace
    JOIN pg_catalog.pg_type t ON t.oid=a.atttypid
    WHERE n.nspname='public' AND c.relkind IN ('r','p') AND a.attnum>0 AND NOT a.attisdropped
-    AND t.typcategory='S' AND (a.attname ~ '(_id|_by)$' OR a.attname='target_user')
+    AND t.typcategory='S' AND (a.attname ~ '_by$' OR
+      a.attname ~ '(^|_)(user|author|actor|owner|creator|recipient|sender|reviewer|reporter|voter|follower|blocked|guest|account)(_id)?$')
     AND NOT(c.relname='guest_credentials' AND a.attname='user_id')
   UNION
   SELECT n.nspname,c.relname,
@@ -51,15 +57,23 @@ BEGIN
     AND NOT(n.nspname='public' AND c.relname='guest_credentials' AND a.attname='user_id')
    GROUP BY fk.oid,n.nspname,c.relname
  LOOP
-  guards:=guards||format(' AND NOT EXISTS(SELECT 1 FROM %I.%I r WHERE %s)',ref.nspname,ref.relname,ref.predicate);
+  IF protected_queries<>'' THEN protected_queries:=protected_queries||' UNION ALL ';END IF;
+  protected_queries:=protected_queries||format('SELECT u.id FROM candidates u WHERE EXISTS(SELECT 1 FROM %I.%I r WHERE %s)',ref.nspname,ref.relname,ref.predicate);
   refs:=refs||jsonb_build_array(jsonb_build_object('schema',ref.nspname,'table',ref.relname,'predicate',ref.predicate));
  END LOOP;
  -- Filter linked data before LIMIT, so protected old guests cannot starve
  -- newer empty accounts. Only20 data-free candidates are ever locked.
- FOR candidate IN EXECUTE base||guards||' ORDER BY g.expires_at,u.id LIMIT 20' ||
+ IF protected_queries='' THEN protected_queries:='SELECT NULL::text AS id WHERE false';END IF;
+ -- Independent UNION branches avoid a combinatorial hundreds-of-joins plan.
+ -- Materialization scopes every reference check to this old-guest cohort.
+ chosen:='WITH candidates AS MATERIALIZED ('||base||'), protected AS MATERIALIZED ('||protected_queries||') '||base||
+   ' AND NOT EXISTS(SELECT 1 FROM protected p WHERE p.id=u.id)';
+ FOR candidate IN EXECUTE chosen||' ORDER BY g.expires_at,u.id LIMIT 20' ||
    CASE WHEN apply_changes THEN ' FOR UPDATE OF u,g SKIP LOCKED' ELSE '' END
  LOOP
   scanned:=scanned+1;keep:=false;
+  EXECUTE 'SELECT EXISTS('||base||' AND u.id=$1)' INTO linked USING candidate.id;
+  IF NOT linked THEN CONTINUE;END IF;
   -- A fresh snapshot under the locks catches references committed while we
   -- waited. Full composite/alternate-key joins preserve their exact owners.
   FOR item IN SELECT value FROM jsonb_array_elements(refs)

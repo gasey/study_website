@@ -16,7 +16,7 @@ import {
 } from "../lib/api";
 
 const INPUT =
-  "min-h-11 min-w-0 rounded-[8px] border border-hairline bg-card px-3 text-[13px]";
+  "min-h-11 min-w-0 rounded-[8px] border border-hairline bg-card px-3 text-sm";
 const TABS = ["practice", "browse", "notes", "discussions"] as const;
 export default function LibraryShelf() {
   const { shelfId = "" } = useParams(),
@@ -158,19 +158,19 @@ export default function LibraryShelf() {
     <main className="mx-auto max-w-shell px-4 pb-24 pt-8 sm:px-6">
       <Link
         to="/library"
-        className="inline-flex min-h-11 items-center text-[13px] font-semibold text-link"
+        className="inline-flex min-h-11 items-center text-sm font-semibold text-link"
       >
         ← Study library
       </Link>
       <div className="mt-3 border-b border-hairline pb-6">
-        <div className="font-mono text-[10px] uppercase tracking-widest text-practice-dark">
+        <div className="font-mono text-xs uppercase tracking-widest text-practice-dark">
           Choose a subject · keep your progress
         </div>
-        {['geography','history','polity','mizoram-gk'].includes(shelfId)&&<Link to="/atlas" className="mt-3 inline-flex min-h-11 items-center rounded-pill border border-hairline bg-card px-4 text-[13px] font-semibold text-link">Explore the Interactive Atlas →</Link>}
+        {['geography','history','polity','mizoram-gk'].includes(shelfId)&&<Link to="/atlas" className="mt-3 inline-flex min-h-11 items-center rounded-pill border border-hairline bg-card px-4 text-sm font-semibold text-link">Explore the Interactive Atlas →</Link>}
         <h1 className="mt-2 font-display text-[clamp(36px,6vw,54px)]">
           {shelf?.title || shelfId.replace(/-/g, " ")}
         </h1>
-        <p className="mt-2 max-w-[720px] text-[15px] leading-relaxed text-secondary">
+        <p className="mt-2 max-w-[720px] text-base leading-relaxed text-secondary">
           {shelf?.description} Practise here, browse original questions or join
           their discussions. Your answers save to your account.
         </p>
@@ -182,7 +182,7 @@ export default function LibraryShelf() {
             onClick={() => filter("view", t)}
             aria-pressed={view === t}
             className={
-              "min-h-11 rounded-pill px-5 text-[13px] font-semibold " +
+              "min-h-11 rounded-pill px-5 text-sm font-semibold " +
               (view === t
                 ? "bg-ink text-paper"
                 : "border border-hairline bg-card")
@@ -193,7 +193,7 @@ export default function LibraryShelf() {
         ))}
       </nav>
       {shelfId === "current-affairs" && (
-        <p className="mt-4 rounded-[10px] bg-[#F6EACB] p-4 text-[13px]">
+        <p className="mt-4 rounded-[10px] bg-[#F6EACB] p-4 text-sm">
           These are historical exam questions. Answer in the context of the
           original paper year; they do not establish today’s officeholders or
           latest facts.
@@ -256,7 +256,7 @@ export default function LibraryShelf() {
                   ))}
                 </select>
           <details className="max-w-full">
-              <summary className="cursor-pointer rounded-pill border border-hairline bg-card px-4 py-3 text-[13px] font-semibold">
+              <summary className="cursor-pointer rounded-pill border border-hairline bg-card px-4 py-3 text-sm font-semibold">
                 More filters
               </summary>
               <div className="mt-3 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -338,7 +338,7 @@ export default function LibraryShelf() {
               </div>
             </details>
             <button
-              className="min-h-11 px-3 text-[12px] text-link underline"
+              className="min-h-11 px-3 text-xs text-link underline"
               onClick={() => {
                 setParams({ view });
                 setQuery("");
@@ -346,13 +346,13 @@ export default function LibraryShelf() {
             >
               Clear filters
             </button>
-            <span className="ml-auto text-[12px] text-muted">
+            <span className="ml-auto text-xs text-muted">
               {loading
                 ? "Loading…"
                 : total.toLocaleString("en-IN") + " questions"}
             </span>
           </div>
-          <p className="mt-3 text-[12px] text-muted">
+          <p className="mt-3 text-xs text-muted">
             {view === "browse"
               ? "Includes descriptive and unkeyed questions, with original sources."
               : "Answer labels distinguish official keys from worked solutions."}{" "}
@@ -362,14 +362,14 @@ export default function LibraryShelf() {
         </>
       )}
       {loading && (
-        <p role="status" className="mt-6 text-[14px] text-secondary">
+        <p role="status" className="mt-6 text-sm text-secondary">
           Loading {view}…
         </p>
       )}
       {error && (
         <p
           role="alert"
-          className="mt-5 rounded-[10px] border border-mypick p-4 text-[13px]"
+          className="mt-5 rounded-[10px] border border-mypick p-4 text-sm"
         >
           {error}{" "}
           <button
@@ -387,7 +387,7 @@ export default function LibraryShelf() {
           ))}
           {materials && (
             <>
-              <p className="mb-4 text-[13px] text-secondary">
+              <p className="mb-4 text-sm text-secondary">
                 Published notes linked to {shelf?.title}.{" "}
                 <Link
                   to={"/studio/new?" + new URLSearchParams({ tag: shelfId })}
@@ -406,7 +406,7 @@ export default function LibraryShelf() {
           )}
           {feed && (
             <>
-              <p className="mb-4 text-[13px] text-secondary">
+              <p className="mb-4 text-sm text-secondary">
                 Discussions unlock after you answer a question. Open any
                 question above to ask a doubt or suggest an improvement.
               </p>
@@ -416,11 +416,11 @@ export default function LibraryShelf() {
                   to={"/bank/" + t.question_id + "?discussion=" + t.id}
                   className="mb-3 block rounded-[12px] border border-hairline bg-card p-5"
                 >
-                  <h2 className="font-display text-[22px]">{t.question}</h2>
-                  <p className="mt-2 line-clamp-3 text-[14px] text-secondary">
+                  <h2 className="font-display text-lg">{t.question}</h2>
+                  <p className="mt-2 line-clamp-3 text-sm text-secondary">
                     {t.body}
                   </p>
-                  <span className="mt-3 block text-[12px] text-link">
+                  <span className="mt-3 block text-xs text-link">
                     Open discussion →
                   </span>
                 </Link>
@@ -430,7 +430,7 @@ export default function LibraryShelf() {
           {(page?.items.length === 0 ||
             materials?.items.length === 0 ||
             feed?.items.length === 0) && (
-            <div className="rounded-[12px] border border-hairline bg-card p-5 text-[14px] text-secondary">
+            <div className="rounded-[12px] border border-hairline bg-card p-5 text-sm text-secondary">
               {feed
                 ? "No unlocked discussions here yet. Practise a question and open its discussion."
                 : materials
@@ -452,7 +452,7 @@ export default function LibraryShelf() {
           >
             ← Previous
           </button>
-          <span className="text-[12px] text-muted">
+          <span className="text-xs text-muted">
             Page {Math.floor(offset / 10) + 1}
           </span>
           <button

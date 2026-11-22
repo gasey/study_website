@@ -55,6 +55,10 @@ async def lifespan(_: FastAPI):
 
 
 app = FastAPI(title="Finna API", version="0.1.0", lifespan=lifespan)
+from .routers import review_digest
+app.include_router(review_digest.router)
+from .routers import referrals
+app.include_router(referrals.router)
 
 # Production is same-origin behind Caddy, so this only matters in dev.
 app.add_middleware(
@@ -66,6 +70,8 @@ app.add_middleware(
 
 from .services.account_boundary import AccountBoundary
 app.add_middleware(AccountBoundary)
+from .services.audience import AudienceBoundary
+app.add_middleware(AudienceBoundary)
 from .services.mobile_identity import MobileBoundary
 app.add_middleware(MobileBoundary)
 app.add_middleware(ReviewBodyLimit)
@@ -102,10 +108,16 @@ app.include_router(collections.router)
 app.include_router(mocks.router)
 from .routers import ops
 app.include_router(ops.router)
+from .routers import account_privacy
+app.include_router(account_privacy.router)
 from .routers import account_viewer
 app.include_router(account_viewer.router)
 from .routers import site_notice
 app.include_router(site_notice.router)
+from .routers import guides
+app.include_router(guides.router)
+from .routers import authoring_console
+app.include_router(authoring_console.router)
 
 
 @app.get("/api/health")
@@ -203,3 +215,6 @@ app.add_middleware(stats.StatsBodyLimit)
 from .routers import youtube_current_affairs
 app.include_router(youtube_current_affairs.router)
 app.add_middleware(youtube_current_affairs.YouTubeBodyLimit)
+
+from .routers import atlas
+app.include_router(atlas.router)

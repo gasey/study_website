@@ -1,4 +1,4 @@
-import asyncio, hashlib, hmac, json
+import asyncio, hashlib, hmac, json, re
 from datetime import datetime, timezone
 from urllib.request import Request as UrlRequest, urlopen
 from urllib.error import HTTPError, URLError
@@ -86,7 +86,7 @@ async def billing_me(user_id: Annotated[str, Depends(require_account)]):
         await cur.execute('SELECT starts_at,ends_at FROM reward_redemptions WHERE user_id=%s AND ends_at>now() ORDER BY starts_at',(user_id,))
         rewards=await cur.fetchall()
     async with cursor() as cur:
-        await cur.execute('SELECT starts_at,ends_at,days FROM billing_access_grants WHERE user_id=%s AND ends_at>now() ORDER BY starts_at',(user_id,))
+        await cur.execute('SELECT starts_at,ends_at,days,source FROM billing_access_grants WHERE user_id=%s AND ends_at>now() ORDER BY starts_at',(user_id,))
         grants=await cur.fetchall()
     return {**user,"subscription":sub,"enabled":enabled(),"reward_access":rewards,"granted_access":grants}
 
@@ -137,6 +137,8 @@ async def verify(body: VerifyRequest, user_id: Annotated[str, Depends(require_ac
     if not hmac.compare_digest(expected,body.razorpay_signature): raise HTTPException(400,"Payment verification failed")
     # Verify with Razorpay itself before granting access. Webhook remains authoritative.
     sub=await _razorpay_async("GET",f"/subscriptions/{row['razorpay_subscription_id']}")
+    if not isinstance(sub,dict) or sub.get('id')!=row['razorpay_subscription_id']:
+        raise HTTPException(502,"Razorpay returned an unexpected subscription")
     await _apply_subscription(sub)
     return {"verified":True,"status":sub.get("status")}
 
@@ -149,15 +151,116 @@ async def _apply_subscription(sub, cur=None):
     status=sub.get("status","created")
     start=datetime.fromtimestamp(sub["current_start"],timezone.utc) if sub.get("current_start") else None
     end=datetime.fromtimestamp(sub["current_end"],timezone.utc) if sub.get("current_end") else None
-    await cur.execute("SELECT user_id FROM billing_subscriptions WHERE razorpay_subscription_id=%s FOR UPDATE",(sid,))
+    await cur.execute("SELECT user_id,access_ended_at FROM billing_subscriptions WHERE razorpay_subscription_id=%s FOR UPDATE",(sid,))
     row=await cur.fetchone()
     if not row: return
     await cur.execute("UPDATE billing_subscriptions SET status=%s,current_start=%s,current_end=%s,updated_at=now() WHERE razorpay_subscription_id=%s",(status,start,end,sid))
     # A mandate authentication is not an active paid subscription period.
-    active=status=="active" and end is not None and end>datetime.now(timezone.utc)
+    active=(not row['access_ended_at'] and status=="active" and end is not None and end>datetime.now(timezone.utc))
     # A delayed event for an older subscription cannot overwrite a newer link.
+    effective_status='refunded' if row['access_ended_at'] else status
+    effective_end=row['access_ended_at'] or end
     await cur.execute("UPDATE users SET plan_code=%s,plan_status=%s,plan_ends_at=%s WHERE id=%s AND razorpay_subscription_id=%s",
-        ("pro" if active else "free",status,end,row["user_id"],sid))
+        ("pro" if active else "free",effective_status,effective_end,row["user_id"],sid))
+
+async def _reconcile_refund(refund_id, payment_id, cur):
+    """Record Razorpay's current refund/payment state for a known payment only."""
+    await cur.execute("SELECT amount_paise,currency,user_id,razorpay_subscription_id FROM billing_payments WHERE razorpay_payment_id=%s FOR UPDATE",(payment_id,))
+    payment_row=await cur.fetchone()
+    if not payment_row:
+        # Refund delivery can precede the charge delivery. Do not permanently
+        # acknowledge it before the owned payment record is available.
+        raise HTTPException(503,"The payment must be reconciled before its refund")
+    refund=await _razorpay_async("GET",f"/refunds/{refund_id}")
+    payment=await _razorpay_async("GET",f"/payments/{payment_id}")
+    if (not isinstance(refund,dict) or not isinstance(payment,dict)
+        or refund.get('id')!=refund_id or refund.get('payment_id')!=payment_id or payment.get('id')!=payment_id):
+        raise HTTPException(502,"Razorpay returned a refund for a different payment")
+    status=refund.get('status')
+    amount=refund.get('amount')
+    currency=refund.get('currency')
+    created=refund.get('created_at')
+    total_refunded=payment.get('amount_refunded')
+    refund_status=payment.get('refund_status')
+    if (not isinstance(status,str) or status not in {'pending','processed','failed'} or isinstance(amount,bool) or not isinstance(amount,int)
+        or amount<=0 or amount>payment_row['amount_paise'] or currency!=payment_row['currency']
+        or type(payment.get('amount')) is not int or payment['amount']!=payment_row['amount_paise']
+        or payment.get('currency')!=payment_row['currency']
+        or not isinstance(payment.get('status'),str) or payment['status'] not in {'captured','refunded'} or payment.get('captured') is not True
+        or isinstance(total_refunded,bool) or not isinstance(total_refunded,int)
+        or total_refunded<0 or total_refunded>payment_row['amount_paise']
+        or (refund_status is not None and (not isinstance(refund_status,str) or refund_status not in {'partial','full'}))
+        or (refund_status=='full' and total_refunded!=payment_row['amount_paise'])
+        or (refund_status=='partial' and not 0<total_refunded<payment_row['amount_paise'])
+        or (refund_status is None and total_refunded!=0)
+        or (status=='processed' and total_refunded<amount)
+        or isinstance(created,bool) or not isinstance(created,int)):
+        raise HTTPException(502,"Razorpay returned invalid refund details")
+    try:created_at=datetime.fromtimestamp(created,timezone.utc)
+    except (ValueError,OverflowError,OSError):
+        raise HTTPException(502,"Razorpay returned an invalid refund timestamp") from None
+    await cur.execute("SELECT razorpay_payment_id,amount_paise,currency,provider_created_at,status FROM billing_refunds WHERE razorpay_refund_id=%s FOR UPDATE",(refund_id,))
+    previous=await cur.fetchone()
+    if previous and (previous['razorpay_payment_id']!=payment_id or previous['amount_paise']!=amount
+        or previous['currency']!=currency or previous['provider_created_at']!=created_at
+        or (previous['status']=='processed' and status!='processed')):
+        raise HTTPException(502,"Razorpay returned inconsistent refund history")
+    full_processed=False
+    if status=='processed' and refund_status=='full':
+        full_processed=await _fully_processed_refunds(payment_id,payment_row,refund)
+    await cur.execute("""UPDATE billing_payments
+      SET status=%s,amount_refunded_paise=%s,refund_status=%s,updated_at=now()
+      WHERE razorpay_payment_id=%s""",
+      (payment.get('status','captured'),total_refunded,refund_status,payment_id))
+    await cur.execute("""INSERT INTO billing_refunds
+      (razorpay_refund_id,razorpay_payment_id,amount_paise,currency,status,provider_created_at)
+      VALUES(%s,%s,%s,%s,%s,%s)
+      ON CONFLICT(razorpay_refund_id) DO UPDATE SET
+        amount_paise=EXCLUDED.amount_paise,currency=EXCLUDED.currency,
+        status=EXCLUDED.status,provider_created_at=EXCLUDED.provider_created_at,updated_at=now()""",
+      (refund_id,payment_id,amount,currency,status,created_at))
+    if full_processed:
+        # Apply the owner's full-refund rule only after current provider state is
+        # confirmed. Preserve earned/owner grants; renewal cancellation stays a
+        # separate provider operation and is not attempted from a webhook.
+        sid=payment_row['razorpay_subscription_id']
+        await cur.execute("""UPDATE billing_subscriptions SET
+          access_ended_at=COALESCE(access_ended_at,now()),access_end_reason='full_refund',updated_at=now()
+          WHERE razorpay_subscription_id=%s""",(sid,))
+        await cur.execute("""UPDATE users SET plan_code='free',plan_status='refunded',plan_ends_at=now()
+          WHERE id=%s AND razorpay_subscription_id=%s""",(payment_row['user_id'],sid))
+
+async def _fully_processed_refunds(payment_id, payment_row, current_refund):
+    """Bounded read: a full aggregate can include refunds still pending."""
+    seen=set();processed=0;current_seen=False
+    for page in range(10):
+        collection=await _razorpay_async("GET",f"/payments/{payment_id}/refunds?count=100&skip={page*100}")
+        items=collection.get('items') if isinstance(collection,dict) else None
+        if (not isinstance(items,list) or len(items)>100 or type(collection.get('count')) is not int
+            or collection['count']!=len(items)):
+            raise HTTPException(502,"Razorpay returned an invalid refund list")
+        for item in items:
+            if (not isinstance(item,dict) or not _provider_id(item.get('id'),'rfnd')
+                or item['id'] in seen or item.get('payment_id')!=payment_id
+                or item.get('currency')!=payment_row['currency']
+                or type(item.get('amount')) is not int or not 0<item['amount']<=payment_row['amount_paise']
+                or not isinstance(item.get('status'),str) or item['status'] not in {'pending','processed','failed'}):
+                raise HTTPException(502,"Razorpay returned inconsistent payment refunds")
+            seen.add(item['id'])
+            if item['id']==current_refund['id']:
+                if any(item.get(key)!=current_refund.get(key) for key in ('amount','status','created_at')):
+                    raise HTTPException(502,"Razorpay refund state changed during reconciliation")
+                current_seen=True
+            if item['status']=='processed':processed+=item['amount']
+        if processed>payment_row['amount_paise']:
+            raise HTTPException(502,"Razorpay returned excessive processed refunds")
+        if len(items)<100:
+            if not current_seen:raise HTTPException(502,"Razorpay omitted the current refund")
+            return processed==payment_row['amount_paise']
+    raise HTTPException(503,"This payment needs manual refund reconciliation")
+
+def _provider_id(value, prefix):
+    return isinstance(value,str) and re.fullmatch(prefix+r'_[A-Za-z0-9_-]{1,100}',value) is not None
 
 @router.post("/webhook")
 async def webhook(request: Request):
@@ -169,30 +272,52 @@ async def webhook(request: Request):
     try:
         event=json.loads(raw)
         if not isinstance(event,dict) or not isinstance(event.get('payload',{}),dict):raise ValueError()
+        if not isinstance(event.get('event','unknown'),str):raise ValueError()
+        for name in ('subscription','payment','refund'):
+            wrapper=event.get('payload',{}).get(name,{})
+            if not isinstance(wrapper,dict) or not isinstance(wrapper.get('entity',{}),dict):raise ValueError()
     except (ValueError,TypeError):
         raise HTTPException(400,"Invalid webhook payload")
     event_id=request.headers.get("x-razorpay-event-id") or hashlib.sha256(raw).hexdigest()
     entity=event.get("payload",{}).get("subscription",{}).get("entity")
     payment=event.get("payload",{}).get("payment",{}).get("entity")
+    refund=event.get("payload",{}).get("refund",{}).get("entity")
     sid=(entity or {}).get('id') or (payment or {}).get('subscription_id')
+    refund_id=(refund or {}).get('id')
+    payment_id=(refund or {}).get('payment_id') or (payment or {}).get('id')
+    if event.get('event','').startswith('refund.') and not refund:
+        raise HTTPException(400,"Missing webhook refund details")
+    if (sid is not None and not _provider_id(sid,'sub')) or (refund is not None and
+        (not _provider_id(refund_id,'rfnd') or not _provider_id(payment_id,'pay'))):
+        raise HTTPException(400,"Invalid webhook identifiers")
+    if refund_id and payment and payment.get('id')!=payment_id:
+        raise HTTPException(400,"Conflicting webhook payment identifiers")
     # Read the provider's current state to tolerate out-of-order deliveries.
     # Unrecognised subscriptions cannot grant access or cause provider lookups.
     async with cursor() as cur:
-        if sid:
+        if sid and not refund_id:
             # Serialize each provider subscription before reading its current
             # state, so delayed concurrent deliveries cannot reverse it.
             await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('billing-subscription:'+sid,))
+        if refund_id and payment_id:
+            await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('billing-payment:'+payment_id,))
         await cur.execute('SELECT 1 FROM billing_webhook_events WHERE event_key=%s',(event_id,))
         if await cur.fetchone():return {"received":True,"duplicate":True}
-        current=None
-        if sid:
-            await cur.execute("SELECT 1 FROM billing_subscriptions WHERE razorpay_subscription_id=%s",(sid,))
-            if await cur.fetchone():current=await _razorpay_async("GET",f"/subscriptions/{sid}")
-        # Receipt and effects commit together; failures remain retryable.
+        # Reserve the event before applying effects, including when simultaneous
+        # deliveries disagree about the payment ID. The receipt rolls back on failure.
         await cur.execute("INSERT INTO billing_webhook_events(event_key,event_name) VALUES (%s,%s) ON CONFLICT DO NOTHING RETURNING event_key",(event_id,event.get("event","unknown")))
         if not await cur.fetchone():return {"received":True,"duplicate":True}
-        if current:await _apply_subscription(current,cur)
-        if payment and sid:
+        current=None
+        if sid and not refund_id:
+            await cur.execute("SELECT 1 FROM billing_subscriptions WHERE razorpay_subscription_id=%s",(sid,))
+            if await cur.fetchone():
+                current=await _razorpay_async("GET",f"/subscriptions/{sid}")
+                if not isinstance(current,dict) or current.get('id')!=sid:
+                    raise HTTPException(502,"Razorpay returned an unexpected subscription")
+        if refund_id and payment_id:
+            await _reconcile_refund(refund_id,payment_id,cur)
+        if current and not refund_id:await _apply_subscription(current,cur)
+        if payment and sid and not refund_id:
             await cur.execute("SELECT user_id FROM billing_subscriptions WHERE razorpay_subscription_id=%s",(sid,))
             user=await cur.fetchone()
             if user:
@@ -207,6 +332,8 @@ async def cancel(user_id: Annotated[str, Depends(require_account)]):
         await cur.execute("SELECT razorpay_subscription_id FROM users WHERE id=%s",(user_id,)); row=await cur.fetchone()
     if not row or not row["razorpay_subscription_id"]: raise HTTPException(404,"No subscription to cancel")
     result=await _razorpay_async("POST",f"/subscriptions/{row['razorpay_subscription_id']}/cancel",{"cancel_at_cycle_end":1})
+    if not isinstance(result,dict) or result.get('id')!=row['razorpay_subscription_id']:
+        raise HTTPException(502,"Razorpay returned an unexpected subscription")
     await _apply_subscription(result)
     return {"cancelled":True,"status":result.get("status")}
 
@@ -231,8 +358,17 @@ async def admin_account(actor:Staff,email:str=Query(min_length=3,max_length=254)
         user['amount_paise']=await _account_amount(user['id'],cur)
         await cur.execute('SELECT days,starts_at,ends_at,created_at FROM billing_access_grants WHERE user_id=%s ORDER BY id DESC LIMIT 20',(user['id'],))
         user['granted_access']=await cur.fetchall()
-        await cur.execute('SELECT amount_paise,status,billing_period FROM billing_subscriptions WHERE user_id=%s ORDER BY id DESC LIMIT 1',(user['id'],))
+        await cur.execute('SELECT amount_paise,status,billing_period,access_ended_at,access_end_reason FROM billing_subscriptions WHERE user_id=%s ORDER BY id DESC LIMIT 1',(user['id'],))
         user['subscription']=await cur.fetchone()
+        await cur.execute('''SELECT razorpay_payment_id,razorpay_subscription_id,amount_paise,
+            amount_refunded_paise,currency,status,refund_status,paid_at,created_at
+            FROM billing_payments WHERE user_id=%s ORDER BY created_at DESC LIMIT 20''',(user['id'],))
+        user['payments']=await cur.fetchall()
+        await cur.execute('''SELECT r.razorpay_refund_id,r.razorpay_payment_id,r.amount_paise,
+            r.currency,r.status,r.provider_created_at,r.created_at,r.updated_at
+            FROM billing_refunds r JOIN billing_payments p USING(razorpay_payment_id)
+            WHERE p.user_id=%s ORDER BY r.provider_created_at DESC NULLS LAST,r.created_at DESC LIMIT 50''',(user['id'],))
+        user['refunds']=await cur.fetchall()
         return user
 
 @router.post('/admin/account/{user_id}/rate')

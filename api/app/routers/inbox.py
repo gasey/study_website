@@ -3,8 +3,9 @@ from typing import Annotated, Literal
 from fastapi import APIRouter, Depends, HTTPException, Query, Response, Request
 from pydantic import BaseModel, ConfigDict, Field
 from ..db import cursor
+from ..services import audience,desk_notes
 from ..services.review_identity import Actor, inbox_identity
-from .study_desks import member, VISIBLE, enabled, messages as desk_messages
+from .study_desks import member, visible_sql, enabled, messages as desk_messages
 
 router = APIRouter(prefix='/api/inbox', tags=['inbox'])
 async def inbox_actor(request: Request, actor: Annotated[Actor, Depends(inbox_identity)]):
@@ -103,18 +104,23 @@ async def threads(actor: Account,response: Response,offset: int=Query(0,ge=0,le=
     enabled()
     async with cursor() as cur:
         await cur.execute('''SELECT d.id,d.name,d.goal,
-          latest.body AS last_message,latest.author,latest.created_at AS last_at,
+          latest.body AS last_message,latest.author,latest.created_at AS last_at,latest.note_id AS _note_id,
           (SELECT count(*)::int FROM study_desk_messages x
            WHERE x.desk_id=d.id AND x.deleted_at IS NULL AND x.created_at>=m.joined_at
-             AND x.author_id<>%s AND x.id>COALESCE(r.last_message_id,0) AND '''+VISIBLE+''') AS unread
+             AND x.author_id<>%s AND x.id>COALESCE(r.last_message_id,0) AND '''+visible_sql()+''') AS unread
           FROM study_desks d JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL
           LEFT JOIN inbox_desk_reads r ON r.desk_id=d.id AND r.user_id=m.user_id
-          LEFT JOIN LATERAL(SELECT x.body,u.handle AS author,x.created_at FROM study_desk_messages x JOIN users u ON u.id=x.author_id
-            WHERE x.desk_id=d.id AND x.deleted_at IS NULL AND x.created_at>=m.joined_at AND '''+VISIBLE+'''
+          LEFT JOIN LATERAL(SELECT x.body,x.note_id,u.handle AS author,x.created_at FROM study_desk_messages x JOIN users u ON u.id=x.author_id
+            WHERE x.desk_id=d.id AND x.deleted_at IS NULL AND x.created_at>=m.joined_at AND '''+visible_sql()+'''
             ORDER BY x.id DESC LIMIT 1) latest ON true
-          WHERE d.closed_at IS NULL AND (%s::text IS NULL OR d.id=%s) ORDER BY latest.created_at DESC NULLS LAST,d.name,d.id LIMIT %s OFFSET %s''',
+          WHERE d.closed_at IS NULL AND '''+audience.subject_sql('d.owner_id')+''' AND (%s::text IS NULL OR d.id=%s) ORDER BY latest.created_at DESC NULLS LAST,d.name,d.id LIMIT %s OFFSET %s''',
           (actor.id,actor.id,actor.id,actor.id,actor.id,actor.id,selected,selected,limit+1,offset))
         rows=await cur.fetchall()
+        for row in rows[:limit]:
+            note_id=row.pop('_note_id')
+            if note_id:
+                try:await desk_notes.shared(cur,row['id'],note_id,actor.id)
+                except HTTPException:row['last_message']='Linked note is unavailable or assessment-locked.'
         return {'items':rows[:limit],'next_offset':offset+limit if len(rows)>limit else None}
 
 @router.post('/threads/{did}/read')
@@ -124,7 +130,7 @@ async def read_thread(did: str,body: ThreadRead,actor: Account,response: Respons
     async with cursor() as cur:
         membership=await member(cur,did,actor.id,lock=True)
         await cur.execute('''SELECT COALESCE(max(x.id),0) AS through_id FROM study_desk_messages x
-          WHERE x.desk_id=%s AND x.id<=%s AND x.created_at>=%s AND x.deleted_at IS NULL AND '''+VISIBLE,
+          WHERE x.desk_id=%s AND x.id<=%s AND x.created_at>=%s AND x.deleted_at IS NULL AND '''+visible_sql(),
           (did,body.through_id,membership['joined_at'],actor.id,actor.id))
         through=(await cur.fetchone())['through_id']
         await cur.execute('''INSERT INTO inbox_desk_reads(user_id,desk_id,last_message_id) VALUES(%s,%s,%s)
@@ -149,8 +155,8 @@ async def unread_count(actor: Account,response: Response):
             await cur.execute('''SELECT count(*)::int AS n FROM study_desks d
               JOIN study_desk_members m ON m.desk_id=d.id AND m.user_id=%s AND m.left_at IS NULL
               LEFT JOIN inbox_desk_reads r ON r.desk_id=d.id AND r.user_id=m.user_id
-              WHERE d.closed_at IS NULL AND EXISTS(SELECT 1 FROM study_desk_messages x
+              WHERE d.closed_at IS NULL AND '''+audience.subject_sql('d.owner_id')+''' AND EXISTS(SELECT 1 FROM study_desk_messages x
                 WHERE x.desk_id=d.id AND x.deleted_at IS NULL AND x.created_at>=m.joined_at
-                AND x.author_id<>%s AND x.id>COALESCE(r.last_message_id,0) AND '''+VISIBLE+')',(actor.id,actor.id,actor.id,actor.id))
+                AND x.author_id<>%s AND x.id>COALESCE(r.last_message_id,0) AND '''+visible_sql()+')',(actor.id,actor.id,actor.id,actor.id))
             conversations=(await cur.fetchone())['n']
     return {'unread':notifications+conversations,'notifications':notifications,'conversations':conversations}

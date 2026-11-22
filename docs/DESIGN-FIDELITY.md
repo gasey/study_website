@@ -2,6 +2,170 @@
 
 ## Current visual reference — 14 November 2026
 
+20 November locally staged privacy tools: existing semantic paper/night cards,
+Figtree, labelled forms, min44px buttons and wrapped references/support address.
+Age selection distinguishes a browser choice from signed-account confirmation;
+under-18 enrollment is visibly unavailable. Account privacy forms and owner queue
+show request receipts, withdrawal/review states and explicitly manual outcomes.
+Final366-file build passes actual synthetic browser receipt/withdrawal, account
+switch, owner queue review and terminal status at1280/320, light/night. Widths
+1265/1265 and305/305 fit. About/refund previews are visibly drafts; Privacy text
+and width are checked in AX/DOM (its saved transition image depicts About).
+Final and intermediate screenshots are distinguished in the report; full-page
+capture at overridden width failed, alternate viewport captures worked. No physical
+Android/accessibility or publication certification. Preview resources removed,
+light/viewport restored. reports/finna-privacy-implementation-20261120/.
+
+19 November staged referrals: semantic Profile invitation card and optional Join
+notice/removal, verified/launch explanations, seven-day/ten-answer/five-per-year
+bounds and explicit withdrawal. Reuses current account and Google sign-in forms;
+submission locks invitation removal and parallel sign-in. Three actual components
+and364-file final build pass. Browser synthetic create/withdraw/reactivate/reload
+and anonymous notice/removal pass at1280/320 in light/night, client/scroll1265/1265
+and305/305. Long email/handle wrapping in Profile corrected. Captures precede only
+nonvisual account-only guard/submission interlocks; final build includes both,
+actual signup/Google component checks cover interlocks. Exact preview resources
+and agent tab removed,Light/viewport restored. No production referral rollout.
+Proof:../reports/finna-referrals-staged-20261119/.
+
+
+19 November review digest: semantic card/buttons on Profile and Email preferences,
+explicit Off default and verified-email explanation, evening window and empty-queue
+copy. Signed-out unsubscribe needs no account and clears the fragment after a
+successful explicit action; GET opening is inert. Two actual React components
+cover response/account isolation and errors. Browser1280/320px light/night passes,
+client/scroll305/305; exact preview resources removed and Light/viewport restored.
+Live preference page verified read-only; owner subscription unchanged.
+Reports:../reports/finna-review-digest-production-20261119/ and
+../reports/finna-review-digest-staged-20261119/.
+
+19 November staged Atlas district/context: semantic Studio source/reuse/district
+forms and dated-entry search, learner source attribution/downloads and shared map
+renderer. Saved-exam ordering uses current sections/live curated links and retains
+the full list. Chronicle links roundtrip to the selected map event; source changes
+hide stale links. Eleven starting proposals are private, dated illustrative data,
+not current surveyed boundaries or complete reviewed district content. Seven actual
+components and361-file build pass; disposable browser draft/attach/preview/publish,
+synthetic binding, order toggle, map/Chronicle and source views pass.320px
+light/night learner/source editor/Chronicle client/scroll305/305. Screenshots and
+cleanup:../reports/finna-atlas-depth-staged-20261118/. No production rollout or
+native/source/legal certification. User tab retained,Light/viewport restored.
+
+18 November staged Atlas drills: explicit authoring controls reuse Studio forms;
+learner activity uses a blank AtlasMap with no study overlays before answering.
+Results state distance/tolerance and zero XP/points. Explored is display-only,
+Today suggestions are optional, and warm-up completion from map activity cannot
+claim a chest. Optional question context reuses AtlasMap and ordinary question
+options/scoring. Synthetic browser author/publish/correct/wrong/explored/practice/
+Today/context checks passed; phone light/night widths 305/305 at 320px. Six actual
+components/screens and final 357-file build pass, including pending-request
+chapter/account reset cases.
+Captures: ../reports/finna-atlas-drills-staged-20261118/. Browser checks preceded
+only the final request-reset fix, which changed no layout. Temporary previews,
+exact database, tabs removed; user tab retained and Light/viewport restored.
+No real content review, native certification or production release is claimed.
+
+18 November staged Atlas Studio: chapter/fact/layer/event forms reuse semantic
+cards, inputs and palette; pin/line/area drawing and draggable handles use the
+same AtlasMap as learners. AtlasChapter is the one learner/draft render path;
+Studio marks drafts visibly and omits the live question panel in private preview.
+Facts/layers use accessible up/down controls; timelines support drag and up/down.
+Autosave survives reopen, immutable source attribution and exact saved-preview
+publication are explicit. Final355-file build,3actual components and final-build
+1280/320px light/night QA fit1265/1265 and305/305 client/scroll. Actual browser pin
+placement/drag, line/area finish, undo/redo, view capture, autosave/reopen, publish/
+hold/restore, invalid GeoJSON rejection and selected-layer copy verified only in a
+disposable fixture. Browser found undo selection drift; corrected and verified on
+phone. Captures in ../reports/finna-atlas-studio-staged-20261118/. No new factual
+source review, physical/native certification or production rollout. Preview exact
+process groups/database/tabs removed; user tab retained,Light/viewport reset.
+
+18 November staged Atlas bindings: existing map/layer/timeline renderer gains a
+semantic asked-from-map panel using ordinary QuestionCard/provenance/answer flow,
+chapter/layer and exam selection, real counts, pagination and honest empty states.
+Question cards/details expose reverse deep links from the same binding store.
+Owner binding form reuses semantic card/input colors and explicit preview/decision
+controls. Final353-file build,3actual components and built-artifact browser QA:
+synthetic save/preview8/publish/5+3pages/reverse/hold-empty/restore/inline answer,
+1280/320px light/night, widths1265/1265 and305/305. Captures/cleanup are in
+../reports/finna-atlas-bindings-staged-20261118/. No physical/native certification,
+real topic curation, new source review or full chapter Studio claim. Agent tabs,
+preview process groups/database removed; user tab retained, Light/viewport reset.
+
+19 November actual Samsung native check: the installed development APK exposes
+a Home percentage-height bug that component tests did not model. Intrinsic action
+sizing fixes1285px blank blocks to135px normal/252px at200% font. Tab labels use
+constrained single-line sizing with full accessibility names; large text now fits
+without last-letter clipping. Normal/200% screenshots and guest navigation cover
+Home,Exams,Library/questions/filters,mock builder,Desk andMe. Font restored; only
+these observed views are certified for this test setup. Full native acceptance,
+standalone hot-font/release behavior and iOS remain open. Receipt:
+../reports/finna-desk-pdf-20261119/NATIVE.md. No production web deployment.
+
+19 November saved Desk PDF check: unmodified authenticated export HTML from a
+synthetic DB printed with Chromium156 into4actual PDFs/17A4 pages. Every page was
+rendered/visually inspected; wrapping, long titles/references, Mizo glyphs, margins,
+empty state and assessment/ownership privacy pass. No layout/runtime edit was
+needed. Mobile print/other browsers/printers remain unverified. Evidence:
+../reports/finna-desk-pdf-20261119/; synthetic saved PDFs in output/pdf/.
+
+18 November staged question notes and room calendar: the existing Desk shell and
+rail gain live note references and a shared-only central-calendar card. Central
+editor retains its form and adds explicit per-entry room/private selection. Final
+350-file build, actual components/screen and1280/320px light/night synthetic QA
+verify share/save/view/withdraw/owner retention, canonical note links and print
+pages. Client/scroll widths1265/1265and305/305; no native/physical-device or actual
+saved-PDF pagination certification. All previews/agent tabs/exactDB cleaned, other
+user tab retained, viewport/Light restored. Frozen captures live in
+../reports/finna-desk-notes-staged-20261118/ and
+../reports/finna-desk-calendar-staged-20261118/. Production healthy-week gate open.
+
+18 November staged synchronized Desk practice: the existing Desk shell gains a
+semantic card with an explicit shared-set confirmation, eligible count, active
+reservation/resume links and waiting/full/started states. The common GameRoom
+player supplies ready/start/round/review controls; Desk sessions show a return link
+and member-only joining instructions instead of an external code. Independent
+practice is labelled separately and assessment-locked emptiness is explicit.
+Practice intro/sidebar and the game surface now use shared light/night colors.
+Built-artifact QA at 1280 and 320 px fits (1265/1265 and 305/305 client/scroll):
+create, synthetic peer join, Ready/start, server-clock progression, return/resume,
+assessment lock and release/completion. Four actual component/screen checks and
+349-file build pass. Final screenshots and pre-correction captures are retained in
+../reports/finna-desk-practice-staged-20261118/. All data is synthetic; this is not
+production, native or physical-device certification. Light/viewport restored and
+preview/tab/exact database cleaned up.
+
+18 November locally staged Desk v4: Finna Web prototype's existing Desk shell,
+Figtree, semantic light/night colors,18px panels,16/20px padding and44px controls.
+The room Progress tab adds a labelled numeric weekly target and accessible bar;
+Shared Qs adds a labelled review-circle selector and flag/resolve/reopen buttons;
+Focus adds the current opt-in board beside the existing timer. No new navigation,
+Today/mastery panel or duplicate timer/summary. Version/conflict, private/empty,
+reached, outage and stale-account states remain explicit. Shared question pages
+stay at five items. Synthetic development-preview1280/320px light/night checks fit
+(1265/1265and305/305client/scroll); nine screenshots and actual-component tests:
+../reports/finna-desk-goals-staged-20261118/. The existing timer's night-color contrast
+is outside the new board's visual certification. Preview interruptions and capture
+timing are recorded. No production rollout, built-artifact browser or native/device
+certification; preview/tab/database/marker cleanup, Light and viewport reset complete.
+
+18 November build-tool continuation: source markup/design tokens untouched.
+6887compiled CSS AST entries preserve declarations/rule/cascade order; only15media
+whitespace differences. Actual built artifacts pass1280/320px paper/night QA for
+Operations, phone account search/all5sections and learner Library; no overflow
+(1265/1265and305/305). Six synthetic screenshots/components/navigation checks in
+../reports/finnaplan-v12-build-dependencies-20261118/. No device certification.
+
+18 November maintenance: existing Finna Admin prototype shell, semantic palettes,
+18px cards/20px padding and44px controls. Owner site notice uses plain-text input,
+explicit IST expiry, visible version/conflict/error/success states and clear/reload.
+Global announcement sits above the app shell. Restore age distinguishes an actual
+paired restore from checksum collection and warns at40days.1280/320px light/night
+QA fits (phone305client/305scroll with scrollbar), including actual expiry save /
+reload and site-wide clear/refresh. Five synthetic PNGs and component checks are
+in ../reports/finnaplan-v12-maintenance-20261118/. Synthetic12-day preview is not
+real restore evidence; live actual restore age is0. No device certification.
+
 18 November account viewer: extracted Finna Admin prototype lines14–18,26–46,
 51–69 supply the existing navy/sidebar, semantic light/night palette, Figtree,
 18px cards,20px padding and12px nested receipts. Canonical /admin/users and phone

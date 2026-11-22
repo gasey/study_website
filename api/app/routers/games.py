@@ -6,6 +6,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from psycopg.types.json import Jsonb
 from ..db import cursor
 from ..deps import current_user, require_account
+from ..services import desk_games,audience
 from ..services import games as g
 from ..services import game_selection as setup
 from .materials import write_guard
@@ -78,6 +79,9 @@ async def availability(cur, user):
 
 
 async def add_member(cur, r, user, public=False):
+    await cur.execute("SELECT 1 FROM game_events WHERE room_id=%s AND actor_id=%s AND action='audience_access_ended'",
+                      (r['id'],user))
+    if await cur.fetchone():raise HTTPException(409,'Your participation in this game has ended. Start or join another game.')
     await cur.execute(
         "SELECT count(*) AS n FROM game_members WHERE room_id=%s AND left_at IS NULL",
         (r["id"],),
@@ -194,7 +198,7 @@ async def join_preview(user:Account,response:Response,code:str=Query(pattern='^[
     private(response)
     async with cursor()as cur:
         await g.permitted(cur,user)
-        await cur.execute("SELECT r.* FROM game_rooms r WHERE r.join_code=%s AND r.state='waiting'AND r.created_at>now()-interval '10 minutes' AND NOT EXISTS(SELECT 1 FROM game_members m JOIN creator_blocks b ON(b.user_id=%s AND b.blocked_id=m.user_id)OR(b.blocked_id=%s AND b.user_id=m.user_id)WHERE m.room_id=r.id AND m.left_at IS NULL)",(code.upper(),user,user))
+        await cur.execute("SELECT r.* FROM game_rooms r WHERE r.join_code=%s AND r.desk_id IS NULL AND r.state='waiting'AND r.created_at>now()-interval '10 minutes' AND NOT EXISTS(SELECT 1 FROM game_members m JOIN creator_blocks b ON(b.user_id=%s AND b.blocked_id=m.user_id)OR(b.blocked_id=%s AND b.user_id=m.user_id)WHERE m.room_id=r.id AND m.left_at IS NULL)",(code.upper(),user,user))
         r=await cur.fetchone()
         if not r:raise HTTPException(404,'This room is unavailable, expired or full')
         await cur.execute('SELECT count(*)AS n FROM game_members WHERE room_id=%s AND left_at IS NULL',(r['id'],));n=(await cur.fetchone())['n']
@@ -207,7 +211,7 @@ async def mark_ready(rid:str,body:Ready,request:Request,user:Account,response:Re
     private(response)
     await write_guard(request,user)
     async with cursor()as cur:
-        r=await g.room(cur,rid);m=await g.member(cur,r,user);await g.permitted(cur,user)
+        r=await g.room(cur,rid);desk_games.web_write(request,r);m=await g.member(cur,r,user);await g.permitted(cur,user)
         now=await g.clock(cur);r=await g.advance(cur,r,now)
         if r['state']!='waiting'or m['left_at']:raise HTTPException(409,'This lobby is no longer accepting readiness')
         await cur.execute('UPDATE game_members SET ready=%s WHERE room_id=%s AND user_id=%s',(body.ready,rid,user));await cur.execute('UPDATE game_rooms SET version=version+1 WHERE id=%s',(rid,));await g.event(cur,rid,user,'ready',{'ready':body.ready})
@@ -382,7 +386,9 @@ async def join(body: Join, request: Request, user: Account, response: Response):
         if not found:
             raise HTTPException(404, "Room code not found")
         now = await g.clock(cur)
-        r = await g.advance(cur, await g.room(cur, found["id"]), now)
+        r = await g.room(cur, found["id"])
+        if r.get("desk_id"):raise HTTPException(403,"Join this practice session from its private Desk")
+        r = await g.advance(cur, r, now)
         await cur.execute(
             "SELECT 1 FROM game_members WHERE room_id=%s AND user_id=%s AND left_at IS NULL",
             (r["id"], user),
@@ -418,6 +424,7 @@ async def start_room(
     await write_guard(request, user)
     async with cursor() as cur:
         r = await g.room(cur, rid)
+        desk_games.web_write(request,r)
         await g.member(cur, r, user)
         await g.permitted(cur, user)
         if r["owner_id"] != user:
@@ -437,6 +444,7 @@ async def answer(
     await write_guard(request, user)
     async with cursor() as cur:
         r = await g.room(cur, rid)
+        desk_games.web_write(request,r)
         m = await g.member(cur, r, user)
         await g.permitted(cur, user)
         now = await g.clock(cur)
@@ -540,7 +548,7 @@ async def cup_board(
         await cur.execute(
             """WITH ranked AS(SELECT m.user_id,u.handle,u.avatar,m.score,m.correct,m.excluded,m.public_result,
           dense_rank() OVER(ORDER BY m.score DESC,m.elapsed_ms)::int AS rank FROM game_cup_entries e JOIN game_rooms r ON r.id=e.room_id AND r.state='finished'
-          JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL JOIN users u ON u.id=m.user_id WHERE e.cup_id=%s)
+          JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL JOIN users u ON u.id=m.user_id WHERE e.cup_id=%s AND """+audience.subject_sql('m.user_id')+""")
           SELECT handle,avatar,score,correct,excluded,rank,public_result,user_id=%s AS is_you FROM ranked p WHERE (p.public_result OR p.user_id=%s)
            AND NOT EXISTS(SELECT 1 FROM creator_blocks b WHERE (b.user_id=%s AND b.blocked_id=p.user_id) OR (b.user_id=p.user_id AND b.blocked_id=%s)) ORDER BY rank,handle LIMIT 21 OFFSET %s""",
             (cup_id, user, user, user, user, offset),
@@ -607,7 +615,7 @@ async def competitive_leaderboard(
                     JOIN game_members m ON m.room_id=r.id AND m.user_id=e.user_id AND m.left_at IS NULL
                     JOIN users u ON u.id=m.user_id
                     LEFT JOIN reward_profiles p ON p.user_id=m.user_id
-                    WHERE e.cup_id=%s
+                    WHERE e.cup_id=%s AND """+audience.subject_sql('m.user_id')+"""
                       AND (m.public_result OR COALESCE(p.board_public, false) OR m.user_id=%s)
                       AND (%s='all' OR COALESCE(p.stream_cohort, 'balanced-core')=%s)
                       AND NOT EXISTS (

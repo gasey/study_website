@@ -99,7 +99,7 @@ export default function ExamPage() {
     return (
       <div className="mx-auto max-w-3xl px-6 py-10">
         <div className="rounded-[14px] border border-mypick bg-mypick-soft p-5 text-mypick">
-          <span className="font-mono text-[11px] uppercase tracking-[0.06em]">Error</span>
+          <span className="font-mono text-xs uppercase tracking-[0.06em]">Error</span>
           <p className="mt-1">{error||headerError}</p><button type="button" onClick={()=>setRetry(n=>n+1)} className="mt-3 min-h-11 underline">Retry exam details</button>
         </div>
         <Link to="/exams" className="label mt-4 inline-block underline">← Exams</Link>
@@ -108,18 +108,7 @@ export default function ExamPage() {
   }
   if (!c) return <main aria-busy="true" className="mx-auto max-w-shell px-6 py-10"><p role="status" className="label">Opening exam…</p><div aria-hidden="true" className="mt-4 h-40 animate-pulse rounded-xl bg-exams-soft"/></main>
 
-  if (isLaterExamCollection(c)) {
-    return (
-      <div className="mx-auto max-w-3xl px-6 py-10">
-        <div className="rounded-[14px] border border-hairline bg-card p-6">
-          <div className="font-mono text-[11px] uppercase tracking-[0.08em] text-muted">Planned for later</div>
-          <h1 className="mt-2 font-display text-[28px] font-medium">This exam is not open yet</h1>
-          <p className="mt-2 text-[14px] text-secondary">We’ll add LDE exam practice as the exam library grows.</p>
-        </div>
-        <Link to="/exams" className="label mt-4 inline-block underline">← Exams</Link>
-      </div>
-    )
-  }
+  const ldeReadOnly = isLaterExamCollection(c)
 
   const general = c.section_list.filter((s) => s.path.startsWith('general/'))
   const technical = c.section_list.filter((s) => s.path.startsWith('technical/'))
@@ -149,7 +138,7 @@ export default function ExamPage() {
       <nav aria-label={`${c.title} module views`} className="module-view-nav">
         {([['overview','Overview'],['browse','Browse'],['topics','Subjects'],['papers','Papers'],['practice','Practice'],['progress','Progress']] as const).map(([key,label]) =>
           <Link key={key} to={{search:(()=>{const next=new URLSearchParams(searchParams);next.set('view',key);if(key!==view)next.delete('offset');next.delete('session');next.delete('practice_mode');return '?'+next.toString()})(),hash:''}} aria-current={view===key?'page':undefined}
-            className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-[13px] font-semibold`}>{label}</Link>)
+            className={`${combined ? (view===key ? 'is-active' : '') : `udc-tab ${view===key ? 'is-active' : ''}`} inline-flex min-h-11 items-center whitespace-nowrap px-4 py-3 text-sm font-semibold`}>{label}</Link>)
         }
 
       </nav>
@@ -159,49 +148,50 @@ export default function ExamPage() {
 
   const existingViews = (
     <div className="exam-module-content">
+      {ldeReadOnly&&<div className="mt-4 rounded-[12px] border border-hairline bg-card p-4 text-sm text-secondary">LDE papers are listed here for browsing and reading. Written questions are displayed without auto-scoring, and LDE stays outside timed mocks.</div>}
       {combined&&view!=='browse'&&view!=='practice'&&<section className="mt-4 rounded-xl border border-hairline bg-card p-4" aria-label="MCS preliminary papers">
-        <h2 className="font-display text-[23px]">Choose your preliminary paper</h2>
-        <p className="mt-1 text-[13px] text-secondary">Study General Studies and Aptitude separately. Historical papers keep their own source, booklet and answer status.</p>
-        <div className="mt-3 grid gap-3 sm:grid-cols-2">{[['gs','Paper I · General Studies','History, polity, geography, economy, environment, science and Mizoram'],['aptitude','Paper II · Aptitude Tests','Comprehension, reasoning, numeracy and data interpretation']].map(([role,title,description])=><Link key={role} to={{search:'?'+new URLSearchParams({view:view==='overview'?'papers':view,section:role})}} aria-current={mcsSection===role?'page':undefined} className={'rounded-lg border p-4 '+(mcsSection===role?'border-exams bg-exams-soft':'border-hairline')}><strong className="text-[15px]">{title}</strong><p className="mt-1 text-[12px] text-secondary">{description}</p></Link>)}</div>
-        {mcsSection&&<Link to={{search:'?'+new URLSearchParams({view})}} className="mt-2 inline-flex min-h-11 items-center text-[12px] font-semibold underline">Show both papers</Link>}
-        <p className="mt-2 text-[12px] text-secondary">Timed sets use eligible questions and the stated practice rules. Partial booklets and recovered copies are study resources; they are not a complete exam simulation.</p>
+        <h2 className="font-display text-lg">Choose your preliminary paper</h2>
+        <p className="mt-1 text-sm text-secondary">Study General Studies and Aptitude separately. Historical papers keep their own source, booklet and answer status.</p>
+        <div className="mt-3 grid gap-3 sm:grid-cols-2">{[['gs','Paper I · General Studies','History, polity, geography, economy, environment, science and Mizoram'],['aptitude','Paper II · Aptitude Tests','Comprehension, reasoning, numeracy and data interpretation']].map(([role,title,description])=><Link key={role} to={{search:'?'+new URLSearchParams({view:view==='overview'?'papers':view,section:role})}} aria-current={mcsSection===role?'page':undefined} className={'rounded-lg border p-4 '+(mcsSection===role?'border-exams bg-exams-soft':'border-hairline')}><strong className="text-base">{title}</strong><p className="mt-1 text-xs text-secondary">{description}</p></Link>)}</div>
+        {mcsSection&&<Link to={{search:'?'+new URLSearchParams({view})}} className="mt-2 inline-flex min-h-11 items-center text-xs font-semibold underline">Show both papers</Link>}
+        <p className="mt-2 text-xs text-secondary">Timed sets use eligible questions and the stated practice rules. Partial booklets and recovered copies are study resources; they are not a complete exam simulation.</p>
       </section>}
 
       {view==='overview'&&!focusedUdc&&['ldc','assistant'].includes(c.id)&&<section aria-label="Clerical exam study" className="mt-4 rounded-[12px] border border-hairline bg-card p-4">
-        <nav aria-label="Choose clerical exam" className="flex flex-wrap gap-2">{[['udc','UDC'],['ldc','LDC'],['assistant','Assistant Grade']].map(([exam,label])=><Link key={exam} to={`/exams/${exam}`} aria-current={c.id===exam?'page':undefined} className={'inline-flex min-h-11 items-center rounded-pill border px-4 text-[13px] font-semibold '+(c.id===exam?'border-ink bg-ink text-paper':'border-hairline')}>{label}</Link>)}</nav>
-        <p className="mt-3 text-[13px] leading-relaxed text-secondary">Study shared subjects with questions from {c.title} papers. General Knowledge, English and other subjects are grouped for revision; each source paper keeps its printed sections and test rules.</p>
-        <div className="mt-3 flex flex-wrap gap-2"><Link to={`/exams/${c.id}?view=topics${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-study-heading`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">All subjects &amp; topics →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=gk-gs#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">General Knowledge →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=english#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">English →</Link></div>
+        <nav aria-label="Choose clerical exam" className="flex flex-wrap gap-2">{[['udc','UDC'],['ldc','LDC'],['assistant','Assistant Grade']].map(([exam,label])=><Link key={exam} to={`/exams/${exam}`} aria-current={c.id===exam?'page':undefined} className={'inline-flex min-h-11 items-center rounded-pill border px-4 text-sm font-semibold '+(c.id===exam?'border-ink bg-ink text-paper':'border-hairline')}>{label}</Link>)}</nav>
+        <p className="mt-3 text-sm leading-relaxed text-secondary">Study shared subjects with questions from {c.title} papers. General Knowledge, English and other subjects are grouped for revision; each source paper keeps its printed sections and test rules.</p>
+        <div className="mt-3 flex flex-wrap gap-2"><Link to={`/exams/${c.id}?view=topics${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}#exam-study-heading`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-sm font-semibold">All subjects &amp; topics →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=gk-gs#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm font-semibold">General Knowledge →</Link><Link to={`/exams/${c.id}?view=browse&subject_id=english#exam-question-browser`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm font-semibold">English →</Link></div>
       </section>}
 
-      {c.section_list.find((s) => s.note)?.note && <div className="mt-4 rounded-[10px] border border-[#E9D8B4] bg-[#FBF4E6] p-4 text-[13px] leading-relaxed text-[#5B3D08]">{c.section_list.find((s) => s.note)?.note}</div>}
+      {c.section_list.find((s) => s.note)?.note && <div className="mt-4 rounded-[10px] border border-[#E9D8B4] bg-[#FBF4E6] p-4 text-sm leading-relaxed text-[#5B3D08]">{c.section_list.find((s) => s.note)?.note}</div>}
 
-      {focusedUdc&&view==='overview'&&<><Suspense fallback={<p className="mt-4 text-[13px] text-muted">Loading saved journey…</p>}><ExamJourney key={c.id} id={c.id} focused/></Suspense><UdcSubjects/></>}
+      {focusedUdc&&view==='overview'&&<><Suspense fallback={<p className="mt-4 text-sm text-muted">Loading saved journey…</p>}><ExamJourney key={c.id} id={c.id} focused/></Suspense><UdcSubjects/></>}
 
       {ready&&(view==='overview'||view==='papers')&&<details id={focusedUdc?'udc-test-options':undefined} tabIndex={focusedUdc?-1:undefined} open={focusedUdc&&location.hash==='#udc-test-options'?true:undefined} aria-label="Answer readiness" className="mt-4 rounded-[12px] border border-hairline bg-card p-4">
-        <summary className="cursor-pointer text-[14px] font-semibold">Answer sources &amp; test options</summary>
-        {focusedUdc&&<p className="mt-3 text-[13px] text-secondary">UDC timed sets cover eligible MCQs only. Written work is not assessed here, so these are not full paper simulations. Check the selected paper’s timing, marks and available questions before starting.</p>}
-        <ul aria-label="Answer source legend" className="mt-3 flex flex-wrap gap-3">{['official','verified','needs-review'].map(status=>{const style=answerStatusAppearance(status);return <li key={status} className="flex flex-col items-start gap-1 text-[12px]"><span className={'inline-flex items-center gap-2 rounded-pill border px-3 py-1 font-semibold '+style.badge}><span aria-hidden="true">{style.symbol}</span>{style.shortLabel}</span><span className="text-secondary">{style.meaning}</span></li>})}</ul>
-        <p className="mt-2 text-[13px] leading-relaxed text-secondary">{c.needs_review.toLocaleString('en-IN')} MCQs need answer review · {c.unsolved.toLocaleString('en-IN')} have no answer. Browse keeps the available questions visible, including written questions. {c.answerable_count.toLocaleString('en-IN')} questions have answers available for study practice, shown with their review labels; only eligible reviewed answers enter a practice-estimate mock.</p>
-        {!c.practice_count&&<p className="mt-2 text-[13px] text-secondary">No reviewed mock set is ready for this exam yet. You can study the papers and help verify answers below each question.</p>}
-        <p className="mt-2 text-[12px] text-secondary">Past-paper current affairs belong to their exam date. Date hints help you compare time-sensitive facts with official updates without changing historical answers.</p>
-        <div className="mt-3 flex flex-wrap gap-3">{c.scorable>=20&&<Link to={`/exams/${c.id}/mock${mcsSection?`?section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">Official-key mock</Link>}{c.practice_count>=20&&<Link to={`/exams/${c.id}/mock?mode=derived${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-[13px] font-semibold">Reviewed practice estimate</Link>}</div>
+        <summary className="cursor-pointer text-sm font-semibold">Answer sources &amp; test options</summary>
+        {focusedUdc&&<p className="mt-3 text-sm text-secondary">UDC timed sets cover eligible MCQs only. Written work is not assessed here, so these are not full paper simulations. Check the selected paper’s timing, marks and available questions before starting.</p>}
+        <ul aria-label="Answer source legend" className="mt-3 flex flex-wrap gap-3">{['official','verified','needs-review'].map(status=>{const style=answerStatusAppearance(status);return <li key={status} className="flex flex-col items-start gap-1 text-xs"><span className={'inline-flex items-center gap-2 rounded-pill border px-3 py-1 font-semibold '+style.badge}><span aria-hidden="true">{style.symbol}</span>{style.shortLabel}</span><span className="text-secondary">{style.meaning}</span></li>})}</ul>
+        <p className="mt-2 text-sm leading-relaxed text-secondary">{c.needs_review.toLocaleString('en-IN')} MCQs need answer review · {c.unsolved.toLocaleString('en-IN')} have no answer. Browse keeps the available questions visible, including written questions. {c.answerable_count.toLocaleString('en-IN')} questions have answers available for study practice, shown with their review labels; only eligible reviewed answers enter a practice-estimate mock.</p>
+        {!c.practice_count&&<p className="mt-2 text-sm text-secondary">No reviewed mock set is ready for this exam yet. You can study the papers and help verify answers below each question.</p>}
+        <p className="mt-2 text-xs text-secondary">Past-paper current affairs belong to their exam date. Date hints help you compare time-sensitive facts with official updates without changing historical answers.</p>
+        <div className="mt-3 flex flex-wrap gap-3">{c.scorable>=20&&<Link to={`/exams/${c.id}/mock${mcsSection?`?section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-sm font-semibold">Official-key mock</Link>}{c.practice_count>=20&&<Link to={`/exams/${c.id}/mock?mode=derived${mcsSection?`&section=${encodeURIComponent(mcsSection)}`:''}`} className="inline-flex min-h-11 items-center rounded-pill border border-hairline px-4 text-sm font-semibold">Reviewed practice estimate</Link>}</div>
       </details>}
 
 
 
-      {bookmarkError&&<p role="alert" className="mt-3 text-[13px] text-mypick">Could not save this exam: {bookmarkError}</p>}
-      {view==='overview'&&!focusedUdc&&<Suspense fallback={<p className="mt-4 text-[13px] text-muted">Loading saved journey…</p>}><ExamJourney key={c.id} id={c.id}/></Suspense>}
+      {bookmarkError&&<p role="alert" className="mt-3 text-sm text-mypick">Could not save this exam: {bookmarkError}</p>}
+      {view==='overview'&&!focusedUdc&&<Suspense fallback={<p className="mt-4 text-sm text-muted">Loading saved journey…</p>}><ExamJourney key={c.id} id={c.id}/></Suspense>}
 
-      {error&&<p role="alert" className="mt-3 rounded-[10px] border border-hairline bg-card p-3 text-[13px]">Paper details could not load. Available questions can still be studied. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry details</button></p>}
-      {view==='topics'&&<Suspense fallback={<p className="mt-5 text-[13px] text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id}/></Suspense>}
+      {error&&<p role="alert" className="mt-3 rounded-[10px] border border-hairline bg-card p-3 text-sm">Paper details could not load. Available questions can still be studied. <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry details</button></p>}
+      {view==='topics'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading subjects and topics…</p>}><ExamStudyTopics examId={c.id}/></Suspense>}
       {focusedUdc&&view==='practice'&&<div className="mt-5">
-        <nav aria-label="UDC practice mode" className="flex flex-wrap gap-4 text-[13px]">
+        <nav aria-label="UDC practice mode" className="flex flex-wrap gap-4 text-sm">
           <Link to={udcPracticeLink(searchParams,'continuous')} aria-current={!savedPractice?'page':undefined} className="inline-flex min-h-11 items-center font-semibold text-link underline">Continuous practice</Link>
           <Link to={udcPracticeLink(searchParams,'sets')} aria-current={savedPractice?'page':undefined} className="inline-flex min-h-11 items-center text-link underline">Saved short sets</Link>
         </nav>
-        {!savedPractice&&<p className="mt-1 text-[13px] text-secondary">Keep going through all matching questions, with no 20-question set limit.</p>}
+        {!savedPractice&&<p className="mt-1 text-sm text-secondary">Keep going through all matching questions, with no 20-question set limit.</p>}
       </div>}
-      {savedPractice&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-[13px] text-muted">Loading UDC practice…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
+      {savedPractice&&view==='practice'&&<Suspense fallback={<p className="mt-5 text-sm text-muted">Loading UDC practice…</p>}><UdcStudySessions key={searchParams.get('session')||'setup'} papers={c.paper_list}/></Suspense>}
       {(view === 'browse' || view === 'practice'&&!savedPractice) && <ModuleQuestionBrowser key={`${c.id}:${view}`} metadataLoading={!ready} collectionTitle={c.title} collectionId={c.id} papers={c.paper_list} sections={c.section_list} initialSectionPath={searchParams.get('section') || ''} initialPool={view==='practice'?'practice':'all'} />}
       {ready&&view === 'progress' && <><ModuleProgressPanel collectionId={c.id} collectionTitle={c.title} totalScorable={c.scorable} totalQuestions={c.questions} /><MasteryMap/></>}
 
@@ -212,20 +202,20 @@ export default function ExamPage() {
         {combined && <div className="cp-stats mt-6">
           <div><strong>{c.paper_list.length}</strong><span>available papers</span></div>
           <div><strong>{c.questions.toLocaleString('en-IN')}</strong><span>questions extracted</span></div>
-          <div><strong>{c.scorable.toLocaleString('en-IN')}</strong><span>ready for scored practice</span></div>
+          <div><strong>{c.scorable.toLocaleString('en-IN')}</strong><span>with official keys</span></div>
           <div><strong>{answeredCount?.toLocaleString('en-IN') ?? '—'}</strong><span>your answers</span></div>
         </div>}
         {!combined && <section className="min-w-0 flex-[2_1_480px]">
           <div className="flex flex-wrap items-baseline justify-between gap-2.5 border-b border-hairline pb-2.5">
-            <h2 className="font-display text-[26px] font-medium">Question coverage</h2>
-            <span className="text-[13px] text-secondary">Available questions by section</span>
+            <h2 className="font-display text-xl font-medium">Question coverage</h2>
+            <span className="text-sm text-secondary">Available questions by section</span>
           </div>
           {c.section_list.map((s) => (
             <div
               key={s.path}
               className="grid items-center gap-3.5 border-b border-hairline2 py-2.5 [grid-template-columns:minmax(120px,200px)_minmax(0,1fr)_48px]"
             >
-              <span className="text-[14px]">{s.title}</span>
+              <span className="text-sm">{s.title}</span>
               <div className="h-2 rounded-[4px] bg-[#E8DFCC]">
                 <div
                   className="h-2 rounded-[4px] bg-exams"
@@ -237,7 +227,7 @@ export default function ExamPage() {
                   aria-valuenow={c.questions ? Math.round((s.questions / c.questions) * 100) : 0}
                 />
               </div>
-              <span className="text-right font-mono text-[12px]">{s.questions}</span>
+              <span className="text-right font-mono text-xs">{s.questions}</span>
             </div>
           ))}
         </section>}
@@ -250,24 +240,24 @@ export default function ExamPage() {
       {ready&&(view === 'overview' || view === 'papers') && !!c.paper_list.length && <section className="mt-10">
         <div className="flex flex-wrap items-end justify-between gap-3 border-b border-hairline pb-2.5">
           <div>
-            <h2 className="font-display text-[26px] font-medium">{udcPreview?'Recent UDC papers':'Past papers'}</h2>
-            <p className="mt-1 text-[13px] text-secondary">{combined?'Choose a year and paper. One booklet opens for study; alternate originals are available in the paper details.':'Choose a paper to read or practise. Counts reflect the questions currently available; check the source PDF for the complete paper.'}</p>
+            <h2 className="font-display text-xl font-medium">{udcPreview?'Recent UDC papers':'Past papers'}</h2>
+            <p className="mt-1 text-sm text-secondary">{combined?'Choose a year and paper. One booklet opens for study; alternate originals are available in the paper details.':'Choose a paper to read or practise. Counts reflect the questions currently available; check the source PDF for the complete paper.'}</p>
           </div>
           <span className="label">{bookletGroups.length} papers</span>
         </div>
         {!udcPreview&&<div className="mt-4 flex flex-wrap gap-3 rounded-[10px] border border-hairline bg-card p-3">
-          <label className="min-w-[180px] flex-1 text-[12px] font-semibold">Find a paper<input type="search" value={paperQuery} onChange={e=>paperFilter('paper_q',e.target.value)} placeholder="Department, paper, year or keyword" className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"/></label>
-          <label className="text-[12px] font-semibold">Year<select value={paperYear} onChange={e=>paperFilter('paper_year',e.target.value)} className="mt-1 block min-h-11 rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"><option value="">All years</option>{[...new Set(c.paper_list.map(p=>p.year).filter((year):year is number=>year!==null))].sort((a,b)=>b-a).map(year=><option key={year} value={year}>{year}</option>)}</select></label>
-          <label className="text-[12px] font-semibold">Order<select value={archiveOrder} onChange={e=>paperFilter('paper_sort',e.target.value)} className="mt-1 block min-h-11 max-w-full rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"><option value="newest">Year: newest first</option><option value="oldest">Year: oldest first</option><option value="exam-asc">Exam: A–Z</option><option value="exam-desc">Exam: Z–A</option></select></label>
-          <label className="text-[12px] font-semibold">Display<select value={archiveList?'list':'cards'} onChange={e=>paperFilter('paper_layout',e.target.value)} className="mt-1 block min-h-11 rounded-[8px] border border-hairline bg-canvas px-3 text-[14px]"><option value="list">Exam &amp; year list</option><option value="cards">Paper cards</option></select></label>
-          {(paperQuery||paperYear)&&<button type="button" onClick={()=>setSearchParams(previous=>{const next=new URLSearchParams(previous);for(const key of ['paper_q','paper_year','paper_page'])next.delete(key);return next},{replace:true})} className="self-end rounded-pill border border-hairline px-4 py-3 text-[13px]">Clear filters</button>}
+          <label className="min-w-[180px] flex-1 text-xs font-semibold">Find a paper<input type="search" value={paperQuery} onChange={e=>paperFilter('paper_q',e.target.value)} placeholder="Department, paper, year or keyword" className="mt-1 block min-h-11 w-full rounded-[8px] border border-hairline bg-canvas px-3 text-sm"/></label>
+          <label className="text-xs font-semibold">Year<select value={paperYear} onChange={e=>paperFilter('paper_year',e.target.value)} className="mt-1 block min-h-11 rounded-[8px] border border-hairline bg-canvas px-3 text-sm"><option value="">All years</option>{[...new Set(c.paper_list.map(p=>p.year).filter((year):year is number=>year!==null))].sort((a,b)=>b-a).map(year=><option key={year} value={year}>{year}</option>)}</select></label>
+          <label className="text-xs font-semibold">Order<select value={archiveOrder} onChange={e=>paperFilter('paper_sort',e.target.value)} className="mt-1 block min-h-11 max-w-full rounded-[8px] border border-hairline bg-canvas px-3 text-sm"><option value="newest">Year: newest first</option><option value="oldest">Year: oldest first</option><option value="exam-asc">Exam: A–Z</option><option value="exam-desc">Exam: Z–A</option></select></label>
+          <label className="text-xs font-semibold">Display<select value={archiveList?'list':'cards'} onChange={e=>paperFilter('paper_layout',e.target.value)} className="mt-1 block min-h-11 rounded-[8px] border border-hairline bg-canvas px-3 text-sm"><option value="list">Exam &amp; year list</option><option value="cards">Paper cards</option></select></label>
+          {(paperQuery||paperYear)&&<button type="button" onClick={()=>setSearchParams(previous=>{const next=new URLSearchParams(previous);for(const key of ['paper_q','paper_year','paper_page'])next.delete(key);return next},{replace:true})} className="self-end rounded-pill border border-hairline px-4 py-3 text-sm">Clear filters</button>}
         </div>}
-        <p id="past-paper-results" tabIndex={-1} role="status" className="mt-3 scroll-mt-28 text-[12px] text-secondary focus:outline-none">{udcPreview?`Showing ${Math.min(3,bookletGroups.length)} recent paper groups`:<>{bookletGroups.length} matching papers · page {paperPage} of {paperPages}</>}</p>
+        <p id="past-paper-results" tabIndex={-1} role="status" className="mt-3 scroll-mt-28 text-xs text-secondary focus:outline-none">{udcPreview?`Showing ${Math.min(3,bookletGroups.length)} recent paper groups`:<>{bookletGroups.length} matching papers · page {paperPage} of {paperPages}</>}</p>
         {archiveList?<ExamPaperList papers={visiblePapers} groups={visibleBookletGroups} examId={c.id}/>:<div className="exam-paper-grid mt-3">
           {groupedPapers?visibleBookletGroups.map(group=>group.papers.length>1||combined?<McsBookletGroup key={group.id} group={group} examId={c.id}/>:<ExamPaperCard key={group.id} paper={group.papers[0]} examId={c.id}/>):visiblePapers.map(p => <ExamPaperCard key={p.id} paper={p} examId={c.id} />)}
         </div>}
         {!filteredPapers.length&&<p className="py-8 text-center text-secondary">No papers match. Try a department name or clear the year.</p>}
-        {udcPreview?<Link to="/exams/udc?view=papers#past-paper-results" className="mt-4 inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-[13px] font-semibold">View all UDC past papers →</Link>:<Pagination page={paperPage} pages={paperPages} onPageChange={value=>paperFilter('paper_page',String(value))} label="Past paper pages"/>}
+        {udcPreview?<Link to="/exams/udc?view=papers#past-paper-results" className="mt-4 inline-flex min-h-11 items-center rounded-pill border border-ink px-4 text-sm font-semibold">View all UDC past papers →</Link>:<Pagination page={paperPage} pages={paperPages} onPageChange={value=>paperFilter('paper_page',String(value))} label="Past paper pages"/>}
       </section>}
 
       {view==='overview'&&(id==='udc'||id==='combined-prelims')&&<QuestionDiscovery exam={id} limit={6}/>}
@@ -277,10 +267,10 @@ export default function ExamPage() {
         <Group title="By trade" items={technical} examId={c.id} />
         <Group title="By subject" items={subjects} examId={c.id} />
       </>}
-      {focusedUdc&&view==='overview'&&<aside className="mt-8 border-t border-hairline pt-4 text-[13px] text-secondary"><p>Want broader practice?</p><Link to="/exams/group-b-non-gazetted" className="inline-flex min-h-11 items-center font-semibold text-link">Explore Group B Non-Gazetted →</Link></aside>}
+      {focusedUdc&&view==='overview'&&<aside className="mt-8 border-t border-hairline pt-4 text-sm text-secondary"><p>Want broader practice?</p><Link to="/exams/group-b-non-gazetted" className="inline-flex min-h-11 items-center font-semibold text-link">Explore Group B Non-Gazetted →</Link></aside>}
     </div>
   )
-  return <ExamOverview title={c.title} collections={ready?[ready]:[]} loading={!ready&&!error} error={error} onRetry={()=>setRetry(n=>n+1)} viewKey={view} headerAction={<div><button type="button" title={bookmarked?'Unsave exam':'Save exam'} aria-label={bookmarked?'Unsave exam':'Save exam'} onClick={()=>void toggleBookmark()} disabled={bookmarkBusy} aria-pressed={bookmarked} className="min-h-11 min-w-11 rounded-lg border border-hairline text-[20px] disabled:opacity-60">{bookmarked?'★':'☆'}</button>{bookmarkError&&<p role="alert" className="max-w-xs text-[12px] text-mypick">{bookmarkError}</p>}</div>} navigation={<>{viewNavigation}<ReviewModuleLink collection={id}/></>}>{view!=='overview'?existingViews:undefined}</ExamOverview>
+  return <ExamOverview title={c.title} collections={ready?[ready]:[]} loading={!ready&&!error} error={error} onRetry={()=>setRetry(n=>n+1)} viewKey={view} headerAction={<div><button type="button" title={bookmarked?'Unsave exam':'Save exam'} aria-label={bookmarked?'Unsave exam':'Save exam'} onClick={()=>void toggleBookmark()} disabled={bookmarkBusy} aria-pressed={bookmarked} className="min-h-11 min-w-11 rounded-lg border border-hairline text-lg disabled:opacity-60">{bookmarked?'★':'☆'}</button>{bookmarkError&&<p role="alert" className="max-w-xs text-xs text-mypick">{bookmarkError}</p>}</div>} navigation={<>{viewNavigation}<ReviewModuleLink collection={id}/></>}>{view!=='overview'?existingViews:undefined}</ExamOverview>
 }
 
 function Group({
@@ -295,21 +285,21 @@ function Group({
   if (!items.length) return null
   return (
     <section className="mt-9">
-      <h2 className="font-display text-[26px] font-medium">{title}</h2>
+      <h2 className="font-display text-xl font-medium">{title}</h2>
       <div className="mt-3 grid gap-3 [grid-template-columns:repeat(auto-fill,minmax(260px,1fr))]">
         {items.map((s) => (
           <article key={s.path} className="flex flex-col gap-2 rounded-[14px] border border-hairline bg-card p-5 shadow-[0_1px_2px_rgba(29,27,24,.05)] transition-shadow hover:shadow-[0_8px_24px_rgba(29,27,24,.12)]">
-            <span className="flex items-center gap-2 text-[12.5px] font-semibold">
+            <span className="flex items-center gap-2 text-xs font-semibold">
               <span className="h-2 w-2 rounded-full bg-exams" />
               {s.papers} paper{s.papers === 1 ? '' : 's'}
             </span>
-            <div className="font-display text-[21px] font-medium leading-tight">{s.title}</div>
-            <div className="flex-1 text-[14px] leading-[1.55] text-[#2E2A24]">
+            <div className="font-display text-lg font-medium leading-tight">{s.title}</div>
+            <div className="flex-1 text-sm leading-[1.55] text-[#2E2A24]">
               {s.questions.toLocaleString('en-IN')} questions · {s.scorable.toLocaleString('en-IN')} verified keys
             </div>
             <div className="mt-2 flex gap-2">
-              <Link to={`/exams/${examId}?view=browse&section=${encodeURIComponent(s.path)}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-3 py-2 text-[12px] font-semibold">Browse section</Link>
-              {s.scorable >= 20 && <Link to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}`} className="rounded-pill bg-ink px-3 py-2 text-[12px] font-semibold text-paper">Practice test</Link>}
+              <Link to={`/exams/${examId}?view=browse&section=${encodeURIComponent(s.path)}`} className="inline-flex min-h-11 items-center rounded-pill border border-ink px-3 py-2 text-xs font-semibold">Browse section</Link>
+              {s.scorable >= 20 && <Link to={`/exams/${examId}/mock?section=${encodeURIComponent(s.path)}`} className="rounded-pill bg-ink px-3 py-2 text-xs font-semibold text-paper">Practice test</Link>}
             </div>
           </article>
         ))}

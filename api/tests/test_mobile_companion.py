@@ -34,7 +34,9 @@ def test_mobile_pkce_replay_and_scope(client,actor):
     headers,body=connect(client,actor,'owner')
     assert client.get('/api/mobile/session',headers=headers).json()['id']=='owner'
     assert client.post('/api/mobile-auth/exchange',json=body).status_code==400
-    for path in ['/api/review/session','/api/admin/bank/reports','/api/auth/session','/api/auth/google/start','/api/billing/config','/api/me/onboarding','/api/billing/bulk/me','/api/billing/bulk/admin']:
+    capabilities=client.get('/api/mobile/session',headers=headers).json()['capabilities']
+    assert not {'site_notice','admin_ops','account_viewer'} & set(capabilities)
+    for path in ['/api/review/session','/api/admin/bank/reports','/api/auth/session','/api/auth/google/start','/api/billing/config','/api/me/onboarding','/api/billing/bulk/me','/api/billing/bulk/admin','/api/site-notice','/api/admin/ops/notice','/api/admin/users']:
         assert client.get(path,headers=headers).status_code==403
     assert client.post('/api/mobile/logout',headers=headers).status_code==200
     assert client.get('/api/mobile/session',headers=headers).status_code==401
@@ -153,6 +155,14 @@ def test_study_desk_learner_writes_remain_bounded():
     assert not allowed('POST','/api/desk/admin/reports/rep_1/resolve')
 
 
+def test_desk_v4_weekly_goals_are_explicitly_web_only():
+    from app.services.mobile_identity import capabilities
+    for method in ('GET','HEAD','POST','PATCH','DELETE'):
+        assert not allowed(method,'/api/desk/rooms/desk_example/weekly-goal')
+        assert not allowed(method,'/api/desk/rooms/desk_example/items/item_example/discussion')
+    assert 'desk_weekly_goal' not in capabilities()
+
+
 def test_profile_reads_and_name_edit_only():
     assert allowed('GET','/api/me/score-summary')
     assert allowed('GET','/api/contributions/summary')
@@ -199,6 +209,8 @@ def test_other_exam_practice_and_idempotent_answer(client,actor,database):
     answer={'version':s['version'],'question_id':q['id'],'chosen_index':1,'presentation_hash':q['presentation_hash']}
     url='/api/study-sessions/'+s['id']+'/answer'
     checked=client.post(url,json=answer,headers=headers);assert checked.status_code==200,checked.text
+    timing=checked.headers.get('server-timing','')
+    assert timing.startswith('answer;dur=') and float(timing.partition('=')[2])>=0
     assert client.post(url,json=answer,headers=headers).json()['results'][q['id']]['result']['correct']
     recent=client.get('/api/study-sessions',params={'collection_id':collection},headers=headers).json()
     assert recent['items'][0]['id']==s['id']
@@ -232,6 +244,8 @@ def test_mobile_answer_receipt_survives_later_content_change(client,actor,databa
     body={'chosen_index':1,'request_key':str(uuid4()),'expected_question':'Synthetic set question 0','expected_options':['A','B','C','D'],'paper_id':p}
     url='/api/mobile/questions/'+ids[0]+'/answer'
     result=client.post(url,headers=headers,json=body);assert result.status_code==200,result.text
+    timing=result.headers.get('server-timing','')
+    assert timing.startswith('answer;dur=') and float(timing.partition('=')[2])>=0
     c.execute("UPDATE canonical_questions SET question='Changed later' WHERE id=%s",(ids[0],))
     again=client.post(url,headers=headers,json=body);assert again.status_code==200 and again.json()==result.json()
     assert client.post(url,headers=headers,json={**body,'chosen_index':0}).status_code==409
@@ -649,3 +663,23 @@ def test_community_standing_and_guide_reads_remain_web_only():
 def test_submission_tracker_remains_web_only():
     from app.services.mobile_identity import allowed
     assert not allowed('GET','/api/community/submissions')
+
+
+def test_desk_practice_surface_stays_closed_without_native_capability():
+    from app.services.mobile_identity import capabilities
+    assert 'desk_practice' not in capabilities()
+    for method,path in [('GET','/api/desk/rooms/example/practice'),
+                        ('POST','/api/desk/rooms/example/practice'),
+                        ('POST','/api/desk/rooms/example/practice/game/join')]:
+        assert not allowed(method,path)
+    # Inherited game reads and explicit reservation release remain available;
+    # Desk-bound ready/start/answer are additionally checked in the router.
+    assert allowed('GET','/api/games/rooms/example')
+    assert allowed('POST','/api/games/rooms/example/leave')
+
+
+def test_question_note_export_and_link_reader_remain_web_only():
+    from app.services.mobile_identity import capabilities
+    assert 'desk_notes' not in capabilities()
+    for path in ('/api/me/desk-notes-print','/api/desk/rooms/example/notes/item'):
+        assert not allowed('GET',path)

@@ -71,6 +71,7 @@ WITH live_sections AS (
       JOIN {all_view} v ON v.id=ANY(s.pins)
       LEFT JOIN appearances a ON a.canonical_id=v.id
      WHERE v.id <> ALL(s.excludes)
+       AND cardinality(s.pins)>0
 )"""
 
 _STATS_QUERY = _MATCHED_QUERY + """, section_stats AS (
@@ -293,8 +294,13 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
                     WHERE cp.collection_id=%s AND cp.version=%s AND cp.allow_browse
                       AND {scope_condition('p', exam_scope)}
                 ), readiness AS MATERIALIZED (
-                    SELECT av.*, {answer_status_sql('av')} AS answer_status
+                    SELECT av.id,av.type,av.status,av.key_disputed,av.source_defect,
+                           av.answer_text IS NOT NULL AS has_answer,
+                           NULLIF(btrim(av.explanation),'') IS NULL AS missing_explanation,
+                           CASE WHEN (SELECT COUNT(*) FROM paper_questions)>=50000
+                           THEN bs.answer_status ELSE {answer_status_sql('av')} END AS answer_status
                     FROM paper_questions pq JOIN canonical_questions av ON av.id=pq.canonical_id
+                    JOIN v_bank_answer_status bs ON bs.id=av.id
                     WHERE av.status IN ('live','held')
                 )
                 SELECT cp.paper_id AS id,COALESCE(cp.display_title,p.exam_name) AS title,
@@ -306,11 +312,11 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE av.answer_status='official')::int AS scorable,
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE av.type='descriptive')::int AS descriptive,
                       COUNT(DISTINCT a.canonical_id) FILTER (WHERE cp.allow_practice AND av.answer_status IN ('official','verified'))::int AS practice_count,
-                      COUNT(DISTINCT av.id) FILTER (WHERE cp.allow_practice AND av.status='live' AND av.answer_text IS NOT NULL AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
+                      COUNT(DISTINCT av.id) FILTER (WHERE cp.allow_practice AND av.status='live' AND av.has_answer AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='verified')::int AS verified_solutions,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='needs-review')::int AS needs_review,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='unsolved')::int AS unsolved,
-                      COUNT(DISTINCT av.id) FILTER (WHERE av.type='mcq' AND NULLIF(btrim(av.explanation),'') IS NULL)::int AS missing_explanations,
+                      COUNT(DISTINCT av.id) FILTER (WHERE av.type='mcq' AND av.missing_explanation)::int AS missing_explanations,
                       COUNT(DISTINCT av.id) FILTER (WHERE av.status='held' OR av.key_disputed OR av.source_defect IN ('duplicate-options','unresolved-source'))::int AS blocked_count
                  FROM collection_papers cp
                  JOIN papers p ON p.id=cp.paper_id
@@ -331,31 +337,42 @@ async def _get_collection(collection_id: str, exam_scope: ExamScope) -> Collecti
                "marks_correct": float(r["marks_correct"]) if r["marks_correct"] is not None else None,
                "marks_wrong": float(r["marks_wrong"]) if r["marks_wrong"] is not None else None}
         ) for r in paper_rows]
+    # Keep indexed receipt probes below 50k questions. The measured full-bank
+    # authority scan is only cheaper for large pools; CASE evaluates one branch.
     # The paper query is scoped by its paper, and matched already scopes question IDs.
     # Reapplying launch views here would rescan the complete appearance index.
     # Count distinct questions across paper appearances; do not add section totals
     # or treat the presence of an unreviewed answer as reviewed mock eligibility.
     async with cursor() as cur:
         await cur.execute("SET LOCAL jit=off")
+        # This measured wide taxonomy collection benefits from declared joins.
+        # Small exam counts keep the default plan. The setting ends on commit.
+        if collection_id == "subject-wise-practice":
+            await cur.execute("SET LOCAL join_collapse_limit=1")
         matched_query = _MATCHED_QUERY.format(
             collection_filter="AND c.id=%(collection_id)s",
             collection_scope=scope_condition('c',exam_scope),
             all_view=pool_view('all',exam_scope))
-        await cur.execute(matched_query + f""", readiness AS MATERIALIZED (
-            SELECT av.*, {answer_status_sql('av')} AS answer_status
-            FROM (SELECT DISTINCT id FROM matched) ids JOIN v_all_questions av ON av.id=ids.id
+        await cur.execute(matched_query + f""", question_ids AS MATERIALIZED (
+            SELECT DISTINCT id FROM matched
+        ), readiness AS MATERIALIZED (
+            SELECT av.id,av.source_defect,av.answer_text IS NOT NULL AS has_answer,
+                   CASE WHEN (SELECT COUNT(*) FROM question_ids)>=50000
+                   THEN bs.answer_status ELSE {answer_status_sql('av')} END AS answer_status
+            FROM question_ids ids JOIN v_all_questions av ON av.id=ids.id
+            JOIN v_bank_answer_status bs ON bs.id=av.id
         ) SELECT mx.path,GROUPING(mx.path) AS is_total,
             COUNT(DISTINCT av.id)::int AS questions,
             COUNT(DISTINCT mx.paper_id)::int AS papers,
             COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='official')::int AS scorable,
             COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status IN ('official','verified'))::int AS practice_count,
-            COUNT(DISTINCT av.id) FILTER (WHERE av.answer_text IS NOT NULL AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
+            COUNT(DISTINCT av.id) FILTER (WHERE av.has_answer AND av.source_defect IS DISTINCT FROM 'duplicate-options' AND av.source_defect IS DISTINCT FROM 'unresolved-source')::int AS answerable_count,
             COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='needs-review')::int AS needs_review,
             COUNT(DISTINCT av.id) FILTER (WHERE av.answer_status='unsolved')::int AS unsolved
             FROM matched mx
             JOIN readiness av ON av.id=mx.id
             GROUP BY GROUPING SETS ((mx.path),())""",
-            {"collection_id":collection_id})
+            {"collection_id":collection_id}, prepare=False)
         detail_stats = await cur.fetchall()
     totals = next(row for row in detail_stats if row['is_total'])
     readiness = {key:totals[key] for key in ('practice_count','answerable_count','needs_review','unsolved')}

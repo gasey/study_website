@@ -21,7 +21,7 @@ export default function Results() {
     return (
       <div className="mx-auto max-w-3xl px-6 py-12">
         <div className="rounded-[14px] border border-mypick bg-mypick-soft p-5 text-mypick">
-          <span className="font-mono text-[11px] uppercase tracking-[0.06em]">Error</span>
+          <span className="font-mono text-xs uppercase tracking-[0.06em]">Error</span>
           <p className="mt-1">{error}</p>
         </div>
         <Link to="/exams" className="label mt-4 inline-block underline">← Exams</Link>

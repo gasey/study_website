@@ -63,7 +63,7 @@ async def snapshot(cur,user):
       AND (xp>=300 OR points>=25)''',(user,));economy.update(await cur.fetchone())
     await cur.execute('''SELECT count(*) FILTER(WHERE parent_id IS NULL) AS posts,
       count(*) FILTER(WHERE parent_id IS NOT NULL) AS replies,
-      COALESCE(sum('''+community_policy.HELPFUL_COUNT+''') FILTER(WHERE NOT hidden AND NOT before_fix AND NOT needs_approval),0) AS helpful_received
+      COALESCE(sum('''+community_policy.helpful_count()+''') FILTER(WHERE NOT hidden AND NOT before_fix AND NOT needs_approval),0) AS helpful_received
       FROM posts p WHERE author_id=%s''',(user,));community=await cur.fetchone()
     await cur.execute('''SELECT
       (SELECT count(*) FROM creator_blocks WHERE user_id=%(user)s) AS blocks_given,

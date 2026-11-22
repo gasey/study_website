@@ -18,12 +18,12 @@ export default function QuestionReport({qid, paperId}: {qid:string; paperId?:str
     } catch(e){setError((e as Error).message)}
     finally{sending.current=false;setBusy(false)}
   }
-  const input='mt-1 w-full rounded-[6px] border border-hairline bg-card p-3 text-[16px]'
-  return <div className={(open?'basis-full ':'')+'text-[12px] text-secondary'}>
+  const input='mt-1 w-full rounded-[6px] border border-hairline bg-card p-3 text-base'
+  return <div className={(open?'basis-full ':'')+'text-xs text-secondary'}>
     <button type="button" aria-expanded={open} onClick={()=>setOpen(!open)} className="min-h-11 py-2 underline underline-offset-2">Report an issue</button>
     {open&&<div className="mt-1 rounded-[10px] border border-hairline bg-paper p-4">
       {sent?<p role="status">Thank you. Your report has been sent to our review team.</p>:<form onSubmit={e=>void send(e)} className="space-y-3">
-        <p className="text-[13px]">Tell us what needs checking. Reports go privately to our review team.</p>
+        <p className="text-sm">Tell us what needs checking. Reports go privately to our review team.</p>
         <label className="block">Issue<select value={kind} onChange={e=>setKind(e.target.value)} className={input}>
           <option value="wrong_key">Answer or explanation</option><option value="typo_ocr">Question text or options</option><option value="outdated">Outdated information</option><option value="ambiguous">Something else</option>
         </select></label>

@@ -6,8 +6,10 @@ from zoneinfo import ZoneInfo
 from fastapi import HTTPException
 from psycopg.types.json import Jsonb
 from ..db import cursor
+from ..config import settings
 from ..source_files import source_pdf_url, figure_image_url
 from .learning_rewards import touch_daily_streak
+from . import game_audience,audience
 
 MODES = {
     "trail": (10, 20, 1),
@@ -189,6 +191,9 @@ async def member(cur, r, user):
     m = await cur.fetchone()
     if not m:
         raise HTTPException(404, "Game not found")
+    if r.get('desk_id'):
+        from .desk_games import access
+        await access(cur,r,user,m['joined_at'])
     await cur.execute(
         "SELECT 1 FROM game_members m JOIN creator_blocks b ON (b.user_id=%s AND b.blocked_id=m.user_id) OR (b.blocked_id=%s AND b.user_id=m.user_id) WHERE m.room_id=%s AND m.left_at IS NULL",
         (user, user, r["id"]),
@@ -213,6 +218,12 @@ def question_round_seconds(r, pos=0):
 
 
 async def start(cur, r, now):
+    admitted=await game_audience.reconcile(cur,r,now)
+    if admitted is None:raise HTTPException(409,'A participant account is changing. Try again shortly.')
+    r=admitted
+    if r.get('desk_id'):
+        from .desk_games import reconcile
+        r = await reconcile(cur,r,now)
     if r["state"] != "waiting":
         raise HTTPException(409, "This game has already started")
     await cur.execute(
@@ -264,6 +275,12 @@ async def release(cur, r, state, now):
 
 
 async def finish(cur, r, now):
+    admitted=await game_audience.reconcile(cur,r,now)
+    if admitted is None:return
+    r=admitted
+    if r.get('desk_id'):
+        from .desk_games import reconcile
+        r = await reconcile(cur,r,now)
     if r["state"] not in ("running", "waiting"):
         return
     await cur.execute(
@@ -272,7 +289,9 @@ async def finish(cur, r, now):
     )
     current = await current_questions(cur, [q["id"] for q in r["questions"]], r.get("selection_context"))
     await cur.execute(
-        "SELECT * FROM game_members WHERE room_id=%s ORDER BY user_id", (r["id"],)
+        '''SELECT * FROM game_members m WHERE room_id=%s AND NOT EXISTS(
+          SELECT 1 FROM game_events e WHERE e.room_id=m.room_id AND e.actor_id=m.user_id
+          AND e.action='audience_access_ended') ORDER BY user_id''', (r["id"],)
     )
     players = await cur.fetchall()
     scoring_rule = (r.get("selection_context") or {}).get("rules", {}).get("scoring")
@@ -395,6 +414,12 @@ async def finish(cur, r, now):
 
 
 async def advance(cur, r, now):
+    admitted=await game_audience.reconcile(cur,r,now)
+    if admitted is None:return r
+    r=admitted
+    if r.get('desk_id'):
+        from .desk_games import reconcile
+        r = await reconcile(cur,r,now)
     if r["state"] == "waiting":
         if now >= r["created_at"] + timedelta(minutes=10):
             await release(cur, r, "cancelled", now)
@@ -462,7 +487,7 @@ async def advance(cur, r, now):
 async def view(cur, r, user, now):
     m = await member(cur, r, user)
     await cur.execute(
-        "SELECT m.user_id,m.score,m.correct,m.wrong,m.skipped,m.excluded,m.lives,m.distance,m.left_at,m.ready,m.elapsed_ms,m.pace_bonus,m.streak_bonus,m.courage_bonus,m.best_streak,u.handle,u.avatar FROM game_members m JOIN users u ON u.id=m.user_id WHERE m.room_id=%s ORDER BY m.joined_at,m.user_id",
+        "SELECT m.user_id,m.score,m.correct,m.wrong,m.skipped,m.excluded,m.lives,m.distance,m.left_at,m.ready,m.elapsed_ms,m.pace_bonus,m.streak_bonus,m.courage_bonus,m.best_streak,u.handle,u.avatar FROM game_members m JOIN users u ON u.id=m.user_id WHERE m.room_id=%s AND "+audience.subject_sql('m.user_id')+" ORDER BY m.joined_at,m.user_id",
         (r["id"],),
     )
     players = await cur.fetchall()
@@ -521,7 +546,8 @@ async def view(cur, r, user, now):
                 p.pop("lives", None)
     result = {
         "id": r["id"],
-        "owner_id": r["owner_id"],
+        "owner_id": r["owner_id"] if not settings.audience_gate_enabled or any(p["user_id"]==r["owner_id"] for p in players) else "",
+        "desk_id": r.get("desk_id"),
         "mode": r["mode"],
         "state": r["state"],
         "subject_id": r["subject_id"],
@@ -552,20 +578,24 @@ async def view(cur, r, user, now):
     return result
 
 
+async def sweep(cur):
+    from .worker_health import beat
+    now=await clock(cur)
+    await cur.execute(
+        "SELECT id FROM game_rooms WHERE (state='running' AND (round_ends_at<=%s OR deadline<=%s)) OR (state='waiting' AND created_at<%s-interval '10 minutes')"
+        +game_audience.pending_sql()+" ORDER BY created_at LIMIT 20 FOR UPDATE SKIP LOCKED",(now,now,now))
+    ids=[r['id'] for r in await cur.fetchall()]
+    for rid in ids:await advance(cur,await room(cur,rid),now)
+    await beat(cur,'game-lifecycle',True,f'rooms processed={len(ids)}')
+    return len(ids)
+
+
 async def worker():
-    from .worker_health import beat, failed
+    from .worker_health import failed
     while True:
         try:
             async with cursor() as cur:
-                now = await clock(cur)
-                await cur.execute(
-                    "SELECT id FROM game_rooms WHERE (state='running' AND (round_ends_at<=%s OR deadline<=%s)) OR (state='waiting' AND created_at<%s-interval '10 minutes') ORDER BY created_at LIMIT 20 FOR UPDATE SKIP LOCKED",
-                    (now, now, now),
-                )
-                ids = [r["id"] for r in await cur.fetchall()]
-                for rid in ids:
-                    await advance(cur, await room(cur, rid), now)
-                await beat(cur, 'game-lifecycle', True, f'rooms processed={len(ids)}')
+                await sweep(cur)
         except Exception:
             await failed('game-lifecycle')
             log.exception("Game clock sweep deferred")

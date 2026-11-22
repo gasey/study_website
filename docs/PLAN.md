@@ -1,6 +1,549 @@
 # Current implementation and content work
 
+- [x] Record the owner's superseding **18+ only** decision. Remove guardian
+  enrollment from current launch scope; update local age/account/policy copy and
+  reject new guardian requests while preserving historical receipts and private
+  data controls. [Adult-only plan](FINNA-ADULT-ONLY-PLAN.md).
+- [ ] Validate and deploy the exact guarded adult-only release; settle retention,
+  invoice/tax/refund/provider and physical/human gates in
+  [the current remaining plan](FINNA-REMAINING.md). Flags remain off and 0122–0129
+  unapplied in production. Receipt: reports/finna-adult-only-policy-20261120/.
+
+Historical implementation checkpoints below retain their original scope and
+status as of their checkpoint dates. The later 18+ decision supersedes guardian
+and minor-processing items in those older entries; they are not current launch
+requirements. Current blockers are consolidated in FINNA-REMAINING.md.
+
+- [x] Recheck account sign-in/restore and explicit offline-answer retry on current
+  signed Android preview01a448a3 using the owned emulator and synthetic HTTPS data.
+  One retry creates one attempt; another restart preserves the result; sign-out
+  revocation/guest restart pass. No phone, source change or new build.
+- [x] Restore radios, retire QA auth, remove private test credentials, stop the AVD
+  with data retained and preserve prior evidence/runtime/upload inputs. Lint and
+  typecheck pass; 11 captures inspected; all three HTTPS roots healthy.
+- [ ] Complete the decisions and physical/human/provider gates in
+  [the consolidated remaining plan](FINNA-REMAINING.md). All launch flags remain
+  off; current backend guards stay local/unapplied. Historical phase entries below
+  retain their original checkpoint scope. Current report:
+  reports/finna-current-signed-account-recovery-20261120/.
+
+- [x] Add a read-only restore preflight for current identity/privacy controls and
+  candidate bearer/mail quarantine; preserve immutable delivery history and deny
+  promotion authorization. Verify 107 scoped checks, including 44 new cases.
+- [x] Document private request/restore/refund operator procedures; preserve 1,079
+  runtime/migration/web/operator inputs and 57 frozen predecessor files. No
+  production connection/deployment, new migration, mail, payment, APK or phone.
+- [ ] Set actual guardian verification/consent/withdrawal/permitted processing and
+  retention schedules; establish independent current-state evidence and reviewed
+  repair/recovery/cutover. Complete invoice/tax/refund entitlement decisions,
+  provider tests and existing physical/human/content/healthy-week/volume gates.
+  Keep database policy, age, checkout and referrals off; 0130 remains unreserved.
+  Procedure: docs/FINNA-PRIVACY-OPERATIONS.md. Report:
+  reports/finna-restore-privacy-preflight-20261120/.
+
+- [x] Admit CMS positive publication rewards before reward locks/derived writes;
+  preserve source publication, caps, replay and byte-identical historical reversals.
+- [x] Guard optional material/contribution workflow notices in SQL, preserve source/
+  audit and account/history controls, and prevent original publisher retry backfill.
+  Retain existing governance proof/authorization; no legal/minor permission inferred.
+- [x] Verify 2,275 backend / 1,202 compatibility / 89 focused checks, 50 new cases, 137 API
+  bindings plus publisher source and 25 zero integrity fields. Fresh 252-table clone
+  preserves all original data/indexes and guard body/configuration/permissions.
+  All owned temporary resources removed; 62 prior-report files, web artifacts and
+  13 baseline DB names preserved. 0129 unapplied; 0130 next unreserved.
+- [ ] Complete actual guardian verification method, consent evidence/withdrawal and
+  permitted minor processing. Finish retention/backup/restore/request/tax/refund and
+  guarded activation/recovery with existing physical/human/content/healthy-week/volume
+  gates. Keep every launch flag off; pair guarded API/publisher/migrations only after
+  draining writers. No production change or phone/APK needed here. Report:
+  reports/finna-cms-notice-eligibility-20261120/.
+
+- [x] Guard current database tier weight for targets/voters, preserve read-only
+  readers and historical labels, and admit complete voter sets before persistence.
+- [x] Preserve before-loss capture for declarations/closure and existing changes;
+  serialize restrictions/closure, avoid partial busy-voter totals and release partial
+  voter leases. Keep source/attempt constraints, votes, receipts and milestones.
+- [x] Reproduce/fix temporary vote-table shadowing through separate0128 lookup-path
+  hardening; preserve applied0127.2225 backend/1152 compatibility/45 new checks pass,
+  136 runtime bindings,25 zero integrity fields and two successful252-table clone
+  rehearsals. Failed helper/network clones are cleaned; all four private stages removed.
+  60 prior-report files/web artifacts and13 baseline DB names preserved.
+- [ ] Guard the separate CMS material positive publication reward path while
+  preserving exact legitimate archive reversals, daily cap and independent review.
+- [ ] Review administrative review/publication/CMS notices, quorum/source proof and
+  retained governance/audit/history processing separately. Complete actual guardian
+  verification/consent/withdrawal/minor-processing and retention/backup/restore/request/
+  tax/refund procedures and guarded launch.0127/0128unapplied,0129next unreserved.
+  Database policy, age, checkout and referrals stay off. No production or phone/APK
+  change. Report:reports/finna-tier-eligibility-20261120/.
+
+- [x] Filter legacy contributor ranks and publication metadata by subject eligibility
+  before rank/limit/cursor; preserve blocks, attribution and source bank history.
+- [x] Filter Helpful totals and visible weekly weights by voter eligibility at query
+  time. Preserve stored votes/milestones and read-only readers; protect legacy titles
+  during mocks, games and open Cups. New hidden-author votes rejected; own removal stays.
+- [x] Verify2180 backend/1107 compatibility/79 focused checks,39 new cases,133 runtime
+  bindings and25 zero integrity fields.47 prior-report files, all migrations and web
+  inputs/build remain identical;13 baseline DB names retained; no new test DBs remain.
+- [ ] Implement database target/voter weighting and tier milestone admission in a
+  new migration with a fresh dump-clone rehearsal. Current SQL standing/privileges/
+  Guide candidacy and before-loss tier capture are not completed by read filters.
+- [ ] Review administrative notices/quorum/audit/history; finish real guardian
+  verification/consent/withdrawal and retention/restore/request/tax/refund/launch.
+  No production change, migration, APK or phone needed here.0127still unreserved;
+  database policy, age, checkout and referrals stay off. Report:
+  reports/finna-contributor-visibility-20261120/.
+
+- [x] Guard positive publication reward recipients through the database policy and
+  nonblocking lease; preserve successful source publication when rewards are skipped.
+- [x] Preserve exact once-only legacy/v2 reversals for restricted/closed accounts,
+  including policy-off mode, and source zero-credit/retry/cap behavior. No backfill.
+- [x] Verify2141 backend/1068 compatibility/49 focused checks,31 new cases,130 source
+  bindings and25 zero integrity fields. Fresh252-table clone preserves all original
+  columns/values/indexes and function owner/ACL; all owned temporary resources removed.
+  0126unapplied,0127next unreserved. Previous63-file report/web artifacts preserved.
+- [ ] Guard community target/voter weighting, tier milestones and legacy contributor
+  ranks/author/voter metadata; review admin
+  notices, audit/quorum metadata and historical control handling separately.
+- [ ] Finish real guardian verification/consent/withdrawal, retention/restore/request/
+  tax/refund procedures and guarded rollout. Database policy, age, checkout and
+  referrals stay off. No phone, new APK or production change. Report:
+  reports/finna-publication-eligibility-20261120/.
+
+- [x] Add default-off database policy/startup agreement and synchronous activity
+  admission for independent SQL sessions; retain attempts, history and queue hints.
+- [x] Serialize guest transfer for both subjects before credential/target locks;
+  preserve assessments/replay and reject restricted, unproved or expired sources.
+  SQL attempt ownership checks both subjects;0125 fixes the reproduced direct-call
+  ownership race without editing applied0124.
+- [x] Verify2110 backend/998 compatibility/35 focused tests,129 runtime bindings,
+  25 zero integrity fields and two fresh252-table production-dump clone rehearsals.
+  All original columns/values/indexes and prior evidence remain preserved; cleanup
+  verifies13 pre-existing local DB names.0124/0125unapplied,0126next unreserved.
+- [ ] Guard positive publication credits with reversal/replay/cap continuity, and
+  community tier computation/milestones; review administrative notice/history scope.
+- [ ] Finish real guardian verification/consent/withdrawal, retention/restore/tax/
+  refund and guarded rollout. Keep database policy, age, checkout and referrals off.
+  No phone, new APK or production change. Report:
+  reports/finna-synchronous-activity-20261120/.
+
+- [x] Add local subject eligibility to public/shared creator, community, material,
+  Desk/Inbox and game/Cup readers before pagination/counts/ranks. Preserve blocks,
+  disclosure, publication, owned export, moderation and relationship-removal controls.
+- [x] Guard immediate Desk/discussion notices with nonblocking processing leases.
+  2075 full backend/946 compatibility/49 focused checks pass, including45 new cases,
+  126 runtime bindings and25 zero integrity fields. Previous reports and all new
+  test-database cleanup verified; no new migration or production change.
+- [ ] Implement separately reviewed database-side handling for synchronous activity,
+  guest adoption, positive publication awards and community tier triggers; preserve
+  integrity queue hints and legitimate reversals.0124 remains unreserved.
+- [ ] Complete real guardian verification/consent/withdrawal and permitted-processing,
+  historical/control exposure, retention/restore/tax/refund and guarded launch.
+  Keep age/checkout/referrals off. No connected phone or new APK needed here.
+  Report:reports/finna-community-eligibility-20261120/.
+
+- [x] Guard local mock/attempt reassessment and correction notice processing with
+  fresh adult/active checks and nonblocking account leases. Roll back mixed pages
+  without cursor advancement, acknowledgements or restriction failure counts.
+  Source invalidation continues; original results/receipts remain unchanged.
+- [x] Verify pending-worker lookahead, restriction/closure races, one-time resume,
+  queue-lock release, failure rollback and default-off locked-oldest skipping.
+  2030 full backend/837 compatibility/46 focused tests pass, with25 new guards,
+  119 source bindings and25 zero integrity fields. No new migration;0124 next.
+- [ ] Review other synchronous/SQL-trigger paths and community/Desk/identity
+  exposure. Complete real guardian verification/consent, retention/restore/tax/
+  refund procedures and guarded rollout before enabling the age flag or checkout.
+  Report:reports/finna-reassessment-eligibility-20261120/. Local only; no phone needed.
+
+- [x] Add local eligibility admission to game start/advance/finish and the real
+  lifecycle sweep; release restricted seats while preserving saved choices,
+  prior economic history and other players' deadlines. Prevent rejoining and
+  later finalization through an immutable room/account marker.
+- [x] Rehearse index0123 on a fresh production dump clone:252 original tables
+  and existing indexes preserved;6.448ms apply.0123 remains unapplied in production,
+  0124 next unreserved.2005 full backend/791 compatibility checks and26 new guard
+  tests pass, with116 source bindings and25 zero integrity fields.
+- [ ] Finish reassessment/correction notices, synchronous/SQL-trigger paths and
+  community/identity exposure review, real guardian verification/consent,
+  retention/restore/tax/refund decisions and guarded rollout. Keep the age flag,
+  checkout and referrals off. No phone connection or new APK needed for this work.
+  Report:reports/finna-game-eligibility-20261120/.
+
+- [x] Park restricted durable learning jobs without acknowledging or deleting
+  pending work; serialize admitted processing with under-18 restriction/closure,
+  recheck candidates and report age-paused work in the heartbeat. Default-off.
+- [ ] Finish game/reassessment and community/Desk processing review, real guardian
+  verification/consent and retention/rollout decisions before activation.
+  1979 full backend/765 compatibility checks,114 source bindings and25 zero fixture
+  integrity fields pass; all newly created test databases are removed.
+  Report:reports/finna-learning-eligibility-20261120/.
+
+- [x] Extend the local optional age boundary to reminder scheduling/delivery,
+  official-calendar notifications, bearer calendar feeds and weekly standings.
+  An under-18 declaration cancels pending study reminders and revokes feed URLs;
+  historical entries/receipts remain. No production or APK change.
+- [ ] Review learning/game/reassessment jobs and community/Desk exposure separately;
+  real guardian verification/consent and retention decisions still block activation.
+  1967 full backend tests/745 compatibility checks and114 source bindings pass.
+  Report:reports/finna-audience-background-20261120/.
+
+- [x] Confirm operator identity as Hruaitluanga, an individual trading as Finna.
+- [x] Implement local owned privacy requests/withdrawal, owner queue, append-only receipts and supported export fields (migration0122).
+- [x] Build the optional adult-declaration boundary for guest/email/Google/web/native access and stale mutation rollback; leave minor enrollment unavailable.
+- [x] Build clearly marked launch policy previews and verify final browser forms at1280/320 in light/night.1950full tests,717compatibility,113source bindings and web build pass.
+- [ ] Select/connect real guardian verification; implement consent/withdrawal and finish minor/background processing review. This foundation is not completed guardian support.
+- [ ] Finalize retention/backup/request/tax/refund procedures; rehearse a guarded production subset, publish complete policies and verify actual payment/refund/reconciliation flows. Keep checkout and age-boundary flag disabled meanwhile.
+  Report:reports/finna-privacy-implementation-20261120/.0122reserved/unapplied;0123next unreserved.
+
+Earlier preparation checkpoints below retain their original scope.
+
+- [x] Record the owner's no-fixed-refund-response-deadline choice and intended under-18 audience; leave uncertain invoice identity unresolved.
+- [x] Prepare production-backed privacy/retention inventory and proposed guardian process, including guest/email/Google/mobile entry points and withdrawal tests.
+- [ ] Implement and validate guardian controls; settle retention/request handling and legal/invoice/tax details before complete public policies and paid launch.
+  Report:reports/finna-policy-readiness-20261120/. No runtime or payment activation in this documentation continuation.
+
+- [x] Compare intermediate readiness join settings on a fresh production-dump clone:48exact outputs and252original tables preserved; alternatives tied or64–71%slower,so no deployment.
+- [x] Record owner-supplied Finna/support and refunds for any reason within7days of the charge in private legal drafts.
+- [ ] Finish remaining legal/invoice,refund handling,age/retention/dispute/provider choices,then publish complete policies and verify payment flow. No paid activation yet.
+  Report:reports/finna-readiness-plans-20261120/.
+
+- [x] Deploy the20November empty-pins guard for subject-wide detail counts:4.46→4.06s in repeated clone tests;1938backend/705integrated/496production compatibility checks pass. Exact counts and answer authority preserved; no phone or new APK.
+  Report:reports/finna-empty-pins-20261120/. Section-count timing and broader performance/launch gates remain open.
+
+- [x] Complete the20November website dependency follow-up: full/production lockfile audits both0; withdrawn picomatch finding closed without changing packages.
+- [x] Collect fresh real-role read-only operations/host/HTTPS evidence:8workers/4timers healthy,25integrity counters0,verified backup,prior actual restore retained. Preserve610signed-Android evidence files and171current upload inputs.
+- [ ] Mobile dependency remediation:27moderate full/20production-graph entries from2advisories await supported upstream versions or separately verified compatibility work; no forced major overrides/downgrades.
+- [ ] Complete the real healthy-week/monthly human gate and measured query/maintenance follow-through. Old natural failures remain in the receipt; no green-week claim or staged-feature rollout.
+  Report:reports/finna-dependency-ops-review-20261120/.
+
+- [x] Traverse1000synthetic questions/all40native pages and check320dp/tablet layouts at200%text on the emulator.
+- [x] Add page recovery and correct restoration startup/temporary clamp/final-event offsets and later-filter mount retention;143component/33logic tests and exports pass. Local five-cycle/nonfinal-row probes pass; original fe640697 cold check failed.
+- [x] Finish preview01a448a3/beta11f7cbfb,verify/install and repeat signed recovery. All1,000/end,40fresh native pages,two exact-position final restarts,nonfinal restart,beta guest navigation and compact filter actions pass. Owner/physical acceptance remains open;prior231e7a5c/3f284a4c remain canceled.
+
+- [x] Implement immediate pending answer feedback and remove the practice feedback GET.
+  Keep durable replay, account lifecycle and cache version guards.129 component / 33 logic tests,
+  lint/typecheck,Android/web exports and Expo Doctor20 / 20 pass.
+- [x] Add exam/module and subject→topic→subtopic browsing, scoped Papers and pinned filter actions;
+  synthetic320 / 390 px browser checks pass. No production bank/content mutation.
+- [x] Provision persistent isolated HTTPS native staging at finna-staging.hawayu.in; actual TLS/PKCE,
+  filter/answer/replay/logout API checks pass; production paths hidden and both existing hosts healthy.
+- [x] Finish preview 666b8b61 and beta e4816038; verify signatures/package/current-code markers.
+  Signed HTTPS staging emulator passes browser/account restore,bank/practice feedback,offline pending
+  restart and explicit retry,result restore,filters and logout. Beta guest smoke passes. No phone used.
+- [ ] Complete physical TalkBack, broader network/tablet/full release performance; iOS remains deferred.
+  Full launch also needs the existing healthy-week, human/content, legal/payment and volume gates.
+  Reports:reports/finna-native-release-readiness-20261119/ and reports/finna-native-https-staging-20261119/.
+
+Earlier dated checkpoints below retain their original evidence scope.
+
+- [x] Record signed TalkBack probe and restore accessibility baseline (19 November).
+  Traversal/speech remain unverified; scrolling probe stopped safely on focus loss.
+  No frame result or full acceptance claimed. Lint/typecheck pass. Report:
+  reports/finna-native-android-accessibility-20261119/.
+- [ ] Complete signed HTTPS staging, TalkBack, wider network/layout/performance
+  acceptance, then combined signed build including prior logout fix and feedback.
+
+- [x] Complete bounded native Android mock recovery/offline/expiry checks (19 November):
+  pending choice survives force-stop and explicit retry; accelerated server expiry
+  scores only two acknowledged answers and excludes one pending choice; result
+  restores after restart. Offline cold restore detaches identity and retains the
+  credential; reconnect restores the same account; parent revocation clears it.
+  Report:reports/finna-native-android-recovery-20261119/.
+- [x] Verify bounded deep-list cold restoration on a1000-question fixture:seed975,
+  four real swipes save980,force-stop/reopen returns the same visible questions.
+  Full traversal/frame-time/memory/release performance remains open.
+- [ ] Next Android acceptance:TalkBack,wider layouts,real background/network
+  variants,full long-list/release performance and reachable HTTPS preview staging.
+  Prior logout correction still needs a future combined signed build;iOS deferred.
+
+- [x] Prepare native three-question mock fixture and verify a guarded countdown
+  capture helper on Android (19 November). Reusable helper build and30focused
+  tests,lint/typecheck pass. Report:reports/finna-native-android-mock-20261119/.
+- [x] Resume physical mock interrupted-answer/deadline/offline/expiry tests in a
+  new isolated session. Bounded development scope passes in the recovery report
+  above;the earlier interrupted preparation receipt retains its original limits.
+
+- [x] Complete bounded native development account/recovery checks (19 November):
+  two real browser handoffs, force-stop account restore, interrupted-answer restore
+  and one explicit retry, isolated B preferences/progress, logout/local cleanup.
+  Disposable fixture and owned connections removed. Report:
+  reports/finna-native-android-account-20261119/.
+- [x] Fix false server-sign-out warning discovered on the phone. Only logout may
+  acknowledge a retired credential; late401 cannot expire a new account.
+  116component/29logic tests,lint/typecheck and native development recheck pass.
+- [ ] Include this new client.ts logout correction in a future combined signed
+  Android build. Installed beta6df0b4c7 contains the prior six fixes,not this one.
+- [ ] Finish wider native network/background variants,TalkBack,full long-list/release
+  performance,wider Android and reachable HTTPS preview acceptance. Bounded mock/
+  offline/expiry and deep-page restoration now pass in development.
+  iOS physical acceptance remains deferred because the owner has no device.
+
+- [x] Install/verify combined signed Android beta6df0b4c7-fd5c-4c2a-a0af-0d6c355e0741
+  on the Samsung and complete its bounded guest scope (19 November):13visually
+  inspected captures,tabs/questions/filters,hot200%font/dark,landscape/cold restart,
+  no exact-UID crash entry;owner display baseline restored. No learner writes.
+  Report:reports/finna-native-android-acceptance-20261119/.
+- [x] Prepare/rehearse disposable1000-question Android development fixture;
+  unique pagination/deep reads pass;Dev Home consumes synthetic API data.
+  Subsequent native account/recovery checks passed in the report above;fixture removed.
+- [ ] Complete signed HTTPS staging acceptance and remaining Android offline/mock/
+  TalkBack/long-list/performance coverage. Prior8091/56439 cleanup is verified.
+- [ ] Deferred:physical iOS acceptance,owner has no iOS device. Does not block
+  Android work;retain source/configuration without claiming iOS passed.
+
+- [x] Rehearse real browser login/confirmation and mobile HTTPS contracts on a
+  disposable local staging API/database (19 November):22 checks,2 synthetic
+  accounts,real mpsc execution; PKCE/replay/ownership/deadline/revocation/CSRF pass.
+  DB/server/TLS credentials removed;112components/29logic/40mobile backend tests,
+  lint/typecheck pass. Report:reports/finna-native-staging-20261119/.
+- [x] Finish/verify combined internal signed Android build
+  6df0b4c7-fd5c-4c2a-a0af-0d6c355e0741 containing all six local runtime fixes.
+  Downloaded APK signature/same certificate/package/non-debuggable/production API/
+  new bundle markers and170input hashes verified at build time. APK is installed;
+  bounded signed guest QA passed. Remote Doctor warning remains. It uses production
+  accounts. Signed synthetic/offline acceptance still requires
+  a separately reachable HTTPS staging API/database and preview binary.
+
+- [x] Fix timed-mock lifecycle/recovery locally (19 November): saved-choice
+  hydration gates controls; stale account/route/reload/save/submit results are
+  ignored; disk-delayed choices never send after client deadline. One automatic
+  empty-answer submission, explicit retries, and duplicate-submit result recovery
+  retain server scoring authority.13 new regressions;112 component/29 logic checks,
+  lint/typecheck/Android export pass. Isolated backend deadline test and21-test
+  bank-review module pass after making its snapshot test fixture self-contained.
+  Report:reports/finna-native-mock-lifecycle-20261119/. One mobile runtime file
+  changed; six now differ from installed beta. No phone/production/runtime API
+  change; physical/staging/accessibility/performance/iOS acceptance stays open.
+
+- [x] Fix native practice replay/start lifecycle locally (19 November): controls
+  wait for saved-choice hydration; credential/lifecycle guards prevent stale
+  sends, clears and navigation. Same-selection retries retain their request key;
+  changed selections get a new key.14 new regressions,99 total component/29 logic
+  tests,lint/typecheck/Android export pass. Two existing isolated real-role backend
+  tests confirm answer replay/ownership/presentation and scheduled reward caps.
+  Report:reports/finna-native-practice-replay-20261119/. Two more mobile runtime
+  files changed; five runtime files now differ from installed signed beta.
+  No phone/production change; staging/device/release acceptance remains open.
+
+- [x] Fix native session lifecycle races locally (19 November): immediate local
+  sign-out; obsolete restore/browser/exchange/session results cannot adopt an
+  account; queued credential writes/cleanup remain ordered across remounts.
+  Late logout leaves a newer sign-in intact; offline restore detaches the bearer
+  until verification, and cleanup/revocation failures are visible.13 regressions,
+  85 total component/29 logic checks,lint/typecheck/Android export pass. No phone
+  used. Report:reports/finna-native-session-lifecycle-20261119/. This session.tsx
+  correction and the prior two-file answer patch await a future signed binary;
+  staging/system-browser/device acceptance remains open.
+
+- [x] Fix native inline-answer lifecycle isolation locally (19 November): pending
+  disk writes cannot start a request after unmount/credential change; old reads,
+  results and feedback cannot cross account/question/presentation scope. Stale
+  offline presentations are rejected locally; unchanged retries keep their key.
+  10 regressions,72 total component/29 logic tests,lint/typecheck/Android export pass.
+  Report:reports/finna-native-account-isolation-20261119/. Two mobile runtime files
+  changed; this fix is not included in the installed signed beta. No phone required
+  for these automated checks; full native/staging acceptance remains open.
+
+- [x] Connect the owner's Expo account and verified personal Finna project; resolve
+  the actual project in native preflight, inspect source upload exclusions and
+  fix landscape side-navigation overlap on the Samsung.60components/lint/typecheck pass.
+- [x] Compile/sign/install first Android beta ebb0569f-a711-4bc2-a177-d803c1297626;
+  real device QA found a global-router navigation crash. Binary rejected.
+- [x] Replace global routing with context-scoped handles and add Home remount
+  regression plus source lint guard.62components/29logic/lint/typecheck/export pass.
+- [x] Verify/install and repeat standalone guest checks on corrected signed beta
+  b4a1a9d2-28c2-4299-a1f6-efe383d2d242. Installed APK matches the verified download;
+  exact hot 200% font → Mock test reproduction, dark mode, landscape navigation,
+  five tabs, question browsing/filter sheet and cold restart pass on Samsung Android16.
+  Baseline phone settings restored; Home left open. Fresh lint/typecheck pass.
+  Report:reports/finna-desk-pdf-20261119/router-remount/continuation/.
+
+- [x] Build/verify/install Android development APK on the owner's connected
+  Samsung (19 November):503tasks,29logic/60component tests,lint/typecheck pass.
+  Original source/backend unchanged; dev package in.hawayu.finna.dev installed.
+  Report:reports/finna-desk-pdf-20261119/NATIVE.md.
+- [x] Complete initial Android guest screen/navigation checks and fix Home action
+  stretching plus large-text tab-label clipping. Actual normal/200% Home geometry,
+  all five tabs, questions/filter sheet and mock builder checked;60final component
+  tests,lint/typecheck pass. Font1.0 restored; local preview services retained.
+  Current report:reports/finna-desk-pdf-20261119/native-device-qa.json.
+- [ ] Complete staging sign-in/offline/replay/long-list/TalkBack, wider device/layout
+  coverage, signed-release performance and iOS acceptance. Samsung guest rotation/
+  appearance checks now pass; Expo project/Android signing are complete. This
+  production-account beta must not be used for synthetic learner-write fixtures.
+
+- [x] Verify actual saved Desk PDF pagination (19 November): four authenticated
+  synthetic API exports/17A4 Chromium pages, all rendered and visually checked;
+  margins/wrapping/Mizo/ownership/assessment hiding pass;7existing note tests pass.
+  Runtime/105bindings/production unchanged. Report:reports/finna-desk-pdf-20261119/.
+  Mobile print and other browsers/printers remain outside this verified scope.
+
+- [x] Investigate section-count planner/flat-taxonomy alternatives (19 November):
+  both fresh252-table clones preserve values;72 alternative comparisons match.
+ 27 synthetic proposal checks pass, but timings show regressions/no useful gain;
+  all four alternatives rejected. Runtime/evidence/production remain unchanged.
+  Reports:reports/finna-section-count-plans-20261119/ and
+  reports/finna-section-count-flat-20261119/. Further query work remains open.
+
+- [x] Profile collection-count proposals on an analyzed production dump clone
+  (19 November); all68 comparisons preserve values across252 tables.
+- [x] Deploy adaptive bulk readiness for large collection counts (19 November):
+  16–23% clone improvement, all68 comparisons equal/252tables unchanged;
+  1602full tests,537/328compatibility,105/77bindings,25integrity pass.
+  Three-file release; both sites/recovery/all8workers healthy, ledger46→46.
+  Evidence:reports/finna-collection-counts-adaptive-20261119/.
+- [x] Deploy measured subject-only join order and prepare=False (19 November):
+  1716full/641integrated/432production tests,105/77bindings,25integrity pass.
+  All68 clone comparisons equal/252tables preserved; target23–40% faster.
+  Live HTTP7.213→4.484s, identical payload hashes, all8workers/sites/recovery
+  healthy, ledger46→46. Two-file paired backup0vhv3tic; no schema/mail change.
+  Report:reports/finna-subject-count-order-staged-20261119/.
+- [ ] Continue measured slow-query review; subject-wise count remains4.484s,
+  section count SQL is unchanged. Earlier rejected proposals remain frozen.
+
 ## Finnaplan implementation — 16 November
+
+- [x] Locally stage referral access (19 November): signup-only email/Google code,
+  ten eligible scored attempts, seven Pro days each, five credits/rolling year,
+  atomic grants/replay/cap/closure/privacy guards, no currency or plan mutation.
+  Profile/Join and private Inbox/export, explicit link withdrawal while paused;
+  default false plus legal/recovery/live-checkout/reconciliation launch gates.
+  1456full backend/exit0,387compatibility,104bindings/25integrity,3React components,
+  364-file build and1280/320 light/night checks pass. Fresh252-table clone preserves
+  original values;0121 applies34.556ms, real-role probe rolled back. Oracle broad
+  default ACL caught/revoked; final tests/clone rerun. No production deployment.
+  Report:reports/finna-referrals-staged-20261119/. Applied0110/0120 immutable;
+  0111–0119 and0121 local drafts,0122 next. Private legal drafts prepared; public
+  policies/provider launch, actual healthy week and remaining external gates open.
+
+
+- [x] Deploy opt-in evening review digest (19 November). Verified current consent,
+  eligible due count/streak/Smart Review, silent empty queue, signed-out POST
+  unsubscribe, one attempt per IST day and security-mail capacity priority.
+  Separate production source package excludes Desk/Atlas; only0120 applied,
+  default subscribers0. Current178 production/356 integrated checks,76/101 bindings,
+  two React components and350/363-file builds pass; earlier1434 full-suite pass
+  predates only the covered one-line withdrawal guard.249-table clone data preserved;
+  ledger46→46,integrity0,both sites/recovery healthy. Backup:
+  /root/finna-digest-backup-dqul4iva. Reports:finna-review-digest-production-20261119
+  andfinna-review-digest-withdrawal-20261119.0111–0119 still local/unapplied;
+  0110/0120 immutable,0121 next. Natural backup/stats receipts healthy; full-week,
+  monthly human, source/legal/native/paid/volume/saved-PDF gates remain.
+
+- [x] Activate verified Resend sender study.hawayu.in (19 November): exact three
+  owner-approved DNS records; domain-scoped sending-only key privately stored;
+  verified STARTTLS/auth, one approved outbox recovery email delivered, owner
+  reset/new-password sign-in and consumed-token readback. General account mail
+  enabled with existing 100/day and 3000/rolling31-day limits. Bounded API restart;
+  recovery available and API/study/family HTTP200. No new code/schema deployment.
+  Evidence: reports/finna-atlas-depth-staged-20261118/sender-activation.json.
+  Due-review consent/unsubscribe/dedup digest and referral/paid gates remain.
+
+- [x] Locally stage Atlas III.5 step 4 code: current-section saved-exam order,
+  full list retained; owner-selected source-bound two-way Chronicle event links;
+  source/layer/checked-date/licensing forms and attributed downloads. Eleven
+  private district starting proposals use dated2021 illustrative boundaries and
+  approximate HQ/river/peak points; actual owner content curation remains open.
+  1415 backend/exit0,337 compatibility,98bindings/25integrity,7actual components,
+  361-file build and320px light/night browser QA pass.249-table clone preserves
+  every original value; real-role probes rolled back. No new migration/deployment;
+  0120 still next. Receipt:reports/finna-atlas-depth-staged-20261118/.
+
+- [x] Locally stage Atlas III.5 step 3: explicit pin/custom point-or-line drills,
+  immutable zero-reward activity, versioned explored state, optional Today and
+  wrong-tap practice suggestions, warm-up display with server-side chest exclusion,
+  and optional fresh geography map context in ordinary/Smart Review questions.
+  1407 full backend tests/exit 0, 329 compatibility checks, 96 bindings/25 integrity,
+  six actual components/screens, 357-file build and browser 320px light/night checks
+  pass. Fresh
+  249-table clone preserved; 0119 applied 33.481 ms and real-role probe rolled back.
+  Receipt: reports/finna-atlas-drills-staged-20261118/. No production rollout;
+  0120 next draft. Next reviewed district depth/exam ordering/Chronicle/licensing.
+
+- [x] Locally stage Atlas III.5 step2: API chapter data, exact26-chapter current-site
+  seed, per-author CAS/autosaved drafts, immutable publication versions/events and
+  manual chapter/fact/layer/event Studio with shared learner/DRAFT renderer.
+  Pin/line/area/drag/copy/import/undo/timeline capture and owner preview/publish/
+  hold/restore.1398full backend/exit0,312compatibility,94bindings/25integrity,
+  3actual components,355-file build and1280/320px browser QA pass. Fresh249-table
+  clone preserved;0117/0118apply26.320/28.293ms,real-role probe rolled back.
+  Receipt:reports/finna-atlas-studio-staged-20261118/.0119next; production healthy-
+  week gate open. Next drills/explored/map context/depth/relevance/Chronicle.
+
+- [x] Locally stage Atlas III.5 step1: reviewed two-way topic bindings, ordinary
+  asked-from-map questions, deep chapter/layer/event links and owner binding manager.
+  Source/registry versions, MFA/CSRF/CAS and immutable publish/hold/restore history;
+  no real topic bindings seeded.1384full backend/child exit0,298compatibility,
+  91bindings/25integrity,3real components,353-file build and1280/320px browser QA.
+  Fresh249-table clone preserves all values;0116apply23.557ms,real-role probe rolls
+  back. Receipt:reports/finna-atlas-bindings-staged-20261118/.0117next draft;
+  no production rollout. Full chapter Studio/26-chapter DB seed remains next.
+
+- [x] Locally stage the room view of the central calendar: explicit per-entry
+  share/withdraw, membership epochs, blocks/closure, personal exam target countdowns
+  and existing recurring slots.1379full/exit0,250compatibility,84bindings/25integrity,
+  13focused checks,3real components/screens,350-file build and browser QA pass.
+  Fresh249-table clone preserved;0115apply5.251ms, real-role probe rolls back.
+  Receipt:reports/finna-desk-calendar-staged-20261118/.0116next draft; no deployment.
+
+- [x] Locally stage question-linked personal/shared notes, live room chat links and
+  guarded account JSON/browser print-save-PDF exports.1374full/exit0,237fresh
+  compatibility checks,82bindings/25integrity,5components,350-file build and browser
+  QA pass;249-table clone preserved, draft0114apply6.531ms. Actual saved PDF not
+  certified;0077is library inventory. Receipt:reports/finna-desk-notes-staged-20261118/.
+  0110applied;0111–0114draft locally,0115next. Production awaits real healthy week.
+
+- [x] Locally stage synchronized Desk practice over explicit shared questions /
+  bookmarks using the existing party engine, ten frozen questions/25s/2–4 players.
+  Current membership/source/block/embargo/native guards and normal replay/caps;
+  no Desk award.211 fresh compatibility/calibration checks,80 bindings, actual
+  components/build/browser and fresh249-table preservation pass.0113 draft
+  rehearsed6.105 ms;0110 latest applied,0114 next unreserved. 1,366 full backend tests passed with exit 0. Final validation:
+  reports/finna-desk-practice-staged-20261118/. Production gated on actual healthy week.
+
+- [x] Implement locally staged Desk v4 shared weekly goals, review-circle
+  flag/resolve/reopen/filters and current opt-in focus board (18 November).
+  Existing verified scoring, server timer/recap and disclosure boundaries reused.
+  Draft0111/0112rehearsed on fresh249-table clone, every original value preserved;
+  real-mpsc rolled-back consent/goal/privilege probe passes.1352full backend/exit0,
+  15goal/recovery checks,3actual component checks, build and browser QA pass. Receipts in
+  reports/finna-desk-goals-staged-20261118/. No production deployment or green-week
+  claim;0110remains latest applied,0113next unreserved. Full plan remains open.
+- [ ] Release staged Desk changes after actual V.13healthy-week gate and a fresh
+  bounded deployment/recovery verification. Continue Atlas/Studio next; saved-PDF pagination remains unverified.
+
+- [x] Deploy bounded question-detail readiness lookup: derivedSQL~4.4s→3–4ms on
+ clone,83,383canonical policy results identical,249-table preservation.1335full /
+ 156compatibility checks,73bindings,2recovery checks; live5HTTPdetails19–30ms,
+ 8healthy workers,integrity0,ledger46→46,bothsites200. No schema/award/source rule
+ change. [Detail performance](../reports/finnaplan-v12-query-performance-20261118/README.md).
+
+- [x] Deploy patchable frontend build-dependency updates:348built/3344served files,
+ unchanged browser-runtime versions/CSS declarations, desktop/phone/light/night and
+ real components/navigation/recovery pass.17routes/2entry assets,8healthy workers,
+ ledger46→46,bothsites200. One unpatched picomatch advisory remains in build graph.
+ [Build receipt](../reports/finnaplan-v12-build-dependencies-20261118/README.md).
+- [ ] Continue profiling collection-count shapes (~1–1.6s); the confirmed4.5s
+  question-detail regression is fixed. Retain monthly human sign-off/green-week/provider/source/device prerequisites.
+
+- [x] Enable real1000ms slow-query logging with bind suppression, existing private
+ log/rotation and reload-only recovery.5operator checks and real1102ms read-only
+ probe pass; API/PostgreSQL stay running,8workers healthy,ledger46→46,bothsites200.
+ [Logging receipt](../reports/finnaplan-v12-query-logging-20261118/README.md).
+
+- [x] Deploy Python dependency remediation: FastAPI0.163.2/Starlette1.10.0 plus
+ 3required purepy dependencies; offline wheels/exact environment fingerprints,
+ 1324full/81focused/2recovery checks and249-table preservation pass. API/UI/schema
+ fixed;8healthy workers,integrity0,ledger46→46,bothsites200. Dated exact installed
+ package advisory scan clean. [Dependency receipt](../reports/finnaplan-v12-dependencies-20261118/README.md).
+
+- [x] Deploy V.12 retention/site notice/restore maintenance:0110applied/immutable,
+  bounded data-preserving cleanup, versioned owner notice and actual paired restore
+  age/tool/checklist.1324full/154final compatibility checks,72bindings,248-table
+  preservation,11API/348built/3211served hashes,8healthy workers,ledger46→46,
+  bothsites200. [Maintenance receipt](../reports/finnaplan-v12-maintenance-20261118/README.md).
+- [ ] Follow up upstream unpatched build advisory and actual slow-query findings;
+  actual monthly human sign-off and seven healthy days remain open. Backend/build updates and logging are deployed; the remaining build advisory has no published patch.
 
 - [x] Deploy V.12read-only account viewer at `/admin/users`: global-owner/MFA,
   private aggregate snapshots, exact-email/handle search and existing-tool links.
@@ -42,8 +585,8 @@
   3public+27private reads,integrity0,ledger46→46,bothsites200. No production list,
   code, discount, payment or email issued.0109immutable; next0110.
   [Bulk release](../reports/finnaplan-v11-bulk-20261118/README.md).
-- [ ] Next independent work: V.12retention/site
-  notice/checklists. Observe actual scheduled backup/stats outcomes and sustain
+- [ ] Next independent work: dependency/security and slow-query observability.
+  Retention/site notice/checklist code is deployed. Observe actual scheduled backup/stats outcomes and sustain
   the real healthy-week gate. V.11email/digest/referrals retain
   prerequisites. [Remaining work](FINNA-REMAINING.md).
 
@@ -246,8 +789,9 @@
   unchanged 337 static artifacts; ledger 46→46. 0098 applied/immutable; next 0099.
   Native Smart Review/focus with saved retries passes 29 domain/60 component
   tests, lint/typecheck and all-platform export. [V.6 receipt](../reports/finnaplan-v6-20261117/README.md).
-- [ ] Link the owner's Expo project (EXPO_PROJECT_ID), deliver a signed native
-  build and complete authenticated physical-device QA; no binary/OTA was published.
+- [x] Link the owner's actual Expo project (19 November): @hruaia123/finna.
+- [ ] Deliver/verify the existing signed Android beta build and complete
+  authenticated physical-device QA. See the current EXPO.md receipt; no OTA/store release.
 - [x] V.9 website layout/navigation consolidation deployed: Revise, Desk toolbox,
   Chronicle date views, one Play grid, one Quick find and Inbox. Six frontend
   scripts pass, including 10 redirect cases and 111 navigation destinations;

@@ -279,3 +279,14 @@ def test_tag_only_absent_provenance_does_not_mask_an_answer():
     canonical.update(answer_text='Unexpected answer',answer_source='none')
     result=publication_mismatches(expected,expected,canonical,True,{'classification':{'subject_id':'english'}})
     assert 'canonical.answer_source' in result and 'canonical.answer_text' in result
+
+
+@pytest.mark.parametrize('patch,accepted',[
+    ({'options':['True','False']},True),
+    ({'sourceDefect':None,'disputeNote':'Cleared obsolete duplicate flag'},True),
+    ({'options':['True','False'],'explanation':'Not allowed'},False),
+])
+def test_unanswered_option_and_defect_restoration_accepts_absent_provenance(patch,accepted):
+    expected,canonical=example();expected.update(answerIndex=None,answerSource=None)
+    canonical.update(answer_text=None,answer_source='none',source_defect=None)
+    assert ('canonical.answer_source' not in publication_mismatches(expected,expected,canonical,True,patch))==accepted

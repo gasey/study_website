@@ -9,9 +9,9 @@ import {
   type EventKind,
 } from "../lib/calendar";
 const INPUT =
-  "min-h-11 w-full rounded-[6px] border border-[#CFC5B2] bg-[#FBF8F1] px-3 py-2 text-[13px]";
+  "min-h-11 w-full rounded-[6px] border border-[#CFC5B2] bg-[#FBF8F1] px-3 py-2 text-sm";
 const BTN =
-  "min-h-11 rounded-pill border border-hairline px-4 py-2 text-[13px] font-semibold disabled:opacity-40";
+  "min-h-11 rounded-pill border border-hairline px-4 py-2 text-sm font-semibold disabled:opacity-40";
 type Draft = Pick<
   CalendarEvent,
   | "title"
@@ -146,14 +146,14 @@ export default function CalendarAdmin() {
   return (
     <section>
       <div className="flex flex-wrap items-center justify-between gap-3">
-        <h2 className="font-display text-[30px]">
+        <h2 className="font-display text-2xl">
           Calendar & official notices
         </h2>
-        <Link to="/calendar" className="text-[13px] text-link underline">
+        <Link to="/calendar" className="text-sm text-link underline">
           Public calendar →
         </Link>
       </div>
-      <p className="mt-2 max-w-3xl text-[14px] leading-relaxed text-secondary">
+      <p className="mt-2 max-w-3xl text-sm leading-relaxed text-secondary">
         Check the exact official source before publishing. Record revisions and
         withdrawals here; inbox subscribers receive updates. Calendar dates are
         all-day, so include exact closing/reporting times in the summary when
@@ -199,17 +199,17 @@ export default function CalendarAdmin() {
                 }
                 onClick={() => edit(e)}
               >
-                <span className="block text-[11px] uppercase text-muted">
+                <span className="block text-xs uppercase text-muted">
                   {e.state} · v{e.version} · {e.starts_on || "No date"}
                 </span>
-                <span className="mt-1 block text-[14px] font-semibold">
+                <span className="mt-1 block text-sm font-semibold">
                   {e.title}
                 </span>
               </button>
             ))
           )}
           {!loading && !items.length && (
-            <p className="text-[13px] text-muted">No entries yet.</p>
+            <p className="text-sm text-muted">No entries yet.</p>
           )}
           <div className="flex justify-between gap-2">
             <button
@@ -233,10 +233,10 @@ export default function CalendarAdmin() {
           className="rounded-[10px] border border-hairline bg-card p-5"
         >
           <fieldset disabled={busy} className="grid gap-4">
-            <legend className="mb-4 font-display text-[24px]">
+            <legend className="mb-4 font-display text-xl">
               {id ? "Edit notice · v" + version : "New draft"}
             </legend>
-            <label className="text-[13px]">
+            <label className="text-sm">
               Title
               <input
                 required
@@ -248,7 +248,7 @@ export default function CalendarAdmin() {
               />
             </label>
             <div className="grid gap-3 sm:grid-cols-2">
-              <label className="text-[13px]">
+              <label className="text-sm">
                 Type
                 <select
                   className={INPUT}
@@ -262,7 +262,7 @@ export default function CalendarAdmin() {
                   ))}
                 </select>
               </label>
-              <label className="text-[13px]">
+              <label className="text-sm">
                 Related exam
                 <select
                   className={INPUT}
@@ -277,7 +277,7 @@ export default function CalendarAdmin() {
                   ))}
                 </select>
               </label>
-              <label className="text-[13px]">
+              <label className="text-sm">
                 Start / event date
                 <input
                   type="date"
@@ -287,7 +287,7 @@ export default function CalendarAdmin() {
                   onChange={(e) => field("starts_on", e.target.value)}
                 />
               </label>
-              <label className="text-[13px]">
+              <label className="text-sm">
                 End date (optional, inclusive)
                 <input
                   type="date"
@@ -298,7 +298,7 @@ export default function CalendarAdmin() {
                 />
               </label>
             </div>
-            <label className="text-[13px]">
+            <label className="text-sm">
               Summary & instructions
               <textarea
                 maxLength={3000}
@@ -308,7 +308,7 @@ export default function CalendarAdmin() {
                 onChange={(e) => field("summary", e.target.value)}
               />
             </label>
-            <label className="text-[13px]">
+            <label className="text-sm">
               Official source URL
               <input
                 type="url"
@@ -320,7 +320,7 @@ export default function CalendarAdmin() {
                 onChange={(e) => field("source_url", e.target.value)}
               />
             </label>
-            <label className="text-[13px]">
+            <label className="text-sm">
               Notice / advertisement reference
               <input
                 required
@@ -331,7 +331,7 @@ export default function CalendarAdmin() {
                 onChange={(e) => field("source_reference", e.target.value)}
               />
             </label>
-            <label className="text-[13px]">
+            <label className="text-sm">
               What was verified?
               <textarea
                 required
@@ -344,7 +344,7 @@ export default function CalendarAdmin() {
               />
             </label>
             <div className="grid gap-3 sm:grid-cols-2">
-              <label className="text-[13px]">
+              <label className="text-sm">
                 Verified on
                 <input
                   type="date"
@@ -355,7 +355,7 @@ export default function CalendarAdmin() {
                   onChange={(e) => field("verified_on", e.target.value)}
                 />
               </label>
-              <label className="text-[13px]">
+              <label className="text-sm">
                 Publication state
                 <select
                   className={INPUT}
@@ -372,7 +372,7 @@ export default function CalendarAdmin() {
                 </select>
               </label>
             </div>
-            <label className="text-[13px]">
+            <label className="text-sm">
               Reason for this revision
               <textarea
                 required
@@ -394,7 +394,7 @@ export default function CalendarAdmin() {
               {history.map((h) => (
                 <p
                   key={h.version}
-                  className="mt-2 text-[12px] leading-relaxed text-secondary"
+                  className="mt-2 text-xs leading-relaxed text-secondary"
                 >
                   v{h.version} ·{" "}
                   {new Date(h.created_at).toLocaleString("en-IN")} · {h.reason}

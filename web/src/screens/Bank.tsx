@@ -8,6 +8,7 @@ import FilterRail, { type Filters } from '../components/FilterRail'
 import {powerFilterQuery} from '../lib/publicBrowse'
 import {currentExamScope} from '../lib/examScope'
 import QuestionCard from '../components/QuestionCard'
+import { useSelectionTray } from '../lib/selectionTray'
 import { listQuestions, prefetchQuestionPage, listTaxonomy, listCollections, type Collection, type QuestionPage, type TaxonomyFacet } from '../lib/api'
 
 const PAGE = 25
@@ -19,8 +20,10 @@ const COVERAGE_YEARS = 6
 
 export default function Bank() {
   const [params,setParams]=useSearchParams()
+  const tray=useSelectionTray()
   const query=params.get('q')||'',search=query.trim(),collectionId=params.get('collection_id')||'',paperId=params.get('paper_id')||'',paperLabel=params.get('paper_label')||''
-  const pool=(['all','scorable','practice'].includes(params.get('pool')||'')?params.get('pool'):'all') as 'all'|'scorable'|'practice'
+  const writtenMode=params.get('mode')==='written'
+  const pool=(writtenMode?'all':['all','scorable','practice'].includes(params.get('pool')||'')?params.get('pool'):'all') as 'all'|'scorable'|'practice'
   const order=(['repeated','mixed','paper'].includes(params.get('order')||'')?params.get('order'):'repeated') as 'repeated'|'mixed'|'paper'
   const filters:Filters={sources:params.getAll('source').filter((s):s is Filters['sources'][number]=>SOURCES.some(v=>v===s)),yearFrom:params.get('year_from')||'',yearTo:params.get('year_to')||'',subjectId:params.get('subject_id')||'',topicId:params.get('topic_id')||''}
   const page=pageNumber(params.get('page')),offset=(page-1)*PAGE
@@ -28,7 +31,6 @@ export default function Bank() {
   const [data,setData]=useState<QuestionPage|null>(null),[error,setError]=useState<string|null>(null),[loading,setLoading]=useState(true),[retryKey,setRetryKey]=useState(0)
   const setFilters=(next:Filters)=>setParams(previous=>{const n=new URLSearchParams(previous);for(const k of ['source','year_from','year_to','subject_id','topic_id','page'])n.delete(k);next.sources.forEach(v=>n.append('source',v));for(const [k,v]of Object.entries({year_from:next.yearFrom,year_to:next.yearTo,subject_id:next.subjectId,topic_id:next.topicId}))if(v)n.set(k,v);return n},{replace:true})
   const setQuery=(value:string)=>setParams(previous=>{const n=new URLSearchParams(previous);if(value)n.set('q',value);else n.delete('q');n.delete('page');return n},{replace:true})
-  const changePool=(value:typeof pool)=>setParams(previous=>{const n=new URLSearchParams(previous);n.set('pool',value);n.delete('page');if(value==='scorable'){const kept=n.getAll('source').filter(v=>v==='official'||v==='key');n.delete('source');kept.forEach(v=>n.append('source',v))}return n},{replace:true})
   const goPage=(value:number)=>{setParams(previous=>{const n=new URLSearchParams(previous);if(value>1)n.set('page',String(value));else n.delete('page');return n});requestAnimationFrame(()=>scrollToResults('bank-results'))}
   useEffect(()=>{let live=true;listTaxonomy(pool,true).then(v=>{if(live)setTaxonomy(v)}).catch(()=>{if(live)setTaxonomy([])});return()=>{live=false}},[pool])
   const sourceKey=filters.sources.join(',')
@@ -47,10 +49,9 @@ export default function Bank() {
     return()=>{live=false;if(timer!==undefined)window.clearTimeout(timer)}
   },[key,settledKey,offset,retryKey])
   useEffect(()=>{const refresh=()=>setRetryKey(v=>v+1);window.addEventListener('ism-auth-change',refresh);window.addEventListener('ism-content-change',refresh);return()=>{window.removeEventListener('ism-auth-change',refresh);window.removeEventListener('ism-content-change',refresh)}},[])
-  // Selection drives the reference's dark action bar. Kept in the screen, not the
-  // URL: it is a scratch list, and sharing a link should not share someone's picks.
-  const [selected,setSelected]=useState<string[]>([])
-  const toggleSelected=(qid:string)=>setSelected(previous=>previous.includes(qid)?previous.filter(v=>v!==qid):[...previous,qid])
+  // Selection persists across navigation in the site-wide selection tray (§VII.10.2).
+  const selected=tray.ids
+  const toggleSelected=(qid:string)=>tray.toggle(qid)
   const setOrder=(value:typeof order)=>setParams(previous=>{const n=new URLSearchParams(previous);if(value==='repeated')n.delete('order');else n.set('order',value);n.delete('page');return n},{replace:true})
   const [collections,setCollections]=useState<Collection[]>([])
   useEffect(()=>{let live=true;listCollections().then(v=>{if(live)setCollections(v)}).catch(()=>{if(live)setCollections([])});return()=>{live=false}},[])
@@ -116,7 +117,7 @@ export default function Bank() {
         </div>
       </header>
       {query.trim().length === 1 && (
-        <p className="text-[12px] text-muted">Enter at least two characters to search.</p>
+        <p className="text-xs text-muted">Enter at least two characters to search.</p>
       )}
 
       {/* Reference frame: filter rail, results, coverage rail. */}
@@ -130,17 +131,15 @@ export default function Bank() {
 
         <section id="bank-results" tabIndex={-1} className="finna-bank-results scroll-mt-28 focus:outline-none">
           <div className="finna-segments" role="group" aria-label="Question pool">
-            {(
-              [
-                ['all', 'All questions'],
-                ['scorable', 'Official answer keys'],
-                ['practice', 'All answered'],
-              ] as const
-            ).map(([k, label]) => (
-              <button key={k} type="button" onClick={() => changePool(k)} aria-pressed={pool === k}>
-                {label}
-              </button>
-            ))}
+            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'all'}>
+              All questions
+            </button>
+            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.delete('mode');n.set('pool','practice');n.delete('page');return n},{replace:true})} aria-pressed={!writtenMode && pool === 'practice'}>
+              With answers
+            </button>
+            <button type="button" onClick={() => setParams(prev=>{const n=new URLSearchParams(prev);n.set('mode','written');n.set('pool','all');n.delete('page');return n},{replace:true})} aria-pressed={writtenMode}>
+              Written answers
+            </button>
           </div>
 
           <div className="finna-bank-toolbar">
@@ -148,7 +147,7 @@ export default function Bank() {
               {loading ? 'Loading…' : `${total.toLocaleString('en-IN')} questions`}
             </span>
             {hasFilters && (
-              <button type="button" onClick={clearFilters} className="min-h-11 rounded-pill px-2 text-[13px] font-semibold text-link hover:underline">
+              <button type="button" onClick={clearFilters} className="min-h-11 rounded-pill px-2 text-sm font-semibold text-link hover:underline">
                 Clear filters
               </button>
             )}
@@ -165,8 +164,8 @@ export default function Bank() {
             <div className="finna-bank-selbar">
               <strong>{selected.length} selected</strong>
               <div>
-                <Link to={`/tests/make?${new URLSearchParams(selected.map((qid) => ['ids', qid]))}`} className="finna-bank-make">Make a test</Link>
-                <button type="button" onClick={() => setSelected([])} className="finna-bank-clear">Clear</button>
+                <Link to={tray.buildHref} className="finna-bank-make">Make a test</Link>
+                <button type="button" onClick={() => tray.clear()} className="finna-bank-clear">Clear</button>
               </div>
             </div>
           )}
@@ -179,26 +178,25 @@ export default function Bank() {
             {loading ? 'Loading questions' : error ? 'Could not load questions' : `${total.toLocaleString('en-IN')} questions found`}
           </div>
 
-          <p className="mt-3 text-[13px] text-muted">
-            {pool === 'all' ? (
-              <>All published questions, including those without an answer key. Unkeyed questions are browse-only.</>
+          <p className="mt-3 text-sm text-muted">
+            {writtenMode ? (
+              <>Descriptive and written-response prompts from past papers. Read the instructions and save a private draft on any prompt.</>
+            ) : pool === 'all' ? (
+              <>All published questions, including those without an answer key yet.</>
             ) : pool === 'scorable' ? (
-              <>Official and transcribed keys only. Scored mocks use this pool.</>
+              <>Questions with an official answer key.</>
             ) : (
-              <>
-                Includes worked solutions and <span className="text-attention-dark">unverified</span> answers
-                for practice. This pool is never scored.
-              </>
+              <>Questions with an official key or a worked solution.</>
             )}
           </p>
 
           {error && (
             <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-[14px] border border-mypick bg-mypick-soft p-4 text-mypick" role="alert">
               <div>
-              <span className="font-mono text-[11px] uppercase tracking-[0.06em]">Error</span>
-              <p className="mt-1 text-[14px]">{error}</p>
+              <span className="font-mono text-xs uppercase tracking-[0.06em]">Error</span>
+              <p className="mt-1 text-sm">{error}</p>
               </div>
-              <button type="button" onClick={() => setRetryKey((n) => n + 1)} className="min-h-11 rounded-pill border border-mypick px-4 py-2 text-[13px] font-semibold hover:bg-white/50">
+              <button type="button" onClick={() => setRetryKey((n) => n + 1)} className="min-h-11 rounded-pill border border-mypick px-4 py-2 text-sm font-semibold hover:bg-white/50">
                 Try again
               </button>
             </div>
@@ -218,7 +216,7 @@ export default function Bank() {
                   </div>
                 ))}
               </div>
-            ) : !error && data?.items.map((q,index) => (
+            ) : !error && (writtenMode ? data?.items.filter((q) => q.type === 'descriptive') : data?.items)?.map((q,index,visibleItems) => (
               <div key={q.id} className="finna-bank-row">
                 <button
                   type="button"
@@ -229,14 +227,14 @@ export default function Bank() {
                 >
                   {selected.includes(q.id) ? '✓' : ''}
                 </button>
-                <QuestionCard q={q} onNext={()=>{const next=data.items[index+1];if(next)document.getElementById('question-'+next.id)?.scrollIntoView({block:'start',behavior:'smooth'});else if(page<pages){setParams(previous=>{const next=new URLSearchParams(previous);next.set('page',String(page+1));return next});requestAnimationFrame(()=>scrollToResults('bank-results'))}}} />
+                <QuestionCard q={q} onNext={()=>{const next=visibleItems[index+1];if(next)document.getElementById('question-'+next.id)?.scrollIntoView({block:'start',behavior:'smooth'});else if(page<pages){setParams(previous=>{const next=new URLSearchParams(previous);next.set('page',String(page+1));return next});requestAnimationFrame(()=>scrollToResults('bank-results'))}}} />
               </div>
             ))}
             {!loading && !error && data?.items.length === 0 && (
               <div className="rounded-[14px] border border-hairline bg-card p-7 text-center">
-                <h2 className="font-display text-[23px] font-medium">No questions found</h2>
-                <p className="mt-2 text-[14px] leading-relaxed text-secondary">Try a different search or remove one of the filters.</p>
-                {hasFilters && <button type="button" onClick={clearFilters} className="mt-4 min-h-11 rounded-pill bg-ink px-5 py-2 text-[13px] font-semibold text-paper">Clear filters</button>}
+                <h2 className="font-display text-lg font-medium">No questions found</h2>
+                <p className="mt-2 text-sm leading-relaxed text-secondary">Try a different search or remove one of the filters.</p>
+                {hasFilters && <button type="button" onClick={clearFilters} className="mt-4 min-h-11 rounded-pill bg-ink px-5 py-2 text-sm font-semibold text-paper">Clear filters</button>}
               </div>
             )}
           </div>
@@ -255,12 +253,12 @@ export default function Bank() {
         <aside className="finna-bank-rail">
           <section className="finna-card">
             <h2>Coverage by year</h2>
-            <p className="mt-1 text-[12px] text-muted">Questions matching the current filters.</p>
+            <p className="mt-1 text-xs text-muted">Questions matching the current filters.</p>
             <div className="mt-3 grid gap-2.5">
-              {coverageRestricted ? <p className="text-[13px] text-muted">Year coverage is shown with basic filters. Background counts never use your combined-search allowance.</p> : coverage.length === 0 ? (
-                <p className="text-[13px] text-muted">Counting…</p>
+              {coverageRestricted ? <p className="text-sm text-muted">Year coverage is shown with basic filters. Background counts never use your combined-search allowance.</p> : coverage.length === 0 ? (
+                <p className="text-sm text-muted">Counting…</p>
               ) : coverage.every((c) => c.n === 0) ? (
-                <p className="text-[13px] text-muted">No questions in the last {COVERAGE_YEARS} years for these filters.</p>
+                <p className="text-sm text-muted">No questions in the last {COVERAGE_YEARS} years for these filters.</p>
               ) : (
                 coverage.map((c) => (
                   <div key={c.year} className="finna-bank-coverage">

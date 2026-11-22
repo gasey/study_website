@@ -70,7 +70,7 @@ async def my_today(user:Annotated[str,Depends(current_user)],request:Request):
     from ..services.curated_sessions import supports_words
     from ..services.curated_release import enabled
     async with cursor() as cur:
-        return await compose(cur,user,include_curated=supports_words(request) and enabled())
+        return await compose(cur,user,include_curated=supports_words(request) and enabled(),include_atlas=not bool(getattr(request.state,'mobile_session',None)))
 
 
 @router.patch('/api/me/focus-subjects')

@@ -2,7 +2,7 @@ import {useEffect,useRef,useState} from 'react'
 import {getDocument,GlobalWorkerOptions,version,type PDFDocumentProxy} from 'pdfjs-dist'
 import workerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 GlobalWorkerOptions.workerSrc=workerUrl
-const CONTROL='min-h-11 rounded-[6px] border border-hairline bg-card px-3 py-2 text-[12px] disabled:opacity-40'
+const CONTROL='min-h-11 rounded-[6px] border border-hairline bg-card px-3 py-2 text-xs disabled:opacity-40'
 
 /** Lazy, same-origin PDF rendering; no browser PDF plug-in or third-party upload. */
 export default function PaperPdf({url,questionPage,questionId}:{url:string;questionPage:number|null;questionId:string}){
@@ -47,12 +47,12 @@ export default function PaperPdf({url,questionPage,questionId}:{url:string;quest
  const actual=document?Math.max(1,Math.min(page,document.numPages)):page
  function turn(next:number){setPage(next);setDraft(String(next))}
  return <div>
-  <div className="mb-2 flex flex-wrap items-center gap-2"><button type="button" aria-label="Previous PDF page" disabled={!document||actual<=1} onClick={()=>turn(actual-1)} className={CONTROL}>←</button><form onSubmit={e=>{e.preventDefault();const next=Number(draft);if(document&&Number.isInteger(next)&&next>=1&&next<=document.numPages)turn(next)}} className="flex items-center gap-2"><label className="text-[12px]">Page <input aria-label="PDF page number" type="number" min={1} max={document?.numPages||1} required value={draft} onChange={e=>setDraft(e.target.value)} className={CONTROL+' w-16'}/></label><span className="text-[12px]">/ {document?.numPages||'…'}</span><button disabled={!document} className={CONTROL}>Go</button></form><button type="button" aria-label="Next PDF page" disabled={!document||actual>=document.numPages} onClick={()=>turn(actual+1)} className={CONTROL}>→</button><label className="text-[12px]">Zoom <select aria-label="PDF zoom" value={zoom} onChange={e=>setZoom(Number(e.target.value))} className={CONTROL}><option value={1}>Fit width</option><option value={1.5}>150%</option><option value={2}>200%</option></select></label></div>
-  {questionPage&&actual!==questionPage&&<button type="button" onClick={()=>turn(questionPage)} className="mb-2 min-h-11 text-[12px] text-link underline">Return to question page {questionPage}</button>}
-  {document&&page>document.numPages&&<p role="alert" className="mb-2 text-[12px] text-mypick">The recorded page is beyond this PDF’s {document.numPages} pages. Showing its last page; check the source mapping.</p>}
-  {error&&<p role="alert" className="mb-2 text-[12px] text-mypick">{error} <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry PDF</button></p>}
+  <div className="mb-2 flex flex-wrap items-center gap-2"><button type="button" aria-label="Previous PDF page" disabled={!document||actual<=1} onClick={()=>turn(actual-1)} className={CONTROL}>←</button><form onSubmit={e=>{e.preventDefault();const next=Number(draft);if(document&&Number.isInteger(next)&&next>=1&&next<=document.numPages)turn(next)}} className="flex items-center gap-2"><label className="text-xs">Page <input aria-label="PDF page number" type="number" min={1} max={document?.numPages||1} required value={draft} onChange={e=>setDraft(e.target.value)} className={CONTROL+' w-16'}/></label><span className="text-xs">/ {document?.numPages||'…'}</span><button disabled={!document} className={CONTROL}>Go</button></form><button type="button" aria-label="Next PDF page" disabled={!document||actual>=document.numPages} onClick={()=>turn(actual+1)} className={CONTROL}>→</button><label className="text-xs">Zoom <select aria-label="PDF zoom" value={zoom} onChange={e=>setZoom(Number(e.target.value))} className={CONTROL}><option value={1}>Fit width</option><option value={1.5}>150%</option><option value={2}>200%</option></select></label></div>
+  {questionPage&&actual!==questionPage&&<button type="button" onClick={()=>turn(questionPage)} className="mb-2 min-h-11 text-xs text-link underline">Return to question page {questionPage}</button>}
+  {document&&page>document.numPages&&<p role="alert" className="mb-2 text-xs text-mypick">The recorded page is beyond this PDF’s {document.numPages} pages. Showing its last page; check the source mapping.</p>}
+  {error&&<p role="alert" className="mb-2 text-xs text-mypick">{error} <button type="button" onClick={()=>setRetry(n=>n+1)} className="min-h-11 underline">Retry PDF</button></p>}
   <div ref={frame} aria-busy={loading} className="max-h-[65vh] min-h-40 overflow-auto rounded-[8px] border border-hairline bg-[#dedbd4] p-2">
-   {loading&&<p role="status" className="p-4 text-[13px]">Rendering original PDF page…</p>}
+   {loading&&<p role="status" className="p-4 text-sm">Rendering original PDF page…</p>}
    <div ref={host}/>
   </div>
  </div>

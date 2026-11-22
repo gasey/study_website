@@ -2,6 +2,7 @@
 export type AdminGrant={role:string;subject_id:string|null}
 export const ADMIN_SECTIONS=[
  ['overview','Overview','daily','staff','See coverage, recorded work and what to fill or correct next.'],
+ ['edit','Authoring console','daily','staff','Keyboard-first queue for fast tagging, context currency, voice edits and conflicts.'],
  ['questions','Questions','daily','staff','Find a question, inspect its source and record a reviewed decision.'],
  ['organization','Modules & schemes','daily','inventory','Reuse sources, manage current and legacy schemes, and check original-paper readiness.'],
  ['current-affairs','Current affairs connections','review','staff','Link historical questions to independently reviewed dated facts and later papers.'],
@@ -23,6 +24,16 @@ export const ADMIN_SECTIONS=[
  ['users','Account viewer','system','owner','Find account, access, study, economy and community summaries.'],
  ['rewards','Rewards & accounts','system','owner','Manage monthly prices, extra Pro days, reward receipts and account events.'],
  ['people','People & permissions','system','owner','Manage explicitly granted staff roles and subject access.'],
+ ['privacy','Privacy requests','system','owner','Review and resolve owned account privacy and correction requests.'],
+ ['moderation','Community moderation','community','owner','Inspect reported posts, profiles and community flags.'],
+ ['atlas','Atlas studio','sources','owner','Edit Atlas geography chapters, drafts and topic bindings.'],
+ ['workbench','Paper workbench','sources','owner','Inspect parsed papers and publish guarded paper packages.'],
+ ['editorial','Editorial review','review','staff','Work through assigned editorial review queues and tag cleanup.'],
+ ['learning','Learning collections','community','owner','Manage curated practice sets and learning catalog items.'],
+ ['discovery','Practice discovery','system','owner','Tune discovery pools and practice visibility.'],
+ ['topic-trail','Topic Trail admin','community','owner','Manage Topic Trail routes and nodes.'],
+ ['mcq-solver','MCQ solver drafts','review','owner','Inspect staged AI solver drafts before human review.'],
+ ['ca-automation','Current affairs automation','sources','owner','Review staged YouTube and news current-affairs candidates.'],
  ['audit','Audit history','system','owner','Inspect recorded admin actions and their reasons.'],
  ['modules','Module comparisons','reference','owner','Use module comparisons as evidence for bank corrections.'],
  ['taxonomy','Taxonomy reference','reference','staff','Browse the registered subject, topic and subtopic hierarchy.'],
@@ -40,7 +51,7 @@ export function canOpenAdminTab(tab:string,grants:readonly AdminGrant[]){
 export function adminNavigation(grants:readonly AdminGrant[]){
  const owner=grants.some(g=>g.role==='owner')
  const entries=ADMIN_SECTIONS.filter(s=>canOpenAdminTab(s[0],grants))
- const primary=entries.filter(s=>['overview','questions','exams','organization','publications'].includes(s[0])||(!owner&&s[0]==='review'))
+ const primary=entries.filter(s=>['overview','edit','questions','exams','organization','publications'].includes(s[0])||(!owner&&s[0]==='review'))
  return {primary,more:entries.filter(s=>!primary.includes(s))}
 }
 export function adminTabHref(tab:string){if(tab==='ops'||tab==='users')return '/admin/'+tab;return '/admin/bank?'+new URLSearchParams({tab,...tab==='questions'?{answer_status:'needs-review'}:{}})}

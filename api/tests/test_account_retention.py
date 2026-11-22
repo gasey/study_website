@@ -28,7 +28,7 @@ def startup(client):
 
 def guest(conn,*,expires='19 months',adopted=False):
     uid='guest_'+uuid4().hex
-    conn.execute("INSERT INTO users(id,handle,created_at) VALUES(%s,%s,now()-interval '25 months')",(uid,uid))
+    conn.execute("INSERT INTO users(id,handle,created_at) VALUES(%s,%s,now()-interval '25 months')",(uid,'guest-'+uid[6:22]))
     conn.execute("INSERT INTO guest_credentials(user_id,token_hash,created_at,expires_at,adopted_by,adopted_at) VALUES(%s,%s,now()-interval '25 months',now()-%s::interval,%s,CASE WHEN %s THEN now() ELSE NULL END)",(uid,hashlib.sha256(uid.encode()).hexdigest(),expires,'author' if adopted else None,adopted))
     return uid
 
@@ -121,10 +121,23 @@ def test_protected_old_guests_do_not_starve_empty_candidates(client,database):
 def test_non_id_and_composite_user_foreign_keys_preserve_exact_accounts(client,database):
     conn=database[1];by_handle=guest(conn);composite=guest(conn);empty=guest(conn)
     conn.execute('CREATE TABLE future_guest_handles(author_handle text REFERENCES users(handle) ON DELETE CASCADE)')
-    conn.execute('INSERT INTO future_guest_handles VALUES(%s)',(by_handle,))
+    conn.execute('INSERT INTO future_guest_handles SELECT handle FROM users WHERE id=%s',(by_handle,))
     conn.execute('ALTER TABLE users ADD UNIQUE(id,identity_version)')
     conn.execute('CREATE TABLE future_guest_versions(uid text,v integer,FOREIGN KEY(uid,v) REFERENCES users(id,identity_version) ON DELETE CASCADE)')
     conn.execute('INSERT INTO future_guest_versions SELECT id,identity_version FROM users WHERE id=%s',(composite,))
     assert run(client,account_retention.sweep)['guests']==1
     assert not conn.execute('SELECT 1 FROM users WHERE id=%s',(empty,)).fetchone()
     for uid in (by_handle,composite):assert conn.execute('SELECT 1 FROM users WHERE id=%s',(uid,)).fetchone()
+
+
+@pytest.mark.parametrize('field,value',[
+ ('plan_code',"'pro'"),('plan_status',"'active'"),('trial_ends_at',"now()-interval '2 years'"),
+ ('plan_ends_at',"now()-interval '2 years'"),('razorpay_subscription_id',"'legacy-provider-reference'"),
+ ('password_hash',"'legacy-credential'"),('email_verified_at',"now()-interval '2 years'"),
+ ('name',"'Saved guest name'"),('avatar',"'{}'::jsonb"),('level','2'),('avatar_version','1'),('identity_version','1')])
+def test_inline_financial_credential_and_profile_state_is_not_empty(client,database,field,value):
+    conn=database[1];uid=guest(conn)
+    # Identifiers/values are a fixed test matrix, never request-supplied SQL.
+    conn.execute('UPDATE users SET '+field+'='+value+' WHERE id=%s',(uid,))
+    run(client,account_retention.sweep)
+    assert conn.execute('SELECT 1 FROM users WHERE id=%s',(uid,)).fetchone()

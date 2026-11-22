@@ -1,5 +1,16 @@
 # Oracle paper workbench and bank authority
 
+## Current collection-performance recovery — 20 November 2026 IST
+
+The empty-pins release changes only `app/routers/collections.py` and matching
+`app/data/learning-economy-v2.json`. Current root-only backup: `/root/finna-empty-pins-backup-c8_khz6p`.
+On Oracle, `sudo python3 /root/finna-empty-pins-backup-c8_khz6p/deploy.py --restore /root/finna-empty-pins-backup-c8_khz6p` validates the
+released API/static/configuration/schema history and both prior preimages, then
+restores the pair and restarts/health-checks only `ism-api`. It refuses newer drift
+before stopping services. It preserves all database, mail, learner and payment history.
+Recovery tests pass; production recovery has not been invoked. Never replay this
+or older frozen deployment targets. Receipt: `reports/finna-empty-pins-20261120/README.md`.
+
 Implemented 3 November 2026. This runbook supersedes the earlier local-publisher location. Workflow ownership remains unchanged: JSON owns exam content; PostgreSQL owns accounts, attempts, review decisions and workflow history.
 
 ## Everyday work
@@ -401,3 +412,265 @@ was not invoked. Final248-table clone and actual-mpsc reads pass;ledger46→46,
 bothsites200. No SQL migration;0109immutable,next0110.68economy-bound sources
 and13collector/unit paths unchanged. Mail/checkout stay off. Retention/site notice,
 monthly restore receipt and the actual seven-day-green gate remain separate work.
+
+
+## V.12 monthly maintenance checklist (deployed, 18 November 2026)
+
+The monthly checklist is run by a human and receipted in DEVLOG. The dashboard
+and agent audits supply evidence; neither substitutes for human sign-off. Check:
+actual paired restore, dependency/CVE reports, TLS and **both** sites, slow-query
+history, economy diagnostics, moderation backlog, disk/log rotation and every
+worker/collector. Missing data and open advisories stay open. The18November
+agent-assisted audit is reports/finnaplan-v12-maintenance-20261118/MONTHLY-CHECKLIST.md;
+its slow-query review is unavailable because duration logging is disabled and
+its dependency reports contain findings. No whole-checklist/green-week claim.
+
+The source-bound actual paired restore already completed against the17November
+backup (232archived tables/124944files). It used an isolated database and private
+files, compared the restored bank checksum under read-only mpsc, then removed
+temporary resources before writing the actual operational receipt. This does not
+certify current248-table migration contents, offsite storage or original source
+PDF completeness. Failed restores preserve last success and expose attention.
+The maintenance release installed the verified tool; use:
+`sudo /srv/api/.venv/bin/python /srv/api/restore-rehearsal.py --run`.
+The tool checks disk headroom and holds a private lock, never switches databases,
+promotes bank files, starts publishers or overwrites source assets. Receipts live
+in /srv/study/backups/restore-rehearsals; the dashboard warns at40days.
+
+Hourly account retention uses500-row transient batches/20empty guests,
+5s statements/1s lock waits and real count heartbeats. Current credentials remain;
+expired credential creation times survive as account activity metadata, with no
+cleanup-time fabricated activity. Durable attempts, reward/billing/adoption/replay
+receipts never expire. Generated guest credentials must have expired over12months
+ago; registered/closed/non-default/profile/access state or linked data protects
+the account, including alternate/composite/future FKs and legacy actor IDs.
+
+The owner site notice is plain text in Operations, optional expiry explicitly in
+IST. Owner/MFA/CSRF/version checks and immutable owner account events apply.
+Reload on a version conflict; Clear hides the banner and keeps audit history.
+Public web pages refresh each minute and at expiry. These notice/admin endpoints
+remain outside the native allowlist and advertised capabilities; old apps get403,
+with explicit test_mobile_companion coverage. No device certification is implied.
+
+Release target finnaplan-v12-maintenance is frozen and installed; never replay it.
+Backup /root/finna-v12-maintenance-backup-n3jzh49v contains its exact pair and
+database safety snapshot.0110is applied/immutable; next0111. Its bounded recovery
+keeps0110 and all database history, the account viewer reader for retained activity,
+and the verified restore tool/collectors; other API/static return to their prior
+pair. Newer API/schema/static/tool/unit drift refuses recovery. Never replay an
+older frozen deployment or restore a database dump over later activity.
+
+
+## Python dependency release — 18 November 2026
+
+Reports:reports/finnaplan-v12-dependencies-20261118/. FastAPI0.163.2/Starlette1.10.0
+and three required pure-Python dependencies installed from exactly five fixed
+SHA256-bound local wheels. No Oracle network resolution or API/static/schema /
+provider/collector changes. Actual installed versions match the clean dated scan;
+npm advisories and slow-query logging are separate open findings.1324full checks,
+81focused/2supplemental recovery checks,249-table preservation and live checks pass.
+The target finnaplan-v12-dependencies is frozen; never replay it. Backup
+/root/finna-v12-dependencies-backup-afhwfwbb holds the old whole environment and
+requirements pair. Its deploy.py --restore <backup> refuses newer code/static /
+schema/environment/requirements/collector/restore-tool drift, swaps back the exact
+old environment and requirements, and preserves all database history. No production
+recovery invoked.0110remains immutable,next0111. Bothsites200;ledger46→46.
+
+
+## Slow-query logging — 18 November 2026
+
+Duration logging now uses1000ms; normal/error bind parameters are suppressed0.
+log_statement remains none; existing stderr /var/log/postgresql/postgresql-16-main.log
+mode0640 and weekly10-file rotation unchanged. The three settings in PostgreSQL16
+postgresql.auto.conf were applied with reload only; API PID and PostgreSQL start
+were unchanged. Real read-only mpsc probe1102.161ms was found with its bind canary
+absent; no raw SQL/values are exported to reports. Read private logs for monthly
+query review; collection starts today, never claim earlier records existed.
+Sources and five operator checks:reports/finnaplan-v12-query-logging-20261118/.
+Bounded target finnaplan-v12-query-logging is frozen; do not replay it. Backup
+/root/finna-v12-query-logging-backup-9_m32fsh holds the prior private auto configuration
+and operator/scope. deploy.py --restore <backup> refuses runtime/configuration /
+rotation drift, resets only those three keys and verifies the exact prior file;
+no database/history restore or service restart. Production recovery not invoked.
+Bothsites200;all8workers healthy;integrity0;ledger46→46.0110immutable,next0111.
+
+
+## Frontend build dependency release — 18 November 2026
+
+Vite6.4.6/esbuild0.25.12/selector-parser6.1.6 are local build-tool updates; browser
+runtime package versions and source markup unchanged. Runtime-only npm audit0;
+one unpatched picomatch advisory accounts for11build-graph package-chain findings.
+No blanket clean/risk acceptance claim.348built/3344served hashes,2996retained
+chunks,17route/2entry asset checks and real-mpsc verification pass. API PID/schema /
+code/environment/logging/rotation/collector files fixed;8workers healthy,bothsites200,
+ledger46→46. Exact scoped target finnaplan-v12-build-dependencies is frozen; never
+replay it. Backup /root/finna-v12-build-dependencies-backup-vjq_0cd7 holds prior
+static contents. Its deploy.py --restore <backup> refuses newer protected state,
+restores prior HTML/assets and retains new immutable chunks for already-open tabs.
+No service restart or database/history rollback; production recovery not invoked.
+Initial actual duration-log review found1operational probe+14other entries,max4.5s.
+Investigate their normalized query shapes privately; no bind values exported.
+Reports:reports/finnaplan-v12-build-dependencies-20261118/ and query-logging report.
+
+
+## Bounded question-detail lookup — 18 November 2026
+
+The observed4.5s derived-detail lookup now reuses question_readiness helpers with
+bounded reviewed-publication probes. All83,383canonical readiness/reviewed flags
+match the authoritative view; cloned derived SQL3–4ms,live five HTTPdetails19–30ms.
+Every other question-router AST node/answer writer unchanged; helper newly bound
+in the73-file evidence set.1335full/156compatibility/2supplemental recovery checks
+and final249-table preservation pass. All8workers healthy,integrity0,ledger46→46,
+bothsites200. No migration/source-key/award/visibility change;0110immutable,next0111.
+Reports:reports/finnaplan-v12-query-performance-20261118/. Frozen target
+finnaplan-v12-query-performance must never be replayed. Backup /root/finna-v12-query-performance-backup-scpanrxd contains exact prior /
+released3-file reader/evidence pair. deploy.py --restore <backup> refuses newer
+API/static/environment/schema/configuration/collector drift, restores only that
+pair, restarts only API and preserves all DB/history. No production recovery.
+Later query analysis must exclude benchmark-clone databases from primary traffic.
+Collection counts~1–1.6s are separate shapes; no all-query performance claim.
+
+## Opt-in review digest — 19 November 2026
+
+Growth-only production bundle reconstructs the552 frozen frontend source hashes
+and adds the preference component/route; Desk/Atlas remain at their prior release.
+Only0120 is applied.0110/0120 checksums are immutable,0111–0119 remain local/unapplied,
+0121 next unreserved. Default subscribers/outbox/delivery rows were0 on readback.
+API/study/family/recovery healthy; ledger46→46,25integrity counters0,76 runtime
+bindings reconcile. Natural backup/statistics jobs now have actual healthy receipts;
+that does not certify a full healthy operations week or monthly human sign-off.
+
+The initial scoped deploy used `scripts/deploy.sh review-digest --check` then
+`review-digest`; the two-file consent-throttle correction used
+`review-digest-withdrawal`. Do not replay frozen installers against newer state.
+Current root-only recovery backup: `/root/finna-digest-backup-dqul4iva`.
+For an intentional matching-scope withdrawal:
+
+```sh
+ssh ubuntu@152.67.31.231 'sudo python3 /root/finna-digest-backup-dqul4iva/deploy.py --restore /root/finna-digest-backup-dqul4iva'
+```
+
+This refuses source/static/credential drift, keeps the compatible API/shared mail
+capacity reader, retains0120 and all histories, disables only reminder sending,
+and restores the exact prior static view. The unsubscribe API survives that static
+restoration. Existing security mail stays enabled; credentials are preserved.
+Never restore the older capacity reader after digest reservations exist. No bank,
+workshop, Caddy, systemd unit or provider credentials were changed by this release.
+Read both sites and recovery availability after a deliberate restart/withdrawal.
+
+Feature availability is REVIEW_DIGEST_ENABLED in the existing private environment;
+subscriptions are separate, prospective, verified-email-bound consent records.
+Do not subscribe accounts for a test or force an evening-window send. The initial
+real recovery email was a separately approved owner test, not digest consent.
+Reports: `finna-review-digest-production-20261119` and
+`finna-review-digest-withdrawal-20261119`; exact production source archives exclude
+credentials. Actual first opted-in digest/DKIM presentation remains a natural-use
+proof, not a claim from the fake SMTP sink.
+
+
+## Referral access staging — 19 November 2026
+
+Referral access is local code behind `REFERRAL_REWARDS_ENABLED=false`, with the
+shared legal/recovery/live-checkout/reconciliation gates still required. It has
+no production deploy target. Do not deploy the entire dirty API/static tree or
+apply the draft migrations to exercise it. See [referral operation](FINNA-REFERRALS.md).
+Draft0121 is reserved;0122 is next unreserved.0111–0119 remain local drafts;
+applied0110 and0120 remain immutable. The live baseline is the digest/withdrawal
+release above. Preserve its existing source-bound recovery backup.
+
+Oracle has a legacy `postgres` default ACL granting new tables CRUD to `mpsc`.
+New feature migrations must explicitly revoke inherited excess privileges before
+adding their intended grants, and rehearse the resulting effective permissions
+on a fresh production dump clone. Draft0121 does this for all referral tables.
+Do not infer production privileges solely from a clean local test schema.
+
+Private legal-page drafts live in [FINNA-LEGAL-DRAFTS.md](FINNA-LEGAL-DRAFTS.md).
+They are unpublished and contain unresolved operator/support/refund and other
+owner decisions. They do not satisfy the legal or provider-launch gate.
+
+## Adaptive collection-count release — 19 November 2026
+
+A three-file reader/evidence release retains indexed readiness below50k IDs and
+uses authoritative bulk readiness above that threshold. Exact counts/eligibility,
+section membership/source scope/held-paper semantics, DTOs, cache policy, writers
+and all applied migrations are unchanged. Clone detail16–23% faster; subject-wise
+live HTTP7213ms remains slow. No all-query performance claim.
+1602backend tests,537/328compatibility,105/77bindings,25integrity and5recovery checks
+pass. Fresh analyzed252-table clone preserves all original values and68 outputs.
+All8workers, both sites/API/recovery healthy; ledger46→46. Static3470,source310,
+private environment/schema unchanged; no new emails or synthetic learner activity.
+Receipts:reports/finna-collection-counts-adaptive-20261119/ and
+reports/finna-collection-adaptive-production-20261119/. The collection-adaptive
+deploy target is frozen; never replay the completed release.
+
+Current paired recovery, root-only on Oracle:
+
+```sh
+ssh ubuntu@152.67.31.231 'sudo python3 /root/finna-collection-adaptive-backup-xlky5zb3/deploy.py --restore /root/finna-collection-adaptive-backup-xlky5zb3'
+```
+
+The operator guards the exact released API/static/protected configuration/schema
+history and three prior preimages before stopping API. It restores only those
+three files and restarts/health-checks the API, preserving attempts, ledger, grants,
+consent, recovery history, all tables and mail configuration. Newer unrelated drift
+refuses before service changes. Restore this pair before considering the older
+digest-withdrawal recovery; never splice evidence/source versions or roll back
+database history. Healthy-week/legal/payment/native/content/human gates stay open.
+
+
+## Subject-wise count join-order release — 19 November 2026
+
+Two-file reader/evidence pair. Only subject-wise-practice's detail transaction
+uses SET LOCAL join_collapse_limit=1; the aggregate uses prepare=False to prevent
+shared prepared plans crossing IDs. Other IDs retain default join settings. Paper/
+section reads and SQL/DTO/source/cache/scoring/writers stay unchanged. No schema,
+global setting, stats object, private/mail configuration or bank change.
+1716full tests,641/432compatibility,105/77bindings,25integrity,62proposal/5recovery
+checks pass. Fresh analyzed252-table clone preserves values and68 outputs; target
+23–40% faster. Live subject HTTP7213→4484ms; both checked payload hashes identical
+to prior release. All8workers/sites/API/recovery healthy; ledger46→46.
+Receipts:reports/finna-subject-count-order-staged-20261119/ and
+reports/finna-subject-count-order-production-20261119/.
+Do not replay the completed subject-count-order deploy target.
+
+Current root-only paired recovery:
+
+```sh
+ssh ubuntu@152.67.31.231 'sudo python3 /root/finna-subject-count-order-backup-0vhv3tic/deploy.py --restore /root/finna-subject-count-order-backup-0vhv3tic'
+```
+
+The exact source/static/protected configuration/schema-history and prior preimages
+are checked before API stops. Restore only these two files; retain all attempts,
+ledger/grants/consent/recovery/audit/database history and mail settings. Drift
+refuses before service changes; restart follows atomic-write failure. Restore this
+pair before considering older adaptive recovery. Never splice source/evidence or
+roll back database history. Actual healthy-week/legal/payment/content/native/PDF/
+human/volume gates remain; synthetic calibration is not an operations week.
+
+## Section-count investigation — 19 November 2026
+
+No release or recovery change. Planner settings and flattened taxonomy alternatives
+were rejected after two analyzed production-dump clones:72 alternative comparisons
+preserve counts/all252 original table values per clone, but performance regresses
+or gives no useful gain. Both exact clones/dumps/stages were removed. See
+reports/finna-section-count-plans-20261119/ and
+reports/finna-section-count-flat-20261119/. Current recovery stays the preceding
+subject-count-order pair at /root/finna-subject-count-order-backup-0vhv3tic.
+Never deploy the rejected probes or replay completed earlier release targets.
+
+
+## Local restore privacy preflight — 20 November 2026
+
+The installed monthly paired-restore tool above is unchanged. Successful dump/
+archive readback does not establish that old credentials, closures, restrictions
+or withdrawals are current. The local `scripts/check-restore-privacy.py --run`
+provides a separate read-only comparison against an independently current reference,
+with candidate credential/mail quarantine and immutable delivery-history comparison.
+It is not installed or integrated into the production rehearsal, never repairs
+state and always denies promotion authorization. Missing staged privacy schema is
+an error; do not run it on the current production database as a supported candidate.
+Follow [the private procedure](FINNA-PRIVACY-OPERATIONS.md#restoring-without-reopening-old-access)
+for required environment names, isolation, currentness, reconciliation and limits.
+All 107 scoped synthetic PostgreSQL/workflow checks pass; no production connection,
+new timer, backup prune, service restart, mail or payment was performed.
+[Evidence](../reports/finna-restore-privacy-preflight-20261120/README.md).

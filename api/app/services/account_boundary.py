@@ -6,7 +6,7 @@ from ..config import settings
 from .account_identity import csrf_token
 
 # Pre-auth forms use strict origin checks instead of authenticated CSRF.
-PREAUTH={'/api/auth/login','/api/auth/register','/api/auth/recovery/request','/api/auth/recovery/complete','/api/auth/email/confirm'}
+PREAUTH={'/api/auth/login','/api/auth/register','/api/auth/recovery/request','/api/auth/recovery/complete','/api/auth/reopen/complete','/api/auth/email/confirm','/api/account-privacy/declare'}
 # This endpoint is a read-only preview despite POST semantics.
 READ_POST={'/api/games/preview'}
 

@@ -17,6 +17,7 @@ SESSION_COOKIE = "ism_session"
 SESSION_DAYS = 30
 
 class Credentials(BaseModel):
+    referral_code: str | None = Field(default=None,pattern=r'^[A-Za-z0-9_-]{24}$')
     email: str = Field(max_length=254)
     password: str = Field(min_length=12, max_length=200)
     @field_validator("email")
@@ -81,6 +82,8 @@ async def register(body: Credentials, request: Request, response: Response,
                    x_device_id: Annotated[str | None, Header(alias="X-Device-Id")] = None):
     _same_origin(request)
     email = str(body.email).strip().lower()
+    from ..services.audience import require_browser, bind_adult
+    await require_browser(request)
     await _check_rate(email, request.client.host if request.client else "unknown")
     if not re.search(r"[A-Za-z]", body.password) or not re.search(r"\d", body.password):
         raise HTTPException(422, "Password must include letters and numbers")
@@ -89,8 +92,17 @@ async def register(body: Credentials, request: Request, response: Response,
     hashed = await run_in_threadpool(_hash_password,body.password)
     try:
         async with cursor() as cur:
+            from ..services.account_identity import closure_email_hash,lock_email_ownership
+            await lock_email_ownership(cur,email)
+            held_hash=closure_email_hash(email)
+            if held_hash:
+                await cur.execute('SELECT 1 FROM account_closure_recovery WHERE email_hash=%s AND expires_at>statement_timestamp()',(held_hash,))
+                if await cur.fetchone():raise HTTPException(409,'This email is reserved during its account-reopen period. Use the recovery link to restore the account.')
             await cur.execute("INSERT INTO users(id,handle,email,password_hash,role,plan_code,plan_status,trial_ends_at) VALUES (%s,%s,%s,%s,'learner','pro','trial',now()+interval '7 days')",
                               (user_id, handle, email, hashed))
+            if settings.audience_gate_enabled:await bind_adult(cur,user_id)
+            from ..services.referrals import attach_signup
+            await attach_signup(cur,user_id,body.referral_code)
     except Exception as exc:
         if "idx_users_email_lower" in str(exc) or "duplicate key" in str(exc).lower():
             raise HTTPException(409, "An account with this email already exists") from exc

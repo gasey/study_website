@@ -7,6 +7,8 @@ from fastapi import HTTPException
 from psycopg.types.json import Jsonb
 from ..db import cursor
 from .review_policy import digest
+from ..config import settings
+from . import assessment_audience
 
 POLICY='adjusted-score-v1'
 log=logging.getLogger(__name__)
@@ -97,6 +99,15 @@ def input_fingerprint(session,inputs):
 
 
 async def assess_mock(cur,mock_id,user=None):
+    if not settings.audience_gate_enabled:return await _assess_mock(cur,mock_id,user)
+    await cur.execute('SELECT user_id FROM mock_sessions WHERE id=%s AND (%s::text IS NULL OR user_id=%s)',(mock_id,user,user))
+    target=await cur.fetchone()
+    if not target:raise HTTPException(404,'Mock not found')
+    async with assessment_audience.admission(cur,target['user_id']):
+        return await _assess_mock(cur,mock_id,user)
+
+
+async def _assess_mock(cur,mock_id,user=None):
     session,inputs=await mock_inputs(cur,mock_id,user)
     adjusted=[];original=[]
     for row in inputs:
@@ -129,6 +140,15 @@ async def assess_mock(cur,mock_id,user=None):
     return {**row['payload'],'id':row['id'],'computed_at':row['created_at']}
 
 async def assess_attempt(cur,attempt_id):
+    if not settings.audience_gate_enabled:return await _assess_attempt(cur,attempt_id)
+    await cur.execute("SELECT user_id FROM attempts WHERE id=%s AND context IN ('practice','review','game')",(attempt_id,))
+    target=await cur.fetchone()
+    if not target:return
+    async with assessment_audience.admission(cur,target['user_id']):
+        return await _assess_attempt(cur,attempt_id)
+
+
+async def _assess_attempt(cur,attempt_id):
     await cur.execute('SELECT a.id AS attempt_id,a.scoring_snapshot,a.chosen_text,a.correct,'+CURRENT_COLUMNS+','+CONTEXT_SELECT+' FROM attempts a LEFT JOIN canonical_questions q ON q.id=a.canonical_id '+source_join("a.scoring_snapshot->>'appearance_id'")+' WHERE a.id=%s AND a.context IN (\'practice\',\'review\',\'game\')',(attempt_id,))
     row=await cur.fetchone()
     if not row:return
@@ -139,6 +159,24 @@ async def assess_attempt(cur,attempt_id):
       ON CONFLICT(attempt_id,input_hash,policy_version) DO NOTHING''',(attempt_id,digest(row),POLICY,Jsonb(payload)))
 
 async def process_job(cur,job=None):
+    if settings.audience_gate_enabled:
+        if job is None:
+            await cur.execute('SELECT canonical_id FROM assessment_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY requested_at,canonical_id LIMIT 10')
+            for candidate in await cur.fetchall():
+                if await process_job(cur,candidate):return True
+            return False
+        try:
+            async with cur.connection.transaction():
+                await cur.execute('SELECT * FROM assessment_jobs WHERE canonical_id=%s AND finished_at IS NULL AND failures<5 FOR UPDATE SKIP LOCKED',(job['canonical_id'],))
+                locked=await cur.fetchone()
+                if not locked:return False
+                return await _process_job(cur,locked)
+        except assessment_audience.Paused:
+            return False
+    return await _process_job(cur,job)
+
+
+async def _process_job(cur,job=None):
     if job is None:
         await cur.execute('SELECT * FROM assessment_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY requested_at LIMIT 1 FOR UPDATE SKIP LOCKED')
         job=await cur.fetchone()
@@ -156,11 +194,17 @@ async def process_job(cur,job=None):
     return True
 
 async def process_new_jobs(cur):
-    await cur.execute('SELECT * FROM new_score_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY id LIMIT 10 FOR UPDATE SKIP LOCKED')
+    await cur.execute('SELECT * FROM new_score_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY id LIMIT 10'
+                      +('' if settings.audience_gate_enabled else ' FOR UPDATE SKIP LOCKED'))
     jobs=await cur.fetchall()
     for job in jobs:
         try:
             async with cur.connection.transaction():
+                if settings.audience_gate_enabled:
+                    await cur.execute('SELECT * FROM new_score_jobs WHERE id=%s AND finished_at IS NULL AND failures<5 FOR UPDATE SKIP LOCKED',(job['id'],))
+                    locked=await cur.fetchone()
+                    if not locked:continue
+                    job=locked
                 if job['mock_id']:await assess_mock(cur,job['mock_id'])
                 elif job['attempt_id']:await assess_attempt(cur,job['attempt_id'])
                 else:
@@ -169,6 +213,9 @@ async def process_new_jobs(cur):
                     if source and source['canonical_id']:
                         await cur.execute("INSERT INTO assessment_jobs(canonical_id) VALUES (%s) ON CONFLICT(canonical_id) DO UPDATE SET requested_at=now(),mock_cursor=NULL,attempt_cursor=0,finished_at=NULL,failures=0,last_error=NULL",(source['canonical_id'],))
             await cur.execute('UPDATE new_score_jobs SET finished_at=now(),last_error=NULL WHERE id=%s',(job['id'],))
+        except assessment_audience.Paused:
+            # The job remains pending, without a failure or acknowledgement.
+            continue
         except Exception:
             await cur.execute("UPDATE new_score_jobs SET failures=failures+1,last_error='Assessment failed; operator investigation required' WHERE id=%s",(job['id'],))
     return len(jobs)
@@ -181,8 +228,15 @@ async def assessment_health(cur):
       (SELECT count(*) FROM new_score_jobs WHERE finished_at IS NULL AND failures>0) +
       (SELECT count(*) FROM question_change_events WHERE finished_at IS NULL AND failures>0) AS failed''')
     count = (await cur.fetchone())['failed']
+    detail=f'pending failed jobs={count}; inspect assessment queues' if count else 'Assessment cycle complete'
+    if settings.audience_gate_enabled:
+        await cur.execute('''SELECT
+          (SELECT count(*) FROM assessment_jobs WHERE finished_at IS NULL) +
+          (SELECT count(*) FROM new_score_jobs WHERE finished_at IS NULL) +
+          (SELECT count(*) FROM question_change_events WHERE finished_at IS NULL) AS pending''')
+        detail+=f"; pending queues={(await cur.fetchone())['pending']}; restricted/busy batches retain cursors"
     await beat(cur, 'score-reassessment', count==0,
-               f'pending failed jobs={count}; inspect assessment queues' if count else 'Assessment cycle complete')
+               detail)
 
 
 async def worker():
@@ -196,23 +250,32 @@ async def worker():
                 for _ in range(10):
                     if not await process_notices(cur):break
                 await process_new_jobs(cur)
-                await cur.execute('SELECT * FROM assessment_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY requested_at LIMIT 1 FOR UPDATE SKIP LOCKED')
-                job=await cur.fetchone()
-                if not job:
-                    await assessment_health(cur)
-                    continue
-                try:
-                    async with cur.connection.transaction():
-                        await process_job(cur,job)
-                except Exception:
-                    await cur.execute("UPDATE assessment_jobs SET failures=failures+1,last_error='Reassessment batch failed; operator investigation required' WHERE canonical_id=%s",(job['canonical_id'],))
-                    await cur.execute("UPDATE review_worker_health SET status='batch failed' WHERE worker_id='score-reassessment'")
-                    log.error('Score reassessment batch failed; persisted job retained')
+                await process_pending(cur)
                 await assessment_health(cur)
         except asyncio.CancelledError:raise
         except Exception:
             await failed('score-reassessment')
             log.error('Score reassessment worker unavailable; jobs retained')
+
+
+async def process_pending(cur):
+    limit=10 if settings.audience_gate_enabled else 1
+    await cur.execute('SELECT canonical_id FROM assessment_jobs WHERE finished_at IS NULL AND failures<5 ORDER BY requested_at,canonical_id LIMIT %s'
+                      +('' if settings.audience_gate_enabled else ' FOR UPDATE SKIP LOCKED'),(limit,))
+    for candidate in await cur.fetchall():
+        try:
+            async with cur.connection.transaction():
+                if settings.audience_gate_enabled:
+                    if await process_job(cur,candidate):return True
+                    continue
+                await cur.execute('SELECT * FROM assessment_jobs WHERE canonical_id=%s AND finished_at IS NULL AND failures<5 FOR UPDATE SKIP LOCKED',(candidate['canonical_id'],))
+                job=await cur.fetchone()
+                if job and await process_job(cur,job):return True
+        except Exception:
+            await cur.execute("UPDATE assessment_jobs SET failures=failures+1,last_error='Reassessment batch failed; operator investigation required' WHERE canonical_id=%s",(candidate['canonical_id'],))
+            await cur.execute("UPDATE review_worker_health SET status='batch failed' WHERE worker_id='score-reassessment'")
+            log.error('Score reassessment batch failed; persisted job retained')
+    return False
 
 
 def original_breakdown(rows,marks_correct,marks_wrong):

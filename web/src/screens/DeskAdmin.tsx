@@ -43,17 +43,17 @@ export default function DeskAdmin() {
   }
   return (
     <main className="mx-auto max-w-[1000px] px-6 pb-24 pt-9">
-      <Link to="/admin/bank?tab=workflow" className="text-[13px] text-link">
+      <Link to="/admin/bank?tab=workflow" className="text-sm text-link">
         ← Publishing dashboard
       </Link>
-      <h1 className="mt-3 font-display text-[36px]">Private desk reports</h1>
-      <p className="mt-2 text-[14px] leading-relaxed text-secondary">
+      <h1 className="mt-3 font-display text-3xl">Private desk reports</h1>
+      <p className="mt-2 text-sm leading-relaxed text-secondary">
         Access is limited to reported snapshots, and viewing this queue is
         audited. Private desks cannot be browsed through this console. Resolve
         with a reason; removal applies only to the exact reported item/message
         version.
       </p>
-      <label className="mt-5 block text-[13px] font-semibold">
+      <label className="mt-5 block text-sm font-semibold">
         Review reason
         <textarea
           minLength={10}
@@ -74,8 +74,8 @@ export default function DeskAdmin() {
             <p className="desk-v3-label">
               {r.target_kind} · {new Date(r.created_at).toLocaleString("en-IN")}
             </p>
-            <p className="mt-3 text-[14px]">Report: {r.reason}</p>
-            <pre className="mt-3 whitespace-pre-wrap break-words rounded-[6px] bg-paper p-3 text-[12px]">
+            <p className="mt-3 text-sm">Report: {r.reason}</p>
+            <pre className="mt-3 whitespace-pre-wrap break-words rounded-[6px] bg-paper p-3 text-xs">
               {JSON.stringify(r.snapshot, null, 2)}
             </pre>
             <div className="mt-4 flex flex-wrap gap-2">

@@ -16,17 +16,17 @@ export default function UdcSubjects() {
   const subjects = data?.subjects.filter(subject => primarySubjects.includes(subject.id)) ?? []
   return <section className="mt-6" aria-labelledby="udc-subjects-heading">
     <div className="flex flex-wrap items-end justify-between gap-2">
-      <div><h2 id="udc-subjects-heading" className="font-display text-[26px]">Study a UDC subject</h2><p className="mt-1 text-[13px] text-secondary">Practise one subject at a time using UDC past-paper questions.</p></div>
-      <Link to="/exams/udc?view=topics#exam-study-heading" className="inline-flex min-h-11 items-center text-[13px] font-semibold text-link">All subjects &amp; topics →</Link>
+      <div><h2 id="udc-subjects-heading" className="font-display text-xl">Study a UDC subject</h2><p className="mt-1 text-sm text-secondary">Practise one subject at a time using UDC past-paper questions.</p></div>
+      <Link to="/exams/udc?view=topics#exam-study-heading" className="inline-flex min-h-11 items-center text-sm font-semibold text-link">All subjects &amp; topics →</Link>
     </div>
-    {!data && !error && <p role="status" className="mt-3 text-[13px] text-muted">Loading UDC subjects…</p>}
-    {error && <p className="mt-3 text-[13px] text-secondary">Open all subjects to load the UDC topic map.</p>}
+    {!data && !error && <p role="status" className="mt-3 text-sm text-muted">Loading UDC subjects…</p>}
+    {error && <p className="mt-3 text-sm text-secondary">Open all subjects to load the UDC topic map.</p>}
     <div className="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{subjects.map(subject => <Link key={subject.id} to={`/exams/udc?view=practice&subject_id=${encodeURIComponent(subject.id)}#exam-question-browser`} className="flex min-h-11 items-center justify-between gap-3 rounded-xl border border-hairline bg-card p-4 hover:border-ink">
-      <span><strong className="text-[15px]">{subject.title}</strong><span className="mt-1 block text-[12px] text-secondary">{subject.questions.toLocaleString('en-IN')} questions in UDC papers</span></span><span aria-hidden="true">→</span>
+      <span><strong className="text-base">{subject.title}</strong><span className="mt-1 block text-xs text-secondary">{subject.questions.toLocaleString('en-IN')} questions in UDC papers</span></span><span aria-hidden="true">→</span>
     </Link>)}</div>
     <details className="mt-4 rounded-xl border border-hairline bg-card px-4">
-      <summary className="min-h-11 cursor-pointer py-3 text-[13px] font-semibold">Syllabus, written practice &amp; coverage</summary>
-      <div className="pb-4 text-[13px] leading-relaxed text-secondary">
+      <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">Syllabus, written practice &amp; coverage</summary>
+      <div className="pb-4 text-sm leading-relaxed text-secondary">
         <h3 className="font-semibold text-ink">2026 combined Assistant / UDC syllabus</h3>
         <p className="mt-2">Two papers, each 3 hours and 200 marks. Paper I has 50 General Knowledge MCQs (100 marks), 25 General English MCQs (50 marks), and written English: précis (10), essay (20) and comprehension (20).</p>
         <p className="mt-2">Paper II has 35 Basic Computer Knowledge MCQs (70 marks), 30 Simple Arithmetic MCQs (60 marks), and 35 General Intelligence &amp; Reasoning MCQs (70 marks).</p>

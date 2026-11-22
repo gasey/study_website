@@ -10,7 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field, field_validator, model_valida
 from ..config import settings
 from ..db import cursor
 from ..deps import require_account
-from ..services import owned_calendar
+from ..services import owned_calendar, audience
 from .materials import write_guard
 
 router = APIRouter()
@@ -29,6 +29,7 @@ class Entry(Strict):
     kind: Literal['personal','progress-test','exam-target'] = 'personal'
     recurrence: Literal[7,14] | None = None
     collection_id: str | None = Field(default=None, min_length=1, max_length=100)
+    desk_id: str | None = Field(default=None, min_length=1, max_length=100)
 
     @field_validator('title','note')
     @classmethod
@@ -64,12 +65,22 @@ async def save(eid: UUID, body: Entry, user: Account, request: Request):
     require_writes()
     async with cursor() as cur:
         await owner_lock(cur,user)
-        await cur.execute('SELECT user_id,version FROM calendar_entries WHERE id=%s FOR UPDATE',(eid,))
+        await cur.execute('SELECT user_id,version,desk_id,desk_joined_at FROM calendar_entries WHERE id=%s FOR UPDATE',(eid,))
         old=await cur.fetchone()
         if old and old['user_id']!=user:
             raise HTTPException(404,'Calendar entry not found')
         if (old['version'] if old else 0)!=body.expected_version:
             raise HTTPException(409,'This entry changed. Reload before saving.')
+        did=body.desk_id if 'desk_id' in body.model_fields_set else old['desk_id'] if old else None
+        if (did or old and old['desk_id']) and getattr(request.state,'mobile_session',None):
+            raise HTTPException(403,'Use the website to edit room-shared calendar entries')
+        joined=None
+        if did:
+            from ..services.desk_calendar import consent
+            # Every explicit save confirms the current room and membership epoch.
+            joined=await consent(cur,did,user)
+            if old and 'desk_id' not in body.model_fields_set and old['desk_joined_at']!=joined:
+                raise HTTPException(409,'Confirm room sharing again after rejoining this desk')
         if body.collection_id:
             await cur.execute("SELECT 1 FROM collections WHERE id=%s AND kind='exam' AND visibility='public'",(body.collection_id,))
             if not await cur.fetchone():
@@ -78,11 +89,11 @@ async def save(eid: UUID, body: Entry, user: Account, request: Request):
         counts=await cur.fetchone()
         if not old and counts['n']>=500 or body.kind=='progress-test' and counts['slots']>=20:
             raise HTTPException(409,'Calendar supports up to 500 entries and 20 recurring test slots')
-        data=(body.date,body.title,body.note,body.kind,body.recurrence,body.collection_id)
+        data=(body.date,body.title,body.note,body.kind,body.recurrence,body.collection_id,did,joined)
         if old:
-            await cur.execute('UPDATE calendar_entries SET date=%s,title=%s,note=%s,kind=%s,recurrence=%s,collection_id=%s,version=version+1,updated_at=clock_timestamp() WHERE id=%s AND user_id=%s RETURNING '+owned_calendar.FIELDS,(*data,eid,user))
+            await cur.execute('UPDATE calendar_entries SET date=%s,title=%s,note=%s,kind=%s,recurrence=%s,collection_id=%s,desk_id=%s,desk_joined_at=%s,version=version+1,updated_at=clock_timestamp() WHERE id=%s AND user_id=%s RETURNING '+owned_calendar.FIELDS,(*data,eid,user))
         else:
-            await cur.execute('INSERT INTO calendar_entries(date,title,note,kind,recurrence,collection_id,id,user_id) VALUES(%s,%s,%s,%s,%s,%s,%s,%s) RETURNING '+owned_calendar.FIELDS,(*data,eid,user))
+            await cur.execute('INSERT INTO calendar_entries(date,title,note,kind,recurrence,collection_id,desk_id,desk_joined_at,id,user_id) VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING '+owned_calendar.FIELDS,(*data,eid,user))
         return await cur.fetchone()
 
 
@@ -150,5 +161,14 @@ async def subscription(token: str):
           WHERE token_hash=%s AND revoked_at IS NULL AND u.email IS NOT NULL''',(hashlib.sha256(token.encode()).hexdigest(),))
         row=await cur.fetchone()
         if not row: raise HTTPException(404,'Calendar feed unavailable',headers=headers)
+        if settings.audience_gate_enabled:
+            await cur.execute('SELECT id FROM users WHERE id=%s AND closed_at IS NULL FOR SHARE',(row['user_id'],))
+            active=await cur.fetchone()
+            # Recheck the bearer URL after the lock; an age restriction or
+            # rotation may have revoked it while this reader was waiting.
+            await cur.execute('SELECT 1 FROM calendar_feed_tokens WHERE user_id=%s AND token_hash=%s AND revoked_at IS NULL',
+                              (row['user_id'],hashlib.sha256(token.encode()).hexdigest()))
+            if not await cur.fetchone() or not active or not await audience.eligible(cur,row['user_id']):
+                raise HTTPException(404,'Calendar feed unavailable',headers=headers)
         content=await owned_calendar.subscription(cur,row['user_id'])
     return Response(content,media_type='text/calendar; charset=utf-8',headers=headers)

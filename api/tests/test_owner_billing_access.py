@@ -40,6 +40,23 @@ def test_owner_only_rates_csrf_mfa_and_audited_account_price(client,actor,databa
     client.cookies.clear()
     assert client.get('/api/billing/config').json()['plans'][0]['amount_paise']==10000
 
+def test_owner_billing_account_view_includes_refund_reconciliation(client,actor,database,account):
+    user,_=account
+    payment_id='pay_'+uuid4().hex;refund_id='rfnd_'+uuid4().hex;sid='sub_'+uuid4().hex
+    database[1].execute("INSERT INTO billing_subscriptions(user_id,plan_code,billing_period,amount_paise,razorpay_plan_id,razorpay_subscription_id,status) VALUES(%s,'pro','monthly',10000,'plan_synthetic',%s,'active')",(user,sid))
+    database[1].execute("INSERT INTO billing_payments(razorpay_payment_id,razorpay_subscription_id,user_id,amount_paise,currency,status,paid_at,amount_refunded_paise,refund_status) VALUES(%s,%s,%s,10000,'INR','captured',now(),2500,'partial')",(payment_id,sid,user))
+    database[1].execute("INSERT INTO billing_refunds(razorpay_refund_id,razorpay_payment_id,amount_paise,currency,status,provider_created_at) VALUES(%s,%s,2500,'INR','pending',now())",(refund_id,payment_id))
+    headers=actor('owner')
+    response=client.get('/api/billing/admin/account',headers=headers,params={'email':user+'@example.test'})
+    assert response.status_code==200,response.text
+    payload=response.json()
+    assert payload['subscription']['access_end_reason'] is None
+    assert payload['payments'][0]['razorpay_payment_id']==payment_id
+    assert payload['payments'][0]['amount_refunded_paise']==2500
+    assert payload['payments'][0]['refund_status']=='partial'
+    assert payload['refunds'][0]['razorpay_refund_id']==refund_id
+    assert payload['refunds'][0]['status']=='pending'
+
 def test_checkout_uses_assigned_price_and_cannot_choose_arbitrary_amount(client,actor,database,account,monkeypatch):
     user,token=account
     database[1].execute("INSERT INTO billing_account_rates(user_id,amount_paise,updated_by) VALUES(%s,5000,'owner')",(user,))

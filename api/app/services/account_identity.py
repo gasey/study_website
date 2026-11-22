@@ -1,5 +1,6 @@
 """Shared cookie identity. Device IDs are preferences, never ownership proof."""
 import hashlib
+import hmac
 import secrets
 from fastapi import HTTPException, Request, Response
 from psycopg.types.json import Jsonb
@@ -10,6 +11,19 @@ GUEST_COOKIE = 'ism_guest'
 
 def digest(token):
     return hashlib.sha256(token.encode()).hexdigest()
+
+def closure_email_hash(email):
+    """Keyed lookup for encrypted, short-lived account-reopen identity escrow."""
+    from ..config import settings
+    key=settings.mfa_encryption_key
+    if not key:return None
+    derived=hashlib.sha256(key.encode()).digest()
+    return hmac.new(derived,email.strip().lower().encode(),hashlib.sha256).hexdigest()
+
+async def lock_email_ownership(cur,email):
+    """Serialize signup, closure escrow and account reactivation by address."""
+    normalized=email.strip().lower()
+    await cur.execute('SELECT pg_advisory_xact_lock(hashtextextended(%s,0))',('account-email-owner:'+normalized,))
 
 def csrf_token(token):
     return digest('bank-review:' + token)
@@ -27,6 +41,8 @@ async def account_session(request):
         return await cur.fetchone()
 
 async def guest_identity(request, response, create=True):
+    from .audience import require_browser
+    await require_browser(request)
     token = request.cookies.get(GUEST_COOKIE, '')
     if token:
         async with cursor() as cur:
@@ -34,6 +50,9 @@ async def guest_identity(request, response, create=True):
               AND expires_at>now() AND adopted_by IS NULL''', (digest(token),))
             row = await cur.fetchone()
         if row:
+            if settings.audience_gate_enabled:
+                from .audience import bind_adult
+                async with cursor() as cur:await bind_adult(cur,row['user_id'])
             return row['user_id']
     if not create:
         return None
@@ -42,19 +61,31 @@ async def guest_identity(request, response, create=True):
     async with cursor() as cur:
         await cur.execute("INSERT INTO users(id,handle,role) VALUES(%s,%s,'learner')", (uid, 'guest-' + uid[6:22]))
         await cur.execute('INSERT INTO guest_credentials(token_hash,user_id) VALUES(%s,%s)', (digest(token), uid))
+        if settings.audience_gate_enabled:
+            from .audience import bind_adult
+            await bind_adult(cur,uid)
     response.set_cookie(GUEST_COOKIE,token,max_age=180*86400,httponly=True,
                         secure=settings.public_origin.startswith('https://'),samesite='lax',path='/')
     return uid
 
 async def transfer_guest(request, account):
     """Transfer only proven practice records. No publication, wallet or role transfer."""
+    from .audience import require_learner,transfer_processing_admission
+    await require_learner(account)
     token = request.cookies.get(GUEST_COOKIE, '')
     if not token:
         return {'transferred':False,'counts':{}}
     async with cursor() as cur:
+        # Read the proved subject without owning its credential row first.
+        # Restrictions/closure own the exclusive account lease before row locks.
+        await cur.execute('SELECT user_id FROM guest_credentials WHERE token_hash=%s AND expires_at>now()',(digest(token),))
+        subject=await cur.fetchone()
+        if not subject:
+            raise HTTPException(409,'Guest progress proof expired. Your account is still signed in.')
+        await transfer_processing_admission(cur,account,subject['user_id'])
         await cur.execute('SELECT * FROM guest_credentials WHERE token_hash=%s AND expires_at>now() FOR UPDATE',(digest(token),))
         proof = await cur.fetchone()
-        if not proof:
+        if not proof or proof['user_id'] != subject['user_id']:
             raise HTTPException(409,'Guest progress proof expired. Your account is still signed in.')
         if proof['adopted_by']:
             if proof['adopted_by'] != account:

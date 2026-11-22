@@ -22,7 +22,7 @@
 [data-theme="night"] .exam-overview .module-view-nav > [aria-current="page"] { color:#17202d !important; }
 .overview-booklets { position:relative; margin-left:auto; }
 .overview-booklets summary { display:flex; align-items:center; min-height:44px; cursor:pointer; font-size:11px; color:rgb(var(--ism-secondary-rgb)); }
-.overview-booklets ul { position:absolute; top:100%; right:0; z-index:10; min-width:180px; max-width:280px; padding:8px 14px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:10px; background:rgb(var(--ism-card-rgb)); box-shadow:0 6px 18px #0002; }
+.overview-booklets ul { position:absolute; top:100%; right:0; z-index:10; min-width:180px; max-width:280px; padding:8px 14px; border:1px solid rgb(var(--ism-hairline-rgb)); border-radius:10px; background:rgb(var(--ism-card-rgb)); box-shadow: var(--ism-card-shadow); }
 /* Keep the reference module's heading, width and navigation stable between tabs. */
 .exam-module-panel { min-height:55vh; animation:exam-panel-enter 140ms ease-out; }
 @keyframes exam-panel-enter { from { opacity:.65; transform:translateY(3px); } to { opacity:1; transform:none; } }

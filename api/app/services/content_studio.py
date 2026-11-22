@@ -93,6 +93,8 @@ async def publication_reward(cur,row,reviewer,doc):
     # Self-publication, paid demos and already-published revisions never pay.
     if row['published_revision'] is not None or row['author_id']==reviewer or doc.access=='paid-preview':return
     user=row['author_id']
+    await cur.execute('SELECT public.audience_processing_admit(%s) AS admitted',(user,))
+    if not (await cur.fetchone())['admitted']:return
     await cur.execute('SELECT 1 FROM users WHERE id=%s AND email IS NOT NULL',(user,))
     if not await cur.fetchone():return
     await cur.execute('SELECT pg_advisory_xact_lock(hashtext(%s))',('rewards:'+user,))

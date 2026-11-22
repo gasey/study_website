@@ -47,7 +47,7 @@ export default function FilterRail({
       className="flex w-full max-w-full flex-col gap-[22px] p-4 sm:max-w-[260px] sm:flex-[1_1_220px]"
     >
       <div>
-        <details><summary className="min-h-11 cursor-pointer py-3 font-semibold text-[13px]">Source details</summary><p className="mb-2 text-[12px] text-muted">Source and verification are separate. Worked solutions may be verified or still need review.</p>
+        <details><summary className="min-h-11 cursor-pointer py-3 font-semibold text-sm">Source details</summary><p className="mb-2 text-xs text-muted">Source and verification are separate. Worked solutions may be verified or still need review.</p>
         {SOURCES.map((s) => (
           <Checkbox
             key={s.key}
@@ -73,7 +73,7 @@ export default function FilterRail({
         <GroupTitle>Exam year</GroupTitle>
         <div className="grid grid-cols-2 gap-2">
           {(['yearFrom', 'yearTo'] as const).map((key) => (
-            <label key={key} className="flex flex-col gap-1 font-mono text-[10px] uppercase tracking-[0.06em] text-muted">
+            <label key={key} className="flex flex-col gap-1 font-mono text-xs uppercase tracking-[0.06em] text-muted">
               {key === 'yearFrom' ? 'From' : 'To'}
               <input
                 aria-label={key === 'yearFrom' ? 'From exam year' : 'To exam year'}
@@ -83,7 +83,7 @@ export default function FilterRail({
                 placeholder="Any"
                 value={value[key]}
                 onChange={(e) => onChange({ ...value, [key]: e.target.value })}
-                className="h-10 w-full rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 font-sans text-[14px] normal-case tracking-normal text-ink placeholder:text-placeholder focus:border-ink focus:outline-none"
+                className="h-10 w-full rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 font-sans text-sm normal-case tracking-normal text-ink placeholder:text-placeholder focus:border-ink focus:outline-none"
               />
             </label>
           ))}
@@ -113,7 +113,7 @@ export default function FilterRail({
               aria-label="Filter by subject"
               value={value.subjectId}
               onChange={(e) => onChange({ ...value, subjectId: e.target.value, topicId: '' })}
-              className="h-10 rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 text-[13px] text-ink focus:border-ink focus:outline-none"
+              className="h-10 rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 text-sm text-ink focus:border-ink focus:outline-none"
             >
               <option value="">All subjects</option>
               {['general-knowledge','general-studies'].includes(value.subjectId)&&<option value={value.subjectId}>GK/GS · original {value.subjectId==='general-knowledge'?'GK':'GS'} tags</option>}
@@ -128,7 +128,7 @@ export default function FilterRail({
               value={value.topicId}
               disabled={!value.subjectId}
               onChange={(e) => onChange({ ...value, topicId: e.target.value })}
-              className="h-10 rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 text-[13px] text-ink focus:border-ink focus:outline-none disabled:opacity-50"
+              className="h-10 rounded-[6px] border border-hairline2 bg-[#FBF8F1] px-2 text-sm text-ink focus:border-ink focus:outline-none disabled:opacity-50"
             >
               <option value="">All topics</option>
               {value.topicId&&!taxonomy.some(f=>f.topic_id===value.topicId)&&<option value={value.topicId}>Original topic selection</option>}
@@ -136,7 +136,7 @@ export default function FilterRail({
                 <option key={f.topic_id} value={f.topic_id!}>{f.topic} ({f.questions})</option>
               ))}
             </select>
-            <p className="text-[11px] leading-snug text-muted">GK and GS share learning topics. Original paper wording appears on each question’s source.</p>
+            <p className="text-xs leading-snug text-muted">GK and GS share learning topics. Original paper wording appears on each question’s source.</p>
           </div>
         ) : (
           <NotYet>Reviewed subject and topic tags will appear here as they are added.</NotYet>

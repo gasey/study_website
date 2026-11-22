@@ -33,6 +33,8 @@ def test_view_is_not_attempt_and_cooldown_survives_requests(client, actor, datab
     conn.execute("UPDATE answer_reveals SET revealed_at=now()-interval '31 minutes' WHERE user_id=%s AND canonical_id=%s", (user, q))
     r = client.post(url+'/answer', json={'chosen_index': 1, 'paper_id': p}, headers=h)
     assert r.status_code == 200 and r.json()['correct'], r.text
+    timing=r.headers.get('server-timing','')
+    assert timing.startswith('answer;dur=') and float(timing.partition('=')[2])>=0
     assert counts(conn, user)[0] == before[0]+1
 
 

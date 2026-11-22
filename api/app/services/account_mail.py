@@ -20,10 +20,18 @@ def configured():
 
 def deliver(email,purpose,token,delivery_key=None,created_at=None):
     message=EmailMessage();message['From']=settings.smtp_from;message['To']=email
-    message['Subject']='Reset your Study Map password' if purpose=='reset' else 'Verify your Study Map email'
-    action='reset' if purpose=='reset' else 'verify'
+    message['Subject']={'reset':'Reset your Finna password','verify':'Verify your Finna email',
+      'reopen':'Reopen your Finna account'}[purpose]
+    action={'reset':'reset','verify':'verify','reopen':'reopen'}[purpose]
+    description={'reset':'reset your password','verify':'verify your email address',
+      'reopen':'reopen your account and choose a new password'}[purpose]
     link=settings.public_origin+'/account/recovery#'+action+'='+token
-    message.set_content('Open this link to '+('reset your password' if purpose=='reset' else 'verify your email')+':\n\n'+link+'\n\nThis link expires after 30 minutes and works once. If you did not request it, you can ignore this email.')
+    message.set_content('Open this link to '+description+':\n\n'+link+'\n\nThis link expires after 30 minutes and works once. If you did not request it, you can ignore this email.')
+    send_message(message,delivery_key,created_at)
+
+
+def send_message(message,delivery_key=None,created_at=None):
+    """Shared certificate-verified transport; no recipient/body/secret logging."""
     if delivery_key:
         message['Message-ID']='<'+delivery_key+'@'+(urlparse(settings.public_origin).hostname or 'finna.invalid')+'>'
         if created_at:message['Date']=format_datetime(created_at)
@@ -47,6 +55,7 @@ async def capacity(cur):
        date_trunc('day',statement_timestamp() AT TIME ZONE 'UTC') AT TIME ZONE 'UTC' AS day,
        statement_timestamp()-interval '31 days' AS month),
       usage AS(SELECT reserved_at AS at FROM account_mail_deliveries
+       UNION ALL SELECT reserved_at AS at FROM review_digest_deliveries
        UNION ALL SELECT o.sent_at FROM account_mail_outbox o WHERE o.sent_at IS NOT NULL
          AND NOT EXISTS(SELECT 1 FROM account_mail_deliveries d WHERE d.outbox_id=o.id))
       SELECT count(*) FILTER(WHERE at>=bounds.day)::int AS day_used,
@@ -63,7 +72,8 @@ async def accepting(cur,lock=False):
     budget=await capacity(cur)
     await cur.execute("""SELECT count(*)::int AS n FROM account_mail_outbox o JOIN users u ON u.id=o.user_id
       WHERE o.sent_at IS NULL AND o.token_cipher<>'' AND o.attempts<5 AND o.created_at>statement_timestamp()-interval '30 minutes'
-        AND u.email IS NOT NULL AND u.closed_at IS NULL""")
+        AND ((u.email IS NOT NULL AND u.closed_at IS NULL) OR (o.purpose='reopen' AND u.closed_at IS NOT NULL
+          AND EXISTS(SELECT 1 FROM account_closure_recovery r WHERE r.user_id=u.id AND r.expires_at>statement_timestamp())))""")
     pending=(await cur.fetchone())['n']
     return pending<min(budget['day_remaining'],budget['month_remaining'])
 
@@ -78,10 +88,19 @@ async def reserve():
             await beat(cur,'sending budget exhausted; pending links keep their original expiry');return None
         await cur.execute("""SELECT o.*,u.email FROM account_mail_outbox o JOIN users u ON u.id=o.user_id
           WHERE o.sent_at IS NULL AND o.token_cipher<>'' AND o.attempts<5 AND o.next_attempt_at<=statement_timestamp()
-            AND o.created_at>statement_timestamp()-interval '30 minutes' AND u.email IS NOT NULL AND u.closed_at IS NULL
+            AND o.created_at>statement_timestamp()-interval '30 minutes'
+            AND ((u.email IS NOT NULL AND u.closed_at IS NULL) OR (o.purpose='reopen' AND u.closed_at IS NOT NULL
+              AND EXISTS(SELECT 1 FROM account_closure_recovery r WHERE r.user_id=u.id AND r.expires_at>statement_timestamp())))
           ORDER BY (o.purpose='reset') DESC,o.id FOR UPDATE OF o SKIP LOCKED LIMIT 1""")
         row=await cur.fetchone()
         if not row:await beat(cur,'idle; no deliverable account links');return None
+        if row['purpose']=='reopen':
+            await cur.execute('SELECT identity_cipher FROM account_closure_recovery WHERE user_id=%s AND expires_at>statement_timestamp()',(row['user_id'],))
+            escrow=await cur.fetchone()
+            if escrow:
+                import json
+                try:row['email']=json.loads(mfa.decrypt(row['user_id'],escrow['identity_cipher']))['email']
+                except Exception:row['email']=None
         await cur.execute("""UPDATE account_mail_deliveries SET state='uncertain',finished_at=clock_timestamp(),error_type='LeaseExpired'
           WHERE outbox_id=%s AND state='reserved'""",(row['id'],))
         await cur.execute("""UPDATE account_mail_outbox SET attempts=attempts+1,next_attempt_at=clock_timestamp()+interval '5 minutes',last_error=NULL
@@ -101,7 +120,16 @@ async def send_reserved(row):
         await cur.execute('SELECT state FROM account_mail_deliveries WHERE id=%s FOR UPDATE',(row['delivery_id'],));attempt=await cur.fetchone()
         if not attempt or attempt['state']!='reserved':return
         paused=not configured()
-        cancel=paused or not user or user['closed_at'] or not user['email'] or user['email']!=row['email'] or not own or own['sent_at'] or own['attempts']!=row['attempts'] or not own['token_cipher']
+        address=user['email'] if user and row['purpose']!='reopen' else None
+        if user and row['purpose']=='reopen' and user['closed_at']:
+            await cur.execute('SELECT identity_cipher FROM account_closure_recovery WHERE user_id=%s AND expires_at>statement_timestamp() FOR SHARE',(row['user_id'],))
+            escrow=await cur.fetchone()
+            if escrow:
+                import json
+                try:address=json.loads(mfa.decrypt(row['user_id'],escrow['identity_cipher']))['email']
+                except Exception:address=None
+        valid_state=bool(user and ((row['purpose']=='reopen' and user['closed_at']) or (row['purpose']!='reopen' and not user['closed_at'])))
+        cancel=paused or not valid_state or not address or address!=row['email'] or not own or own['sent_at'] or own['attempts']!=row['attempts'] or not own['token_cipher']
         if not cancel:
             try:raw=mfa.decrypt(row['user_id'],own['token_cipher'])
             except Exception:raw=None
@@ -116,7 +144,7 @@ async def send_reserved(row):
                 await cur.execute("UPDATE account_mail_outbox SET token_cipher='',last_error='Cancelled' WHERE id=%s",(row['id'],))
             await beat(cur,'cancelled unavailable or expired account link');return
         key='finna-account-'+hashlib.sha256((settings.public_origin+'|'+str(row['id'])+'|'+row['created_at'].isoformat()).encode()).hexdigest()
-        try:await run_in_threadpool(deliver,user['email'],own['purpose'],raw,key,row['created_at'])
+        try:await run_in_threadpool(deliver,address,own['purpose'],raw,key,row['created_at'])
         except Exception as error:
             # An SMTP timeout can follow acceptance. Keep its capacity consumed and
             # the same provider idempotency key; never claim exactly-once delivery.
@@ -139,7 +167,12 @@ async def tick():
 async def worker():
     while True:
         await asyncio.sleep(10)
-        try:await tick()
+        try:
+            await tick()
+            from .review_digest import tick as digest_tick
+            await digest_tick()
+            from .referrals import tick as referral_tick
+            await referral_tick()
         except asyncio.CancelledError:raise
         except Exception:
             # No exception body/recipient/token/credential is logged.
