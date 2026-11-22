@@ -13,8 +13,15 @@ import { listQuestions, prefetchQuestionPage, listTaxonomy, listCollections, typ
 
 const PAGE = 25
 const SOURCES = ['official','key','derived','inferred','none'] as const
-/** Reference sort group. Values are the API's existing `order`, not a new field. */
-const ORDERS = [['repeated','Most asked'],['mixed','Mixed'],['paper','Paper order']] as const
+/** Reference sort group. Values are the API's existing `order`, not a new field.
+ *  "Most asked" sorts by `canonical_questions.times_asked`, which is 1 on every
+ *  row because the dedupe job has never run — merging duplicate printings is
+ *  what creates a repeat. It therefore degenerates to `ORDER BY id` while
+ *  presenting itself as a ranking. Disabled and not the default, matching the
+ *  "Asked 2+ times" filter in FilterRail rather than making a promise the data
+ *  cannot keep. Re-enable when `max(times_asked) > 1`. */
+const ORDERS = [['paper','Paper order'],['mixed','Mixed'],['repeated','Most asked']] as const
+const REPEATS_READY = false
 /** Coverage rail: the bank has no year facet, so each bar is a real count query. */
 const COVERAGE_YEARS = 6
 
@@ -24,7 +31,8 @@ export default function Bank() {
   const query=params.get('q')||'',search=query.trim(),collectionId=params.get('collection_id')||'',paperId=params.get('paper_id')||'',paperLabel=params.get('paper_label')||''
   const writtenMode=params.get('mode')==='written'
   const pool=(writtenMode?'all':['all','scorable','practice'].includes(params.get('pool')||'')?params.get('pool'):'all') as 'all'|'scorable'|'practice'
-  const order=(['repeated','mixed','paper'].includes(params.get('order')||'')?params.get('order'):'repeated') as 'repeated'|'mixed'|'paper'
+  const requested=params.get('order')||''
+  const order=((['repeated','mixed','paper'].includes(requested)&&(requested!=='repeated'||REPEATS_READY))?requested:'paper') as 'repeated'|'mixed'|'paper'
   const filters:Filters={sources:params.getAll('source').filter((s):s is Filters['sources'][number]=>SOURCES.some(v=>v===s)),yearFrom:params.get('year_from')||'',yearTo:params.get('year_to')||'',subjectId:params.get('subject_id')||'',topicId:params.get('topic_id')||''}
   const page=pageNumber(params.get('page')),offset=(page-1)*PAGE
   const [taxonomy,setTaxonomy]=useState<TaxonomyFacet[]>([])
@@ -52,7 +60,7 @@ export default function Bank() {
   // Selection persists across navigation in the site-wide selection tray (§VII.10.2).
   const selected=tray.ids
   const toggleSelected=(qid:string)=>tray.toggle(qid)
-  const setOrder=(value:typeof order)=>setParams(previous=>{const n=new URLSearchParams(previous);if(value==='repeated')n.delete('order');else n.set('order',value);n.delete('page');return n},{replace:true})
+  const setOrder=(value:typeof order)=>setParams(previous=>{const n=new URLSearchParams(previous);if(value==='paper')n.delete('order');else n.set('order',value);n.delete('page');return n},{replace:true})
   const [collections,setCollections]=useState<Collection[]>([])
   useEffect(()=>{let live=true;listCollections().then(v=>{if(live)setCollections(v)}).catch(()=>{if(live)setCollections([])});return()=>{live=false}},[])
   const pickCollection=(id:string)=>setParams(previous=>{const n=new URLSearchParams(previous);if(id&&id!==collectionId)n.set('collection_id',id);else n.delete('collection_id');n.delete('paper_id');n.delete('paper_label');n.delete('page');return n},{replace:true})
@@ -153,7 +161,14 @@ export default function Bank() {
             )}
             <div className="finna-segments" role="group" aria-label="Sort questions" style={{ marginLeft: 'auto' }}>
               {ORDERS.map(([k, label]) => (
-                <button key={k} type="button" onClick={() => setOrder(k)} aria-pressed={order === k}>
+                <button
+                  key={k}
+                  type="button"
+                  onClick={() => setOrder(k)}
+                  aria-pressed={order === k}
+                  disabled={k === 'repeated' && !REPEATS_READY}
+                  title={k === 'repeated' && !REPEATS_READY ? 'No repeats recorded yet — duplicate printings are merged by the dedupe job.' : undefined}
+                >
                   {label}
                 </button>
               ))}

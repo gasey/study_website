@@ -10,7 +10,7 @@ export type DestinationSection =
   | 'you'
   | 'admin'
 
-export type DestinationSurface = 'nav' | 'tabs' | 'index' | 'quickfind'
+export type DestinationSurface = 'nav' | 'tabs' | 'quick' | 'index' | 'quickfind'
 
 /** Which desktop nav item opens a dropdown containing this destination.
  *  A destination with no `menu` never appears in a dropdown. The nav item
@@ -195,7 +195,7 @@ export const SITE_MAP: readonly Destination[] = [
     label: 'Revise',
     section: 'practice',
     blurb: 'Scheduled spaced reviews, past mistakes and vocabulary drills.',
-    surfaces: ['index', 'quickfind'],
+    surfaces: ['index', 'quickfind', 'quick'],
     menu: 'practice',
     keywords: 'spaced repetition leitner mistakes vocabulary due review',
   },
@@ -249,7 +249,7 @@ export const SITE_MAP: readonly Destination[] = [
     label: 'Desk',
     section: 'you',
     blurb: 'Your personal notes, bookmarks, focus timer and private 6-seat study rooms.',
-    surfaces: ['tabs', 'index', 'quickfind'],
+    surfaces: ['tabs', 'index', 'quickfind', 'quick'],
     icon: 'desk',
     keywords: 'study desk rooms notes bookmarks pomodoro focus review circle',
   },

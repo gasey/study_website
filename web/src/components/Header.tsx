@@ -14,6 +14,7 @@ import NavIcon from './NavIcon'
 import BrowseAllowance from './BrowseAllowance'
 
 const NAV_ITEMS=destinationsForSurface('nav')
+const QUICK_ITEMS=destinationsForSurface('quick')
 const HOME_PATH=destinationPath('home'),INBOX_PATH=destinationPath('inbox'),PROFILE_PATH=destinationPath('profile')
 const CREATE_PATH=destinationPath('create'),INDEX_PATH=destinationPath('index')
 const EXAMS_PATH=destinationPath('exams'),LIBRARY_PATH=destinationPath('library')
@@ -73,7 +74,13 @@ export default function Header(){
      <Link to={item.path} className="finna-nav-link" aria-current={active(item.id)?'page':undefined}>{item.label}</Link>
      {items.length>0&&<button type="button" ref={el=>{triggers.current[item.id]=el}} className="-ml-1.5 mr-1 grid h-9 w-5 place-items-center rounded-md text-[10px] text-secondary" aria-label={`${item.label} menu`} aria-expanded={menu===item.id} aria-controls={menu===item.id?'finna-mega-menu':undefined} onClick={()=>setMenu(menu===item.id?null:item.id)} onKeyDown={e=>{if(e.key==='ArrowDown'){e.preventDefault();setMenu(item.id)}}}>⌄</button>}
     </div>})}</nav>
-   <div className="finna-quick"><Link to={selected?'/exams/'+selected.id:EXAMS_PATH} className="finna-exam-chip">{selected?'My exam: '+selected.title.replace(/\s*[·(].*$/,'').slice(0,24):'Choose your exam'}</Link></div>
+   {/* Trimmed quick rail. The original carried Revise · Desk · Play · Atlas ·
+       Chronicle; Play, Atlas and Chronicle now have a real home in the Practice
+       and Guides dropdowns, so re-adding them would just rebuild the clutter.
+       Revise and Desk are kept because they are daily verbs and neither has a
+       desktop home otherwise — Desk is a phone tab with no `menu` at all, so
+       without this it is reachable only from /index or ⌘K. */}
+   <div className="finna-quick">{QUICK_ITEMS.map(item=><Link key={item.id} to={item.path} className={item.id==='desk'?'finna-secondary-tool':undefined}>{item.label}</Link>)}<Link to={selected?'/exams/'+selected.id:EXAMS_PATH} className="finna-exam-chip">{selected?'My exam: '+selected.title.replace(/\s*[·(].*$/,'').slice(0,24):'Choose your exam'}</Link></div>
   </div>
    {menu&&(MENUS[menu]||[]).length>0&&<div id="finna-mega-menu" className="finna-menu"><div className="finna-wrap finna-menu-inner"><div>{MENUS[menu].map(d=><Link key={d.id} to={d.path}>{d.label}<small>{d.blurb}</small></Link>)}</div></div></div>}
   </div>}
