@@ -103,6 +103,10 @@ for (const file of walk(SRC)) {
     for (const m of line.matchAll(/(?:to|href)="(\/[^"]*)"/g)) found.push(m[1])
     for (const m of line.matchAll(/(?:to|href)=\{([^}]*(?:\}[^}]*)??)\}/g)) found.push(...targetsIn(m[1]))
     for (const m of line.matchAll(navCall)) found.push(...targetsIn(m[1]))
+    // Route strings held in label/path tuples — `[['Rewards','/rewards'], …]`
+    // mapped to <Link to={href}>. The path never appears next to a `to=`, so
+    // the scans above cannot see it; two dead links hid here.
+    for (const m of line.matchAll(/\[\s*'[^']{2,60}'\s*,\s*'(\/[^']*)'\s*\]|\[\s*'(\/[^']*)'\s*,\s*'[^']{2,60}'\s*\]/g)) found.push(m[1] || m[2])
     for (const t of new Set(found)) if (!live(t)) dead.push(`${rel}:${i + 1}  ${t}`)
   })
 }

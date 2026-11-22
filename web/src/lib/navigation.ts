@@ -2,7 +2,15 @@ import { destinationsForSurface } from './siteMap'
 
 /** Phone primary tabs generated directly from `siteMap.ts` (§VII.3.1, §VII.3.3).
  *  Five tabs: Home · Exams · Guides · Desk · Me. */
-export const PRIMARY_NAV = destinationsForSurface('tabs').map((d) => ({
+/** Phone tab order is deliberate, not manifest order: Home · Exams · Subjects ·
+ *  Guides · Me (owner, 22 Nov 2026). Desk left the bar — §0.12 calls it "purely
+ *  a toolbox" rather than a daily destination — and keeps its desktop quick link
+ *  plus entries on Home, Profile and /index. */
+const TAB_ORDER = ['home', 'exams', 'library', 'guides', 'profile']
+export const PRIMARY_NAV = destinationsForSurface('tabs')
+  .slice()
+  .sort((a, b) => TAB_ORDER.indexOf(a.id) - TAB_ORDER.indexOf(b.id))
+  .map((d) => ({
   to: d.path,
   label: d.label,
   icon: d.icon || 'home',

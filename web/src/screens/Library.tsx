@@ -5,7 +5,23 @@ import {SITE_MAP,destinationPath} from '../lib/siteMap'
 import MaterialDiscovery from '../components/MaterialDiscovery'
 const Materials=lazy(()=>import('./Materials'))
 const VIEWS=[['subjects','Subjects'],['reading','From the community'],['saved','Saved']] as const
-const SUBJECT_TOOLS=SITE_MAP.filter(d=>['atlas','chronicle','guides','practice','revise','bank'].includes(d.id))
+/** Pre-filtered subject entry points. V.14 removed the Library's "Modules" and
+ *  "Practice sets" tabs, which were the only place these lived, and deleted the
+ *  /english, /arithmetic, /mizo and /essay routes they pointed at without
+ *  building the "library subject scopes" §VII.14 promised in their place. These
+ *  are rebuilt as real filters over /bank, with subject_ids verified against the
+ *  live taxonomy rather than guessed. */
+const SUBJECT_FILTERS=[
+ {title:'English',href:'/bank?subject_id=english',label:'Grammar, comprehension and writing'},
+ {title:'Mathematics',href:'/bank?subject_id=mathematics',label:'Concepts, worked methods and practice'},
+ {title:'Reasoning & aptitude',href:'/bank?subject_id=reasoning-and-aptitude',label:'Patterns, logic and aptitude'},
+ {title:'Mizo',href:'/bank?subject_id=mizo',label:'Language, literature and culture'},
+ {title:'Written answers',href:'/bank?mode=written',label:'Essay, letter, précis and comprehension prompts'},
+ {title:'Atlas',href:'/atlas',label:'Interactive chapters and map layers'},
+ {title:'Chronicle',href:'/chronicle',label:'Dates, events and linked questions'},
+ {title:'Stats',href:'/stats',label:'India, global rankings and the Economic Survey'},
+] as const
+const SUBJECT_TOOLS=SITE_MAP.filter(d=>['guides','practice','revise','bank'].includes(d.id))
 export default function Library(){
  const [params,setParams]=useSearchParams(),[shelves,setShelves]=useState<LibraryShelf[]>([]),[facets,setFacets]=useState<TaxonomyFacet[]>([])
  const [loading,setLoading]=useState(true),[error,setError]=useState(''),[query,setQuery]=useState(''),[retry,setRetry]=useState(0)
@@ -23,6 +39,7 @@ export default function Library(){
    {error&&<p role="alert" className="mb-4 rounded-xl border border-mypick bg-mypick-soft p-4 text-sm text-mypick">{error} <button onClick={()=>setRetry(n=>n+1)} className="min-h-11 font-bold underline">Try again</button></p>}
    <section aria-label="Subject library" className="finna-library-grid">{shelves.map(s=><Link key={s.id} to={'/library/topics/'+s.id}><h2>{s.title}</h2><p>{s.description}</p><strong>{s.questions.toLocaleString('en-IN')} questions →</strong></Link>)}</section>
    {!loading&&!error&&!shelves.length&&<section className="finna-card"><h2>Your subject library is getting ready</h2><p className="mt-2 text-sm text-secondary">Browse all subject categories below or open the index.</p></section>}
+   <section className="finna-tools" aria-labelledby="subject-filters"><h2 id="subject-filters">Browse by subject</h2><div>{SUBJECT_FILTERS.map(s=><Link key={s.href} to={s.href}><h3>{s.title}</h3><p>{s.label}</p></Link>)}</div></section>
    <section className="finna-tools" aria-labelledby="guided-tools"><h2 id="guided-tools">Related surfaces</h2><div>{SUBJECT_TOOLS.map(t=><Link key={t.id} to={t.path}><h3>{t.label}</h3><p>{t.blurb}</p></Link>)}</div></section>
    <div className="mt-5 grid items-start gap-5 lg:grid-cols-[minmax(0,2fr)_minmax(250px,1fr)]"><MaterialDiscovery title="From the community" compact/><section className="finna-card mt-6"><div className="finna-section-top"><h2>Saved</h2><Link to={destinationPath('desk')}>Desk</Link></div><Link to={destinationPath('revise')} className="finna-plan-item"><span className="text-sm font-semibold">Revise questions &amp; mistakes →</span></Link><Link to={destinationPath('exams')} className="finna-plan-item"><span className="text-sm font-semibold">My exams →</span></Link></section></div>
    <details className="finna-card mt-5"><summary className="min-h-11 cursor-pointer py-2 text-base font-bold">Browse all subject categories</summary><label className="mt-3 block"><span className="sr-only">Find a library subject</span><input type="search" aria-label="Find a library subject" placeholder="Find a subject" value={query} onChange={e=>setQuery(e.target.value)} className="min-h-11 w-full rounded-xl border border-hairline bg-paper px-4 text-sm"/></label><div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">{subjects.map(s=><Link key={s.id} to={'/library/subjects/'+encodeURIComponent(s.id)} className="rounded-xl border border-hairline p-4 hover:border-learn"><h3 className="text-base font-bold">{s.title}</h3><p className="mt-1 text-xs text-secondary">{s.questions.toLocaleString('en-IN')} questions</p></Link>)}</div>{!loading&&!subjects.length&&<p className="py-4 text-sm text-secondary">No subjects match this search.</p>}</details>
