@@ -446,7 +446,7 @@ function BankVocabulary({embedded = false}: {embedded?: boolean}) {
             )}
             <Link
               to={
-                "/contribute/new?question=" +
+                "/create/new?question=" +
                 encodeURIComponent(card.question_id)
               }
               className="text-link underline"

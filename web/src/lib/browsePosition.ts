@@ -157,7 +157,7 @@ export function paperBrowseLink(collection: string, paper: string) {
   const params = new URLSearchParams({ view: 'browse', pool: 'all', paper, order: 'paper' })
   if (collection === 'group-b' || collection.startsWith('group-b-')) {
     params.set('collection', collection)
-    return '/group-b?' + params
+    return '/exams/group-b-gazetted?' + params
   }
   return '/exams/' + encodeURIComponent(collection) + '?' + params
 }

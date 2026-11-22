@@ -38,7 +38,7 @@ export function groupBTitle(collection:string){
  return collection==='group-b-non-gazetted'?'Group B Non-Gazetted':collection==='group-b-gazetted'?'Group B Gazetted':'Group B shared study'
 }
 export function groupBLink(collection:string,view:string='home',extra:Record<string,string>={}){
- return '/group-b?'+new URLSearchParams({...extra,collection,view})
+ return '/exams/group-b-gazetted?'+new URLSearchParams({...extra,collection,view})
 }
 
 /** Only landing pages move; existing paper/question/practice deep links keep their scope. */

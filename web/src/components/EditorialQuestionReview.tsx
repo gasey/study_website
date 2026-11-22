@@ -60,6 +60,6 @@ export default function EditorialQuestionReview({snapshot,user,assignment,scope,
    <button type="button" disabled={busy} className={BUTTON} aria-pressed={view==='edit'} onClick={()=>setView(view==='edit'?'check':'edit')}>{view==='edit'?'Back to checking':'Edit'}</button>
    <button type="button" disabled={busy} className={BUTTON} aria-pressed={view==='issue'} onClick={()=>setView(view==='issue'?'check':'issue')}>{view==='issue'?'Back to checking':'Cannot verify'}</button>
   </div>
-  <details className="rounded-lg border border-hairline bg-card px-4"><summary className="min-h-11 cursor-pointer py-3 text-sm">More question tools</summary><Link className={BUTTON+' mb-3 text-link'} to={'/current-affairs/manage?'+new URLSearchParams({question,appearance})}>Link dated updates / later questions →</Link></details>
+  <details className="rounded-lg border border-hairline bg-card px-4"><summary className="min-h-11 cursor-pointer py-3 text-sm">More question tools</summary><Link className={BUTTON+' mb-3 text-link'} to={'/admin/bank?tab=current-affairs&'+new URLSearchParams({question,appearance})}>Link dated updates / later questions →</Link></details>
  </div>
 }

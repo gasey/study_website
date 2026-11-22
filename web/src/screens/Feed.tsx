@@ -64,7 +64,7 @@ export default function Feed({embedded=false}:{embedded?:boolean}) {
     return () => { active = false }
   }, [tab, discussion, offset, reload])
 
-  const startCompose = (type: string) => type === 'MCQ' ? nav('/contribute/new?kind=new_question') : type==='Note'?nav('/community?compose=study'):type==='Share material'?nav('/community?compose=material-share'):['Material','Post'].includes(type)?nav('/studio/new'):setComposeType(type)
+  const startCompose = (type: string) => type === 'MCQ' ? nav('/create/new?kind=new_question') : type==='Note'?nav('/community?compose=study'):type==='Share material'?nav('/community?compose=material-share'):['Material','Post'].includes(type)?nav('/studio/new'):setComposeType(type)
 
   return <div className={embedded?'finna-embedded-community':'mx-auto max-w-shell px-4 pb-24 pt-6 sm:px-6 sm:pt-6'}>
     <header className="mb-6 flex flex-wrap items-end justify-between gap-3"><div><p className="font-mono text-xs uppercase tracking-widest text-community-dark">Learn together</p><h1 className="mt-2 font-display text-3xl">Community</h1><p className="mt-2 text-sm text-secondary">Questions, shared reading and conversations.</p></div><Link to="/create" className="inline-flex min-h-11 items-center rounded-pill bg-ink px-5 text-sm font-semibold text-paper">Create & contribute →</Link></header>

@@ -16,7 +16,7 @@ export function pdfLibraryAction(item:PdfLibraryItem):'draft'|'review'|'inspect'
  return 'intake'
 }
 export function pdfWorkbenchHref(id:string,returnTo:string){
- return '/paper-workbench?'+new URLSearchParams({draft:id,return_to:returnTo})
+ return '/admin/bank?tab=workbench&'+new URLSearchParams({draft:id,return_to:returnTo})
 }
 export function pdfLibraryReturn(value:string|null){
  return value?.startsWith('/admin/bank?tab=pdf-library')?value:'/admin/bank?tab=pdf-library'

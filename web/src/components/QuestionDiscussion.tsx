@@ -560,7 +560,7 @@ function Topic({
           <Link
             className={BTN + " text-link"}
             to={
-              "/contribute/new?" +
+              "/create/new?" +
               new URLSearchParams({
                 question: qid,
                 discussion_post: String(pid),

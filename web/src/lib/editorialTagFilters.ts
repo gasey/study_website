@@ -14,4 +14,4 @@ export function tagReviewHref(question:string,appearance:string,paper:string,ret
  return '/admin/bank?'+p
 }
 export function tagQuery(params:URLSearchParams){return params.get('tag_q')||(params.get('tab')==='retag'?params.get('q')||'':'')}
-export function tagReturn(params:URLSearchParams){const value=params.get('tag_return')||'';return value.startsWith('/admin/bank?')||value.startsWith('/editorial?')?value:''}
+export function tagReturn(params:URLSearchParams){const value=params.get('tag_return')||'';return value.startsWith('/admin/bank?')||value.startsWith('/admin/bank?tab=editorial&')?value:''}

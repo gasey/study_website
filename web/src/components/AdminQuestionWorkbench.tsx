@@ -71,7 +71,7 @@ export default function AdminQuestionWorkbench({taxonomy,taxonomyReady=true,gran
  useEffect(()=>{const id=detail?.canonical.id===selected?selected+':'+detail.snapshot.record.id:'';if(!id||focusedQuestion.current===id)return;focusedQuestion.current=id;inspectorHeading.current?.focus({preventScroll:true});inspectorHeading.current?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})},[selected,detail?.snapshot.record.id])
  const sourceURL=source?.source_pdf_url?source.source_pdf_url.split('#')[0]+(current?.page?'#page='+current.page:''):null
  const inPage=data?.items.findIndex(q=>q.id===selected)??-1
- const editURL=current?'/contribute/new?'+new URLSearchParams({question:selected,appearance:current.id}):''
+ const editURL=current?'/create/new?'+new URLSearchParams({question:selected,appearance:current.id}):''
  const differentAnswer=!!detail&&!!current&&(detail.canonical.answer_text!==((current.answerIndex===null)?null:current.options[current.answerIndex]??null)||detail.canonical.answer_source!==current.answerSource)
  const nextTarget=data&&listCurrent?nextReviewTarget(data.items,data.total,offset,selected):null
  function nextQuestion(){if(!nextTarget)return;if(nextTarget.kind==='question')select(nextTarget.question);else update({offset:String(nextTarget.offset),question:'',appearance:'',open_first:'1'},false)}

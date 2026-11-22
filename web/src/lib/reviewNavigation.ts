@@ -1,7 +1,7 @@
 import type {AdminGrant} from './adminNavigation'
 
 export const REVIEW_WORKSPACE='/editorial'
-export const TAG_CLEANUP='/editorial?workspace=attention&queue=tags'
+export const TAG_CLEANUP='/admin/bank?tab=editorial&workspace=attention&queue=tags'
 export type ReviewAccess={grants:AdminGrant[];assigned:boolean}
 export function reviewDestinations({grants,assigned}:ReviewAccess){
  const staff=grants.length>0

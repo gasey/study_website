@@ -236,7 +236,7 @@ export default function Games() {
             You have an unfinished {MODE_NAMES[data.active.mode]}.
           </p>
           <Link
-            to={(data.active.mode==='trail'?'/trail/':'/games/') + data.active.id}
+            to={'/games/'+data.active.id+(data.active.mode==='trail'?'?mode=trail':'')}
             className={BTN + " !bg-ink !text-paper"}
           >
             Resume / leave →
@@ -354,7 +354,7 @@ export default function Games() {
             {data?.history.map((h) => (
               <Link
                 key={h.id}
-                to={(h.mode==='trail'?'/trail/':'/games/') + h.id}
+                to={'/games/'+h.id+(h.mode==='trail'?'?mode=trail':'')}
                 className="flex items-center justify-between gap-3 border-b border-hairline py-3"
               >
                 <span className="text-sm">

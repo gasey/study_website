@@ -99,6 +99,14 @@ function MaterialsRoute() {
   return id ? <MaterialReader /> : <Materials />
 }
 
+/** `/news` was the notices view of the calendar. V.14 deleted that route, and
+ *  `notices` is a prop nothing passed — so the notices view became unreachable
+ *  rather than consolidated. It is now a query mode on `/calendar`. */
+function CalendarRoute() {
+  const { search } = useLocation()
+  return <ExamCalendar notices={new URLSearchParams(search).get('view') === 'notices'} />
+}
+
 /** Topic Trail folded into the one Play hub (§0.12). It was routed at
  *  `/trail/:id` until Phase V.14 removed that route without retargeting the
  *  links, which broke trail creation. It reads the same `id` param. */
@@ -263,7 +271,7 @@ export default function App() {
                     leaving a live API and a shipping mobile section unreachable
                     from the web. Restored until the demotion is actually built. */}
                 <Route path="/stats/*" element={<Stats />} />
-                <Route path="/calendar" element={<ExamCalendar />} />
+                <Route path="/calendar" element={<CalendarRoute />} />
                 <Route path="/desk/:deskId?" element={<StudyDesk />} />
                 <Route path="/games/:id?" element={<GamesRoute />} />
                 <Route path="/search" element={<GlobalSearch />} />

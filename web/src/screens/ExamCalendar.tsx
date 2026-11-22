@@ -331,7 +331,7 @@ export default function ExamCalendar({
       <div className="mt-3 flex flex-wrap gap-4 text-sm font-semibold">
         <Link
           className="min-h-11 py-3 text-link underline"
-          to={notices ? "/calendar" : "/news"}
+          to={notices ? "/calendar" : "/calendar?view=notices"}
         >
           {notices ? "Open exam calendar →" : "Read official notices →"}
         </Link>

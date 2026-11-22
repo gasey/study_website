@@ -2,7 +2,7 @@ import type { AnswerSource } from '../lib/api'
 import {answerStatus,answerStatusAppearance,type AnswerContext} from '../lib/answerStatus'
 export function answerProvenance(source:AnswerSource,reviewed=false){return answerStatus(source,{reviewed})}
 export function evidenceLink(questionId:string) {
-  return '/contribute/new?'+new URLSearchParams({question:questionId,kind:'answer',intent:'verify'})
+  return '/create/new?'+new URLSearchParams({question:questionId,kind:'answer',intent:'verify'})
 }
 /** Part VII (§VII.6, §VII.6.2):
  *  - Learner mode (default): trusted answers render no badge at all;

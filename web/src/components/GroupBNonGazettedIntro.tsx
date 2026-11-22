@@ -2,7 +2,7 @@ import {useEffect,useState} from 'react'
 import {Link} from 'react-router-dom'
 import {getExamStudyTopics,type ExamStudyTopics} from '../lib/api'
 
-const ROOT='/group-b?collection=group-b-non-gazetted'
+const ROOT='/exams/group-b-gazetted?collection=group-b-non-gazetted'
 
 export default function GroupBNonGazettedIntro({guidanceOnly=false}:{guidanceOnly?:boolean}){
  const [topics,setTopics]=useState<ExamStudyTopics|null>(null)

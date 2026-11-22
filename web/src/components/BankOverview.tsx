@@ -7,7 +7,7 @@ export type Coverage={questions:number;live:number;held:number;written:number;mi
 export type Overview={totals:Coverage;exams:(Coverage&{id:string;title:string;papers:number;mapped_papers:number})[];generated_at:string;papers:number;schemes:number;mapped_papers:number;questions_with_inspections:number;published_corrections:number}
 const n=(v:number)=>v.toLocaleString('en-IN')
 const admin=(tab:string,extra:Record<string,string>={})=>'/admin/bank?'+new URLSearchParams({tab,...extra})
-const review=(id:string)=>'/editorial?'+new URLSearchParams({scope:'module:'+id})
+const review=(id:string)=>'/admin/bank?tab=editorial&'+new URLSearchParams({scope:'module:'+id})
 export default function BankOverview({data,health,grants,busy,onRetry}:{data:Overview;health:AdminHealth;grants:AdminGrant[];busy:boolean;onRetry:()=>void}){
  const [search,setSearch]=useState(''),[attention,setAttention]=useState(false)
  const owner=grants.some(g=>g.role==='owner'),t=data.totals
