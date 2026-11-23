@@ -8469,3 +8469,101 @@ And the three declines stand unchanged: no microservices, no Kubernetes, no
 WebSockets beyond the one staff-only SSE route §VII.11.4 already named.
 
 Nothing in Part VIII is implemented.
+
+---
+
+# Part IX — Community: built, complete, and out of reach
+
+23 November IST — written after the owner asked for "a fun interactive website",
+a follow-feed, doubts that surface the MCQ in focus, and Reddit-style voting,
+and asked how to fold those into one feature instead of many. **The answer is
+that they are already one feature, it already exists, and the reason it is empty
+is scale rather than design.** No code was written for this part.
+
+## IX.1 It is already built, and already one thing
+
+`posts` has been in the schema since **migration 0002** — the original design:
+
+```sql
+canonical_id  NOT NULL REFERENCES canonical_questions(id)
+kind          CHECK (kind IN ('explanation','doubt','reply'))
+about_option  INTEGER        -- "Why not B?", per printed option
+parent_id     → posts(id)    -- threading
+accepted      BOOLEAN        -- accepted answer
+helpful_w     NUMERIC        -- votes weighted by whether the voter answered correctly
+before_fix    BOOLEAN        -- marks a discussion written before the key was corrected
+hidden        BOOLEAN        -- auto-hidden by abuse reports
+```
+
+Wired through ten service and router files; `QuestionDiscussion.tsx` is 904 lines
+and already renders on every question page; `Feed.tsx`, `creator_follows`,
+`post_votes`, `contribution_votes` and `material_votes` all exist.
+
+**The consolidation the owner asked for is already structural.** `canonical_id`
+is `NOT NULL`, so a post cannot exist without a question. The feed can only ever
+be *questions with activity*; it cannot drift into a feed of people. The
+guardrail against the distraction the owner was worried about is a foreign key.
+
+And `helpful_w` — weighting a vote by whether the voter actually answered the
+question correctly — is a better ranking signal than the upvote model the owner
+proposed, and predates the request by the whole life of the project.
+
+## IX.2 Why it is empty, measured
+
+| | |
+| --- | --- |
+| `posts` / `post_votes` / `creator_follows` rows | **0 / 0 / 0** |
+| Users who have **ever** answered a question | **25** |
+| Users clearing `scored_attempts >= 50` (the study-note gate) | **2** |
+| Accounts older than 3 days with an email | **3** |
+| Attempts site-wide | **423** |
+
+`community_policy.can_create` is `old_enough AND scored_attempts >= 50`. At most
+two accounts in the site's history have ever been eligible to author a study
+note. Asking a doubt is lighter — registered, not sanctioned, within a daily
+limit — but the question page gates the discussion behind *answering the
+question first*, and only 25 people have ever answered anything.
+
+**Nothing in the product is broken. There is no audience yet.** A doubt asked
+into a community of twenty-five waits forever, which is a worse experience than
+no feature at all.
+
+## IX.3 The decision
+
+**Build nothing here.** Not a feed, not follows, not profiles, not a v2. The
+route table was cut from ~88 to 38 in V.14 because the site was confusing; adding
+a social layer for twenty-five people reverses that for no gain.
+
+This is the third instance of one pattern, and it is the pattern worth naming:
+`v_question_stats` and `v_option_picks` were built in 0003 and unread until V.20;
+all five authoring-console queues were empty on the day they shipped; `posts` has
+been complete and unused since 0002. **This project's constraint has never been
+missing features.**
+
+## IX.4 The one loop, for when it is warranted
+
+When it is time, it is one behaviour on an object that exists, not a new
+destination:
+
+> A learner asks a doubt on a question → it arrives in the **Inbox** (§0.12's
+> single notification surface) → the owner answers → the accepted answer is
+> promoted into that question's **explanation**.
+
+It works at zero community volume because the owner is the respondent; twenty-five
+learners are answerable by one person. Every answered doubt improves the question
+permanently for everyone who meets it later, which is the same work as the
+**12,607 missing explanations** (§VIII, V.20 queue). As traffic grows, other
+learners answer and `helpful_w` ranks them — same tables, no rework, and the feed
+fills itself.
+
+The only genuinely new piece of UI worth building is the one the owner identified:
+**the feed should render the question inline and answerable, not as a link.** That
+is a view change, and it is what makes the surface study rather than scrolling.
+
+## IX.5 The trigger to revisit
+
+Deferral with a trip-wire, in the manner of §0.11.3's cohort gate: revisit when
+**50 accounts have answered at least one question in a week**, and separately when
+**10 accounts clear the existing `scored_attempts >= 50` bar**. Below that, the
+honest move is to improve the thing a solitary learner meets — explanations,
+coverage, the practice loop — because those need no crowd to be useful.
