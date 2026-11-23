@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { reviewRequest, type TaxonomyNode } from '../lib/review'
 
-type QueueKind = 'untagged' | 'legacy' | 'reported' | 'conflicts' | 'missed'
+type QueueKind = 'untagged' | 'legacy' | 'reported' | 'conflicts' | 'missed' | 'no-explanation'
 
 interface VoiceWarning {
   code: string
@@ -437,6 +437,7 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
               ['reported', 'Reported'],
               ['conflicts', 'Conflicts'],
               ['missed', 'Most missed'],
+              ['no-explanation', 'Needs explanation'],
             ] as const
           ).map(([id, label]) => (
             <button

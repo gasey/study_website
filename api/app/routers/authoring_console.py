@@ -264,7 +264,7 @@ async def apply_contexts(
 @router.get('/authoring-queue')
 async def authoring_queue(
     actor: Annotated[Actor, Depends(identity)],
-    queue: Literal['untagged', 'legacy', 'reported', 'conflicts', 'missed'] = 'untagged',
+    queue: Literal['untagged', 'legacy', 'reported', 'conflicts', 'missed', 'no-explanation'] = 'untagged',
     limit: int = Query(50, ge=1, le=50),
     offset: int = Query(0, ge=0, le=100000),
 ) -> dict:
@@ -305,6 +305,16 @@ async def authoring_queue(
                 'legacy': "COALESCE(bp.period, 'unknown') = 'legacy'",
                 'reported': "EXISTS (SELECT 1 FROM content_reports cr WHERE cr.canonical_id = c.id AND cr.status IN ('open','confirmed'))",
                 'missed': f'st.attempts >= {MIN_ATTEMPTS} AND st.accuracy <= 0.5',
+                # The largest body of real work in the bank: 12,608 live questions with an
+                # official or transcribed key and no explanation at all. Deliberately scoped
+                # to a trustworthy answer — writing an explanation for an answer nobody has
+                # verified would be explaining a guess, and §VII.8's voice rules assume the
+                # answer is settled. The other ~8,200 unexplained questions have no usable
+                # answer and belong in answer review, not here.
+                'no-explanation': ("coalesce(a.explanation,'') = '' "
+                                   "AND c.answer_source IN ('official','key') "
+                                   "AND NOT c.key_disputed "
+                                   "AND coalesce(c.source_defect,'') NOT IN ('duplicate-options','unresolved-source')"),
             }[queue]
             # LATERAL rather than a plain join on the view: correlating it lets the
             # planner reach idx_attempts_canonical per row instead of aggregating the
