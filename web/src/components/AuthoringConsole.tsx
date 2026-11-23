@@ -82,6 +82,11 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
   const [voiceWarnings, setVoiceWarnings] = useState<VoiceWarning[]>([])
   const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [bulkStatus, setBulkStatus] = useState('')
+  // Explanations are per-question text, so a "batch" here means publishing several
+  // together in ONE bank write — not applying one text to many. That is what the
+  // worker's grouped apply exists for (§VIII.5.2 #4): 10 explanations become one
+  // sync-bank.sh run instead of ten. Keyed by canonical id.
+  const [explanationDrafts, setExplanationDrafts] = useState<Record<string, string>>({})
 
   // Source text / options / locator (§VIII.5.1)
   const [questionText, setQuestionText] = useState('')
@@ -98,6 +103,7 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     setLoading(true)
     setError('')
     setSelectedIds([])
+    setExplanationDrafts({})
     try {
       const res = await reviewRequest<{ items: QueueItem[] }>(
         `/admin/bank/authoring-queue?queue=${encodeURIComponent(kind)}&limit=50`,
@@ -211,6 +217,76 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     const after = answerIndex == null ? null : optionDrafts[answerIndex] ?? null
     return before !== after
   }, [current, optionsChanged, answerIndex, optionDrafts])
+
+  /** The server caps a batch at 20 targets; mirror it so the cap is visible here. */
+  const BATCH_CAP = 20
+  const draftIds = useMemo(() => Object.keys(explanationDrafts), [explanationDrafts])
+
+  const addToBatch = useCallback(() => {
+    if (!current) return
+    const text = explanation.trim()
+    if (text.length < 20) {
+      setRowErrors((prev) => ({ ...prev, [current.id]: 'An explanation needs at least 20 characters.' }))
+      return
+    }
+    if (!(current.id in explanationDrafts) && draftIds.length >= BATCH_CAP) {
+      setBulkStatus(`A batch publishes at most ${BATCH_CAP} explanations. Publish these first.`)
+      return
+    }
+    setExplanationDrafts((prev) => ({ ...prev, [current.id]: text }))
+    setRowErrors((prev) => {
+      const next = { ...prev }
+      delete next[current.id]
+      return next
+    })
+    setBulkStatus('')
+    setIndex((i) => Math.min(items.length - 1, i + 1))
+  }, [current, explanation, explanationDrafts, draftIds.length, items.length])
+
+  async function publishExplanationBatch() {
+    type Target = { question_id: string; appearance_id: string; baseline_hash: string; source_version: string; explanation: string }
+    const targets: Target[] = []
+    for (const qid of draftIds) {
+      const row = items.find((it) => it.id === qid)
+      if (row) {
+        targets.push({
+          question_id: qid,
+          appearance_id: row.appearance_id,
+          baseline_hash: row.baseline_hash,
+          source_version: row.source_version,
+          explanation: explanationDrafts[qid],
+        })
+      }
+    }
+    if (!targets.length) return
+    setBulkStatus(`Publishing ${targets.length} explanation${targets.length === 1 ? '' : 's'} as one batch…`)
+    setRowStatus((prev) => {
+      const next = { ...prev }
+      targets.forEach((t) => { next[t.question_id] = 'saving' })
+      return next
+    })
+    try {
+      await reviewRequest(
+        '/admin/bank/explanations/apply',
+        { targets, reason: note },
+        'expl-batch-' + crypto.randomUUID(),
+      )
+      setRowStatus((prev) => {
+        const next = { ...prev }
+        targets.forEach((t) => { next[t.question_id] = 'saved' })
+        return next
+      })
+      setBulkStatus(`Published ${targets.length} explanation${targets.length === 1 ? '' : 's'} in one bank write.`)
+      setExplanationDrafts({})
+    } catch (e) {
+      setRowStatus((prev) => {
+        const next = { ...prev }
+        targets.forEach((t) => { next[t.question_id] = 'error' })
+        return next
+      })
+      setBulkStatus(e instanceof Error ? e.message : 'Batch publish failed')
+    }
+  }
 
   const saveAndNext = useCallback(async () => {
     if (!current) return
@@ -391,6 +467,11 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     const onKey = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement | null
       const typing = target && (/INPUT|TEXTAREA|SELECT/.test(target.tagName) || target.isContentEditable)
+      if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'Enter') {
+        e.preventDefault()
+        addToBatch()
+        return
+      }
       if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
         e.preventDefault()
         void saveAndNext()
@@ -412,7 +493,7 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [items.length, saveAndNext])
+  }, [items.length, saveAndNext, addToBatch])
 
   async function runVoiceCheck() {
     try {
@@ -456,7 +537,7 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
         </div>
 
         <p className="mt-2 font-mono text-xs text-muted">
-          j/k move · . repeat tag · ⌘↵ save &amp; next
+          j/k move · . repeat tag · ⌘↵ save · ⌘⇧↵ queue
         </p>
         <p className="mt-1 text-xs text-secondary">
           Edits text, options, tags, currency, explanation and the printed locator.
@@ -503,6 +584,9 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                     )}
                   </div>
                   <div className="truncate text-ink">{it.question}</div>
+                  {it.id in explanationDrafts && (
+                    <div className="font-mono text-xs font-semibold text-link">queued for batch</div>
+                  )}
                   {it.attempts ? (
                     <div className="font-mono text-xs text-muted">
                       {it.attempts} answered · {Math.round((it.accuracy ?? 0) * 100)}% correct
@@ -849,6 +933,32 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                   </div>
                 </div>
               )}
+              {draftIds.length > 0 && (
+                <div className="flex flex-wrap items-center justify-between gap-3 rounded-lg border border-ink bg-canvas p-3">
+                  <p className="text-sm font-semibold text-ink">
+                    {draftIds.length} explanation{draftIds.length === 1 ? '' : 's'} queued
+                    <span className="ml-2 font-normal text-secondary">
+                      — publishing together is one bank write instead of {draftIds.length}
+                    </span>
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    <button
+                      type="button"
+                      onClick={() => { setExplanationDrafts({}); setBulkStatus('') }}
+                      className="min-h-10 rounded-lg border border-hairline bg-paper px-3 text-sm font-semibold text-ink"
+                    >
+                      Discard queue
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => void publishExplanationBatch()}
+                      className="min-h-10 rounded-lg bg-ink px-4 text-sm font-bold text-paper"
+                    >
+                      Publish {draftIds.length} as one batch
+                    </button>
+                  </div>
+                </div>
+              )}
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <input
                   value={note}
@@ -856,6 +966,15 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                   placeholder="Optional note…"
                   className="min-h-11 min-w-0 flex-1 rounded-lg border border-hairline2 bg-paper px-3 text-sm"
                 />
+                {explanation.trim().length >= 20 && explanation.trim() !== (current.explanation || '').trim() && (
+                  <button
+                    type="button"
+                    onClick={() => addToBatch()}
+                    className="min-h-11 rounded-lg border border-ink bg-paper px-4 py-2 text-sm font-semibold text-ink"
+                  >
+                    {current.id in explanationDrafts ? 'Update in batch' : 'Add to batch'} (⌘⇧↵)
+                  </button>
+                )}
                 <button
                   type="button"
                   onClick={() => void saveAndNext()}
