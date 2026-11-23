@@ -10,42 +10,200 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { cancelBilling, createCheckout, getAccountSession, getBilling, getBillingConfig, loginAccount, logoutAccount, registerAccount, verifyCheckout, type AccountSession, type BillingConfig } from '../lib/api'
 
-const shell = 'mx-auto max-w-shell px-6 pb-24 pt-10'
-const panel = 'rounded-[16px] border border-hairline bg-card p-6 shadow-[0_1px_2px_rgba(29,27,24,.05)]'
-const input = 'mt-1.5 h-12 w-full rounded-[9px] border border-hairline bg-paper px-3 text-base outline-none focus:border-ink'
-const button = 'rounded-pill bg-ink px-5 py-3 text-sm font-semibold text-white disabled:opacity-50'
-
 export function AccountForm({ mode }: { mode: 'login' | 'join' }) {
   const [ageReady,setAgeReady]=useState(false)
   const [googleBusy,setGoogleBusy]=useState(false);const [code,setCode]=useState('');const [email,setEmail]=useState(''); const [password,setPassword]=useState(''); const [error,setError]=useState(''); const [busy,setBusy]=useState(false)
-  const [focusField,setFocusField]=useState<'none'|'email'|'password'>('none');const [showPassword,setShowPassword]=useState(false)
+  const [focusField,setFocusField]=useState<'none'|'email'|'password'|'code'>('none');const [showPassword,setShowPassword]=useState(false);const [showMfa,setShowMfa]=useState(false)
   const location=useLocation();const mobileNext=mobileReturn(new URLSearchParams(location.search).get('next'));const next=mobileNext||safeReturnPath(new URLSearchParams(location.search).get('next'));const [saveGuest,setSaveGuest]=useState(false);const [guestCount,setGuestCount]=useState(0)
   useEffect(()=>{fetch('/api/auth/guest-progress',{credentials:'include',cache:'no-store'}).then(r=>r.json()).then(r=>setGuestCount(r.attempts||0)).catch(()=>{})},[])
   const nav=useNavigate(); const joining=mode==='join'
   const rawReferral=new URLSearchParams(location.search).get('ref');const referralCode=joining&&rawReferral&&/^[A-Za-z0-9_-]{24}$/.test(rawReferral)?rawReferral:undefined
   function removeReferral(){const params=new URLSearchParams(location.search);params.delete('ref');nav({pathname:location.pathname,search:params.toString()},{replace:true})}
   async function submit(e:FormEvent){ e.preventDefault();if(googleBusy||busy||joining&&!ageReady)return; setBusy(true);setError('');try{ if(joining) await registerAccount(email,password,referralCode); else await loginAccount(email,password,code); resetAccountContext();let transferError='';if(saveGuest){try{await reviewSession(true);await reviewRequest('/auth/guest-progress/save',{})}catch(e){transferError=(e as Error).message}}window.dispatchEvent(new Event('ism-auth-change'));if(mobileNext)window.location.assign(mobileNext);else nav(next);if(transferError)window.dispatchEvent(new CustomEvent('ism-account-notice',{detail:'Signed in. Guest progress could not be saved: '+transferError})) }catch(err){setError(err instanceof Error?err.message:'Could not sign in.')}finally{setBusy(false)} }
-  const catMood: CatMood = busy ? 'happy' : error ? 'error' : focusField === 'password' ? (showPassword ? 'peek' : 'password') : focusField === 'email' ? 'email' : 'idle'
-  return <main className={shell+' finna-account-page'}><div className="mx-auto max-w-[480px]">
-    <div className="mb-3 font-mono text-xs uppercase tracking-[.12em] text-muted">Finna · Account</div>
-    <CatLoginMascot mood={catMood} emailProgress={Math.min(1, email.length / 28)} />
-    <section className={panel+' relative z-[2] pt-8'}><h1 className="font-display text-2xl font-medium">{joining?'Join free':'Welcome back'}</h1>
-      <p className="mt-2 text-sm leading-relaxed text-secondary">{joining?'Finna is for people aged 18 or over. Save your progress across devices. New accounts include a seven-day Pro trial with no card required.':'Finna is for people aged 18 or over. Sign in to continue, or manage your existing account and data.'}</p>
-      {new URLSearchParams(location.search).has('recovered')&&<p role="status" className="mt-4 text-sm">Your password was saved. Sign in to continue.</p>}
-      {new URLSearchParams(location.search).has('reopened')&&<p role="status" className="mt-4 text-sm">Your account is reopened. Sign in with your new password; reconnect Google and set up MFA again if you used them.</p>}
-      {new URLSearchParams(location.search).has('closed')&&<p role="status" className="mt-4 text-sm">Your account is closed and all devices have been signed out. If your email was verified, you can request a reopening link within 30 days.</p>}
-      {error&&<p role="alert" className="mt-4 rounded-[9px] bg-wrong-soft p-3 text-sm text-wrong-dark">{error}</p>}
-      <AgeCategoryCheck onReady={setAgeReady}/>{referralCode&&<SignupReferral key={referralCode} code={referralCode} onRemove={removeReferral} disabled={busy||googleBusy}/>}<GoogleSignIn referralCode={referralCode} disabled={busy||!ageReady} onBusyChange={setGoogleBusy}/>{new URLSearchParams(location.search).has("google_error")&&<p role="status">Google sign-in was cancelled. You can try again.</p>}<form onSubmit={submit} className="mt-5 space-y-4"><label className="block text-sm font-semibold">Email address<input className={input} type="email" autoComplete="email" required maxLength={254} value={email} onFocus={()=>setFocusField('email')} onBlur={()=>setFocusField('none')} onChange={e=>setEmail(e.target.value)}/></label>
-        <label className="block text-sm font-semibold">Password<span className="cat-pw-wrap"><input className={input} type={showPassword?'text':'password'} autoComplete={joining?'new-password':'current-password'} minLength={joining?12:1} maxLength={200} required value={password} onFocus={()=>setFocusField('password')} onBlur={()=>setFocusField('none')} onChange={e=>setPassword(e.target.value)}/><button type="button" className="cat-pw-toggle" aria-pressed={showPassword} onMouseDown={e=>e.preventDefault()} onClick={()=>{setShowPassword(v=>!v);setFocusField('password')}}>{showPassword?'Hide':'Show'}</button></span>{joining&&<span className="mt-1 block text-xs font-normal text-muted">At least 12 characters, including a letter and a number.</span>}</label>
-        {!joining&&<label className="block text-sm font-semibold">Authenticator or recovery code <span className="font-normal text-muted">(if enabled)</span><input value={code} onChange={e=>setCode(e.target.value)} autoComplete="one-time-code" maxLength={64} className={input}/></label>}
-        {guestCount>0&&<label className="flex gap-3 text-sm leading-relaxed"><input type="checkbox" checked={saveGuest} onChange={e=>setSaveGuest(e.target.checked)}/><span>Save this browser’s {guestCount} practice answers and study progress to my account. Past guest answers earn no XP.</span></label>}
-        <button className={`${button} w-full`} disabled={busy||googleBusy||joining&&!ageReady}>{busy?'Please wait…':joining?'Create account':'Log in'}</button>
-      </form>
-      <p className="mt-5 text-center text-sm text-secondary">{joining?'Already have an account?':'New to India Study Map?'} <Link className="font-semibold text-link underline" to={(joining?'/login':'/join')+'?next='+encodeURIComponent(next)}>{joining?'Log in':'Join free'}</Link></p>
-      {!joining&&<Link to="/account/recovery" className="mt-4 inline-flex min-h-11 items-center text-sm text-link underline">Forgot your password?</Link>}
-      <p className="mt-4 border-t border-hairline pt-4 text-xs leading-relaxed text-muted">Use an email address you can access. Check Account recovery for current recovery availability.</p>
-    </section>
-  </div></main>
+  const catMood: CatMood = busy ? 'happy' : error ? 'error' : focusField === 'password' ? (showPassword ? 'peek' : 'password') : focusField === 'email' || focusField === 'code' ? 'email' : 'idle'
+  const cardLift = focusField === 'password'
+  const nextQs = '?next=' + encodeURIComponent(next)
+
+  return <main className="cat-auth-scene finna-account-page">
+    {/* Ambient floating scene charms (stars, paws & soft bubbles) */}
+    <div className="cat-scene-charms" aria-hidden="true">
+      <span className="cat-charm cat-charm-1">✦</span>
+      <span className="cat-charm cat-charm-2">🐾</span>
+      <span className="cat-charm cat-charm-3">✦</span>
+      <span className="cat-charm cat-charm-4">🐟</span>
+      <span className="cat-charm cat-charm-5">🐾</span>
+      <span className="cat-charm cat-charm-6">✦</span>
+    </div>
+
+    <div className="cat-auth-shell">
+      <div className="cat-auth-kicker">
+        <span>Finna</span>
+        <span aria-hidden="true">·</span>
+        <span>{joining ? '7-day Pro trial included' : 'Study safe & progress'}</span>
+      </div>
+
+      <CatLoginMascot mood={catMood} emailProgress={Math.min(1, email.length / 28)} />
+
+      <section className={`cat-auth-card${cardLift ? ' is-up' : ''}${error ? ' is-error' : ''}`}>
+        {/* Playful Segmented Log in / Join free pill switcher */}
+        <nav className="cat-mode-tabs" aria-label="Account mode">
+          <Link to={'/login' + nextQs} className={`cat-mode-tab${!joining ? ' is-active' : ''}`}>
+            Log in
+          </Link>
+          <Link to={'/join' + nextQs} className={`cat-mode-tab${joining ? ' is-active' : ''}`}>
+            Join free ✨
+          </Link>
+        </nav>
+
+        <header className="cat-card-head">
+          <h1>{joining ? 'Create your study safe' : 'Welcome back'}</h1>
+          <p>
+            {joining
+              ? 'Save progress across devices & unlock a 7-day Pro trial — no card required. (Ages 18+)'
+              : 'Sign in to sync your past papers, Personal Question Vault, and study streak. (Ages 18+)'}
+          </p>
+        </header>
+
+        {new URLSearchParams(location.search).has('recovered') && (
+          <p role="status" className="cat-status-pill">Your password was saved. Sign in to continue.</p>
+        )}
+        {new URLSearchParams(location.search).has('reopened') && (
+          <p role="status" className="cat-status-pill">Your account is reopened. Sign in with your new password; reconnect Google and MFA if used.</p>
+        )}
+        {new URLSearchParams(location.search).has('closed') && (
+          <p role="status" className="cat-status-pill">Your account is closed and signed out. Verified emails can request a reopening link within 30 days.</p>
+        )}
+        {error && <p role="alert" className="cat-error-banner">{error}</p>}
+
+        <AgeCategoryCheck onReady={setAgeReady} />
+        {referralCode && <SignupReferral key={referralCode} code={referralCode} onRemove={removeReferral} disabled={busy || googleBusy} />}
+
+        <div className="cat-google-wrap">
+          <GoogleSignIn referralCode={referralCode} disabled={busy || !ageReady} onBusyChange={setGoogleBusy} />
+          {new URLSearchParams(location.search).has('google_error') && (
+            <p role="status" className="cat-status-pill">Google sign-in was cancelled. You can try again.</p>
+          )}
+        </div>
+
+        <div className="cat-divider" aria-hidden="true">
+          <span>or with email</span>
+        </div>
+
+        <form onSubmit={submit} className="cat-form">
+          <div className={`cat-field${focusField === 'email' ? ' is-focused' : ''}${email ? ' is-filled' : ''}`}>
+            <span className="cat-field-icon" aria-hidden="true">✉</span>
+            <div className="cat-field-inner">
+              <input
+                id="finna-auth-email"
+                type="email"
+                autoComplete="email"
+                required
+                maxLength={254}
+                placeholder=" "
+                value={email}
+                onFocus={() => setFocusField('email')}
+                onBlur={() => setFocusField('none')}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <label htmlFor="finna-auth-email">Email address</label>
+            </div>
+            <span className="cat-field-bar" aria-hidden="true" />
+          </div>
+
+          <div className={`cat-field${focusField === 'password' ? ' is-focused' : ''}${password ? ' is-filled' : ''}`}>
+            <span className="cat-field-icon" aria-hidden="true">🔒</span>
+            <div className="cat-field-inner">
+              <input
+                id="finna-auth-password"
+                type={showPassword ? 'text' : 'password'}
+                autoComplete={joining ? 'new-password' : 'current-password'}
+                minLength={joining ? 12 : 1}
+                maxLength={200}
+                required
+                placeholder=" "
+                value={password}
+                onFocus={() => setFocusField('password')}
+                onBlur={() => setFocusField('none')}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <label htmlFor="finna-auth-password">Password</label>
+            </div>
+            <button
+              type="button"
+              className="cat-pw-toggle-inline"
+              aria-pressed={showPassword}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={() => {
+                setShowPassword((v) => !v)
+                setFocusField('password')
+              }}
+            >
+              {showPassword ? '🙈 Hide' : '👁 Peek'}
+            </button>
+            <span className="cat-field-bar" aria-hidden="true" />
+          </div>
+          {joining && (
+            <p className="cat-field-hint">At least 12 characters, including a letter and a number.</p>
+          )}
+
+          {!joining && (
+            <div className="cat-mfa-row">
+              {!showMfa ? (
+                <button type="button" className="cat-mfa-trigger" onClick={() => setShowMfa(true)}>
+                  🔑 Have an authenticator or recovery code?
+                </button>
+              ) : (
+                <div className={`cat-field${focusField === 'code' ? ' is-focused' : ''}${code ? ' is-filled' : ''}`}>
+                  <span className="cat-field-icon" aria-hidden="true">🔑</span>
+                  <div className="cat-field-inner">
+                    <input
+                      id="finna-auth-mfa"
+                      value={code}
+                      onFocus={() => setFocusField('code')}
+                      onBlur={() => setFocusField('none')}
+                      onChange={(e) => setCode(e.target.value)}
+                      autoComplete="one-time-code"
+                      maxLength={64}
+                      placeholder=" "
+                    />
+                    <label htmlFor="finna-auth-mfa">Authenticator or recovery code</label>
+                  </div>
+                  <span className="cat-field-bar" aria-hidden="true" />
+                </div>
+              )}
+            </div>
+          )}
+
+          {guestCount > 0 && (
+            <label className="cat-guest-check">
+              <input type="checkbox" checked={saveGuest} onChange={(e) => setSaveGuest(e.target.checked)} />
+              <span>Save this browser’s {guestCount} practice answers to my account (past guest answers earn no XP).</span>
+            </label>
+          )}
+
+          <button className="cat-submit-btn" disabled={busy || googleBusy || (joining && !ageReady)}>
+            <span>{busy ? 'Unlocking…' : joining ? 'Create free account' : 'Log in'}</span>
+            <span className="cat-submit-arrow" aria-hidden="true">→</span>
+          </button>
+        </form>
+
+        <div className="cat-card-foot">
+          {!joining ? (
+            <Link to="/account/recovery" className="cat-foot-link">Forgot password?</Link>
+          ) : (
+            <span className="cat-foot-note">No card required</span>
+          )}
+          <Link to={(joining ? '/login' : '/join') + nextQs} className="cat-foot-link is-strong">
+            {joining ? 'Already have an account? Log in' : 'New to Finna? Join free'}
+          </Link>
+        </div>
+      </section>
+
+      <p className="cat-scene-footnote">
+        Use an email address you can access. Check <Link to="/account/recovery">Account recovery</Link> for current recovery options.
+      </p>
+    </div>
+  </main>
 }
 
 const planCards=[{period:'monthly',label:'Monthly',price:'₹100',note:'Billed monthly'}]
