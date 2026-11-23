@@ -163,6 +163,8 @@ def test_udc_check_rejects_stale_display_before_grading(monkeypatch,stale):
     from types import SimpleNamespace
     from unittest.mock import AsyncMock
     from fastapi import HTTPException
+    from starlette.requests import Request
+    from starlette.responses import Response
     from app.routers import study_sessions as route
     # Real rows come from SELECT * on practice_study_sessions, which has carried
     # collection_id since migration 0062; grading now reads it instead of
@@ -183,15 +185,16 @@ def test_udc_check_rejects_stale_display_before_grading(monkeypatch,stale):
     monkeypatch.setattr(route,'state',AsyncMock(return_value={'items':[SimpleNamespace(id='qid',presentation_hash='b'*64)]}))
     grader=AsyncMock();monkeypatch.setattr(route,'_answer_question',grader)
     body=route.Check(version=1,question_id='qid',chosen_index=0,presentation_hash=('a' if stale else 'b')*64)
+    # check() wraps _check_answer to stamp a Server-Timing header, so the route
+    # takes a Response alongside the Request.
+    call=lambda:asyncio.run(route.check('session-1',body,'learner',Request({'type':'http'}),Response()))
     if stale:
-        from starlette.requests import Request
-        with pytest.raises(HTTPException) as exc:asyncio.run(route.check('set',body,'learner',Request({'type':'http'})))
+        with pytest.raises(HTTPException) as exc:call()
         assert exc.value.status_code==409 and 'no attempt was recorded' in exc.value.detail
         grader.assert_not_awaited()
         assert not any(sql.startswith('UPDATE') for sql in cur.queries)
     else:
-        from starlette.requests import Request
-        asyncio.run(route.check('set',body,'learner',Request({'type':'http'})))
+        call()
         grader.assert_awaited_once()
     assert any('FOR SHARE' in sql for sql in cur.queries)
 

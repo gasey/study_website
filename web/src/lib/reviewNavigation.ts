@@ -1,6 +1,9 @@
 import type {AdminGrant} from './adminNavigation'
 
-export const REVIEW_WORKSPACE='/editorial'
+// `/editorial` has not been a declared route since the V.14 consolidation; this chip
+// 404'd on /index because the dead-link gate only resolves string literals in `to={...}`
+// and this one is passed through a variable (§VIII.6).
+export const REVIEW_WORKSPACE='/admin/bank?tab=editorial'
 export const TAG_CLEANUP='/admin/bank?tab=editorial&workspace=attention&queue=tags'
 export type ReviewAccess={grants:AdminGrant[];assigned:boolean}
 export function reviewDestinations({grants,assigned}:ReviewAccess){

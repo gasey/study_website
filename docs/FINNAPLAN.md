@@ -1,5 +1,34 @@
 # Finnaplan — learning, points, desk and community design
 
+23 November IST — Part VIII added on owner direction; document only, no code,
+migration or production state touched. The owner asked how the schema should
+look when the bank holds SSC, UPSC and "questions from anything — geography,
+history, civil engineering" rather than only MPSC; how web and mobile follow;
+and how to make the admin console simpler and the modify → refine → publish loop
+quick, for making **lots** of corrections. Four owner decisions are locked at
+§VIII.0: exam relevance is **derived from a syllabus map**, never stored per
+question; **paperless questions are fully first-class**; **no second exam is
+named** — *"now mpsc focus but ready for others too"*; and admin is **speed
+first, then sections**. Decision 3 governs the shape: Part VIII does not build
+multi-exam machinery for one tenant. It cuts three seams so the deferred work
+stays §V.7's checklist — widen the two-valued `ExamScope` (`exam_scope.py:4`,
+twenty lines now, 207 call sites later), stop the paper being the spine, and get
+topics onto questions. §VIII.3.2 names the deferred list rather than building
+it. **Two findings the plan turns on.** First, `RoutineEdit.kind` already
+accepts `'transcription'` and `'source_reference'`
+(`admin_bank_edits.py:50`), and `owner_workflow.change_summary` already
+auto-summarises question text, printed options and option-to-answer mapping —
+but `AuthoringConsole.tsx:157` only ever sends `'taxonomy'`, so the keyboard
+console with 50-row prefetch and `⌘↵` **cannot fix a typo**, and text work falls
+to a 4-click / 7-request path. Teaching it the other two kinds is a frontend
+change against an API already built for it, with every guard intact — the single
+highest-value item here (§VIII.5.1). Second, §VII.18's "71% have no topic"
+traces to a real audit (`reports/tagging-policy-20261107/README.md:30`) dated
+**7 November — the day before** the 8 November publication of 58,197 taxonomy
+corrections, so §VIII.4.2 makes re-measuring step 1 rather than acting on a
+figure the next day's work may have moved. Build order V.19–V.24 at §VIII.9;
+four never-list additions at §VIII.10. Nothing in Part VIII is implemented.
+
 22 November IST — Part VII added on owner direction; document only, no code
 or production state touched. The owner, reading the built site, reported it as
 confusing and asked for module-by-module simplification. Part VII (§VII.0–VII.16)
@@ -7390,3 +7419,1042 @@ web.
 **Done when**: `max(times_asked) > 1`, and no surface in the product
 promises a signal its data cannot supply.
 
+---
+
+## VII.19 Cross-pollination from ShikshaCom (`work/`) — Authentication, UI/UX, Onboarding, Block Guides & Mobile Hardening (owner request, 22 November 2026)
+
+An audit of the sibling production monorepo at `/home/hruaia/workspace/projects/work`
+(`shared/src/**`, `design_handoff_account_model/`, `design_handoff_google_oauth/`,
+`design_handoff_public_quiz_hub/`, `design_handoff_content_studio/`,
+`TOUR_SYSTEM_SPEC.md`, `MOBILE.md`, `FULL_PLATFORM_UX_AUDIT_2026-08-15.md` and
+`FRONTEND_UX_BUG_AUDIT.md`) identified seven battle-tested architectures, code
+modules, and UX/auth fixes that directly strengthen Finna's repeat loop
+(§VII.18), surface simplification (§VII.1–VII.5), and admin authoring (§VII.11)
+without violating any Finna `CLAUDE.md` authority, privacy, or adult-only (18+)
+invariant.
+
+### VII.19.1 Authentication, session lifecycle & Google OAuth hardening
+
+Sources: `work/shared/src/contexts/AuthContext.jsx`,
+`work/shared/src/api/refreshSession.js`,
+`work/design_handoff_account_model/DECISIONS.md`,
+`work/design_handoff_google_oauth/BUILD_GUIDE.md`,
+`work/FRONTEND_UX_BUG_AUDIT.md` (#4, #7, #13).
+
+1. **Preserve `?next=` intent across Join and Email Verification (not just Login).**
+   In `work/FRONTEND_UX_BUG_AUDIT.md` #4, Login threaded `?next=` while Signup
+   dropped it, ejecting a first-time user who signed up mid-browse onto a
+   generic dashboard with their selected course/test forgotten. In Finna, a
+   guest who taps **Save**, **Test these 34**, or hits the daily untimed cap on
+   `/practice` and chooses **Join** must have `safeReturnPath(next)`
+   (`web/src/lib/accountContext.ts:21`) carried through `/join` → email
+   verification → session creation so they land back on the exact question or
+   filtered set they were studying.
+2. **Auto-login from the email verification link (`DECISIONS.md` #2) & resilient `/verify-email` holding state (`Audit` #7, #13).**
+   Clicking a valid email-verification link already proves ownership of the
+   address; minting the session immediately on verification removes two
+   redundant screens ("Email verified" → "Go to login" → re-type credentials)
+   while keeping the `is_verified` gate intact. If a verification link is
+   expired or `/verify-email` is refreshed (losing router state), route directly
+   to `/resend-verification` with the email pre-filled or editable — never tell
+   the user to "sign up again" (which collides with "account already exists").
+3. **Tab-focus & visibility session re-check with single-flight coalescing (`AuthContext.jsx:163-234`, `refreshSession.js`).**
+   Finna's `accountContext.ts` already coalesces `/api/auth/session` via a
+   module-level `pending` promise and synchronises explicit auth changes across
+   tabs via `localStorage` (`ism.account-change`). Adding `work/`'s
+   `visibilitychange` / `focus` re-check (throttled and guarded so a network
+   blip or offline state *never* clears the local session — only an
+   authoritative server `authenticated: false` response does) ensures a tab
+   brought back to the foreground after hours immediately reflects session
+   expiry or account changes before the learner submits an answer.
+4. **Quiet in-place session refresh (`load({ quiet: true })` / `AuthContext.jsx:464-477` trap).**
+   Never flip a top-level shell `loading` flag to `true` during an in-app
+   mutation (updating focus subjects, linking Google, changing password, or
+   saving preferences). Unmounting the route tree while awaiting `/auth/session`
+   destroys active component/modal state and makes a successful `200`/`201`
+   look like a silent reset.
+5. **Google OAuth production invariants (`design_handoff_google_oauth/BUILD_GUIDE.md` Traps 1, 3, 4, 5, 6):**
+   - **Match on immutable Google `sub`, never email alone** (email is used only
+     on first link; `email_verified` and `aud` are both asserted server-side).
+   - **Explicit 18+ & terms consent on first Google sign-in (`AuthContext.jsx:421-445`):**
+     When Google returns a valid token for an email with no Finna account yet,
+     return `{ needsConsent: true, email, name }` and show the single explicit
+     18+ age declaration & terms checkbox (`docs/FINNA-ADULT-ONLY-PLAN.md`)
+     before creating the account — never infer adult/terms consent from the
+     initial Google button click.
+   - **Caddy header guard (`BUILD_GUIDE.md` Trap 3):** Document in the Caddy
+     runbook that `Cross-Origin-Opener-Policy` must never be set to strict
+     `same-origin` on `study.hawayu.in` (use `same-origin-allow-popups` if COOP
+     is ever enabled), because strict `same-origin` silently breaks the Google
+     Identity Services popup (`postMessage` hangs and the button appears dead).
+
+### VII.19.2 Error sanitization & Outage-vs-Empty honesty
+
+Sources: `work/shared/src/shared/extractError.js`, `work/CLAUDE.md` (Rule 24),
+`work/FRONTEND_UX_BUG_AUDIT.md` (#17, #18, #42).
+
+1. **Gateway / HTML 5xx scrubber (`extractError.js` → `web/src/lib/api.ts`).**
+   When a reverse proxy (Caddy) or worker returns an HTML 502/504/500 page or
+   an oversized stack dump, `res.statusText` or raw body strings can leak raw
+   markup (`<!doctype html>...`) into user-facing error banners. Port
+   `work/shared/src/shared/extractError.js`'s `usableString(s)` guard into
+   `web/src/lib/api.ts:169`: reject any error string starting with `<` or
+   exceeding 300 characters, skip machine `code` tokens, and fall back to a
+   clean human message (`"Couldn't reach Finna right now. Please try again."`).
+2. **Never turn a failed fetch into `[]` (`CLAUDE.md` Rule 24 & Audit #17, #42).**
+   In `work/`, helper wrappers that caught fetch errors and returned `[]` caused
+   backend outages to render as reassuring empty states (*"No questions match
+   these filters — Clear all filters"*). Every Finna browse and return surface
+   (`/home`, `/exams/:id`, `/subjects/:id`, `/practice`, `/guides`, `/desk`)
+   must keep `error` distinct from `items.length === 0` and render an inline
+   **Couldn't load — Retry** card on failure.
+3. **Never echo an empty query (`Audit` #18).**
+   Guard empty-search messages on `query.trim().length > 0` so an empty state
+   never renders literal `No questions match ""`.
+
+### VII.19.3 Non-intrusive contextual onboarding, `?` Help panel & `WelcomeBackBar`
+
+Sources: `work/shared/src/tour/TourProvider.jsx`,
+`work/shared/src/tour/WelcomeBackBar.jsx`,
+`work/shared/src/tour/HelpPanel.jsx`, `work/TOUR_SYSTEM_SPEC.md`.
+
+Finna §VII.14 cuts route sprawl so a new user can understand the site rapidly,
+and §VII.12.2 adds `/guides/using-finna`. Complementing that prose guide with
+`work/`'s lightweight, self-serve tour mechanics gives learners contextual help
+without modal spam:
+
+1. **Press `?` anywhere for a route-aware Help Drawer (`TourProvider.jsx:326-338`).**
+   When no input/textarea is focused, pressing `?` (or clicking the header `?`
+   icon) opens a compact drawer listing keyboard shortcuts (`1–4` / `A–D` to
+   pick an option, `Enter`/`→` for next question, `S` to save, `.` in admin to
+   repeat last tag) and a 1-click **"Show me around this page"** spotlight for
+   `/practice`, `/exams/:id`, `/desk`, and `/admin`.
+2. **DOM-verified `canRun()` & zero interruption gates (`TourProvider.jsx:263-300`).**
+   - A tour or tip is offered **only** when `canRun()` confirms its target DOM
+     anchor (`document.querySelector(step.target)`) actually exists on screen
+     (preventing dead "Replay tour" clicks on empty lists) and per-step
+     `when(ctx)` predicates filter out conditional anchors before computing
+     `Step 1 of N`.
+   - Hard suppression gates: never auto-trigger a tip while a timed `/practice`
+     run is active (`S4`), while any dialog/sheet is open (`S1`), while a form
+     has unsaved edits (`S5`, `form[data-dirty]`), or on viewports `< 768px`
+     unless explicitly marked `mobile: true` (`S7`).
+3. **Inline `WelcomeBackBar` for 45+ day returning aspirants (`WelcomeBackBar.jsx`).**
+   Alongside §VII.18.6's daily Return block, if an authenticated learner returns
+   after `absence_days >= 45`, render a single inline, non-modal status bar at
+   the top of `/home` (*"Welcome back — want a 60-second refresher or to jump
+   straight into your last exam paper?"*) with a 7-day auto-expire and 45-day
+   dismiss cooldown in `localStorage`.
+
+### VII.19.4 Public Quiz Hub & Mock Runner UX lessons for `/practice` and `/exams/:id`
+
+Sources: `work/design_handoff_public_quiz_hub/README.md`,
+`work/shiksha-student-dashboard/src/pages/QuizMock.jsx`,
+`work/FULL_PLATFORM_UX_AUDIT_2026-08-15.md` (#15), `work/MOBILE.md` (`4df29f4`).
+
+1. **Server-computed chip state where `live` is a floor (`public_quiz_hub/README.md` §6.5a).**
+   Subject, topic, and exam chips on `/exams/:id` and `/subjects/:id` must
+   never be hardcoded static arrays that can open a 0-question grid. The
+   server computes effective chip state from real facet counts: an admin may
+   mark a module `soon` or `hidden`, but **cannot** force `live` when its
+   question count is `0`. Any facet with `0` matching questions renders disabled
+   with its count (`0`) or is omitted (§VII.18.4).
+2. **Guest vs signed-in personal panels (`public_quiz_hub/README.md` Decision 1).**
+   Guests can browse and try `/practice` within §VII.17's free allowance;
+   personal history pills (`Seen N× · wrong M×`), Return blocks, and review
+   queues are hidden cleanly for guests — never rendered with fake `0`
+   placeholders.
+3. **Unambiguous result copy & honest timing gate (`FULL_PLATFORM_UX_AUDIT.md` #15).**
+   - Never display *"You're in the top 0% of attempts"*; use unambiguous
+     observed copy: **"You scored higher than X% of attempts on this paper"**
+     (shown only when `participants >= 5`, per §0.8).
+   - Gate **"Time per question"** strictly on `hasTimingData` — omit the metric
+     whenever per-question duration was not recorded rather than showing `0s`.
+4. **Explicit `new_attempt: true` on retake (`MOBILE.md` `4df29f4`).**
+   Tapping **"Practice again"** / **"Retake"** on a completed test must request
+   an explicit fresh attempt (`new_attempt: true`) and surface any allowance
+   gate cleanly, never re-opening a finished attempt's submitted state as if it
+   were live.
+
+### VII.19.5 Structured JSON block-tree & 24-token subject theming for V.15 `/guides`
+
+Sources: `work/shared/src/blogBlocks/schema.js`, `render.js`, `blocksCss.js`,
+`importer.js`, `selftest.js`.
+
+Finna Phase V.15 (§VII.5) converts ~43 MB of authored content from 29 standalone
+`india-study-map` HTML modules into first-party `/guides` without rendering raw
+embedded HTML iframes (`§V.15 Tests: no guide body renders as raw embedded HTML`).
+`work/shared/src/blogBlocks/` already solved this exact problem for 115 custom
+HTML chapter guides:
+
+1. **Adopt the typed block-tree contract (`{ id, t, ...props, s }`) for `guide_chapter.body_blocks`:**
+   - Core block vocabulary: `hero` (overline, title, accented fragment, 4-up stat
+     strip), `prose`, `callout` (rule / trap / exam-tip / memory-hook),
+     `comparisonTable`, `timeline`, `formula`, `faq`, and `practiceLink`
+     (resolving `guide_question` IDs directly to `/practice`).
+   - **Write-time strict validation, read-time permissive rendering** (`schema.js:20-23`):
+     unknown future block types degrade gracefully instead of crashing older
+     clients.
+   - **Never run an HTML sanitizer over plain-text fields (`schema.js:24-28`):**
+     plain-text fields are escaped at render time; only explicit inline-HTML
+     fields pass through restricted sanitization, preventing the `& → &amp;`
+     double-encoding corruption documented in `work/`.
+2. **24 validated hex theme tokens per guide (`THEME_TOKENS` + `normalizeTheme()`, `schema.js:38-97`):**
+   - Each guide (e.g., *Polity Codex*, *Quick Revision*, *Tenses & Voice*,
+     *Mizoram Forest & Environment*) can store a small JSON `theme` map of the
+     24 CSS custom properties (`--ink`, `--paper`, `--accent`, `--accent-lt`,
+     `--coral`, `--gold`, `--green`, etc.), validated against `HEX_RE` and
+     filled from `DEFAULT_THEME`. This preserves each guide's distinct visual
+     identity with zero `trusted_html` or arbitrary `<style>` injection.
+
+### VII.19.6 Content Studio CMS patterns for Finna's `/admin` console
+
+Sources: `work/design_handoff_content_studio/README.md`, `work/CLAUDE.md`
+(Content Studio Phases 1–9).
+
+1. **Admin navigation by job, not by database table (`content_studio/README.md` §Overview #1–2).**
+   Organise `/admin` around the operator's four daily jobs:
+   - **Inbox & Conflicts** (`/admin/ops`: learner reports ranked by exposure
+     count, §VII.6.3 Shape B answer conflicts, pending submissions)
+   - **Bank & Paper Workbench** (§VII.11 keyboard-first editor, bulk tags, paper
+     intake)
+   - **Guides & Calendar** (§VII.5 guides, current affairs, exam dates)
+   - **History & System** (recent publications feed with 1-click **Restore**,
+     creating an append-only `restored` revision rather than deleting history)
+2. **409-with-`used_in[]` on asset deletion (`CLAUDE.md` Phase 4).**
+   Deleting any figure image, source PDF, or guide diagram that is still
+   referenced by a question or guide chapter returns HTTP `409` with the exact
+   `used_in[]` question/chapter IDs rather than breaking live question cards.
+3. **Pre-publish checklist gate (`CLAUDE.md` Phase 5a).**
+   Surface a deterministic checklist bar in the paper/guide editor (missing
+   taxonomy subject, unresolved Shape B key conflict, broken `guide_question`
+   reference) that returns `409` on blocking defects before publication.
+
+### VII.19.7 Mobile & cross-client engineering guards
+
+Sources: `work/MOBILE.md` (§1b, §2 `4cd102f`, `72b43c6`),
+`work/design_handoff_public_quiz_hub/corpus/README.md`.
+
+1. **Single-source token & typography test (`palette_single_source_test`, `MOBILE.md` §2 `4cd102f`).**
+   Add a fast CI test in `finna` (`web/` and `india-study-map-mobile/`) that
+   scans `src/` and fails if any raw hex colour literal or arbitrary
+   `text-[Npx]` / non-token font-family appears outside the canonical token
+   file, or if any primary text/surface pairing drops below WCAG AA `4.5:1`.
+   In `work/`, this caught 18 silent token leaks and a `3.47:1` contrast bug.
+2. **Android 3-button navigation bar `SafeArea` audit (`MOBILE.md` §1b `72b43c6`).**
+   A bottom bar tested only under Android gesture navigation (~16dp inset) can
+   render *underneath* the 3-button system navigation bar (48dp inset), making
+   bottom CTAs untappable on physical Samsung/Pixel devices. Audit every bottom
+   sticky surface in `india-study-map-mobile` and mobile web (`/practice` Next/Save
+   bar, `SelectionTray`, 5-tab bottom bar) to enforce `SafeArea` /
+   `env(safe-area-inset-bottom)`.
+3. **Invalidate cached dashboard/resume state on context or account change (`MOBILE.md` §1b Bug #1).**
+   Verify that every client cache (`ReadRequestCache` on web and query caches on
+   mobile) keys on `accountGeneration()` / `user.id` so logging out or switching
+   accounts never flashes stale Return-block items or personal history.
+4. **Two-column DOCX/PDF parser corruption gate (`design_handoff_public_quiz_hub/corpus/README.md`).**
+   `work/design_handoff_public_quiz_hub/corpus/` contains `ssc_parse.py` and
+   4,764 parsed SSC PYQs (`ssc_bank.json`). Its primary engineering lesson —
+   *"a higher parse count is not the goal; two-column DOCX/PDF extraction can
+   silently shift answers across rows while the parser self-reports success"* —
+   reinforces Finna §VII.6.3's **paper-cluster gate** (>5 answer conflicts in
+   one paper = check for page/column offset corruption before adjudicating
+   individual keys).
+
+### VII.19.8 Dashboard v2 UI architecture for Finna `/home` (`StudyHome.tsx`)
+
+Sources: `work/shiksha-student-dashboard/src/pages/DashboardV2.jsx`,
+`work/shiksha-student-dashboard/src/styles/dashboardV2.css`,
+`work/shiksha-student-dashboard/src/shared/tokens.css`,
+`work/shiksha-student-dashboard/src/utils/subjectChips.js`,
+`work/shiksha-student-dashboard/src/components/OfflineBanner.jsx`,
+`work/shiksha-student-dashboard/src/components/CommandPalette.jsx`,
+`work/design_handoff_dashboards_v2/README.md`.
+
+Comparing Finna's current authenticated dashboard (`web/src/screens/StudyHome.tsx`)
+against `work/`'s `DashboardV2.jsx` surfaces five high-impact UI upgrades:
+
+1. **Replace the social-feed center column on `/home` with `DashboardV2`'s "Today-Led" CSS Grid (`dashboardV2.css:117-147`).**
+   - **Current defect in `StudyHome.tsx:56-62`:** The central stream column of
+     `/home` leads with a social post composer (`Ask a doubt / Note / MCQ`) and
+     embeds `<Feed embedded/>`, pushing the learner's actual `Resume` card below
+     the composer and picking only one resume item (`r.items.find(...)`, `:29`).
+   - **Adopt `DashboardV2`'s Today-led responsive grid areas:**
+     - **Phone (`< 700px`):** single column (`"hero" "return" "today" "subjects" "cal"`),
+       with `min-width: 0` on every flex/grid container (`dashboardV2.css:30, 151`)
+       so long paper titles never cause horizontal page scroll.
+     - **Tablet (`900px–1399px`):** 2-column asymmetric layout
+       (`grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr)`).
+     - **Desktop (`≥ 1400px`):** 3-column layout
+       (`grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) 320px`) where
+       column 1 is **Exam Hero + Return Block (§VII.18.6) + Today Plan**,
+       column 2 is **Subject Mastery Progress + Weak/Repeated Mistakes**, and
+       the `320px` right rail is **This Week KPIs + Compact Month Calendar**.
+       The community feed lives at `/community`, never inside `/home`.
+2. **4-Tile KPI Strip with `null → "—"` Honesty (`DashboardV2.jsx:256-282, 392-412`).**
+   - Render four compact top stat tiles (`Questions this week`, `Reviews due`,
+     `7-day Accuracy`, `Current streak`) styled with soft semantic icon pills
+     (`background: var(--<tone>-soft); color: var(--<tone>)`).
+   - **Never render `"0%"` when the denominator is zero (`DashboardV2.jsx:274-278`):**
+     when `weekAnswers === 0`, `accuracy` is `null` and renders as `"—"`
+     (`.dv2-statValue--na`), because `"0%"` tells a learner who hasn't
+     practised yet this week that they scored zero.
+3. **Deterministic 6-Slot Subject Chip Palette & 2-Letter Square Monograms (`subjectChips.js`, `tokens.css:114-126`).**
+   - In `work/shiksha-student-dashboard/src/utils/subjectChips.js`, a single
+     deterministic string hash (`hashString(name) % 6`) maps any subject name to
+     one of six `{ bg, ink }` CSS custom-property pairs (`--subj-1..6-bg` /
+     `--subj-1..6-ink`: teal, blue, amber, green, maroon, violet) plus a
+     2-letter square monogram (`subjectInitials(name)` → `Po`, `Ar`, `En`,
+     `Mi`, `Gk`).
+   - Adopting this in Finna ensures `Polity`, `Arithmetic`, `English`, `Mizo`,
+     etc. keep the **exact same chip colour and monogram** across `/home`,
+     `/exams/:id`, `/subjects/:id`, `/practice`, `/guides`, and `/results`
+     without maintaining fragile hardcoded subject-name switch statements.
+4. **Honest `OfflineBanner` with Real `lastLoadedAt` Timestamp (`OfflineBanner.jsx`).**
+   - Stamp `lastLoadedAt = Date.now()` **only when a fetch succeeds**
+     (`DashboardV2.jsx:189`). When `navigator.onLine === false`, display an
+     inline status bar at the top of the screen:
+     *"You're offline. Showing what was saved at 4:15 PM. Submitting answers
+     needs a connection."* + **[Retry]**. If no load has succeeded yet, omit the
+     *"saved at …"* sentence rather than printing a blank or fabricated time.
+5. **Independent Secondary Fetch Isolation (`DashboardV2.jsx:203-213`) & Portalled `⌘K` Command Palette (`CommandPalette.jsx`).**
+   - Isolate primary dashboard state from secondary panels so a failed secondary
+     query never flags the entire dashboard as failed (`StudyHome.tsx:31`
+     currently sets `error: true` if any of 6 promises rejects).
+   - Render the `⌘K` / `Ctrl+K` quick-jump palette via `createPortal(..., document.body)`
+     (`CommandPalette.jsx:79`) so CSS transforms on parent cards never trap the
+     fixed overlay.
+6. **Compact Right-Rail Month Calendar with Semantic Event Dots (`DashboardV2.jsx:304-325, 594-641`).**
+   - Monday-first 7-column mini calendar in the `320px` right rail with 4 dot
+     states and an inline legend: **Exam / Notification date** (from `/calendar`),
+     **Reviews due**, **Practised day**, and **Overdue target**.
+
+### VII.19.9 Public Landing Homepage UI (`Home.tsx` at `/`) & Live Ticker Architecture
+
+Sources: `work/shiksha-frontend/src/components/home/Hero.jsx`,
+`work/shiksha-frontend/src/components/home/ShikshaHome.jsx`,
+`work/shiksha-frontend/src/components/ticker/TickerCards.jsx`,
+`work/design_handoff_live_ticker/README.md`,
+`work/EXPLORE_PROGRESS.md` (§Login spotlight),
+`work/FRONTEND_UX_BUG_AUDIT.md` (Critical #1, High #19, Medium #36).
+
+1. **Keep the Live "Try One · Practice" Hero Card (`Home.tsx:95-117`), Add Zero-CLS Skeleton Reservation (`Hero.jsx:153-159`).**
+   - Finna's interactive sample question in the hero is stronger than static
+     marketing art and stays. However, while `getHome()` is in flight, reserve
+     the exact hero stats & question card bounding box (`min-h-[340px]` +
+     `aria-busy="true"` shimmer bars from `Hero.jsx:154-158`) so the primary
+     **"Start with [Exam] →"** CTA button never shifts vertically after first
+     paint.
+2. **State the Merged Free Allowance Upfront in the Hero (`FRONTEND_UX_BUG_AUDIT.md` Critical #1).**
+   - In `work/`, visitors could not tell the platform was free until after
+     signup + email verification. Below Finna's hero CTAs (`Home.tsx:92`),
+     explicitly state §VII.17's free tier:
+     **"Free without an account: browse all past papers & guides + 50 practice
+     answers/day + 1 timed run/month."**
+3. **IntersectionObserver Count-Up with `prefers-reduced-motion` Bypass (`Hero.jsx:54-86`, `StatValue`).**
+   - Animate real bank counters (`data.total_questions`, past papers, exam
+     collections) once on scroll-into-view using cubic ease-out
+     (`1 - (1 - p) ** 3` over `1200ms`), and render final values immediately
+     when `window.matchMedia('(prefers-reduced-motion: reduce)').matches` is
+     true. **Never use fabricated numbers or placeholder faculty/ratings**
+     (`FRONTEND_UX_BUG_AUDIT.md` Medium #36).
+4. **Upgrade Site Notices into a Slot-Targeted, Accessible `TickerCards` Rotator (`TickerCards.jsx`, `design_handoff_live_ticker/README.md`).**
+   - Follow `work/design_handoff_live_ticker/README.md` §0's core decision:
+     **extend the existing notice model (`SiteNoticeAdmin.tsx`) with `slots`
+     (`navbar` | `home_band` | `auth_login`), `kind` eyebrow (`New paper`,
+     `Exam date`, `New guide`, `Current affairs`), and `starts_at`/`ends_at`
+     windows rather than creating a second parallel queue.**
+   - Apply `TickerCards.jsx`'s four accessibility and layout rules:
+     - **5-second timer (`ROTATE_MS = 5000`) that pauses the state index itself**
+       (not just CSS animation) on pointer hover, keyboard `focusin`,
+       `document.visibilityState !== 'visible'`, and `prefers-reduced-motion`.
+     - **`aria-live="off"` on auto-rotating cards** so screen readers are not
+       interrupted every 5 seconds, paired with explicit `‹` / `›` and pagination
+       dots.
+     - **Reserved grid stage height (`EXPLORE_PROGRESS.md:73`)** when rendered on
+       `/login` or `/home` so rotating cards of different line lengths never
+       jostle form inputs or buttons below them.
+     - **Render index clamping (`const page = index < pages ? index : 0`)** at
+       render time (`TickerCards.jsx:41`) so an item expiring mid-visit never
+       causes an out-of-bounds frame.
+
+### VII.19.10 Post-Test Results & Mistake-Review UX (`QuizResult.jsx` & `ACADEMY_DASHBOARD_AUDIT.md`)
+
+Sources: `work/shiksha-student-dashboard/src/pages/QuizResult.jsx`,
+`work/ACADEMY_DASHBOARD_AUDIT_2026-08-23.md` (§2 Teacher & Student Quizzes).
+
+1. **Focused `MistakesReview` Modal Stepper (`QuizResult.jsx:25-60, 144-148`).**
+   - At the top of Finna's test/practice results screen (`Results.tsx`), add a
+     prominent **"Review N mistakes"** button whenever `wrongQuestions.length > 0`.
+   - Clicking it opens a distraction-free modal stepper (`Reviewing mistake 1 of N`)
+     showing only the missed questions one by one: question stem,
+     **✗ Your answer**, **✓ Correct answer**, **Why (explanation)**, a 1-tap
+     **Save ★** button (§VII.18.7), and `← Previous` / `Next →`.
+2. **In-Result Question Search Preserving Original Question Numbers (`QuizResult.jsx:150-164`).**
+   - Add an instant search filter above the full result breakdown that matches
+     across question stem, the learner's selected option, and the correct
+     option, while **keeping each question's original paper number (`Q7.`,
+     `Q24.`)** (`resultData.questions.map((q, i) => ({ q, number: i + 1 }))`)
+     so filtering never renumbers questions from `1`.
+3. **Per-Topic Accuracy Breakdown with 1-Tap "Practise This Topic" (`QuizResult.jsx:182-202`).**
+   - Group the completed test's questions by taxonomy topic/subject and render a
+     direct **"Practise topic →"** button beside each row that launches `/practice`
+     pre-filtered to that topic's questions (or the learner's `ever_wrong`
+     questions in that topic).
+4. **Result & Analytics Integrity Guards (`ACADEMY_DASHBOARD_AUDIT.md` §2):**
+   - **Exclude unsubmitted/abandoned attempts from accuracy averages (`Audit` §2 High #6):**
+     Only completed attempts (`status = 'submitted'`) count toward a paper's or
+     learner's average score; an opened-and-closed tab must never count as a `0`.
+   - **Zero-attempt / low-sample guard on "Weak Topic" flags (`Audit` §2 High #9):**
+     Never flag a topic as weak (`< 40%`) when `attempts === 0` or below the
+     minimum sample threshold (`attempts >= 3`).
+   - **Index-based correctness, never string comparison (`Audit` §2 Medium):**
+     In result review, always compare `selected_index === answer_index`, never
+     `selected_text === answer_text` (which breaks on duplicate or whitespace-normalized
+     option text).
+   - **Always render skipped questions in the result review (`Audit` §2 Medium):**
+     Iterate the test's full question list (marking unanswered items as
+     `Skipped`), never just the `attempt.answers` rows.
+
+### VII.19.11 Token Architecture & Dark-Mode Contrast Guards (`tokens.css` & `ACADEMY_DASHBOARD_AUDIT.md`)
+
+Sources: `work/shiksha-student-dashboard/src/shared/tokens.css` (lines 44–60),
+`work/design_handoff_dashboards_v2/BUILD_GUIDE.md` ( line 245),
+`work/ACADEMY_DASHBOARD_AUDIT_2026-08-23.md` (§0 Theme T3, §2 Critical #2, High #3).
+
+1. **The `--on-accent` vs `--surface` Dark-Mode Trap (`tokens.css:44-60`, `BUILD_GUIDE.md:245`).**
+   - In `work/`, migrating `color: #fff` on primary/accent buttons to
+     `color: var(--surface)` looked 100% identical in light mode (where
+     `--surface` is `#ffffff`), and then turned button labels **near-black on
+     saturated blue/maroon buttons in dark mode** (where `--surface` flips to
+     `#172229` while `--primary`/`--action` stays saturated).
+   - **Rule for Finna (`finna.css` / `index.css`):** Define `--on-accent: #ffffff`
+     for text and icons sitting on filled accent buttons (`bg-practice`,
+     `bg-exams`, primary CTAs) and never use `var(--surface)` or `text-paper`
+     as a button foreground color.
+2. **Eliminate the 18 Hardcoded Hex Literals in `Home.tsx` (`Home.tsx:8-17, 54-93`).**
+   - Move `Home.tsx`'s inline hex values (`#12131A`, `#F5F0E6`, `#2557D6`,
+     `#CFC7B8`, `#FFC83D`, `#2D5BD0`, `#7B45B8`, `#0E8287`, `#B23A9A`,
+     `#B26B00`, `#8A8A12`) into semantic CSS custom properties so the
+     `palette_single_source_test` (§VII.19.7 #1) passes across all screens.
+3. **IST Midnight (`Asia/Kolkata`) Boundary Rule (`ACADEMY_DASHBOARD_AUDIT.md` §0 Theme T3).**
+   - Never compute "today" or "this week" using `UTC` midnight (`00:00 UTC` is
+     `05:30 IST`, which misattributes early-morning study sessions between
+     `12:00 AM` and `5:30 AM IST` to the previous day). All SQL and client
+     day boundaries must use `Asia/Kolkata` local date (`ist_date`).
+4. **Authoring Data-Loss Guards (`ACADEMY_DASHBOARD_AUDIT.md` §1 High #3, §2 Critical #2 & High #3):**
+   - **No replace-all `PUT` on partial draft saves:** Saving a question or paper
+     draft in `/admin` must never delete omitted questions.
+   - **Edit forms must fetch the detail serializer, never seed from a truncated list serializer**
+     (which in `work/` overwrote 400-word descriptions with `""` on edit).
+   - **Bulk import never defaults a missing answer key to Option A (`index 0`)**:
+     unmarked questions import as `unsolved` (`answer_index = null`).
+
+### VII.19.12 Where each item slots into the Part V / Part VII execution order
+
+| Item from `work/` | Slots into Finna phase | Migration needed? |
+| --- | --- | --- |
+| `extractError` HTML/5xx scrubber + Outage-vs-Empty (`__failed` vs `[]`) | **V.14** (Surface & type) | None |
+| `--on-accent` token + `Home.tsx` hex cleanup + 6-slot deterministic `subjectChips` palette + single-source token CI test + Android 3-button `SafeArea` audit | **V.14** | None |
+| `/home` (`StudyHome.tsx`) Today-led 3-col grid (remove embedded social feed) + 4-tile KPI strip (`null → "—"`) + `OfflineBanner` (`lastLoadedAt`) + right-rail Month Calendar + portalled `⌘K` | **V.14 / V.2** | None |
+| Public `/` (`Home.tsx`) zero-CLS hero skeleton + upfront Free-Tier line + `StatValue` count-up + accessible `TickerCards` notice rotator | **V.14** | None (or optional `slots` column on notices) |
+| `?next=` through Join & Verify + Auto-login on verify + Tab-focus session recheck + Google OAuth `sub`/COOP/18+ consent guards | **V.14 / V.2** | None |
+| Server-computed chip states (`live` floor > 0 questions) + explicit `new_attempt: true` + `MistakesReview` modal stepper + in-result search keeping `Q#` + unambiguous percentile/timing gate | **V.2 / VII.18** (Repeat loop) | None |
+| Press `?` route-aware Help Drawer + `canRun()` anchor check + 45-day `WelcomeBackBar` | **V.14 / V.15** (alongside `/guides/using-finna`) | None (`localStorage` + existing session recency) |
+| Structured JSON block-tree (`blogBlocks/schema.js`) + 24-token subject themes | **V.15** (Guides, migration `0136`) | Included in `0136` (`body_blocks JSONB`, `theme JSONB`) |
+| Admin job-grouped nav + 1-click Restore revision + `409 used_in[]` asset guard + no-replace-on-draft-save & no-default-Option-A import guards | **V.16 / V.12** (Authoring console & Admin) | None / minor `0135` check |
+
+---
+
+## VII.20 Tactile Concept-Book Library & Open-Book Guides UI (Web & Mobile, owner request, 22 November 2026)
+
+Owner direction: unify the **Library** and **Guides** reading experience across Finna Web (`study.hawayu.in`) and Finna Mobile (`india-study-map-mobile`) around a tactile hardcover concept-book and bookshelf metaphor inspired by three CodePen studies:
+
+- **`vYaeadj` (`hathibelagal-dev`)** — tactile 3D concept-book covers with embossed spine crease, bookmark ribbon, volume monogram, and paper-edge stack.
+- **`xrRPRL` (`jkantner`)** — interactive 3D front-cover swing and multi-leaf fanned paper pages peeking open on hover/focus.
+- **`oNxEBXj` (`losborne24`)** — architectural bookshelf ledge framing rows of subject and reference volumes cleanly without vertical bloat.
+
+### VII.20.1 Design rules (both platforms)
+
+1. **Deterministic 6-tone bookbinding palette** (`teal`, `cobalt`, `terracotta`, `emerald`, `plum`, `amber`) resolved via `bookToneFor(seed, idx)` — never random per render, keeping subject identity consistent across Library, Guides, Modules, and Mobile.
+2. **Dark-mode and contrast compliance (§VII.19.11):** Hardcover inks stay high-contrast white (`#FFFFFF` on saturated covers) across both Light and Night modes; inner peek pages and open-book spreads adapt cleanly (`#FCF9F2` archival ivory in Light mode → `#141B28` slate-ink paper in Night mode; oak ledge → walnut/slate ledge).
+3. **Reduced-motion safety:** Web disables 3D cover/leaf rotation under `@media (prefers-reduced-motion: reduce)`; Mobile disables spring lift/tilt via `useReducedMotion()`.
+4. **Zero route or contract drift (§VII.14 / §VII.15):** No new routes added (`38` declared web routes; `check-v14-surface.cjs` 10/10 OK). First-party Guides remain cleanly separated from community Materials.
+
+### VII.20.2 Implemented files
+
+- **Finna Web (`finna/web/`):**
+  - `src/components/ConceptBook.tsx` — reusable 3D interactive hardcover concept book component (`ConceptBook`, `bookToneFor`, `bookMonogram`) with spine groove, bookmark ribbon, fanned inner peek page, and stacked right-edge pages.
+  - `src/screens/Library.tsx` — upgraded `/library` (`Subjects · From the community · Saved`) with an aurora Studio hero, core Concept Bookshelf (`.bk-shelf-wrap` + `.bk-shelf-ledge`), pocket reference mini-books (`.bk-mini-book`) for pre-filtered subject scopes, related surfaces grid, and searchable all-categories mini-book drawer.
+  - `src/screens/Guides.tsx` — upgraded `/guides` catalog into an interactive multi-leaf 3D page-flip book shelf (`.gd-book-card` + `.gd-3d-book` with progressive leaf fan on hover/focus, search bar, and subject filter pills) and `/guides/:slug` into an Open-Book Spread reader (`.gd-reader-grid` with sticky mini-cover bookmark rail, numbered chapter markers, ivory/night book paper with spine-fold shadow, and chapter → practice links).
+  - `src/styles/finna.css` — added `.bk-*` and `.gd-*` styles with full Light/Night tokens, responsive mobile grids, and `prefers-reduced-motion` rules.
+- **Finna Mobile (`india-study-map-mobile/`):**
+  - `src/components/ConceptBookCard.tsx` — native React Native tactile hardcover book component (`ConceptBookCard`, `BookshelfPanel`, `BookshelfLedge`) with spine band, ribbon tab, cream/slate paper-edge strip, and spring press-lift animation honoring `useReducedMotion()`.
+  - `src/app/(tabs)/library.tsx` — upgraded the `Library` tab with a 2-column Concept Bookshelf for core/all subjects plus a horizontal swipeable **Reference shelf** (`Modules & lessons`, `Study materials`, `MES Guide`, `Atlas`, `Chronicle`, `Stats`, `Games`) while preserving `Subjects · Tools · Saved` segments and all existing routes.
+  - `src/app/modules.tsx` — upgraded `Modules` to render module volumes as `<ConceptBookCard />` inside a `BookshelfPanel`.
+  - `tests/components/LibraryBookshelf.test.tsx` — component test suite covering subject bookshelf rendering, reference shelf navigation, and module volume routing.
+
+### VII.20.3 Execution-order slot
+
+| Surface | Finna phase | Migration needed? | Status |
+| --- | --- | --- | --- |
+| Web Concept-Book Library (`/library`) & 3D Open-Book Guides (`/guides`, `/guides/:slug`) | **V.14 / V.15** | None | Shipped live (22 Nov 2026) |
+| Mobile Concept-Book Library (`(tabs)/library.tsx`) & Modules (`modules.tsx`) | **V.14 / Mobile** | None | Shipped in `india-study-map-mobile` (22 Nov 2026) |
+
+---
+
+## VII.21 Hero-Crest Exam Cards & Future Sponsor Carousel Reference (Web & Mobile, owner request, 22 November 2026)
+
+### VII.21.1 Paper-Booklet Exam Cards & Homepage Side-Margin Discovery Deck (Web & Mobile)
+
+Updated on owner follow-up (22 November 2026):
+
+- **Archival Paper-Booklet Exam Cards (`/exams` Web + `(tabs)/exams.tsx` Mobile):**
+  - Warm archival cream paper (`#FCF9F2` Light / `#151B28` Night) with multi-sheet stacked paper depth underneath, double-ruled official booklet masthead (`BOOKLET · UDC`, `GUIDE · 2013 REG`), embossed series stamp, subtle answer-sheet left margin rule, coverage meter, and a framed **3-column examination rubric footer** (`Questions | Official Key | Sections`; `Branches | Papers | Schemes` for MES).
+  - **Web (`web/src/screens/Exams.tsx`, `web/src/styles/finna.css`):** Supports both `Booklets` grid and horizontal `List` paper-register rows.
+  - **Mobile (`india-study-map-mobile/src/app/(tabs)/exams.tsx`):** Adds a **`Swipe` | `List`** switcher — horizontal snap-paging swipeable paper booklet deck (`1 / N` indicator + dot markers) alongside a compact vertical paper-register list view (`tests/components/ExamsBooklet.test.tsx`).
+- **Homepage Side-Margin Feature Spotlight Deck (`ExploreDeckRail.tsx` + Mobile Home):**
+  - Inspired by ShikshaCom's draggable noticeboard card stack, `Nidal95/pen/RNNgWNM`, and `hexagoncircle/pen/wvmjomb`.
+  - Lives calmly in the **Homepage side margin** on Web (`StudyHome.tsx` top of `.finna-home-right` rail and `Home.tsx` sticky `.ed-side-col`) and as a compact horizontal swipeable **"Also on Finna"** strip on Mobile (`india-study-map-mobile/src/app/(tabs)/index.tsx`), surfacing **Stats, Guides/Modules, Chronicle, Atlas, Games, and Calendar** without crowding the main study column.
+  - Supports pointer-drag flicking, arrow stepping, filling progress markers that pause on hover/focus, and full `prefers-reduced-motion` static fallback.
+
+### VII.21.2 Future Sponsor / Ad Card Carousel Reference (`Nidal95/pen/RNNgWNM` — deferred, NOT active)
+
+Owner earmarked **`https://codepen.io/Nidal95/pen/RNNgWNM`** (interactive overlapping card carousel) for **future** non-intrusive sponsor/ad cards once Finna reaches post-launch monetization:
+
+- **Guardrails when implemented later:**
+  1. **Zero ads inside active study loops:** Never render sponsor cards inside `/practice`, timed mocks, `/revise`, `/guides/:slug` reading spreads, or `QuestionCard`. Eligible surfaces only: lower browse shelves on `/exams`, `/library`, or `/home` when `plan_code === 'free'` and an explicit feature flag (`FINNA_SPONSOR_CAROUSEL_ENABLED`, default `false`) is turned on.
+  2. **First-party / privacy-clean sponsorship only:** Static or server-served sponsor cards with clear `Sponsored` eyebrow badge — no third-party ad-network trackers or behavioral cookies without privacy review (§VII / `docs/FINNA-PRIVACY-INVENTORY.md`).
+  3. **Accessibility:** Pause/step buttons, keyboard focus support, and static horizontal strip fallback under `prefers-reduced-motion`.
+
+
+
+
+
+---
+
+# Part VIII — Scaling the bank beyond one exam, and the fast correction loop
+
+23 November IST — written on owner direction, document only; no code, migration
+or production state touched. The owner asked three things: how the schema should
+look when the bank holds SSC, UPSC and "questions from anything — geography,
+history, civil engineering" rather than only MPSC; how web and mobile should be
+built for that; and how to make the admin console simpler and the
+modify → refine → publish loop quick, because the intent is to make **lots** of
+corrections.
+
+Four owner decisions were taken before this part was written, and they are
+binding for §VIII.2–§VIII.9:
+
+1. **Exam relevance is derived from a syllabus map, not stored per question.**
+   Each exam maps its syllabus onto the existing shared registry; relevance is a
+   join, not a column. Adding an exam is a checklist, never an 82,000-row
+   classification campaign.
+2. **Paperless questions are fully first-class.** A question with no printed
+   source can be browsed, practised, scored and put in mocks like any other.
+3. **No second exam is named. Build for the future, stay focused on MPSC now.**
+   Owner, verbatim: *"its for the future make the plan for future i want the
+   plan for scaling when i want to add these now mpsc focus but ready for
+   others too."*
+4. **Admin: speed first, then sections.** Both are in scope; the correction loop
+   lands before the navigation restructure.
+
+## VIII.0 The governing principle: cut the seams now, fill them later
+
+Decision 3 is the one that shapes this part, and it rules out the obvious plan.
+Building exam bodies, an exam registry, syllabus maps and a lens cascade *today*
+would be building machinery with exactly one tenant, paid for now and tested
+never. §0.10 already promised the opposite — "onboarding a new exam body is a
+checklist, not a project" — and §V.7 already deferred `exam_syllabus` and the
+`is_primary` flag to "when the second exam body onboards."
+
+Part VIII does not reverse that. It asks a narrower question: **what must be
+true today so that the deferred work stays a checklist?** Three answers, and
+only three:
+
+- **Nothing new may assume there are two scopes.** `ExamScope` is a two-valued
+  `Literal` (`api/app/exam_scope.py:4`). Every month it survives, more code is
+  written against it. Widening the type is a 20-line change now and a 207-call-site
+  change later.
+- **The paper must stop being the spine.** Every default read path inner-joins
+  `papers`, so audience, provenance and existence are one fact. This blocks
+  decision 2 *today*, for MPSC alone — it is not multi-exam work.
+- **Questions must have topics.** Decision 1 makes relevance a join against the
+  taxonomy. A question with no topic is relevant to nothing. This is the long
+  pole and it is already late.
+
+Everything else — bodies, exams, syllabus rows, the lens cascade, per-exam
+onboarding — stays deferred exactly where §V.7 left it. The test of this part is
+that §VIII.3's deferred list is *shorter* than it would have been, not that it
+is built.
+
+## VIII.1 "Exam" currently means three different things
+
+The schema collapses three independent facts into `papers`:
+
+| Fact | What it answers | Where it lives today | Where it belongs |
+| --- | --- | --- | --- |
+| **Provenance** | Where did this question physically come from? | `papers.id` (a PDF path), `papers.exam_type`, `papers.exam_name` | `papers`, and **optional** per question |
+| **Audience** | Who is this question useful to? | `papers.exam_scope_id` → `launch_question_ids` | Derived from syllabus × taxonomy |
+| **Aboutness** | What is it testing? | `question_classifications` | Already correct — do not touch |
+
+The third is already right and is the part of this schema that needs no work.
+The v2 taxonomy header states the policy outright: *"Exam and sitting metadata
+are stored on linked papers/sittings, not as learning tags."* The registry is a
+global forest of 47 subjects / 83 topics / 47 subtopics, `subject_id` carries no
+FK, and it already holds `civil-engineering/structural-engineering` beside
+`general-studies/geography`. §VII.19's tagging rules say the same in prose:
+English from LDC, UDC, Assistant and technical recruitments **uses the same
+English taxonomy**. "Any random question from geography, history, civil
+engineering" is already representable. Nothing about the owner's content
+ambition requires a taxonomy change.
+
+The first two are conflated, and that conflation is the whole problem.
+
+## VIII.2 The spine: questions without papers (phase V.21, MPSC-only value)
+
+### VIII.2.1 What breaks today
+
+A question that was never printed in a paper is, in practice, unreachable:
+
+- `api/migrations/0046_mizoram_launch_scope.sql:14` — `launch_question_ids`
+  **inner-joins** `papers`. The four `v_launch_*` pool views filter on it, and
+  `exam_scope.py:10,21` makes those views the default for every public endpoint.
+  A question with no appearance, or an appearance with `paper_id IS NULL`, is
+  invisible to list, detail, search, library, home, mocks and games.
+- `api/app/routers/questions.py:700-702` — answer reveal carries an
+  **unconditional** `EXISTS(appearances JOIN papers)` guard, regardless of scope.
+- `scripts/review_bank_store.py:72-76` — the only creation path for a question
+  with no `paperId` fabricates `'Community/' + author_id`, stamps
+  `examType:'Community'`, and stamps `examScopeId:'mizoram-recruitment'` on
+  content that has nothing to do with Mizoram, purely so the launch view will
+  show it.
+- That falsehood is then load-bearing in the wrong direction: five call sites
+  (`game_selection.py:249`, `mocks.py:66`, `questions.py:121`,
+  `atlas_context.py:68`, `bank_dates.py:167`) branch on `exam_type='Community'`
+  to **exclude** these questions from scored play.
+
+So the current answer to "add a question from anything" is: invent a fake paper,
+lie about its scope, and be disqualified from mocks and games. Decision 2 says
+that is not acceptable, and note that **none of this is multi-exam work** — it
+blocks the owner from adding a standalone MPSC practice question today.
+
+`appearances.paper_id` is already nullable (`0001_schema_v2.sql:57`, never
+promoted to `NOT NULL` in 138 migrations). The schema permits what every query
+forbids. That is the cheap part.
+
+### VIII.2.2 The change
+
+One new migration. Additive, no rewrite of applied migrations, rehearsed on a
+disposable clone per §V.0.
+
+- **`canonical_questions.origin`** — `TEXT NOT NULL DEFAULT 'paper'`,
+  `CHECK (origin IN ('paper','authored','imported'))`. Derivable from the
+  appearance join, made explicit so queries and honesty labels do not have to
+  re-derive it. Backfill is a single `UPDATE` of the current state: everything
+  is `'paper'`.
+- **`canonical_questions.audience`** — `TEXT[] NOT NULL DEFAULT '{}'`, the scope
+  ids a paperless question belongs to. This follows the precedent the newest
+  table in the repo already set: `guides.exam_scope TEXT[]`
+  (`0136_guides_library.sql`) is a multi-valued, FK-free exam tag, and it is the
+  right shape. Paper-origin questions leave it empty and keep inheriting from
+  their paper.
+- **Replace `launch_question_ids`** with a union that admits both lineages:
+  paper-origin questions resolve scope through `papers.exam_scope_id` as today;
+  non-paper questions resolve through `canonical_questions.audience`. The four
+  `v_launch_*` views change only in which id set they filter against.
+- **Relax `questions.py:700-702`** so answer reveal admits an authored question
+  with a reviewed answer, instead of requiring a printed paper to exist.
+- **Retire the `Community/` fabrication** in `review_bank_store.py:72-76`. A
+  question authored with no paper gets `origin='authored'` and an explicit
+  `audience`, not a synthetic paper and not a false Mizoram stamp.
+- **Split the two meanings of `exam_type='Community'`.** It currently means both
+  "no printed source" (provenance) and "do not score this" (trust). The five
+  exclusion sites must branch on trust, not on origin. An owner-authored
+  question with a reviewed answer is not less trustworthy than a transcribed one
+  — it simply has different evidence, which §0.2's rule already covers:
+  provenance is a display property, not a visibility filter.
+
+### VIII.2.3 What does not change
+
+`papers.exam_type`'s five-value `CHECK` (`0001:29-30`, widened at `0030:122`)
+has no valid value for an SSC CGL paper and conflates provenance with category.
+It is **not** fixed here. It is a real defect, but it is exam-#2 work, it needs
+a data migration of 3,331 rows, and fixing it today buys nothing. §VIII.3 lists
+it as deferred, which is the point of listing it.
+
+Likewise `papers.exam_name` — 1,240 distinct free-text values across 3,331
+papers, with case-variant duplicates, matched by `LIKE` in `0011_exam_tracks.sql:28-33`
+and patched by 33 hand-listed PDF paths in `0053`. Deferred, named, not fixed.
+
+## VIII.3 The exam spine: what lands now, what waits
+
+### VIII.3.1 Lands now — the type (phase V.19, same migration-free pass)
+
+`api/app/exam_scope.py` is twenty lines and four functions. The 207 call sites
+thread a value through; they do not each branch. Widening it is contained:
+
+- `ExamScope` becomes an open scope identifier rather than
+  `Literal["mizoram-recruitment","all"]`, validated against a scope registry
+  instead of against the type system.
+- `scope_condition()` and `question_scope()` keep emitting internal literals and
+  keep refusing to interpolate client text — that discipline is correct and
+  stays.
+- `web/src/lib/examScope.ts:2` mirrors the same widening; `ListParams`
+  (`web/src/lib/api.ts:200-221`) gains nothing yet, because there is still one
+  exam.
+
+The payoff is a rule, not a feature: **from V.19 onward, no new code may assume
+two scopes, and no new code may hardcode an exam id.** §0.10 rule 1 already says
+"exam identity is data, never schema or code branches" and already exempts
+existing history from renaming. V.19 makes that rule enforceable by a test
+rather than by vigilance.
+
+### VIII.3.2 Deferred to exam #2 — named, specified, unbuilt
+
+This list exists so the deferral is honest and so onboarding stays a checklist.
+None of it is built in Part VIII.
+
+| Deferred item | Why it waits | Already specified at |
+| --- | --- | --- |
+| `exam_bodies` / `exams` as real rows, replacing the 3-row `bank_source_providers` and six hardcoded collection ids | One tenant; the seed would be a single row | §0.10 rule 1, §V.7 step 1 |
+| `exam_syllabus(exam_id, subject_id, topic_id, weight, display_order)` | The lens engine; useless with one exam | §0.11.1 |
+| `is_primary` saved-exam flag and the lens cascade | Nothing to switch between | §0.11.1–§0.11.2 |
+| `papers.exam_type` CHECK widening + provenance/category split | 3,331-row data migration, no benefit today | §VIII.2.3 |
+| `papers.exam_name` normalisation onto an exam FK | Same | §VIII.2.3 |
+| `collection_sections.query` gaining an exam key | Sections resolve by paper ids / taxonomy today (`collections.py:35-63`) | §VIII.4.2 |
+| Licensing stance per body, as **step 0** of onboarding | Must precede ingestion | §13.1 #13 |
+| "All exams" becoming an enabled-scope whitelist rather than `TRUE` | Flagged live gap | `GAMES-SPECIALIZATION-PLAN.md:28`; `VOCABULARY-AUTOMATIC-MASTERY-PLAN.md:21` |
+
+## VIII.4 Relevance is derived — and topic coverage is the real gate
+
+### VIII.4.1 The formula
+
+Decision 1 makes cross-exam relevance a join, with no per-question exam data:
+
+> A question is relevant to an exam when the exam's syllabus map covers the
+> question's taxonomy path — matching on subject, and on topic when the syllabus
+> row names one.
+
+Three consequences worth stating plainly, because they are why this decision is
+the right one:
+
+- **Onboarding cost is ~100 rows, not 82,000 classifications.** An exam's
+  syllabus is authored once onto the existing registry.
+- **Paperless questions work for free.** They have a taxonomy path, so they have
+  relevance. No paper, no exam tag, no special case. §VIII.2 and decision 1 fit
+  together exactly.
+- **The shared-registry dividend is automatic.** §0.11.3's promise — an aspirant
+  moving from MPSC to SSC keeps their English mastery where syllabi overlap —
+  falls out of the join rather than needing migration work.
+
+And one consequence that is a liability:
+
+- **A question with no topic is relevant to nothing.** It stays visible in its
+  own paper and in its subject, and it disappears from every exam lens except
+  the one its paper belongs to.
+
+### VIII.4.2 The gate, and an honest caveat about its size
+
+§VII.18 states that 58,370 of 82,249 questions have an approved subject but no
+topic — 71%. That figure is real and traceable: it is a read-only live audit
+recorded at `reports/tagging-policy-20261107/README.md:30` and
+`docs/PLAN.md:1058`.
+
+**It was measured on 7 November 2026 — the day before the owner-authorized
+taxonomy publication of 8 November**, which published 58,197 corrections and
+reached 77,791 accepted tagging outcomes covering 94.4% of the bank
+(`reports/owner-taxonomy-final-20261108/README.md`). Whether those corrections
+*added topics* or only confirmed and corrected subjects is not determinable from
+the ledger, and the two figures are close enough to invite a false inference in
+either direction. `CLAUDE.md` is explicit: use fresh authoritative checks rather
+than counts in historical documents.
+
+**Step 1 of V.20 is therefore to re-measure topic coverage, not to act on 71%.**
+If coverage is now good, the lens is nearly ready and the campaign is small. If
+it is still 71%, topic coverage is the single largest piece of work in this plan
+and everything about multi-exam depends on it. The plan must not be written
+against the wrong one of those two worlds, and §VIII.5's console is what makes
+either number tractable — which is why admin speed is sequenced ahead of exam
+machinery and not behind it.
+
+Note also the cheaper reach that already exists and needs no schema: §VII.18.4's
+**subject modules**. A module is a saved query — `collection_sections.query`
+resolves from `subject_id`/`topic_id` with no `paper_ids`
+(`collections.py:52-63`) and `collections.kind` already allows `practice` — so
+"whole English across every exam" costs one row plus one section. That is the
+answer to cross-exam breadth *before* the syllabus map exists, and it has the
+same dependency: it is only as good as the tagging.
+
+## VIII.5 Admin phase 1 — the correction loop (phase V.20)
+
+Owner direction, and the thing this phase is measured against: *"i would want to
+make lots of correction and the flow and publish or change accceptange should be
+quick."*
+
+§VII.11's framing is reaffirmed without amendment: **not one guard is removed
+here.** MFA, CSRF, rate limits, per-subject grants, idempotency keys, advisory
+locks, stale-source checks, active-assessment holds, immutable history and
+guarded publication with readback all stay. The latency is in the interface
+making the operator pay for them one question at a time.
+
+### VIII.5.1 The finding: the fast console cannot fix a typo
+
+This is the highest-value item in Part VIII and it is almost free.
+
+`web/src/components/AuthoringConsole.tsx` is the keyboard-first queue §VII.11
+asked for, and it works: 50-row prefetch with `baseline_hash` and
+`source_version` (`authoring_console.py:238-305`), `j`/`k` navigation, `.`
+repeat-last-tag, `⌘↵` save-and-advance, zero round-trips between rows.
+
+It cannot change a word of a question. `saveAndNext`
+(`AuthoringConsole.tsx:139-229`) has exactly three write blocks — taxonomy,
+context/currency, explanation — and the only `kind` it ever sends is
+`'taxonomy'` (`AuthoringConsole.tsx:157`). Question text, options, answer and
+source locator are read-only there; the sole `<textarea>` is the explanation.
+
+The server has supported the rest all along:
+
+```
+RoutineEdit.kind: Literal['taxonomy','transcription','source_reference','explanation']
+                                       api/app/routers/admin_bank_edits.py:50
+```
+
+`owner_workflow.change_summary` (`owner_workflow.py:24-36`) already generates
+factual summaries for `question text`, `printed options`,
+`option-to-answer mapping`, `instructions`, `shared passage`, `text formatting`
+and `option formatting`, so a text fix needs no typed reason — and
+`routine_proposal:40-42` still demands a ≥20-character note on exactly the case
+that warrants one, a change to the correct answer. The answer-key protection at
+`admin_bank_edits.py:60-74` applies unchanged.
+
+So the fast path and the correction path are disjoint for no reason, and typo
+work is pushed onto `AdminQuestionWorkbench`: four clicks and seven HTTP
+requests per question, three of them redundant. **Teaching the console to send
+`transcription` and `source_reference` is a frontend change against an API
+already built for it, with every guard intact.** It is the single thing that
+most directly serves "lots of corrections."
+
+### VIII.5.2 The ranked list
+
+| # | Change | Where | Why |
+| --- | --- | --- | --- |
+| 1 | Console sends `transcription` + `source_reference`; text/options/locator become editable in the same keyboard loop | `AuthoringConsole.tsx:157` | §VIII.5.1; no guard touched |
+| 2 | Coalesce `saveAndNext`'s up-to-3 POSTs into one | `AuthoringConsole.tsx:156,180,202` | 60 writes/min (`review_identity.py:35`) ÷ 3 ≈ a 20-question/minute ceiling |
+| 3 | Return `baseline_token` from `/inspect`; open the correction editor expanded | `bank_workspace.py:590-631`, `InlineQuestionCorrection.tsx:10` | `/inspect` already returns the snapshot; one missing field costs a click and two round-trips |
+| 4 | Group non-taxonomy batch exports in the worker | `bank-review-worker.py:220-230`, `admin_tag_batch.py:25` | A 20-item explanation batch already asks for `group_export=True` (`authoring_console.py:124`) but runs 20 sequential `sync-bank.sh` applies |
+| 5 | Stop the full list refetch on `window.focus` | `AdminQuestionWorkbench.tsx:51` | Alt-tabbing to the source PDF and back costs a page + counts refetch |
+| 6 | Replace the mandatory ≥20-char note on publisher-role **non-answer** edits with the server-generated summary | `QuestionCorrectionEditor.tsx:21`, `admin_bank_edits.py:40` | Owners already have this; answer-bearing edits keep the requirement |
+| 7 | Drop the ≥20-char reason on pure metadata context saves | `bank_organization.py:22` | `bank_question_contexts` is versioned, source-signed and actor-stamped regardless |
+| 8 | Make the staff MFA window honest — keep the requirement, re-fetch the session so the banner is live | `account_identity.py:38`, `BankAdmin.tsx:60,108` | 15-minute expiry + a mount-time banner means silent 403s mid-flow |
+| 9 | Preserve `offset`/`question` across filter and tab changes | `AdminQuestionWorkbench.tsx:42`, `BankAdmin.tsx:97` | Losing your place in a 50-row queue is the whole cost of a filter |
+| 10 | Switch the 12-second batch poll to the SSE endpoint that already exists | `EditorialTagCleanup.tsx:42` vs `authoring_console.py:308-337` | §VII.11.4's single sanctioned exception, already built and unused |
+| 11 | One-tap fix-and-next from a question's own learner-facing page | §VII.18.9 | Same `routine-edits` call, no console navigation |
+
+Acceptance is §VII.11's, restated and now including text: **a measured run
+corrects 100 questions — tags *and* typos — in under eight minutes with no page
+navigation, and that run's publish failures are visible without leaving the
+screen.**
+
+## VIII.6 Admin phase 2 — sections (phase V.21)
+
+The console is one route (`App.tsx:298`) dispatching 37 `?tab=` sections
+(`adminNavigation.ts:3-41`) through a 45-line switch (`BankAdmin.tsx:97-144`).
+§VII.14 judged the sections "defensible — admins are experts." That holds for
+the count; it does not hold for the current state, which has measurable defects
+rather than merely a lot of entries:
+
+- **11 of 37 sections are missing from the sidebar.** `AdminNavigation.tsx:4-11`
+  hardcodes its own 26-key `GROUPS` instead of reading the manifest. `edit` —
+  the fast console, the most valuable screen in the product for this owner — is
+  one of the eleven, reachable only by ⌘K or a typed URL.
+- **`ADMIN_GROUPS` and `adminNavigation()` are dead code** (`adminNavigation.ts:42,51-56`),
+  imported by nothing, so the manifest's grouping is unused by the real nav.
+- **`exams` and `papers` render the same component**, and `AdminExamInventory.tsx:20`
+  hard-sets `tab=exams` on any filter change, so `papers` cannot survive its own
+  first interaction.
+- **`EditorialTagCleanup` is mounted twice** with two URL-param namespaces
+  (`AdminRetagging.tsx:2`, `EditorialAttention.tsx:21`).
+- **Five queue readers over the same two tables** — `admin_workflow.py:36`,
+  `admin_bank_edits.py:165`, `bank_workspace.py:168`,
+  `AdminQuestionWorkbench.tsx:85`, `authoring_console.py:238`.
+- **Three dead `/admin/*` links** (`AdminNavigation.tsx:18`, `More.tsx:46`,
+  `TopicTrail.tsx:27`) fall through `AdminRoute` (`App.tsx:172`) to `NotFound`,
+  plus one entirely unrouted screen (`AtlasBindings.tsx`) whose backend is live.
+- **`/editorial` is rendered as a staff chip on `/index`**
+  (`SiteIndex.tsx:181-186`, `reviewNavigation.ts:3`) and is not a declared route.
+  The dead-link gate misses it because the link is dynamic.
+
+V.21 is therefore subtraction plus one honest manifest, adopting §VII.19.6's
+four operator jobs:
+
+1. **Inbox & Conflicts** — learner reports ranked by exposure, answer conflicts,
+   pending submissions. §VII.18.9's rule stands: exposure ranking sorts every
+   admin queue, and the report inbox is the queue's first tab.
+2. **Bank & Workbench** — the §VIII.5 console, bulk tags, paper intake,
+   organization, PDF library.
+3. **Guides, Content & Calendar** — guides, materials review, current affairs,
+   atlas, notices.
+4. **History & System** — publications, audit, ops, users, rewards, privacy,
+   moderation.
+
+With: the sidebar generated from `ADMIN_SECTIONS` so no section is unreachable;
+`ADMIN_GROUPS` and `adminNavigation()` deleted or made real; the `papers` twin,
+the `/admin/ops` and `/admin/users` path aliases and the duplicate
+`EditorialTagCleanup` mount removed; the five queue readers collapsed to one; the
+dead links fixed and `/editorial` either routed or removed; and the unreferenced
+endpoints deleted (`authoring_console.py:340,407,435`, `retagging.py:152`,
+`bank_workspace.py:524`).
+
+This is the same move §VII.3 made for the learner surface — seven hand-synced
+navigation surfaces became one `siteMap.ts` manifest — applied to the console
+that §VII.14 pointed at as the pattern's source.
+
+## VIII.7 Web
+
+Almost nothing. V.14 landed: 38 routes (`App.tsx:256-300`), one generated
+manifest driving seven surfaces (`siteMap.ts`), practice and mock merged. Part
+VIII adds two items and neither is a new screen:
+
+- **`/bank` gains the exam dimension when there is one to gain.** Today its
+  collection chips are `collections.slice(0, 5)` — unfiltered and truncated
+  (`Bank.tsx:119`) — while `/practice` already has a proper exam picker
+  (`Practice.tsx:69,248-258`). Align `/bank` to `/practice`'s behaviour now; the
+  exam facet itself is exam-#2 work.
+- **Paperless questions need an honest source line.** §VII.7's rule applies
+  unchanged: nothing is hidden, the label is a line under the source line. A
+  question with `origin='authored'` says so where a paper-origin question names
+  its paper. §0.11.4: labelled, never hidden.
+
+Two stale comments should be corrected while nearby: `siteMap.ts:37` describes a
+6-link desktop nav that renders 5, and `navigation.ts:4` lists tabs that do not
+match the five that ship.
+
+## VIII.8 Mobile
+
+The Expo app is internal-only — `README.md:5` calls it "not a published app",
+all four `eas.json` profiles are `distribution: internal`, and
+`submit.production` is empty. §0.12's rule governs: the phone web is the mobile
+experience, the app is the offline companion, and every `MobileBoundary`
+widening must be justified by something native rather than by "the web has it."
+
+So Part VIII gives mobile exactly one job, and it is a correctness job:
+
+- **The mobile tab bar is outside the manifest.**
+  `india-study-map-mobile/src/components/BottomNavigation.tsx:6-19` hardcodes its
+  own five tabs and still shows **Desk** with **no Guides** — the two changes web
+  made on 22 November. Nothing syncs them. The app has a working one-directional
+  contract generator (`scripts/sync-contracts.cjs` → `api-types.ts`,
+  `games-types.ts`); the tab manifest should ride the same path, so that
+  `siteMap.ts` stays the single source for both surfaces.
+
+Everything else in §VIII.2–§VIII.4 reaches mobile for free, because the app
+consumes the shared API: widening `ExamScope` and admitting paperless questions
+change the data the existing screens already render. The app gets **no** admin
+capability (`mobile_authoring.py:7,16` gates on `require_account`), and no
+separate exam picker ahead of exam #2.
+
+One contract risk to record: nothing type-checks Python against TypeScript
+anywhere. `schemas.py`, `web/src/lib/api.ts` and the 12 hand-ported mobile type
+files are held together by convention, and `exam-guides:check` / `atlas:check`
+are the only drift detectors, both scoped to copied data rather than to the API.
+Widening a core type across three hand-maintained definitions is exactly the
+shape of change that convention loses. V.19's test should assert the three agree
+on the scope type.
+
+## VIII.9 Build order
+
+Appended to §V.13 after V.18. Each phase carries §V.0's standing gates: a new
+numbered migration rehearsed on a disposable clone, isolated-PostgreSQL tests,
+local web build, both hosts verified, a DEVLOG receipt with honest limitations.
+
+| Phase | Content | Migration | Gate |
+| --- | --- | --- | --- |
+| **V.19** | Widen `ExamScope` to an open identifier; web + mobile mirror; drift test asserting all three definitions agree | none | No new two-scope assumption; no hardcoded exam id in new code |
+| **V.20** | §VIII.5 correction loop, items 1–11, speed first | none | 100 questions — tags and typos — in under 8 minutes, no navigation |
+
+**V.20 complete, 23 November 2026** (items 1, 2 partial, 3, 4, 5, 7, 8, 9, 10, 11;
+migration-free, built and tested locally, not deployed — see `DEVLOG.md`). **Item 6 was
+put to the owner and declined: the no-typed-reason workflow stays owner-only**, so
+publishers keep writing a reason on every edit and the §SOLO-OWNER-WORKFLOW attribution
+boundary is unchanged. Item 4 widened the guarded batch publisher from taxonomy-only to
+taxonomy-or-explanation — safe because the batch machinery was never taxonomy-specific
+(`transform()` applies whatever the patch holds, the readback already selects
+`explanation`, and the group path verifies every receipt); `transcription` and
+`source_reference` stay deliberately unbatchable. **Its admission rule is tested; its
+apply path is not** — the worker cannot run off Oracle, so the first real use must be a
+2–3 item explanation batch watched through to `published`. Implementing it found that the
+keyboard console **could not write at all**: `routine-edits` was called without its required
+`Idempotency-Key` so the taxonomy save returned 422, and a non-taxonomy correction on an
+*untagged* question — the console's default queue — was structurally impossible, because
+`Proposal.subject_id` must be a string while an unclassified question's subject is `None`,
+and `bank_review.create` separately required the proposal subject to equal that `None`.
+Both are fixed narrowly; the second also made `apply_explanations`' existing
+`or 'general-knowledge'` fallback reachable instead of dead code. Item 6 is **deferred as a
+role-policy decision**, not ceremony: it would extend the owner-scoped no-typed-reason
+workflow to publishers, which needs an explicit owner grant. Item 4 (worker batch grouping)
+is deferred because the guarded publication path cannot be exercised off Oracle; items 8 and
+11 remain open. Full single-POST coalescing was **rejected** — it requires a combined patch
+under one `kind`, changing the audit shape §VII.11 forbids.
+| **V.21** | §VIII.2 paperless spine: `origin`, `audience`, union launch view, reveal relaxation, retire the `Community/` fabrication, split provenance from trust | one | An authored question with no paper is browsable, practisable and honestly labelled |
+| **V.22** | §VIII.6 console sections: four job groups, generated sidebar, duplicates and dead routes deleted | none | Every section reachable from the sidebar; zero dead admin links |
+
+**V.22 implemented 23 November 2026** (migration-free, frontend only, built and tested
+locally, not deployed — see `DEVLOG.md`). 37 sections across four job groups — Inbox &
+conflicts (9), Bank & workbench (11), Guides/content & calendar (9), History & system (7)
+— all generated from `adminNavigation.ts`, all reachable, all dispatched. The `papers`
+twin, the dead `adminNavigation()` helper, the orphaned `More.tsx` and the `/admin/ops`
+and `/admin/users` addressing aliases are gone (the two paths remain as redirects so
+bookmarks keep working). `AtlasBindings` was **routed rather than deleted** — its backend
+is live. New `web/scripts/check-admin-nav.cjs` gates all of this in `prebuild` and
+immediately found a **fourth** dead admin link (`/admin/mcq-solver` in `BankOverview.tsx`)
+that this section's own list had missed.
+
+**Two items in this section were wrong and are withdrawn:**
+
+- **"Delete the unreferenced endpoints" — withdrawn.** `/admin/bank/conflicts`,
+  `/conflicts/{qid}` and `/conflicts/refresh` are **tested V.17 machinery** awaiting a UI
+  (`refresh` rebuilds `v_answer_conflicts` and writes a worker heartbeat), and
+  `/admin/bank/retag/proposals` carries permission, idempotency and
+  409-on-altered-payload tests. "No frontend caller" is not the same as dead; deleting
+  tested, permission-bearing surface buys nothing.
+- **"Collapse the five queue readers to one" — withdrawn.** They are different
+  projections for different screens, not one query copied five times. The authoring queue
+  must return full records with `baseline_hash` and `source_version`; the others must
+  not. Merging them produces one endpoint with a mode parameter — the same code with
+  worse cohesion and a large regression surface, for no user-visible gain. The console's
+  problem was navigation.
+
+`EditorialTagCleanup`'s two mounts are **retained deliberately**: inside
+`EditorialAttention` it is one of four queues, and `?tab=retag` is a direct entry point to
+the same work. Two entry points to one component is a shortcut, not a contradiction.
+| **V.23** | Re-measure topic coverage (§VIII.4.2 step 1); then the campaign, sized by what the measurement says | none | A current, dated coverage number in `reports/`, replacing the 7 Nov figure |
+| **V.24+** | Exam #2 onboarding: §VIII.3.2's deferred list, executed as §V.7's checklist with licensing as step 0 | several | Onboarding is data work, as §0.10 promised |
+
+V.19 and V.20 are migration-free and independent of each other; V.21 is the only
+schema work before exam #2. V.23 is placed last among the "now" phases
+deliberately — it is the longest and the console from V.20 is what makes it
+tractable.
+
+## VIII.10 Never-list additions
+
+Carried forward from §V.8, §VII.13.1 and §VII.16.4, plus four specific to this
+part:
+
+- **Never classify 82,000 questions against a new exam.** Decision 1 makes
+  relevance a join. A per-question exam tag campaign is the thing this design
+  exists to avoid; if one is ever proposed, the syllabus map was wrong instead.
+- **Never fabricate a paper to make a question visible, and never stamp a scope
+  a question does not belong to.** This is what §VIII.2 removes; re-adding it in
+  another form re-creates the same defect.
+- **Never let "no printed source" imply "not trustworthy."** They are different
+  facts and §VIII.2.2 splits them. Provenance is a display property, not a
+  visibility filter (§0.2).
+- **Never remove a guard to make the console faster.** §VII.11's framing is
+  binding: the latency is in the interface, not the guards. Every item in
+  §VIII.5.2 is an interface or transport change.
+
+And the three declines stand unchanged: no microservices, no Kubernetes, no
+WebSockets beyond the one staff-only SSE route §VII.11.4 already named.
+
+Nothing in Part VIII is implemented.

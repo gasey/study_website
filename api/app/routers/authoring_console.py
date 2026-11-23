@@ -17,6 +17,7 @@ from __future__ import annotations
 import asyncio
 import json
 from typing import Annotated, Literal
+from uuid import uuid4
 
 from fastapi import APIRouter, Depends, Header, HTTPException, Query
 from fastapi.responses import StreamingResponse
@@ -28,6 +29,7 @@ from ..services.admin_bank_edits import decide
 from ..services.bank_organization import signature_sql
 from ..services.editorial_access import source_version
 from ..services.explanation_voice import check_explanation_voice
+from ..services.question_stats import MIN_ATTEMPTS
 from ..services.review_identity import Actor, identity, require_role
 from ..services.review_policy import Proposal, digest
 from .exam_inventory import no_store
@@ -93,6 +95,23 @@ async def apply_explanations(
             'SELECT pg_advisory_xact_lock(hashtextextended(%s, 0))',
             ('expl-batch:' + actor.id + ':' + idempotency_key,),
         )
+        # The batch row is what lets the worker publish these together instead of running
+        # one full sync-bank.sh per explanation (§VIII.5.2 #4). It also makes the batch
+        # replay-safe as a whole: decide() is already idempotent per target, but the row's
+        # UNIQUE(author_id, idempotency_key) would reject a retry without this check.
+        await cur.execute(
+            'SELECT * FROM bank_retag_batches WHERE author_id = %s AND idempotency_key = %s',
+            (actor.id, idempotency_key),
+        )
+        prior = await cur.fetchone()
+        request_hash = digest(body.model_dump(mode='json'))
+        if prior:
+            if prior['request_hash'] != request_hash:
+                raise HTTPException(409, 'This request key belongs to a different batch')
+            return {'contribution_ids': prior['contribution_ids'], 'warnings': {},
+                    'count': len(prior['contribution_ids']), 'batch_id': prior['id'], 'replayed': True}
+        from ..services.bank_publication import require_batch_slot
+        await require_batch_slot(cur)
         contributions = []
         voice_warnings = {}
         for target in sorted(body.targets, key=lambda t: t.question_id):
@@ -131,7 +150,14 @@ async def apply_explanations(
             warns = check_explanation_voice(target.explanation)
             if warns:
                 voice_warnings[target.question_id] = warns
-    return {'contribution_ids': contributions, 'warnings': voice_warnings, 'count': len(contributions)}
+        bid = 'expl_' + uuid4().hex
+        await cur.execute(
+            """INSERT INTO bank_retag_batches(id, author_id, idempotency_key, request_hash, contribution_ids)
+               VALUES (%s, %s, %s, %s, %s)""",
+            (bid, actor.id, idempotency_key, request_hash, contributions),
+        )
+    return {'contribution_ids': contributions, 'warnings': voice_warnings, 'count': len(contributions),
+            'batch_id': bid, 'replayed': False}
 
 
 class ContextTarget(StrictModel):
@@ -238,7 +264,7 @@ async def apply_contexts(
 @router.get('/authoring-queue')
 async def authoring_queue(
     actor: Annotated[Actor, Depends(identity)],
-    queue: Literal['untagged', 'legacy', 'reported', 'conflicts'] = 'untagged',
+    queue: Literal['untagged', 'legacy', 'reported', 'conflicts', 'missed'] = 'untagged',
     limit: int = Query(50, ge=1, le=50),
     offset: int = Query(0, ge=0, le=100000),
 ) -> dict:
@@ -268,15 +294,29 @@ async def authoring_queue(
                 (limit, offset),
             )
         else:
+            # `missed` is exposure ranking (§VII.18.9): the questions learners actually
+            # hit and get wrong are far likelier to carry a bad key or a broken
+            # transcription than one nobody has opened, so this is the triage list for
+            # the V.20 correction loop. It reads `v_question_stats`, which migration
+            # 0003 created and indexed and which nothing has read since. MIN_ATTEMPTS
+            # is the same population gate the learner-facing bars use.
             where = {
                 'untagged': 'qc.subject_id IS NULL',
                 'legacy': "COALESCE(bp.period, 'unknown') = 'legacy'",
                 'reported': "EXISTS (SELECT 1 FROM content_reports cr WHERE cr.canonical_id = c.id AND cr.status IN ('open','confirmed'))",
+                'missed': f'st.attempts >= {MIN_ATTEMPTS} AND st.accuracy <= 0.5',
             }[queue]
+            # LATERAL rather than a plain join on the view: correlating it lets the
+            # planner reach idx_attempts_canonical per row instead of aggregating the
+            # whole attempts table, which is the shape migration 0138 found mattered.
+            # Measure on a clone before claiming a number for it (§VII.16).
+            order = ('st.attempts DESC NULLS LAST, c.id' if queue == 'missed'
+                     else 'a.paper_id, a.qnum_seq NULLS LAST, c.id')
             await cur.execute(
                 f"""SELECT c.id, a.id AS appearance_id, a.paper_id, a.qnum,
                            c.question, c.options, c.explanation,
                            qc.subject_id, qc.topic_id, qc.subtopic_id,
+                           st.attempts, st.accuracy,
                            COALESCE(bp.period, 'unknown') AS period,
                            COALESCE(ctx.payload->>'time_behavior', 'unknown') AS time_behavior,
                            COALESCE(ctx.payload->>'scheme_status', 'unknown') AS scheme_status,
@@ -286,8 +326,10 @@ async def authoring_queue(
                       LEFT JOIN question_classifications qc ON qc.question_id = c.id AND qc.review_status = 'approved'
                       LEFT JOIN bank_paper_profiles bp ON bp.paper_id = a.paper_id
                       LEFT JOIN bank_question_contexts ctx ON ctx.question_id = c.id
+                      LEFT JOIN LATERAL (SELECT s.attempts, s.accuracy FROM v_question_stats s
+                                          WHERE s.canonical_id = c.id) st ON true
                      WHERE c.status = 'live' AND {where}
-                     ORDER BY a.paper_id, a.qnum_seq NULLS LAST, c.id
+                     ORDER BY {order}
                      LIMIT %s OFFSET %s""",
                 (limit, offset),
             )
@@ -296,11 +338,27 @@ async def authoring_queue(
         for row in rows:
             snap = await service.snapshot(cur, row['id'], row['appearance_id'])
             ver = await source_version(cur, row['id'], row['appearance_id'])
+            # Serve the appearance-level record the correction is diffed against
+            # (§VIII.5.1). The list query above reads canonical text, but a
+            # transcription/source_reference patch is validated against this
+            # snapshot in decide(); the console must edit the same bytes or its
+            # no-op and baseline checks disagree with the server. answer_index /
+            # answer_source ride along so option edits can re-map the answer, which
+            # review_policy.validate_target requires. No extra query: the snapshot
+            # was already being fetched to compute baseline_hash.
+            rec = snap['record']
             enriched.append({
                 **row,
+                'question': rec.get('question'),
+                'options': rec.get('options') or [],
+                'explanation': rec.get('explanation'),
+                'answer_index': rec.get('answerIndex'),
+                'answer_source': rec.get('answerSource'),
+                'qnum': rec.get('qnum'),
+                'page': rec.get('page'),
                 'baseline_hash': digest(snap),
                 'source_version': ver,
-                'voice_warnings': check_explanation_voice(row.get('explanation')),
+                'voice_warnings': check_explanation_voice(rec.get('explanation')),
             })
     return {'queue': queue, 'items': enriched, 'limit': limit, 'offset': offset}
 

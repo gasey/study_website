@@ -2,6 +2,7 @@ import AtlasQuestionLinks from '../components/AtlasQuestionLinks'
 import PracticeAnswerPanel from '../components/PracticeAnswerPanel'
 import WrittenDraftBox from '../components/WrittenDraftBox'
 import QuestionUpdate from '../components/QuestionUpdate'
+import OwnerQuickFix from '../components/OwnerQuickFix'
 import { useSelectionTray } from '../lib/selectionTray'
 import {savePracticePosition} from '../lib/learning'
 import {QuestionActions} from '../components/QuestionDiscussion'
@@ -175,7 +176,7 @@ export default function QuestionDetail() {
         {answerError&&<p role="alert" className="mt-3 text-sm text-mypick">{answerError}</p>}
         {q.held&&<p className="finna-qd-notice border border-exams bg-attention-soft text-exams-dark">This question is under review. Compare the official key and reviewed evidence below.</p>}
         {q.answer_source==='none'&&<p className="mt-4 text-sm text-secondary">No checkable answer is available yet. You can submit a worked solution with evidence even when no official key is available.</p>}
-        {q.type==='mcq'&&<PracticeAnswerPanel options={q.options} key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
+        {q.type==='mcq'&&<PracticeAnswerPanel options={q.options} chosenText={picked==null?null:q.options[picked]} key={id+':'+(params.get('paper')||'')} qid={q.id} question={q.question} context={{reviewed:q.reviewed_derived,disputed:q.key_disputed,defect:q.source_defect,statusOverride:q.answer_status}} result={result} topic={[q.taxonomy_subject,q.taxonomy_topic].filter(Boolean).join(" / ")} paperId={params.get('paper')} year={q.appearances.find(a=>a.paper_id===params.get('paper'))?.year ?? (new Set(q.appearances.map(a=>a.year)).size===1?q.appearances[0]?.year:null)} available={!q.held&&q.answer_source!=='none'&&!['duplicate-options','unresolved-source'].includes(q.source_defect||'')} disabled={submitting} onBusy={setSubmitting} onViewed={setViewed} onRetry={()=>{setPicked(null);setResult(null);setAnswerError('')}}/>}
         {q.type!=='mcq'&&<WrittenDraftBox questionId={q.id}/>}
 
       </article>
@@ -185,6 +186,7 @@ export default function QuestionDetail() {
         {!answered && <p className="finna-qd-locked">Answer the question to open the discussion.</p>}
         <QuestionActions questionType={q.type} key={id} qid={id} context={{paper_id:q.appearances.find(a=>a.paper_id===params.get('paper'))?.paper_id,collection_id:params.get('exam')}} answeredSignal={result} initialOpen={!!params.get('post')||window.location.hash==='#discussion'}/>
       </section>
+      <OwnerQuickFix qid={id}/>
       </div>
 
       <aside className="finna-qd-side">

@@ -35,6 +35,11 @@ export async function reviewRequest<T>(path:string,body?:unknown,key?:string,sou
   let message=response.statusText
   try {const err=await response.json();message=Array.isArray(err.detail)?err.detail.map((e:{msg:string})=>e.msg).join('; '):err.detail||err.message||message}catch{/* fallback */}
   if(response.status===401){current=null;await checkSessionRejected(identity)}
+  // Staff MFA verification lapses after 15 minutes (account_identity.py:36). The admin
+  // console computed its banner once at mount, so a lapsed session kept claiming it was
+  // fine while every write 403'd. Drop the memoised session and say so (§VIII.5.2 #8);
+  // the requirement itself is unchanged.
+  if(response.status===403&&/authenticator/i.test(message)){current=null;window.dispatchEvent(new Event('ism-review-session-stale'))}
   throw new Error(message)
  }
  const data=await response.json() as T

@@ -4,10 +4,10 @@ import {ADMIN_TAXONOMY_TABS} from '../lib/adminReviewFlow'
 import AdminNavigation from '../components/AdminNavigation'
 import AdminHome,{type AdminHealth} from '../components/AdminHome'
 import ReportResolution from '../components/ReportResolution'
-import {ADMIN_SECTIONS,canOpenAdminTab,adminTabHref} from '../lib/adminNavigation'
+import {ADMIN_SECTIONS,canOpenAdminTab} from '../lib/adminNavigation'
 import DatabaseMap from '../components/DatabaseMap'
 import { lazy,Suspense,useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import {RewardAdmin} from './Rewards'
 import AdminQuestionWorkbench from '../components/AdminQuestionWorkbench'
 import { kindLabel, reviewRequest, reviewSession, stateLabel, type ReviewPage, type ReviewSession, type TaxonomyNode } from '../lib/review'
@@ -31,6 +31,10 @@ const OpsDashboard=lazy(()=>import('../components/OpsDashboard'))
 const AccountPrivacy=lazy(()=>import('./AccountPrivacy'))
 const Moderation=lazy(()=>import('./Moderation'))
 const AtlasStudio=lazy(()=>import('./AtlasStudio'))
+// Routed in V.22 (§VIII.6): the screen existed with a live backend
+// (`/api/admin/atlas/bindings`) but was imported by nothing, so the feature was
+// unreachable. Giving it a section is cheaper than deleting a working tool.
+const AtlasBindings=lazy(()=>import('./AtlasBindings'))
 const PaperWorkbench=lazy(()=>import('./PaperWorkbench'))
 const EditorialReview=lazy(()=>import('./EditorialReview'))
 const LearningCatalogAdmin=lazy(()=>import('./LearningCatalogAdmin'))
@@ -46,8 +50,9 @@ type Health=AdminHealth
 interface QuestionRow {id:string;type:string;question:string;answer_source:string;status:string;source_defect:string|null;subject_id:string|null;subject_label:string|null;topic_label:string|null}
 export default function BankAdmin(){
  const [theme,setTheme]=useStudyTheme()
- const location=useLocation(),navigate=useNavigate()
- const [params,setParams]=useSearchParams();const requestedTab=location.pathname==='/admin/users'?'users':location.pathname==='/admin/ops'?'ops':params.get('tab')||'overview';const tab=ADMIN_SECTIONS.some(s=>s[0]===requestedTab)?requestedTab:'overview'
+ // `/admin/ops` and `/admin/users` now redirect to their tab before reaching this screen
+ // (§VIII.6), so the console has one addressing scheme and no pathname special cases.
+ const [params,setParams]=useSearchParams();const requestedTab=params.get('tab')||'overview';const tab=ADMIN_SECTIONS.some(s=>s[0]===requestedTab)?requestedTab:'overview'
  const [session,setSession]=useState<ReviewSession|null>(null);const [health,setHealth]=useState<Health|null>(null)
  const [taxonomy,setTaxonomy]=useState<TaxonomyNode[]>([]);const [taxonomyReady,setTaxonomyReady]=useState(false);const [taxonomyError,setTaxonomyError]=useState('');const [taxonomyRetry,setTaxonomyRetry]=useState(0)
  const needsTaxonomy=ADMIN_TAXONOMY_TABS.includes(tab)
@@ -58,14 +63,22 @@ export default function BankAdmin(){
  const [reportDecision,setReportDecision]=useState<{id:number;status:'fixed'|'rejected'}|null>(null)
  const [grant,setGrant]=useState({email:'',role:'reviewer',subject_id:'',reason:''});const [busy,setBusy]=useState(false)
  useEffect(()=>{let live=true;reviewSession(true).then(s=>{if(live)setSession(s)}).catch(e=>{if(live){setError(e.message==='Sign in to contribute'?'Sign in with your admin or reviewer account to continue.':e.message);setLoading(false)}});return()=>{live=false}},[])
+ // Keep the MFA banner honest without a background poll (§VIII.5.2 #8): re-ask when a
+ // write has just been refused for a lapsed authenticator, and when the operator comes
+ // back to the tab — which is exactly when the 15-minute window has usually elapsed.
+ useEffect(()=>{let live=true
+  const refresh=()=>{reviewSession(true).then(s=>{if(live)setSession(s)}).catch(()=>{/* keep the last known session; writes still fail closed */})}
+  const onReturn=()=>{if(document.visibilityState==='visible')refresh()}
+  window.addEventListener('ism-review-session-stale',refresh);document.addEventListener('visibilitychange',onReturn);window.addEventListener('focus',onReturn)
+  return()=>{live=false;window.removeEventListener('ism-review-session-stale',refresh);document.removeEventListener('visibilitychange',onReturn);window.removeEventListener('focus',onReturn)}
+ },[])
  useEffect(()=>{if(!session||!needsTaxonomy||taxonomyReady||!canOpenAdminTab(tab,session.grants))return;let live=true;setTaxonomyError('');reviewRequest<TaxonomyNode[]>('/review/taxonomy').then(nodes=>{if(live){setTaxonomy(nodes);setTaxonomyReady(true)}}).catch(e=>{if(live)setTaxonomyError(e.message)});return()=>{live=false}},[session,needsTaxonomy,taxonomyReady,taxonomyRetry,tab])
  useEffect(()=>{const timer=window.setTimeout(()=>{setSearch(query.trim());setOffset(0)},250);return()=>window.clearTimeout(timer)},[query])
  useEffect(()=>{if(!session)return;if(!canOpenAdminTab(tab,session.grants)){setLoading(false);setError('');return}let live=true;setLoading(true);setError('');setRows([])
-  const qs=new URLSearchParams({q:search,offset:String(offset),limit:'20'});if(subject)qs.set('subject_id',subject)
   async function load(){try{
-   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
+   if(tab==='users'||tab==='ops'||tab==='edit'||tab==='organization'||tab==='intake'||tab==='quality'||tab==='retag'||tab==='current-affairs'||tab==='privacy'||tab==='moderation'||tab==='atlas'||tab==='atlas-bindings'||tab==='workbench'||tab==='editorial'||tab==='learning'||tab==='discovery'||tab==='topic-trail'||tab==='mcq-solver'||tab==='ca-automation'){/* Dedicated workflow owns loading. */}
    else if(tab==='overview'){const result=await reviewRequest<Health>('/admin/bank/summary');if(live)setHealth(result)}
-   else if(tab==='exams'||tab==='papers'||tab==='pdf-library'){/* Inventory owns its requests. */}
+   else if(tab==='exams'||tab==='pdf-library'){/* Inventory owns its requests. */}
    else if(tab==='questions'){/* The repair workspace owns its URL filters and pagination. */}
    else if(tab==='review'){const result=await reviewRequest<ReviewPage>('/review/queue?'+new URLSearchParams({...subject?{subject_id:subject}:{},...state?{state}:{}}));if(live)setQueue(result)}
    else if(tab==='modules'){/* Immutable module intake owns loading. */}
@@ -78,7 +91,7 @@ export default function BankAdmin(){
    else if(tab==='rewards'){/* Rewards policy component owns loading. */}
    else if(tab==='database'){/* live map owns its request */}
    else if(tab==='taxonomy'){/* already loaded */}
-   else {const path=tab==='people'?'/admin/bank/grants':tab==='publications'?'/admin/bank/publications':tab==='papers'?'/admin/bank/papers?'+qs:tab==='reports'?'/admin/bank/reports'+(params.get('report')?'?report_id='+encodeURIComponent(params.get('report')!):''):'/admin/bank/audit';const result=await reviewRequest<Row[]>(path);if(live)setRows(result)}
+   else {const path=tab==='people'?'/admin/bank/grants':tab==='publications'?'/admin/bank/publications':tab==='reports'?'/admin/bank/reports'+(params.get('report')?'?report_id='+encodeURIComponent(params.get('report')!):''):'/admin/bank/audit';const result=await reviewRequest<Row[]>(path);if(live)setRows(result)}
   }catch(e){if(live)setError((e as Error).message)}finally{if(live)setLoading(false)}}void load();return()=>{live=false}
  },[session,tab,search,subject,state,offset,refresh,params.get('report')])
  async function retryAssessments(){const reason=window.prompt('Why should these stalled reassessments be retried? (at least 10 characters)');if(!reason)return;setBusy(true);try{await reviewRequest('/admin/bank/assessments/retry',{reason});setRefresh(n=>n+1)}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
@@ -94,7 +107,7 @@ export default function BankAdmin(){
  const inventoryAccess=session?.grants.some(g=>g.subject_id===null&&['owner','publisher','senior','reviewer'].includes(g.role))
  const inventoryWrite=session?.grants.some(g=>g.subject_id===null&&['owner','publisher'].includes(g.role))
  const subjects=taxonomy.filter(n=>n.level==='subject')
- return <div className="finna-admin min-h-screen lg:flex" data-admin-tab={tab}><aside className="bg-[#1D1B18] text-[#E9E1D2] lg:sticky lg:top-0 lg:h-screen lg:w-[236px] lg:shrink-0 lg:overflow-y-auto"><div className="border-b border-[#3A3631] px-5 py-[18px]"><Link to="/library" className="font-display text-lg font-semibold text-paper">Finna<span className="text-[#FFC83D]">.</span></Link><div className="mt-1 font-mono text-xs uppercase tracking-[.1em] text-[#A89F8E]">Admin console</div></div><AdminNavigation tab={tab} grants={session?.grants||[]} onNavigate={key=>{if(key==='ops'||key==='users'){navigate('/admin/'+key);return}if(location.pathname==='/admin/ops'||location.pathname==='/admin/users'){navigate(adminTabHref(key));return}setParams(key==='questions'?{tab:key,answer_status:'needs-review'}:{tab:key});setOffset(0);setQuery('');setSearch('')}}/><div className="hidden border-t border-[#3A3631] px-5 py-4 text-xs text-[#A89F8E] lg:block">{owner&&<p className="mb-2 font-semibold text-paper">Administrator · can review and publish</p>}{session?.grants.map(g=>g.role+(g.subject_id?' · '+g.subject_id:'')).join(', ')||'Account access required'}</div></aside>
+ return <div className="finna-admin min-h-screen lg:flex" data-admin-tab={tab}><aside className="bg-[#1D1B18] text-[#E9E1D2] lg:sticky lg:top-0 lg:h-screen lg:w-[236px] lg:shrink-0 lg:overflow-y-auto"><div className="border-b border-[#3A3631] px-5 py-[18px]"><Link to="/library" className="font-display text-lg font-semibold text-paper">Finna<span className="text-[#FFC83D]">.</span></Link><div className="mt-1 font-mono text-xs uppercase tracking-[.1em] text-[#A89F8E]">Admin console</div></div><AdminNavigation tab={tab} grants={session?.grants||[]} onNavigate={key=>{setParams(key==='questions'?{tab:key,answer_status:'needs-review'}:{tab:key});setOffset(0);setQuery('');setSearch('')}}/><div className="hidden border-t border-[#3A3631] px-5 py-4 text-xs text-[#A89F8E] lg:block">{owner&&<p className="mb-2 font-semibold text-paper">Administrator · can review and publish</p>}{session?.grants.map(g=>g.role+(g.subject_id?' · '+g.subject_id:'')).join(', ')||'Account access required'}</div></aside>
  <div className="min-w-0 flex-1"><header className="finna-admin-topbar"><div><strong>{NAV.find(([key])=>key===tab)?.[1]||'Overview'}</strong><span>{NAV.find(([key])=>key===tab)?.[4]}</span></div><div className="flex flex-wrap items-center gap-5 text-sm">{owner&&<Link to="/admin/bank?tab=database" className="inline-flex min-h-11 items-center font-semibold text-link">Database map</Link>}<button type="button" className="min-h-11 font-semibold text-link" onClick={()=>setTheme(theme==='night'?'paper':'night')}>{theme==='night'?'Light':'Dark'}</button><Link to="/create/submissions" className="font-semibold text-link">Contributions</Link><Link to="/library" className="font-semibold text-link">View site →</Link></div></header>
  <main className="finna-admin-content w-full min-w-0"><h1 className="sr-only">{NAV.find(([key])=>key===tab)?.[1]||'Overview'}</h1>
  {inventoryAccess&&tab==='organization'&&<Suspense fallback={<p>Loading modules and schemes…</p>}><BankOrganization canWrite={!!inventoryWrite&&!session?.mfa_required}/></Suspense>}
@@ -105,8 +118,8 @@ export default function BankAdmin(){
  {allowed&&session&&tab==='quality'&&<Suspense fallback={<p>Loading review dashboard…</p>}><BankQualityDashboard taxonomy={taxonomy}/></Suspense>}
  {inventoryAccess&&tab==='intake'&&<Suspense fallback={<p>Loading paper intake…</p>}><PaperIntake canWrite={!!inventoryWrite}/></Suspense>}
  {inventoryAccess&&tab==='pdf-library'&&<Suspense fallback={<p>Loading PDF Library…</p>}><PdfLibrary canWrite={!!inventoryWrite}/></Suspense>}
- {session?.mfa_required&&<div className="mt-4 rounded-[8px] border border-attention bg-attention-soft p-4 text-sm">Authenticator verification is required before staff changes. <Link to="/account/security" className="font-semibold text-link underline">Open Account security →</Link></div>}
- {error&&<div role="alert" className="mt-4 rounded-[8px] border border-mypick bg-mypick-soft p-4 text-sm text-mypick">{error} <Link to={'/login?next='+encodeURIComponent((['/admin/ops','/admin/users'].includes(location.pathname)?location.pathname:'/admin/bank')+(params.toString()?'?'+params.toString():''))} className="underline">Sign in</Link> <button onClick={()=>setRefresh(n=>n+1)} className="ml-3 underline">Retry</button></div>}
+ {session?.mfa_required&&<div role="status" className="mt-4 rounded-[8px] border border-attention bg-attention-soft p-4 text-sm">Authenticator verification is required before staff changes, and it lapses 15 minutes after you verify — saves will be refused until you verify again. <Link to="/account/security" className="font-semibold text-link underline">Open Account security →</Link></div>}
+ {error&&<div role="alert" className="mt-4 rounded-[8px] border border-mypick bg-mypick-soft p-4 text-sm text-mypick">{error} <Link to={'/login?next='+encodeURIComponent('/admin/bank'+(params.toString()?'?'+params.toString():''))} className="underline">Sign in</Link> <button onClick={()=>setRefresh(n=>n+1)} className="ml-3 underline">Retry</button></div>}
  {session&&session.grants.length===0&&<p className="mt-5 rounded-panel border border-hairline bg-card p-5">Your account has no admin or reviewer grant. You can still <Link to="/create/submissions" className="text-link underline">contribute improvements</Link>.</p>}
  {loading&&<p className="mt-6 text-sm text-muted">Loading workspace…</p>}
  {allowed&&!loading&&!error&&tab==='overview'&&health&&<AdminHome health={health} grants={session?.grants||[]} busy={busy} onRetry={retryAssessments} onRefresh={()=>setRefresh(n=>n+1)}/>}
@@ -120,6 +133,7 @@ export default function BankAdmin(){
  {owner&&tab==='privacy'&&<Suspense fallback={<p>Loading privacy requests…</p>}><AccountPrivacy admin/></Suspense>}
  {owner&&tab==='moderation'&&<Suspense fallback={<p>Loading community moderation…</p>}><Moderation/></Suspense>}
  {owner&&tab==='atlas'&&<Suspense fallback={<p>Loading Atlas studio…</p>}><AtlasStudio/></Suspense>}
+ {owner&&tab==='atlas-bindings'&&<Suspense fallback={<p>Loading Atlas topic bindings…</p>}><AtlasBindings/></Suspense>}
  {owner&&tab==='workbench'&&<Suspense fallback={<p>Loading paper workbench…</p>}><PaperWorkbench/></Suspense>}
  {allowed&&tab==='editorial'&&<Suspense fallback={<p>Loading editorial review…</p>}><EditorialReview/></Suspense>}
  {owner&&tab==='learning'&&<Suspense fallback={<p>Loading learning catalog…</p>}><LearningCatalogAdmin/></Suspense>}
@@ -139,7 +153,7 @@ export default function BankAdmin(){
  {allowed&&!loading&&!error&&tab==='taxonomy'&&taxonomyReady &&<div className="mt-5 rounded-[8px] border border-hairline bg-card p-5"><p className="mb-4 text-sm text-secondary">These IDs and hierarchy come from the registered taxonomy. Change a question’s classification in its editor; taxonomy structure changes are versioned in the bank registry.</p>{taxonomy.map(n=><div key={n.id} className="border-b border-hairline py-2 text-sm" style={{paddingLeft:n.level==='subject'?0:n.level==='topic'?20:40}}><strong className={n.level==='subject'?'font-semibold':'font-normal'}>{n.label}</strong><span className="ml-3 font-mono text-xs text-muted">{n.id} · {n.version}</span></div>)}</div>}
  {allowed&&!loading&&!error&&tab==='people'&&taxonomyReady&&<><form onSubmit={grantAccess} className="mt-5 grid gap-3 rounded-[8px] border border-hairline bg-card p-5 sm:grid-cols-2"><h2 className="font-display text-lg sm:col-span-2">Grant an account permission</h2><input type="email" required aria-label="Account email" placeholder="Existing account email" value={grant.email} onChange={e=>setGrant(g=>({...g,email:e.target.value}))} className={INPUT}/><select value={grant.role} aria-label="Permission role" onChange={e=>setGrant(g=>({...g,role:e.target.value}))} className={INPUT}>{['reviewer','senior','publisher','owner'].map(role=><option key={role}>{role}</option>)}</select><select aria-label="Permission subject scope" value={grant.subject_id} onChange={e=>setGrant(g=>({...g,subject_id:e.target.value}))} className={INPUT}><option value="">All subjects</option>{subjects.map(n=><option key={n.id} value={n.id}>{n.label}</option>)}</select><input minLength={10} required placeholder="Reason for this grant" aria-label="Grant reason" value={grant.reason} onChange={e=>setGrant(g=>({...g,reason:e.target.value}))} className={INPUT}/><button disabled={busy} className="min-h-11 rounded-pill bg-ink px-5 text-sm font-semibold text-paper sm:justify-self-start">Grant permission</button></form><div className="mt-4 grid gap-2">{rows.map(r=><div key={String(r.id)} className="flex flex-wrap items-center justify-between gap-3 rounded-[8px] border border-hairline bg-card p-4 text-sm"><div><strong>{String(r.email)}</strong><p className="mt-1 text-secondary">{String(r.role)} · {String(r.subject_id||'all subjects')} · {r.revoked_at?'revoked':'active'}</p></div>{!r.revoked_at&&<button onClick={()=>revoke(Number(r.id))} className="min-h-11 px-3 text-mypick underline">Revoke</button>}</div>)}</div></>}
  {allowed&&tab==='publications'&&<Suspense fallback={<p className="mt-5 text-muted">Loading publication history…</p>}><PublicationHistory/></Suspense>}
- {inventoryAccess&&['exams','papers'].includes(tab)&&<Suspense fallback={<p className="mt-4 text-muted">Loading exam inventory…</p>}><AdminExamInventory canManage={inventoryWrite}/></Suspense>}
+ {inventoryAccess&&tab==='exams'&&<Suspense fallback={<p className="mt-4 text-muted">Loading exam inventory…</p>}><AdminExamInventory canManage={inventoryWrite}/></Suspense>}
  {allowed&&!loading&&!error&&tab==='audit'&&<AdminAuditTimeline rows={rows.map(r=>({id:String(r.id),action:r.action,actor_id:r.actor_id,created_at:r.created_at,detail:r.detail}))} onMore={rows.length>=50?moreAudit:undefined}/>}
  </main></div></div>
 }

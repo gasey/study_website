@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { reviewRequest, type TaxonomyNode } from '../lib/review'
 
-type QueueKind = 'untagged' | 'legacy' | 'reported' | 'conflicts'
+type QueueKind = 'untagged' | 'legacy' | 'reported' | 'conflicts' | 'missed'
 
 interface VoiceWarning {
   code: string
@@ -9,13 +9,29 @@ interface VoiceWarning {
   guidance: string
 }
 
+/** Contribution-producing edit kinds. decide() accepts all of these
+ *  (`admin_bank_edits.py:50`), but only one may be in flight per question — it
+ *  flips the contribution to `accepted` immediately, and the next write is
+ *  rejected while that is unpublished (`admin_bank_edits.py:75-77`). */
+type EditKind = 'transcription' | 'taxonomy' | 'explanation' | 'source_reference'
+
+const EDIT_KIND_LABELS: Record<EditKind, string> = {
+  transcription: 'text & options',
+  taxonomy: 'tags',
+  explanation: 'explanation',
+  source_reference: 'source locator',
+}
+
 interface QueueItem {
   id: string
   appearance_id: string
   paper_id: string
   qnum: string | null
+  page: number | null
   question: string
   options: (string | null)[]
+  answer_index: number | null
+  answer_source: string | null
   explanation: string | null
   subject_id: string | null
   topic_id: string | null
@@ -30,6 +46,8 @@ interface QueueItem {
   shape?: string
   official_answer?: string | null
   solution_answer?: string | null
+  attempts?: number | null
+  accuracy?: number | null
 }
 
 /** Keyboard-first authoring console (§VI.6 / §VII.11, Phases V.16–V.17).
@@ -64,6 +82,14 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
   const [voiceWarnings, setVoiceWarnings] = useState<VoiceWarning[]>([])
   const [selectedIds, setSelectedIds] = useState<string[]>([])
   const [bulkStatus, setBulkStatus] = useState('')
+
+  // Source text / options / locator (§VIII.5.1)
+  const [questionText, setQuestionText] = useState('')
+  const [optionDrafts, setOptionDrafts] = useState<(string | null)[]>([])
+  const [answerIndex, setAnswerIndex] = useState<number | null>(null)
+  const [qnum, setQnum] = useState('')
+  const [page, setPage] = useState('')
+  const [chosenKind, setChosenKind] = useState<EditKind | null>(null)
 
   const lastTagRef = useRef<{ subjectId: string; topicId: string; subtopicId: string } | null>(null)
   const current = items[index] || null
@@ -101,6 +127,12 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     setExplanation(current.explanation || '')
     setVoiceWarnings(current.voice_warnings || [])
     setNote('')
+    setQuestionText(current.question || '')
+    setOptionDrafts([...(current.options || [])])
+    setAnswerIndex(current.answer_index)
+    setQnum(current.qnum || '')
+    setPage(current.page == null ? '' : String(current.page))
+    setChosenKind(null)
   }, [current?.id])
 
   const subjects = useMemo(() => taxonomy.filter((n) => n.level === 'subject'), [taxonomy])
@@ -136,47 +168,83 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
     setTaxFilter('')
   }
 
+  const optionsChanged = useMemo(() => {
+    const base = current?.options || []
+    if (base.length !== optionDrafts.length) return true
+    return optionDrafts.some((o, i) => (o ?? '') !== (base[i] ?? ''))
+  }, [current, optionDrafts])
+
+  const basePage = current?.page == null ? '' : String(current.page)
+
+  const contextChanged =
+    !!current &&
+    (timeBehavior !== current.time_behavior ||
+      schemeStatus !== current.scheme_status ||
+      period !== current.period)
+
+  /** Which contribution-producing kinds the operator has touched. */
+  const dirty = useMemo((): Record<EditKind, boolean> => {
+    if (!current) {
+      return { transcription: false, taxonomy: false, explanation: false, source_reference: false }
+    }
+    return {
+      transcription: questionText !== (current.question || '') || optionsChanged,
+      taxonomy:
+        !!subjectId &&
+        (subjectId !== (current.subject_id || '') ||
+          topicId !== (current.topic_id || '') ||
+          subtopicId !== (current.subtopic_id || '')),
+      explanation:
+        explanation.trim() !== (current.explanation || '').trim() && explanation.trim().length >= 20,
+      source_reference: qnum !== (current.qnum || '') || page !== basePage,
+    }
+  }, [current, questionText, optionsChanged, subjectId, topicId, subtopicId, explanation, qnum, page, basePage])
+
+  const dirtyKinds = useMemo(() => (Object.keys(dirty) as EditKind[]).filter((k) => dirty[k]), [dirty])
+  const activeKind: EditKind | null = (chosenKind && dirty[chosenKind] ? chosenKind : dirtyKinds[0]) || null
+
+  /** Would this option edit move the recorded answer? decide() then requires a
+   *  worked explanation or mapped official-key evidence (`admin_bank_edits.py:73`). */
+  const answerTextMoves = useMemo(() => {
+    if (!current || !optionsChanged || current.answer_index == null) return false
+    const before = current.options?.[current.answer_index] ?? null
+    const after = answerIndex == null ? null : optionDrafts[answerIndex] ?? null
+    return before !== after
+  }, [current, optionsChanged, answerIndex, optionDrafts])
+
   const saveAndNext = useCallback(async () => {
     if (!current) return
     const qid = current.id
+    const advance = () => setIndex((i) => Math.min(items.length - 1, i + 1))
+    if (!activeKind && !contextChanged) {
+      advance()
+      return
+    }
+    if (activeKind === 'transcription' && answerTextMoves && explanation.trim().length < 20) {
+      setRowErrors((prev) => ({
+        ...prev,
+        [qid]: 'Moving the recorded answer needs a worked explanation of at least 20 characters.',
+      }))
+      return
+    }
     setRowStatus((prev) => ({ ...prev, [qid]: 'saving' }))
     setRowErrors((prev) => {
       const next = { ...prev }
       delete next[qid]
       return next
     })
+    const base = {
+      canonical_id: current.id,
+      appearance_id: current.appearance_id,
+      note,
+      baseline_hash: current.baseline_hash,
+      source_version: current.source_version,
+    }
     try {
-      // 1. Tag update if subject selected and changed
-      if (
-        subjectId &&
-        (subjectId !== (current.subject_id || '') ||
-          topicId !== (current.topic_id || '') ||
-          subtopicId !== (current.subtopic_id || ''))
-      ) {
-        await reviewRequest('/admin/bank/routine-edits', {
-          kind: 'taxonomy',
-          canonical_id: current.id,
-          appearance_id: current.appearance_id,
-          patch: {
-            classification: {
-              subject_id: subjectId,
-              topic_id: topicId || null,
-              subtopic_id: subtopicId || null,
-            },
-          },
-          note,
-          baseline_hash: current.baseline_hash,
-          source_version: current.source_version,
-        })
-        lastTagRef.current = { subjectId, topicId, subtopicId }
-      }
-
-      // 2. Context / currency update if changed
-      if (
-        timeBehavior !== current.time_behavior ||
-        schemeStatus !== current.scheme_status ||
-        period !== current.period
-      ) {
+      // Currency/context writes `bank_question_contexts` — versioned metadata,
+      // not a contribution — so it never trips the one-correction-in-flight
+      // guard and may always ride along with the chosen edit.
+      if (contextChanged) {
         await reviewRequest(
           '/admin/bank/contexts/apply',
           {
@@ -191,14 +259,49 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
               },
             ],
             paper_period: period !== current.period ? period : null,
-            reason: note || 'Updated question currency context in authoring console.',
+            reason: note,
           },
           'ctx-' + crypto.randomUUID(),
         )
       }
 
-      // 3. Explanation update if changed and >= 20 chars
-      if (explanation.trim() !== (current.explanation || '').trim() && explanation.trim().length >= 20) {
+      // Exactly one contribution-producing correction per save: decide() flips
+      // the contribution to `accepted` immediately and rejects the next write
+      // until it publishes (`admin_bank_edits.py:75-77`).
+      if (activeKind === 'taxonomy') {
+        await reviewRequest(
+          '/admin/bank/routine-edits',
+          {
+            ...base,
+            kind: 'taxonomy',
+            patch: {
+              classification: {
+                subject_id: subjectId,
+                topic_id: topicId || null,
+                subtopic_id: subtopicId || null,
+              },
+            },
+          },
+          'tax-' + crypto.randomUUID(),
+        )
+        lastTagRef.current = { subjectId, topicId, subtopicId }
+      } else if (activeKind === 'transcription') {
+        const patch: Record<string, unknown> = {}
+        if (questionText !== (current.question || '')) patch.question = questionText
+        if (optionsChanged) {
+          patch.options = optionDrafts
+          // review_policy.validate_target refuses an option change that does not
+          // explicitly re-map an existing recorded answer.
+          if (current.answer_index != null) patch.answerIndex = answerIndex
+        }
+        if (answerTextMoves) patch.explanation = explanation.trim()
+        await reviewRequest('/admin/bank/routine-edits', { ...base, kind: 'transcription', patch }, 'txn-' + crypto.randomUUID())
+      } else if (activeKind === 'source_reference') {
+        const patch: Record<string, unknown> = {}
+        if (qnum !== (current.qnum || '')) patch.qnum = qnum
+        if (page !== basePage) patch.page = page.trim() === '' ? null : Number(page)
+        await reviewRequest('/admin/bank/routine-edits', { ...base, kind: 'source_reference', patch }, 'src-' + crypto.randomUUID())
+      } else if (activeKind === 'explanation') {
         await reviewRequest(
           '/admin/bank/explanations/apply',
           {
@@ -211,14 +314,14 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                 explanation: explanation.trim(),
               },
             ],
-            reason: note || 'Edited explanation voice in authoring console.',
+            reason: note,
           },
           'exp-' + crypto.randomUUID(),
         )
       }
 
       setRowStatus((prev) => ({ ...prev, [qid]: 'saved' }))
-      setIndex((i) => Math.min(items.length - 1, i + 1))
+      advance()
     } catch (e) {
       setRowStatus((prev) => ({ ...prev, [qid]: 'error' }))
       setRowErrors((prev) => ({
@@ -226,7 +329,29 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
         [qid]: e instanceof Error ? e.message : 'Save failed',
       }))
     }
-  }, [current, subjectId, topicId, subtopicId, period, timeBehavior, schemeStatus, supersededNote, explanation, note, items.length])
+  }, [
+    current,
+    activeKind,
+    contextChanged,
+    answerTextMoves,
+    optionsChanged,
+    questionText,
+    optionDrafts,
+    answerIndex,
+    qnum,
+    page,
+    basePage,
+    subjectId,
+    topicId,
+    subtopicId,
+    period,
+    timeBehavior,
+    schemeStatus,
+    supersededNote,
+    explanation,
+    note,
+    items.length,
+  ])
 
   async function bulkApplyContext() {
     if (!selectedIds.length) return
@@ -311,6 +436,7 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
               ['legacy', 'Legacy'],
               ['reported', 'Reported'],
               ['conflicts', 'Conflicts'],
+              ['missed', 'Most missed'],
             ] as const
           ).map(([id, label]) => (
             <button
@@ -330,6 +456,9 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
 
         <p className="mt-2 font-mono text-xs text-muted">
           j/k move · . repeat tag · ⌘↵ save &amp; next
+        </p>
+        <p className="mt-1 text-xs text-secondary">
+          Edits text, options, tags, currency, explanation and the printed locator.
         </p>
 
         {loading && <p role="status" className="mt-3 text-sm text-secondary">Prefetching 50 rows…</p>}
@@ -373,6 +502,11 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                     )}
                   </div>
                   <div className="truncate text-ink">{it.question}</div>
+                  {it.attempts ? (
+                    <div className="font-mono text-xs text-muted">
+                      {it.attempts} answered · {Math.round((it.accuracy ?? 0) * 100)}% correct
+                    </div>
+                  ) : null}
                 </button>
               </li>
             )
@@ -408,7 +542,6 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                 <p className="font-mono text-xs text-muted">
                   {current.paper_id} · Q{current.qnum || '?'} · {current.id}
                 </p>
-                <h2 className="mt-1 text-lg font-bold text-ink">{current.question}</h2>
               </div>
               <span className="font-mono text-xs text-muted">
                 {index + 1} / {items.length}
@@ -427,6 +560,85 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
                 {rowErrors[current.id]}
               </p>
             )}
+
+            {/* Source text, options and printed locator (§VIII.5.1) */}
+            <div className="space-y-3 rounded-lg border border-hairline bg-paper p-4">
+              <div className="flex flex-wrap items-center justify-between gap-2">
+                <label htmlFor="ac-question" className="text-xs font-bold uppercase tracking-[0.06em] text-muted">
+                  Question text
+                </label>
+                <span className="font-mono text-xs text-muted">
+                  {current.answer_source ? 'answer: ' + current.answer_source : 'no recorded answer'}
+                </span>
+              </div>
+              <textarea
+                id="ac-question"
+                rows={3}
+                value={questionText}
+                onChange={(e) => setQuestionText(e.target.value)}
+                className="w-full rounded-lg border border-hairline2 bg-card p-3 text-sm text-ink"
+              />
+
+              <div className="space-y-2">
+                <span className="text-xs font-bold uppercase tracking-[0.06em] text-muted">Options</span>
+                {optionDrafts.map((opt, i) => (
+                  <div key={i} className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="ac-answer"
+                      aria-label={`Correct answer is option ${i + 1}`}
+                      checked={answerIndex === i}
+                      disabled={current.answer_index == null}
+                      onChange={() => setAnswerIndex(i)}
+                    />
+                    <input
+                      value={opt ?? ''}
+                      aria-label={`Option ${i + 1}`}
+                      onChange={(e) =>
+                        setOptionDrafts((prev) => prev.map((o, j) => (j === i ? e.target.value : o)))
+                      }
+                      className="min-h-10 min-w-0 flex-1 rounded-lg border border-hairline2 bg-card px-3 text-sm text-ink"
+                    />
+                  </div>
+                ))}
+                {!optionDrafts.length && (
+                  <p className="text-xs text-secondary">No printed options — written question.</p>
+                )}
+                {current.answer_index == null && optionDrafts.length > 0 && (
+                  <p className="text-xs text-secondary">
+                    No recorded answer. Setting one is an answer decision, not a transcription fix.
+                  </p>
+                )}
+              </div>
+
+              {answerTextMoves && (
+                <p role="alert" className="rounded-lg border border-exams bg-exams-soft p-3 text-xs text-exams-dark">
+                  This moves the recorded answer from “{current.options?.[current.answer_index ?? 0] ?? '—'}” to “
+                  {(answerIndex == null ? null : optionDrafts[answerIndex]) ?? '—'}”. A worked explanation of at
+                  least 20 characters is required before this can be saved.
+                </p>
+              )}
+
+              <div className="grid gap-3 sm:grid-cols-2">
+                <label className="text-xs text-muted">
+                  Printed question number
+                  <input
+                    value={qnum}
+                    onChange={(e) => setQnum(e.target.value)}
+                    className="mt-1 min-h-10 w-full rounded-lg border border-hairline2 bg-card px-3 text-sm text-ink"
+                  />
+                </label>
+                <label className="text-xs text-muted">
+                  Source page
+                  <input
+                    inputMode="numeric"
+                    value={page}
+                    onChange={(e) => setPage(e.target.value)}
+                    className="mt-1 min-h-10 w-full rounded-lg border border-hairline2 bg-card px-3 text-sm text-ink"
+                  />
+                </label>
+              </div>
+            </div>
 
             {/* Search-as-you-type taxonomy picker */}
             <div className="space-y-3 rounded-lg border border-hairline bg-paper p-4">
@@ -610,20 +822,51 @@ export default function AuthoringConsole({ taxonomy }: { taxonomy: TaxonomyNode[
               )}
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-3 border-t border-hairline pt-4">
-              <input
-                value={note}
-                onChange={(e) => setNote(e.target.value)}
-                placeholder="Optional note…"
-                className="min-h-11 min-w-0 flex-1 rounded-lg border border-hairline2 bg-paper px-3 text-sm"
-              />
-              <button
-                type="button"
-                onClick={() => void saveAndNext()}
-                className="min-h-11 rounded-lg bg-ink px-5 py-2 text-sm font-bold text-paper"
-              >
-                Save &amp; next (⌘↵)
-              </button>
+            <div className="space-y-3 border-t border-hairline pt-4">
+              {dirtyKinds.length > 1 && (
+                <div className="rounded-lg border border-exams bg-exams-soft p-3 text-xs text-exams-dark">
+                  <p className="font-semibold">
+                    One correction publishes at a time, so only the change you pick is saved now.
+                  </p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
+                    {dirtyKinds.map((k) => (
+                      <button
+                        key={k}
+                        type="button"
+                        aria-pressed={activeKind === k}
+                        onClick={() => setChosenKind(k)}
+                        className={
+                          'min-h-9 rounded-lg border px-2.5 text-xs font-semibold ' +
+                          (activeKind === k
+                            ? 'border-ink bg-ink text-paper'
+                            : 'border-hairline bg-paper text-ink')
+                        }
+                      >
+                        {EDIT_KIND_LABELS[k]}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <input
+                  value={note}
+                  onChange={(e) => setNote(e.target.value)}
+                  placeholder="Optional note…"
+                  className="min-h-11 min-w-0 flex-1 rounded-lg border border-hairline2 bg-paper px-3 text-sm"
+                />
+                <button
+                  type="button"
+                  onClick={() => void saveAndNext()}
+                  className="min-h-11 rounded-lg bg-ink px-5 py-2 text-sm font-bold text-paper"
+                >
+                  {activeKind
+                    ? `Save ${EDIT_KIND_LABELS[activeKind]}${contextChanged ? ' + currency' : ''} & next (⌘↵)`
+                    : contextChanged
+                      ? 'Save currency & next (⌘↵)'
+                      : 'Skip to next (⌘↵)'}
+                </button>
+              </div>
             </div>
           </div>
         )}

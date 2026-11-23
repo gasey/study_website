@@ -150,7 +150,14 @@ async def get_context(qid:str,actor:Account,appearance_id:str=Query(min_length=1
         return {'saved':saved,'source_version':token,'current':bool(saved and saved['appearance_id']==appearance_id and saved['source_version']==token),'resolution':resolution}
 
 
-class ContextSave(Reason):
+class ContextSave(service.Strict):
+    # Learning context is versioned, source-signed, optimistically locked and
+    # actor-stamped on every write, and changes no bank content — so it carries
+    # no typed-reason requirement (§VIII.5.2 #7). The sibling batch endpoint
+    # `/admin/bank/contexts/apply` already accepts an empty reason and ignores it;
+    # this makes the two writers of bank_question_contexts agree. The field stays
+    # accepted for wire compatibility with existing clients.
+    reason:str=Field(default='',max_length=4000)
     appearance_id:str=Field(min_length=1,max_length=600)
     source_version:str=Field(pattern=r'^[a-f0-9]{64}$')
     expected_version:int=Field(ge=0)

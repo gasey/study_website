@@ -218,7 +218,12 @@ def once(dry_run=False):
         pub=pubs[0]
         try:
             group=None
-            if pub['manifest'].get('admin_edit',{}).get('kind')=='taxonomy':
+            # V.20 (§VIII.5.2 #4): explanation batches already asked for group_export
+            # but fell through to one full sync-bank.sh per item. Grouping them uses the
+            # same batch row, the same per-publication authority re-check below, and the
+            # same verify_live_batch readback. The allowlist is explicit so a new kind
+            # has to be admitted deliberately in admin_tag_batch.BATCH_PATCH_KEYS too.
+            if pub['manifest'].get('admin_edit',{}).get('kind') in ('taxonomy','explanation'):
                 groups=remote('SELECT contribution_ids FROM bank_retag_batches WHERE '+literal(pub['contribution_id'])+'=ANY(contribution_ids)',True)
                 if groups:
                     ids=groups[0]['contribution_ids']
@@ -244,7 +249,7 @@ def once(dry_run=False):
                 for item in pubs:
                     if item['state']!='applied':
                         acknowledge(item,next(r for r in group['receipts'] if r['publication_id']==item['id']))
-                print('Published admin tag batch '+group['batch_id'])
+                print('Published admin batch '+group['batch_id'])
             else:
                 verify_live(receipt,pub['manifest'])
                 acknowledge(pub,receipt)

@@ -620,6 +620,11 @@ async def inspect_question(qid:str,actor:Account,appearance_id:str|None=None,
             await cur.execute("SELECT id,kind,note FROM content_reports WHERE canonical_id=%s AND status IN ('open','confirmed') ORDER BY id",(qid,))
             snap['reports']=await cur.fetchall()
         snap['documents']=documents
+        # The inspector already returns the whole snapshot; shipping the stale-source
+        # token with it lets the inline correction editor open from this payload rather
+        # than refetching /review/questions and /review/session (§VIII.5.2 #3). decide()
+        # re-checks both this token and the digest at save time regardless.
+        snap['baseline_token']=await source_version(cur,qid,appearance_id)
         await cur.execute('''SELECT id,title,kind,state,revision,updated_at FROM bank_contributions
             WHERE canonical_id=%s AND state NOT IN ('draft','withdrawn') ORDER BY updated_at DESC,id LIMIT 20''',(qid,))
         proposals=await cur.fetchall()

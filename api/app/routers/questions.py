@@ -709,7 +709,13 @@ async def reveal_answer(question_id: str, response: Response,
             raise HTTPException(409, 'The stored answer needs source review.')
         await record_reveal(cur, user_id, question_id)
         await cur.execute("SELECT revealed_at+interval '30 minutes' AS retry_at FROM answer_reveals WHERE user_id=%s AND canonical_id=%s",(user_id,question_id))
-        return {**viewed_payload(row),**(await cur.fetchone()),'retry_after_seconds':1800}
+        # Drain this result before question_stats runs its own queries on the same
+        # cursor, or the pending row is discarded and fetchone() returns None.
+        retry=await cur.fetchone()
+        # Same aggregate block as the answer path: this is the other reveal moment.
+        from ..services.question_stats import question_stats
+        stats=await question_stats(cur,question_id,row['options'])
+        return {**viewed_payload(row),**retry,'retry_after_seconds':1800,'stats':stats}
 
 
 @router.get("/{question_id}/share", response_class=HTMLResponse)
@@ -930,10 +936,15 @@ async def _answer_question(
         from ..services.learning_rewards import attempt_reward
         reward=await attempt_reward(cur,user_id,question_id,attempt,correct,row['answer_source'],body.context)
 
+        # Computed after the insert so the learner's own answer is counted, and only
+        # here — this is a reveal moment (§VII.18 #2). Aggregate only; None below the
+        # population gate in services/question_stats.py.
+        from ..services.question_stats import question_stats
+        stats=await question_stats(cur,question_id,row['options'])
         result=AnswerResult(
             reward=reward,correct=correct,answer_index=answer_index,answer_text=answer_text,
             answer_source=row['answer_source'],verified=row['answer_source'] in ('official','key'),
-            explanation=row['explanation'] or None)
+            explanation=row['explanation'] or None,stats=stats)
         if idempotency_key:
             await cur.execute('INSERT INTO practice_request_receipts(user_id,request_key,request_hash,attempt_id,response) VALUES(%s,%s,%s,%s,%s)',(user_id,idempotency_key,request_hash,attempt,Jsonb(result.model_dump())))
     return result

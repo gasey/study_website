@@ -226,7 +226,14 @@ async def create(cur,actor,p,key,expected_baseline_hash=None,additional_module_i
         raise HTTPException(409,'The bank changed since this comparison was opened. Refresh before creating the draft.')
     if baseline and baseline['record']['classification'].get('subject_id')!=p.subject_id:
         # Retagging can change the subject, but review permissions follow the old subject until publication.
-        if p.kind!='taxonomy': raise HTTPException(422,'Use the question’s current subject')
+        # An unclassified question has no old subject to follow, and Proposal.subject_id must be a string, so
+        # before V.20 a typo, printed-locator or explanation fix on an untagged question could not be
+        # expressed at all — which is precisely the authoring console's default queue (§VIII.5.1). Permission
+        # is unchanged: permitted() still checks the actor against the old subject (None ⇒ the unscoped
+        # check) and against the proposal's subject, so only a global owner/publisher, or one granted that
+        # subject, gets through.
+        if p.kind!='taxonomy' and baseline['record']['classification'].get('subject_id') is not None:
+            raise HTTPException(422,'Use the question’s current subject')
     await validate_evidence(cur,p,baseline,allow_noop=admin_attestation)
     # Explicit owner maintenance remains target-scoped and audited; these trusted
     # records cannot be created by HTTP clients. Staff maintenance is uncapped and

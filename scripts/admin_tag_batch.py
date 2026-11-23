@@ -1,4 +1,16 @@
-"""Bounded atomic publication of explicit admin tag decisions from one snapshot."""
+"""Bounded atomic publication of explicit admin tag or explanation decisions from one snapshot.
+
+Phase V.20 (§VIII.5.2 #4) widened this from taxonomy-only. The machinery was already
+kind-agnostic — `transform()` applies whatever the manifest's patch holds, the receipts
+record `payload.patch` generically, and the worker's readback (`fetch_live_records`)
+already selects `explanation` alongside the tag columns — so only the admission rule
+below was taxonomy-specific. Every other guard is unchanged: 1–20 decisions, one shared
+question each, per-publication authority re-checks in the worker, the bank lock, the
+snapshot/journal reconciliation, the gzip backup, and the output checksum.
+
+A batch carries exactly one kind. Mixing would publish under one journal id whose name
+describes only part of its contents.
+"""
 import gzip
 import hashlib
 import json
@@ -9,25 +21,34 @@ from contextlib import nullcontext
 from review_bank_store import atomic,bank_lock,digest,sha,record,transform
 from editorial_protection import check_candidate,prepare_publication,finish_publication
 
+# Patch keys a batched correction may carry, per kind. Anything outside this map — a
+# transcription, an answer remap, a source reference — still publishes one at a time,
+# because those are the kinds whose review history is worth a separate receipt.
+BATCH_PATCH_KEYS={'taxonomy':{'classification','relatedClassifications'},'explanation':{'explanation'}}
+
 
 def apply_admin_tag_batch(bank_path,root,publications,dry_run=False,locked=False):
     bank_path=Path(bank_path).resolve();root=Path(root).resolve()
     if not dry_run:
         from bank_authority import require_writable
         require_writable(bank_path)
-    if not 1<=len(publications)<=20:raise ValueError('Admin tag batches contain 1–20 exact decisions')
+    if not 1<=len(publications)<=20:raise ValueError('Admin batches contain 1–20 exact decisions')
     publications=sorted(publications,key=lambda p:p['id'])
     manifests=[p['manifest'] for p in publications]
-    canonical=[]
+    canonical=[];kinds=set()
     for pub in publications:
-        m=pub['manifest'];p=m['payload']
+        m=pub['manifest'];p=m['payload'];kind=(m.get('admin_edit') or {}).get('kind')
         if (digest(m)!=pub['manifest_hash'] or m.get('schema')!=1 or not m.get('admin_edit')
-            or m['admin_edit'].get('kind')!='taxonomy' or p.get('kind')!='taxonomy'
-            or not p.get('canonical_id') or not p.get('patch') or set(p['patch'])-{'classification','relatedClassifications'}):
-            raise ValueError('Only immutable final admin tag corrections qualify for this batch')
-        canonical.append(p['canonical_id'])
+            or kind not in BATCH_PATCH_KEYS or p.get('kind')!=kind
+            or not p.get('canonical_id') or not p.get('patch') or set(p['patch'])-BATCH_PATCH_KEYS[kind]):
+            raise ValueError('Only immutable final admin tag or explanation corrections qualify for this batch')
+        canonical.append(p['canonical_id']);kinds.add(kind)
     if len(set(canonical))!=len(canonical):raise ValueError('Choose each shared question once')
-    bid='admin_tags_'+digest([p['id'] for p in publications])[:32]
+    if len(kinds)!=1:raise ValueError('An admin batch publishes exactly one correction kind')
+    kind=kinds.pop()
+    # 'admin_tags_' is preserved verbatim for taxonomy so existing journals and receipts
+    # on Oracle keep resolving; a new kind gets its own prefix.
+    bid=('admin_tags_' if kind=='taxonomy' else 'admin_'+kind+'_')+digest([p['id'] for p in publications])[:32]
     directory=bank_path.parent/'review-batches';journal_path=directory/(bid+'.json')
     with (nullcontext() if locked else bank_lock(bank_path)):
         check_candidate(bank_path)

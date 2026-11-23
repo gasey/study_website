@@ -10,12 +10,13 @@ import QuestionExplanation from './QuestionExplanation'
 import QuestionCurrentness from './QuestionCurrentness'
 import CurrentAffairsConnections from './CurrentAffairsConnections'
 import RewardOutcome from './RewardOutcome'
+import QuestionStats from './QuestionStats'
 import {SourceQuestionText} from './SourceQuestionText'
 
 /** Views are restored privately; only checked results reach attempt/progress handlers. */
-export default function PracticeAnswerPanel({qid,paperId,options,question,year,topic,context,result,available=true,disabled=false,onViewed,onBusy,onRetry,onNext,nextLabel='Next question →',showNext=true,secondaryActions}: {
+export default function PracticeAnswerPanel({qid,paperId,options,question,year,topic,context,result,chosenText,available=true,disabled=false,onViewed,onBusy,onRetry,onNext,nextLabel='Next question →',showNext=true,secondaryActions}: {
  qid:string;paperId?:string|null;options?:readonly (string|null)[];question:string;year?:number|null;topic?:string;
- context:AnswerContext;result?:AnswerResult|null;available?:boolean;disabled?:boolean;
+ context:AnswerContext;result?:AnswerResult|null;chosenText?:string|null;available?:boolean;disabled?:boolean;
  onViewed:(viewed:boolean)=>void;onBusy?:(busy:boolean)=>void;onRetry?:()=>void;onNext?:()=>void|Promise<void>;nextLabel?:string;showNext?:boolean;secondaryActions?:ReactNode
 }) {
  const nav=useNavigate(),[params]=useSearchParams()
@@ -89,6 +90,7 @@ export default function PracticeAnswerPanel({qid,paperId,options,question,year,t
   {error&&<p role="alert" className="mt-2 text-sm text-mypick">{error}</p>}
   {answer&&<section aria-label="Answer and explanation" className="border-t border-hairline pt-2 text-sm">
    <div className="practice-answer-outcome flex flex-wrap items-baseline gap-x-2"><strong>{result?answerFeedbackLabel(result,context):'Answer'}</strong><span>{answerLetter?` · ${answerLetter}. `:' · '}<SourceQuestionText text={answer.answer_text}/></span></div>
+   <QuestionStats stats={answer.stats} answerText={answer.answer_text} chosenText={chosenText}/>
    {!result&&<div className="flex flex-wrap items-center gap-x-2 text-xs text-muted"><p>No attempt recorded{remaining>0?` · retry in ${remaining} ${remaining===1?'minute':'minutes'}`:''}.</p>{remaining===0&&onRetry&&<button type="button" onClick={retry} className="min-h-11 px-1 font-semibold text-link">Retry now</button>}</div>}
    <QuestionCurrentness variant="summary" revealed question={question} year={year} topic={topic}/>
    <AnswerComparison options={options} qid={qid} paperId={paperId} revealed answer={answer} answerReviewed={answerStatus(answer.answer_source,context).status==='verified'} explanation={answer.explanation} actions={

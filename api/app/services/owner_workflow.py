@@ -42,7 +42,13 @@ def routine_proposal(snapshot,kind,patch,note='',evidence=None):
         raise HTTPException(422,'Changing the correct answer needs a supporting note of at least 20 characters')
     summary=change_summary(record,kind,patch)
     reason=summary+('\nOwner note: '+note if note else '')
+    # An untagged question has no approved classification, so a non-taxonomy
+    # correction (typo, printed locator, explanation) had no subject to bind to and
+    # failed Proposal validation — which blocked exactly the authoring console's
+    # default `untagged` queue (§VIII.5.1). Fall back the same way the shipped
+    # explanation batch already does (`authoring_console.py:101`); grant checks in
+    # permitted() are unchanged and still run against whichever subject this is.
     return Proposal(kind=kind,canonical_id=snapshot['canonical_id'],appearance_id=record['id'],
-      subject_id=(patch.get('classification') or record['classification'])['subject_id'],
+      subject_id=(patch.get('classification') or record['classification']).get('subject_id') or 'general-knowledge',
       title='Owner correction: '+record['question'][:140],patch=patch,rationale=reason,
       evidence=evidence or [{'kind':'reasoning','note':reason[:4000]}])

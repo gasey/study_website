@@ -152,6 +152,9 @@ class AnswerResult(BaseModel):
     answer_source: str
     verified: bool
     explanation: str | None = None
+    # Aggregate, post-reveal only, None below the population gate. See
+    # services/question_stats.py — these never carry per-learner data.
+    stats: dict | None = None
 
 
 class DailyActivity(BaseModel):

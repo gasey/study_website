@@ -38,9 +38,19 @@ export default function EditorialTagCleanup({nodes,canWrite,needsMfa=false,onBus
   const timer=window.setTimeout(()=>reviewRequest<{items:Row[];total:number}>('/admin/bank/tag-issues?'+qs).then(r=>{if(live)setData(r)}).catch(e=>{if(live){pendingNext.current=false;setData(null);setError(e.message)}}).finally(()=>{if(live)setLoading(false)}),250);return()=>{live=false;clearTimeout(timer)}
  },[query,issue,offset,bank,sort,subject,module,paper,topic,subtopic,pathScope,period,region,timeBehavior,year,refresh])
  useEffect(()=>{let live=true;setSnapshot(null);if(selected)reviewRequest<BankSnapshot>('/review/questions/'+encodeURIComponent(selected.id)+((selectedAppearance||selected.appearance_id)?'?appearance_id='+encodeURIComponent(selectedAppearance||selected.appearance_id):'')).then(s=>{if(live)setSnapshot(s)}).catch(e=>{if(live)setError(e.message)});return()=>{live=false}},[selectedId,selectedAppearance,refresh])
- useEffect(()=>{if(!batchId)return;let live=true,timer:number|undefined
-  const load=()=>reviewRequest<Batch>('/admin/bank/retag/batches/'+encodeURIComponent(batchId)).then(b=>{if(!live)return;setBatch(b);if(b.items.some(i=>['publishing','accepted'].includes(i.state)))timer=window.setTimeout(load,12000)}).catch(e=>{if(live)setError(e.message)})
-  void load();return()=>{live=false;clearTimeout(timer)}
+ // Batch progress rides the one-way staff SSE stream (§VII.11.4 / §VIII.5.2 #10),
+ // which was built in V.16 and never wired up. The stream only triggers a refetch
+ // when `done` actually moves, so a 1.5s frame does not become a 1.5s request; if
+ // it fails or the server closes it, this degrades to the original 12s poll.
+ useEffect(()=>{if(!batchId)return;let live=true,timer:number|undefined,source:EventSource|undefined,lastDone=-1
+  const load=(schedule:boolean)=>reviewRequest<Batch>('/admin/bank/retag/batches/'+encodeURIComponent(batchId)).then(b=>{if(!live)return;setBatch(b);if(schedule&&b.items.some(i=>['publishing','accepted'].includes(i.state)))timer=window.setTimeout(()=>load(true),12000)}).catch(e=>{if(live)setError(e.message)})
+  const fallback=()=>{if(!live||timer!==undefined)return;void load(true)}
+  try{
+   source=new EventSource('/api/admin/bank/batches/'+encodeURIComponent(batchId)+'/events',{withCredentials:true})
+   source.onmessage=event=>{if(!live)return;try{const progress=JSON.parse(event.data) as {done?:number};if(progress.done!==lastDone){lastDone=progress.done??-1;void load(false)}}catch{/* ignore a malformed frame; the stream close handler falls back */}}
+   source.onerror=()=>{source?.close();source=undefined;fallback()}
+  }catch{source=undefined}
+  void load(!source);return()=>{live=false;clearTimeout(timer);source?.close()}
  },[batchId,refresh])
  function toggle(q:Row){setPreview(null);setSelection(old=>old.some(x=>x.id===q.id)?old.filter(x=>x.id!==q.id):old.length<20?[...old,q]:old)}
  async function showPreview(){setBusy(true);setError('');try{setPreview((await reviewRequest<{items:Preview[]}>('/admin/bank/retag/preview',{targets:selection.map(q=>({question_id:q.id,appearance_id:q.appearance_id}))})).items)}catch(e){setError((e as Error).message)}finally{setBusy(false)}}
