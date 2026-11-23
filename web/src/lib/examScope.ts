@@ -1,13 +1,25 @@
 import { useSyncExternalStore } from "react";
-export type ExamScope = "mizoram-recruitment" | "all";
+// Mirrors api/app/exam_scope.py KNOWN_SCOPES (§VIII.3.1, phase V.19). A new exam
+// body adds its id in both places; api/tests/test_exam_scope_drift.py fails if the
+// two lists disagree. The type is open so no new code assumes exactly two scopes.
+export const KNOWN_EXAM_SCOPES = [
+  "all",
+  "mizoram-recruitment",
+  "outside-mizoram",
+] as const;
+export type ExamScope = (typeof KNOWN_EXAM_SCOPES)[number];
+function isExamScope(value: string | null): value is ExamScope {
+  return !!value && (KNOWN_EXAM_SCOPES as readonly string[]).includes(value);
+}
 const KEY = "ism-exam-scope";
 function readExamScope(): ExamScope {
   const explicit = new URLSearchParams(window.location?.search || "").get(
     "exam_scope",
   );
-  if (explicit === "all" || explicit === "mizoram-recruitment") return explicit;
+  if (isExamScope(explicit)) return explicit;
   try {
-    return localStorage.getItem(KEY) === "all" ? "all" : "mizoram-recruitment";
+    const stored = localStorage.getItem(KEY);
+    return isExamScope(stored) ? stored : "mizoram-recruitment";
   } catch {
     return "mizoram-recruitment";
   }

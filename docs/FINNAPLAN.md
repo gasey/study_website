@@ -8567,3 +8567,75 @@ Deferral with a trip-wire, in the manner of §0.11.3's cohort gate: revisit when
 **10 accounts clear the existing `scored_attempts >= 50` bar**. Below that, the
 honest move is to improve the thing a solitary learner meets — explanations,
 coverage, the practice loop — because those need no crowd to be useful.
+
+---
+
+# Part X — Closing Part VIII: what shipped, and why V.21 is deferred
+
+23 November IST. Part VIII set a build order of V.19 → V.24. This records where it
+actually ended and why, so the next person does not read an open plan and assume
+the remaining items are merely unstarted.
+
+## X.1 Shipped
+
+| Phase | Outcome |
+| --- | --- |
+| **V.19** | `ExamScope` widened from `Literal["mizoram-recruitment","all"]` to an allowlist-validated open identifier, mirrored in `web/src/lib/examScope.ts`, with `test_exam_scope_drift.py` holding the two in agreement. An unknown scope now **fails** instead of silently serving the Mizoram pool, and `outside-mizoram` — a seeded row with no materialised views — gets a correct per-scope predicate rather than Mizoram's launch pool. The widening immediately caught a hardcoded `"all" \| "mizoram-recruitment"` in `web/src/lib/api.ts`, which is the class of assumption this phase exists to remove. |
+| **V.20** | The correction loop. Three latent defects fixed (missing idempotency key, non-taxonomy edits impossible on untagged questions, up-to-three doomed writes per save), text/options/locator editing in the keyboard console, batch export grouping, honest MFA, fix-from-the-page. |
+| **V.22** | Console reorganised by job; eleven unreachable sections recovered; duplicates, aliases and four dead links removed; `check-admin-nav.cjs` added to `prebuild`. |
+| **V.23** | Topic coverage re-measured: **19.2%, not 71%** (§VIII.4.2). |
+| Beyond the plan | Answer stats connected (§VII.18 #2); `no-explanation` queue (12,608 candidates); bulk explanation publishing; the Bundle A+B cutover and the worker's grouped apply path exercised in production. |
+
+## X.2 V.21 is deferred, on the evidence
+
+V.21 is the paperless spine: `canonical_questions.origin` and `audience`, a union
+launch view, a relaxed answer-reveal guard, retiring the `Community/` fabrication,
+and splitting provenance from trust at five call sites. It remains the right design.
+It is not being built now, for one measured reason:
+
+**Every part of it is inert against current data.**
+
+| | |
+| --- | --- |
+| Appearances with `paper_id IS NULL` | **0** |
+| Papers with `exam_type='Community'` | **0** |
+| Files calling `pool_view` / `question_scope` / `scope_condition` | 16 |
+| Files reading the launch views | 5 |
+
+The `Community/` fabrication stamps a false `mizoram-recruitment` scope — but it has
+never fired. The unconditional `appearances JOIN papers` on answer reveal blocks
+paperless questions — of which there are none. So V.21 would change what **every
+learner-facing endpoint shows** in order to serve content that does not exist.
+
+Part IX named the pattern this project keeps repeating: `v_question_stats` built in
+0003 and unread until V.20; all five authoring queues empty on the day they shipped;
+`posts` complete and unused since 0002. **Building V.21 today would be the fourth
+instance** — the highest-risk one, because it touches visibility rather than a
+side feature.
+
+## X.3 The trigger
+
+Build V.21 when there is something for it to carry. Concretely, **when the owner
+first wants to add a question that has no printed source** — a geography or
+engineering question written directly rather than transcribed. That is a real
+request with a real first row, and the migration can be written and rehearsed
+against it in an afternoon. The design in §VIII.2 is complete and waiting; nothing
+needs rediscovering.
+
+Until then the honest statement of capability is: **Finna can hold questions from
+any exam body, and cannot yet hold a question from no exam at all.**
+
+## X.4 What is actually next, by value
+
+1. **Explanations.** 12,608 questions have an official key and no explanation; the
+   V.20 queue surfaces them and bulk publishing makes them cheap. This is the only
+   item that improves what a solitary learner meets, which at 25 active users is
+   the only thing that matters.
+2. **Provenance for AI-written explanations.** `/explanations/apply` records
+   `explanation_human_edited = true` and no model, so AI-drafted text is
+   indistinguishable from owner-written text — which defeats §VII.8's purpose at
+   exactly the moment it matters, a 12,608-row backfill.
+3. **The dedupe job.** `times_asked` is still 1 on every row, so repeat frequency —
+   the most valuable signal in a PYQ bank — remains dead.
+4. V.21, on the trigger above. V.24 (a second exam body) is unblocked by V.23's
+   measurement whenever a body is chosen.

@@ -196,7 +196,7 @@ export interface ListParams {
   atlas_chapter?: string
   atlas_layer?: string
   learning_entry?: string
-  exam_scope?: "all" | "mizoram-recruitment"
+  exam_scope?: import("./examScope").ExamScope
   study_area?: GroupBStudyArea
   shelf_id?: string
   subtopic_id?: string
