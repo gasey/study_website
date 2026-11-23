@@ -8170,6 +8170,17 @@ the ledger, and the two figures are close enough to invite a false inference in
 either direction. `CLAUDE.md` is explicit: use fresh authoritative checks rather
 than counts in historical documents.
 
+**MEASURED 23 November 2026: it is 19.2%, not 71%.** 15,789 approved classifications
+carry a subject with no topic; **66,594 carry both** (`reports/finna-topic-coverage-20261123/`).
+The 8 November publication did add topics, so the figure above is stale by roughly a factor
+of four. Of the two worlds this section set out, it is the first: **the lens is nearly ready
+and the campaign is small.** About 81% of the bank can be reached by a syllabus-map join
+today, so derived relevance (decision 1) is viable now, the remaining ~15,789 questions are a
+background improvement rather than a gate, and **topic coverage no longer blocks V.19, V.21
+or onboarding a second exam.** The count measures whether a topic is *recorded*, not whether
+it is *correct* — the 8 November run was owner-delegated acceptance of AI classification.
+
+The original instruction, kept because the reasoning still holds:
 **Step 1 of V.20 is therefore to re-measure topic coverage, not to act on 71%.**
 If coverage is now good, the lens is nearly ready and the campaign is small. If
 it is still 71%, topic coverage is the single largest piece of work in this plan
